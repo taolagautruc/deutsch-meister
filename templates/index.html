@@ -1,0 +1,977 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DeutschMeister (A1 → B2) - Hệ thống học & luyện thi tiếng Đức chuẩn CEFR</title>
+    <!-- Nạp trước Tailwind CSS thuần cục bộ để đảm bảo 100% không bao giờ mất giao diện -->
+    <link rel="stylesheet" href="/static/css/tailwind.min.css">
+    <!-- Nạp bộ máy Tailwind v3 cục bộ (kèm fallback CDN) -->
+    <script src="/static/js/tailwind.js"></script>
+    <script>
+        if (typeof tailwind === 'undefined') {
+            document.write('<script src="https://cdn.tailwindcss.com"><\/script>');
+        }
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/css/style.css">
+    <style>
+        body { font-family: 'Inter', system-ui, -apple-system, sans-serif; }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-900 min-h-screen flex flex-col">
+
+    <!-- ========================================================= -->
+    <!-- HEADER CHUẨN BẢN GỐC (NỀN TRẮNG + CỜ ĐỨC + 4 TAB + HV)     -->
+    <!-- ========================================================= -->
+    <header class="sticky top-0 z-50 bg-white/95 backdrop-blur border-b border-slate-200 shadow-sm">
+        <!-- Thanh màu cờ Đức trên cùng -->
+        <div class="h-1.5 w-full flex">
+            <div class="flex-1 bg-slate-900"></div>
+            <div class="flex-1 bg-red-600"></div>
+            <div class="flex-1 bg-amber-400"></div>
+        </div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 min-h-[72px] py-2.5 flex flex-wrap items-center justify-between gap-4">
+            <!-- Logo & Tên hệ thống -->
+            <div class="flex items-center gap-3 shrink-0 cursor-pointer" onclick="switchMainView('levels')">
+                <div class="w-11 h-11 rounded-2xl overflow-hidden shadow-md border border-slate-200 flex flex-col relative items-center justify-center">
+                    <div class="w-full h-1/3 bg-slate-900"></div>
+                    <div class="w-full h-1/3 bg-red-600"></div>
+                    <div class="w-full h-1/3 bg-amber-400"></div>
+                    <span class="absolute px-1.5 py-0.5 rounded-md bg-slate-900/90 text-white font-black text-[11px] tracking-wider shadow">DE</span>
+                </div>
+                <div>
+                    <div class="flex items-center gap-2">
+                        <h1 class="font-extrabold text-xl tracking-tight text-slate-900 whitespace-nowrap">
+                            Deutsch<span class="text-indigo-600">Meister</span>
+                        </h1>
+                        <span class="px-2 py-0.5 text-[11px] font-bold rounded-full bg-indigo-50 text-indigo-600 border border-indigo-200 whitespace-nowrap">
+                            A1 → B2
+                        </span>
+                    </div>
+                    <p class="text-xs text-slate-500 whitespace-nowrap">Hệ thống học & luyện thi tiếng Đức chuẩn CEFR</p>
+                </div>
+            </div>
+
+            <!-- 4 Nút điều hướng trung tâm -->
+            <nav class="flex items-center gap-1.5 bg-slate-100 p-1.5 rounded-2xl border border-slate-200/80 overflow-x-auto">
+                <button onclick="switchMainView('levels')" id="nav-levels" class="px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold whitespace-nowrap shrink-0 bg-white text-indigo-600 shadow-sm transition">
+                    🎯 Cấp độ (A1 - B2)
+                </button>
+                <button onclick="switchMainView('workspace')" id="nav-workspace" class="px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold whitespace-nowrap shrink-0 text-slate-600 hover:text-slate-900 transition">
+                    🎓 Không gian học (<span id="current-level-badge">A1</span>)
+                </button>
+                <button onclick="switchMainView('arena')" id="nav-arena" class="px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold whitespace-nowrap shrink-0 text-slate-600 hover:text-slate-900 transition">
+                    🏆 Đấu trường & BXH
+                </button>
+                <button onclick="switchMainView('sql')" id="nav-sql" class="px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold whitespace-nowrap shrink-0 text-slate-600 hover:text-slate-900 transition">
+                    🗄️ Kiến trúc Python/SQL
+                </button>
+            </nav>
+
+            <!-- Cụm thông tin Ngày, EXP & Avatar HV bên phải -->
+            <div class="flex items-center gap-2.5 shrink-0">
+                <div class="px-3 py-1.5 rounded-xl bg-orange-50 border border-orange-200 text-orange-700 text-xs sm:text-sm font-bold flex items-center gap-1.5 whitespace-nowrap">
+                    🔥 <span id="user-streak">7</span> ngày
+                </div>
+                <div class="px-3.5 py-1.5 rounded-xl bg-amber-50 border border-amber-200 text-amber-700 text-xs sm:text-sm font-extrabold flex items-center gap-1.5 whitespace-nowrap">
+                    ⚡ <span id="user-exp">1,450</span> EXP
+                </div>
+                <div class="w-9 h-9 rounded-xl bg-indigo-600 text-white font-bold text-xs flex items-center justify-center shadow-sm shrink-0">
+                    HV
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- ========================================================= -->
+    <!-- NỘI DUNG CHÍNH (4 MÀN HÌNH)                               -->
+    <!-- ========================================================= -->
+    <main class="max-w-7xl w-full mx-auto px-4 sm:px-6 py-8 flex-1 space-y-8">
+
+        <!-- 1. MÀN HÌNH CHỌN TRÌNH ĐỘ (A1 - B2) -->
+        <section id="view-levels" class="space-y-8">
+            <!-- Hero Banner Xanh Đậm -->
+            <div class="rounded-3xl bg-gradient-to-br from-slate-900 via-indigo-950 to-slate-900 text-white p-6 sm:p-10 shadow-xl border border-slate-800 relative overflow-hidden">
+                <div class="max-w-3xl space-y-5 relative z-10">
+                    <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/10 border border-white/15 text-xs font-medium text-amber-300">
+                        <span class="w-2 h-2 rounded-full bg-amber-400"></span>
+                        Giao diện chuẩn Châu Âu (CEFR A1 - B2) • Đã kết nối Python & SQLite
+                    </div>
+
+                    <h2 class="text-3xl sm:text-4xl font-extrabold leading-tight tracking-tight">
+                        Chinh phục Tiếng Đức từ con số 0 đến tự tin giao tiếp <span class="text-amber-400">Trình độ B2</span>
+                    </h2>
+
+                    <p class="text-slate-300 text-sm sm:text-base leading-relaxed">
+                        Mỗi cấp độ được thiết kế thành một không gian độc lập gồm <b class="text-white">Bài học lý thuyết</b> chuyên sâu, <b class="text-white">7 dạng Bài tập</b> rèn luyện 4 kỹ năng (Nghe – Nói – Đọc – Viết) và <b class="text-white">Đấu trường Game</b> tính giờ đua Top Bảng xếp hạng mỗi ngày.
+                    </p>
+
+                    <div class="flex flex-wrap items-center gap-3 pt-1">
+                        <button onclick="openLevel('A1')" class="px-5 py-3 rounded-xl bg-amber-400 hover:bg-amber-300 text-slate-950 font-extrabold text-sm shadow-lg transition flex items-center gap-2">
+                            ▶ Bắt đầu ngay với Trình độ A1
+                        </button>
+                        <button onclick="switchMainView('arena')" class="px-5 py-3 rounded-xl bg-white/10 hover:bg-white/15 text-white border border-white/15 font-semibold text-sm transition flex items-center gap-2">
+                            ⚡ Vào Đấu trường Game nhận EXP
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Khung Mục tiêu hôm nay & Tiến độ EXP ngày -->
+                <div class="mt-8 p-5 rounded-2xl bg-slate-900/80 border border-white/10 backdrop-blur">
+                    <div class="flex items-center justify-between gap-4 mb-3">
+                        <div>
+                            <p class="text-[11px] font-bold uppercase tracking-wider text-slate-400">MỤC TIÊU HÔM NAY</p>
+                            <h3 class="text-lg font-extrabold text-white mt-0.5">Hạng #4 Bảng Xếp Hạng</h3>
+                        </div>
+                        <div class="w-10 h-10 rounded-xl bg-amber-400/20 border border-amber-400/40 flex items-center justify-center text-amber-300 text-lg">
+                            🏆
+                        </div>
+                    </div>
+                    <div class="flex items-center justify-between text-xs text-slate-300 mb-1.5">
+                        <span>Tiến độ EXP ngày</span>
+                        <span class="font-bold text-amber-400"><span id="hero-exp">1,450</span> / 2,000 EXP</span>
+                    </div>
+                    <div class="w-full h-2.5 bg-slate-800 rounded-full overflow-hidden">
+                        <div id="hero-exp-bar" class="h-full bg-gradient-to-r from-amber-400 via-orange-500 to-red-500 rounded-full transition-all duration-500" style="width: 72%"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tiêu đề danh sách cấp độ -->
+            <div class="flex flex-wrap items-end justify-between gap-4">
+                <div>
+                    <h2 class="text-2xl font-extrabold text-slate-900">Chọn Trình Độ & Không Gian Học Tập</h2>
+                    <p class="text-sm text-slate-500 mt-1">Ấn vào bất kỳ trình độ nào để mở Bài học lý thuyết, 7 dạng Bài tập và Đấu trường Game của trình độ đó.</p>
+                </div>
+            </div>
+
+            <!-- Lưới 4 Thẻ Trình Độ (A1, A2, B1, B2) -->
+            <div id="levels-grid" class="grid grid-cols-1 md:grid-cols-2 gap-6"></div>
+        </section>
+
+        <!-- 2. MÀN HÌNH KHÔNG GIAN HỌC TẬP (LÝ THUYẾT & 7 DẠNG BÀI TẬP) -->
+        <section id="view-workspace" class="hidden space-y-6">
+            <div class="bg-white border border-slate-200 rounded-3xl p-6 shadow-sm flex flex-wrap items-center justify-between gap-4">
+                <div class="flex items-center gap-4">
+                    <div id="ws-badge" class="w-14 h-14 rounded-2xl bg-emerald-500 text-white font-black text-2xl flex items-center justify-center shadow-md">
+                        A1
+                    </div>
+                    <div>
+                        <span id="ws-pill" class="px-2.5 py-0.5 rounded-full text-xs font-bold bg-emerald-50 text-emerald-700 border border-emerald-200">Trình độ A1</span>
+                        <h2 id="ws-title" class="text-2xl font-extrabold text-slate-900 mt-1">Sơ cấp 1 (Anfänger)</h2>
+                    </div>
+                </div>
+
+                <!-- Nút chuyển Phần 1 (Lý thuyết) & Phần 2 (Bài tập) -->
+                <div class="flex items-center gap-2 bg-slate-100 p-1.5 rounded-2xl border border-slate-200">
+                    <button onclick="switchSubTab('theory')" id="subtab-theory" class="px-4 py-2.5 rounded-xl text-sm font-bold whitespace-nowrap shrink-0 bg-white text-indigo-600 shadow-sm transition">
+                        📖 Phần 1: Bài học & Từ vựng
+                    </button>
+                    <button onclick="switchSubTab('exercises')" id="subtab-exercises" class="px-4 py-2.5 rounded-xl text-sm font-bold whitespace-nowrap shrink-0 text-slate-600 hover:text-slate-900 transition">
+                        ✍️ Phần 2: Bài tập (Đủ 7 Dạng)
+                    </button>
+                </div>
+            </div>
+
+            <!-- PHÂN KHU 1: LÝ THUYẾT & THẺ TỪ VỰNG -->
+            <div id="subview-theory" class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+                <!-- Cột trái: Danh sách bài học -->
+                <div class="bg-white border border-slate-200 rounded-3xl p-5 shadow-sm space-y-4 h-fit">
+                    <div class="flex items-center justify-between">
+                        <h3 class="font-extrabold text-sm text-slate-700 uppercase tracking-wider">Danh mục bài học</h3>
+                        <span class="px-2.5 py-1 rounded-lg bg-emerald-50 text-emerald-700 border border-emerald-200 font-bold text-xs">SQLite Live</span>
+                    </div>
+                    <div id="lesson-list" class="space-y-2.5"></div>
+                </div>
+
+                <!-- Cột phải: Nội dung bài học & Thẻ từ vựng -->
+                <div class="lg:col-span-2 space-y-6">
+                    <div class="bg-white border border-slate-200 rounded-3xl p-6 shadow-sm space-y-4">
+                        <div class="flex flex-wrap items-center justify-between gap-2 border-b border-slate-100 pb-4">
+                            <h3 id="current-lesson-title" class="text-xl font-extrabold text-slate-900">Đang tải bài học...</h3>
+                            <span class="px-3 py-1 rounded-full bg-amber-50 text-amber-700 border border-amber-200 text-xs font-bold shrink-0">Lý thuyết & Ngữ pháp</span>
+                        </div>
+                        <div id="current-lesson-grammar" class="text-slate-700 leading-relaxed text-sm sm:text-base"></div>
+                    </div>
+
+                    <div class="bg-white border border-slate-200 rounded-3xl p-6 shadow-sm space-y-4">
+                        <div class="flex flex-wrap items-center justify-between gap-2">
+                            <h3 class="font-extrabold text-lg text-slate-900">Từ Vựng & Mẫu Câu Trọng Tâm (Có Phát Âm)</h3>
+                            <div class="flex flex-wrap gap-2 text-xs font-bold">
+                                <span class="px-2.5 py-1 rounded-lg bg-blue-50 text-blue-700 border border-blue-200">der (Giống đực)</span>
+                                <span class="px-2.5 py-1 rounded-lg bg-rose-50 text-rose-700 border border-rose-200">die (Giống cái)</span>
+                                <span class="px-2.5 py-1 rounded-lg bg-emerald-50 text-emerald-700 border border-emerald-200">das (Giống trung)</span>
+                            </div>
+                        </div>
+                        <div id="vocab-grid" class="grid grid-cols-1 md:grid-cols-3 gap-4"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- PHÂN KHU 2: HỆ THỐNG 7 DẠNG BÀI TẬP -->
+            <div id="subview-exercises" class="hidden space-y-6">
+                <div class="bg-white border border-slate-200 rounded-3xl p-6 shadow-sm space-y-6">
+                    <div class="flex flex-wrap items-center justify-between gap-4 border-b border-slate-100 pb-4">
+                        <div>
+                            <div class="flex items-center gap-2">
+                                <h3 class="text-xl font-extrabold text-slate-900">Hệ Thống 7 Dạng Bài Tập Tương Tác</h3>
+                                <span class="px-2.5 py-0.5 rounded-full bg-indigo-50 border border-indigo-200 text-indigo-700 font-extrabold text-xs">50 Câu • Chuẩn CEFR</span>
+                            </div>
+                            <p class="text-xs text-slate-500 mt-0.5">Chọn từng dạng bài tập bên dưới để rèn luyện. Làm đúng cộng điểm EXP trực tiếp vào SQLite.</p>
+                        </div>
+                        <!-- Bàn phím ảo tiếng Đức -->
+                        <div class="flex flex-wrap items-center gap-1.5 bg-slate-100 p-1.5 rounded-xl border border-slate-200">
+                            <span class="text-xs font-semibold text-slate-500 px-2">Phím Đức:</span>
+                            <button onclick="insertGermanChar('Ä')" class="px-2.5 py-1 bg-white hover:bg-indigo-50 rounded-lg text-slate-800 font-bold text-sm shadow-sm border border-slate-200">Ä</button>
+                            <button onclick="insertGermanChar('Ö')" class="px-2.5 py-1 bg-white hover:bg-indigo-50 rounded-lg text-slate-800 font-bold text-sm shadow-sm border border-slate-200">Ö</button>
+                            <button onclick="insertGermanChar('Ü')" class="px-2.5 py-1 bg-white hover:bg-indigo-50 rounded-lg text-slate-800 font-bold text-sm shadow-sm border border-slate-200">Ü</button>
+                            <button onclick="insertGermanChar('ä')" class="px-2.5 py-1 bg-white hover:bg-indigo-50 rounded-lg text-slate-800 font-bold text-sm shadow-sm border border-slate-200">ä</button>
+                            <button onclick="insertGermanChar('ö')" class="px-2.5 py-1 bg-white hover:bg-indigo-50 rounded-lg text-slate-800 font-bold text-sm shadow-sm border border-slate-200">ö</button>
+                            <button onclick="insertGermanChar('ü')" class="px-2.5 py-1 bg-white hover:bg-indigo-50 rounded-lg text-slate-800 font-bold text-sm shadow-sm border border-slate-200">ü</button>
+                            <button onclick="insertGermanChar('ß')" class="px-2.5 py-1 bg-white hover:bg-indigo-50 rounded-lg text-slate-800 font-bold text-sm shadow-sm border border-slate-200">ß</button>
+                        </div>
+                    </div>
+
+                    <!-- Thanh công cụ Đổi số ngẫu nhiên mới -->
+                    <div class="flex flex-wrap items-center justify-between gap-3 bg-gradient-to-r from-indigo-50/80 via-white to-amber-50/80 p-4 rounded-2xl border border-indigo-100/80 shadow-xs">
+                        <div class="flex items-center gap-3">
+                            <span class="w-9 h-9 rounded-xl bg-indigo-600 text-white flex items-center justify-center text-sm shadow-sm font-black">🎲</span>
+                            <div>
+                                <h4 class="font-extrabold text-sm text-slate-900 flex items-center gap-2">
+                                    <span>Luyện Phản Xạ Số Đếm Không Giới Hạn</span>
+                                    <span class="px-2 py-0.5 rounded-md bg-amber-100 text-amber-800 text-[10px] font-bold">Dynamic Engine</span>
+                                </h4>
+                                <p class="text-xs text-slate-500">Mỗi lần luyện tập, hệ thống tự động sinh số ngẫu nhiên mới (2 - 3 - 4 chữ số, nghe, đọc, viết).</p>
+                            </div>
+                        </div>
+                        <button onclick="triggerRandomizeAll()" class="px-4 py-2.5 rounded-xl bg-indigo-600 hover:bg-indigo-500 active:scale-95 text-white font-bold text-xs shadow-sm hover:shadow transition-all flex items-center gap-2 cursor-pointer">
+                            <span>🎲</span> Đổi bộ số ngẫu nhiên mới
+                        </button>
+                    </div>
+
+                    <div id="exercises-container" class="space-y-4"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. MÀN HÌNH ĐẤU TRƯỜNG GAME & BẢNG XẾP HẠNG NGÀY -->
+        <section id="view-arena" class="hidden grid grid-cols-1 lg:grid-cols-3 gap-6">
+            <div class="lg:col-span-2 bg-white border border-slate-200 rounded-3xl p-6 sm:p-8 shadow-sm space-y-6">
+                <div class="flex flex-wrap items-center justify-between gap-4 border-b border-slate-100 pb-5">
+                    <div>
+                        <span class="px-3 py-1 rounded-full bg-amber-100 text-amber-800 font-bold text-xs">SPEED ARENA • NHÂN HỆ SỐ COMBO</span>
+                        <h2 class="text-2xl font-extrabold text-slate-900 mt-1">⚔️ Đấu Trường Phản Xạ Tiếng Đức</h2>
+                    </div>
+                    <div class="flex items-center gap-3">
+                        <div class="px-4 py-2 rounded-2xl bg-red-50 border border-red-200 text-red-600 font-mono font-extrabold text-base">
+                            ⏱️ <span id="arena-timer">45</span>s
+                        </div>
+                        <div class="px-4 py-2 rounded-2xl bg-amber-50 border border-amber-200 text-amber-700 font-extrabold text-base">
+                            🔥 Combo x<span id="arena-combo">1</span>
+                        </div>
+                        <button onclick="startArenaGame()" class="px-5 py-2.5 bg-indigo-600 hover:bg-indigo-500 text-white font-bold rounded-2xl text-sm shadow-md transition">
+                            Bắt đầu ván mới
+                        </button>
+                    </div>
+                </div>
+
+                <div id="arena-play-box" class="p-8 rounded-3xl bg-slate-50 border border-slate-200 text-center space-y-4">
+                    <div class="w-16 h-16 rounded-2xl bg-indigo-100 text-indigo-600 flex items-center justify-center text-3xl mx-auto">⚡</div>
+                    <h3 class="text-lg font-extrabold text-slate-800">Sẵn sàng đua Top Bảng xếp hạng hôm nay?</h3>
+                    <p class="text-slate-500 text-sm max-w-md mx-auto">Trả lời liên tiếp đúng để kích hoạt Combo x2, x3, x4. Toàn bộ EXP thắng được sẽ lưu thẳng vào tệp <code class="text-indigo-600 font-bold">deutsch_meister.db</code>!</p>
+                </div>
+            </div>
+
+            <!-- Bảng xếp hạng Ngày -->
+            <div class="bg-white border border-slate-200 rounded-3xl p-6 shadow-sm space-y-4 h-fit">
+                <div class="flex items-center justify-between border-b border-slate-100 pb-3">
+                    <h3 class="font-extrabold text-lg text-slate-900">🏆 Bảng Xếp Hạng Hôm Nay</h3>
+                    <span class="text-xs font-bold text-emerald-600 bg-emerald-50 px-2.5 py-1 rounded-lg">Realtime SQL</span>
+                </div>
+                <div id="leaderboard-list" class="space-y-2.5 text-sm"></div>
+            </div>
+        </section>
+
+        <!-- 4. MÀN HÌNH KIẾN TRÚC PYTHON & SQL ĐẦY ĐỦ -->
+        <section id="view-sql" class="hidden space-y-6">
+            <div class="bg-white border border-slate-200 rounded-3xl p-6 sm:p-8 shadow-sm space-y-6">
+                <div class="flex flex-wrap items-center justify-between gap-4 border-b border-slate-100 pb-4">
+                    <div>
+                        <span class="px-3 py-1 rounded-full bg-emerald-100 text-emerald-800 font-bold text-xs">TRẠNG THÁI: ĐANG KẾT NỐI TRỰC TIẾP VỚI SQLITE & FLASK</span>
+                        <h2 class="text-2xl font-extrabold text-slate-900 mt-1">🗄️ Kiến Trúc Cơ Sở Dữ Liệu Python & SQL</h2>
+                    </div>
+                </div>
+
+                <p class="text-slate-600 text-sm leading-relaxed">
+                    Hệ thống <b>DeutschMeister</b> đang chạy trực tiếp trên máy chủ Python Flask (<code class="px-2 py-0.5 rounded bg-slate-100 font-bold text-indigo-600">app.py</code>) và lưu trữ toàn bộ Cấp độ, Bài học, Từ vựng, 7 dạng Bài tập và Điểm EXP trong cơ sở dữ liệu SQLite (<code class="px-2 py-0.5 rounded bg-slate-100 font-bold text-indigo-600">deutsch_meister.db</code>):
+                </p>
+
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 text-xs font-mono">
+                    <div class="p-5 rounded-2xl bg-slate-900 text-slate-100 space-y-2 overflow-x-auto">
+                        <p class="text-amber-400 font-bold text-sm">-- 1. Sơ đồ 5 Bảng Cơ Sở Dữ Liệu SQL</p>
+                        <pre class="text-slate-300 leading-relaxed">CREATE TABLE levels (
+  id INTEGER PRIMARY KEY AUTOINCREMENT,
+  code VARCHAR(10) UNIQUE NOT NULL,
+  title VARCHAR(100) NOT NULL,
+  description TEXT
+);
+
+CREATE TABLE lessons (
+  id INTEGER PRIMARY KEY AUTOINCREMENT,
+  level_id INT REFERENCES levels(id),
+  title VARCHAR(255) NOT NULL,
+  grammar_content TEXT
+);
+
+CREATE TABLE vocabularies (
+  id INTEGER PRIMARY KEY AUTOINCREMENT,
+  lesson_id INT REFERENCES lessons(id),
+  german_word VARCHAR(100) NOT NULL,
+  article VARCHAR(10),
+  vietnamese_meaning VARCHAR(255) NOT NULL,
+  example_sentence TEXT
+);
+
+CREATE TABLE exercises (
+  id INTEGER PRIMARY KEY AUTOINCREMENT,
+  lesson_id INT REFERENCES lessons(id),
+  exercise_type VARCHAR(50) NOT NULL,
+  question TEXT NOT NULL,
+  options_json TEXT,
+  correct_answer TEXT NOT NULL,
+  explanation TEXT,
+  exp_reward INT DEFAULT 15,
+  extra_data TEXT
+);</pre>
+                    </div>
+
+                    <div class="p-5 rounded-2xl bg-slate-900 text-slate-100 space-y-3 overflow-x-auto">
+                        <p class="text-emerald-400 font-bold text-sm"># 2. Cấu Trúc Dự Án Ngăn Nắp & Các Cổng REST API</p>
+                        <pre class="text-slate-300 leading-relaxed">deutsch_meister/
+├── app.py                   # Máy chủ Flask & REST API
+├── database/                # Khối quản trị Database SQLite
+│   ├── database.py          # Kết nối & Khởi tạo CSDL
+│   └── setup_exercises.py   # Bảng exercises 7 dạng bài
+├── lessons/                 # Khối bài học phân chia theo cấp độ
+│   └── a1/
+│       └── seed_a1_b1_p1.py # Bài 1 (P1): 30 Chữ cái, 50 Bài tập
+├── templates/               # Giao diện người dùng
+│   └── index.html           # Single Page Application
+├── static/                  # Tài nguyên & Logic Frontend
+│   ├── css/style.css        # Hiệu ứng & Styling
+│   └── js/
+│       ├── audio_tts.js     # Engine phát âm chuẩn de-DE
+│       └── number_trainer.js# Sinh số ngẫu nhiên 0 - 9999
+└── deutsch_meister.db       # Cơ sở dữ liệu SQLite</pre>
+                        <div class="pt-2 border-t border-slate-800 text-slate-400 text-xs space-y-1">
+                            <p class="text-indigo-400 font-bold">Các API chính:</p>
+                            <p>• <b>GET /api/overview</b>: Lấy 4 cấp độ và EXP</p>
+                            <p>• <b>GET /api/levels/&lt;code&gt;</b>: Lấy Bài học, Từ vựng, Bài tập</p>
+                            <p>• <b>POST /api/exp/add</b>: Cộng điểm EXP vào SQLite</p>
+                            <p>• <b>GET /api/tts?text=...</b>: Cổng Google German TTS dự phòng</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- ========================================================= -->
+    <!-- JAVASCRIPT XỬ LÝ TƯƠNG TÁC, PHÁT ÂM & KẾT NỐI API PYTHON   -->
+    <!-- ========================================================= -->
+    <script src="/static/js/audio_tts.js"></script>
+    <script src="/static/js/number_trainer.js"></script>
+    <script>
+        const LEVEL_META = {
+            "A1": {
+                badgeBg: "bg-emerald-500",
+                pillStyle: "bg-emerald-50 text-emerald-700 border-emerald-200",
+                subTitle: "Sơ cấp 1 (Anfänger)",
+                progress: 35,
+                desc: "Làm quen bảng chữ cái, quy tắc phát âm, mạo từ der/die/das, chia động từ hiện tại và giao tiếp cơ bản hằng ngày.",
+                focus: [
+                    "Bảng chữ cái & Umlaut (ä, ö, ü, ß)",
+                    "Quy tắc phát âm nguyên âm ghép & phụ âm",
+                    "Chào hỏi & 5 câu giao tiếp giới thiệu bản thân",
+                    "Hệ thống số đếm từ 0 đến 9.999"
+                ],
+                lessonsCount: "24 Bài (Bài 1 P1)",
+                exCount: "50 Bài (Đủ 7 dạng)"
+            },
+            "A2": {
+                badgeBg: "bg-blue-600",
+                pillStyle: "bg-blue-50 text-blue-700 border-blue-200",
+                subTitle: "Sơ cấp 2 (Grundlegende Kenntnisse)",
+                progress: 12,
+                desc: "Giao tiếp thông dụng về gia đình, mua sắm, công việc; làm chủ thì quá khứ Perfekt, động từ khuyết thiếu và Cách 3 (Dativ).",
+                focus: [
+                    "Thì quá khứ hoàn thành (Perfekt với haben/sein)",
+                    "Động từ khuyết thiếu (Modalverben: können, müssen...)",
+                    "Cách 3 (Dativ) & Giới từ chỉ vị trí (Wechselpräpositionen)",
+                    "Câu ghép với weil, dass, wenn"
+                ],
+                lessonsCount: "28 Bài",
+                exCount: "196 Bài"
+            },
+            "B1": {
+                badgeBg: "bg-indigo-600",
+                pillStyle: "bg-indigo-50 text-indigo-700 border-indigo-200",
+                subTitle: "Trung cấp 1 (Mittelstufe 1)",
+                progress: 0,
+                desc: "Sử dụng tiếng Đức độc lập trong công việc, học tập và du lịch; viết email, trình bày quan điểm cá nhân và câu bị động.",
+                focus: [
+                    "Câu bị động (Passiv) & Thì quá khứ Präteritum",
+                    "Mệnh đề quan hệ (Relativsätze) & Cách 2 (Genitiv)",
+                    "Động từ đi kèm giới từ cố định (Verben mit Präpositionen)",
+                    "Kỹ năng viết thư và thuyết trình chuẩn Goethe B1"
+                ],
+                lessonsCount: "32 Bài",
+                exCount: "224 Bài"
+            },
+            "B2": {
+                badgeBg: "bg-rose-600",
+                pillStyle: "bg-rose-50 text-rose-700 border-rose-200",
+                subTitle: "Trung cao cấp (Mittelstufe 2)",
+                progress: 0,
+                desc: "Diễn đạt trôi chảy, thảo luận các chủ đề phức tạp, học thuật và chuyên ngành; làm chủ Konjunktiv II và cấu trúc danh từ hóa.",
+                focus: [
+                    "Thức giả định Konjunktiv I & II chuyên sâu",
+                    "Cấu trúc cụm danh từ – động từ (Funktionsverbgefüge)",
+                    "Chuyển đổi mệnh đề sang cụm danh từ học thuật",
+                    "Tranh biện và viết bài luận phân tích chuẩn B2"
+                ],
+                lessonsCount: "36 Bài",
+                exCount: "252 Bài"
+            }
+        };
+
+        const TYPE_LABELS = {
+            "all": "Tất cả",
+            "trac_nghiem": "1. Trắc nghiệm",
+            "dien_khuyet": "2. Điền khuyết",
+            "dich": "3. Dịch Việt ⇄ Đức",
+            "nghe": "4. Nghe (1.0x & 0.65x)",
+            "noi": "5. Luyện Nói",
+            "doc": "6. Đọc hiểu",
+            "viet": "7. Viết câu & số"
+        };
+
+        let currentLevelData = null;
+        let currentLesson = null;
+        let currentFilterType = 'all';
+        let activeInputId = null;
+        let arenaTimerInterval = null;
+        let arenaTimeLeft = 45;
+        let arenaCombo = 1;
+        let userTotalExp = 1450;
+
+        // Hệ thống phát âm chuẩn tiếng Đức với khóa giọng de-DE và Bảng ánh xạ
+        const INLINE_GERMAN_MAP = {
+            "A": "A", "B": "Be", "C": "Ce", "D": "De", "E": "E", "F": "Ef",
+            "G": "Ge", "H": "Ha", "I": "I", "J": "Jot", "K": "Ka", "L": "El",
+            "M": "Em", "N": "En", "O": "O", "P": "Pe", "Q": "Ku", "R": "Er",
+            "S": "Es", "T": "Te", "U": "U", "V": "Vau", "W": "We", "X": "Iks",
+            "Y": "Üpsilon", "Z": "Zett", "Ä": "Ä", "Ö": "Ö", "Ü": "Ü", "ß": "Eszett",
+            "die": "die.", "der": "der.", "das": "das.", "Tschüss": "Tschüüs!",
+            "Tschüss!": "Tschüüs!", "Hi": "Hi!", "das Bier": "das Bier.",
+            "das Tier": "das Tier.", "das Tor": "das Tor.", "das Rad": "das Rad.",
+            "das Spiel": "das Spiel.", "die Tür": "die Tür.", "die Küche": "die Küche."
+        };
+
+        let inlineBestGermanVoice = null;
+        function getInlineGermanVoice() {
+            if (!('speechSynthesis' in window)) return null;
+            const voices = window.speechSynthesis.getVoices() || [];
+            const deVoices = voices.filter(v => {
+                const l = (v.lang || '').toLowerCase().replace('_', '-');
+                return l === 'de-de' || l.startsWith('de');
+            });
+            if (deVoices.length === 0) return null;
+            const preferred = ['Anna', 'Helena', 'Petra', 'Markus', 'Yannick', 'Google Deutsch', 'Katja'];
+            for (const name of preferred) {
+                const match = deVoices.find(v => v.name && v.name.includes(name));
+                if (match) return match;
+            }
+            return deVoices[0];
+        }
+
+        if ('speechSynthesis' in window) {
+            window.speechSynthesis.onvoiceschanged = () => {
+                inlineBestGermanVoice = getInlineGermanVoice();
+            };
+            inlineBestGermanVoice = getInlineGermanVoice();
+        }
+
+        function speakGerman(rawText, rate = 0.9) {
+            if (!rawText) return;
+            const textTrimmed = String(rawText).trim();
+            const mapObj = (typeof GERMAN_PRONUNCIATION_MAP !== 'undefined') ? GERMAN_PRONUNCIATION_MAP : INLINE_GERMAN_MAP;
+            let textToSpeak = mapObj[textTrimmed] || textTrimmed;
+
+            if (!/[.!?]$/.test(textToSpeak) && textToSpeak.length <= 15) {
+                textToSpeak += '.';
+            }
+
+            if ('speechSynthesis' in window) {
+                try {
+                    window.speechSynthesis.cancel();
+                    const u = new SpeechSynthesisUtterance(textToSpeak);
+                    u.lang = 'de-DE';
+                    u.rate = rate || 0.9;
+                    u.pitch = 1.0;
+                    const v = (typeof bestGermanVoice !== 'undefined' && bestGermanVoice) || inlineBestGermanVoice || getInlineGermanVoice();
+                    if (v) u.voice = v;
+                    u.onerror = () => {
+                        const audio = new Audio('/api/tts?text=' + encodeURIComponent(textTrimmed));
+                        audio.play().catch(e => console.log('Audio blocked:', e));
+                    };
+                    window.speechSynthesis.speak(u);
+                    return;
+                } catch (e) {
+                    console.warn('SpeechSynthesis err:', e);
+                }
+            }
+
+            // Fallback audio qua /api/tts
+            try {
+                const audio = new Audio('/api/tts?text=' + encodeURIComponent(textTrimmed));
+                audio.play().catch(e => console.log('Fallback blocked:', e));
+            } catch (e) {}
+        }
+
+        function switchMainView(viewName) {
+            ['levels', 'workspace', 'arena', 'sql'].forEach(v => {
+                document.getElementById(`view-${v}`).classList.add('hidden');
+                document.getElementById(`nav-${v}`).className = "px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold whitespace-nowrap shrink-0 text-slate-600 hover:text-slate-900 transition";
+            });
+            document.getElementById(`view-${viewName}`).classList.remove('hidden');
+            document.getElementById(`nav-${viewName}`).className = "px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold whitespace-nowrap shrink-0 bg-white text-indigo-600 shadow-sm transition";
+            if (viewName === 'arena') renderLeaderboard();
+        }
+
+        function switchSubTab(tabName) {
+            const isTheory = tabName === 'theory';
+            document.getElementById('subview-theory').classList.toggle('hidden', !isTheory);
+            document.getElementById('subview-exercises').classList.toggle('hidden', isTheory);
+            document.getElementById('subtab-theory').className = isTheory
+                ? "px-4 py-2.5 rounded-xl text-sm font-bold whitespace-nowrap shrink-0 bg-white text-indigo-600 shadow-sm transition"
+                : "px-4 py-2.5 rounded-xl text-sm font-bold whitespace-nowrap shrink-0 text-slate-600 hover:text-slate-900 transition";
+            document.getElementById('subtab-exercises').className = !isTheory
+                ? "px-4 py-2.5 rounded-xl text-sm font-bold whitespace-nowrap shrink-0 bg-white text-indigo-600 shadow-sm transition"
+                : "px-4 py-2.5 rounded-xl text-sm font-bold whitespace-nowrap shrink-0 text-slate-600 hover:text-slate-900 transition";
+
+            if (!isTheory && currentLesson && currentLesson.allRenderExercises) {
+                // Tự động đổi đề ngẫu nhiên mới cho toàn bộ câu hỏi số đếm khi mở tab Bài tập
+                if (typeof randomizeAllNumberExercises === 'function') {
+                    randomizeAllNumberExercises(currentLesson.allRenderExercises);
+                }
+                filterExercises(currentFilterType);
+            }
+        }
+
+        function updateExpUI(rawExp) {
+            userTotalExp = 1450 + Number(rawExp || 0);
+            document.getElementById('user-exp').innerText = userTotalExp.toLocaleString('en-US');
+            document.getElementById('hero-exp').innerText = userTotalExp.toLocaleString('en-US');
+            const pct = Math.min(100, Math.round((userTotalExp / 2000) * 100));
+            document.getElementById('hero-exp-bar').style.width = `${pct}%`;
+        }
+
+        async function loadOverview() {
+            const res = await fetch('/api/overview');
+            const data = await res.json();
+            updateExpUI(data.user.total_exp);
+
+            const grid = document.getElementById('levels-grid');
+            grid.innerHTML = data.levels.map(lv => {
+                const m = LEVEL_META[lv.code] || LEVEL_META["A1"];
+                return `
+                <div onclick="openLevel('${lv.code}')" class="cursor-pointer group bg-white hover:border-indigo-400 border border-slate-200 rounded-3xl p-6 sm:p-7 shadow-sm hover:shadow-xl transition flex flex-col justify-between space-y-6">
+                    <div class="space-y-4">
+                        <div class="flex items-start justify-between gap-4">
+                            <div class="flex items-center gap-4">
+                                <div class="w-14 h-14 rounded-2xl ${m.badgeBg} text-white font-black text-2xl flex items-center justify-center shadow-md shrink-0">
+                                    ${lv.code}
+                                </div>
+                                <div>
+                                    <span class="px-2.5 py-0.5 rounded-full text-xs font-bold border ${m.pillStyle}">Trình độ ${lv.code}</span>
+                                    <h3 class="font-extrabold text-xl text-slate-900 group-hover:text-indigo-600 transition mt-1">${m.subTitle}</h3>
+                                </div>
+                            </div>
+                            <div class="text-right shrink-0">
+                                <span class="text-xs font-semibold text-slate-400">${m.progress}% hoàn thành</span>
+                                <div class="w-20 h-1.5 bg-slate-100 rounded-full overflow-hidden mt-1 ml-auto">
+                                    <div class="h-full ${m.badgeBg} rounded-full" style="width: ${m.progress}%"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <p class="text-slate-600 text-sm leading-relaxed">${m.desc}</p>
+                        <div class="space-y-2 pt-1">
+                            <p class="text-[11px] font-extrabold uppercase tracking-wider text-slate-400">TRỌNG TÂM KIẾN THỨC:</p>
+                            <ul class="space-y-1.5 text-xs sm:text-sm text-slate-700">
+                                ${m.focus.map(item => `<li class="flex items-center gap-2"><span class="text-emerald-500 font-bold">✓</span><span>${item}</span></li>`).join('')}
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="grid grid-cols-3 gap-2 pt-4 border-t border-slate-100 bg-slate-50/80 rounded-2xl p-3.5 text-center">
+                        <div>
+                            <p class="text-[11px] text-slate-400 font-medium">Bài học</p>
+                            <p class="text-sm font-extrabold text-slate-900">${m.lessonsCount}</p>
+                        </div>
+                        <div class="border-x border-slate-200/80">
+                            <p class="text-[11px] text-slate-400 font-medium">Kho bài tập</p>
+                            <p class="text-sm font-extrabold text-slate-900">${m.exCount}</p>
+                        </div>
+                        <div>
+                            <p class="text-[11px] text-slate-400 font-medium">Đấu trường</p>
+                            <p class="text-sm font-extrabold text-amber-600">Có BXH</p>
+                        </div>
+                    </div>
+                </div>`;
+            }).join('');
+        }
+
+        async function openLevel(code) {
+            const res = await fetch(`/api/levels/${code}`);
+            currentLevelData = await res.json();
+            const m = LEVEL_META[code] || LEVEL_META["A1"];
+
+            document.getElementById('current-level-badge').innerText = code;
+            document.getElementById('ws-badge').innerText = code;
+            document.getElementById('ws-badge').className = `w-14 h-14 rounded-2xl ${m.badgeBg} text-white font-black text-2xl flex items-center justify-center shadow-md`;
+            document.getElementById('ws-pill').innerText = `Trình độ ${code}`;
+            document.getElementById('ws-pill').className = `px-2.5 py-0.5 rounded-full text-xs font-bold border ${m.pillStyle}`;
+            document.getElementById('ws-title').innerText = m.subTitle;
+
+            const lessonList = document.getElementById('lesson-list');
+            if (currentLevelData.lessons.length === 0) {
+                lessonList.innerHTML = `<p class="text-sm text-slate-500 p-3 bg-slate-50 rounded-2xl">Chưa có bài học nào ở cấp độ ${code}. Hãy gửi tài liệu để nạp vào cơ sở dữ liệu!</p>`;
+                document.getElementById('current-lesson-title').innerText = `Cấp độ ${code} (Đang chờ tài liệu của bạn)`;
+                document.getElementById('current-lesson-grammar').innerHTML = "Khi bạn gửi nội dung lý thuyết và bài tập của cấp độ này, chúng ta sẽ nạp thẳng vào SQLite.";
+                document.getElementById('vocab-grid').innerHTML = "";
+                document.getElementById('exercises-container').innerHTML = "";
+            } else {
+                lessonList.innerHTML = currentLevelData.lessons.map((ls, idx) => `
+                    <button onclick="selectLesson(${idx})" class="w-full text-left px-4 py-3 rounded-2xl bg-indigo-50/70 hover:bg-indigo-100/80 border border-indigo-200 text-indigo-950 text-sm font-bold transition">
+                        ${ls.title}
+                    </button>
+                `).join('');
+                selectLesson(0);
+            }
+            switchMainView('workspace');
+        }
+
+        function selectLesson(index) {
+            currentLesson = currentLevelData.lessons[index];
+            document.getElementById('current-lesson-title').innerText = currentLesson.title;
+            document.getElementById('current-lesson-grammar').innerHTML = currentLesson.grammar_content;
+
+            const vocabGrid = document.getElementById('vocab-grid');
+            vocabGrid.innerHTML = currentLesson.vocabularies.map(v => {
+                let cardStyle = "bg-amber-50/40 border-amber-200";
+                let badgeStyle = "bg-amber-600 text-white";
+                if (v.article === 'der') {
+                    cardStyle = "bg-blue-50/50 border-blue-200";
+                    badgeStyle = "bg-blue-600 text-white";
+                } else if (v.article === 'die') {
+                    cardStyle = "bg-rose-50/50 border-rose-200";
+                    badgeStyle = "bg-rose-600 text-white";
+                } else if (v.article === 'das') {
+                    cardStyle = "bg-emerald-50/50 border-emerald-200";
+                    badgeStyle = "bg-emerald-600 text-white";
+                }
+
+                const fullWord = (v.article === 'der' || v.article === 'die' || v.article === 'das')
+                    ? `${v.article} ${v.german_word}`
+                    : v.german_word;
+                const safeSpeak = fullWord.replace(/'/g, "\\'");
+
+                return `
+                    <div class="p-4 rounded-2xl border ${cardStyle} flex flex-col justify-between space-y-3">
+                        <div>
+                            <div class="flex items-center justify-between">
+                                <span class="px-2.5 py-0.5 rounded-lg text-xs font-extrabold ${badgeStyle}">${v.article || 'Từ'}</span>
+                                <button onclick="speakGerman('${safeSpeak}')" class="text-xs font-bold px-2.5 py-1 rounded-lg bg-white hover:bg-indigo-50 text-indigo-600 border border-slate-200 shadow-sm">
+                                    🔊 Phát âm
+                                </button>
+                            </div>
+                            <h4 class="text-lg font-extrabold text-slate-900 mt-2">${fullWord}</h4>
+                            <p class="text-sm text-indigo-600 font-bold">${v.vietnamese_meaning}</p>
+                        </div>
+                        <p class="text-xs text-slate-500 italic border-t border-slate-200/70 pt-2">"${v.example_sentence}"</p>
+                    </div>
+                `;
+            }).join('');
+
+            currentLesson.allRenderExercises = currentLesson.exercises;
+            if (typeof randomizeAllNumberExercises === 'function') {
+                randomizeAllNumberExercises(currentLesson.allRenderExercises);
+            }
+            filterExercises('all');
+        }
+
+        function filterExercises(typeKey) {
+            currentFilterType = typeKey;
+            const exContainer = document.getElementById('exercises-container');
+            const list = currentLesson.allRenderExercises || [];
+
+            const filterBarHtml = `
+                <div class="flex flex-wrap gap-2 pb-3 border-b border-slate-100">
+                    ${Object.keys(TYPE_LABELS).map(k => {
+                        const count = k === 'all' ? list.length : list.filter(x => x.exercise_type === k).length;
+                        const active = currentFilterType === k;
+                        return `
+                            <button onclick="filterExercises('${k}')" class="px-3.5 py-2 rounded-xl text-xs font-extrabold transition ${active ? 'bg-indigo-600 text-white shadow-sm' : 'bg-slate-100 hover:bg-slate-200 text-slate-700'}">
+                                ${TYPE_LABELS[k]} (${count})
+                            </button>
+                        `;
+                    }).join('')}
+                </div>
+            `;
+
+            const exercisesHtml = list.map((ex, i) => {
+                if (currentFilterType !== 'all' && ex.exercise_type !== currentFilterType) return '';
+
+                let extra = {};
+                try { extra = ex.extra_data ? JSON.parse(ex.extra_data) : {}; } catch (e) {}
+
+                let extraHtml = '';
+                if (ex.exercise_type === 'nghe' || ex.exercise_type === 'noi') {
+                    const textToSpeak = (extra.audio_text || ex.correct_answer).replace(/'/g, "\\'");
+                    extraHtml = `
+                        <div class="flex flex-wrap gap-2 mt-2">
+                            <button onclick="speakGerman('${textToSpeak}', 1.0)" class="px-3.5 py-1.5 rounded-xl bg-blue-50 hover:bg-blue-100 text-blue-700 border border-blue-200 text-xs font-bold">
+                                🔊 Nghe chuẩn (1.0x)
+                            </button>
+                            <button onclick="speakGerman('${textToSpeak}', 0.65)" class="px-3.5 py-1.5 rounded-xl bg-amber-50 hover:bg-amber-100 text-amber-700 border border-amber-200 text-xs font-bold">
+                                🐢 Nghe chậm (0.65x)
+                            </button>
+                            ${ex.exercise_type === 'noi' ? `
+                                <button onclick="simulateSpeech(${i}, '${textToSpeak}')" class="px-3.5 py-1.5 rounded-xl bg-rose-50 hover:bg-rose-100 text-rose-700 border border-rose-200 text-xs font-bold">
+                                    🎙️ Thu âm giọng đọc của bạn
+                                </button>
+                            ` : ''}
+                        </div>
+                    `;
+                }
+
+                if (ex.exercise_type === 'doc' && extra.passage) {
+                    extraHtml = `
+                        <div class="p-4 rounded-xl bg-indigo-50/60 border border-indigo-200 text-xs sm:text-sm text-slate-800 whitespace-pre-line font-medium my-2">${extra.passage}</div>
+                    `;
+                }
+
+                let inputHtml = '';
+                if (ex.options && ex.options.length > 0) {
+                    inputHtml = `<div class="grid grid-cols-1 sm:grid-cols-2 gap-2.5 mt-3">
+                        ${ex.options.map(opt => {
+                            const safeOpt = opt.replace(/'/g, "\\'");
+                            return `
+                                <button onclick="checkExerciseAnswer(${i}, '${safeOpt}')" class="text-left px-4 py-3 rounded-xl bg-white hover:bg-indigo-50 border border-slate-200 hover:border-indigo-300 text-sm font-bold text-slate-800 shadow-sm transition">
+                                    ${opt}
+                                </button>
+                            `;
+                        }).join('')}
+                    </div>`;
+                } else {
+                    inputHtml = `
+                        <div class="flex gap-2 mt-3">
+                            <input id="ex-input-${i}" onfocus="activeInputId='ex-input-${i}'" type="text" placeholder="Nhập đáp án tiếng Đức của bạn..." class="flex-1 px-4 py-2.5 rounded-xl bg-white border border-slate-200 text-sm focus:outline-none focus:border-indigo-500">
+                            <button onclick="checkExerciseAnswer(${i}, document.getElementById('ex-input-${i}').value)" class="px-5 py-2.5 rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white font-bold text-sm shadow-sm transition">
+                                Kiểm tra
+                            </button>
+                        </div>
+                    `;
+                }
+
+                return `
+                    <div class="p-5 rounded-2xl bg-slate-50 border border-slate-200 space-y-2">
+                        <div class="flex items-center justify-between text-xs">
+                            <span class="px-2.5 py-1 rounded-lg bg-indigo-100 text-indigo-700 font-extrabold uppercase">${TYPE_LABELS[ex.exercise_type] || ex.exercise_type}</span>
+                            <span class="text-amber-600 font-extrabold">⚡ +${ex.exp_reward} EXP</span>
+                        </div>
+                        <p class="font-bold text-slate-900 text-sm sm:text-base">${ex.question}</p>
+                        ${extraHtml}
+                        ${inputHtml}
+                        <div id="ex-feedback-${i}" class="hidden text-xs p-3.5 rounded-xl mt-2"></div>
+                    </div>
+                `;
+            }).join('');
+
+            exContainer.innerHTML = filterBarHtml + exercisesHtml;
+        }
+
+        function simulateSpeech(index, expectedText) {
+            const input = document.getElementById(`ex-input-${index}`);
+            if (input) {
+                input.value = expectedText;
+                checkExerciseAnswer(index, expectedText);
+            }
+        }
+
+        function insertGermanChar(ch) {
+            if (!activeInputId) return;
+            const input = document.getElementById(activeInputId);
+            if (input) {
+                input.value += ch;
+                input.focus();
+            }
+        }
+
+        function normalizeAnswer(str) {
+            return (str || "").trim().toLowerCase().replace(/[.!?]+$/g, "");
+        }
+
+        async function checkExerciseAnswer(index, userAnswer) {
+            const ex = currentLesson.allRenderExercises[index];
+            const feedback = document.getElementById(`ex-feedback-${index}`);
+            feedback.classList.remove('hidden');
+
+            const isCorrect = (typeof checkGermanAnswerEquivalence === 'function')
+                ? checkGermanAnswerEquivalence(userAnswer, ex.correct_answer)
+                : normalizeAnswer(userAnswer) === normalizeAnswer(ex.correct_answer);
+
+            let extra = {};
+            try {
+                extra = typeof ex.extra_data === 'string' ? JSON.parse(ex.extra_data) : (ex.extra_data || {});
+            } catch (e) {}
+
+            if (isCorrect) {
+                feedback.className = "text-xs p-3.5 rounded-xl mt-2 bg-emerald-50 text-emerald-800 border border-emerald-200";
+                let nextDynamicHtml = '';
+                if (extra.dynamic_number || extra.dynamic_mode) {
+                    nextDynamicHtml = `
+                        <div class="mt-2.5 pt-2 border-t border-emerald-200/80 flex items-center justify-between flex-wrap gap-2">
+                            <span class="text-emerald-700 font-semibold">🎯 Tuyệt vời! Bạn muốn rèn thêm phản xạ số này?</span>
+                            <button onclick="refreshSingleExercise(${index})" class="px-3.5 py-1.5 rounded-lg bg-emerald-600 hover:bg-emerald-700 active:scale-95 text-white font-bold text-xs shadow-xs transition flex items-center gap-1 cursor-pointer">
+                                🔄 Đổi số khác để luyện tiếp
+                            </button>
+                        </div>
+                    `;
+                }
+                feedback.innerHTML = `✅ <b>Chính xác!</b> ${ex.explanation} <b>(+${ex.exp_reward} EXP đã lưu vào SQL)</b>${nextDynamicHtml}`;
+                await addExpToDatabase(ex.exp_reward);
+            } else {
+                feedback.className = "text-xs p-3.5 rounded-xl mt-2 bg-rose-50 text-rose-800 border border-rose-200";
+                feedback.innerHTML = `❌ <b>Chưa chính xác.</b> Đáp án đúng là: <b>${ex.correct_answer}</b>.<br>${ex.explanation}`;
+            }
+        }
+
+        function refreshSingleExercise(index) {
+            const ex = currentLesson.allRenderExercises[index];
+            if (typeof generateNewNumberData === 'function') {
+                generateNewNumberData(ex);
+            }
+            filterExercises(currentFilterType);
+            setTimeout(() => {
+                const input = document.getElementById(`ex-input-${index}`);
+                if (input) {
+                    input.focus();
+                }
+            }, 60);
+        }
+
+        function triggerRandomizeAll() {
+            if (currentLesson && currentLesson.allRenderExercises) {
+                if (typeof randomizeAllNumberExercises === 'function') {
+                    randomizeAllNumberExercises(currentLesson.allRenderExercises);
+                }
+                filterExercises(currentFilterType);
+            }
+        }
+
+        async function addExpToDatabase(expAmount) {
+            const res = await fetch('/api/exp/add', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ exp: expAmount })
+            });
+            const data = await res.json();
+            updateExpUI(data.user.total_exp);
+            renderLeaderboard();
+        }
+
+        function startArenaGame() {
+            clearInterval(arenaTimerInterval);
+            arenaTimeLeft = 45;
+            arenaCombo = 1;
+            document.getElementById('arena-timer').innerText = arenaTimeLeft;
+            document.getElementById('arena-combo').innerText = arenaCombo;
+
+            nextArenaQuestion();
+            arenaTimerInterval = setInterval(() => {
+                arenaTimeLeft--;
+                document.getElementById('arena-timer').innerText = arenaTimeLeft;
+                if (arenaTimeLeft <= 0) {
+                    clearInterval(arenaTimerInterval);
+                    document.getElementById('arena-play-box').innerHTML = `
+                        <h3 class="text-2xl font-extrabold text-indigo-600">⏰ Hết giờ thi đấu!</h3>
+                        <p class="text-sm text-slate-600">Tổng điểm hiện tại của bạn: <b>${userTotalExp.toLocaleString('en-US')} EXP</b>. Bấm "Bắt đầu ván mới" để nâng hạng!</p>
+                    `;
+                }
+            }, 1000);
+        }
+
+        function nextArenaQuestion() {
+            const arenaPool = [
+                { q: "Số 16 trong tiếng Đức viết thế nào?", opts: ["sechzehn", "sechszehn", "sechzig"], ans: "sechzehn" },
+                { q: "Số 17 trong tiếng Đức viết thế nào?", opts: ["siebzehn", "siebenzehn", "siebzig"], ans: "siebzehn" },
+                { q: "Số 30 trong tiếng Đức viết thế nào?", opts: ["dreißig", "dreizig", "dreizehn"], ans: "dreißig" },
+                { q: "Số 21 trong tiếng Đức là gì?", opts: ["einundzwanzig", "einsundzwanzig", "zwanzigeins"], ans: "einundzwanzig" },
+                { q: "Chữ cái 'J' trong bảng chữ cái đọc là gì?", opts: ["[jot]", "[ja]", "[ji]"], ans: "[jot]" },
+                { q: "Nguyên âm ghép 'eu / äu' (Deutsch, Verkäufer) đọc như âm gì?", opts: ["oi", "ai", "i dài"], ans: "oi" },
+                { q: "'Ich komme ___ Vietnam.' Điền giới từ đúng:", opts: ["aus", "in", "von"], ans: "aus" },
+                { q: "'Ich wohne ___ Hai Phong.' Điền giới từ đúng:", opts: ["in", "aus", "zu"], ans: "in" },
+                { q: "Số 'vierunddreißig' là số mấy?", opts: ["34", "43", "44"], ans: "34" },
+                { q: "Số 'siebenhundertsieben' là số mấy?", opts: ["707", "770", "717"], ans: "707" }
+            ];
+            const item = arenaPool[Math.floor(Math.random() * arenaPool.length)];
+            document.getElementById('arena-play-box').innerHTML = `
+                <p class="text-lg font-extrabold text-slate-900">${item.q}</p>
+                <div class="flex flex-wrap justify-center gap-3 mt-4">
+                    ${item.opts.map(o => `
+                        <button onclick="answerArena('${o}', '${item.ans}')" class="px-6 py-3 rounded-2xl bg-white hover:bg-indigo-600 hover:text-white border border-slate-200 font-bold text-slate-800 shadow-sm transition">
+                            ${o}
+                        </button>
+                    `).join('')}
+                </div>
+            `;
+        }
+
+        async function answerArena(choice, ans) {
+            if (choice === ans) {
+                const gained = 15 * arenaCombo;
+                arenaCombo = Math.min(4, arenaCombo + 1);
+                document.getElementById('arena-combo').innerText = arenaCombo;
+                await addExpToDatabase(gained);
+            } else {
+                arenaCombo = 1;
+                document.getElementById('arena-combo').innerText = arenaCombo;
+            }
+            if (arenaTimeLeft > 0) nextArenaQuestion();
+        }
+
+        function renderLeaderboard() {
+            const competitors = [
+                { name: "lukas_de (B2)", exp: 1890, isMe: false },
+                { name: "Minh Anh (B1)", exp: 1620, isMe: false },
+                { name: "Hoàng Nam (A2)", exp: 1510, isMe: false },
+                { name: "Bạn (Học viên HV)", exp: userTotalExp, isMe: true },
+                { name: "Thảo Vy (A1)", exp: 1120, isMe: false }
+            ].sort((a, b) => b.exp - a.exp);
+
+            document.getElementById('leaderboard-list').innerHTML = competitors.map((c, idx) => `
+                <div class="flex items-center justify-between p-3.5 rounded-2xl ${c.isMe ? 'bg-indigo-50 border border-indigo-200 text-indigo-900 font-extrabold' : 'bg-slate-50 border border-slate-200/80 text-slate-700 font-medium'}">
+                    <span>#${idx + 1} ${c.name}</span>
+                    <span class="text-amber-600 font-extrabold">⚡ ${c.exp.toLocaleString('en-US')} EXP</span>
+                </div>
+            `).join('');
+        }
+
+        loadOverview();
+    </script>
+</body>
+</html>
