@@ -54,9 +54,29 @@ function getRandomInt(min, max) {
     return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
+function priceToGerman(euros, cents) {
+    euros = parseInt(euros, 10) || 0;
+    cents = parseInt(cents, 10) || 0;
+
+    let euroStr = "";
+    if (euros === 1) {
+        euroStr = "ein Euro";
+    } else {
+        euroStr = `${numberToGerman(euros)} Euro`;
+    }
+
+    if (cents <= 0) {
+        return euroStr;
+    }
+
+    const centStr = numberToGerman(cents);
+    return `${euroStr} ${centStr}`;
+}
+
 /**
  * So sánh đáp án tiếng Đức thông minh:
  * Chấp nhận cả eintausend... và tausend..., einhundert... và hundert...
+ * Chấp nhận định dạng giá tiền (4,50 <-> 4.50 <-> 4,50 Euro <-> ein Euro neunundzwanzig Cent...)
  */
 function checkGermanAnswerEquivalence(userAns, correctAns) {
     if (!userAns || !correctAns) return false;
@@ -71,6 +91,15 @@ function checkGermanAnswerEquivalence(userAns, correctAns) {
     const c = clean(correctAns);
 
     if (u === c) return true;
+
+    // Chuẩn hóa so sánh giá tiền Euro (ví dụ: "4,50" <-> "4.50" <-> "4,50 euro" <-> "4,50 €")
+    const cleanPrice = (s) => s.replace(/euro/g, '').replace(/€/g, '').replace(/\./g, ',').replace(/\s+/g, '').trim();
+    if (cleanPrice(u) === cleanPrice(c) && cleanPrice(c).includes(',')) return true;
+
+    // Chuẩn hóa loại bỏ chữ "cent" ở cuối khi so sánh chữ đọc giá tiền
+    const uNoCent = u.replace(/\s*cent$/g, '').replace(/eins euro/g, 'ein euro');
+    const cNoCent = c.replace(/\s*cent$/g, '').replace(/eins euro/g, 'ein euro');
+    if (uNoCent === cNoCent) return true;
 
     // Chuẩn hóa loại bỏ khoảng trắng hoàn toàn nếu câu trả lời là 1 từ ghép
     const uNoSpace = u.replace(/\s+/g, '');
@@ -105,13 +134,82 @@ function checkGermanAnswerEquivalence(userAns, correctAns) {
 }
 
 /**
- * Sinh đề ngẫu nhiên mới cho 1 câu hỏi số đếm cụ thể
+ * Sinh đề ngẫu nhiên mới cho 1 câu hỏi cụ thể (Số đếm, Giá tiền Euro hoặc Chia động từ)
  */
 function generateNewNumberData(ex) {
     let extra = {};
     try {
         extra = typeof ex.extra_data === 'string' ? JSON.parse(ex.extra_data) : (ex.extra_data || {});
     } catch (e) {
+        return ex;
+    }
+
+    // 1. Xử lý câu hỏi Giá tiền Euro (dynamic_price)
+    if (extra.dynamic_price) {
+        const centsList = [0, 10, 15, 20, 25, 30, 45, 50, 60, 75, 80, 85, 89, 90, 95, 99];
+        const euros = getRandomInt(1, 25);
+        const cents = centsList[Math.floor(Math.random() * centsList.length)];
+        const formattedPrice = `${euros},${cents < 10 ? '0' + cents : cents}`;
+        const dePrice = priceToGerman(euros, cents);
+
+        if (extra.dynamic_mode === 'listen_price') {
+            extra.audio_text = `Das macht ${dePrice}.`;
+            ex.extra_data = JSON.stringify(extra);
+            ex.question = `[Luyện Nghe giá tiền Euro (Random)]: Nghe câu thông báo của nhân viên phục vụ và điền số tiền:`;
+            ex.correct_answer = formattedPrice;
+            ex.explanation = `Nhân viên phục vụ nói '${extra.audio_text}' → Số tiền là ${formattedPrice} € (hoặc gõ ${dePrice}).`;
+        } else {
+            ex.question = `[Viết giá tiền Euro (Random)]: Hãy viết giá tiền ${formattedPrice} € bằng chữ tiếng Đức (chấp nhận có hoặc không có chữ Cent):`;
+            ex.correct_answer = dePrice;
+            ex.explanation = `Giá tiền ${formattedPrice} € viết bằng chữ tiếng Đức là: '${dePrice}' (hoặc kèm 'Cent').`;
+        }
+        return ex;
+    }
+
+    // 2. Xử lý câu hỏi Chia động từ theo ngôi (dynamic_conjugation)
+    if (extra.dynamic_conjugation) {
+        const verbsDb = (typeof GERMAN_VERBS_DB !== 'undefined') ? GERMAN_VERBS_DB : [
+            { infinitiv: "machen", meaning: "làm", forms: { ich: "mache", du: "machst", er_sie_es: "macht", wir: "machen", ihr: "macht", sie_Sie: "machen" } },
+            { infinitiv: "wohnen", meaning: "sống", forms: { ich: "wohne", du: "wohnst", er_sie_es: "wohnt", wir: "wohnen", ihr: "wohnt", sie_Sie: "wohnen" } },
+            { infinitiv: "kommen", meaning: "đến", forms: { ich: "komme", du: "kommst", er_sie_es: "kommt", wir: "kommen", ihr: "kommt", sie_Sie: "kommen" } },
+            { infinitiv: "heißen", meaning: "tên là", forms: { ich: "heiße", du: "heißt", er_sie_es: "heißt", wir: "heißen", ihr: "heißt", sie_Sie: "heißen" } },
+            { infinitiv: "mieten", meaning: "thuê", forms: { ich: "miete", du: "mietest", er_sie_es: "mietet", wir: "mieten", ihr: "mietet", sie_Sie: "mieten" } },
+            { infinitiv: "arbeiten", meaning: "làm việc", forms: { ich: "arbeite", du: "arbeitest", er_sie_es: "arbeitet", wir: "arbeiten", ihr: "arbeitet", sie_Sie: "arbeiten" } },
+            { infinitiv: "trinken", meaning: "uống", forms: { ich: "trinke", du: "trinkst", er_sie_es: "trinkt", wir: "trinken", ihr: "trinkt", sie_Sie: "trinken" } },
+            { infinitiv: "nehmen", meaning: "chọn món", forms: { ich: "nehme", du: "nimmst", er_sie_es: "nimmt", wir: "nehmen", ihr: "nehmt", sie_Sie: "nehmen" } },
+            { infinitiv: "lesen", meaning: "đọc", forms: { ich: "lese", du: "liest", er_sie_es: "liest", wir: "lesen", ihr: "lest", sie_Sie: "lesen" } },
+            { infinitiv: "sein", meaning: "thì, là, ở", forms: { ich: "bin", du: "bist", er_sie_es: "ist", wir: "sind", ihr: "seid", sie_Sie: "sind" } },
+            { infinitiv: "haben", meaning: "có", forms: { ich: "habe", du: "hast", er_sie_es: "hat", wir: "haben", ihr: "habt", sie_Sie: "haben" } },
+            { infinitiv: "möchten", meaning: "muốn", forms: { ich: "möchte", du: "möchtest", er_sie_es: "möchte", wir: "möchten", ihr: "möchtet", sie_Sie: "möchten" } },
+            { infinitiv: "zahlen", meaning: "thanh toán", forms: { ich: "zahle", du: "zahlst", er_sie_es: "zahlt", wir: "zahlen", ihr: "zahlt", sie_Sie: "zahlen" } }
+        ];
+
+        const targetVerbs = ["machen", "wohnen", "kommen", "heißen", "mieten", "arbeiten", "trinken", "nehmen", "lesen", "sein", "haben", "möchten", "zahlen"];
+        const pool = verbsDb.filter(v => targetVerbs.includes(v.infinitiv));
+        const chosenVerb = pool[Math.floor(Math.random() * pool.length)];
+
+        const subjects = [
+            { label: "ich", personKey: "ich", pronoun: "ich" },
+            { label: "du", personKey: "du", pronoun: "du" },
+            { label: "er", personKey: "er_sie_es", pronoun: "er" },
+            { label: "sie (cô ấy)", personKey: "er_sie_es", pronoun: "sie" },
+            { label: "es", personKey: "er_sie_es", pronoun: "es" },
+            { label: "wir", personKey: "wir", pronoun: "wir" },
+            { label: "ihr", personKey: "ihr", pronoun: "ihr" },
+            { label: "sie (họ)", personKey: "sie_Sie", pronoun: "sie" },
+            { label: "Sie (Ngài)", personKey: "sie_Sie", pronoun: "Sie" },
+            { label: "Anna und ich", personKey: "wir", pronoun: "Anna und ich" },
+            { label: "Du und Peter", personKey: "ihr", pronoun: "Du und Peter" },
+            { label: "Die Lehrerin", personKey: "er_sie_es", pronoun: "Die Lehrerin" },
+            { label: "Mein Freund", personKey: "er_sie_es", pronoun: "Mein Freund" }
+        ];
+
+        const chosenSubject = subjects[Math.floor(Math.random() * subjects.length)];
+        const correctForm = chosenVerb.forms[chosenSubject.personKey];
+
+        ex.question = `[Rèn phản xạ Chia Động Từ (Random)]: Hãy chia động từ '${chosenVerb.infinitiv}' (${chosenVerb.meaning}) cho chủ ngữ '${chosenSubject.label}': '${chosenSubject.pronoun} ___'`;
+        ex.correct_answer = correctForm;
+        ex.explanation = `Động từ '${chosenVerb.infinitiv}' đi với chủ ngữ '${chosenSubject.label}' được chia là: '${correctForm}'.`;
         return ex;
     }
 
@@ -221,7 +319,7 @@ function randomizeAllNumberExercises(exercisesList) {
         let isDynamic = false;
         try {
             const extra = typeof ex.extra_data === 'string' ? JSON.parse(ex.extra_data) : (ex.extra_data || {});
-            if (extra.dynamic_number || extra.dynamic_mode) isDynamic = true;
+            if (extra.dynamic_number || extra.dynamic_mode || extra.dynamic_price || extra.dynamic_conjugation) isDynamic = true;
         } catch (e) {}
 
         if (isDynamic) {
@@ -232,6 +330,7 @@ function randomizeAllNumberExercises(exercisesList) {
 
 if (typeof window !== 'undefined') {
     window.numberToGerman = numberToGerman;
+    window.priceToGerman = priceToGerman;
     window.getRandomInt = getRandomInt;
     window.checkGermanAnswerEquivalence = checkGermanAnswerEquivalence;
     window.generateNewNumberData = generateNewNumberData;

@@ -26,8 +26,8 @@ def seed_lesson_1_part_1():
         return
     a1_id = level_a1["id"]
 
-    # Xóa dữ liệu cũ của Bài 1 để nạp lại sạch sẽ
-    cursor.execute("DELETE FROM lessons WHERE level_id = ? AND title LIKE 'Bài 1%';", (a1_id,))
+    # Xóa dữ liệu cũ của Bài 1 (P1) để nạp lại sạch sẽ
+    cursor.execute("DELETE FROM lessons WHERE level_id = ? AND title LIKE 'Bài 1 (P1)%';", (a1_id,))
 
     lesson_title = 'Bài 1 (P1): "Làm Quen Với Tiếng Đức, Bảng Chữ Cái và Đếm Số"'
 

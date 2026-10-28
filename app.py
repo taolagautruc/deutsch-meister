@@ -7,6 +7,37 @@ from database import get_connection
 app = Flask(__name__)
 app.json.ensure_ascii = False
 
+def ensure_db_initialized():
+    """Tự động kiểm tra và khởi tạo dữ liệu nếu chạy trên máy chủ mới (Render/Cloud)"""
+    try:
+        from database import init_db, get_connection
+        init_db()
+        conn = get_connection()
+        cursor = conn.cursor()
+        
+        # Đảm bảo bảng exercises có cột extra_data
+        cursor.execute("PRAGMA table_info(exercises);")
+        columns = [col["name"] for col in cursor.fetchall()]
+        if "extra_data" not in columns:
+            cursor.execute("ALTER TABLE exercises ADD COLUMN extra_data TEXT;")
+            conn.commit()
+
+        cursor.execute("SELECT COUNT(*) as cnt FROM lessons WHERE title LIKE 'Bài 1 (P1)%';")
+        if cursor.fetchone()["cnt"] == 0:
+            from lessons.a1.seed_a1_b1_p1 import seed_lesson_1_part_1
+            seed_lesson_1_part_1()
+            
+        cursor.execute("SELECT COUNT(*) as cnt FROM lessons WHERE title LIKE 'Bài 1 (P2)%';")
+        if cursor.fetchone()["cnt"] == 0:
+            from lessons.a1.seed_a1_b1_p2 import seed_lesson_1_part_2
+            seed_lesson_1_part_2()
+            
+        conn.close()
+    except Exception as e:
+        print("ensure_db_initialized:", e)
+
+ensure_db_initialized()
+
 @app.route("/")
 def index():
     return render_template("index.html")
@@ -85,14 +116,16 @@ def add_exp():
 
 if __name__ == "__main__":
     import os
+    import socket
+
+    def is_port_in_use(p):
+        with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
+            return s.connect_ex(('127.0.0.1', p)) == 0
+
     port = int(os.environ.get("PORT", 5000))
-    try:
-        print(f"🚀 DeutschMeister đang chạy tại: http://127.0.0.1:{port}")
-        app.run(debug=True, host="0.0.0.0", port=port)
-    except OSError as e:
-        if port == 5000:
-            print("⚠️ Cổng 5000 đang được macOS AirPlay Receiver sử dụng. Tự động chuyển sang cổng 5001...")
-            print("🚀 DeutschMeister đang chạy tại: http://127.0.0.1:5001")
-            app.run(debug=True, host="0.0.0.0", port=5001)
-        else:
-            raise e
+    if port == 5000 and is_port_in_use(5000):
+        print("⚠️ Cổng 5000 đang được macOS AirPlay Receiver sử dụng. Tự động chuyển sang cổng 5001...")
+        port = 5001
+
+    print(f"🚀 DeutschMeister đang chạy tại: http://127.0.0.1:{port}")
+    app.run(debug=True, host="0.0.0.0", port=port)
