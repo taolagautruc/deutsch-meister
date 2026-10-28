@@ -24,7 +24,24 @@ const GERMAN_PRONUNCIATION_MAP = {
     "das Rad": "das Rad.",
     "das Spiel": "das Spiel.",
     "die Tür": "die Tür.",
-    "die Küche": "die Küche."
+    "die Küche": "die Küche.",
+    // Từ vựng Bài 1 (P2): Gọi đồ uống, giá tiền & chia động từ
+    "Café": "Café",
+    "Kakao": "Kakao.",
+    "Euro": "Euro.",
+    "Cent": "Cent.",
+    "möchte": "möchte.",
+    "möchten": "möchten.",
+    "liest": "liest.",
+    "nimmt": "nimmt.",
+    "heißt": "heißt.",
+    "zahlen": "zahlen.",
+    "Kaffee": "Kaffee.",
+    "Tee": "Tee.",
+    "Milch": "Milch.",
+    "Zucker": "Zucker.",
+    "getrennt": "getrennt.",
+    "zusammen": "zusammen."
 };
 
 let bestGermanVoice = null;

@@ -54,13 +54,16 @@
                 </div>
             </div>
 
-            <!-- 4 Nút điều hướng trung tâm -->
+            <!-- 5 Nút điều hướng trung tâm (Bổ sung Tab Chia động từ ở chính giữa) -->
             <nav class="flex items-center gap-1.5 bg-slate-100 p-1.5 rounded-2xl border border-slate-200/80 overflow-x-auto">
                 <button onclick="switchMainView('levels')" id="nav-levels" class="px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold whitespace-nowrap shrink-0 bg-white text-indigo-600 shadow-sm transition">
                     🎯 Cấp độ (A1 - B2)
                 </button>
                 <button onclick="switchMainView('workspace')" id="nav-workspace" class="px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold whitespace-nowrap shrink-0 text-slate-600 hover:text-slate-900 transition">
                     🎓 Không gian học (<span id="current-level-badge">A1</span>)
+                </button>
+                <button onclick="switchMainView('verbs')" id="nav-verbs" class="px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold whitespace-nowrap shrink-0 text-slate-600 hover:text-slate-900 transition">
+                    📖 Chia động từ
                 </button>
                 <button onclick="switchMainView('arena')" id="nav-arena" class="px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold whitespace-nowrap shrink-0 text-slate-600 hover:text-slate-900 transition">
                     🏆 Đấu trường & BXH
@@ -234,20 +237,20 @@
                         </div>
                     </div>
 
-                    <!-- Thanh công cụ Đổi số ngẫu nhiên mới -->
+                    <!-- Thanh công cụ Đổi đề ngẫu nhiên mới -->
                     <div class="flex flex-wrap items-center justify-between gap-3 bg-gradient-to-r from-indigo-50/80 via-white to-amber-50/80 p-4 rounded-2xl border border-indigo-100/80 shadow-xs">
                         <div class="flex items-center gap-3">
                             <span class="w-9 h-9 rounded-xl bg-indigo-600 text-white flex items-center justify-center text-sm shadow-sm font-black">🎲</span>
                             <div>
                                 <h4 class="font-extrabold text-sm text-slate-900 flex items-center gap-2">
-                                    <span>Luyện Phản Xạ Số Đếm Không Giới Hạn</span>
+                                    <span>Luyện Phản Xạ Ngẫu Nhiên Không Giới Hạn</span>
                                     <span class="px-2 py-0.5 rounded-md bg-amber-100 text-amber-800 text-[10px] font-bold">Dynamic Engine</span>
                                 </h4>
-                                <p class="text-xs text-slate-500">Mỗi lần luyện tập, hệ thống tự động sinh số ngẫu nhiên mới (2 - 3 - 4 chữ số, nghe, đọc, viết).</p>
+                                <p class="text-xs text-slate-500">Mỗi lần luyện tập, hệ thống tự động sinh số đếm, giá tiền Euro (€) hoặc câu chia động từ ngẫu nhiên mới.</p>
                             </div>
                         </div>
                         <button onclick="triggerRandomizeAll()" class="px-4 py-2.5 rounded-xl bg-indigo-600 hover:bg-indigo-500 active:scale-95 text-white font-bold text-xs shadow-sm hover:shadow transition-all flex items-center gap-2 cursor-pointer">
-                            <span>🎲</span> Đổi bộ số ngẫu nhiên mới
+                            <span>🎲</span> Đổi bộ đề ngẫu nhiên mới
                         </button>
                     </div>
 
@@ -256,7 +259,12 @@
             </div>
         </section>
 
-        <!-- 3. MÀN HÌNH ĐẤU TRƯỜNG GAME & BẢNG XẾP HẠNG NGÀY -->
+        <!-- 3. MÀN HÌNH TRA CỨU CHIA ĐỘNG TỪ (VERB-KONJUGATOR) - NẰM CHÍNH GIỮA WORKSPACE VÀ ARENA -->
+        <section id="view-verbs" class="hidden space-y-6">
+            <!-- Được render động bởi renderVerbKonjugator() -->
+        </section>
+
+        <!-- 4. MÀN HÌNH ĐẤU TRƯỜNG GAME & BẢNG XẾP HẠNG NGÀY -->
         <section id="view-arena" class="hidden grid grid-cols-1 lg:grid-cols-3 gap-6">
             <div class="lg:col-span-2 bg-white border border-slate-200 rounded-3xl p-6 sm:p-8 shadow-sm space-y-6">
                 <div class="flex flex-wrap items-center justify-between gap-4 border-b border-slate-100 pb-5">
@@ -384,6 +392,7 @@ CREATE TABLE exercises (
     <!-- ========================================================= -->
     <script src="/static/js/audio_tts.js"></script>
     <script src="/static/js/number_trainer.js"></script>
+    <script src="/static/js/verbs_db.js"></script>
     <script>
         const LEVEL_META = {
             "A1": {
@@ -395,11 +404,11 @@ CREATE TABLE exercises (
                 focus: [
                     "Bảng chữ cái & Umlaut (ä, ö, ü, ß)",
                     "Quy tắc phát âm nguyên âm ghép & phụ âm",
-                    "Chào hỏi & 5 câu giao tiếp giới thiệu bản thân",
-                    "Hệ thống số đếm từ 0 đến 9.999"
+                    "Hệ thống số đếm từ 0 đến 9.999",
+                    "Đại từ nhân xưng, Chia động từ & Gọi đồ uống (P2)"
                 ],
-                lessonsCount: "24 Bài (Bài 1 P1)",
-                exCount: "50 Bài (Đủ 7 dạng)"
+                lessonsCount: "2 Bài (P1 & P2)",
+                exCount: "100 Bài (Đủ 7 dạng)"
             },
             "A2": {
                 badgeBg: "bg-blue-600",
@@ -478,7 +487,13 @@ CREATE TABLE exercises (
             "die": "die.", "der": "der.", "das": "das.", "Tschüss": "Tschüüs!",
             "Tschüss!": "Tschüüs!", "Hi": "Hi!", "das Bier": "das Bier.",
             "das Tier": "das Tier.", "das Tor": "das Tor.", "das Rad": "das Rad.",
-            "das Spiel": "das Spiel.", "die Tür": "die Tür.", "die Küche": "die Küche."
+            "das Spiel": "das Spiel.", "die Tür": "die Tür.", "die Küche": "die Küche.",
+            // Từ vựng Bài 1 (P2): Gọi đồ uống, giá tiền & chia động từ
+            "Café": "Café", "Kakao": "Kakao.", "Euro": "Euro.", "Cent": "Cent.",
+            "möchte": "möchte.", "möchten": "möchten.", "liest": "liest.",
+            "nimmt": "nimmt.", "heißt": "heißt.", "zahlen": "zahlen.",
+            "Kaffee": "Kaffee.", "Tee": "Tee.", "Milch": "Milch.",
+            "Zucker": "Zucker.", "getrennt": "getrennt.", "zusammen": "zusammen."
         };
 
         let inlineBestGermanVoice = null;
@@ -543,13 +558,24 @@ CREATE TABLE exercises (
         }
 
         function switchMainView(viewName) {
-            ['levels', 'workspace', 'arena', 'sql'].forEach(v => {
-                document.getElementById(`view-${v}`).classList.add('hidden');
-                document.getElementById(`nav-${v}`).className = "px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold whitespace-nowrap shrink-0 text-slate-600 hover:text-slate-900 transition";
+            ['levels', 'workspace', 'verbs', 'arena', 'sql'].forEach(v => {
+                const el = document.getElementById(`view-${v}`);
+                if (el) el.classList.add('hidden');
+                const nav = document.getElementById(`nav-${v}`);
+                if (nav) nav.className = "px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold whitespace-nowrap shrink-0 text-slate-600 hover:text-slate-900 transition";
             });
-            document.getElementById(`view-${viewName}`).classList.remove('hidden');
-            document.getElementById(`nav-${viewName}`).className = "px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold whitespace-nowrap shrink-0 bg-white text-indigo-600 shadow-sm transition";
-            if (viewName === 'arena') renderLeaderboard();
+            const targetView = document.getElementById(`view-${viewName}`);
+            if (targetView) targetView.classList.remove('hidden');
+            const targetNav = document.getElementById(`nav-${viewName}`);
+            if (targetNav) targetNav.className = "px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold whitespace-nowrap shrink-0 bg-white text-indigo-600 shadow-sm transition";
+
+            if (viewName === 'verbs') {
+                if (typeof renderVerbKonjugator === 'function') {
+                    renderVerbKonjugator('view-verbs');
+                }
+            } else if (viewName === 'arena') {
+                renderLeaderboard();
+            }
         }
 
         function switchSubTab(tabName) {
@@ -655,8 +681,9 @@ CREATE TABLE exercises (
                 document.getElementById('exercises-container').innerHTML = "";
             } else {
                 lessonList.innerHTML = currentLevelData.lessons.map((ls, idx) => `
-                    <button onclick="selectLesson(${idx})" class="w-full text-left px-4 py-3 rounded-2xl bg-indigo-50/70 hover:bg-indigo-100/80 border border-indigo-200 text-indigo-950 text-sm font-bold transition">
-                        ${ls.title}
+                    <button id="lesson-btn-${idx}" onclick="selectLesson(${idx})" class="w-full text-left px-4 py-3 rounded-2xl bg-white hover:bg-indigo-50 border border-slate-200 text-slate-800 text-sm font-bold transition flex items-center justify-between group">
+                        <span class="truncate pr-2">${ls.title}</span>
+                        <span class="text-[11px] px-2 py-0.5 rounded-lg bg-indigo-50 text-indigo-700 font-extrabold shrink-0 border border-indigo-200">50 câu</span>
                     </button>
                 `).join('');
                 selectLesson(0);
@@ -668,6 +695,24 @@ CREATE TABLE exercises (
             currentLesson = currentLevelData.lessons[index];
             document.getElementById('current-lesson-title').innerText = currentLesson.title;
             document.getElementById('current-lesson-grammar').innerHTML = currentLesson.grammar_content;
+
+            // Cập nhật trạng thái active trên danh sách bài học
+            if (currentLevelData && currentLevelData.lessons) {
+                currentLevelData.lessons.forEach((_, idx) => {
+                    const btn = document.getElementById(`lesson-btn-${idx}`);
+                    if (btn) {
+                        if (idx === index) {
+                            btn.className = "w-full text-left px-4 py-3 rounded-2xl bg-indigo-600 text-white shadow-md border border-indigo-600 text-sm font-bold transition flex items-center justify-between";
+                            const badge = btn.querySelector('span:last-child');
+                            if (badge) badge.className = "text-[11px] px-2 py-0.5 rounded-lg bg-white/20 text-white font-extrabold shrink-0 border border-white/30";
+                        } else {
+                            btn.className = "w-full text-left px-4 py-3 rounded-2xl bg-white hover:bg-indigo-50 border border-slate-200 text-slate-800 text-sm font-bold transition flex items-center justify-between group";
+                            const badge = btn.querySelector('span:last-child');
+                            if (badge) badge.className = "text-[11px] px-2 py-0.5 rounded-lg bg-indigo-50 text-indigo-700 font-extrabold shrink-0 border border-indigo-200";
+                        }
+                    }
+                });
+            }
 
             const vocabGrid = document.getElementById('vocab-grid');
             vocabGrid.innerHTML = currentLesson.vocabularies.map(v => {
@@ -842,12 +887,25 @@ CREATE TABLE exercises (
             if (isCorrect) {
                 feedback.className = "text-xs p-3.5 rounded-xl mt-2 bg-emerald-50 text-emerald-800 border border-emerald-200";
                 let nextDynamicHtml = '';
-                if (extra.dynamic_number || extra.dynamic_mode) {
+                const isDynamicEx = extra.dynamic_number || extra.dynamic_mode || extra.dynamic_price || extra.dynamic_conjugation;
+                if (isDynamicEx) {
+                    let promptMsg = "🎯 Tuyệt vời! Bạn muốn rèn thêm phản xạ?";
+                    let btnLabel = "🔄 Đổi đề khác để luyện tiếp";
+                    if (extra.dynamic_price) {
+                        promptMsg = "🎯 Chuẩn xác! Bạn muốn rèn thêm phản xạ giá tiền Euro?";
+                        btnLabel = "🔄 Đổi số tiền khác để luyện tiếp";
+                    } else if (extra.dynamic_conjugation) {
+                        promptMsg = "🎯 Xuất sắc! Bạn muốn rèn thêm phản xạ chia động từ?";
+                        btnLabel = "🔄 Đổi câu chia động từ khác";
+                    } else if (extra.dynamic_number || extra.dynamic_mode) {
+                        promptMsg = "🎯 Tuyệt vời! Bạn muốn rèn thêm phản xạ số này?";
+                        btnLabel = "🔄 Đổi số khác để luyện tiếp";
+                    }
                     nextDynamicHtml = `
                         <div class="mt-2.5 pt-2 border-t border-emerald-200/80 flex items-center justify-between flex-wrap gap-2">
-                            <span class="text-emerald-700 font-semibold">🎯 Tuyệt vời! Bạn muốn rèn thêm phản xạ số này?</span>
+                            <span class="text-emerald-700 font-semibold">${promptMsg}</span>
                             <button onclick="refreshSingleExercise(${index})" class="px-3.5 py-1.5 rounded-lg bg-emerald-600 hover:bg-emerald-700 active:scale-95 text-white font-bold text-xs shadow-xs transition flex items-center gap-1 cursor-pointer">
-                                🔄 Đổi số khác để luyện tiếp
+                                ${btnLabel}
                             </button>
                         </div>
                     `;
