@@ -54,7 +54,7 @@
                 </div>
             </div>
 
-            <!-- 5 Nút điều hướng trung tâm (Bổ sung Tab Chia động từ ở chính giữa) -->
+            <!-- 6 Nút điều hướng trung tâm (Bổ sung Tab Từ vựng & Giống ở chính giữa) -->
             <nav class="flex items-center gap-1.5 bg-slate-100 p-1.5 rounded-2xl border border-slate-200/80 overflow-x-auto">
                 <button onclick="switchMainView('levels')" id="nav-levels" class="px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold whitespace-nowrap shrink-0 bg-white text-indigo-600 shadow-sm transition">
                     🎯 Cấp độ (A1 - B2)
@@ -64,6 +64,9 @@
                 </button>
                 <button onclick="switchMainView('verbs')" id="nav-verbs" class="px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold whitespace-nowrap shrink-0 text-slate-600 hover:text-slate-900 transition">
                     📖 Chia động từ
+                </button>
+                <button onclick="switchMainView('lexikon')" id="nav-lexikon" class="px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold whitespace-nowrap shrink-0 text-slate-600 hover:text-slate-900 transition">
+                    🏷️ Từ vựng & Giống
                 </button>
                 <button onclick="switchMainView('arena')" id="nav-arena" class="px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold whitespace-nowrap shrink-0 text-slate-600 hover:text-slate-900 transition">
                     🏆 Đấu trường & BXH
@@ -259,12 +262,17 @@
             </div>
         </section>
 
-        <!-- 3. MÀN HÌNH TRA CỨU CHIA ĐỘNG TỪ (VERB-KONJUGATOR) - NẰM CHÍNH GIỮA WORKSPACE VÀ ARENA -->
+        <!-- 3. MÀN HÌNH TRA CỨU CHIA ĐỘNG TỪ (VERB-KONJUGATOR) -->
         <section id="view-verbs" class="hidden space-y-6">
             <!-- Được render động bởi renderVerbKonjugator() -->
         </section>
 
-        <!-- 4. MÀN HÌNH ĐẤU TRƯỜNG GAME & BẢNG XẾP HẠNG NGÀY -->
+        <!-- 4. MÀN HÌNH TỪ VỰNG & GIỐNG (LEXIKON) - NẰM CHÍNH GIỮA CHIA ĐỘNG TỪ VÀ ĐẤU TRƯỜNG -->
+        <section id="view-lexikon" class="hidden space-y-6">
+            <!-- Được render động bởi renderLexikon() -->
+        </section>
+
+        <!-- 5. MÀN HÌNH ĐẤU TRƯỜNG GAME & BẢNG XẾP HẠNG NGÀY -->
         <section id="view-arena" class="hidden grid grid-cols-1 lg:grid-cols-3 gap-6">
             <div class="lg:col-span-2 bg-white border border-slate-200 rounded-3xl p-6 sm:p-8 shadow-sm space-y-6">
                 <div class="flex flex-wrap items-center justify-between gap-4 border-b border-slate-100 pb-5">
@@ -393,6 +401,7 @@ CREATE TABLE exercises (
     <script src="/static/js/audio_tts.js"></script>
     <script src="/static/js/number_trainer.js"></script>
     <script src="/static/js/verbs_db.js"></script>
+    <script src="/static/js/lexikon_db.js"></script>
     <script>
         const LEVEL_META = {
             "A1": {
@@ -405,10 +414,11 @@ CREATE TABLE exercises (
                     "Bảng chữ cái & Umlaut (ä, ö, ü, ß)",
                     "Quy tắc phát âm nguyên âm ghép & phụ âm",
                     "Hệ thống số đếm từ 0 đến 9.999",
-                    "Đại từ nhân xưng, Chia động từ & Gọi đồ uống (P2)"
+                    "Đại từ nhân xưng, Chia động từ & Gọi đồ uống (P2)",
+                    "Sprache im Kurs: Động từ & Giống der/die/das (Bài 2)"
                 ],
-                lessonsCount: "2 Bài (P1 & P2)",
-                exCount: "100 Bài (Đủ 7 dạng)"
+                lessonsCount: "3 Bài (P1, P2, Bài 2)",
+                exCount: "150 Bài (Đủ 7 dạng)"
             },
             "A2": {
                 badgeBg: "bg-blue-600",
@@ -493,7 +503,13 @@ CREATE TABLE exercises (
             "möchte": "möchte.", "möchten": "möchten.", "liest": "liest.",
             "nimmt": "nimmt.", "heißt": "heißt.", "zahlen": "zahlen.",
             "Kaffee": "Kaffee.", "Tee": "Tee.", "Milch": "Milch.",
-            "Zucker": "Zucker.", "getrennt": "getrennt.", "zusammen": "zusammen."
+            "Zucker": "Zucker.", "getrennt": "getrennt.", "zusammen": "zusammen.",
+            // Từ vựng Bài 2: Đồ dùng lớp học & Giống
+            "ein": "ein.", "eine": "eine.", "kein": "kein.", "keine": "keine.",
+            "Kuli": "Kuli.", "Brille": "Brille.", "Wörterbuch": "Wörterbuch.",
+            "Handy": "Handy.", "Stühle": "Stühle.", "Bücher": "Bücher.",
+            "Brötchen": "Brötchen.", "buchstabieren": "buchstabieren.",
+            "wiederholen": "wiederholen.", "verstehen": "verstehen.", "anschreiben": "anschreiben."
         };
 
         let inlineBestGermanVoice = null;
@@ -558,7 +574,7 @@ CREATE TABLE exercises (
         }
 
         function switchMainView(viewName) {
-            ['levels', 'workspace', 'verbs', 'arena', 'sql'].forEach(v => {
+            ['levels', 'workspace', 'verbs', 'lexikon', 'arena', 'sql'].forEach(v => {
                 const el = document.getElementById(`view-${v}`);
                 if (el) el.classList.add('hidden');
                 const nav = document.getElementById(`nav-${v}`);
@@ -572,6 +588,10 @@ CREATE TABLE exercises (
             if (viewName === 'verbs') {
                 if (typeof renderVerbKonjugator === 'function') {
                     renderVerbKonjugator('view-verbs');
+                }
+            } else if (viewName === 'lexikon') {
+                if (typeof renderLexikon === 'function') {
+                    renderLexikon('view-lexikon');
                 }
             } else if (viewName === 'arena') {
                 renderLeaderboard();
@@ -887,7 +907,7 @@ CREATE TABLE exercises (
             if (isCorrect) {
                 feedback.className = "text-xs p-3.5 rounded-xl mt-2 bg-emerald-50 text-emerald-800 border border-emerald-200";
                 let nextDynamicHtml = '';
-                const isDynamicEx = extra.dynamic_number || extra.dynamic_mode || extra.dynamic_price || extra.dynamic_conjugation;
+                const isDynamicEx = extra.dynamic_number || extra.dynamic_mode || extra.dynamic_price || extra.dynamic_conjugation || extra.dynamic_article_quiz || extra.dynamic_possessive_article || extra.dynamic_plural_quiz;
                 if (isDynamicEx) {
                     let promptMsg = "🎯 Tuyệt vời! Bạn muốn rèn thêm phản xạ?";
                     let btnLabel = "🔄 Đổi đề khác để luyện tiếp";
@@ -897,6 +917,15 @@ CREATE TABLE exercises (
                     } else if (extra.dynamic_conjugation) {
                         promptMsg = "🎯 Xuất sắc! Bạn muốn rèn thêm phản xạ chia động từ?";
                         btnLabel = "🔄 Đổi câu chia động từ khác";
+                    } else if (extra.dynamic_article_quiz) {
+                        promptMsg = "🎯 Chuẩn xác! Bạn muốn rèn thêm phản xạ mạo từ & phủ định?";
+                        btnLabel = "🔄 Đổi cặp từ khác để luyện tiếp";
+                    } else if (extra.dynamic_possessive_article) {
+                        promptMsg = "🎯 Xuất sắc! Bạn muốn rèn thêm phản xạ sở hữu & mạo từ?";
+                        btnLabel = "🔄 Đổi câu sở hữu khác";
+                    } else if (extra.dynamic_plural_quiz) {
+                        promptMsg = "🎯 Tuyệt vời! Bạn muốn rèn thêm số nhiều danh từ?";
+                        btnLabel = "🔄 Đổi từ khác để luyện số nhiều";
                     } else if (extra.dynamic_number || extra.dynamic_mode) {
                         promptMsg = "🎯 Tuyệt vời! Bạn muốn rèn thêm phản xạ số này?";
                         btnLabel = "🔄 Đổi số khác để luyện tiếp";
