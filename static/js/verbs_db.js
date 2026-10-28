@@ -434,21 +434,20 @@ function speakAllForms(verbInfinitiv) {
     speakNext();
 }
 
-/**
- * Render giao diện Tra cứu & Chia động từ (Verb-Konjugator)
- */
-function renderVerbKonjugator(containerId) {
-    const container = document.getElementById(containerId);
-    if (!container) return;
+const VERB_GROUPS = [
+    { id: "all", label: "Tất cả" },
+    { id: "Quy tắc", label: "Quy tắc (Regelmäßig)" },
+    { id: "-s, -ß, -z", label: "Gốc -s, -ß, -z (heißen, tanzen)" },
+    { id: "-t, -d", label: "Gốc -t, -d (mieten, arbeiten)" },
+    { id: "Biến âm", label: "Biến âm gốc (nehmen, lesen)" },
+    { id: "Bất quy tắc", label: "Bất quy tắc & Khuyết thiếu (sein, möchten)" }
+];
 
-    const groups = [
-        { id: "all", label: "Tất cả" },
-        { id: "Quy tắc", label: "Quy tắc (Regelmäßig)" },
-        { id: "-s, -ß, -z", label: "Gốc -s, -ß, -z (heißen, tanzen)" },
-        { id: "-t, -d", label: "Gốc -t, -d (mieten, arbeiten)" },
-        { id: "Biến âm", label: "Biến âm gốc (nehmen, lesen)" },
-        { id: "Bất quy tắc", label: "Bất quy tắc & Khuyết thiếu (sein, möchten)" }
-    ];
+function updateVerbKonjugatorUI() {
+    const cardsGrid = document.getElementById('verb-cards-grid');
+    const filterPills = document.getElementById('verb-filter-pills');
+    const clearWrap = document.getElementById('verb-clear-btn-wrap');
+    if (!cardsGrid || !filterPills || !clearWrap) return;
 
     const q = (currentVerbSearchQuery || "").toLowerCase().trim();
     const filteredVerbs = GERMAN_VERBS_DB.filter(v => {
@@ -460,19 +459,39 @@ function renderVerbKonjugator(containerId) {
         return matchGroup && matchSearch;
     });
 
-    const filterButtonsHtml = groups.map(g => {
+    clearWrap.innerHTML = currentVerbSearchQuery ? `
+        <button onclick="clearVerbSearch()" class="px-4 py-3 rounded-2xl bg-white/10 hover:bg-white/20 text-white text-xs font-bold border border-white/20 transition cursor-pointer">
+            ✕ Xóa tìm kiếm
+        </button>
+    ` : '';
+
+    filterPills.innerHTML = VERB_GROUPS.map(g => {
         const count = g.id === "all"
             ? GERMAN_VERBS_DB.length
             : GERMAN_VERBS_DB.filter(v => v.group.toLowerCase().includes(g.id.toLowerCase())).length;
         const isActive = currentVerbFilterGroup === g.id;
         return `
-            <button onclick="setVerbFilterGroup('${g.id}')" class="px-3.5 py-1.5 rounded-xl text-xs font-bold transition whitespace-nowrap shrink-0 ${isActive ? 'bg-indigo-600 text-white shadow-sm' : 'bg-slate-100 hover:bg-slate-200 text-slate-700'}">
+            <button onclick="setVerbFilterGroup('${g.id}')" class="px-3.5 py-1.5 rounded-xl text-xs font-bold transition whitespace-nowrap shrink-0 cursor-pointer ${isActive ? 'bg-indigo-600 text-white shadow-sm' : 'bg-slate-100 hover:bg-slate-200 text-slate-700'}">
                 ${g.label} (${count})
             </button>
         `;
     }).join('');
 
-    const cardsHtml = filteredVerbs.map(v => {
+    if (filteredVerbs.length === 0) {
+        cardsGrid.innerHTML = `
+            <div class="col-span-full p-8 rounded-3xl bg-white border border-slate-200 text-center space-y-3">
+                <div class="text-3xl">🔍</div>
+                <h4 class="text-base font-bold text-slate-800">Không tìm thấy động từ nào phù hợp với từ khóa "${currentVerbSearchQuery}"</h4>
+                <p class="text-xs text-slate-500">Hãy thử gõ từ nguyên mẫu như 'machen', 'sein', 'wohnen' hoặc nghĩa tiếng Việt như 'uống', 'sống', 'thuê'.</p>
+                <button onclick="clearVerbSearch()" class="px-4 py-2 rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white font-bold text-xs cursor-pointer">
+                    Hiển thị toàn bộ ${GERMAN_VERBS_DB.length} động từ
+                </button>
+            </div>
+        `;
+        return;
+    }
+
+    cardsGrid.innerHTML = filteredVerbs.map(v => {
         let badgeColor = "bg-indigo-50 text-indigo-700 border-indigo-200";
         if (v.group.includes("Biến âm")) badgeColor = "bg-amber-50 text-amber-800 border-amber-300";
         else if (v.group.includes("-t, -d")) badgeColor = "bg-emerald-50 text-emerald-800 border-emerald-300";
@@ -488,7 +507,7 @@ function renderVerbKonjugator(containerId) {
                     <div class="flex items-start justify-between gap-3 flex-wrap">
                         <div class="flex items-baseline gap-2.5">
                             <h3 class="text-2xl font-black text-slate-900 tracking-tight">${v.infinitiv}</h3>
-                            <button onclick="speakGerman('${v.infinitiv}')" class="w-8 h-8 rounded-xl bg-slate-100 hover:bg-indigo-600 text-slate-600 hover:text-white flex items-center justify-center text-xs transition shadow-xs" title="Phát âm nguyên mẫu">
+                            <button onclick="speakGerman('${v.infinitiv}')" class="w-8 h-8 rounded-xl bg-slate-100 hover:bg-indigo-600 text-slate-600 hover:text-white flex items-center justify-center text-xs transition shadow-xs cursor-pointer" title="Phát âm nguyên mẫu">
                                 🔊
                             </button>
                         </div>
@@ -565,104 +584,102 @@ function renderVerbKonjugator(containerId) {
                 <div class="pt-2 border-t border-slate-100 space-y-2.5">
                     <div class="flex items-center justify-between gap-2 text-xs">
                         <span class="text-slate-600 italic truncate" title="${v.example}">"${v.example}"</span>
-                        <button onclick="speakGerman('${safeExample}')" class="shrink-0 px-2 py-1 rounded-lg bg-indigo-50 hover:bg-indigo-100 text-indigo-700 font-bold transition" title="Nghe câu ví dụ">
+                        <button onclick="speakGerman('${safeExample}')" class="shrink-0 px-2 py-1 rounded-lg bg-indigo-50 hover:bg-indigo-100 text-indigo-700 font-bold transition cursor-pointer" title="Nghe câu ví dụ">
                             🔊 Ví dụ
                         </button>
                     </div>
 
-                    <button onclick="speakAllForms('${v.infinitiv}')" class="w-full py-2 rounded-xl bg-slate-100 hover:bg-indigo-600 hover:text-white text-slate-700 text-xs font-bold transition flex items-center justify-center gap-1.5 shadow-2xs">
+                    <button onclick="speakAllForms('${v.infinitiv}')" class="w-full py-2 rounded-xl bg-slate-100 hover:bg-indigo-600 hover:text-white text-slate-700 text-xs font-bold transition flex items-center justify-center gap-1.5 shadow-2xs cursor-pointer">
                         🔊 Đọc toàn bộ bảng chia (6 ngôi)
                     </button>
                 </div>
             </div>
         `;
     }).join('');
+}
 
-    container.innerHTML = `
-        <!-- Hero Banner của Tab Tra cứu động từ -->
-        <div class="rounded-3xl bg-gradient-to-r from-slate-900 via-indigo-950 to-slate-900 text-white p-6 sm:p-8 shadow-xl border border-slate-800">
-            <div class="flex flex-wrap items-center justify-between gap-4">
-                <div class="space-y-2 max-w-3xl">
-                    <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-indigo-500/20 border border-indigo-400/30 text-indigo-300 text-xs font-bold">
-                        📖 DeutschMeister Verb-Konjugator • Bảng Tra Cứu Chia Động Từ A1 - A2
+/**
+ * Render giao diện Tra cứu & Chia động từ (Verb-Konjugator)
+ */
+function renderVerbKonjugator(containerId) {
+    const container = document.getElementById(containerId);
+    if (!container) return;
+
+    if (!document.getElementById('verb-cards-grid')) {
+        container.innerHTML = `
+            <!-- Hero Banner của Tab Tra cứu động từ -->
+            <div class="rounded-3xl bg-gradient-to-r from-slate-900 via-indigo-950 to-slate-900 text-white p-6 sm:p-8 shadow-xl border border-slate-800">
+                <div class="flex flex-wrap items-center justify-between gap-4">
+                    <div class="space-y-2 max-w-3xl">
+                        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-indigo-500/20 border border-indigo-400/30 text-indigo-300 text-xs font-bold">
+                            📖 DeutschMeister Verb-Konjugator • Bảng Tra Cứu Chia Động Từ A1 - A2
+                        </div>
+                        <h2 class="text-2xl sm:text-3xl font-black tracking-tight text-white">
+                            Tra Cứu & Luyện Phát Âm Chia Động Từ
+                        </h2>
+                        <p class="text-xs sm:text-sm text-slate-300 leading-relaxed">
+                            Hệ thống tự động phân tách <b>Gốc động từ (Verbstamm)</b>, tô màu <b>Đuôi chia (-e, -st, -t, -en)</b>, cảnh báo biến âm (e → i/ie, a → ä) và hỗ trợ giọng đọc bản xứ <b>de-DE</b> cho từng ngôi nhân xưng.
+                        </p>
                     </div>
-                    <h2 class="text-2xl sm:text-3xl font-black tracking-tight text-white">
-                        Tra Cứu & Luyện Phát Âm Chia Động Từ
-                    </h2>
-                    <p class="text-xs sm:text-sm text-slate-300 leading-relaxed">
-                        Hệ thống tự động phân tách <b>Gốc động từ (Verbstamm)</b>, tô màu <b>Đuôi chia (-e, -st, -t, -en)</b>, cảnh báo biến âm (e → i/ie, a → ä) và hỗ trợ giọng đọc bản xứ <b>de-DE</b> cho từng ngôi nhân xưng.
-                    </p>
+
+                    <div class="shrink-0 text-right hidden sm:block">
+                        <span class="px-4 py-2 rounded-2xl bg-white/10 border border-white/20 text-amber-400 font-extrabold text-sm flex items-center gap-2">
+                            ⚡ ${GERMAN_VERBS_DB.length} Động từ cốt lõi
+                        </span>
+                    </div>
                 </div>
 
-                <div class="shrink-0 text-right hidden sm:block">
-                    <span class="px-4 py-2 rounded-2xl bg-white/10 border border-white/20 text-amber-400 font-extrabold text-sm flex items-center gap-2">
-                        ⚡ ${GERMAN_VERBS_DB.length} Động từ cốt lõi
-                    </span>
+                <!-- Thanh tìm kiếm thông minh (Giữ nguyên DOM để tránh nhảy chữ khi gõ bàn phím) -->
+                <div class="mt-6 flex flex-wrap gap-3">
+                    <div class="relative flex-1 min-w-[260px]">
+                        <span class="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-slate-400">
+                            🔍
+                        </span>
+                        <input id="verb-search-input" value="${currentVerbSearchQuery}" oninput="onVerbSearchChange(this.value)" type="text" placeholder="Gõ động từ tiếng Đức (machen, sein, nehmen...) hoặc nghĩa tiếng Việt (làm, uống, muốn, thuê...)" class="w-full pl-10 pr-4 py-3 rounded-2xl bg-white/10 border border-white/20 text-white placeholder:text-slate-400 text-sm focus:outline-none focus:bg-white/20 focus:border-amber-400 transition" autocomplete="off" spellcheck="false">
+                    </div>
+                    <div id="verb-clear-btn-wrap"></div>
                 </div>
             </div>
 
-            <!-- Thanh tìm kiếm thông minh -->
-            <div class="mt-6 flex flex-wrap gap-3">
-                <div class="relative flex-1 min-w-[260px]">
-                    <span class="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-slate-400">
-                        🔍
-                    </span>
-                    <input id="verb-search-input" value="${currentVerbSearchQuery}" oninput="onVerbSearchChange(this.value)" type="text" placeholder="Gõ động từ tiếng Đức (machen, sein, nehmen...) hoặc nghĩa tiếng Việt (làm, uống, muốn, thuê...)" class="w-full pl-10 pr-4 py-3 rounded-2xl bg-white/10 border border-white/20 text-white placeholder:text-slate-400 text-sm focus:outline-none focus:bg-white/20 focus:border-amber-400 transition">
-                </div>
-                ${currentVerbSearchQuery ? `
-                    <button onclick="clearVerbSearch()" class="px-4 py-3 rounded-2xl bg-white/10 hover:bg-white/20 text-white text-xs font-bold border border-white/20 transition">
-                        ✕ Xóa tìm kiếm
-                    </button>
-                ` : ''}
+            <!-- Bộ lọc phân loại theo nhóm -->
+            <div class="flex items-center gap-2 overflow-x-auto pb-1">
+                <span class="text-xs font-bold text-slate-500 whitespace-nowrap">Bộ lọc:</span>
+                <div id="verb-filter-pills" class="flex items-center gap-2 overflow-x-auto"></div>
             </div>
-        </div>
 
-        <!-- Bộ lọc phân loại theo nhóm -->
-        <div class="flex items-center gap-2 overflow-x-auto pb-1">
-            <span class="text-xs font-bold text-slate-500 whitespace-nowrap">Bộ lọc:</span>
-            ${filterButtonsHtml}
-        </div>
+            <!-- Lưới thẻ động từ -->
+            <div id="verb-cards-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5"></div>
+        `;
+    }
 
-        <!-- Lưới thẻ động từ -->
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
-            ${cardsHtml.length > 0 ? cardsHtml : `
-                <div class="col-span-full p-8 rounded-3xl bg-white border border-slate-200 text-center space-y-3">
-                    <div class="text-3xl">🔍</div>
-                    <h4 class="text-base font-bold text-slate-800">Không tìm thấy động từ nào phù hợp với từ khóa "${currentVerbSearchQuery}"</h4>
-                    <p class="text-xs text-slate-500">Hãy thử gõ từ nguyên mẫu như 'machen', 'sein', 'wohnen' hoặc nghĩa tiếng Việt như 'uống', 'sống', 'thuê'.</p>
-                    <button onclick="clearVerbSearch()" class="px-4 py-2 rounded-xl bg-indigo-600 text-white font-bold text-xs">
-                        Hiển thị toàn bộ ${GERMAN_VERBS_DB.length} động từ
-                    </button>
-                </div>
-            `}
-        </div>
-    `;
+    updateVerbKonjugatorUI();
 }
 
 function setVerbFilterGroup(groupId) {
     currentVerbFilterGroup = groupId;
-    renderVerbKonjugator('view-verbs');
+    updateVerbKonjugatorUI();
 }
 
 function onVerbSearchChange(val) {
     currentVerbSearchQuery = val;
-    renderVerbKonjugator('view-verbs');
-    const input = document.getElementById('verb-search-input');
-    if (input) {
-        input.focus();
-        input.setSelectionRange(input.value.length, input.value.length);
-    }
+    updateVerbKonjugatorUI();
 }
 
 function clearVerbSearch() {
     currentVerbSearchQuery = "";
     currentVerbFilterGroup = "all";
-    renderVerbKonjugator('view-verbs');
+    const input = document.getElementById('verb-search-input');
+    if (input) {
+        input.value = "";
+        input.focus();
+    }
+    updateVerbKonjugatorUI();
 }
 
 if (typeof window !== 'undefined') {
     window.GERMAN_VERBS_DB = GERMAN_VERBS_DB;
     window.renderVerbKonjugator = renderVerbKonjugator;
+    window.updateVerbKonjugatorUI = updateVerbKonjugatorUI;
     window.setVerbFilterGroup = setVerbFilterGroup;
     window.onVerbSearchChange = onVerbSearchChange;
     window.clearVerbSearch = clearVerbSearch;
