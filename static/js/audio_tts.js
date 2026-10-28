@@ -41,7 +41,23 @@ const GERMAN_PRONUNCIATION_MAP = {
     "Milch": "Milch.",
     "Zucker": "Zucker.",
     "getrennt": "getrennt.",
-    "zusammen": "zusammen."
+    "zusammen": "zusammen.",
+    // Từ vựng Bài 2: Đồ dùng lớp học & Giống der/die/das
+    "ein": "ein.",
+    "eine": "eine.",
+    "kein": "kein.",
+    "keine": "keine.",
+    "Kuli": "Kuli.",
+    "Brille": "Brille.",
+    "Wörterbuch": "Wörterbuch.",
+    "Handy": "Händy.",
+    "Stühle": "Stühle.",
+    "Bücher": "Bücher.",
+    "Brötchen": "Brötchen.",
+    "buchstabieren": "buchstabieren.",
+    "wiederholen": "wiederholen.",
+    "verstehen": "verstehen.",
+    "anschreiben": "anschreiben."
 };
 
 let bestGermanVoice = null;

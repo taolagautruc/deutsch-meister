@@ -213,6 +213,83 @@ function generateNewNumberData(ex) {
         return ex;
     }
 
+    // 3. Xử lý câu hỏi Mạo từ & Phủ định (dynamic_article_quiz)
+    if (extra.dynamic_article_quiz) {
+        const db = (typeof GERMAN_LEXIKON_DB !== 'undefined' && GERMAN_LEXIKON_DB.length > 0)
+            ? GERMAN_LEXIKON_DB.filter(x => x.gender !== 'verb')
+            : [
+                { word: "Tisch", article: "der", gender: "der", negation: "kein Tisch", indefinite: "ein Tisch", meaning: "cái bàn" },
+                { word: "Brille", article: "die", gender: "die", negation: "keine Brille", indefinite: "eine Brille", meaning: "cái kính" },
+                { word: "Handy", article: "das", gender: "das", negation: "kein Handy", indefinite: "ein Handy", meaning: "điện thoại" },
+                { word: "Tasche", article: "die", gender: "die", negation: "keine Tasche", indefinite: "eine Tasche", meaning: "túi xách" },
+                { word: "Buch", article: "das", gender: "das", negation: "kein Buch", indefinite: "ein Buch", meaning: "quyển sách" },
+                { word: "Kuli", article: "der", gender: "der", negation: "kein Kuli", indefinite: "ein Kuli", meaning: "bút bi" }
+            ];
+
+        const idx1 = Math.floor(Math.random() * db.length);
+        let idx2 = Math.floor(Math.random() * db.length);
+        while (idx2 === idx1 && db.length > 1) {
+            idx2 = Math.floor(Math.random() * db.length);
+        }
+        const item1 = db[idx1];
+        const item2 = db[idx2];
+
+        const negWord = item1.gender === 'die' ? 'keine' : 'kein';
+        const indWord = item2.gender === 'die' ? 'eine' : 'ein';
+        const qIndefinite = item1.gender === 'die' ? 'eine' : 'ein';
+
+        ex.question = `[Mạo từ & Phủ định (Random)]: Hoàn thành câu trả lời phủ định: "Ist das ${qIndefinite} ${item1.word}?" → "Nein, das ist ___ ${item1.word}. Das ist ___ ${item2.word}." (Điền 2 từ mạo từ cách nhau bởi dấu phẩy):`;
+        ex.correct_answer = `${negWord}, ${indWord}`;
+        ex.explanation = `'${item1.word}' mang giống ${item1.article} nên phủ định dùng '${negWord}'; '${item2.word}' mang giống ${item2.article} nên dùng '${indWord}'.`;
+        return ex;
+    }
+
+    // 4. Xử lý câu hỏi Sở hữu với Mạo từ xác định (dynamic_possessive_article)
+    if (extra.dynamic_possessive_article) {
+        const db = (typeof GERMAN_LEXIKON_DB !== 'undefined' && GERMAN_LEXIKON_DB.length > 0)
+            ? GERMAN_LEXIKON_DB.filter(x => x.gender !== 'verb')
+            : [
+                { word: "Kuli", article: "der", gender: "der", meaning: "bút bi" },
+                { word: "Handy", article: "das", gender: "das", meaning: "điện thoại" },
+                { word: "Brille", article: "die", gender: "die", meaning: "kính mắt" },
+                { word: "Buch", article: "das", gender: "das", meaning: "quyển sách" },
+                { word: "Tasche", article: "die", gender: "die", meaning: "túi xách" },
+                { word: "Füller", article: "der", gender: "der", meaning: "bút mực" }
+            ];
+        const names = ["Anna", "David", "Marc", "Frau Schiller", "Herr Nguyen", "Sophie", "Peter"];
+        const chosenItem = db[Math.floor(Math.random() * db.length)];
+        const chosenName = names[Math.floor(Math.random() * names.length)];
+
+        const indWord = chosenItem.gender === 'die' ? 'eine' : 'ein';
+        const defWord = chosenItem.article; // der / die / das
+
+        ex.question = `[Mạo từ Sở Hữu (Random)]: Hoàn thành câu xác nhận đồ vật của ${chosenName}: "Ist das ___ ${chosenItem.word}?" → "Ja, das ist ___ ${chosenItem.word} von ${chosenName}." (Điền 2 từ mạo từ cách nhau bởi dấu phẩy):`;
+        ex.correct_answer = `${indWord}, ${defWord}`;
+        ex.explanation = `'${chosenItem.word}' (${chosenItem.meaning}) mang giống ${defWord} → Mạo từ bất định là '${indWord}' và mạo từ xác định sở hữu là '${defWord} ${chosenItem.word} von ${chosenName}'.`;
+        return ex;
+    }
+
+    // 5. Xử lý câu hỏi Số nhiều danh từ (dynamic_plural_quiz)
+    if (extra.dynamic_plural_quiz) {
+        const db = (typeof GERMAN_LEXIKON_DB !== 'undefined' && GERMAN_LEXIKON_DB.length > 0)
+            ? GERMAN_LEXIKON_DB.filter(x => x.gender !== 'verb' && x.plural && x.plural.startsWith('die '))
+            : [
+                { word: "Tisch", article: "der", plural: "die Tische", rule: "Thêm -e" },
+                { word: "Stuhl", article: "der", plural: "die Stühle", rule: "Biến âm u -> ü và thêm -e" },
+                { word: "Brille", article: "die", plural: "die Brillen", rule: "Thêm -n" },
+                { word: "Buch", article: "das", plural: "die Bücher", rule: "Biến âm u -> ü và thêm -er" },
+                { word: "Heft", article: "das", plural: "die Hefte", rule: "Thêm -e" },
+                { word: "Wörterbuch", article: "das", plural: "die Wörterbücher", rule: "Số nhiều theo Buch (die Wörterbücher)" },
+                { word: "Handy", article: "das", plural: "die Handys", rule: "Thêm -s" }
+            ];
+        const chosenItem = db[Math.floor(Math.random() * db.length)];
+
+        ex.question = `[Số Nhiều Danh Từ (Random)]: Hãy viết dạng số nhiều (kèm mạo từ 'die') của danh từ '${chosenItem.article} ${chosenItem.word}':`;
+        ex.correct_answer = chosenItem.plural;
+        ex.explanation = `'${chosenItem.article} ${chosenItem.word}' khi chuyển sang số nhiều là '${chosenItem.plural}'. ${chosenItem.rule || ''}`;
+        return ex;
+    }
+
     if (!extra.dynamic_number && !extra.dynamic_mode) return ex;
 
     const mode = extra.dynamic_mode;
@@ -319,7 +396,7 @@ function randomizeAllNumberExercises(exercisesList) {
         let isDynamic = false;
         try {
             const extra = typeof ex.extra_data === 'string' ? JSON.parse(ex.extra_data) : (ex.extra_data || {});
-            if (extra.dynamic_number || extra.dynamic_mode || extra.dynamic_price || extra.dynamic_conjugation) isDynamic = true;
+            if (extra.dynamic_number || extra.dynamic_mode || extra.dynamic_price || extra.dynamic_conjugation || extra.dynamic_article_quiz || extra.dynamic_possessive_article || extra.dynamic_plural_quiz) isDynamic = true;
         } catch (e) {}
 
         if (isDynamic) {
