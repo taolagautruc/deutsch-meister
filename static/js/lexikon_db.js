@@ -314,19 +314,21 @@ const GERMAN_LEXIKON_DB = [
 let currentLexikonFilter = "all";
 let currentLexikonSearchQuery = "";
 
-function renderLexikon(containerId) {
-    const container = document.getElementById(containerId);
-    if (!container) return;
+const LEXIKON_FILTERS = [
+    { id: "all", label: "Tất cả" },
+    { id: "der", label: "🔵 Giống đực - der (Maskulinum)" },
+    { id: "die", label: "🔴 Giống cái - die (Femininum)" },
+    { id: "das", label: "🟢 Giống trung - das (Neutrum)" },
+    { id: "Đồ dùng lớp học", label: "🏫 Đồ dùng & Ngôn ngữ lớp học" },
+    { id: "Động từ lớp học", label: "🗣️ Động từ lớp học & Giao tiếp" },
+    { id: "Quy tắc hậu tố giống", label: "🧩 Quy tắc hậu tố nhận biết giống" }
+];
 
-    const filters = [
-        { id: "all", label: "Tất cả" },
-        { id: "der", label: "🔵 Giống đực - der (Maskulinum)" },
-        { id: "die", label: "🔴 Giống cái - die (Femininum)" },
-        { id: "das", label: "🟢 Giống trung - das (Neutrum)" },
-        { id: "Đồ dùng lớp học", label: "🏫 Đồ dùng & Ngôn ngữ lớp học" },
-        { id: "Động từ lớp học", label: "🗣️ Động từ lớp học & Giao tiếp" },
-        { id: "Quy tắc hậu tố giống", label: "🧩 Quy tắc hậu tố nhận biết giống" }
-    ];
+function updateLexikonUI() {
+    const cardsGrid = document.getElementById('lexikon-cards-grid');
+    const filterPills = document.getElementById('lexikon-filter-pills');
+    const clearWrap = document.getElementById('lexikon-clear-btn-wrap');
+    if (!cardsGrid || !filterPills || !clearWrap) return;
 
     const q = (currentLexikonSearchQuery || "").toLowerCase().trim();
     const filteredList = GERMAN_LEXIKON_DB.filter(item => {
@@ -347,7 +349,15 @@ function renderLexikon(containerId) {
         return matchFilter && matchSearch;
     });
 
-    const filterButtonsHtml = filters.map(f => {
+    // Cập nhật nút xóa tìm kiếm
+    clearWrap.innerHTML = currentLexikonSearchQuery ? `
+        <button onclick="clearLexikonSearch()" class="px-4 py-3 rounded-2xl bg-white/10 hover:bg-white/20 text-white text-xs font-bold border border-white/20 transition cursor-pointer">
+            ✕ Xóa tìm kiếm
+        </button>
+    ` : '';
+
+    // Cập nhật bộ lọc Pills
+    filterPills.innerHTML = LEXIKON_FILTERS.map(f => {
         let count = 0;
         if (f.id === "all") {
             count = GERMAN_LEXIKON_DB.length;
@@ -359,13 +369,28 @@ function renderLexikon(containerId) {
 
         const isActive = currentLexikonFilter === f.id;
         return `
-            <button onclick="setLexikonFilter('${f.id}')" class="px-3.5 py-1.5 rounded-xl text-xs font-bold transition whitespace-nowrap shrink-0 ${isActive ? 'bg-indigo-600 text-white shadow-sm' : 'bg-slate-100 hover:bg-slate-200 text-slate-700'}">
+            <button onclick="setLexikonFilter('${f.id}')" class="px-3.5 py-1.5 rounded-xl text-xs font-bold transition whitespace-nowrap shrink-0 cursor-pointer ${isActive ? 'bg-indigo-600 text-white shadow-sm' : 'bg-slate-100 hover:bg-slate-200 text-slate-700'}">
                 ${f.label} (${count})
             </button>
         `;
     }).join('');
 
-    const cardsHtml = filteredList.map(item => {
+    // Cập nhật danh sách thẻ từ vựng
+    if (filteredList.length === 0) {
+        cardsGrid.innerHTML = `
+            <div class="col-span-full p-8 rounded-3xl bg-white border border-slate-200 text-center space-y-3">
+                <div class="text-3xl">🔍</div>
+                <h4 class="text-base font-bold text-slate-800">Không tìm thấy từ vựng nào phù hợp với từ khóa "${currentLexikonSearchQuery}"</h4>
+                <p class="text-xs text-slate-500">Hãy thử gõ tên đồ vật như 'Kuli', 'Brille', 'Buch' hoặc nghĩa tiếng Việt như 'bút', 'kính', 'sách'.</p>
+                <button onclick="clearLexikonSearch()" class="px-4 py-2 rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white font-bold text-xs cursor-pointer">
+                    Hiển thị toàn bộ ${GERMAN_LEXIKON_DB.length} mục tra cứu
+                </button>
+            </div>
+        `;
+        return;
+    }
+
+    cardsGrid.innerHTML = filteredList.map(item => {
         let badgeStyle = "bg-purple-50 text-purple-700 border-purple-300";
         let displayFullWord = item.word;
 
@@ -418,7 +443,7 @@ function renderLexikon(containerId) {
                     <div class="flex items-start justify-between gap-3 flex-wrap">
                         <div class="flex items-baseline gap-2.5">
                             <h3 class="text-2xl font-black text-slate-900 tracking-tight">${displayFullWord}</h3>
-                            <button onclick="speakGerman('${safeSpeakWord}')" class="w-8 h-8 rounded-xl bg-slate-100 hover:bg-indigo-600 text-slate-600 hover:text-white flex items-center justify-center text-xs transition shadow-xs" title="Phát âm chuẩn de-DE">
+                            <button onclick="speakGerman('${safeSpeakWord}')" class="w-8 h-8 rounded-xl bg-slate-100 hover:bg-indigo-600 text-slate-600 hover:text-white flex items-center justify-center text-xs transition shadow-xs cursor-pointer" title="Phát âm chuẩn de-DE">
                                 🔊
                             </button>
                         </div>
@@ -438,7 +463,7 @@ function renderLexikon(containerId) {
                 <div class="pt-2 border-t border-slate-100 space-y-1 text-xs">
                     <div class="flex items-center justify-between gap-2">
                         <span class="text-slate-700 font-medium italic">"${item.example}"</span>
-                        <button onclick="speakGerman('${safeSpeakExample}')" class="shrink-0 px-2.5 py-1 rounded-lg bg-indigo-50 hover:bg-indigo-100 text-indigo-700 font-bold transition flex items-center gap-1">
+                        <button onclick="speakGerman('${safeSpeakExample}')" class="shrink-0 px-2.5 py-1 rounded-lg bg-indigo-50 hover:bg-indigo-100 text-indigo-700 font-bold transition flex items-center gap-1 cursor-pointer">
                             🔊 Nghe câu
                         </button>
                     </div>
@@ -447,92 +472,88 @@ function renderLexikon(containerId) {
             </div>
         `;
     }).join('');
+}
 
-    container.innerHTML = `
-        <!-- Hero Banner của Tab Từ vựng & Giống -->
-        <div class="rounded-3xl bg-gradient-to-r from-slate-900 via-indigo-950 to-slate-900 text-white p-6 sm:p-8 shadow-xl border border-slate-800">
-            <div class="flex flex-wrap items-center justify-between gap-4">
-                <div class="space-y-2 max-w-3xl">
-                    <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-indigo-500/20 border border-indigo-400/30 text-indigo-300 text-xs font-bold">
-                        🏷️ DeutschMeister Genus- & Wortschatz-Lexikon • Tra Cứu Giống & Từ Vựng A1 - A2
+function renderLexikon(containerId) {
+    const container = document.getElementById(containerId);
+    if (!container) return;
+
+    // Nếu cấu trúc DOM chưa có (lần đầu mở tab), khởi tạo khung tĩnh một lần duy nhất
+    if (!document.getElementById('lexikon-cards-grid')) {
+        container.innerHTML = `
+            <!-- Hero Banner của Tab Từ vựng & Giống -->
+            <div class="rounded-3xl bg-gradient-to-r from-slate-900 via-indigo-950 to-slate-900 text-white p-6 sm:p-8 shadow-xl border border-slate-800">
+                <div class="flex flex-wrap items-center justify-between gap-4">
+                    <div class="space-y-2 max-w-3xl">
+                        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-indigo-500/20 border border-indigo-400/30 text-indigo-300 text-xs font-bold">
+                            🏷️ DeutschMeister Genus- & Wortschatz-Lexikon • Tra Cứu Giống & Từ Vựng A1 - A2
+                        </div>
+                        <h2 class="text-2xl sm:text-3xl font-black tracking-tight text-white">
+                            Tra Cứu Giống (der / die / das), Số Nhiều & Từ Vựng Theo Chủ Đề
+                        </h2>
+                        <p class="text-xs sm:text-sm text-slate-300 leading-relaxed">
+                            Hệ thống phân loại tự động Giống đực (<b>der</b>), Giống cái (<b>die</b>), Giống trung (<b>das</b>), Dạng số nhiều (<b>Plural</b>), Mạo từ bất định (<b>ein/eine</b>), Phủ định (<b>kein/keine</b>) và Động từ theo chủ đề kèm câu ví dụ thực tế và giọng đọc bản xứ <b>de-DE</b>.
+                        </p>
                     </div>
-                    <h2 class="text-2xl sm:text-3xl font-black tracking-tight text-white">
-                        Tra Cứu Giống (der / die / das), Số Nhiều & Từ Vựng Theo Chủ Đề
-                    </h2>
-                    <p class="text-xs sm:text-sm text-slate-300 leading-relaxed">
-                        Hệ thống phân loại tự động Giống đực (<b>der</b>), Giống cái (<b>die</b>), Giống trung (<b>das</b>), Dạng số nhiều (<b>Plural</b>), Mạo từ bất định (<b>ein/eine</b>), Phủ định (<b>kein/keine</b>) và Động từ theo chủ đề kèm câu ví dụ thực tế và giọng đọc bản xứ <b>de-DE</b>.
-                    </p>
+
+                    <div class="shrink-0 text-right hidden sm:block">
+                        <span class="px-4 py-2 rounded-2xl bg-white/10 border border-white/20 text-amber-400 font-extrabold text-sm flex items-center gap-2">
+                            ⚡ ${GERMAN_LEXIKON_DB.length}+ Từ vựng & Quy tắc cốt lõi
+                        </span>
+                    </div>
                 </div>
 
-                <div class="shrink-0 text-right hidden sm:block">
-                    <span class="px-4 py-2 rounded-2xl bg-white/10 border border-white/20 text-amber-400 font-extrabold text-sm flex items-center gap-2">
-                        ⚡ ${GERMAN_LEXIKON_DB.length}+ Từ vựng & Quy tắc cốt lõi
-                    </span>
+                <!-- Thanh tìm kiếm thông minh (Giữ nguyên DOM để không bị nhảy chữ khi gõ bàn phím Telex) -->
+                <div class="mt-6 flex flex-wrap gap-3">
+                    <div class="relative flex-1 min-w-[260px]">
+                        <span class="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-slate-400">
+                            🔍
+                        </span>
+                        <input id="lexikon-search-input" value="${currentLexikonSearchQuery}" oninput="onLexikonSearchChange(this.value)" type="text" placeholder="Gõ từ tiếng Đức (Kuli, Brille, Handy, verstehen...) hoặc nghĩa tiếng Việt (bút bi, kính mắt, bảng đen, đánh vần...)" class="w-full pl-10 pr-4 py-3 rounded-2xl bg-white/10 border border-white/20 text-white placeholder:text-slate-400 text-sm focus:outline-none focus:bg-white/20 focus:border-amber-400 transition" autocomplete="off" spellcheck="false">
+                    </div>
+                    <div id="lexikon-clear-btn-wrap"></div>
                 </div>
             </div>
 
-            <!-- Thanh tìm kiếm thông minh -->
-            <div class="mt-6 flex flex-wrap gap-3">
-                <div class="relative flex-1 min-w-[260px]">
-                    <span class="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-slate-400">
-                        🔍
-                    </span>
-                    <input id="lexikon-search-input" value="${currentLexikonSearchQuery}" oninput="onLexikonSearchChange(this.value)" type="text" placeholder="Gõ từ tiếng Đức (Kuli, Brille, Handy, verstehen...) hoặc nghĩa tiếng Việt (bút bi, kính mắt, bảng đen, đánh vần...)" class="w-full pl-10 pr-4 py-3 rounded-2xl bg-white/10 border border-white/20 text-white placeholder:text-slate-400 text-sm focus:outline-none focus:bg-white/20 focus:border-amber-400 transition">
-                </div>
-                ${currentLexikonSearchQuery ? `
-                    <button onclick="clearLexikonSearch()" class="px-4 py-3 rounded-2xl bg-white/10 hover:bg-white/20 text-white text-xs font-bold border border-white/20 transition">
-                        ✕ Xóa tìm kiếm
-                    </button>
-                ` : ''}
+            <!-- Bộ lọc phân loại theo giống & chủ đề -->
+            <div class="flex items-center gap-2 overflow-x-auto pb-1">
+                <span class="text-xs font-bold text-slate-500 whitespace-nowrap">Bộ lọc:</span>
+                <div id="lexikon-filter-pills" class="flex items-center gap-2 overflow-x-auto"></div>
             </div>
-        </div>
 
-        <!-- Bộ lọc phân loại theo giống & chủ đề -->
-        <div class="flex items-center gap-2 overflow-x-auto pb-1">
-            <span class="text-xs font-bold text-slate-500 whitespace-nowrap">Bộ lọc:</span>
-            ${filterButtonsHtml}
-        </div>
+            <!-- Lưới thẻ từ vựng & giống (Cập nhật động nội dung thẻ mà không ảnh hưởng tới ô input) -->
+            <div id="lexikon-cards-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5"></div>
+        `;
+    }
 
-        <!-- Lưới thẻ từ vựng & giống -->
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
-            ${cardsHtml.length > 0 ? cardsHtml : `
-                <div class="col-span-full p-8 rounded-3xl bg-white border border-slate-200 text-center space-y-3">
-                    <div class="text-3xl">🔍</div>
-                    <h4 class="text-base font-bold text-slate-800">Không tìm thấy từ vựng nào phù hợp với từ khóa "${currentLexikonSearchQuery}"</h4>
-                    <p class="text-xs text-slate-500">Hãy thử gõ tên đồ vật như 'Kuli', 'Brille', 'Buch' hoặc nghĩa tiếng Việt như 'bút', 'kính', 'sách'.</p>
-                    <button onclick="clearLexikonSearch()" class="px-4 py-2 rounded-xl bg-indigo-600 text-white font-bold text-xs">
-                        Hiển thị toàn bộ ${GERMAN_LEXIKON_DB.length} mục tra cứu
-                    </button>
-                </div>
-            `}
-        </div>
-    `;
+    updateLexikonUI();
 }
 
 function setLexikonFilter(filterId) {
     currentLexikonFilter = filterId;
-    renderLexikon('view-lexikon');
+    updateLexikonUI();
 }
 
 function onLexikonSearchChange(val) {
     currentLexikonSearchQuery = val;
-    renderLexikon('view-lexikon');
-    const input = document.getElementById('lexikon-search-input');
-    if (input) {
-        input.focus();
-        input.setSelectionRange(input.value.length, input.value.length);
-    }
+    updateLexikonUI();
 }
 
 function clearLexikonSearch() {
     currentLexikonSearchQuery = "";
     currentLexikonFilter = "all";
-    renderLexikon('view-lexikon');
+    const input = document.getElementById('lexikon-search-input');
+    if (input) {
+        input.value = "";
+        input.focus();
+    }
+    updateLexikonUI();
 }
 
 if (typeof window !== 'undefined') {
     window.GERMAN_LEXIKON_DB = GERMAN_LEXIKON_DB;
     window.renderLexikon = renderLexikon;
+    window.updateLexikonUI = updateLexikonUI;
     window.setLexikonFilter = setLexikonFilter;
     window.onLexikonSearchChange = onLexikonSearchChange;
     window.clearLexikonSearch = clearLexikonSearch;
