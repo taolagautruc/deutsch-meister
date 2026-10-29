@@ -145,26 +145,68 @@ function checkGermanAnswerEquivalence(userAns, correctAns) {
         .replace(/eintausend/g, 'tausend');
     if (normalizeHundredsThousands(uNoSpace) === normalizeHundredsThousands(cNoSpace)) return true;
 
-    // 6. Số tự nhiên <-> Chữ số tiếng Đức (1 <-> eins, 5 <-> fünf/fuenf, ...)
-    const numWords = {
-        '0': 'null', '1': 'eins', '2': 'zwei', '3': 'drei', '4': 'vier', '5': 'fuenf',
-        '6': 'sechs', '7': 'sieben', '8': 'acht', '9': 'neun', '10': 'zehn',
-        '11': 'elf', '12': 'zwoelf', '16': 'sechzehn', '17': 'siebzehn', '20': 'zwanzig',
-        '30': 'dreissig', '60': 'sechzig', '70': 'siebzig', '100': 'hundert', '1000': 'tausend'
+    // 6. Số tự nhiên <-> Chữ số tiếng Đức (0-9999 dùng numberToGerman)
+    const expandAllIntegersToWords = (str) => {
+        if (!str) return '';
+        return str.replace(/\b(\d{1,4})\b/g, (match, d) => {
+            const n = parseInt(d, 10);
+            const g = (typeof numberToGerman === 'function') ? numberToGerman(n) : '';
+            return g ? deGermanize(g) : match;
+        });
     };
-    if (numWords[u0] === cDe || numWords[c0] === uDe) return true;
 
-    // Số thay thế trong câu: ví dụ "hat 5 zimmer" <-> "hat fuenf zimmer"
-    const replaceDigitsWithWords = (str) => {
-        let res = str;
-        for (const [digit, word] of Object.entries(numWords)) {
-            res = res.replace(new RegExp(`\\b${digit}\\b`, 'g'), word);
-        }
+    // 7. Chuẩn hóa giá tiền Euro: Chuyển đổi số tiền thập phân sang chữ (3,99 -> drei Euro neunundneunzig)
+    const expandPricesToGermanWords = (str) => {
+        if (!str) return '';
+        return str.replace(/(\d+)[.,](\d{1,2})(?:\s*(?:euro|€))?/gi, (match, euros, cents) => {
+            const e = parseInt(euros, 10);
+            let c = parseInt(cents, 10);
+            if (cents.length === 1) c = c * 10;
+            const pw = (typeof priceToGerman === 'function') ? priceToGerman(e, c) : '';
+            return pw ? deGermanize(pw) : match;
+        });
+    };
+
+    // So sánh sau khi đã mở rộng số và giá tiền sang chữ tiếng Đức
+    const uFullExp = deGermanize(baseClean(expandAllIntegersToWords(expandPricesToGermanWords(userAns))));
+    const cFullExp = deGermanize(baseClean(expandAllIntegersToWords(expandPricesToGermanWords(correctAns))));
+    if (uFullExp === cFullExp) return true;
+    if (uFullExp.replace(/\s+/g, '') === cFullExp.replace(/\s+/g, '')) return true;
+
+    // Chuẩn hóa các cụm từ tính tiền / giá tiền tương đương:
+    const normalizePricePhrases = (s) => {
+        let res = s;
+        res = res.replace(/\b(das macht|das kostet|es macht|es kostet|zusammen macht das|zusammen kostet das|zusammen macht|zusammen kostet|zusammen ist das|zusammen)\b/g, '__PRICE_VERB__');
+        res = res.replace(/\bcent\b/g, '').replace(/\s+/g, ' ').trim();
+        res = res.replace(/\beins euro\b/g, 'ein euro');
         return res;
     };
-    if (replaceDigitsWithWords(uDe) === replaceDigitsWithWords(cDe)) return true;
+    const uP = normalizePricePhrases(uFullExp);
+    const cP = normalizePricePhrases(cFullExp);
+    if (uP === cP) return true;
+    if (uP.replace(/\s+/g, '') === cP.replace(/\s+/g, '')) return true;
 
-    // 7. Chuẩn hóa giá tiền Euro: "4,50" <-> "4.50" <-> "4,50 euro" <-> "4,50 €"
+    // Chấp nhận có hoặc không có từ "euro" khi đọc giá tiền:
+    const uNoEuro = uP.replace(/\beuro\b/g, '').replace(/\s+/g, ' ').trim();
+    const cNoEuro = cP.replace(/\beuro\b/g, '').replace(/\s+/g, ' ').trim();
+    if (uNoEuro === cNoEuro) return true;
+    if (uNoEuro.replace(/\s+/g, '') === cNoEuro.replace(/\s+/g, '')) return true;
+
+    // Chấp nhận người học chỉ nhập giá tiền (bỏ qua động từ das macht/zusammen):
+    const uPNoVerb = uP.replace(/__PRICE_VERB__/g, '').replace(/\s+/g, ' ').trim();
+    const cPNoVerb = cP.replace(/__PRICE_VERB__/g, '').replace(/\s+/g, ' ').trim();
+    if (uPNoVerb && cPNoVerb) {
+        if (uPNoVerb === cPNoVerb) return true;
+        if (uPNoVerb.replace(/\s+/g, '') === cPNoVerb.replace(/\s+/g, '')) return true;
+        const uPVNoEuro = uPNoVerb.replace(/\beuro\b/g, '').replace(/\s+/g, ' ').trim();
+        const cPVNoEuro = cPNoVerb.replace(/\beuro\b/g, '').replace(/\s+/g, ' ').trim();
+        if (uPVNoEuro && cPVNoEuro) {
+            if (uPVNoEuro === cPVNoEuro) return true;
+            if (uPVNoEuro.replace(/\s+/g, '') === cPVNoEuro.replace(/\s+/g, '')) return true;
+        }
+    }
+
+    // Chuẩn hóa giá tiền Euro số thuần: "4,50" <-> "4.50" <-> "4,50 euro" <-> "4,50 €"
     const cleanPrice = (s) => String(s).toLowerCase()
         .replace(/euro/g, '')
         .replace(/€/g, '')
@@ -214,13 +256,23 @@ function checkGermanAnswerEquivalence(userAns, correctAns) {
     };
     if (normalizeIntro(uLoc) === normalizeIntro(cLoc)) return true;
 
-    // 10. Hoán vị hai vế liên kết bằng "und", "và", hoặc dấu phẩy:
+    // 10. Hoán vị hai vế liên kết bằng "und", "và", hoặc dấu phẩy & từ đồng nghĩa đồ nội thất:
+    const normalizeFurniture = (s) => s
+        .replace(/\bbuecherregal\b/g, 'regal')
+        .replace(/\bfernsehgeraet\b/g, 'fernseher');
+
+    const uFurn = normalizeFurniture(uDe);
+    const cFurn = normalizeFurniture(cDe);
+    if (uFurn === cFurn) return true;
+
     const swap1Word = (s) => s.replace(/(\b[a-z0-9äöüß]+\b)\s+(und|va|và)\s+(\b[a-z0-9äöüß]+\b)/gi, '$3 $2 $1');
     const swap2Word = (s) => s.replace(/(\b[a-z0-9äöüß]+\s+[a-z0-9äöüß]+\b)\s+(und|va|và)\s+(\b[a-z0-9äöüß]+\s+[a-z0-9äöüß]+\b)/gi, '$3 $2 $1');
+    const swapNounPairs = (s) => s.replace(/\b((?:einen|ein|eine|der|die|das|den)\s+[a-z0-9äöüß]+)\s+(und|va|và)\s+((?:einen|ein|eine|der|die|das|den)\s+[a-z0-9äöüß]+)\b/gi, '$3 $2 $1');
 
-    for (const swapper of [swap1Word, swap2Word]) {
+    for (const swapper of [swap1Word, swap2Word, swapNounPairs]) {
         if (swapper(uLoc) === cLoc || uLoc === swapper(cLoc) || swapper(uLoc) === swapper(cLoc)) return true;
         if (swapper(uDe) === cDe || uDe === swapper(cDe)) return true;
+        if (swapper(uFurn) === cFurn || uFurn === swapper(cFurn) || swapper(uFurn) === swapper(cFurn)) return true;
     }
 
     // 11. Đảo ngữ trạng từ đầu câu trong tiếng Đức:
@@ -239,7 +291,10 @@ function checkGermanAnswerEquivalence(userAns, correctAns) {
     const normalizeOrder = (s) => {
         let res = s;
         res = res.replace(/\b(ich trinke|ich nehme|ich moechte)\b/g, '__ORDER__');
-        res = res.replace(/\b(wir moechten bitte zahlen|wir moechten zahlen bitte|wir moechten zahlen|wir moechten bezahlen|zahlen bitte)\b/g, '__PAY__');
+        res = res.replace(/\b(wir moechten bitte zahlen|wir moechten zahlen bitte|wir moechten zahlen|wir moechten bezahlen|zahlen bitte|wir zahlen bitte|wir zahlen|bitte zahlen)\b/g, '__PAY__');
+        res = res.replace(/\b(zusammen oder getrennt bitte|zusammen oder getrennt)\b/g, '__PAY_SPLIT__');
+        res = res.replace(/\b(tee ohne zucker bitte|einen tee ohne zucker bitte|tee ohne zucker|einen tee ohne zucker)\b/g, '__TEA_NO_SUGAR__');
+        res = res.replace(/\b(kaffee mit viel milch|einen kaffee mit viel milch|kaffee mit viel milch bitte|einen kaffee mit viel milch bitte)\b/g, '__COFFEE_MILK__');
         return res;
     };
     if (normalizeOrder(uDe) === normalizeOrder(cDe)) return true;
@@ -259,6 +314,10 @@ function checkGermanAnswerEquivalence(userAns, correctAns) {
         res = res.replace(/\bwas moechtest du trinken\b/g, '__Q_DRINK__');
         res = res.replace(/\bwas trinken sie\b/g, '__Q_DRINK__');
         res = res.replace(/\bwas trinkst du\b/g, '__Q_DRINK__');
+        res = res.replace(/\b(entschuldigung wie bitte|wie bitte)\b/g, '__PARDON__');
+        res = res.replace(/\b(koennen sie das bitte buchstabieren|koennen sie das wort bitte buchstabieren|koennen sie bitte buchstabieren|buchstabieren sie das bitte)\b/g, '__SPELL__');
+        res = res.replace(/\b(koennen sie das bitte anschreiben|koennen sie das bitte an die tafel schreiben|schreiben sie das bitte an)\b/g, '__WRITE_BOARD__');
+        res = res.replace(/\b(koennen sie das bitte wiederholen|wiederholen sie das bitte|koennen sie bitte wiederholen)\b/g, '__REPEAT__');
         return res;
     };
     if (normalizeQuestions(uDe) === normalizeQuestions(cDe)) return true;
@@ -267,6 +326,9 @@ function checkGermanAnswerEquivalence(userAns, correctAns) {
     const normalizeVnPronouns = (s) => {
         const stripped = stripVnAccents(s);
         return stripped
+            .replace(/€|\beuro\b/gi, '__CURR_EUR__')
+            .replace(/\b(dong|vnd|d)\b/gi, '__CURR_VND__')
+            .replace(/\b(tong cong het|tong cong la|tong la|het|tong cong|tat ca het|tat ca la)\b/gi, '__TOTAL_PRICE__')
             .replace(/\b(ngai|ban|anh|chi|ong|ba|bac|em|thay|co)\b/gi, '__PRON_2ND__')
             .replace(/\b(chung minh|chung toi|chung ta)\b/gi, '__PRON_1ST_PL__')
             .replace(/\b(toi|minh|ta|tui)\b/gi, '__PRON_1ST_SG__')
