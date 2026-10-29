@@ -1180,51 +1180,51 @@ def seed_lesson_3():
             json.dumps({"audio_text": "Wien liegt in Österreich. Man spricht dort Deutsch."})
         ),
 
-        # --- DẠNG 5: LUYỆN NÓI & PHÁT ÂM (5 CÂU) ---
+        # --- DẠNG 5: SẮP XẾP TỪ THÀNH CÂU (sap_xep) - ĐÚNG 5 CÂU (Câu 35 -> 39) ---
         (
-            lesson_id, "noi",
-            "Câu 35: Luyện phát âm câu vị trí địa lý của Hải Phòng:",
+            lesson_id, "sap_xep",
+            "Câu 35 [Sắp xếp từ thành câu]: Sắp xếp các từ sau thành câu chỉ vị trí địa lý của Hải Phòng: [im Nordosten / liegt / Hai Phong / Vietnam / von / .]",
             None,
             "Hai Phong liegt im Nordosten von Vietnam.",
-            "Bấm vào biểu tượng loa để nghe giọng đọc bản xứ de-DE và luyện đọc to thành tiếng.",
+            "Chủ ngữ Hai Phong + động từ liegt (vị trí 2) + im Nordosten (ở phía Đông Bắc) + von Vietnam.",
             20,
-            json.dumps({"audio_text": "Hai Phong liegt im Nordosten von Vietnam."})
+            json.dumps({"audio_text": "Hai Phong liegt im Nordosten von Vietnam.", "translation": "Hải Phòng nằm ở phía Đông Bắc của Việt Nam."}, ensure_ascii=False)
         ),
         (
-            lesson_id, "noi",
-            "Câu 36: Luyện phát âm câu vị trí địa lý của Đà Nẵng:",
+            lesson_id, "sap_xep",
+            "Câu 36 [Sắp xếp từ thành câu]: Sắp xếp các từ sau thành câu chỉ vị trí miền Trung của Đà Nẵng: [in der Mitte / Da Nang / von / liegt / Vietnam / .]",
             None,
             "Da Nang liegt in der Mitte von Vietnam.",
-            "Luyện phát âm chuẩn: 'Da Nang liegt in der Mitte von Vietnam.'",
+            "Chủ ngữ Da Nang + động từ liegt + in der Mitte (ở miền trung) + von Vietnam.",
             20,
-            json.dumps({"audio_text": "Da Nang liegt in der Mitte von Vietnam."})
+            json.dumps({"audio_text": "Da Nang liegt in der Mitte von Vietnam.", "translation": "Đà Nẵng nằm ở miền Trung của Việt Nam."}, ensure_ascii=False)
         ),
         (
-            lesson_id, "noi",
-            "Câu 37: Luyện phát âm câu hội thoại hỏi thăm vị trí:",
+            lesson_id, "sap_xep",
+            "Câu 37 [Sắp xếp câu hội thoại]: Sắp xếp câu hỏi trải nghiệm quá khứ và phản hồi: [in Athen / schon / Warst / ? / du / denn / wo / Nein / das / ist / ?]",
             None,
             "Warst du schon in Athen? – Nein, wo ist denn das?",
-            "Luyện phát âm ngữ điệu tự nhiên của tiểu từ 'denn': 'Warst du schon in Athen? – Nein, wo ist denn das?'",
+            "Câu hỏi quá khứ Präteritum của sein: Warst du schon in Athen? và câu hỏi lại: Nein, wo ist denn das?",
             20,
-            json.dumps({"audio_text": "Warst du schon in Athen? Nein, wo ist denn das?"})
+            json.dumps({"audio_text": "Warst du schon in Athen? – Nein, wo ist denn das?", "translation": "Bạn đã từng đến Athens chưa? – Chưa, nơi đó ở đâu vậy?"}, ensure_ascii=False)
         ),
         (
-            lesson_id, "noi",
-            "Câu 38: Luyện phát âm đoạn thư quá khứ du lịch Hải Phòng:",
+            lesson_id, "sap_xep",
+            "Câu 38 [Sắp xếp từ thành câu]: Sắp xếp câu kể về chuyến đi Hải Phòng ở quá khứ: [in Haiphong / Paula und ich / waren / Gestern / . / super / Es / war / !]",
             None,
             "Gestern waren Paula und ich in Haiphong. Es war super!",
-            "Luyện phát âm chuẩn đuôi 'waren' và 'war': 'Gestern waren Paula und ich in Haiphong. Es war super!'",
+            "Trạng từ thời gian Gestern đứng đầu câu -> Động từ waren đảo lên vị trí 2 -> Chủ ngữ Paula und ich. Câu tiếp: Es war super!",
             20,
-            json.dumps({"audio_text": "Gestern waren Paula und ich in Haiphong. Es war super!"})
+            json.dumps({"audio_text": "Gestern waren Paula und ich in Haiphong. Es war super!", "translation": "Hôm qua Paula và tôi đã ở Hải Phòng. Chuyến đi thật tuyệt vời!"}, ensure_ascii=False)
         ),
         (
-            lesson_id, "noi",
-            "Câu 39: Luyện phát âm câu về các ngôn ngữ của Thụy Sỹ:",
+            lesson_id, "sap_xep",
+            "Câu 39 [Sắp xếp từ thành câu]: Sắp xếp câu nói về 3 ngôn ngữ ở Thụy Sỹ: [In der Schweiz / man / spricht / Deutsch, Französisch und Italienisch / .]",
             None,
             "In der Schweiz spricht man Deutsch, Französisch und Italienisch.",
-            "Luyện phát âm chuẩn các ngôn ngữ: 'In der Schweiz spricht man Deutsch, Französisch und Italienisch.'",
+            "Trạng ngữ địa điểm In der Schweiz đứng đầu -> Động từ spricht đứng vị trí 2 -> Chủ ngữ phiếm chỉ man -> Danh sách 3 ngôn ngữ.",
             20,
-            json.dumps({"audio_text": "In der Schweiz spricht man Deutsch, Französisch und Italienisch."})
+            json.dumps({"audio_text": "In der Schweiz spricht man Deutsch, Französisch und Italienisch.", "translation": "Ở Thụy Sỹ người ta nói tiếng Đức, tiếng Pháp và tiếng Ý."}, ensure_ascii=False)
         ),
 
         # --- DẠNG 6: ĐỌC HIỂU BƯU THIẾP HẢI PHÒNG (4 CÂU) ---

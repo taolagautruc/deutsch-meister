@@ -519,42 +519,42 @@ def seed_lesson_1_part_1():
         ),
 
         # =========================================================================
-        # DẠNG 5: LUYỆN NÓI & PHÁT ÂM (noi) - ĐÚNG 5 CÂU (Câu 34 - 38)
+        # DẠNG 5: SẮP XẾP TỪ THÀNH CÂU (sap_xep) - ĐÚNG 5 CÂU (Câu 34 - 38)
         # =========================================================================
         (
-            lesson_id, "noi",
-            "Câu 34 [Luyện Nói âm ie & ü]: Bấm '🔊 Nghe chuẩn', đọc to cụm từ sau rồi bấm '🎙️ Thu âm' hoặc gõ lại:",
+            lesson_id, "sap_xep",
+            "Câu 34 [Sắp xếp từ thành câu]: Sắp xếp các từ bị xáo trộn sau thành một câu hoàn chỉnh: [das Tier / Die Küche / das Bier / und]",
             None, "Die Küche, das Bier und das Tier",
-            "Chú ý âm 'ie' kéo dài trong die, Bier, Tier và âm tròn môi 'ü' trong Küche.", 25,
-            json.dumps({"audio_text": "Die Küche, das Bier und das Tier"})
+            "Quy tắc liên từ 'und' nối các danh từ và viết hoa danh từ giống cái (die Küche), giống trung (das Bier, das Tier).", 25,
+            json.dumps({"audio_text": "Die Küche, das Bier und das Tier", "translation": "Nhà bếp, bia và con thú"}, ensure_ascii=False)
         ),
         (
-            lesson_id, "noi",
-            "Câu 35 [Luyện Nói âm sch, tsch, ß]: Nghe mẫu và luyện đọc to câu sau:",
+            lesson_id, "sap_xep",
+            "Câu 35 [Sắp xếp từ thành câu]: Sắp xếp các từ bị xáo trộn sau thành câu chào tạm biệt & giới thiệu tên: [Wir / Tschüss! / heißen / Anna / Ben / und]",
             None, "Tschüss! Wir heißen Anna und Ben.",
-            "Phát âm rõ [tʃʏs] (Tschüss) và [s] kéo dài (heißen).", 25,
-            json.dumps({"audio_text": "Tschüss! Wir heißen Anna und Ben."})
+            "Tschüss! đứng đầu làm lời chào, sau đó là mệnh đề chính với động từ heißen đứng vị trí thứ 2 sau chủ ngữ Wir.", 25,
+            json.dumps({"audio_text": "Tschüss! Wir heißen Anna und Ben.", "translation": "Tạm biệt! Chúng tôi tên là Anna và Ben."}, ensure_ascii=False)
         ),
         (
-            lesson_id, "noi",
-            "Câu 36 [Luyện Nói Tự giới thiệu]: Nghe mẫu và luyện đọc trôi chảy 4 câu tự giới thiệu bản thân:",
+            lesson_id, "sap_xep",
+            "Câu 36 [Sắp xếp câu hội thoại]: Sắp xếp các câu sau thành đoạn giới thiệu bản thân 4 câu mạch lạc: [Ich komme aus Vietnam. / Ich heiße Anna. / Guten Tag! / Ich wohne in Hai Phong.]",
             None, "Guten Tag! Ich heiße Anna. Ich komme aus Vietnam. Ich wohne in Hai Phong.",
-            "Chuỗi 4 câu giao tiếp nền tảng trong bài 1.", 30,
-            json.dumps({"audio_text": "Guten Tag! Ich heiße Anna. Ich komme aus Vietnam. Ich wohne in Hai Phong."})
+            "Trật tự giới thiệu chuẩn văn phong Đức: Lời chào (Guten Tag!) -> Tên (Ich heiße Anna.) -> Quê hương (Ich komme aus Vietnam.) -> Nơi ở (Ich wohne in Hai Phong.).", 30,
+            json.dumps({"audio_text": "Guten Tag! Ich heiße Anna. Ich komme aus Vietnam. Ich wohne in Hai Phong.", "translation": "Xin chào! Tôi tên là Anna. Tôi đến từ Việt Nam. Tôi sống ở Hải Phòng."}, ensure_ascii=False)
         ),
         (
-            lesson_id, "noi",
-            "Câu 37 [Luyện Nói Tạm biệt]: Nghe mẫu và đọc chuẩn 2 câu tạm biệt trang trọng & thân mật:",
+            lesson_id, "sap_xep",
+            "Câu 37 [Sắp xếp từ thành câu]: Sắp xếp 3 lời tạm biệt sau theo đúng thứ tự: Trang trọng -> Thân mật -> Hẹn ngày mai: [Bis morgen! / Auf Wiedersehen! / Tschüss!]",
             None, "Auf Wiedersehen! Tschüss! Bis morgen!",
-            "Phát âm rõ âm [v] trong Wiedersehen và [tʃʏs] trong Tschüss.", 25,
-            json.dumps({"audio_text": "Auf Wiedersehen! Tschüss! Bis morgen!"})
+            "Auf Wiedersehen! (trang trọng) -> Tschüss! (thân mật hàng ngày) -> Bis morgen! (hẹn gặp lại ngày mai).", 25,
+            json.dumps({"audio_text": "Auf Wiedersehen! Tschüss! Bis morgen!", "translation": "Hẹn gặp lại! Tạm biệt! Hẹn gặp lại ngày mai!"}, ensure_ascii=False)
         ),
         (
-            lesson_id, "noi",
-            "Câu 38 [Luyện Nói số đếm (Random)]: Nghe mẫu và luyện phát âm số sau bằng tiếng Đức:",
+            lesson_id, "sap_xep",
+            "Câu 38 [Sắp xếp chữ số tiếng Đức]: Sắp xếp các thành tố sau thành chữ số 21 (Hàng đơn vị + und + Hàng chục): [zwanzig / und / ein]",
             None, "einundzwanzig",
-            "21 đọc là einundzwanzig.", 25,
-            json.dumps({"audio_text": "einundzwanzig", "dynamic_number": True, "dynamic_mode": "speak_num", "min": 21, "max": 99})
+            "Quy tắc số đếm tiếng Đức từ 21-99: Đơn vị đọc trước, nối bằng liên từ 'und', rồi đến hàng chục viết liền một từ: ein + und + zwanzig = einundzwanzig.", 25,
+            json.dumps({"audio_text": "einundzwanzig", "translation": "Số hai mươi mốt (21)"}, ensure_ascii=False)
         ),
 
         # =========================================================================

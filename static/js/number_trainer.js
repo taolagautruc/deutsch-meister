@@ -324,11 +324,14 @@ function generateNewNumberData(ex) {
 
         if (extra.dynamic_mode === 'listen_price') {
             extra.audio_text = `Das macht ${dePrice}.`;
+            extra.translation = `Nhân viên phục vụ nói: Tổng cộng hết ${formattedPrice} € (${dePrice}).`;
             ex.extra_data = JSON.stringify(extra);
             ex.question = `[Luyện Nghe giá tiền Euro (Random)]: Nghe câu thông báo của nhân viên phục vụ và điền số tiền:`;
             ex.correct_answer = formattedPrice;
             ex.explanation = `Nhân viên phục vụ nói '${extra.audio_text}' → Số tiền là ${formattedPrice} € (hoặc gõ ${dePrice}).`;
         } else {
+            extra.translation = `Giá tiền: ${formattedPrice} € (${dePrice})`;
+            ex.extra_data = JSON.stringify(extra);
             ex.question = `[Viết giá tiền Euro (Random)]: Hãy viết giá tiền ${formattedPrice} € bằng chữ tiếng Đức (chấp nhận có hoặc không có chữ Cent):`;
             ex.correct_answer = dePrice;
             ex.explanation = `Giá tiền ${formattedPrice} € viết bằng chữ tiếng Đức là: '${dePrice}' (hoặc kèm 'Cent').`;
@@ -380,6 +383,8 @@ function generateNewNumberData(ex) {
         ex.question = `[Rèn phản xạ Chia Động Từ (Random)]: Hãy chia động từ '${chosenVerb.infinitiv}' (${chosenVerb.meaning}) cho chủ ngữ '${chosenSubject.label}': '${chosenSubject.pronoun} ___'`;
         ex.correct_answer = correctForm;
         ex.explanation = `Động từ '${chosenVerb.infinitiv}' đi với chủ ngữ '${chosenSubject.label}' được chia là: '${correctForm}'.`;
+        extra.translation = `'${chosenSubject.label}' ${chosenVerb.meaning}: ${chosenSubject.pronoun} ${correctForm}`;
+        ex.extra_data = JSON.stringify(extra);
         return ex;
     }
 
@@ -411,6 +416,8 @@ function generateNewNumberData(ex) {
         ex.question = `[Mạo từ & Phủ định (Random)]: Hoàn thành câu trả lời phủ định: "Ist das ${qIndefinite} ${item1.word}?" → "Nein, das ist ___ ${item1.word}. Das ist ___ ${item2.word}." (Điền 2 từ mạo từ cách nhau bởi dấu phẩy):`;
         ex.correct_answer = `${negWord}, ${indWord}`;
         ex.explanation = `'${item1.word}' mang giống ${item1.article} nên phủ định dùng '${negWord}'; '${item2.word}' mang giống ${item2.article} nên dùng '${indWord}'.`;
+        extra.translation = `Không, đó không phải là một ${item1.meaning}. Đó là một ${item2.meaning}.`;
+        ex.extra_data = JSON.stringify(extra);
         return ex;
     }
 
@@ -436,6 +443,8 @@ function generateNewNumberData(ex) {
         ex.question = `[Mạo từ Sở Hữu (Random)]: Hoàn thành câu xác nhận đồ vật của ${chosenName}: "Ist das ___ ${chosenItem.word}?" → "Ja, das ist ___ ${chosenItem.word} von ${chosenName}." (Điền 2 từ mạo từ cách nhau bởi dấu phẩy):`;
         ex.correct_answer = `${indWord}, ${defWord}`;
         ex.explanation = `'${chosenItem.word}' (${chosenItem.meaning}) mang giống ${defWord} → Mạo từ bất định là '${indWord}' và mạo từ xác định sở hữu là '${defWord} ${chosenItem.word} von ${chosenName}'.`;
+        extra.translation = `Vâng, đó là ${chosenItem.meaning} của ${chosenName}.`;
+        ex.extra_data = JSON.stringify(extra);
         return ex;
     }
 
@@ -988,14 +997,16 @@ function generateNewNumberData(ex) {
         ex.correct_answer = `${de1}, ${de2}`;
         ex.explanation = `${n1} = ${de1}; ${n2} = ${de2}.`;
     }
-    else if (mode === 'speak_num') {
+    else if (mode === 'speak_num' || mode === 'arrange_num') {
         const num = getRandomInt(min, max);
         const german = numberToGerman(num);
         extra.audio_text = german;
+        extra.translation = `Số ${num}`;
+        ex.exercise_type = 'sap_xep';
         ex.extra_data = JSON.stringify(extra);
-        ex.question = `[Luyện Nói số đếm (Random)]: Nghe mẫu và luyện phát âm số ${num} bằng tiếng Đức:`;
+        ex.question = `[Sắp xếp chữ số tiếng Đức (Random)]: Hãy viết số ${num} bằng chữ tiếng Đức (chú ý quy tắc: Hàng đơn vị + und + Hàng chục):`;
         ex.correct_answer = german;
-        ex.explanation = `Số ${num} phát âm là: ${german}.`;
+        ex.explanation = `Số ${num} trong tiếng Đức viết là: '${german}'.`;
     }
 
     return ex;

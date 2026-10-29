@@ -932,42 +932,42 @@ def seed_lesson_1_part_2():
         ),
 
         # ---------------------------------------------------------------------
-        # DẠNG 5: LUYỆN NÓI & PHÁT ÂM (noi) - ĐÚNG 5 CÂU (Câu 35 -> 39)
+        # DẠNG 5: SẮP XẾP TỪ THÀNH CÂU (sap_xep) - ĐÚNG 5 CÂU (Câu 35 -> 39)
         # ---------------------------------------------------------------------
         (
-            lesson_id, "noi",
-            "Câu 35 [Luyện Nói]: Nghe mẫu và luyện phát âm câu hỏi gọi món: 'Was möchten Sie trinken?'",
+            lesson_id, "sap_xep",
+            "Câu 35 [Sắp xếp từ thành câu]: Sắp xếp các từ sau thành câu hỏi gọi đồ uống lịch sự: [trinken / möchten / Was / Sie / ?]",
             None, "Was möchten Sie trinken?",
-            "Luyện ngữ điệu câu hỏi có từ để hỏi W-Frage với âm Umlaut ö trong 'möchten'.", 25,
-            json.dumps({"audio_text": "Was möchten Sie trinken?"})
+            "Câu hỏi W-Frage với động từ khuyết thiếu möchten: Từ để hỏi (Was) đứng vị trí 1, động từ khuyết thiếu chia theo Sie (möchten) đứng vị trí 2, động từ nguyên thể trinken về cuối câu.", 25,
+            json.dumps({"audio_text": "Was möchten Sie trinken?", "translation": "Quý khách muốn uống gì ạ?"}, ensure_ascii=False)
         ),
         (
-            lesson_id, "noi",
-            "Câu 36 [Luyện Nói]: Nghe mẫu và luyện phát âm câu gọi đồ uống: 'Ich trinke Kaffee mit viel Milch.'",
+            lesson_id, "sap_xep",
+            "Câu 36 [Sắp xếp từ thành câu]: Sắp xếp các từ sau thành câu gọi cà phê nhiều sữa: [Kaffee / trinke / Ich / viel / Milch / mit / .]",
             None, "Ich trinke Kaffee mit viel Milch.",
-            "Phát âm chuẩn âm đuôi -e trong 'trinke' và âm đuôi -ch trong 'Milch'.", 25,
-            json.dumps({"audio_text": "Ich trinke Kaffee mit viel Milch."})
+            "Chủ ngữ Ich đứng vị trí 1, động từ trinke đứng vị trí 2, tân ngữ Kaffee và cụm giới từ mit viel Milch ở sau.", 25,
+            json.dumps({"audio_text": "Ich trinke Kaffee mit viel Milch.", "translation": "Tôi uống cà phê với nhiều sữa."}, ensure_ascii=False)
         ),
         (
-            lesson_id, "noi",
-            "Câu 37 [Luyện Nói]: Nghe mẫu và luyện phát âm câu hỏi thanh toán: 'Zusammen oder getrennt?'",
+            lesson_id, "sap_xep",
+            "Câu 37 [Sắp xếp từ thành câu]: Sắp xếp câu hỏi bồi bàn hỏi khách trả chung hay riêng: [getrennt / oder / Zusammen / ?]",
             None, "Zusammen oder getrennt?",
-            "Chú ý âm /ts/ ở đầu chữ 'Zusammen' và âm bật hơi 'getrennt'.", 25,
-            json.dumps({"audio_text": "Zusammen oder getrennt?"})
+            "Mẫu câu hỏi kinh điển khi thanh toán tại quán ăn/cafe ở Đức: Zusammen (chung) oder (hay) getrennt (riêng)?", 25,
+            json.dumps({"audio_text": "Zusammen hoặc getrennt?", "translation": "Thanh toán chung hay thanh toán riêng?"}, ensure_ascii=False)
         ),
         (
-            lesson_id, "noi",
-            "Câu 38 [Luyện Nói]: Nghe mẫu và luyện phát âm câu giới thiệu: 'Die Lehrerin ist nett, sie ist aus den USA.'",
+            lesson_id, "sap_xep",
+            "Câu 38 [Sắp xếp từ thành câu]: Sắp xếp các từ sau thành câu ghép miêu tả cô giáo: [nett / ist / Die Lehrerin / sie / , / aus den USA / ist / .]",
             None, "Die Lehrerin ist nett, sie ist aus den USA.",
-            "Luyện phát âm đuôi giống cái -in trong 'Lehrerin' và nối âm 'aus den USA'.", 25,
-            json.dumps({"audio_text": "Die Lehrerin ist nett, sie ist aus den USA."})
+            "Mệnh đề 1: Die Lehrerin ist nett. Mệnh đề 2: sie ist aus den USA (Đại từ sie thay thế cho Die Lehrerin).", 25,
+            json.dumps({"audio_text": "Die Lehrerin ist nett, sie ist aus den USA.", "translation": "Cô giáo rất tốt bụng, cô ấy đến từ nước Mỹ."}, ensure_ascii=False)
         ),
         (
-            lesson_id, "noi",
-            "Câu 39 [Luyện Nói]: Nghe mẫu và luyện phát âm câu hỏi nơi làm việc: 'Wo arbeitest du? Ich arbeite bei der Post.'",
+            lesson_id, "sap_xep",
+            "Câu 39 [Sắp xếp hội thoại]: Sắp xếp câu hỏi và trả lời về nơi làm việc: [bei der Post / arbeitest / Wo / ? / Ich / du / arbeite / .]",
             None, "Wo arbeitest du? Ich arbeite bei der Post.",
-            "Chú ý phát âm rõ đuôi -est và -e của động từ arbeiten.", 25,
-            json.dumps({"audio_text": "Wo arbeitest du? Ich arbeite bei der Post."})
+            "Câu hỏi: Wo arbeitest du? Trả lời: Ich arbeite bei der Post.", 25,
+            json.dumps({"audio_text": "Wo arbeitest du? Ich arbeite bei der Post.", "translation": "Bạn làm việc ở đâu? Tôi làm việc ở bưu điện."}, ensure_ascii=False)
         ),
 
         # ---------------------------------------------------------------------

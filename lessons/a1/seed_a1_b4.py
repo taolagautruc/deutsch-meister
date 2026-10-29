@@ -1027,44 +1027,43 @@ def seed_lesson_4():
             json.dumps({"audio_text": "Mein Wohnzimmer ist hell und modern."})
         ),
 
-        # --- DẠNG 5: LUYỆN NÓI & PHÁT ÂM (4 CÂU) ---
+        # --- DẠNG 5: SẮP XẾP TỪ THÀNH CÂU (sap_xep) - ĐÚNG 4 CÂU (Câu 38 -> 41) ---
         (
-            lesson_id, "noi",
-            "Câu 38 [Luyện Nói]: Nghe mẫu và phát âm chuẩn câu: 'Mein Wohnzimmer ist hell und modern. Es hat einen Fernseher und ein Bücherregal.'",
+            lesson_id, "sap_xep",
+            "Câu 38 [Sắp xếp từ thành câu]: Sắp xếp các từ sau thành 2 câu miêu tả phòng khách và đồ đạc: [hell und modern / ist / Mein Wohnzimmer / . / einen Fernseher / Es / hat / und / ein Bücherregal / .]",
             None,
             "Mein Wohnzimmer ist hell und modern. Es hat einen Fernseher und ein Bücherregal.",
-            "Luyện phát âm chuẩn âm 'ei' trong Mein, 'hell und modern' và Akkusativ 'einen Fernseher'.",
+            "Câu 1: Mein Wohnzimmer ist hell und modern. Câu 2: Động từ haben đi với Akkusativ: einen Fernseher (der Fernseher) và ein Bücherregal (das Bücherregal).",
             20,
-            json.dumps({"audio_text": "Mein Wohnzimmer ist hell und modern. Es hat einen Fernseher und ein Bücherregal."})
+            json.dumps({"audio_text": "Mein Wohnzimmer ist hell und modern. Es hat einen Fernseher und ein Bücherregal.", "translation": "Phòng khách của tôi sáng và hiện đại. Nó có một chiếc TV và một giá sách."}, ensure_ascii=False)
         ),
         (
-            lesson_id, "noi",
-            "Câu 39 [Luyện Nói]: Nghe mẫu và luyện phát âm câu hỏi: 'Sind das eure Kinder, Maria und Lukas?'",
+            lesson_id, "sap_xep",
+            "Câu 39 [Sắp xếp từ thành câu]: Sắp xếp câu hỏi xác nhận mạo từ sở hữu số nhiều: [eure / Sind / Kinder / das / , / Maria und Lukas / ?]",
             None,
             "Sind das eure Kinder, Maria und Lukas?",
-            "Luyện nói câu hỏi với mạo từ sở hữu 'eure' và ngữ điệu câu hỏi Ja/Nein lên giọng ở cuối.",
+            "Động từ Sind đảo lên đầu câu hỏi Ja/Nein. Đại từ sở hữu ngôi ihr ở dạng số nhiều (die Kinder) là eure.",
             20,
-            json.dumps({"audio_text": "Sind das eure Kinder, Maria und Lukas?"})
+            json.dumps({"audio_text": "Sind das eure Kinder, Maria und Lukas?", "translation": "Đó có phải con của các bạn không, Maria và Lukas?"}, ensure_ascii=False)
         ),
         (
-            lesson_id, "noi",
-            "Câu 40 [Luyện Nói]: Nghe mẫu và phát âm câu: 'Das Haus hat einen Flur. Er ist lang und dunkel.'",
+            lesson_id, "sap_xep",
+            "Câu 40 [Sắp xếp từ thành câu]: Sắp xếp câu miêu tả hành lang sử dụng đại từ thay thế Er: [einen Flur / hat / Das Haus / . / ist / Er / lang und dunkel / .]",
             None,
             "Das Haus hat einen Flur. Er ist lang und dunkel.",
-            "Luyện nối âm và phát âm chuẩn đại từ 'Er' thay thế cho 'der Flur'.",
+            "Câu 1: Động từ hat đòi hỏi Akkusativ -> einen Flur (der Flur). Câu 2: Đại từ Er thay thế cho danh từ giống đực der Flur.",
             20,
-            json.dumps({"audio_text": "Das Haus hat einen Flur. Er ist lang und dunkel."})
+            json.dumps({"audio_text": "Das Haus hat einen Flur. Er ist lang und dunkel.", "translation": "Ngôi nhà có một hành lang. Nó dài và tối."}, ensure_ascii=False)
         ),
         (
-            lesson_id, "noi",
-            "Câu 41 [Luyện Nói]: Nghe mẫu và phát âm câu: 'Wir haben auch einen Garten. Ich finde den Garten sehr schön.'",
+            lesson_id, "sap_xep",
+            "Câu 41 [Sắp xếp từ thành câu]: Sắp xếp câu miêu tả có khu vườn và cảm nghĩ: [einen Garten / Wir / auch / haben / . / den Garten / rất/sehr schön / finde / Ich / .]",
             None,
-            "Wir haben auch einen Garten. Ich finde den Garten sehr schön.",
-            "Luyện phát âm chuẩn sự chuyển biến từ 'einen Garten' sang 'den Garten'.",
+            "Wir haben auch einen Garten. Ich finde den Garten rất/sehr schön.",
+            "Câu 1: haben đòi hỏi Akkusativ -> einen Garten. Câu 2: finden đòi hỏi Akkusativ -> den Garten rất/sehr schön.",
             20,
-            json.dumps({"audio_text": "Wir haben auch einen Garten. Ich finde den Garten sehr schön."})
+            json.dumps({"audio_text": "Wir haben auch einen Garten. Ich finde den Garten rất/sehr schön.", "translation": "Chúng tôi cũng có một khu vườn. Tôi thấy khu vườn rất đẹp."}, ensure_ascii=False)
         ),
-
         # --- DẠNG 6: ĐỌC HIỂU BỨC THƯ CỦA JULIA (4 CÂU) ---
         (
             lesson_id, "doc",

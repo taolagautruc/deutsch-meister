@@ -691,42 +691,42 @@ def seed_lesson_2():
         ),
 
         # ---------------------------------------------------------------------
-        # DẠNG 5: LUYỆN NÓI & PHÁT ÂM (noi) - ĐÚNG 5 CÂU (Câu 35 -> 39)
+        # DẠNG 5: SẮP XẾP TỪ THÀNH CÂU (sap_xep) - ĐÚNG 5 CÂU (Câu 35 -> 39)
         # ---------------------------------------------------------------------
         (
-            lesson_id, "noi",
-            "Câu 35 [Luyện Nói]: Nghe mẫu và luyện phát âm câu hỏi: 'Wie heißt das auf Deutsch?'",
+            lesson_id, "sap_xep",
+            "Câu 35 [Sắp xếp từ thành câu]: Sắp xếp câu hỏi kinh điển trong lớp học: 'Cái này tiếng Đức gọi là gì?': [heißt / Deutsch / Wie / auf / das / ?]",
             None, "Wie heißt das auf Deutsch?",
-            "Luyện ngữ điệu xuống ở cuối câu hỏi có từ để hỏi (W-Frage).", 20,
-            json.dumps({"audio_text": "Wie heißt das auf Deutsch?"})
+            "Cấu trúc hỏi từ vựng trong tiếng Đức: Wie + heißt + das + auf Deutsch?", 20,
+            json.dumps({"audio_text": "Wie heißt das auf Deutsch?", "translation": "Cái này tiếng Đức gọi là gì?"}, ensure_ascii=False)
         ),
         (
-            lesson_id, "noi",
-            "Câu 36 [Luyện Nói]: Nghe mẫu và luyện phát âm câu: 'Das verstehe ich nicht. Können Sie das bitte wiederholen?'",
+            lesson_id, "sap_xep",
+            "Câu 36 [Sắp xếp từ thành câu]: Sắp xếp câu giao tiếp: 'Tôi không hiểu điều đó. Ngài nhắc lại được không?': [verstehe / Das / nicht / . / bitte / Können / wiederholen / das / Sie / ?]",
             None, "Das verstehe ich nicht. Können Sie das bitte wiederholen?",
-            "Nhấn giọng vào 'nicht' và lên giọng nhẹ ở cuối câu hỏi Yes/No 'wiederholen?'.", 20,
-            json.dumps({"audio_text": "Das verstehe ich nicht. Können Sie das bitte wiederholen?"})
+            "Mệnh đề 1: Das verstehe ich không. Mệnh đề 2: Động từ khuyết thiếu Können đảo lên đầu câu hỏi Ja/Nein: Können Sie das bitte wiederholen?", 20,
+            json.dumps({"audio_text": "Das verstehe ich nicht. Können Sie das bitte wiederholen?", "translation": "Tôi không hiểu điều đó. Ngài có thể vui lòng nhắc lại được không?"}, ensure_ascii=False)
         ),
         (
-            lesson_id, "noi",
-            "Câu 37 [Luyện Nói]: Nghe mẫu và luyện phát âm câu nhờ đánh vần: 'Können Sie das bitte buchstabieren?'",
+            lesson_id, "sap_xep",
+            "Câu 37 [Sắp xếp từ thành câu]: Sắp xếp câu nhờ giáo viên đánh vần từ vựng: [Sie / buchstabieren / bitte / Können / das / ?]",
             None, "Können Sie das bitte buchstabieren?",
-            "Phát âm rõ đuôi '-ieren' (/i:ʁən/).", 20,
-            json.dumps({"audio_text": "Können Sie das bitte buchstabieren?"})
+            "Câu hỏi lịch sự dùng động từ khuyết thiếu können: Können đứng vị trí 1, chủ ngữ Sie vị trí 2, bitte ở giữa, động từ buchstabieren nguyên thể ở cuối.", 20,
+            json.dumps({"audio_text": "Können Sie das bitte buchstabieren?", "translation": "Ngài có thể vui lòng đánh vần từ đó được không?"}, ensure_ascii=False)
         ),
         (
-            lesson_id, "noi",
-            "Câu 38 [Luyện Nói]: Nghe mẫu và luyện phát âm câu phủ định + khẳng định: 'Nein, das ist keine Brille. Das ist eine Landkarte.'",
+            lesson_id, "sap_xep",
+            "Câu 38 [Sắp xếp từ thành câu]: Sắp xếp câu phủ định mạo từ và khẳng định: [keine / Brille / Nein / das / ist / . / eine / Das / Landkarte / ist / .]",
             None, "Nein, das ist keine Brille. Das ist eine Landkarte.",
-            "Phát âm rõ âm đuôi '-e' trong 'keine' và 'eine' (khác với kein/ein).", 20,
-            json.dumps({"audio_text": "Nein, das ist keine Brille. Das ist eine Landkarte."})
+            "Nein, das ist keine Brille (die Brille dùng keine). Das ist eine Landkarte (die Landkarte dùng eine).", 20,
+            json.dumps({"audio_text": "Nein, das ist keine Brille. Das ist eine Landkarte.", "translation": "Không, đó không phải là kính mắt. Đó là một tấm bản đồ."}, ensure_ascii=False)
         ),
         (
-            lesson_id, "noi",
-            "Câu 39 [Luyện Nói]: Nghe mẫu và luyện phát âm câu: 'Ja, das ist das Wörterbuch von Frau Schiller.'",
+            lesson_id, "sap_xep",
+            "Câu 39 [Sắp xếp từ thành câu]: Sắp xếp câu xác nhận sở hữu từ điển của bà Schiller: [das Wörterbuch / ist / Ja / Frau Schiller / von / das / .]",
             None, "Ja, das ist das Wörterbuch von Frau Schiller.",
-            "Luyện phát âm chuẩn âm biến 'ö' (/ø:/) và 'ü' (/y:/) trong 'Wörterbuch'.", 20,
-            json.dumps({"audio_text": "Ja, das ist das Wörterbuch von Frau Schiller."})
+            "Ja, das ist das Wörterbuch (giống trung das) von Frau Schiller (cụm sở hữu von + tên người).", 20,
+            json.dumps({"audio_text": "Ja, das ist das Wörterbuch von Frau Schiller.", "translation": "Vâng, đó là cuốn từ điển của bà Schiller."}, ensure_ascii=False)
         ),
 
         # ---------------------------------------------------------------------
