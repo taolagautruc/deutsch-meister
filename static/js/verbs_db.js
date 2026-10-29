@@ -208,13 +208,13 @@ const GERMAN_VERBS_DB = [
     },
     {
         infinitiv: "finden",
-        meaning: "tìm thấy, cảm thấy",
+        meaning: "tìm thấy; cảm thấy/đánh giá (+ Akkusativ + Tính từ)",
         group: "Gốc kết thúc bằng -t, -d",
         stem: "find-",
         ending: "-en",
         forms: { ich: "finde", du: "findest", er_sie_es: "findet", wir: "finden", ihr: "findet", sie_Sie: "finden" },
-        note: "Gốc kết thúc bằng -d nên chèn thêm -e- ở ngôi du (findest) và er/sie/es (findet).",
-        example: "Wie findest du den Kaffee? Er ist sehr lecker."
+        note: "Gốc kết thúc bằng -d nên chèn thêm -e- ở ngôi du (findest) và er/sie/es (findet). Đi với tân ngữ Akkusativ (Cách 4): Ich finde den Garten sehr schön.",
+        example: "Ich finde die Küche zu klein, aber den Garten sehr schön."
     },
     {
         infinitiv: "kosten",
@@ -456,6 +456,26 @@ const GERMAN_VERBS_DB = [
         forms: { ich: "zeige", du: "zeigst", er_sie_es: "zeigt", wir: "zeigen", ihr: "zeigt", sie_Sie: "zeigen" },
         note: "Chia theo công thức chuẩn: -e, -st, -t, -en, -t, -en.",
         example: "Paula zeigt Fotos von der Reise nach Hai Phong."
+    },
+    {
+        infinitiv: "suchen",
+        meaning: "tìm kiếm (+ Akkusativ)",
+        group: "Quy tắc (Regelmäßig)",
+        stem: "such-",
+        ending: "-en",
+        forms: { ich: "suche", du: "suchst", er_sie_es: "sucht", wir: "suchen", ihr: "sucht", sie_Sie: "suchen" },
+        note: "Đòi hỏi tân ngữ Cách 4 (Akkusativ): Wir suchen eine neue Wohnung mit Garten.",
+        example: "Wir suchen eine Wohnung mit 3 Zimmern und Balkon."
+    },
+    {
+        infinitiv: "brauchen",
+        meaning: "cần (+ Akkusativ)",
+        group: "Quy tắc (Regelmäßig)",
+        stem: "brauch-",
+        ending: "-en",
+        forms: { ich: "brauche", du: "brauchst", er_sie_es: "braucht", wir: "brauchen", ihr: "braucht", sie_Sie: "brauchen" },
+        note: "Đòi hỏi tân ngữ Cách 4 (Akkusativ): Ich brauche einen Tisch und einen Stuhl.",
+        example: "Mein Arbeitszimmer braucht einen Tisch und einen Stuhl."
     }
 ];
 
