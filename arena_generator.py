@@ -25,7 +25,8 @@ TYPE_POINTS = {
     "dich_cau_vd": {"correct": 15, "wrong": -6, "label": "Dịch câu: Việt → Đức"},
     "dich_cau_dv": {"correct": 15, "wrong": -6, "label": "Dịch câu: Đức → Việt"},
     "nghe_dien": {"correct": 10, "wrong": -4, "label": "Nghe & Điền"},
-    "dien_tao_cau": {"correct": 5, "wrong": -2, "label": "Điền tạo câu"}
+    "dien_tao_cau": {"correct": 5, "wrong": -2, "label": "Điền tạo câu"},
+    "doc_hieu": {"correct": 12, "wrong": -4, "label": "Đọc hiểu đoạn văn"}
 }
 
 # Bảng ánh xạ ID bài học hiện tại sang order
@@ -482,6 +483,284 @@ ARENA_DATA_BY_LESSON = {
 }
 
 
+def generate_varied_doc_hieu_questions(allowed_orders, count=15):
+    """
+    Sinh các câu hỏi Đọc hiểu đoạn văn phong phú bằng cách thay đổi và hoán đổi
+    từ vựng cốt lõi đã học trong các bài (Bài 1 P1 -> Bài 4 A1).
+    Điểm số chuẩn: Đúng: +12 EXP, Sai: -4 EXP.
+    """
+    pool = []
+
+    # 1. BÀI 1 (P1): Hội thoại làm quen, chào hỏi, quê quán, số nhà
+    if 1 in allowed_orders:
+        names_vn = ['Anna', 'Minh', 'Linh', 'Nam', 'Hoa', 'Mai', 'Duc', 'Huong']
+        teachers = ['Frau Schiller', 'Herr Müller', 'Frau Weber', 'Herr Wagner', 'Frau Meyer']
+        cities_vn = [
+            ('Hai Phong', '34', 'vierunddreißig'),
+            ('Hanoi', '18', 'achtzehn'),
+            ('Da Nang', '25', 'fünfundzwanzig'),
+            ('Saigon', '72', 'zweiundsiebzig'),
+            ('Hue', '45', 'fünfundvierzig')
+        ]
+        greetings = [
+            ('Guten Morgen', 'Buổi sáng'),
+            ('Guten Tag', 'Ban ngày / Buổi chiều'),
+            ('Guten Abend', 'Buổi tối')
+        ]
+
+        for _ in range(2):
+            nv = random.choice(names_vn)
+            tc = random.choice(teachers)
+            c = random.choice(cities_vn)
+            gr = random.choice(greetings)
+
+            passage = (
+                f'- {tc}: {gr[0]}! Wie heißen Sie?\n'
+                f'- {nv}: {gr[0]}! Ich heiße {nv}.\n'
+                f'- {tc}: Woher kommen Sie, {nv}?\n'
+                f'- {nv}: Ich komme aus Vietnam.\n'
+                f'- {tc}: Und wo wohnen Sie?\n'
+                f'- {nv}: Ich wohne in {c[0]}. Meine Hausnummer ist {c[2]} ({c[1]}).'
+            )
+
+            # Câu 1: Lời chào
+            opts1 = [gr[0] + '!', 'Gute Nacht!', 'Tschüss!', 'Auf Wiedersehen!']
+            random.shuffle(opts1)
+            pool.append({
+                'type': 'doc_hieu',
+                'type_label': 'Đọc hiểu đoạn văn',
+                'points_correct': 12,
+                'points_wrong': -4,
+                'passage': passage,
+                'question': f'Lời chào mà {tc} dùng khi bắt đầu buổi học trong hội thoại là gì?',
+                'options': opts1,
+                'correct_answer': gr[0] + '!',
+                'accepted_answers': [gr[0] + '!', gr[0]],
+                'explanation': f'{tc} mở đầu hội thoại bằng câu: \'{gr[0]}!\''
+            })
+
+            # Câu 2: Thành phố nơi ở
+            other_cities = [x[0] for x in cities_vn if x[0] != c[0]]
+            opts2 = [c[0]] + random.sample(other_cities, 3)
+            random.shuffle(opts2)
+            pool.append({
+                'type': 'doc_hieu',
+                'type_label': 'Đọc hiểu đoạn văn',
+                'points_correct': 12,
+                'points_wrong': -4,
+                'passage': passage,
+                'question': f'Dựa vào đoạn hội thoại trên, bạn {nv} hiện đang sống ở thành phố nào?',
+                'options': opts2,
+                'correct_answer': c[0],
+                'accepted_answers': [c[0]],
+                'explanation': f'{nv} nói rõ: \'Ich wohne in {c[0]}. Meine Hausnummer ist {c[2]}.\''
+            })
+
+            # Câu 3: Số nhà
+            other_nums = [x[1] for x in cities_vn if x[1] != c[1]]
+            while len(other_nums) < 3:
+                other_nums.append(str(random.randint(10, 99)))
+            opts3 = [c[1]] + other_nums[:3]
+            random.shuffle(opts3)
+            pool.append({
+                'type': 'doc_hieu',
+                'type_label': 'Đọc hiểu đoạn văn',
+                'points_correct': 12,
+                'points_wrong': -4,
+                'passage': passage,
+                'question': f'Số nhà (Hausnummer) của {nv} trong đoạn hội thoại là số mấy?',
+                'options': opts3,
+                'correct_answer': c[1],
+                'accepted_answers': [c[1], c[2]],
+                'explanation': f'Trong hội thoại: \'{c[2]}\' tương ứng với số {c[1]}.'
+            })
+
+    # 2. BÀI 1 (P2): Quán cà phê & Giá tiền Euro
+    if 2 in allowed_orders:
+        cafes = ['Café Kafka', 'Café Mozart', 'Café Berlin', 'Café Schiller', 'Bistro Central']
+        friends_a = ['Anna', 'Maria', 'Julia', 'Laura', 'Sophie']
+        friends_b = ['Peter', 'Lukas', 'David', 'Marc', 'Thomas']
+        drinks = [
+            ('Kaffee', 'cà phê', '3', 'drei'),
+            ('Tee mit Zitrone', 'trà chanh', '2', 'zwei'),
+            ('Mineralwasser', 'nước khoáng', '3', 'drei'),
+            ('Orangensaft', 'nước cam', '4', 'vier'),
+            ('Bier', 'bia', '4', 'vier')
+        ]
+
+        for _ in range(2):
+            cf = random.choice(cafes)
+            fa = random.choice(friends_a)
+            fb = random.choice(friends_b)
+            d1, d2 = random.sample(drinks, 2)
+            total = int(d1[2]) + int(d2[2])
+            pay_mode = random.choice(['zusammen', 'getrennt'])
+            pay_text = 'Zusammen, bitte!' if pay_mode == 'zusammen' else 'Getrennt, bitte!'
+
+            passage = (
+                f'Tại quán {cf}:\n'
+                f'- Kellner: Guten Tag! Was möchten Sie trinken?\n'
+                f'- {fa}: Ich nehme einen {d1[0]}. Was kostet der {d1[0]}?\n'
+                f'- Kellner: Ein {d1[0]} kostet {d1[2]} Euro. Und für Sie?\n'
+                f'- {fb}: Für mich bitte ein {d2[0]}.\n'
+                f'- Kellner: Gerne! Das macht {pay_text} Insgesamt {total} Euro.'
+            )
+
+            # Câu 1: Đồ uống bạn A gọi
+            opts1 = [d1[1], d2[1], 'rượu vang', 'sữa tươi']
+            random.shuffle(opts1)
+            pool.append({
+                'type': 'doc_hieu',
+                'type_label': 'Đọc hiểu đoạn văn',
+                'points_correct': 12,
+                'points_wrong': -4,
+                'passage': passage,
+                'question': f'Dựa vào hội thoại tại quán {cf}, bạn {fa} đã gọi loại đồ uống nào?',
+                'options': opts1,
+                'correct_answer': d1[1],
+                'accepted_answers': [d1[1], d1[0]],
+                'explanation': f'{fa} nói: \'Ich nehme einen {d1[0]}.\' ({d1[1]}).'
+            })
+
+            # Câu 2: Tổng số tiền
+            opts2 = [f'{total} Euro', f'{total + 2} Euro', f'{total - 1} Euro', f'{int(d1[2]) * 2} Euro']
+            random.shuffle(opts2)
+            pool.append({
+                'type': 'doc_hieu',
+                'type_label': 'Đọc hiểu đoạn văn',
+                'points_correct': 12,
+                'points_wrong': -4,
+                'passage': passage,
+                'question': f'Tổng số tiền thanh toán (Insgesamt) cho cả 2 đồ uống là bao nhiêu?',
+                'options': opts2,
+                'correct_answer': f'{total} Euro',
+                'accepted_answers': [f'{total} Euro', str(total)],
+                'explanation': f'Giá {d1[0]} ({d1[2]}€) + {d2[0]} ({d2[2]}€) = {total} Euro.'
+            })
+
+    # 3. BÀI 2: Lớp học & Đồ dùng học tập (der/die/das)
+    if 3 in allowed_orders:
+        classroom_items = [
+            ('der Kuli', 'bút bi', 'Marc', 'ein Kuli'),
+            ('das Wörterbuch', 'từ điển', 'Anna', 'ein Wörterbuch'),
+            ('das Heft', 'quyển vở', 'David', 'ein Heft'),
+            ('das Buch', 'sách tiếng Đức', 'Paula', 'ein Buch'),
+            ('die Lampe', 'chiếc đèn bàn', 'Thomas', 'eine Lampe')
+        ]
+        for _ in range(2):
+            item_choice = random.choice(classroom_items)
+            item = item_choice[:2]
+            student = random.choice(['Anna', 'David', 'Paula', 'Marc'])
+            other_student = 'David' if student != 'David' else 'Marc'
+            passage = (
+                f'Frau Schiller: Guten Morgen zusammen! Was ist das auf Deutsch, {student}?\n'
+                f'{student}: Das ist {item[0]}.\n'
+                f'Frau Schiller: Sehr gut! Das ist {item[0]} von {student}.\n'
+                f'{other_student}: Entschuldigung, wie bitte? Das verstehe ich nicht. Können Sie das bitte anschreiben?\n'
+                f'Frau Schiller: Ja, natürlich! Auf dem Tisch haben wir auch eine Landkarte und drei Stühle.'
+            )
+
+            opts = [f'Của bạn {student}', f'Của bạn {other_student}', 'Của cô giáo Frau Schiller', 'Của cả lớp']
+            random.shuffle(opts)
+            pool.append({
+                'type': 'doc_hieu',
+                'type_label': 'Đọc hiểu đoạn văn',
+                'points_correct': 12,
+                'points_wrong': -4,
+                'passage': passage,
+                'question': f'Theo hội thoại trong lớp học, {item[1]} ({item[0]}) trên bàn là của ai?',
+                'options': opts,
+                'correct_answer': f'Của bạn {student}',
+                'accepted_answers': [f'Của bạn {student}', student],
+                'explanation': f'Cô giáo Frau Schiller xác nhận: \'Das ist {item[0]} von {student}.\''
+            })
+
+    # 4. BÀI 3: Bưu thiếp du lịch & Quá khứ war / waren
+    if 4 in allowed_orders:
+        tourists = [
+            ('Peter und Paula', 'Liebe Anna', 'Hai Phong', 'im BigC Supermarkt', 'im Theater', 'am Do Son Meer'),
+            ('Lukas und Maria', 'Lieber Thomas', 'Berlin', 'im Museum', 'im Restaurant', 'am Brandenburger Tor'),
+            ('Carlos und Julia', 'Liebe Laura', 'München', 'im Schloss', 'im Englischen Garten', 'am Marienplatz')
+        ]
+        for t in tourists:
+            passage = (
+                f'Postkarte aus {t[2]}:\n'
+                f'{t[1]},\n'
+                f'viele Grüße aus {t[2]}! Gestern war das Wetter super.\n'
+                f'Ich war {t[3]} und meine Freundin war {t[4]}.\n'
+                f'Heute sind wir {t[5]}.\n'
+                f'Herzliche Grüße,\n'
+                f'{t[0]}'
+            )
+
+            opts = [t[1].split()[1], 'Peter', 'Carlos', 'Lukas']
+            opts = list(dict.fromkeys(opts))
+            while len(opts) < 4:
+                opts.append('Alex')
+            random.shuffle(opts)
+            pool.append({
+                'type': 'doc_hieu',
+                'type_label': 'Đọc hiểu đoạn văn',
+                'points_correct': 12,
+                'points_wrong': -4,
+                'passage': passage,
+                'question': f'Dựa vào bức thư bưu thiếp gửi từ {t[2]}, ai là người nhận bức thư?',
+                'options': opts,
+                'correct_answer': t[1].split()[1],
+                'accepted_answers': [t[1].split()[1]],
+                'explanation': f'Bức thư mở đầu bằng lời gửi: \'{t[1]},\''
+            })
+
+    # 5. BÀI 4: Bức thư miêu tả căn hộ / Ngôi nhà mới
+    if 5 in allowed_orders:
+        house_senders = ['Julia', 'Sophie', 'Thomas', 'Maximilian']
+        for snd in house_senders:
+            rooms = random.choice(['3', '4', '5'])
+            adj = random.choice([('groß und hell', 'phòng khách'), ('gemütlich und modern', 'phòng khách')])
+            passage = (
+                f'Brief von {snd}:\n'
+                f'Liebe Freunde,\n'
+                f'unsere Wohnung ist sehr schön und hat {rooms} Zimmer.\n'
+                f'Das Wohnzimmer ist {adj[0]}.\n'
+                f'Aber ich finde die Küche zu klein.\n'
+                f'Oben gibt es einen Balkon.\n'
+                f'Viele Grüße,\n{snd}'
+            )
+
+            opts1 = [f'{rooms} phòng', '2 phòng', '6 phòng', '1 phòng']
+            random.shuffle(opts1)
+            pool.append({
+                'type': 'doc_hieu',
+                'type_label': 'Đọc hiểu đoạn văn',
+                'points_correct': 12,
+                'points_wrong': -4,
+                'passage': passage,
+                'question': f'Dựa vào bức thư của {snd}, căn hộ/ngôi nhà có tất cả bao nhiêu phòng (Zimmer)?',
+                'options': opts1,
+                'correct_answer': f'{rooms} phòng',
+                'accepted_answers': [f'{rooms} phòng', rooms],
+                'explanation': f'Trong thư viết: \'...hat {rooms} Zimmer.\''
+            })
+
+            opts2 = ['Nhà bếp (die Küche)', 'Phòng khách (das Wohnzimmer)', 'Ban công (der Balkon)', 'Phòng tắm (das Bad)']
+            random.shuffle(opts2)
+            pool.append({
+                'type': 'doc_hieu',
+                'type_label': 'Đọc hiểu đoạn văn',
+                'points_correct': 12,
+                'points_wrong': -4,
+                'passage': passage,
+                'question': f'Trong thư của {snd}, căn phòng nào bị nhận xét là quá nhỏ (zu klein)?',
+                'options': opts2,
+                'correct_answer': 'Nhà bếp (die Küche)',
+                'accepted_answers': ['Nhà bếp (die Küche)', 'die Küche', 'Küche'],
+                'explanation': f'{snd} viết rõ: \'Aber ich finde die Küche zu klein.\''
+            })
+
+    random.shuffle(pool)
+    return pool[:count]
+
+
 def build_arena_questions_for_user(user_id, count=70):
     """
     Sinh danh sách câu hỏi Đấu trường kết hợp 50% từ database exercises
@@ -520,9 +799,11 @@ def build_arena_questions_for_user(user_id, count=70):
         explanation = r["explanation"]
         trans = extra.get("translation", "")
 
-        # Map exercise_type sang 9 dạng Đấu trường
-        mapped_type = "trac_nghiem"
+        # Map exercise_type sang các dạng Đấu trường
         raw_type = r["exercise_type"]
+        passage = extra.get("passage", "")
+        is_doc = (raw_type == "doc") or ("đọc hiểu" in q_text.lower()) or bool(passage)
+
         opts = []
         if r["options_json"]:
             try:
@@ -530,7 +811,42 @@ def build_arena_questions_for_user(user_id, count=70):
             except:
                 opts = []
 
-        if opts and len(opts) > 1:
+        if is_doc:
+            mapped_type = "doc_hieu"
+            if not passage:
+                if "Anna" in q_text and ("Vietnam" in q_text or "Hai Phong" in q_text or "34" in q_text or "lời chào" in q_text.lower()):
+                    passage = (
+                        "Hội thoại tại lớp học tiếng Đức:\n"
+                        "- Lehrerin: Guten Morgen! Wie heißen Sie?\n"
+                        "- Anna: Guten Morgen! Ich heiße Anna.\n"
+                        "- Lehrerin: Woher kommen Sie, Anna?\n"
+                        "- Anna: Ich komme aus Vietnam.\n"
+                        "- Lehrerin: Und wo wohnen Sie?\n"
+                        "- Anna: Ich wohne in Hai Phong. Meine Hausnummer ist vierunddreißig."
+                    )
+                elif "Marc" in q_text or "Café Kafka" in q_text or "Post" in q_text:
+                    passage = (
+                        "Marc: Woher kommst du?\n"
+                        "Anna: Ich komme aus Brasilien. Das ist mein Freund, er kommt aus Russland.\n"
+                        "Marc: Und wo wohnt ihr?\n"
+                        "Anna: Wir wohnen in Berlin. Wo arbeitest du?\n"
+                        "Marc: Ich arbeite bei der Post."
+                    )
+                elif "Paula" in q_text or "Bưu thiếp" in q_text or "Cat Bi" in q_text:
+                    passage = (
+                        "Bưu thiếp gửi từ Hải Phòng (Postkarte aus Hai Phong):\n"
+                        "Liebe Anna, viele Grüße aus Hai Phong! Gestern war das Wetter super.\n"
+                        "Ich war im BigC Supermarkt und Paula war im Theater. Der Cat Bi Markt war sehr interessant.\n"
+                        "Heute sind wir am Do Son Meer. Herzliche Grüße, Peter und Paula"
+                    )
+                elif "Julia" in q_text or "Haus" in q_text or "Balkon" in q_text or "Zimmer" in q_text:
+                    passage = (
+                        "Bức thư của Julia gửi các bạn (Brief von Julia):\n"
+                        "Liebe Freunde, unser Haus ist sehr alt und hat 5 Zimmer. Oben gibt es einen Balkon.\n"
+                        "Aber ich finde die Küche zu klein. Das Haus hat einen Flur. Er ist lang und dunkel.\n"
+                        "Viele Grüße, Julia"
+                    )
+        elif opts and len(opts) > 1:
             mapped_type = "trac_nghiem"
         elif raw_type == "dien_khuyet":
             mapped_type = "dien_khuyet"
@@ -561,7 +877,10 @@ def build_arena_questions_for_user(user_id, count=70):
             "translation": trans
         }
 
-        if mapped_type == "trac_nghiem":
+        if passage:
+            item["passage"] = passage
+
+        if opts and len(opts) > 1:
             item["options"] = opts
         elif mapped_type == "nghe_dien":
             item["audio_text"] = extra.get("audio_text", correct_ans)
@@ -708,6 +1027,10 @@ def build_arena_questions_for_user(user_id, count=70):
                 "explanation": item["explanation"],
                 "translation": "Hoàn thiện câu chuẩn ngữ pháp tiếng Đức"
             })
+
+    # 2.8. Sinh các câu Đọc hiểu đoạn văn thay đổi từ vựng đã học (Đúng: +12đ | Sai: -4đ)
+    doc_hieu_questions = generate_varied_doc_hieu_questions(allowed_orders, count=15)
+    questions.extend(doc_hieu_questions)
 
     # Xáo trộn toàn bộ câu hỏi
     random.shuffle(questions)

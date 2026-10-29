@@ -1228,13 +1228,24 @@ def seed_lesson_3():
         ),
 
         # --- DẠNG 6: ĐỌC HIỂU BƯU THIẾP HẢI PHÒNG (4 CÂU) ---
+        passage_b3_postcard = (
+            "Bưu thiếp gửi từ Hải Phòng (Postkarte aus Hai Phong):\n"
+            "Liebe Anna,\n"
+            "viele Grüße aus Hai Phong! Gestern war das Wetter super.\n"
+            "Ich war im BigC Supermarkt und Paula war im Theater.\n"
+            "Der Cat Bi Markt war sehr interessant.\n"
+            "Heute sind wir am Do Son Meer.\n"
+            "Herzliche Grüße,\n"
+            "Peter und Paula"
+        )
+
         (
             lesson_id, "doc",
             "Câu 40 [Đọc hiểu Bưu thiếp]: Dựa vào bức thư của Paula & Peter, ai là người nhận bức thư bưu thiếp này?",
             json.dumps(["Anna", "Paula", "Peter", "Carlos"]),
             "Anna",
             "Bức thư mở đầu bằng 'Liebe Anna,' → Người nhận thư là Anna.",
-            20, None
+            20, json.dumps({"passage": passage_b3_postcard}, ensure_ascii=False)
         ),
         (
             lesson_id, "doc",
@@ -1242,7 +1253,7 @@ def seed_lesson_3():
             json.dumps(["im BigC Supermarkt", "im Theater", "am Do Son Meer", "in Hanoi"]),
             "im Theater",
             "Bức thư nêu rõ: 'Ich war im BigC Supermarkt und Paula [war] im Theater.' → Paula đã ở trong nhà hát.",
-            20, None
+            20, json.dumps({"passage": passage_b3_postcard}, ensure_ascii=False)
         ),
         (
             lesson_id, "doc",
@@ -1250,7 +1261,7 @@ def seed_lesson_3():
             json.dumps(["sehr groß", "sehr interessant", "sehr teuer", "nicht schön"]),
             "sehr interessant",
             "Bức thư viết: 'Der Cat Bi Markt war sehr interessant.' (Chợ Cát Bi đã rất thú vị).",
-            20, None
+            20, json.dumps({"passage": passage_b3_postcard}, ensure_ascii=False)
         ),
         (
             lesson_id, "doc",
@@ -1258,7 +1269,7 @@ def seed_lesson_3():
             json.dumps(["im Supermarkt", "im Theater", "auf dem Markt", "am Do Son Meer"]),
             "am Do Son Meer",
             "Bức thư viết: 'Heute sind wir am Do Son Meer.' (Hôm nay chúng mình đang ở biển Đồ Sơn).",
-            20, None
+            20, json.dumps({"passage": passage_b3_postcard}, ensure_ascii=False)
         ),
 
         # --- DẠNG 7: VIẾT CÂU & CHUYỂN ĐỔI CÂU HỎI (7 CÂU) ---
