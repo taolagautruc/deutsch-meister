@@ -387,7 +387,7 @@
             "dien_khuyet": "2. Điền khuyết",
             "dich": "3. Dịch Việt ⇄ Đức",
             "nghe": "4. Nghe (1.0x & 0.65x)",
-            "noi": "5. Luyện Nói",
+            "sap_xep": "5. Sắp xếp câu",
             "doc": "6. Đọc hiểu",
             "viet": "7. Viết câu & số"
         };
@@ -708,6 +708,7 @@
                 <div class="flex flex-wrap gap-2 pb-3 border-b border-slate-100">
                     ${Object.keys(TYPE_LABELS).map(k => {
                         const count = k === 'all' ? list.length : list.filter(x => x.exercise_type === k).length;
+                        if (k !== 'all' && count === 0) return '';
                         const active = currentFilterType === k;
                         return `
                             <button onclick="filterExercises('${k}')" class="px-3.5 py-2 rounded-xl text-xs font-extrabold transition ${active ? 'bg-indigo-600 text-white shadow-sm' : 'bg-slate-100 hover:bg-slate-200 text-slate-700'}">
@@ -725,7 +726,7 @@
                 try { extra = ex.extra_data ? JSON.parse(ex.extra_data) : {}; } catch (e) {}
 
                 let extraHtml = '';
-                if (ex.exercise_type === 'nghe' || ex.exercise_type === 'noi') {
+                if (ex.exercise_type === 'nghe') {
                     const textToSpeak = (extra.audio_text || ex.correct_answer).replace(/'/g, "\\'");
                     extraHtml = `
                         <div class="flex flex-wrap gap-2 mt-2">
@@ -735,11 +736,6 @@
                             <button onclick="speakGerman('${textToSpeak}', 0.65)" class="px-3.5 py-1.5 rounded-xl bg-amber-50 hover:bg-amber-100 text-amber-700 border border-amber-200 text-xs font-bold">
                                 🐢 Nghe chậm (0.65x)
                             </button>
-                            ${ex.exercise_type === 'noi' ? `
-                                <button onclick="simulateSpeech(${i}, '${textToSpeak}')" class="px-3.5 py-1.5 rounded-xl bg-rose-50 hover:bg-rose-100 text-rose-700 border border-rose-200 text-xs font-bold">
-                                    🎙️ Thu âm giọng đọc của bạn
-                                </button>
-                            ` : ''}
                         </div>
                     `;
                 }
@@ -766,8 +762,8 @@
                 } else {
                     inputHtml = `
                         <div class="flex gap-2 mt-3">
-                            <input id="ex-input-${i}" onfocus="activeInputId='ex-input-${i}'" type="text" placeholder="Nhập đáp án tiếng Đức của bạn..." class="flex-1 px-4 py-2.5 rounded-xl bg-white border border-slate-200 text-sm focus:outline-none focus:border-indigo-500">
-                            <button onclick="checkExerciseAnswer(${i}, document.getElementById('ex-input-${i}').value)" class="px-5 py-2.5 rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white font-bold text-sm shadow-sm transition">
+                            <input id="ex-input-${i}" onfocus="activeInputId='ex-input-${i}'" onkeydown="handleExerciseInputKeydown(event, ${i})" type="text" placeholder="Nhập đáp án tiếng Đức của bạn... (nhấn Enter để kiểm tra và chuyển câu)" class="flex-1 px-4 py-2.5 rounded-xl bg-white border border-slate-200 text-sm focus:outline-none focus:border-indigo-500">
+                            <button onclick="checkExerciseAnswer(${i}, document.getElementById('ex-input-${i}').value)" class="px-5 py-2.5 rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white font-bold text-sm shadow-sm transition cursor-pointer">
                                 Kiểm tra
                             </button>
                         </div>
@@ -775,7 +771,7 @@
                 }
 
                 return `
-                    <div class="p-5 rounded-2xl bg-slate-50 border border-slate-200 space-y-2">
+                    <div id="ex-card-${i}" class="p-5 rounded-2xl bg-slate-50 border border-slate-200 space-y-2">
                         <div class="flex items-center justify-between text-xs">
                             <span class="px-2.5 py-1 rounded-lg bg-indigo-100 text-indigo-700 font-extrabold uppercase">${TYPE_LABELS[ex.exercise_type] || ex.exercise_type}</span>
                             <span class="text-amber-600 font-extrabold">⚡ +${ex.exp_reward} EXP</span>
@@ -791,12 +787,63 @@
             exContainer.innerHTML = filterBarHtml + exercisesHtml;
         }
 
-        function simulateSpeech(index, expectedText) {
-            const input = document.getElementById(`ex-input-${index}`);
-            if (input) {
-                input.value = expectedText;
-                checkExerciseAnswer(index, expectedText);
+        function handleExerciseInputKeydown(event, index) {
+            if (event.key === 'Enter') {
+                event.preventDefault();
+                const input = document.getElementById(`ex-input-${index}`);
+                const val = input ? input.value : '';
+                checkExerciseAnswer(index, val);
+
+                // Tự động chuyển và focus sang câu tiếp theo để học tiện lợi
+                setTimeout(() => {
+                    focusNextExercise(index);
+                }, 220);
             }
+        }
+
+        function focusNextExercise(currentIndex) {
+            const list = currentLesson && currentLesson.allRenderExercises ? currentLesson.allRenderExercises : [];
+            for (let nextIndex = currentIndex + 1; nextIndex < list.length; nextIndex++) {
+                const ex = list[nextIndex];
+                if (currentFilterType !== 'all' && ex.exercise_type !== currentFilterType) {
+                    continue;
+                }
+                const nextInput = document.getElementById(`ex-input-${nextIndex}`);
+                if (nextInput) {
+                    nextInput.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                    nextInput.focus();
+                    return;
+                }
+                const nextCard = document.getElementById(`ex-card-${nextIndex}`);
+                if (nextCard) {
+                    nextCard.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                    return;
+                }
+            }
+        }
+
+        function getExerciseTranslation(ex, extra) {
+            if (extra && extra.translation) {
+                return extra.translation;
+            }
+            if (ex && ex.translation) {
+                return ex.translation;
+            }
+            if (ex && ex.extra_data) {
+                try {
+                    const parsed = typeof ex.extra_data === 'string' ? JSON.parse(ex.extra_data) : ex.extra_data;
+                    if (parsed && parsed.translation) return parsed.translation;
+                } catch (e) {}
+            }
+            if (ex && ex.question) {
+                const matchVi = ex.question.match(/(?:nghĩa là|có nghĩa là|dịch là)[:\s]+['"„]([^'"“]+)['"”]/i);
+                if (matchVi) return matchVi[1];
+            }
+            if (ex && ex.explanation) {
+                const matchExp = ex.explanation.match(/['"„][^'"”]+['"”]\s*(?:=|có nghĩa là|→|->)\s*([^.]+)/i);
+                if (matchExp && matchExp[1] && matchExp[1].trim().length > 3) return matchExp[1].trim();
+            }
+            return "";
         }
 
         function insertGermanChar(ch) {
@@ -830,6 +877,16 @@
             try {
                 extra = typeof ex.extra_data === 'string' ? JSON.parse(ex.extra_data) : (ex.extra_data || {});
             } catch (e) {}
+
+            const translation = getExerciseTranslation(ex, extra);
+            let translationHtml = '';
+            if (translation) {
+                translationHtml = `
+                    <div class="mt-2.5 p-3 rounded-xl bg-indigo-50 border border-indigo-200 text-indigo-950 font-medium leading-relaxed">
+                        <span class="font-bold text-indigo-700">📖 Dịch nghĩa:</span> ${translation}
+                    </div>
+                `;
+            }
 
             if (isCorrect) {
                 feedback.className = "text-xs p-3.5 rounded-xl mt-2 bg-emerald-50 text-emerald-800 border border-emerald-200";
@@ -896,12 +953,37 @@
                         </div>
                     `;
                 }
-                feedback.innerHTML = `✅ <b>Chính xác!</b> ${ex.explanation} <b>(+${ex.exp_reward} EXP)</b>${nextDynamicHtml}`;
+                feedback.innerHTML = `
+                    <div class="space-y-1.5">
+                        <div class="flex items-center gap-2">
+                            <span class="text-emerald-700 font-extrabold text-sm">✅ Chính xác!</span>
+                            <span class="text-emerald-800 font-bold">(+${ex.exp_reward} EXP)</span>
+                        </div>
+                        ${translationHtml}
+                        <div class="text-emerald-900 leading-relaxed pt-1">
+                            <span class="font-bold">💡 Giải thích:</span> ${ex.explanation}
+                        </div>
+                        ${nextDynamicHtml}
+                    </div>
+                `;
                 await addExpToDatabase(ex.exp_reward);
             } else {
                 feedback.className = "text-xs p-3.5 rounded-xl mt-2 bg-rose-50 text-rose-800 border border-rose-200";
                 const displayAns = String(ex.correct_answer || '').trim().replace(/[.]+$/, '');
-                feedback.innerHTML = `❌ <b>Chưa chính xác.</b> Đáp án đúng là: <b>${displayAns}</b>.<br>${ex.explanation}`;
+                feedback.innerHTML = `
+                    <div class="space-y-1.5">
+                        <div class="flex items-center gap-2">
+                            <span class="text-rose-700 font-extrabold text-sm">❌ Chưa chính xác.</span>
+                        </div>
+                        <div class="text-rose-900 pt-0.5">
+                            Đáp án đúng là: <b class="font-extrabold text-rose-800">${displayAns}</b>
+                        </div>
+                        ${translationHtml}
+                        <div class="text-rose-950 leading-relaxed pt-1">
+                            <span class="font-bold">💡 Giải thích:</span> ${ex.explanation}
+                        </div>
+                    </div>
+                `;
             }
         }
 
