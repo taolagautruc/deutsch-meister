@@ -496,6 +496,252 @@ function generateNewNumberData(ex) {
         return ex;
     }
 
+    // 11. Xử lý câu hỏi Phân biệt Nominativ vs. Akkusativ (dynamic_nom_akk_quiz - Bài 4)
+    if (extra.dynamic_nom_akk_quiz) {
+        const nomAkkItems = [
+            { word: "Garten", gender: "der", meaning: "khu vườn" },
+            { word: "Balkon", gender: "der", meaning: "ban công" },
+            { word: "Flur", gender: "der", meaning: "hành lang" },
+            { word: "Keller", gender: "der", meaning: "tầng hầm" },
+            { word: "Schrank", gender: "der", meaning: "cái tủ" },
+            { word: "Kühlschrank", gender: "der", meaning: "tủ lạnh" },
+            { word: "Tisch", gender: "der", meaning: "cái bàn" },
+            { word: "Stuhl", gender: "der", meaning: "cái ghế" },
+            { word: "Teppich", gender: "der", meaning: "tấm thảm" },
+            { word: "Spiegel", gender: "der", meaning: "cái gương" },
+            { word: "Fernseher", gender: "der", meaning: "chiếc tivi" },
+            { word: "Wohnung", gender: "die", meaning: "căn hộ" },
+            { word: "Küche", gender: "die", meaning: "phòng bếp" },
+            { word: "Garage", gender: "die", meaning: "nhà để xe" },
+            { word: "Lampe", gender: "die", meaning: "cây đèn" },
+            { word: "Spüle", gender: "die", meaning: "bồn rửa bát" },
+            { word: "Toilette", gender: "die", meaning: "nhà vệ sinh" },
+            { word: "Haus", gender: "das", meaning: "ngôi nhà" },
+            { word: "Zimmer", gender: "das", meaning: "căn phòng" },
+            { word: "Wohnzimmer", gender: "das", meaning: "phòng khách" },
+            { word: "Schlafzimmer", gender: "das", meaning: "phòng ngủ" },
+            { word: "Badezimmer", gender: "das", meaning: "phòng tắm" },
+            { word: "Bett", gender: "das", meaning: "cái giường" },
+            { word: "Bücherregal", gender: "das", meaning: "kệ sách" }
+        ];
+
+        const chosen = nomAkkItems[Math.floor(Math.random() * nomAkkItems.length)];
+        const modeType = Math.floor(Math.random() * 4); // 0: haben (indefinite), 1: es gibt (indefinite), 2: finden (definite), 3: kein (negation)
+
+        let answer = "";
+        let qText = "";
+        let ruleText = "";
+
+        if (modeType === 0) {
+            // haben + Akkusativ
+            answer = chosen.gender === "der" ? "einen" : (chosen.gender === "die" ? "eine" : "ein");
+            qText = `[Nominativ vs. Akkusativ (Random)]: Điền mạo từ bất định thích hợp vào chỗ trống: "Wir haben ___ ${chosen.word}." (${chosen.meaning})`;
+            ruleText = `Động từ 'haben' đòi hỏi tân ngữ Akkusativ. Danh từ '${chosen.word}' mang giống '${chosen.gender}' → ${chosen.gender === 'der' ? 'chỉ giống đực đổi thành "einen"' : 'giống ' + chosen.gender + ' giữ nguyên là "' + answer + '"'}.`;
+        } else if (modeType === 1) {
+            // es gibt + Akkusativ
+            answer = chosen.gender === "der" ? "einen" : (chosen.gender === "die" ? "eine" : "ein");
+            qText = `[Nominativ vs. Akkusativ (Random)]: Điền mạo từ bất định thích hợp: "Oben gibt es ___ ${chosen.word}." (${chosen.meaning})`;
+            ruleText = `Cấu trúc 'es gibt' luôn đòi hỏi Akkusativ. '${chosen.word}' mang giống '${chosen.gender}' → đáp án là '${answer}'.`;
+        } else if (modeType === 2) {
+            // finden + Akkusativ (definite)
+            answer = chosen.gender === "der" ? "den" : (chosen.gender === "die" ? "die" : "das");
+            qText = `[Nominativ vs. Akkusativ (Random)]: Điền mạo từ xác định thích hợp: "Ich finde ___ ${chosen.word} sehr schön." (${chosen.meaning})`;
+            ruleText = `'finden' đòi hỏi Akkusativ xác định. '${chosen.word}' mang giống '${chosen.gender}' → ${chosen.gender === 'der' ? 'der đổi thành "den"' : 'giữ nguyên là "' + answer + '"'}.`;
+        } else {
+            // kein- + Akkusativ
+            answer = chosen.gender === "der" ? "keinen" : (chosen.gender === "die" ? "keine" : "kein");
+            qText = `[Nominativ vs. Akkusativ (Random)]: Điền từ phủ định thích hợp: "Die Wohnung hat ___ ${chosen.word}." (${chosen.meaning})`;
+            ruleText = `'haben' + phủ định ở Akkusativ: '${chosen.word}' (${chosen.gender}) → '${answer}'.`;
+        }
+
+        if (ex.exercise_type === "trac_nghiem" || (ex.options && ex.options.length > 0)) {
+            const allOpts = modeType === 2 ? ["den", "der", "die", "das"] : ["einen", "ein", "eine", "keinen"];
+            if (!allOpts.includes(answer)) allOpts[0] = answer;
+            const shuffled = Array.from(new Set(allOpts)).sort(() => Math.random() - 0.5);
+            ex.options = shuffled;
+            ex.options_json = JSON.stringify(shuffled);
+        }
+
+        ex.question = qText;
+        ex.correct_answer = answer;
+        ex.explanation = ruleText;
+        return ex;
+    }
+
+    // 12. Xử lý câu hỏi Mạo từ sở hữu theo 9 Ngôi (dynamic_possessiv_quiz - Bài 4)
+    if (extra.dynamic_possessiv_quiz) {
+        const owners = [
+            { label: "ich (tôi)", stem: "mein" },
+            { label: "du (bạn)", stem: "dein" },
+            { label: "er (anh ấy / Peter)", stem: "sein" },
+            { label: "sie (cô ấy / Lena)", stem: "ihr" },
+            { label: "wir (chúng tôi)", stem: "unser" },
+            { label: "ihr (các bạn / Maria und Lukas)", stem: "euer", isEuer: true },
+            { label: "sie (họ / die Eltern)", stem: "ihr" },
+            { label: "Sie (Ngài / Herr Müller)", stem: "Ihr", isCapital: true }
+        ];
+
+        const nouns = [
+            { word: "Garten", gender: "der", vi: "khu vườn" },
+            { word: "Balkon", gender: "der", vi: "ban công" },
+            { word: "Flur", gender: "der", vi: "hành lang" },
+            { word: "Wohnung", gender: "die", vi: "căn hộ" },
+            { word: "Küche", gender: "die", vi: "phòng bếp" },
+            { word: "Tasche", gender: "die", vi: "túi xách" },
+            { word: "Haus", gender: "das", vi: "ngôi nhà" },
+            { word: "Zimmer", gender: "das", vi: "căn phòng" },
+            { word: "Auto", gender: "das", vi: "chiếc ô tô" },
+            { word: "Kinder", gender: "die_pl", vi: "những đứa con" }
+        ];
+
+        const owner = owners[Math.floor(Math.random() * owners.length)];
+        const noun = nouns[Math.floor(Math.random() * nouns.length)];
+        const isAkk = Math.random() > 0.5; // Nominativ vs Akkusativ
+
+        let result = owner.stem;
+        let ending = "";
+
+        if (noun.gender === "der") {
+            if (isAkk) {
+                ending = "-en";
+                if (owner.isEuer) {
+                    result = "euren";
+                } else {
+                    result = owner.stem + "en";
+                }
+            } else {
+                result = owner.stem;
+            }
+        } else if (noun.gender === "die" || noun.gender === "die_pl") {
+            ending = "-e";
+            if (owner.isEuer) {
+                result = "eure";
+            } else {
+                result = owner.stem + "e";
+            }
+        } else {
+            // das
+            result = owner.stem;
+        }
+
+        const caseName = isAkk && noun.gender === "der" ? "Cách 4 (Akkusativ)" : (isAkk ? "Cách 4 (Akkusativ)" : "Cách 1 (Nominativ)");
+        const sentenceContext = isAkk 
+            ? `"Wir haben ___ ${noun.word}." hoặc "Ich mag ___ ${noun.word}."`
+            : `"Das ist ___ ${noun.word}."`;
+
+        ex.question = `[Mạo từ Sở Hữu 9 Ngôi (Random)]: Hãy chia mạo từ sở hữu của người sở hữu '${owner.label}' đứng trước danh từ '${noun.gender === 'die_pl' ? 'die (Pl.)' : noun.gender} ${noun.word}' (${noun.vi}) trong câu ${sentenceContext}:`;
+        ex.correct_answer = result;
+        ex.explanation = `Người sở hữu là '${owner.label}' → Gốc sở hữu '${owner.stem}'. Đi với danh từ '${noun.word}' (${noun.gender}) ở ${caseName} → dạng đúng là '${result}'${owner.isEuer && (ending === '-e' || ending === '-en') ? ' (lưu ý "euer" bị lược bỏ e ở giữa thành "' + result + '")' : ''}.`;
+        return ex;
+    }
+
+    // 13. Xử lý câu hỏi Tính từ Đối lập Miêu tả Nhà cửa (dynamic_adjective_antonym_quiz - Bài 4)
+    if (extra.dynamic_adjective_antonym_quiz) {
+        const adjPairs = [
+            { pos: "hell", neg: "dunkel", viPos: "sáng sủa", viNeg: "tối tăm", context: "Arbeitszimmer", nounVi: "phòng làm việc" },
+            { pos: "groß", neg: "klein", viPos: "rộng lớn", viNeg: "nhỏ hẹp", context: "Wohnzimmer", nounVi: "phòng khách" },
+            { pos: "leise", neg: "laut", viPos: "yên tĩnh", viNeg: "ồn ào", context: "Schlafzimmer", nounVi: "phòng ngủ" },
+            { pos: "lang", neg: "kurz", viPos: "dài", viNeg: "ngắn", context: "Flur", nounVi: "hành lang" },
+            { pos: "neu", neg: "alt", viPos: "mới", viNeg: "cũ / cổ", context: "Haus", nounVi: "ngôi nhà" },
+            { pos: "billig", neg: "teuer", viPos: "rẻ", viNeg: "đắt đỏ", context: "Wohnung", nounVi: "căn hộ" },
+            { pos: "schön", neg: "hässlich", viPos: "đẹp", viNeg: "xấu xí", context: "Garten", nounVi: "khu vườn" }
+        ];
+
+        const pair = adjPairs[Math.floor(Math.random() * adjPairs.length)];
+        const testPos = Math.random() > 0.5;
+        const sourceWord = testPos ? pair.pos : pair.neg;
+        const sourceVi = testPos ? pair.viPos : pair.viNeg;
+        const targetWord = testPos ? pair.neg : pair.pos;
+        const targetVi = testPos ? pair.viNeg : pair.viPos;
+
+        const subType = Math.random() > 0.5 ? "opposite" : "sentence";
+
+        if (subType === "opposite") {
+            ex.question = `[Tính từ Đối lập (Random)]: Từ trái nghĩa (Gegenteil) trong tiếng Đức của tính từ '${sourceWord}' (${sourceVi}) là gì?`;
+            ex.correct_answer = targetWord;
+            ex.explanation = `Tính từ '${sourceWord}' (${sourceVi}) có từ đối lập là '${targetWord}' (${targetVi}).`;
+        } else {
+            ex.question = `[Tính từ Miêu tả Nhà cửa (Random)]: Hoàn thành câu miêu tả sau bằng tính từ trái nghĩa với '${sourceWord}': "Das ${pair.context} ist nicht ${sourceWord}, sondern es ist ___."`;
+            ex.correct_answer = targetWord;
+            ex.explanation = `Từ đối lập với '${sourceWord}' (${sourceVi}) là '${targetWord}' (${targetVi}) → "Das ${pair.context} ist nicht ${sourceWord}, sondern es ist ${targetWord}."`;
+        }
+        return ex;
+    }
+
+    // 14. Xử lý câu hỏi Thay thế Đại từ Nhân xưng theo Giống (dynamic_pronoun_replacement_quiz - Bài 4)
+    if (extra.dynamic_pronoun_replacement_quiz) {
+        const pronounItems = [
+            { word: "Flur", gender: "der", pronoun: "Er", sentence: "Das Haus hat einen Flur. ___ ist lang und dunkel." },
+            { word: "Garten", gender: "der", pronoun: "Er", sentence: "Wir haben einen Garten. ___ ist groß und sehr schön." },
+            { word: "Balkon", gender: "der", pronoun: "Er", sentence: "Oben gibt es einen Balkon. ___ ist sonnig und hell." },
+            { word: "Kühlschrank", gender: "der", pronoun: "Er", sentence: "Er kauft einen Kühlschrank. ___ ist modern und neu." },
+            { word: "Küche", gender: "die", pronoun: "Sie", sentence: "Die Wohnung hat eine Küche. ___ ist klein, aber gemütlich." },
+            { word: "Wohnung", gender: "die", pronoun: "Sie", sentence: "Wir mieten eine Wohnung. ___ hat 4 Zimmer." },
+            { word: "Garage", gender: "die", pronoun: "Sie", sentence: "Das Haus hat eine Garage. ___ ist sehr praktisch." },
+            { word: "Wohnzimmer", gender: "das", pronoun: "Es", sentence: "Wir haben ein Wohnzimmer. ___ ist hell und modern." },
+            { word: "Haus", gender: "das", pronoun: "Es", sentence: "Julia hat ein Haus. ___ ist sehr alt und hat 5 Zimmer." },
+            { word: "Schlafzimmer", gender: "das", pronoun: "Es", sentence: "Mein Haus hat ein Schlafzimmer. ___ ist leise und warm." }
+        ];
+
+        const item = pronounItems[Math.floor(Math.random() * pronounItems.length)];
+        ex.question = `[Đại từ Thay thế theo Giống (Random)]: Điền đại từ nhân xưng thích hợp ('Er' / 'Sie' / 'Es') thay thế cho danh từ giống '${item.gender}' (${item.word}): "${item.sentence}"`;
+        ex.correct_answer = item.pronoun;
+        ex.explanation = `'${item.word}' mang giống '${item.gender}' nên đại từ nhân xưng làm chủ ngữ thay thế ở câu sau là '${item.pronoun}' (der → er, die → sie, das → es).`;
+        return ex;
+    }
+
+    // 15. Xử lý câu hỏi Dịch câu Miêu tả Phòng & Nội thất (dynamic_house_translation_quiz - Bài 4)
+    if (extra.dynamic_house_translation_quiz) {
+        const translationPool = [
+            {
+                vi: "Tôi có một ngôi nhà. Ngôi nhà của tôi có 5 phòng.",
+                de: "Ich habe ein Haus. Mein Haus hat 5 Zimmer.",
+                note: "das Haus đứng sau habe (Akkusativ) → ein Haus; làm chủ ngữ → Mein Haus."
+            },
+            {
+                vi: "Phòng khách của tôi thì sáng và hiện đại.",
+                de: "Mein Wohnzimmer ist hell und modern.",
+                note: "das Wohnzimmer (giống trung) → Mein Wohnzimmer; tính từ sau ist giữ nguyên."
+            },
+            {
+                vi: "Nó có 1 Tivi và 1 giá sách.",
+                de: "Es hat einen Fernseher und ein Bücherregal.",
+                note: "der Fernseher (giống đực) sau hat đổi thành einen Fernseher; das Bücherregal giữ nguyên ein."
+            },
+            {
+                vi: "Phòng ngủ của tôi thì ấm cúng và có 1 giường.",
+                de: "Mein Schlafzimmer ist gemütlich und hat ein Bett.",
+                note: "das Schlafzimmer → Mein; das Bett sau hat → ein Bett."
+            },
+            {
+                vi: "Phòng làm việc của tôi thì nhỏ nhưng sáng.",
+                de: "Mein Arbeitszimmer ist klein, aber hell.",
+                note: "Liên từ aber nối 2 tính từ trái nghĩa: klein, aber hell."
+            },
+            {
+                vi: "Nó có 1 bàn và 1 ghế.",
+                de: "Es hat einen Tisch und einen Stuhl.",
+                note: "Cả der Tisch và der Stuhl đều là giống đực nên sau hat đổi thành einen Tisch und einen Stuhl."
+            },
+            {
+                vi: "Phòng bếp của tôi thì nhỏ và đẹp.",
+                de: "Meine Küche ist klein und schön.",
+                note: "die Küche mang giống cái nên mạo từ sở hữu phải thêm -e: Meine Küche."
+            },
+            {
+                vi: "Chúng mình cũng có một khu vườn. Mình thấy khu vườn rất đẹp.",
+                de: "Wir haben auch einen Garten. Ich finde den Garten sehr schön.",
+                note: "der Garten lần 1 sau haben → einen Garten; lần 2 đã xác định sau finden → den Garten."
+            }
+        ];
+
+        const chosen = translationPool[Math.floor(Math.random() * translationPool.length)];
+        ex.question = `[Dịch câu Miêu tả Nhà & Nội thất (Random)]: Hãy dịch câu sau sang tiếng Đức chuẩn xác: "${chosen.vi}"`;
+        ex.correct_answer = chosen.de;
+        ex.explanation = `Bản dịch chuẩn: '${chosen.de}'. (${chosen.note})`;
+        return ex;
+    }
+
     if (!extra.dynamic_number && !extra.dynamic_mode) return ex;
 
     const mode = extra.dynamic_mode;
@@ -602,7 +848,7 @@ function randomizeAllNumberExercises(exercisesList) {
         let isDynamic = false;
         try {
             const extra = typeof ex.extra_data === 'string' ? JSON.parse(ex.extra_data) : (ex.extra_data || {});
-            if (extra.dynamic_number || extra.dynamic_mode || extra.dynamic_price || extra.dynamic_conjugation || extra.dynamic_article_quiz || extra.dynamic_possessive_article || extra.dynamic_plural_quiz || extra.dynamic_direction_quiz || extra.dynamic_landmark_quiz || extra.dynamic_praeteritum_quiz || extra.dynamic_country_language_quiz || extra.dynamic_question_transform) isDynamic = true;
+            if (extra.dynamic_number || extra.dynamic_mode || extra.dynamic_price || extra.dynamic_conjugation || extra.dynamic_article_quiz || extra.dynamic_possessive_article || extra.dynamic_plural_quiz || extra.dynamic_direction_quiz || extra.dynamic_landmark_quiz || extra.dynamic_praeteritum_quiz || extra.dynamic_country_language_quiz || extra.dynamic_question_transform || extra.dynamic_nom_akk_quiz || extra.dynamic_possessiv_quiz || extra.dynamic_adjective_antonym_quiz || extra.dynamic_pronoun_replacement_quiz || extra.dynamic_house_translation_quiz) isDynamic = true;
         } catch (e) {}
 
         if (isDynamic) {

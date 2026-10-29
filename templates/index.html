@@ -100,7 +100,7 @@
                 <div class="max-w-3xl space-y-5 relative z-10">
                     <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/10 border border-white/15 text-xs font-medium text-amber-300">
                         <span class="w-2 h-2 rounded-full bg-amber-400"></span>
-                        Giao diện chuẩn Châu Âu (CEFR A1 - B2) • Đã kết nối Python & SQLite
+                        Giao diện chuẩn Châu Âu (CEFR A1 - B2) • Hệ thống học tập thông minh tương tác cao
                     </div>
 
                     <h2 class="text-3xl sm:text-4xl font-extrabold leading-tight tracking-tight">
@@ -184,7 +184,7 @@
                 <div class="bg-white border border-slate-200 rounded-3xl p-5 shadow-sm space-y-4 h-fit">
                     <div class="flex items-center justify-between">
                         <h3 class="font-extrabold text-sm text-slate-700 uppercase tracking-wider">Danh mục bài học</h3>
-                        <span class="px-2.5 py-1 rounded-lg bg-emerald-50 text-emerald-700 border border-emerald-200 font-bold text-xs">SQLite Live</span>
+                        <span class="px-2.5 py-1 rounded-lg bg-emerald-50 text-emerald-700 border border-emerald-200 font-bold text-xs">Trực tuyến</span>
                     </div>
                     <div id="lesson-list" class="space-y-2.5"></div>
                 </div>
@@ -222,7 +222,7 @@
                                 <h3 class="text-xl font-extrabold text-slate-900">Hệ Thống 7 Dạng Bài Tập Tương Tác</h3>
                                 <span class="px-2.5 py-0.5 rounded-full bg-indigo-50 border border-indigo-200 text-indigo-700 font-extrabold text-xs">50 Câu • Chuẩn CEFR</span>
                             </div>
-                            <p class="text-xs text-slate-500 mt-0.5">Chọn từng dạng bài tập bên dưới để rèn luyện. Làm đúng cộng điểm EXP trực tiếp vào SQLite.</p>
+                            <p class="text-xs text-slate-500 mt-0.5">Chọn từng dạng bài tập bên dưới để rèn luyện. Làm đúng cộng điểm EXP trực tiếp vào hồ sơ của bạn.</p>
                         </div>
                         <!-- Bàn phím ảo tiếng Đức -->
                         <div class="flex flex-wrap items-center gap-1.5 bg-slate-100 p-1.5 rounded-xl border border-slate-200">
@@ -301,7 +301,7 @@
             <div class="bg-white border border-slate-200 rounded-3xl p-6 shadow-sm space-y-4 h-fit">
                 <div class="flex items-center justify-between border-b border-slate-100 pb-3">
                     <h3 class="font-extrabold text-lg text-slate-900">🏆 Bảng Xếp Hạng Hôm Nay</h3>
-                    <span class="text-xs font-bold text-emerald-600 bg-emerald-50 px-2.5 py-1 rounded-lg">Realtime SQL</span>
+                    <span class="text-xs font-bold text-emerald-600 bg-emerald-50 px-2.5 py-1 rounded-lg">Đang hoạt động</span>
                 </div>
                 <div id="leaderboard-list" class="space-y-2.5 text-sm"></div>
             </div>
@@ -610,7 +610,7 @@
             if (currentLevelData.lessons.length === 0) {
                 lessonList.innerHTML = `<p class="text-sm text-slate-500 p-3 bg-slate-50 rounded-2xl">Chưa có bài học nào ở cấp độ ${code}. Hãy gửi tài liệu để nạp vào cơ sở dữ liệu!</p>`;
                 document.getElementById('current-lesson-title').innerText = `Cấp độ ${code} (Đang chờ tài liệu của bạn)`;
-                document.getElementById('current-lesson-grammar').innerHTML = "Khi bạn gửi nội dung lý thuyết và bài tập của cấp độ này, chúng ta sẽ nạp thẳng vào SQLite.";
+                document.getElementById('current-lesson-grammar').innerHTML = "Nội dung lý thuyết và bài tập của cấp độ này đang được chuẩn bị.";
                 document.getElementById('vocab-grid').innerHTML = "";
                 document.getElementById('exercises-container').innerHTML = "";
             } else {
@@ -821,11 +821,26 @@
             if (isCorrect) {
                 feedback.className = "text-xs p-3.5 rounded-xl mt-2 bg-emerald-50 text-emerald-800 border border-emerald-200";
                 let nextDynamicHtml = '';
-                const isDynamicEx = extra.dynamic_number || extra.dynamic_mode || extra.dynamic_price || extra.dynamic_conjugation || extra.dynamic_article_quiz || extra.dynamic_possessive_article || extra.dynamic_plural_quiz || extra.dynamic_direction_quiz || extra.dynamic_landmark_quiz || extra.dynamic_praeteritum_quiz || extra.dynamic_country_language_quiz || extra.dynamic_question_transform;
+                const isDynamicEx = extra.dynamic_number || extra.dynamic_mode || extra.dynamic_price || extra.dynamic_conjugation || extra.dynamic_article_quiz || extra.dynamic_possessive_article || extra.dynamic_plural_quiz || extra.dynamic_direction_quiz || extra.dynamic_landmark_quiz || extra.dynamic_praeteritum_quiz || extra.dynamic_country_language_quiz || extra.dynamic_question_transform || extra.dynamic_nom_akk_quiz || extra.dynamic_possessiv_quiz || extra.dynamic_adjective_antonym_quiz || extra.dynamic_pronoun_replacement_quiz || extra.dynamic_house_translation_quiz;
                 if (isDynamicEx) {
                     let promptMsg = "🎯 Tuyệt vời! Bạn muốn rèn thêm phản xạ?";
                     let btnLabel = "🔄 Đổi đề khác để luyện tiếp";
-                    if (extra.dynamic_direction_quiz) {
+                    if (extra.dynamic_nom_akk_quiz) {
+                        promptMsg = "🎯 Chuẩn xác! Bạn muốn rèn thêm phản xạ Nominativ vs. Akkusativ?";
+                        btnLabel = "🔄 Đổi câu khác để luyện Cách 1 & 4";
+                    } else if (extra.dynamic_possessiv_quiz) {
+                        promptMsg = "🎯 Xuất sắc! Bạn muốn rèn thêm Mạo từ sở hữu theo 9 ngôi?";
+                        btnLabel = "🔄 Đổi chủ sở hữu & danh từ khác";
+                    } else if (extra.dynamic_adjective_antonym_quiz) {
+                        promptMsg = "🎯 Tuyệt vời! Bạn muốn rèn thêm cặp tính từ đối lập?";
+                        btnLabel = "🔄 Đổi cặp tính từ khác";
+                    } else if (extra.dynamic_pronoun_replacement_quiz) {
+                        promptMsg = "🎯 Chuẩn xác! Bạn muốn rèn thêm thay thế đại từ (Er/Sie/Es)?";
+                        btnLabel = "🔄 Đổi câu khác để luyện đại từ";
+                    } else if (extra.dynamic_house_translation_quiz) {
+                        promptMsg = "🎯 Xuất sắc! Bạn muốn rèn thêm dịch câu miêu tả phòng & nội thất?";
+                        btnLabel = "🔄 Đổi câu miêu tả khác";
+                    } else if (extra.dynamic_direction_quiz) {
                         promptMsg = "🎯 Chuẩn xác! Bạn muốn rèn thêm phản xạ phương hướng & bản đồ?";
                         btnLabel = "🔄 Đổi thành phố khác để luyện tiếp";
                     } else if (extra.dynamic_landmark_quiz) {
@@ -868,7 +883,7 @@
                         </div>
                     `;
                 }
-                feedback.innerHTML = `✅ <b>Chính xác!</b> ${ex.explanation} <b>(+${ex.exp_reward} EXP đã lưu vào SQL)</b>${nextDynamicHtml}`;
+                feedback.innerHTML = `✅ <b>Chính xác!</b> ${ex.explanation} <b>(+${ex.exp_reward} EXP)</b>${nextDynamicHtml}`;
                 await addExpToDatabase(ex.exp_reward);
             } else {
                 feedback.className = "text-xs p-3.5 rounded-xl mt-2 bg-rose-50 text-rose-800 border border-rose-200";

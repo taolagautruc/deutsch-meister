@@ -513,6 +513,250 @@ const GERMAN_LEXIKON_DB = [
         rule: "Danh từ ghép (das Haus + die Aufgabe) -> lấy giống cái (die), thường dùng ở dạng số nhiều: die Hausaufgaben machen.",
         example: "Er macht die Hausaufgaben. – Was macht er? / Macht er die Hausaufgaben?",
         example_vi: "Anh ấy làm bài tập về nhà. – Anh ấy làm gì? / Anh ấy có làm bài tập về nhà không?"
+    },
+
+    // --- 7. BÀI 4: NHÀ Ở & CÁC PHÒNG (MENSCHEN UND HÄUSER) ---
+    {
+        word: "Garten", article: "der", gender: "der", plural: "die Gärten",
+        indefinite: "ein Garten", negation: "kein Garten", akkusativ: "den / einen / keinen Garten",
+        meaning: "khu vườn", category: "Nhà ở & Phòng ốc",
+        rule: "Biến âm a -> ä ở số nhiều (die Gärten). Giống đực ở Akkusativ đổi thành den/einen/keinen Garten.",
+        example: "Wir haben einen großen Garten. Ich finde den Garten sehr schön.",
+        example_vi: "Chúng mình có một khu vườn lớn. Mình thấy khu vườn rất đẹp."
+    },
+    {
+        word: "Balkon", article: "der", gender: "der", plural: "die Balkone",
+        indefinite: "ein Balkon", negation: "kein Balkon", akkusativ: "den / einen / keinen Balkon",
+        meaning: "ban công", category: "Nhà ở & Phòng ốc",
+        rule: "Số nhiều thêm -e. Sau cấu trúc 'es gibt' (Akkusativ) đổi thành 'einen Balkon'.",
+        example: "Oben gibt es einen Balkon.",
+        example_vi: "Ở tầng trên có một cái ban công."
+    },
+    {
+        word: "Flur", article: "der", gender: "der", plural: "die Flure",
+        indefinite: "ein Flur", negation: "kein Flur", akkusativ: "den / einen / keinen Flur",
+        meaning: "hành lang", category: "Nhà ở & Phòng ốc",
+        rule: "Số nhiều thêm -e. Đại từ nhân xưng thay thế ở Nominativ là 'Er' (Er ist lang und dunkel).",
+        example: "Das Haus hat einen Flur. Er ist lang und dunkel.",
+        example_vi: "Ngôi nhà có một hành lang. Nó dài và tối."
+    },
+    {
+        word: "Keller", article: "der", gender: "der", plural: "die Keller",
+        indefinite: "ein Keller", negation: "kein Keller", akkusativ: "den / einen / keinen Keller",
+        meaning: "tầng hầm", category: "Nhà ở & Phòng ốc",
+        rule: "Đuôi -er giữ nguyên ở số nhiều. Akkusativ đổi thành: einen Keller / keinen Keller.",
+        example: "Die Wohnung hat einen Keller.",
+        example_vi: "Căn hộ có một tầng hầm."
+    },
+    {
+        word: "Stock", article: "der", gender: "der", plural: "die Stöcke",
+        indefinite: "ein Stock", negation: "kein Stock", akkusativ: "den / einen / keinen Stock",
+        meaning: "tầng lầu", category: "Nhà ở & Phòng ốc",
+        rule: "Số nhiều biến âm o -> ö và thêm -e (die Stöcke). Thường đi với số thứ tự: im 1. Stock.",
+        example: "Meine Wohnung liegt im zweiten Stock.",
+        example_vi: "Căn hộ của tôi nằm ở tầng hai."
+    },
+    {
+        word: "Wohnung", article: "die", gender: "die", plural: "die Wohnungen",
+        indefinite: "eine Wohnung", negation: "keine Wohnung", akkusativ: "die / eine / keine Wohnung",
+        meaning: "căn hộ", category: "Nhà ở & Phòng ốc",
+        rule: "Hậu tố -ung luôn mang giống cái (die) 100%, số nhiều thêm -en. Akkusativ giữ nguyên.",
+        example: "Wir suchen eine neue Wohnung in Berlin.",
+        example_vi: "Chúng mình đang tìm một căn hộ mới ở Berlin."
+    },
+    {
+        word: "Garage", article: "die", gender: "die", plural: "die Garagen",
+        indefinite: "eine Garage", negation: "keine Garage", akkusativ: "die / eine / keine Garage",
+        meaning: "ga-ra ô tô, nhà để xe", category: "Nhà ở & Phòng ốc",
+        rule: "Đuôi -e mang giống cái (die), số nhiều thêm -n. Mạo từ Akkusativ giữ nguyên.",
+        example: "Das Haus hat eine große Garage.",
+        example_vi: "Ngôi nhà có một ga-ra để xe rộng rãi."
+    },
+    {
+        word: "Terrasse", article: "die", gender: "die", plural: "die Terrassen",
+        indefinite: "eine Terrasse", negation: "keine Terrasse", akkusativ: "die / eine / keine Terrasse",
+        meaning: "sân hiên, sân thượng", category: "Nhà ở & Phòng ốc",
+        rule: "Đuôi -e mang giống cái (die), số nhiều thêm -n.",
+        example: "Im Sommer sitzen wir oft auf der Terrasse.",
+        example_vi: "Vào mùa hè chúng tôi hay ngồi ngoài sân hiên."
+    },
+    {
+        word: "Küche", article: "die", gender: "die", plural: "die Küchen",
+        indefinite: "eine Küche", negation: "keine Küche", akkusativ: "die / eine / keine Küche",
+        meaning: "nhà bếp, phòng bếp", category: "Nhà ở & Phòng ốc",
+        rule: "Đuôi -e mang giống cái (die). Mạo từ sở hữu thêm đuôi -e: Meine Küche ist klein und schön.",
+        example: "Ich finde die Küche zu klein.",
+        example_vi: "Mình thấy căn bếp hơi quá nhỏ."
+    },
+    {
+        word: "Toilette", article: "die", gender: "die", plural: "die Toiletten",
+        indefinite: "eine Toilette", negation: "keine Toilette", akkusativ: "die / eine / keine Toilette",
+        meaning: "nhà vệ sinh", category: "Nhà ở & Phòng ốc",
+        rule: "Đuôi -e mang giống cái (die), số nhiều thêm -n (die Toiletten).",
+        example: "Wo ist die Toilette, bitte?",
+        example_vi: "Xin hỏi nhà vệ sinh ở đâu ạ?"
+    },
+    {
+        word: "Haus", article: "das", gender: "das", plural: "die Häuser",
+        indefinite: "ein Haus", negation: "kein Haus", akkusativ: "das / ein / kein Haus",
+        meaning: "ngôi nhà", category: "Nhà ở & Phòng ốc",
+        rule: "Số nhiều biến âm a -> ä và thêm đuôi -er (die Häuser). Giống trung ở Akkusativ giữ nguyên.",
+        example: "Wir haben ein Haus. Unser Haus ist sehr alt.",
+        example_vi: "Chúng mình có một ngôi nhà. Nhà của chúng mình rất cũ."
+    },
+    {
+        word: "Wohnheim", article: "das", gender: "das", plural: "die Wohnheime",
+        indefinite: "ein Wohnheim", negation: "kein Wohnheim", akkusativ: "das / ein / kein Wohnheim",
+        meaning: "ký túc xá", category: "Nhà ở & Phòng ốc",
+        rule: "Ghép wohnen + das Heim -> mang giống trung (das), số nhiều thêm -e.",
+        example: "Lukas wohnt im Studentenwohnheim.",
+        example_vi: "Lukas sống trong ký túc xá sinh viên."
+    },
+    {
+        word: "Fenster", article: "das", gender: "das", plural: "die Fenster",
+        indefinite: "ein Fenster", negation: "kein Fenster", akkusativ: "das / ein / kein Fenster",
+        meaning: "cửa sổ", category: "Nhà ở & Phòng ốc",
+        rule: "Đuôi -er giống trung, số nhiều giữ nguyên (die Fenster).",
+        example: "Das Zimmer hat ein großes Fenster.",
+        example_vi: "Căn phòng có một cửa sổ lớn."
+    },
+    {
+        word: "Zimmer", article: "das", gender: "das", plural: "die Zimmer",
+        indefinite: "ein Zimmer", negation: "kein Zimmer", akkusativ: "das / ein / kein Zimmer",
+        meaning: "căn phòng", category: "Nhà ở & Phòng ốc",
+        rule: "Đuôi -er giống trung, số nhiều giữ nguyên. Mọi phòng ghép với -zimmer đều là das!",
+        example: "Unser Haus hat 5 Zimmer.",
+        example_vi: "Ngôi nhà của chúng tôi có 5 phòng."
+    },
+    {
+        word: "Wohnzimmer", article: "das", gender: "das", plural: "die Wohnzimmer",
+        indefinite: "ein Wohnzimmer", negation: "kein Wohnzimmer", akkusativ: "das / ein / kein Wohnzimmer",
+        meaning: "phòng khách", category: "Nhà ở & Phòng ốc",
+        rule: "Ghép với das Zimmer -> luôn mang giống trung (das), số nhiều giữ nguyên. Đại từ thay thế là Es.",
+        example: "Mein Wohnzimmer ist hell und modern. Es hat einen Fernseher.",
+        example_vi: "Phòng khách của tôi sáng và hiện đại. Nó có 1 Tivi."
+    },
+    {
+        word: "Badezimmer", article: "das", gender: "das", plural: "die Badezimmer",
+        indefinite: "ein Badezimmer", negation: "kein Badezimmer", akkusativ: "das / ein / kein Badezimmer",
+        meaning: "phòng tắm (das Bad)", category: "Nhà ở & Phòng ốc",
+        rule: "Ghép baden + das Zimmer -> giống trung (das). Viết gọn là das Bad (die Bäder).",
+        example: "Das Badezimmer ist sehr sauber.",
+        example_vi: "Phòng tắm rất sạch sẽ."
+    },
+    {
+        word: "Schlafzimmer", article: "das", gender: "das", plural: "die Schlafzimmer",
+        indefinite: "ein Schlafzimmer", negation: "kein Schlafzimmer", akkusativ: "das / ein / kein Schlafzimmer",
+        meaning: "phòng ngủ", category: "Nhà ở & Phòng ốc",
+        rule: "Ghép schlafen + das Zimmer -> giống trung (das), số nhiều giữ nguyên.",
+        example: "Mein Schlafzimmer ist gemütlich und hat ein Bett.",
+        example_vi: "Phòng ngủ của tôi thì ấm cúng và có 1 giường."
+    },
+    {
+        word: "Esszimmer", article: "das", gender: "das", plural: "die Esszimmer",
+        indefinite: "ein Esszimmer", negation: "kein Esszimmer", akkusativ: "das / ein / kein Esszimmer",
+        meaning: "phòng ăn", category: "Nhà ở & Phòng ốc",
+        rule: "Ghép essen + das Zimmer -> giống trung (das).",
+        example: "Wir essen zusammen im Esszimmer.",
+        example_vi: "Chúng tôi ăn cùng nhau trong phòng ăn."
+    },
+    {
+        word: "Arbeitszimmer", article: "das", gender: "das", plural: "die Arbeitszimmer",
+        indefinite: "ein Arbeitszimmer", negation: "kein Arbeitszimmer", akkusativ: "das / ein / kein Arbeitszimmer",
+        meaning: "phòng làm việc", category: "Nhà ở & Phòng ốc",
+        rule: "Ghép die Arbeit + s + das Zimmer -> giống trung (das). Đại từ thay thế là Es.",
+        example: "Mein Arbeitszimmer ist klein, aber hell. Es hat einen Tisch và einen Stuhl.",
+        example_vi: "Phòng làm việc của tôi nhỏ nhưng sáng. Nó có 1 bàn và 1 ghế."
+    },
+    {
+        word: "Kinderzimmer", article: "das", gender: "das", plural: "die Kinderzimmer",
+        indefinite: "ein Kinderzimmer", negation: "kein Kinderzimmer", akkusativ: "das / ein / kein Kinderzimmer",
+        meaning: "phòng trẻ em", category: "Nhà ở & Phòng ốc",
+        rule: "Ghép die Kinder + das Zimmer -> giống trung (das).",
+        example: "Das Kinderzimmer ist bunt und schön.",
+        example_vi: "Phòng trẻ em rực rỡ và đẹp."
+    },
+
+    // --- 8. BÀI 4: NỘI THẤT & ĐỒ ĐẠC (MÖBEL & EINRICHTUNG) ---
+    {
+        word: "Schrank", article: "der", gender: "der", plural: "die Schränke",
+        indefinite: "ein Schrank", negation: "kein Schrank", akkusativ: "den / einen / keinen Schrank",
+        meaning: "cái tủ (tủ quần áo)", category: "Nội thất & Đồ đạc",
+        rule: "Số nhiều thêm Umlaut a -> ä và -e. Sau động từ haben/kaufen (Akkusativ) đổi thành: einen Schrank.",
+        example: "Er kauft einen neuen Schrank für das Schlafzimmer.",
+        example_vi: "Anh ấy mua một cái tủ mới cho phòng ngủ."
+    },
+    {
+        word: "Kühlschrank", article: "der", gender: "der", plural: "die Kühlschränke",
+        indefinite: "ein Kühlschrank", negation: "kein Kühlschrank", akkusativ: "den / einen / keinen Kühlschrank",
+        meaning: "tủ lạnh", category: "Nội thất & Đồ đạc",
+        rule: "Ghép kühl + der Schrank -> giống đực (der). Akkusativ: einen Kühlschrank.",
+        example: "Die Küche hat einen modernen Kühlschrank.",
+        example_vi: "Nhà bếp có một chiếc tủ lạnh hiện đại."
+    },
+    {
+        word: "Teppich", article: "der", gender: "der", plural: "die Teppiche",
+        indefinite: "ein Teppich", negation: "kein Teppich", akkusativ: "den / einen / keinen Teppich",
+        meaning: "tấm thảm", category: "Nội thất & Đồ đạc",
+        rule: "Hậu tố -ich luôn mang giống đực (der). Số nhiều thêm -e. Akkusativ: einen Teppich.",
+        example: "Im Wohnzimmer liegt ein schöner Teppich.",
+        example_vi: "Trong phòng khách có trải một tấm thảm đẹp."
+    },
+    {
+        word: "Spiegel", article: "der", gender: "der", plural: "die Spiegel",
+        indefinite: "ein Spiegel", negation: "kein Spiegel", akkusativ: "den / einen / keinen Spiegel",
+        meaning: "cái gương", category: "Nội thất & Đồ đạc",
+        rule: "Tận cùng -el, số nhiều giữ nguyên. Akkusativ: einen Spiegel.",
+        example: "Das Bad hat einen großen Spiegel.",
+        example_vi: "Phòng tắm có một chiếc gương lớn."
+    },
+    {
+        word: "Fernseher", article: "der", gender: "der", plural: "die Fernseher",
+        indefinite: "ein Fernseher", negation: "kein Fernseher", akkusativ: "den / einen / keinen Fernseher",
+        meaning: "Tivi (máy truyền hình)", category: "Nội thất & Đồ đạc",
+        rule: "Tận cùng -er chỉ thiết bị mang giống đực (der). Akkusativ đổi thành: einen Fernseher.",
+        example: "Mein Wohnzimmer hat einen Fernseher und ein Bücherregal.",
+        example_vi: "Phòng khách của tôi có 1 chiếc Tivi và 1 giá sách."
+    },
+    {
+        word: "Lampe", article: "die", gender: "die", plural: "die Lampen",
+        indefinite: "eine Lampe", negation: "keine Lampe", akkusativ: "die / eine / keine Lampe",
+        meaning: "cái đèn", category: "Nội thất & Đồ đạc",
+        rule: "Tận cùng -e mang giống cái (die), số nhiều thêm -n. Akkusativ giữ nguyên.",
+        example: "Auf dem Schreibtisch steht eine Lampe.",
+        example_vi: "Trên bàn làm việc có một cái đèn."
+    },
+    {
+        word: "Spüle", article: "die", gender: "die", plural: "die Spülen",
+        indefinite: "eine Spüle", negation: "keine Spüle", akkusativ: "die / eine / keine Spüle",
+        meaning: "bồn rửa bát", category: "Nội thất & Đồ đạc",
+        rule: "Đuôi -e mang giống cái (die), số nhiều thêm -n.",
+        example: "Die Küche hat eine Spüle và einen Herd.",
+        example_vi: "Nhà bếp có một bồn rửa bát và một cái bếp."
+    },
+    {
+        word: "Bett", article: "das", gender: "das", plural: "die Betten",
+        indefinite: "ein Bett", negation: "kein Bett", akkusativ: "das / ein / kein Bett",
+        meaning: "cái giường", category: "Nội thất & Đồ đạc",
+        rule: "Ngoại lệ số nhiều của giống trung thêm -en: die Betten. Akkusativ giữ nguyên ein Bett.",
+        example: "Mein Schlafzimmer hat ein bequemes Bett.",
+        example_vi: "Phòng ngủ của tôi có một chiếc giường êm ái."
+    },
+    {
+        word: "Regal", article: "das", gender: "das", plural: "die Regale",
+        indefinite: "ein Regal", negation: "kein Regal", akkusativ: "das / ein / kein Regal",
+        meaning: "cái giá, cái kệ", category: "Nội thất & Đồ đạc",
+        rule: "Giống trung (das), số nhiều thêm -e (die Regale).",
+        example: "Das Arbeitszimmer hat ein weißes Regal.",
+        example_vi: "Phòng làm việc có một cái kệ màu trắng."
+    },
+    {
+        word: "Bücherregal", article: "das", gender: "das", plural: "die Bücherregale",
+        indefinite: "ein Bücherregal", negation: "kein Bücherregal", akkusativ: "das / ein / kein Bücherregal",
+        meaning: "giá sách, kệ sách", category: "Nội thất & Đồ đạc",
+        rule: "Ghép die Bücher + das Regal -> lấy giống theo das Regal. Akkusativ giữ nguyên ein Bücherregal.",
+        example: "Es hat einen Fernseher und ein Bücherregal.",
+        example_vi: "Nó có 1 Tivi và 1 giá sách."
     }
 ];
 
@@ -524,6 +768,8 @@ const LEXIKON_FILTERS = [
     { id: "der", label: "🔵 Giống đực - der (Maskulinum)" },
     { id: "die", label: "🔴 Giống cái - die (Femininum)" },
     { id: "das", label: "🟢 Giống trung - das (Neutrum)" },
+    { id: "Nhà ở & Phòng ốc", label: "🏠 Nhà ở & Phòng ốc (Menschen & Häuser)" },
+    { id: "Nội thất & Đồ đạc", label: "🛋️ Nội thất & Đồ đạc (Möbel & Einrichtung)" },
     { id: "Quốc gia & Ngôn ngữ", label: "🌍 Quốc gia & Ngôn ngữ (Länder & Sprachen)" },
     { id: "Danh lam thắng cảnh", label: "🏛️ Danh lam thắng cảnh (Sehenswürdigkeiten)" },
     { id: "Phương hướng & Bản đồ", label: "🧭 Phương hướng & Bản đồ (Himmelsrichtungen)" },
@@ -642,6 +888,12 @@ function updateLexikonUI() {
                         <span class="font-bold text-slate-900">${item.indefinite}</span> / <span class="text-rose-600 font-bold">${item.negation}</span>
                     </div>
                 </div>
+                ${item.akkusativ ? `
+                <div class="p-2 rounded-xl bg-indigo-50/70 border border-indigo-200 text-xs flex items-center justify-between">
+                    <span class="text-indigo-900 font-bold text-[10px]">Cách 4 (Akkusativ):</span>
+                    <span class="font-mono font-bold text-indigo-700 text-[11px]">${item.akkusativ}</span>
+                </div>
+                ` : ''}
             `;
         }
 
@@ -723,6 +975,72 @@ function renderLexikon(containerId) {
                 </div>
             </div>
 
+            <!-- Nút bật/tắt Bảng Ma Trận Mạo Từ & Sở Hữu -->
+            <div class="flex items-center justify-between flex-wrap gap-2 pt-1">
+                <button onclick="toggleMatrixTable()" id="btn-toggle-matrix" class="px-4 py-2.5 rounded-2xl bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-500 hover:to-purple-500 text-white font-bold text-xs shadow-md transition flex items-center gap-1.5 cursor-pointer">
+                    📊 Bảng Tra Cứu Nhanh Mạo Từ & Sở Hữu (Nominativ vs. Akkusativ)
+                </button>
+                <span class="text-xs text-slate-500 italic">💡 Bấm để đối chiếu nhanh quy tắc biến đổi Cách 1 (Nominativ) sang Cách 4 (Akkusativ)</span>
+            </div>
+
+            <!-- Khung Ma Trận Tra Cứu Nhanh (Collapsible) -->
+            <div id="lexikon-matrix-table-wrap" class="hidden rounded-3xl bg-white border border-indigo-200 p-5 sm:p-6 shadow-sm space-y-4">
+                <div class="flex items-center justify-between border-b border-slate-100 pb-3">
+                    <h3 class="text-base font-extrabold text-slate-900 flex items-center gap-2">
+                        <span>📋</span> Ma Trận 3 Loại Mạo Từ: Nominativ (Cách 1) vs. Akkusativ (Cách 4)
+                    </h3>
+                    <button onclick="toggleMatrixTable()" class="text-slate-400 hover:text-slate-700 text-sm font-bold cursor-pointer">✕ Đóng</button>
+                </div>
+
+                <div class="overflow-x-auto rounded-2xl border border-slate-200">
+                    <table class="w-full text-left text-xs">
+                        <thead class="bg-slate-100 text-slate-700 font-bold border-b border-slate-200">
+                            <tr>
+                                <th class="p-3">Giống / Số</th>
+                                <th class="p-3">Xác định (C1 → C4)</th>
+                                <th class="p-3">Bất định (C1 → C4)</th>
+                                <th class="p-3">Phủ định (C1 → C4)</th>
+                                <th class="p-3">Sở hữu ich / du / er / wir (C1 → C4)</th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-slate-100">
+                            <tr class="bg-blue-50/40">
+                                <td class="p-3 font-bold text-blue-800">🔵 Giống Đực (m)</td>
+                                <td class="p-3"><b>der</b> → <span class="font-bold text-rose-600">den</span></td>
+                                <td class="p-3"><b>ein</b> → <span class="font-bold text-rose-600">einen</span></td>
+                                <td class="p-3"><b>kein</b> → <span class="font-bold text-rose-600">keinen</span></td>
+                                <td class="p-3">mein → <span class="font-bold text-rose-600">meinen</span> / dein → <span class="font-bold text-rose-600">deinen</span></td>
+                            </tr>
+                            <tr class="bg-rose-50/40">
+                                <td class="p-3 font-bold text-rose-800">🔴 Giống Cái (f)</td>
+                                <td class="p-3"><b>die</b> → <b>die</b> (giữ nguyên)</td>
+                                <td class="p-3"><b>eine</b> → <b>eine</b> (giữ nguyên)</td>
+                                <td class="p-3"><b>keine</b> → <b>keine</b> (giữ nguyên)</td>
+                                <td class="p-3">meine / deine / seine / unsere (giữ nguyên)</td>
+                            </tr>
+                            <tr class="bg-emerald-50/40">
+                                <td class="p-3 font-bold text-emerald-800">🟢 Giống Trung (n)</td>
+                                <td class="p-3"><b>das</b> → <b>das</b> (giữ nguyên)</td>
+                                <td class="p-3"><b>ein</b> → <b>ein</b> (giữ nguyên)</td>
+                                <td class="p-3"><b>kein</b> → <b>kein</b> (giữ nguyên)</td>
+                                <td class="p-3">mein / dein / sein / unser (giữ nguyên)</td>
+                            </tr>
+                            <tr class="bg-purple-50/40">
+                                <td class="p-3 font-bold text-purple-800">🟣 Số Nhiều (Pl)</td>
+                                <td class="p-3"><b>die</b> → <b>die</b> (giữ nguyên)</td>
+                                <td class="p-3"><i>— (không có ein)</i></td>
+                                <td class="p-3"><b>keine</b> → <b>keine</b> (giữ nguyên)</td>
+                                <td class="p-3">meine / deine / eure (bỏ e) / Ihre (giữ nguyên)</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="p-3.5 rounded-2xl bg-amber-50 border border-amber-200 text-xs text-slate-700">
+                    💡 <b>Quy luật cốt lõi cần nhớ:</b> Chỉ duy nhất <b>Giống đực (der)</b> khi chuyển sang Akkusativ mới đổi đuôi sang <b>-en</b> (<i>den, einen, keinen, meinen, deinen, seinen, ihren, unseren, euren, Ihren</i>). Tất cả các giống còn lại (die, das, Plural) <b>giữ nguyên 100%</b>!
+                </div>
+            </div>
+
             <!-- Bộ lọc phân loại theo giống & chủ đề -->
             <div class="flex items-center gap-2 overflow-x-auto pb-1">
                 <span class="text-xs font-bold text-slate-500 whitespace-nowrap">Bộ lọc:</span>
@@ -758,6 +1076,20 @@ function clearLexikonSearch() {
     updateLexikonUI();
 }
 
+function toggleMatrixTable() {
+    const wrap = document.getElementById('lexikon-matrix-table-wrap');
+    const btn = document.getElementById('btn-toggle-matrix');
+    if (!wrap || !btn) return;
+    const isHidden = wrap.classList.contains('hidden');
+    if (isHidden) {
+        wrap.classList.remove('hidden');
+        btn.innerHTML = '✕ Đóng Bảng Ma Trận Mạo Từ & Sở Hữu';
+    } else {
+        wrap.classList.add('hidden');
+        btn.innerHTML = '📊 Bảng Tra Cứu Nhanh Mạo Từ & Sở Hữu (Nominativ vs. Akkusativ)';
+    }
+}
+
 if (typeof window !== 'undefined') {
     window.GERMAN_LEXIKON_DB = GERMAN_LEXIKON_DB;
     window.renderLexikon = renderLexikon;
@@ -765,4 +1097,5 @@ if (typeof window !== 'undefined') {
     window.setLexikonFilter = setLexikonFilter;
     window.onLexikonSearchChange = onLexikonSearchChange;
     window.clearLexikonSearch = clearLexikonSearch;
+    window.toggleMatrixTable = toggleMatrixTable;
 }
