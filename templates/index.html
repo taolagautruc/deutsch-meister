@@ -73,17 +73,17 @@
                 </button>
             </nav>
 
-            <!-- Cụm thông tin Ngày, EXP & Avatar HV bên phải -->
-            <div class="flex items-center gap-2.5 shrink-0">
+            <!-- Cụm thông tin Tài khoản / Ngày / EXP bên phải -->
+            <div id="auth-header-container" class="flex items-center gap-2.5 shrink-0">
                 <div class="px-3 py-1.5 rounded-xl bg-orange-50 border border-orange-200 text-orange-700 text-xs sm:text-sm font-bold flex items-center gap-1.5 whitespace-nowrap">
                     🔥 <span id="user-streak">7</span> ngày
                 </div>
                 <div class="px-3.5 py-1.5 rounded-xl bg-amber-50 border border-amber-200 text-amber-700 text-xs sm:text-sm font-extrabold flex items-center gap-1.5 whitespace-nowrap">
                     ⚡ <span id="user-exp">1,450</span> EXP
                 </div>
-                <div class="w-9 h-9 rounded-xl bg-indigo-600 text-white font-bold text-xs flex items-center justify-center shadow-sm shrink-0">
-                    HV
-                </div>
+                <button onclick="openAuthModal('login')" class="px-3.5 py-2 rounded-xl bg-indigo-600 hover:bg-indigo-500 active:scale-95 text-white font-extrabold text-xs sm:text-sm shadow-sm transition flex items-center gap-1.5 cursor-pointer">
+                    🔐 <span>Đăng nhập / Đua Top</span>
+                </button>
             </div>
         </div>
     </header>
@@ -269,39 +269,47 @@
             <!-- Được render động bởi renderLexikon() -->
         </section>
 
-        <!-- 5. MÀN HÌNH ĐẤU TRƯỜNG GAME & BẢNG XẾP HẠNG NGÀY -->
+        <!-- 5. MÀN HÌNH ĐẤU TRƯỜNG GAME & BẢNG XẾP HẠNG THỰC TẾ -->
         <section id="view-arena" class="hidden grid grid-cols-1 lg:grid-cols-3 gap-6">
-            <div class="lg:col-span-2 bg-white border border-slate-200 rounded-3xl p-6 sm:p-8 shadow-sm space-y-6">
+            <div class="lg:col-span-2 bg-white border border-slate-200 rounded-3xl p-6 sm:p-8 shadow-sm space-y-6 relative overflow-hidden">
+                <!-- Hộp điểm số bay lơ lửng -->
+                <div id="arena-floating-score-box" class="pointer-events-none absolute inset-0 z-30 overflow-hidden"></div>
+
                 <div class="flex flex-wrap items-center justify-between gap-4 border-b border-slate-100 pb-5">
                     <div>
-                        <span class="px-3 py-1 rounded-full bg-amber-100 text-amber-800 font-bold text-xs">SPEED ARENA • NHÂN HỆ SỐ COMBO</span>
+                        <span class="px-3 py-1 rounded-full bg-amber-100 text-amber-800 font-bold text-xs uppercase tracking-wider">SPEED ARENA • ĐẤU TRƯỜNG PHẢN XẠ 2 PHÚT</span>
                         <h2 class="text-2xl font-extrabold text-slate-900 mt-1">⚔️ Đấu Trường Phản Xạ Tiếng Đức</h2>
                     </div>
-                    <div class="flex items-center gap-3">
-                        <div class="px-4 py-2 rounded-2xl bg-red-50 border border-red-200 text-red-600 font-mono font-extrabold text-base">
-                            ⏱️ <span id="arena-timer">45</span>s
+                    <div class="flex items-center gap-2 sm:gap-3">
+                        <div class="px-3 sm:px-4 py-2 rounded-2xl bg-slate-100 border border-slate-200 text-slate-800 font-mono font-extrabold text-sm sm:text-base flex items-center gap-1.5 shadow-xs">
+                            ⏱️ <span id="arena-timer">02:00</span>
                         </div>
-                        <div class="px-4 py-2 rounded-2xl bg-amber-50 border border-amber-200 text-amber-700 font-extrabold text-base">
-                            🔥 Combo x<span id="arena-combo">1</span>
+                        <div class="px-3 sm:px-4 py-2 rounded-2xl bg-amber-50 border border-amber-200 text-amber-700 font-extrabold text-sm sm:text-base flex items-center gap-1.5 shadow-xs">
+                            ⚡ <span id="arena-score">0</span>
                         </div>
-                        <button onclick="startArenaGame()" class="px-5 py-2.5 bg-indigo-600 hover:bg-indigo-500 text-white font-bold rounded-2xl text-sm shadow-md transition">
-                            Bắt đầu ván mới
-                        </button>
+                        <div class="px-3 py-2 rounded-2xl bg-indigo-50 border border-indigo-200 text-indigo-700 text-xs sm:text-sm font-bold flex items-center gap-1">
+                            🎟️ <span id="arena-attempts-badge">2/2</span>
+                        </div>
                     </div>
                 </div>
 
-                <div id="arena-play-box" class="p-8 rounded-3xl bg-slate-50 border border-slate-200 text-center space-y-4">
-                    <div class="w-16 h-16 rounded-2xl bg-indigo-100 text-indigo-600 flex items-center justify-center text-3xl mx-auto">⚡</div>
-                    <h3 class="text-lg font-extrabold text-slate-800">Sẵn sàng đua Top Bảng xếp hạng hôm nay?</h3>
-                    <p class="text-slate-500 text-sm max-w-md mx-auto">Trả lời liên tiếp đúng để kích hoạt Combo x2, x3, x4. Toàn bộ EXP thắng được sẽ lưu thẳng vào tệp <code class="text-indigo-600 font-bold">deutsch_meister.db</code>!</p>
+                <div id="arena-play-box" class="p-4 sm:p-6 rounded-3xl bg-slate-50 border border-slate-200 text-center space-y-4 min-h-[380px] flex flex-col justify-center">
+                    <!-- Được render và quản lý hoàn toàn bởi arena_engine.js -->
                 </div>
             </div>
 
-            <!-- Bảng xếp hạng Ngày -->
+            <!-- Bảng xếp hạng Thực tế (2 Tabs: Hôm Nay & Kỷ Lục Toàn Thời Gian) -->
             <div class="bg-white border border-slate-200 rounded-3xl p-6 shadow-sm space-y-4 h-fit">
-                <div class="flex items-center justify-between border-b border-slate-100 pb-3">
-                    <h3 class="font-extrabold text-lg text-slate-900">🏆 Bảng Xếp Hạng Hôm Nay</h3>
-                    <span class="text-xs font-bold text-emerald-600 bg-emerald-50 px-2.5 py-1 rounded-lg">Đang hoạt động</span>
+                <div class="flex items-center justify-between border-b border-slate-100 pb-3 gap-2">
+                    <h3 class="font-extrabold text-lg text-slate-900">🏆 Bảng Xếp Hạng</h3>
+                    <div class="flex items-center bg-slate-100 p-1 rounded-xl">
+                        <button id="lb-tab-daily" onclick="switchLeaderboardTab('daily')" class="py-1.5 px-3 rounded-lg bg-white text-indigo-700 font-extrabold text-xs shadow-xs transition cursor-pointer">
+                            Hôm nay
+                        </button>
+                        <button id="lb-tab-alltime" onclick="switchLeaderboardTab('alltime')" class="py-1.5 px-3 rounded-lg text-slate-600 hover:text-slate-900 font-bold text-xs transition cursor-pointer">
+                            Kỷ lục
+                        </button>
+                    </div>
                 </div>
                 <div id="leaderboard-list" class="space-y-2.5 text-sm"></div>
             </div>
@@ -316,6 +324,7 @@
     <script src="/static/js/number_trainer.js"></script>
     <script src="/static/js/verbs_db.js"></script>
     <script src="/static/js/lexikon_db.js"></script>
+    <script src="/static/js/arena_engine.js"></script>
     <script>
         const LEVEL_META = {
             "A1": {
@@ -508,7 +517,11 @@
                     renderLexikon('view-lexikon');
                 }
             } else if (viewName === 'arena') {
-                renderLeaderboard();
+                if (typeof loadLeaderboardData === 'function') {
+                    loadLeaderboardData();
+                } else if (typeof renderLeaderboard === 'function') {
+                    renderLeaderboard();
+                }
             }
         }
 
@@ -533,11 +546,20 @@
         }
 
         function updateExpUI(rawExp) {
-            userTotalExp = 1450 + Number(rawExp || 0);
-            document.getElementById('user-exp').innerText = userTotalExp.toLocaleString('en-US');
-            document.getElementById('hero-exp').innerText = userTotalExp.toLocaleString('en-US');
-            const pct = Math.min(100, Math.round((userTotalExp / 2000) * 100));
-            document.getElementById('hero-exp-bar').style.width = `${pct}%`;
+            if (window.currentAuthUser && window.currentAuthUser.total_exp !== undefined) {
+                userTotalExp = Number(rawExp !== undefined ? rawExp : window.currentAuthUser.total_exp);
+            } else {
+                userTotalExp = 1450 + Number(rawExp || 0);
+            }
+            const userExpEl = document.getElementById('user-exp');
+            if (userExpEl) userExpEl.innerText = userTotalExp.toLocaleString('en-US');
+            const heroExpEl = document.getElementById('hero-exp');
+            if (heroExpEl) heroExpEl.innerText = userTotalExp.toLocaleString('en-US');
+            const heroExpBar = document.getElementById('hero-exp-bar');
+            if (heroExpBar) {
+                const pct = Math.min(100, Math.round((userTotalExp / 2000) * 100));
+                heroExpBar.style.width = `${pct}%`;
+            }
         }
 
         async function loadOverview() {
@@ -695,6 +717,17 @@
 
             if (typeof randomizeAllNumberExercises === 'function') {
                 randomizeAllNumberExercises(currentLesson.allRenderExercises);
+            }
+            // Tự động đồng bộ tiến độ học để mở khóa câu hỏi trong Đấu trường
+            if (currentLesson) {
+                fetch('/api/progress/mark-studied', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        level_code: (currentLevelData && currentLevelData.code) ? currentLevelData.code : 'A1',
+                        lesson_order: (index + 1)
+                    })
+                }).catch(() => {});
             }
             filterExercises('all');
         }
@@ -1036,100 +1069,96 @@
         }
 
         async function addExpToDatabase(expAmount) {
-            const res = await fetch('/api/exp/add', {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({ exp: expAmount })
-            });
-            const data = await res.json();
-            updateExpUI(data.user.total_exp);
-            renderLeaderboard();
-        }
-
-        function startArenaGame() {
-            clearInterval(arenaTimerInterval);
-            arenaTimeLeft = 45;
-            arenaCombo = 1;
-            document.getElementById('arena-timer').innerText = arenaTimeLeft;
-            document.getElementById('arena-combo').innerText = arenaCombo;
-
-            nextArenaQuestion();
-            arenaTimerInterval = setInterval(() => {
-                arenaTimeLeft--;
-                document.getElementById('arena-timer').innerText = arenaTimeLeft;
-                if (arenaTimeLeft <= 0) {
-                    clearInterval(arenaTimerInterval);
-                    document.getElementById('arena-play-box').innerHTML = `
-                        <h3 class="text-2xl font-extrabold text-indigo-600">⏰ Hết giờ thi đấu!</h3>
-                        <p class="text-sm text-slate-600">Tổng điểm hiện tại của bạn: <b>${userTotalExp.toLocaleString('en-US')} EXP</b>. Bấm "Bắt đầu ván mới" để nâng hạng!</p>
-                    `;
+            try {
+                const res = await fetch('/api/exp/add', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ exp: expAmount })
+                });
+                const data = await res.json();
+                if (data && data.user) {
+                    updateExpUI(data.user.total_exp);
                 }
-            }, 1000);
-        }
-
-        function nextArenaQuestion() {
-            const arenaPool = [
-                { q: "Số 16 trong tiếng Đức viết thế nào?", opts: ["sechzehn", "sechszehn", "sechzig"], ans: "sechzehn" },
-                { q: "Số 17 trong tiếng Đức viết thế nào?", opts: ["siebzehn", "siebenzehn", "siebzig"], ans: "siebzehn" },
-                { q: "Số 30 trong tiếng Đức viết thế nào?", opts: ["dreißig", "dreizig", "dreizehn"], ans: "dreißig" },
-                { q: "Số 21 trong tiếng Đức là gì?", opts: ["einundzwanzig", "einsundzwanzig", "zwanzigeins"], ans: "einundzwanzig" },
-                { q: "Chữ cái 'J' trong bảng chữ cái đọc là gì?", opts: ["[jot]", "[ja]", "[ji]"], ans: "[jot]" },
-                { q: "Nguyên âm ghép 'eu / äu' (Deutsch, Verkäufer) đọc như âm gì?", opts: ["oi", "ai", "i dài"], ans: "oi" },
-                { q: "'Ich komme ___ Vietnam.' Điền giới từ đúng:", opts: ["aus", "in", "von"], ans: "aus" },
-                { q: "'Ich wohne ___ Hai Phong.' Điền giới từ đúng:", opts: ["in", "aus", "zu"], ans: "in" },
-                { q: "Số 'vierunddreißig' là số mấy?", opts: ["34", "43", "44"], ans: "34" },
-                { q: "Số 'siebenhundertsieben' là số mấy?", opts: ["707", "770", "717"], ans: "707" },
-                { q: "Quốc gia nào sau đây bắt buộc đi kèm mạo từ 'die'?", opts: ["die Schweiz", "Deutschland", "Österreich"], ans: "die Schweiz" },
-                { q: "Danh thắng tháp Eiffel ('der Eiffelturm') ở thành phố nào?", opts: ["Paris", "Berlin", "London"], ans: "Paris" },
-                { q: "'Gestern ___ Paula und ich in Haiphong.' Điền động từ đúng:", opts: ["waren", "war", "wart"], ans: "waren" },
-                { q: "Thành cổ Akropolis ('die Akropolis') ở quốc gia nào?", opts: ["Griechenland", "Italien", "Spanien"], ans: "Griechenland" },
-                { q: "'Hanoi liegt ___ Norden von Vietnam.' Điền từ đúng:", opts: ["im", "in der", "am"], ans: "im" }
-            ];
-            const item = arenaPool[Math.floor(Math.random() * arenaPool.length)];
-            const arenaOptions = shuffleArray(item.opts);
-            document.getElementById('arena-play-box').innerHTML = `
-                <p class="text-lg font-extrabold text-slate-900">${item.q}</p>
-                <div class="flex flex-wrap justify-center gap-3 mt-4">
-                    ${arenaOptions.map(o => `
-                        <button onclick="answerArena('${o.replace(/'/g, "\\'")}', '${item.ans.replace(/'/g, "\\'")}')" class="px-6 py-3 rounded-2xl bg-white hover:bg-indigo-600 hover:text-white border border-slate-200 font-bold text-slate-800 shadow-sm transition cursor-pointer">
-                            ${o}
-                        </button>
-                    `).join('')}
-                </div>
-            `;
-        }
-
-        async function answerArena(choice, ans) {
-            if (choice === ans) {
-                const gained = 15 * arenaCombo;
-                arenaCombo = Math.min(4, arenaCombo + 1);
-                document.getElementById('arena-combo').innerText = arenaCombo;
-                await addExpToDatabase(gained);
-            } else {
-                arenaCombo = 1;
-                document.getElementById('arena-combo').innerText = arenaCombo;
-            }
-            if (arenaTimeLeft > 0) nextArenaQuestion();
+                if (typeof loadLeaderboardData === 'function') {
+                    loadLeaderboardData();
+                }
+            } catch (e) {}
         }
 
         function renderLeaderboard() {
-            const competitors = [
-                { name: "lukas_de (B2)", exp: 1890, isMe: false },
-                { name: "Minh Anh (B1)", exp: 1620, isMe: false },
-                { name: "Hoàng Nam (A2)", exp: 1510, isMe: false },
-                { name: "Bạn (Học viên HV)", exp: userTotalExp, isMe: true },
-                { name: "Thảo Vy (A1)", exp: 1120, isMe: false }
-            ].sort((a, b) => b.exp - a.exp);
-
-            document.getElementById('leaderboard-list').innerHTML = competitors.map((c, idx) => `
-                <div class="flex items-center justify-between p-3.5 rounded-2xl ${c.isMe ? 'bg-indigo-50 border border-indigo-200 text-indigo-900 font-extrabold' : 'bg-slate-50 border border-slate-200/80 text-slate-700 font-medium'}">
-                    <span>#${idx + 1} ${c.name}</span>
-                    <span class="text-amber-600 font-extrabold">⚡ ${c.exp.toLocaleString('en-US')} EXP</span>
-                </div>
-            `).join('');
+            if (typeof loadLeaderboardData === 'function') {
+                loadLeaderboardData();
+            }
         }
 
         loadOverview();
     </script>
+
+    <!-- ========================================================= -->
+    <!-- MODAL ĐĂNG NHẬP / ĐĂNG KÝ (UNIQUE AUTH SYSTEM)           -->
+    <!-- ========================================================= -->
+    <div id="auth-modal" class="fixed inset-0 z-50 bg-slate-950/60 backdrop-blur-xs flex items-center justify-center p-4 hidden">
+        <div class="bg-white rounded-3xl max-w-md w-full p-6 sm:p-8 shadow-2xl border border-slate-200 relative animate-in fade-in zoom-in duration-200">
+            <button onclick="closeAuthModal()" class="absolute top-4 right-4 text-slate-400 hover:text-slate-600 p-2 rounded-xl transition cursor-pointer">
+                ✕
+            </button>
+            <div class="text-center space-y-1 mb-5">
+                <div class="w-12 h-12 rounded-2xl bg-indigo-100 text-indigo-600 font-black text-xl flex items-center justify-center mx-auto mb-2">
+                    DE
+                </div>
+                <h3 class="text-xl font-black text-slate-900">Tài Khoản Đua Top</h3>
+                <p class="text-xs text-slate-500">Đăng nhập để lưu EXP, thi đấu Đấu trường 2 phút & vinh danh BXH</p>
+            </div>
+
+            <!-- Tabs Login / Register -->
+            <div class="flex border-b border-slate-200 mb-5 text-center">
+                <button id="auth-tab-login" onclick="switchAuthTab('login')" class="flex-1 py-2.5 font-extrabold text-sm border-b-2 border-indigo-600 text-indigo-600 transition cursor-pointer">
+                    Đăng nhập
+                </button>
+                <button id="auth-tab-reg" onclick="switchAuthTab('reg')" class="flex-1 py-2.5 font-bold text-sm border-b-2 border-transparent text-slate-400 hover:text-slate-600 transition cursor-pointer">
+                    Tạo tài khoản mới
+                </button>
+            </div>
+
+            <!-- Form Đăng Nhập -->
+            <form id="auth-form-login" onsubmit="handleLoginFormSubmit(event)" class="space-y-4">
+                <div id="login-error-box" class="p-3 rounded-xl bg-rose-50 border border-rose-200 text-rose-700 text-xs font-semibold hidden"></div>
+                <div>
+                    <label class="block text-xs font-bold text-slate-700 mb-1">Tên tài khoản (Username):</label>
+                    <input type="text" id="login-username" required placeholder="Nhập tên tài khoản..." class="w-full px-4 py-2.5 rounded-xl border border-slate-200 text-sm focus:outline-none focus:border-indigo-600">
+                </div>
+                <div>
+                    <label class="block text-xs font-bold text-slate-700 mb-1">Mật khẩu:</label>
+                    <div class="relative">
+                        <input type="password" id="login-password" required placeholder="Nhập mật khẩu..." class="w-full px-4 py-2.5 rounded-xl border border-slate-200 text-sm focus:outline-none focus:border-indigo-600">
+                        <button type="button" onclick="togglePasswordVisibility('login-password', this)" class="absolute right-3 top-2.5 text-sm opacity-60 hover:opacity-100 cursor-pointer">👁️</button>
+                    </div>
+                </div>
+                <button type="submit" class="w-full py-3 rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white font-extrabold text-sm shadow-md transition cursor-pointer">
+                    Đăng nhập ngay
+                </button>
+            </form>
+
+            <!-- Form Đăng Ký -->
+            <form id="auth-form-reg" onsubmit="handleRegisterFormSubmit(event)" class="space-y-4 hidden">
+                <div id="reg-error-box" class="p-3 rounded-xl bg-rose-50 border border-rose-200 text-rose-700 text-xs font-semibold hidden"></div>
+                <div>
+                    <label class="block text-xs font-bold text-slate-700 mb-1">Tên tài khoản mới (4 - 24 ký tự):</label>
+                    <input type="text" id="reg-username" required placeholder="VD: minh_anh99, lukas_de..." oninput="handleUsernameInputChange(this.value)" class="w-full px-4 py-2.5 rounded-xl border border-slate-200 text-sm focus:outline-none focus:border-indigo-600">
+                    <div id="reg-username-feedback"></div>
+                </div>
+                <div>
+                    <label class="block text-xs font-bold text-slate-700 mb-1">Mật khẩu (Tối thiểu 8 ký tự):</label>
+                    <div class="relative">
+                        <input type="password" id="reg-password" required minlength="8" placeholder="Nhập mật khẩu an toàn..." class="w-full px-4 py-2.5 rounded-xl border border-slate-200 text-sm focus:outline-none focus:border-indigo-600">
+                        <button type="button" onclick="togglePasswordVisibility('reg-password', this)" class="absolute right-3 top-2.5 text-sm opacity-60 hover:opacity-100 cursor-pointer">👁️</button>
+                    </div>
+                </div>
+                <button type="submit" class="w-full py-3 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-extrabold text-sm shadow-md transition cursor-pointer">
+                    Tạo tài khoản & Đua Top
+                </button>
+            </form>
+        </div>
+    </div>
 </body>
 </html>
