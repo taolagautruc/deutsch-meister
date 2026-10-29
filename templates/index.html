@@ -71,9 +71,6 @@
                 <button onclick="switchMainView('arena')" id="nav-arena" class="px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold whitespace-nowrap shrink-0 text-slate-600 hover:text-slate-900 transition">
                     🏆 Đấu trường & BXH
                 </button>
-                <button onclick="switchMainView('sql')" id="nav-sql" class="px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold whitespace-nowrap shrink-0 text-slate-600 hover:text-slate-900 transition">
-                    🗄️ Kiến trúc Python/SQL
-                </button>
             </nav>
 
             <!-- Cụm thông tin Ngày, EXP & Avatar HV bên phải -->
@@ -310,89 +307,6 @@
             </div>
         </section>
 
-        <!-- 4. MÀN HÌNH KIẾN TRÚC PYTHON & SQL ĐẦY ĐỦ -->
-        <section id="view-sql" class="hidden space-y-6">
-            <div class="bg-white border border-slate-200 rounded-3xl p-6 sm:p-8 shadow-sm space-y-6">
-                <div class="flex flex-wrap items-center justify-between gap-4 border-b border-slate-100 pb-4">
-                    <div>
-                        <span class="px-3 py-1 rounded-full bg-emerald-100 text-emerald-800 font-bold text-xs">TRẠNG THÁI: ĐANG KẾT NỐI TRỰC TIẾP VỚI SQLITE & FLASK</span>
-                        <h2 class="text-2xl font-extrabold text-slate-900 mt-1">🗄️ Kiến Trúc Cơ Sở Dữ Liệu Python & SQL</h2>
-                    </div>
-                </div>
-
-                <p class="text-slate-600 text-sm leading-relaxed">
-                    Hệ thống <b>DeutschMeister</b> đang chạy trực tiếp trên máy chủ Python Flask (<code class="px-2 py-0.5 rounded bg-slate-100 font-bold text-indigo-600">app.py</code>) và lưu trữ toàn bộ Cấp độ, Bài học, Từ vựng, 7 dạng Bài tập và Điểm EXP trong cơ sở dữ liệu SQLite (<code class="px-2 py-0.5 rounded bg-slate-100 font-bold text-indigo-600">deutsch_meister.db</code>):
-                </p>
-
-                <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 text-xs font-mono">
-                    <div class="p-5 rounded-2xl bg-slate-900 text-slate-100 space-y-2 overflow-x-auto">
-                        <p class="text-amber-400 font-bold text-sm">-- 1. Sơ đồ 5 Bảng Cơ Sở Dữ Liệu SQL</p>
-                        <pre class="text-slate-300 leading-relaxed">CREATE TABLE levels (
-  id INTEGER PRIMARY KEY AUTOINCREMENT,
-  code VARCHAR(10) UNIQUE NOT NULL,
-  title VARCHAR(100) NOT NULL,
-  description TEXT
-);
-
-CREATE TABLE lessons (
-  id INTEGER PRIMARY KEY AUTOINCREMENT,
-  level_id INT REFERENCES levels(id),
-  title VARCHAR(255) NOT NULL,
-  grammar_content TEXT
-);
-
-CREATE TABLE vocabularies (
-  id INTEGER PRIMARY KEY AUTOINCREMENT,
-  lesson_id INT REFERENCES lessons(id),
-  german_word VARCHAR(100) NOT NULL,
-  article VARCHAR(10),
-  vietnamese_meaning VARCHAR(255) NOT NULL,
-  example_sentence TEXT
-);
-
-CREATE TABLE exercises (
-  id INTEGER PRIMARY KEY AUTOINCREMENT,
-  lesson_id INT REFERENCES lessons(id),
-  exercise_type VARCHAR(50) NOT NULL,
-  question TEXT NOT NULL,
-  options_json TEXT,
-  correct_answer TEXT NOT NULL,
-  explanation TEXT,
-  exp_reward INT DEFAULT 15,
-  extra_data TEXT
-);</pre>
-                    </div>
-
-                    <div class="p-5 rounded-2xl bg-slate-900 text-slate-100 space-y-3 overflow-x-auto">
-                        <p class="text-emerald-400 font-bold text-sm"># 2. Cấu Trúc Dự Án Ngăn Nắp & Các Cổng REST API</p>
-                        <pre class="text-slate-300 leading-relaxed">deutsch_meister/
-├── app.py                   # Máy chủ Flask & REST API
-├── database/                # Khối quản trị Database SQLite
-│   ├── database.py          # Kết nối & Khởi tạo CSDL
-│   └── setup_exercises.py   # Bảng exercises 7 dạng bài
-├── lessons/                 # Khối bài học phân chia theo cấp độ
-│   └── a1/
-│       └── seed_a1_b1_p1.py # Bài 1 (P1): 30 Chữ cái, 50 Bài tập
-├── templates/               # Giao diện người dùng
-│   └── index.html           # Single Page Application
-├── static/                  # Tài nguyên & Logic Frontend
-│   ├── css/style.css        # Hiệu ứng & Styling
-│   └── js/
-│       ├── audio_tts.js     # Engine phát âm chuẩn de-DE
-│       └── number_trainer.js# Sinh số ngẫu nhiên 0 - 9999
-└── deutsch_meister.db       # Cơ sở dữ liệu SQLite</pre>
-                        <div class="pt-2 border-t border-slate-800 text-slate-400 text-xs space-y-1">
-                            <p class="text-indigo-400 font-bold">Các API chính:</p>
-                            <p>• <b>GET /api/overview</b>: Lấy 4 cấp độ và EXP</p>
-                            <p>• <b>GET /api/levels/&lt;code&gt;</b>: Lấy Bài học, Từ vựng, Bài tập</p>
-                            <p>• <b>POST /api/exp/add</b>: Cộng điểm EXP vào SQLite</p>
-                            <p>• <b>GET /api/tts?text=...</b>: Cổng Google German TTS dự phòng</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
     </main>
 
     <!-- ========================================================= -->
@@ -574,7 +488,7 @@ CREATE TABLE exercises (
         }
 
         function switchMainView(viewName) {
-            ['levels', 'workspace', 'verbs', 'lexikon', 'arena', 'sql'].forEach(v => {
+            ['levels', 'workspace', 'verbs', 'lexikon', 'arena'].forEach(v => {
                 const el = document.getElementById(`view-${v}`);
                 if (el) el.classList.add('hidden');
                 const nav = document.getElementById(`nav-${v}`);
@@ -907,11 +821,26 @@ CREATE TABLE exercises (
             if (isCorrect) {
                 feedback.className = "text-xs p-3.5 rounded-xl mt-2 bg-emerald-50 text-emerald-800 border border-emerald-200";
                 let nextDynamicHtml = '';
-                const isDynamicEx = extra.dynamic_number || extra.dynamic_mode || extra.dynamic_price || extra.dynamic_conjugation || extra.dynamic_article_quiz || extra.dynamic_possessive_article || extra.dynamic_plural_quiz;
+                const isDynamicEx = extra.dynamic_number || extra.dynamic_mode || extra.dynamic_price || extra.dynamic_conjugation || extra.dynamic_article_quiz || extra.dynamic_possessive_article || extra.dynamic_plural_quiz || extra.dynamic_direction_quiz || extra.dynamic_landmark_quiz || extra.dynamic_praeteritum_quiz || extra.dynamic_country_language_quiz || extra.dynamic_question_transform;
                 if (isDynamicEx) {
                     let promptMsg = "🎯 Tuyệt vời! Bạn muốn rèn thêm phản xạ?";
                     let btnLabel = "🔄 Đổi đề khác để luyện tiếp";
-                    if (extra.dynamic_price) {
+                    if (extra.dynamic_direction_quiz) {
+                        promptMsg = "🎯 Chuẩn xác! Bạn muốn rèn thêm phản xạ phương hướng & bản đồ?";
+                        btnLabel = "🔄 Đổi thành phố khác để luyện tiếp";
+                    } else if (extra.dynamic_landmark_quiz) {
+                        promptMsg = "🎯 Xuất sắc! Bạn muốn rèn thêm danh thắng Châu Âu?";
+                        btnLabel = "🔄 Đổi danh thắng khác";
+                    } else if (extra.dynamic_praeteritum_quiz) {
+                        promptMsg = "🎯 Tuyệt vời! Bạn muốn rèn thêm chia động từ ở quá khứ Präteritum?";
+                        btnLabel = "🔄 Đổi câu quá khứ khác";
+                    } else if (extra.dynamic_country_language_quiz) {
+                        promptMsg = "🎯 Chuẩn xác! Bạn muốn rèn thêm quốc gia & ngôn ngữ?";
+                        btnLabel = "🔄 Đổi quốc gia khác";
+                    } else if (extra.dynamic_question_transform) {
+                        promptMsg = "🎯 Xuất sắc! Bạn muốn rèn thêm chuyển đổi câu hỏi?";
+                        btnLabel = "🔄 Đổi câu khác để luyện chuyển đổi";
+                    } else if (extra.dynamic_price) {
                         promptMsg = "🎯 Chuẩn xác! Bạn muốn rèn thêm phản xạ giá tiền Euro?";
                         btnLabel = "🔄 Đổi số tiền khác để luyện tiếp";
                     } else if (extra.dynamic_conjugation) {
@@ -1013,7 +942,12 @@ CREATE TABLE exercises (
                 { q: "'Ich komme ___ Vietnam.' Điền giới từ đúng:", opts: ["aus", "in", "von"], ans: "aus" },
                 { q: "'Ich wohne ___ Hai Phong.' Điền giới từ đúng:", opts: ["in", "aus", "zu"], ans: "in" },
                 { q: "Số 'vierunddreißig' là số mấy?", opts: ["34", "43", "44"], ans: "34" },
-                { q: "Số 'siebenhundertsieben' là số mấy?", opts: ["707", "770", "717"], ans: "707" }
+                { q: "Số 'siebenhundertsieben' là số mấy?", opts: ["707", "770", "717"], ans: "707" },
+                { q: "Quốc gia nào sau đây bắt buộc đi kèm mạo từ 'die'?", opts: ["die Schweiz", "Deutschland", "Österreich"], ans: "die Schweiz" },
+                { q: "Danh thắng tháp Eiffel ('der Eiffelturm') ở thành phố nào?", opts: ["Paris", "Berlin", "London"], ans: "Paris" },
+                { q: "'Gestern ___ Paula und ich in Haiphong.' Điền động từ đúng:", opts: ["waren", "war", "wart"], ans: "waren" },
+                { q: "Thành cổ Akropolis ('die Akropolis') ở quốc gia nào?", opts: ["Griechenland", "Italien", "Spanien"], ans: "Griechenland" },
+                { q: "'Hanoi liegt ___ Norden von Vietnam.' Điền từ đúng:", opts: ["im", "in der", "am"], ans: "im" }
             ];
             const item = arenaPool[Math.floor(Math.random() * arenaPool.length)];
             document.getElementById('arena-play-box').innerHTML = `

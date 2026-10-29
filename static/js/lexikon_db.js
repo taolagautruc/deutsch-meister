@@ -308,6 +308,211 @@ const GERMAN_LEXIKON_DB = [
         rule: "⚠️ NGOẠI LỆ QUAN TRỌNG: Dù kết thúc bằng -nis nhưng 'die Erlaubnis' mang giống cái!",
         example: "Hast du eine Erlaubnis von der Lehrerin?",
         example_vi: "Bạn có sự cho phép của cô giáo chưa?"
+    },
+    // --- 4. BÀI 3: DANH LAM THẮNG CẢNH CHÂU ÂU (SEHENSWÜRDIGKEITEN) ---
+    {
+        word: "Sehenswürdigkeit", article: "die", gender: "die", plural: "die Sehenswürdigkeiten",
+        indefinite: "eine Sehenswürdigkeit", negation: "keine Sehenswürdigkeit",
+        meaning: "danh lam thắng cảnh, điểm tham quan", category: "Danh lam thắng cảnh",
+        rule: "Hậu tố -keit luôn mang giống cái (die) 100%, số nhiều thêm -en.",
+        example: "Der Eiffelturm ist eine berühmte Sehenswürdigkeit in Europa.",
+        example_vi: "Tháp Eiffel là một danh lam thắng cảnh nổi tiếng ở châu Âu."
+    },
+    {
+        word: "Akropolis", article: "die", gender: "die", plural: "— (Danh từ riêng)",
+        indefinite: "Athen (Hy Lạp)", negation: "Griechenland",
+        meaning: "Thành cổ Akropolis (ở Athens, Hy Lạp)", category: "Danh lam thắng cảnh",
+        rule: "Danh thắng nổi tiếng ở Athen (Griechenland), luôn đi kèm mạo từ xác định 'die'.",
+        example: "Was ist das? – Das ist die Akropolis. Sie liegt in Athen, Griechenland.",
+        example_vi: "Đây là gì? – Đó là thành cổ Akropolis. Nó nằm ở Athens, Hy Lạp."
+    },
+    {
+        word: "Big Ben", article: "der", gender: "der", plural: "— (Danh từ riêng)",
+        indefinite: "London (Anh)", negation: "England / Großbritannien",
+        meaning: "Tháp đồng hồ Big Ben (ở London, Anh)", category: "Danh lam thắng cảnh",
+        rule: "Mang giống đực (der) theo danh từ der Turm (ngọn tháp).",
+        example: "Wo ist der Big Ben? – Der Big Ben ist in London, England.",
+        example_vi: "Tháp Big Ben ở đâu? – Tháp Big Ben ở London, nước Anh."
+    },
+    {
+        word: "Eiffelturm", article: "der", gender: "der", plural: "die Eiffeltürme",
+        indefinite: "Paris (Pháp)", negation: "Frankreich",
+        meaning: "Tháp Eiffel (ở Paris, Pháp)", category: "Danh lam thắng cảnh",
+        rule: "Danh từ ghép lấy giống theo từ cuối: der Turm (ngọn tháp) -> der Eiffelturm.",
+        example: "Der Eiffelturm steht in Paris. Paris liegt in Frankreich.",
+        example_vi: "Tháp Eiffel nằm ở Paris. Paris thuộc nước Pháp."
+    },
+    {
+        word: "Schiefe Turm", article: "der", gender: "der", plural: "Pisa (Ý)",
+        indefinite: "ein schiefer Turm", negation: "Italien",
+        meaning: "Tháp nghiêng Pisa (ở Pisa, Ý)", category: "Danh lam thắng cảnh",
+        rule: "Cụm danh từ có tính từ 'schief' (nghiêng) + der Turm (tháp) -> der Schiefe Turm von Pisa.",
+        example: "Wo ist der Schiefe Turm? – Er ist in Pisa, Italien.",
+        example_vi: "Tháp nghiêng ở đâu? – Nó nằm ở thành phố Pisa, nước Ý."
+    },
+    {
+        word: "Prater", article: "der", gender: "der", plural: "— (Danh từ riêng)",
+        indefinite: "Wien (Áo)", negation: "Österreich",
+        meaning: "Công viên giải trí Prater (ở Viên, Áo)", category: "Danh lam thắng cảnh",
+        rule: "Mang giống đực (der), tọa lạc tại thủ đô Wien của nước Áo (Österreich).",
+        example: "Der Prater ist in Wien. Wien liegt im Osten von Österreich.",
+        example_vi: "Công viên Prater ở Viên. Viên nằm ở phía Đông của nước Áo."
+    },
+    {
+        word: "Brandenburger Tor", article: "das", gender: "das", plural: "Berlin (Đức)",
+        indefinite: "ein Tor", negation: "Deutschland",
+        meaning: "Cổng Brandenburg (ở Berlin, Đức)", category: "Danh lam thắng cảnh",
+        rule: "Lấy giống trung (das) theo danh từ chính das Tor (cái cổng).",
+        example: "Was ist das? – Das ist das Brandenburger Tor in Berlin, Deutschland.",
+        example_vi: "Đây là gì? – Đó là Cổng Brandenburg ở Berlin, CHLB Đức."
+    },
+    {
+        word: "Rote Platz", article: "der", gender: "der", plural: "Moskau (Nga)",
+        indefinite: "ein Platz", negation: "Russland",
+        meaning: "Quảng trường Đỏ (ở Mát-xcơ-va, Nga)", category: "Danh lam thắng cảnh",
+        rule: "Lấy giống đực (der) theo danh từ der Platz (quảng trường).",
+        example: "Der Rote Platz ist in Moskau. Moskau liegt in Russland.",
+        example_vi: "Quảng trường Đỏ nằm ở Mát-xcơ-va. Mát-xcơ-va thuộc nước Nga."
+    },
+
+    // --- 5. BÀI 3: QUỐC GIA CÓ MẠO TỪ & ĐỊA LÝ (LÄNDER MIT ARTIKEL) ---
+    {
+        word: "Schweiz", article: "die", gender: "die", plural: "Ngôn ngữ: Deutsch, Französisch, Italienisch",
+        indefinite: "in der Schweiz", negation: "aus der Schweiz",
+        meaning: "Thụy Sỹ (Quốc gia có mạo từ die)", category: "Quốc gia & Ngôn ngữ",
+        rule: "Quốc gia mang giống cái (die). Khi đi với 'aus' hoặc 'in' ở Dativ phải đổi thành 'aus der Schweiz' / 'in der Schweiz'.",
+        example: "Meine Tante wohnt in der Schweiz. Dort spricht man Deutsch, Französisch und Italienisch.",
+        example_vi: "Cô của tôi sống ở Thụy Sỹ. Ở đó người ta nói tiếng Đức, tiếng Pháp và tiếng Ý."
+    },
+    {
+        word: "Türkei", article: "die", gender: "die", plural: "Ngôn ngữ: Türkisch",
+        indefinite: "in der Türkei", negation: "aus der Türkei",
+        meaning: "Thổ Nhĩ Kỳ (Quốc gia có mạo từ die)", category: "Quốc gia & Ngôn ngữ",
+        rule: "Mọi quốc gia tận cùng bằng đuôi -ei đều mang giống cái (die). Dativ: aus/in der Türkei.",
+        example: "Er kommt aus der Türkei und spricht Türkisch.",
+        example_vi: "Anh ấy đến từ Thổ Nhĩ Kỳ và nói tiếng Thổ Nhĩ Kỳ."
+    },
+    {
+        word: "Slowakei", article: "die", gender: "die", plural: "Ngôn ngữ: Slowakisch",
+        indefinite: "in der Slowakei", negation: "aus der Slowakei",
+        meaning: "Slovakia (Quốc gia có mạo từ die)", category: "Quốc gia & Ngôn ngữ",
+        rule: "Đuôi -ei mang giống cái (die). Dativ: aus/in der Slowakei.",
+        example: "Bratislava liegt in der Slowakei. Man spricht dort Slowakisch.",
+        example_vi: "Bratislava nằm ở Slovakia. Ở đó người ta nói tiếng Slovakia."
+    },
+    {
+        word: "Iran", article: "der", gender: "der", plural: "Ngôn ngữ: Persisch (Tiếng Ba Tư)",
+        indefinite: "im (in dem) Iran", negation: "aus dem Iran",
+        meaning: "Iran (Quốc gia có mạo từ der)", category: "Quốc gia & Ngôn ngữ",
+        rule: "Quốc gia mang giống đực (der). Ở Dativ đổi thành 'aus dem Iran' và 'im Iran'. Ngôn ngữ là Persisch!",
+        example: "Mein Kollege kommt aus dem Iran. Er spricht Persisch.",
+        example_vi: "Đồng nghiệp của tôi đến từ Iran. Anh ấy nói tiếng Ba Tư."
+    },
+    {
+        word: "USA", article: "die (Pl.)", gender: "die", plural: "Ngôn ngữ: Englisch",
+        indefinite: "in den USA", negation: "aus den USA",
+        meaning: "Hợp chủng quốc Hoa Kỳ - Mỹ (Số nhiều)", category: "Quốc gia & Ngôn ngữ",
+        rule: "Danh từ số nhiều (Plural). Khi đi với 'aus' hoặc 'in' ở Dativ đổi thành 'aus den USA' / 'in den USA'.",
+        example: "Die Lehrerin ist nett, sie kommt aus den USA.",
+        example_vi: "Cô giáo rất tốt bụng, cô ấy đến từ nước Mỹ."
+    },
+    {
+        word: "Niederlande", article: "die (Pl.)", gender: "die", plural: "Ngôn ngữ: Niederländisch",
+        indefinite: "in den Niederlanden", negation: "aus den Niederlanden",
+        meaning: "Hà Lan (Số nhiều)", category: "Quốc gia & Ngôn ngữ",
+        rule: "Danh từ số nhiều (Plural). Dativ: in den Niederlanden / aus den Niederlanden.",
+        example: "Amsterdam ist in den Niederlanden. Man spricht dort Niederländisch.",
+        example_vi: "Amsterdam ở Hà Lan. Ở đó người ta nói tiếng Hà Lan."
+    },
+
+    // --- 6. BÀI 3: PHƯƠNG HƯỚNG & ĐỊNH HƯỚNG BẢN ĐỒ (HIMMELSRICHTUNGEN) ---
+    {
+        word: "Norden", article: "der", gender: "der", plural: "Tính từ: nördlich",
+        indefinite: "im Norden von", negation: "nördlich von",
+        meaning: "phía Bắc, miền Bắc", category: "Phương hướng & Bản đồ",
+        rule: "Mọi phương hướng đều mang giống đực (der). Có 2 cách nói: 'im Norden von' hoặc 'nördlich von'.",
+        example: "Wo liegt Hanoi? – Hanoi liegt im Norden von Vietnam (nördlich von Vietnam).",
+        example_vi: "Hà Nội nằm ở đâu? – Hà Nội nằm ở miền Bắc Việt Nam."
+    },
+    {
+        word: "Süden", article: "der", gender: "der", plural: "Tính từ: südlich",
+        indefinite: "im Süden von", negation: "südlich von",
+        meaning: "phía Nam, miền Nam", category: "Phương hướng & Bản đồ",
+        rule: "Giống đực (der). Hai cách diễn đạt: 'im Süden von' hoặc 'südlich von'.",
+        example: "Long An liegt im Süden von Vietnam (südlich von Vietnam).",
+        example_vi: "Long An nằm ở miền Nam của Việt Nam."
+    },
+    {
+        word: "Osten", article: "der", gender: "der", plural: "Tính từ: östlich",
+        indefinite: "im Osten von", negation: "östlich von",
+        meaning: "phía Đông, miền Đông", category: "Phương hướng & Bản đồ",
+        rule: "Giống đực (der). Khi chuyển sang tính từ thêm Umlaut o -> ö: östlich.",
+        example: "Berlin liegt im Osten von Deutschland (östlich von Deutschland).",
+        example_vi: "Berlin nằm ở phía Đông của nước Đức."
+    },
+    {
+        word: "Westen", article: "der", gender: "der", plural: "Tính từ: westlich",
+        indefinite: "im Westen von", negation: "westlich von",
+        meaning: "phía Tây, miền Tây", category: "Phương hướng & Bản đồ",
+        rule: "Giống đực (der). Tính từ là 'westlich' (không có Umlaut).",
+        example: "Köln liegt im Westen von Deutschland (westlich von Deutschland).",
+        example_vi: "Köln nằm ở phía Tây của nước Đức."
+    },
+    {
+        word: "Nordosten", article: "der", gender: "der", plural: "Tính từ: nordöstlich",
+        indefinite: "im Nordosten von", negation: "nordöstlich von",
+        meaning: "phía Đông Bắc (ghép Bắc + Đông)", category: "Phương hướng & Bản đồ",
+        rule: "Tiếng Đức đặt Bắc (Nord-) trước Đông (-osten). Tính từ: nordöstlich.",
+        example: "Hai Phong liegt im Nordosten von Vietnam (nordöstlich von Vietnam).",
+        example_vi: "Hải Phòng nằm ở phía Đông Bắc của Việt Nam."
+    },
+    {
+        word: "Südosten", article: "der", gender: "der", plural: "Tính từ: südöstlich",
+        indefinite: "im Südosten von", negation: "südöstlich von",
+        meaning: "phía Đông Nam (ghép Nam + Đông)", category: "Phương hướng & Bản đồ",
+        rule: "Tiếng Đức đặt Nam (Süd-) trước Đông (-osten). Tính từ: südöstlich.",
+        example: "Dresden liegt im Südosten von Deutschland.",
+        example_vi: "Dresden nằm ở phía Đông Nam của nước Đức."
+    },
+    {
+        word: "Nordwesten", article: "der", gender: "der", plural: "Tính từ: nordwestlich",
+        indefinite: "im Nordwesten von", negation: "nordwestlich von",
+        meaning: "phía Tây Bắc (ghép Bắc + Tây)", category: "Phương hướng & Bản đồ",
+        rule: "Tiếng Đức đặt Bắc (Nord-) trước Tây (-westen). Tính từ: nordwestlich.",
+        example: "Dien Bien liegt im Nordwesten von Vietnam.",
+        example_vi: "Điện Biên nằm ở phía Tây Bắc của Việt Nam."
+    },
+    {
+        word: "Südwesten", article: "der", gender: "der", plural: "Tính từ: südwestlich",
+        indefinite: "im Südwesten von", negation: "südwestlich von",
+        meaning: "phía Tây Nam (ghép Nam + Tây)", category: "Phương hướng & Bản đồ",
+        rule: "Tiếng Đức đặt Nam (Süd-) trước Tây (-westen). Tính từ: südwestlich.",
+        example: "Can Tho liegt im Südwesten von Vietnam.",
+        example_vi: "Cần Thơ nằm ở phía Tây Nam của Việt Nam."
+    },
+    {
+        word: "Mitte", article: "die", gender: "die", plural: "Cụm cố định: in der Mitte von",
+        indefinite: "in der Mitte", negation: "Không có dạng -lich",
+        meaning: "trung tâm, ở giữa, miền Trung", category: "Phương hướng & Bản đồ",
+        rule: "Mang giống cái (die) nên khi đi với giới từ 'in' ở Dativ phải đổi thành 'in der Mitte von'.",
+        example: "Wo liegt Da Nang? – Da Nang liegt in der Mitte von Vietnam.",
+        example_vi: "Đà Nẵng nằm ở đâu? – Đà Nẵng nằm ở miền Trung của Việt Nam."
+    },
+    {
+        word: "Landkarte", article: "die", gender: "die", plural: "die Landkarten",
+        indefinite: "eine Landkarte", negation: "keine Landkarte",
+        meaning: "bản đồ địa lý", category: "Phương hướng & Bản đồ",
+        rule: "Danh từ ghép (das Land + die Karte) -> lấy giống cái theo từ cuối (die Karte).",
+        example: "Wir sehen die Städte auf der Landkarte.",
+        example_vi: "Chúng tôi xem các thành phố trên bản đồ địa lý."
+    },
+    {
+        word: "Hausaufgabe", article: "die", gender: "die", plural: "die Hausaufgaben (thường dùng số nhiều)",
+        indefinite: "eine Hausaufgabe", negation: "keine Hausaufgaben",
+        meaning: "bài tập về nhà", category: "Đồ dùng lớp học",
+        rule: "Danh từ ghép (das Haus + die Aufgabe) -> lấy giống cái (die), thường dùng ở dạng số nhiều: die Hausaufgaben machen.",
+        example: "Er macht die Hausaufgaben. – Was macht er? / Macht er die Hausaufgaben?",
+        example_vi: "Anh ấy làm bài tập về nhà. – Anh ấy làm gì? / Anh ấy có làm bài tập về nhà không?"
     }
 ];
 
@@ -319,6 +524,9 @@ const LEXIKON_FILTERS = [
     { id: "der", label: "🔵 Giống đực - der (Maskulinum)" },
     { id: "die", label: "🔴 Giống cái - die (Femininum)" },
     { id: "das", label: "🟢 Giống trung - das (Neutrum)" },
+    { id: "Quốc gia & Ngôn ngữ", label: "🌍 Quốc gia & Ngôn ngữ (Länder & Sprachen)" },
+    { id: "Danh lam thắng cảnh", label: "🏛️ Danh lam thắng cảnh (Sehenswürdigkeiten)" },
+    { id: "Phương hướng & Bản đồ", label: "🧭 Phương hướng & Bản đồ (Himmelsrichtungen)" },
     { id: "Đồ dùng lớp học", label: "🏫 Đồ dùng & Ngôn ngữ lớp học" },
     { id: "Động từ lớp học", label: "🗣️ Động từ lớp học & Giao tiếp" },
     { id: "Quy tắc hậu tố giống", label: "🧩 Quy tắc hậu tố nhận biết giống" }
