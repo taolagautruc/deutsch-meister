@@ -685,7 +685,14 @@
                 `;
             }).join('');
 
-            currentLesson.allRenderExercises = currentLesson.exercises;
+            currentLesson.allRenderExercises = (currentLesson.exercises || []).map(ex => {
+                const copy = { ...ex };
+                if (copy.options && Array.isArray(copy.options) && copy.options.length > 1) {
+                    copy.options = shuffleArray(copy.options);
+                }
+                return copy;
+            });
+
             if (typeof randomizeAllNumberExercises === 'function') {
                 randomizeAllNumberExercises(currentLesson.allRenderExercises);
             }
@@ -746,11 +753,12 @@
                 let inputHtml = '';
                 if (ex.options && ex.options.length > 0) {
                     inputHtml = `<div class="grid grid-cols-1 sm:grid-cols-2 gap-2.5 mt-3">
-                        ${ex.options.map(opt => {
-                            const safeOpt = opt.replace(/'/g, "\\'");
+                        ${ex.options.map((opt, optIdx) => {
+                            const letter = String.fromCharCode(65 + optIdx); // A, B, C, D
                             return `
-                                <button onclick="checkExerciseAnswer(${i}, '${safeOpt}')" class="text-left px-4 py-3 rounded-xl bg-white hover:bg-indigo-50 border border-slate-200 hover:border-indigo-300 text-sm font-bold text-slate-800 shadow-sm transition">
-                                    ${opt}
+                                <button onclick="selectMultipleChoice(${i}, ${optIdx})" class="text-left px-4 py-3 rounded-xl bg-white hover:bg-indigo-50 border border-slate-200 hover:border-indigo-300 text-sm font-bold text-slate-800 shadow-sm transition flex items-start gap-2.5 group cursor-pointer">
+                                    <span class="w-6 h-6 rounded-lg bg-slate-100 group-hover:bg-indigo-100 text-slate-700 group-hover:text-indigo-700 font-extrabold text-xs flex items-center justify-center shrink-0 border border-slate-200 group-hover:border-indigo-300 transition">${letter}</span>
+                                    <span class="pt-0.5">${opt}</span>
                                 </button>
                             `;
                         }).join('')}
@@ -891,10 +899,30 @@
             }
         }
 
+        function shuffleArray(arr) {
+            if (!arr || !Array.isArray(arr)) return arr;
+            const shuffled = [...arr];
+            for (let i = shuffled.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+            }
+            return shuffled;
+        }
+
+        function selectMultipleChoice(exIndex, optIndex) {
+            const ex = currentLesson.allRenderExercises[exIndex];
+            if (ex && ex.options && ex.options[optIndex] !== undefined) {
+                checkExerciseAnswer(exIndex, ex.options[optIndex]);
+            }
+        }
+
         function refreshSingleExercise(index) {
             const ex = currentLesson.allRenderExercises[index];
             if (typeof generateNewNumberData === 'function') {
                 generateNewNumberData(ex);
+            }
+            if (ex && ex.options && Array.isArray(ex.options) && ex.options.length > 1) {
+                ex.options = shuffleArray(ex.options);
             }
             filterExercises(currentFilterType);
             setTimeout(() => {
@@ -910,6 +938,11 @@
                 if (typeof randomizeAllNumberExercises === 'function') {
                     randomizeAllNumberExercises(currentLesson.allRenderExercises);
                 }
+                currentLesson.allRenderExercises.forEach(ex => {
+                    if (ex && ex.options && Array.isArray(ex.options) && ex.options.length > 1) {
+                        ex.options = shuffleArray(ex.options);
+                    }
+                });
                 filterExercises(currentFilterType);
             }
         }
@@ -965,11 +998,12 @@
                 { q: "'Hanoi liegt ___ Norden von Vietnam.' Điền từ đúng:", opts: ["im", "in der", "am"], ans: "im" }
             ];
             const item = arenaPool[Math.floor(Math.random() * arenaPool.length)];
+            const arenaOptions = shuffleArray(item.opts);
             document.getElementById('arena-play-box').innerHTML = `
                 <p class="text-lg font-extrabold text-slate-900">${item.q}</p>
                 <div class="flex flex-wrap justify-center gap-3 mt-4">
-                    ${item.opts.map(o => `
-                        <button onclick="answerArena('${o}', '${item.ans}')" class="px-6 py-3 rounded-2xl bg-white hover:bg-indigo-600 hover:text-white border border-slate-200 font-bold text-slate-800 shadow-sm transition">
+                    ${arenaOptions.map(o => `
+                        <button onclick="answerArena('${o.replace(/'/g, "\\'")}', '${item.ans.replace(/'/g, "\\'")}')" class="px-6 py-3 rounded-2xl bg-white hover:bg-indigo-600 hover:text-white border border-slate-200 font-bold text-slate-800 shadow-sm transition cursor-pointer">
                             ${o}
                         </button>
                     `).join('')}
