@@ -500,16 +500,16 @@ def seed_lesson_2():
         ),
         (
             lesson_id, "trac_nghiem",
-            "Câu 7 [Danh từ ghép]: Danh từ ghép 'das Wörterbuch' (quyển từ điển) lấy giống theo từ nào?",
-            json.dumps(["das Buch (từ đứng cuối cùng)", "die Wörter (từ đứng đầu)", "Luôn là giống đực der", "Tự sinh giống ngẫu nhiên"]),
-            "das Buch (từ đứng cuối cùng)",
+            "Câu 7 [Danh từ ghép]: Danh từ ghép 'das Wörterbuch' (quyển từ điển) lấy giống theo thành phần nào?",
+            json.dumps(["Từ đứng cuối cùng (das Buch)", "Từ đứng đầu tiên (die Wörter)", "Từ có số lượng âm tiết nhiều hơn", "Mặc định luôn là giống đực der"]),
+            "Từ đứng cuối cùng (das Buch)",
             "Nguyên tắc danh từ ghép tiếng Đức: Giống và dạng số nhiều luôn được xác định bởi từ đứng cuối cùng (das Buch -> das Wörterbuch).", 10, None
         ),
         (
             lesson_id, "trac_nghiem",
             "Câu 8 [Ngữ pháp Mạo từ]: Mạo từ bất định (ein / eine) ở dạng số nhiều (Plural) là gì?",
-            json.dumps(["Tuyệt đối KHÔNG có mạo từ bất định ở số nhiều", "eine", "einen", "einer"]),
-            "Tuyệt đối KHÔNG có mạo từ bất định ở số nhiều",
+            json.dumps(["Không có mạo từ bất định (Nullartikel)", "Dùng mạo từ 'eine'", "Dùng mạo từ 'einen'", "Dùng mạo từ 'einer'"]),
+            "Không có mạo từ bất định (Nullartikel)",
             "Số nhiều không có mạo từ bất định! Chỉ nói 'Das sind Bücher', không bao giờ có 'eine Bücher'.", 15, None
         ),
         (
@@ -736,12 +736,12 @@ def seed_lesson_2():
             lesson_id, "doc",
             "Câu 40 [Đọc hiểu 1]: Dựa vào đoạn hội thoại lớp học, cây bút bi (Kuli) trên bàn là của ai?",
             json.dumps([
-                "Của bạn Anna (der Kuli von Anna)",
+                "Của bạn Anna",
                 "Của bạn Marc",
                 "Của bạn David",
                 "Của cô giáo Frau Schiller"
             ]),
-            "Của bạn Anna (der Kuli von Anna)",
+            "Của bạn Anna",
             "Cô giáo Frau Schiller xác nhận: 'Sehr gut! Das ist der Kuli von Anna.'", 20,
             json.dumps({"passage": passage_doc})
         ),
@@ -749,12 +749,12 @@ def seed_lesson_2():
             lesson_id, "doc",
             "Câu 41 [Đọc hiểu 2]: Đồ vật mà cô giáo chỉ vào khi hỏi Anna thực chất là gì?",
             json.dumps([
-                "Một quyển từ điển (ein Wörterbuch)",
-                "Một quyển vở (ein Heft)",
-                "Một chiếc kính mắt (eine Brille)",
-                "Một tờ giấy (ein Papier)"
+                "Một quyển từ điển",
+                "Một quyển vở",
+                "Một chiếc kính mắt",
+                "Một tờ giấy"
             ]),
-            "Một quyển từ điển (ein Wörterbuch)",
+            "Một quyển từ điển",
             "Anna trả lời: 'Nein, Frau Schiller, das ist kein Heft. Das ist ein Wörterbuch.'", 20,
             json.dumps({"passage": passage_doc})
         ),
@@ -762,25 +762,25 @@ def seed_lesson_2():
             lesson_id, "doc",
             "Câu 42 [Đọc hiểu 3]: Bạn David đã nhờ cô giáo làm điều gì khi không hiểu từ mới?",
             json.dumps([
-                "Viết từ đó lên bảng (anschreiben)",
+                "Viết từ đó lên bảng",
                 "Nói lại thật nhanh",
                 "Cho bạn ấy mượn từ điển",
                 "Đọc dịch sang tiếng Anh"
             ]),
-            "Viết từ đó lên bảng (anschreiben)",
-            "David nói: 'Das verstehe ich nicht. Können Sie das bitte anschreiben?'", 20,
+            "Viết từ đó lên bảng",
+            "David nói: 'Das verstehe ich không hiểu. Können Sie das bitte anschreiben?'", 20,
             json.dumps({"passage": passage_doc})
         ),
         (
             lesson_id, "doc",
             "Câu 43 [Đọc hiểu 4]: Trong lớp học, ngoài bàn và từ điển thì còn có những đồ vật gì nữa?",
             json.dumps([
-                "Một tấm bản đồ và ba cái ghế (eine Landkarte und drei Stühle)",
+                "Một tấm bản đồ và ba cái ghế",
                 "Một chiếc điện thoại và hai quyển vở",
                 "Bốn chiếc cốc và một cái bánh mì",
-                "Không có đồ vật nào khác"
+                "Không có thêm đồ vật nào"
             ]),
-            "Một tấm bản đồ và ba cái ghế (eine Landkarte und drei Stühle)",
+            "Một tấm bản đồ và ba cái ghế",
             "Cô giáo nói: 'Auf dem Tisch haben wir auch eine Landkarte und drei Stühle.'", 20,
             json.dumps({"passage": passage_doc})
         ),
@@ -791,13 +791,13 @@ def seed_lesson_2():
         (
             lesson_id, "viet",
             "Câu 44 [Sắp xếp khung câu Satzklammer]: Sắp xếp các từ sau thành câu nhờ vả hoàn chỉnh: 'bitte / Sie / Können / das / wiederholen / ?'",
-            None, "Können Sie das bitte wiederholen? / Können Sie das bitte wiederholen",
+            None, "Können Sie das bitte wiederholen? / Können Sie das bitte wiederholen / Können Sie das wiederholen, bitte? / Können Sie das wiederholen bitte / Können Sie bitte das wiederholen? / Können Sie bitte wiederholen? / Können Sie wiederholen bitte? / Können Sie wiederholen bitte",
             "Cấu trúc khung câu: Động từ khuyết thiếu 'Können' ở đầu câu hỏi + Sie + das bitte + động từ nguyên mẫu 'wiederholen' ở cuối câu.", 25, None
         ),
         (
             lesson_id, "viet",
             "Câu 45 [Sắp xếp khung câu Satzklammer]: Sắp xếp các từ sau thành câu hoàn chỉnh: 'buchstabieren / bitte / das / Sie / Können / ?'",
-            None, "Können Sie das bitte buchstabieren? / Können Sie das bitte buchstabieren",
+            None, "Können Sie das bitte buchstabieren? / Können Sie das bitte buchstabieren / Können Sie das buchstabieren, bitte? / Können Sie das buchstabieren bitte / Können Sie bitte das buchstabieren? / Können Sie bitte buchstabieren? / Können Sie buchstabieren bitte? / Können Sie buchstabieren bitte",
             "Cấu trúc: Können + Sie + das bitte + buchstabieren?", 25, None
         ),
         (

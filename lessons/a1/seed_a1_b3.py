@@ -895,47 +895,47 @@ def seed_lesson_3():
         (
             lesson_id, "trac_nghiem",
             "Câu 1: Quốc gia nào dưới đây bắt buộc phải đi kèm mạo từ 'die' ở Nominativ?",
-            json.dumps(["Deutschland", "Österreich", "die Schweiz", "Spanien"]),
-            "die Schweiz",
-            "'die Schweiz' (Thụy Sỹ) là quốc gia mang giống cái, bắt buộc đi kèm mạo từ.",
+            json.dumps(["Schweiz", "Österreich", "Spanien", "Deutschland"]),
+            "Schweiz",
+            "'die Schweiz' (Thụy Sỹ) là quốc gia mang giống cái, bắt buộc đi kèm mạo từ 'die' (khác với 85% quốc gia không dùng mạo từ như Deutschland, Österreich, Spanien).",
             15, None
         ),
         (
             lesson_id, "trac_nghiem",
-            "Câu 2: Tại nước Áo (Österreich), ngôn ngữ chính thức được người dân sử dụng là gì?",
-            json.dumps(["Österreichisch", "Deutsch", "Englisch", "Französisch"]),
-            "Deutsch",
-            "Nước Áo (Österreich) sử dụng tiếng Đức (Deutsch) là ngôn ngữ chính thức.",
+            "Câu 2: Chọn mạo từ thích hợp ở Dativ đi với giới từ 'aus' cho quốc gia có mạo từ giống cái: \"Frau Müller kommt aus ___ Schweiz.\"",
+            json.dumps(["der", "die", "den", "dem"]),
+            "der",
+            "'die Schweiz' là quốc gia có mạo từ giống cái, sau giới từ 'aus' (Dativ) mạo từ 'die' đổi thành 'der' → 'aus der Schweiz'.",
             15, None
         ),
         (
             lesson_id, "trac_nghiem",
-            "Câu 3: Ngôn ngữ chính thức của đất nước Iran (der Iran) là gì?",
-            json.dumps(["Iranisch", "Arabisch", "Persisch", "Türkisch"]),
-            "Persisch",
-            "Tại Iran (der Iran), ngôn ngữ chính thức là tiếng Ba Tư (Persisch).",
+            "Câu 3: Điền dạng quá khứ Präteritum của 'sein' cho ngôi 'ihr': \"Gestern ___ ihr im Theater, đúng không?\"",
+            json.dumps(["wart", "warst", "waren", "war"]),
+            "wart",
+            "Ngôi 'ihr' đi với thì quá khứ đơn (Präteritum) của động từ 'sein' được chia là 'wart'.",
             15, None
         ),
         (
             lesson_id, "trac_nghiem",
-            "Câu 4: Danh thắng tháp Eiffel ('der Eiffelturm') nằm ở thành phố và quốc gia nào?",
-            json.dumps(["Berlin, Deutschland", "Paris, Frankreich", "London, England", "Rom, Italien"]),
-            "Paris, Frankreich",
-            "Tháp Eiffel ('der Eiffelturm') tọa lạc tại thủ đô Paris, nước Pháp (Frankreich).",
+            "Câu 4: Cụm giới từ nào diễn đạt đúng quy tắc ngữ pháp khi nói 'ở tại Thổ Nhĩ Kỳ' (in + Dativ với quốc gia giống cái 'die Türkei')?",
+            json.dumps(["in der Türkei", "in die Türkei", "im Türkei", "in Türkei"]),
+            "in der Türkei",
+            "'die Türkei' là quốc gia giống cái, khi kết hợp với giới từ chỉ vị trí 'in' (Dativ) mạo từ đổi thành 'in der Türkei'.",
             15, None
         ),
         (
             lesson_id, "trac_nghiem",
-            "Câu 5: Công trình Cổng Brandenburg ('das Brandenburger Tor') đi kèm mạo từ gì ở Nominativ?",
-            json.dumps(["der", "die", "das", "die (Plural)"]),
-            "das",
-            "'das Brandenburger Tor' mang giống trung (das) theo danh từ chính 'das Tor' (cái cổng).",
+            "Câu 5: Đâu là câu hỏi Có/Không (Ja/Nein-Frage) có trật tự từ đúng ngữ pháp (động từ đứng ở vị trí 1)?",
+            json.dumps(["Wohnen Sie in Hai Phong?", "Sie wohnen in Hai Phong?", "Wo wohnen Sie in Hai Phong?", "In Hai Phong wohnen Sie?"]),
+            "Wohnen Sie in Hai Phong?",
+            "Trong câu hỏi Có/Không (Ja/Nein-Frage), động từ bắt buộc phải đảo lên vị trí đầu tiên (vị trí 1) trong câu.",
             15, None
         ),
         (
             lesson_id, "trac_nghiem",
             "Câu 6: Theo quy tắc phương hướng tiếng Đức, phía 'Đông Bắc' được ghép như thế nào?",
-            json.dumps(["der Ostennorden", "der Nordosten", "der Ostnord", "der Nordost"]),
+            json.dumps(["der Nordosten", "der Ostnord", "der Ostennorden", "der Nordost"]),
             "der Nordosten",
             "Tiếng Đức lấy Bắc (Nord-) ghép trước Đông (-osten) tạo thành 'der Nordosten'.",
             15, None
@@ -943,7 +943,7 @@ def seed_lesson_3():
         (
             lesson_id, "trac_nghiem",
             "Câu 7: Điền dạng quá khứ Präteritum của 'sein': 'Gestern ___ Paula und ich in Haiphong.'",
-            json.dumps(["war", "warst", "waren", "wart"]),
+            json.dumps(["waren", "war", "warst", "wart"]),
             "waren",
             "Chủ ngữ 'Paula und ich' tương đương với ngôi 'wir' (chúng tôi) → chia là 'waren'.",
             15, None
@@ -951,25 +951,25 @@ def seed_lesson_3():
         (
             lesson_id, "trac_nghiem",
             "Câu 8: Ở thì Quá khứ đơn (Präteritum) của 'sein', ngôi 'er/sie/es' được chia như thế nào?",
-            json.dumps(["wart", "ware", "war", "warst"]),
+            json.dumps(["war", "warst", "waren", "wart"]),
             "war",
             "Quy tắc vàng: Ngôi thứ 3 số ít (er/sie/es) và ngôi thứ nhất (ich) chia giống hệt nhau: 'war'.",
             15, None
         ),
         (
             lesson_id, "trac_nghiem",
-            "Câu 9: Trong bức thư Hải Phòng, giới từ nào đi với chợ ngoài trời Cát Bi Markt? '___ dem Cat Bi Markt'",
-            json.dumps(["im", "auf", "an", "bei"]),
-            "auf",
-            "Chợ ngoài trời hoặc quảng trường dùng giới từ 'auf dem': 'auf dem Cat Bi Markt'.",
+            "Câu 9: Chọn cụm từ đúng khi miêu tả vị trí bằng TÍNH TỪ phương hướng (-lich): \"Köln liegt ___ von Deutschland.\"",
+            json.dumps(["westlich", "im westlich", "am westlich", "im Westen"]),
+            "westlich",
+            "Tính từ phương hướng có đuôi '-lich' đứng độc lập sau động từ 'liegt' và KHÔNG đi kèm giới từ 'im' → 'Köln liegt westlich von Deutschland'.",
             15, None
         ),
         (
             lesson_id, "trac_nghiem",
-            "Câu 10 [Dynamic Thắng cảnh]: Công trình 'die Akropolis' nằm ở thành phố nào?",
-            json.dumps(["Athen", "London", "Paris", "Wien"]),
-            "Athen",
-            "'die Akropolis' là thành cổ nổi tiếng tọa lạc tại thủ đô Athen (Athens), Hy Lạp.",
+            "Câu 10 [Dynamic Ngữ pháp]: Chọn dạng chia quá khứ Präteritum của 'sein' cho chủ ngữ 'wir': \"Gestern ___ wir in Berlin.\"",
+            json.dumps(["waren", "war", "warst", "wart"]),
+            "waren",
+            "Chủ ngữ 'wir' đi với quá khứ của 'sein' là 'waren'.",
             15,
             json.dumps({"dynamic_landmark_quiz": True})
         ),
@@ -1100,10 +1100,10 @@ def seed_lesson_3():
         ),
         (
             lesson_id, "dich",
-            "Câu 26: Dịch câu sau sang tiếng Đức: 'Tháp Eiffel nằm ở Paris, nước Pháp.'",
+            "Câu 26: Dịch câu sau sang tiếng Đức: 'Anh ấy đến từ Thụy Sỹ và nói tiếng Đức.'",
             None,
-            "Der Eiffelturm ist in Paris, Frankreich. / Der Eiffelturm liegt in Paris, Frankreich.",
-            "Tháp Eiffel: 'Der Eiffelturm ist in Paris, Frankreich.' (hoặc 'liegt in').",
+            "Er kommt aus der Schweiz und spricht Deutsch. / Er kommt aus der Schweiz und er spricht Deutsch.",
+            "'die Schweiz' đi với 'aus' (Dativ) thành 'aus der Schweiz'; động từ 'sprechen' chia cho ngôi 'er' là 'spricht'.",
             20, None
         ),
         (
