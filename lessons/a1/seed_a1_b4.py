@@ -1065,13 +1065,24 @@ def seed_lesson_4():
             json.dumps({"audio_text": "Wir haben auch einen Garten. Ich finde den Garten rất/sehr schön.", "translation": "Chúng tôi cũng có một khu vườn. Tôi thấy khu vườn rất đẹp."}, ensure_ascii=False)
         ),
         # --- DẠNG 6: ĐỌC HIỂU BỨC THƯ CỦA JULIA (4 CÂU) ---
+        passage_b4_julia = (
+            "Bức thư của Julia gửi các bạn (Brief von Julia):\n"
+            "Liebe Freunde,\n"
+            "unser Haus ist sehr alt und hat 5 Zimmer.\n"
+            "Oben gibt es einen Balkon.\n"
+            "Aber ich finde die Küche zu klein.\n"
+            "Das Haus hat einen Flur. Er ist lang und dunkel.\n"
+            "Viele Grüße,\n"
+            "Julia"
+        )
+
         (
             lesson_id, "doc",
             "Câu 42 [Đọc hiểu Thư Julia]: Dựa vào bức thư của Julia, ngôi nhà của Julia có bao nhiêu phòng (Zimmer)? (Điền con số)",
             None,
             "5 / fünf / 5 Zimmer / fünf Zimmer",
             "Trong thư Julia viết: 'Unser Haus ist sehr alt und hat 5 Zimmer.' → Đáp án là 5 phòng.",
-            20, None
+            20, json.dumps({"passage": passage_b4_julia}, ensure_ascii=False)
         ),
         (
             lesson_id, "doc",
@@ -1079,7 +1090,7 @@ def seed_lesson_4():
             None,
             "einen Balkon / Balkon / ein Balkon / der Balkon",
             "Trong thư viết: 'Oben gibt es einen Balkon.'",
-            20, None
+            20, json.dumps({"passage": passage_b4_julia}, ensure_ascii=False)
         ),
         (
             lesson_id, "doc",
@@ -1087,7 +1098,7 @@ def seed_lesson_4():
             None,
             "zu klein / quá nhỏ / sie ist zu klein / nhỏ quá",
             "Julia viết: '...aber ich finde die Küche zu klein.'",
-            20, None
+            20, json.dumps({"passage": passage_b4_julia}, ensure_ascii=False)
         ),
         (
             lesson_id, "doc",
@@ -1095,7 +1106,7 @@ def seed_lesson_4():
             None,
             "lang und dunkel / dunkel und lang / dài và tối / tối và dài",
             "Julia viết: 'Das Haus hat einen Flur. Er ist lang und dunkel.'",
-            20, None
+            20, json.dumps({"passage": passage_b4_julia}, ensure_ascii=False)
         ),
 
         # --- DẠNG 7: VIẾT LẠI CÂU & BIẾN ĐỔI NGỮ PHÁP (5 CÂU) ---

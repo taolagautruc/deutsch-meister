@@ -478,13 +478,13 @@ function initArenaLobbyScreen() {
                 </p>
             </div>
 
-            <!-- Bảng ma trận điểm số 9 dạng -->
+            <!-- Bảng ma trận điểm số Đấu trường -->
             <div class="p-4 rounded-2xl bg-white border border-slate-200 text-left shadow-xs space-y-3">
                 <div class="text-xs font-black uppercase text-indigo-700 tracking-wider flex items-center justify-between">
-                    <span>📋 Ma trận Điểm Thưởng / Phạt (9 Dạng):</span>
+                    <span>📋 Ma trận Điểm Thưởng / Phạt:</span>
                     <span class="text-slate-400 font-semibold normal-case">Học đến đâu - Thi đến đó</span>
                 </div>
-                <div class="grid grid-cols-2 sm:grid-cols-3 gap-2 text-[11px]">
+                <div class="grid grid-cols-2 sm:grid-cols-4 gap-2 text-[11px]">
                     <div class="p-2 rounded-xl bg-slate-50 border border-slate-200/80">
                         <b>1. Trắc nghiệm:</b> <span class="text-emerald-600 font-bold">+5</span> / <span class="text-rose-600 font-bold">-2</span>
                     </div>
@@ -503,8 +503,14 @@ function initArenaLobbyScreen() {
                     <div class="p-2 rounded-xl bg-slate-50 border border-slate-200/80">
                         <b>6. Nghe & Điền:</b> <span class="text-emerald-600 font-bold">+10</span> / <span class="text-rose-600 font-bold">-4</span>
                     </div>
-                    <div class="p-2 rounded-xl bg-slate-50 border border-slate-200/80 col-span-2 sm:col-span-3 text-center">
-                        <b>7. Điền tạo thành câu:</b> <span class="text-emerald-600 font-bold">+5</span> / <span class="text-rose-600 font-bold">-2</span> | <i>Giới hạn nghiêm ngặt: <b>2 lượt / ngày / tài khoản</b></i>
+                    <div class="p-2 rounded-xl bg-slate-50 border border-slate-200/80">
+                        <b>7. Điền tạo câu:</b> <span class="text-emerald-600 font-bold">+5</span> / <span class="text-rose-600 font-bold">-2</span>
+                    </div>
+                    <div class="p-2 rounded-xl bg-emerald-50/70 border border-emerald-300">
+                        <b>8. Đọc hiểu đoạn văn:</b> <span class="text-emerald-600 font-bold">+12</span> / <span class="text-rose-600 font-bold">-4</span>
+                    </div>
+                    <div class="p-2 rounded-xl bg-slate-50 border border-slate-200/80 col-span-2 sm:col-span-4 text-center text-[10px] text-slate-500">
+                        <i>Giới hạn nghiêm ngặt: <b>2 lượt / ngày / tài khoản</b> • Tự động mở khóa câu hỏi theo bài đã học</i>
                     </div>
                 </div>
             </div>
@@ -628,8 +634,8 @@ function renderCurrentArenaQuestion() {
 
     let inputAreaHtml = '';
 
-    // Dạng 1: Trắc nghiệm (4 options)
-    if (q.type === 'trac_nghiem') {
+    // Dạng 1: Trắc nghiệm (4 options) hoặc Đọc hiểu đoạn văn có options
+    if (q.type === 'trac_nghiem' || (q.type === 'doc_hieu' && q.options && q.options.length > 0)) {
         const opts = (q.options && q.options.length > 0) ? q.options : ["A", "B", "C", "D"];
         inputAreaHtml = `
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 mt-4">
@@ -762,6 +768,15 @@ function renderCurrentArenaQuestion() {
                     Đúng: <b class="text-emerald-600">+${q.points_correct}</b> | Sai: <b class="text-rose-600">${q.points_wrong}</b>
                 </span>
             </div>
+
+            ${q.passage ? `
+                <div class="p-4 rounded-2xl bg-indigo-50/80 border border-indigo-200 text-left text-xs sm:text-sm text-slate-800 leading-relaxed font-medium whitespace-pre-line shadow-xs mb-3">
+                    <div class="text-[11px] font-black uppercase text-indigo-700 mb-1.5 flex items-center gap-1.5 tracking-wider">
+                        <span>📖 Đoạn văn / Hội thoại:</span>
+                    </div>
+                    <div class="italic text-slate-900 font-normal leading-relaxed">${q.passage}</div>
+                </div>
+            ` : ''}
 
             <h4 class="text-base sm:text-lg font-bold text-slate-900 leading-snug">
                 ${q.question}
@@ -945,6 +960,13 @@ function handleArenaAnswer(userAnswer) {
         isCorrect = evaluateFlexibleTranslation(userAnswer, q.accepted_answers || [q.correct_answer], 'de');
     } else if (q.type === 'dich_nghia_dv' || q.type === 'dich_cau_dv') {
         isCorrect = evaluateFlexibleTranslation(userAnswer, q.accepted_answers || [q.correct_answer], 'vi');
+    } else if (q.type === 'doc_hieu') {
+        if (q.options && q.options.length > 0) {
+            isCorrect = normalizeArenaText(userAnswer, 'de') === normalizeArenaText(q.correct_answer, 'de') ||
+                        userAnswer.trim().toLowerCase() === String(q.correct_answer).trim().toLowerCase();
+        } else {
+            isCorrect = evaluateFlexibleTranslation(userAnswer, q.accepted_answers || [q.correct_answer], 'de');
+        }
     } else if (q.type === 'dien_tao_cau') {
         isCorrect = evaluateFlexibleTranslation(userAnswer, q.accepted_answers || [q.correct_answer], 'de');
     }
