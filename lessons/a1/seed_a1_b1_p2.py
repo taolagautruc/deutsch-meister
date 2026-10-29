@@ -860,7 +860,7 @@ def seed_lesson_1_part_2():
         (
             lesson_id, "dich",
             "Câu 25 [Dịch Việt → Đức]: Dịch câu sau sang tiếng Đức: 'Tổng cộng hết 3,99 Euro.'",
-            None, "Das macht 3,99 Euro. / Das macht 3,99 €. / Das macht 3.99 Euro. / Das kostet 3,99 Euro. / Das macht 3,99.",
+            None, "Das macht 3,99 Euro. / Das macht 3,99 €. / Das macht 3.99 Euro. / Das kostet 3,99 Euro. / Das macht 3,99. / Das macht drei Euro neunundneunzig. / Das macht drei Euro neunundneunzig Cent. / Das kostet drei Euro neunundneunzig. / Das macht drei neunundneunzig.",
             "Cấu trúc chuẩn: 'Das macht 3,99 Euro.'", 20, None
         ),
         (
