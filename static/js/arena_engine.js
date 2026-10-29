@@ -1147,3 +1147,4 @@ document.addEventListener('DOMContentLoaded', () => {
     initArenaLobbyScreen();
     loadLeaderboardData();
 });
+
