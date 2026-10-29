@@ -712,3 +712,4 @@ def build_arena_questions_for_user(user_id, count=70):
     # Xáo trộn toàn bộ câu hỏi
     random.shuffle(questions)
     return questions[:count]
+
