@@ -836,51 +836,51 @@ def seed_lesson_1_part_2():
         (
             lesson_id, "dich",
             "Câu 21 [Dịch Việt → Đức]: Dịch câu sau sang tiếng Đức: 'Tôi uống cà phê với nhiều sữa.'",
-            None, "Ich trinke Kaffee mit viel Milch.",
+            None, "Ich trinke Kaffee mit viel Milch. / Ich nehme Kaffee mit viel Milch. / Ich möchte Kaffee mit viel Milch. / Ich trinke einen Kaffee mit viel Milch.",
             "Cấu trúc: Ich trinke (Tôi uống) + Kaffee (cà phê) + mit viel Milch (với nhiều sữa).", 20, None
         ),
         (
             lesson_id, "dich",
             "Câu 22 [Dịch Việt → Đức]: Dịch câu sau sang tiếng Đức: 'Cho trà không đường, làm ơn.'",
-            None, "Tee ohne Zucker, bitte.",
+            None, "Tee ohne Zucker, bitte. / Einen Tee ohne Zucker, bitte. / Tee ohne Zucker bitte. / Ich möchte Tee ohne Zucker, bitte.",
             "Cấu trúc: Tee (trà) + ohne Zucker (không đường) + bitte (làm ơn/ạ).", 20, None
         ),
         (
             lesson_id, "dich",
             "Câu 23 [Dịch Việt → Đức]: Dịch câu sau sang tiếng Đức: 'Chúng tôi muốn thanh toán.'",
-            None, "Wir möchten bitte zahlen.",
+            None, "Wir möchten bitte zahlen. / Wir möchten zahlen, bitte. / Wir möchten zahlen. / Wir möchten bitte bezahlen. / Zahlen, bitte! / Zahlen bitte!",
             "Cấu trúc khung câu: Wir möchten (Chúng tôi muốn) + bitte + zahlen (thanh toán).", 20, None
         ),
         (
             lesson_id, "dich",
             "Câu 24 [Dịch Việt → Đức]: Dịch câu sau sang tiếng Đức: 'Thanh toán chung hay riêng?'",
-            None, "Zusammen oder getrennt?",
+            None, "Zusammen oder getrennt? / Zusammen hoặc getrennt, bitte? / Zusammen oder getrennt",
             "Câu hỏi quen thuộc của nhân viên phục vụ: Zusammen (chung) + oder (hay/hoặc) + getrennt (riêng)?", 20, None
         ),
         (
             lesson_id, "dich",
             "Câu 25 [Dịch Việt → Đức]: Dịch câu sau sang tiếng Đức: 'Tổng cộng hết 3,99 Euro.'",
-            None, "Das macht 3,99 Euro.",
+            None, "Das macht 3,99 Euro. / Das macht 3,99 €. / Das macht 3.99 Euro. / Das kostet 3,99 Euro. / Das macht 3,99.",
             "Cấu trúc chuẩn: 'Das macht 3,99 Euro.'", 20, None
         ),
         (
             lesson_id, "dich",
             "Câu 26 [Đổi giá tiền Euro (Random)]: Hãy viết giá tiền 1,29 € bằng chữ tiếng Đức (chấp nhận có hoặc không có chữ Cent):",
-            None, "ein Euro neunundzwanzig",
+            None, "ein Euro neunundzwanzig / 1,29 / 1,29 € / ein Euro 29",
             "1,29 € đọc là: 'ein Euro neunundzwanzig' (chú ý dùng 'ein Euro' thay vì 'eins Euro').", 20,
             json.dumps({"dynamic_price": True, "dynamic_mode": "price_to_de", "euros": 1, "cents": 29})
         ),
         (
             lesson_id, "dich",
             "Câu 27 [Đổi giá tiền Euro (Random)]: Hãy viết giá tiền 2,99 € bằng chữ tiếng Đức:",
-            None, "zwei Euro neunundneunzig",
+            None, "zwei Euro neunundneunzig / 2,99 / 2,99 € / 2 Euro 99",
             "2,99 € viết bằng chữ tiếng Đức là: 'zwei Euro neunundneunzig'.", 20,
             json.dumps({"dynamic_price": True, "dynamic_mode": "price_to_de", "euros": 2, "cents": 99})
         ),
         (
             lesson_id, "dich",
             "Câu 28 [Đổi giá tiền Euro (Random)]: Hãy viết giá tiền 9,86 € bằng chữ tiếng Đức:",
-            None, "neun Euro sechsundachtzig",
+            None, "neun Euro sechsundachtzig / 9,86 / 9,86 € / 9 Euro 86",
             "9,86 € viết bằng chữ tiếng Đức là: 'neun Euro sechsundachtzig'.", 20,
             json.dumps({"dynamic_price": True, "dynamic_mode": "price_to_de", "euros": 9, "cents": 86})
         ),
@@ -891,7 +891,7 @@ def seed_lesson_1_part_2():
         (
             lesson_id, "nghe",
             "Câu 29 [Luyện Nghe]: Nghe câu hỏi của nhân viên bồi bàn và viết lại chính xác:",
-            None, "Was möchten Sie trinken?",
+            None, "Was möchten Sie trinken? / Was möchten Sie trinken",
             "Câu nghe được là: 'Was möchten Sie trinken?' (Quý khách muốn uống gì ạ?)", 20,
             json.dumps({"audio_text": "Was möchten Sie trinken?"})
         ),
@@ -926,7 +926,7 @@ def seed_lesson_1_part_2():
         (
             lesson_id, "nghe",
             "Câu 34 [Luyện Nghe]: Nghe và viết lại câu trả lời thanh toán:",
-            None, "Zusammen, bitte.",
+            None, "Zusammen, bitte. / Zusammen bitte. / Zusammen, bitte / Zusammen bitte",
             "Âm thanh phát: 'Zusammen, bitte.' (Thanh toán chung ạ.)", 20,
             json.dumps({"audio_text": "Zusammen, bitte."})
         ),
@@ -1017,13 +1017,13 @@ def seed_lesson_1_part_2():
         (
             lesson_id, "viet",
             "Câu 44 [Sắp xếp khung câu Satzklammer]: Sắp xếp các từ sau thành câu hỏi hoàn chỉnh: 'trinken / Sie / Was / möchten / ?'",
-            None, "Was möchten Sie trinken?",
+            None, "Was möchten Sie trinken? / Was möchten Sie trinken",
             "Cấu trúc câu hỏi: Từ để hỏi (Was) + möchten chia theo Sie + Sie + động từ nguyên mẫu trinken cuối câu.", 25, None
         ),
         (
             lesson_id, "viet",
             "Câu 45 [Sắp xếp khung câu Satzklammer]: Sắp xếp các từ sau thành câu hoàn chỉnh: 'zahlen / möchten / Wir / bitte / .'",
-            None, "Wir möchten bitte zahlen.",
+            None, "Wir möchten bitte zahlen. / Wir möchten zahlen, bitte. / Wir möchten bitte zahlen",
             "Cấu trúc: Chủ ngữ (Wir) + möchten + bitte + zahlen nguyên mẫu ở cuối câu.", 25, None
         ),
         (
@@ -1054,7 +1054,7 @@ def seed_lesson_1_part_2():
         (
             lesson_id, "viet",
             "Câu 50 [Viết giá tiền Euro (Random)]: Hãy viết cách đọc giá tiền 3,99 € bằng chữ tiếng Đức (chấp nhận có hoặc không có chữ Cent):",
-            None, "drei Euro neunundneunzig",
+            None, "drei Euro neunundneunzig / 3,99 / 3,99 € / 3.99 / drei Euro neunundneunzig Cent",
             "3,99 € được viết là: 'drei Euro neunundneunzig'.", 30,
             json.dumps({"dynamic_price": True, "dynamic_mode": "price_to_de", "euros": 3, "cents": 99})
         )

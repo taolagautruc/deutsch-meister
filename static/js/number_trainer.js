@@ -74,67 +74,229 @@ function priceToGerman(euros, cents) {
 }
 
 /**
- * So sánh đáp án tiếng Đức thông minh:
- * Chấp nhận cả eintausend... và tausend..., einhundert... và hundert...
- * Chấp nhận định dạng giá tiền (4,50 <-> 4.50 <-> 4,50 Euro <-> ein Euro neunundzwanzig Cent...)
+ * So sánh đáp án tiếng Đức & Việt thông minh, toàn diện:
+ * 1. Chấp nhận danh sách đáp án tương đương qua dấu '/', '||', '\n', 'hoặc'.
+ * 2. Bỏ qua toàn bộ dấu câu (chấm, phẩy, chấm than, chấm hỏi, ngoặc kép, gạch ngang) và chuẩn hóa khoảng trắng.
+ * 3. Chuẩn hóa tiếng Đức: ß <-> ss, ä <-> ae, ö <-> oe, ü <-> ue.
+ * 4. Chuẩn hóa giới thiệu bản thân:
+ *    "ich heiße [Tên]" <-> "ich bin [Tên]" <-> "mein name ist [Tên]"
+ *    "hallo" <-> "hi" <-> "guten tag"
+ * 5. Chuẩn hóa địa danh Việt Nam:
+ *    "hai phong" <-> "hải phòng" <-> "haiphong"
+ *    "ha noi" <-> "hà nội" <-> "hanoi"
+ *    "da nang" <-> "đà nẵng" <-> "danang"
+ *    "viet nam" <-> "việt nam" <-> "vietnam"
+ * 6. Chuẩn hóa đại từ tiếng Việt:
+ *    "ngài" <-> "bạn" <-> "anh" <-> "chị" <-> "ông" <-> "bà" <-> "bác"
+ *    "chúng mình" <-> "chúng tôi" <-> "chúng ta"
+ * 7. Hoán vị vế liên từ "und" / "và":
+ *    "A und B" <-> "B und A"
+ * 8. Đảo ngữ vị trí trạng từ:
+ *    "gestern waren Paula und ich in..." <-> "Paula und ich waren gestern in..."
+ *    "gestern war ich..." <-> "ich war gestern..."
+ * 9. Chuẩn hóa giá tiền Euro:
+ *    "4,50" <-> "4.50" <-> "4,50 €" <-> "4,50 euro"
+ * 10. Chuẩn hóa số đếm:
+ *    "5" <-> "fünf", "einhundert" <-> "hundert", v.v.
  */
 function checkGermanAnswerEquivalence(userAns, correctAns) {
     if (!userAns || !correctAns) return false;
 
-    const clean = (s) => String(s)
-        .trim()
-        .toLowerCase()
-        .replace(/[.,!?;:]+$/g, '')
-        .replace(/\s+/g, ' ');
-
-    const u = clean(userAns);
-    const c = clean(correctAns);
-
-    if (u === c) return true;
-
-    // Chấp nhận nhiều đáp án tương đương cách nhau bởi dấu '/' hoặc '||'
-    if (correctAns.includes('/') || correctAns.includes('||')) {
-        const alts = correctAns.split(/\/|\|\|/).map(a => a.trim());
+    // 1. Phân tách nếu có nhiều phương án đáp án chuẩn (cách nhau bởi /, ||, \n, hoặc)
+    if (correctAns.includes('/') || correctAns.includes('||') || correctAns.includes('\n') || /\s+hoặc\s+/i.test(correctAns)) {
+        const alts = correctAns.split(/\/|\|\||\n|\s+hoặc\s+/i).map(a => a.trim()).filter(Boolean);
         if (alts.some(alt => checkGermanAnswerEquivalence(userAns, alt))) {
             return true;
         }
     }
 
-    // Chuẩn hóa so sánh giá tiền Euro (ví dụ: "4,50" <-> "4.50" <-> "4,50 euro" <-> "4,50 €")
-    const cleanPrice = (s) => s.replace(/euro/g, '').replace(/€/g, '').replace(/\./g, ',').replace(/\s+/g, '').trim();
-    if (cleanPrice(u) === cleanPrice(c) && cleanPrice(c).includes(',')) return true;
+    // 2. Chuẩn hóa cơ bản: chữ thường, bỏ toàn bộ dấu câu
+    const baseClean = (s) => String(s)
+        .trim()
+        .toLowerCase()
+        .replace(/[.,!?;:\"\'„“”«»‘`’–—\-\(\)\[\]\{\}\/\\~]+/g, ' ')
+        .replace(/\s+/g, ' ')
+        .trim();
 
-    // Chuẩn hóa loại bỏ chữ "cent" ở cuối khi so sánh chữ đọc giá tiền
-    const uNoCent = u.replace(/\s*cent$/g, '').replace(/eins euro/g, 'ein euro');
-    const cNoCent = c.replace(/\s*cent$/g, '').replace(/eins euro/g, 'ein euro');
-    if (uNoCent === cNoCent) return true;
+    const u0 = baseClean(userAns);
+    const c0 = baseClean(correctAns);
 
-    // Chuẩn hóa loại bỏ khoảng trắng hoàn toàn nếu câu trả lời là 1 từ ghép
-    const uNoSpace = u.replace(/\s+/g, '');
-    const cNoSpace = c.replace(/\s+/g, '');
+    if (u0 === c0) return true;
 
+    // 3. Chuẩn hóa tiếng Đức: ß -> ss, ä -> ae, ö -> oe, ü -> ue
+    const deGermanize = (s) => s
+        .replace(/ß/g, 'ss')
+        .replace(/ä/g, 'ae')
+        .replace(/ö/g, 'oe')
+        .replace(/ü/g, 'ue');
+
+    const uDe = deGermanize(u0);
+    const cDe = deGermanize(c0);
+    if (uDe === cDe) return true;
+
+    // 4. Bỏ khoảng trắng hoàn toàn (từ ghép, số đếm hoặc gõ liền)
+    const uNoSpace = uDe.replace(/\s+/g, '');
+    const cNoSpace = cDe.replace(/\s+/g, '');
     if (uNoSpace === cNoSpace) return true;
 
-    // So sánh chấp nhận cả einhundert <-> hundert
-    const normalizeHundreds = (str) => str.replace(/einhundert/g, 'hundert');
-    if (normalizeHundreds(uNoSpace) === normalizeHundreds(cNoSpace)) return true;
+    // 5. Chuẩn hóa số đếm: einhundert <-> hundert, eintausend <-> tausend
+    const normalizeHundredsThousands = (s) => s
+        .replace(/einhundert/g, 'hundert')
+        .replace(/eintausend/g, 'tausend');
+    if (normalizeHundredsThousands(uNoSpace) === normalizeHundredsThousands(cNoSpace)) return true;
 
-    // So sánh chấp nhận cả eintausend <-> tausend
-    const normalizeThousands = (str) => str.replace(/eintausend/g, 'tausend');
-    if (normalizeThousands(uNoSpace) === normalizeThousands(cNoSpace)) return true;
+    // 6. Số tự nhiên <-> Chữ số tiếng Đức (1 <-> eins, 5 <-> fünf/fuenf, ...)
+    const numWords = {
+        '0': 'null', '1': 'eins', '2': 'zwei', '3': 'drei', '4': 'vier', '5': 'fuenf',
+        '6': 'sechs', '7': 'sieben', '8': 'acht', '9': 'neun', '10': 'zehn',
+        '11': 'elf', '12': 'zwoelf', '16': 'sechzehn', '17': 'siebzehn', '20': 'zwanzig',
+        '30': 'dreissig', '60': 'sechzig', '70': 'siebzig', '100': 'hundert', '1000': 'tausend'
+    };
+    if (numWords[u0] === cDe || numWords[c0] === uDe) return true;
 
-    // So sánh cho cặp số cách nhau dấu phẩy (ví dụ: "83, 92" hoặc "dreiundachtzig, zweiundneunzig")
-    if (c.includes(',')) {
-        const uParts = u.split(',').map(p => clean(p).replace(/\s+/g, ''));
-        const cParts = c.split(',').map(p => clean(p).replace(/\s+/g, ''));
-        if (uParts.length === cParts.length) {
-            const allMatch = uParts.every((part, idx) => {
-                const target = cParts[idx];
-                return part === target ||
-                    normalizeHundreds(part) === normalizeHundreds(target) ||
-                    normalizeThousands(part) === normalizeThousands(target);
-            });
-            if (allMatch) return true;
+    // Số thay thế trong câu: ví dụ "hat 5 zimmer" <-> "hat fuenf zimmer"
+    const replaceDigitsWithWords = (str) => {
+        let res = str;
+        for (const [digit, word] of Object.entries(numWords)) {
+            res = res.replace(new RegExp(`\\b${digit}\\b`, 'g'), word);
+        }
+        return res;
+    };
+    if (replaceDigitsWithWords(uDe) === replaceDigitsWithWords(cDe)) return true;
+
+    // 7. Chuẩn hóa giá tiền Euro: "4,50" <-> "4.50" <-> "4,50 euro" <-> "4,50 €"
+    const cleanPrice = (s) => String(s).toLowerCase()
+        .replace(/euro/g, '')
+        .replace(/€/g, '')
+        .replace(/\./g, ',')
+        .replace(/\s+/g, '')
+        .trim();
+    if (cleanPrice(userAns) === cleanPrice(correctAns) && cleanPrice(correctAns).includes(',')) return true;
+
+    // Chuẩn hóa loại bỏ chữ "cent" ở cuối khi so sánh chữ đọc giá tiền
+    const uNoCent = uDe.replace(/\s*cent$/g, '').replace(/eins euro/g, 'ein euro');
+    const cNoCent = cDe.replace(/\s*cent$/g, '').replace(/eins euro/g, 'ein euro');
+    if (uNoCent === cNoCent) return true;
+
+    // 8. Chuẩn hóa tiếng Việt (bỏ dấu) & tên địa danh:
+    const stripVnAccents = (str) => {
+        return str
+            .normalize("NFD")
+            .replace(/[\u0300-\u036f]/g, "")
+            .replace(/đ/g, "d")
+            .replace(/Đ/g, "D");
+    };
+
+    const normalizeLocations = (s) => {
+        let res = stripVnAccents(s);
+        res = res.replace(/\b(hải phòng|hai phong|haiphong)\b/gi, 'haiphong');
+        res = res.replace(/\b(hà nội|ha noi|hanoi)\b/gi, 'hanoi');
+        res = res.replace(/\b(đà nẵng|da nang|danang)\b/gi, 'danang');
+        res = res.replace(/\b(việt nam|viet nam|vietnam)\b/gi, 'vietnam');
+        res = res.replace(/\b(sài gòn|sai gon|saigon|tphcm)\b/gi, 'saigon');
+        res = res.replace(/\b(long an|longan)\b/gi, 'longan');
+        return res;
+    };
+
+    const uLoc = normalizeLocations(uDe);
+    const cLoc = normalizeLocations(cDe);
+    if (uLoc === cLoc) return true;
+
+    // 9. Giới thiệu bản thân trong tiếng Đức:
+    // "ich heiße / heisse" <-> "ich bin" <-> "mein name ist"
+    // Lời chào: "hallo" <-> "hi" <-> "guten tag"
+    const normalizeIntro = (s) => {
+        let res = s;
+        res = res.replace(/^(guten tag|hallo|hi)\b/, '__GREET__');
+        res = res.replace(/\b(ich heisse|ich bin|mein name ist)\b/g, '__INTRO_NAME__');
+        res = res.replace(/\bund ich wohne\b/g, 'ich wohne');
+        return res;
+    };
+    if (normalizeIntro(uLoc) === normalizeIntro(cLoc)) return true;
+
+    // 10. Hoán vị hai vế liên kết bằng "und", "và", hoặc dấu phẩy:
+    const swap1Word = (s) => s.replace(/(\b[a-z0-9äöüß]+\b)\s+(und|va|và)\s+(\b[a-z0-9äöüß]+\b)/gi, '$3 $2 $1');
+    const swap2Word = (s) => s.replace(/(\b[a-z0-9äöüß]+\s+[a-z0-9äöüß]+\b)\s+(und|va|và)\s+(\b[a-z0-9äöüß]+\s+[a-z0-9äöüß]+\b)/gi, '$3 $2 $1');
+
+    for (const swapper of [swap1Word, swap2Word]) {
+        if (swapper(uLoc) === cLoc || uLoc === swapper(cLoc) || swapper(uLoc) === swapper(cLoc)) return true;
+        if (swapper(uDe) === cDe || uDe === swapper(cDe)) return true;
+    }
+
+    // 11. Đảo ngữ trạng từ đầu câu trong tiếng Đức:
+    const normalizeAdverbInversion = (s) => {
+        let res = s;
+        res = res.replace(/^gestern waren paula und ich\b/, 'paula und ich waren gestern');
+        res = res.replace(/^gestern war ich\b/, 'ich war gestern');
+        res = res.replace(/^gestern waren wir\b/, 'wir waren gestern');
+        res = res.replace(/^heute trinken wir\b/, 'wir trinken heute');
+        res = res.replace(/^heute habe ich\b/, 'ich habe heute');
+        return res;
+    };
+    if (normalizeAdverbInversion(uLoc) === normalizeAdverbInversion(cLoc)) return true;
+
+    // 12. Gọi đồ uống / thanh toán trong tiếng Đức:
+    const normalizeOrder = (s) => {
+        let res = s;
+        res = res.replace(/\b(ich trinke|ich nehme|ich moechte)\b/g, '__ORDER__');
+        res = res.replace(/\b(wir moechten bitte zahlen|wir moechten zahlen bitte|wir moechten zahlen|wir moechten bezahlen|zahlen bitte)\b/g, '__PAY__');
+        return res;
+    };
+    if (normalizeOrder(uDe) === normalizeOrder(cDe)) return true;
+
+    // 13. Câu hỏi tương đương (Wie heißen Sie <-> Wie heißt du, v.v.):
+    const normalizeQuestions = (s) => {
+        let res = s;
+        res = res.replace(/\bwie heissen sie\b/g, '__Q_NAME__');
+        res = res.replace(/\bwie heisst du\b/g, '__Q_NAME__');
+        res = res.replace(/\bwie ist ihr name\b/g, '__Q_NAME__');
+        res = res.replace(/\bwie ist dein name\b/g, '__Q_NAME__');
+        res = res.replace(/\bwo wohnen sie\b/g, '__Q_LIVE__');
+        res = res.replace(/\bwo wohnst du\b/g, '__Q_LIVE__');
+        res = res.replace(/\bwoher kommen sie\b/g, '__Q_FROM__');
+        res = res.replace(/\bwoher kommst du\b/g, '__Q_FROM__');
+        res = res.replace(/\bwas moechten sie trinken\b/g, '__Q_DRINK__');
+        res = res.replace(/\bwas moechtest du trinken\b/g, '__Q_DRINK__');
+        res = res.replace(/\bwas trinken sie\b/g, '__Q_DRINK__');
+        res = res.replace(/\bwas trinkst du\b/g, '__Q_DRINK__');
+        return res;
+    };
+    if (normalizeQuestions(uDe) === normalizeQuestions(cDe)) return true;
+
+    // 14. Dịch sang tiếng Việt - Linh hoạt đại từ nhân xưng & từ đồng nghĩa:
+    const normalizeVnPronouns = (s) => {
+        const stripped = stripVnAccents(s);
+        return stripped
+            .replace(/\b(ngai|ban|anh|chi|ong|ba|bac|em|thay|co)\b/gi, '__PRON_2ND__')
+            .replace(/\b(chung minh|chung toi|chung ta)\b/gi, '__PRON_1ST_PL__')
+            .replace(/\b(toi|minh|ta|tui)\b/gi, '__PRON_1ST_SG__')
+            .replace(/\b(cai nay|dieu nay|cai do|dieu do|do)\b/gi, '__THIS__')
+            .replace(/\b(mot|1)\b/gi, '1')
+            .replace(/\b(khu vuon|cai vuon|vuon)\b/gi, 'vuon')
+            .replace(/\b(quyen vo|cuon vo|vo)\b/gi, 'vo')
+            .replace(/\b(quyen tu dien|cuon tu dien|tu dien)\b/gi, 'tudien')
+            .replace(/\b(chiec dien thoai|cai dien thoai|dien thoai)\b/gi, 'dienthoai')
+            .replace(/\b(rat dep|dep)\b/gi, 'dep')
+            .replace(/\b(nho qua|qua nho)\b/gi, 'quanho')
+            .replace(/\b(lap lai|nhac lai)\b/gi, 'nhaclai')
+            .replace(/\b(vui long|lam on)\b/gi, 'lamon')
+            .replace(/\b(goi la gi|la gi|ten la gi)\b/gi, 'lagi');
+    };
+    if (normalizeVnPronouns(u0) === normalizeVnPronouns(c0)) return true;
+
+    // 15. Câu đọc hiểu điền ngắn: bỏ mạo từ ở đầu câu
+    const stripArticle = (s) => s.replace(/^(einen|ein|eine|der|die|das)\s+/i, '');
+    if (stripArticle(uLoc) === stripArticle(cLoc)) return true;
+
+    // 16. So sánh cặp số cách nhau dấu phẩy (ví dụ: "83, 92" <-> "83 và 92" <-> "dreiundachtzig, zweiundneunzig")
+    if (c0.includes(',') || c0.includes(' und ') || c0.includes(' và ')) {
+        const splitPairs = (str) => str.split(/,|\bund\b|\bvà\b|\bva\b/).map(p => baseClean(p).replace(/\s+/g, '')).filter(Boolean);
+        const uParts = splitPairs(userAns);
+        const cParts = splitPairs(correctAns);
+        if (uParts.length === 2 && cParts.length === 2) {
+            const match1 = (checkGermanAnswerEquivalence(uParts[0], cParts[0]) && checkGermanAnswerEquivalence(uParts[1], cParts[1]));
+            const match2 = (checkGermanAnswerEquivalence(uParts[0], cParts[1]) && checkGermanAnswerEquivalence(uParts[1], cParts[0]));
+            if (match1 || match2) return true;
         }
     }
 

@@ -430,22 +430,22 @@ def seed_lesson_1_part_1():
         (
             lesson_id, "dich",
             "Câu 19 [Việt → Đức]: Dịch sang tiếng Đức: 'Chào buổi sáng!'",
-            None, "Guten Morgen!", "'Chào buổi sáng!' = 'Guten Morgen!'.", 20, None
+            None, "Guten Morgen! / Guten Morgen", "'Chào buổi sáng!' = 'Guten Morgen!'.", 20, None
         ),
         (
             lesson_id, "dich",
             "Câu 20 [Việt → Đức]: Dịch sang tiếng Đức: 'Hẹn gặp lại!' (Trang trọng)",
-            None, "Auf Wiedersehen!", "'Hẹn gặp lại!' (trang trọng) = 'Auf Wiedersehen!'.", 20, None
+            None, "Auf Wiedersehen! / Auf Wiedersehen", "'Hẹn gặp lại!' (trang trọng) = 'Auf Wiedersehen!'.", 20, None
         ),
         (
             lesson_id, "dich",
             "Câu 21 [Việt → Đức]: Dịch sang tiếng Đức: 'Tôi đến từ Việt Nam.'",
-            None, "Ich komme aus Vietnam.", "Mẫu câu chuẩn: 'Ich komme aus Vietnam.'", 20, None
+            None, "Ich komme aus Vietnam. / Ich komme aus Viet Nam. / Ich komme aus Việt Nam.", "Mẫu câu chuẩn: 'Ich komme aus Vietnam.'", 20, None
         ),
         (
             lesson_id, "dich",
             "Câu 22 [Đức → Việt]: Dịch câu hỏi sau sang tiếng Việt: 'Wo wohnen Sie?'",
-            None, "Ngài sống ở đâu?", "'Wo wohnen Sie?' = 'Ngài sống ở đâu?'", 20, None
+            None, "Ngài sống ở đâu? / Bạn sống ở đâu? / Anh sống ở đâu? / Chị sống ở đâu? / Bác sống ở đâu? / Ông sống ở đâu? / Bà sống ở đâu?", "'Wo wohnen Sie?' = 'Ngài sống ở đâu?' (chấp nhận cả các đại từ xưng hô tương đương như bạn, anh, chị).", 20, None
         ),
         (
             lesson_id, "dich",
@@ -478,25 +478,25 @@ def seed_lesson_1_part_1():
         (
             lesson_id, "nghe",
             "Câu 27 [Nghe từ vựng có Umlaut]: Bấm nút Nghe và gõ lại chính xác danh từ tiếng Đức bạn nghe được (Gợi ý: Trường đại học):",
-            None, "Universität", "Từ phát âm là 'Universität'.", 20,
+            None, "Universität / Universitaet", "Từ phát âm là 'Universität'.", 20,
             json.dumps({"audio_text": "Universität"})
         ),
         (
             lesson_id, "nghe",
             "Câu 28 [Nghe từ vựng]: Bấm nút Nghe và gõ lại lời chào tạm biệt thân mật trong tiếng Đức:",
-            None, "Tschüss", "Từ phát âm là 'Tschüss' [tʃʏs] (Tạm biệt).", 20,
+            None, "Tschüss / Tschuess", "Từ phát âm là 'Tschüss' [tʃʏs] (Tạm biệt).", 20,
             json.dumps({"audio_text": "Tschüss"})
         ),
         (
             lesson_id, "nghe",
             "Câu 29 [Nghe câu giao tiếp]: Nghe câu hỏi và gõ lại chính xác bằng tiếng Đức:",
-            None, "Woher kommen Sie?", "Câu hỏi: 'Woher kommen Sie?' (Ngài đến từ đâu?).", 20,
+            None, "Woher kommen Sie? / Woher kommen Sie", "Câu hỏi: 'Woher kommen Sie?' (Ngài đến từ đâu?).", 20,
             json.dumps({"audio_text": "Woher kommen Sie?"})
         ),
         (
             lesson_id, "nghe",
             "Câu 30 [Nghe câu giới thiệu]: Nghe câu tự giới thiệu và gõ lại chính xác bằng tiếng Đức:",
-            None, "Mein Name ist Anna.", "Câu nói: 'Mein Name ist Anna.' (Tên tôi là Anna.)", 20,
+            None, "Mein Name ist Anna. / Mein Name ist Anna / Ich heiße Anna. / Ich bin Anna.", "Câu nói: 'Mein Name ist Anna.' (Tên tôi là Anna.)", 20,
             json.dumps({"audio_text": "Mein Name ist Anna."})
         ),
         (
@@ -641,7 +641,7 @@ def seed_lesson_1_part_1():
         (
             lesson_id, "viet",
             "Câu 50 [Viết câu giao tiếp]: Hãy viết câu tiếng Đức có nghĩa là: 'Xin chào! Tôi tên là Anna. Tôi sống ở Hải Phòng.'",
-            None, "Hallo! Ich heiße Anna. Ich wohne in Hai Phong.", "Kết hợp lời chào Hallo + giới thiệu tên + nơi ở.", 35, None
+            None, "Hallo! Ich heiße Anna. Ich wohne in Hai Phong. / Hallo, ich bin Anna. Ich wohne in Hai Phong. / Hallo, ich heiße Anna. Ich wohne in Hai Phong. / Hallo! Ich bin Anna. Ich wohne in Hai Phong. / Hallo! Mein Name ist Anna. Ich wohne in Hai Phong. / Guten Tag! Ich heiße Anna. Ich wohne in Hai Phong. / Guten Tag, ich bin Anna. Ich wohne in Hai Phong. / Hallo! Ich bin Anna und wohne in Hai Phong.", "Kết hợp lời chào Hallo/Guten Tag + giới thiệu tên (Ich heiße / Ich bin / Mein Name ist) + nơi ở (Ich wohne in Hai Phong). Chấp nhận nhiều cách diễn đạt tương đương.", 35, None
         )
     ]
 

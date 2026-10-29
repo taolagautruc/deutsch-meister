@@ -809,7 +809,12 @@
         }
 
         function normalizeAnswer(str) {
-            return (str || "").trim().toLowerCase().replace(/[.!?]+$/g, "");
+            return (str || "")
+                .trim()
+                .toLowerCase()
+                .replace(/[.,!?;:\"\'„“”«»‘`’–—\-\(\)\[\]\{\}\/\\~]+/g, " ")
+                .replace(/\s+/g, " ")
+                .trim();
         }
 
         async function checkExerciseAnswer(index, userAnswer) {
@@ -895,7 +900,8 @@
                 await addExpToDatabase(ex.exp_reward);
             } else {
                 feedback.className = "text-xs p-3.5 rounded-xl mt-2 bg-rose-50 text-rose-800 border border-rose-200";
-                feedback.innerHTML = `❌ <b>Chưa chính xác.</b> Đáp án đúng là: <b>${ex.correct_answer}</b>.<br>${ex.explanation}`;
+                const displayAns = String(ex.correct_answer || '').trim().replace(/[.]+$/, '');
+                feedback.innerHTML = `❌ <b>Chưa chính xác.</b> Đáp án đúng là: <b>${displayAns}</b>.<br>${ex.explanation}`;
             }
         }
 

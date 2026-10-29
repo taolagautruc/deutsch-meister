@@ -598,49 +598,49 @@ def seed_lesson_2():
         (
             lesson_id, "dich",
             "Câu 21 [Dịch Đức → Việt]: Hãy dịch câu giao tiếp sau sang tiếng Việt: 'Wie heißt das auf Deutsch?'",
-            None, "Cái này tiếng Đức gọi là gì?",
+            None, "Cái này tiếng Đức gọi là gì? / Cái này gọi là gì trong tiếng Đức? / Cái này tiếng Đức là gì? / Trong tiếng Đức cái này gọi là gì? / Cái này đọc là gì trong tiếng Đức?",
             "'Wie heißt das auf Deutsch?' = Cái này tiếng Đức gọi là gì? (hoặc Trong tiếng Đức cái này tên là gì?).", 15, None
         ),
         (
             lesson_id, "dich",
             "Câu 22 [Dịch Đức → Việt]: Hãy dịch câu giao tiếp sau sang tiếng Việt: 'Das verstehe ich nicht. Können Sie das bitte wiederholen?'",
-            None, "Tôi không hiểu điều đó. Ngài có thể vui lòng lặp lại được không?",
+            None, "Tôi không hiểu điều đó. Ngài có thể vui lòng lặp lại được không? / Tôi không hiểu. Ngài có thể nhắc lại được không? / Tôi không hiểu, bạn có thể nhắc lại được không? / Tôi không hiểu điều này. Bạn có thể nhắc lại được không? / Tôi không hiểu. Ngài có thể lặp lại được không? / Tôi không hiểu, ngài có thể lặp lại được không?",
             "'Das verstehe ich nicht' = Tôi không hiểu điều đó; 'Können Sie das bitte wiederholen?' = Ngài có thể vui lòng nhắc lại được không?", 20, None
         ),
         (
             lesson_id, "dich",
             "Câu 23 [Dịch Đức → Việt]: Hãy dịch câu sau sang tiếng Việt: 'Das ist kein Heft, das ist ein Wörterbuch.'",
-            None, "Đó không phải là quyển vở, đó là một quyển từ điển.",
+            None, "Đó không phải là quyển vở, đó là một quyển từ điển. / Đây không phải là quyển vở, đây là một quyển từ điển. / Đó không phải là vở, đó là từ điển. / Đó không phải quyển vở, đó là một cuốn từ điển. / Kia không phải quyển vở, kia là cuốn từ điển.",
             "'kein Heft' = không phải quyển vở; 'ein Wörterbuch' = một quyển từ điển.", 15, None
         ),
         (
             lesson_id, "dich",
             "Câu 24 [Dịch Đức → Việt]: Hãy dịch câu sau sang tiếng Việt: 'Ist das ein Handy? – Ja, das ist das Handy von David.'",
-            None, "Đây có phải là điện thoại không? – Đúng, đó là điện thoại của David.",
+            None, "Đây có phải là điện thoại không? – Đúng, đó là điện thoại của David. / Đây là điện thoại phải không? – Vâng, đó là điện thoại của David. / Đây có phải là điện thoại không? – Vâng, đó là điện thoại của David. / Đây có phải điện thoại không? – Đúng, đó là điện thoại của David.",
             "'das Handy von David' = điện thoại của David.", 15, None
         ),
         (
             lesson_id, "dich",
             "Câu 25 [Dịch Việt → Đức]: Dịch câu lịch sự khi nghe không rõ sang tiếng Đức: 'Xin lỗi, Ngài nói sao cơ ạ?'",
-            None, "Entschuldigung, wie bitte?",
+            None, "Entschuldigung, wie bitte? / Wie bitte? / Entschuldigung, wie bitte / Entschuldigen Sie, wie bitte?",
             "'Entschuldigung, wie bitte?' là câu hỏi lịch sự khi chưa nghe rõ lời đối phương.", 15, None
         ),
         (
             lesson_id, "dich",
             "Câu 26 [Dịch Việt → Đức]: Dịch câu sau sang tiếng Đức: 'Ngài có thể vui lòng đánh vần từ đó được không?'",
-            None, "Können Sie das bitte buchstabieren?",
+            None, "Können Sie das bitte buchstabieren? / Können Sie das Wort bitte buchstabieren? / Können Sie das bitte buchstabieren / Kannst du das bitte buchstabieren?",
             "Cấu trúc nhờ vả: 'Können Sie das bitte buchstabieren?'.", 20, None
         ),
         (
             lesson_id, "dich",
             "Câu 27 [Dịch Việt → Đức]: Dịch câu sau sang tiếng Đức: 'Ngài có thể vui lòng viết từ đó lên bảng được không?'",
-            None, "Können Sie das bitte anschreiben?",
+            None, "Können Sie das bitte anschreiben? / Können Sie das bitte an die Tafel schreiben? / Können Sie das bitte anschreiben / Kannst du das bitte anschreiben?",
             "'anschreiben' = viết lên bảng. Câu hỏi: 'Können Sie das bitte anschreiben?'.", 20, None
         ),
         (
             lesson_id, "dich",
             "Câu 28 [Dịch Việt → Đức]: Dịch câu sau sang tiếng Đức: 'Không, đó không phải là kính mắt. Đó là một tấm bản đồ.'",
-            None, "Nein, das ist keine Brille. Das ist eine Landkarte.",
+            None, "Nein, das ist keine Brille. Das ist eine Landkarte. / Nein, das ist keine Brille, das ist eine Landkarte. / Nein, das ist keine Brille. Es ist eine Landkarte.",
             "'keine Brille' (phủ định die) và 'eine Landkarte' (bất định die).", 20, None
         ),
 
@@ -664,21 +664,21 @@ def seed_lesson_2():
         (
             lesson_id, "nghe",
             "Câu 31 [Luyện Nghe]: Nghe câu hỏi lớp học và chép lại hoàn chỉnh bằng tiếng Đức:",
-            None, "Wie heißt das auf Deutsch?",
+            None, "Wie heißt das auf Deutsch? / Wie heißt das auf Deutsch",
             "Âm thanh phát câu hỏi: 'Wie heißt das auf Deutsch?'", 20,
             json.dumps({"audio_text": "Wie heißt das auf Deutsch?"})
         ),
         (
             lesson_id, "nghe",
             "Câu 32 [Luyện Nghe]: Nghe câu nhờ vả và điền động từ ở cuối câu: 'Können Sie das bitte ___?'",
-            None, "wiederholen",
+            None, "wiederholen / bitte wiederholen",
             "Âm thanh phát: 'Können Sie das bitte wiederholen?' → Động từ là 'wiederholen'.", 15,
             json.dumps({"audio_text": "Können Sie das bitte wiederholen?"})
         ),
         (
             lesson_id, "nghe",
             "Câu 33 [Luyện Nghe số nhiều]: Nghe câu miêu tả phòng học và điền 2 danh từ số nhiều: 'Im Kursraum gibt es viele ___ und ___.' (cách nhau bởi dấu phẩy):",
-            None, "Tische, Stühle",
+            None, "Tische, Stühle / Tische und Stühle / Stühle, Tische",
             "Âm thanh phát: 'Im Kursraum gibt es viele Tische und Stühle.' → Điền 'Tische, Stühle'.", 20,
             json.dumps({"audio_text": "Im Kursraum gibt es viele Tische und Stühle."})
         ),
@@ -791,25 +791,25 @@ def seed_lesson_2():
         (
             lesson_id, "viet",
             "Câu 44 [Sắp xếp khung câu Satzklammer]: Sắp xếp các từ sau thành câu nhờ vả hoàn chỉnh: 'bitte / Sie / Können / das / wiederholen / ?'",
-            None, "Können Sie das bitte wiederholen?",
+            None, "Können Sie das bitte wiederholen? / Können Sie das bitte wiederholen",
             "Cấu trúc khung câu: Động từ khuyết thiếu 'Können' ở đầu câu hỏi + Sie + das bitte + động từ nguyên mẫu 'wiederholen' ở cuối câu.", 25, None
         ),
         (
             lesson_id, "viet",
             "Câu 45 [Sắp xếp khung câu Satzklammer]: Sắp xếp các từ sau thành câu hoàn chỉnh: 'buchstabieren / bitte / das / Sie / Können / ?'",
-            None, "Können Sie das bitte buchstabieren?",
+            None, "Können Sie das bitte buchstabieren? / Können Sie das bitte buchstabieren",
             "Cấu trúc: Können + Sie + das bitte + buchstabieren?", 25, None
         ),
         (
             lesson_id, "viet",
             "Câu 46 [Chuyển đổi số nhiều]: Hãy viết dạng số nhiều (kèm mạo từ 'die') của danh từ 'das Buch':",
-            None, "die Bücher",
+            None, "die Bücher / Bücher",
             "'das Buch' chuyển sang số nhiều là 'die Bücher' (biến âm u -> ü và thêm -er).", 25, None
         ),
         (
             lesson_id, "viet",
             "Câu 47 [Chuyển đổi số nhiều]: Hãy viết dạng số nhiều (kèm mạo từ 'die') của danh từ 'der Tisch':",
-            None, "die Tische",
+            None, "die Tische / Tische",
             "'der Tisch' chuyển sang số nhiều là 'die Tische' (thêm đuôi -e).", 25, None
         ),
         (
@@ -822,7 +822,7 @@ def seed_lesson_2():
         (
             lesson_id, "viet",
             "Câu 49 [Số Nhiều Danh Từ (Random)]: Hãy viết dạng số nhiều (kèm mạo từ 'die') của danh từ 'der Stuhl':",
-            None, "die Stühle",
+            None, "die Stühle / Stühle",
             "'der Stuhl' khi chuyển sang số nhiều là 'die Stühle' (biến âm u -> ü và thêm -e).", 25,
             json.dumps({"dynamic_plural_quiz": True})
         ),
