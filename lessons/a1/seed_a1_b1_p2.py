@@ -976,25 +976,25 @@ def seed_lesson_1_part_2():
         (
             lesson_id, "doc",
             "Câu 40 [Đọc hiểu 1]: Dựa vào đoạn hội thoại giữa Marc, Anna và Peter, Marc làm việc ở đâu?",
-            json.dumps(["Tại bưu điện (bei der Post)", "Tại quán cà phê (im Café)", "Tại trường học (in der Schule)", "Tại ngân hàng (bei der Bank)"]),
-            "Tại bưu điện (bei der Post)",
-            "Trong đoạn hội thoại, Marc nói: 'Ich arbeite bei der Post.'", 20,
+            json.dumps(["Tại bưu điện", "Tại quán cà phê", "Tại trường học", "Tại ngân hàng"]),
+            "Tại bưu điện",
+            "Trong đoạn hội thoại, Marc nói: 'Ich arbeite bei der Post.' (tại bưu điện).", 20,
             json.dumps({"passage": passage_doc_1})
         ),
         (
             lesson_id, "doc",
             "Câu 41 [Đọc hiểu 2]: Dựa vào đoạn tin nhắn Café Kafka, Peter hiện đang ở đâu?",
-            json.dumps(["Trong khóa học tiếng Đức (im Deutschkurs)", "Ở quán Café Kafka", "Ở bưu điện", "Ở Nga"]),
-            "Trong khóa học tiếng Đức (im Deutschkurs)",
-            "Peter trả lời: 'Ich bin im Deutschkurs.'", 20,
+            json.dumps(["Trong khóa học tiếng Đức", "Ở quán Café Kafka", "Ở bưu điện", "Ở ga tàu"]),
+            "Trong khóa học tiếng Đức",
+            "Peter trả lời: 'Ich bin im Deutschkurs.' (trong khóa học tiếng Đức).", 20,
             json.dumps({"passage": passage_doc_2})
         ),
         (
             lesson_id, "doc",
             "Câu 42 [Đọc hiểu 3]: Theo lời của Peter, cô giáo dạy tiếng Đức đến từ quốc gia nào?",
-            json.dumps(["Mỹ (den USA)", "Nga (Russland)", "Brazil (Brasilien)", "Đức (Deutschland)"]),
-            "Mỹ (den USA)",
-            "Peter nói: 'Die Lehrerin ist nett, sie ist aus den USA.'", 20,
+            json.dumps(["Mỹ", "Nga", "Brazil", "Đức"]),
+            "Mỹ",
+            "Peter nói: 'Die Lehrerin ist nett, sie ist aus den USA.' (cô giáo đến từ Mỹ).", 20,
             json.dumps({"passage": passage_doc_2})
         ),
         (

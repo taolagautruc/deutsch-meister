@@ -315,12 +315,18 @@ function checkGermanAnswerEquivalence(userAns, correctAns) {
         res = res.replace(/\bwas trinken sie\b/g, '__Q_DRINK__');
         res = res.replace(/\bwas trinkst du\b/g, '__Q_DRINK__');
         res = res.replace(/\b(entschuldigung wie bitte|wie bitte)\b/g, '__PARDON__');
-        res = res.replace(/\b(koennen sie das bitte buchstabieren|koennen sie das wort bitte buchstabieren|koennen sie bitte buchstabieren|buchstabieren sie das bitte)\b/g, '__SPELL__');
-        res = res.replace(/\b(koennen sie das bitte anschreiben|koennen sie das bitte an die tafel schreiben|schreiben sie das bitte an)\b/g, '__WRITE_BOARD__');
-        res = res.replace(/\b(koennen sie das bitte wiederholen|wiederholen sie das bitte|koennen sie bitte wiederholen)\b/g, '__REPEAT__');
+        res = res.replace(/\b(koennen sie das bitte buchstabieren|koennen sie das buchstabieren bitte|koennen sie bitte das buchstabieren|koennen sie das wort bitte buchstabieren|koennen sie bitte buchstabieren|koennen sie buchstabieren bitte|buchstabieren sie das bitte)\b/g, '__SPELL__');
+        res = res.replace(/\b(koennen sie das bitte anschreiben|koennen sie das anschreiben bitte|koennen sie bitte das anschreiben|koennen sie das bitte an die tafel schreiben|schreiben sie das bitte an)\b/g, '__WRITE_BOARD__');
+        res = res.replace(/\b(koennen sie das bitte wiederholen|koennen sie das wiederholen bitte|koennen sie bitte das wiederholen|koennen sie bitte wiederholen|koennen sie wiederholen bitte|wiederholen sie das bitte)\b/g, '__REPEAT__');
         return res;
     };
     if (normalizeQuestions(uDe) === normalizeQuestions(cDe)) return true;
+
+    // Linh hoạt câu nhờ vả với "Können Sie ...": chấp nhận mọi vị trí của "bitte" và "das" tùy chọn
+    if (uDe.startsWith('koennen sie') && cDe.startsWith('koennen sie')) {
+        const normPolite = (s) => s.replace(/\bbitte\b/g, '').replace(/\bdas\b/g, '').replace(/\s+/g, ' ').trim();
+        if (normPolite(uDe) === normPolite(cDe)) return true;
+    }
 
     // 14. Dịch sang tiếng Việt - Linh hoạt đại từ nhân xưng & từ đồng nghĩa:
     const normalizeVnPronouns = (s) => {
@@ -452,8 +458,14 @@ function generateNewNumberData(ex) {
 
     // 3. Xử lý câu hỏi Mạo từ & Phủ định (dynamic_article_quiz)
     if (extra.dynamic_article_quiz) {
+        const allowedCategories = ['Đồ dùng lớp học', 'Nội thất & Đồ đạc'];
+        const excludedWords = ['Hausaufgabe', 'Tafel', 'verstehen', 'wiederholen', 'buchstabieren', 'anschreiben', 'können'];
         const db = (typeof GERMAN_LEXIKON_DB !== 'undefined' && GERMAN_LEXIKON_DB.length > 0)
-            ? GERMAN_LEXIKON_DB.filter(x => x.gender !== 'verb')
+            ? GERMAN_LEXIKON_DB.filter(x => 
+                allowedCategories.includes(x.category) && 
+                !excludedWords.includes(x.word) &&
+                (x.gender === 'der' || x.gender === 'die' || x.gender === 'das')
+              )
             : [
                 { word: "Tisch", article: "der", gender: "der", negation: "kein Tisch", indefinite: "ein Tisch", meaning: "cái bàn" },
                 { word: "Brille", article: "die", gender: "die", negation: "keine Brille", indefinite: "eine Brille", meaning: "cái kính" },
@@ -485,8 +497,14 @@ function generateNewNumberData(ex) {
 
     // 4. Xử lý câu hỏi Sở hữu với Mạo từ xác định (dynamic_possessive_article)
     if (extra.dynamic_possessive_article) {
+        const allowedCategories = ['Đồ dùng lớp học', 'Nội thất & Đồ đạc'];
+        const excludedWords = ['Hausaufgabe', 'Tafel', 'Landkarte', 'Whiteboard', 'verstehen', 'können'];
         const db = (typeof GERMAN_LEXIKON_DB !== 'undefined' && GERMAN_LEXIKON_DB.length > 0)
-            ? GERMAN_LEXIKON_DB.filter(x => x.gender !== 'verb')
+            ? GERMAN_LEXIKON_DB.filter(x => 
+                allowedCategories.includes(x.category) && 
+                !excludedWords.includes(x.word) &&
+                (x.gender === 'der' || x.gender === 'die' || x.gender === 'das')
+              )
             : [
                 { word: "Kuli", article: "der", gender: "der", meaning: "bút bi" },
                 { word: "Handy", article: "das", gender: "das", meaning: "điện thoại" },
@@ -512,8 +530,14 @@ function generateNewNumberData(ex) {
 
     // 5. Xử lý câu hỏi Số nhiều danh từ (dynamic_plural_quiz)
     if (extra.dynamic_plural_quiz) {
+        const allowedCategories = ['Đồ dùng lớp học', 'Nội thất & Đồ đạc', 'Nhà ở & Phòng ốc'];
+        const excludedWords = ['Hausaufgabe', 'verstehen', 'können'];
         const db = (typeof GERMAN_LEXIKON_DB !== 'undefined' && GERMAN_LEXIKON_DB.length > 0)
-            ? GERMAN_LEXIKON_DB.filter(x => x.gender !== 'verb' && x.plural && x.plural.startsWith('die '))
+            ? GERMAN_LEXIKON_DB.filter(x => 
+                allowedCategories.includes(x.category) && 
+                !excludedWords.includes(x.word) &&
+                x.gender !== 'verb' && x.plural && x.plural.startsWith('die ')
+              )
             : [
                 { word: "Tisch", article: "der", plural: "die Tische", rule: "Thêm -e" },
                 { word: "Stuhl", article: "der", plural: "die Stühle", rule: "Biến âm u -> ü và thêm -e" },
@@ -562,33 +586,67 @@ function generateNewNumberData(ex) {
         return ex;
     }
 
-    // 7. Xử lý câu hỏi Danh lam Thắng cảnh Châu Âu (dynamic_landmark_quiz - Bài 3)
+    // 7. Xử lý câu hỏi Ngữ pháp Quá khứ Präteritum & Giới từ (dynamic_landmark_quiz - Bài 3)
     if (extra.dynamic_landmark_quiz) {
-        const landmarks = [
-            { name: "Akropolis", article: "die", city: "Athen", country: "Griechenland", vi: "Thành cổ Akropolis" },
-            { name: "Big Ben", article: "der", city: "London", country: "England", vi: "Tháp đồng hồ Big Ben" },
-            { name: "Eiffelturm", article: "der", city: "Paris", country: "Frankreich", vi: "Tháp Eiffel" },
-            { name: "Schiefe Turm", article: "der", city: "Pisa", country: "Italien", vi: "Tháp nghiêng Pisa" },
-            { name: "Prater", article: "der", city: "Wien", country: "Österreich", vi: "Công viên giải trí Prater" },
-            { name: "Brandenburger Tor", article: "das", city: "Berlin", country: "Deutschland", vi: "Cổng Brandenburg" },
-            { name: "Rote Platz", article: "der", city: "Moskau", country: "Russland", vi: "Quảng trường Đỏ" }
+        const grammarItems = [
+            {
+                q: "Chọn dạng quá khứ (Präteritum) đúng của động từ 'sein' cho chủ ngữ 'Paula und ich': \"Gestern ___ Paula und ich in Haiphong.\"",
+                ans: "waren",
+                options: ["waren", "war", "warst", "wart"],
+                expl: "'Paula und ich' tương đương ngôi 'wir' (chúng tôi) → dạng quá khứ của 'sein' là 'waren'."
+            },
+            {
+                q: "Chọn dạng quá khứ (Präteritum) đúng của động từ 'sein' cho ngôi 'du': \"___ du schon einmal in Deutschland?\"",
+                ans: "Warst",
+                options: ["Warst", "Wart", "War", "Waren"],
+                expl: "Ngôi 'du' đi với quá khứ của 'sein' là 'warst' (đảo lên đầu câu viết hoa thành 'Warst')."
+            },
+            {
+                q: "Chọn dạng quá khứ (Präteritum) đúng của động từ 'sein' cho ngôi 'ihr': \"Gestern ___ ihr im Theater, đúng không?\"",
+                ans: "wart",
+                options: ["wart", "warst", "waren", "war"],
+                expl: "Ngôi 'ihr' đi với quá khứ của 'sein' chia là 'wart'."
+            },
+            {
+                q: "Điền mạo từ thích hợp ở Dativ đi sau giới từ 'aus' cho quốc gia giống cái 'die Schweiz': \"Frau Müller kommt aus ___ Schweiz.\"",
+                ans: "der",
+                options: ["der", "die", "den", "dem"],
+                expl: "'die Schweiz' là quốc gia có mạo từ giống cái, sau giới từ 'aus' (Dativ) mạo từ 'die' chuyển thành 'der' → 'aus der Schweiz'."
+            },
+            {
+                q: "Điền mạo từ thích hợp ở Dativ đi sau giới từ 'in' cho quốc gia giống đực 'der Iran': \"Herr Meier wohnt in ___ Iran.\"",
+                ans: "dem",
+                options: ["dem", "der", "den", "das"],
+                expl: "'der Iran' là quốc gia giống đực, sau giới từ 'in' (Dativ) mạo từ 'der' chuyển thành 'dem' (hoặc viết tắt là 'im')."
+            },
+            {
+                q: "Điền mạo từ thích hợp ở Dativ đi sau giới từ 'in' cho quốc gia số nhiều 'die USA': \"David lebt in ___ USA.\"",
+                ans: "den",
+                options: ["den", "der", "die", "dem"],
+                expl: "'die USA' là danh từ số nhiều, sau giới từ 'in' (Dativ số nhiều) mạo từ đổi thành 'den' → 'in den USA'."
+            },
+            {
+                q: "Đâu là câu hỏi Có/Không (Ja/Nein-Frage) có trật tự từ ĐÚNG ngữ pháp tiếng Đức?",
+                ans: "Wohnen Sie in Hai Phong?",
+                options: ["Wohnen Sie in Hai Phong?", "Sie wohnen in Hai Phong?", "Wo wohnen Sie in Hai Phong?", "In Hai Phong wohnen Sie?"],
+                expl: "Trong câu hỏi Có/Không (Ja/Nein-Frage), động từ bắt buộc phải đảo lên vị trí đầu câu (vị trí 1)."
+            },
+            {
+                q: "Khi miêu tả vị trí bằng TÍNH TỪ phương hướng (-lich), câu nào sau đây ĐÚNG ngữ pháp?",
+                ans: "Köln liegt westlich von Deutschland.",
+                options: ["Köln liegt westlich von Deutschland.", "Köln liegt im westlich von Deutschland.", "Köln liegt am westlich von Deutschland.", "Köln liegt westlichen von Deutschland."],
+                expl: "Tính từ phương hướng có đuôi '-lich' đứng độc lập sau 'liegt' và tuyệt đối KHÔNG có giới từ 'im' phía trước."
+            }
         ];
-        const chosen = landmarks[Math.floor(Math.random() * landmarks.length)];
-        const quizType = Math.floor(Math.random() * 3);
 
-        if (quizType === 0) {
-            ex.question = `[Danh lam thắng cảnh Châu Âu (Random)]: Công trình '${chosen.name}' (${chosen.vi}) đi kèm mạo từ nào ở Nominativ? "Was ist das? – Das ist ___ ${chosen.name}."`;
-            ex.correct_answer = chosen.article;
-            ex.explanation = `'${chosen.name}' đi kèm mạo từ '${chosen.article}' → "Das ist ${chosen.article} ${chosen.name}".`;
-        } else if (quizType === 1) {
-            ex.question = `[Địa danh & Thành phố (Random)]: Công trình '${chosen.article} ${chosen.name}' (${chosen.vi}) nằm ở thành phố nào? "Wo ist denn das? – Das ist in ___."`;
-            ex.correct_answer = chosen.city;
-            ex.explanation = `'${chosen.article} ${chosen.name}' tọa lạc tại thành phố '${chosen.city}'.`;
-        } else {
-            ex.question = `[Địa danh & Quốc gia (Random)]: Thành phố ${chosen.city} ('${chosen.article} ${chosen.name}') nằm ở quốc gia nào? "In welchem Land ist das? – ${chosen.city} ist in ___."`;
-            ex.correct_answer = chosen.country;
-            ex.explanation = `'${chosen.city}' nằm ở đất nước '${chosen.country}'.`;
-        }
+        const chosen = grammarItems[Math.floor(Math.random() * grammarItems.length)];
+        const shuffled = [...chosen.options].sort(() => Math.random() - 0.5);
+
+        ex.question = `[Ngữ pháp Trọng tâm (Random)]: ${chosen.q}`;
+        ex.correct_answer = chosen.ans;
+        ex.options = shuffled;
+        ex.options_json = JSON.stringify(shuffled);
+        ex.explanation = chosen.expl;
         return ex;
     }
 

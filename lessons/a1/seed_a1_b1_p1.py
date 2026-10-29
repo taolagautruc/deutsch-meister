@@ -309,8 +309,8 @@ def seed_lesson_1_part_1():
         (
             lesson_id, "trac_nghiem",
             "Câu 2: Hai chữ cái 'V' và 'W' có tên gọi trong bảng chữ cái lần lượt là:",
-            json.dumps(["V /faʊ̯/ (phao) và W /veː/ (vê)", "V /veː/ và W /faʊ̯/", "V /vi/ và W /double-u/", "V /va/ và W /wa/"]),
-            "V /faʊ̯/ (phao) và W /veː/ (vê)",
+            json.dumps(["V /faʊ̯/ và W /veː/", "V /veː/ và W /faʊ̯/", "V /vi/ và W /weː/", "V /va/ và W /wa/"]),
+            "V /faʊ̯/ và W /veː/",
             "Chữ V tên là /faʊ̯/ (vào từ phát âm như ph/f); chữ W tên là /veː/ (vào từ phát âm như v).",
             15, None
         ),
@@ -341,8 +341,8 @@ def seed_lesson_1_part_1():
         (
             lesson_id, "trac_nghiem",
             "Câu 6: Khi đứng ở đầu từ, hai tổ hợp 'sp' (Sport, Spiel) và 'st' (Stadt, Stuhl) được phát âm thế nào?",
-            json.dumps(["Chữ s được đọc tròn môi như 'sch' (/ʃp/ và /ʃt/)", "Đọc s nhẹ bình thường", "Câm chữ s", "Đọc như chữ z"]),
-            "Chữ s được đọc tròn môi như 'sch' (/ʃp/ và /ʃt/)",
+            json.dumps(["Chữ 's' được đọc tròn môi như 'sch' (/ʃ/)", "Chữ 's' được đọc nhẹ bình thường (/s/)", "Chữ 's' bị câm không phát âm", "Chữ 's' được đọc như chữ 'z' (/z/)"]),
+            "Chữ 's' được đọc tròn môi như 'sch' (/ʃ/)",
             "Quy tắc phát âm: 'sp' và 'st' ở đầu từ luôn đọc chữ s thành âm 'sch' nặng (Sport, Spiel, Stadt, Stuhl).",
             15, None
         ),
