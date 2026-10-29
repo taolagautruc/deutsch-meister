@@ -1062,7 +1062,7 @@ def seed_lesson_3():
             lesson_id, "dich",
             "Câu 21: Dịch câu sau sang tiếng Đức (dùng cụm danh từ 'im ... von'): 'Hải Phòng nằm ở phía Đông Bắc của Việt Nam.'",
             None,
-            "Hai Phong liegt im Nordosten von Vietnam. / Hai Phong liegt nordöstlich von Vietnam.",
+            "Hai Phong liegt im Nordosten von Vietnam. / Hai Phong liegt nordöstlich von Vietnam. / Hai Phong liegt im Nordosten von Viet Nam. / Haiphong liegt im Nordosten von Vietnam.",
             "Dùng cụm danh từ: 'Hai Phong liegt im Nordosten von Vietnam.' hoặc tính từ 'Hai Phong liegt nordöstlich von Vietnam.'",
             20, None
         ),
@@ -1070,7 +1070,7 @@ def seed_lesson_3():
             lesson_id, "dich",
             "Câu 22: Dịch câu sau sang tiếng Đức: 'Đà Nẵng nằm ở miền Trung của Việt Nam.'",
             None,
-            "Da Nang liegt in der Mitte von Vietnam.",
+            "Da Nang liegt in der Mitte von Vietnam. / Da Nang liegt in der Mitte von Viet Nam. / Đà Nẵng liegt in der Mitte von Vietnam.",
             "Miền Trung dùng cụm cố định: 'Da Nang liegt in der Mitte von Vietnam.'",
             20, None
         ),
@@ -1078,7 +1078,7 @@ def seed_lesson_3():
             lesson_id, "dich",
             "Câu 23: Dịch câu sau sang tiếng Đức: 'Long An nằm ở miền Nam của Việt Nam.'",
             None,
-            "Long An liegt im Süden von Vietnam. / Long An liegt südlich von Vietnam.",
+            "Long An liegt im Süden von Vietnam. / Long An liegt südlich von Vietnam. / Long An liegt im Süden von Viet Nam.",
             "Long An nằm ở miền Nam: 'Long An liegt im Süden von Vietnam.' hoặc 'Long An liegt südlich von Vietnam.'",
             20, None
         ),
@@ -1086,16 +1086,16 @@ def seed_lesson_3():
             lesson_id, "dich",
             "Câu 24: Dịch câu sau sang tiếng Đức (câu hỏi trải nghiệm quá khứ thân mật 'du'): 'Bạn đã từng đến Hà Nội chưa?'",
             None,
-            "Warst du schon in Hanoi?",
-            "Câu hỏi trải nghiệm với 'schon' và 'sein' ở quá khứ: 'Warst du schon in Hanoi?'",
+            "Warst du schon in Hanoi? / Waren Sie schon in Hanoi? / Warst du schon in Ha Noi? / Warst du schon mal in Hanoi?",
+            "Câu hỏi trải nghiệm với 'schon' và 'sein' ở quá khứ: 'Warst du schon in Hanoi?' (hoặc dạng lịch sự 'Waren Sie schon in Hanoi?').",
             20, None
         ),
         (
             lesson_id, "dich",
             "Câu 25: Dịch câu sau sang tiếng Đức: 'Hôm qua Paula và tôi đã ở Hải Phòng.'",
             None,
-            "Gestern waren Paula und ich in Haiphong. / Paula und ich waren gestern in Haiphong.",
-            "Đưa trạng từ 'gestern' lên đầu: 'Gestern waren Paula und ich in Haiphong.'",
+            "Gestern waren Paula und ich in Haiphong. / Paula und ich waren gestern in Haiphong. / Gestern waren Paula und ich in Hai Phong. / Paula und ich waren gestern in Hai Phong.",
+            "Đưa trạng từ 'gestern' lên đầu hoặc theo sau chủ ngữ: 'Gestern waren Paula und ich in Haiphong.' / 'Paula und ich waren gestern in Haiphong.'",
             20, None
         ),
         (
@@ -1110,7 +1110,7 @@ def seed_lesson_3():
             lesson_id, "dich",
             "Câu 27: Dịch câu sau sang tiếng Đức: 'Ở Thụy Sỹ người ta nói tiếng Đức, tiếng Pháp và tiếng Ý.'",
             None,
-            "In der Schweiz spricht man Deutsch, Französisch und Italienisch.",
+            "In der Schweiz spricht man Deutsch, Französisch und Italienisch. / Man spricht Deutsch, Französisch und Italienisch in der Schweiz. / In der Schweiz spricht man Deutsch, Französisch, Italienisch.",
             "Ở Thụy Sỹ: 'In der Schweiz spricht man Deutsch, Französisch und Italienisch.'",
             20, None
         ),
@@ -1118,7 +1118,7 @@ def seed_lesson_3():
             lesson_id, "dich",
             "Câu 28 [Dynamic Phương hướng]: Viết câu miêu tả vị trí địa lý của thành phố: 'Hanoi liegt im Norden von Vietnam.'",
             None,
-            "Hanoi liegt im Norden von Vietnam. / Hanoi liegt nördlich von Vietnam.",
+            "Hanoi liegt im Norden von Vietnam. / Hanoi liegt nördlich von Vietnam. / Ha Noi liegt im Norden von Vietnam.",
             "Vị trí địa lý chuẩn: 'Hanoi liegt im Norden von Vietnam.' (hoặc 'nördlich von Vietnam').",
             20,
             json.dumps({"dynamic_direction_quiz": True})
@@ -1266,7 +1266,7 @@ def seed_lesson_3():
             lesson_id, "viet",
             "Câu 44: Hãy chuyển câu trần thuật 'Ich heiße Anna.' sang câu hỏi có từ để hỏi (W-Frage):",
             None,
-            "Wie heißen Sie? / Wie heißt du?",
+            "Wie heißen Sie? / Wie heißt du? / Wie ist Ihr Name? / Wie ist dein Name?",
             "Khi hỏi tên với động từ 'heißen', dùng từ để hỏi 'Wie': 'Wie heißen Sie?' (hoặc 'Wie heißt du?').",
             25, None
         ),
@@ -1274,7 +1274,7 @@ def seed_lesson_3():
             lesson_id, "viet",
             "Câu 45: Hãy chuyển câu trần thuật 'Ich wohne in Hai Phong.' sang câu hỏi Có/Không (Ja/Nein-Frage):",
             None,
-            "Wohnen Sie in Hai Phong? / Wohnst du in Hai Phong?",
+            "Wohnen Sie in Hai Phong? / Wohnst du in Hai Phong? / Wohnen Sie in Haiphong? / Wohnst du in Haiphong?",
             "Đẩy động từ lên đầu câu để tạo Ja/Nein-Frage: 'Wohnen Sie in Hai Phong?' (hoặc 'Wohnst du in Hai Phong?').",
             25, None
         ),
@@ -1282,7 +1282,7 @@ def seed_lesson_3():
             lesson_id, "viet",
             "Câu 46: Hãy chuyển câu trần thuật 'Er macht die Hausaufgaben.' sang câu hỏi có từ để hỏi (W-Frage):",
             None,
-            "Was macht er?",
+            "Was macht er? / Was tut er?",
             "Hỏi cho hành động làm bài tập dùng từ để hỏi 'Was': 'Was macht er?' (Anh ấy đang làm gì?).",
             25, None
         ),
@@ -1290,7 +1290,7 @@ def seed_lesson_3():
             lesson_id, "viet",
             "Câu 47: Hãy chuyển câu trần thuật 'Sie ist Lehrerin.' sang câu hỏi Có/Không (Ja/Nein-Frage):",
             None,
-            "Ist sie Lehrerin?",
+            "Ist sie Lehrerin? / Ist sie eine Lehrerin?",
             "Đảo động từ 'ist' lên đầu câu: 'Ist sie Lehrerin?' (Cô ấy có phải là giáo viên không?).",
             25, None
         ),
@@ -1306,7 +1306,7 @@ def seed_lesson_3():
             lesson_id, "viet",
             "Câu 49: Viết lại câu sau sang dạng dùng TÍNH TỪ phương hướng (-lich): 'Köln liegt im Westen von Deutschland.'",
             None,
-            "Köln liegt westlich von Deutschland.",
+            "Köln liegt westlich von Deutschland. / Köln liegt im Westen von Deutschland.",
             "Chuyển cụm danh từ 'im Westen von' sang tính từ 'westlich von' (không có 'im').",
             25, None
         ),
@@ -1314,7 +1314,7 @@ def seed_lesson_3():
             lesson_id, "viet",
             "Câu 50 [Dynamic Chuyển đổi Câu]: Hãy chuyển câu trần thuật sang câu hỏi tương ứng:",
             None,
-            "Wie heißen Sie? / Wie heißt du?",
+            "Wie heißen Sie? / Wie heißt du? / Wie ist Ihr Name? / Wie ist dein Name?",
             "Chuyển đổi câu chuẩn ngữ pháp tiếng Đức.",
             25,
             json.dumps({"dynamic_question_transform": True})

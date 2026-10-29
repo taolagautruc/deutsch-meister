@@ -918,7 +918,7 @@ def seed_lesson_4():
             lesson_id, "dich",
             "Câu 25: Dịch câu sau sang tiếng Đức: 'Tôi có một ngôi nhà. Ngôi nhà của tôi có 5 phòng.'",
             None,
-            "Ich habe ein Haus. Mein Haus hat 5 Zimmer.",
+            "Ich habe ein Haus. Mein Haus hat 5 Zimmer. / Ich habe ein Haus. Mein Haus hat fünf Zimmer. / Ich besitze ein Haus. Mein Haus hat 5 Zimmer.",
             "das Haus đứng sau habe (Akkusativ) → ein Haus; làm chủ ngữ (Nominativ) → Mein Haus. Số nhiều của Zimmer giữ nguyên.",
             20, None
         ),
@@ -926,7 +926,7 @@ def seed_lesson_4():
             lesson_id, "dich",
             "Câu 26: Dịch câu sau sang tiếng Đức: 'Phòng khách của tôi thì sáng và hiện đại.'",
             None,
-            "Mein Wohnzimmer ist hell und modern.",
+            "Mein Wohnzimmer ist hell und modern. / Mein Wohnzimmer ist modern und hell.",
             "das Wohnzimmer (giống trung) → Mein Wohnzimmer. Tính từ sau 'ist' giữ nguyên không chia đuôi.",
             20, None
         ),
@@ -934,7 +934,7 @@ def seed_lesson_4():
             lesson_id, "dich",
             "Câu 27: Dịch câu sau sang tiếng Đức: 'Nó có 1 Tivi và 1 giá sách.' (Nó = thay thế cho das Wohnzimmer)",
             None,
-            "Es hat einen Fernseher und ein Bücherregal.",
+            "Es hat einen Fernseher und ein Bücherregal. / Es hat ein Bücherregal und einen Fernseher. / Es hat einen Fernseher und ein Regal.",
             "Đại từ 'Es' thay cho das Wohnzimmer; der Fernseher (giống đực) sau hat đổi thành 'einen Fernseher'; das Bücherregal giữ nguyên 'ein'.",
             20, None
         ),
@@ -942,7 +942,7 @@ def seed_lesson_4():
             lesson_id, "dich",
             "Câu 28: Dịch câu sau sang tiếng Đức: 'Phòng ngủ của tôi thì ấm cúng và có 1 giường.'",
             None,
-            "Mein Schlafzimmer ist gemütlich und hat ein Bett.",
+            "Mein Schlafzimmer ist gemütlich und hat ein Bett. / Mein Schlafzimmer ist gemütlich und hat 1 Bett.",
             "das Schlafzimmer → Mein Schlafzimmer; das Bett (giống trung) sau hat → ein Bett.",
             20, None
         ),
@@ -950,7 +950,7 @@ def seed_lesson_4():
             lesson_id, "dich",
             "Câu 29: Dịch câu sau sang tiếng Đức: 'Phòng làm việc của tôi thì nhỏ nhưng sáng. Nó có 1 bàn và 1 ghế.'",
             None,
-            "Mein Arbeitszimmer ist klein, aber hell. Es hat einen Tisch und einen Stuhl.",
+            "Mein Arbeitszimmer ist klein, aber hell. Es hat einen Tisch und einen Stuhl. / Mein Arbeitszimmer ist klein, aber hell. Es hat einen Stuhl und einen Tisch. / Mein Arbeitszimmer ist klein aber hell. Es hat einen Tisch und einen Stuhl.",
             "Liên từ aber nối 2 tính từ tương phản; der Tisch và der Stuhl đều là giống đực nên đổi thành 'einen Tisch und einen Stuhl'.",
             20, None
         ),
@@ -958,7 +958,7 @@ def seed_lesson_4():
             lesson_id, "dich",
             "Câu 30: Dịch câu sau sang tiếng Đức: 'Phòng bếp của tôi thì nhỏ và đẹp.'",
             None,
-            "Meine Küche ist klein und schön.",
+            "Meine Küche ist klein und schön. / Meine Küche ist schön und klein.",
             "die Küche (giống cái) nên mạo từ sở hữu phải có đuôi -e: Meine Küche.",
             20, None
         ),
@@ -966,7 +966,7 @@ def seed_lesson_4():
             lesson_id, "dich",
             "Câu 31: Dịch câu sau sang tiếng Việt: 'Wir haben auch einen Garten. Ich finde den Garten sehr schön.'",
             None,
-            "Chúng mình cũng có một khu vườn. Mình thấy khu vườn rất đẹp.",
+            "Chúng mình cũng có một khu vườn. Mình thấy khu vườn rất đẹp. / Chúng tôi cũng có một khu vườn. Tôi thấy khu vườn rất đẹp. / Chúng ta cũng có một khu vườn. Tôi thấy khu vườn rất đẹp. / Chúng mình cũng có một cái vườn. Mình thấy vườn rất đẹp.",
             "Bản dịch câu kết trong thư của Julia gửi Claudia.",
             20, None
         ),
@@ -974,7 +974,7 @@ def seed_lesson_4():
             lesson_id, "dich",
             "Câu 32 [Dynamic Dịch Câu Miêu Tả Nhà & Nội Thất]: Hãy dịch câu sau sang tiếng Đức chuẩn xác:",
             None,
-            "Mein Wohnzimmer ist hell und modern.",
+            "Mein Wohnzimmer ist hell und modern. / Mein Wohnzimmer ist modern und hell.",
             "Vận dụng chính xác mạo từ sở hữu (Mein/Meine), đại từ thay thế (Er/Sie/Es) và Akkusativ giống đực (einen Tisch, einen Stuhl, einen Fernseher).",
             20,
             json.dumps({"dynamic_house_translation_quiz": True})
@@ -1021,7 +1021,7 @@ def seed_lesson_4():
             lesson_id, "nghe",
             "Câu 37 [Luyện Nghe]: Nghe và viết lại câu miêu tả: 'Mein Wohnzimmer ist hell und modern.'",
             None,
-            "Mein Wohnzimmer ist hell und modern.",
+            "Mein Wohnzimmer ist hell und modern. / Mein Wohnzimmer ist modern und hell.",
             "Luyện nghe và chép lại trọn vẹn câu miêu tả phòng khách.",
             20,
             json.dumps({"audio_text": "Mein Wohnzimmer ist hell und modern."})
@@ -1059,7 +1059,7 @@ def seed_lesson_4():
             lesson_id, "noi",
             "Câu 41 [Luyện Nói]: Nghe mẫu và phát âm câu: 'Wir haben auch einen Garten. Ich finde den Garten sehr schön.'",
             None,
-            "Wir haben auch einen Garten. Ich finde den Garten rất schön.",
+            "Wir haben auch einen Garten. Ich finde den Garten sehr schön.",
             "Luyện phát âm chuẩn sự chuyển biến từ 'einen Garten' sang 'den Garten'.",
             20,
             json.dumps({"audio_text": "Wir haben auch einen Garten. Ich finde den Garten sehr schön."})
@@ -1070,7 +1070,7 @@ def seed_lesson_4():
             lesson_id, "doc",
             "Câu 42 [Đọc hiểu Thư Julia]: Dựa vào bức thư của Julia, ngôi nhà của Julia có bao nhiêu phòng (Zimmer)? (Điền con số)",
             None,
-            "5 / fünf",
+            "5 / fünf / 5 Zimmer / fünf Zimmer",
             "Trong thư Julia viết: 'Unser Haus ist sehr alt und hat 5 Zimmer.' → Đáp án là 5 phòng.",
             20, None
         ),
@@ -1078,7 +1078,7 @@ def seed_lesson_4():
             lesson_id, "doc",
             "Câu 43 [Đọc hiểu Thư Julia]: Ở phía trên (Oben) của ngôi nhà có cái gì? (Điền tiếng Đức kèm mạo từ: 'einen ...')",
             None,
-            "einen Balkon",
+            "einen Balkon / Balkon / ein Balkon / der Balkon",
             "Trong thư viết: 'Oben gibt es einen Balkon.'",
             20, None
         ),
@@ -1086,7 +1086,7 @@ def seed_lesson_4():
             lesson_id, "doc",
             "Câu 44 [Đọc hiểu Thư Julia]: Julia cảm thấy nhà bếp (die Küche) như thế nào? (Điền cụm 2 từ tiếng Đức)",
             None,
-            "zu klein",
+            "zu klein / quá nhỏ / sie ist zu klein / nhỏ quá",
             "Julia viết: '...aber ich finde die Küche zu klein.'",
             20, None
         ),
@@ -1094,7 +1094,7 @@ def seed_lesson_4():
             lesson_id, "doc",
             "Câu 45 [Đọc hiểu Thư Julia]: Hành lang (der Flur) của ngôi nhà được miêu tả bằng 2 tính từ nào? (Điền dạng '... und ...')",
             None,
-            "lang und dunkel",
+            "lang und dunkel / dunkel und lang / dài và tối / tối và dài",
             "Julia viết: 'Das Haus hat einen Flur. Er ist lang und dunkel.'",
             20, None
         ),
@@ -1104,7 +1104,7 @@ def seed_lesson_4():
             lesson_id, "viet",
             "Câu 46: Viết lại câu sau sang câu có động từ 'haben' ở Akkusativ: 'Das ist ein Garten.' → 'Wir haben ___.'",
             None,
-            "einen Garten",
+            "einen Garten / den Garten / Garten",
             "Chuyển từ Nominativ 'ein Garten' sang Akkusativ sau 'haben': 'Wir haben einen Garten.'",
             25, None
         ),
