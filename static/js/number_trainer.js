@@ -92,6 +92,14 @@ function checkGermanAnswerEquivalence(userAns, correctAns) {
 
     if (u === c) return true;
 
+    // Chấp nhận nhiều đáp án tương đương cách nhau bởi dấu '/' hoặc '||'
+    if (correctAns.includes('/') || correctAns.includes('||')) {
+        const alts = correctAns.split(/\/|\|\|/).map(a => a.trim());
+        if (alts.some(alt => checkGermanAnswerEquivalence(userAns, alt))) {
+            return true;
+        }
+    }
+
     // Chuẩn hóa so sánh giá tiền Euro (ví dụ: "4,50" <-> "4.50" <-> "4,50 euro" <-> "4,50 €")
     const cleanPrice = (s) => s.replace(/euro/g, '').replace(/€/g, '').replace(/\./g, ',').replace(/\s+/g, '').trim();
     if (cleanPrice(u) === cleanPrice(c) && cleanPrice(c).includes(',')) return true;
@@ -290,6 +298,204 @@ function generateNewNumberData(ex) {
         return ex;
     }
 
+    // 6. Xử lý câu hỏi Phương hướng & Bản đồ (dynamic_direction_quiz - Bài 3)
+    if (extra.dynamic_direction_quiz) {
+        const cities = [
+            { city: "Hanoi", country: "Vietnam", noun: "im Norden", adj: "nördlich", vi: "miền Bắc", isCenter: false },
+            { city: "Hai Phong", country: "Vietnam", noun: "im Nordosten", adj: "nordöstlich", vi: "phía Đông Bắc", isCenter: false },
+            { city: "Da Nang", country: "Vietnam", noun: "in der Mitte", adj: "in der Mitte", vi: "miền Trung", isCenter: true },
+            { city: "Long An", country: "Vietnam", noun: "im Süden", adj: "südlich", vi: "miền Nam", isCenter: false },
+            { city: "Dien Bien", country: "Vietnam", noun: "im Nordwesten", adj: "nordwestlich", vi: "phía Tây Bắc", isCenter: false },
+            { city: "Can Tho", country: "Vietnam", noun: "im Südwesten", adj: "südwestlich", vi: "phía Tây Nam", isCenter: false },
+            { city: "Berlin", country: "Deutschland", noun: "im Osten", adj: "östlich", vi: "phía Đông", isCenter: false },
+            { city: "München", country: "Deutschland", noun: "im Süden", adj: "südlich", vi: "phía Nam", isCenter: false },
+            { city: "Hamburg", country: "Deutschland", noun: "im Norden", adj: "nördlich", vi: "phía Bắc", isCenter: false },
+            { city: "Köln", country: "Deutschland", noun: "im Westen", adj: "westlich", vi: "phía Tây", isCenter: false },
+            { city: "Frankfurt", country: "Deutschland", noun: "im Westen", adj: "westlich", vi: "phía Tây", isCenter: false },
+            { city: "Dresden", country: "Deutschland", noun: "im Südosten", adj: "südöstlich", vi: "phía Đông Nam", isCenter: false }
+        ];
+        const chosen = cities[Math.floor(Math.random() * cities.length)];
+        const useAdj = !chosen.isCenter && (Math.random() > 0.5);
+
+        if (useAdj) {
+            ex.question = `[Phương hướng Tính từ -lich (Random)]: Hãy viết câu miêu tả vị trí của ${chosen.city} bằng TÍNH TỪ chỉ phương hướng (-lich) theo mẫu '${chosen.city} liegt ... von ${chosen.country}':`;
+            ex.correct_answer = `${chosen.city} liegt ${chosen.adj} von ${chosen.country}.`;
+            ex.explanation = `Dùng tính từ chỉ phương hướng (-lich): '${chosen.city} liegt ${chosen.adj} von ${chosen.country}' (${chosen.city} nằm ở ${chosen.vi} ${chosen.country}). Tuyệt đối không dùng 'im' trước tính từ.`;
+        } else {
+            ex.question = `[Phương hướng Cụm Danh từ (Random)]: Hãy hoàn thành vị trí của ${chosen.city} (${chosen.vi} ${chosen.country}): '${chosen.city} liegt ___ von ${chosen.country}.'`;
+            ex.correct_answer = chosen.noun;
+            ex.explanation = `'${chosen.city}' nằm ở ${chosen.vi} của ${chosen.country} → Cụm giới từ là '${chosen.noun} von ${chosen.country}'.`;
+        }
+        return ex;
+    }
+
+    // 7. Xử lý câu hỏi Danh lam Thắng cảnh Châu Âu (dynamic_landmark_quiz - Bài 3)
+    if (extra.dynamic_landmark_quiz) {
+        const landmarks = [
+            { name: "Akropolis", article: "die", city: "Athen", country: "Griechenland", vi: "Thành cổ Akropolis" },
+            { name: "Big Ben", article: "der", city: "London", country: "England", vi: "Tháp đồng hồ Big Ben" },
+            { name: "Eiffelturm", article: "der", city: "Paris", country: "Frankreich", vi: "Tháp Eiffel" },
+            { name: "Schiefe Turm", article: "der", city: "Pisa", country: "Italien", vi: "Tháp nghiêng Pisa" },
+            { name: "Prater", article: "der", city: "Wien", country: "Österreich", vi: "Công viên giải trí Prater" },
+            { name: "Brandenburger Tor", article: "das", city: "Berlin", country: "Deutschland", vi: "Cổng Brandenburg" },
+            { name: "Rote Platz", article: "der", city: "Moskau", country: "Russland", vi: "Quảng trường Đỏ" }
+        ];
+        const chosen = landmarks[Math.floor(Math.random() * landmarks.length)];
+        const quizType = Math.floor(Math.random() * 3);
+
+        if (quizType === 0) {
+            ex.question = `[Danh lam thắng cảnh Châu Âu (Random)]: Công trình '${chosen.name}' (${chosen.vi}) đi kèm mạo từ nào ở Nominativ? "Was ist das? – Das ist ___ ${chosen.name}."`;
+            ex.correct_answer = chosen.article;
+            ex.explanation = `'${chosen.name}' đi kèm mạo từ '${chosen.article}' → "Das ist ${chosen.article} ${chosen.name}".`;
+        } else if (quizType === 1) {
+            ex.question = `[Địa danh & Thành phố (Random)]: Công trình '${chosen.article} ${chosen.name}' (${chosen.vi}) nằm ở thành phố nào? "Wo ist denn das? – Das ist in ___."`;
+            ex.correct_answer = chosen.city;
+            ex.explanation = `'${chosen.article} ${chosen.name}' tọa lạc tại thành phố '${chosen.city}'.`;
+        } else {
+            ex.question = `[Địa danh & Quốc gia (Random)]: Thành phố ${chosen.city} ('${chosen.article} ${chosen.name}') nằm ở quốc gia nào? "In welchem Land ist das? – ${chosen.city} ist in ___."`;
+            ex.correct_answer = chosen.country;
+            ex.explanation = `'${chosen.city}' nằm ở đất nước '${chosen.country}'.`;
+        }
+        return ex;
+    }
+
+    // 8. Xử lý câu hỏi Chia 'sein' ở Thì Präteritum (dynamic_praeteritum_quiz - Bài 3)
+    if (extra.dynamic_praeteritum_quiz) {
+        const subjects = [
+            { label: "ich", pronoun: "ich", form: "war" },
+            { label: "du", pronoun: "du", form: "warst" },
+            { label: "er (anh ấy)", pronoun: "er", form: "war" },
+            { label: "sie (cô ấy)", pronoun: "sie", form: "war" },
+            { label: "wir", pronoun: "wir", form: "waren" },
+            { label: "ihr", pronoun: "ihr", form: "wart" },
+            { label: "Sie (Ngài)", pronoun: "Sie", form: "waren" },
+            { label: "Paula und ich", pronoun: "Paula und ich", form: "waren" },
+            { label: "du und Peter (ihr)", pronoun: "du und Peter", form: "wart" },
+            { label: "Paula", pronoun: "Paula", form: "war" },
+            { label: "Der Cat Bi Markt", pronoun: "Der Cat Bi Markt", form: "war" }
+        ];
+        const times = ["Gestern", "Vorgestern", "Letzte Woche", "Früher"];
+        const places = ["in Haiphong", "in Hanoi", "im BigC Supermarkt", "im Theater", "auf dem Cat Bi Markt", "in Wien", "in Athen"];
+
+        const chosenSub = subjects[Math.floor(Math.random() * subjects.length)];
+        const chosenTime = times[Math.floor(Math.random() * times.length)];
+        const chosenPlace = places[Math.floor(Math.random() * places.length)];
+
+        ex.question = `[Chia 'sein' ở Thì Präteritum (Random)]: Điền dạng quá khứ đúng của động từ 'sein' cho chủ ngữ '${chosenSub.label}': "${chosenTime} ___ ${chosenSub.pronoun} ${chosenPlace}."`;
+        ex.correct_answer = chosenSub.form;
+        ex.explanation = `Chủ ngữ '${chosenSub.pronoun}' đi với thì Quá khứ đơn (Präteritum) của 'sein' là '${chosenSub.form}'. (${chosenTime} ${chosenSub.form} ${chosenSub.pronoun} ${chosenPlace}).`;
+        return ex;
+    }
+
+    // 9. Xử lý câu hỏi Quốc gia & Ngôn ngữ (dynamic_country_language_quiz - Bài 3)
+    if (extra.dynamic_country_language_quiz) {
+        const countries = [
+            { country: "die Schweiz", article: "die", lang: "Deutsch, Französisch, Italienisch", aus: "aus der Schweiz", in: "in der Schweiz", isSpecial: true },
+            { country: "die Türkei", article: "die", lang: "Türkisch", aus: "aus der Türkei", in: "in der Türkei", isSpecial: true },
+            { country: "die Slowakei", article: "die", lang: "Slowakisch", aus: "aus der Slowakei", in: "in der Slowakei", isSpecial: true },
+            { country: "der Iran", article: "der", lang: "Persisch", aus: "aus dem Iran", in: "im Iran", isSpecial: true },
+            { country: "die USA", article: "die (Pl.)", lang: "Englisch", aus: "aus den USA", in: "in den USA", isSpecial: true },
+            { country: "Deutschland", article: "—", lang: "Deutsch", aus: "aus Deutschland", in: "in Deutschland", isSpecial: false },
+            { country: "Österreich", article: "—", lang: "Deutsch", aus: "aus Österreich", in: "in Österreich", isSpecial: false },
+            { country: "Italien", article: "—", lang: "Italienisch", aus: "aus Italien", in: "in Italien", isSpecial: false },
+            { country: "Spanien", article: "—", lang: "Spanisch", aus: "aus Spanien", in: "in Spanien", isSpecial: false },
+            { country: "Griechenland", article: "—", lang: "Griechisch", aus: "aus Griechenland", in: "in Griechenland", isSpecial: false },
+            { country: "Frankreich", article: "—", lang: "Französisch", aus: "aus Frankreich", in: "in Frankreich", isSpecial: false },
+            { country: "Russland", article: "—", lang: "Russisch", aus: "aus Russland", in: "in Russland", isSpecial: false },
+            { country: "Polen", article: "—", lang: "Polnisch", aus: "aus Polen", in: "in Polen", isSpecial: false },
+            { country: "Vietnam", article: "—", lang: "Vietnamesisch", aus: "aus Vietnam", in: "in Vietnam", isSpecial: false }
+        ];
+
+        const chosen = countries[Math.floor(Math.random() * countries.length)];
+        const quizType = chosen.isSpecial ? (Math.random() > 0.5 ? 'preposition' : 'language') : 'language';
+
+        if (quizType === 'preposition') {
+            const useAus = Math.random() > 0.5;
+            if (useAus) {
+                ex.question = `[Giới từ 'aus' với Quốc gia có mạo từ (Random)]: Điền cụm giới từ 'đến từ' cho quốc gia '${chosen.country}': "Frau Müller kommt ___."`;
+                ex.correct_answer = chosen.aus;
+                ex.explanation = `'${chosen.country}' là quốc gia có mạo từ, khi kết hợp với 'aus' ở Dativ phải đổi thành '${chosen.aus}'.`;
+            } else {
+                ex.question = `[Giới từ 'in' với Quốc gia có mạo từ (Random)]: Điền cụm giới từ 'ở tại' cho quốc gia '${chosen.country}': "Herr Meier wohnt ___."`;
+                ex.correct_answer = chosen.in;
+                ex.explanation = `'${chosen.country}' ở Dativ khi đi với giới từ 'in' là '${chosen.in}'.`;
+            }
+        } else {
+            ex.question = `[Ngôn ngữ Quốc gia (Random)]: Ngôn ngữ chính được nói tại '${chosen.country}' là gì? (Ví dụ: Deutsch, Französisch, Spanisch...):`;
+            ex.correct_answer = chosen.lang;
+            ex.explanation = `Tại '${chosen.country}', ngôn ngữ chính là: '${chosen.lang}'.`;
+        }
+        return ex;
+    }
+
+    // 10. Xử lý câu hỏi Chuyển đổi Câu hỏi W-Frage & Ja/Nein-Frage (dynamic_question_transform - Bài 3)
+    if (extra.dynamic_question_transform) {
+        const sentencePool = [
+            {
+                statement: "Ich heiße Anna.",
+                wQuestion: "Wie heißen Sie?",
+                wAlt: "Wie heißt du?",
+                jnQuestion: "Heißen Sie Anna?",
+                jnAlt: "Heißt du Anna?",
+                meaning: "Tôi tên là Anna."
+            },
+            {
+                statement: "Ich wohne in Hai Phong.",
+                wQuestion: "Wo wohnen Sie?",
+                wAlt: "Wo wohnst du?",
+                jnQuestion: "Wohnen Sie in Hai Phong?",
+                jnAlt: "Wohnst du in Hai Phong?",
+                meaning: "Tôi sống ở Hải Phòng."
+            },
+            {
+                statement: "Er macht die Hausaufgaben.",
+                wQuestion: "Was macht er?",
+                wAlt: "Was macht er?",
+                jnQuestion: "Macht er die Hausaufgaben?",
+                jnAlt: "Macht er die Hausaufgaben?",
+                meaning: "Anh ấy làm bài tập về nhà."
+            },
+            {
+                statement: "Sie ist Lehrerin.",
+                wQuestion: "Wer ist sie?",
+                wAlt: "Was ist sie von Beruf?",
+                jnQuestion: "Ist sie Lehrerin?",
+                jnAlt: "Ist sie Lehrerin?",
+                meaning: "Cô ấy là giáo viên."
+            },
+            {
+                statement: "Carlos kommt aus Wien.",
+                wQuestion: "Woher kommt Carlos?",
+                wAlt: "Woher kommt er?",
+                jnQuestion: "Kommt Carlos aus Wien?",
+                jnAlt: "Kommt er aus Wien?",
+                meaning: "Carlos đến từ Viên."
+            },
+            {
+                statement: "Hanoi liegt im Norden von Vietnam.",
+                wQuestion: "Wo liegt Hanoi?",
+                wAlt: "Wo liegt Hanoi?",
+                jnQuestion: "Liegt Hanoi im Norden von Vietnam?",
+                jnAlt: "Liegt Hanoi im Norden von Vietnam?",
+                meaning: "Hà Nội nằm ở miền Bắc Việt Nam."
+            }
+        ];
+
+        const chosen = sentencePool[Math.floor(Math.random() * sentencePool.length)];
+        const askW = Math.random() > 0.5;
+
+        if (askW) {
+            ex.question = `[Chuyển sang W-Frage (Random)]: Hãy chuyển câu trần thuật "${chosen.statement}" (${chosen.meaning}) sang câu hỏi có từ để hỏi (W-Frage):`;
+            ex.correct_answer = `${chosen.wQuestion} / ${chosen.wAlt}`;
+            ex.explanation = `Câu hỏi W-Frage tương ứng là: '${chosen.wQuestion}' (hoặc thân mật: '${chosen.wAlt}').`;
+        } else {
+            ex.question = `[Chuyển sang Ja/Nein-Frage (Random)]: Hãy chuyển câu trần thuật "${chosen.statement}" (${chosen.meaning}) sang câu hỏi Có/Không (Ja/Nein-Frage):`;
+            ex.correct_answer = `${chosen.jnQuestion} / ${chosen.jnAlt}`;
+            ex.explanation = `Đẩy động từ lên đầu câu để tạo Ja/Nein-Frage: '${chosen.jnQuestion}' (hoặc: '${chosen.jnAlt}').`;
+        }
+        return ex;
+    }
+
     if (!extra.dynamic_number && !extra.dynamic_mode) return ex;
 
     const mode = extra.dynamic_mode;
@@ -396,7 +602,7 @@ function randomizeAllNumberExercises(exercisesList) {
         let isDynamic = false;
         try {
             const extra = typeof ex.extra_data === 'string' ? JSON.parse(ex.extra_data) : (ex.extra_data || {});
-            if (extra.dynamic_number || extra.dynamic_mode || extra.dynamic_price || extra.dynamic_conjugation || extra.dynamic_article_quiz || extra.dynamic_possessive_article || extra.dynamic_plural_quiz) isDynamic = true;
+            if (extra.dynamic_number || extra.dynamic_mode || extra.dynamic_price || extra.dynamic_conjugation || extra.dynamic_article_quiz || extra.dynamic_possessive_article || extra.dynamic_plural_quiz || extra.dynamic_direction_quiz || extra.dynamic_landmark_quiz || extra.dynamic_praeteritum_quiz || extra.dynamic_country_language_quiz || extra.dynamic_question_transform) isDynamic = true;
         } catch (e) {}
 
         if (isDynamic) {

@@ -11,8 +11,9 @@ const GERMAN_VERBS_DB = [
         stem: "sei-",
         ending: "-n",
         forms: { ich: "bin", du: "bist", er_sie_es: "ist", wir: "sind", ihr: "seid", sie_Sie: "sind" },
-        note: "Động từ bất quy tắc quan trọng nhất trong tiếng Đức, biến đổi hoàn toàn ở tất cả các ngôi.",
-        example: "Ich bin im Deutschkurs. Wo seid ihr?"
+        praeteritum: { ich: "war", du: "warst", er_sie_es: "war", wir: "waren", ihr: "wart", sie_Sie: "waren" },
+        note: "Động từ bất quy tắc quan trọng nhất trong tiếng Đức, biến đổi hoàn toàn ở tất cả các ngôi ở cả Hiện tại (Präsens) và Quá khứ đơn (Präteritum).",
+        example: "Ich bin im Deutschkurs. Gestern waren wir in Haiphong."
     },
     {
         infinitiv: "haben",
@@ -21,8 +22,9 @@ const GERMAN_VERBS_DB = [
         stem: "hab-",
         ending: "-en",
         forms: { ich: "habe", du: "hast", er_sie_es: "hat", wir: "haben", ihr: "habt", sie_Sie: "haben" },
-        note: "Ngôi du và er/sie/es lược bỏ phụ âm -b- ở gốc (hast, hat).",
-        example: "Ich habe Zeit. Hast du Kaffee?"
+        praeteritum: { ich: "hatte", du: "hattest", er_sie_es: "hatte", wir: "hatten", ihr: "hattet", sie_Sie: "hatten" },
+        note: "Ngôi du và er/sie/es lược bỏ phụ âm -b- ở gốc (hast, hat). Quá khứ đơn dùng gốc hatt- (hatte, hattest).",
+        example: "Ich habe Zeit. Gestern hatte ich keinen Deutschunterricht."
     },
     {
         infinitiv: "machen",
@@ -353,6 +355,107 @@ const GERMAN_VERBS_DB = [
         forms: { ich: "will", du: "willst", er_sie_es: "will", wir: "wollen", ihr: "wollt", sie_Sie: "wollen" },
         note: "Động từ khuyết thiếu: ich và er/sie/es đều là 'will' (o đổi thành i).",
         example: "Wir wollen Deutsch lernen."
+    },
+    {
+        infinitiv: "liegen",
+        meaning: "nằm ở, tọa lạc ở (thành phố, địa danh trên bản đồ)",
+        group: "Quy tắc (Regelmäßig)",
+        stem: "lieg-",
+        ending: "-en",
+        forms: { ich: "liege", du: "liegst", er_sie_es: "liegt", wir: "liegen", ihr: "liegt", sie_Sie: "liegen" },
+        praeteritum: { ich: "lag", du: "lagst", er_sie_es: "lag", wir: "lagen", ihr: "lagt", sie_Sie: "lagen" },
+        note: "Đi với giới từ 'im + Phương hướng + von' hoặc 'Tính từ hướng (-lich) + von': Hanoi liegt im Norden von Vietnam.",
+        example: "Hanoi liegt im Norden von Vietnam. Hai Phong liegt im Nordosten."
+    },
+    {
+        infinitiv: "besuchen",
+        meaning: "thăm, ghé thăm (địa danh, danh thắng, bạn bè)",
+        group: "Quy tắc (Regelmäßig)",
+        stem: "besuch-",
+        ending: "-en",
+        forms: { ich: "besuche", du: "besuchst", er_sie_es: "besucht", wir: "besuchen", ihr: "besucht", sie_Sie: "besuchen" },
+        note: "Tiền tố không tách 'be-'. Ví dụ: Wir besuchen das Brandenburger Tor in Berlin.",
+        example: "Wir besuchen das Brandenburger Tor in Berlin."
+    },
+    {
+        infinitiv: "buchstabieren",
+        meaning: "đánh vần từng chữ cái",
+        group: "Quy tắc (Regelmäßig)",
+        stem: "buchstabier-",
+        ending: "-en",
+        forms: { ich: "buchstabiere", du: "buchstabierst", er_sie_es: "buchstabiert", wir: "buchstabieren", ihr: "buchstabiert", sie_Sie: "buchstabieren" },
+        note: "Đuôi -ieren nhấn trọng âm vào -ier-. Ví dụ: Können Sie das bitte buchstabieren?",
+        example: "Können Sie Ihren Vornamen bitte buchstabieren?"
+    },
+    {
+        infinitiv: "verstehen",
+        meaning: "hiểu, nắm rõ ý nghĩa",
+        group: "Bất quy tắc & Khuyết thiếu (Unregelmäßig & Modalverben)",
+        stem: "versteh-",
+        ending: "-en",
+        forms: { ich: "verstehe", du: "verstehst", er_sie_es: "versteht", wir: "verstehen", ihr: "versteht", sie_Sie: "verstehen" },
+        note: "Tiền tố không tách ver-. Ví dụ: Das verstehe ich nicht.",
+        example: "Entschuldigung, wie bitte? Das verstehe ich leider nicht."
+    },
+    {
+        infinitiv: "wiederholen",
+        meaning: "nhắc lại, lặp lại lời nói",
+        group: "Quy tắc (Regelmäßig)",
+        stem: "wiederhol-",
+        ending: "-en",
+        forms: { ich: "wiederhole", du: "wiederholst", er_sie_es: "wiederholt", wir: "wiederholen", ihr: "wiederholt", sie_Sie: "wiederholen" },
+        note: "Không tách khi mang nghĩa lặp lại lời nói. Ví dụ: Können Sie das bitte wiederholen?",
+        example: "Können Sie die Frage bitte noch einmal wiederholen?"
+    },
+    {
+        infinitiv: "schreiben",
+        meaning: "viết",
+        group: "Quy tắc (Regelmäßig)",
+        stem: "schreib-",
+        ending: "-en",
+        forms: { ich: "schreibe", du: "schreibst", er_sie_es: "schreibt", wir: "schreiben", ihr: "schreibt", sie_Sie: "schreiben" },
+        note: "Chia theo công thức chuẩn: -e, -st, -t, -en, -t, -en.",
+        example: "Ich schreibe eine Postkarte an Anna."
+    },
+    {
+        infinitiv: "helfen",
+        meaning: "giúp đỡ, trợ giúp",
+        group: "Biến âm gốc (nehmen, lesen)",
+        stem: "helf- / hilf-",
+        ending: "-en",
+        forms: { ich: "helfe", du: "hilfst", er_sie_es: "hilft", wir: "helfen", ihr: "helft", sie_Sie: "helfen" },
+        note: "Biến âm gốc e -> i ở ngôi du (hilfst) và er/sie/es (hilft).",
+        example: "Können Sie mir bitte helfen?"
+    },
+    {
+        infinitiv: "öffnen",
+        meaning: "mở (sách, cửa sổ, phòng)",
+        group: "Gốc -t, -d (mieten, arbeiten)",
+        stem: "öffn-",
+        ending: "-en",
+        forms: { ich: "öffne", du: "öffnest", er_sie_es: "öffnet", wir: "öffnen", ihr: "öffnet", sie_Sie: "öffnen" },
+        note: "Gốc kết thúc bằng -fn nên thêm âm đệm -e- ở ngôi du (-est) và er/sie/es (-et).",
+        example: "Bitte öffnen Sie das Buch auf Seite zwanzig."
+    },
+    {
+        infinitiv: "schließen",
+        meaning: "đóng lại, khép lại",
+        group: "Gốc -s, -ß, -z (heißen, tanzen)",
+        stem: "schließ-",
+        ending: "-en",
+        forms: { ich: "schließe", du: "schließt", er_sie_es: "schließt", wir: "schließen", ihr: "schließt", sie_Sie: "schließen" },
+        note: "Gốc kết thúc bằng -ß nên ngôi du chỉ thêm -t (du schließt = er/sie/es schließt).",
+        example: "Schließen Sie bitte das Fenster!"
+    },
+    {
+        infinitiv: "zeigen",
+        meaning: "chỉ, cho xem (ảnh, tài liệu)",
+        group: "Quy tắc (Regelmäßig)",
+        stem: "zeig-",
+        ending: "-en",
+        forms: { ich: "zeige", du: "zeigst", er_sie_es: "zeigt", wir: "zeigen", ihr: "zeigt", sie_Sie: "zeigen" },
+        note: "Chia theo công thức chuẩn: -e, -st, -t, -en, -t, -en.",
+        example: "Paula zeigt Fotos von der Reise nach Hai Phong."
     }
 ];
 
@@ -419,6 +522,35 @@ function speakAllForms(verbInfinitiv) {
         `wir ${verb.forms.wir}`,
         `ihr ${verb.forms.ihr}`,
         `sie und Sie ${verb.forms.sie_Sie}`
+    ];
+
+    let i = 0;
+    function speakNext() {
+        if (i < list.length) {
+            if (typeof window.speakGerman === 'function') {
+                window.speakGerman(list[i]);
+            }
+            i++;
+            setTimeout(speakNext, 1100);
+        }
+    }
+    speakNext();
+}
+
+/**
+ * Đọc lần lượt 6 ngôi của thì Quá khứ đơn (Präteritum)
+ */
+function speakAllPraeteritumForms(verbInfinitiv) {
+    const verb = GERMAN_VERBS_DB.find(v => v.infinitiv === verbInfinitiv);
+    if (!verb || !verb.praeteritum) return;
+
+    const list = [
+        `ich ${verb.praeteritum.ich}`,
+        `du ${verb.praeteritum.du}`,
+        `er, sie, es ${verb.praeteritum.er_sie_es}`,
+        `wir ${verb.praeteritum.wir}`,
+        `ihr ${verb.praeteritum.ihr}`,
+        `sie und Sie ${verb.praeteritum.sie_Sie}`
     ];
 
     let i = 0;
@@ -532,53 +664,117 @@ function updateVerbKonjugatorUI() {
                     </p>
                 </div>
 
-                <!-- Bảng chia 6 ngôi -->
-                <div class="grid grid-cols-2 gap-2 bg-slate-50/70 p-3 rounded-2xl border border-slate-200/80 text-xs">
-                    <div onclick="speakGerman('ich ${v.forms.ich}')" class="cursor-pointer p-2 rounded-xl bg-white border border-slate-200/80 hover:border-indigo-400 hover:shadow-xs transition flex items-center justify-between group">
-                        <span class="text-slate-500 font-medium">ich:</span>
-                        <div class="flex items-center gap-1">
-                            ${formatConjugatedForm(v, 'ich', v.forms.ich)}
-                            <span class="opacity-0 group-hover:opacity-100 transition text-[10px] text-indigo-600">🔊</span>
-                        </div>
+                <!-- Bảng chia 6 ngôi Hiện tại (Präsens) -->
+                <div>
+                    <div class="flex items-center justify-between mb-1.5 px-1">
+                        <span class="text-[11px] font-bold text-slate-500 uppercase tracking-wider">Thì Hiện Tại (Präsens)</span>
+                        <span class="text-[10px] text-indigo-600 font-semibold">🔊 Bấm ô để nghe</span>
                     </div>
-                    <div onclick="speakGerman('wir ${v.forms.wir}')" class="cursor-pointer p-2 rounded-xl bg-white border border-slate-200/80 hover:border-indigo-400 hover:shadow-xs transition flex items-center justify-between group">
-                        <span class="text-slate-500 font-medium">wir:</span>
-                        <div class="flex items-center gap-1">
-                            ${formatConjugatedForm(v, 'wir', v.forms.wir)}
-                            <span class="opacity-0 group-hover:opacity-100 transition text-[10px] text-indigo-600">🔊</span>
+                    <div class="grid grid-cols-2 gap-2 bg-slate-50/70 p-3 rounded-2xl border border-slate-200/80 text-xs">
+                        <div onclick="speakGerman('ich ${v.forms.ich}')" class="cursor-pointer p-2 rounded-xl bg-white border border-slate-200/80 hover:border-indigo-400 hover:shadow-xs transition flex items-center justify-between group">
+                            <span class="text-slate-500 font-medium">ich:</span>
+                            <div class="flex items-center gap-1">
+                                ${formatConjugatedForm(v, 'ich', v.forms.ich)}
+                                <span class="opacity-0 group-hover:opacity-100 transition text-[10px] text-indigo-600">🔊</span>
+                            </div>
                         </div>
-                    </div>
+                        <div onclick="speakGerman('wir ${v.forms.wir}')" class="cursor-pointer p-2 rounded-xl bg-white border border-slate-200/80 hover:border-indigo-400 hover:shadow-xs transition flex items-center justify-between group">
+                            <span class="text-slate-500 font-medium">wir:</span>
+                            <div class="flex items-center gap-1">
+                                ${formatConjugatedForm(v, 'wir', v.forms.wir)}
+                                <span class="opacity-0 group-hover:opacity-100 transition text-[10px] text-indigo-600">🔊</span>
+                            </div>
+                        </div>
 
-                    <div onclick="speakGerman('du ${v.forms.du}')" class="cursor-pointer p-2 rounded-xl bg-white border border-slate-200/80 hover:border-indigo-400 hover:shadow-xs transition flex items-center justify-between group">
-                        <span class="text-slate-500 font-medium">du:</span>
-                        <div class="flex items-center gap-1">
-                            ${formatConjugatedForm(v, 'du', v.forms.du)}
-                            <span class="opacity-0 group-hover:opacity-100 transition text-[10px] text-indigo-600">🔊</span>
+                        <div onclick="speakGerman('du ${v.forms.du}')" class="cursor-pointer p-2 rounded-xl bg-white border border-slate-200/80 hover:border-indigo-400 hover:shadow-xs transition flex items-center justify-between group">
+                            <span class="text-slate-500 font-medium">du:</span>
+                            <div class="flex items-center gap-1">
+                                ${formatConjugatedForm(v, 'du', v.forms.du)}
+                                <span class="opacity-0 group-hover:opacity-100 transition text-[10px] text-indigo-600">🔊</span>
+                            </div>
                         </div>
-                    </div>
-                    <div onclick="speakGerman('ihr ${v.forms.ihr}')" class="cursor-pointer p-2 rounded-xl bg-white border border-slate-200/80 hover:border-indigo-400 hover:shadow-xs transition flex items-center justify-between group">
-                        <span class="text-slate-500 font-medium">ihr:</span>
-                        <div class="flex items-center gap-1">
-                            ${formatConjugatedForm(v, 'ihr', v.forms.ihr)}
-                            <span class="opacity-0 group-hover:opacity-100 transition text-[10px] text-indigo-600">🔊</span>
+                        <div onclick="speakGerman('ihr ${v.forms.ihr}')" class="cursor-pointer p-2 rounded-xl bg-white border border-slate-200/80 hover:border-indigo-400 hover:shadow-xs transition flex items-center justify-between group">
+                            <span class="text-slate-500 font-medium">ihr:</span>
+                            <div class="flex items-center gap-1">
+                                ${formatConjugatedForm(v, 'ihr', v.forms.ihr)}
+                                <span class="opacity-0 group-hover:opacity-100 transition text-[10px] text-indigo-600">🔊</span>
+                            </div>
                         </div>
-                    </div>
 
-                    <div onclick="speakGerman('er ${v.forms.er_sie_es}')" class="cursor-pointer p-2 rounded-xl bg-white border border-slate-200/80 hover:border-indigo-400 hover:shadow-xs transition flex items-center justify-between group">
-                        <span class="text-slate-500 font-medium">er/sie/es:</span>
-                        <div class="flex items-center gap-1">
-                            ${formatConjugatedForm(v, 'er_sie_es', v.forms.er_sie_es)}
-                            <span class="opacity-0 group-hover:opacity-100 transition text-[10px] text-indigo-600">🔊</span>
+                        <div onclick="speakGerman('er ${v.forms.er_sie_es}')" class="cursor-pointer p-2 rounded-xl bg-white border border-slate-200/80 hover:border-indigo-400 hover:shadow-xs transition flex items-center justify-between group">
+                            <span class="text-slate-500 font-medium">er/sie/es:</span>
+                            <div class="flex items-center gap-1">
+                                ${formatConjugatedForm(v, 'er_sie_es', v.forms.er_sie_es)}
+                                <span class="opacity-0 group-hover:opacity-100 transition text-[10px] text-indigo-600">🔊</span>
+                            </div>
                         </div>
-                    </div>
-                    <div onclick="speakGerman('sie ${v.forms.sie_Sie}')" class="cursor-pointer p-2 rounded-xl bg-white border border-slate-200/80 hover:border-indigo-400 hover:shadow-xs transition flex items-center justify-between group">
-                        <span class="text-slate-500 font-medium">sie/Sie:</span>
-                        <div class="flex items-center gap-1">
-                            ${formatConjugatedForm(v, 'sie_Sie', v.forms.sie_Sie)}
-                            <span class="opacity-0 group-hover:opacity-100 transition text-[10px] text-indigo-600">🔊</span>
+                        <div onclick="speakGerman('sie ${v.forms.sie_Sie}')" class="cursor-pointer p-2 rounded-xl bg-white border border-slate-200/80 hover:border-indigo-400 hover:shadow-xs transition flex items-center justify-between group">
+                            <span class="text-slate-500 font-medium">sie/Sie:</span>
+                            <div class="flex items-center gap-1">
+                                ${formatConjugatedForm(v, 'sie_Sie', v.forms.sie_Sie)}
+                                <span class="opacity-0 group-hover:opacity-100 transition text-[10px] text-indigo-600">🔊</span>
+                            </div>
                         </div>
                     </div>
                 </div>
+
+                ${v.praeteritum ? `
+                <!-- Bảng chia 6 ngôi Quá khứ đơn (Präteritum) -->
+                <div>
+                    <div class="flex items-center justify-between mb-1.5 px-1">
+                        <span class="text-[11px] font-bold text-amber-700 uppercase tracking-wider">Thì Quá Khứ Đơn (Präteritum)</span>
+                        <button onclick="speakAllPraeteritumForms('${v.infinitiv}')" class="text-[10px] text-amber-800 hover:text-amber-950 font-bold hover:underline cursor-pointer">
+                            🔊 Đọc 6 ngôi Präteritum
+                        </button>
+                    </div>
+                    <div class="grid grid-cols-2 gap-2 bg-amber-50/60 p-3 rounded-2xl border border-amber-200 text-xs">
+                        <div onclick="speakGerman('ich ${v.praeteritum.ich}')" class="cursor-pointer p-2 rounded-xl bg-white border border-amber-200/80 hover:border-amber-400 hover:shadow-xs transition flex items-center justify-between group">
+                            <span class="text-slate-500 font-medium">ich:</span>
+                            <div class="flex items-center gap-1">
+                                <span class="font-black text-amber-900">${v.praeteritum.ich}</span>
+                                <span class="opacity-0 group-hover:opacity-100 transition text-[10px] text-amber-600">🔊</span>
+                            </div>
+                        </div>
+                        <div onclick="speakGerman('wir ${v.praeteritum.wir}')" class="cursor-pointer p-2 rounded-xl bg-white border border-amber-200/80 hover:border-amber-400 hover:shadow-xs transition flex items-center justify-between group">
+                            <span class="text-slate-500 font-medium">wir:</span>
+                            <div class="flex items-center gap-1">
+                                <span class="font-black text-amber-900">${v.praeteritum.wir}</span>
+                                <span class="opacity-0 group-hover:opacity-100 transition text-[10px] text-amber-600">🔊</span>
+                            </div>
+                        </div>
+
+                        <div onclick="speakGerman('du ${v.praeteritum.du}')" class="cursor-pointer p-2 rounded-xl bg-white border border-amber-200/80 hover:border-amber-400 hover:shadow-xs transition flex items-center justify-between group">
+                            <span class="text-slate-500 font-medium">du:</span>
+                            <div class="flex items-center gap-1">
+                                <span class="font-black text-amber-900">${v.praeteritum.du}</span>
+                                <span class="opacity-0 group-hover:opacity-100 transition text-[10px] text-amber-600">🔊</span>
+                            </div>
+                        </div>
+                        <div onclick="speakGerman('ihr ${v.praeteritum.ihr}')" class="cursor-pointer p-2 rounded-xl bg-white border border-amber-200/80 hover:border-amber-400 hover:shadow-xs transition flex items-center justify-between group">
+                            <span class="text-slate-500 font-medium">ihr:</span>
+                            <div class="flex items-center gap-1">
+                                <span class="font-black text-amber-900">${v.praeteritum.ihr}</span>
+                                <span class="opacity-0 group-hover:opacity-100 transition text-[10px] text-amber-600">🔊</span>
+                            </div>
+                        </div>
+
+                        <div onclick="speakGerman('er ${v.praeteritum.er_sie_es}')" class="cursor-pointer p-2 rounded-xl bg-white border border-amber-200/80 hover:border-amber-400 hover:shadow-xs transition flex items-center justify-between group">
+                            <span class="text-slate-500 font-medium">er/sie/es:</span>
+                            <div class="flex items-center gap-1">
+                                <span class="font-black text-amber-900">${v.praeteritum.er_sie_es}</span>
+                                <span class="opacity-0 group-hover:opacity-100 transition text-[10px] text-amber-600">🔊</span>
+                            </div>
+                        </div>
+                        <div onclick="speakGerman('sie ${v.praeteritum.sie_Sie}')" class="cursor-pointer p-2 rounded-xl bg-white border border-amber-200/80 hover:border-amber-400 hover:shadow-xs transition flex items-center justify-between group">
+                            <span class="text-slate-500 font-medium">sie/Sie:</span>
+                            <div class="flex items-center gap-1">
+                                <span class="font-black text-amber-900">${v.praeteritum.sie_Sie}</span>
+                                <span class="opacity-0 group-hover:opacity-100 transition text-[10px] text-amber-600">🔊</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                ` : ''}
 
                 <!-- Ví dụ thực tế & Nút đọc toàn bộ bảng -->
                 <div class="pt-2 border-t border-slate-100 space-y-2.5">
@@ -684,4 +880,5 @@ if (typeof window !== 'undefined') {
     window.onVerbSearchChange = onVerbSearchChange;
     window.clearVerbSearch = clearVerbSearch;
     window.speakAllForms = speakAllForms;
+    window.speakAllPraeteritumForms = speakAllPraeteritumForms;
 }
