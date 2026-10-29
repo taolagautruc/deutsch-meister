@@ -8,3 +8,4 @@ from lessons.a1.seed_a1_b4 import seed_lesson_4
 
 if __name__ == "__main__":
     seed_lesson_4()
+

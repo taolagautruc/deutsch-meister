@@ -103,9 +103,14 @@ def get_level_data(level_code):
 
         cursor.execute("SELECT * FROM exercises WHERE lesson_id = ? ORDER BY id;", (lesson["id"],))
         exercises = []
+        import random
         for ex in cursor.fetchall():
             ex_dict = dict(ex)
-            ex_dict["options"] = json.loads(ex_dict["options_json"]) if ex_dict["options_json"] else []
+            opts = json.loads(ex_dict["options_json"]) if ex_dict["options_json"] else []
+            if opts and isinstance(opts, list) and len(opts) > 1:
+                opts = list(opts)
+                random.shuffle(opts)
+            ex_dict["options"] = opts
             exercises.append(ex_dict)
         lesson["exercises"] = exercises
 

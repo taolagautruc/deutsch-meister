@@ -835,6 +835,21 @@ def seed_lesson_2():
         )
     ]
 
+    import random
+    shuffled_exercises = []
+    for ex in exercises:
+        ex_list = list(ex)
+        if ex_list[1] == "trac_nghiem" and ex_list[3]:
+            try:
+                opts = json.loads(ex_list[3])
+                if isinstance(opts, list) and len(opts) > 1:
+                    random.shuffle(opts)
+                    ex_list[3] = json.dumps(opts, ensure_ascii=False)
+            except Exception:
+                pass
+        shuffled_exercises.append(tuple(ex_list))
+    exercises = shuffled_exercises
+
     cursor.executemany("""
         INSERT INTO exercises (lesson_id, exercise_type, question, options_json, correct_answer, explanation, exp_reward, extra_data)
         VALUES (?, ?, ?, ?, ?, ?, ?, ?);
