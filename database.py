@@ -60,6 +60,64 @@ def init_db():
     );
     """)
 
+    # 5. Bảng Tài khoản người chơi cạnh tranh (Users - UNIQUE COLLATE NOCASE)
+    cursor.execute("""
+    CREATE TABLE IF NOT EXISTS users (
+        id INTEGER PRIMARY KEY AUTOINCREMENT,
+        username TEXT NOT NULL UNIQUE COLLATE NOCASE,
+        password_hash TEXT NOT NULL,
+        highest_level_code TEXT DEFAULT 'A1',
+        highest_lesson_order INTEGER DEFAULT 1,
+        total_exp INTEGER DEFAULT 0,
+        arena_best_score INTEGER DEFAULT 0,
+        arena_total_games INTEGER DEFAULT 0,
+        streak_days INTEGER DEFAULT 1,
+        last_active_date TEXT,
+        created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+    );
+    """)
+
+    cursor.execute("CREATE UNIQUE INDEX IF NOT EXISTS idx_users_username_lower ON users(LOWER(username));")
+
+    # 6. Bảng Tiến độ bài học của từng tài khoản (user_studied_lessons)
+    cursor.execute("""
+    CREATE TABLE IF NOT EXISTS user_studied_lessons (
+        id INTEGER PRIMARY KEY AUTOINCREMENT,
+        user_id INTEGER NOT NULL,
+        lesson_id INTEGER NOT NULL,
+        level_code TEXT NOT NULL,
+        lesson_order INTEGER NOT NULL,
+        studied_theory INTEGER DEFAULT 1,
+        practice_completed INTEGER DEFAULT 0,
+        best_practice_score INTEGER DEFAULT 0,
+        last_studied_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+        UNIQUE(user_id, lesson_id),
+        FOREIGN KEY(user_id) REFERENCES users(id) ON DELETE CASCADE
+    );
+    """)
+
+    # 7. Bảng Phiên chơi Đấu trường (arena_daily_attempts - tối đa 2 lần/ngày)
+    cursor.execute("""
+    CREATE TABLE IF NOT EXISTS arena_daily_attempts (
+        id INTEGER PRIMARY KEY AUTOINCREMENT,
+        session_token TEXT NOT NULL UNIQUE,
+        user_id INTEGER NOT NULL,
+        play_date TEXT NOT NULL,
+        attempt_number INTEGER NOT NULL,
+        status TEXT DEFAULT 'in_progress',
+        final_score INTEGER DEFAULT 0,
+        correct_count INTEGER DEFAULT 0,
+        wrong_count INTEGER DEFAULT 0,
+        scope_summary TEXT,
+        breakdown_json TEXT,
+        started_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+        finished_at TIMESTAMP,
+        FOREIGN KEY(user_id) REFERENCES users(id) ON DELETE CASCADE
+    );
+    """)
+
+    cursor.execute("CREATE INDEX IF NOT EXISTS idx_arena_user_date ON arena_daily_attempts(user_id, play_date);")
+
     # Thêm sẵn 4 cấp độ A1, A2, B1, B2 nếu chưa có
     default_levels = [
         ("A1", "Trình độ A1 - Khởi đầu", "Làm quen phát âm, giao tiếp cơ bản và ngữ pháp nền tảng."),
@@ -77,6 +135,21 @@ def init_db():
     INSERT OR IGNORE INTO user_progress (user_id, username, total_exp, current_streak)
     VALUES (1, 'Bạn (Học viên)', 0, 1);
     """)
+
+    # Khởi tạo các tài khoản thi đua mẫu cho Bảng xếp hạng nếu bảng users trống
+    cursor.execute("SELECT COUNT(*) FROM users;")
+    if cursor.fetchone()[0] == 0:
+        from werkzeug.security import generate_password_hash
+        sample_users = [
+            ("lukas_de", generate_password_hash("LukasPass123!", method="pbkdf2:sha256"), "B2", 10, 1890, 185, 12, 7),
+            ("Minh_Anh", generate_password_hash("MinhAnhPass123!", method="pbkdf2:sha256"), "B1", 8, 1620, 160, 9, 5),
+            ("HoangNam", generate_password_hash("HoangNamPass123!", method="pbkdf2:sha256"), "A2", 5, 1510, 140, 8, 4),
+            ("Thao_Vy", generate_password_hash("ThaoVyPass123!", method="pbkdf2:sha256"), "A1", 4, 1120, 110, 5, 3)
+        ]
+        cursor.executemany("""
+        INSERT INTO users (username, password_hash, highest_level_code, highest_lesson_order, total_exp, arena_best_score, arena_total_games, streak_days)
+        VALUES (?, ?, ?, ?, ?, ?, ?, ?);
+        """, sample_users)
 
     conn.commit()
     conn.close()
