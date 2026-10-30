@@ -394,12 +394,14 @@ function generateNewNumberData(ex) {
             extra.audio_text = `Das macht ${dePrice}.`;
             extra.translation = `Nhân viên phục vụ nói: Tổng cộng hết ${formattedPrice} € (${dePrice}).`;
             ex.extra_data = JSON.stringify(extra);
+            ex.translation = extra.translation;
             ex.question = `[Luyện Nghe giá tiền Euro (Random)]: Nghe câu thông báo của nhân viên phục vụ và điền số tiền:`;
             ex.correct_answer = formattedPrice;
             ex.explanation = `Nhân viên phục vụ nói '${extra.audio_text}' → Số tiền là ${formattedPrice} € (hoặc gõ ${dePrice}).`;
         } else {
             extra.translation = `Giá tiền: ${formattedPrice} € (${dePrice})`;
             ex.extra_data = JSON.stringify(extra);
+            ex.translation = extra.translation;
             ex.question = `[Viết giá tiền Euro (Random)]: Hãy viết giá tiền ${formattedPrice} € bằng chữ tiếng Đức (chấp nhận có hoặc không có chữ Cent):`;
             ex.correct_answer = dePrice;
             ex.explanation = `Giá tiền ${formattedPrice} € viết bằng chữ tiếng Đức là: '${dePrice}' (hoặc kèm 'Cent').`;
@@ -453,6 +455,7 @@ function generateNewNumberData(ex) {
         ex.explanation = `Động từ '${chosenVerb.infinitiv}' đi với chủ ngữ '${chosenSubject.label}' được chia là: '${correctForm}'.`;
         extra.translation = `'${chosenSubject.label}' ${chosenVerb.meaning}: ${chosenSubject.pronoun} ${correctForm}`;
         ex.extra_data = JSON.stringify(extra);
+        ex.translation = extra.translation;
         return ex;
     }
 
@@ -492,6 +495,7 @@ function generateNewNumberData(ex) {
         ex.explanation = `'${item1.word}' mang giống ${item1.article} nên phủ định dùng '${negWord}'; '${item2.word}' mang giống ${item2.article} nên dùng '${indWord}'.`;
         extra.translation = `Không, đó không phải là một ${item1.meaning}. Đó là một ${item2.meaning}.`;
         ex.extra_data = JSON.stringify(extra);
+        ex.translation = extra.translation;
         return ex;
     }
 
@@ -525,6 +529,7 @@ function generateNewNumberData(ex) {
         ex.explanation = `'${chosenItem.word}' (${chosenItem.meaning}) mang giống ${defWord} → Mạo từ bất định là '${indWord}' và mạo từ xác định sở hữu là '${defWord} ${chosenItem.word} von ${chosenName}'.`;
         extra.translation = `Vâng, đó là ${chosenItem.meaning} của ${chosenName}.`;
         ex.extra_data = JSON.stringify(extra);
+        ex.translation = extra.translation;
         return ex;
     }
 
@@ -554,6 +559,7 @@ function generateNewNumberData(ex) {
         ex.explanation = `'${chosenItem.article} ${chosenItem.word}' khi chuyển sang số nhiều là '${chosenItem.plural}'. ${chosenItem.rule || ''}`;
         extra.translation = `'${chosenItem.plural}' = những ${chosenItem.meaning || chosenItem.word}`;
         ex.extra_data = JSON.stringify(extra);
+        ex.translation = extra.translation;
         return ex;
     }
 
@@ -587,6 +593,7 @@ function generateNewNumberData(ex) {
         }
         extra.translation = `${chosen.city} nằm ở ${chosen.vi} của ${chosen.country}.`;
         ex.extra_data = JSON.stringify(extra);
+        ex.translation = extra.translation;
         return ex;
     }
 
@@ -597,49 +604,57 @@ function generateNewNumberData(ex) {
                 q: "Chọn dạng quá khứ (Präteritum) đúng của động từ 'sein' cho chủ ngữ 'Paula und ich': \"Gestern ___ Paula und ich in Haiphong.\"",
                 ans: "waren",
                 options: ["waren", "war", "warst", "wart"],
-                expl: "'Paula und ich' tương đương ngôi 'wir' (chúng tôi) → dạng quá khứ của 'sein' là 'waren'."
+                expl: "'Paula und ich' tương đương ngôi 'wir' (chúng tôi) → dạng quá khứ của 'sein' là 'waren'.",
+                vi: "Hôm qua Paula và tôi đã ở Hải Phòng."
             },
             {
                 q: "Chọn dạng quá khứ (Präteritum) đúng của động từ 'sein' cho ngôi 'du': \"___ du schon einmal in Deutschland?\"",
                 ans: "Warst",
                 options: ["Warst", "Wart", "War", "Waren"],
-                expl: "Ngôi 'du' đi với quá khứ của 'sein' là 'warst' (đảo lên đầu câu viết hoa thành 'Warst')."
+                expl: "Ngôi 'du' đi với quá khứ của 'sein' là 'warst' (đảo lên đầu câu viết hoa thành 'Warst').",
+                vi: "Bạn đã từng ở Đức lần nào chưa?"
             },
             {
                 q: "Chọn dạng quá khứ (Präteritum) đúng của động từ 'sein' cho ngôi 'ihr': \"Gestern ___ ihr im Theater, đúng không?\"",
                 ans: "wart",
                 options: ["wart", "warst", "waren", "war"],
-                expl: "Ngôi 'ihr' đi với quá khứ của 'sein' chia là 'wart'."
+                expl: "Ngôi 'ihr' đi với quá khứ của 'sein' chia là 'wart'.",
+                vi: "Hôm qua các bạn đã ở rạp hát, đúng không?"
             },
             {
                 q: "Điền mạo từ thích hợp ở Dativ đi sau giới từ 'aus' cho quốc gia giống cái 'die Schweiz': \"Frau Müller kommt aus ___ Schweiz.\"",
                 ans: "der",
                 options: ["der", "die", "den", "dem"],
-                expl: "'die Schweiz' là quốc gia có mạo từ giống cái, sau giới từ 'aus' (Dativ) mạo từ 'die' chuyển thành 'der' → 'aus der Schweiz'."
+                expl: "'die Schweiz' là quốc gia có mạo từ giống cái, sau giới từ 'aus' (Dativ) mạo từ 'die' chuyển thành 'der' → 'aus der Schweiz'.",
+                vi: "Bà Müller đến từ Thụy Sỹ."
             },
             {
                 q: "Điền mạo từ thích hợp ở Dativ đi sau giới từ 'in' cho quốc gia giống đực 'der Iran': \"Herr Meier wohnt in ___ Iran.\"",
                 ans: "dem",
                 options: ["dem", "der", "den", "das"],
-                expl: "'der Iran' là quốc gia giống đực, sau giới từ 'in' (Dativ) mạo từ 'der' chuyển thành 'dem' (hoặc viết tắt là 'im')."
+                expl: "'der Iran' là quốc gia giống đực, sau giới từ 'in' (Dativ) mạo từ 'der' chuyển thành 'dem' (hoặc viết tắt là 'im').",
+                vi: "Ông Meier sống ở Iran."
             },
             {
                 q: "Điền mạo từ thích hợp ở Dativ đi sau giới từ 'in' cho quốc gia số nhiều 'die USA': \"David lebt in ___ USA.\"",
                 ans: "den",
                 options: ["den", "der", "die", "dem"],
-                expl: "'die USA' là danh từ số nhiều, sau giới từ 'in' (Dativ số nhiều) mạo từ đổi thành 'den' → 'in den USA'."
+                expl: "'die USA' là danh từ số nhiều, sau giới từ 'in' (Dativ số nhiều) mạo từ đổi thành 'den' → 'in den USA'.",
+                vi: "David sống ở Mỹ."
             },
             {
                 q: "Đâu là câu hỏi Có/Không (Ja/Nein-Frage) có trật tự từ ĐÚNG ngữ pháp tiếng Đức?",
                 ans: "Wohnen Sie in Hai Phong?",
                 options: ["Wohnen Sie in Hai Phong?", "Sie wohnen in Hai Phong?", "Wo wohnen Sie in Hai Phong?", "In Hai Phong wohnen Sie?"],
-                expl: "Trong câu hỏi Có/Không (Ja/Nein-Frage), động từ bắt buộc phải đảo lên vị trí đầu câu (vị trí 1)."
+                expl: "Trong câu hỏi Có/Không (Ja/Nein-Frage), động từ bắt buộc phải đảo lên vị trí đầu câu (vị trí 1).",
+                vi: "Ngài sống ở Hải Phòng phải không?"
             },
             {
                 q: "Khi miêu tả vị trí bằng TÍNH TỪ phương hướng (-lich), câu nào sau đây ĐÚNG ngữ pháp?",
                 ans: "Köln liegt westlich von Deutschland.",
                 options: ["Köln liegt westlich von Deutschland.", "Köln liegt im westlich von Deutschland.", "Köln liegt am westlich von Deutschland.", "Köln liegt westlichen von Deutschland."],
-                expl: "Tính từ phương hướng có đuôi '-lich' đứng độc lập sau 'liegt' và tuyệt đối KHÔNG có giới từ 'im' phía trước."
+                expl: "Tính từ phương hướng có đuôi '-lich' đứng độc lập sau 'liegt' và tuyệt đối KHÔNG có giới từ 'im' phía trước.",
+                vi: "Köln nằm ở phía Tây của nước Đức."
             }
         ];
 
@@ -651,54 +666,73 @@ function generateNewNumberData(ex) {
         ex.options = shuffled;
         ex.options_json = JSON.stringify(shuffled);
         ex.explanation = chosen.expl;
+        extra.translation = chosen.vi || chosen.expl;
+        ex.extra_data = JSON.stringify(extra);
+        ex.translation = extra.translation;
         return ex;
     }
 
     // 8. Xử lý câu hỏi Chia 'sein' ở Thì Präteritum (dynamic_praeteritum_quiz - Bài 3)
     if (extra.dynamic_praeteritum_quiz) {
         const subjects = [
-            { label: "ich", pronoun: "ich", form: "war" },
-            { label: "du", pronoun: "du", form: "warst" },
-            { label: "er (anh ấy)", pronoun: "er", form: "war" },
-            { label: "sie (cô ấy)", pronoun: "sie", form: "war" },
-            { label: "wir", pronoun: "wir", form: "waren" },
-            { label: "ihr", pronoun: "ihr", form: "wart" },
-            { label: "Sie (Ngài)", pronoun: "Sie", form: "waren" },
-            { label: "Paula und ich", pronoun: "Paula und ich", form: "waren" },
-            { label: "du und Peter (ihr)", pronoun: "du und Peter", form: "wart" },
-            { label: "Paula", pronoun: "Paula", form: "war" },
-            { label: "Der Cat Bi Markt", pronoun: "Der Cat Bi Markt", form: "war" }
+            { label: "ich", pronoun: "ich", form: "war", vi: "tôi" },
+            { label: "du", pronoun: "du", form: "warst", vi: "bạn" },
+            { label: "er (anh ấy)", pronoun: "er", form: "war", vi: "anh ấy" },
+            { label: "sie (cô ấy)", pronoun: "sie", form: "war", vi: "cô ấy" },
+            { label: "wir", pronoun: "wir", form: "waren", vi: "chúng tôi" },
+            { label: "ihr", pronoun: "ihr", form: "wart", vi: "các bạn" },
+            { label: "Sie (Ngài)", pronoun: "Sie", form: "waren", vi: "Ngài" },
+            { label: "Paula und ich", pronoun: "Paula und ich", form: "waren", vi: "Paula và tôi" },
+            { label: "du und Peter (ihr)", pronoun: "du und Peter", form: "wart", vi: "bạn và Peter" },
+            { label: "Paula", pronoun: "Paula", form: "war", vi: "Paula" },
+            { label: "Der Cat Bi Markt", pronoun: "Der Cat Bi Markt", form: "war", vi: "Chợ Cát Bi" }
         ];
-        const times = ["Gestern", "Vorgestern", "Letzte Woche", "Früher"];
-        const places = ["in Haiphong", "in Hanoi", "im BigC Supermarkt", "im Theater", "auf dem Cat Bi Markt", "in Wien", "in Athen"];
+        const times = [
+            { de: "Gestern", vi: "Hôm qua" },
+            { de: "Vorgestern", vi: "Hôm kia" },
+            { de: "Letzte Woche", vi: "Tuần trước" },
+            { de: "Früher", vi: "Trước đây" }
+        ];
+        const places = [
+            { de: "in Haiphong", vi: "ở Hải Phòng" },
+            { de: "in Hanoi", vi: "ở Hà Nội" },
+            { de: "im BigC Supermarkt", vi: "ở siêu thị BigC" },
+            { de: "im Theater", vi: "ở nhà hát" },
+            { de: "auf dem Cat Bi Markt", vi: "ở chợ Cát Bi" },
+            { de: "in Wien", vi: "ở Viên" },
+            { de: "in Athen", vi: "ở Athens" }
+        ];
 
         const chosenSub = subjects[Math.floor(Math.random() * subjects.length)];
         const chosenTime = times[Math.floor(Math.random() * times.length)];
         const chosenPlace = places[Math.floor(Math.random() * places.length)];
 
-        ex.question = `[Chia 'sein' ở Thì Präteritum (Random)]: Điền dạng quá khứ đúng của động từ 'sein' cho chủ ngữ '${chosenSub.label}': "${chosenTime} ___ ${chosenSub.pronoun} ${chosenPlace}."`;
+        ex.question = `[Chia 'sein' ở Thì Präteritum (Random)]: Điền dạng quá khứ đúng của động từ 'sein' cho chủ ngữ '${chosenSub.label}': "${chosenTime.de} ___ ${chosenSub.pronoun} ${chosenPlace.de}."`;
         ex.correct_answer = chosenSub.form;
-        ex.explanation = `Chủ ngữ '${chosenSub.pronoun}' đi với thì Quá khứ đơn (Präteritum) của 'sein' là '${chosenSub.form}'. (${chosenTime} ${chosenSub.form} ${chosenSub.pronoun} ${chosenPlace}).`;
+        ex.explanation = `Chủ ngữ '${chosenSub.pronoun}' đi với thì Quá khứ đơn (Präteritum) của 'sein' là '${chosenSub.form}'. (${chosenTime.de} ${chosenSub.form} ${chosenSub.pronoun} ${chosenPlace.de}).`;
+        extra.translation = `${chosenTime.vi}, ${chosenSub.vi} đã ở ${chosenPlace.vi}.`;
+        ex.extra_data = JSON.stringify(extra);
+        ex.translation = extra.translation;
         return ex;
     }
 
     // 9. Xử lý câu hỏi Quốc gia & Ngôn ngữ (dynamic_country_language_quiz - Bài 3)
     if (extra.dynamic_country_language_quiz) {
         const countries = [
-            { country: "die Schweiz", article: "die", lang: "Deutsch, Französisch, Italienisch", aus: "aus der Schweiz", in: "in der Schweiz", isSpecial: true },
-            { country: "die Türkei", article: "die", lang: "Türkisch", aus: "aus der Türkei", in: "in der Türkei", isSpecial: true },
-            { country: "die Slowakei", article: "die", lang: "Slowakisch", aus: "aus der Slowakei", in: "in der Slowakei", isSpecial: true },
-            { country: "der Iran", article: "der", lang: "Persisch", aus: "aus dem Iran", in: "im Iran", isSpecial: true },
-            { country: "die USA", article: "die (Pl.)", lang: "Englisch", aus: "aus den USA", in: "in den USA", isSpecial: true },
-            { country: "Deutschland", article: "—", lang: "Deutsch", aus: "aus Deutschland", in: "in Deutschland", isSpecial: false },
-            { country: "Österreich", article: "—", lang: "Deutsch", aus: "aus Österreich", in: "in Österreich", isSpecial: false },
-            { country: "Italien", article: "—", lang: "Italienisch", aus: "aus Italien", in: "in Italien", isSpecial: false },
-            { country: "Spanien", article: "—", lang: "Spanisch", aus: "aus Spanien", in: "in Spanien", isSpecial: false },
-            { country: "Griechenland", article: "—", lang: "Griechisch", aus: "aus Griechenland", in: "in Griechenland", isSpecial: false },
-            { country: "Frankreich", article: "—", lang: "Französisch", aus: "aus Frankreich", in: "in Frankreich", isSpecial: false },
-            { country: "Russland", article: "—", lang: "Russisch", aus: "aus Russland", in: "in Russland", isSpecial: false },
-            { country: "Polen", article: "—", lang: "Polnisch", aus: "aus Polen", in: "in Polen", isSpecial: false },
-            { country: "Vietnam", article: "—", lang: "Vietnamesisch", aus: "aus Vietnam", in: "in Vietnam", isSpecial: false }
+            { country: "die Schweiz", article: "die", lang: "Deutsch, Französisch, Italienisch", aus: "aus der Schweiz", in: "in der Schweiz", isSpecial: true, vi: "Thụy Sỹ" },
+            { country: "die Türkei", article: "die", lang: "Türkisch", aus: "aus der Türkei", in: "in der Türkei", isSpecial: true, vi: "Thổ Nhĩ Kỳ" },
+            { country: "die Slowakei", article: "die", lang: "Slowakisch", aus: "aus der Slowakei", in: "in der Slowakei", isSpecial: true, vi: "Slovakia" },
+            { country: "der Iran", article: "der", lang: "Persisch", aus: "aus dem Iran", in: "im Iran", isSpecial: true, vi: "Iran" },
+            { country: "die USA", article: "die (Pl.)", lang: "Englisch", aus: "aus den USA", in: "in den USA", isSpecial: true, vi: "Mỹ" },
+            { country: "Deutschland", article: "—", lang: "Deutsch", aus: "aus Deutschland", in: "in Deutschland", isSpecial: false, vi: "Đức" },
+            { country: "Österreich", article: "—", lang: "Deutsch", aus: "aus Österreich", in: "in Österreich", isSpecial: false, vi: "Áo" },
+            { country: "Italien", article: "—", lang: "Italienisch", aus: "aus Italien", in: "in Italien", isSpecial: false, vi: "Ý" },
+            { country: "Spanien", article: "—", lang: "Spanisch", aus: "aus Spanien", in: "in Spanien", isSpecial: false, vi: "Tây Ban Nha" },
+            { country: "Griechenland", article: "—", lang: "Griechisch", aus: "aus Griechenland", in: "in Griechenland", isSpecial: false, vi: "Hy Lạp" },
+            { country: "Frankreich", article: "—", lang: "Französisch", aus: "aus Frankreich", in: "in Frankreich", isSpecial: false, vi: "Pháp" },
+            { country: "Russland", article: "—", lang: "Russisch", aus: "aus Russland", in: "in Russland", isSpecial: false, vi: "Nga" },
+            { country: "Polen", article: "—", lang: "Polnisch", aus: "aus Polen", in: "in Polen", isSpecial: false, vi: "Ba Lan" },
+            { country: "Vietnam", article: "—", lang: "Vietnamesisch", aus: "aus Vietnam", in: "in Vietnam", isSpecial: false, vi: "Việt Nam" }
         ];
 
         const chosen = countries[Math.floor(Math.random() * countries.length)];
@@ -710,16 +744,21 @@ function generateNewNumberData(ex) {
                 ex.question = `[Giới từ 'aus' với Quốc gia có mạo từ (Random)]: Điền cụm giới từ 'đến từ' cho quốc gia '${chosen.country}': "Frau Müller kommt ___."`;
                 ex.correct_answer = chosen.aus;
                 ex.explanation = `'${chosen.country}' là quốc gia có mạo từ, khi kết hợp với 'aus' ở Dativ phải đổi thành '${chosen.aus}'.`;
+                extra.translation = `Bà Müller đến từ ${chosen.vi} (Frau Müller kommt ${chosen.aus}).`;
             } else {
                 ex.question = `[Giới từ 'in' với Quốc gia có mạo từ (Random)]: Điền cụm giới từ 'ở tại' cho quốc gia '${chosen.country}': "Herr Meier wohnt ___."`;
                 ex.correct_answer = chosen.in;
                 ex.explanation = `'${chosen.country}' ở Dativ khi đi với giới từ 'in' là '${chosen.in}'.`;
+                extra.translation = `Ông Meier sống ở ${chosen.vi} (Herr Meier wohnt ${chosen.in}).`;
             }
         } else {
             ex.question = `[Ngôn ngữ Quốc gia (Random)]: Ngôn ngữ chính được nói tại '${chosen.country}' là gì? (Ví dụ: Deutsch, Französisch, Spanisch...):`;
             ex.correct_answer = chosen.lang;
             ex.explanation = `Tại '${chosen.country}', ngôn ngữ chính là: '${chosen.lang}'.`;
+            extra.translation = `Tại ${chosen.vi}, ngôn ngữ chính là tiếng ${chosen.lang}.`;
         }
+        ex.extra_data = JSON.stringify(extra);
+        ex.translation = extra.translation;
         return ex;
     }
 
@@ -788,6 +827,9 @@ function generateNewNumberData(ex) {
             ex.correct_answer = `${chosen.jnQuestion} / ${chosen.jnAlt}`;
             ex.explanation = `Đẩy động từ lên đầu câu để tạo Ja/Nein-Frage: '${chosen.jnQuestion}' (hoặc: '${chosen.jnAlt}').`;
         }
+        extra.translation = chosen.meaning;
+        ex.extra_data = JSON.stringify(extra);
+        ex.translation = extra.translation;
         return ex;
     }
 
@@ -860,6 +902,9 @@ function generateNewNumberData(ex) {
         ex.question = qText;
         ex.correct_answer = answer;
         ex.explanation = ruleText;
+        extra.translation = `${chosen.gender} ${chosen.word} = ${chosen.meaning}`;
+        ex.extra_data = JSON.stringify(extra);
+        ex.translation = extra.translation;
         return ex;
     }
 
@@ -927,6 +972,9 @@ function generateNewNumberData(ex) {
         ex.question = `[Mạo từ Sở Hữu 9 Ngôi (Random)]: Hãy chia mạo từ sở hữu của người sở hữu '${owner.label}' đứng trước danh từ '${noun.gender === 'die_pl' ? 'die (Pl.)' : noun.gender} ${noun.word}' (${noun.vi}) trong câu ${sentenceContext}:`;
         ex.correct_answer = result;
         ex.explanation = `Người sở hữu là '${owner.label}' → Gốc sở hữu '${owner.stem}'. Đi với danh từ '${noun.word}' (${noun.gender}) ở ${caseName} → dạng đúng là '${result}'${owner.isEuer && (ending === '-e' || ending === '-en') ? ' (lưu ý "euer" bị lược bỏ e ở giữa thành "' + result + '")' : ''}.`;
+        extra.translation = `${noun.vi} của ${owner.label}`;
+        ex.extra_data = JSON.stringify(extra);
+        ex.translation = extra.translation;
         return ex;
     }
 
@@ -960,6 +1008,9 @@ function generateNewNumberData(ex) {
             ex.correct_answer = targetWord;
             ex.explanation = `Từ đối lập với '${sourceWord}' (${sourceVi}) là '${targetWord}' (${targetVi}) → "Das ${pair.context} ist nicht ${sourceWord}, sondern es ist ${targetWord}."`;
         }
+        extra.translation = `'${sourceWord}' (${sourceVi}) >< '${targetWord}' (${targetVi})`;
+        ex.extra_data = JSON.stringify(extra);
+        ex.translation = extra.translation;
         return ex;
     }
 
@@ -982,6 +1033,9 @@ function generateNewNumberData(ex) {
         ex.question = `[Đại từ Thay thế theo Giống (Random)]: Điền đại từ nhân xưng thích hợp ('Er' / 'Sie' / 'Es') thay thế cho danh từ giống '${item.gender}' (${item.word}): "${item.sentence}"`;
         ex.correct_answer = item.pronoun;
         ex.explanation = `'${item.word}' mang giống '${item.gender}' nên đại từ nhân xưng làm chủ ngữ thay thế ở câu sau là '${item.pronoun}' (der → er, die → sie, das → es).`;
+        extra.translation = `'${item.word}' (${item.gender}) → đại từ thay thế: '${item.pronoun}'`;
+        ex.extra_data = JSON.stringify(extra);
+        ex.translation = extra.translation;
         return ex;
     }
 
@@ -1034,6 +1088,9 @@ function generateNewNumberData(ex) {
         ex.question = `[Dịch câu Miêu tả Nhà & Nội thất (Random)]: Hãy dịch câu sau sang tiếng Đức chuẩn xác: "${chosen.vi}"`;
         ex.correct_answer = chosen.de;
         ex.explanation = `Bản dịch chuẩn: '${chosen.de}'. (${chosen.note})`;
+        extra.translation = `${chosen.vi} → ${chosen.de}`;
+        ex.extra_data = JSON.stringify(extra);
+        ex.translation = extra.translation;
         return ex;
     }
 
