@@ -54,6 +54,7 @@ const GERMAN_PRONUNCIATION_MAP = {
     "Stühle": "Stühle.",
     "Bücher": "Bücher.",
     "Brötchen": "Brötchen.",
+    "Mäppchen": "Mäppchen.",
     "buchstabieren": "buchstabieren.",
     "wiederholen": "wiederholen.",
     "verstehen": "verstehen.",

@@ -25,8 +25,14 @@ def seed_lesson_2():
         return
     a1_id = level_a1["id"]
 
-    # Xóa dữ liệu cũ của Bài 2 nếu đã có để cập nhật sạch sẽ
-    cursor.execute("DELETE FROM lessons WHERE level_id = ? AND title LIKE 'Bài 2%';", (a1_id,))
+    cursor.execute("SELECT id FROM lessons WHERE level_id = ? AND title LIKE 'Bài 2%';", (a1_id,))
+    existing_lesson = cursor.fetchone()
+    lesson_id = existing_lesson["id"] if existing_lesson else 16
+
+    # Xóa dữ liệu cũ của Bài 2 để cập nhật sạch sẽ
+    cursor.execute("DELETE FROM vocabularies WHERE lesson_id = ?;", (lesson_id,))
+    cursor.execute("DELETE FROM exercises WHERE lesson_id = ?;", (lesson_id,))
+    cursor.execute("DELETE FROM lessons WHERE id = ?;", (lesson_id,))
 
     lesson_title = 'Bài 2: "Sprache im Kurs - Động Từ và Giống (der, die, das & Mạo Từ)"'
 
@@ -109,7 +115,7 @@ def seed_lesson_2():
                     </div>
                     <div class="p-3 rounded-xl bg-white border border-slate-200">
                         <span class="font-extrabold text-indigo-600">2. Genitiv (Cách 2 - Sở hữu cách):</span>
-                        <p class="text-slate-600 mt-1">Chỉ sự sở hữu (ở trình độ A1 thường dùng cấu trúc <b>von + Tên riêng</b>, ví dụ: <i>der Kuli von Anna</i>).</p>
+                        <p class="text-slate-600 mt-1">Chỉ sự sở hữu (ví dụ: <i>Annas Kuli</i>; ở trình độ A1 thường thay thế bằng cấu trúc giới từ <b>von + Tên riêng</b> ở Cách 3, ví dụ: <i>der Kuli von Anna</i>).</p>
                     </div>
                     <div class="p-3 rounded-xl bg-white border border-slate-200">
                         <span class="font-extrabold text-indigo-600">3. Dativ (Cách 3 - Tân ngữ gián tiếp):</span>
@@ -156,7 +162,7 @@ def seed_lesson_2():
                             <li>7 Thứ trong tuần (<i>der Montag, der Sonntag...</i>)</li>
                             <li>4 Mùa (<i>der Sommer, der Winter, der Frühling, der Herbst</i>)</li>
                             <li>4 Hướng (<i>der Norden, der Süden, der Osten, der Westen</i>)</li>
-                            <li>Thời tiết (<i>der Wind, der Regen, der Schnee, der Nebel</i>)</li>
+                            <li>Hiện tượng mưa, gió, sương, bão (<i>der Wind, der Regen, der Schnee, der Nebel, der Sturm</i>)</li>
                             <li>Nghề nghiệp nam giới (<i>der Koch, der Lehrer, der Arzt</i>)</li>
                         </ul>
                     </div>
@@ -196,10 +202,10 @@ def seed_lesson_2():
                         <ul class="list-disc list-inside text-slate-700 space-y-1">
                             <li><b>-ment</b>: <i>das Dokument, das Medikament</i></li>
                             <li class="text-rose-700 font-bold">⚠️ Ngoại lệ: <i>der Moment</i> (khoảnh khắc)!</li>
-                            <li><b>-um</b>: <i>das Studium, das Museum, das Zentrum</i></li>
-                            <li><b>-tum</b>: <i>das Präteritum, das Eigentum</i></li>
-                            <li><b>-chen / -lein</b> (thu nhỏ 100%): <i>das Brötchen, das Mädchen</i></li>
-                            <li><b>-ma / -em</b>: <i>das Thema, das Klima, das System</i></li>
+                            <li><b>-um</b>: <i>das Studium, das Museum, das Zentrum, das Präteritum</i></li>
+                            <li><b>-tum</b>: <i>das Eigentum, das Wachstum</i> <span class="text-rose-700 font-bold">(⚠️ Ngoại lệ: <i>der Reichtum, der Irrtum</i>)</span></li>
+                            <li><b>-chen / -lein</b> (thu nhỏ 100%): <i>das Mäppchen, das Brötchen, das Mädchen</i></li>
+                            <li><b>-ma / -em</b>: <i>das Thema, das Klima, das System, das Problem</i> <span class="text-rose-700 font-bold">(⚠️ Ngoại lệ: <i>die Firma</i>)</span></li>
                             <li><b>-nis</b>: <i>das Ergebnis, das Zeugnis</i></li>
                             <li class="text-rose-700 font-bold">⚠️ Ngoại lệ: <i>die Erlaubnis</i> (sự cho phép)!</li>
                         </ul>
@@ -244,13 +250,13 @@ def seed_lesson_2():
                         <tr class="hover:bg-slate-50"><td class="p-3 font-bold text-rose-600">die</td><td class="p-3 font-bold">die Brille</td><td class="p-3 text-indigo-600 font-semibold">die Brillen</td><td class="p-3">cái kính mắt</td><td class="p-3 text-slate-500">Đuôi -e thêm -n</td></tr>
                         <tr class="hover:bg-slate-50"><td class="p-3 font-bold text-rose-600">die</td><td class="p-3 font-bold">die Tasche</td><td class="p-3 text-indigo-600 font-semibold">die Taschen</td><td class="p-3">túi xách / cặp sách</td><td class="p-3 text-slate-500">Đuôi -e thêm -n</td></tr>
                         <tr class="hover:bg-slate-50"><td class="p-3 font-bold text-rose-600">die</td><td class="p-3 font-bold">die Landkarte</td><td class="p-3 text-indigo-600 font-semibold">die Landkarten</td><td class="p-3">bản đồ</td><td class="p-3 text-slate-500">Lấy giống theo die Karte, thêm -n</td></tr>
-                        <tr class="hover:bg-slate-50"><td class="p-3 font-bold text-emerald-600">das</td><td class="p-3 font-bold">das Papier</td><td class="p-3 text-indigo-600 font-semibold">die Papiere</td><td class="p-3">tờ giấy</td><td class="p-3 text-slate-500">Thêm đuôi -e</td></tr>
+                        <tr class="hover:bg-slate-50"><td class="p-3 font-bold text-emerald-600">das</td><td class="p-3 font-bold">das Papier</td><td class="p-3 text-indigo-600 font-semibold">die Papiere</td><td class="p-3">giấy (chất liệu) / giấy tờ (số nhiều)</td><td class="p-3 text-slate-500">Danh từ chất liệu (một tờ giấy: ein Blatt Papier); số nhiều die Papiere: giấy tờ tùy thân</td></tr>
                         <tr class="hover:bg-slate-50"><td class="p-3 font-bold text-emerald-600">das</td><td class="p-3 font-bold">das Heft</td><td class="p-3 text-indigo-600 font-semibold">die Hefte</td><td class="p-3">quyển vở</td><td class="p-3 text-slate-500">Thêm đuôi -e</td></tr>
                         <tr class="hover:bg-slate-50"><td class="p-3 font-bold text-emerald-600">das</td><td class="p-3 font-bold">das Buch</td><td class="p-3 text-indigo-600 font-semibold">die Bücher</td><td class="p-3">quyển sách</td><td class="p-3 text-slate-500">Biến âm u → ü + đuôi -er</td></tr>
                         <tr class="hover:bg-slate-50"><td class="p-3 font-bold text-emerald-600">das</td><td class="p-3 font-bold">das Wörterbuch</td><td class="p-3 text-indigo-600 font-semibold">die Wörterbücher</td><td class="p-3">quyển từ điển</td><td class="p-3 text-slate-500">Ghép (Wörter + Buch) → số nhiều theo Buch</td></tr>
                         <tr class="hover:bg-slate-50"><td class="p-3 font-bold text-emerald-600">das</td><td class="p-3 font-bold">das Handy</td><td class="p-3 text-indigo-600 font-semibold">die Handys</td><td class="p-3">điện thoại di động</td><td class="p-3 text-slate-500">Từ mượn thêm đuôi -s</td></tr>
                         <tr class="hover:bg-slate-50"><td class="p-3 font-bold text-emerald-600">das</td><td class="p-3 font-bold">das Whiteboard</td><td class="p-3 text-indigo-600 font-semibold">die Whiteboards</td><td class="p-3">bảng trắng</td><td class="p-3 text-slate-500">Từ mượn thêm đuôi -s</td></tr>
-                        <tr class="hover:bg-slate-50"><td class="p-3 font-bold text-emerald-600">das</td><td class="p-3 font-bold">das Brötchen</td><td class="p-3 text-indigo-600 font-semibold">die Brötchen</td><td class="p-3">bánh mì nhỏ</td><td class="p-3 text-slate-500">Đuôi -chen giữ nguyên dạng</td></tr>
+                        <tr class="hover:bg-slate-50"><td class="p-3 font-bold text-emerald-600">das</td><td class="p-3 font-bold">das Mäppchen</td><td class="p-3 text-indigo-600 font-semibold">die Mäppchen</td><td class="p-3">hộp bút / túi đựng bút</td><td class="p-3 text-slate-500">Đuôi -chen luôn giống das, số nhiều giữ nguyên dạng</td></tr>
                     </tbody>
                 </table>
             </div>
@@ -270,6 +276,7 @@ def seed_lesson_2():
                         <li><b>heißen</b> (gọi là / tên là): <i>Wie heißt das auf Deutsch?</i></li>
                         <li><b>verstehen</b> (hiểu): <i>Das verstehe ich nicht.</i> (Đảo tân ngữ lên đầu, động từ ở vị trí 2).</li>
                         <li><b>können</b> (khuyết thiếu - có thể): <i>Können Sie das bitte ...?</i> (Đẩy động từ chính về cuối câu ở dạng nguyên mẫu).</li>
+                        <li><b>erklären</b> (giải thích): <i>Können Sie das bitte erklären?</i></li>
                         <li><b>wiederholen</b> (nhắc lại): <i>Können Sie das bitte wiederholen?</i></li>
                         <li><b>buchstabieren</b> (đánh vần): <i>Können Sie das bitte buchstabieren?</i></li>
                         <li><b>anschreiben</b> (viết lên bảng): <i>Können Sie das bitte anschreiben?</i></li>
@@ -283,8 +290,8 @@ def seed_lesson_2():
                         <li><b>Was ist das auf Deutsch?</b> → Cái này trong tiếng Đức là gì?</li>
                         <li><b>Entschuldigung, wie bitte?</b> → Xin lỗi, Ngài nói sao cơ ạ?</li>
                         <li><b>Das verstehe ich nicht. Können Sie das bitte wiederholen?</b> → Tôi không hiểu. Ngài lặp lại được không?</li>
-                        <li><b>Das verstehe ich nicht. Können Sie das bitte buchstabieren?</b> → Tôi không hiểu. Ngài đánh vần giúp tôi?</li>
-                        <li><b>Das verstehe ich nicht. Können Sie das bitte anschreiben?</b> → Tôi không hiểu. Ngài viết lên bảng giúp tôi?</li>
+                        <li><b>Das verstehe ich nicht. Können Sie das bitte buchstabieren?</b> → Tôi không hiểu. Ngài đánh vần giúp tôi được không?</li>
+                        <li><b>Das verstehe ich nicht. Können Sie das bitte anschreiben?</b> → Tôi không hiểu. Ngài viết lên bảng giúp tôi được không?</li>
                     </ol>
                 </div>
             </div>
@@ -294,7 +301,7 @@ def seed_lesson_2():
         <div class="p-6 rounded-3xl bg-white border border-slate-200 shadow-sm space-y-5">
             <div class="flex items-center gap-3">
                 <span class="flex items-center justify-center w-8 h-8 rounded-xl bg-indigo-100 text-indigo-700 font-black text-sm">5</span>
-                <h4 class="text-lg font-black text-slate-900">Bảng 3 Cột Mạo từ: Xác định, Bất định & Phủ định với "kein/keine"</h4>
+                <h4 class="text-lg font-black text-slate-900">Bảng 3 Cột Mạo từ ở Cách 1 (Nominativ): Xác định, Bất định & Phủ định với "kein/keine"</h4>
             </div>
 
             <div class="overflow-x-auto">
@@ -338,7 +345,7 @@ def seed_lesson_2():
 
             <div class="p-4 rounded-2xl bg-amber-50/80 border border-amber-200 text-xs sm:text-sm text-slate-700 space-y-1.5">
                 <p class="font-bold text-amber-900">💡 Mẹo ghi nhớ siêu nhanh:</p>
-                <p>1. Giống đực (<i>der</i>) và giống trung (<i>das</i>) dùng chung mạo từ bất định: <b>ein</b>, phủ định: <b>kein</b>.</p>
+                <p>1. Ở Cách 1 (Nominativ), giống đực (<i>der</i>) và giống trung (<i>das</i>) dùng chung mạo từ bất định: <b>ein</b>, phủ định: <b>kein</b>.</p>
                 <p>2. Giống cái (<i>die</i>) và số nhiều (<i>Plural</i>) dùng chung đuôi <b>-e</b>: <b>eine / keine</b> (Lưu ý: Số nhiều không có <i>eine</i>, chỉ có <i>keine</i>!).</p>
                 <p>3. Khi có cụm sở hữu <b>von + Tên riêng</b> (ví dụ: <i>von Anna, von David</i>), đồ vật đã được xác định cụ thể nên ta dùng lại mạo từ xác định <b>der/die/das</b>!</p>
             </div>
@@ -365,12 +372,12 @@ def seed_lesson_2():
                 <div class="p-3 rounded-xl bg-slate-50 border border-slate-200">
                     <p class="font-bold text-indigo-900">3. Hỏi kính mắt và phủ định (die Brille):</p>
                     <p class="text-slate-700">Hỏi: <i>Ist das <b>eine</b> Brille?</i> (Đây có phải là kính mắt không?)</p>
-                    <p class="text-rose-800">Đáp phủ định + đính chính: <i>Nein, das ist <b>keine</b> Brille. Das ist <b>eine</b> Landkarte.</i></p>
+                    <p class="text-rose-800">Đáp phủ định + đính chính: <i>Nein, das ist <b>keine</b> Brille. Das ist <b>eine</b> Landkarte.</i> (Không, đó không phải là kính mắt. Đó là một tấm bản đồ.)</p>
                 </div>
                 <div class="p-3 rounded-xl bg-slate-50 border border-slate-200">
-                    <p class="font-bold text-indigo-900">4. Hỏi cái cốc và tờ giấy (der Becher & das Papier):</p>
+                    <p class="font-bold text-indigo-900">4. Hỏi cái cốc và quyển vở (der Becher & das Heft):</p>
                     <p class="text-slate-700">Hỏi: <i>Ist das <b>ein</b> Becher?</i> (Đây có phải là cái cốc không?)</p>
-                    <p class="text-rose-800">Đáp: <i>Nein, das ist <b>kein</b> Becher. Das ist <b>ein</b> Papier.</i> (Không, đó không phải là cái cốc. Đó là một tờ giấy.)</p>
+                    <p class="text-rose-800">Đáp: <i>Nein, das ist <b>kein</b> Becher. Das ist <b>ein</b> Heft.</i> (Không, đó không phải là cái cốc. Đó là một quyển vở.)</p>
                 </div>
             </div>
         </div>
@@ -378,10 +385,9 @@ def seed_lesson_2():
     """
 
     cursor.execute("""
-        INSERT INTO lessons (level_id, title, grammar_content)
-        VALUES (?, ?, ?);
-    """, (a1_id, lesson_title, grammar_html))
-    lesson_id = cursor.lastrowid
+        INSERT INTO lessons (id, level_id, title, grammar_content)
+        VALUES (?, ?, ?, ?);
+    """, (lesson_id, a1_id, lesson_title, grammar_html))
 
     # =========================================================================
     # NẠP TỪ VỰNG BÀI 2 (36 TỪ CHUẨN ĐỒ DÙNG LỚP HỌC, ĐỘNG TỪ & HẬU TỐ)
@@ -396,33 +402,33 @@ def seed_lesson_2():
         (lesson_id, "Becher", "der", "cái cốc / cái ly (không quai)", "Ist das ein Becher? – Nein, das ist kein Becher. (Đây có phải là cái cốc không? – Không, đó không phải là cái cốc.)"),
         (lesson_id, "Tafel", "die", "cái bảng đen", "Die Lehrerin schreibt an die Tafel. (Cô giáo viết lên bảng.)"),
         (lesson_id, "Brille", "die", "cái kính mắt", "Ist das eine Brille? – Nein, das ist keine Brille. (Đây có phải là chiếc kính mắt không? – Không, đó không phải là kính mắt.)"),
-        (lesson_id, "Tasche", "die", "túi xách / cặp sách", "Ja, das ist die Tasche von Anna. (Vâng, đó là chiếc túi xách của Anna.)"),
+        (lesson_id, "Tasche", "die", "túi xách / cặp sách", "Ist das eine Tasche? – Ja, das ist die Tasche von Anna. (Đây có phải là chiếc túi xách không? – Vâng, đó là chiếc túi xách của Anna.)"),
         (lesson_id, "Landkarte", "die", "bản đồ", "Das ist keine Brille, das ist eine Landkarte. (Đó không phải là kính mắt, đó là một tấm bản đồ.)"),
-        (lesson_id, "Papier", "das", "tờ giấy", "Ist das ein Becher? – Nein, das ist ein Papier. (Đây có phải cái cốc không? – Không, đó là một tờ giấy.)"),
-        (lesson_id, "Heft", "das", "quyển vở", "Können Sie 'das Heft' bitte buchstabieren? – H - E - F - T. (Ngài có thể vui lòng đánh vần từ 'das Heft' được không? – H - E - F - T.)"),
+        (lesson_id, "Papier", "das", "giấy / tờ giấy (ein Blatt Papier)", "Brauchst du Papier? – Ja, ich brauche ein Blatt Papier. (Bạn có cần giấy không? – Vâng, tôi cần một tờ giấy.)"),
+        (lesson_id, "Heft", "das", "quyển vở", "Können Sie 'Heft' bitte buchstabieren? – H - E - F - T. (Ngài có thể vui lòng đánh vần từ 'Heft' được không? – H - E - F - T.)"),
         (lesson_id, "Buch", "das", "quyển sách", "Ist das ein Buch? – Ja, das ist das Buch von Frau Schiller. (Đây có phải là quyển sách không? – Vâng, đó là cuốn sách của cô Schiller.)"),
         (lesson_id, "Wörterbuch", "das", "quyển từ điển", "Das ist kein Heft, das ist ein Wörterbuch. (Đó không phải quyển vở, đó là một cuốn từ điển.)"),
         (lesson_id, "Handy", "das", "điện thoại di động", "Ist das ein Handy? – Ja, das ist das Handy von David. (Đây có phải là điện thoại không? – Vâng, đó là điện thoại của David.)"),
         (lesson_id, "Whiteboard", "das", "bảng trắng", "Im Deutschkurs haben wir eine Tafel und ein Whiteboard. (Trong lớp học tiếng Đức, chúng tôi có một bảng đen và một bảng trắng.)"),
-        (lesson_id, "Brötchen", "das", "bánh mì nhỏ", "Ich esse ein Brötchen und trinke einen Kaffee. (Tôi ăn một chiếc bánh mì nhỏ và uống một tách cà phê.)"),
+        (lesson_id, "Mäppchen", "das", "hộp bút / túi đựng bút (-chen)", "Ist das dein Mäppchen? – Ja, im Mäppchen sind ein Kuli und ein Bleistift. (Đây là hộp bút của bạn à? – Vâng, trong hộp bút có một cây bút bi và một cây bút chì.)"),
         (lesson_id, "verstehen", "Verb", "hiểu, nắm bắt được", "Das verstehe ich nicht. Können Sie das bitte erklären? (Tôi không hiểu điều đó. Ngài có thể vui lòng giải thích được không?)"),
         (lesson_id, "wiederholen", "Verb", "lặp lại, nhắc lại", "Das verstehe ich nicht. Können Sie das bitte wiederholen? (Tôi không hiểu điều đó. Ngài có thể vui lòng nhắc lại được không?)"),
         (lesson_id, "buchstabieren", "Verb", "đánh vần", "Das verstehe ich nicht. Können Sie das bitte buchstabieren? (Tôi không hiểu điều đó. Ngài có thể vui lòng đánh vần từ đó được không?)"),
         (lesson_id, "anschreiben", "Verb", "viết lên bảng", "Das verstehe ich nicht. Können Sie das bitte anschreiben? (Tôi không hiểu điều đó. Ngài có thể vui lòng viết lên bảng được không?)"),
-        (lesson_id, "können", "Modalverb", "có thể (nhờ vả / khả năng)", "Können Sie das bitte langsam wiederholen? (Ngài có thể vui lòng nhắc lại chậm một chút được không?)"),
+        (lesson_id, "können", "Verb", "có thể (nhờ vả / khả năng)", "Können Sie das bitte langsam wiederholen? (Ngài có thể vui lòng nhắc lại chậm một chút được không?)"),
         (lesson_id, "heißen", "Verb", "tên là, gọi là", "Wie heißt das auf Deutsch? (Cái này tiếng Đức gọi là gì?)"),
-        (lesson_id, "Praktikant", "der", "nam thực tập sinh (-ant)", "Er ist ein Praktikant bei der Post. (Anh ấy là một thực tập sinh ở bưu điện.)"),
-        (lesson_id, "Student", "der", "nam sinh viên (-ent)", "David ist ein Student aus den USA. (David là một nam sinh viên đến từ Mỹ.)"),
+        (lesson_id, "Praktikant", "der", "nam thực tập sinh (-ant)", "Er ist Praktikant bei der Post. (Anh ấy là thực tập sinh ở bưu điện.)"),
+        (lesson_id, "Student", "der", "nam sinh viên (-ent)", "David ist Student aus den USA. (David là sinh viên đến từ Mỹ.)"),
         (lesson_id, "Teppich", "der", "tấm thảm (-ich)", "Ist das ein Teppich? – Ja, der Teppich ist sehr schön. (Đây có phải tấm thảm không? – Vâng, tấm thảm rất đẹp.)"),
-        (lesson_id, "Polizist", "der", "nam cảnh sát (-ist)", "Mein Freund arbeitet als Polizist in Berlin. (Bạn tôi làm việc với tư cách là cảnh sát ở Berlin.)"),
+        (lesson_id, "Polizist", "der", "nam cảnh sát (-ist)", "Mein Freund arbeitet als Polizist in Berlin. (Bạn tôi làm cảnh sát ở Berlin.)"),
         (lesson_id, "Krankheit", "die", "căn bệnh (-heit)", "Das ist keine schlimme Krankheit. (Đó không phải là một căn bệnh nghiêm trọng.)"),
         (lesson_id, "Möglichkeit", "die", "khả năng / cơ hội (-keit)", "Das ist eine gute Möglichkeit für uns. (Đó là một cơ hội tốt cho chúng tôi.)"),
-        (lesson_id, "Freundschaft", "die", "tình bạn (-schaft)", "Die Freundschaft von Anna und Sophie ist toll. (Tình bạn giữa Anna và Sophie thật tuyệt vời.)"),
+        (lesson_id, "Freundschaft", "die", "tình bạn (-schaft)", "Die Freundschaft zwischen Anna und Sophie ist toll. (Tình bạn giữa Anna và Sophie thật tuyệt vời.)"),
         (lesson_id, "Kleidung", "die", "quần áo, trang phục (-ung)", "Die Kleidung aus Italien ist sehr modern. (Quần áo từ nước Ý rất hiện đại.)"),
         (lesson_id, "Dokument", "das", "tài liệu (-ment)", "Ist das ein Dokument? – Ja, das ist das Dokument von Herrn Nguyen. (Đây có phải tài liệu không? – Vâng, đó là tài liệu của ông Nguyễn.)"),
         (lesson_id, "Moment", "der", "khoảnh khắc, giây lát (NGOẠI LỆ -ment)", "Einen Moment, bitte! Ich schreibe das Wort an. (Làm ơn đợi một lát! Tôi đang viết từ đó lên bảng.)"),
         (lesson_id, "Ergebnis", "das", "kết quả (-nis)", "Das Ergebnis im Deutschkurs ist super. (Kết quả trong khóa học tiếng Đức rất tuyệt vời.)"),
-        (lesson_id, "Erlaubnis", "die", "sự cho phép (NGOẠI LỆ -nis)", "Hast du eine Erlaubnis von der Lehrerin? (Bạn có sự cho phép của cô giáo chưa?)")
+        (lesson_id, "Erlaubnis", "die", "sự cho phép (NGOẠI LỆ -nis)", "Hast du die Erlaubnis von der Lehrerin? (Bạn đã có sự cho phép của cô giáo chưa?)")
     ]
 
     cursor.executemany("""
@@ -819,9 +825,9 @@ def seed_lesson_2():
         ),
         (
             lesson_id, "viet",
-            "Câu 50 [Mạo từ & Phủ định (Random)]: Hoàn thành câu trả lời phủ định: \"Ist das ein Becher?\" → \"Nein, das ist ___ Becher. Das ist ___ Papier.\" (Điền 2 từ mạo từ cách nhau bởi dấu phẩy):",
+            "Câu 50 [Mạo từ & Phủ định (Random)]: Hoàn thành câu trả lời phủ định: \"Ist das ein Becher?\" → \"Nein, das ist ___ Becher. Das ist ___ Heft.\" (Điền 2 từ mạo từ cách nhau bởi dấu phẩy):",
             None, "kein, ein",
-            "'Becher' là giống đực der nên phủ định là 'kein'; 'Papier' là giống trung das nên dùng 'ein'.", 30,
+            "'Becher' là giống đực der nên phủ định là 'kein'; 'Heft' là giống trung das nên dùng 'ein'.", 30,
             json.dumps({"dynamic_article_quiz": True})
         )
     ]
