@@ -26,8 +26,14 @@ def seed_lesson_1_part_1():
         return
     a1_id = level_a1["id"]
 
-    # Xóa dữ liệu cũ của Bài 1 (P1) để nạp lại sạch sẽ
-    cursor.execute("DELETE FROM lessons WHERE level_id = ? AND title LIKE 'Bài 1 (P1)%';", (a1_id,))
+    # Xóa dữ liệu cũ của Bài 1 (P1) để nạp lại sạch sẽ, giữ nguyên lesson_id nếu đã có
+    cursor.execute("SELECT id FROM lessons WHERE level_id = ? AND title LIKE 'Bài 1 (P1)%';", (a1_id,))
+    existing_lesson = cursor.fetchone()
+    fixed_lesson_id = existing_lesson["id"] if existing_lesson else None
+    if fixed_lesson_id:
+        cursor.execute("DELETE FROM vocabularies WHERE lesson_id = ?;", (fixed_lesson_id,))
+        cursor.execute("DELETE FROM exercises WHERE lesson_id = ?;", (fixed_lesson_id,))
+        cursor.execute("DELETE FROM lessons WHERE id = ?;", (fixed_lesson_id,))
 
     lesson_title = 'Bài 1 (P1): "Làm Quen Với Tiếng Đức, Bảng Chữ Cái và Đếm Số"'
 
@@ -39,20 +45,20 @@ def seed_lesson_1_part_1():
         ("C c", "/tseː/", "đọc như tsê", "C"),
         ("D d", "/deː/", "đọc như đê", "D"),
         ("E e", "/eː/", "đọc như ê", "E"),
-        ("F f", "/ɛf/", "đọc như ép-phờ", "F"),
+        ("F f", "/ɛf/", "đọc như ép-ph (1 âm tiết)", "F"),
         ("G g", "/geː/", "đọc như ghê", "G"),
         ("H h", "/haː/", "đọc như ha", "H"),
         ("I i", "/iː/", "đọc như i", "I"),
-        ("J j", "/jɔt/", "đọc như dốt", "J"),
+        ("J j", "/jɔt/", "đọc như i-ót (nối âm nhanh) / dót (giọng Nam)", "J"),
         ("K k", "/kaː/", "đọc như ca", "K"),
-        ("L l", "/ɛl/", "đọc như en-lờ", "L"),
-        ("M m", "/ɛm/", "đọc như em-mờ", "M"),
-        ("N n", "/ɛn/", "đọc như en-nờ", "N"),
+        ("L l", "/ɛl/", "đọc như e-l (cong lưỡi chạm hàm trên, không đọc \"en\")", "L"),
+        ("M m", "/ɛm/", "đọc như em-m (1 âm tiết)", "M"),
+        ("N n", "/ɛn/", "đọc như en-n (1 âm tiết)", "N"),
         ("O o", "/oː/", "đọc như ô", "O"),
         ("P p", "/peː/", "đọc như pê", "P"),
         ("Q q", "/kuː/", "đọc như cu", "Q"),
-        ("R r", "/ɛɐ̯/", "đọc như e-rờ rung cuống họng", "R"),
-        ("S s", "/ɛs/", "đọc như ét-sờ", "S"),
+        ("R r", "/ɛʁ/ ~ /ɛɐ̯/", "đọc như e-rờ (rung cuống họng) hoặc e-ơ", "R"),
+        ("S s", "/ɛs/", "đọc như ét-x (1 âm tiết, xì hơi nhẹ)", "S"),
         ("T t", "/teː/", "đọc như thê bật hơi", "T"),
         ("U u", "/uː/", "đọc như u", "U"),
         ("V v", "/faʊ̯/", "đọc là phao (vào từ: ph)", "V"),
@@ -61,10 +67,10 @@ def seed_lesson_1_part_1():
         ("Y y", "/ˈʏpsilɔn/", "đọc như uýp-xi-lon", "Y"),
         ("Z z", "/tsɛt/", "đọc như tsét", "Z"),
         # 4 chữ cái đặc biệt (Umlaut & Eszett)
-        ("Ä ä", "/ɛː/", "a-Umlaut (mở miệng đọc ê)", "Ä"),
+        ("Ä ä", "/ɛː/", "a-Umlaut (mở rộng miệng đọc e)", "Ä"),
         ("Ö ö", "/øː/", "o-Umlaut (tròn môi chữ ô đọc ê)", "Ö"),
-        ("Ü ü", "/yː/", "u-Umlaut (tròn môi chữ u đọc uy)", "Ü"),
-        ("ß", "/ɛsˈtsɛt/", "Eszett (đọc như s kéo dài)", "ß")
+        ("Ü ü", "/yː/", "u-Umlaut (tròn môi u, đọc i -> âm uy)", "Ü"),
+        ("ß", "/ɛsˈtsɛt/", "Eszett (đọc như x nhẹ /s/ vô thanh)", "ß")
     ]
 
     alpha_cards = "".join([
@@ -137,10 +143,10 @@ def seed_lesson_1_part_1():
                     <p class="font-bold text-amber-900 text-sm flex items-center gap-1.5">
                         <span>✨</span> Khẩu hình 4 chữ cái đặc biệt (Umlaut & Eszett):
                     </p>
-                    <p>• <b>Ä / ä /ɛː/</b>: <i>a-Umlaut</i> — miệng mở rộng đọc âm <b>ê</b> (<i>Qualität, Universität</i>)</p>
+                    <p>• <b>Ä / ä /ɛː/</b>: <i>a-Umlaut</i> — hạ cằm mở rộng miệng đọc âm <b>e kéo dài</b> (<i>Qualität, Universität, Bär</i>)</p>
                     <p>• <b>Ö / ö /øː/</b>: <i>o-Umlaut</i> — giữ tròn môi chữ <b>ô</b> nhưng phát âm chữ <b>ê</b> (<i>mögen, hören</i>)</p>
-                    <p>• <b>Ü / ü /yː/</b>: <i>u-Umlaut</i> — giữ tròn môi chữ <b>u</b> nhưng phát âm chữ <b>uy</b> (<i>müde, Küche</i>)</p>
-                    <p>• <b>ß /ɛsˈtsɛt/</b>: <i>Eszett</i> — đọc như âm <b>s</b> kéo dài (<i>heißen, dreißig</i>)</p>
+                    <p>• <b>Ü / ü /yː/</b>: <i>u-Umlaut</i> — giữ cố định môi tròn chữ <b>u</b> nhưng lưỡi phát âm chữ <b>i</b>, tạo thành âm <b>uy</b> (<i>müde, Tür, Küche</i>)</p>
+                    <p>• <b>ß /ɛsˈtsɛt/</b>: <i>Eszett</i> — đọc như âm <b>x nhẹ</b> (/s/ vô thanh), luôn đứng sau nguyên âm dài hoặc nguyên âm đôi (<i>heißen, groß, dreißig</i>)</p>
                 </div>
                 <div class="p-4 rounded-2xl bg-emerald-50/70 border border-emerald-200 space-y-2">
                     <p class="font-bold text-emerald-900 text-sm flex items-center gap-1.5">
@@ -187,20 +193,21 @@ def seed_lesson_1_part_1():
                 <div class="p-4 rounded-2xl bg-slate-50 border border-slate-200 space-y-2">
                     <p class="font-extrabold text-slate-900 text-sm">🅰️ Nguyên âm đôi & Tổ hợp có -r:</p>
                     <p>• <b>ei [aɪ̯]</b> → đọc là <b>ai</b>: <button onclick="speakGerman('mein, dein, eins, zwei, drei')" class="text-indigo-600 font-bold underline hover:text-indigo-800">🔊 mein, dein, eins, zwei, drei</button></p>
-                    <p>• <b>ie [iː]</b> → đọc là <b>i kéo dài</b> (tuyệt đối không đọc "đai"): <button onclick="speakGerman('die, Sie, vier, sieben')" class="text-indigo-600 font-bold underline hover:text-indigo-800">🔊 die, Sie, vier, sieben</button></p>
+                    <p>• <b>ie [iː]</b> → đọc là <b>i kéo dài</b> (tuyệt đối không đọc "đai"): <button onclick="speakGerman('die, Sie, wie, sieben')" class="text-indigo-600 font-bold underline hover:text-indigo-800">🔊 die, Sie, wie, sieben</button></p>
                     <p>• <b>eu / äu [ɔʏ̯]</b> → đọc là <b>oi</b>: <button onclick="speakGerman('Deutsch, Verkäufer, neun')" class="text-indigo-600 font-bold underline hover:text-indigo-800">🔊 Deutsch, Verkäufer, neun</button></p>
-                    <p>• <b>ir</b> (i-ơ ngắn): <i>mir, dir</i> | <b>ier</b> (i-ơ dài): <button onclick="speakGerman('hier, das Bier, das Tier')" class="text-indigo-600 font-bold underline hover:text-indigo-800">🔊 hier, Bier, Tier</button></p>
+                    <p>• <b>ir</b> (i-ơ ngắn [ɪɐ̯]): <i>Kirche, Birne, Schirm</i> | <b>ir / ier</b> (i-ơ dài [iːɐ̯]): <button onclick="speakGerman('mir, dir, wir, vier, hier, das Bier, das Tier')" class="text-indigo-600 font-bold underline hover:text-indigo-800">🔊 mir, dir, wir, vier, hier, Bier, Tier</button></p>
                     <p>• <b>ur</b> (u-ơ): <i>Kurs, Burg</i> | <b>ür</b> (uy-ơ): <button onclick="speakGerman('die Tür, für')" class="text-indigo-600 font-bold underline hover:text-indigo-800">🔊 Tür, für</button></p>
-                    <p>• <b>or</b> (o): <i>Tor, sorgen</i> | <b>er</b> (e): <i>der, wer, woher</i></p>
+                    <p>• <b>or</b> (o-ơ ngắn [ɔɐ̯]): <i>sorgen, Wort, Norden</i> | <b>or</b> (ô-ơ dài [oːɐ̯]): <i>Tor, Ohr, vor</i></p>
+                    <p>• <b>er</b> (cuối từ không nhấn trọng âm → đọc là ơ ngắn [ɐ]): <i>Vater, Mutter, oder, Verkäufer</i> | <b>er</b> (nhấn trọng âm → đọc là ê-ơ [eːɐ̯]): <i>der, wer, woher</i></p>
                 </div>
                 <div class="p-4 rounded-2xl bg-slate-50 border border-slate-200 space-y-2">
                     <p class="font-extrabold text-slate-900 text-sm">🅱️ Phụ âm & Tổ hợp phụ âm đặc trưng:</p>
-                    <p>• <b>s</b> (trước nguyên âm) → đọc như <b>z/d</b>: <button onclick="speakGerman('Sie, sorgen, sieben')" class="text-indigo-600 font-bold underline hover:text-indigo-800">🔊 Sie, sorgen, sieben</button></p>
-                    <p>• <b>v</b> → đọc như <b>ph (f)</b>: <button onclick="speakGerman('der Vater, vier')" class="text-indigo-600 font-bold underline hover:text-indigo-800">🔊 Vater, vier</button> | <b>w</b> → đọc như <b>v</b>: <i>was, wer</i></p>
+                    <p>• <b>s [z]</b> (trước nguyên âm) → đọc như âm <b>z</b> tiếng Anh (hoặc d giọng Bắc): <button onclick="speakGerman('Sie, sorgen, sieben')" class="text-indigo-600 font-bold underline hover:text-indigo-800">🔊 Sie, sorgen, sieben</button></p>
+                    <p>• <b>v [f]</b> → đọc như <b>ph</b>: <button onclick="speakGerman('der Vater, vier')" class="text-indigo-600 font-bold underline hover:text-indigo-800">🔊 Vater, vier</button> | <b>w [v]</b> → đọc như <b>v</b>: <i>was, wer</i></p>
                     <p>• <b>z [ts]</b> → siết hai hàm răng đọc <b>ts</b>: <button onclick="speakGerman('der Zahn, der Zoo, zehn, zwei')" class="text-indigo-600 font-bold underline hover:text-indigo-800">🔊 Zahn, Zoo, zehn</button></p>
-                    <p>• <b>ch</b>: sau <b>a, o, u, au</b> đọc như <b>kh</b> (<button onclick="speakGerman('auch, der Koch')" class="text-indigo-600 font-bold underline hover:text-indigo-800">🔊 auch, Koch</button>); còn lại đọc nhẹ (<button onclick="speakGerman('mich, dich, ich')" class="text-indigo-600 font-bold underline hover:text-indigo-800">🔊 mich, dich, ich</button>)</p>
+                    <p>• <b>ch</b>: sau <b>a, o, u, au</b> đọc là <b>[x]</b> như <b>kh</b> (<button onclick="speakGerman('auch, der Koch, die Nacht')" class="text-indigo-600 font-bold underline hover:text-indigo-800">🔊 auch, Koch, Nacht</button>); còn lại đọc là <b>[ç]</b> như <b>ch nhẹ</b> xì hơi qua vòm miệng (<button onclick="speakGerman('ich, mich, dich, die Küche')" class="text-indigo-600 font-bold underline hover:text-indigo-800">🔊 ich, mich, dich, Küche</button>)</p>
                     <p>• <b>sch [ʃ]</b> (chu môi s nặng): <button onclick="speakGerman('die Schule, die Schuhe')" class="text-indigo-600 font-bold underline hover:text-indigo-800">🔊 Schule, Schuhe</button></p>
-                    <p>• <b>sp / st</b> (đầu từ) → đọc s như <b>sch</b>: <button onclick="speakGerman('der Sport, das Spiel, die Stadt, der Stuhl')" class="text-indigo-600 font-bold underline hover:text-indigo-800">🔊 Sport, Spiel, Stadt, Stuhl</button></p>
+                    <p>• <b>sp [ʃp] / st [ʃt]</b> (đầu từ/âm tiết) → đọc s như <b>sch</b> (s nặng): <button onclick="speakGerman('der Sport, das Spiel, die Stadt, der Stuhl')" class="text-indigo-600 font-bold underline hover:text-indigo-800">🔊 Sport, Spiel, Stadt, Stuhl</button></p>
                     <p>• <b>tsch [tʃ]</b> (ch nặng): <button onclick="speakGerman('Tschüss, Deutsch')" class="text-indigo-600 font-bold underline hover:text-indigo-800">🔊 Tschüss, Deutsch</button></p>
                 </div>
             </div>
@@ -210,19 +217,19 @@ def seed_lesson_1_part_1():
         <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
             <div class="p-6 rounded-3xl bg-white border border-slate-200 shadow-sm space-y-2 text-xs sm:text-sm">
                 <h4 class="text-base font-extrabold text-indigo-700 uppercase tracking-wide">3. Chào Hỏi & Tạm Biệt</h4>
-                <p>• <b>Hallo!</b>: Xin chào (lịch sự) | <b>Hi! / Grüß dich! / Hallöchen!</b>: Chào thân mật</p>
+                <p>• <b>Hallo!</b>: Xin chào (thông dụng/phổ biến) | <b>Hi! / Grüß dich! / Hallöchen!</b>: Chào thân mật (bạn bè)</p>
                 <p>• <b>Guten Morgen</b>: Chào buổi sáng | <b>Guten Tag</b>: Chào buổi trưa/chiều</p>
                 <p>• <b>Guten Abend</b>: Chào buổi tối | <b>Gute Nacht</b>: Chúc ngủ ngon</p>
-                <p>• <b>Tschüss!</b> [tʃʏs]: Tạm biệt | <b>Auf Wiedersehen!</b>: Hẹn gặp lại (trang trọng)</p>
+                <p>• <b>Tschüss!</b> [tʃʏs]: Tạm biệt (thân mật) | <b>Auf Wiedersehen!</b>: Hẹn gặp lại (trang trọng)</p>
                 <p>• <b>Bis dann / Bis morgen / Bis später</b>: Hẹn gặp sau / Hẹn ngày mai / Hẹn lát gặp</p>
             </div>
             <div class="p-6 rounded-3xl bg-white border border-slate-200 shadow-sm space-y-2 text-xs sm:text-sm">
-                <h4 class="text-base font-extrabold text-indigo-700 uppercase tracking-wide">4. 5 Mẫu Câu Giới Thiệu Bản Thân</h4>
-                <p>1) <b>Wer sind Sie?</b> → <i>Ich bin Anna.</i></p>
-                <p>2) <b>Wie ist Ihr Name?</b> → <i>Mein Name ist Anna.</i></p>
-                <p>3) <b>Wie heißen Sie?</b> → <i>Ich heiße Anna.</i></p>
-                <p>4) <b>Woher kommen Sie?</b> → <i>Ich komme <b>aus</b> Vietnam.</i></p>
-                <p>5) <b>Wo wohnen Sie?</b> → <i>Ich wohne <b>in</b> Hai Phong.</i></p>
+                <h4 class="text-base font-extrabold text-indigo-700 uppercase tracking-wide">4. 5 Mẫu Câu Giới Thiệu Bản Thân <span class="text-xs font-normal text-slate-500 lowercase">(sử dụng đại từ "Sie" - Ngài/Bạn lịch sự)</span></h4>
+                <p>1) <b>Wer sind Sie?</b> (Ngài là ai?) → <i>Ich bin Anna.</i> (Tôi là Anna.)</p>
+                <p>2) <b>Wie ist Ihr Name?</b> (Tên của Ngài là gì?) → <i>Mein Name ist Anna.</i> (Tên tôi là Anna.)</p>
+                <p>3) <b>Wie heißen Sie?</b> (Ngài tên là gì?) → <i>Ich heiße Anna.</i> (Tôi tên là Anna.)</p>
+                <p>4) <b>Woher kommen Sie?</b> (Ngài đến từ đâu?) → <i>Ich komme <b>aus</b> Vietnam.</i> (Tôi đến từ Việt Nam.)</p>
+                <p>5) <b>Wo wohnen Sie?</b> (Ngài sống ở đâu?) → <i>Ich wohne <b>in</b> Hai Phong.</i> (Tôi sống ở Hải Phòng.)</p>
             </div>
         </div>
 
@@ -240,20 +247,24 @@ def seed_lesson_1_part_1():
                 </div>
                 <div class="p-4 rounded-2xl bg-slate-50 border border-slate-200">
                     <p class="font-bold text-slate-900 mb-1">Số tròn chục, trăm, nghìn:</p>
-                    <p>20: <b>zwanzig</b> | <span class="text-red-600 font-bold">30: dreißig (ß)</span> | 40: <b>vierzig</b> | 50: <b>fünfzig</b> | <span class="text-red-600 font-bold">60: sechzig</span> | <span class="text-red-600 font-bold">70: siebzig</span> | 80: <b>achtzig</b> | 90: <b>neunzig</b> | 100: <b>(ein)hundert</b> | 1000: <b>(ein)tausend</b></p>
+                    <p><span class="text-red-600 font-bold">20: zwanzig (đổi gốc)</span> | <span class="text-red-600 font-bold">30: dreißig (ß)</span> | 40: <b>vierzig</b> | 50: <b>fünfzig</b> | <span class="text-red-600 font-bold">60: sechzig (bỏ s)</span> | <span class="text-red-600 font-bold">70: siebzig (bỏ en)</span> | 80: <b>achtzig</b> | 90: <b>neunzig</b> | 100: <b>(ein)hundert</b> | 1000: <b>(ein)tausend</b></p>
                 </div>
             </div>
             <div class="p-4 rounded-2xl bg-indigo-50/70 border border-indigo-200 space-y-1.5">
                 <p class="font-extrabold text-indigo-950">🔢 Quy tắc ghép số (Viết liền một từ duy nhất):</p>
                 <p>• <b>21–99</b>: <b>[Đơn vị] + und + [Chục]</b> (Số 1 bỏ <i>s</i> thành <b>ein</b>: 21 = <i>einundzwanzig</i>, 34 = <i>vierunddreißig</i>).</p>
-                <p>• <b>100–9999</b>: <b>[Nghìn] + [Trăm] + [2 số cuối]</b> (Không có <i>und</i> sau hundert/tausend: 707 = <i>siebenhundertsieben</i>, 912 = <i>neunhundertzwölf</i>).</p>
+                <p>• <b>100–9999</b>: <b>[Nghìn] + [Trăm] + [2 số cuối]</b> (Không có <i>und</i> sau hundert/tausend: 101 = <i>einhunderteins</i>, 707 = <i>siebenhundertsieben</i>, 912 = <i>neunhundertzwölf</i>, 2026 = <i>zweitausendsechsundzwanzig</i>).</p>
             </div>
         </div>
     </div>
     """
 
-    cursor.execute("INSERT INTO lessons (level_id, title, grammar_content) VALUES (?, ?, ?);", (a1_id, lesson_title, grammar_html))
-    lesson_id = cursor.lastrowid
+    if fixed_lesson_id:
+        cursor.execute("INSERT INTO lessons (id, level_id, title, grammar_content) VALUES (?, ?, ?, ?);", (fixed_lesson_id, a1_id, lesson_title, grammar_html))
+        lesson_id = fixed_lesson_id
+    else:
+        cursor.execute("INSERT INTO lessons (level_id, title, grammar_content) VALUES (?, ?, ?);", (a1_id, lesson_title, grammar_html))
+        lesson_id = cursor.lastrowid
 
     # 2. 30 THẺ TỪ VỰNG (Chuẩn mạo từ der/die/das và câu ví dụ)
     vocabs = [
@@ -272,9 +283,9 @@ def seed_lesson_1_part_1():
         (lesson_id, "Qualität", "die", "Chất lượng", "Die Qualität ist sehr gut. (Chất lượng rất tốt.)"),
         (lesson_id, "Universität", "die", "Trường đại học", "Die Universität ist in Berlin. (Trường đại học ở Berlin.)"),
         (lesson_id, "Küche", "die", "Nhà bếp", "Die Küche ist sauber. (Nhà bếp sạch sẽ.)"),
-        (lesson_id, "Burg", "die", "Lâu đài / Thành cổ", "Die Burg in Hamburg ist alt. (Lâu đài ở Hamburg cổ kính.)"),
+        (lesson_id, "Burg", "die", "Pháo đài / Thành cổ", "Die Burg in Nürnberg ist sehr alt. (Thành cổ ở Nürnberg rất cổ kính.)"),
         (lesson_id, "Tür", "die", "Cánh cửa", "Die Tür ist offen. (Cánh cửa đang mở.)"),
-        (lesson_id, "Ruhe", "die", "Sự yên tĩnh", "Bitte Ruhe! (Xin hãy giữ yên lặng!)"),
+        (lesson_id, "Ruhe", "die", "Sự yên tĩnh", "Ruhe, bitte! (Xin hãy giữ yên lặng!)"),
         (lesson_id, "Schule", "die", "Trường học", "Die Schule ist groß. (Trường học lớn.)"),
         (lesson_id, "Stadt", "die", "Thành phố", "Berlin ist eine schöne Stadt. (Berlin là một thành phố đẹp.)"),
         (lesson_id, "Nacht", "die", "Ban đêm", "Gute Nacht! (Chúc ngủ ngon!)"),
@@ -283,10 +294,10 @@ def seed_lesson_1_part_1():
         (lesson_id, "Tor", "das", "Cái cổng / Khung thành", "Das Brandenburger Tor ist in Berlin. (Cổng Brandenburg ở Berlin.)"),
         (lesson_id, "Rad", "das", "Bánh xe / Xe đạp", "Ich fahre mit dem Rad. (Tôi đi bằng xe đạp.)"),
         (lesson_id, "Spiel", "das", "Trò chơi / Trận đấu", "Das Spiel ist super. (Trận đấu rất tuyệt vời.)"),
-        (lesson_id, "Auf Wiedersehen!", "Mẫu câu", "Hẹn gặp lại (Trang trọng)", "Auf Wiedersehen! Bis morgen! (Hẹn gặp lại! Hẹn ngày mai!)"),
-        (lesson_id, "Tschüss!", "Mẫu câu", "Tạm biệt (Thân mật)", "Tschüss! Bis später! (Tạm biệt! Hẹn lát nữa gặp!)"),
-        (lesson_id, "Woher kommen Sie?", "Mẫu câu", "Ngài đến từ đâu?", "Woher kommen Sie? Ich komme aus Vietnam. (Ngài đến từ đâu? - Tôi đến từ Việt Nam.)"),
-        (lesson_id, "Wo wohnen Sie?", "Mẫu câu", "Ngài sống ở đâu?", "Wo wohnen Sie? Ich wohne in Hai Phong. (Ngài sống ở đâu? - Tôi sống ở Hải Phòng.)")
+        (lesson_id, "Wort", "das", "Từ vựng / Lời nói", "Das Wort ist neu. (Từ này mới.)"),
+        (lesson_id, "Land", "das", "Đất nước / Quốc gia", "Vietnam ist ein schönes Land. (Việt Nam là một đất nước đẹp.)"),
+        (lesson_id, "Haus", "das", "Ngôi nhà", "Das Haus ist groß. (Ngôi nhà lớn.)"),
+        (lesson_id, "Buch", "das", "Quyển sách", "Das Buch ist gut. (Quyển sách rất hay.)")
     ]
     cursor.executemany("INSERT INTO vocabularies (lesson_id, german_word, article, vietnamese_meaning, example_sentence) VALUES (?, ?, ?, ?, ?);", vocabs)
 
@@ -301,9 +312,9 @@ def seed_lesson_1_part_1():
         (
             lesson_id, "trac_nghiem",
             "Câu 1: Trong bảng chữ cái tiếng Đức, chữ cái 'J' có phiên âm và cách đọc tên là gì?",
-            json.dumps(["/jɔt/ - đọc là dốt", "/ja/ - đọc là gia", "/dʒeɪ/ - đọc là dây", "/ji/ - đọc là gi"]),
-            "/jɔt/ - đọc là dốt",
-            "Chữ J trong bảng chữ cái tiếng Đức được đọc tên là /jɔt/ (dốt).",
+            json.dumps(["/jɔt/ - đọc là i-ót / dót", "/ja/ - đọc là gia", "/dʒeɪ/ - đọc là dây", "/ji/ - đọc là gi"]),
+            "/jɔt/ - đọc là i-ót / dót",
+            "Chữ J trong bảng chữ cái tiếng Đức được đọc tên là /jɔt/ (đọc nối âm nhanh là i-ót, hoặc dót theo giọng Nam).",
             15, None
         ),
         (
