@@ -997,11 +997,13 @@ function generateNewNumberData(ex) {
         const adjPairs = [
             { pos: "hell", neg: "dunkel", viPos: "sáng sủa", viNeg: "tối tăm", context: "Arbeitszimmer", nounVi: "phòng làm việc" },
             { pos: "groß", neg: "klein", viPos: "rộng lớn", viNeg: "nhỏ hẹp", context: "Wohnzimmer", nounVi: "phòng khách" },
-            { pos: "leise", neg: "laut", viPos: "yên tĩnh", viNeg: "ồn ào", context: "Schlafzimmer", nounVi: "phòng ngủ" },
+            { pos: "ruhig", neg: "laut", viPos: "yên tĩnh", viNeg: "ồn ào", context: "Schlafzimmer", nounVi: "phòng ngủ" },
             { pos: "lang", neg: "kurz", viPos: "dài", viNeg: "ngắn", context: "Flur", nounVi: "hành lang" },
-            { pos: "neu", neg: "alt", viPos: "mới", viNeg: "cũ / cổ", context: "Haus", nounVi: "ngôi nhà" },
+            { pos: "neu", neg: "alt", viPos: "mới", viNeg: "cũ / lâu năm", context: "Haus", nounVi: "ngôi nhà" },
             { pos: "billig", neg: "teuer", viPos: "rẻ", viNeg: "đắt đỏ", context: "Wohnung", nounVi: "căn hộ" },
-            { pos: "schön", neg: "hässlich", viPos: "đẹp", viNeg: "xấu xí", context: "Garten", nounVi: "khu vườn" }
+            { pos: "schön", neg: "hässlich", viPos: "đẹp", viNeg: "xấu xí", context: "Garten", nounVi: "khu vườn" },
+            { pos: "modern", neg: "altmodisch", viPos: "hiện đại", viNeg: "lỗi thời / kiểu cũ", context: "Wohnzimmer", nounVi: "phòng khách" },
+            { pos: "gemütlich", neg: "ungemütlich", viPos: "ấm cúng", viNeg: "không ấm cúng / bất tiện", context: "Schlafzimmer", nounVi: "phòng ngủ" }
         ];
 
         const pair = adjPairs[Math.floor(Math.random() * adjPairs.length)];

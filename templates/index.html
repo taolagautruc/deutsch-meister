@@ -207,7 +207,7 @@
                                 <button data-filter="der" onclick="filterVocab('der')" class="vocab-filter-btn px-2.5 py-1 rounded-lg bg-blue-50 text-blue-700 border border-blue-200 hover:bg-blue-100 transition cursor-pointer">der (Giống đực)</button>
                                 <button data-filter="die" onclick="filterVocab('die')" class="vocab-filter-btn px-2.5 py-1 rounded-lg bg-rose-50 text-rose-700 border border-rose-200 hover:bg-rose-100 transition cursor-pointer">die (Giống cái)</button>
                                 <button data-filter="das" onclick="filterVocab('das')" class="vocab-filter-btn px-2.5 py-1 rounded-lg bg-emerald-50 text-emerald-700 border border-emerald-200 hover:bg-emerald-100 transition cursor-pointer">das (Giống trung)</button>
-                                <button data-filter="verb" onclick="filterVocab('verb')" class="vocab-filter-btn px-2.5 py-1 rounded-lg bg-purple-50 text-purple-700 border border-purple-200 hover:bg-purple-100 transition cursor-pointer">Verb (Động từ)</button>
+                                <button id="vocab-filter-extra-btn" data-filter="verb" onclick="filterVocab('verb')" class="vocab-filter-btn px-2.5 py-1 rounded-lg bg-purple-50 text-purple-700 border border-purple-200 hover:bg-purple-100 transition cursor-pointer">Verb (Động từ)</button>
                             </div>
                         </div>
                         <div id="vocab-grid" class="grid grid-cols-1 md:grid-cols-3 gap-4"></div>
@@ -657,12 +657,39 @@
             const vocabGrid = document.getElementById('vocab-grid');
             if (!vocabGrid || !currentLesson || !currentLesson.vocabularies) return;
 
+            const extraBtn = document.getElementById('vocab-filter-extra-btn');
+            const hasVerbs = currentLesson.vocabularies.some(v => v.article === 'Verb' || v.article === 'Modalverb' || v.article === 'Động từ');
+            const hasAdjs = currentLesson.vocabularies.some(v => v.article === 'Adj.' || v.article === 'Adjektiv' || v.article === 'Tính từ');
+
+            if (extraBtn) {
+                if (hasAdjs && !hasVerbs) {
+                    extraBtn.innerText = 'Adj. (Tính từ)';
+                    extraBtn.setAttribute('data-filter', 'adj');
+                    extraBtn.onclick = () => filterVocab('adj');
+                    extraBtn.style.display = 'inline-block';
+                } else if (hasVerbs && !hasAdjs) {
+                    extraBtn.innerText = 'Verb (Động từ)';
+                    extraBtn.setAttribute('data-filter', 'verb');
+                    extraBtn.onclick = () => filterVocab('verb');
+                    extraBtn.style.display = 'inline-block';
+                } else if (hasVerbs && hasAdjs) {
+                    extraBtn.innerText = 'Verb / Adj.';
+                    extraBtn.setAttribute('data-filter', 'other');
+                    extraBtn.onclick = () => filterVocab('other');
+                    extraBtn.style.display = 'inline-block';
+                } else {
+                    extraBtn.style.display = 'none';
+                }
+            }
+
             const list = currentLesson.vocabularies.filter(v => {
                 if (currentVocabFilter === 'all') return true;
                 if (currentVocabFilter === 'der') return v.article === 'der';
                 if (currentVocabFilter === 'die') return v.article === 'die';
                 if (currentVocabFilter === 'das') return v.article === 'das';
                 if (currentVocabFilter === 'verb') return v.article === 'Verb' || v.article === 'Modalverb' || v.article === 'Động từ';
+                if (currentVocabFilter === 'adj') return v.article === 'Adj.' || v.article === 'Adjektiv' || v.article === 'Tính từ';
+                if (currentVocabFilter === 'other') return v.article !== 'der' && v.article !== 'die' && v.article !== 'das';
                 return true;
             });
 
@@ -681,6 +708,9 @@
                 } else if (v.article === 'Verb' || v.article === 'Modalverb' || v.article === 'Động từ') {
                     cardStyle = "bg-purple-50/50 border-purple-200";
                     badgeStyle = "bg-purple-600 text-white";
+                } else if (v.article === 'Adj.' || v.article === 'Adjektiv' || v.article === 'Tính từ') {
+                    cardStyle = "bg-amber-50/50 border-amber-200";
+                    badgeStyle = "bg-amber-600 text-white";
                 }
 
                 const fullWord = (v.article === 'der' || v.article === 'die' || v.article === 'das')
@@ -715,6 +745,7 @@
                         f === 'die' ? 'bg-rose-600 text-white' :
                         f === 'das' ? 'bg-emerald-600 text-white' :
                         f === 'verb' ? 'bg-purple-600 text-white' :
+                        f === 'adj' ? 'bg-amber-600 text-white' :
                         'bg-indigo-600 text-white'
                     );
                 } else {
@@ -723,6 +754,7 @@
                         f === 'die' ? 'bg-rose-50 text-rose-700 border border-rose-200 hover:bg-rose-100' :
                         f === 'das' ? 'bg-emerald-50 text-emerald-700 border border-emerald-200 hover:bg-emerald-100' :
                         f === 'verb' ? 'bg-purple-50 text-purple-700 border border-purple-200 hover:bg-purple-100' :
+                        f === 'adj' ? 'bg-amber-50 text-amber-700 border border-amber-200 hover:bg-amber-100' :
                         'bg-slate-100 text-slate-700 hover:bg-slate-200'
                     );
                 }
