@@ -25,8 +25,14 @@ def seed_lesson_1_part_2():
         return
     a1_id = level_a1["id"]
 
-    # Xóa dữ liệu cũ của Bài 1 (P2) nếu đã có để cập nhật sạch sẽ
-    cursor.execute("DELETE FROM lessons WHERE level_id = ? AND title LIKE 'Bài 1 (P2)%';", (a1_id,))
+    # Xóa dữ liệu cũ của Bài 1 (P2) nếu đã có để cập nhật sạch sẽ, bảo toàn lesson_id
+    cursor.execute("SELECT id FROM lessons WHERE level_id = ? AND title LIKE 'Bài 1 (P2)%';", (a1_id,))
+    existing_lesson = cursor.fetchone()
+    fixed_lesson_id = existing_lesson["id"] if existing_lesson else None
+    if fixed_lesson_id:
+        cursor.execute("DELETE FROM vocabularies WHERE lesson_id = ?;", (fixed_lesson_id,))
+        cursor.execute("DELETE FROM exercises WHERE lesson_id = ?;", (fixed_lesson_id,))
+        cursor.execute("DELETE FROM lessons WHERE id = ?;", (fixed_lesson_id,))
 
     lesson_title = 'Bài 1 (P2): "Kaffee oder Tee - Cà Phê Hoặc Trà"'
 
@@ -50,7 +56,7 @@ def seed_lesson_1_part_2():
                     Kaffee oder Tee? • Đại Từ Nhân Xưng, Chia Động Từ, Gọi Đồ Uống & Thanh Toán Euro (€)
                 </h3>
                 <p class="text-slate-300 text-xs sm:text-sm leading-relaxed max-w-4xl">
-                    <b>Mục tiêu bài học:</b> Làm chủ hệ thống Đại từ nhân xưng ở cách 1 (Nominativ), phân biệt 3 chữ <i>sie/Sie</i>; nắm vững quy tắc chia động từ thì Hiện tại (Quy tắc, Gốc <i>-s/-ß/-z</i>, Gốc <i>-t/-d</i>, Biến âm <i>e → i/ie</i>, Bất quy tắc <i>sein/haben</i> và khuyết thiếu <i>möchten</i>); tự tin gọi đồ uống, tùy chọn gia vị (<i>mit/ohne, viel/wenig</i>) và hỏi giá, thanh toán tiền Euro (€) tại quán cà phê/nhà hàng.
+                    <b>Mục tiêu bài học:</b> Làm chủ hệ thống Đại từ nhân xưng ở cách 1 (Nominativ), phân biệt 3 chữ <i>sie/Sie</i>; nắm vững quy tắc chia động từ thì Hiện tại (Quy tắc, Gốc <i>-s/-ß/-z</i>, Gốc <i>-t/-d</i>, Biến âm <i>e → i/ie</i>, Bất quy tắc <i>sein/haben</i> và khuyết thiếu <i>möchten</i>); tự tin gọi đồ uống, tùy chọn thành phần đi kèm như đường, sữa, đá (<i>mit/ohne, viel/wenig</i>) và hỏi giá, thanh toán tiền Euro (€) tại quán cà phê/nhà hàng.
                 </p>
             </div>
         </div>
@@ -84,7 +90,7 @@ def seed_lesson_1_part_2():
                         <span class="text-xl font-black text-indigo-700">du</span>
                         <span class="text-xs text-indigo-600 group-hover:scale-110 transition">🔊</span>
                     </div>
-                    <p class="text-xs font-bold text-slate-800 mt-1">bạn, cậu, em (ngôi 2 thân mật)</p>
+                    <p class="text-xs font-bold text-slate-800 mt-1">bạn, cậu, em (ngôi 2 số ít thân mật)</p>
                     <p class="text-[11px] text-slate-500 mt-0.5">Dùng cho bạn bè, người thân, trẻ em. Đuôi: <b class="text-indigo-600">-st</b></p>
                 </div>
 
@@ -103,7 +109,7 @@ def seed_lesson_1_part_2():
                         <span class="text-xs text-rose-600 group-hover:scale-110 transition">🔊</span>
                     </div>
                     <p class="text-xs font-bold text-slate-800 mt-1">cô ấy, bà ấy, nó (giống cái die)</p>
-                    <p class="text-[11px] text-rose-700 mt-0.5 font-semibold">Động từ chia đuôi: <b>-t</b> (hoặc <b>ist</b>)</p>
+                    <p class="text-[11px] text-slate-500 mt-0.5">Ngôi 3 số ít giống cái. Đuôi: <b class="text-indigo-600">-t</b></p>
                 </div>
 
                 <div onclick="speakGerman('es')" class="cursor-pointer p-4 rounded-2xl bg-slate-50 hover:bg-indigo-50/80 border border-slate-200 hover:border-indigo-400 transition group flex flex-col justify-between">
@@ -139,7 +145,7 @@ def seed_lesson_1_part_2():
                         <span class="text-xs text-purple-600 group-hover:scale-110 transition">🔊</span>
                     </div>
                     <p class="text-xs font-bold text-slate-800 mt-1">họ, chúng nó (ngôi 3 số nhiều)</p>
-                    <p class="text-[11px] text-purple-700 mt-0.5 font-semibold">Động từ chia đuôi: <b>-en</b> (hoặc <b>sind</b>)</p>
+                    <p class="text-[11px] text-slate-500 mt-0.5">Ngôi 3 số nhiều. Đuôi: <b class="text-indigo-600">-en</b></p>
                 </div>
 
                 <div onclick="speakGerman('Sie')" class="cursor-pointer p-4 rounded-2xl bg-amber-50/90 hover:bg-amber-100/90 border border-amber-300 hover:border-amber-500 transition group flex flex-col justify-between">
@@ -147,7 +153,7 @@ def seed_lesson_1_part_2():
                         <span class="text-xl font-black text-amber-800">Sie <span class="text-xs font-medium text-amber-700">(Viết hoa S)</span></span>
                         <span class="text-xs text-amber-700 group-hover:scale-110 transition">🔊</span>
                     </div>
-                    <p class="text-xs font-bold text-slate-800 mt-1">Ngài / các Ngài / Ông / Bà (Lịch sự)</p>
+                    <p class="text-xs font-bold text-slate-800 mt-1">Ngài / các Ngài / Ông / Bà (ngôi 2 lịch sự)</p>
                     <p class="text-[11px] text-amber-800 mt-0.5 font-semibold">Luôn viết hoa <b>S</b> ở mọi vị trí! Đuôi: <b>-en</b></p>
                 </div>
             </div>
@@ -160,7 +166,7 @@ def seed_lesson_1_part_2():
                 <ul class="list-disc pl-5 space-y-1 text-slate-700">
                     <li><b>sie (cô ấy)</b>: Đi với động từ chia đuôi <b>-t</b> (ví dụ: <i>sie kommt, sie trinkt, sie ist</i>).</li>
                     <li><b>sie (họ)</b>: Đi với động từ chia đuôi <b>-en</b> (ví dụ: <i>sie kommen, sie trinken, sie sind</i>).</li>
-                    <li><b>Sie (Ngài - lịch sự)</b>: Luôn viết hoa chữ <b>S</b> dù đứng đầu hay giữa câu, động từ chia đuôi <b>-en</b> (ví dụ: <i>Was trinken Sie?</i>).</li>
+                    <li><b>Sie (Ngài - lịch sự)</b>: Luôn viết hoa chữ <b>S</b> ở mọi vị trí (đầu, giữa hay cuối câu), động từ chia đuôi <b>-en</b> (ví dụ: <i>Was trinken Sie?</i>).</li>
                 </ul>
             </div>
         </div>
@@ -170,8 +176,8 @@ def seed_lesson_1_part_2():
             <div class="flex items-center gap-3">
                 <span class="w-8 h-8 rounded-xl bg-indigo-600 text-white font-extrabold flex items-center justify-center text-sm shadow-sm">2</span>
                 <div>
-                    <h3 class="text-lg font-black text-slate-900">Cấu Tạo Động Từ & Công Thức Chia Động Từ Có Quy Tắc (Regelmäßige Verben)</h3>
-                    <p class="text-xs text-slate-500">Quy tắc vàng ở thì Hiện tại (Präsens) và Vị trí số 2 (Position 2)</p>
+                    <h3 class="text-lg font-black text-slate-900">Cấu Tạo Động Từ & Quy Tắc Chia Đuôi Chuẩn Ở Thì Hiện Tại (Präsens)</h3>
+                    <p class="text-xs text-slate-500">Công thức chia đuôi tiêu chuẩn ở thì Hiện tại (Präsens) và Quy tắc Vị trí số 2 (Position 2)</p>
                 </div>
             </div>
 
@@ -254,7 +260,7 @@ def seed_lesson_1_part_2():
             <!-- Quy tắc vị trí động từ Position 2 -->
             <div class="p-4 rounded-2xl bg-slate-50 border border-slate-200 text-xs sm:text-sm text-slate-700 space-y-1.5">
                 <p class="font-extrabold text-slate-900">📌 Quy tắc Vị trí số 2 (Position 2):</p>
-                <p>Trong câu trần thuật và câu hỏi có từ để hỏi (W-Frage), động từ đã chia theo chủ ngữ <b>luôn luôn đứng ở vị trí thứ 2</b>:</p>
+                <p>Trong câu trần thuật và câu hỏi có từ để hỏi (W-Frage), động từ đã chia theo chủ ngữ <b>luôn luôn đứng ở vị trí thành phần thứ 2 trong câu</b> (tính theo cụm thành phần câu, không đếm theo từng từ đơn lẻ):</p>
                 <div class="flex flex-wrap gap-2 pt-1 font-mono text-xs font-bold">
                     <span class="px-2.5 py-1 rounded-lg bg-white border border-slate-200">Ich [1] <b class="text-indigo-600">komme [2]</b> aus Vietnam.</span>
                     <span class="px-2.5 py-1 rounded-lg bg-white border border-slate-200">Wo [1] <b class="text-indigo-600">wohnen [2]</b> Sie?</span>
@@ -280,13 +286,15 @@ def seed_lesson_1_part_2():
                         <span class="text-xs font-mono px-2 py-0.5 rounded bg-purple-200 text-purple-900 font-bold">heißen, tanzen</span>
                     </div>
                     <p class="text-xs text-slate-700 leading-relaxed">
-                        Vì gốc đã có âm gió /s/, ở ngôi <b>du</b> ta <b>chỉ thêm -t</b> (không thêm -st). Ngôi <b>du, er/sie/es, ihr</b> viết giống nhau:
+                        Vì gốc động từ đã kết thúc bằng nhóm âm xuýt (/s/, /z/, /ts/, /ks/), ở ngôi <b>du</b> ta <b>chỉ thêm -t</b> (không thêm -st). Do đó, ngôi <b>du, er/sie/es và ihr</b> có cách viết giống hệt nhau:
                     </p>
                     <div class="bg-white p-3 rounded-xl border border-purple-200 text-xs font-mono space-y-1">
-                        <div>ich <b>heiße</b></div>
-                        <div>du <b class="text-purple-700">heißt</b> <span class="text-slate-400 font-sans">(chỉ thêm -t!)</span></div>
-                        <div>er/sie/es <b class="text-purple-700">heißt</b></div>
-                        <div>wir <b>heißen</b> | ihr <b class="text-purple-700">heißt</b> | sie/Sie <b>heißen</b></div>
+                        <div>ich <b>heiße</b> | <b>tanze</b></div>
+                        <div>du <b class="text-purple-700">heißt</b> | <b class="text-purple-700">tanzt</b> <span class="text-slate-400 font-sans">(chỉ thêm -t!)</span></div>
+                        <div>er/sie/es <b class="text-purple-700">heißt</b> | <b class="text-purple-700">tanzt</b></div>
+                        <div>wir <b>heißen</b> | <b>tanzen</b></div>
+                        <div>ihr <b class="text-purple-700">heißt</b> | <b class="text-purple-700">tanzt</b></div>
+                        <div>sie/Sie <b>heißen</b> | <b>tanzen</b></div>
                     </div>
                 </div>
 
@@ -327,20 +335,20 @@ def seed_lesson_1_part_2():
                             <span><b>Marc:</b> Woher kommst du? <i>(Bạn đến từ đâu?)</i></span>
                             <span class="text-indigo-600">🔊</span>
                         </div>
-                        <div onclick="speakGerman('Ich komme aus Brasilien. Das ist mein Freund, er kommt aus Russland.')" class="cursor-pointer p-2 rounded-lg hover:bg-indigo-50 transition flex justify-between items-center">
-                            <span><b>Anna:</b> Ich komme aus Brasilien. Das ist mein Freund, er kommt aus Russland.</span>
+                        <div onclick="speakGerman('Ich komme aus Brasilien. Das ist mein Freund Peter, er kommt aus Russland.')" class="cursor-pointer p-2 rounded-lg hover:bg-indigo-50 transition flex justify-between items-center">
+                            <span><b>Anna:</b> Ich komme aus Brasilien. Das ist mein Freund Peter, er kommt aus Russland. <i>(Mình đến từ Brazil. Đây là bạn trai mình, Peter, anh ấy đến từ Nga.)</i></span>
                             <span class="text-indigo-600">🔊</span>
                         </div>
                         <div onclick="speakGerman('Und wo wohnt ihr?')" class="cursor-pointer p-2 rounded-lg hover:bg-indigo-50 transition flex justify-between items-center">
-                            <span><b>Marc:</b> Und wo wohnt ihr? <i>(Và các bạn sống ở đâu?)</i></span>
+                            <span><b>Marc:</b> Und wo wohnt ihr? <i>(Và hai bạn sống ở đâu?)</i></span>
                             <span class="text-indigo-600">🔊</span>
                         </div>
                         <div onclick="speakGerman('Wir wohnen in Berlin. Wo arbeitest du?')" class="cursor-pointer p-2 rounded-lg hover:bg-indigo-50 transition flex justify-between items-center">
-                            <span><b>Anna:</b> Wir wohnen in Berlin. Wo arbeitest du?</span>
+                            <span><b>Anna:</b> Wir wohnen in Berlin. Wo arbeitest du? <i>(Chúng mình sống ở Berlin. Còn bạn làm việc ở đâu?)</i></span>
                             <span class="text-indigo-600">🔊</span>
                         </div>
                         <div onclick="speakGerman('Ich arbeite bei der Post.')" class="cursor-pointer p-2 rounded-lg hover:bg-indigo-50 transition flex justify-between items-center">
-                            <span><b>Marc:</b> Ich arbeite bei der Post. <i>(Tôi làm việc tại bưu điện.)</i></span>
+                            <span><b>Marc:</b> Ich arbeite bei der Post. <i>(Mình làm việc tại bưu điện.)</i></span>
                             <span class="text-indigo-600">🔊</span>
                         </div>
                     </div>
@@ -352,19 +360,19 @@ def seed_lesson_1_part_2():
                             <span class="text-[11px] text-amber-700 font-semibold">Frau Bui & Herr Nguyen</span>
                         </div>
                         <div onclick="speakGerman('Guten Tag, wie heißen Sie?')" class="cursor-pointer p-2 rounded-lg hover:bg-amber-50 transition flex justify-between items-center">
-                            <span><b>Frau Bui:</b> Guten Tag, wie heißen Sie?</span>
+                            <span><b>Frau Bui:</b> Guten Tag, wie heißen Sie? <i>(Xin chào, tên Ngài là gì ạ?)</i></span>
                             <span class="text-amber-600">🔊</span>
                         </div>
-                        <div onclick="speakGerman('Ich heiße Dat.')" class="cursor-pointer p-2 rounded-lg hover:bg-amber-50 transition flex justify-between items-center">
-                            <span><b>Herr Nguyen:</b> Ich heiße Dat.</span>
+                        <div onclick="speakGerman('Ich heiße Dat Nguyen.')" class="cursor-pointer p-2 rounded-lg hover:bg-amber-50 transition flex justify-between items-center">
+                            <span><b>Herr Nguyen:</b> Ich heiße Dat Nguyen. <i>(Tôi tên là Đạt Nguyễn.)</i></span>
                             <span class="text-amber-600">🔊</span>
                         </div>
                         <div onclick="speakGerman('Woher kommen Sie?')" class="cursor-pointer p-2 rounded-lg hover:bg-amber-50 transition flex justify-between items-center">
-                            <span><b>Frau Bui:</b> Woher kommen Sie?</span>
+                            <span><b>Frau Bui:</b> Woher kommen Sie? <i>(Ngài đến từ đâu ạ?)</i></span>
                             <span class="text-amber-600">🔊</span>
                         </div>
                         <div onclick="speakGerman('Ich komme aus Vietnam.')" class="cursor-pointer p-2 rounded-lg hover:bg-amber-50 transition flex justify-between items-center">
-                            <span><b>Herr Nguyen:</b> Ich komme aus Vietnam.</span>
+                            <span><b>Herr Nguyen:</b> Ich komme aus Vietnam. <i>(Tôi đến từ Việt Nam.)</i></span>
                             <span class="text-amber-600">🔊</span>
                         </div>
                     </div>
@@ -424,8 +432,8 @@ def seed_lesson_1_part_2():
                             </thead>
                             <tbody class="divide-y divide-amber-100 font-bold">
                                 <tr><td class="py-1">ich</td><td>lese</td><td>nehme</td></tr>
-                                <tr><td class="py-1">du</td><td class="text-rose-600">liest</td><td class="text-rose-600">nimmst</td></tr>
-                                <tr><td class="py-1">er/sie/es</td><td class="text-rose-600">liest</td><td class="text-rose-600">nimmt</td></tr>
+                                <tr><td class="py-1">du</td><td class="text-rose-600">liest <span class="text-[10px] text-slate-400 font-sans">(chỉ +t)</span></td><td class="text-rose-600">nimmst <span class="text-[10px] text-slate-400 font-sans">(bỏ h, gấp đôi m)</span></td></tr>
+                                <tr><td class="py-1">er/sie/es</td><td class="text-rose-600">liest</td><td class="text-rose-600">nimmt <span class="text-[10px] text-slate-400 font-sans">(bỏ h, gấp đôi m)</span></td></tr>
                                 <tr><td class="py-1">wir</td><td>lesen</td><td>nehmen</td></tr>
                                 <tr><td class="py-1">ihr</td><td>lest</td><td>nehmt</td></tr>
                                 <tr><td class="py-1">sie/Sie</td><td>lesen</td><td>nehmen</td></tr>
@@ -441,14 +449,14 @@ def seed_lesson_1_part_2():
                 <div onclick="speakGerman('Hi, Anna und ich sind im Café Kafka. Wo bist du? Maria ist auch da. Kommst du auch?')" class="cursor-pointer p-3 rounded-xl bg-white border border-slate-200 hover:border-indigo-400 transition flex justify-between items-start">
                     <span>
                         <i>"Hi, Anna und ich <b>sind</b> im Café Kafka. Wo <b>bist</b> du? Maria <b>ist</b> auch da. Kommst du auch?"</i><br>
-                        <span class="text-slate-500 text-xs">Chào, Anna và tôi đang ở quán Café Kafka. Bạn ở đâu? Maria cũng ở đây. Bạn đến luôn nhé?</span>
+                        <span class="text-slate-500 text-xs">Chào, Anna và tôi đang ở quán Café Kafka. Bạn đang ở đâu? Maria cũng ở đây. Bạn cũng đến chứ?</span>
                     </span>
                     <span class="text-indigo-600 ml-2">🔊</span>
                 </div>
-                <div onclick="speakGerman('Wo seid ihr? Ich bin im Deutschkurs. Die Lehrerin ist nett, sie ist aus den USA.')" class="cursor-pointer p-3 rounded-xl bg-white border border-slate-200 hover:border-indigo-400 transition flex justify-between items-start">
+                <div onclick="speakGerman('Ach, ihr seid im Café Kafka! Ich bin im Deutschkurs. Die Lehrerin ist nett, sie ist aus den USA.')" class="cursor-pointer p-3 rounded-xl bg-white border border-slate-200 hover:border-indigo-400 transition flex justify-between items-start">
                     <span>
-                        <i>"Wo <b>seid</b> ihr? Ich <b>bin</b> im Deutschkurs. Die Lehrerin <b>ist</b> nett, sie <b>ist</b> aus den USA."</i><br>
-                        <span class="text-slate-500 text-xs">Các bạn ở đâu? Tôi đang ở trong khóa học tiếng Đức. Cô giáo rất tốt bụng, cô ấy đến từ Mỹ.</span>
+                        <i>"Ach, ihr <b>seid</b> im Café Kafka! Ich <b>bin</b> im Deutschkurs. Die Lehrerin <b>ist</b> nett, sie <b>ist</b> aus den USA."</i><br>
+                        <span class="text-slate-500 text-xs">A, các bạn đang ở quán Café Kafka à! Tôi đang ở lớp học tiếng Đức. Cô giáo rất thân thiện, cô ấy đến từ Mỹ.</span>
                     </span>
                     <span class="text-indigo-600 ml-2">🔊</span>
                 </div>
@@ -476,6 +484,7 @@ def seed_lesson_1_part_2():
                         <li class="py-1">ihr <b class="text-indigo-600">möchtet</b></li>
                         <li class="py-1">sie/Sie <b class="text-indigo-600">möchten</b></li>
                     </ul>
+                    <p class="text-[11px] text-slate-500 pt-1">💡 <b>Bản chất:</b> <i>'möchten'</i> là dạng giả định lịch sự (Konjunktiv II) của động từ <i>'mögen'</i>, được sử dụng với cấu trúc giống hệt động từ khuyết thiếu. Khi ngữ cảnh gọi món đã rõ, có thể lược bỏ động từ thường ở cuối câu (VD: <i>Möchten Sie Kaffee mit Milch?</i>).</p>
                 </div>
 
                 <div class="p-5 rounded-2xl bg-indigo-50/60 border border-indigo-200 space-y-3 text-xs sm:text-sm">
@@ -498,12 +507,12 @@ def seed_lesson_1_part_2():
             </div>
         </div>
 
-        <!-- MỤC 6: TỪ VỰNG ĐỒ UỐNG, GIA VỊ, CÁCH HỎI GIÁ & THANH TOÁN TIỀN EURO -->
+        <!-- MỤC 6: TỪ VỰNG ĐỒ UỐNG, THÀNH PHẦN ĐI KÈM, CÁCH HỎI GIÁ & THANH TOÁN TIỀN EURO -->
         <div class="p-6 rounded-3xl bg-white border border-slate-200 shadow-sm space-y-5">
             <div class="flex items-center gap-3">
                 <span class="w-8 h-8 rounded-xl bg-indigo-600 text-white font-extrabold flex items-center justify-center text-sm shadow-sm">6</span>
                 <div>
-                    <h3 class="text-lg font-black text-slate-900">Từ Vựng Đồ Uống, Gia Vị, Cách Gọi Món & Thanh Toán Euro (€)</h3>
+                    <h3 class="text-lg font-black text-slate-900">Từ Vựng Đồ Uống, Thành Phần Đi Kèm, Cách Gọi Món & Thanh Toán Euro (€)</h3>
                     <p class="text-xs text-slate-500">Kỹ năng thực chiến tại quán cà phê ở Đức, Áo và Thụy Sĩ</p>
                 </div>
             </div>
@@ -565,7 +574,7 @@ def seed_lesson_1_part_2():
 
                 <div class="p-4 rounded-2xl bg-amber-50/60 border border-amber-200 space-y-2 text-xs sm:text-sm">
                     <h4 class="font-extrabold text-amber-900">Quy tắc đọc giá tiền Euro (1 € = 100 Cent):</h4>
-                    <p class="text-slate-700">Dấu phẩy <b>,</b> đọc là <b>Euro</b>, phần lẻ đọc số bình thường:</p>
+                    <p class="text-slate-700">Dấu phẩy (<b>,</b>) đọc là <b>"Euro"</b>, phần số lẻ phía sau đọc như số đếm bình thường:</p>
                     <div class="space-y-1 font-mono text-xs">
                         <div onclick="speakGerman('ein Euro neunundzwanzig')" class="cursor-pointer hover:text-indigo-600">1,29 € → <b>ein Euro neunundzwanzig</b> 🔊</div>
                         <div onclick="speakGerman('drei Euro neunundneunzig')" class="cursor-pointer hover:text-indigo-600">3,99 € → <b>drei Euro neunundneunzig</b> 🔊</div>
@@ -588,8 +597,8 @@ def seed_lesson_1_part_2():
                     <span><b>Anna:</b> Ich trinke Kaffee mit viel Milch. <i>(Tôi uống cà phê với nhiều sữa.)</i></span>
                     <span class="text-indigo-600">🔊</span>
                 </div>
-                <div onclick="speakGerman('Ich nehme Tee.')" class="cursor-pointer p-2.5 rounded-xl hover:bg-white transition flex justify-between items-center">
-                    <span><b>Sophie:</b> Ich nehme Tee. <i>(Tôi dùng trà.)</i></span>
+                <div onclick="speakGerman('Ich nehme Tee, bitte.')" class="cursor-pointer p-2.5 rounded-xl hover:bg-white transition flex justify-between items-center">
+                    <span><b>Sophie:</b> Ich nehme Tee, bitte. <i>(Cho tôi dùng trà ạ.)</i></span>
                     <span class="text-indigo-600">🔊</span>
                 </div>
                 <div class="py-1 text-slate-400 text-center italic text-xs">--- Sau khi uống xong - Gọi tính tiền ---</div>
@@ -605,8 +614,8 @@ def seed_lesson_1_part_2():
                     <span><b>Anna:</b> Zusammen, bitte. <i>(Thanh toán chung ạ.)</i></span>
                     <span class="text-indigo-600">🔊</span>
                 </div>
-                <div onclick="speakGerman('Das macht drei Euro neunundneunzig.')" class="cursor-pointer p-2.5 rounded-xl hover:bg-white transition flex justify-between items-center">
-                    <span><b>Kellner:</b> Das macht 3,99 Euro. <i>(Tổng cộng hết 3,99 Euro ạ.)</i></span>
+                <div onclick="speakGerman('Das macht sechs Euro achtzig.')" class="cursor-pointer p-2.5 rounded-xl hover:bg-white transition flex justify-between items-center">
+                    <span><b>Kellner:</b> Das macht 6,80 Euro. <i>(Tổng cộng hết 6,80 Euro ạ.)</i></span>
                     <span class="text-indigo-600">🔊</span>
                 </div>
             </div>
@@ -614,50 +623,51 @@ def seed_lesson_1_part_2():
     </div>
     """
 
-    cursor.execute("""
-        INSERT INTO lessons (level_id, title, grammar_content)
-        VALUES (?, ?, ?);
-    """, (a1_id, lesson_title, grammar_html))
-    lesson_id = cursor.lastrowid
+    if fixed_lesson_id:
+        cursor.execute("INSERT INTO lessons (id, level_id, title, grammar_content) VALUES (?, ?, ?, ?);", (fixed_lesson_id, a1_id, lesson_title, grammar_html))
+        lesson_id = fixed_lesson_id
+    else:
+        cursor.execute("INSERT INTO lessons (level_id, title, grammar_content) VALUES (?, ?, ?);", (a1_id, lesson_title, grammar_html))
+        lesson_id = cursor.lastrowid
 
     # =========================================================================
     # DANH SÁCH TỪ VỰNG BÀI 1 (P2)
     # =========================================================================
     vocabs = [
         (lesson_id, "Kaffee", "der", "Cà phê", "Ich trinke Kaffee mit viel Milch. (Tôi uống cà phê với nhiều sữa.)"),
-        (lesson_id, "Tee", "der", "Trà", "Ich nehme Tee ohne Zucker, bitte. (Làm ơn cho tôi dùng trà không đường.)"),
+        (lesson_id, "Tee", "der", "Trà", "Ich nehme Tee ohne Zucker, bitte. (Cho tôi dùng trà không đường ạ.)"),
         (lesson_id, "Milch", "die", "Sữa", "Möchten Sie Kaffee mit Milch? (Ngài muốn dùng cà phê có sữa không?)"),
         (lesson_id, "Zucker", "der", "Đường", "Tee ohne Zucker, bitte. (Làm ơn cho một ly trà không đường.)"),
-        (lesson_id, "Cola", "die", "Nước ngọt Coca-Cola", "Er trinkt eine Cola. (Anh ấy uống một lon Coca-Cola.)"),
+        (lesson_id, "Cola", "die", "Nước ngọt Cola", "Er trinkt eine Cola. (Anh ấy uống một ly/chai nước ngọt Cola.)"),
         (lesson_id, "Wasser", "das", "Nước lọc", "Ein Glas Wasser, bitte. (Làm ơn cho một ly nước lọc.)"),
         (lesson_id, "Mineralwasser", "das", "Nước khoáng", "Ich trinke gern Mineralwasser. (Tôi thích uống nước khoáng.)"),
         (lesson_id, "Wein", "der", "Rượu vang", "Wir trinken Wein im Restaurant. (Chúng tôi uống rượu vang trong nhà hàng.)"),
         (lesson_id, "Kakao", "der", "Ca cao", "Ich möchte Kakao trinken. (Tôi muốn uống ca cao.)"),
-        (lesson_id, "Saft", "der", "Nước ép hoa quả", "Der Orangensaft ist lecker. (Nước cam ngon.)"),
-        (lesson_id, "Eis", "das", "Đá lạnh / Kem", "Kaffee mit Eis, bitte. (Làm ơn cho cà phê đá.)"),
+        (lesson_id, "Saft", "der", "Nước ép hoa quả", "Der Saft ist sehr lecker. (Nước ép hoa quả rất ngon.)"),
+        (lesson_id, "Eis", "das", "Đá lạnh / Kem", "Cola mit Eis, bitte. (Làm ơn cho một ly Cola có đá.)"),
         (lesson_id, "Café", "das", "Quán cà phê", "Wir sind im Café Kafka. (Chúng tôi đang ở quán cà phê Kafka.)"),
-        (lesson_id, "Kellner", "der", "Người bồi bàn / nhân viên phục vụ", "Der Kellner fragt: Was möchten Sie trinken? (Người bồi bàn hỏi: Ngài muốn uống gì?)"),
-        (lesson_id, "Euro", "der", "Đồng tiền Euro (€)", "Das macht 3,99 Euro. (Tổng cộng hết 3,99 Euro.)"),
-        (lesson_id, "Cent", "der", "Đồng xu Cent (1 € = 100 Cent)", "Ein Euro hat hundert Cent. (Một Euro có một trăm Cent.)"),
-        (lesson_id, "trinken", None, "Uống", "Was trinken Sie? Ich trinke Tee. (Ngài uống gì? - Tôi uống trà.)"),
-        (lesson_id, "nehmen", None, "Dùng, lấy, chọn (món)", "Was nehmen Sie? Ich nehme Kaffee. (Ngài dùng món gì? - Tôi dùng cà phê.)"),
-        (lesson_id, "möchten", None, "Muốn (lịch sự)", "Was möchten Sie trinken? (Ngài muốn uống gì?)"),
-        (lesson_id, "zahlen", None, "Thanh toán, trả tiền", "Wir möchten bitte zahlen. (Làm ơn cho chúng tôi thanh toán.)"),
-        (lesson_id, "kosten", None, "Có giá là, tốn bao nhiêu", "Wie viel kostet der Kaffee? (Cà phê này giá bao nhiêu?)"),
-        (lesson_id, "mieten", None, "Thuê (nhà, căn hộ)", "Er mietet eine Wohnung in Berlin. (Anh ấy thuê một căn hộ ở Berlin.)"),
-        (lesson_id, "arbeiten", None, "Làm việc", "Wo arbeitest du? Ich arbeite bei der Post. (Bạn làm việc ở đâu? - Tôi làm việc ở bưu điện.)"),
-        (lesson_id, "wohnen", None, "Sống, cư trú", "Wir wohnen in Frankfurt. (Chúng tôi sống ở Frankfurt.)"),
-        (lesson_id, "kommen", None, "Đến từ, xuất thân", "Ich komme aus Vietnam. (Tôi đến từ Việt Nam.)"),
-        (lesson_id, "heißen", None, "Tên là, gọi là", "Wie heißen Sie? Ich heiße Dat. (Ngài tên là gì? - Tôi tên là Đạt.)"),
-        (lesson_id, "sein", None, "Thì, là, ở", "Ich bin im Deutschkurs. (Tôi đang ở trong khóa học tiếng Đức.)"),
-        (lesson_id, "haben", None, "Có, sở hữu", "Hast du heute Zeit? (Hôm nay bạn có thời gian không?)"),
-        (lesson_id, "lesen", None, "Đọc", "Du liest ein deutsches Buch. (Bạn đang đọc một cuốn sách tiếng Đức.)"),
-        (lesson_id, "mit", None, "Với, có kèm", "Kaffee mit Milch und Zucker. (Cà phê có sữa và đường.)"),
-        (lesson_id, "ohne", None, "Không có, không kèm", "Tee ohne Zucker. (Trà không có đường.)"),
-        (lesson_id, "viel", None, "Nhiều", "Ich trinke Kaffee mit viel Milch. (Tôi uống cà phê với nhiều sữa.)"),
-        (lesson_id, "wenig", None, "Ít", "Nur wenig Zucker, bitte. (Chỉ một chút đường thôi, làm ơn.)"),
-        (lesson_id, "zusammen", None, "Cùng nhau, tính chung", "Zusammen, bitte. (Làm ơn tính chung.)"),
-        (lesson_id, "getrennt", None, "Riêng biệt, tính riêng", "Wir zahlen getrennt, bitte. (Làm ơn cho chúng tôi tính riêng.)")
+        (lesson_id, "Kellner", "der", "Nam bồi bàn / Nam nhân viên phục vụ (nữ: die Kellnerin)", "Der Kellner fragt: Was möchten Sie trinken? (Người bồi bàn hỏi: Ngài muốn uống gì?)"),
+        (lesson_id, "Euro", "der", "Đồng tiền Euro (€)", "Das macht 6,80 Euro. (Tổng cộng hết 6,80 Euro.)"),
+        (lesson_id, "Cent", "der", "Đơn vị xu Cent (1 € = 100 Cent)", "Ein Euro hat hundert Cent. (Một Euro có một trăm Cent.)"),
+        (lesson_id, "trinken", "Động từ", "Uống", "Was trinken Sie? Ich trinke Tee. (Ngài uống gì? - Tôi uống trà.)"),
+        (lesson_id, "nehmen", "Động từ", "Dùng, lấy, chọn (món)", "Was nehmen Sie? Ich nehme Kaffee. (Ngài dùng món gì? - Tôi dùng cà phê.)"),
+        (lesson_id, "möchten", "Động từ", "Muốn (lịch sự)", "Was möchten Sie trinken? (Ngài muốn uống gì?)"),
+        (lesson_id, "zahlen", "Động từ", "Thanh toán, trả tiền", "Wir möchten bitte zahlen. (Làm ơn cho chúng tôi thanh toán.)"),
+        (lesson_id, "kosten", "Động từ", "Có giá là, trị giá, tốn", "Wie viel kostet der Kaffee? (Cà phê này giá bao nhiêu?)"),
+        (lesson_id, "mieten", "Động từ", "Thuê (nhà, căn hộ)", "Er mietet eine Wohnung in Berlin. (Anh ấy thuê một căn hộ ở Berlin.)"),
+        (lesson_id, "arbeiten", "Động từ", "Làm việc", "Wo arbeitest du? Ich arbeite bei der Post. (Bạn làm việc ở đâu? - Tôi làm việc ở bưu điện.)"),
+        (lesson_id, "wohnen", "Động từ", "Sống, cư trú", "Wir wohnen in Frankfurt. (Chúng tôi sống ở Frankfurt.)"),
+        (lesson_id, "kommen", "Động từ", "Đến, tới (kommen aus: đến từ)", "Ich komme aus Vietnam. (Tôi đến từ Việt Nam.)"),
+        (lesson_id, "heißen", "Động từ", "Tên là, gọi là", "Wie heißen Sie? Ich heiße Dat Nguyen. (Ngài tên là gì? - Tôi tên là Đạt Nguyễn.)"),
+        (lesson_id, "sein", "Động từ", "Thì, là, ở", "Ich bin im Deutschkurs. (Tôi đang ở lớp học tiếng Đức.)"),
+        (lesson_id, "haben", "Động từ", "Có, sở hữu", "Hast du heute Zeit? (Hôm nay bạn có thời gian không?)"),
+        (lesson_id, "lesen", "Động từ", "Đọc", "Du liest ein deutsches Buch. (Bạn đang đọc một cuốn sách tiếng Đức.)"),
+        (lesson_id, "mit", "Giới từ", "Với, có kèm", "Kaffee mit Milch und Zucker. (Cà phê có sữa và đường.)"),
+        (lesson_id, "ohne", "Giới từ", "Không có, không kèm", "Tee ohne Zucker. (Trà không có đường.)"),
+        (lesson_id, "viel", "Trạng từ", "Nhiều", "Ich trinke Kaffee mit viel Milch. (Tôi uống cà phê với nhiều sữa.)"),
+        (lesson_id, "wenig", "Trạng từ", "Ít", "Nur wenig Zucker, bitte. (Chỉ một ít đường thôi ạ.)"),
+        (lesson_id, "zusammen", "Trạng từ", "Cùng nhau, tính chung", "Zusammen, bitte. (Làm ơn tính chung.)"),
+        (lesson_id, "getrennt", "Trạng từ", "Riêng biệt, tính riêng", "Wir zahlen getrennt, bitte. (Làm ơn cho chúng tôi tính riêng.)")
     ]
 
     cursor.executemany("""
@@ -682,12 +692,12 @@ def seed_lesson_1_part_2():
     passage_doc_3 = (
         "Kellner: Was möchten Sie trinken?\n"
         "Anna: Ich trinke Kaffee mit viel Milch.\n"
-        "Sophie: Ich nehme Tee.\n"
+        "Sophie: Ich nehme Tee, bitte.\n"
         "...\n"
         "Anna und Sophie: Wir möchten bitte zahlen.\n"
         "Kellner: Zusammen oder getrennt?\n"
         "Anna: Zusammen, bitte.\n"
-        "Kellner: Das macht 3,99 Euro."
+        "Kellner: Das macht 6,80 Euro."
     )
 
     # =========================================================================
@@ -1003,13 +1013,13 @@ def seed_lesson_1_part_2():
             lesson_id, "doc",
             "Câu 43 [Đọc hiểu 4]: Dựa vào hội thoại tại quán cà phê, Sophie uống gì và tổng số tiền thanh toán là bao nhiêu?",
             json.dumps([
-                "Sophie uống trà và tổng tiền là 3,99 Euro",
-                "Sophie uống cà phê và tổng tiền là 3,99 Euro",
+                "Sophie uống trà và tổng tiền là 6,80 Euro",
+                "Sophie uống cà phê và tổng tiền là 6,80 Euro",
                 "Anna uống trà và tổng tiền là 4,50 Euro",
                 "Cả hai đều uống cà phê"
             ]),
-            "Sophie uống trà và tổng tiền là 3,99 Euro",
-            "Sophie nói 'Ich nehme Tee.' và người bồi bàn báo 'Das macht 3,99 Euro.'", 20,
+            "Sophie uống trà và tổng tiền là 6,80 Euro",
+            "Sophie nói 'Ich nehme Tee, bitte.' và người bồi bàn báo 'Das macht 6,80 Euro.'", 20,
             json.dumps({"passage": passage_doc_3})
         ),
 
