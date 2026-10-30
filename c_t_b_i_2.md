@@ -545,7 +545,7 @@ const GERMAN_LEXIKON_DB = [
         indefinite: "ein Dokument", negation: "kein Dokument",
         meaning: "tài liệu, văn kiện", category: "Quy tắc hậu tố giống",
         rule: "Đa số đuôi -ment mang giống trung (das), NGOẠI TRỪ: der Moment (khoảnh khắc)!",
-        example: "Ist das ein Dokument? – Ja, das ist das Dokument von Herr Nguyen.",
+        example: "Ist das ein Dokument? – Ja, das ist das Dokument von Herrn Nguyen.",
         example_vi: "Đây có phải là tài liệu không? – Đúng, đó là tài liệu của ông Nguyễn."
     },
     {
