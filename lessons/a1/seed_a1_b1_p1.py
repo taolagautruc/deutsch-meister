@@ -257,36 +257,36 @@ def seed_lesson_1_part_1():
 
     # 2. 30 THẺ TỪ VỰNG (Chuẩn mạo từ der/die/das và câu ví dụ)
     vocabs = [
-        (lesson_id, "Verkäufer", "der", "Người bán hàng (nam)", "Der Verkäufer ist freundlich. (Người bán hàng rất thân thiện.)"),
-        (lesson_id, "Kurs", "der", "Khóa học", "Der Deutschkurs beginnt heute. (Khóa học tiếng Đức bắt đầu hôm nay.)"),
-        (lesson_id, "Stuhl", "der", "Cái ghế", "Der Stuhl ist neu. (Cái ghế này mới.)"),
+        (lesson_id, "Verkäufer", "der", "Người bán hàng (nam)", "Der Verkäufer ist freundlich. (Người bán hàng thân thiện.)"),
+        (lesson_id, "Kurs", "der", "Khóa học", "Der Kurs beginnt heute. (Khóa học bắt đầu hôm nay.)"),
+        (lesson_id, "Stuhl", "der", "Cái ghế", "Der Stuhl ist neu. (Cái ghế mới.)"),
         (lesson_id, "Vater", "der", "Người cha / Bố", "Mein Vater wohnt in Berlin. (Bố tôi sống ở Berlin.)"),
         (lesson_id, "Zahn", "der", "Cái răng", "Der Zahn ist weiß. (Cái răng màu trắng.)"),
         (lesson_id, "Zoo", "der", "Sở thú", "Wir gehen in den Zoo. (Chúng tôi đi sở thú.)"),
-        (lesson_id, "Koch", "der", "Đầu bếp (nam)", "Der Koch kocht rất gut. (Người đầu bếp nấu ăn rất ngon.)"),
+        (lesson_id, "Koch", "der", "Đầu bếp (nam)", "Der Koch kocht sehr gut. (Người đầu bếp nấu ăn rất ngon.)"),
         (lesson_id, "Sport", "der", "Thể thao", "Sport ist gesund. (Thể thao tốt cho sức khỏe.)"),
-        (lesson_id, "Tag", "der", "Ngày / Buổi trưa chiều", "Guten Tag! Wie geht es Ihnen? (Xin chào! Ngài có khỏe không?)"),
+        (lesson_id, "Tag", "der", "Ngày / Ban ngày", "Guten Tag! Wie geht es Ihnen? (Xin chào! Ngài có khỏe không?)"),
         (lesson_id, "Morgen", "der", "Buổi sáng", "Guten Morgen! (Chào buổi sáng!)"),
         (lesson_id, "Abend", "der", "Buổi tối", "Guten Abend! (Chào buổi tối!)"),
         (lesson_id, "Name", "der", "Tên", "Mein Name ist Anna. (Tên của tôi là Anna.)"),
         (lesson_id, "Qualität", "die", "Chất lượng", "Die Qualität ist sehr gut. (Chất lượng rất tốt.)"),
         (lesson_id, "Universität", "die", "Trường đại học", "Die Universität ist in Berlin. (Trường đại học ở Berlin.)"),
         (lesson_id, "Küche", "die", "Nhà bếp", "Die Küche ist sauber. (Nhà bếp sạch sẽ.)"),
-        (lesson_id, "Burg", "die", "Lâu đài / Thành cổ", "Die Burg in Hamburg ist alt. (Lâu đài ở Hamburg đã cổ.)"),
+        (lesson_id, "Burg", "die", "Lâu đài / Thành cổ", "Die Burg in Hamburg ist alt. (Lâu đài ở Hamburg cổ kính.)"),
         (lesson_id, "Tür", "die", "Cánh cửa", "Die Tür ist offen. (Cánh cửa đang mở.)"),
         (lesson_id, "Ruhe", "die", "Sự yên tĩnh", "Bitte Ruhe! (Xin hãy giữ yên lặng!)"),
-        (lesson_id, "Schule", "die", "Trường học", "Die Schule ist groß. (Trường học rất lớn.)"),
+        (lesson_id, "Schule", "die", "Trường học", "Die Schule ist groß. (Trường học lớn.)"),
         (lesson_id, "Stadt", "die", "Thành phố", "Berlin ist eine schöne Stadt. (Berlin là một thành phố đẹp.)"),
         (lesson_id, "Nacht", "die", "Ban đêm", "Gute Nacht! (Chúc ngủ ngon!)"),
-        (lesson_id, "Bier", "das", "Bia", "Das Bier aus Deutschland ist gut. (Bia từ nước Đức rất ngon.)"),
+        (lesson_id, "Bier", "das", "Bia", "Das Bier aus Deutschland ist gut. (Bia từ nước Đức ngon.)"),
         (lesson_id, "Tier", "das", "Con vật / Động vật", "Das Tier ist im Zoo. (Con vật ở trong sở thú.)"),
         (lesson_id, "Tor", "das", "Cái cổng / Khung thành", "Das Brandenburger Tor ist in Berlin. (Cổng Brandenburg ở Berlin.)"),
         (lesson_id, "Rad", "das", "Bánh xe / Xe đạp", "Ich fahre mit dem Rad. (Tôi đi bằng xe đạp.)"),
         (lesson_id, "Spiel", "das", "Trò chơi / Trận đấu", "Das Spiel ist super. (Trận đấu rất tuyệt vời.)"),
         (lesson_id, "Auf Wiedersehen!", "Mẫu câu", "Hẹn gặp lại (Trang trọng)", "Auf Wiedersehen! Bis morgen! (Hẹn gặp lại! Hẹn ngày mai!)"),
         (lesson_id, "Tschüss!", "Mẫu câu", "Tạm biệt (Thân mật)", "Tschüss! Bis später! (Tạm biệt! Hẹn lát nữa gặp!)"),
-        (lesson_id, "Woher kommen Sie?", "Mẫu câu", "Ngài đến từ đâu?", "Woher kommen Sie? Ich komme aus Vietnam. (Ngài đến từ đâu?)"),
-        (lesson_id, "Wo wohnen Sie?", "Mẫu câu", "Ngài sống ở đâu?", "Wo wohnen Sie? Ich wohne in Hai Phong. (Ngài sống ở đâu?)")
+        (lesson_id, "Woher kommen Sie?", "Mẫu câu", "Ngài đến từ đâu?", "Woher kommen Sie? Ich komme aus Vietnam. (Ngài đến từ đâu? - Tôi đến từ Việt Nam.)"),
+        (lesson_id, "Wo wohnen Sie?", "Mẫu câu", "Ngài sống ở đâu?", "Wo wohnen Sie? Ich wohne in Hai Phong. (Ngài sống ở đâu? - Tôi sống ở Hải Phòng.)")
     ]
     cursor.executemany("INSERT INTO vocabularies (lesson_id, german_word, article, vietnamese_meaning, example_sentence) VALUES (?, ?, ?, ?, ?);", vocabs)
 
