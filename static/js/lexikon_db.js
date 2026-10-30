@@ -352,12 +352,12 @@ const GERMAN_LEXIKON_DB = [
         example_vi: "Tháp Eiffel nằm ở Paris. Paris thuộc nước Pháp."
     },
     {
-        word: "Schiefe Turm", article: "der", gender: "der", plural: "Pisa (Ý)",
+        word: "Schiefe Turm (von Pisa)", article: "der", gender: "der", plural: "Pisa (Ý)",
         indefinite: "ein schiefer Turm", negation: "Italien",
         meaning: "Tháp nghiêng Pisa (ở Pisa, Ý)", category: "Danh lam thắng cảnh",
         rule: "Cụm danh từ có tính từ 'schief' (nghiêng) + der Turm (tháp) -> der Schiefe Turm von Pisa.",
-        example: "Wo ist der Schiefe Turm? – Er ist in Pisa, Italien.",
-        example_vi: "Tháp nghiêng ở đâu? – Nó nằm ở thành phố Pisa, nước Ý."
+        example: "Wo ist der Schiefe Turm von Pisa? – Er ist in Pisa, Italien.",
+        example_vi: "Tháp nghiêng Pisa ở đâu? – Nó nằm ở thành phố Pisa, nước Ý."
     },
     {
         word: "Prater", article: "der", gender: "der", plural: "— (Danh từ riêng)",
@@ -438,41 +438,41 @@ const GERMAN_LEXIKON_DB = [
     {
         word: "Norden", article: "der", gender: "der", plural: "Tính từ: nördlich",
         indefinite: "im Norden von", negation: "nördlich von",
-        meaning: "phía Bắc, miền Bắc", category: "Phương hướng & Bản đồ",
-        rule: "Mọi phương hướng đều mang giống đực (der). Có 2 cách nói: 'im Norden von' hoặc 'nördlich von'.",
-        example: "Wo liegt Hanoi? – Hanoi liegt im Norden von Vietnam (nördlich von Vietnam).",
+        meaning: "phía Bắc, miền Bắc (im Norden von + Quốc gia / nördlich von + Địa điểm khác)", category: "Phương hướng & Bản đồ",
+        rule: "Mọi phương hướng đều mang giống đực (der). 'im Norden von + Quốc gia' (bên trong) vs. 'nördlich von + Địa điểm khác' (bên ngoài).",
+        example: "Wo liegt Hanoi? – Hanoi liegt im Norden von Vietnam (nördlich von Hue).",
         example_vi: "Hà Nội nằm ở đâu? – Hà Nội nằm ở miền Bắc Việt Nam."
     },
     {
         word: "Süden", article: "der", gender: "der", plural: "Tính từ: südlich",
         indefinite: "im Süden von", negation: "südlich von",
-        meaning: "phía Nam, miền Nam", category: "Phương hướng & Bản đồ",
-        rule: "Giống đực (der). Hai cách diễn đạt: 'im Süden von' hoặc 'südlich von'.",
-        example: "Long An liegt im Süden von Vietnam (südlich von Vietnam).",
+        meaning: "phía Nam, miền Nam (im Süden von + Quốc gia / südlich von + Địa điểm khác)", category: "Phương hướng & Bản đồ",
+        rule: "Giống đực (der). 'im Süden von + Quốc gia' vs. 'südlich von + Địa điểm khác'.",
+        example: "Long An liegt im Süden von Vietnam (südwestlich von Ho-Chi-Minh-Stadt).",
         example_vi: "Long An nằm ở miền Nam của Việt Nam."
     },
     {
         word: "Osten", article: "der", gender: "der", plural: "Tính từ: östlich",
         indefinite: "im Osten von", negation: "östlich von",
-        meaning: "phía Đông, miền Đông", category: "Phương hướng & Bản đồ",
+        meaning: "phía Đông, miền Đông (im Osten von + Quốc gia / östlich von + Địa điểm khác)", category: "Phương hướng & Bản đồ",
         rule: "Giống đực (der). Khi chuyển sang tính từ thêm Umlaut o -> ö: östlich.",
-        example: "Berlin liegt im Osten von Deutschland (östlich von Deutschland).",
+        example: "Berlin liegt im Osten von Deutschland (östlich von Magdeburg).",
         example_vi: "Berlin nằm ở phía Đông của nước Đức."
     },
     {
         word: "Westen", article: "der", gender: "der", plural: "Tính từ: westlich",
         indefinite: "im Westen von", negation: "westlich von",
-        meaning: "phía Tây, miền Tây", category: "Phương hướng & Bản đồ",
+        meaning: "phía Tây, miền Tây (im Westen von + Quốc gia / westlich von + Địa điểm khác)", category: "Phương hướng & Bản đồ",
         rule: "Giống đực (der). Tính từ là 'westlich' (không có Umlaut).",
-        example: "Köln liegt im Westen von Deutschland (westlich von Deutschland).",
+        example: "Köln liegt im Westen von Deutschland (westlich von Frankfurt).",
         example_vi: "Köln nằm ở phía Tây của nước Đức."
     },
     {
         word: "Nordosten", article: "der", gender: "der", plural: "Tính từ: nordöstlich",
         indefinite: "im Nordosten von", negation: "nordöstlich von",
-        meaning: "phía Đông Bắc (ghép Bắc + Đông)", category: "Phương hướng & Bản đồ",
+        meaning: "phía Đông Bắc (im Nordosten von + Quốc gia / nordöstlich von + Địa điểm khác)", category: "Phương hướng & Bản đồ",
         rule: "Tiếng Đức đặt Bắc (Nord-) trước Đông (-osten). Tính từ: nordöstlich.",
-        example: "Hai Phong liegt im Nordosten von Vietnam (nordöstlich von Vietnam).",
+        example: "Hai Phong liegt im Nordosten von Vietnam (östlich von Hanoi).",
         example_vi: "Hải Phòng nằm ở phía Đông Bắc của Việt Nam."
     },
     {
@@ -519,8 +519,8 @@ const GERMAN_LEXIKON_DB = [
         word: "Hausaufgabe", article: "die", gender: "die", plural: "die Hausaufgaben (thường dùng số nhiều)",
         indefinite: "eine Hausaufgabe", negation: "keine Hausaufgaben",
         meaning: "bài tập về nhà", category: "Đồ dùng lớp học",
-        rule: "Danh từ ghép (das Haus + die Aufgabe) -> lấy giống cái (die), thường dùng ở dạng số nhiều: die Hausaufgaben machen.",
-        example: "Er macht die Hausaufgaben. – Was macht er? / Macht er die Hausaufgaben?",
+        rule: "Danh từ ghép (das Haus + die Aufgabe) -> lấy giống cái (die), thường dùng ở dạng số nhiều không mạo từ: Hausaufgaben machen.",
+        example: "Er macht Hausaufgaben. – Was macht er? / Macht er Hausaufgaben?",
         example_vi: "Anh ấy làm bài tập về nhà. – Anh ấy làm gì? / Anh ấy có làm bài tập về nhà không?"
     },
 
