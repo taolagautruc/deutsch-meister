@@ -284,7 +284,7 @@ def seed_lesson_2():
                         <li><b>Entschuldigung, wie bitte?</b> → Xin lỗi, Ngài nói sao cơ ạ?</li>
                         <li><b>Das verstehe ich nicht. Können Sie das bitte wiederholen?</b> → Tôi không hiểu. Ngài lặp lại được không?</li>
                         <li><b>Das verstehe ich nicht. Können Sie das bitte buchstabieren?</b> → Tôi không hiểu. Ngài đánh vần giúp tôi?</li>
-                        <li><b>Das verstehe ich không -> Das verstehe ich nicht. Können Sie das bitte anschreiben?</b> → Tôi không hiểu. Ngài viết lên bảng giúp tôi?</li>
+                        <li><b>Das verstehe ich nicht. Können Sie das bitte anschreiben?</b> → Tôi không hiểu. Ngài viết lên bảng giúp tôi?</li>
                     </ol>
                 </div>
             </div>
@@ -419,7 +419,7 @@ def seed_lesson_2():
         (lesson_id, "Möglichkeit", "die", "khả năng / cơ hội (-keit)", "Das ist eine gute Möglichkeit für uns. (Đó là một cơ hội tốt cho chúng tôi.)"),
         (lesson_id, "Freundschaft", "die", "tình bạn (-schaft)", "Die Freundschaft von Anna und Sophie ist toll. (Tình bạn giữa Anna và Sophie thật tuyệt vời.)"),
         (lesson_id, "Kleidung", "die", "quần áo, trang phục (-ung)", "Die Kleidung aus Italien ist sehr modern. (Quần áo từ nước Ý rất hiện đại.)"),
-        (lesson_id, "Dokument", "das", "tài liệu (-ment)", "Ist das ein Dokument? – Ja, das ist das Dokument von Herr Nguyen. (Đây có phải tài liệu không? – Vâng, đó là tài liệu của ông Nguyễn.)"),
+        (lesson_id, "Dokument", "das", "tài liệu (-ment)", "Ist das ein Dokument? – Ja, das ist das Dokument von Herrn Nguyen. (Đây có phải tài liệu không? – Vâng, đó là tài liệu của ông Nguyễn.)"),
         (lesson_id, "Moment", "der", "khoảnh khắc, giây lát (NGOẠI LỆ -ment)", "Einen Moment, bitte! Ich schreibe das Wort an. (Làm ơn đợi một lát! Tôi đang viết từ đó lên bảng.)"),
         (lesson_id, "Ergebnis", "das", "kết quả (-nis)", "Das Ergebnis im Deutschkurs ist super. (Kết quả trong khóa học tiếng Đức rất tuyệt vời.)"),
         (lesson_id, "Erlaubnis", "die", "sự cho phép (NGOẠI LỆ -nis)", "Hast du eine Erlaubnis von der Lehrerin? (Bạn có sự cho phép của cô giáo chưa?)")
@@ -759,7 +759,7 @@ def seed_lesson_2():
                 "Đọc dịch sang tiếng Anh"
             ]),
             "Viết từ đó lên bảng",
-            "David nói: 'Das verstehe ich không hiểu. Können Sie das bitte anschreiben?'", 20,
+            "David nói: 'Das verstehe ich nicht. Können Sie das bitte anschreiben?'", 20,
             json.dumps({"passage": passage_doc})
         ),
         (
