@@ -906,42 +906,42 @@ def seed_lesson_1_part_2():
             "Câu 29 [Luyện Nghe]: Nghe câu hỏi của nhân viên bồi bàn và viết lại chính xác:",
             None, "Was möchten Sie trinken? / Was möchten Sie trinken",
             "Câu nghe được là: 'Was möchten Sie trinken?' (Quý khách muốn uống gì ạ?)", 20,
-            json.dumps({"audio_text": "Was möchten Sie trinken?"})
+            json.dumps({"audio_text": "Was möchten Sie trinken?", "translation": "Quý khách muốn uống gì ạ?"}, ensure_ascii=False)
         ),
         (
             lesson_id, "nghe",
             "Câu 30 [Luyện Nghe điền từ]: Nghe và điền động từ biến âm còn thiếu vào câu: 'Du ___ ein deutsches Buch.'",
             None, "liest",
-            "Âm thanh phát câu: 'Du liest ein deutsches Buch.' → Động từ còn thiếu là 'liest'.", 20,
-            json.dumps({"audio_text": "Du liest ein deutsches Buch."})
+            "Âm thanh phát câu: 'Du liest ein deutsches Buch.' (Bạn đọc một quyển sách tiếng Đức.) → Động từ còn thiếu là 'liest' (động từ biến âm e → ie ở ngôi du).", 20,
+            json.dumps({"audio_text": "Du liest ein deutsches Buch.", "translation": "Bạn đọc một quyển sách tiếng Đức."}, ensure_ascii=False)
         ),
         (
             lesson_id, "nghe",
             "Câu 31 [Luyện Nghe điền từ]: Nghe và điền động từ biến âm còn thiếu vào câu: 'Er ___ einen Tee mit Zitrone.'",
             None, "nimmt",
-            "Âm thanh phát câu: 'Er nimmt einen Tee mit Zitrone.' → Động từ là 'nimmt'.", 20,
-            json.dumps({"audio_text": "Er nimmt einen Tee mit Zitrone."})
+            "Âm thanh phát câu: 'Er nimmt einen Tee mit Zitrone.' (Anh ấy dùng một cốc trà với chanh.) → Động từ còn thiếu là 'nimmt' (động từ biến âm e → i và gấp đôi m ở ngôi er).", 20,
+            json.dumps({"audio_text": "Er nimmt einen Tee mit Zitrone.", "translation": "Anh ấy dùng một cốc trà với chanh."}, ensure_ascii=False)
         ),
         (
             lesson_id, "nghe",
             "Câu 32 [Luyện Nghe giá tiền (Random)]: Nghe câu thông báo của bồi bàn và điền số tiền dạng số (ví dụ: 4,50):",
             None, "4,50",
-            "Bồi bàn thông báo 'Das macht vier Euro fünfzig.' → Số tiền là 4,50 (hoặc 4.50).", 20,
-            json.dumps({"audio_text": "Das macht vier Euro fünfzig.", "dynamic_price": True, "dynamic_mode": "listen_price", "euros": 4, "cents": 50})
+            "Bồi bàn thông báo 'Das macht vier Euro fünfzig.' (Tổng cộng hết 4,50 Euro.) → Số tiền là 4,50 (hoặc 4.50).", 20,
+            json.dumps({"audio_text": "Das macht vier Euro fünfzig.", "translation": "Tổng cộng hết 4,50 Euro.", "dynamic_price": True, "dynamic_mode": "listen_price", "euros": 4, "cents": 50}, ensure_ascii=False)
         ),
         (
             lesson_id, "nghe",
             "Câu 33 [Luyện Nghe giá tiền (Random)]: Nghe câu thông báo của bồi bàn và điền số tiền dạng số (ví dụ: 12,89):",
             None, "12,89",
-            "Bồi bàn thông báo 'Das macht zwölf Euro neunundachtzig.' → Số tiền là 12,89.", 20,
-            json.dumps({"audio_text": "Das macht zwölf Euro neunundachtzig.", "dynamic_price": True, "dynamic_mode": "listen_price", "euros": 12, "cents": 89})
+            "Bồi bàn thông báo 'Das macht zwölf Euro neunundachtzig.' (Tổng cộng hết 12,89 Euro.) → Số tiền là 12,89.", 20,
+            json.dumps({"audio_text": "Das macht zwölf Euro neunundachtzig.", "translation": "Tổng cộng hết 12,89 Euro.", "dynamic_price": True, "dynamic_mode": "listen_price", "euros": 12, "cents": 89}, ensure_ascii=False)
         ),
         (
             lesson_id, "nghe",
             "Câu 34 [Luyện Nghe]: Nghe và viết lại câu trả lời thanh toán:",
             None, "Zusammen, bitte. / Zusammen bitte. / Zusammen, bitte / Zusammen bitte",
-            "Âm thanh phát: 'Zusammen, bitte.' (Thanh toán chung ạ.)", 20,
-            json.dumps({"audio_text": "Zusammen, bitte."})
+            "Âm thanh phát: 'Zusammen, bitte.' (Làm ơn thanh toán chung.)", 20,
+            json.dumps({"audio_text": "Zusammen, bitte.", "translation": "Làm ơn thanh toán chung."}, ensure_ascii=False)
         ),
 
         # ---------------------------------------------------------------------

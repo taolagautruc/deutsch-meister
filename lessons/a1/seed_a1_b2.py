@@ -648,43 +648,43 @@ def seed_lesson_2():
             lesson_id, "nghe",
             "Câu 29 [Luyện Nghe]: Nghe câu sau và điền cụm từ nghe được: 'Das ist ___ von Anna.'",
             None, "der Kuli",
-            "Âm thanh phát: 'Das ist der Kuli von Anna.' → Cụm từ cần điền là 'der Kuli'.", 15,
-            json.dumps({"audio_text": "Das ist der Kuli von Anna."})
+            "Âm thanh phát: 'Das ist der Kuli von Anna.' (Đó là bút bi của Anna.) → Cụm từ cần điền là 'der Kuli'.", 15,
+            json.dumps({"audio_text": "Das ist der Kuli von Anna.", "translation": "Đó là bút bi của Anna."}, ensure_ascii=False)
         ),
         (
             lesson_id, "nghe",
             "Câu 30 [Luyện Nghe]: Nghe câu phủ định và điền cụm mạo từ + danh từ: 'Nein, das ist ___.'",
             None, "keine Brille",
-            "Âm thanh phát: 'Nein, das ist keine Brille. Das ist eine Landkarte.' → Cần điền 'keine Brille'.", 15,
-            json.dumps({"audio_text": "Nein, das ist keine Brille. Das ist eine Landkarte."})
+            "Âm thanh phát: 'Nein, das ist keine Brille. Das ist eine Landkarte.' (Không, đó không phải là kính mắt. Đó là một tấm bản đồ.) → Cần điền 'keine Brille'.", 15,
+            json.dumps({"audio_text": "Nein, das ist keine Brille. Das ist eine Landkarte.", "translation": "Không, đó không phải là kính mắt. Đó là một tấm bản đồ."}, ensure_ascii=False)
         ),
         (
             lesson_id, "nghe",
             "Câu 31 [Luyện Nghe]: Nghe câu hỏi lớp học và chép lại hoàn chỉnh bằng tiếng Đức:",
             None, "Wie heißt das auf Deutsch? / Wie heißt das auf Deutsch",
-            "Âm thanh phát câu hỏi: 'Wie heißt das auf Deutsch?'", 20,
-            json.dumps({"audio_text": "Wie heißt das auf Deutsch?"})
+            "Âm thanh phát câu hỏi: 'Wie heißt das auf Deutsch?' (Cái này tiếng Đức gọi là gì?)", 20,
+            json.dumps({"audio_text": "Wie heißt das auf Deutsch?", "translation": "Cái này tiếng Đức gọi là gì?"}, ensure_ascii=False)
         ),
         (
             lesson_id, "nghe",
             "Câu 32 [Luyện Nghe]: Nghe câu nhờ vả và điền động từ ở cuối câu: 'Können Sie das bitte ___?'",
             None, "wiederholen / bitte wiederholen",
-            "Âm thanh phát: 'Können Sie das bitte wiederholen?' → Động từ là 'wiederholen'.", 15,
-            json.dumps({"audio_text": "Können Sie das bitte wiederholen?"})
+            "Âm thanh phát: 'Können Sie das bitte wiederholen?' (Ngài có thể vui lòng nhắc lại được không?) → Động từ là 'wiederholen'.", 15,
+            json.dumps({"audio_text": "Können Sie das bitte wiederholen?", "translation": "Ngài có thể vui lòng nhắc lại được không?"}, ensure_ascii=False)
         ),
         (
             lesson_id, "nghe",
             "Câu 33 [Luyện Nghe số nhiều]: Nghe câu miêu tả phòng học và điền 2 danh từ số nhiều: 'Im Kursraum gibt es viele ___ und ___.' (cách nhau bởi dấu phẩy):",
             None, "Tische, Stühle / Tische und Stühle / Stühle, Tische",
-            "Âm thanh phát: 'Im Kursraum gibt es viele Tische und Stühle.' → Điền 'Tische, Stühle'.", 20,
-            json.dumps({"audio_text": "Im Kursraum gibt es viele Tische und Stühle."})
+            "Âm thanh phát: 'Im Kursraum gibt es viele Tische und Stühle.' (Trong phòng học có nhiều bàn và ghế.) → Điền 'Tische, Stühle'.", 20,
+            json.dumps({"audio_text": "Im Kursraum gibt es viele Tische und Stühle.", "translation": "Trong phòng học có nhiều bàn và ghế."}, ensure_ascii=False)
         ),
         (
             lesson_id, "nghe",
             "Câu 34 [Luyện Nghe sở hữu]: Nghe câu sau và điền cụm từ: 'Das ist ___ von Frau Schiller.'",
             None, "das Wörterbuch",
-            "Âm thanh phát: 'Das ist das Wörterbuch von Frau Schiller.' → Điền 'das Wörterbuch'.", 15,
-            json.dumps({"audio_text": "Das ist das Wörterbuch von Frau Schiller."})
+            "Âm thanh phát: 'Das ist das Wörterbuch von Frau Schiller.' (Đó là cuốn từ điển của bà Schiller.) → Điền 'das Wörterbuch'.", 15,
+            json.dumps({"audio_text": "Das ist das Wörterbuch von Frau Schiller.", "translation": "Đó là cuốn từ điển của bà Schiller."}, ensure_ascii=False)
         ),
 
         # ---------------------------------------------------------------------

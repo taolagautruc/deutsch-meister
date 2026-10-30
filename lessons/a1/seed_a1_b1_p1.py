@@ -489,26 +489,26 @@ def seed_lesson_1_part_1():
         (
             lesson_id, "nghe",
             "Câu 27 [Nghe từ vựng có Umlaut]: Bấm nút Nghe và gõ lại chính xác danh từ tiếng Đức bạn nghe được (Gợi ý: Trường đại học):",
-            None, "Universität / Universitaet", "Từ phát âm là 'Universität'.", 20,
-            json.dumps({"audio_text": "Universität"})
+            None, "Universität / Universitaet", "Từ phát âm là 'Universität' (Trường đại học).", 20,
+            json.dumps({"audio_text": "Universität", "translation": "Trường đại học"}, ensure_ascii=False)
         ),
         (
             lesson_id, "nghe",
             "Câu 28 [Nghe từ vựng]: Bấm nút Nghe và gõ lại lời chào tạm biệt thân mật trong tiếng Đức:",
             None, "Tschüss / Tschuess", "Từ phát âm là 'Tschüss' [tʃʏs] (Tạm biệt).", 20,
-            json.dumps({"audio_text": "Tschüss"})
+            json.dumps({"audio_text": "Tschüss", "translation": "Tạm biệt"}, ensure_ascii=False)
         ),
         (
             lesson_id, "nghe",
             "Câu 29 [Nghe câu giao tiếp]: Nghe câu hỏi và gõ lại chính xác bằng tiếng Đức:",
             None, "Woher kommen Sie? / Woher kommen Sie", "Câu hỏi: 'Woher kommen Sie?' (Ngài đến từ đâu?).", 20,
-            json.dumps({"audio_text": "Woher kommen Sie?"})
+            json.dumps({"audio_text": "Woher kommen Sie?", "translation": "Ngài đến từ đâu?"}, ensure_ascii=False)
         ),
         (
             lesson_id, "nghe",
             "Câu 30 [Nghe câu giới thiệu]: Nghe câu tự giới thiệu và gõ lại chính xác bằng tiếng Đức:",
             None, "Mein Name ist Anna. / Mein Name ist Anna / Ich heiße Anna. / Ich bin Anna.", "Câu nói: 'Mein Name ist Anna.' (Tên tôi là Anna.)", 20,
-            json.dumps({"audio_text": "Mein Name ist Anna."})
+            json.dumps({"audio_text": "Mein Name ist Anna.", "translation": "Tên tôi là Anna."}, ensure_ascii=False)
         ),
         (
             lesson_id, "nghe",

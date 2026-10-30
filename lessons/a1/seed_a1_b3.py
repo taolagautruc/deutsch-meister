@@ -1150,16 +1150,16 @@ def seed_lesson_3():
             "Das Brandenburger Tor ist in Berlin.",
             "Âm thanh phát âm: 'Das Brandenburger Tor ist in Berlin.' (Cổng Brandenburg ở Berlin).",
             20,
-            json.dumps({"audio_text": "Das Brandenburger Tor ist in Berlin."})
+            json.dumps({"audio_text": "Das Brandenburger Tor ist in Berlin.", "translation": "Cổng Brandenburg ở Berlin."}, ensure_ascii=False)
         ),
         (
             lesson_id, "nghe",
             "Câu 30: Nghe âm thanh chuẩn 1.0x / 0.65x và nhập lại câu nói tiếng Đức:",
             None,
             "Gestern waren wir in Haiphong. Es war super!",
-            "Âm thanh phát âm: 'Gestern waren wir in Haiphong. Es war super!'",
+            "Âm thanh phát âm: 'Gestern waren wir in Haiphong. Es war super!' (Hôm qua chúng tôi đã ở Hải Phòng. Thật tuyệt vời!)",
             20,
-            json.dumps({"audio_text": "Gestern waren wir in Haiphong. Es war super!"})
+            json.dumps({"audio_text": "Gestern waren wir in Haiphong. Es war super!", "translation": "Hôm qua chúng tôi đã ở Hải Phòng. Thật tuyệt vời!"}, ensure_ascii=False)
         ),
         (
             lesson_id, "nghe",
@@ -1168,34 +1168,34 @@ def seed_lesson_3():
             "Athen ist in Griechenland.",
             "Âm thanh phát âm: 'Athen ist in Griechenland.' (Athens nằm ở Hy Lạp).",
             20,
-            json.dumps({"audio_text": "Athen ist in Griechenland."})
+            json.dumps({"audio_text": "Athen ist in Griechenland.", "translation": "Athens nằm ở Hy Lạp."}, ensure_ascii=False)
         ),
         (
             lesson_id, "nghe",
             "Câu 32: Nghe âm thanh chuẩn 1.0x / 0.65x và nhập lại câu nói tiếng Đức:",
             None,
             "Der Cat-Bi-Markt war sehr interessant.",
-            "Âm thanh phát âm: 'Der Cat-Bi-Markt war sehr interessant.'",
+            "Âm thanh phát âm: 'Der Cat-Bi-Markt war sehr interessant.' (Chợ Cát Bi đã rất thú vị.)",
             20,
-            json.dumps({"audio_text": "Der Cat-Bi-Markt war sehr interessant."})
+            json.dumps({"audio_text": "Der Cat-Bi-Markt war sehr interessant.", "translation": "Chợ Cát Bi đã rất thú vị."}, ensure_ascii=False)
         ),
         (
             lesson_id, "nghe",
             "Câu 33: Nghe âm thanh chuẩn 1.0x / 0.65x và nhập lại câu nói tiếng Đức:",
             None,
             "Er kommt aus der Türkei und spricht Türkisch.",
-            "Âm thanh phát âm: 'Er kommt aus der Türkei und spricht Türkisch.'",
+            "Âm thanh phát âm: 'Er kommt aus der Türkei und spricht Türkisch.' (Anh ấy đến từ Thổ Nhĩ Kỳ và nói tiếng Thổ Nhĩ Kỳ.)",
             20,
-            json.dumps({"audio_text": "Er kommt aus der Türkei und spricht Türkisch."})
+            json.dumps({"audio_text": "Er kommt aus der Türkei und spricht Türkisch.", "translation": "Anh ấy đến từ Thổ Nhĩ Kỳ và nói tiếng Thổ Nhĩ Kỳ."}, ensure_ascii=False)
         ),
         (
             lesson_id, "nghe",
             "Câu 34: Nghe âm thanh chuẩn 1.0x / 0.65x và nhập lại câu nói tiếng Đức:",
             None,
             "Wien liegt in Österreich. Man spricht dort Deutsch.",
-            "Âm thanh phát âm: 'Wien liegt in Österreich. Man spricht dort Deutsch.'",
+            "Âm thanh phát âm: 'Wien liegt in Österreich. Man spricht dort Deutsch.' (Viên nằm ở Áo. Người ta nói tiếng Đức ở đó.)",
             20,
-            json.dumps({"audio_text": "Wien liegt in Österreich. Man spricht dort Deutsch."})
+            json.dumps({"audio_text": "Wien liegt in Österreich. Man spricht dort Deutsch.", "translation": "Viên nằm ở Áo. Người ta nói tiếng Đức ở đó."}, ensure_ascii=False)
         ),
 
         # --- DẠNG 5: SẮP XẾP TỪ THÀNH CÂU (sap_xep) - ĐÚNG 5 CÂU (Câu 35 -> 39) ---
