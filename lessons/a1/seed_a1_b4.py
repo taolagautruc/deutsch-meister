@@ -666,7 +666,7 @@ def seed_lesson_4():
         (lesson_id, "Badezimmer", "das", "phòng tắm (Pl: die Badezimmer)", "Das Badezimmer hat ein Fenster. (Phòng tắm có một cửa sổ.)"),
         (lesson_id, "Arbeitszimmer", "das", "phòng làm việc (Pl: die Arbeitszimmer)", "Mein Arbeitszimmer ist klein, aber hell. (Phòng làm việc của tôi nhỏ nhưng sáng sủa.)"),
         (lesson_id, "Esszimmer", "das", "phòng ăn (Pl: die Esszimmer)", "Wir essen im Esszimmer. (Chúng tôi ăn cơm trong phòng ăn.)"),
-        (lesson_id, "Kinderzimmer", "das", "phòng trẻ em (Pl: die Kinderzimmer)", "Das Kinderzimmer ist groß. (Phòng của trẻ em rất rộng.)"),
+        (lesson_id, "Kinderzimmer", "das", "phòng trẻ em (Pl: die Kinderzimmer)", "Das Kinderzimmer ist groß. (Phòng trẻ em rộng.)"),
         (lesson_id, "Fenster", "das", "cửa sổ (Pl: die Fenster)", "Das Zimmer hat kein Fenster. (Căn phòng không có cửa sổ.)"),
         (lesson_id, "Wohnheim", "das", "ký túc xá (Pl: die Wohnheime)", "David wohnt im Studentenwohnheim. (David sống trong ký túc xá sinh viên.)"),
         (lesson_id, "Bad", "das", "phòng tắm (viết gọn)", "Im Bad gibt es einen Spiegel. (Trong phòng tắm có một cái gương.)"),
