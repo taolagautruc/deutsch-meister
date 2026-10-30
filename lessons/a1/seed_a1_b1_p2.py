@@ -28,7 +28,7 @@ def seed_lesson_1_part_2():
     # Xóa dữ liệu cũ của Bài 1 (P2) nếu đã có để cập nhật sạch sẽ
     cursor.execute("DELETE FROM lessons WHERE level_id = ? AND title LIKE 'Bài 1 (P2)%';", (a1_id,))
 
-    lesson_title = 'Bài 1 (P2): "Kaffee Oder Tee - Cà Phê Hoặc Trà"'
+    lesson_title = 'Bài 1 (P2): "Kaffee oder Tee - Cà Phê Hoặc Trà"'
 
     # =========================================================================
     # NỘI DUNG LÝ THUYẾT CHI TIẾT (6 MỤC CHUẨN ĐẶC TẢ KỸ THUẬT - KHÔNG LINK YOUTUBE)
@@ -1084,7 +1084,7 @@ def seed_lesson_1_part_2():
 
     conn.commit()
     conn.close()
-    print("✅ Đã khởi tạo thành công Bài 1 (P2): 'Kaffee Oder Tee - Cà Phê Hoặc Trà' với đầy đủ Lý thuyết (Không link YouTube) + 34 Từ vựng + ĐÚNG 50 Bài tập (10+10+8+6+5+4+7) có Random Đổi đề!")
+    print("✅ Đã khởi tạo thành công Bài 1 (P2): 'Kaffee oder Tee - Cà Phê Hoặc Trà' với đầy đủ Lý thuyết (Không link YouTube) + 34 Từ vựng + ĐÚNG 50 Bài tập (10+10+8+6+5+4+7) có Random Đổi đề!")
 
 if __name__ == "__main__":
     seed_lesson_1_part_2()
