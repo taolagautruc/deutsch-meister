@@ -999,45 +999,45 @@ def seed_lesson_4():
             "Câu 33 [Luyện Nghe]: Nghe và điền mạo từ còn thiếu trong câu: 'Oben gibt es ___ Balkon.'",
             None,
             "einen",
-            "Âm thanh phát âm 'einen' trong câu 'Oben gibt es einen Balkon.'",
+            "Âm thanh phát câu: 'Oben gibt es einen Balkon.' (Ở phía trên có một ban công.) → Điền mạo từ Akkusativ 'einen'.",
             20,
-            json.dumps({"audio_text": "Oben gibt es einen Balkon."})
+            json.dumps({"audio_text": "Oben gibt es einen Balkon.", "translation": "Ở phía trên có một ban công."}, ensure_ascii=False)
         ),
         (
             lesson_id, "nghe",
             "Câu 34 [Luyện Nghe]: Nghe và điền từ còn thiếu: 'Ich finde den Garten sehr ___.'",
             None,
             "schön",
-            "Âm thanh phát âm tính từ 'schön' trong câu 'Ich finde den Garten rất schön.'",
+            "Âm thanh phát câu: 'Ich finde den Garten sehr schön.' (Tôi thấy khu vườn rất đẹp.) → Tính từ còn thiếu là 'schön'.",
             20,
-            json.dumps({"audio_text": "Ich finde den Garten sehr schön."})
+            json.dumps({"audio_text": "Ich finde den Garten sehr schön.", "translation": "Tôi thấy khu vườn rất đẹp."}, ensure_ascii=False)
         ),
         (
             lesson_id, "nghe",
             "Câu 35 [Luyện Nghe]: Nghe và điền danh từ: 'Das Haus hat einen ___.'",
             None,
             "Flur",
-            "Âm thanh phát âm 'Flur' (hành lang) trong câu 'Das Haus hat einen Flur.'",
+            "Âm thanh phát câu: 'Das Haus hat einen Flur.' (Ngôi nhà có một hành lang.) → Danh từ còn thiếu là 'Flur'.",
             20,
-            json.dumps({"audio_text": "Das Haus hat einen Flur."})
+            json.dumps({"audio_text": "Das Haus hat einen Flur.", "translation": "Ngôi nhà có một hành lang."}, ensure_ascii=False)
         ),
         (
             lesson_id, "nghe",
             "Câu 36 [Luyện Nghe]: Nghe và điền mạo từ sở hữu: 'Sind das ___ Kinder, Maria und Lukas?'",
             None,
             "eure",
-            "Âm thanh phát âm 'eure' trong câu 'Sind das eure Kinder, Maria und Lukas?'",
+            "Âm thanh phát câu: 'Sind das eure Kinder, Maria und Lukas?' (Kia có phải các con của các bạn không, Maria và Lukas?) → Mạo từ sở hữu số nhiều là 'eure'.",
             20,
-            json.dumps({"audio_text": "Sind das eure Kinder, Maria und Lukas?"})
+            json.dumps({"audio_text": "Sind das eure Kinder, Maria und Lukas?", "translation": "Kia có phải các con của các bạn không, Maria và Lukas?"}, ensure_ascii=False)
         ),
         (
             lesson_id, "nghe",
             "Câu 37 [Luyện Nghe]: Nghe và viết lại câu miêu tả: 'Mein Wohnzimmer ist hell und modern.'",
             None,
             "Mein Wohnzimmer ist hell und modern. / Mein Wohnzimmer ist modern und hell.",
-            "Luyện nghe và chép lại trọn vẹn câu miêu tả phòng khách.",
+            "Âm thanh phát câu: 'Mein Wohnzimmer ist hell und modern.' (Phòng khách của tôi sáng sủa và hiện đại.)",
             20,
-            json.dumps({"audio_text": "Mein Wohnzimmer ist hell und modern."})
+            json.dumps({"audio_text": "Mein Wohnzimmer ist hell und modern.", "translation": "Phòng khách của tôi sáng sủa và hiện đại."}, ensure_ascii=False)
         ),
 
         # --- DẠNG 5: SẮP XẾP TỪ THÀNH CÂU (sap_xep) - ĐÚNG 4 CÂU (Câu 38 -> 41) ---

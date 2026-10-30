@@ -937,27 +937,82 @@
             }
         }
 
-        function getExerciseTranslation(ex, extra) {
-            if (extra && extra.translation) {
-                return extra.translation;
+        function hasVietnameseChars(str) {
+            return /[àáạảãâầấậẩẫăằắặẳẵèéẹẻẽêềếệểễìíịỉĩòóọỏõôồốộổỗơờớợởỡùúụủũưừứựửữỳýỵỷỹđ]/i.test(str || '');
+        }
+
+        function isInvalidTranslationString(str) {
+            if (!str || typeof str !== 'string') return true;
+            const trimmed = str.trim();
+            if (trimmed.length < 2) return true;
+            // Loại bỏ các câu suy luận ngữ pháp hoặc chỉ thị làm bài
+            if (/^(động từ|cụm từ|từ cần điền|đáp án|cần điền|chủ ngữ|ngôi|âm thanh phát|câu nghe được|điền|chọn|kết hợp|lưu ý|quy tắc)/i.test(trimmed)) {
+                return true;
             }
-            if (ex && ex.translation) {
-                return ex.translation;
+            return false;
+        }
+
+        function getExerciseTranslation(ex, extra) {
+            // 1. Kiểm tra extra.translation hoặc ex.translation
+            if (extra && extra.translation && typeof extra.translation === 'string' && extra.translation.trim()) {
+                const trans = extra.translation.trim();
+                if (!isInvalidTranslationString(trans)) return trans;
+            }
+            if (ex && ex.translation && typeof ex.translation === 'string' && ex.translation.trim()) {
+                const trans = ex.translation.trim();
+                if (!isInvalidTranslationString(trans)) return trans;
             }
             if (ex && ex.extra_data) {
                 try {
                     const parsed = typeof ex.extra_data === 'string' ? JSON.parse(ex.extra_data) : ex.extra_data;
-                    if (parsed && parsed.translation) return parsed.translation;
+                    if (parsed && parsed.translation && !isInvalidTranslationString(parsed.translation)) {
+                        return parsed.translation.trim();
+                    }
                 } catch (e) {}
             }
+
+            // 2. Nếu là dạng dịch Đức -> Việt: đáp án đúng chính là tiếng Việt
+            if (ex && ex.exercise_type === 'dich' && ex.question && /(?:đức\s*→\s*việt|sang tiếng việt)/i.test(ex.question)) {
+                if (ex.correct_answer) {
+                    const firstOpt = ex.correct_answer.split('/')[0].trim();
+                    if (hasVietnameseChars(firstOpt) && !isInvalidTranslationString(firstOpt)) return firstOpt;
+                }
+            }
+
+            // 3. Nếu là dạng dịch Việt -> Đức: câu tiếng Việt nằm trong dấu ngoặc kép của đề bài
+            if (ex && ex.exercise_type === 'dich' && ex.question && /(?:việt\s*→\s*đức|sang tiếng đức)/i.test(ex.question)) {
+                const matchVi = ex.question.match(/['"„]([^'"“]+)['"”]/);
+                if (matchVi && hasVietnameseChars(matchVi[1]) && !isInvalidTranslationString(matchVi[1])) {
+                    return matchVi[1].trim();
+                }
+            }
+
+            // 4. Nếu trong đề bài có "nghĩa là '...' / dịch là '...'"
             if (ex && ex.question) {
                 const matchVi = ex.question.match(/(?:nghĩa là|có nghĩa là|dịch là)[:\s]+['"„]([^'"“]+)['"”]/i);
-                if (matchVi) return matchVi[1];
+                if (matchVi && hasVietnameseChars(matchVi[1]) && !isInvalidTranslationString(matchVi[1])) {
+                    return matchVi[1].trim();
+                }
             }
+
+            // 5. Nếu trong giải thích có câu tiếng Việt trong ngoặc đơn đi liền sau câu tiếng Đức:
+            // Ví dụ: 'Was möchten Sie trinken?' (Quý khách muốn uống gì ạ?)
             if (ex && ex.explanation) {
-                const matchExp = ex.explanation.match(/['"„][^'"”]+['"”]\s*(?:=|có nghĩa là|→|->)\s*([^.]+)/i);
-                if (matchExp && matchExp[1] && matchExp[1].trim().length > 3) return matchExp[1].trim();
+                const matchParen = ex.explanation.match(/['"„][^'"”]+['"”]\s*\(([^()]+)\)/);
+                if (matchParen && hasVietnameseChars(matchParen[1]) && !isInvalidTranslationString(matchParen[1])) {
+                    const parenText = matchParen[1].trim();
+                    if (!/^(chú ý|lưu ý|ngôi|dạng|tương đương)/i.test(parenText)) {
+                        return parenText;
+                    }
+                }
+
+                // Ví dụ: 'Tee' = trà
+                const matchEq = ex.explanation.match(/['"„][^'"”]+['"”]\s*(?:=|có nghĩa là)[:\s]*['"„]?([^.'"]*[àáạảãâầấậẩẫăằắặẳẵèéẹẻẽêềếệểễìíịỉĩòóọỏõôồốộổỗơờớợởỡùúụủũưừứựửữỳýỵỷỹđ][^.('"]*)/i);
+                if (matchEq && hasVietnameseChars(matchEq[1]) && !isInvalidTranslationString(matchEq[1])) {
+                    return matchEq[1].trim();
+                }
             }
+
             return "";
         }
 
