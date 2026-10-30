@@ -58,8 +58,8 @@ const GERMAN_LEXIKON_DB = [
         indefinite: "ein Becher", negation: "kein Becher",
         meaning: "cái cốc / cái ly (không quai)", category: "Đồ dùng lớp học",
         rule: "Đuôi -er mang giống đực (der), số nhiều giữ nguyên (die Becher).",
-        example: "Ist das ein Becher? – Nein, das ist kein Becher. Das ist ein Papier.",
-        example_vi: "Đây có phải là cái cốc không? – Không, đó không phải cái cốc. Đó là một tờ giấy."
+        example: "Ist das ein Becher? – Nein, das ist kein Becher. Das ist ein Heft.",
+        example_vi: "Đây có phải là cái cốc không? – Không, đó không phải là cái cốc. Đó là một quyển vở."
     },
 
     // --- 2. ĐỒ DÙNG LỚP HỌC (GIỐNG CÁI - DIE) ---
@@ -100,19 +100,28 @@ const GERMAN_LEXIKON_DB = [
     {
         word: "Papier", article: "das", gender: "das", plural: "die Papiere",
         indefinite: "ein Papier", negation: "kein Papier",
-        meaning: "tờ giấy / giấy", category: "Đồ dùng lớp học",
-        rule: "Giống trung (das), số nhiều thêm -e (die Papiere).",
-        example: "Ist das ein Becher? – Nein, das ist ein Papier.",
-        example_vi: "Đây có phải là cái cốc không? – Không, đó là một tờ giấy."
+        meaning: "giấy / tờ giấy (ein Blatt Papier)", category: "Đồ dùng lớp học",
+        rule: "Giống trung (das); là danh từ chất liệu không đếm được (một tờ giấy: ein Blatt Papier). Số nhiều die Papiere: giấy tờ tùy thân.",
+        example: "Brauchst du Papier? – Ja, ich brauche ein Blatt Papier.",
+        example_vi: "Bạn có cần giấy không? – Vâng, tôi cần một tờ giấy."
     },
     {
         word: "Heft", article: "das", gender: "das", plural: "die Hefte",
         indefinite: "ein Heft", negation: "kein Heft",
         meaning: "quyển vở", category: "Đồ dùng lớp học",
         rule: "Giống trung (das), số nhiều thêm -e (die Hefte).",
-        example: "Können Sie 'das Heft' bitte buchstabieren? – H - E - F - T.",
-        example_vi: "Ngài có thể đánh vần từ 'das Heft' được không? – H - E - F - T."
+        example: "Können Sie 'Heft' bitte buchstabieren? – H - E - F - T.",
+        example_vi: "Ngài có thể vui lòng đánh vần từ 'Heft' được không? – H - E - F - T."
     },
+    {
+        word: "Mäppchen", article: "das", gender: "das", plural: "die Mäppchen",
+        indefinite: "ein Mäppchen", negation: "kein Mäppchen",
+        meaning: "hộp bút / túi đựng bút", category: "Đồ dùng lớp học",
+        rule: "Đuôi thu nhỏ -chen luôn mang giống trung (das) 100%, số nhiều giữ nguyên dạng.",
+        example: "Ist das dein Mäppchen? – Ja, im Mäppchen sind ein Kuli und ein Bleistift.",
+        example_vi: "Đây là hộp bút của bạn à? – Vâng, trong hộp bút có một cây bút bi và một cây bút chì."
+    },
+
     {
         word: "Buch", article: "das", gender: "das", plural: "die Bücher",
         indefinite: "ein Buch", negation: "kein Buch",
@@ -202,7 +211,7 @@ const GERMAN_LEXIKON_DB = [
         indefinite: "ein Praktikant", negation: "kein Praktikant",
         meaning: "nam thực tập sinh", category: "Quy tắc hậu tố giống",
         rule: "Hậu tố -ant luôn mang giống đực (der).",
-        example: "Er ist ein Praktikant bei der Post.",
+        example: "Er ist Praktikant bei der Post.",
         example_vi: "Anh ấy là một thực tập sinh tại bưu điện."
     },
     {
@@ -210,7 +219,7 @@ const GERMAN_LEXIKON_DB = [
         indefinite: "ein Student", negation: "kein Student",
         meaning: "nam sinh viên", category: "Quy tắc hậu tố giống",
         rule: "Hậu tố -ent luôn mang giống đực (der). Nữ sinh viên là die Studentin.",
-        example: "David ist ein Student aus den USA.",
+        example: "David ist Student aus den USA.",
         example_vi: "David là một sinh viên đến từ Mỹ."
     },
     {
@@ -258,7 +267,7 @@ const GERMAN_LEXIKON_DB = [
         indefinite: "eine Freundschaft", negation: "keine Freundschaft",
         meaning: "tình bạn", category: "Quy tắc hậu tố giống",
         rule: "Hậu tố -schaft luôn mang giống cái (die) 100%.",
-        example: "Die Freundschaft von Anna und Sophie ist toll.",
+        example: "Die Freundschaft zwischen Anna und Sophie ist toll.",
         example_vi: "Tình bạn của Anna và Sophie thật tuyệt vời."
     },
     {
@@ -306,7 +315,7 @@ const GERMAN_LEXIKON_DB = [
         indefinite: "eine Erlaubnis", negation: "keine Erlaubnis",
         meaning: "sự cho phép, giấy phép (NGOẠI LỆ)", category: "Quy tắc hậu tố giống",
         rule: "⚠️ NGOẠI LỆ QUAN TRỌNG: Dù kết thúc bằng -nis nhưng 'die Erlaubnis' mang giống cái!",
-        example: "Hast du eine Erlaubnis von der Lehrerin?",
+        example: "Hast du die Erlaubnis von der Lehrerin?",
         example_vi: "Bạn có sự cho phép của cô giáo chưa?"
     },
     // --- 4. BÀI 3: DANH LAM THẮNG CẢNH CHÂU ÂU (SEHENSWÜRDIGKEITEN) ---

@@ -203,9 +203,11 @@
                         <div class="flex flex-wrap items-center justify-between gap-2">
                             <h3 class="font-extrabold text-lg text-slate-900">Từ Vựng & Mẫu Câu Trọng Tâm (Có Phát Âm)</h3>
                             <div class="flex flex-wrap gap-2 text-xs font-bold">
-                                <span class="px-2.5 py-1 rounded-lg bg-blue-50 text-blue-700 border border-blue-200">der (Giống đực)</span>
-                                <span class="px-2.5 py-1 rounded-lg bg-rose-50 text-rose-700 border border-rose-200">die (Giống cái)</span>
-                                <span class="px-2.5 py-1 rounded-lg bg-emerald-50 text-emerald-700 border border-emerald-200">das (Giống trung)</span>
+                                <button data-filter="all" onclick="filterVocab('all')" class="vocab-filter-btn px-2.5 py-1 rounded-lg bg-indigo-600 text-white transition shadow-xs cursor-pointer">Tất cả</button>
+                                <button data-filter="der" onclick="filterVocab('der')" class="vocab-filter-btn px-2.5 py-1 rounded-lg bg-blue-50 text-blue-700 border border-blue-200 hover:bg-blue-100 transition cursor-pointer">der (Giống đực)</button>
+                                <button data-filter="die" onclick="filterVocab('die')" class="vocab-filter-btn px-2.5 py-1 rounded-lg bg-rose-50 text-rose-700 border border-rose-200 hover:bg-rose-100 transition cursor-pointer">die (Giống cái)</button>
+                                <button data-filter="das" onclick="filterVocab('das')" class="vocab-filter-btn px-2.5 py-1 rounded-lg bg-emerald-50 text-emerald-700 border border-emerald-200 hover:bg-emerald-100 transition cursor-pointer">das (Giống trung)</button>
+                                <button data-filter="verb" onclick="filterVocab('verb')" class="vocab-filter-btn px-2.5 py-1 rounded-lg bg-purple-50 text-purple-700 border border-purple-200 hover:bg-purple-100 transition cursor-pointer">Verb (Động từ)</button>
                             </div>
                         </div>
                         <div id="vocab-grid" class="grid grid-cols-1 md:grid-cols-3 gap-4"></div>
@@ -644,6 +646,89 @@
             switchMainView('workspace');
         }
 
+        let currentVocabFilter = 'all';
+
+        function filterVocab(filter) {
+            currentVocabFilter = filter;
+            renderVocabularies();
+        }
+
+        function renderVocabularies() {
+            const vocabGrid = document.getElementById('vocab-grid');
+            if (!vocabGrid || !currentLesson || !currentLesson.vocabularies) return;
+
+            const list = currentLesson.vocabularies.filter(v => {
+                if (currentVocabFilter === 'all') return true;
+                if (currentVocabFilter === 'der') return v.article === 'der';
+                if (currentVocabFilter === 'die') return v.article === 'die';
+                if (currentVocabFilter === 'das') return v.article === 'das';
+                if (currentVocabFilter === 'verb') return v.article === 'Verb' || v.article === 'Modalverb' || v.article === 'Động từ';
+                return true;
+            });
+
+            vocabGrid.innerHTML = list.map(v => {
+                let cardStyle = "bg-amber-50/40 border-amber-200";
+                let badgeStyle = "bg-amber-600 text-white";
+                if (v.article === 'der') {
+                    cardStyle = "bg-blue-50/50 border-blue-200";
+                    badgeStyle = "bg-blue-600 text-white";
+                } else if (v.article === 'die') {
+                    cardStyle = "bg-rose-50/50 border-rose-200";
+                    badgeStyle = "bg-rose-600 text-white";
+                } else if (v.article === 'das') {
+                    cardStyle = "bg-emerald-50/50 border-emerald-200";
+                    badgeStyle = "bg-emerald-600 text-white";
+                } else if (v.article === 'Verb' || v.article === 'Modalverb' || v.article === 'Động từ') {
+                    cardStyle = "bg-purple-50/50 border-purple-200";
+                    badgeStyle = "bg-purple-600 text-white";
+                }
+
+                const fullWord = (v.article === 'der' || v.article === 'die' || v.article === 'das')
+                    ? `${v.article} ${v.german_word}`
+                    : v.german_word;
+                const safeSpeak = fullWord.replace(/'/g, "\\'");
+
+                return `
+                    <div class="p-4 rounded-2xl border ${cardStyle} flex flex-col justify-between space-y-3">
+                        <div>
+                            <div class="flex items-center justify-between">
+                                <span class="px-2.5 py-0.5 rounded-lg text-xs font-extrabold ${badgeStyle}">${v.article || 'Từ'}</span>
+                                <button onclick="speakGerman('${safeSpeak}')" class="text-xs font-bold px-2.5 py-1 rounded-lg bg-white hover:bg-indigo-50 text-indigo-600 border border-slate-200 shadow-sm shrink-0 whitespace-nowrap cursor-pointer">
+                                    🔊 Phát âm
+                                </button>
+                            </div>
+                            <h4 class="text-lg font-extrabold text-slate-900 mt-2">${fullWord}</h4>
+                            <p class="text-sm text-indigo-600 font-bold">${v.vietnamese_meaning}</p>
+                        </div>
+                        <p class="text-xs text-slate-500 italic border-t border-slate-200/70 pt-2">"${v.example_sentence}"</p>
+                    </div>
+                `;
+            }).join('');
+
+            // Cập nhật trạng thái active cho các nút bộ lọc
+            const filterBtns = document.querySelectorAll('.vocab-filter-btn');
+            filterBtns.forEach(btn => {
+                const f = btn.getAttribute('data-filter');
+                if (f === currentVocabFilter) {
+                    btn.className = "vocab-filter-btn px-2.5 py-1 rounded-lg text-xs font-bold transition shadow-xs cursor-pointer " + (
+                        f === 'der' ? 'bg-blue-600 text-white' :
+                        f === 'die' ? 'bg-rose-600 text-white' :
+                        f === 'das' ? 'bg-emerald-600 text-white' :
+                        f === 'verb' ? 'bg-purple-600 text-white' :
+                        'bg-indigo-600 text-white'
+                    );
+                } else {
+                    btn.className = "vocab-filter-btn px-2.5 py-1 rounded-lg text-xs font-bold transition cursor-pointer " + (
+                        f === 'der' ? 'bg-blue-50 text-blue-700 border border-blue-200 hover:bg-blue-100' :
+                        f === 'die' ? 'bg-rose-50 text-rose-700 border border-rose-200 hover:bg-rose-100' :
+                        f === 'das' ? 'bg-emerald-50 text-emerald-700 border border-emerald-200 hover:bg-emerald-100' :
+                        f === 'verb' ? 'bg-purple-50 text-purple-700 border border-purple-200 hover:bg-purple-100' :
+                        'bg-slate-100 text-slate-700 hover:bg-slate-200'
+                    );
+                }
+            });
+        }
+
         function selectLesson(index) {
             currentLesson = currentLevelData.lessons[index];
             document.getElementById('current-lesson-title').innerText = currentLesson.title;
@@ -667,42 +752,8 @@
                 });
             }
 
-            const vocabGrid = document.getElementById('vocab-grid');
-            vocabGrid.innerHTML = currentLesson.vocabularies.map(v => {
-                let cardStyle = "bg-amber-50/40 border-amber-200";
-                let badgeStyle = "bg-amber-600 text-white";
-                if (v.article === 'der') {
-                    cardStyle = "bg-blue-50/50 border-blue-200";
-                    badgeStyle = "bg-blue-600 text-white";
-                } else if (v.article === 'die') {
-                    cardStyle = "bg-rose-50/50 border-rose-200";
-                    badgeStyle = "bg-rose-600 text-white";
-                } else if (v.article === 'das') {
-                    cardStyle = "bg-emerald-50/50 border-emerald-200";
-                    badgeStyle = "bg-emerald-600 text-white";
-                }
-
-                const fullWord = (v.article === 'der' || v.article === 'die' || v.article === 'das')
-                    ? `${v.article} ${v.german_word}`
-                    : v.german_word;
-                const safeSpeak = fullWord.replace(/'/g, "\\'");
-
-                return `
-                    <div class="p-4 rounded-2xl border ${cardStyle} flex flex-col justify-between space-y-3">
-                        <div>
-                            <div class="flex items-center justify-between">
-                                <span class="px-2.5 py-0.5 rounded-lg text-xs font-extrabold ${badgeStyle}">${v.article || 'Từ'}</span>
-                                <button onclick="speakGerman('${safeSpeak}')" class="text-xs font-bold px-2.5 py-1 rounded-lg bg-white hover:bg-indigo-50 text-indigo-600 border border-slate-200 shadow-sm">
-                                    🔊 Phát âm
-                                </button>
-                            </div>
-                            <h4 class="text-lg font-extrabold text-slate-900 mt-2">${fullWord}</h4>
-                            <p class="text-sm text-indigo-600 font-bold">${v.vietnamese_meaning}</p>
-                        </div>
-                        <p class="text-xs text-slate-500 italic border-t border-slate-200/70 pt-2">"${v.example_sentence}"</p>
-                    </div>
-                `;
-            }).join('');
+            currentVocabFilter = 'all';
+            renderVocabularies();
 
             currentLesson.allRenderExercises = (currentLesson.exercises || []).map(ex => {
                 const copy = { ...ex };
