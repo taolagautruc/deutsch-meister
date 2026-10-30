@@ -303,7 +303,9 @@ def seed_lesson_1_part_2():
                         <div>ich <b>miete</b> | <b>arbeite</b></div>
                         <div>du <b class="text-emerald-700">mietest</b> | <b class="text-emerald-700">arbeitest</b> <span class="text-slate-400 font-sans">(thêm -e-)</span></div>
                         <div>er/sie/es <b class="text-emerald-700">mietet</b> | <b class="text-emerald-700">arbeitet</b></div>
-                        <div>wir <b>mieten</b> | ihr <b class="text-emerald-700">mietet</b> | sie/Sie <b>mieten</b></div>
+                        <div>wir <b>mieten</b> | <b>arbeiten</b></div>
+                        <div>ihr <b class="text-emerald-700">mietet</b> | <b class="text-emerald-700">arbeitet</b> <span class="text-slate-400 font-sans">(thêm -e-)</span></div>
+                        <div>sie/Sie <b>mieten</b> | <b>arbeiten</b></div>
                     </div>
                 </div>
             </div>
