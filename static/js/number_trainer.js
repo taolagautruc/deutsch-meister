@@ -552,6 +552,8 @@ function generateNewNumberData(ex) {
         ex.question = `[Số Nhiều Danh Từ (Random)]: Hãy viết dạng số nhiều (kèm mạo từ 'die') của danh từ '${chosenItem.article} ${chosenItem.word}':`;
         ex.correct_answer = chosenItem.plural;
         ex.explanation = `'${chosenItem.article} ${chosenItem.word}' khi chuyển sang số nhiều là '${chosenItem.plural}'. ${chosenItem.rule || ''}`;
+        extra.translation = `'${chosenItem.plural}' = những ${chosenItem.meaning || chosenItem.word}`;
+        ex.extra_data = JSON.stringify(extra);
         return ex;
     }
 
@@ -583,6 +585,8 @@ function generateNewNumberData(ex) {
             ex.correct_answer = chosen.noun;
             ex.explanation = `'${chosen.city}' nằm ở ${chosen.vi} của ${chosen.country} → Cụm giới từ là '${chosen.noun} von ${chosen.country}'.`;
         }
+        extra.translation = `${chosen.city} nằm ở ${chosen.vi} của ${chosen.country}.`;
+        ex.extra_data = JSON.stringify(extra);
         return ex;
     }
 
