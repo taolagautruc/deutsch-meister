@@ -387,51 +387,42 @@ def seed_lesson_2():
     # NẠP TỪ VỰNG BÀI 2 (36 TỪ CHUẨN ĐỒ DÙNG LỚP HỌC, ĐỘNG TỪ & HẬU TỐ)
     # =========================================================================
     vocabularies = [
-        # Đồ dùng lớp học (der)
-        (lesson_id, "Tisch", "der", "cái bàn", "Ist das ein Tisch? – Ja, das ist der Tisch im Kursraum."),
-        (lesson_id, "Stuhl", "der", "cái ghế", "Das ist kein Tisch, das ist ein Stuhl."),
-        (lesson_id, "Füller", "der", "bút mực / bút máy", "Ist das ein Füller? – Ja, das ist der Füller von Marc."),
-        (lesson_id, "Kuli", "der", "bút bi (Kugelschreiber)", "Ist das ein Kuli? – Ja, das ist der Kuli von Anna."),
-        (lesson_id, "Bleistift", "der", "bút chì", "Ich habe keinen Kuli, aber ich habe einen Bleistift."),
-        (lesson_id, "Radiergummi", "der", "cục tẩy / gôm", "Wie heißt das auf Deutsch? – Das ist ein Radiergummi."),
-        (lesson_id, "Becher", "der", "cái cốc / cái ly (không quai)", "Ist das ein Becher? – Nein, das ist kein Becher."),
-
-        # Đồ dùng lớp học (die)
-        (lesson_id, "Tafel", "die", "cái bảng đen", "Die Lehrerin schreibt an die Tafel."),
-        (lesson_id, "Brille", "die", "cái kính mắt", "Ist das eine Brille? – Nein, das ist keine Brille."),
-        (lesson_id, "Tasche", "die", "túi xách / cặp sách", "Ja, das ist die Tasche von Anna."),
-        (lesson_id, "Landkarte", "die", "bản đồ", "Das ist keine Brille, das ist eine Landkarte."),
-
-        # Đồ dùng lớp học (das)
-        (lesson_id, "Papier", "das", "tờ giấy", "Ist das ein Becher? – Nein, das ist ein Papier."),
-        (lesson_id, "Heft", "das", "quyển vở", "Können Sie 'das Heft' bitte buchstabieren? – H - E - F - T."),
-        (lesson_id, "Buch", "das", "quyển sách", "Ist das ein Buch? – Ja, das ist das Buch von Frau Schiller."),
-        (lesson_id, "Wörterbuch", "das", "quyển từ điển", "Das ist kein Heft, das ist ein Wörterbuch."),
-        (lesson_id, "Handy", "das", "điện thoại di động", "Ist das ein Handy? – Ja, das ist das Handy von David."),
-        (lesson_id, "Whiteboard", "das", "bảng trắng", "Im Deutschkurs haben wir eine Tafel und ein Whiteboard."),
-        (lesson_id, "Brötchen", "das", "bánh mì nhỏ", "Ich esse ein Brötchen und trinke einen Kaffee."),
-
-        # Động từ lớp học
-        (lesson_id, "verstehen", "Verb", "hiểu, nắm bắt được", "Das verstehe ich nicht. Können Sie das bitte erklären?"),
-        (lesson_id, "wiederholen", "Verb", "lặp lại, nhắc lại", "Das verstehe ich nicht. Können Sie das bitte wiederholen?"),
-        (lesson_id, "buchstabieren", "Verb", "đánh vần", "Das verstehe ich nicht. Können Sie das bitte buchstabieren?"),
-        (lesson_id, "anschreiben", "Verb", "viết lên bảng", "Das verstehe ich không -> Das verstehe ich nicht. Können Sie das bitte anschreiben?"),
-        (lesson_id, "können", "Modalverb", "có thể (nhờ vả / khả năng)", "Können Sie das bitte langsam wiederholen?"),
-        (lesson_id, "heißen", "Verb", "tên là, gọi là", "Wie heißt das auf Deutsch?"),
-
-        # Hậu tố nhận biết giống & ngoại lệ
-        (lesson_id, "Praktikant", "der", "nam thực tập sinh (-ant)", "Er ist ein Praktikant bei der Post."),
-        (lesson_id, "Student", "der", "nam sinh viên (-ent)", "David ist ein Student aus den USA."),
-        (lesson_id, "Teppich", "der", "tấm thảm (-ich)", "Ist das ein Teppich? – Ja, der Teppich ist sehr schön."),
-        (lesson_id, "Polizist", "der", "nam cảnh sát (-ist)", "Mein Freund arbeitet als Polizist in Berlin."),
-        (lesson_id, "Krankheit", "die", "căn bệnh (-heit)", "Das ist keine schlimme Krankheit."),
-        (lesson_id, "Möglichkeit", "die", "khả năng / cơ hội (-keit)", "Das ist eine gute Möglichkeit für uns."),
-        (lesson_id, "Freundschaft", "die", "tình bạn (-schaft)", "Die Freundschaft von Anna und Sophie ist toll."),
-        (lesson_id, "Kleidung", "die", "quần áo, trang phục (-ung)", "Die Kleidung aus Italien ist sehr modern."),
-        (lesson_id, "Dokument", "das", "tài liệu (-ment)", "Ist das ein Dokument? – Ja, das ist das Dokument von Herr Nguyen."),
-        (lesson_id, "Moment", "der", "khoảnh khắc, giây lát (NGOẠI LỆ -ment)", "Einen Moment, bitte! Ich schreibe das Wort an."),
-        (lesson_id, "Ergebnis", "das", "kết quả (-nis)", "Das Ergebnis im Deutschkurs ist super."),
-        (lesson_id, "Erlaubnis", "die", "sự cho phép (NGOẠI LỆ -nis)", "Hast du eine Erlaubnis von der Lehrerin?")
+        (lesson_id, "Tisch", "der", "cái bàn", "Ist das ein Tisch? – Ja, das ist der Tisch im Kursraum. (Đây có phải là cái bàn không? – Vâng, đó là cái bàn trong phòng học.)"),
+        (lesson_id, "Stuhl", "der", "cái ghế", "Das ist kein Tisch, das ist ein Stuhl. (Đó không phải là cái bàn, đó là một cái ghế.)"),
+        (lesson_id, "Füller", "der", "bút mực / bút máy", "Ist das ein Füller? – Ja, das ist der Füller von Marc. (Đây có phải bút mực không? – Vâng, đó là bút mực của Marc.)"),
+        (lesson_id, "Kuli", "der", "bút bi (Kugelschreiber)", "Ist das ein Kuli? – Ja, das ist der Kuli von Anna. (Đây có phải bút bi không? – Vâng, đó là bút bi của Anna.)"),
+        (lesson_id, "Bleistift", "der", "bút chì", "Ich habe keinen Kuli, aber ich habe einen Bleistift. (Tôi không có bút bi, nhưng tôi có một cây bút chì.)"),
+        (lesson_id, "Radiergummi", "der", "cục tẩy / gôm", "Wie heißt das auf Deutsch? – Das ist ein Radiergummi. (Cái này tiếng Đức gọi là gì? – Đó là một cục tẩy.)"),
+        (lesson_id, "Becher", "der", "cái cốc / cái ly (không quai)", "Ist das ein Becher? – Nein, das ist kein Becher. (Đây có phải là cái cốc không? – Không, đó không phải là cái cốc.)"),
+        (lesson_id, "Tafel", "die", "cái bảng đen", "Die Lehrerin schreibt an die Tafel. (Cô giáo viết lên bảng.)"),
+        (lesson_id, "Brille", "die", "cái kính mắt", "Ist das eine Brille? – Nein, das ist keine Brille. (Đây có phải là chiếc kính mắt không? – Không, đó không phải là kính mắt.)"),
+        (lesson_id, "Tasche", "die", "túi xách / cặp sách", "Ja, das ist die Tasche von Anna. (Vâng, đó là chiếc túi xách của Anna.)"),
+        (lesson_id, "Landkarte", "die", "bản đồ", "Das ist keine Brille, das ist eine Landkarte. (Đó không phải là kính mắt, đó là một tấm bản đồ.)"),
+        (lesson_id, "Papier", "das", "tờ giấy", "Ist das ein Becher? – Nein, das ist ein Papier. (Đây có phải cái cốc không? – Không, đó là một tờ giấy.)"),
+        (lesson_id, "Heft", "das", "quyển vở", "Können Sie 'das Heft' bitte buchstabieren? – H - E - F - T. (Ngài có thể vui lòng đánh vần từ 'das Heft' được không? – H - E - F - T.)"),
+        (lesson_id, "Buch", "das", "quyển sách", "Ist das ein Buch? – Ja, das ist das Buch von Frau Schiller. (Đây có phải là quyển sách không? – Vâng, đó là cuốn sách của cô Schiller.)"),
+        (lesson_id, "Wörterbuch", "das", "quyển từ điển", "Das ist kein Heft, das ist ein Wörterbuch. (Đó không phải quyển vở, đó là một cuốn từ điển.)"),
+        (lesson_id, "Handy", "das", "điện thoại di động", "Ist das ein Handy? – Ja, das ist das Handy von David. (Đây có phải là điện thoại không? – Vâng, đó là điện thoại của David.)"),
+        (lesson_id, "Whiteboard", "das", "bảng trắng", "Im Deutschkurs haben wir eine Tafel und ein Whiteboard. (Trong lớp học tiếng Đức, chúng tôi có một bảng đen và một bảng trắng.)"),
+        (lesson_id, "Brötchen", "das", "bánh mì nhỏ", "Ich esse ein Brötchen und trinke einen Kaffee. (Tôi ăn một chiếc bánh mì nhỏ và uống một tách cà phê.)"),
+        (lesson_id, "verstehen", "Verb", "hiểu, nắm bắt được", "Das verstehe ich nicht. Können Sie das bitte erklären? (Tôi không hiểu điều đó. Ngài có thể vui lòng giải thích được không?)"),
+        (lesson_id, "wiederholen", "Verb", "lặp lại, nhắc lại", "Das verstehe ich nicht. Können Sie das bitte wiederholen? (Tôi không hiểu điều đó. Ngài có thể vui lòng nhắc lại được không?)"),
+        (lesson_id, "buchstabieren", "Verb", "đánh vần", "Das verstehe ich nicht. Können Sie das bitte buchstabieren? (Tôi không hiểu điều đó. Ngài có thể vui lòng đánh vần từ đó được không?)"),
+        (lesson_id, "anschreiben", "Verb", "viết lên bảng", "Das verstehe ich nicht. Können Sie das bitte anschreiben? (Tôi không hiểu điều đó. Ngài có thể vui lòng viết lên bảng được không?)"),
+        (lesson_id, "können", "Modalverb", "có thể (nhờ vả / khả năng)", "Können Sie das bitte langsam wiederholen? (Ngài có thể vui lòng nhắc lại chậm một chút được không?)"),
+        (lesson_id, "heißen", "Verb", "tên là, gọi là", "Wie heißt das auf Deutsch? (Cái này tiếng Đức gọi là gì?)"),
+        (lesson_id, "Praktikant", "der", "nam thực tập sinh (-ant)", "Er ist ein Praktikant bei der Post. (Anh ấy là một thực tập sinh ở bưu điện.)"),
+        (lesson_id, "Student", "der", "nam sinh viên (-ent)", "David ist ein Student aus den USA. (David là một nam sinh viên đến từ Mỹ.)"),
+        (lesson_id, "Teppich", "der", "tấm thảm (-ich)", "Ist das ein Teppich? – Ja, der Teppich ist sehr schön. (Đây có phải tấm thảm không? – Vâng, tấm thảm rất đẹp.)"),
+        (lesson_id, "Polizist", "der", "nam cảnh sát (-ist)", "Mein Freund arbeitet als Polizist in Berlin. (Bạn tôi làm việc với tư cách là cảnh sát ở Berlin.)"),
+        (lesson_id, "Krankheit", "die", "căn bệnh (-heit)", "Das ist keine schlimme Krankheit. (Đó không phải là một căn bệnh nghiêm trọng.)"),
+        (lesson_id, "Möglichkeit", "die", "khả năng / cơ hội (-keit)", "Das ist eine gute Möglichkeit für uns. (Đó là một cơ hội tốt cho chúng tôi.)"),
+        (lesson_id, "Freundschaft", "die", "tình bạn (-schaft)", "Die Freundschaft von Anna und Sophie ist toll. (Tình bạn giữa Anna và Sophie thật tuyệt vời.)"),
+        (lesson_id, "Kleidung", "die", "quần áo, trang phục (-ung)", "Die Kleidung aus Italien ist sehr modern. (Quần áo từ nước Ý rất hiện đại.)"),
+        (lesson_id, "Dokument", "das", "tài liệu (-ment)", "Ist das ein Dokument? – Ja, das ist das Dokument von Herr Nguyen. (Đây có phải tài liệu không? – Vâng, đó là tài liệu của ông Nguyễn.)"),
+        (lesson_id, "Moment", "der", "khoảnh khắc, giây lát (NGOẠI LỆ -ment)", "Einen Moment, bitte! Ich schreibe das Wort an. (Làm ơn đợi một lát! Tôi đang viết từ đó lên bảng.)"),
+        (lesson_id, "Ergebnis", "das", "kết quả (-nis)", "Das Ergebnis im Deutschkurs ist super. (Kết quả trong khóa học tiếng Đức rất tuyệt vời.)"),
+        (lesson_id, "Erlaubnis", "die", "sự cho phép (NGOẠI LỆ -nis)", "Hast du eine Erlaubnis von der Lehrerin? (Bạn có sự cho phép của cô giáo chưa?)")
     ]
 
     cursor.executemany("""
