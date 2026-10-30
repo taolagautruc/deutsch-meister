@@ -1061,15 +1061,15 @@ def seed_lesson_1_part_2():
             lesson_id, "viet",
             "Câu 49 [Rèn phản xạ Chia Động Từ (Random)]: Hãy chia động từ 'arbeiten' cho chủ ngữ 'du': 'du ___'",
             None, "arbeitest",
-            "Động từ 'arbeiten' ở ngôi 'du' được chia là 'arbeitest'.", 25,
-            json.dumps({"dynamic_conjugation": True, "verb": "arbeiten", "subject": "du"})
+            "Động từ 'arbeiten' ở ngôi 'du' được chia là 'arbeitest' (du arbeitest: Bạn làm việc).", 25,
+            json.dumps({"dynamic_conjugation": True, "verb": "arbeiten", "subject": "du", "translation": "Bạn làm việc."}, ensure_ascii=False)
         ),
         (
             lesson_id, "viet",
             "Câu 50 [Viết giá tiền Euro (Random)]: Hãy viết cách đọc giá tiền 3,99 € bằng chữ tiếng Đức (chấp nhận có hoặc không có chữ Cent):",
             None, "drei Euro neunundneunzig / 3,99 / 3,99 € / 3.99 / drei Euro neunundneunzig Cent",
             "3,99 € được viết là: 'drei Euro neunundneunzig'.", 30,
-            json.dumps({"dynamic_price": True, "dynamic_mode": "price_to_de", "euros": 3, "cents": 99})
+            json.dumps({"dynamic_price": True, "dynamic_mode": "price_to_de", "euros": 3, "cents": 99, "translation": "3,99 Euro."}, ensure_ascii=False)
         )
     ]
 
