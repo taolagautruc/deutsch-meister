@@ -584,7 +584,7 @@ const GERMAN_LEXIKON_DB = [
     {
         word: "Terrasse", article: "die", gender: "die", plural: "die Terrassen",
         indefinite: "eine Terrasse", negation: "keine Terrasse", akkusativ: "die / eine / keine Terrasse",
-        meaning: "sân hiên, sân thượng", category: "Nhà ở & Phòng ốc",
+        meaning: "sân hiên, hiên nhà", category: "Nhà ở & Phòng ốc",
         rule: "Đuôi -e mang giống cái (die), số nhiều thêm -n.",
         example: "Im Sommer sitzen wir oft auf der Terrasse.",
         example_vi: "Vào mùa hè chúng tôi hay ngồi ngoài sân hiên."
@@ -609,7 +609,7 @@ const GERMAN_LEXIKON_DB = [
         word: "Haus", article: "das", gender: "das", plural: "die Häuser",
         indefinite: "ein Haus", negation: "kein Haus", akkusativ: "das / ein / kein Haus",
         meaning: "ngôi nhà", category: "Nhà ở & Phòng ốc",
-        rule: "Số nhiều biến âm a -> ä và thêm đuôi -er (die Häuser). Giống trung ở Akkusativ giữ nguyên.",
+        rule: "Số nhiều biến âm au -> äu và thêm đuôi -er (die Häuser). Giống trung ở Akkusativ giữ nguyên.",
         example: "Wir haben ein Haus. Unser Haus ist sehr alt.",
         example_vi: "Chúng mình có một ngôi nhà. Nhà của chúng mình rất cũ."
     },
@@ -674,7 +674,7 @@ const GERMAN_LEXIKON_DB = [
         indefinite: "ein Arbeitszimmer", negation: "kein Arbeitszimmer", akkusativ: "das / ein / kein Arbeitszimmer",
         meaning: "phòng làm việc", category: "Nhà ở & Phòng ốc",
         rule: "Ghép die Arbeit + s + das Zimmer -> giống trung (das). Đại từ thay thế là Es.",
-        example: "Mein Arbeitszimmer ist klein, aber hell. Es hat einen Tisch và einen Stuhl.",
+        example: "Mein Arbeitszimmer ist klein, aber hell. Es hat einen Tisch und einen Stuhl.",
         example_vi: "Phòng làm việc của tôi nhỏ nhưng sáng. Nó có 1 bàn và 1 ghế."
     },
     {
@@ -740,7 +740,7 @@ const GERMAN_LEXIKON_DB = [
         indefinite: "eine Spüle", negation: "keine Spüle", akkusativ: "die / eine / keine Spüle",
         meaning: "bồn rửa bát", category: "Nội thất & Đồ đạc",
         rule: "Đuôi -e mang giống cái (die), số nhiều thêm -n.",
-        example: "Die Küche hat eine Spüle và einen Herd.",
+        example: "Die Küche hat eine Spüle und einen Herd.",
         example_vi: "Nhà bếp có một bồn rửa bát và một cái bếp."
     },
     {
@@ -764,8 +764,8 @@ const GERMAN_LEXIKON_DB = [
         indefinite: "ein Bücherregal", negation: "kein Bücherregal", akkusativ: "das / ein / kein Bücherregal",
         meaning: "giá sách, kệ sách", category: "Nội thất & Đồ đạc",
         rule: "Ghép die Bücher + das Regal -> lấy giống theo das Regal. Akkusativ giữ nguyên ein Bücherregal.",
-        example: "Es hat einen Fernseher und ein Bücherregal.",
-        example_vi: "Nó có 1 Tivi và 1 giá sách."
+        example: "Das Wohnzimmer hat einen Fernseher und ein Bücherregal.",
+        example_vi: "Phòng khách có 1 Tivi và 1 giá sách."
     }
 ];
 
