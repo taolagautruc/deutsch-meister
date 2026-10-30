@@ -16,6 +16,21 @@ def get_vn_today_str():
     """Trả về ngày hiện tại theo chuẩn YYYY-MM-DD theo múi giờ Việt Nam (UTC+7)"""
     return datetime.now(VN_TZ).strftime("%Y-%m-%d")
 
+def ensure_question_number(orig_question: str, new_question_body: str = None, fallback_index: int = None) -> str:
+    """
+    Bảo toàn và chuẩn hóa tiền tố 'Câu <số> ' cho mọi câu hỏi bài tập.
+    """
+    target = new_question_body if new_question_body is not None else orig_question
+    if not target:
+        return target or ""
+    src = orig_question.strip() if orig_question else ""
+    match = re.match(r"^(Câu\s+\d+\s*)", src, re.IGNORECASE)
+    prefix = match.group(1) if match else (f"Câu {fallback_index} " if fallback_index else "")
+    
+    if prefix and not re.match(r"^Câu\s+\d+", target.strip(), re.IGNORECASE):
+        return f"{prefix.strip()} {target.strip()}"
+    return target
+
 app = Flask(__name__)
 app.secret_key = os.environ.get("SECRET_KEY", "deutsch-meister-arena-2026-super-secret-key-120s")
 app.config['SESSION_COOKIE_HTTPONLY'] = True
@@ -119,13 +134,14 @@ def get_level_data(level_code):
         cursor.execute("SELECT * FROM exercises WHERE lesson_id = ? ORDER BY id;", (lesson["id"],))
         exercises = []
         import random
-        for ex in cursor.fetchall():
+        for idx, ex in enumerate(cursor.fetchall()):
             ex_dict = dict(ex)
             opts = json.loads(ex_dict["options_json"]) if ex_dict["options_json"] else []
             if opts and isinstance(opts, list) and len(opts) > 1:
                 opts = list(opts)
                 random.shuffle(opts)
             ex_dict["options"] = opts
+            ex_dict["question"] = ensure_question_number(ex_dict.get("question", ""), fallback_index=idx + 1)
             exercises.append(ex_dict)
         lesson["exercises"] = exercises
 

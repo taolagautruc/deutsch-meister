@@ -372,15 +372,41 @@ function checkGermanAnswerEquivalence(userAns, correctAns) {
 }
 
 /**
+ * Đảm bảo câu hỏi luôn bảo toàn tiền tố "Câu <số> "
+ * Nếu newQuestionBody chưa có tiền tố "Câu <số> ", trích xuất từ origQuestion hoặc dùng fallbackIndex
+ */
+function ensureQuestionNumber(origQuestion, newQuestionBody, fallbackIndex = null) {
+    const target = (newQuestionBody !== undefined && newQuestionBody !== null) ? newQuestionBody : origQuestion;
+    if (!target) return target || '';
+    const src = (origQuestion || '').trim();
+    const match = src.match(/^(Câu\s+\d+\s*)/i);
+    const prefix = match ? match[1] : (fallbackIndex != null ? `Câu ${fallbackIndex} ` : '');
+
+    const cleanTarget = target.trim();
+    if (prefix && !cleanTarget.match(/^Câu\s+\d+/i)) {
+        return `${prefix.trim()} ${cleanTarget}`;
+    }
+    return cleanTarget;
+}
+
+/**
  * Sinh đề ngẫu nhiên mới cho 1 câu hỏi cụ thể (Số đếm, Giá tiền Euro hoặc Chia động từ)
  */
-function generateNewNumberData(ex) {
+function generateNewNumberData(ex, fallbackIndex = null) {
     let extra = {};
     try {
         extra = typeof ex.extra_data === 'string' ? JSON.parse(ex.extra_data) : (ex.extra_data || {});
     } catch (e) {
         return ex;
     }
+
+    const origQuestion = ex.question || '';
+    const finalize = (item) => {
+        if (item && item.question) {
+            item.question = ensureQuestionNumber(origQuestion, item.question, fallbackIndex);
+        }
+        return item;
+    };
 
     // 1. Xử lý câu hỏi Giá tiền Euro (dynamic_price)
     if (extra.dynamic_price) {
@@ -406,7 +432,7 @@ function generateNewNumberData(ex) {
             ex.correct_answer = dePrice;
             ex.explanation = `Giá tiền ${formattedPrice} € viết bằng chữ tiếng Đức là: '${dePrice}' (hoặc kèm 'Cent').`;
         }
-        return ex;
+        return finalize(ex);
     }
 
     // 2. Xử lý câu hỏi Chia động từ theo ngôi (dynamic_conjugation)
@@ -456,7 +482,7 @@ function generateNewNumberData(ex) {
         extra.translation = `'${chosenSubject.label}' ${chosenVerb.meaning}: ${chosenSubject.pronoun} ${correctForm}`;
         ex.extra_data = JSON.stringify(extra);
         ex.translation = extra.translation;
-        return ex;
+        return finalize(ex);
     }
 
     // 3. Xử lý câu hỏi Mạo từ & Phủ định (dynamic_article_quiz)
@@ -496,7 +522,7 @@ function generateNewNumberData(ex) {
         extra.translation = `Không, đó không phải là một ${item1.meaning}. Đó là một ${item2.meaning}.`;
         ex.extra_data = JSON.stringify(extra);
         ex.translation = extra.translation;
-        return ex;
+        return finalize(ex);
     }
 
     // 4. Xử lý câu hỏi Sở hữu với Mạo từ xác định (dynamic_possessive_article)
@@ -530,7 +556,7 @@ function generateNewNumberData(ex) {
         extra.translation = `Vâng, đó là ${chosenItem.meaning} của ${chosenName}.`;
         ex.extra_data = JSON.stringify(extra);
         ex.translation = extra.translation;
-        return ex;
+        return finalize(ex);
     }
 
     // 5. Xử lý câu hỏi Số nhiều danh từ (dynamic_plural_quiz)
@@ -560,7 +586,7 @@ function generateNewNumberData(ex) {
         extra.translation = `'${chosenItem.plural}' = những ${chosenItem.meaning || chosenItem.word}`;
         ex.extra_data = JSON.stringify(extra);
         ex.translation = extra.translation;
-        return ex;
+        return finalize(ex);
     }
 
     // 6. Xử lý câu hỏi Phương hướng & Bản đồ (dynamic_direction_quiz - Bài 3)
@@ -607,7 +633,7 @@ function generateNewNumberData(ex) {
         extra.translation = `${chosen.city} nằm ở ${chosen.vi} của ${chosen.country}.`;
         ex.extra_data = JSON.stringify(extra);
         ex.translation = extra.translation;
-        return ex;
+        return finalize(ex);
     }
 
     // 7. Xử lý câu hỏi Ngữ pháp Quá khứ Präteritum & Giới từ (dynamic_landmark_quiz - Bài 3)
@@ -682,7 +708,7 @@ function generateNewNumberData(ex) {
         extra.translation = chosen.vi || chosen.expl;
         ex.extra_data = JSON.stringify(extra);
         ex.translation = extra.translation;
-        return ex;
+        return finalize(ex);
     }
 
     // 8. Xử lý câu hỏi Chia 'sein' ở Thì Präteritum (dynamic_praeteritum_quiz - Bài 3)
@@ -727,7 +753,7 @@ function generateNewNumberData(ex) {
         extra.translation = `${chosenTime.vi}, ${chosenSub.vi} đã ở ${chosenPlace.vi}.`;
         ex.extra_data = JSON.stringify(extra);
         ex.translation = extra.translation;
-        return ex;
+        return finalize(ex);
     }
 
     // 9. Xử lý câu hỏi Quốc gia & Ngôn ngữ (dynamic_country_language_quiz - Bài 3)
@@ -773,7 +799,7 @@ function generateNewNumberData(ex) {
         }
         ex.extra_data = JSON.stringify(extra);
         ex.translation = extra.translation;
-        return ex;
+        return finalize(ex);
     }
 
     // 10. Xử lý câu hỏi Chuyển đổi Câu hỏi W-Frage & Ja/Nein-Frage (dynamic_question_transform - Bài 3)
@@ -844,7 +870,7 @@ function generateNewNumberData(ex) {
         extra.translation = chosen.meaning;
         ex.extra_data = JSON.stringify(extra);
         ex.translation = extra.translation;
-        return ex;
+        return finalize(ex);
     }
 
     // 11. Xử lý câu hỏi Phân biệt Nominativ vs. Akkusativ (dynamic_nom_akk_quiz - Bài 4)
@@ -919,7 +945,7 @@ function generateNewNumberData(ex) {
         extra.translation = `${chosen.gender} ${chosen.word} = ${chosen.meaning}`;
         ex.extra_data = JSON.stringify(extra);
         ex.translation = extra.translation;
-        return ex;
+        return finalize(ex);
     }
 
     // 12. Xử lý câu hỏi Mạo từ sở hữu theo 9 Ngôi (dynamic_possessiv_quiz - Bài 4)
@@ -989,7 +1015,7 @@ function generateNewNumberData(ex) {
         extra.translation = `${noun.vi} của ${owner.label}`;
         ex.extra_data = JSON.stringify(extra);
         ex.translation = extra.translation;
-        return ex;
+        return finalize(ex);
     }
 
     // 13. Xử lý câu hỏi Tính từ Đối lập Miêu tả Nhà cửa (dynamic_adjective_antonym_quiz - Bài 4)
@@ -1027,7 +1053,7 @@ function generateNewNumberData(ex) {
         extra.translation = `'${sourceWord}' (${sourceVi}) >< '${targetWord}' (${targetVi})`;
         ex.extra_data = JSON.stringify(extra);
         ex.translation = extra.translation;
-        return ex;
+        return finalize(ex);
     }
 
     // 14. Xử lý câu hỏi Thay thế Đại từ Nhân xưng theo Giống (dynamic_pronoun_replacement_quiz - Bài 4)
@@ -1052,7 +1078,7 @@ function generateNewNumberData(ex) {
         extra.translation = `'${item.word}' (${item.gender}) → đại từ thay thế: '${item.pronoun}'`;
         ex.extra_data = JSON.stringify(extra);
         ex.translation = extra.translation;
-        return ex;
+        return finalize(ex);
     }
 
     // 15. Xử lý câu hỏi Dịch câu Miêu tả Phòng & Nội thất (dynamic_house_translation_quiz - Bài 4)
@@ -1107,10 +1133,10 @@ function generateNewNumberData(ex) {
         extra.translation = `${chosen.vi} → ${chosen.de}`;
         ex.extra_data = JSON.stringify(extra);
         ex.translation = extra.translation;
-        return ex;
+        return finalize(ex);
     }
 
-    if (!extra.dynamic_number && !extra.dynamic_mode) return ex;
+    if (!extra.dynamic_number && !extra.dynamic_mode) return finalize(ex);
 
     const mode = extra.dynamic_mode;
     const min = extra.min || 21;
@@ -1131,7 +1157,7 @@ function generateNewNumberData(ex) {
         }
 
         const options = Array.from(distractors).sort(() => Math.random() - 0.5);
-        ex.question = `Câu 10 [Random Đọc Số]: Cách viết tiếng Đức chính xác của số ${num} là gì?`;
+        ex.question = `[Random Đọc Số]: Cách viết tiếng Đức chính xác của số ${num} là gì?`;
         ex.options = options;
         ex.options_json = JSON.stringify(options);
         ex.correct_answer = correct;
@@ -1206,7 +1232,7 @@ function generateNewNumberData(ex) {
         ex.explanation = `Số ${num} trong tiếng Đức viết là: '${german}'.`;
     }
 
-    return ex;
+    return finalize(ex);
 }
 
 /**
@@ -1214,7 +1240,7 @@ function generateNewNumberData(ex) {
  */
 function randomizeAllNumberExercises(exercisesList) {
     if (!exercisesList || !Array.isArray(exercisesList)) return;
-    exercisesList.forEach(ex => {
+    exercisesList.forEach((ex, idx) => {
         let isDynamic = false;
         try {
             const extra = typeof ex.extra_data === 'string' ? JSON.parse(ex.extra_data) : (ex.extra_data || {});
@@ -1222,12 +1248,13 @@ function randomizeAllNumberExercises(exercisesList) {
         } catch (e) {}
 
         if (isDynamic) {
-            generateNewNumberData(ex);
+            generateNewNumberData(ex, idx + 1);
         }
     });
 }
 
 if (typeof window !== 'undefined') {
+    window.ensureQuestionNumber = ensureQuestionNumber;
     window.numberToGerman = numberToGerman;
     window.priceToGerman = priceToGerman;
     window.getRandomInt = getRandomInt;

@@ -676,17 +676,18 @@ def seed_lesson_1_part_2():
     """, vocabs)
 
     # Đoạn văn đọc hiểu dùng chung cho dạng Đọc hiểu
+    # THAY BẰNG CODE MỚI:
     passage_doc_1 = (
         "Marc: Woher kommst du?\n"
-        "Anna: Ich komme aus Brasilien. Das ist mein Freund, er kommt aus Russland.\n"
+        "Anna: Ich komme aus Brasilien. Das ist mein Freund Peter, er kommt aus Russland.\n"
         "Marc: Und wo wohnt ihr?\n"
         "Anna: Wir wohnen in Berlin. Wo arbeitest du?\n"
         "Marc: Ich arbeite bei der Post."
     )
 
     passage_doc_2 = (
-        "Anna: Hi, Anna und ich sind im Café Kafka. Wo bist du? Maria ist auch da. Kommst du auch?\n"
-        "Peter: Wo seid ihr? Ich bin im Deutschkurs. Die Lehrerin ist nett, sie ist aus den USA."
+        "Marc: Hi, Anna und ich sind im Café Kafka. Wo bist du? Maria ist auch da. Kommst du auch?\n"
+        "Peter: Ach, ihr seid im Café Kafka! Ich bin im Deutschkurs. Die Lehrerin ist nett, sie ist aus den USA."
     )
 
     passage_doc_3 = (
@@ -733,7 +734,7 @@ def seed_lesson_1_part_2():
             "Câu 4 [Chia động từ gốc -ß]: Ngôi 'du' của động từ 'heißen' (tên là) được chia chính xác là gì?",
             json.dumps(["heißt", "heißest", "heißen", "heißst"]),
             "heißt",
-            "Vì gốc 'heiß-' đã có âm gió -ß nên ngôi 'du' chỉ thêm đuôi -t: du heißt.", 15, None
+            "Vì gốc 'heiß-' kết thúc bằng âm xuýt -ß (/s/) nên ở ngôi 'du' ta chỉ thêm đuôi -t (không thêm -st): du heißt.", 15, None
         ),
         (
             lesson_id, "trac_nghiem",
@@ -754,14 +755,14 @@ def seed_lesson_1_part_2():
             "Câu 7 [Động từ biến âm]: Ngôi 'du' của động từ 'lesen' (đọc) chia dạng nào dưới đây?",
             json.dumps(["liest", "lesest", "leist", "lest"]),
             "liest",
-            "Động từ 'lesen' biến âm e → ie ở ngôi du và er/sie/es: du liest.", 15, None
+            "Động từ 'lesen' biến âm e → ie ở ngôi du và er/sie/es; đồng thời gốc 'les-' kết thúc bằng -s nên ngôi du chỉ thêm -t: du liest.", 15, None
         ),
         (
             lesson_id, "trac_nghiem",
             "Câu 8 [Động từ biến âm]: Ngôi 'er' của động từ 'nehmen' (chọn món/lấy) chia là gì?",
             json.dumps(["nimmt", "nehmt", "nimmst", "nahmt"]),
             "nimmt",
-            "Động từ 'nehmen' biến âm 'nehm-' thành 'nimm-' ở ngôi du (nimmst) và er/sie/es (nimmt).", 15, None
+            "Động từ 'nehmen' biến âm e → i, đồng thời bỏ 'h' và gấp đôi phụ âm 'm' ở ngôi du (nimmst) và er/sie/es (nimmt).", 15, None
         ),
         (
             lesson_id, "trac_nghiem",
@@ -807,7 +808,7 @@ def seed_lesson_1_part_2():
         ),
         (
             lesson_id, "dien_khuyet",
-            "Câu 15 [Điền khuyết kommen]: Điền dạng đúng của 'kommen': 'Das ist mein Freund, er ___ aus Russland.'",
+            "Câu 15 [Điền khuyết kommen]: Điền dạng đúng của 'kommen': 'Das ist mein Freund Peter, er ___ aus Russland.'",
             None, "kommt",
             "Chủ ngữ 'er' đi với động từ kommen thêm đuôi -t: 'kommt'.", 15, None
         ),
@@ -827,7 +828,7 @@ def seed_lesson_1_part_2():
             lesson_id, "dien_khuyet",
             "Câu 18 [Điền khuyết nehmen]: Điền dạng đúng của 'nehmen': 'Was ___ du? - Ich nehme Tee.'",
             None, "nimmst",
-            "Động từ biến âm 'nehmen' ở ngôi 'du' biến đổi thành 'nimmst'.", 15, None
+            "Động từ 'nehmen' ở ngôi 'du' biến âm e → i, bỏ 'h' và gấp đôi 'm' thành 'nimmst'.", 15, None
         ),
         (
             lesson_id, "dien_khuyet",
@@ -837,7 +838,7 @@ def seed_lesson_1_part_2():
         ),
         (
             lesson_id, "dien_khuyet",
-            "Câu 20 [Điền khuyết machen]: Điền dạng đúng của 'machen': 'Das ___ 3,99 Euro.'",
+            "Câu 20 [Điền khuyết machen]: Điền dạng đúng của 'machen': 'Das ___ 6,80 Euro.'",
             None, "macht",
             "Cấu trúc báo tổng giá tiền: 'Das macht + [Số tiền] + Euro'.", 15, None
         ),
@@ -866,14 +867,14 @@ def seed_lesson_1_part_2():
         (
             lesson_id, "dich",
             "Câu 24 [Dịch Việt → Đức]: Dịch câu sau sang tiếng Đức: 'Thanh toán chung hay riêng?'",
-            None, "Zusammen oder getrennt? / Zusammen hoặc getrennt, bitte? / Zusammen oder getrennt",
+            None, "Zusammen oder getrennt? / Zusammen oder getrennt, bitte? / Zusammen oder getrennt",
             "Câu hỏi quen thuộc của nhân viên phục vụ: Zusammen (chung) + oder (hay/hoặc) + getrennt (riêng)?", 20, None
         ),
         (
             lesson_id, "dich",
-            "Câu 25 [Dịch Việt → Đức]: Dịch câu sau sang tiếng Đức: 'Tổng cộng hết 3,99 Euro.'",
-            None, "Das macht 3,99 Euro. / Das macht 3,99 €. / Das macht 3.99 Euro. / Das kostet 3,99 Euro. / Das macht 3,99. / Das macht drei Euro neunundneunzig. / Das macht drei Euro neunundneunzig Cent. / Das kostet drei Euro neunundneunzig. / Das macht drei neunundneunzig.",
-            "Cấu trúc chuẩn: 'Das macht 3,99 Euro.'", 20, None
+            "Câu 25 [Dịch Việt → Đức]: Dịch câu sau sang tiếng Đức: 'Tổng cộng hết 6,80 Euro.'",
+            None, "Das macht 6,80 Euro. / Das macht 6,80 €. / Das macht 6.80 Euro. / Das kostet 6,80 Euro. / Das macht 6,80. / Das macht sechs Euro achtzig. / Das macht sechs Euro achtzig Cent. / Das kostet sechs Euro achtzig. / Das macht sechs achtzig.",
+            "Cấu trúc chuẩn khi nhân viên báo tổng tiền: 'Das macht 6,80 Euro.' (sechs Euro achtzig).", 20, None
         ),
         (
             lesson_id, "dich",
@@ -965,7 +966,7 @@ def seed_lesson_1_part_2():
             "Câu 37 [Sắp xếp từ thành câu]: Sắp xếp câu hỏi bồi bàn hỏi khách trả chung hay riêng: [getrennt / oder / Zusammen / ?]",
             None, "Zusammen oder getrennt?",
             "Mẫu câu hỏi kinh điển khi thanh toán tại quán ăn/cafe ở Đức: Zusammen (chung) oder (hay) getrennt (riêng)?", 25,
-            json.dumps({"audio_text": "Zusammen hoặc getrennt?", "translation": "Thanh toán chung hay thanh toán riêng?"}, ensure_ascii=False)
+            json.dumps({"audio_text": "Zusammen oder getrennt?", "translation": "Thanh toán chung hay thanh toán riêng?"}, ensure_ascii=False)
         ),
         (
             lesson_id, "sap_xep",
@@ -996,9 +997,9 @@ def seed_lesson_1_part_2():
         (
             lesson_id, "doc",
             "Câu 41 [Đọc hiểu 2]: Dựa vào đoạn tin nhắn Café Kafka, Peter hiện đang ở đâu?",
-            json.dumps(["Trong khóa học tiếng Đức", "Ở quán Café Kafka", "Ở bưu điện", "Ở ga tàu"]),
-            "Trong khóa học tiếng Đức",
-            "Peter trả lời: 'Ich bin im Deutschkurs.' (trong khóa học tiếng Đức).", 20,
+            json.dumps(["Ở lớp học tiếng Đức", "Ở quán Café Kafka", "Ở bưu điện", "Ở ga tàu"]),
+            "Ở lớp học tiếng Đức",
+            "Peter trả lời: 'Ich bin im Deutschkurs.' (Tôi đang ở lớp học tiếng Đức).", 20,
             json.dumps({"passage": passage_doc_2})
         ),
         (
