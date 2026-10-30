@@ -702,9 +702,9 @@ def seed_lesson_2():
         ),
         (
             lesson_id, "sap_xep",
-            "Câu 36 [Sắp xếp từ thành câu]: Sắp xếp câu giao tiếp: 'Tôi không hiểu điều đó. Ngài nhắc lại được không?': [verstehe / Das / nicht / . / bitte / Können / wiederholen / das / Sie / ?]",
+            "Câu 36 [Sắp xếp từ thành câu]: Sắp xếp câu giao tiếp: 'Tôi không hiểu điều đó. Ngài nhắc lại được không?': [verstehe / Das / ich / nicht / . / bitte / Können / wiederholen / das / Sie / ?]",
             None, "Das verstehe ich nicht. Können Sie das bitte wiederholen?",
-            "Mệnh đề 1: Das verstehe ich không. Mệnh đề 2: Động từ khuyết thiếu Können đảo lên đầu câu hỏi Ja/Nein: Können Sie das bitte wiederholen?", 20,
+            "Mệnh đề 1: Das verstehe ich nicht. Mệnh đề 2: Động từ khuyết thiếu Können đảo lên đầu câu hỏi Ja/Nein: Können Sie das bitte wiederholen?", 20,
             json.dumps({"audio_text": "Das verstehe ich nicht. Können Sie das bitte wiederholen?", "translation": "Tôi không hiểu điều đó. Ngài có thể vui lòng nhắc lại được không?"}, ensure_ascii=False)
         ),
         (
@@ -798,7 +798,7 @@ def seed_lesson_2():
             lesson_id, "viet",
             "Câu 45 [Sắp xếp khung câu Satzklammer]: Sắp xếp các từ sau thành câu hoàn chỉnh: 'buchstabieren / bitte / das / Sie / Können / ?'",
             None, "Können Sie das bitte buchstabieren? / Können Sie das bitte buchstabieren / Können Sie das buchstabieren, bitte? / Können Sie das buchstabieren bitte / Können Sie bitte das buchstabieren? / Können Sie bitte buchstabieren? / Können Sie buchstabieren bitte? / Können Sie buchstabieren bitte",
-            "Cấu trúc: Können + Sie + das bitte + buchstabieren?", 25, None
+            "Cấu trúc khung câu: Động từ khuyết thiếu 'Können' ở đầu câu hỏi + Sie + das bitte + động từ nguyên mẫu 'buchstabieren' ở cuối câu.", 25, None
         ),
         (
             lesson_id, "viet",
