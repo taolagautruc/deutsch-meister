@@ -458,19 +458,19 @@ function generateNewNumberData(ex, fallbackIndex = null) {
         const chosenVerb = pool[Math.floor(Math.random() * pool.length)];
 
         const subjects = [
-            { label: "ich", personKey: "ich", pronoun: "ich" },
-            { label: "du", personKey: "du", pronoun: "du" },
-            { label: "er", personKey: "er_sie_es", pronoun: "er" },
-            { label: "sie (cô ấy)", personKey: "er_sie_es", pronoun: "sie" },
-            { label: "es", personKey: "er_sie_es", pronoun: "es" },
-            { label: "wir", personKey: "wir", pronoun: "wir" },
-            { label: "ihr", personKey: "ihr", pronoun: "ihr" },
-            { label: "sie (họ)", personKey: "sie_Sie", pronoun: "sie" },
-            { label: "Sie (Ngài)", personKey: "sie_Sie", pronoun: "Sie" },
-            { label: "Anna und ich", personKey: "wir", pronoun: "Anna und ich" },
-            { label: "Du und Peter", personKey: "ihr", pronoun: "Du und Peter" },
-            { label: "Die Lehrerin", personKey: "er_sie_es", pronoun: "Die Lehrerin" },
-            { label: "Mein Freund", personKey: "er_sie_es", pronoun: "Mein Freund" }
+            { label: "ich", personKey: "ich", pronoun: "ich", vi: "Tôi" },
+            { label: "du", personKey: "du", pronoun: "du", vi: "Bạn" },
+            { label: "er", personKey: "er_sie_es", pronoun: "er", vi: "Anh ấy" },
+            { label: "sie (cô ấy)", personKey: "er_sie_es", pronoun: "sie", vi: "Cô ấy" },
+            { label: "es", personKey: "er_sie_es", pronoun: "es", vi: "Nó" },
+            { label: "wir", personKey: "wir", pronoun: "wir", vi: "Chúng tôi" },
+            { label: "ihr", personKey: "ihr", pronoun: "ihr", vi: "Các bạn" },
+            { label: "sie (họ)", personKey: "sie_Sie", pronoun: "sie", vi: "Họ" },
+            { label: "Sie (Ngài)", personKey: "sie_Sie", pronoun: "Sie", vi: "Ngài" },
+            { label: "Anna und ich", personKey: "wir", pronoun: "Anna und ich", vi: "Anna và tôi" },
+            { label: "Du und Peter", personKey: "ihr", pronoun: "Du und Peter", vi: "Bạn và Peter" },
+            { label: "Die Lehrerin", personKey: "er_sie_es", pronoun: "Die Lehrerin", vi: "Cô giáo" },
+            { label: "Mein Freund", personKey: "er_sie_es", pronoun: "Mein Freund", vi: "Bạn của tôi" }
         ];
 
         const chosenSubject = subjects[Math.floor(Math.random() * subjects.length)];
@@ -479,7 +479,7 @@ function generateNewNumberData(ex, fallbackIndex = null) {
         ex.question = `[Rèn phản xạ Chia Động Từ (Random)]: Hãy chia động từ '${chosenVerb.infinitiv}' (${chosenVerb.meaning}) cho chủ ngữ '${chosenSubject.label}': '${chosenSubject.pronoun} ___'`;
         ex.correct_answer = correctForm;
         ex.explanation = `Động từ '${chosenVerb.infinitiv}' đi với chủ ngữ '${chosenSubject.label}' được chia là: '${correctForm}'.`;
-        extra.translation = `'${chosenSubject.label}' ${chosenVerb.meaning}: ${chosenSubject.pronoun} ${correctForm}`;
+        extra.translation = `${chosenSubject.vi} ${chosenVerb.meaning}.`;
         ex.extra_data = JSON.stringify(extra);
         ex.translation = extra.translation;
         return finalize(ex);
@@ -583,7 +583,7 @@ function generateNewNumberData(ex, fallbackIndex = null) {
         ex.question = `[Số Nhiều Danh Từ (Random)]: Hãy viết dạng số nhiều (kèm mạo từ 'die') của danh từ '${chosenItem.article} ${chosenItem.word}':`;
         ex.correct_answer = chosenItem.plural;
         ex.explanation = `'${chosenItem.article} ${chosenItem.word}' khi chuyển sang số nhiều là '${chosenItem.plural}'. ${chosenItem.rule || ''}`;
-        extra.translation = `'${chosenItem.plural}' = những ${chosenItem.meaning || chosenItem.word}`;
+        extra.translation = `Những ${chosenItem.meaning || chosenItem.word}.`;
         ex.extra_data = JSON.stringify(extra);
         ex.translation = extra.translation;
         return finalize(ex);
@@ -942,7 +942,12 @@ function generateNewNumberData(ex, fallbackIndex = null) {
         ex.question = qText;
         ex.correct_answer = answer;
         ex.explanation = ruleText;
-        extra.translation = `${chosen.gender} ${chosen.word} = ${chosen.meaning}`;
+        let sentenceVi = "";
+        if (modeType === 0) sentenceVi = `Chúng tôi có một ${chosen.meaning}.`;
+        else if (modeType === 1) sentenceVi = `Ở phía trên có một ${chosen.meaning}.`;
+        else if (modeType === 2) sentenceVi = `Tôi thấy ${chosen.meaning} rất đẹp.`;
+        else sentenceVi = `Căn hộ không có ${chosen.meaning}.`;
+        extra.translation = sentenceVi;
         ex.extra_data = JSON.stringify(extra);
         ex.translation = extra.translation;
         return finalize(ex);
@@ -951,14 +956,14 @@ function generateNewNumberData(ex, fallbackIndex = null) {
     // 12. Xử lý câu hỏi Mạo từ sở hữu theo 9 Ngôi (dynamic_possessiv_quiz - Bài 4)
     if (extra.dynamic_possessiv_quiz) {
         const owners = [
-            { label: "ich (tôi)", stem: "mein" },
-            { label: "du (bạn)", stem: "dein" },
-            { label: "er (anh ấy / Peter)", stem: "sein" },
-            { label: "sie (cô ấy / Lena)", stem: "ihr" },
-            { label: "wir (chúng tôi)", stem: "unser" },
-            { label: "ihr (các bạn / Maria und Lukas)", stem: "euer", isEuer: true },
-            { label: "sie (họ / die Eltern)", stem: "ihr" },
-            { label: "Sie (Ngài / Herr Müller)", stem: "Ihr", isCapital: true }
+            { label: "ich (tôi)", stem: "mein", vi: "tôi" },
+            { label: "du (bạn)", stem: "dein", vi: "bạn" },
+            { label: "er (anh ấy / Peter)", stem: "sein", vi: "anh ấy" },
+            { label: "sie (cô ấy / Lena)", stem: "ihr", vi: "cô ấy" },
+            { label: "wir (chúng tôi)", stem: "unser", vi: "chúng tôi" },
+            { label: "ihr (các bạn / Maria und Lukas)", stem: "euer", isEuer: true, vi: "các bạn" },
+            { label: "sie (họ / die Eltern)", stem: "ihr", vi: "họ" },
+            { label: "Sie (Ngài / Herr Müller)", stem: "Ihr", isCapital: true, vi: "Ngài" }
         ];
 
         const nouns = [
@@ -1012,7 +1017,7 @@ function generateNewNumberData(ex, fallbackIndex = null) {
         ex.question = `[Mạo từ Sở Hữu 9 Ngôi (Random)]: Hãy chia mạo từ sở hữu của người sở hữu '${owner.label}' đứng trước danh từ '${noun.gender === 'die_pl' ? 'die (Pl.)' : noun.gender} ${noun.word}' (${noun.vi}) trong câu ${sentenceContext}:`;
         ex.correct_answer = result;
         ex.explanation = `Người sở hữu là '${owner.label}' → Gốc sở hữu '${owner.stem}'. Đi với danh từ '${noun.word}' (${noun.gender}) ở ${caseName} → dạng đúng là '${result}'${owner.isEuer && (ending === '-e' || ending === '-en') ? ' (lưu ý "euer" bị lược bỏ e ở giữa thành "' + result + '")' : ''}.`;
-        extra.translation = `${noun.vi} của ${owner.label}`;
+        extra.translation = isAkk ? `Chúng tôi có ${noun.vi} của ${owner.vi}.` : `Đó là ${noun.vi} của ${owner.vi}.`;
         ex.extra_data = JSON.stringify(extra);
         ex.translation = extra.translation;
         return finalize(ex);
@@ -1045,12 +1050,13 @@ function generateNewNumberData(ex, fallbackIndex = null) {
             ex.question = `[Tính từ Đối lập (Random)]: Từ trái nghĩa (Gegenteil) trong tiếng Đức của tính từ '${sourceWord}' (${sourceVi}) là gì?`;
             ex.correct_answer = targetWord;
             ex.explanation = `Tính từ '${sourceWord}' (${sourceVi}) có từ đối lập là '${targetWord}' (${targetVi}).`;
+            extra.translation = `Từ trái nghĩa của '${sourceVi}' là '${targetVi}'.`;
         } else {
             ex.question = `[Tính từ Miêu tả Nhà cửa (Random)]: Hoàn thành câu miêu tả sau bằng tính từ trái nghĩa với '${sourceWord}': "Das ${pair.context} ist nicht ${sourceWord}, sondern es ist ___."`;
             ex.correct_answer = targetWord;
             ex.explanation = `Từ đối lập với '${sourceWord}' (${sourceVi}) là '${targetWord}' (${targetVi}) → "Das ${pair.context} ist nicht ${sourceWord}, sondern es ist ${targetWord}."`;
+            extra.translation = `Căn ${pair.nounVi} không ${sourceVi}, mà nó ${targetVi}.`;
         }
-        extra.translation = `'${sourceWord}' (${sourceVi}) >< '${targetWord}' (${targetVi})`;
         ex.extra_data = JSON.stringify(extra);
         ex.translation = extra.translation;
         return finalize(ex);
@@ -1059,23 +1065,23 @@ function generateNewNumberData(ex, fallbackIndex = null) {
     // 14. Xử lý câu hỏi Thay thế Đại từ Nhân xưng theo Giống (dynamic_pronoun_replacement_quiz - Bài 4)
     if (extra.dynamic_pronoun_replacement_quiz) {
         const pronounItems = [
-            { word: "Flur", gender: "der", pronoun: "Er", sentence: "Das Haus hat einen Flur. ___ ist lang und dunkel." },
-            { word: "Garten", gender: "der", pronoun: "Er", sentence: "Wir haben einen Garten. ___ ist groß und sehr schön." },
-            { word: "Balkon", gender: "der", pronoun: "Er", sentence: "Oben gibt es einen Balkon. ___ ist sonnig und hell." },
-            { word: "Kühlschrank", gender: "der", pronoun: "Er", sentence: "Er kauft einen Kühlschrank. ___ ist modern und neu." },
-            { word: "Küche", gender: "die", pronoun: "Sie", sentence: "Die Wohnung hat eine Küche. ___ ist klein, aber gemütlich." },
-            { word: "Wohnung", gender: "die", pronoun: "Sie", sentence: "Wir mieten eine Wohnung. ___ hat 4 Zimmer." },
-            { word: "Garage", gender: "die", pronoun: "Sie", sentence: "Das Haus hat eine Garage. ___ ist sehr praktisch." },
-            { word: "Wohnzimmer", gender: "das", pronoun: "Es", sentence: "Wir haben ein Wohnzimmer. ___ ist hell und modern." },
-            { word: "Haus", gender: "das", pronoun: "Es", sentence: "Julia hat ein Haus. ___ ist sehr alt und hat 5 Zimmer." },
-            { word: "Schlafzimmer", gender: "das", pronoun: "Es", sentence: "Mein Haus hat ein Schlafzimmer. ___ ist leise und warm." }
+            { word: "Flur", gender: "der", pronoun: "Er", sentence: "Das Haus hat einen Flur. ___ ist lang und dunkel.", sentenceVi: "Ngôi nhà có một hành lang. Nó dài và tối." },
+            { word: "Garten", gender: "der", pronoun: "Er", sentence: "Wir haben einen Garten. ___ ist groß und sehr schön.", sentenceVi: "Chúng tôi có một khu vườn. Nó rộng và rất đẹp." },
+            { word: "Balkon", gender: "der", pronoun: "Er", sentence: "Oben gibt es einen Balkon. ___ ist sonnig und hell.", sentenceVi: "Ở phía trên có một ban công. Nó nhiều nắng và sáng sủa." },
+            { word: "Kühlschrank", gender: "der", pronoun: "Er", sentence: "Er kauft einen Kühlschrank. ___ ist modern und neu.", sentenceVi: "Anh ấy mua một chiếc tủ lạnh. Nó hiện đại và mới." },
+            { word: "Küche", gender: "die", pronoun: "Sie", sentence: "Die Wohnung hat eine Küche. ___ ist klein, aber gemütlich.", sentenceVi: "Căn hộ có một phòng bếp. Nó nhỏ nhưng ấm cúng." },
+            { word: "Wohnung", gender: "die", pronoun: "Sie", sentence: "Wir mieten eine Wohnung. ___ hat 4 Zimmer.", sentenceVi: "Chúng tôi thuê một căn hộ. Nó có 4 phòng." },
+            { word: "Garage", gender: "die", pronoun: "Sie", sentence: "Das Haus hat eine Garage. ___ ist sehr praktisch.", sentenceVi: "Ngôi nhà có một nhà để xe. Nó rất tiện lợi." },
+            { word: "Wohnzimmer", gender: "das", pronoun: "Es", sentence: "Wir haben ein Wohnzimmer. ___ ist hell und modern.", sentenceVi: "Chúng tôi có một phòng khách. Nó sáng sủa và hiện đại." },
+            { word: "Haus", gender: "das", pronoun: "Es", sentence: "Julia hat ein Haus. ___ ist sehr alt und hat 5 Zimmer.", sentenceVi: "Julia có một ngôi nhà. Nó rất cũ và có 5 phòng." },
+            { word: "Schlafzimmer", gender: "das", pronoun: "Es", sentence: "Mein Haus hat ein Schlafzimmer. ___ ist leise und warm.", sentenceVi: "Nhà của tôi có một phòng ngủ. Nó yên tĩnh và ấm áp." }
         ];
 
         const item = pronounItems[Math.floor(Math.random() * pronounItems.length)];
         ex.question = `[Đại từ Thay thế theo Giống (Random)]: Điền đại từ nhân xưng thích hợp ('Er' / 'Sie' / 'Es') thay thế cho danh từ giống '${item.gender}' (${item.word}): "${item.sentence}"`;
         ex.correct_answer = item.pronoun;
         ex.explanation = `'${item.word}' mang giống '${item.gender}' nên đại từ nhân xưng làm chủ ngữ thay thế ở câu sau là '${item.pronoun}' (der → er, die → sie, das → es).`;
-        extra.translation = `'${item.word}' (${item.gender}) → đại từ thay thế: '${item.pronoun}'`;
+        extra.translation = item.sentenceVi;
         ex.extra_data = JSON.stringify(extra);
         ex.translation = extra.translation;
         return finalize(ex);
@@ -1130,7 +1136,7 @@ function generateNewNumberData(ex, fallbackIndex = null) {
         ex.question = `[Dịch câu Miêu tả Nhà & Nội thất (Random)]: Hãy dịch câu sau sang tiếng Đức chuẩn xác: "${chosen.vi}"`;
         ex.correct_answer = chosen.de;
         ex.explanation = `Bản dịch chuẩn: '${chosen.de}'. (${chosen.note})`;
-        extra.translation = `${chosen.vi} → ${chosen.de}`;
+        extra.translation = chosen.vi;
         ex.extra_data = JSON.stringify(extra);
         ex.translation = extra.translation;
         return finalize(ex);
