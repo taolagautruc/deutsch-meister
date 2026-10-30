@@ -883,13 +883,15 @@
                     `;
                 }
 
+                const displayQuestion = (typeof ensureQuestionNumber === 'function') ? ensureQuestionNumber(ex.question, ex.question, i + 1) : ex.question;
+
                 return `
                     <div id="ex-card-${i}" class="p-5 rounded-2xl bg-slate-50 border border-slate-200 space-y-2">
                         <div class="flex items-center justify-between text-xs">
                             <span class="px-2.5 py-1 rounded-lg bg-indigo-100 text-indigo-700 font-extrabold uppercase">${TYPE_LABELS[ex.exercise_type] || ex.exercise_type}</span>
                             <span class="text-amber-600 font-extrabold">⚡ +${ex.exp_reward} EXP</span>
                         </div>
-                        <p class="font-bold text-slate-900 text-sm sm:text-base">${ex.question}</p>
+                        <p class="font-bold text-slate-900 text-sm sm:text-base">${displayQuestion}</p>
                         ${extraHtml}
                         ${inputHtml}
                         <div id="ex-feedback-${i}" class="hidden text-xs p-3.5 rounded-xl mt-2"></div>
@@ -1120,7 +1122,7 @@
         function refreshSingleExercise(index) {
             const ex = currentLesson.allRenderExercises[index];
             if (typeof generateNewNumberData === 'function') {
-                generateNewNumberData(ex);
+                generateNewNumberData(ex, index + 1);
             }
             if (ex && ex.options && Array.isArray(ex.options) && ex.options.length > 1) {
                 ex.options = shuffleArray(ex.options);
