@@ -633,7 +633,7 @@ def seed_lesson_1_part_2():
         (lesson_id, "Mineralwasser", "das", "Nước khoáng", "Ich trinke gern Mineralwasser. (Tôi thích uống nước khoáng.)"),
         (lesson_id, "Wein", "der", "Rượu vang", "Wir trinken Wein im Restaurant. (Chúng tôi uống rượu vang trong nhà hàng.)"),
         (lesson_id, "Kakao", "der", "Ca cao", "Ich möchte Kakao trinken. (Tôi muốn uống ca cao.)"),
-        (lesson_id, "Saft", "der", "Nước ép hoa quả", "Der Orangensaft ist lecker. (Nước cam rất ngon.)"),
+        (lesson_id, "Saft", "der", "Nước ép hoa quả", "Der Orangensaft ist lecker. (Nước cam ngon.)"),
         (lesson_id, "Eis", "das", "Đá lạnh / Kem", "Kaffee mit Eis, bitte. (Làm ơn cho cà phê đá.)"),
         (lesson_id, "Café", "das", "Quán cà phê", "Wir sind im Café Kafka. (Chúng tôi đang ở quán cà phê Kafka.)"),
         (lesson_id, "Kellner", "der", "Người bồi bàn / nhân viên phục vụ", "Der Kellner fragt: Was möchten Sie trinken? (Người bồi bàn hỏi: Ngài muốn uống gì?)"),
