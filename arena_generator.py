@@ -678,7 +678,7 @@ def generate_varied_doc_hieu_questions(allowed_orders, count=15):
     # 4. BÀI 3: Bưu thiếp du lịch & Quá khứ war / waren
     if 4 in allowed_orders:
         tourists = [
-            ('Peter und Paula', 'Liebe Anna', 'Hai Phong', 'im BigC Supermarkt', 'im Theater', 'am Do Son Meer'),
+            ('Peter und Paula', 'Liebe Anna', 'Hai Phong', 'im Big-C-Supermarkt', 'im Theater', 'in Do Son am Meer'),
             ('Lukas und Maria', 'Lieber Thomas', 'Berlin', 'im Museum', 'im Restaurant', 'am Brandenburger Tor'),
             ('Carlos und Julia', 'Liebe Laura', 'München', 'im Schloss', 'im Englischen Garten', 'am Marienplatz')
         ]
@@ -836,8 +836,8 @@ def build_arena_questions_for_user(user_id, count=70):
                     passage = (
                         "Bưu thiếp gửi từ Hải Phòng (Postkarte aus Hai Phong):\n"
                         "Liebe Anna, viele Grüße aus Hai Phong! Gestern war das Wetter super.\n"
-                        "Ich war im BigC Supermarkt und Paula war im Theater. Der Cat Bi Markt war sehr interessant.\n"
-                        "Heute sind wir am Do Son Meer. Herzliche Grüße, Peter und Paula"
+                        "Ich war im Big-C-Supermarkt und Paula war im Theater. Der Cat-Bi-Markt war sehr interessant.\n"
+                        "Heute sind wir in Do Son am Meer. Herzliche Grüße, Peter und Paula"
                     )
                 elif "Julia" in q_text or "Haus" in q_text or "Balkon" in q_text or "Zimmer" in q_text:
                     passage = (

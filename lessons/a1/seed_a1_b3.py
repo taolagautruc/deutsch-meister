@@ -25,8 +25,14 @@ def seed_lesson_3():
         return
     a1_id = level_a1["id"]
 
-    # Xóa dữ liệu cũ của Bài 3 nếu đã có để cập nhật sạch sẽ
-    cursor.execute("DELETE FROM lessons WHERE level_id = ? AND title LIKE 'Bài 3%';", (a1_id,))
+    cursor.execute("SELECT id FROM lessons WHERE level_id = ? AND title LIKE 'Bài 3%';", (a1_id,))
+    existing_lesson = cursor.fetchone()
+    lesson_id = existing_lesson["id"] if existing_lesson else 17
+
+    # Xóa dữ liệu cũ của Bài 3 để cập nhật sạch sẽ
+    cursor.execute("DELETE FROM vocabularies WHERE lesson_id = ?;", (lesson_id,))
+    cursor.execute("DELETE FROM exercises WHERE lesson_id = ?;", (lesson_id,))
+    cursor.execute("DELETE FROM lessons WHERE id = ?;", (lesson_id,))
 
     lesson_title = 'Bài 3: "Städte – Länder – Sprachen: Địa Danh, Phương Hướng & Thì Quá Khứ Đơn (Präteritum)"'
 
@@ -71,7 +77,7 @@ def seed_lesson_3():
 
             <!-- 1.1 Bảng 13 Quốc gia không mạo từ -->
             <div class="space-y-3">
-                <h5 class="text-xs font-bold uppercase tracking-wider text-slate-500">1.1. Bảng 13 Quốc gia Không dùng Mạo từ & Ngôn ngữ tương ứng</h5>
+                <h5 class="text-xs font-bold uppercase tracking-wider text-slate-500">1.1. Bảng 12 Quốc gia Không dùng Mạo từ & Ngôn ngữ tương ứng</h5>
                 <p class="text-xs text-slate-600">
                     Khi nói <i>"đến từ"</i> dùng giới từ <b>aus</b>, khi nói <i>"ở tại"</i> dùng giới từ <b>in</b>, và khi nói <i>"đi đến"</i> dùng giới từ <b>nach</b> (không cần mạo từ ở giữa):
                 </p>
@@ -149,12 +155,12 @@ def seed_lesson_3():
                             </tr>
                             <tr class="hover:bg-slate-50 transition">
                                 <td class="p-3 font-bold text-indigo-700">Großbritannien / England</td>
-                                <td class="p-3">Nước Anh</td>
+                                <td class="p-3">Vương quốc Anh / Nước Anh</td>
                                 <td class="p-3 font-semibold text-purple-700">Englisch</td>
                                 <td class="p-3">Tiếng Anh</td>
                                 <td class="p-3 flex items-center justify-between gap-2">
-                                    <span class="italic text-slate-700">"Big Ben ist in England. Sprichst du Englisch?"</span>
-                                    <button onclick="speakGerman('Big Ben ist in England. Sprichst du Englisch?')" class="px-2 py-1 rounded-lg bg-indigo-50 text-indigo-700 font-bold hover:bg-indigo-100 transition cursor-pointer">🔊</button>
+                                    <span class="italic text-slate-700">"Der Big Ben ist in England. Sprichst du Englisch?"</span>
+                                    <button onclick="speakGerman('Der Big Ben ist in England. Sprichst du Englisch?')" class="px-2 py-1 rounded-lg bg-indigo-50 text-indigo-700 font-bold hover:bg-indigo-100 transition cursor-pointer">🔊</button>
                                 </td>
                             </tr>
                             <tr class="hover:bg-slate-50 transition">
@@ -346,9 +352,9 @@ def seed_lesson_3():
                 <div class="p-4 rounded-2xl bg-slate-50 border border-slate-200 space-y-2">
                     <div class="flex items-center justify-between">
                         <span class="px-2 py-0.5 rounded-md bg-blue-100 text-blue-800 font-bold">der (Giống đực)</span>
-                        <button onclick="speakGerman('der Schiefe Turm in Pisa, Italien')" class="text-indigo-600 font-bold hover:underline">🔊</button>
+                        <button onclick="speakGerman('der Schiefe Turm von Pisa in Pisa, Italien')" class="text-indigo-600 font-bold hover:underline">🔊</button>
                     </div>
-                    <h5 class="text-base font-black text-slate-900">der Schiefe Turm</h5>
+                    <h5 class="text-base font-black text-slate-900">der Schiefe Turm (von Pisa)</h5>
                     <p class="text-slate-600">Tháp nghiêng Pisa (<i>schief</i> = nghiêng)</p>
                     <p class="text-indigo-700 font-semibold">📍 Pisa, Italien (Ý)</p>
                 </div>
@@ -448,14 +454,14 @@ def seed_lesson_3():
                             <td class="p-3 font-bold text-blue-700">der Norden</td>
                             <td class="p-3 font-semibold text-indigo-700">im Norden von</td>
                             <td class="p-3 font-semibold text-purple-700">nördlich von</td>
-                            <td class="p-3">Hanoi liegt <b>im Norden von</b> Vietnam (<b>nördlich von</b> Vietnam).</td>
+                            <td class="p-3">Hanoi liegt <b>im Norden von</b> Vietnam (<b>nördlich von</b> Hue).</td>
                         </tr>
                         <tr class="hover:bg-slate-50 transition">
                             <td class="p-3 font-bold text-slate-900">Nam (South)</td>
                             <td class="p-3 font-bold text-blue-700">der Süden</td>
                             <td class="p-3 font-semibold text-indigo-700">im Süden von</td>
                             <td class="p-3 font-semibold text-purple-700">südlich von</td>
-                            <td class="p-3">Long An liegt <b>im Süden von</b> Vietnam (<b>südlich von</b> Vietnam).</td>
+                            <td class="p-3">Long An liegt <b>im Süden von</b> Vietnam (<b>südwestlich von</b> Ho-Chi-Minh-Stadt).</td>
                         </tr>
                         <tr class="hover:bg-slate-50 transition">
                             <td class="p-3 font-bold text-slate-900">Đông (East)</td>
@@ -520,10 +526,10 @@ def seed_lesson_3():
                 </div>
 
                 <div class="p-4 rounded-2xl bg-purple-50 border border-purple-200 space-y-1.5">
-                    <span class="px-2.5 py-1 rounded-md bg-purple-600 text-white font-bold">Cách 2: Dùng Tính Từ (-lich von)</span>
-                    <p class="text-slate-800 font-semibold mt-2">Công thức: <code>[Thành phố] + liegt + [Tính từ -lich] + von + [Quốc gia].</code></p>
-                    <p class="text-slate-600 italic">👉 "Hai Phong liegt <b>nordöstlich von</b> Vietnam." (Tuyệt đối KHÔNG có "im")</p>
-                    <p class="text-slate-600 italic">👉 "München liegt <b>südlich von</b> Deutschland."</p>
+                    <span class="px-2.5 py-1 rounded-md bg-purple-600 text-white font-bold">Cách 2: Dùng Tính Từ (-lich von) — So sánh vị trí giữa 2 địa điểm tách biệt</span>
+                    <p class="text-slate-800 font-semibold mt-2">Công thức: <code>[Địa điểm A] + liegt + [Tính từ -lich] + von + [Địa điểm B].</code></p>
+                    <p class="text-slate-600 italic">👉 "Hai Phong liegt <b>östlich von</b> Hanoi." (Hải Phòng nằm ở phía Đông của Hà Nội — Tuyệt đối KHÔNG có "im")</p>
+                    <p class="text-slate-600 italic">👉 "Österreich liegt <b>südlich von</b> Deutschland." (Nước Áo nằm ở phía Nam của nước Đức.)</p>
                 </div>
             </div>
         </div>
@@ -575,7 +581,7 @@ def seed_lesson_3():
                         <tr class="hover:bg-slate-50 transition">
                             <td class="p-3 font-black text-indigo-700">Wer</td>
                             <td class="p-3 font-semibold">Ai? (Chủ ngữ)</td>
-                            <td class="p-3">Hỏi người: <i>Wer ist das? – Das ist Frau Schiller. / Wer ist sie? – Sie ist Lehrerin.</i></td>
+                            <td class="p-3">Hỏi người: <i>Wer ist das? – Das ist Frau Schiller. / Wer ist sie? – Sie ist meine Kollegin.</i></td>
                         </tr>
                         <tr class="hover:bg-slate-50 transition">
                             <td class="p-3 font-black text-indigo-700">Wo</td>
@@ -595,12 +601,12 @@ def seed_lesson_3():
                         <tr class="hover:bg-slate-50 transition">
                             <td class="p-3 font-black text-indigo-700">Was</td>
                             <td class="p-3 font-semibold">Cái gì? / Làm nghề gì?</td>
-                            <td class="p-3">Hỏi sự vật: <i>Was ist das? / Was macht er? – Er macht die Hausaufgaben.</i></td>
+                            <td class="p-3">Hỏi sự vật: <i>Was ist das? / Was macht er? – Er macht Hausaufgaben.</i></td>
                         </tr>
                         <tr class="hover:bg-slate-50 transition">
                             <td class="p-3 font-black text-indigo-700">Wie</td>
                             <td class="p-3 font-semibold">Như thế nào? / Bao nhiêu?</td>
-                            <td class="p-3">Hỏi tên, sức khỏe: <i>Wie heißen Sie? / Wie geht es dir? / Wie bitte?</i></td>
+                            <td class="p-3">Hỏi tên, sức khỏe, số điện thoại: <i>Wie heißen Sie? / Wie geht es dir? / Wie ist Ihre Telefonnummer? / Wie bitte?</i></td>
                         </tr>
                         <tr class="hover:bg-slate-50 transition">
                             <td class="p-3 font-black text-indigo-700">Wann</td>
@@ -636,13 +642,13 @@ def seed_lesson_3():
                         <p class="text-emerald-700 font-medium">→ Ja/Nein: <b>Wohnen Sie in Hai Phong?</b></p>
                     </div>
                     <div class="p-3 rounded-xl bg-slate-50 border border-slate-200 space-y-1">
-                        <p class="font-bold text-slate-900">3. "Er macht die Hausaufgaben." (Anh ấy làm bài tập)</p>
+                        <p class="font-bold text-slate-900">3. "Er macht Hausaufgaben." (Anh ấy làm bài tập)</p>
                         <p class="text-indigo-700 font-medium">→ W-Frage: <b>Was macht er?</b></p>
-                        <p class="text-emerald-700 font-medium">→ Ja/Nein: <b>Macht er die Hausaufgaben?</b></p>
+                        <p class="text-emerald-700 font-medium">→ Ja/Nein: <b>Macht er Hausaufgaben?</b></p>
                     </div>
                     <div class="p-3 rounded-xl bg-slate-50 border border-slate-200 space-y-1">
                         <p class="font-bold text-slate-900">4. "Sie ist Lehrerin." (Cô ấy là giáo viên)</p>
-                        <p class="text-indigo-700 font-medium">→ W-Frage: <b>Wer ist sie?</b> (hoặc <i>Was ist sie von Beruf?</i>)</p>
+                        <p class="text-indigo-700 font-medium">→ W-Frage: <b>Was ist sie von Beruf?</b> (hoặc <i>Was macht sie beruflich?</i>)</p>
                         <p class="text-emerald-700 font-medium">→ Ja/Nein: <b>Ist sie Lehrerin?</b></p>
                     </div>
                 </div>
@@ -735,15 +741,15 @@ def seed_lesson_3():
                     <p>• <b>vorgestern</b>: hôm kia</p>
                     <p>• <b>früher</b>: trước đây, ngày xưa</p>
                     <p>• <b>letzte Woche / letztes Jahr</b>: tuần trước / năm ngoái</p>
-                    <p>• <b>schon</b>: đã từng (<i>Warst du schon in Hanoi?</i>)</p>
+                    <p>• <b>schon (mal)</b> (đi với war/wart): đã từng (hỏi trải nghiệm quá khứ: <i>Warst du schon [mal] in Hanoi?</i>)</p>
                 </div>
 
                 <div class="p-4 rounded-2xl bg-indigo-50 border border-indigo-200 space-y-1.5">
                     <p class="font-bold text-indigo-900">✈️ Mẫu Hội Thoại Hỏi Trải Nghiệm Du Lịch:</p>
-                    <p class="italic">A: <b>"Warst du schon in Hanoi?"</b> (Bạn đã từng ở Hà Nội chưa?)</p>
-                    <p class="italic text-emerald-800">B: <b>"Ja, ich war schon in Hanoi."</b> (Rồi, mình đã từng ở Hà Nội.)</p>
-                    <p class="italic text-rose-800">C: <b>"Nein, wo ist denn das?"</b> (Chưa, thế nó ở đâu vậy?)</p>
-                    <p class="italic text-indigo-800">A: <b>"Hanoi liegt im Norden von Vietnam."</b></p>
+                    <p class="italic">A: <b>"Warst du schon in Hanoi?"</b> (Bạn đã từng đến Hà Nội chưa?)</p>
+                    <p class="italic text-emerald-800">• Nếu ĐÃ đi (B): <b>"Ja, ich war schon in Hanoi."</b> (Rồi, mình đã từng ở Hà Nội.)</p>
+                    <p class="italic text-rose-800">• Nếu CHƯA đi (B): <b>"Nein, wo ist denn das?"</b> (Chưa, thế nó nằm ở đâu vậy?)</p>
+                    <p class="italic text-indigo-800">A: <b>"Hanoi liegt im Norden von Vietnam."</b> (Hà Nội nằm ở miền Bắc Việt Nam.)</p>
                 </div>
             </div>
         </div>
@@ -765,11 +771,11 @@ def seed_lesson_3():
                     <button onclick="speakGerman('Carlos, woher kommst du? Ich komme aus Wien. Das ist in Österreich.')" class="px-2 py-1 rounded bg-indigo-50 text-indigo-700 font-bold hover:bg-indigo-100 transition cursor-pointer">🔊 Nghe hội thoại</button>
                 </div>
                 <div class="space-y-1 text-slate-700 leading-relaxed">
-                    <p><b>A:</b> Carlos, woher <b>kommst</b> du?</p>
-                    <p><b>Carlos:</b> Ich <b>komme</b> aus Wien. Das <b>ist</b> in Österreich. Und du, woher <b>kommst</b> du?</p>
-                    <p><b>A:</b> Ich <b>komme</b> aus Athen. <b>Warst</b> du schon in Athen?</p>
-                    <p><b>Carlos:</b> Nein, wo <b>ist</b> denn das?</p>
-                    <p><b>A:</b> Das <b>ist</b> in Griechenland.</p>
+                    <p><b>A:</b> Carlos, woher <b>kommst</b> du? <span class="text-slate-500 font-sans italic">(Carlos, bạn đến từ đâu?)</span></p>
+                    <p><b>Carlos:</b> Ich <b>komme</b> aus Wien. Das <b>ist</b> in Österreich. Und du, woher <b>kommst</b> du? <span class="text-slate-500 font-sans italic">(Mình đến từ Viên. Nó nằm ở nước Áo. Còn bạn, bạn đến từ đâu?)</span></p>
+                    <p><b>A:</b> Ich <b>komme</b> aus Athen. <b>Warst</b> du schon in Athen? <span class="text-slate-500 font-sans italic">(Mình đến từ Athen. Bạn đã từng đến Athen chưa?)</span></p>
+                    <p><b>Carlos:</b> Nein, wo <b>ist</b> denn das? <span class="text-slate-500 font-sans italic">(Chưa, thế nó nằm ở đâu vậy?)</span></p>
+                    <p><b>A:</b> Das <b>ist</b> in Griechenland. <span class="text-slate-500 font-sans italic">(Nó nằm ở Hy Lạp.)</span></p>
                 </div>
             </div>
 
@@ -777,7 +783,7 @@ def seed_lesson_3():
             <div class="p-6 rounded-3xl bg-gradient-to-br from-amber-50 to-orange-50 border border-amber-200 text-slate-800 space-y-3 relative shadow-xs">
                 <div class="flex items-center justify-between flex-wrap gap-2">
                     <span class="px-3 py-1 rounded-full bg-amber-200 text-amber-900 font-bold text-xs">✉️ Bưu Thiếp Du Lịch Hải Phòng Gửi Anna</span>
-                    <button onclick="speakGerman('Liebe Anna, gestern waren Paula und ich in Haiphong. Ich war im BigC Supermarkt und Paula im Theater. Wart ihr schon auf dem Cat Bi Markt? Der Cat Bi Markt war sehr interessant. Hier sind ein paar Fotos. Es war super! Heute sind wir am Do Son Meer. Viele Grüße, Paula und Peter')" class="px-3 py-1.5 rounded-xl bg-amber-600 text-white font-bold text-xs hover:bg-amber-700 transition flex items-center gap-1.5 cursor-pointer">
+                    <button onclick="speakGerman('Liebe Anna, gestern waren Paula und ich in Haiphong. Ich war im Big-C-Supermarkt und Paula im Theater. Wart ihr schon auf dem Cat-Bi-Markt? Der Cat-Bi-Markt war sehr interessant. Hier sind ein paar Fotos. Es war super! Heute sind wir in Do Son am Meer. Viele Grüße, Paula und Peter')" class="px-3 py-1.5 rounded-xl bg-amber-600 text-white font-bold text-xs hover:bg-amber-700 transition flex items-center gap-1.5 cursor-pointer">
                         🔊 Nghe toàn bộ bức thư
                     </button>
                 </div>
@@ -785,9 +791,12 @@ def seed_lesson_3():
                 <div class="p-5 rounded-2xl bg-white/90 border border-amber-200/80 font-serif text-xs leading-relaxed space-y-2 text-slate-900">
                     <p class="font-bold text-amber-950 text-sm">Liebe Anna,</p>
                     <p>
-                        <b>gestern</b> <b>waren</b> Paula und ich in Haiphong. <b>Ich</b> <b>war</b> im BigC Supermarkt und <b>Paula</b> [war] im Theater. <b>Wart</b> <b>ihr</b> schon auf dem Cat Bi Markt? Der Cat Bi Markt <b>war</b> sehr interessant. Hier <b>sind</b> ein paar Fotos. Es <b>war</b> super! <b>Heute</b> <b>sind</b> wir am Do Son Meer.
+                        <b>gestern</b> <b>waren</b> Paula und ich in Haiphong. <b>Ich</b> <b>war</b> im Big-C-Supermarkt und <b>Paula</b> [war] im Theater. <b>Wart</b> <b>ihr</b> schon auf dem Cat-Bi-Markt? Der Cat-Bi-Markt <b>war</b> sehr interessant. Hier <b>sind</b> ein paar Fotos. Es <b>war</b> super! <b>Heute</b> <b>sind</b> wir in Do Son am Meer.
                     </p>
                     <p class="pt-2">Viele Grüße<br><b>Paula und Peter</b></p>
+                    <p class="text-xs text-amber-900/80 italic pt-2 border-t border-amber-200/80 font-sans">
+                        (Dịch nghĩa: Anna thân mến, hôm qua Paula và mình đã ở Hải Phòng. Mình đã ở siêu thị Big C còn Paula [đã ở] trong nhà hát. Các bạn đã từng đến chợ Cát Bi chưa? Chợ Cát Bi rất thú vị. Đây là một vài bức ảnh. Tuyệt vời lắm! Hôm nay chúng mình đang ở biển tại Đồ Sơn. Nhiều lời chào thân ái, Paula và Peter.)
+                    </p>
                 </div>
 
                 <div class="text-xs text-slate-700 space-y-1.5 pt-2">
@@ -795,10 +804,10 @@ def seed_lesson_3():
                     <p>1. <b>gestern waren Paula und ich...</b>: Khi trạng ngữ thời gian <code>gestern</code> đứng Vị trí 1, động từ chia ở quá khứ <b>waren</b> giữ vững ở Vị trí 2, chủ ngữ <b>Paula und ich</b> (= <i>wir</i>) lùi về Vị trí 3!</p>
                     <p>2. <b>4 Cụm Giới từ Chỉ Địa Điểm (Cách 3 - Dativ) cần thuộc lòng:</b></p>
                     <div class="grid grid-cols-2 sm:grid-cols-4 gap-2 pt-1 font-mono text-[11px]">
-                        <span class="p-2 rounded-lg bg-white border border-amber-200 text-slate-800"><b>im Supermarkt</b><br><span class="text-slate-500 font-sans">(in dem)</span></span>
-                        <span class="p-2 rounded-lg bg-white border border-amber-200 text-slate-800"><b>im Theater</b><br><span class="text-slate-500 font-sans">(in dem)</span></span>
-                        <span class="p-2 rounded-lg bg-white border border-amber-200 text-slate-800"><b>auf dem Markt</b><br><span class="text-slate-500 font-sans">(trên chợ)</span></span>
-                        <span class="p-2 rounded-lg bg-white border border-amber-200 text-slate-800"><b>am Do Son Meer</b><br><span class="text-slate-500 font-sans">(an dem)</span></span>
+                        <span class="p-2 rounded-lg bg-white border border-amber-200 text-slate-800"><b>im Supermarkt</b><br><span class="text-slate-500 font-sans">(in + dem: ở siêu thị)</span></span>
+                        <span class="p-2 rounded-lg bg-white border border-amber-200 text-slate-800"><b>im Theater</b><br><span class="text-slate-500 font-sans">(in + dem: ở nhà hát)</span></span>
+                        <span class="p-2 rounded-lg bg-white border border-amber-200 text-slate-800"><b>auf dem Markt</b><br><span class="text-slate-500 font-sans">(auf + dem: ở chợ)</span></span>
+                        <span class="p-2 rounded-lg bg-white border border-amber-200 text-slate-800"><b>am Meer</b><br><span class="text-slate-500 font-sans">(an + dem: ở biển)</span></span>
                     </div>
                 </div>
             </div>
@@ -813,8 +822,8 @@ def seed_lesson_3():
                 <div class="p-4 rounded-2xl bg-white/10 border border-white/10 space-y-2">
                     <p class="text-amber-400 font-bold">1. Địa danh & Phương hướng:</p>
                     <p>• Quốc gia có mạo từ: <i>aus/in der Schweiz, aus/in der Türkei, aus dem / im Iran, aus/in den USA</i>.</p>
-                    <p>• 7 Danh thắng: <i>die Akropolis, der Big Ben, der Eiffelturm, der Schiefe Turm, der Prater, das Brandenburger Tor, der Rote Platz</i>.</p>
-                    <p>• 2 cách viết vị trí: <i>liegt im Norden von...</i> (danh từ) = <i>liegt nördlich von...</i> (tính từ).</p>
+                    <p>• 7 Danh thắng: <i>die Akropolis, der Big Ben, der Eiffelturm, der Schiefe Turm (von Pisa), der Prater, das Brandenburger Tor, der Rote Platz</i>.</p>
+                    <p>• 2 cách diễn đạt vị trí: <i>liegt im Norden von [Quốc gia]</i> (nằm ở miền Bắc của nước...) vs. <i>liegt nördlich von [Thành phố/Quốc gia khác]</i> (nằm về phía Bắc so với...).</p>
                 </div>
                 <div class="p-4 rounded-2xl bg-white/10 border border-white/10 space-y-2">
                     <p class="text-emerald-400 font-bold">2. Quá khứ Präteritum & Cấu trúc câu:</p>
@@ -828,53 +837,56 @@ def seed_lesson_3():
     """
 
     cursor.execute("""
-        INSERT INTO lessons (level_id, title, grammar_content)
-        VALUES (?, ?, ?);
-    """, (a1_id, lesson_title, grammar_html))
-    lesson_id = cursor.lastrowid
+        INSERT INTO lessons (id, level_id, title, grammar_content)
+        VALUES (?, ?, ?, ?);
+    """, (lesson_id, a1_id, lesson_title, grammar_html))
 
     # =========================================================================
     # NẠP TỪ VỰNG BÀI 3 (35+ TỪ VỰNG CHUẨN ĐẶC TẢ)
     # =========================================================================
     vocabularies = [
-        (lesson_id, "Deutschland", "das", "nước Đức", "Ich komme aus Deutschland und spreche Deutsch. (Tôi đến từ nước Đức và nói tiếng Đức.)"),
-        (lesson_id, "Österreich", "das", "nước Áo", "Wien liegt in Österreich. Man spricht dort Deutsch. (Viên nằm ở nước Áo. Người ta nói tiếng Đức ở đó.)"),
-        (lesson_id, "Italien", "das", "nước Ý", "Pisa ist in Italien. Sie spricht gut Italienisch. (Pisa ở nước Ý. Cô ấy nói tiếng Ý giỏi.)"),
-        (lesson_id, "Spanien", "das", "Tây Ban Nha", "Carlos kommt aus Spanien und spricht Spanisch. (Carlos đến từ Tây Ban Nha và nói tiếng Tây Ban Nha.)"),
-        (lesson_id, "Griechenland", "das", "Hy Lạp", "Athen ist in Griechenland. Er lernt Griechisch. (Athen ở Hy Lạp. Anh ấy học tiếng Hy Lạp.)"),
-        (lesson_id, "Frankreich", "das", "nước Pháp", "Der Eiffelturm ist in Frankreich. Wir sprechen Französisch. (Tháp Eiffel ở nước Pháp. Chúng tôi nói tiếng Pháp.)"),
-        (lesson_id, "England", "das", "nước Anh (Großbritannien)", "Big Ben ist in England. Sprichst du Englisch? (Big Ben ở nước Anh. Bạn có nói tiếng Anh không?)"),
-        (lesson_id, "Polen", "das", "Ba Lan", "Mein Freund kommt aus Polen und spricht Polnisch. (Bạn tôi đến từ Ba Lan và nói tiếng Ba Lan.)"),
-        (lesson_id, "Tschechien", "das", "Cộng hòa Séc", "Prag liegt in Tschechien. Dort spricht man Tschechisch. (Praha nằm ở Cộng hòa Séc. Ở đó người ta nói tiếng Séc.)"),
-        (lesson_id, "Russland", "das", "nước Nga", "Moskau ist in Russland. Anna spricht Russisch. (Moskva ở nước Nga. Anna nói tiếng Nga.)"),
-        (lesson_id, "China", "das", "Trung Quốc", "Frau Wang kommt aus China und spricht Chinesisch. (Bà Wang đến từ Trung Quốc và nói tiếng Trung.)"),
-        (lesson_id, "Vietnam", "das", "Việt Nam", "Ich komme aus Vietnam und spreche Vietnamesisch. (Tôi đến từ Việt Nam và nói tiếng Việt.)"),
+        (lesson_id, "Deutschland", "—", "nước Đức (không dùng mạo từ)", "Ich komme aus Deutschland und spreche Deutsch. (Tôi đến từ nước Đức và nói tiếng Đức.)"),
+        (lesson_id, "Österreich", "—", "nước Áo (không dùng mạo từ)", "Wien liegt in Österreich. Man spricht dort Deutsch. (Viên nằm ở nước Áo. Người ta nói tiếng Đức ở đó.)"),
+        (lesson_id, "Italien", "—", "nước Ý (không dùng mạo từ)", "Pisa ist in Italien. Sie spricht gut Italienisch. (Pisa ở nước Ý. Cô ấy nói tiếng Ý giỏi.)"),
+        (lesson_id, "Spanien", "—", "Tây Ban Nha (không dùng mạo từ)", "Carlos kommt aus Spanien und spricht Spanisch. (Carlos đến từ Tây Ban Nha và nói tiếng Tây Ban Nha.)"),
+        (lesson_id, "Griechenland", "—", "Hy Lạp (không dùng mạo từ)", "Athen ist in Griechenland. Er lernt Griechisch. (Athen ở Hy Lạp. Anh ấy học tiếng Hy Lạp.)"),
+        (lesson_id, "Frankreich", "—", "nước Pháp (không dùng mạo từ)", "Der Eiffelturm ist in Frankreich. Wir sprechen Französisch. (Tháp Eiffel ở nước Pháp. Chúng tôi nói tiếng Pháp.)"),
+        (lesson_id, "England", "—", "nước Anh (Großbritannien) (không dùng mạo từ)", "Der Big Ben ist in England. Sprichst du Englisch? (Tháp Big Ben ở nước Anh. Bạn có nói tiếng Anh không?)"),
+        (lesson_id, "Polen", "—", "Ba Lan (không dùng mạo từ)", "Mein Freund kommt aus Polen und spricht Polnisch. (Bạn tôi đến từ Ba Lan và nói tiếng Ba Lan.)"),
+        (lesson_id, "Tschechien", "—", "Cộng hòa Séc (không dùng mạo từ)", "Prag liegt in Tschechien. Dort spricht man Tschechisch. (Praha nằm ở Cộng hòa Séc. Ở đó người ta nói tiếng Séc.)"),
+        (lesson_id, "Russland", "—", "nước Nga (không dùng mạo từ)", "Moskau ist in Russland. Anna spricht Russisch. (Moskva ở nước Nga. Anna nói tiếng Nga.)"),
+        (lesson_id, "China", "—", "Trung Quốc (không dùng mạo từ)", "Frau Wang kommt aus China und spricht Chinesisch. (Bà Wang đến từ Trung Quốc và nói tiếng Trung.)"),
+        (lesson_id, "Vietnam", "—", "Việt Nam (không dùng mạo từ)", "Ich komme aus Vietnam und spreche Vietnamesisch. (Tôi đến từ Việt Nam và nói tiếng Việt.)"),
         (lesson_id, "Schweiz", "die", "Thụy Sỹ (aus der / in der Schweiz)", "Meine Tante wohnt in der Schweiz. Dort spricht man Deutsch, Französisch und Italienisch. (Dì tôi sống ở Thụy Sỹ. Ở đó người ta nói tiếng Đức, tiếng Pháp và tiếng Ý.)"),
         (lesson_id, "Türkei", "die", "Thổ Nhĩ Kỳ (aus der / in der Türkei)", "Er kommt aus der Türkei und spricht Türkisch. (Anh ấy đến từ Thổ Nhĩ Kỳ và nói tiếng Thổ Nhĩ Kỳ.)"),
         (lesson_id, "Slowakei", "die", "Slovakia (aus der / in der Slowakei)", "Bratislava liegt in der Slowakei. Man spricht dort Slowakisch. (Bratislava nằm ở Slovakia. Người ta nói tiếng Slovak ở đó.)"),
         (lesson_id, "Iran", "der", "Iran (aus dem / im Iran)", "Mein Kollege kommt aus dem Iran. Er spricht Persisch. (Đồng nghiệp của tôi đến từ Iran. Anh ấy nói tiếng Ba Tư.)"),
-        (lesson_id, "USA", "die (Pl.)", "Hợp chủng quốc Hoa Kỳ - Mỹ (aus den / in den USA)", "Die Lehrerin kommt aus den USA. (Cô giáo đến từ nước Mỹ.)"),
-        (lesson_id, "Niederlande", "die (Pl.)", "Hà Lan (aus den / in den Niederlanden)", "Amsterdam ist in den Niederlanden. (Amsterdam nằm ở Hà Lan.)"),
+        (lesson_id, "USA", "die", "Hợp chủng quốc Hoa Kỳ - Mỹ (aus den / in den USA)", "Die Lehrerin kommt aus den USA. (Cô giáo đến từ nước Mỹ.)"),
+        (lesson_id, "Niederlande", "die", "Hà Lan (aus den / in den Niederlanden)", "Amsterdam ist in den Niederlanden. (Amsterdam nằm ở Hà Lan.)"),
         (lesson_id, "Sehenswürdigkeit", "die", "danh lam thắng cảnh, điểm tham quan", "Der Eiffelturm ist eine berühmte Sehenswürdigkeit in Europa. (Tháp Eiffel là một danh lam thắng cảnh nổi tiếng ở châu Âu.)"),
         (lesson_id, "Akropolis", "die", "Thành cổ Akropolis (ở Athen, Griechenland)", "Was ist das? – Das ist die Akropolis. Sie liegt in Athen. (Đây là gì? – Đó là thành cổ Akropolis. Nó nằm ở Athen.)"),
         (lesson_id, "Big Ben", "der", "Tháp đồng hồ Big Ben (ở London, England)", "Wo ist der Big Ben? – Er ist in London, England. (Tháp Big Ben ở đâu? – Nó ở Luân Đôn, nước Anh.)"),
-        (lesson_id, "Eiffelturm", "der", "Tháp Eiffel (ở Paris, Frankreich)", "Der Eiffelturm steht in Paris. Paris liegt in Frankreich. (Tháp Eiffel đứng sừng sững ở Paris. Paris nằm ở nước Pháp.)"),
-        (lesson_id, "Schiefe Turm", "der", "Tháp nghiêng Pisa (ở Pisa, Italien)", "Wo ist der Schiefe Turm? – Er ist in Pisa, Italien. (Tháp nghiêng ở đâu? – Nó ở Pisa, nước Ý.)"),
+        (lesson_id, "Eiffelturm", "der", "Tháp Eiffel (ở Paris, Frankreich)", "Der Eiffelturm steht in Paris. Paris liegt in Frankreich. (Tháp Eiffel tọa lạc ở Paris. Paris nằm ở nước Pháp.)"),
+        (lesson_id, "Schiefe Turm (von Pisa)", "der", "Tháp nghiêng Pisa (ở Pisa, Italien)", "Wo ist der Schiefe Turm von Pisa? – Er ist in Pisa, Italien. (Tháp nghiêng Pisa ở đâu? – Nó ở Pisa, nước Ý.)"),
         (lesson_id, "Prater", "der", "Công viên giải trí Prater (ở Wien, Österreich)", "Der Prater ist in Wien. Wien liegt im Osten von Österreich. (Công viên Prater ở Viên. Viên nằm ở phía Đông của nước Áo.)"),
         (lesson_id, "Brandenburger Tor", "das", "Cổng Brandenburg (ở Berlin, Deutschland)", "Das Brandenburger Tor ist in Berlin, Deutschland. (Cổng Brandenburg nằm ở Berlin, nước Đức.)"),
         (lesson_id, "Rote Platz", "der", "Quảng trường Đỏ (ở Moskau, Russland)", "Der Rote Platz ist in Moskau. Moskau liegt in Russland. (Quảng trường Đỏ nằm ở Moskva. Moskva nằm ở nước Nga.)"),
-        (lesson_id, "Norden", "der", "phía Bắc, miền Bắc (im Norden von / nördlich von)", "Hanoi liegt im Norden von Vietnam. (Hà Nội nằm ở miền Bắc Việt Nam.)"),
-        (lesson_id, "Süden", "der", "phía Nam, miền Nam (im Süden von / südlich von)", "Long An liegt im Süden von Vietnam. (Long An nằm ở miền Nam Việt Nam.)"),
-        (lesson_id, "Osten", "der", "phía Đông, miền Đông (im Osten von / östlich von)", "Berlin liegt im Osten von Deutschland. (Berlin nằm ở phía Đông nước Đức.)"),
-        (lesson_id, "Westen", "der", "phía Tây, miền Tây (im Westen von / westlich von)", "Köln liegt im Westen von Deutschland. (Köln nằm ở phía Tây nước Đức.)"),
-        (lesson_id, "Nordosten", "der", "phía Đông Bắc (im Nordosten von / nordöstlich von)", "Hai Phong liegt im Nordosten von Vietnam. (Hải Phòng nằm ở phía Đông Bắc Việt Nam.)"),
+        (lesson_id, "Norden", "der", "phía Bắc, miền Bắc (im Norden von + Quốc gia / nördlich von + Địa điểm khác)", "Hanoi liegt im Norden von Vietnam. (Hà Nội nằm ở miền Bắc Việt Nam.)"),
+        (lesson_id, "Süden", "der", "phía Nam, miền Nam (im Süden von + Quốc gia / südlich von + Địa điểm khác)", "Long An liegt im Süden von Vietnam. (Long An nằm ở miền Nam Việt Nam.)"),
+        (lesson_id, "Osten", "der", "phía Đông, miền Đông (im Osten von + Quốc gia / östlich von + Địa điểm khác)", "Berlin liegt im Osten von Deutschland. (Berlin nằm ở phía Đông nước Đức.)"),
+        (lesson_id, "Westen", "der", "phía Tây, miền Tây (im Westen von + Quốc gia / westlich von + Địa điểm khác)", "Köln liegt im Westen von Deutschland. (Köln nằm ở phía Tây nước Đức.)"),
+        (lesson_id, "Nordosten", "der", "phía Đông Bắc (im Nordosten von + Quốc gia / nordöstlich von + Địa điểm khác)", "Hai Phong liegt im Nordosten von Vietnam. (Hải Phòng nằm ở phía Đông Bắc Việt Nam.)"),
         (lesson_id, "Mitte", "die", "miền Trung, trung tâm (in der Mitte von)", "Da Nang liegt in der Mitte von Vietnam. (Đà Nẵng nằm ở miền Trung Việt Nam.)"),
         (lesson_id, "Landkarte", "die", "bản đồ địa lý", "Wir sehen die Städte auf der Landkarte. (Chúng tôi thấy các thành phố trên bản đồ.)"),
-        (lesson_id, "Supermarkt", "der", "siêu thị (im BigC Supermarkt)", "Ich war gestern im BigC Supermarkt. (Hôm qua tôi đã ở siêu thị BigC.)"),
+        (lesson_id, "Supermarkt", "der", "siêu thị (im Supermarkt)", "Ich war gestern im Big-C-Supermarkt. (Hôm qua tôi đã ở siêu thị Big C.)"),
         (lesson_id, "Theater", "das", "nhà hát (im Theater)", "Paula war im Theater in Haiphong. (Paula đã ở nhà hát tại Hải Phòng.)"),
-        (lesson_id, "Markt", "der", "chợ (auf dem Cat Bi Markt)", "Wart ihr schon auf dem Cat Bi Markt? (Các bạn đã từng đi chợ Cát Bi chưa?)"),
-        (lesson_id, "Meer", "das", "biển (am Do Son Meer)", "Heute sind wir am Do Son Meer. (Hôm nay chúng tôi đang ở biển Đồ Sơn.)"),
-        (lesson_id, "Hausaufgabe", "die", "bài tập về nhà", "Er macht die Hausaufgaben. (Anh ấy đang làm bài tập về nhà.)")
+        (lesson_id, "Markt", "der", "chợ (auf dem Markt)", "Wart ihr schon auf dem Cat-Bi-Markt? (Các bạn đã từng đi chợ Cát Bi chưa?)"),
+        (lesson_id, "Meer", "das", "biển (am Meer)", "Heute sind wir in Do Son am Meer. (Hôm nay chúng tôi đang ở biển tại Đồ Sơn.)"),
+        (lesson_id, "Hausaufgabe", "die", "bài tập về nhà (Pl. die Hausaufgaben)", "Er macht Hausaufgaben. (Anh ấy đang làm bài tập về nhà.)"),
+        (lesson_id, "sprechen", "Verb", "nói (ngôn ngữ)", "Ich spreche Vietnamesisch und ein bisschen Deutsch. (Tôi nói tiếng Việt và một chút tiếng Đức.)"),
+        (lesson_id, "liegen", "Verb", "nằm ở, tọa lạc ở", "Hanoi liegt im Norden von Vietnam. (Hà Nội nằm ở miền Bắc Việt Nam.)"),
+        (lesson_id, "sein", "Verb", "thì, là, ở (quá khứ: war / waren)", "Gestern waren wir in Haiphong. (Hôm qua chúng tôi đã ở Hải Phòng.)"),
+        (lesson_id, "haben", "Verb", "có (quá khứ: hatte / hatten)", "Wir hatten viel Spaß in Berlin. (Chúng tôi đã có rất nhiều niềm vui ở Berlin.)")
     ]
 
     cursor.executemany("""
@@ -885,6 +897,17 @@ def seed_lesson_3():
     # =========================================================================
     # NẠP KHO 50 CÂU HỎI BÀI 3 (ĐỦ 7 DẠNG KỸ NĂNG: 10 + 10 + 8 + 6 + 5 + 4 + 7)
     # =========================================================================
+    passage_b3_postcard = (
+        "Bưu thiếp gửi từ Hải Phòng (Postkarte aus Hai Phong):\n"
+        "Liebe Anna,\n"
+        "viele Grüße aus Hai Phong! Gestern war das Wetter super.\n"
+        "Ich war im Big-C-Supermarkt und Paula war im Theater.\n"
+        "Der Cat-Bi-Markt war sehr interessant.\n"
+        "Heute sind wir in Do Son am Meer.\n"
+        "Herzliche Grüße,\n"
+        "Peter und Paula"
+    )
+
     exercises = [
         # --- DẠNG 1: TRẮC NGHIỆM (10 CÂU) ---
         (
@@ -1004,7 +1027,7 @@ def seed_lesson_3():
         ),
         (
             lesson_id, "dien_khuyet",
-            "Câu 15: Điền dạng quá khứ của 'sein' cho ngôi 'ich': 'Gestern ___ ich im BigC Supermarkt.'",
+            "Câu 15: Điền dạng quá khứ của 'sein' cho ngôi 'ich': 'Gestern ___ ich im Big-C-Supermarkt.'",
             None,
             "war",
             "Chủ ngữ 'ich' đi với thì Präteritum của 'sein' là 'war'.",
@@ -1012,7 +1035,7 @@ def seed_lesson_3():
         ),
         (
             lesson_id, "dien_khuyet",
-            "Câu 16: Điền dạng quá khứ của 'sein' cho ngôi 'ihr': '___ ihr schon auf dem Cat Bi Markt?'",
+            "Câu 16: Điền dạng quá khứ của 'sein' cho ngôi 'ihr': '___ ihr schon auf dem Cat-Bi-Markt?'",
             None,
             "Wart",
             "Chủ ngữ 'ihr' đi với thì Präteritum của 'sein' là 'wart' (viết hoa đầu câu: Wart).",
@@ -1113,8 +1136,8 @@ def seed_lesson_3():
             lesson_id, "dich",
             "Câu 28 [Dynamic Phương hướng]: Viết câu miêu tả vị trí địa lý của thành phố: 'Hanoi liegt im Norden von Vietnam.'",
             None,
-            "Hanoi liegt im Norden von Vietnam. / Hanoi liegt nördlich von Vietnam. / Ha Noi liegt im Norden von Vietnam.",
-            "Vị trí địa lý chuẩn: 'Hanoi liegt im Norden von Vietnam.' (hoặc 'nördlich von Vietnam').",
+            "Hanoi liegt im Norden von Vietnam. / Ha Noi liegt im Norden von Vietnam.",
+            "Vị trí địa lý chuẩn: 'Hanoi liegt im Norden von Vietnam.' (nằm bên trong miền Bắc của nước Việt Nam).", 
             20,
             json.dumps({"dynamic_direction_quiz": True})
         ),
@@ -1151,10 +1174,10 @@ def seed_lesson_3():
             lesson_id, "nghe",
             "Câu 32: Nghe âm thanh chuẩn 1.0x / 0.65x và nhập lại câu nói tiếng Đức:",
             None,
-            "Der Cat Bi Markt war sehr interessant.",
-            "Âm thanh phát âm: 'Der Cat Bi Markt war sehr interessant.'",
+            "Der Cat-Bi-Markt war sehr interessant.",
+            "Âm thanh phát âm: 'Der Cat-Bi-Markt war sehr interessant.'",
             20,
-            json.dumps({"audio_text": "Der Cat Bi Markt war sehr interessant."})
+            json.dumps({"audio_text": "Der Cat-Bi-Markt war sehr interessant."})
         ),
         (
             lesson_id, "nghe",
@@ -1223,16 +1246,6 @@ def seed_lesson_3():
         ),
 
         # --- DẠNG 6: ĐỌC HIỂU BƯU THIẾP HẢI PHÒNG (4 CÂU) ---
-        passage_b3_postcard = (
-            "Bưu thiếp gửi từ Hải Phòng (Postkarte aus Hai Phong):\n"
-            "Liebe Anna,\n"
-            "viele Grüße aus Hai Phong! Gestern war das Wetter super.\n"
-            "Ich war im BigC Supermarkt und Paula war im Theater.\n"
-            "Der Cat Bi Markt war sehr interessant.\n"
-            "Heute sind wir am Do Son Meer.\n"
-            "Herzliche Grüße,\n"
-            "Peter und Paula"
-        )
 
         (
             lesson_id, "doc",
@@ -1245,25 +1258,25 @@ def seed_lesson_3():
         (
             lesson_id, "doc",
             "Câu 41 [Đọc hiểu Bưu thiếp]: Ngày hôm qua ('gestern'), Paula đã ở địa điểm nào?",
-            json.dumps(["im BigC Supermarkt", "im Theater", "am Do Son Meer", "in Hanoi"]),
+            json.dumps(["im Big-C-Supermarkt", "im Theater", "in Do Son am Meer", "in Hanoi"]),
             "im Theater",
-            "Bức thư nêu rõ: 'Ich war im BigC Supermarkt und Paula [war] im Theater.' → Paula đã ở trong nhà hát.",
+            "Bức thư nêu rõ: 'Ich war im Big-C-Supermarkt und Paula [war] im Theater.' → Paula đã ở trong nhà hát.",
             20, json.dumps({"passage": passage_b3_postcard}, ensure_ascii=False)
         ),
         (
             lesson_id, "doc",
-            "Câu 42 [Đọc hiểu Bưu thiếp]: Chợ Cát Bi ('der Cat Bi Markt') được nhận xét như thế nào?",
+            "Câu 42 [Đọc hiểu Bưu thiếp]: Chợ Cát Bi ('der Cat-Bi-Markt') được nhận xét như thế nào?",
             json.dumps(["sehr groß", "sehr interessant", "sehr teuer", "nicht schön"]),
             "sehr interessant",
-            "Bức thư viết: 'Der Cat Bi Markt war sehr interessant.' (Chợ Cát Bi đã rất thú vị).",
+            "Bức thư viết: 'Der Cat-Bi-Markt war sehr interessant.' (Chợ Cát Bi rất thú vị).",
             20, json.dumps({"passage": passage_b3_postcard}, ensure_ascii=False)
         ),
         (
             lesson_id, "doc",
             "Câu 43 [Đọc hiểu Bưu thiếp]: Ngày hôm nay ('heute'), Paula và Peter đang ở địa điểm nào?",
-            json.dumps(["im Supermarkt", "im Theater", "auf dem Markt", "am Do Son Meer"]),
-            "am Do Son Meer",
-            "Bức thư viết: 'Heute sind wir am Do Son Meer.' (Hôm nay chúng mình đang ở biển Đồ Sơn).",
+            json.dumps(["im Supermarkt", "im Theater", "auf dem Markt", "in Do Son am Meer"]),
+            "in Do Son am Meer",
+            "Bức thư viết: 'Heute sind wir in Do Son am Meer.' (Hôm nay chúng mình đang ở biển tại Đồ Sơn).",
             20, json.dumps({"passage": passage_b3_postcard}, ensure_ascii=False)
         ),
 
@@ -1286,7 +1299,7 @@ def seed_lesson_3():
         ),
         (
             lesson_id, "viet",
-            "Câu 46: Hãy chuyển câu trần thuật 'Er macht die Hausaufgaben.' sang câu hỏi có từ để hỏi (W-Frage):",
+            "Câu 46: Hãy chuyển câu trần thuật 'Er macht Hausaufgaben.' sang câu hỏi có từ để hỏi (W-Frage):",
             None,
             "Was macht er? / Was tut er?",
             "Hỏi cho hành động làm bài tập dùng từ để hỏi 'Was': 'Was macht er?' (Anh ấy đang làm gì?).",

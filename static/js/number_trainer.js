@@ -583,13 +583,26 @@ function generateNewNumberData(ex) {
         const useAdj = !chosen.isCenter && (Math.random() > 0.5);
 
         if (useAdj) {
-            ex.question = `[Phương hướng Tính từ -lich (Random)]: Hãy viết câu miêu tả vị trí của ${chosen.city} bằng TÍNH TỪ chỉ phương hướng (-lich) theo mẫu '${chosen.city} liegt ... von ${chosen.country}':`;
-            ex.correct_answer = `${chosen.city} liegt ${chosen.adj} von ${chosen.country}.`;
-            ex.explanation = `Dùng tính từ chỉ phương hướng (-lich): '${chosen.city} liegt ${chosen.adj} von ${chosen.country}' (${chosen.city} nằm ở ${chosen.vi} ${chosen.country}). Tuyệt đối không dùng 'im' trước tính từ.`;
+            const pairsAdj = [
+                { a: "Hai Phong", b: "Hanoi", adj: "östlich", viA: "Hải Phòng", viB: "Hà Nội", viDir: "phía Đông" },
+                { a: "Hanoi", b: "Hue", adj: "nördlich", viA: "Hà Nội", viB: "Huế", viDir: "phía Bắc" },
+                { a: "Long An", b: "Ho-Chi-Minh-Stadt", adj: "südwestlich", viA: "Long An", viB: "TP. Hồ Chí Minh", viDir: "phía Tây Nam" },
+                { a: "Österreich", b: "Deutschland", adj: "südlich", viA: "Nước Áo", viB: "nước Đức", viDir: "phía Nam" },
+                { a: "Hamburg", b: "Hannover", adj: "nördlich", viA: "Hamburg", viB: "Hannover", viDir: "phía Bắc" },
+                { a: "München", b: "Nürnberg", adj: "südlich", viA: "München", viB: "Nürnberg", viDir: "phía Nam" },
+                { a: "Köln", b: "Frankfurt", adj: "nordwestlich", viA: "Köln", viB: "Frankfurt", viDir: "phía Tây Bắc" },
+                { a: "Dresden", b: "Leipzig", adj: "östlich", viA: "Dresden", viB: "Leipzig", viDir: "phía Đông" }
+            ];
+            const pair = pairsAdj[Math.floor(Math.random() * pairsAdj.length)];
+            ex.question = `[Phương hướng Tính từ -lich (Random)]: Hãy viết câu miêu tả vị trí của ${pair.a} so với ${pair.b} bằng TÍNH TỪ chỉ phương hướng (-lich) theo mẫu '${pair.a} liegt ... von ${pair.b}':`;
+            ex.correct_answer = `${pair.a} liegt ${pair.adj} von ${pair.b}.`;
+            ex.explanation = `Dùng tính từ chỉ phương hướng (-lich) so sánh 2 địa điểm riêng biệt: '${pair.a} liegt ${pair.adj} von ${pair.b}' (${pair.viA} nằm ở ${pair.viDir} của ${pair.viB}). Tuyệt đối không dùng 'im' trước tính từ.`;
+            extra.translation = `${pair.viA} nằm ở ${pair.viDir} của ${pair.viB}.`;
         } else {
             ex.question = `[Phương hướng Cụm Danh từ (Random)]: Hãy hoàn thành vị trí của ${chosen.city} (${chosen.vi} ${chosen.country}): '${chosen.city} liegt ___ von ${chosen.country}.'`;
             ex.correct_answer = chosen.noun;
-            ex.explanation = `'${chosen.city}' nằm ở ${chosen.vi} của ${chosen.country} → Cụm giới từ là '${chosen.noun} von ${chosen.country}'.`;
+            ex.explanation = `'${chosen.city}' nằm ở ${chosen.vi} của ${chosen.country} → Cụm giới từ là '${chosen.noun} von ${chosen.country}' (bên trong lãnh thổ).`;
+            extra.translation = `${chosen.city} nằm ở ${chosen.vi} của ${chosen.country}.`;
         }
         extra.translation = `${chosen.city} nằm ở ${chosen.vi} của ${chosen.country}.`;
         ex.extra_data = JSON.stringify(extra);
@@ -685,7 +698,7 @@ function generateNewNumberData(ex) {
             { label: "Paula und ich", pronoun: "Paula und ich", form: "waren", vi: "Paula và tôi" },
             { label: "du und Peter (ihr)", pronoun: "du und Peter", form: "wart", vi: "bạn và Peter" },
             { label: "Paula", pronoun: "Paula", form: "war", vi: "Paula" },
-            { label: "Der Cat Bi Markt", pronoun: "Der Cat Bi Markt", form: "war", vi: "Chợ Cát Bi" }
+            { label: "Der Cat-Bi-Markt", pronoun: "Der Cat-Bi-Markt", form: "war", vi: "Chợ Cát Bi" }
         ];
         const times = [
             { de: "Gestern", vi: "Hôm qua" },
@@ -696,9 +709,10 @@ function generateNewNumberData(ex) {
         const places = [
             { de: "in Haiphong", vi: "ở Hải Phòng" },
             { de: "in Hanoi", vi: "ở Hà Nội" },
-            { de: "im BigC Supermarkt", vi: "ở siêu thị BigC" },
+            { de: "im Big-C-Supermarkt", vi: "ở siêu thị Big C" },
             { de: "im Theater", vi: "ở nhà hát" },
-            { de: "auf dem Cat Bi Markt", vi: "ở chợ Cát Bi" },
+            { de: "auf dem Cat-Bi-Markt", vi: "ở chợ Cát Bi" },
+            { de: "in Do Son am Meer", vi: "ở biển tại Đồ Sơn" },
             { de: "in Wien", vi: "ở Viên" },
             { de: "in Athen", vi: "ở Athens" }
         ];
