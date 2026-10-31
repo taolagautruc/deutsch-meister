@@ -476,6 +476,127 @@ const GERMAN_VERBS_DB = [
         forms: { ich: "brauche", du: "brauchst", er_sie_es: "braucht", wir: "brauchen", ihr: "braucht", sie_Sie: "brauchen" },
         note: "Đòi hỏi tân ngữ Cách 4 (Akkusativ): Ich brauche einen Tisch und einen Stuhl.",
         example: "Mein Arbeitszimmer braucht einen Tisch und einen Stuhl."
+    },
+    // --- 12 ĐỘNG TỪ MỚI BÀI 5 (THỜI GIAN, LỊCH TRÌNH & ĐỘNG TỪ TÁCH) ---
+    {
+        infinitiv: "aufmachen",
+        meaning: "mở (cửa, cửa sổ, sách...)",
+        group: "Động từ tách (Trennbare Verben)",
+        stem: "auf- / mach-",
+        ending: "-en",
+        forms: { ich: "mache ... auf", du: "machst ... auf", er_sie_es: "macht ... auf", wir: "machen ... auf", ihr: "macht ... auf", sie_Sie: "machen ... auf" },
+        note: "Tiền tố tách 'auf-' đứng ở cuối câu trong câu đơn thì hiện tại. Ví dụ: Ich mache die Tür auf.",
+        example: "Ich mache die Tür auf."
+    },
+    {
+        infinitiv: "zumachen",
+        meaning: "đóng lại (cửa, cửa sổ...)",
+        group: "Động từ tách (Trennbare Verben)",
+        stem: "zu- / mach-",
+        ending: "-en",
+        forms: { ich: "mache ... zu", du: "machst ... zu", er_sie_es: "macht ... zu", wir: "machen ... zu", ihr: "macht ... zu", sie_Sie: "machen ... zu" },
+        note: "Tiền tố tách 'zu-' đứng ở cuối câu trong câu đơn thì hiện tại.",
+        example: "Es ist kalt. Machst du bitte das Fenster zu?"
+    },
+    {
+        infinitiv: "anmachen",
+        meaning: "bật (đèn, tivi, thiết bị)",
+        group: "Động từ tách (Trennbare Verben)",
+        stem: "an- / mach-",
+        ending: "-en",
+        forms: { ich: "mache ... an", du: "machst ... an", er_sie_es: "macht ... an", wir: "machen ... an", ihr: "macht ... an", sie_Sie: "machen ... an" },
+        note: "Tiền tố tách 'an-' đứng ở cuối câu trong câu đơn thì hiện tại.",
+        example: "Am Abend mache ich die Lampe an."
+    },
+    {
+        infinitiv: "ausmachen",
+        meaning: "tắt (đèn, tivi, thiết bị)",
+        group: "Động từ tách (Trennbare Verben)",
+        stem: "aus- / mach-",
+        ending: "-en",
+        forms: { ich: "mache ... aus", du: "machst ... aus", er_sie_es: "macht ... aus", wir: "machen ... aus", ihr: "macht ... aus", sie_Sie: "machen ... aus" },
+        note: "Tiền tố tách 'aus-' đứng ở cuối câu trong câu đơn thì hiện tại.",
+        example: "Um 22 Uhr mache ich den Fernseher aus."
+    },
+    {
+        infinitiv: "aufstehen",
+        meaning: "thức dậy, đứng dậy",
+        group: "Động từ tách (Trennbare Verben)",
+        stem: "auf- / steh-",
+        ending: "-en",
+        forms: { ich: "stehe ... auf", du: "stehst ... auf", er_sie_es: "steht ... auf", wir: "stehen ... auf", ihr: "steht ... auf", sie_Sie: "stehen ... auf" },
+        note: "Tiền tố tách 'auf-' đứng ở cuối câu. Đảo ngữ khi trạng từ thời gian đứng đầu: Am Sonntag stehe ich um 8 Uhr auf.",
+        example: "Am Sonntag stehe ich um 8 Uhr auf."
+    },
+    {
+        infinitiv: "ausgehen",
+        meaning: "đi ra ngoài, đi chơi tối",
+        group: "Động từ tách (Trennbare Verben)",
+        stem: "aus- / geh-",
+        ending: "-en",
+        forms: { ich: "gehe ... aus", du: "gehst ... aus", er_sie_es: "geht ... aus", wir: "gehen ... aus", ihr: "geht ... aus", sie_Sie: "gehen ... aus" },
+        note: "Tiền tố tách 'aus-' đứng ở cuối câu. Ví dụ: Am Freitag um 20 Uhr gehe ich aus.",
+        example: "Am Freitag um 20 Uhr gehe ich aus."
+    },
+    {
+        infinitiv: "einkaufen",
+        meaning: "đi mua sắm",
+        group: "Động từ tách (Trennbare Verben)",
+        stem: "ein- / kauf-",
+        ending: "-en",
+        forms: { ich: "kaufe ... ein", du: "kaufst ... ein", er_sie_es: "kauft ... ein", wir: "kaufen ... ein", ihr: "kauft ... ein", sie_Sie: "kaufen ... ein" },
+        note: "Tiền tố tách 'ein-' đứng ở cuối câu. Ví dụ: Am Samstag kaufen wir im Supermarkt ein.",
+        example: "Am Samstag kaufen wir im Supermarkt ein."
+    },
+    {
+        infinitiv: "anrufen",
+        meaning: "gọi điện thoại (+ Akkusativ)",
+        group: "Động từ tách (Trennbare Verben)",
+        stem: "an- / ruf-",
+        ending: "-en",
+        forms: { ich: "rufe ... an", du: "rufst ... an", er_sie_es: "ruft ... an", wir: "rufen ... an", ihr: "ruft ... an", sie_Sie: "rufen ... an" },
+        note: "Tiền tố tách 'an-' đứng ở cuối câu. Đi kèm tân ngữ Akkusativ (anrufen + Akk).",
+        example: "Ich rufe dich am Nachmittag an."
+    },
+    {
+        infinitiv: "fernsehen",
+        meaning: "xem tivi (biến âm e → ie)",
+        group: "Động từ tách (Trennbare Verben)",
+        stem: "fern- / seh-",
+        ending: "-en",
+        forms: { ich: "sehe ... fern", du: "siehst ... fern", er_sie_es: "sieht ... fern", wir: "sehen ... fern", ihr: "seht ... fern", sie_Sie: "sehen ... fern" },
+        note: "Vừa là động từ tách vừa biến âm nguyên âm gốc e -> ie ở ngôi du (siehst ... fern) và er/sie/es (sieht ... fern).",
+        example: "Am Abend sieht mein Vater gern fern."
+    },
+    {
+        infinitiv: "mitkommen",
+        meaning: "đi cùng, tham gia cùng",
+        group: "Động từ tách (Trennbare Verben)",
+        stem: "mit- / komm-",
+        ending: "-en",
+        forms: { ich: "komme ... mit", du: "kommst ... mit", er_sie_es: "kommt ... mit", wir: "kommen ... mit", ihr: "kommt ... mit", sie_Sie: "kommen ... mit" },
+        note: "Tiền tố tách 'mit-' đứng ở cuối câu. Ví dụ trong câu hỏi: Kommst du mit?",
+        example: "Wir gehen ins Kino. Kommst du mit?"
+    },
+    {
+        infinitiv: "vorbereiten",
+        meaning: "chuẩn bị",
+        group: "Động từ tách (Trennbare Verben)",
+        stem: "vor- / bereit-",
+        ending: "-en",
+        forms: { ich: "bereite ... vor", du: "bereitest ... vor", er_sie_es: "bereitet ... vor", wir: "bereiten ... vor", ihr: "bereitet ... vor", sie_Sie: "bereiten ... vor" },
+        note: "Động từ tách có gốc kết thúc bằng -t (bereit-) nên chèn thêm nguyên âm -e- trước đuôi chia ở các ngôi du, er/sie/es, ihr.",
+        example: "Die Lehrerin bereitet den Deutschkurs vor."
+    },
+    {
+        infinitiv: "frühstücken",
+        meaning: "ăn sáng",
+        group: "Quy tắc (Regelmäßig)",
+        stem: "frühstück-",
+        ending: "-en",
+        forms: { ich: "frühstücke", du: "frühstückst", er_sie_es: "frühstückt", wir: "frühstücken", ihr: "frühstückt", sie_Sie: "frühstücken" },
+        note: "Động từ quy tắc KHÔNG tách, chia đuôi chuẩn: -e, -st, -t, -en, -t, -en.",
+        example: "Um 9 Uhr frühstücke ich."
     }
 ];
 
@@ -522,6 +643,11 @@ function formatConjugatedForm(verb, personKey, value) {
         if (personKey === "du") {
             return `<span class="font-black text-purple-700 bg-purple-50 px-2 py-0.5 rounded-md border border-purple-200">${value}</span>`;
         }
+    }
+
+    // 5. Trường hợp Động từ tách (Trennbare Verben)
+    if (verb.group.includes("tách") || verb.group.includes("Trennbare")) {
+        return `<span class="font-black text-sky-800 bg-sky-50 px-1.5 py-0.5 rounded-md border border-sky-200">${value}</span>`;
     }
 
     // Mặc định: Highlight phần đuôi
@@ -588,6 +714,7 @@ function speakAllPraeteritumForms(verbInfinitiv) {
 
 const VERB_GROUPS = [
     { id: "all", label: "Tất cả" },
+    { id: "Động từ tách", label: "Động từ tách (Trennbare Verben)" },
     { id: "Quy tắc", label: "Quy tắc (Regelmäßig)" },
     { id: "-s, -ß, -z", label: "Gốc -s, -ß, -z (heißen, tanzen)" },
     { id: "-t, -d", label: "Gốc -t, -d (mieten, arbeiten)" },
@@ -649,8 +776,11 @@ function updateVerbKonjugatorUI() {
         else if (v.group.includes("-t, -d")) badgeColor = "bg-emerald-50 text-emerald-800 border-emerald-300";
         else if (v.group.includes("-s, -ß, -z")) badgeColor = "bg-purple-50 text-purple-800 border-purple-300";
         else if (v.group.includes("Bất quy tắc")) badgeColor = "bg-rose-50 text-rose-800 border-rose-300";
+        else if (v.group.includes("tách")) badgeColor = "bg-sky-50 text-sky-800 border-sky-300";
 
         const safeExample = v.example.replace(/'/g, "\\'");
+
+        const cleanSpeak = (person, val) => (person + ' ' + (val || '').replace(/\\.\\.\\./g, ' ')).replace(/\\s+/g, ' ').trim();
 
         return `
             <div class="p-5 sm:p-6 rounded-3xl bg-white border border-slate-200 shadow-sm hover:shadow-lg hover:border-indigo-300 transition-all flex flex-col justify-between space-y-4">
@@ -691,14 +821,14 @@ function updateVerbKonjugatorUI() {
                         <span class="text-[10px] text-indigo-600 font-semibold">🔊 Bấm ô để nghe</span>
                     </div>
                     <div class="grid grid-cols-2 gap-2 bg-slate-50/70 p-3 rounded-2xl border border-slate-200/80 text-xs">
-                        <div onclick="speakGerman('ich ${v.forms.ich}')" class="cursor-pointer p-2 rounded-xl bg-white border border-slate-200/80 hover:border-indigo-400 hover:shadow-xs transition flex items-center justify-between group">
+                        <div onclick="speakGerman('${cleanSpeak('ich', v.forms.ich)}')" class="cursor-pointer p-2 rounded-xl bg-white border border-slate-200/80 hover:border-indigo-400 hover:shadow-xs transition flex items-center justify-between group">
                             <span class="text-slate-500 font-medium">ich:</span>
                             <div class="flex items-center gap-1">
                                 ${formatConjugatedForm(v, 'ich', v.forms.ich)}
                                 <span class="opacity-0 group-hover:opacity-100 transition text-[10px] text-indigo-600">🔊</span>
                             </div>
                         </div>
-                        <div onclick="speakGerman('wir ${v.forms.wir}')" class="cursor-pointer p-2 rounded-xl bg-white border border-slate-200/80 hover:border-indigo-400 hover:shadow-xs transition flex items-center justify-between group">
+                        <div onclick="speakGerman('${cleanSpeak('wir', v.forms.wir)}')" class="cursor-pointer p-2 rounded-xl bg-white border border-slate-200/80 hover:border-indigo-400 hover:shadow-xs transition flex items-center justify-between group">
                             <span class="text-slate-500 font-medium">wir:</span>
                             <div class="flex items-center gap-1">
                                 ${formatConjugatedForm(v, 'wir', v.forms.wir)}
@@ -706,14 +836,14 @@ function updateVerbKonjugatorUI() {
                             </div>
                         </div>
 
-                        <div onclick="speakGerman('du ${v.forms.du}')" class="cursor-pointer p-2 rounded-xl bg-white border border-slate-200/80 hover:border-indigo-400 hover:shadow-xs transition flex items-center justify-between group">
+                        <div onclick="speakGerman('${cleanSpeak('du', v.forms.du)}')" class="cursor-pointer p-2 rounded-xl bg-white border border-slate-200/80 hover:border-indigo-400 hover:shadow-xs transition flex items-center justify-between group">
                             <span class="text-slate-500 font-medium">du:</span>
                             <div class="flex items-center gap-1">
                                 ${formatConjugatedForm(v, 'du', v.forms.du)}
                                 <span class="opacity-0 group-hover:opacity-100 transition text-[10px] text-indigo-600">🔊</span>
                             </div>
                         </div>
-                        <div onclick="speakGerman('ihr ${v.forms.ihr}')" class="cursor-pointer p-2 rounded-xl bg-white border border-slate-200/80 hover:border-indigo-400 hover:shadow-xs transition flex items-center justify-between group">
+                        <div onclick="speakGerman('${cleanSpeak('ihr', v.forms.ihr)}')" class="cursor-pointer p-2 rounded-xl bg-white border border-slate-200/80 hover:border-indigo-400 hover:shadow-xs transition flex items-center justify-between group">
                             <span class="text-slate-500 font-medium">ihr:</span>
                             <div class="flex items-center gap-1">
                                 ${formatConjugatedForm(v, 'ihr', v.forms.ihr)}
@@ -721,14 +851,14 @@ function updateVerbKonjugatorUI() {
                             </div>
                         </div>
 
-                        <div onclick="speakGerman('er ${v.forms.er_sie_es}')" class="cursor-pointer p-2 rounded-xl bg-white border border-slate-200/80 hover:border-indigo-400 hover:shadow-xs transition flex items-center justify-between group">
+                        <div onclick="speakGerman('${cleanSpeak('er', v.forms.er_sie_es)}')" class="cursor-pointer p-2 rounded-xl bg-white border border-slate-200/80 hover:border-indigo-400 hover:shadow-xs transition flex items-center justify-between group">
                             <span class="text-slate-500 font-medium">er/sie/es:</span>
                             <div class="flex items-center gap-1">
                                 ${formatConjugatedForm(v, 'er_sie_es', v.forms.er_sie_es)}
                                 <span class="opacity-0 group-hover:opacity-100 transition text-[10px] text-indigo-600">🔊</span>
                             </div>
                         </div>
-                        <div onclick="speakGerman('sie ${v.forms.sie_Sie}')" class="cursor-pointer p-2 rounded-xl bg-white border border-slate-200/80 hover:border-indigo-400 hover:shadow-xs transition flex items-center justify-between group">
+                        <div onclick="speakGerman('${cleanSpeak('sie', v.forms.sie_Sie)}')" class="cursor-pointer p-2 rounded-xl bg-white border border-slate-200/80 hover:border-indigo-400 hover:shadow-xs transition flex items-center justify-between group">
                             <span class="text-slate-500 font-medium">sie/Sie:</span>
                             <div class="flex items-center gap-1">
                                 ${formatConjugatedForm(v, 'sie_Sie', v.forms.sie_Sie)}
