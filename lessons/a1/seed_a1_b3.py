@@ -768,7 +768,7 @@ def seed_lesson_3():
             <div class="p-5 rounded-2xl bg-slate-50 border border-slate-200 text-xs space-y-2">
                 <div class="flex items-center justify-between">
                     <h5 class="font-bold text-slate-900">💬 Đoạn Hội Thoại Carlos & Người Bạn (Athen / Wien):</h5>
-                    <button onclick="speakGerman('Carlos, woher kommst du? Ich komme aus Wien. Das ist in Österreich.')" class="px-2 py-1 rounded bg-indigo-50 text-indigo-700 font-bold hover:bg-indigo-100 transition cursor-pointer">🔊 Nghe hội thoại</button>
+                    <button onclick="speakGerman('Carlos, woher kommst du? Ich komme aus Wien. Das ist in Österreich. Und du, woher kommst du? Ich komme aus Athen. Warst du schon in Athen? Nein, wo ist denn das? Das ist in Griechenland.')" class="px-2 py-1 rounded bg-indigo-50 text-indigo-700 font-bold hover:bg-indigo-100 transition cursor-pointer">🔊 Nghe hội thoại</button>
                 </div>
                 <div class="space-y-1 text-slate-700 leading-relaxed">
                     <p><b>A:</b> Carlos, woher <b>kommst</b> du? <span class="text-slate-500 font-sans italic">(Carlos, bạn đến từ đâu?)</span></p>
@@ -783,7 +783,7 @@ def seed_lesson_3():
             <div class="p-6 rounded-3xl bg-gradient-to-br from-amber-50 to-orange-50 border border-amber-200 text-slate-800 space-y-3 relative shadow-xs">
                 <div class="flex items-center justify-between flex-wrap gap-2">
                     <span class="px-3 py-1 rounded-full bg-amber-200 text-amber-900 font-bold text-xs">✉️ Bưu Thiếp Du Lịch Hải Phòng Gửi Anna</span>
-                    <button onclick="speakGerman('Liebe Anna, gestern waren Paula und ich in Haiphong. Ich war im Big-C-Supermarkt und Paula im Theater. Wart ihr schon auf dem Cat-Bi-Markt? Der Cat-Bi-Markt war sehr interessant. Hier sind ein paar Fotos. Es war super! Heute sind wir in Do Son am Meer. Viele Grüße, Paula und Peter')" class="px-3 py-1.5 rounded-xl bg-amber-600 text-white font-bold text-xs hover:bg-amber-700 transition flex items-center gap-1.5 cursor-pointer">
+                    <button onclick="speakGerman('Liebe Anna, gestern waren Paula und ich in Haiphong. Ich war im Big-C-Supermarkt und Paula war im Theater. Wart ihr schon auf dem Cat-Bi-Markt? Der Cat-Bi-Markt war sehr interessant. Hier sind ein paar Fotos. Es war super! Heute sind wir in Do Son am Meer. Viele Grüße, Paula und Peter')" class="px-3 py-1.5 rounded-xl bg-amber-600 text-white font-bold text-xs hover:bg-amber-700 transition flex items-center gap-1.5 cursor-pointer">
                         🔊 Nghe toàn bộ bức thư
                     </button>
                 </div>
@@ -791,11 +791,11 @@ def seed_lesson_3():
                 <div class="p-5 rounded-2xl bg-white/90 border border-amber-200/80 font-serif text-xs leading-relaxed space-y-2 text-slate-900">
                     <p class="font-bold text-amber-950 text-sm">Liebe Anna,</p>
                     <p>
-                        <b>gestern</b> <b>waren</b> Paula und ich in Haiphong. <b>Ich</b> <b>war</b> im Big-C-Supermarkt und <b>Paula</b> [war] im Theater. <b>Wart</b> <b>ihr</b> schon auf dem Cat-Bi-Markt? Der Cat-Bi-Markt <b>war</b> sehr interessant. Hier <b>sind</b> ein paar Fotos. Es <b>war</b> super! <b>Heute</b> <b>sind</b> wir in Do Son am Meer.
+                        gestern waren Paula und ich in Haiphong. Ich war im Big-C-Supermarkt und Paula war im Theater. Wart ihr schon auf dem Cat-Bi-Markt? Der Cat-Bi-Markt war sehr interessant. Hier sind ein paar Fotos. Es war super! Heute sind wir in Do Son am Meer.
                     </p>
-                    <p class="pt-2">Viele Grüße<br><b>Paula und Peter</b></p>
+                    <p class="pt-2">Viele Grüße<br>Paula und Peter</p>
                     <p class="text-xs text-amber-900/80 italic pt-2 border-t border-amber-200/80 font-sans">
-                        (Dịch nghĩa: Anna thân mến, hôm qua Paula và mình đã ở Hải Phòng. Mình đã ở siêu thị Big C còn Paula [đã ở] trong nhà hát. Các bạn đã từng đến chợ Cát Bi chưa? Chợ Cát Bi rất thú vị. Đây là một vài bức ảnh. Tuyệt vời lắm! Hôm nay chúng mình đang ở biển tại Đồ Sơn. Nhiều lời chào thân ái, Paula và Peter.)
+                        (Dịch nghĩa: Anna thân mến, hôm qua Paula và mình đã ở Hải Phòng. Mình đã ở siêu thị Big C còn Paula đã ở trong nhà hát. Các bạn đã từng đến chợ Cát Bi chưa? Chợ Cát Bi rất thú vị. Đây là một vài bức ảnh. Tuyệt vời lắm! Hôm nay chúng mình đang ở biển tại Đồ Sơn. Nhiều lời chào thân ái, Paula và Peter.)
                     </p>
                 </div>
 
@@ -1314,7 +1314,7 @@ def seed_lesson_3():
             "Câu 41 [Đọc hiểu Bưu thiếp]: Ngày hôm qua ('gestern'), Paula đã ở địa điểm nào?",
             json.dumps(["im Big-C-Supermarkt", "im Theater", "in Do Son am Meer", "in Hanoi"]),
             "im Theater",
-            "Bức thư nêu rõ: 'Ich war im Big-C-Supermarkt und Paula [war] im Theater.' → Paula đã ở trong nhà hát.",
+            "Bức thư nêu rõ: 'Ich war im Big-C-Supermarkt und Paula war im Theater.' → Paula đã ở trong nhà hát.",
             20, json.dumps({"passage": passage_b3_postcard}, ensure_ascii=False)
         ),
         (
