@@ -468,42 +468,42 @@ def seed_lesson_3():
                             <td class="p-3 font-bold text-blue-700">der Osten</td>
                             <td class="p-3 font-semibold text-indigo-700">im Osten von</td>
                             <td class="p-3 font-semibold text-purple-700">östlich von</td>
-                            <td class="p-3">Berlin liegt <b>im Osten von</b> Deutschland.</td>
+                            <td class="p-3">Berlin liegt <b>im Osten von</b> Deutschland (<b>östlich von</b> Magdeburg).</td>
                         </tr>
                         <tr class="hover:bg-slate-50 transition">
                             <td class="p-3 font-bold text-slate-900">Tây (West)</td>
                             <td class="p-3 font-bold text-blue-700">der Westen</td>
                             <td class="p-3 font-semibold text-indigo-700">im Westen von</td>
                             <td class="p-3 font-semibold text-purple-700">westlich von</td>
-                            <td class="p-3">Köln liegt <b>im Westen von</b> Deutschland.</td>
+                            <td class="p-3">Köln liegt <b>im Westen von</b> Deutschland (<b>westlich von</b> Frankfurt).</td>
                         </tr>
                         <tr class="hover:bg-slate-50 transition">
                             <td class="p-3 font-bold text-slate-900">Đông Bắc (Northeast)</td>
                             <td class="p-3 font-bold text-blue-700">der Nordosten</td>
                             <td class="p-3 font-semibold text-indigo-700">im Nordosten von</td>
                             <td class="p-3 font-semibold text-purple-700">nordöstlich von</td>
-                            <td class="p-3">Hai Phong liegt <b>im Nordosten von</b> Vietnam.</td>
+                            <td class="p-3">Hai Phong liegt <b>im Nordosten von</b> Vietnam (<b>nordöstlich von</b> Hanoi).</td>
                         </tr>
                         <tr class="hover:bg-slate-50 transition">
                             <td class="p-3 font-bold text-slate-900">Đông Nam (Southeast)</td>
                             <td class="p-3 font-bold text-blue-700">der Südosten</td>
                             <td class="p-3 font-semibold text-indigo-700">im Südosten von</td>
                             <td class="p-3 font-semibold text-purple-700">südöstlich von</td>
-                            <td class="p-3">Dresden liegt <b>im Südosten von</b> Deutschland.</td>
+                            <td class="p-3">Dresden liegt <b>im Südosten von</b> Deutschland (<b>südöstlich von</b> Leipzig).</td>
                         </tr>
                         <tr class="hover:bg-slate-50 transition">
                             <td class="p-3 font-bold text-slate-900">Tây Bắc (Northwest)</td>
                             <td class="p-3 font-bold text-blue-700">der Nordwesten</td>
                             <td class="p-3 font-semibold text-indigo-700">im Nordwesten von</td>
                             <td class="p-3 font-semibold text-purple-700">nordwestlich von</td>
-                            <td class="p-3">Dien Bien liegt <b>im Nordwesten von</b> Vietnam.</td>
+                            <td class="p-3">Dien Bien liegt <b>im Nordwesten von</b> Vietnam (<b>nordwestlich von</b> Hanoi).</td>
                         </tr>
                         <tr class="hover:bg-slate-50 transition">
                             <td class="p-3 font-bold text-slate-900">Tây Nam (Southwest)</td>
                             <td class="p-3 font-bold text-blue-700">der Südwesten</td>
                             <td class="p-3 font-semibold text-indigo-700">im Südwesten von</td>
                             <td class="p-3 font-semibold text-purple-700">südwestlich von</td>
-                            <td class="p-3">Can Tho liegt <b>im Südwesten von</b> Vietnam.</td>
+                            <td class="p-3">Can Tho liegt <b>im Südwesten von</b> Vietnam (<b>südwestlich von</b> Ho-Chi-Minh-Stadt).</td>
                         </tr>
                         <tr class="hover:bg-rose-50/50 transition">
                             <td class="p-3 font-bold text-rose-700">Miền Trung / Ở giữa</td>
@@ -728,7 +728,7 @@ def seed_lesson_3():
                             <td class="p-3 font-black text-amber-900 bg-amber-50/50">waren</td>
                             <td class="p-3">haben</td>
                             <td class="p-3 font-black text-indigo-900 bg-indigo-50/50">hatten</td>
-                            <td class="p-3"><button onclick="speakGerman('sie waren, Sie waren')" class="px-2 py-1 rounded bg-slate-100 text-indigo-600 font-bold hover:bg-indigo-600 hover:text-white transition cursor-pointer">🔊</button></td>
+                            <td class="p-3"><button onclick="speakGerman('sie waren, sie hatten')" class="px-2 py-1 rounded bg-slate-100 text-indigo-600 font-bold hover:bg-indigo-600 hover:text-white transition cursor-pointer">🔊</button></td>
                         </tr>
                     </tbody>
                 </table>
