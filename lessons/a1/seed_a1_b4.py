@@ -98,7 +98,7 @@ def seed_lesson_4():
                             <button onclick="speakGerman('der Keller')" class="p-1 rounded bg-blue-100 hover:bg-blue-200 text-xs cursor-pointer">🔊</button>
                         </li>
                         <li class="flex items-start justify-between gap-1">
-                            <div><b>der Stock</b> <span class="text-slate-500 text-xs">(Pl: die Stockwerke)</span><br><span class="text-xs text-slate-600">Tầng lầu</span></div>
+                            <div><b>der Stock</b> <span class="text-slate-500 text-xs">(Pl: die Stöcke; hoặc das Stockwerk, Pl: die Stockwerke)</span><br><span class="text-xs text-slate-600">Tầng lầu (ở Đức: das Erdgeschoss = tầng trệt, nên der 1. Stock = lầu 1 / tầng 2)</span></div>
                             <button onclick="speakGerman('der Stock')" class="p-1 rounded bg-blue-100 hover:bg-blue-200 text-xs cursor-pointer">🔊</button>
                         </li>
                     </ul>
@@ -158,7 +158,7 @@ def seed_lesson_4():
                             <button onclick="speakGerman('das Wohnheim')" class="p-1 rounded bg-emerald-100 hover:bg-emerald-200 text-xs cursor-pointer">🔊</button>
                         </li>
                         <li class="flex items-start justify-between gap-1">
-                            <div><b>das Bad</b> <span class="text-slate-500 text-xs">(Pl: die Bäder)</span><br><span class="text-xs text-slate-600">Phòng tắm (viết gọn của das Badezimmer)</span></div>
+                            <div><b>das Bad</b> <span class="text-slate-500 text-xs">(Pl: die Bäder)</span><br><span class="text-xs text-slate-600">Phòng tắm (cũng: bồn tắm, việc tắm; = das Badezimmer)</span></div>
                             <button onclick="speakGerman('das Bad')" class="p-1 rounded bg-emerald-100 hover:bg-emerald-200 text-xs cursor-pointer">🔊</button>
                         </li>
                     </ul>
@@ -222,15 +222,15 @@ def seed_lesson_4():
                             <td class="p-3 font-semibold">C3</td>
                             <td class="p-3 font-medium">Dativ</td>
                             <td class="p-3">Tân ngữ gián tiếp</td>
-                            <td class="p-3">Người/vật nhận tác động gián tiếp; đứng sau giới từ luôn đi với Dativ (<i>mit, aus, bei, zu...</i>) hoặc giới từ chỉ vị trí tĩnh (<i>in, auf, an...</i>)</td>
-                            <td class="p-3 font-mono">Wem? (Cho ai?) / Wo? (Ở đâu?)</td>
+                            <td class="p-3">Người/vật nhận tác động gián tiếp; đứng sau giới từ luôn đi với Dativ (<i>mit, aus, bei, zu...</i>)</td>
+                            <td class="p-3 font-mono">Wem? (Cho ai?)<br><span class="text-[11px] text-slate-500 font-sans italic block pt-0.5">(Ghi chú: Giới từ 2 chiều in, an, auf... + Dativ khi hỏi vị trí tĩnh "Wo? - Ở đâu?")</span></td>
                         </tr>
                         <tr class="bg-rose-50/40">
                             <td class="p-3 font-black text-rose-700">C4</td>
                             <td class="p-3 font-bold">Akkusativ</td>
                             <td class="p-3">Tân ngữ trực tiếp</td>
                             <td class="p-3">Chịu tác động trực tiếp của ngoại động từ (<b>haben, finden, brauchen, suchen, kaufen, sehen, es gibt...</b>)</td>
-                            <td class="p-3 font-mono text-rose-600">Wen? (Ai?) / Was? (Cái gì?)</td>
+                            <td class="p-3 font-mono text-rose-600">Wen? (Ai?) / Was? (Cái gì?)<br><span class="text-[11px] text-slate-500 font-sans italic block pt-0.5">(Ghi chú: Giới từ 2 chiều + Akkusativ khi hỏi hướng chuyển động "Wohin? - Đi đâu?")</span></td>
                         </tr>
                     </tbody>
                 </table>
@@ -551,6 +551,20 @@ def seed_lesson_4():
                             <td class="p-3 font-mono font-bold text-slate-700">ein Regal / ein Bücherregal</td>
                             <td class="p-3">Cái giá / Kệ sách</td>
                         </tr>
+                        <tr class="bg-emerald-50/20">
+                            <td class="p-3 font-bold text-emerald-700">🟢 Trung</td>
+                            <td class="p-3 font-bold">das Sofa</td>
+                            <td class="p-3 text-slate-500">die Sofas</td>
+                            <td class="p-3 font-mono font-bold text-slate-700">ein Sofa</td>
+                            <td class="p-3">Ghế sofa</td>
+                        </tr>
+                        <tr class="bg-purple-50/20">
+                            <td class="p-3 font-bold text-purple-700">🟣 Số nhiều</td>
+                            <td class="p-3 font-bold">die Möbel</td>
+                            <td class="p-3 text-slate-500">die Möbel (Pl.)</td>
+                            <td class="p-3 font-mono font-bold text-slate-700">Möbel / die Möbel</td>
+                            <td class="p-3">Đồ nội thất (luôn dùng số nhiều)</td>
+                        </tr>
                     </tbody>
                 </table>
             </div>
@@ -658,7 +672,7 @@ def seed_lesson_4():
         (lesson_id, "Balkon", "der", "ban công (Pl: die Balkone)", "Oben gibt es einen Balkon. (Ở phía trên có một ban công.)"),
         (lesson_id, "Flur", "der", "hành lang (Pl: die Flure)", "Das Haus hat einen Flur. Er ist lang und dunkel. (Ngôi nhà có một hành lang. Nó dài và tối.)"),
         (lesson_id, "Keller", "der", "tầng hầm (Pl: die Keller)", "Die Wohnung hat einen Keller. (Căn hộ có một tầng hầm.)"),
-        (lesson_id, "Stock", "der", "tầng lầu (Pl: die Stockwerke)", "Die Wohnung liegt im ersten Stock. (Căn hộ nằm ở lầu 1 / tầng 2.)"),
+        (lesson_id, "Stock", "der", "tầng lầu (Pl: die Stöcke; hoặc das Stockwerk, Pl: die Stockwerke; der erste Stock = lầu 1 / tầng 2)", "Die Wohnung liegt im ersten Stock. (Căn hộ nằm ở lầu 1 / tầng 2.)"),
         (lesson_id, "Wohnung", "die", "căn hộ (Pl: die Wohnungen)", "Wir suchen eine Wohnung in Berlin. (Chúng tôi đang tìm một căn hộ ở Berlin.)"),
         (lesson_id, "Küche", "die", "phòng bếp (Pl: die Küchen)", "Ich finde die Küche zu klein. (Tôi thấy căn bếp quá nhỏ.)"),
         (lesson_id, "Garage", "die", "nhà để xe / ga-ra (Pl: die Garagen)", "Das Haus hat eine Garage. (Ngôi nhà có một nhà để xe.)"),
@@ -674,7 +688,7 @@ def seed_lesson_4():
         (lesson_id, "Kinderzimmer", "das", "phòng trẻ em (Pl: die Kinderzimmer)", "Das Kinderzimmer ist groß. (Phòng trẻ em rộng.)"),
         (lesson_id, "Fenster", "das", "cửa sổ (Pl: die Fenster)", "Das Zimmer hat kein Fenster. (Căn phòng không có cửa sổ.)"),
         (lesson_id, "Wohnheim", "das", "ký túc xá (Pl: die Wohnheime)", "David wohnt im Studentenwohnheim. (David sống trong ký túc xá sinh viên.)"),
-        (lesson_id, "Bad", "das", "phòng tắm (Pl: die Bäder)", "Im Bad gibt es einen Spiegel. (Trong phòng tắm có một cái gương.)"),
+        (lesson_id, "Bad", "das", "phòng tắm (cũng: bồn tắm, việc tắm; = das Badezimmer; Pl: die Bäder)", "Im Bad gibt es einen Spiegel. (Trong phòng tắm có một cái gương.)"),
         (lesson_id, "Schrank", "der", "cái tủ (Pl: die Schränke)", "Er kauft einen Schrank. (Anh ấy mua một chiếc tủ.)"),
         (lesson_id, "Kühlschrank", "der", "tủ lạnh (Pl: die Kühlschränke)", "Die Küche hat einen Kühlschrank. (Phòng bếp có một chiếc tủ lạnh.)"),
         (lesson_id, "Tisch", "der", "cái bàn (Pl: die Tische)", "Ich brauche einen Tisch. (Tôi cần một cái bàn.)"),
@@ -687,6 +701,8 @@ def seed_lesson_4():
         (lesson_id, "Bett", "das", "chiếc giường (Pl: die Betten)", "Mein Schlafzimmer hat ein Bett. (Phòng ngủ của tôi có một chiếc giường.)"),
         (lesson_id, "Regal", "das", "cái kệ / giá (Pl: die Regale)", "Wir haben ein Regal. (Chúng tôi có một cái kệ.)"),
         (lesson_id, "Bücherregal", "das", "kệ sách / giá sách (Pl: die Bücherregale)", "Das Wohnzimmer hat ein Bücherregal. (Phòng khách có một chiếc kệ sách.)"),
+        (lesson_id, "Sofa", "das", "ghế sofa (Pl: die Sofas)", "Ich finde das Sofa ein bisschen altmodisch. (Tôi thấy chiếc ghế sofa hơi lỗi thời một chút.)"),
+        (lesson_id, "Möbel", "die (Pl.)", "đồ nội thất (luôn dùng số nhiều: die Möbel)", "Die Möbel sind neu. (Đồ nội thất thì mới.)"),
         (lesson_id, "hell", "Adj.", "sáng sủa", "Mein Arbeitszimmer ist hell. (Phòng làm việc của tôi sáng sủa.)"),
         (lesson_id, "dunkel", "Adj.", "tối tăm", "Der Flur ist dunkel. (Hành lang thì tối tăm.)"),
         (lesson_id, "groß", "Adj.", "to, lớn, rộng", "Das Wohnzimmer ist groß. (Phòng khách thì rộng lớn.)"),
