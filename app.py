@@ -41,34 +41,35 @@ app.json.ensure_ascii = False
 def ensure_db_initialized():
     """Tự động kiểm tra và khởi tạo dữ liệu nếu chạy trên máy chủ mới (Render/Cloud)"""
     try:
-        from database import init_db, get_connection
+        from database import init_db, get_connection, is_postgres
         init_db()
         conn = get_connection()
         cursor = conn.cursor()
         
-        # Đảm bảo bảng exercises có cột extra_data
-        cursor.execute("PRAGMA table_info(exercises);")
-        columns = [col["name"] for col in cursor.fetchall()]
-        if "extra_data" not in columns:
-            cursor.execute("ALTER TABLE exercises ADD COLUMN extra_data TEXT;")
-            conn.commit()
+        if not is_postgres():
+            # Đảm bảo bảng exercises có cột extra_data
+            cursor.execute("PRAGMA table_info(exercises);")
+            columns = [col["name"] for col in cursor.fetchall()]
+            if "extra_data" not in columns:
+                cursor.execute("ALTER TABLE exercises ADD COLUMN extra_data TEXT;")
+                conn.commit()
 
-        # Đảm bảo bảng users có cột token và updated_at
-        cursor.execute("PRAGMA table_info(users);")
-        u_cols = [col["name"] for col in cursor.fetchall()]
-        if "token" not in u_cols:
-            cursor.execute("ALTER TABLE users ADD COLUMN token TEXT;")
-            conn.commit()
-        if "updated_at" not in u_cols:
-            cursor.execute("ALTER TABLE users ADD COLUMN updated_at TIMESTAMP;")
-            conn.commit()
+            # Đảm bảo bảng users có cột token và updated_at
+            cursor.execute("PRAGMA table_info(users);")
+            u_cols = [col["name"] for col in cursor.fetchall()]
+            if "token" not in u_cols:
+                cursor.execute("ALTER TABLE users ADD COLUMN token TEXT;")
+                conn.commit()
+            if "updated_at" not in u_cols:
+                cursor.execute("ALTER TABLE users ADD COLUMN updated_at TIMESTAMP;")
+                conn.commit()
 
-        # Đảm bảo bảng user_studied_lessons có cột correct_exercises
-        cursor.execute("PRAGMA table_info(user_studied_lessons);")
-        usl_cols = [col["name"] for col in cursor.fetchall()]
-        if "correct_exercises" not in usl_cols:
-            cursor.execute("ALTER TABLE user_studied_lessons ADD COLUMN correct_exercises TEXT DEFAULT '[]';")
-            conn.commit()
+            # Đảm bảo bảng user_studied_lessons có cột correct_exercises
+            cursor.execute("PRAGMA table_info(user_studied_lessons);")
+            usl_cols = [col["name"] for col in cursor.fetchall()]
+            if "correct_exercises" not in usl_cols:
+                cursor.execute("ALTER TABLE user_studied_lessons ADD COLUMN correct_exercises TEXT DEFAULT '[]';")
+                conn.commit()
 
         cursor.execute("SELECT COUNT(*) as cnt FROM lessons WHERE title LIKE 'Bài 1 (P1)%';")
         if cursor.fetchone()["cnt"] == 0:
@@ -374,9 +375,20 @@ def login():
     else:
         c.execute("SELECT * FROM users WHERE LOWER(username) = LOWER(?);", (raw_ident,))
     row = c.fetchone()
-    if not row or not check_password_hash(row["password_hash"], password):
+    if not row:
         conn.close()
-        return jsonify({"error": "Tên tài khoản (hoặc ID) hoặc mật khẩu không chính xác!"}), 401
+        return jsonify({
+            "error": f"Tài khoản '{raw_ident}' chưa có trên hệ thống máy chủ.",
+            "not_found": True,
+            "username": raw_ident
+        }), 401
+
+    if not check_password_hash(row["password_hash"], password):
+        conn.close()
+        return jsonify({
+            "error": "Mật khẩu không chính xác! Vui lòng kiểm tra lại.",
+            "not_found": False
+        }), 401
 
     user_dict = dict(row)
     user_dict.pop("password_hash", None)
@@ -509,12 +521,16 @@ def mark_studied():
             ON CONFLICT(user_id, lesson_id) DO UPDATE SET last_studied_at = CURRENT_TIMESTAMP;
         """, (uid, lesson_id, level_code, lesson_order))
 
+        c.execute("SELECT highest_lesson_order FROM users WHERE id = ?;", (uid,))
+        urow = c.fetchone()
+        curr_order = urow["highest_lesson_order"] if urow else 1
+        new_order = max(curr_order or 1, lesson_order)
         c.execute("""
             UPDATE users
-            SET highest_lesson_order = MAX(highest_lesson_order, ?),
+            SET highest_lesson_order = ?,
                 highest_level_code = ?
             WHERE id = ?;
-        """, (lesson_order, level_code, uid))
+        """, (new_order, level_code, uid))
         conn.commit()
         conn.close()
 
@@ -599,17 +615,21 @@ def record_exercise():
 
     score = len(correct_list)
     correct_json = json.dumps(correct_list)
+    prev_practice_done = (row["practice_completed"] or 0) if row else 0
+    prev_best_score = (row["best_practice_score"] or 0) if row else 0
+    final_practice_completed = 1 if (practice_completed or prev_practice_done) else 0
+    final_best_score = max(score, prev_best_score)
 
     c.execute("""
         INSERT INTO user_studied_lessons (user_id, lesson_id, level_code, lesson_order, studied_theory, practice_completed, best_practice_score, correct_exercises, last_studied_at)
         VALUES (?, ?, ?, ?, ?, ?, ?, ?, CURRENT_TIMESTAMP)
         ON CONFLICT(user_id, lesson_id) DO UPDATE SET
-            practice_completed = MAX(practice_completed, ?),
-            best_practice_score = MAX(best_practice_score, ?),
+            practice_completed = ?,
+            best_practice_score = ?,
             correct_exercises = ?,
             last_studied_at = CURRENT_TIMESTAMP;
-    """, (uid, lesson_id, level_code, lesson_order, studied_theory, practice_completed, score, correct_json,
-          practice_completed, score, correct_json))
+    """, (uid, lesson_id, level_code, lesson_order, studied_theory, final_practice_completed, final_best_score, correct_json,
+          final_practice_completed, final_best_score, correct_json))
     conn.commit()
     conn.close()
 
@@ -699,16 +719,22 @@ def arena_finish():
         """, (final_score, correct_count, wrong_count, scope_summary, json.dumps(breakdown), session_token, uid))
 
     # Cập nhật điểm cho user
+    exp_gain = max(0, int(final_score))
+    c.execute("SELECT arena_best_score FROM users WHERE id = ?;", (uid,))
+    urow = c.fetchone()
+    old_best = (urow["arena_best_score"] or 0) if urow else 0
+    new_best = max(old_best, int(final_score))
+
     c.execute("""
         UPDATE users
-        SET total_exp = total_exp + MAX(0, ?),
-            arena_best_score = MAX(arena_best_score, ?),
+        SET total_exp = total_exp + ?,
+            arena_best_score = ?,
             arena_total_games = arena_total_games + 1
         WHERE id = ?;
-    """, (final_score, final_score, uid))
+    """, (exp_gain, new_best, uid))
 
     if uid == 1:
-        c.execute("UPDATE user_progress SET total_exp = total_exp + MAX(0, ?) WHERE user_id = 1;", (final_score,))
+        c.execute("UPDATE user_progress SET total_exp = total_exp + ? WHERE user_id = 1;", (exp_gain,))
 
     conn.commit()
 

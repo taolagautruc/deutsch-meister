@@ -507,7 +507,72 @@ async function handleLoginFormSubmit(e) {
             renderAuthUserUI();
             loadLeaderboardData();
         } else {
-            errBox.innerText = data.error || "Đăng nhập thất bại!";
+            if (data.not_found && username) {
+                errBox.innerHTML = `
+                    <div class="space-y-2 text-left">
+                        <div class="font-bold text-amber-300">⚠️ Tài khoản "${username}" chưa tồn tại trên máy chủ mới.</div>
+                        <div class="text-[11px] text-slate-200">Bạn có muốn kích hoạt ngay tài khoản này với mật khẩu vừa nhập không? (EXP và tiến trình học trên máy bạn sẽ được bảo lưu 100%)</div>
+                        <button type="button" onclick="quickRegisterFromLogin('${username.replace(/'/g, "\\'")}')" class="w-full mt-2 py-2 px-3 bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-500 hover:to-teal-500 text-white font-extrabold rounded-xl shadow transition cursor-pointer text-xs flex items-center justify-center gap-1.5">
+                            ⚡ KÍCH HOẠT & BẢO LƯU TIẾN TRÌNH NGAY
+                        </button>
+                    </div>
+                `;
+            } else {
+                errBox.innerText = data.error || "Đăng nhập thất bại!";
+            }
+            errBox.classList.remove('hidden');
+        }
+    } catch (err) {
+        errBox.innerText = "Lỗi kết nối máy chủ!";
+        errBox.classList.remove('hidden');
+    }
+}
+
+async function quickRegisterFromLogin(uname) {
+    const password = document.getElementById('login-password').value;
+    const errBox = document.getElementById('login-error-box');
+    if (!password || password.length < 8) {
+        alert("Vui lòng nhập mật khẩu tối thiểu 8 ký tự vào ô mật khẩu trước khi kích hoạt!");
+        return;
+    }
+    const currentExp = (typeof userTotalExp !== 'undefined') ? userTotalExp : 0;
+    const currentProgress = (typeof userLessonsProgress !== 'undefined') ? userLessonsProgress : {};
+
+    try {
+        const res = await fetch('/api/auth/register', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+                username: uname,
+                password: password,
+                initial_exp: currentExp,
+                guest_progress: currentProgress
+            })
+        });
+        const data = await res.json();
+        if (res.ok) {
+            currentAuthUser = data.user;
+            if (data.token || (data.user && data.user.token)) {
+                localStorage.setItem('dm_auth_token', data.token || data.user.token);
+            }
+            if (data.user && data.user.progress && typeof window.userLessonsProgress !== 'undefined') {
+                window.userLessonsProgress = Object.assign(window.userLessonsProgress || {}, data.user.progress);
+                if (typeof saveLocalLessonsProgress === 'function') saveLocalLessonsProgress();
+                if (typeof renderLessonList === 'function') renderLessonList();
+                if (typeof updateLessonProgressUI === 'function') updateLessonProgressUI();
+            }
+            closeAuthModal();
+            renderAuthUserUI();
+            loadLeaderboardData();
+
+            const myId = (data.user && data.user.id) ? data.user.id : (data.user_id || '');
+            alert(`🎉 CHÚC MỪNG ${uname} ĐÃ KÍCH HOẠT TÀI KHOẢN THÀNH CÔNG!\n\n` +
+                  `🔑 MÃ ID RIÊNG: #${myId}\n` +
+                  `👤 TÊN ĐĂNG NHẬP: ${uname}\n` +
+                  `⚡ EXP BẢO LƯU: ${(data.user.total_exp || currentExp).toLocaleString('en-US')} EXP\n\n` +
+                  `📌 Lần sau truy cập lại, bạn chỉ cần nhập Tên đăng nhập (hoặc Mã ID #${myId}) + Mật khẩu này!`);
+        } else {
+            errBox.innerText = data.error || "Kích hoạt thất bại. Vui lòng thử lại!";
             errBox.classList.remove('hidden');
         }
     } catch (err) {
