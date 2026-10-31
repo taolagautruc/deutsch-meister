@@ -274,7 +274,7 @@ def seed_lesson_2():
                     <h5 class="font-bold text-indigo-950 text-sm">🔹 Các Động từ lớp học cốt lõi:</h5>
                     <ul class="text-xs text-slate-700 space-y-2">
                         <li><b>heißen</b> (gọi là / tên là): <button onclick="speakGerman('Wie heißt das auf Deutsch?')" class="text-indigo-600 hover:underline">🔊 <i>Wie heißt das auf Deutsch?</i></button></li>
-                        <li><b>verstehen</b> (hiểu): <button onclick="speakGerman('Das verstehe ich nicht.')" class="text-indigo-600 hover:underline">🔊 <i>Das verstehe ich không -> Das verstehe ich nicht.</i></button> (Đảo tân ngữ lên đầu, động từ ở vị trí 2).</li>
+                        <li><b>verstehen</b> (hiểu): <button onclick="speakGerman('Das verstehe ich nicht.')" class="text-indigo-600 hover:underline">🔊 <i>Das verstehe ich nicht.</i></button> (Đảo tân ngữ lên đầu, động từ ở vị trí 2).</li>
                         <li><b>können</b> (khuyết thiếu - có thể): <button onclick="speakGerman('Können Sie das bitte wiederholen?')" class="text-indigo-600 hover:underline">🔊 <i>Können Sie das bitte ...?</i></button> (Đẩy động từ chính về cuối câu ở dạng nguyên mẫu).</li>
                         <li><b>erklären</b> (giải thích): <button onclick="speakGerman('Können Sie das bitte erklären?')" class="text-indigo-600 hover:underline">🔊 <i>Können Sie das bitte erklären?</i></button></li>
                         <li><b>wiederholen</b> (nhắc lại): <button onclick="speakGerman('Können Sie das bitte wiederholen?')" class="text-indigo-600 hover:underline">🔊 <i>Können Sie das bitte wiederholen?</i></button></li>
@@ -290,8 +290,8 @@ def seed_lesson_2():
                         <li><button onclick="speakGerman('Was ist das auf Deutsch?')" class="text-indigo-600 font-bold hover:underline">🔊 <b>Was ist das auf Deutsch?</b></button> → Cái này trong tiếng Đức là gì?</li>
                         <li><button onclick="speakGerman('Entschuldigung, wie bitte?')" class="text-indigo-600 font-bold hover:underline">🔊 <b>Entschuldigung, wie bitte?</b></button> → Xin lỗi, Ngài nói sao cơ ạ?</li>
                         <li><button onclick="speakGerman('Das verstehe ich nicht. Können Sie das bitte wiederholen?')" class="text-indigo-600 font-bold hover:underline">🔊 <b>Das verstehe ich nicht. Können Sie das bitte wiederholen?</b></button> → Tôi không hiểu. Ngài lặp lại được không?</li>
-                        <li><button onclick="speakGerman('Das verstehe ich nicht. Können Sie das bitte buchstabieren?')" class="text-indigo-600 font-bold hover:underline">🔊 <b>Das verstehe ich không -> Das verstehe ich nicht. Können Sie das bitte buchstabieren?</b></button> → Tôi không hiểu. Ngài đánh vần giúp tôi được không?</li>
-                        <li><button onclick="speakGerman('Das verstehe ich không -> Das verstehe ich nicht. Können Sie das bitte anschreiben?')" class="text-indigo-600 font-bold hover:underline">🔊 <b>Das verstehe ich không -> Das verstehe ich nicht. Können Sie das bitte anschreiben?</b></button> → Tôi không hiểu. Ngài viết lên bảng giúp tôi được không?</li>
+                        <li><button onclick="speakGerman('Das verstehe ich nicht. Können Sie das bitte buchstabieren?')" class="text-indigo-600 font-bold hover:underline">🔊 <b>Das verstehe ich nicht. Können Sie das bitte buchstabieren?</b></button> → Tôi không hiểu. Ngài đánh vần giúp tôi được không?</li>
+                        <li><button onclick="speakGerman('Das verstehe ich nicht. Können Sie das bitte anschreiben?')" class="text-indigo-600 font-bold hover:underline">🔊 <b>Das verstehe ich nicht. Können Sie das bitte anschreiben?</b></button> → Tôi không hiểu. Ngài viết lên bảng giúp tôi được không?</li>
                     </ol>
                 </div>
             </div>
