@@ -621,15 +621,39 @@ function generateNewNumberData(ex, fallbackIndex = null) {
                 { a: "Dresden", b: "Leipzig", adj: "östlich", viA: "Dresden", viB: "Leipzig", viDir: "phía Đông" }
             ];
             const pair = pairsAdj[Math.floor(Math.random() * pairsAdj.length)];
-            ex.question = `[Phương hướng Tính từ -lich (Random)]: Hãy viết câu miêu tả vị trí của ${pair.a} so với ${pair.b} bằng TÍNH TỪ chỉ phương hướng (-lich) theo mẫu '${pair.a} liegt ... von ${pair.b}':`;
-            ex.correct_answer = `${pair.a} liegt ${pair.adj} von ${pair.b}.`;
+            ex.question = `[Phương hướng Tính từ -lich (Random)]: Hãy dịch câu sau sang tiếng Đức (dùng TÍNH TỪ chỉ phương hướng -lich): '${pair.viA} nằm ở ${pair.viDir} của ${pair.viB}.'`;
+            const alts = [
+                `${pair.a} liegt ${pair.adj} von ${pair.b}.`,
+                `${pair.a} liegt ${pair.adj} von ${pair.b}`
+            ];
+            if (pair.a === "Hai Phong") {
+                alts.push(`Haiphong liegt ${pair.adj} von ${pair.b}.`);
+                alts.push(`Hai Phong liegt ${pair.adj} von Ha Noi.`);
+            } else if (pair.a === "Hanoi") {
+                alts.push(`Ha Noi liegt ${pair.adj} von ${pair.b}.`);
+            }
+            ex.correct_answer = alts.join(" / ");
             ex.explanation = `Dùng tính từ chỉ phương hướng (-lich) so sánh 2 địa điểm riêng biệt: '${pair.a} liegt ${pair.adj} von ${pair.b}' (${pair.viA} nằm ở ${pair.viDir} của ${pair.viB}). Tuyệt đối không dùng 'im' trước tính từ.`;
             extra.translation = `${pair.viA} nằm ở ${pair.viDir} của ${pair.viB}.`;
         } else {
-            ex.question = `[Phương hướng Cụm Danh từ (Random)]: Hãy hoàn thành vị trí của ${chosen.city} (${chosen.vi} ${chosen.country}): '${chosen.city} liegt ___ von ${chosen.country}.'`;
-            ex.correct_answer = chosen.noun;
-            ex.explanation = `'${chosen.city}' nằm ở ${chosen.vi} của ${chosen.country} → Cụm giới từ là '${chosen.noun} von ${chosen.country}' (bên trong lãnh thổ).`;
-            extra.translation = `${chosen.city} nằm ở ${chosen.vi} của ${chosen.country}.`;
+            const countryVi = chosen.country === "Vietnam" ? "Việt Nam" : "nước Đức";
+            ex.question = `[Phương hướng Cụm Danh từ (Random)]: Hãy dịch câu sau sang tiếng Đức (dùng CỤM DANH TỪ chỉ phương hướng 'im ... von'): '${chosen.city} nằm ở ${chosen.vi} của ${countryVi}.'`;
+            const nounAlts = [
+                `${chosen.city} liegt ${chosen.noun} von ${chosen.country}.`,
+                `${chosen.city} liegt ${chosen.noun} von ${chosen.country}`
+            ];
+            if (chosen.city === "Hanoi") {
+                nounAlts.push(`Ha Noi liegt ${chosen.noun} von ${chosen.country}.`);
+            } else if (chosen.city === "Hai Phong") {
+                nounAlts.push(`Haiphong liegt ${chosen.noun} von ${chosen.country}.`);
+                nounAlts.push(`Hai Phong liegt ${chosen.noun} von Viet Nam.`);
+            } else if (chosen.city === "Da Nang") {
+                nounAlts.push(`Đà Nẵng liegt ${chosen.noun} von ${chosen.country}.`);
+                nounAlts.push(`Da Nang liegt ${chosen.noun} von Viet Nam.`);
+            }
+            ex.correct_answer = nounAlts.join(" / ");
+            ex.explanation = `'${chosen.city}' nằm ở ${chosen.vi} của ${chosen.country} → Cụm giới từ là '${chosen.city} liegt ${chosen.noun} von ${chosen.country}' (nằm bên trong lãnh thổ).`;
+            extra.translation = `${chosen.city} nằm ở ${chosen.vi} của ${countryVi}.`;
         }
         ex.extra_data = JSON.stringify(extra);
         ex.translation = extra.translation;

@@ -1190,7 +1190,7 @@ def seed_lesson_3():
         ),
         (
             lesson_id, "dich",
-            "Câu 28 [Dynamic Phương hướng]: Viết câu miêu tả vị trí địa lý của thành phố: 'Hanoi liegt im Norden von Vietnam.'",
+            "Câu 28 [Dịch Việt → Đức]: Hãy dịch câu sau sang tiếng Đức (dùng CỤM DANH TỪ chỉ phương hướng 'im ... von'): 'Hà Nội nằm ở miền Bắc của Việt Nam.'",
             None,
             "Hanoi liegt im Norden von Vietnam. / Ha Noi liegt im Norden von Vietnam.",
             "Vị trí địa lý chuẩn: 'Hanoi liegt im Norden von Vietnam.' (nằm bên trong miền Bắc của nước Việt Nam).", 
