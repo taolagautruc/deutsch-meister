@@ -315,7 +315,7 @@ def seed_lesson_4():
                 <div class="text-slate-800 text-sm sm:text-base leading-relaxed pl-2 border-l-4 border-amber-400">
                     <p><i>Liebe Claudia,</i></p>
                     <p class="pt-1.5">
-                        <i>wir haben <b>ein</b> Haus. Unser Haus ist sehr alt und hat 5 Zimmer. Oben gibt es <b>einen</b> Balkon. Das Wohnzimmer ist groß, aber ich finde <b>die</b> Küche <b>zu klein</b>. Das Haus hat <b>einen</b> Flur. Er ist lang und dunkel. Wir haben auch <b>einen</b> Garten. Ich finde <b>den</b> Garten sehr schön.</i>
+                        <i>Wir haben <b>ein</b> Haus. Unser Haus ist sehr alt und hat 5 Zimmer. Oben gibt es <b>einen</b> Balkon. Das Wohnzimmer ist groß, aber ich finde <b>die</b> Küche <b>zu klein</b>. Das Haus hat <b>einen</b> Flur. Er ist lang und dunkel. Wir haben auch <b>einen</b> Garten. Ich finde <b>den</b> Garten sehr schön.</i>
                     </p>
                     <p class="pt-2"><i>Viele Grüße<br>Julia</i></p>
                 </div>
@@ -1102,7 +1102,7 @@ def seed_lesson_4():
         ),
         (
             lesson_id, "nghe",
-            "Câu 37 [Luyện Nghe]: Nghe và viết lại câu miêu tả: 'Mein Wohnzimmer ist hell und modern.'",
+            "Câu 37 [Luyện Nghe]: Nghe và viết lại câu miêu tả bạn nghe được bằng tiếng Đức:",
             None,
             "Mein Wohnzimmer ist hell und modern. / Mein Wohnzimmer ist modern und hell.",
             "Âm thanh phát câu: 'Mein Wohnzimmer ist hell und modern.' (Phòng khách của tôi sáng sủa và hiện đại.)",
