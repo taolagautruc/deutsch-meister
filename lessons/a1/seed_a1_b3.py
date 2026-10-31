@@ -908,6 +908,60 @@ def seed_lesson_3():
         "Peter und Paula"
     )
 
+
+    EXERCISE_TRANSLATIONS = {
+    "1": "Quốc gia có mạo từ giống cái: die Schweiz (Thụy Sỹ).",
+    "2": "Sau 'aus' (Dativ), 'die Schweiz' chuyển thành 'aus der Schweiz'.",
+    "3": "Quá khứ Präteritum của 'sein' ở ngôi 'ihr' là 'wart'.",
+    "4": "Ở Thổ Nhĩ Kỳ (Dativ): 'in der Türkei'.",
+    "5": "Câu hỏi Có/Không (Ja/Nein-Frage): Ngài sống ở Hải Phòng phải không? (Wohnen Sie in Hai Phong?).",
+    "6": "Phía Đông Bắc: der Nordosten.",
+    "7": "Hôm qua Paula và tôi đã ở Hải Phòng. (Gestern waren Paula und ich in Haiphong.)",
+    "8": "Quá khứ Präteritum của 'sein' ở ngôi 'er/sie/es' là 'war'.",
+    "9": "Köln nằm ở phía Tây của nước Đức. (Köln liegt westlich von Deutschland.)",
+    "10": "Hôm qua Paula và tôi đã ở Hải Phòng. (Gestern waren Paula und ich in Haiphong.)",
+    "11": "Hà Nội nằm ở miền Bắc của Việt Nam. (Hanoi liegt im Norden von Vietnam.)",
+    "12": "Hải Phòng nằm ở phía Đông Bắc của Hà Nội. (Hai Phong liegt nordöstlich von Hanoi.)",
+    "13": "Đà Nẵng nằm ở miền Trung của Việt Nam. (Da Nang liegt in der Mitte von Vietnam.)",
+    "14": "Bạn đã từng ở Đức lần nào chưa? (Warst du schon einmal in Deutschland?)",
+    "15": "Hôm qua tôi đã ở siêu thị Big C. (Gestern war ich im Big-C-Supermarkt.)",
+    "16": "Hôm qua các bạn đã ở rạp hát phải không? (Wart ihr gestern im Theater?)",
+    "17": "Bạn đến từ đâu? - Tôi đến từ Thụy Sỹ. (Woher kommst du? - Ich komme aus der Schweiz.)",
+    "18": "Dì của tôi sống ở Thụy Sỹ. (Meine Tante wohnt in der Schweiz.)",
+    "19": "New York nằm ở nước Mỹ. (New York liegt in den USA.)",
+    "20": "Hôm qua tôi đã ở Hải Phòng. (Gestern war ich in Haiphong.)",
+    "21": "Hải Phòng nằm ở phía Đông Bắc của Việt Nam. (Hai Phong liegt im Nordosten von Vietnam.)",
+    "22": "Đà Nẵng nằm ở miền Trung của Việt Nam. (Da Nang liegt in der Mitte von Vietnam.)",
+    "23": "Long An nằm ở miền Nam của Việt Nam. (Long An liegt im Süden von Vietnam.)",
+    "24": "Bạn đã từng ở Hà Nội chưa? (Warst du schon in Hanoi?)",
+    "25": "Hôm qua Paula và tôi đã ở Hải Phòng. (Gestern waren Paula und ich in Haiphong.)",
+    "26": "Anh ấy đến từ Thụy Sỹ và nói tiếng Đức. (Er kommt aus der Schweiz und spricht Deutsch.)",
+    "27": "Ở Thụy Sỹ người ta nói tiếng Đức, tiếng Pháp và tiếng Ý. (In der Schweiz spricht man Deutsch, Französisch und Italienisch.)",
+    "28": "Hà Nội nằm ở miền Bắc của Việt Nam. (Hanoi liegt im Norden von Vietnam.)",
+    "29": "Cổng Brandenburg ở Berlin. (Das Brandenburger Tor ist in Berlin.)",
+    "30": "Hôm qua chúng tôi đã ở Hải Phòng. Thật tuyệt vời! (Gestern waren wir in Haiphong. Es war super!)",
+    "31": "Athens nằm ở Hy Lạp. (Athen ist in Griechenland.)",
+    "32": "Chợ Cát Bi đã rất thú vị. (Der Cat-Bi-Markt war sehr interessant.)",
+    "33": "Anh ấy đến từ Thổ Nhĩ Kỳ và nói tiếng Thổ Nhĩ Kỳ. (Er kommt aus der Türkei und spricht Türkisch.)",
+    "34": "Viên nằm ở Áo. Người ta nói tiếng Đức ở đó. (Wien liegt in Österreich. Man spricht dort Deutsch.)",
+    "35": "Hải Phòng nằm ở phía Đông Bắc của Việt Nam. (Hai Phong liegt im Nordosten von Vietnam.)",
+    "36": "Đà Nẵng nằm ở miền Trung của Việt Nam. (Da Nang liegt in der Mitte von Vietnam.)",
+    "37": "Bạn đã từng đến Athens chưa? – Chưa, nơi đó ở đâu vậy? (Warst du schon in Athen? – Nein, wo ist denn das?)",
+    "38": "Hôm qua Paula và tôi đã ở Hải Phòng. Chuyến đi thật tuyệt vời! (Gestern waren Paula und ich in Haiphong. Es war super!)",
+    "39": "Ở Thụy Sỹ người ta nói tiếng Đức, tiếng Pháp và tiếng Ý. (In der Schweiz spricht man Deutsch, Französisch und Italienisch.)",
+    "40": "Bưu thiếp gửi từ Hải Phòng:\nAnna thân mến,\nNhiều lời chào từ Hải Phòng! Hôm qua thời tiết thật tuyệt vời.\nMình đã ở siêu thị Big C và Paula đã ở rạp hát.\nChợ Cát Bi đã rất thú vị.\nHôm nay chúng mình đang ở bãi biển tại Đồ Sơn.\nNhiều lời chào thân ái,\nPeter và Paula",
+    "41": "Bưu thiếp gửi từ Hải Phòng:\nAnna thân mến,\nNhiều lời chào từ Hải Phòng! Hôm qua thời tiết thật tuyệt vời.\nMình đã ở siêu thị Big C và Paula đã ở rạp hát.\nChợ Cát Bi đã rất thú vị.\nHôm nay chúng mình đang ở bãi biển tại Đồ Sơn.\nNhiều lời chào thân ái,\nPeter và Paula",
+    "42": "Bưu thiếp gửi từ Hải Phòng:\nAnna thân mến,\nNhiều lời chào từ Hải Phòng! Hôm qua thời tiết thật tuyệt vời.\nMình đã ở siêu thị Big C và Paula đã ở rạp hát.\nChợ Cát Bi đã rất thú vị.\nHôm nay chúng mình đang ở bãi biển tại Đồ Sơn.\nNhiều lời chào thân ái,\nPeter và Paula",
+    "43": "Bưu thiếp gửi từ Hải Phòng:\nAnna thân mến,\nNhiều lời chào từ Hải Phòng! Hôm qua thời tiết thật tuyệt vời.\nMình đã ở siêu thị Big C và Paula đã ở rạp hát.\nChợ Cát Bi đã rất thú vị.\nHôm nay chúng mình đang ở bãi biển tại Đồ Sơn.\nNhiều lời chào thân ái,\nPeter và Paula",
+    "44": "Ngài tên là gì? (hoặc: Bạn tên là gì?) (Wie heißen Sie? / Wie heißt du?)",
+    "45": "Ngài sống ở Hải Phòng phải không? (Wohnen Sie in Hai Phong?)",
+    "46": "Anh ấy đang làm gì? (Was macht er?)",
+    "47": "Cô ấy là giáo viên phải không? (Ist sie Lehrerin?)",
+    "48": "Carlos đến từ đâu? (Woher kommt Carlos?)",
+    "49": "Köln nằm ở phía Tây của nước Đức. (Köln liegt westlich von Deutschland.)",
+    "50": "Ngài tên là gì? (hoặc: Bạn tên là gì?) (Wie heißen Sie? / Wie heißt du?)"
+}
+
     exercises = [
         # --- DẠNG 1: TRẮC NGHIỆM (10 CÂU) ---
         (
@@ -1219,9 +1273,9 @@ def seed_lesson_3():
         ),
         (
             lesson_id, "sap_xep",
-            "Câu 37 [Sắp xếp câu hội thoại]: Sắp xếp câu hỏi trải nghiệm quá khứ và phản hồi: [in Athen / schon / Warst / ? / du / denn / wo / Nein / das / ist / ?]",
+            "Câu 37 [Sắp xếp câu hội thoại]: Sắp xếp câu hỏi trải nghiệm quá khứ và phản hồi: [in Athen / schon / Warst / ? / du / – / denn / wo / Nein / das / ist / ?]",
             None,
-            "Warst du schon in Athen? – Nein, wo ist denn das?",
+            "Warst du schon in Athen? – Nein, wo ist denn das? / Warst du schon in Athen? Nein, wo ist denn das?",
             "Câu hỏi quá khứ Präteritum của sein: Warst du schon in Athen? và câu hỏi lại: Nein, wo ist denn das?",
             20,
             json.dumps({"audio_text": "Warst du schon in Athen? – Nein, wo ist denn das?", "translation": "Bạn đã từng đến Athens chưa? – Chưa, nơi đó ở đâu vậy?"}, ensure_ascii=False)
@@ -1342,8 +1396,20 @@ def seed_lesson_3():
 
     import random
     shuffled_exercises = []
-    for ex in exercises:
+    for idx, ex in enumerate(exercises):
         ex_list = list(ex)
+        q_num = idx + 1
+        extra_d = {}
+        if ex_list[7]:
+            try:
+                extra_d = json.loads(ex_list[7]) if isinstance(ex_list[7], str) else dict(ex_list[7])
+            except Exception:
+                extra_d = {}
+        trans_val = EXERCISE_TRANSLATIONS.get(str(q_num)) or EXERCISE_TRANSLATIONS.get(q_num)
+        if trans_val and not extra_d.get("translation"):
+            extra_d["translation"] = trans_val
+            # trans applied
+        ex_list[7] = json.dumps(extra_d, ensure_ascii=False) if extra_d else None
         if ex_list[1] == "trac_nghiem" and ex_list[3]:
             try:
                 opts = json.loads(ex_list[3])

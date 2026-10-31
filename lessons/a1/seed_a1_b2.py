@@ -239,24 +239,24 @@ def seed_lesson_2():
                         </tr>
                     </thead>
                     <tbody class="divide-y divide-slate-100">
-                        <tr class="hover:bg-slate-50"><td class="p-3 font-bold text-blue-600">der</td><td class="p-3 font-bold">der Tisch</td><td class="p-3 text-indigo-600 font-semibold">die Tische</td><td class="p-3">cái bàn</td><td class="p-3 text-slate-500">Thêm đuôi -e</td></tr>
-                        <tr class="hover:bg-slate-50"><td class="p-3 font-bold text-blue-600">der</td><td class="p-3 font-bold">der Stuhl</td><td class="p-3 text-indigo-600 font-semibold">die Stühle</td><td class="p-3">cái ghế</td><td class="p-3 text-slate-500">Biến âm u → ü + đuôi -e</td></tr>
-                        <tr class="hover:bg-slate-50"><td class="p-3 font-bold text-blue-600">der</td><td class="p-3 font-bold">der Füller</td><td class="p-3 text-indigo-600 font-semibold">die Füller</td><td class="p-3">bút máy / bút mực</td><td class="p-3 text-slate-500">Đuôi -er giữ nguyên dạng</td></tr>
-                        <tr class="hover:bg-slate-50"><td class="p-3 font-bold text-blue-600">der</td><td class="p-3 font-bold">der Kuli</td><td class="p-3 text-indigo-600 font-semibold">die Kulis</td><td class="p-3">bút bi</td><td class="p-3 text-slate-500">Thêm đuôi -s</td></tr>
-                        <tr class="hover:bg-slate-50"><td class="p-3 font-bold text-blue-600">der</td><td class="p-3 font-bold">der Bleistift</td><td class="p-3 text-indigo-600 font-semibold">die Bleistifte</td><td class="p-3">bút chì</td><td class="p-3 text-slate-500">Thêm đuôi -e</td></tr>
-                        <tr class="hover:bg-slate-50"><td class="p-3 font-bold text-blue-600">der</td><td class="p-3 font-bold">der Radiergummi</td><td class="p-3 text-indigo-600 font-semibold">die Radiergummis</td><td class="p-3">cục tẩy / gôm</td><td class="p-3 text-slate-500">Thêm đuôi -s</td></tr>
-                        <tr class="hover:bg-slate-50"><td class="p-3 font-bold text-blue-600">der</td><td class="p-3 font-bold">der Becher</td><td class="p-3 text-indigo-600 font-semibold">die Becher</td><td class="p-3">cái cốc / ly</td><td class="p-3 text-slate-500">Đuôi -er giữ nguyên dạng</td></tr>
-                        <tr class="hover:bg-slate-50"><td class="p-3 font-bold text-rose-600">die</td><td class="p-3 font-bold">die Tafel</td><td class="p-3 text-indigo-600 font-semibold">die Tafeln</td><td class="p-3">cái bảng đen</td><td class="p-3 text-slate-500">Đuôi -el thêm -n</td></tr>
-                        <tr class="hover:bg-slate-50"><td class="p-3 font-bold text-rose-600">die</td><td class="p-3 font-bold">die Brille</td><td class="p-3 text-indigo-600 font-semibold">die Brillen</td><td class="p-3">cái kính mắt</td><td class="p-3 text-slate-500">Đuôi -e thêm -n</td></tr>
-                        <tr class="hover:bg-slate-50"><td class="p-3 font-bold text-rose-600">die</td><td class="p-3 font-bold">die Tasche</td><td class="p-3 text-indigo-600 font-semibold">die Taschen</td><td class="p-3">túi xách / cặp sách</td><td class="p-3 text-slate-500">Đuôi -e thêm -n</td></tr>
-                        <tr class="hover:bg-slate-50"><td class="p-3 font-bold text-rose-600">die</td><td class="p-3 font-bold">die Landkarte</td><td class="p-3 text-indigo-600 font-semibold">die Landkarten</td><td class="p-3">bản đồ</td><td class="p-3 text-slate-500">Lấy giống theo die Karte, thêm -n</td></tr>
-                        <tr class="hover:bg-slate-50"><td class="p-3 font-bold text-emerald-600">das</td><td class="p-3 font-bold">das Papier</td><td class="p-3 text-indigo-600 font-semibold">die Papiere</td><td class="p-3">giấy (chất liệu) / giấy tờ (số nhiều)</td><td class="p-3 text-slate-500">Danh từ chất liệu (một tờ giấy: ein Blatt Papier); số nhiều die Papiere: giấy tờ tùy thân</td></tr>
-                        <tr class="hover:bg-slate-50"><td class="p-3 font-bold text-emerald-600">das</td><td class="p-3 font-bold">das Heft</td><td class="p-3 text-indigo-600 font-semibold">die Hefte</td><td class="p-3">quyển vở</td><td class="p-3 text-slate-500">Thêm đuôi -e</td></tr>
-                        <tr class="hover:bg-slate-50"><td class="p-3 font-bold text-emerald-600">das</td><td class="p-3 font-bold">das Buch</td><td class="p-3 text-indigo-600 font-semibold">die Bücher</td><td class="p-3">quyển sách</td><td class="p-3 text-slate-500">Biến âm u → ü + đuôi -er</td></tr>
-                        <tr class="hover:bg-slate-50"><td class="p-3 font-bold text-emerald-600">das</td><td class="p-3 font-bold">das Wörterbuch</td><td class="p-3 text-indigo-600 font-semibold">die Wörterbücher</td><td class="p-3">quyển từ điển</td><td class="p-3 text-slate-500">Ghép (Wörter + Buch) → số nhiều theo Buch</td></tr>
-                        <tr class="hover:bg-slate-50"><td class="p-3 font-bold text-emerald-600">das</td><td class="p-3 font-bold">das Handy</td><td class="p-3 text-indigo-600 font-semibold">die Handys</td><td class="p-3">điện thoại di động</td><td class="p-3 text-slate-500">Từ mượn thêm đuôi -s</td></tr>
-                        <tr class="hover:bg-slate-50"><td class="p-3 font-bold text-emerald-600">das</td><td class="p-3 font-bold">das Whiteboard</td><td class="p-3 text-indigo-600 font-semibold">die Whiteboards</td><td class="p-3">bảng trắng</td><td class="p-3 text-slate-500">Từ mượn thêm đuôi -s</td></tr>
-                        <tr class="hover:bg-slate-50"><td class="p-3 font-bold text-emerald-600">das</td><td class="p-3 font-bold">das Mäppchen</td><td class="p-3 text-indigo-600 font-semibold">die Mäppchen</td><td class="p-3">hộp bút / túi đựng bút</td><td class="p-3 text-slate-500">Đuôi -chen luôn giống das, số nhiều giữ nguyên dạng</td></tr>
+                        <tr class="hover:bg-slate-50"><td class="p-3 font-bold text-blue-600">der</td><td class="p-3 font-bold"><button onclick="speakGerman('der Tisch')" class="text-indigo-600 hover:underline">🔊 der Tisch</button></td><td class="p-3 text-indigo-600 font-semibold"><button onclick="speakGerman('die Tische')" class="hover:underline">🔊 die Tische</button></td><td class="p-3">cái bàn</td><td class="p-3 text-slate-500">Thêm đuôi -e</td></tr>
+                        <tr class="hover:bg-slate-50"><td class="p-3 font-bold text-blue-600">der</td><td class="p-3 font-bold"><button onclick="speakGerman('der Stuhl')" class="text-indigo-600 hover:underline">🔊 der Stuhl</button></td><td class="p-3 text-indigo-600 font-semibold"><button onclick="speakGerman('die Stühle')" class="hover:underline">🔊 die Stühle</button></td><td class="p-3">cái ghế</td><td class="p-3 text-slate-500">Biến âm u → ü + đuôi -e</td></tr>
+                        <tr class="hover:bg-slate-50"><td class="p-3 font-bold text-blue-600">der</td><td class="p-3 font-bold"><button onclick="speakGerman('der Füller')" class="text-indigo-600 hover:underline">🔊 der Füller</button></td><td class="p-3 text-indigo-600 font-semibold"><button onclick="speakGerman('die Füller')" class="hover:underline">🔊 die Füller</button></td><td class="p-3">bút máy / bút mực</td><td class="p-3 text-slate-500">Đuôi -er giữ nguyên dạng</td></tr>
+                        <tr class="hover:bg-slate-50"><td class="p-3 font-bold text-blue-600">der</td><td class="p-3 font-bold"><button onclick="speakGerman('der Kuli')" class="text-indigo-600 hover:underline">🔊 der Kuli</button></td><td class="p-3 text-indigo-600 font-semibold"><button onclick="speakGerman('die Kulis')" class="hover:underline">🔊 die Kulis</button></td><td class="p-3">bút bi</td><td class="p-3 text-slate-500">Thêm đuôi -s</td></tr>
+                        <tr class="hover:bg-slate-50"><td class="p-3 font-bold text-blue-600">der</td><td class="p-3 font-bold"><button onclick="speakGerman('der Bleistift')" class="text-indigo-600 hover:underline">🔊 der Bleistift</button></td><td class="p-3 text-indigo-600 font-semibold"><button onclick="speakGerman('die Bleistifte')" class="hover:underline">🔊 die Bleistifte</button></td><td class="p-3">bút chì</td><td class="p-3 text-slate-500">Thêm đuôi -e</td></tr>
+                        <tr class="hover:bg-slate-50"><td class="p-3 font-bold text-blue-600">der</td><td class="p-3 font-bold"><button onclick="speakGerman('der Radiergummi')" class="text-indigo-600 hover:underline">🔊 der Radiergummi</button></td><td class="p-3 text-indigo-600 font-semibold"><button onclick="speakGerman('die Radiergummis')" class="hover:underline">🔊 die Radiergummis</button></td><td class="p-3">cục tẩy / gôm</td><td class="p-3 text-slate-500">Thêm đuôi -s</td></tr>
+                        <tr class="hover:bg-slate-50"><td class="p-3 font-bold text-blue-600">der</td><td class="p-3 font-bold"><button onclick="speakGerman('der Becher')" class="text-indigo-600 hover:underline">🔊 der Becher</button></td><td class="p-3 text-indigo-600 font-semibold"><button onclick="speakGerman('die Becher')" class="hover:underline">🔊 die Becher</button></td><td class="p-3">cái cốc / ly</td><td class="p-3 text-slate-500">Đuôi -er giữ nguyên dạng</td></tr>
+                        <tr class="hover:bg-slate-50"><td class="p-3 font-bold text-rose-600">die</td><td class="p-3 font-bold"><button onclick="speakGerman('die Tafel')" class="text-indigo-600 hover:underline">🔊 die Tafel</button></td><td class="p-3 text-indigo-600 font-semibold"><button onclick="speakGerman('die Tafeln')" class="hover:underline">🔊 die Tafeln</button></td><td class="p-3">cái bảng đen</td><td class="p-3 text-slate-500">Đuôi -el thêm -n</td></tr>
+                        <tr class="hover:bg-slate-50"><td class="p-3 font-bold text-rose-600">die</td><td class="p-3 font-bold"><button onclick="speakGerman('die Brille')" class="text-indigo-600 hover:underline">🔊 die Brille</button></td><td class="p-3 text-indigo-600 font-semibold"><button onclick="speakGerman('die Brillen')" class="hover:underline">🔊 die Brillen</button></td><td class="p-3">cái kính mắt</td><td class="p-3 text-slate-500">Đuôi -e thêm -n</td></tr>
+                        <tr class="hover:bg-slate-50"><td class="p-3 font-bold text-rose-600">die</td><td class="p-3 font-bold"><button onclick="speakGerman('die Tasche')" class="text-indigo-600 hover:underline">🔊 die Tasche</button></td><td class="p-3 text-indigo-600 font-semibold"><button onclick="speakGerman('die Taschen')" class="hover:underline">🔊 die Taschen</button></td><td class="p-3">túi xách / cặp sách</td><td class="p-3 text-slate-500">Đuôi -e thêm -n</td></tr>
+                        <tr class="hover:bg-slate-50"><td class="p-3 font-bold text-rose-600">die</td><td class="p-3 font-bold"><button onclick="speakGerman('die Landkarte')" class="text-indigo-600 hover:underline">🔊 die Landkarte</button></td><td class="p-3 text-indigo-600 font-semibold"><button onclick="speakGerman('die Landkarten')" class="hover:underline">🔊 die Landkarten</button></td><td class="p-3">bản đồ</td><td class="p-3 text-slate-500">Lấy giống theo die Karte, thêm -n</td></tr>
+                        <tr class="hover:bg-slate-50"><td class="p-3 font-bold text-emerald-600">das</td><td class="p-3 font-bold"><button onclick="speakGerman('das Papier')" class="text-indigo-600 hover:underline">🔊 das Papier</button></td><td class="p-3 text-indigo-600 font-semibold"><button onclick="speakGerman('die Papiere')" class="hover:underline">🔊 die Papiere</button></td><td class="p-3">giấy (chất liệu) / giấy tờ (số nhiều)</td><td class="p-3 text-slate-500">Danh từ chất liệu (một tờ giấy: ein Blatt Papier); số nhiều die Papiere: giấy tờ tùy thân</td></tr>
+                        <tr class="hover:bg-slate-50"><td class="p-3 font-bold text-emerald-600">das</td><td class="p-3 font-bold"><button onclick="speakGerman('das Heft')" class="text-indigo-600 hover:underline">🔊 das Heft</button></td><td class="p-3 text-indigo-600 font-semibold"><button onclick="speakGerman('die Hefte')" class="hover:underline">🔊 die Hefte</button></td><td class="p-3">quyển vở</td><td class="p-3 text-slate-500">Thêm đuôi -e</td></tr>
+                        <tr class="hover:bg-slate-50"><td class="p-3 font-bold text-emerald-600">das</td><td class="p-3 font-bold"><button onclick="speakGerman('das Buch')" class="text-indigo-600 hover:underline">🔊 das Buch</button></td><td class="p-3 text-indigo-600 font-semibold"><button onclick="speakGerman('die Bücher')" class="hover:underline">🔊 die Bücher</button></td><td class="p-3">quyển sách</td><td class="p-3 text-slate-500">Biến âm u → ü + đuôi -er</td></tr>
+                        <tr class="hover:bg-slate-50"><td class="p-3 font-bold text-emerald-600">das</td><td class="p-3 font-bold"><button onclick="speakGerman('das Wörterbuch')" class="text-indigo-600 hover:underline">🔊 das Wörterbuch</button></td><td class="p-3 text-indigo-600 font-semibold"><button onclick="speakGerman('die Wörterbücher')" class="hover:underline">🔊 die Wörterbücher</button></td><td class="p-3">quyển từ điển</td><td class="p-3 text-slate-500">Ghép (Wörter + Buch) → số nhiều theo Buch</td></tr>
+                        <tr class="hover:bg-slate-50"><td class="p-3 font-bold text-emerald-600">das</td><td class="p-3 font-bold"><button onclick="speakGerman('das Handy')" class="text-indigo-600 hover:underline">🔊 das Handy</button></td><td class="p-3 text-indigo-600 font-semibold"><button onclick="speakGerman('die Handys')" class="hover:underline">🔊 die Handys</button></td><td class="p-3">điện thoại di động</td><td class="p-3 text-slate-500">Từ mượn thêm đuôi -s</td></tr>
+                        <tr class="hover:bg-slate-50"><td class="p-3 font-bold text-emerald-600">das</td><td class="p-3 font-bold"><button onclick="speakGerman('das Whiteboard')" class="text-indigo-600 hover:underline">🔊 das Whiteboard</button></td><td class="p-3 text-indigo-600 font-semibold"><button onclick="speakGerman('die Whiteboards')" class="hover:underline">🔊 die Whiteboards</button></td><td class="p-3">bảng trắng</td><td class="p-3 text-slate-500">Từ mượn thêm đuôi -s</td></tr>
+                        <tr class="hover:bg-slate-50"><td class="p-3 font-bold text-emerald-600">das</td><td class="p-3 font-bold"><button onclick="speakGerman('das Mäppchen')" class="text-indigo-600 hover:underline">🔊 das Mäppchen</button></td><td class="p-3 text-indigo-600 font-semibold"><button onclick="speakGerman('die Mäppchen')" class="hover:underline">🔊 die Mäppchen</button></td><td class="p-3">hộp bút / túi đựng bút</td><td class="p-3 text-slate-500">Đuôi -chen luôn giống das, số nhiều giữ nguyên dạng</td></tr>
                     </tbody>
                 </table>
             </div>
@@ -273,25 +273,25 @@ def seed_lesson_2():
                 <div class="p-4 rounded-2xl bg-indigo-50 border border-indigo-100 space-y-2">
                     <h5 class="font-bold text-indigo-950 text-sm">🔹 Các Động từ lớp học cốt lõi:</h5>
                     <ul class="text-xs text-slate-700 space-y-2">
-                        <li><b>heißen</b> (gọi là / tên là): <i>Wie heißt das auf Deutsch?</i></li>
-                        <li><b>verstehen</b> (hiểu): <i>Das verstehe ich nicht.</i> (Đảo tân ngữ lên đầu, động từ ở vị trí 2).</li>
-                        <li><b>können</b> (khuyết thiếu - có thể): <i>Können Sie das bitte ...?</i> (Đẩy động từ chính về cuối câu ở dạng nguyên mẫu).</li>
-                        <li><b>erklären</b> (giải thích): <i>Können Sie das bitte erklären?</i></li>
-                        <li><b>wiederholen</b> (nhắc lại): <i>Können Sie das bitte wiederholen?</i></li>
-                        <li><b>buchstabieren</b> (đánh vần): <i>Können Sie das bitte buchstabieren?</i></li>
-                        <li><b>anschreiben</b> (viết lên bảng): <i>Können Sie das bitte anschreiben?</i></li>
+                        <li><b>heißen</b> (gọi là / tên là): <button onclick="speakGerman('Wie heißt das auf Deutsch?')" class="text-indigo-600 hover:underline">🔊 <i>Wie heißt das auf Deutsch?</i></button></li>
+                        <li><b>verstehen</b> (hiểu): <button onclick="speakGerman('Das verstehe ich nicht.')" class="text-indigo-600 hover:underline">🔊 <i>Das verstehe ich không -> Das verstehe ich nicht.</i></button> (Đảo tân ngữ lên đầu, động từ ở vị trí 2).</li>
+                        <li><b>können</b> (khuyết thiếu - có thể): <button onclick="speakGerman('Können Sie das bitte wiederholen?')" class="text-indigo-600 hover:underline">🔊 <i>Können Sie das bitte ...?</i></button> (Đẩy động từ chính về cuối câu ở dạng nguyên mẫu).</li>
+                        <li><b>erklären</b> (giải thích): <button onclick="speakGerman('Können Sie das bitte erklären?')" class="text-indigo-600 hover:underline">🔊 <i>Können Sie das bitte erklären?</i></button></li>
+                        <li><b>wiederholen</b> (nhắc lại): <button onclick="speakGerman('Können Sie das bitte wiederholen?')" class="text-indigo-600 hover:underline">🔊 <i>Können Sie das bitte wiederholen?</i></button></li>
+                        <li><b>buchstabieren</b> (đánh vần): <button onclick="speakGerman('Können Sie das bitte buchstabieren?')" class="text-indigo-600 hover:underline">🔊 <i>Können Sie das bitte buchstabieren?</i></button></li>
+                        <li><b>anschreiben</b> (viết lên bảng): <button onclick="speakGerman('Können Sie das bitte anschreiben?')" class="text-indigo-600 hover:underline">🔊 <i>Können Sie das bitte anschreiben?</i></button></li>
                     </ul>
                 </div>
 
                 <div class="p-4 rounded-2xl bg-amber-50 border border-amber-200 space-y-2">
                     <h5 class="font-bold text-amber-950 text-sm">🔹 6 Mẫu câu giao tiếp chuẩn:</h5>
                     <ol class="list-decimal list-inside text-xs text-slate-700 space-y-1.5 font-medium">
-                        <li><b>Wie heißt das auf Deutsch?</b> → Cái này tiếng Đức gọi là gì?</li>
-                        <li><b>Was ist das auf Deutsch?</b> → Cái này trong tiếng Đức là gì?</li>
-                        <li><b>Entschuldigung, wie bitte?</b> → Xin lỗi, Ngài nói sao cơ ạ?</li>
-                        <li><b>Das verstehe ich nicht. Können Sie das bitte wiederholen?</b> → Tôi không hiểu. Ngài lặp lại được không?</li>
-                        <li><b>Das verstehe ich nicht. Können Sie das bitte buchstabieren?</b> → Tôi không hiểu. Ngài đánh vần giúp tôi được không?</li>
-                        <li><b>Das verstehe ich nicht. Können Sie das bitte anschreiben?</b> → Tôi không hiểu. Ngài viết lên bảng giúp tôi được không?</li>
+                        <li><button onclick="speakGerman('Wie heißt das auf Deutsch?')" class="text-indigo-600 font-bold hover:underline">🔊 <b>Wie heißt das auf Deutsch?</b></button> → Cái này tiếng Đức gọi là gì?</li>
+                        <li><button onclick="speakGerman('Was ist das auf Deutsch?')" class="text-indigo-600 font-bold hover:underline">🔊 <b>Was ist das auf Deutsch?</b></button> → Cái này trong tiếng Đức là gì?</li>
+                        <li><button onclick="speakGerman('Entschuldigung, wie bitte?')" class="text-indigo-600 font-bold hover:underline">🔊 <b>Entschuldigung, wie bitte?</b></button> → Xin lỗi, Ngài nói sao cơ ạ?</li>
+                        <li><button onclick="speakGerman('Das verstehe ich nicht. Können Sie das bitte wiederholen?')" class="text-indigo-600 font-bold hover:underline">🔊 <b>Das verstehe ich nicht. Können Sie das bitte wiederholen?</b></button> → Tôi không hiểu. Ngài lặp lại được không?</li>
+                        <li><button onclick="speakGerman('Das verstehe ich nicht. Können Sie das bitte buchstabieren?')" class="text-indigo-600 font-bold hover:underline">🔊 <b>Das verstehe ich không -> Das verstehe ich nicht. Können Sie das bitte buchstabieren?</b></button> → Tôi không hiểu. Ngài đánh vần giúp tôi được không?</li>
+                        <li><button onclick="speakGerman('Das verstehe ich không -> Das verstehe ich nicht. Können Sie das bitte anschreiben?')" class="text-indigo-600 font-bold hover:underline">🔊 <b>Das verstehe ich không -> Das verstehe ich nicht. Können Sie das bitte anschreiben?</b></button> → Tôi không hiểu. Ngài viết lên bảng giúp tôi được không?</li>
                     </ol>
                 </div>
             </div>
@@ -448,6 +448,60 @@ def seed_lesson_2():
         "Frau Schiller: Ja, natürlich: W - Ö - R - T - E - R - B - U - C - H. Das ist ein Wörterbuch. "
         "Auf dem Tisch haben wir auch eine Landkarte und drei Stühle."
     )
+
+
+    EXERCISE_TRANSLATIONS = {
+    "1": "Mọi danh từ có hậu tố '-ung' đều mang giống cái (die).",
+    "2": "Các danh từ có đuôi '-heit', '-keit' luôn mang giống cái (die).",
+    "3": "Ngoại lệ đuôi '-ent': der Moment (giống đực).",
+    "4": "Ngoại lệ đuôi '-nis': die Erlaubnis (giống cái).",
+    "5": "Hậu tố giảm nhẹ '-chen', '-lein' luôn mang giống trung (das).",
+    "6": "Tên các tháng trong năm (Januar, Mai...) luôn mang giống đực (der).",
+    "7": "Giống của danh từ ghép (das Wörterbuch) được quyết định bởi từ đứng cuối cùng (das Buch).",
+    "8": "Ở dạng số nhiều, không có mạo từ bất định (Nullartikel).",
+    "9": "'Cái này tiếng Đức gọi là gì?' = 'Wie heißt das auf Deutsch?'.",
+    "10": "Để phủ định danh từ số nhiều, ta dùng 'keine'.",
+    "11": "Đây có phải là một chiếc kính mắt không? (Ist das eine Brille?)",
+    "12": "Đây có phải là một chiếc bút bi không? (Ist das ein Kuli?)",
+    "13": "Đó không phải là một chiếc bàn, đó là một chiếc ghế. (Das ist kein Tisch, das ist ein Stuhl.)",
+    "14": "Đó có phải là một tấm bản đồ không? – Không, đó không phải là bản đồ. (Ist das eine Landkarte? – Nein, das ist keine Landkarte.)",
+    "15": "Tôi không hiểu điều đó. (Das verstehe ich nicht.)",
+    "16": "Ngài có thể vui lòng đánh vần từ đó được không? (Können Sie das Wort bitte buchstabieren?)",
+    "17": "Ngài có thể vui lòng viết từ đó lên bảng được không? (Können Sie das Wort bitte anschreiben?)",
+    "18": "Trong phòng học có 15 chiếc ghế. (Im Kursraum gibt es 15 Stühle.)",
+    "19": "Trên bàn có 3 quyển sách. (Auf dem Tisch liegen 3 Bücher.)",
+    "20": "Không, đó không phải là một cái kính. Đó là một cái bàn. (Nein, das ist keine Brille. Das ist ein Tisch.)",
+    "21": "Cái này tiếng Đức gọi là gì? (Wie heißt das auf Deutsch?)",
+    "22": "Tôi không hiểu điều đó. Ngài có thể nhắc lại được không? (Das verstehe ich nicht. Können Sie das bitte wiederholen?)",
+    "23": "Đó không phải là quyển vở, đó là cuốn từ điển. (Das ist kein Heft, das ist ein Wörterbuch.)",
+    "24": "Đây có phải là điện thoại của Anna không? (Ist das das Handy von Anna?)",
+    "25": "Xin lỗi, ngài nói gì cơ ạ? (Entschuldigung, wie bitte?)",
+    "26": "Ngài có thể vui lòng đánh vần điều đó được không? (Können Sie das bitte buchstabieren?)",
+    "27": "Ngài có thể vui lòng viết từ đó lên bảng được không? (Können Sie das bitte anschreiben?)",
+    "28": "Không, đó không phải là kính mắt. Đó là một tấm bản đồ. (Nein, das ist keine Brille. Das ist eine Landkarte.)",
+    "29": "Đó là chiếc bút bi của Anna. (Das ist der Kuli von Anna.)",
+    "30": "Không, đó không phải là kính mắt. Đó là một tấm bản đồ. (Nein, das ist keine Brille. Das ist eine Landkarte.)",
+    "31": "Cái này tiếng Đức gọi là gì? (Wie heißt das auf Deutsch?)",
+    "32": "Ngài có thể vui lòng nhắc lại được không? (Können Sie das bitte wiederholen?)",
+    "33": "Trong phòng học có bàn và ghế. (Im Kursraum gibt es Tische und Stühle.)",
+    "34": "Quyển vở, cuốn từ điển và tấm bản đồ. (Das Heft, das Wörterbuch und die Landkarte.)",
+    "35": "Cái này tiếng Đức gọi là gì? (Wie heißt das auf Deutsch?)",
+    "36": "Tôi không hiểu điều đó. Ngài có thể vui lòng nhắc lại được không? (Das verstehe ich nicht. Können Sie das bitte wiederholen?)",
+    "37": "Ngài có thể vui lòng đánh vần điều đó được không? (Können Sie das bitte buchstabieren?)",
+    "38": "Không, đó không phải là kính mắt. Đó là một tấm bản đồ. (Nein, das ist keine Brille. Das ist eine Landkarte.)",
+    "39": "Vâng, đó là cuốn từ điển của bà Schiller. (Ja, das ist das Wörterbuch von Frau Schiller.)",
+    "40": "Hội thoại lớp học:\nCô Schiller: Chào buổi sáng cả lớp! Cái này trong tiếng Đức gọi là gì, Marc?\nMarc: Đó là một cây bút bi ạ.\nCô Schiller: Rất tốt! Đó là cây bút bi của Anna. Và Anna, đó có phải là một quyển vở không?\nAnna: Thưa cô Schiller, không phải, đó không phải là quyển vở. Đó là một cuốn từ điển ạ.\nDavid: Xin lỗi cô, em nghe chưa rõ? Em không hiểu điều đó. Cô có thể viết từ đó lên bảng được không ạ?\nCô Schiller: Được chứ, tất nhiên rồi: W - Ö - R - T - E - R - B - U - C - H. Đó là một cuốn từ điển. Trên bàn chúng ta cũng có một tấm bản đồ và ba chiếc ghế.",
+    "41": "Hội thoại lớp học:\nCô Schiller: Chào buổi sáng cả lớp! Cái này trong tiếng Đức gọi là gì, Marc?\nMarc: Đó là một cây bút bi ạ.\nCô Schiller: Rất tốt! Đó là cây bút bi của Anna. Và Anna, đó có phải là một quyển vở không?\nAnna: Thưa cô Schiller, không phải, đó không phải là quyển vở. Đó là một cuốn từ điển ạ.\nDavid: Xin lỗi cô, em nghe chưa rõ? Em không hiểu điều đó. Cô có thể viết từ đó lên bảng được không ạ?\nCô Schiller: Được chứ, tất nhiên rồi: W - Ö - R - T - E - R - B - U - C - H. Đó là một cuốn từ điển. Trên bàn chúng ta cũng có một tấm bản đồ và ba chiếc ghế.",
+    "42": "Hội thoại lớp học:\nCô Schiller: Chào buổi sáng cả lớp! Cái này trong tiếng Đức gọi là gì, Marc?\nMarc: Đó là một cây bút bi ạ.\nCô Schiller: Rất tốt! Đó là cây bút bi của Anna. Và Anna, đó có phải là một quyển vở không?\nAnna: Thưa cô Schiller, không phải, đó không phải là quyển vở. Đó là một cuốn từ điển ạ.\nDavid: Xin lỗi cô, em nghe chưa rõ? Em không hiểu điều đó. Cô có thể viết từ đó lên bảng được không ạ?\nCô Schiller: Được chứ, tất nhiên rồi: W - Ö - R - T - E - R - B - U - C - H. Đó là một cuốn từ điển. Trên bàn chúng ta cũng có một tấm bản đồ và ba chiếc ghế.",
+    "43": "Hội thoại lớp học:\nCô Schiller: Chào buổi sáng cả lớp! Cái này trong tiếng Đức gọi là gì, Marc?\nMarc: Đó là một cây bút bi ạ.\nCô Schiller: Rất tốt! Đó là cây bút bi của Anna. Và Anna, đó có phải là một quyển vở không?\nAnna: Thưa cô Schiller, không phải, đó không phải là quyển vở. Đó là một cuốn từ điển ạ.\nDavid: Xin lỗi cô, em nghe chưa rõ? Em không hiểu điều đó. Cô có thể viết từ đó lên bảng được không ạ?\nCô Schiller: Được chứ, tất nhiên rồi: W - Ö - R - T - E - R - B - U - C - H. Đó là một cuốn từ điển. Trên bàn chúng ta cũng có một tấm bản đồ và ba chiếc ghế.",
+    "44": "Ngài có thể vui lòng nhắc lại được không? (Können Sie das bitte wiederholen?)",
+    "45": "Ngài có thể vui lòng đánh vần điều đó được không? (Können Sie das bitte buchstabieren?)",
+    "46": "Những quyển sách: die Bücher.",
+    "47": "Những chiếc bàn: die Tische.",
+    "48": "Vâng, đó là điện thoại của Anna. (Ja, das ist das Handy von Anna.)",
+    "49": "Những chiếc ghế: die Stühle.",
+    "50": "Không, đó không phải là kính mắt. Đó là một cái bàn. (Nein, das ist keine Brille. Das ist ein Tisch.)"
+}
 
     exercises = [
         # ---------------------------------------------------------------------
@@ -834,8 +888,20 @@ def seed_lesson_2():
 
     import random
     shuffled_exercises = []
-    for ex in exercises:
+    for idx, ex in enumerate(exercises):
         ex_list = list(ex)
+        q_num = idx + 1
+        extra_d = {}
+        if ex_list[7]:
+            try:
+                extra_d = json.loads(ex_list[7]) if isinstance(ex_list[7], str) else dict(ex_list[7])
+            except Exception:
+                extra_d = {}
+        trans_val = EXERCISE_TRANSLATIONS.get(str(q_num)) or EXERCISE_TRANSLATIONS.get(q_num)
+        if trans_val and not extra_d.get("translation"):
+            extra_d["translation"] = trans_val
+            # trans applied
+        ex_list[7] = json.dumps(extra_d, ensure_ascii=False) if extra_d else None
         if ex_list[1] == "trac_nghiem" and ex_list[3]:
             try:
                 opts = json.loads(ex_list[3])

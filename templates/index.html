@@ -544,11 +544,17 @@
             }
         }
 
+        window.playWordTTS = function(word) {
+            if (typeof speakGerman === 'function') {
+                speakGerman(word);
+            }
+        };
+
         function updateExpUI(rawExp) {
             if (window.currentAuthUser && window.currentAuthUser.total_exp !== undefined) {
                 userTotalExp = Number(rawExp !== undefined ? rawExp : window.currentAuthUser.total_exp);
             } else {
-                userTotalExp = 1450 + Number(rawExp || 0);
+                userTotalExp = Number(rawExp !== undefined ? rawExp : 0);
             }
             const userExpEl = document.getElementById('user-exp');
             if (userExpEl) userExpEl.innerText = userTotalExp.toLocaleString('en-US');
@@ -717,6 +723,9 @@
                     ? `${v.article} ${v.german_word}`
                     : v.german_word;
                 const safeSpeak = fullWord.replace(/'/g, "\\'");
+                const deSentenceMatch = v.example_sentence ? v.example_sentence.match(/^([^(]+)/) : null;
+                const deSentence = deSentenceMatch ? deSentenceMatch[1].trim() : v.example_sentence;
+                const safeExampleSpeak = (deSentence || '').replace(/'/g, "\\'");
 
                 return `
                     <div class="p-4 rounded-2xl border ${cardStyle} flex flex-col justify-between space-y-3">
@@ -730,7 +739,10 @@
                             <h4 class="text-lg font-extrabold text-slate-900 mt-2">${fullWord}</h4>
                             <p class="text-sm text-indigo-600 font-bold">${v.vietnamese_meaning}</p>
                         </div>
-                        <p class="text-xs text-slate-500 italic border-t border-slate-200/70 pt-2">"${v.example_sentence}"</p>
+                        <p class="text-xs text-slate-500 italic border-t border-slate-200/70 pt-2 flex items-start justify-between gap-1.5">
+                            <span>"${v.example_sentence}"</span>
+                            <button onclick="speakGerman('${safeExampleSpeak}')" title="Nghe câu ví dụ" class="shrink-0 p-1 rounded-md text-slate-400 hover:text-indigo-600 hover:bg-white transition cursor-pointer text-xs">🔊</button>
+                        </p>
                     </div>
                 `;
             }).join('');
@@ -853,7 +865,7 @@
                     `;
                 }
 
-                if (ex.exercise_type === 'doc' && extra.passage) {
+                if (extra.passage) {
                     extraHtml = `
                         <div class="p-4 rounded-xl bg-indigo-50/60 border border-indigo-200 text-xs sm:text-sm text-slate-800 whitespace-pre-line font-medium my-2">${extra.passage}</div>
                     `;

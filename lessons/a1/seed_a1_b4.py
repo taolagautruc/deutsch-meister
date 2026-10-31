@@ -83,23 +83,23 @@ def seed_lesson_4():
                     <ul class="space-y-2 text-slate-800">
                         <li class="flex items-start justify-between gap-1">
                             <div><b>der Garten</b> <span class="text-slate-500 text-xs">(Pl: die Gärten)</span><br><span class="text-xs text-slate-600">Khu vườn (biến âm a→ä)</span></div>
-                            <button onclick="playWordTTS('Garten')" class="p-1 rounded bg-blue-100 hover:bg-blue-200 text-xs">🔊</button>
+                            <button onclick="speakGerman('der Garten')" class="p-1 rounded bg-blue-100 hover:bg-blue-200 text-xs cursor-pointer">🔊</button>
                         </li>
                         <li class="flex items-start justify-between gap-1">
                             <div><b>der Balkon</b> <span class="text-slate-500 text-xs">(Pl: die Balkone)</span><br><span class="text-xs text-slate-600">Ban công</span></div>
-                            <button onclick="playWordTTS('Balkon')" class="p-1 rounded bg-blue-100 hover:bg-blue-200 text-xs">🔊</button>
+                            <button onclick="speakGerman('der Balkon')" class="p-1 rounded bg-blue-100 hover:bg-blue-200 text-xs cursor-pointer">🔊</button>
                         </li>
                         <li class="flex items-start justify-between gap-1">
                             <div><b>der Flur</b> <span class="text-slate-500 text-xs">(Pl: die Flure)</span><br><span class="text-xs text-slate-600">Hành lang</span></div>
-                            <button onclick="playWordTTS('Flur')" class="p-1 rounded bg-blue-100 hover:bg-blue-200 text-xs">🔊</button>
+                            <button onclick="speakGerman('der Flur')" class="p-1 rounded bg-blue-100 hover:bg-blue-200 text-xs cursor-pointer">🔊</button>
                         </li>
                         <li class="flex items-start justify-between gap-1">
                             <div><b>der Keller</b> <span class="text-slate-500 text-xs">(Pl: die Keller)</span><br><span class="text-xs text-slate-600">Tầng hầm (đuôi -er giữ nguyên)</span></div>
-                            <button onclick="playWordTTS('Keller')" class="p-1 rounded bg-blue-100 hover:bg-blue-200 text-xs">🔊</button>
+                            <button onclick="speakGerman('der Keller')" class="p-1 rounded bg-blue-100 hover:bg-blue-200 text-xs cursor-pointer">🔊</button>
                         </li>
                         <li class="flex items-start justify-between gap-1">
                             <div><b>der Stock</b> <span class="text-slate-500 text-xs">(Pl: die Stockwerke)</span><br><span class="text-xs text-slate-600">Tầng lầu</span></div>
-                            <button onclick="playWordTTS('Stock')" class="p-1 rounded bg-blue-100 hover:bg-blue-200 text-xs">🔊</button>
+                            <button onclick="speakGerman('der Stock')" class="p-1 rounded bg-blue-100 hover:bg-blue-200 text-xs cursor-pointer">🔊</button>
                         </li>
                     </ul>
                 </div>
@@ -113,23 +113,23 @@ def seed_lesson_4():
                     <ul class="space-y-2 text-slate-800">
                         <li class="flex items-start justify-between gap-1">
                             <div><b>die Wohnung</b> <span class="text-slate-500 text-xs">(Pl: die Wohnungen)</span><br><span class="text-xs text-slate-600">Căn hộ (hậu tố -ung luôn là die)</span></div>
-                            <button onclick="playWordTTS('Wohnung')" class="p-1 rounded bg-rose-100 hover:bg-rose-200 text-xs">🔊</button>
+                            <button onclick="speakGerman('die Wohnung')" class="p-1 rounded bg-rose-100 hover:bg-rose-200 text-xs cursor-pointer">🔊</button>
                         </li>
                         <li class="flex items-start justify-between gap-1">
                             <div><b>die Küche</b> <span class="text-slate-500 text-xs">(Pl: die Küchen)</span><br><span class="text-xs text-slate-600">Phòng bếp / Nhà bếp</span></div>
-                            <button onclick="playWordTTS('Küche')" class="p-1 rounded bg-rose-100 hover:bg-rose-200 text-xs">🔊</button>
+                            <button onclick="speakGerman('die Küche')" class="p-1 rounded bg-rose-100 hover:bg-rose-200 text-xs cursor-pointer">🔊</button>
                         </li>
                         <li class="flex items-start justify-between gap-1">
                             <div><b>die Garage</b> <span class="text-slate-500 text-xs">(Pl: die Garagen)</span><br><span class="text-xs text-slate-600">Ga-ra ô tô</span></div>
-                            <button onclick="playWordTTS('Garage')" class="p-1 rounded bg-rose-100 hover:bg-rose-200 text-xs">🔊</button>
+                            <button onclick="speakGerman('die Garage')" class="p-1 rounded bg-rose-100 hover:bg-rose-200 text-xs cursor-pointer">🔊</button>
                         </li>
                         <li class="flex items-start justify-between gap-1">
                             <div><b>die Terrasse</b> <span class="text-slate-500 text-xs">(Pl: die Terrassen)</span><br><span class="text-xs text-slate-600">Hiên nhà / Sân hiên</span></div>
-                            <button onclick="playWordTTS('Terrasse')" class="p-1 rounded bg-rose-100 hover:bg-rose-200 text-xs">🔊</button>
+                            <button onclick="speakGerman('die Terrasse')" class="p-1 rounded bg-rose-100 hover:bg-rose-200 text-xs cursor-pointer">🔊</button>
                         </li>
                         <li class="flex items-start justify-between gap-1">
                             <div><b>die Toilette</b> <span class="text-slate-500 text-xs">(Pl: die Toiletten)</span><br><span class="text-xs text-slate-600">Nhà vệ sinh</span></div>
-                            <button onclick="playWordTTS('Toilette')" class="p-1 rounded bg-rose-100 hover:bg-rose-200 text-xs">🔊</button>
+                            <button onclick="speakGerman('die Toilette')" class="p-1 rounded bg-rose-100 hover:bg-rose-200 text-xs cursor-pointer">🔊</button>
                         </li>
                     </ul>
                 </div>
@@ -143,23 +143,23 @@ def seed_lesson_4():
                     <ul class="space-y-2 text-slate-800">
                         <li class="flex items-start justify-between gap-1">
                             <div><b>das Haus</b> <span class="text-slate-500 text-xs">(Pl: die Häuser)</span><br><span class="text-xs text-slate-600">Ngôi nhà (biến âm au→äu + er)</span></div>
-                            <button onclick="playWordTTS('Haus')" class="p-1 rounded bg-emerald-100 hover:bg-emerald-200 text-xs">🔊</button>
+                            <button onclick="speakGerman('das Haus')" class="p-1 rounded bg-emerald-100 hover:bg-emerald-200 text-xs cursor-pointer">🔊</button>
                         </li>
                         <li class="flex items-start justify-between gap-1">
                             <div><b>das Zimmer</b> <span class="text-slate-500 text-xs">(Pl: die Zimmer)</span><br><span class="text-xs text-slate-600">Căn phòng (số nhiều giữ nguyên)</span></div>
-                            <button onclick="playWordTTS('Zimmer')" class="p-1 rounded bg-emerald-100 hover:bg-emerald-200 text-xs">🔊</button>
+                            <button onclick="speakGerman('das Zimmer')" class="p-1 rounded bg-emerald-100 hover:bg-emerald-200 text-xs cursor-pointer">🔊</button>
                         </li>
                         <li class="flex items-start justify-between gap-1">
                             <div><b>das Fenster</b> <span class="text-slate-500 text-xs">(Pl: die Fenster)</span><br><span class="text-xs text-slate-600">Cửa sổ (số nhiều giữ nguyên)</span></div>
-                            <button onclick="playWordTTS('Fenster')" class="p-1 rounded bg-emerald-100 hover:bg-emerald-200 text-xs">🔊</button>
+                            <button onclick="speakGerman('das Fenster')" class="p-1 rounded bg-emerald-100 hover:bg-emerald-200 text-xs cursor-pointer">🔊</button>
                         </li>
                         <li class="flex items-start justify-between gap-1">
                             <div><b>das Wohnheim</b> <span class="text-slate-500 text-xs">(Pl: die Wohnheime)</span><br><span class="text-xs text-slate-600">Ký túc xá (das Heim)</span></div>
-                            <button onclick="playWordTTS('Wohnheim')" class="p-1 rounded bg-emerald-100 hover:bg-emerald-200 text-xs">🔊</button>
+                            <button onclick="speakGerman('das Wohnheim')" class="p-1 rounded bg-emerald-100 hover:bg-emerald-200 text-xs cursor-pointer">🔊</button>
                         </li>
                         <li class="flex items-start justify-between gap-1">
                             <div><b>das Bad</b> <span class="text-slate-500 text-xs">(Pl: die Bäder)</span><br><span class="text-xs text-slate-600">Phòng tắm (viết gọn của das Badezimmer)</span></div>
-                            <button onclick="playWordTTS('Bad')" class="p-1 rounded bg-emerald-100 hover:bg-emerald-200 text-xs">🔊</button>
+                            <button onclick="speakGerman('das Bad')" class="p-1 rounded bg-emerald-100 hover:bg-emerald-200 text-xs cursor-pointer">🔊</button>
                         </li>
                     </ul>
                 </div>
@@ -726,6 +726,60 @@ def seed_lesson_4():
         "Julia"
     )
 
+
+    EXERCISE_TRANSLATIONS = {
+    "1": "Chúng tôi có một ngôi nhà. (Wir haben ein Haus.)",
+    "2": "Ở phía trên có một ban công. (Oben gibt es einen Balkon.)",
+    "3": "Tôi thấy khu vườn rất đẹp. (Ich finde den Garten sehr schön.)",
+    "4": "Phòng khách thì rộng, nhưng tôi thấy nhà bếp quá nhỏ. (Das Wohnzimmer ist groß, aber ich finde die Küche zu klein.)",
+    "5": "Ngôi nhà có một hành lang. Nó dài và tối. (Das Haus hat einen Flur. Er ist lang und dunkel.)",
+    "6": "Kia có phải là túi xách của bạn không, Anna? (Ist das deine Tasche, Anna?)",
+    "7": "Kia có phải là ô tô của Ngài không, ông Müller? (Ist das Ihr Auto, Herr Müller?)",
+    "8": "Kia có phải là con của các bạn không, Maria và Lukas? (Sind das eure Kinder, Maria und Lukas?)",
+    "9": "Kia có phải là sách của bạn không, Tina? – Không, đó là sách của cô ấy. (Ist das dein Buch, Tina? – Nein, das ist ihr Buch.)",
+    "10": "Tất cả các phòng có đuôi '-zimmer' (Wohnzimmer, Schlafzimmer...) đều mang giống trung (das).",
+    "11": "Từ trái nghĩa của 'hell' (sáng sủa) là 'dunkel' (tối tăm).",
+    "12": "Chúng tôi có một khu vườn. (Wir haben einen Garten.)",
+    "13": "Ở phía trên có một ban công. (Oben gibt es einen Balkon.)",
+    "14": "Ngôi nhà có một hành lang. (Das Haus hat einen Flur.)",
+    "15": "Chúng tôi cũng có một khu vườn. Tôi thấy khu vườn rất đẹp. (Wir haben auch einen Garten. Ich finde den Garten sehr schön.)",
+    "16": "Phòng khách thì rộng, nhưng tôi thấy nhà bếp quá nhỏ. (Das Wohnzimmer ist groß, aber ich finde die Küche zu klein.)",
+    "17": "Đó có phải là một tầng hầm không? – Không, căn hộ không có tầng hầm. (Ist das ein Keller? – Nein, die Wohnung hat keinen Keller.)",
+    "18": "Đây là căn hộ của chúng tôi. (Das ist unsere Wohnung.)",
+    "19": "Chúng tôi đến thăm khu vườn của các bạn. (Wir besuchen euren Garten.)",
+    "20": "Đó là ngôi nhà của anh ấy. (Das ist sein Haus.)",
+    "21": "Cô ấy đang tìm chìa khóa của mình. (Sie sucht ihren Schlüssel.)",
+    "22": "Hôm qua chúng tôi không có thời gian. (Gestern hatten wir keine Zeit.)",
+    "23": "Đó là phòng của tôi. (Das ist mein Zimmer.)",
+    "24": "Căn phòng làm việc không tối tăm, mà nó sáng sủa.",
+    "25": "Tôi có một ngôi nhà. Ngôi nhà của tôi có 5 phòng. (Ich habe ein Haus. Mein Haus hat 5 Zimmer.)",
+    "26": "Phòng khách của tôi thì sáng và hiện đại. (Mein Wohnzimmer ist hell und modern.)",
+    "27": "Nó có 1 Tivi và 1 giá sách. (Es hat einen Fernseher und ein Bücherregal.)",
+    "28": "Phòng ngủ của tôi thì ấm cúng và có 1 giường. (Mein Schlafzimmer ist gemütlich und hat ein Bett.)",
+    "29": "Phòng làm việc của tôi thì nhỏ nhưng sáng. Nó có 1 bàn và 1 ghế. (Mein Arbeitszimmer ist klein, aber hell. Es hat einen Tisch und einen Stuhl.)",
+    "30": "Phòng bếp của tôi thì nhỏ và đẹp. (Meine Küche ist klein und schön.)",
+    "31": "Chúng mình cũng có một khu vườn. Mình thấy khu vườn rất đẹp. (Wir haben auch einen Garten. Ich finde den Garten sehr schön.)",
+    "32": "Phòng khách của tôi thì sáng và hiện đại. (Mein Wohnzimmer ist hell und modern.)",
+    "33": "Ở phía trên có một ban công. (Oben gibt es einen Balkon.)",
+    "34": "Tôi thấy khu vườn rất đẹp. (Ich finde den Garten rất đẹp / sehr schön.)",
+    "35": "Ngôi nhà có một hành lang. (Das Haus hat einen Flur.)",
+    "36": "Kia có phải các con của các bạn không, Maria và Lukas? (Sind das eure Kinder, Maria und Lukas?)",
+    "37": "Phòng khách của tôi sáng sủa và hiện đại. (Mein Wohnzimmer ist hell und modern.)",
+    "38": "Phòng khách của tôi sáng và hiện đại. Nó có một chiếc TV và một giá sách. (Mein Wohnzimmer ist hell und modern. Es hat einen Fernseher und ein Bücherregal.)",
+    "39": "Đó có phải con của các bạn không, Maria và Lukas? (Sind das eure Kinder, Maria und Lukas?)",
+    "40": "Ngôi nhà có một hành lang. Nó dài và tối. (Das Haus hat einen Flur. Er ist lang und dunkel.)",
+    "41": "Chúng tôi cũng có một khu vườn. Tôi thấy khu vườn rất đẹp. (Wir haben auch einen Garten. Ich finde den Garten sehr schön.)",
+    "42": "Bức thư của Julia gửi các bạn:\nCác bạn thân mến,\nNgôi nhà của chúng mình rất cổ kính và có 5 phòng.\nỞ phía trên có một ban công.\nNhưng mình thấy nhà bếp quá nhỏ.\nNgôi nhà có một hành lang. Nó dài và tối.\nThân ái,\nJulia",
+    "43": "Bức thư của Julia gửi các bạn:\nCác bạn thân mến,\nNgôi nhà của chúng mình rất cổ kính và có 5 phòng.\nỞ phía trên có một ban công.\nNhưng mình thấy nhà bếp quá nhỏ.\nNgôi nhà có một hành lang. Nó dài và tối.\nThân ái,\nJulia",
+    "44": "Bức thư của Julia gửi các bạn:\nCác bạn thân mến,\nNgôi nhà của chúng mình rất cổ kính và có 5 phòng.\nỞ phía trên có một ban công.\nNhưng mình thấy nhà bếp quá nhỏ.\nNgôi nhà có một hành lang. Nó dài và tối.\nThân ái,\nJulia",
+    "45": "Bức thư của Julia gửi các bạn:\nCác bạn thân mến,\nNgôi nhà của chúng mình rất cổ kính và có 5 phòng.\nỞ phía trên có một ban công.\nNhưng mình thấy nhà bếp quá nhỏ.\nNgôi nhà có một hành lang. Nó dài và tối.\nThân ái,\nJulia",
+    "46": "Chúng tôi có một khu vườn. (Wir haben einen Garten.)",
+    "47": "Đó là cuốn sách của cô ấy. (Das ist ihr Buch.)",
+    "48": "Đó là chiếc tủ của anh ấy. (Das ist sein Schrank.)",
+    "49": "Chúng tôi không có tivi. (Wir haben keinen Fernseher.)",
+    "50": "Ngôi nhà có một hành lang. Nó dài và tối. (Das Haus hat einen Flur. Er ist lang und dunkel.)"
+}
+
     exercises = [
         # --- DẠNG 1: TRẮC NGHIỆM NGỮ PHÁP & TỪ VỰNG (12 CÂU) ---
         (
@@ -1157,8 +1211,20 @@ def seed_lesson_4():
 
     import random
     shuffled_exercises = []
-    for ex in exercises:
+    for idx, ex in enumerate(exercises):
         ex_list = list(ex)
+        q_num = idx + 1
+        extra_d = {}
+        if ex_list[7]:
+            try:
+                extra_d = json.loads(ex_list[7]) if isinstance(ex_list[7], str) else dict(ex_list[7])
+            except Exception:
+                extra_d = {}
+        trans_val = EXERCISE_TRANSLATIONS.get(str(q_num)) or EXERCISE_TRANSLATIONS.get(q_num)
+        if trans_val and not extra_d.get("translation"):
+            extra_d["translation"] = trans_val
+            # trans applied
+        ex_list[7] = json.dumps(extra_d, ensure_ascii=False) if extra_d else None
         if ex_list[1] == "trac_nghiem" and ex_list[3]:
             try:
                 opts = json.loads(ex_list[3])

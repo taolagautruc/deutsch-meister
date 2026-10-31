@@ -176,11 +176,31 @@ async function checkCurrentAuthSession() {
         const data = await res.json();
         if (data.logged_in && data.user) {
             currentAuthUser = data.user;
+            if (data.user.token) localStorage.setItem('dm_auth_token', data.user.token);
             renderAuthUserUI();
-        } else {
-            currentAuthUser = null;
-            renderAuthUserUI();
+            return;
         }
+
+        // Tự động khôi phục tài khoản vĩnh viễn từ localStorage nếu cookie phiên bị trình duyệt xóa
+        const savedToken = localStorage.getItem('dm_auth_token');
+        if (savedToken) {
+            const restRes = await fetch('/api/auth/restore-session', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ token: savedToken })
+            });
+            if (restRes.ok) {
+                const restData = await restRes.json();
+                if (restData.logged_in && restData.user) {
+                    currentAuthUser = restData.user;
+                    renderAuthUserUI();
+                    return;
+                }
+            }
+        }
+
+        currentAuthUser = null;
+        renderAuthUserUI();
     } catch (e) {
         currentAuthUser = null;
         renderAuthUserUI();
@@ -188,10 +208,14 @@ async function checkCurrentAuthSession() {
 }
 
 function renderAuthUserUI() {
+    window.currentAuthUser = currentAuthUser;
     const authContainer = document.getElementById('auth-header-container');
     if (!authContainer) return;
 
     if (currentAuthUser) {
+        if (typeof updateExpUI === 'function') {
+            updateExpUI(currentAuthUser.total_exp);
+        }
         const initials = (currentAuthUser.username || 'HV').substring(0, 2).toUpperCase();
         const rem = currentAuthUser.arena_remaining_today !== undefined ? currentAuthUser.arena_remaining_today : 2;
         authContainer.innerHTML = `
@@ -392,10 +416,13 @@ async function handleRegisterFormSubmit(e) {
         const data = await res.json();
         if (res.ok) {
             currentAuthUser = data.user;
+            if (data.token || (data.user && data.user.token)) {
+                localStorage.setItem('dm_auth_token', data.token || data.user.token);
+            }
             closeAuthModal();
             renderAuthUserUI();
             loadLeaderboardData();
-            alert(`🎉 Chúc mừng ${username}! Đăng ký thành công. Bạn đã sẵn sàng Đua Top.`);
+            alert(`🎉 Chúc mừng ${username}! Đăng ký thành công. Tài khoản của bạn đã được bảo lưu vĩnh viễn trên hệ thống.`);
         } else {
             errBox.innerText = data.error || "Đăng ký thất bại. Vui lòng thử lại!";
             errBox.classList.remove('hidden');
@@ -422,6 +449,9 @@ async function handleLoginFormSubmit(e) {
         const data = await res.json();
         if (res.ok) {
             currentAuthUser = data.user;
+            if (data.token || (data.user && data.user.token)) {
+                localStorage.setItem('dm_auth_token', data.token || data.user.token);
+            }
             closeAuthModal();
             renderAuthUserUI();
             loadLeaderboardData();
@@ -437,6 +467,7 @@ async function handleLoginFormSubmit(e) {
 
 async function handleUserLogout() {
     try {
+        localStorage.removeItem('dm_auth_token');
         await fetch('/api/auth/logout', { method: 'POST' });
         currentAuthUser = null;
         renderAuthUserUI();

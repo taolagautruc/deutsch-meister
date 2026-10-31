@@ -35,6 +35,7 @@ app = Flask(__name__)
 app.secret_key = os.environ.get("SECRET_KEY", "deutsch-meister-arena-2026-super-secret-key-120s")
 app.config['SESSION_COOKIE_HTTPONLY'] = True
 app.config['SESSION_COOKIE_SAMESITE'] = 'Lax'
+app.config['PERMANENT_SESSION_LIFETIME'] = timedelta(days=365)
 app.json.ensure_ascii = False
 
 def ensure_db_initialized():
@@ -50,6 +51,16 @@ def ensure_db_initialized():
         columns = [col["name"] for col in cursor.fetchall()]
         if "extra_data" not in columns:
             cursor.execute("ALTER TABLE exercises ADD COLUMN extra_data TEXT;")
+            conn.commit()
+
+        # Đảm bảo bảng users có cột token và updated_at
+        cursor.execute("PRAGMA table_info(users);")
+        u_cols = [col["name"] for col in cursor.fetchall()]
+        if "token" not in u_cols:
+            cursor.execute("ALTER TABLE users ADD COLUMN token TEXT;")
+            conn.commit()
+        if "updated_at" not in u_cols:
+            cursor.execute("ALTER TABLE users ADD COLUMN updated_at TIMESTAMP;")
             conn.commit()
 
         cursor.execute("SELECT COUNT(*) as cnt FROM lessons WHERE title LIKE 'Bài 1 (P1)%';")
@@ -109,8 +120,20 @@ def get_overview():
     cursor = conn.cursor()
     cursor.execute("SELECT * FROM levels ORDER BY id;")
     levels = [dict(row) for row in cursor.fetchall()]
-    cursor.execute("SELECT * FROM user_progress WHERE user_id = 1;")
-    user = dict(cursor.fetchone())
+    
+    uid = session.get("user_id")
+    user = None
+    if uid:
+        cursor.execute("SELECT id as user_id, username, total_exp, streak_days as current_streak FROM users WHERE id = ?;", (uid,))
+        row = cursor.fetchone()
+        if row:
+            user = dict(row)
+            
+    if not user:
+        cursor.execute("SELECT * FROM user_progress WHERE user_id = 1;")
+        row = cursor.fetchone()
+        user = dict(row) if row else {"user_id": 1, "username": "Học viên", "total_exp": 0, "current_streak": 1}
+        
     conn.close()
     return jsonify({"levels": levels, "user": user})
 
@@ -229,10 +252,11 @@ def register():
 
     pwd_hash = generate_password_hash(password, method="pbkdf2:sha256")
     today = get_vn_today_str()
+    auth_token = str(uuid.uuid4())
     c.execute("""
-        INSERT INTO users (username, password_hash, highest_level_code, highest_lesson_order, total_exp, arena_best_score, arena_total_games, streak_days, last_active_date)
-        VALUES (?, ?, 'A1', 1, 0, 0, 0, 1, ?);
-    """, (username, pwd_hash, today))
+        INSERT INTO users (username, password_hash, token, highest_level_code, highest_lesson_order, total_exp, arena_best_score, arena_total_games, streak_days, last_active_date)
+        VALUES (?, ?, ?, 'A1', 1, 0, 0, 0, 1, ?);
+    """, (username, pwd_hash, auth_token, today))
     user_id = c.lastrowid
 
     # Đánh dấu mặc định bài đầu tiên đã học
@@ -246,12 +270,14 @@ def register():
     user_dict = dict(c.fetchone())
     conn.close()
 
+    session.permanent = True
     session["user_id"] = user_id
+    user_dict["token"] = auth_token
     user_dict["studied_lessons"] = [14]
     user_dict["arena_attempts_today"] = 0
     user_dict["arena_remaining_today"] = 2
 
-    return jsonify({"message": f"Chào mừng {username}! Đăng ký thành công.", "user": user_dict})
+    return jsonify({"message": f"Chào mừng {username}! Đăng ký thành công.", "user": user_dict, "token": auth_token})
 
 @app.route("/api/auth/login", methods=["POST"])
 def login():
@@ -273,12 +299,15 @@ def login():
 
     user_dict = dict(row)
     user_dict.pop("password_hash", None)
-    session["user_id"] = user_dict["id"]
-
-    # Cập nhật last_active_date
+    
+    auth_token = user_dict.get("token") or str(uuid.uuid4())
     today = get_vn_today_str()
-    c.execute("UPDATE users SET last_active_date = ? WHERE id = ?;", (today, user_dict["id"]))
+    c.execute("UPDATE users SET token = ?, last_active_date = ? WHERE id = ?;", (auth_token, today, user_dict["id"]))
     conn.commit()
+
+    session.permanent = True
+    session["user_id"] = user_dict["id"]
+    user_dict["token"] = auth_token
 
     # Lấy danh sách bài đã học
     c.execute("SELECT lesson_id FROM user_studied_lessons WHERE user_id = ?;", (user_dict["id"],))
@@ -292,7 +321,43 @@ def login():
     user_dict["arena_attempts_today"] = used
     user_dict["arena_remaining_today"] = max(0, 2 - used)
 
-    return jsonify({"message": f"Đăng nhập thành công! Chào {user_dict['username']}.", "user": user_dict})
+    return jsonify({"message": f"Đăng nhập thành công! Chào {user_dict['username']}.", "user": user_dict, "token": auth_token})
+
+@app.route("/api/auth/restore-session", methods=["POST"])
+def restore_session():
+    """Khôi phục phiên đăng nhập từ localStorage token khi người dùng tải lại web"""
+    data = request.get_json() or {}
+    token = data.get("token", "").strip()
+    if not token:
+        return jsonify({"logged_in": False, "user": None}), 400
+
+    conn = get_connection()
+    c = conn.cursor()
+    c.execute("SELECT id, username, token, highest_level_code, highest_lesson_order, total_exp, arena_best_score, arena_total_games, streak_days, last_active_date FROM users WHERE token = ?;", (token,))
+    row = c.fetchone()
+    if not row:
+        conn.close()
+        return jsonify({"logged_in": False, "user": None}), 404
+
+    user_dict = dict(row)
+    session.permanent = True
+    session["user_id"] = user_dict["id"]
+
+    today = get_vn_today_str()
+    c.execute("UPDATE users SET last_active_date = ? WHERE id = ?;", (today, user_dict["id"]))
+    conn.commit()
+
+    c.execute("SELECT lesson_id FROM user_studied_lessons WHERE user_id = ?;", (user_dict["id"],))
+    user_dict["studied_lessons"] = [r["lesson_id"] for r in c.fetchall()]
+
+    c.execute("SELECT COUNT(*) AS cnt FROM arena_daily_attempts WHERE user_id = ? AND play_date = ?;", (user_dict["id"], today))
+    used = c.fetchone()["cnt"]
+    conn.close()
+
+    user_dict["arena_attempts_today"] = used
+    user_dict["arena_remaining_today"] = max(0, 2 - used)
+
+    return jsonify({"logged_in": True, "user": user_dict, "token": token})
 
 @app.route("/api/auth/logout", methods=["POST"])
 def logout():

@@ -66,6 +66,7 @@ def init_db():
         id INTEGER PRIMARY KEY AUTOINCREMENT,
         username TEXT NOT NULL UNIQUE COLLATE NOCASE,
         password_hash TEXT NOT NULL,
+        token TEXT,
         highest_level_code TEXT DEFAULT 'A1',
         highest_lesson_order INTEGER DEFAULT 1,
         total_exp INTEGER DEFAULT 0,
@@ -73,6 +74,7 @@ def init_db():
         arena_total_games INTEGER DEFAULT 0,
         streak_days INTEGER DEFAULT 1,
         last_active_date TEXT,
+        updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
         created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
     );
     """)
