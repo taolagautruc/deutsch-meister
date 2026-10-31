@@ -119,8 +119,8 @@ def seed_lesson_3():
                                 <td class="p-3 font-semibold text-purple-700">Italienisch</td>
                                 <td class="p-3">Tiếng Ý</td>
                                 <td class="p-3 flex items-center justify-between gap-2">
-                                    <span class="italic text-slate-700">"Pisa ist in Italien. Sie spricht gut Italienisch."</span>
-                                    <button onclick="speakGerman('Pisa ist in Italien. Sie spricht gut Italienisch.')" class="px-2 py-1 rounded-lg bg-indigo-50 text-indigo-700 font-bold hover:bg-indigo-100 transition cursor-pointer">🔊</button>
+                                    <span class="italic text-slate-700">"Pisa liegt in Italien. Man spricht dort Italienisch."</span>
+                                    <button onclick="speakGerman('Pisa liegt in Italien. Man spricht dort Italienisch.')" class="px-2 py-1 rounded-lg bg-indigo-50 text-indigo-700 font-bold hover:bg-indigo-100 transition cursor-pointer">🔊</button>
                                 </td>
                             </tr>
                             <tr class="hover:bg-slate-50 transition">
@@ -139,8 +139,8 @@ def seed_lesson_3():
                                 <td class="p-3 font-semibold text-purple-700">Griechisch</td>
                                 <td class="p-3">Tiếng Hy Lạp</td>
                                 <td class="p-3 flex items-center justify-between gap-2">
-                                    <span class="italic text-slate-700">"Athen ist in Griechenland. Er lernt Griechisch."</span>
-                                    <button onclick="speakGerman('Athen ist in Griechenland. Er lernt Griechisch.')" class="px-2 py-1 rounded-lg bg-indigo-50 text-indigo-700 font-bold hover:bg-indigo-100 transition cursor-pointer">🔊</button>
+                                    <span class="italic text-slate-700">"Athen liegt in Griechenland. Man spricht dort Griechisch."</span>
+                                    <button onclick="speakGerman('Athen liegt in Griechenland. Man spricht dort Griechisch.')" class="px-2 py-1 rounded-lg bg-indigo-50 text-indigo-700 font-bold hover:bg-indigo-100 transition cursor-pointer">🔊</button>
                                 </td>
                             </tr>
                             <tr class="hover:bg-slate-50 transition">
@@ -154,8 +154,8 @@ def seed_lesson_3():
                                 </td>
                             </tr>
                             <tr class="hover:bg-slate-50 transition">
-                                <td class="p-3 font-bold text-indigo-700">Großbritannien / England</td>
-                                <td class="p-3">Vương quốc Anh / Nước Anh</td>
+                                <td class="p-3 font-bold text-indigo-700">England</td>
+                                <td class="p-3">Nước Anh (England) <span class="text-xs text-slate-500 block">(Vương quốc Anh = Großbritannien / das Vereinigte Königreich)</span></td>
                                 <td class="p-3 font-semibold text-purple-700">Englisch</td>
                                 <td class="p-3">Tiếng Anh</td>
                                 <td class="p-3 flex items-center justify-between gap-2">
@@ -519,17 +519,19 @@ def seed_lesson_3():
             <!-- Hai cách trả lời câu hỏi Wo liegt...? -->
             <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-xs">
                 <div class="p-4 rounded-2xl bg-indigo-50 border border-indigo-200 space-y-1.5">
-                    <span class="px-2.5 py-1 rounded-md bg-indigo-600 text-white font-bold">Cách 1: Dùng Cụm Danh Từ (im ... von)</span>
-                    <p class="text-slate-800 font-semibold mt-2">Công thức: <code>[Thành phố] + liegt + im [Danh từ hướng] + von + [Quốc gia].</code></p>
-                    <p class="text-slate-600 italic">👉 "Hai Phong liegt <b>im Nordosten von</b> Vietnam."</p>
-                    <p class="text-slate-600 italic">👉 "München liegt <b>im Süden von</b> Deutschland."</p>
+                    <span class="px-2.5 py-1 rounded-md bg-indigo-600 text-white font-bold">Cách 1: Dùng Cụm Danh Từ (im ... von) — Nằm BÊN TRONG</span>
+                    <p class="text-slate-800 font-semibold mt-2">Công thức: <code>[Địa điểm A] + liegt + im [Danh từ hướng] + von + [Địa điểm B].</code></p>
+                    <p class="text-slate-700 italic">Ý nghĩa: Địa điểm A nằm <b>bên trong</b> địa điểm B, ở phía...</p>
+                    <p class="text-slate-600 italic">👉 "Hamburg liegt <b>im Norden von</b> Deutschland." <span class="text-indigo-700 font-medium">(Hamburg nằm ở miền Bắc nước Đức — nằm trong nước Đức)</span></p>
+                    <p class="text-slate-600 italic">👉 "Hai Phong liegt <b>im Nordosten von</b> Vietnam." <span class="text-indigo-700 font-medium">(Hải Phòng nằm ở phía Đông Bắc Việt Nam)</span></p>
                 </div>
 
                 <div class="p-4 rounded-2xl bg-purple-50 border border-purple-200 space-y-1.5">
-                    <span class="px-2.5 py-1 rounded-md bg-purple-600 text-white font-bold">Cách 2: Dùng Tính Từ (-lich von) — So sánh vị trí giữa 2 địa điểm tách biệt</span>
+                    <span class="px-2.5 py-1 rounded-md bg-purple-600 text-white font-bold">Cách 2: Dùng Tính Từ (-lich von) — Nằm BÊN NGOÀI</span>
                     <p class="text-slate-800 font-semibold mt-2">Công thức: <code>[Địa điểm A] + liegt + [Tính từ -lich] + von + [Địa điểm B].</code></p>
-                    <p class="text-slate-600 italic">👉 "Hai Phong liegt <b>östlich von</b> Hanoi." (Hải Phòng nằm ở phía Đông của Hà Nội — Tuyệt đối KHÔNG có "im")</p>
-                    <p class="text-slate-600 italic">👉 "Österreich liegt <b>südlich von</b> Deutschland." (Nước Áo nằm ở phía Nam của nước Đức.)</p>
+                    <p class="text-slate-700 italic">Ý nghĩa: Địa điểm A nằm <b>bên ngoài</b> địa điểm B, về phía...</p>
+                    <p class="text-slate-600 italic">👉 "Hamburg liegt <b>nördlich von</b> Berlin." <span class="text-purple-700 font-medium">(Hamburg nằm về phía Bắc của Berlin — nằm ngoài Berlin)</span></p>
+                    <p class="text-slate-600 italic">👉 "Österreich liegt <b>südlich von</b> Deutschland." <span class="text-purple-700 font-medium">(Nước Áo nằm về phía Nam của nước Đức — nằm ngoài Đức)</span></p>
                 </div>
             </div>
         </div>
@@ -823,7 +825,7 @@ def seed_lesson_3():
                     <p class="text-amber-400 font-bold">1. Địa danh & Phương hướng:</p>
                     <p>• Quốc gia có mạo từ: <i>aus/in der Schweiz, aus/in der Türkei, aus dem / im Iran, aus/in den USA</i>.</p>
                     <p>• 7 Danh thắng: <i>die Akropolis, der Big Ben, der Eiffelturm, der Schiefe Turm (von Pisa), der Prater, das Brandenburger Tor, der Rote Platz</i>.</p>
-                    <p>• 2 cách diễn đạt vị trí: <i>liegt im Norden von [Quốc gia]</i> (nằm ở miền Bắc của nước...) vs. <i>liegt nördlich von [Thành phố/Quốc gia khác]</i> (nằm về phía Bắc so với...).</p>
+                    <p>• 2 cách diễn đạt vị trí: <i>liegt im Norden von...</i> (nằm trong, ở phía Bắc của...) vs. <i>liegt nördlich von...</i> (nằm ngoài, ở phía Bắc của...).</p>
                 </div>
                 <div class="p-4 rounded-2xl bg-white/10 border border-white/10 space-y-2">
                     <p class="text-emerald-400 font-bold">2. Quá khứ Präteritum & Cấu trúc câu:</p>
@@ -847,11 +849,11 @@ def seed_lesson_3():
     vocabularies = [
         (lesson_id, "Deutschland", "—", "nước Đức (không dùng mạo từ)", "Ich komme aus Deutschland und spreche Deutsch. (Tôi đến từ nước Đức và nói tiếng Đức.)"),
         (lesson_id, "Österreich", "—", "nước Áo (không dùng mạo từ)", "Wien liegt in Österreich. Man spricht dort Deutsch. (Viên nằm ở nước Áo. Người ta nói tiếng Đức ở đó.)"),
-        (lesson_id, "Italien", "—", "nước Ý (không dùng mạo từ)", "Pisa ist in Italien. Sie spricht gut Italienisch. (Pisa ở nước Ý. Cô ấy nói tiếng Ý giỏi.)"),
+        (lesson_id, "Italien", "—", "nước Ý (không dùng mạo từ)", "Pisa liegt in Italien. Man spricht dort Italienisch. (Pisa nằm ở nước Ý. Người ta nói tiếng Ý ở đó.)"),
         (lesson_id, "Spanien", "—", "Tây Ban Nha (không dùng mạo từ)", "Carlos kommt aus Spanien und spricht Spanisch. (Carlos đến từ Tây Ban Nha và nói tiếng Tây Ban Nha.)"),
-        (lesson_id, "Griechenland", "—", "Hy Lạp (không dùng mạo từ)", "Athen ist in Griechenland. Er lernt Griechisch. (Athen ở Hy Lạp. Anh ấy học tiếng Hy Lạp.)"),
+        (lesson_id, "Griechenland", "—", "Hy Lạp (không dùng mạo từ)", "Athen liegt in Griechenland. Man spricht dort Griechisch. (Athen nằm ở Hy Lạp. Người ta nói tiếng Hy Lạp ở đó.)"),
         (lesson_id, "Frankreich", "—", "nước Pháp (không dùng mạo từ)", "Der Eiffelturm ist in Frankreich. Wir sprechen Französisch. (Tháp Eiffel ở nước Pháp. Chúng tôi nói tiếng Pháp.)"),
-        (lesson_id, "England", "—", "nước Anh (Großbritannien) (không dùng mạo từ)", "Der Big Ben ist in England. Sprichst du Englisch? (Tháp Big Ben ở nước Anh. Bạn có nói tiếng Anh không?)"),
+        (lesson_id, "England", "—", "nước Anh (England, không dùng mạo từ) — Ghi chú: Vương quốc Anh = Großbritannien / das Vereinigte Königreich", "Der Big Ben ist in England. Sprichst du Englisch? (Tháp Big Ben ở nước Anh. Bạn có nói tiếng Anh không?)"),
         (lesson_id, "Polen", "—", "Ba Lan (không dùng mạo từ)", "Mein Freund kommt aus Polen und spricht Polnisch. (Bạn tôi đến từ Ba Lan và nói tiếng Ba Lan.)"),
         (lesson_id, "Tschechien", "—", "Cộng hòa Séc (không dùng mạo từ)", "Prag liegt in Tschechien. Dort spricht man Tschechisch. (Praha nằm ở Cộng hòa Séc. Ở đó người ta nói tiếng Séc.)"),
         (lesson_id, "Russland", "—", "nước Nga (không dùng mạo từ)", "Moskau ist in Russland. Anna spricht Russisch. (Moskva ở nước Nga. Anna nói tiếng Nga.)"),
@@ -871,11 +873,11 @@ def seed_lesson_3():
         (lesson_id, "Prater", "der", "Công viên giải trí Prater (ở Wien, Österreich)", "Der Prater ist in Wien. Wien liegt im Osten von Österreich. (Công viên Prater ở Viên. Viên nằm ở phía Đông của nước Áo.)"),
         (lesson_id, "Brandenburger Tor", "das", "Cổng Brandenburg (ở Berlin, Deutschland)", "Das Brandenburger Tor ist in Berlin, Deutschland. (Cổng Brandenburg nằm ở Berlin, nước Đức.)"),
         (lesson_id, "Rote Platz", "der", "Quảng trường Đỏ (ở Moskau, Russland)", "Der Rote Platz ist in Moskau. Moskau liegt in Russland. (Quảng trường Đỏ nằm ở Moskva. Moskva nằm ở nước Nga.)"),
-        (lesson_id, "Norden", "der", "phía Bắc, miền Bắc (im Norden von + Quốc gia / nördlich von + Địa điểm khác)", "Hanoi liegt im Norden von Vietnam. (Hà Nội nằm ở miền Bắc Việt Nam.)"),
-        (lesson_id, "Süden", "der", "phía Nam, miền Nam (im Süden von + Quốc gia / südlich von + Địa điểm khác)", "Long An liegt im Süden von Vietnam. (Long An nằm ở miền Nam Việt Nam.)"),
-        (lesson_id, "Osten", "der", "phía Đông, miền Đông (im Osten von + Quốc gia / östlich von + Địa điểm khác)", "Berlin liegt im Osten von Deutschland. (Berlin nằm ở phía Đông nước Đức.)"),
-        (lesson_id, "Westen", "der", "phía Tây, miền Tây (im Westen von + Quốc gia / westlich von + Địa điểm khác)", "Köln liegt im Westen von Deutschland. (Köln nằm ở phía Tây nước Đức.)"),
-        (lesson_id, "Nordosten", "der", "phía Đông Bắc (im Nordosten von + Quốc gia / nordöstlich von + Địa điểm khác)", "Hai Phong liegt im Nordosten von Vietnam. (Hải Phòng nằm ở phía Đông Bắc Việt Nam.)"),
+        (lesson_id, "Norden", "der", "phía Bắc, miền Bắc (im Norden von + (nằm trong) / nördlich von + (nằm ngoài, phía bắc của))", "Hanoi liegt im Norden von Vietnam. (Hà Nội nằm ở miền Bắc Việt Nam.)"),
+        (lesson_id, "Süden", "der", "phía Nam, miền Nam (im Süden von + (nằm trong) / südlich von + (nằm ngoài, phía nam của))", "Long An liegt im Süden von Vietnam. (Long An nằm ở miền Nam Việt Nam.)"),
+        (lesson_id, "Osten", "der", "phía Đông, miền Đông (im Osten von + (nằm trong) / östlich von + (nằm ngoài, phía đông của))", "Berlin liegt im Osten von Deutschland. (Berlin nằm ở phía Đông nước Đức.)"),
+        (lesson_id, "Westen", "der", "phía Tây, miền Tây (im Westen von + (nằm trong) / westlich von + (nằm ngoài, phía tây của))", "Köln liegt im Westen von Deutschland. (Köln nằm ở phía Tây nước Đức.)"),
+        (lesson_id, "Nordosten", "der", "phía Đông Bắc (im Nordosten von + (nằm trong) / nordöstlich von + (nằm ngoài, phía đông bắc của))", "Hai Phong liegt im Nordosten von Vietnam. (Hải Phòng nằm ở phía Đông Bắc Việt Nam.)"),
         (lesson_id, "Mitte", "die", "miền Trung, trung tâm (in der Mitte von)", "Da Nang liegt in der Mitte von Vietnam. (Đà Nẵng nằm ở miền Trung Việt Nam.)"),
         (lesson_id, "Landkarte", "die", "bản đồ địa lý", "Wir sehen die Städte auf der Landkarte. (Chúng tôi thấy các thành phố trên bản đồ.)"),
         (lesson_id, "Supermarkt", "der", "siêu thị (im Supermarkt)", "Ich war gestern im Big-C-Supermarkt. (Hôm qua tôi đã ở siêu thị Big C.)"),

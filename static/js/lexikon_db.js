@@ -438,41 +438,41 @@ const GERMAN_LEXIKON_DB = [
     {
         word: "Norden", article: "der", gender: "der", plural: "Tính từ: nördlich",
         indefinite: "im Norden von", negation: "nördlich von",
-        meaning: "phía Bắc, miền Bắc (im Norden von + Quốc gia / nördlich von + Địa điểm khác)", category: "Phương hướng & Bản đồ",
-        rule: "Mọi phương hướng đều mang giống đực (der). 'im Norden von + Quốc gia' (bên trong) vs. 'nördlich von + Địa điểm khác' (bên ngoài).",
-        example: "Wo liegt Hanoi? – Hanoi liegt im Norden von Vietnam (nördlich von Hue).",
-        example_vi: "Hà Nội nằm ở đâu? – Hà Nội nằm ở miền Bắc Việt Nam."
+        meaning: "phía Bắc, miền Bắc (im Norden von + (nằm trong) / nördlich von + (nằm ngoài, phía bắc của))", category: "Phương hướng & Bản đồ",
+        rule: "Mọi phương hướng đều mang giống đực (der). 'im Norden von' (nằm trong) vs. 'nördlich von' (nằm ngoài, phía bắc của).",
+        example: "Wo liegt Hamburg? – Hamburg liegt im Norden von Deutschland (nördlich von Berlin).",
+        example_vi: "Hamburg nằm ở đâu? – Hamburg nằm ở miền Bắc nước Đức (về phía Bắc của Berlin)."
     },
     {
         word: "Süden", article: "der", gender: "der", plural: "Tính từ: südlich",
         indefinite: "im Süden von", negation: "südlich von",
-        meaning: "phía Nam, miền Nam (im Süden von + Quốc gia / südlich von + Địa điểm khác)", category: "Phương hướng & Bản đồ",
-        rule: "Giống đực (der). 'im Süden von + Quốc gia' vs. 'südlich von + Địa điểm khác'.",
+        meaning: "phía Nam, miền Nam (im Süden von + (nằm trong) / südlich von + (nằm ngoài, phía nam của))", category: "Phương hướng & Bản đồ",
+        rule: "Giống đực (der). 'im Süden von' (nằm trong) vs. 'südlich von' (nằm ngoài, phía nam của).",
         example: "Long An liegt im Süden von Vietnam (südwestlich von Ho-Chi-Minh-Stadt).",
         example_vi: "Long An nằm ở miền Nam của Việt Nam."
     },
     {
         word: "Osten", article: "der", gender: "der", plural: "Tính từ: östlich",
         indefinite: "im Osten von", negation: "östlich von",
-        meaning: "phía Đông, miền Đông (im Osten von + Quốc gia / östlich von + Địa điểm khác)", category: "Phương hướng & Bản đồ",
-        rule: "Giống đực (der). Khi chuyển sang tính từ thêm Umlaut o -> ö: östlich.",
+        meaning: "phía Đông, miền Đông (im Osten von + (nằm trong) / östlich von + (nằm ngoài, phía đông của))", category: "Phương hướng & Bản đồ",
+        rule: "Giống đực (der). 'im Osten von' (nằm trong) vs. 'östlich von' (nằm ngoài, phía đông của). Tính từ: östlich.",
         example: "Berlin liegt im Osten von Deutschland (östlich von Magdeburg).",
         example_vi: "Berlin nằm ở phía Đông của nước Đức."
     },
     {
         word: "Westen", article: "der", gender: "der", plural: "Tính từ: westlich",
         indefinite: "im Westen von", negation: "westlich von",
-        meaning: "phía Tây, miền Tây (im Westen von + Quốc gia / westlich von + Địa điểm khác)", category: "Phương hướng & Bản đồ",
-        rule: "Giống đực (der). Tính từ là 'westlich' (không có Umlaut).",
+        meaning: "phía Tây, miền Tây (im Westen von + (nằm trong) / westlich von + (nằm ngoài, phía tây của))", category: "Phương hướng & Bản đồ",
+        rule: "Giống đực (der). 'im Westen von' (nằm trong) vs. 'westlich von' (nằm ngoài, phía tây của). Tính từ: westlich.",
         example: "Köln liegt im Westen von Deutschland (westlich von Frankfurt).",
         example_vi: "Köln nằm ở phía Tây của nước Đức."
     },
     {
         word: "Nordosten", article: "der", gender: "der", plural: "Tính từ: nordöstlich",
         indefinite: "im Nordosten von", negation: "nordöstlich von",
-        meaning: "phía Đông Bắc (im Nordosten von + Quốc gia / nordöstlich von + Địa điểm khác)", category: "Phương hướng & Bản đồ",
-        rule: "Tiếng Đức đặt Bắc (Nord-) trước Đông (-osten). Tính từ: nordöstlich.",
-        example: "Hai Phong liegt im Nordosten von Vietnam (östlich von Hanoi).",
+        meaning: "phía Đông Bắc (im Nordosten von + (nằm trong) / nordöstlich von + (nằm ngoài, phía đông bắc của))", category: "Phương hướng & Bản đồ",
+        rule: "Tiếng Đức đặt Bắc (Nord-) trước Đông (-osten). 'im Nordosten von' (nằm trong) vs. 'nordöstlich von' (nằm ngoài, phía đông bắc của).",
+        example: "Hai Phong liegt im Nordosten von Vietnam (nordöstlich von Hanoi).",
         example_vi: "Hải Phòng nằm ở phía Đông Bắc của Việt Nam."
     },
     {
