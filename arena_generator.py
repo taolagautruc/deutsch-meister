@@ -35,7 +35,8 @@ LESSON_ORDER_MAP = {
     15: ("A1", 2, "Bài 1 (P2): Gọi đồ, Đại từ, Chia động từ, Euro"),
     16: ("A1", 3, "Bài 2: Đồ dùng, Giống der/die/das, Mạo từ, können"),
     17: ("A1", 4, "Bài 3: Địa danh, Phương hướng, Präteritum war/waren"),
-    18: ("A1", 5, "Bài 4: Nhà ở, Nominativ vs Akkusativ, Mạo từ sở hữu")
+    18: ("A1", 5, "Bài 4: Nhà ở, Nominativ vs Akkusativ, Mạo từ sở hữu"),
+    19: ("A1", 6, "Bài 5: Thời gian, Động từ tách, Haben in Präteritum")
 }
 
 def get_user_allowed_lessons(user_id):
@@ -479,6 +480,121 @@ ARENA_DATA_BY_LESSON = {
                 "explanation": "Cả der Balkon và der Garten đều là giống đực, đi sau hat (Akkusativ) thành einen Balkon und einen Garten."
             }
         ]
+    },
+    6: {
+        "name": "Bài 5: Thời gian, Động từ tách & Haben in Präteritum",
+        "vocab_pairs": [
+            ("die Sekunde", "giây"),
+            ("die Minute", "phút"),
+            ("die Stunde", "giờ / tiếng đồng hồ (thời lượng)"),
+            ("der Tag", "ngày"),
+            ("die Woche", "tuần"),
+            ("das Wochenende", "cuối tuần"),
+            ("der Monat", "tháng"),
+            ("das Jahr", "năm"),
+            ("die Uhr", "đồng hồ / mốc giờ"),
+            ("der Montag", "thứ Hai"),
+            ("der Mittwoch", "thứ Tư"),
+            ("der Freitag", "thứ Sáu"),
+            ("der Sonntag", "Chủ nhật"),
+            ("der Morgen", "buổi sáng sớm (06:00 - 10:00)"),
+            ("der Nachmittag", "buổi chiều (14:00 - 18:00)"),
+            ("der Abend", "buổi tối (18:00 - 22:00)"),
+            ("die Nacht", "ban đêm (22:00 - 06:00)"),
+            ("der Januar", "tháng Một"),
+            ("der Juni", "tháng Sáu"),
+            ("der Dezember", "tháng Mười Hai"),
+            ("aufstehen", "thức dậy (động từ tách)"),
+            ("ausgehen", "đi ra ngoài / đi chơi (động từ tách)"),
+            ("aufmachen", "mở ra (cửa, sách...)"),
+            ("zumachen", "đóng lại (cửa, sách...)"),
+            ("einkaufen", "đi mua sắm (động từ tách)"),
+            ("anrufen", "gọi điện thoại"),
+            ("fernsehen", "xem tivi"),
+            ("frühstücken", "ăn sáng"),
+            ("die Panne", "sự cố hỏng xe dọc đường"),
+            ("die Zeit", "thời gian")
+        ],
+        "noi_o_sets": [
+            [
+                {"left": "acht Uhr fünfzehn (8h15)", "right": "Viertel nach acht"},
+                {"left": "neun Uhr zehn (9h10)", "right": "zehn nach neun"},
+                {"left": "zwei Uhr dreißig (2h30)", "right": "halb drei"},
+                {"left": "fünf Uhr fünfzig (5h50)", "right": "zehn vor sechs"}
+            ],
+            [
+                {"left": "um", "right": "8 Uhr (lúc 8 giờ)"},
+                {"left": "am", "right": "Sonntag / Morgen (vào Chủ nhật / buổi sáng)"},
+                {"left": "im", "right": "Juni / Sommer (vào tháng Sáu / mùa hè)"},
+                {"left": "in der", "right": "Nacht (vào ban đêm)"}
+            ],
+            [
+                {"left": "aufstehen", "right": "thức dậy (động từ tách)"},
+                {"left": "frühstücken", "right": "ăn sáng (động từ không tách)"},
+                {"left": "ausgehen", "right": "đi ra ngoài / đi chơi (động từ tách)"},
+                {"left": "aufmachen", "right": "mở ra (động từ tách)"}
+            ],
+            [
+                {"left": "ich / er / sie / es", "right": "hatte"},
+                {"left": "du", "right": "hattest"},
+                {"left": "wir / sie / Sie", "right": "hatten"},
+                {"left": "ihr", "right": "hattet"}
+            ]
+        ],
+        "sentences_vd": [
+            ("Vào Chủ nhật tôi thức dậy lúc 8 giờ.", ["Am Sonntag stehe ich um 8 Uhr auf.", "Am Sonntag stehe ich um acht Uhr auf.", "Ich stehe am Sonntag um 8 Uhr auf."]),
+            ("Từ 8 giờ đến 12 giờ tôi làm việc.", ["Von 8 bis 12 Uhr arbeite ich.", "Ich arbeite von 8 bis 12 Uhr."]),
+            ("Hôm qua tôi không có thời gian, nhưng hôm nay tôi có nhiều thời gian.", ["Gestern hatte ich keine Zeit, aber heute habe ich viel Zeit."]),
+            ("Vào thứ Sáu lúc 20 giờ tôi đi chơi.", ["Am Freitag um 20 Uhr gehe ich aus.", "Ich gehe am Freitag um 20 Uhr aus."])
+        ],
+        "sentences_dv": [
+            ("Ich mache die Tür auf.", ["Tôi mở cửa", "Tôi mở cánh cửa", "Tôi mở cửa ra", "Tôi mở cánh cửa ra", "Mình mở cửa ra"]),
+            ("Um 12 Uhr mache ich Mittagspause.", ["Vào lúc 12 giờ tôi nghỉ trưa", "Lúc 12 giờ tôi nghỉ trưa", "Tôi nghỉ trưa lúc 12 giờ", "12 giờ tôi nghỉ trưa"]),
+            ("Gestern hatten wir eine Panne, aber heute haben wir keine Panne.", ["Hôm qua chúng tôi đã gặp một sự cố, nhưng hôm nay chúng tôi không gặp sự cố nào", "Hôm qua chúng tôi có một sự cố hỏng xe, nhưng hôm nay chúng tôi không có sự cố nào"]),
+            ("Um 22 Uhr gehe ich ins Bett.", ["Vào lúc 22 giờ tôi đi ngủ", "Lúc 22 giờ tôi đi ngủ", "Tôi đi ngủ lúc 22 giờ", "22 giờ tôi đi ngủ"])
+        ],
+        "nghe_dien_items": [
+            {
+                "audio_text": "Am Sonntag stehe ich um acht Uhr auf.",
+                "display_sentence": "Am Sonntag ___ ich um acht Uhr auf.",
+                "hint_vi": "Vào Chủ nhật tôi thức dậy vào lúc 8 giờ.",
+                "accepted_answers": ["stehe"]
+            },
+            {
+                "audio_text": "Um neun Uhr frühstücke ich.",
+                "display_sentence": "Um neun Uhr ___ ich.",
+                "hint_vi": "Vào lúc 9 giờ tôi ăn sáng.",
+                "accepted_answers": ["frühstücke", "fruehstuecke"]
+            },
+            {
+                "audio_text": "Entschuldigung, wir waren gestern Abend nicht bei der Party. Wir hatten eine Panne.",
+                "display_sentence": "Entschuldigung, wir waren gestern Abend nicht bei der Party. Wir hatten eine ___.",
+                "hint_vi": "Xin lỗi, tối qua chúng mình không có mặt ở bữa tiệc. Chúng mình đã gặp một sự cố hỏng xe.",
+                "accepted_answers": ["Panne"]
+            },
+            {
+                "audio_text": "Gestern hatte er kein Geld, aber heute hat er viel Geld.",
+                "display_sentence": "Gestern ___ er kein Geld, aber heute hat er viel Geld.",
+                "hint_vi": "Hôm qua anh ấy đã không có tiền, nhưng hôm nay anh ấy có nhiều tiền.",
+                "accepted_answers": ["hatte"]
+            }
+        ],
+        "dien_tao_cau_items": [
+            {
+                "question": "Điền vào 2 chỗ trống để tạo câu: 'Vào Chủ nhật tôi thức dậy vào lúc 8 giờ.'",
+                "display_frame": "Am Sonntag [1] ich um 8 Uhr [2].",
+                "word_bank_hints": ["stehe", "auf", "mache", "aus", "gehe"],
+                "accepted_answers": ["stehe / auf"],
+                "explanation": "Khi 'Am Sonntag' đứng đầu câu, động từ gốc 'stehe' đứng ở vị trí số 2, tiền tố 'auf' đứng ở cuối câu."
+            },
+            {
+                "question": "Điền vào 2 chỗ trống để tạo câu đối chiếu: 'Hôm qua chúng tôi đã gặp một sự cố, nhưng hôm nay chúng tôi không gặp sự cố nào.'",
+                "display_frame": "Gestern [1] wir eine Panne, aber heute [2] wir keine Panne.",
+                "word_bank_hints": ["hatten", "haben", "hatte", "habe", "waren"],
+                "accepted_answers": ["hatten / haben"],
+                "explanation": "Chủ ngữ wir: quá khứ dùng hatten, hiện tại dùng haben."
+            }
+        ]
     }
 }
 
@@ -756,6 +872,41 @@ def generate_varied_doc_hieu_questions(allowed_orders, count=15):
                 'accepted_answers': ['Nhà bếp (die Küche)', 'die Küche', 'Küche'],
                 'explanation': f'{snd} viết rõ: \'Aber ich finde die Küche zu klein.\''
             })
+
+    # 6. BÀI 5: Bức thư của Maria gửi Thomas (Thời gian & Präteritum hatten / Panne)
+    if 6 in allowed_orders:
+        passage_b5 = (
+            "Lieber Thomas,\n"
+            "Entschuldigung, wir waren gestern Abend nicht bei der Party. Wir hatten eine Panne.\n"
+            "Ich hatte kein Handy und kein Geld für den Bus. Und ein Rad hatten Joan und ich auch nicht.\n"
+            "Joan hatte ein Handy, aber sie hatte deine Nummer nicht.\n"
+            "Hattet ihr eine tolle Party?\n"
+            "Liebe Grüße,\nMaria"
+        )
+        pool.append({
+            'type': 'doc_hieu',
+            'type_label': 'Đọc hiểu đoạn văn',
+            'points_correct': 12,
+            'points_wrong': -4,
+            'passage': passage_b5,
+            'question': 'Tại sao Maria và Joan tối qua không đến dự bữa tiệc của Thomas?',
+            'options': ['Họ gặp sự cố hỏng xe (eine Panne)', 'Họ phải đi làm ca đêm', 'Họ bị ốm', 'Họ đi xem phim'],
+            'correct_answer': 'Họ gặp sự cố hỏng xe (eine Panne)',
+            'accepted_answers': ['Họ gặp sự cố hỏng xe (eine Panne)', 'Panne', 'eine Panne'],
+            'explanation': "Trong thư Maria giải thích: 'Wir hatten eine Panne.' (Chúng mình đã gặp một sự cố hỏng xe)."
+        })
+        pool.append({
+            'type': 'doc_hieu',
+            'type_label': 'Đọc hiểu đoạn văn',
+            'points_correct': 12,
+            'points_wrong': -4,
+            'passage': passage_b5,
+            'question': 'Trong bức thư trên, ai là người có điện thoại di động (Handy)?',
+            'options': ['Joan', 'Maria', 'Thomas', 'Không ai cả'],
+            'correct_answer': 'Joan',
+            'accepted_answers': ['Joan'],
+            'explanation': "Trong thư Maria viết: 'Ich hatte kein Handy... Joan hatte ein Handy, aber sie hatte deine Nummer nicht.'"
+        })
 
     random.shuffle(pool)
     return pool[:count]

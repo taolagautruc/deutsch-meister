@@ -1179,6 +1179,88 @@ function generateNewNumberData(ex, fallbackIndex = null) {
         return finalize(ex);
     }
 
+    // 16. Xử lý câu hỏi Đổi giờ Đời thường (dynamic_time_quiz - Bài 5)
+    if (extra.dynamic_time_quiz) {
+        const timeItems = [
+            { time: "08:15", off: "acht Uhr fünfzehn", inoff: "Viertel nach acht", wrong: ["Viertel vor acht", "halb acht", "acht nach Viertel"], exp: "Hơn 15 phút (1/4 giờ) qua mốc 8 giờ → 'Viertel nach acht'." },
+            { time: "09:30", off: "neun Uhr dreißig", inoff: "halb zehn", wrong: ["halb neun", "Viertel nach neun", "dreißig nach neun"], exp: "9h30 = còn nửa tiếng nữa đến 10 giờ → 'halb zehn'." },
+            { time: "09:05", off: "neun Uhr fünf", inoff: "fünf nach neun", wrong: ["fünf vor neun", "halb zehn", "zehn nach neun"], exp: "9 giờ hơn 5 phút → 'fünf nach neun'." },
+            { time: "07:50", off: "sieben Uhr fünfzig", inoff: "zehn vor acht", wrong: ["zehn nach sieben", "fünfzig nach sieben", "Viertel vor acht"], exp: "7h50 = 8 giờ kém 10 phút → 'zehn vor acht'." },
+            { time: "20:10", off: "zwanzig Uhr zehn", inoff: "zehn nach acht", wrong: ["zehn nach zwanzig", "zehn vor acht", "Viertel nach acht"], exp: "20h10 đổi sang hệ 12 tiếng là 8h10 tối → 'zehn nach acht'." },
+            { time: "03:15", off: "drei Uhr fünfzehn", inoff: "Viertel nach drei", wrong: ["Viertel vor drei", "halb vier", "fünfzehn vor drei"], exp: "3 giờ hơn 15 phút → 'Viertel nach drei'." },
+            { time: "05:45", off: "fünf Uhr fünfundvierzig", inoff: "Viertel vor sechs", wrong: ["Viertel nach fünf", "fünfundvierzig nach fünf", "halb sechs"], exp: "5h45 = 6 giờ kém 15 phút → 'Viertel vor sechs'." },
+            { time: "08:30", off: "acht Uhr dreißig", inoff: "halb neun", wrong: ["halb acht", "Viertel vor neun", "dreißig nach acht"], exp: "8 giờ rưỡi → 'halb neun' (nửa tiếng trước 9h)." },
+            { time: "02:30", off: "zwei Uhr dreißig", inoff: "halb drei", wrong: ["halb zwei", "Viertel nach zwei", "dreißig nach zwei"], exp: "2 giờ rưỡi → 'halb drei' (nửa tiếng trước 3h)." },
+            { time: "05:50", off: "fünf Uhr fünfzig", inoff: "zehn vor sechs", wrong: ["zehn nach fünf", "fünfzig nach fünf", "Viertel vor sechs"], exp: "5h50 = 6 giờ kém 10 phút → 'zehn vor sechs'." },
+            { time: "06:05", off: "sechs Uhr fünf", inoff: "fünf nach sechs", wrong: ["fünf vor sechs", "halb sieben", "zehn nach sechs"], exp: "6 giờ hơn 5 phút → 'fünf nach sechs'." },
+            { time: "10:30", off: "zehn Uhr dreißig", inoff: "halb elf", wrong: ["halb zehn", "Viertel nach zehn", "dreißig nach zehn"], exp: "10 giờ rưỡi = còn nửa tiếng đến 11 giờ → 'halb elf'." },
+            { time: "11:15", off: "elf Uhr fünfzehn", inoff: "Viertel nach elf", wrong: ["Viertel vor elf", "halb zwölf", "fünfzehn nach elf"], exp: "11 giờ hơn 15 phút → 'Viertel nach elf'." },
+            { time: "04:45", off: "vier Uhr fünfundvierzig", inoff: "Viertel vor fünf", wrong: ["Viertel nach vier", "halb fünf", "fünfzehn vor fünf"], exp: "4h45 = 5 giờ kém 15 phút → 'Viertel vor fünf'." },
+            { time: "01:30", off: "ein Uhr dreißig", inoff: "halb zwei", wrong: ["halb eins", "Viertel nach eins", "dreißig nach eins"], exp: "1 giờ rưỡi = còn nửa tiếng đến 2 giờ → 'halb zwei'." }
+        ];
+        const chosen = timeItems[Math.floor(Math.random() * timeItems.length)];
+        ex.question = `[Đổi cách nói giờ (Random)]: Cách đọc giờ đời thường (Inoffiziell) nào sau đây tương ứng với ${chosen.time} (${chosen.off})?`;
+        ex.correct_answer = chosen.inoff;
+        ex.explanation = chosen.exp;
+        extra.translation = `Mốc giờ ${chosen.time}: ${chosen.inoff}`;
+        const opts = [chosen.inoff, ...chosen.wrong];
+        const shuffled = opts.sort(() => Math.random() - 0.5);
+        ex.options = shuffled;
+        ex.options_json = JSON.stringify(shuffled);
+        ex.extra_data = JSON.stringify(extra);
+        ex.translation = extra.translation;
+        return finalize(ex);
+    }
+
+    // 17. Xử lý câu hỏi Giới từ thời gian (dynamic_prep_quiz - Bài 5)
+    if (extra.dynamic_prep_quiz) {
+        const prepItems = [
+            { question: "___ Sonntag stehe ich ___ 8 Uhr auf.", correct: "Am / um", wrong: ["Im / um", "Um / am", "Am / im"], exp: "Thứ trong tuần ('Sonntag') đi với 'am'; giờ giấc cụ thể ('8 Uhr') đi với 'um'.", trans: "Vào Chủ nhật tôi thức dậy vào lúc 8 giờ." },
+            { question: "___ Montag beginnt meine Arbeit ___ 9 Uhr.", correct: "Am / um", wrong: ["Im / um", "Um / am", "In der / um"], exp: "Thứ trong tuần ('Montag') đi với 'am'; giờ cụ thể ('9 Uhr') đi với 'um'.", trans: "Vào thứ Hai công việc của tôi bắt đầu vào lúc 9 giờ." },
+            { question: "Mein Deutschkurs ist ___ Dienstag ___ 18 Uhr.", correct: "am / um", wrong: ["im / um", "um / am", "am / im"], exp: "Thứ trong tuần đi với 'am'; mốc giờ đi với 'um'.", trans: "Khóa học tiếng Đức của tôi diễn ra vào thứ Ba lúc 18 giờ." },
+            { question: "___ Juni fahren wir nach Berlin, ___ Sommer ist das Wetter super.", correct: "Im / im", wrong: ["Am / am", "Um / im", "Im / am"], exp: "Tháng trong năm ('Juni') và mùa ('Sommer') đều đi với giới từ 'im'.", trans: "Vào tháng Sáu chúng tôi đi tới Berlin, vào mùa hè thời tiết rất tuyệt." },
+            { question: "___ Freitag ___ 20 Uhr gehe ich mit Freunden aus.", correct: "Am / um", wrong: ["Im / um", "Um / am", "In / um"], exp: "Thứ Sáu đi với 'am'; 20 Uhr đi với 'um'.", trans: "Vào thứ Sáu lúc 20 giờ tôi đi chơi với bạn bè." },
+            { question: "___ Morgen trinke ich Kaffee, aber ___ Nacht schlafe ich viel.", correct: "Am / in der", wrong: ["Im / am", "Am / am", "In der / am"], exp: "'der Morgen' đi với 'am'; ngoại lệ 'die Nacht' (giống cái) bắt buộc đi với 'in der Nacht'.", trans: "Vào buổi sáng tôi uống cà phê, nhưng vào ban đêm tôi ngủ nhiều." }
+        ];
+        const chosen = prepItems[Math.floor(Math.random() * prepItems.length)];
+        ex.question = `[Giới từ thời gian (Random)]: Chọn giới từ thích hợp điền vào câu: '${chosen.question}'`;
+        ex.correct_answer = chosen.correct;
+        ex.explanation = chosen.exp;
+        extra.translation = chosen.trans;
+        const opts = [chosen.correct, ...chosen.wrong];
+        const shuffled = opts.sort(() => Math.random() - 0.5);
+        ex.options = shuffled;
+        ex.options_json = JSON.stringify(shuffled);
+        ex.extra_data = JSON.stringify(extra);
+        ex.translation = extra.translation;
+        return finalize(ex);
+    }
+
+    // 18. Xử lý câu hỏi Động từ tách (dynamic_trennbare_quiz - Bài 5)
+    if (extra.dynamic_trennbare_quiz) {
+        const trennbareItems = [
+            { verb: "aufmachen", subject: "Ich", object: "das Fenster", stem: "mache", prefix: "auf", wrong: ["aufmache / —", "machst / auf", "auf / mache"], exp: "Động từ tách 'aufmachen': gốc 'mache' đứng ở V2 theo ngôi 'ich', tiền tố 'auf' đứng cuối câu.", trans: "Tôi mở cửa sổ ra." },
+            { verb: "zumachen", subject: "Er", object: "die Tür", stem: "macht", prefix: "zu", wrong: ["zumacht / —", "mache / zu", "macht / auf"], exp: "Động từ tách 'zumachen': gốc 'macht' đứng ở V2 theo ngôi 'er', tiền tố 'zu' đứng cuối câu.", trans: "Anh ấy đóng cánh cửa lại." },
+            { verb: "aufstehen", subject: "Wir", object: "am Sonntag um 8 Uhr", stem: "stehen", prefix: "auf", wrong: ["aufstehen / —", "steht / auf", "stehen / aus"], exp: "Động từ tách 'aufstehen': gốc 'stehen' chia theo 'wir', tiền tố 'auf' đứng cuối câu.", trans: "Vào Chủ nhật chúng tôi thức dậy lúc 8 giờ." },
+            { verb: "ausgehen", subject: "Du", object: "am Freitag um 20 Uhr", stem: "gehst", prefix: "aus", wrong: ["ausgehst / —", "gehe / aus", "geht / aus"], exp: "Động từ tách 'ausgehen': gốc 'gehst' chia theo 'du', tiền tố 'aus' đứng cuối câu.", trans: "Vào thứ Sáu lúc 20 giờ bạn đi chơi." },
+            { verb: "einkaufen", subject: "Anna", object: "im Supermarkt", stem: "kauft", prefix: "ein", wrong: ["einkauft / —", "kaufe / ein", "kaufen / ein"], exp: "Động từ tách 'einkaufen': gốc 'kauft' chia theo 'Anna' (sie), tiền tố 'ein' đứng cuối câu.", trans: "Anna đi mua sắm ở siêu thị." },
+            { verb: "anmachen", subject: "Ich", object: "die Lampe am Abend", stem: "mache", prefix: "an", wrong: ["anmache / —", "macht / an", "mache / aus"], exp: "Động từ tách 'anmachen': gốc 'mache' chia theo 'ich', tiền tố 'an' đứng cuối câu.", trans: "Tôi bật đèn vào buổi tối." },
+            { verb: "fernsehen", subject: "Mein Vater", object: "am Abend gern", stem: "sieht", prefix: "fern", wrong: ["siehst / fern", "seht / fern", "fernsehen / —"], exp: "Động từ tách 'fernsehen': biến âm 'e -> ie' ở ngôi thứ 3 số ít là 'sieht', tiền tố 'fern' đứng cuối câu.", trans: "Vào buổi tối bố tôi thích xem tivi." }
+        ];
+        const chosen = trennbareItems[Math.floor(Math.random() * trennbareItems.length)];
+        ex.question = `[Động từ tách (Random)]: Chọn dạng đúng của '${chosen.verb}' cho câu: '${chosen.subject} ___ ${chosen.object} ___.'`;
+        ex.correct_answer = `${chosen.stem} / ${chosen.prefix}`;
+        ex.explanation = chosen.exp;
+        extra.translation = chosen.trans;
+        const opts = [`${chosen.stem} / ${chosen.prefix}`, ...chosen.wrong];
+        const shuffled = opts.sort(() => Math.random() - 0.5);
+        ex.options = shuffled;
+        ex.options_json = JSON.stringify(shuffled);
+        ex.extra_data = JSON.stringify(extra);
+        ex.translation = extra.translation;
+        return finalize(ex);
+    }
+
     if (!extra.dynamic_number && !extra.dynamic_mode) return finalize(ex);
 
     const mode = extra.dynamic_mode;
@@ -1307,7 +1389,7 @@ function randomizeAllNumberExercises(exercisesList) {
         let isDynamic = false;
         try {
             const extra = typeof ex.extra_data === 'string' ? JSON.parse(ex.extra_data) : (ex.extra_data || {});
-            if (extra.dynamic_number || extra.dynamic_mode || extra.dynamic_price || extra.dynamic_conjugation || extra.dynamic_article_quiz || extra.dynamic_possessive_article || extra.dynamic_plural_quiz || extra.dynamic_direction_quiz || extra.dynamic_landmark_quiz || extra.dynamic_praeteritum_quiz || extra.dynamic_country_language_quiz || extra.dynamic_question_transform || extra.dynamic_nom_akk_quiz || extra.dynamic_possessiv_quiz || extra.dynamic_adjective_antonym_quiz || extra.dynamic_pronoun_replacement_quiz || extra.dynamic_house_translation_quiz) isDynamic = true;
+            if (extra.dynamic_number || extra.dynamic_mode || extra.dynamic_price || extra.dynamic_conjugation || extra.dynamic_article_quiz || extra.dynamic_possessive_article || extra.dynamic_plural_quiz || extra.dynamic_direction_quiz || extra.dynamic_landmark_quiz || extra.dynamic_praeteritum_quiz || extra.dynamic_country_language_quiz || extra.dynamic_question_transform || extra.dynamic_nom_akk_quiz || extra.dynamic_possessiv_quiz || extra.dynamic_adjective_antonym_quiz || extra.dynamic_pronoun_replacement_quiz || extra.dynamic_house_translation_quiz || extra.dynamic_prep_quiz || extra.dynamic_time_quiz || extra.dynamic_trennbare_quiz) isDynamic = true;
         } catch (e) {}
 
         if (isDynamic) {

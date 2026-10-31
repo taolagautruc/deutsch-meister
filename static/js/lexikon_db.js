@@ -766,6 +766,311 @@ const GERMAN_LEXIKON_DB = [
         rule: "Ghép die Bücher + das Regal -> lấy giống theo das Regal. Akkusativ giữ nguyên ein Bücherregal.",
         example: "Das Wohnzimmer hat einen Fernseher und ein Bücherregal.",
         example_vi: "Phòng khách có 1 Tivi và 1 giá sách."
+    },
+    // --- 11. THỜI GIAN, THỨ, THÁNG & LỊCH TRÌNH (BÀI 5) ---
+    {
+        word: "Sekunde", article: "die", gender: "die", plural: "die Sekunden",
+        indefinite: "eine Sekunde", negation: "keine Sekunde",
+        meaning: "giây", category: "Thời gian & Lịch trình",
+        rule: "Đơn vị thời gian nhỏ mang giống cái (die), số nhiều thêm -n.",
+        example: "Eine Minute hat sechzig Sekunden.",
+        example_vi: "Một phút có sáu mươi giây."
+    },
+    {
+        word: "Minute", article: "die", gender: "die", plural: "die Minuten",
+        indefinite: "eine Minute", negation: "keine Minute",
+        meaning: "phút", category: "Thời gian & Lịch trình",
+        rule: "Đơn vị thời gian kết thúc đuôi -e mang giống cái (die), số nhiều thêm -n.",
+        example: "Der Bus kommt in fünf Minuten.",
+        example_vi: "Xe buýt sẽ đến trong năm phút nữa."
+    },
+    {
+        word: "Stunde", article: "die", gender: "die", plural: "die Stunden",
+        indefinite: "eine Stunde", negation: "keine Stunde",
+        meaning: "tiếng, giờ đồng hồ (thời lượng)", category: "Thời gian & Lịch trình",
+        rule: "Chỉ thời lượng/khoảng thời gian. Số nhiều thêm -n (die Stunden).",
+        example: "Heute arbeite ich acht Stunden.",
+        example_vi: "Hôm nay tôi làm việc tám tiếng đồng hồ."
+    },
+    {
+        word: "Tag", article: "der", gender: "der", plural: "die Tage",
+        indefinite: "ein Tag", negation: "kein Tag",
+        meaning: "ngày", category: "Thời gian & Lịch trình",
+        rule: "Danh từ giống đực (der Tag), số nhiều thêm -e (die Tage).",
+        example: "Ein Tag hat vierundzwanzig Stunden.",
+        example_vi: "Một ngày có hai mươi tư tiếng đồng hồ."
+    },
+    {
+        word: "Woche", article: "die", gender: "die", plural: "die Wochen",
+        indefinite: "eine Woche", negation: "keine Woche",
+        meaning: "tuần", category: "Thời gian & Lịch trình",
+        rule: "Danh từ kết thúc đuôi -e mang giống cái (die), số nhiều thêm -n.",
+        example: "Eine Woche hat sieben Tage.",
+        example_vi: "Một tuần có bảy ngày."
+    },
+    {
+        word: "Wochenende", article: "das", gender: "das", plural: "die Wochenenden",
+        indefinite: "ein Wochenende", negation: "kein Wochenende",
+        meaning: "cuối tuần", category: "Thời gian & Lịch trình",
+        rule: "Ghép die Woche + das Ende -> lấy giống theo das Ende. Đi với am Wochenende.",
+        example: "Am Wochenende arbeite ich nicht.",
+        example_vi: "Vào cuối tuần tôi không làm việc."
+    },
+    {
+        word: "Monat", article: "der", gender: "der", plural: "die Monate",
+        indefinite: "ein Monat", negation: "kein Monat",
+        meaning: "tháng", category: "Thời gian & Lịch trình",
+        rule: "Danh từ giống đực (der Monat), số nhiều thêm -e (die Monate).",
+        example: "Ein Monat hat dreißig oder einunddreißig Tage.",
+        example_vi: "Một tháng có ba mươi hoặc ba mươi mốt ngày."
+    },
+    {
+        word: "Jahr", article: "das", gender: "das", plural: "die Jahre",
+        indefinite: "ein Jahr", negation: "kein Jahr",
+        meaning: "năm", category: "Thời gian & Lịch trình",
+        rule: "Danh từ giống trung (das Jahr), số nhiều thêm -e (die Jahre).",
+        example: "Ein Jahr hat zwölf Monate.",
+        example_vi: "Một năm có mười hai tháng."
+    },
+    {
+        word: "Uhr", article: "die", gender: "die", plural: "die Uhren",
+        indefinite: "eine Uhr", negation: "keine Uhr",
+        meaning: "đồng hồ / giờ (mốc thời gian)", category: "Thời gian & Lịch trình",
+        rule: "Dùng để nói mốc giờ trên đồng hồ (Es ist 8 Uhr) hoặc cái đồng hồ. Số nhiều thêm -en.",
+        example: "Es ist acht Uhr.",
+        example_vi: "Bây giờ là tám giờ đúng."
+    },
+    {
+        word: "Montag", article: "der", gender: "der", plural: "die Montage",
+        indefinite: "ein Montag", negation: "kein Montag",
+        meaning: "thứ Hai", category: "Thời gian & Lịch trình",
+        rule: "Tất cả các thứ trong tuần đều mang giống đực (der) và đi với am.",
+        example: "Am Montag beginnt meine Arbeitswoche.",
+        example_vi: "Vào thứ Hai tuần làm việc của tôi bắt đầu."
+    },
+    {
+        word: "Dienstag", article: "der", gender: "der", plural: "die Dienstage",
+        indefinite: "ein Dienstag", negation: "kein Dienstag",
+        meaning: "thứ Ba", category: "Thời gian & Lịch trình",
+        rule: "Thứ trong tuần mang giống đực (der), đi với am Dienstag.",
+        example: "Am Dienstag habe ich einen Deutschkurs.",
+        example_vi: "Vào thứ Ba tôi có một khóa học tiếng Đức."
+    },
+    {
+        word: "Mittwoch", article: "der", gender: "der", plural: "die Mittwoche",
+        indefinite: "ein Mittwoch", negation: "kein Mittwoch",
+        meaning: "thứ Tư", category: "Thời gian & Lịch trình",
+        rule: "Thứ trong tuần mang giống đực (der), đi với am Mittwoch.",
+        example: "Am Mittwoch mache ich um 17 Uhr Sport.",
+        example_vi: "Vào thứ Tư tôi tập thể thao lúc 17 giờ."
+    },
+    {
+        word: "Donnerstag", article: "der", gender: "der", plural: "die Donnerstage",
+        indefinite: "ein Donnerstag", negation: "kein Donnerstag",
+        meaning: "thứ Năm", category: "Thời gian & Lịch trình",
+        rule: "Thứ trong tuần mang giống đực (der), đi với am Donnerstag.",
+        example: "Am Donnerstag kauft Anna im Supermarkt ein.",
+        example_vi: "Vào thứ Năm Anna đi mua sắm ở siêu thị."
+    },
+    {
+        word: "Freitag", article: "der", gender: "der", plural: "die Freitage",
+        indefinite: "ein Freitag", negation: "kein Freitag",
+        meaning: "thứ Sáu", category: "Thời gian & Lịch trình",
+        rule: "Thứ trong tuần mang giống đực (der), đi với am Freitag.",
+        example: "Am Freitag um 20 Uhr gehe ich aus.",
+        example_vi: "Vào thứ Sáu lúc 20 giờ tôi đi chơi."
+    },
+    {
+        word: "Samstag", article: "der", gender: "der", plural: "die Samstage",
+        indefinite: "ein Samstag", negation: "kein Samstag",
+        meaning: "thứ Bảy", category: "Thời gian & Lịch trình",
+        rule: "Thứ trong tuần mang giống đực (der), đi với am Samstag.",
+        example: "Am Samstag treffen wir unsere Freunde.",
+        example_vi: "Vào thứ Bảy chúng tôi gặp gỡ bạn bè của mình."
+    },
+    {
+        word: "Sonntag", article: "der", gender: "der", plural: "die Sonntage",
+        indefinite: "ein Sonntag", negation: "kein Sonntag",
+        meaning: "Chủ nhật", category: "Thời gian & Lịch trình",
+        rule: "Thứ trong tuần mang giống đực (der), đi với am Sonntag.",
+        example: "Am Sonntag stehe ich um 8 Uhr auf.",
+        example_vi: "Vào Chủ nhật tôi thức dậy lúc 8 giờ."
+    },
+    {
+        word: "Morgen", article: "der", gender: "der", plural: "die Morgen",
+        indefinite: "ein Morgen", negation: "kein Morgen",
+        meaning: "buổi sáng sớm (06:00 – 10:00)", category: "Thời gian & Lịch trình",
+        rule: "Buổi trong ngày mang giống đực (der), đi với am Morgen.",
+        example: "Am Morgen trinke ich gern eine Tasse Kaffee.",
+        example_vi: "Vào buổi sáng tôi thích uống một tách cà phê."
+    },
+    {
+        word: "Vormittag", article: "der", gender: "der", plural: "die Vormittage",
+        indefinite: "ein Vormittag", negation: "kein Vormittag",
+        meaning: "buổi sáng trước trưa (10:00 – 12:00)", category: "Thời gian & Lịch trình",
+        rule: "Buổi trong ngày mang giống đực (der), đi với am Vormittag.",
+        example: "Am Vormittag arbeite ich im Büro.",
+        example_vi: "Vào buổi sáng trước trưa tôi làm việc ở văn phòng."
+    },
+    {
+        word: "Mittag", article: "der", gender: "der", plural: "die Mittage",
+        indefinite: "ein Mittag", negation: "kein Mittag",
+        meaning: "buổi trưa (12:00 – 14:00)", category: "Thời gian & Lịch trình",
+        rule: "Buổi trong ngày mang giống đực (der), đi với am Mittag.",
+        example: "Am Mittag mache ich um 12 Uhr Mittagspause.",
+        example_vi: "Vào buổi trưa tôi nghỉ trưa lúc 12 giờ."
+    },
+    {
+        word: "Nachmittag", article: "der", gender: "der", plural: "die Nachmittage",
+        indefinite: "ein Nachmittag", negation: "kein Nachmittag",
+        meaning: "buổi chiều (14:00 – 18:00)", category: "Thời gian & Lịch trình",
+        rule: "Buổi trong ngày mang giống đực (der), đi với am Nachmittag.",
+        example: "Am Nachmittag trinken wir Tee und lesen ein Buch.",
+        example_vi: "Vào buổi chiều chúng tôi uống trà và đọc một quyển sách."
+    },
+    {
+        word: "Abend", article: "der", gender: "der", plural: "die Abende",
+        indefinite: "ein Abend", negation: "kein Abend",
+        meaning: "buổi tối (18:00 – 22:00)", category: "Thời gian & Lịch trình",
+        rule: "Buổi trong ngày mang giống đực (der), đi với am Abend.",
+        example: "Am Abend sehe ich mit meiner Familie fern.",
+        example_vi: "Vào buổi tối tôi xem tivi cùng gia đình mình."
+    },
+    {
+        word: "Nacht", article: "die", gender: "die", plural: "die Nächte",
+        indefinite: "eine Nacht", negation: "keine Nacht",
+        meaning: "ban đêm (22:00 – 06:00)", category: "Thời gian & Lịch trình",
+        rule: "Ngoại lệ: mang giống cái (die Nacht) nên bắt buộc đi với in der Nacht (không dùng am Nacht).",
+        example: "In der Nacht schlafe ich acht Stunden.",
+        example_vi: "Vào ban đêm tôi ngủ tám tiếng đồng hồ."
+    },
+    {
+        word: "Januar", article: "der", gender: "der", plural: "die Januare",
+        indefinite: "ein Januar", negation: "kein Januar",
+        meaning: "tháng Một", category: "Thời gian & Lịch trình",
+        rule: "Tất cả 12 tháng đều mang giống đực (der) và đi với giới từ im.",
+        example: "Im Januar ist es in Deutschland sehr kalt.",
+        example_vi: "Vào tháng Một trời ở Đức rất lạnh."
+    },
+    {
+        word: "Februar", article: "der", gender: "der", plural: "die Februare",
+        indefinite: "ein Februar", negation: "kein Februar",
+        meaning: "tháng Hai", category: "Thời gian & Lịch trình",
+        rule: "Tháng trong năm mang giống đực (der), đi với im Februar.",
+        example: "Im Februar hat der Monat nur 28 oder 29 Tage.",
+        example_vi: "Vào tháng Hai tháng chỉ có 28 hoặc 29 ngày."
+    },
+    {
+        word: "März", article: "der", gender: "der", plural: "die Märze",
+        indefinite: "ein März", negation: "kein März",
+        meaning: "tháng Ba", category: "Thời gian & Lịch trình",
+        rule: "Tháng trong năm mang giống đực (der), đi với im März.",
+        example: "Im März beginnt der Frühling.",
+        example_vi: "Vào tháng Ba mùa xuân bắt đầu."
+    },
+    {
+        word: "April", article: "der", gender: "der", plural: "die Aprile",
+        indefinite: "ein April", negation: "kein April",
+        meaning: "tháng Tư", category: "Thời gian & Lịch trình",
+        rule: "Tháng trong năm mang giống đực (der), đi với im April.",
+        example: "Mein Bruder hat im April Geburtstag.",
+        example_vi: "Anh trai tôi có sinh nhật vào tháng Tư."
+    },
+    {
+        word: "Mai", article: "der", gender: "der", plural: "die Maie",
+        indefinite: "ein Mai", negation: "kein Mai",
+        meaning: "tháng Năm", category: "Thời gian & Lịch trình",
+        rule: "Tháng trong năm mang giống đực (der), đi với im Mai.",
+        example: "Im Mai ist das Wetter in Berlin sehr schön.",
+        example_vi: "Vào tháng Năm thời tiết ở Berlin rất đẹp."
+    },
+    {
+        word: "Juni", article: "der", gender: "der", plural: "die Junis",
+        indefinite: "ein Juni", negation: "kein Juni",
+        meaning: "tháng Sáu", category: "Thời gian & Lịch trình",
+        rule: "Tháng trong năm mang giống đực (der), đi với im Juni.",
+        example: "Im Juni fahren wir nach Italien.",
+        example_vi: "Vào tháng Sáu chúng tôi đi sang Ý."
+    },
+    {
+        word: "Juli", article: "der", gender: "der", plural: "die Julis",
+        indefinite: "ein Juli", negation: "kein Juli",
+        meaning: "tháng Bảy", category: "Thời gian & Lịch trình",
+        rule: "Tháng trong năm mang giống đực (der), đi với im Juli.",
+        example: "Im Juli haben die Studenten Sommerferien.",
+        example_vi: "Vào tháng Bảy các sinh viên có kỳ nghỉ hè."
+    },
+    {
+        word: "August", article: "der", gender: "der", plural: "die Auguste",
+        indefinite: "ein August", negation: "kein August",
+        meaning: "tháng Tám", category: "Thời gian & Lịch trình",
+        rule: "Tháng trong năm mang giống đực (der), đi với im August.",
+        example: "Im August ist es in Vietnam oft heiß.",
+        example_vi: "Vào tháng Tám trời ở Việt Nam thường nóng."
+    },
+    {
+        word: "September", article: "der", gender: "der", plural: "die September",
+        indefinite: "ein September", negation: "kein September",
+        meaning: "tháng Chín", category: "Thời gian & Lịch trình",
+        rule: "Tháng trong năm mang giống đực (der), đi với im September.",
+        example: "Im September beginnt mein Studium.",
+        example_vi: "Vào tháng Chín việc học đại học của tôi bắt đầu."
+    },
+    {
+        word: "Oktober", article: "der", gender: "der", plural: "die Oktobere",
+        indefinite: "ein Oktober", negation: "kein Oktober",
+        meaning: "tháng Mười", category: "Thời gian & Lịch trình",
+        rule: "Tháng trong năm mang giống đực (der), đi với im Oktober.",
+        example: "Im Oktober ist der Herbst rất đẹp.",
+        example_vi: "Vào tháng Mười mùa thu rất đẹp."
+    },
+    {
+        word: "November", article: "der", gender: "der", plural: "die November",
+        indefinite: "ein November", negation: "kein November",
+        meaning: "tháng Mười Một", category: "Thời gian & Lịch trình",
+        rule: "Tháng trong năm mang giống đực (der), đi với im November.",
+        example: "Im November arbeite ich viel.",
+        example_vi: "Vào tháng Mười Một tôi làm việc nhiều."
+    },
+    {
+        word: "Dezember", article: "der", gender: "der", plural: "die Dezember",
+        indefinite: "ein Dezember", negation: "kein Dezember",
+        meaning: "tháng Mười Hai", category: "Thời gian & Lịch trình",
+        rule: "Tháng trong năm mang giống đực (der), đi với im Dezember.",
+        example: "Im Dezember ist Weihnachten.",
+        example_vi: "Vào tháng Mười Hai là lễ Giáng sinh."
+    },
+    {
+        word: "Termin", article: "der", gender: "der", plural: "die Termine",
+        indefinite: "ein Termin", negation: "kein Termin", akkusativ: "den / einen / keinen Termin",
+        meaning: "cuộc hẹn, lịch hẹn", category: "Thời gian & Lịch trình",
+        rule: "Danh từ giống đực (der Termin), số nhiều thêm -e. Sau haben đổi sang Akkusativ: einen Termin.",
+        example: "Ich habe einen Termin um zehn Uhr.",
+        example_vi: "Tôi có một cuộc hẹn vào lúc mười giờ."
+    },
+    {
+        word: "Mittagspause", article: "die", gender: "die", plural: "die Mittagspausen",
+        indefinite: "eine Mittagspause", negation: "keine Mittagspause",
+        meaning: "giờ nghỉ trưa", category: "Thời gian & Lịch trình",
+        rule: "Ghép der Mittag + die Pause -> mang giống cái (die). Đi với cụm Mittagspause machen.",
+        example: "Um zwölf Uhr mache ich Mittagspause.",
+        example_vi: "Vào lúc mười hai giờ tôi nghỉ trưa."
+    },
+    {
+        word: "Panne", article: "die", gender: "die", plural: "die Pannen",
+        indefinite: "eine Panne", negation: "keine Panne",
+        meaning: "sự cố hỏng xe dọc đường", category: "Thời gian & Lịch trình",
+        rule: "Danh từ giống cái (die Panne). Cụm cố định: eine Panne haben (gặp sự cố).",
+        example: "Wir hatten gestern eine Panne.",
+        example_vi: "Hôm qua chúng tôi đã gặp một sự cố hỏng xe."
+    },
+    {
+        word: "Zeit", article: "die", gender: "die", plural: "die Zeiten",
+        indefinite: "eine Zeit", negation: "keine Zeit",
+        meaning: "thời gian", category: "Thời gian & Lịch trình",
+        rule: "Danh từ giống cái (die Zeit). Thường dùng: keine Zeit haben (không có thời gian).",
+        example: "Gestern hatte ich keine Zeit.",
+        example_vi: "Hôm qua tôi đã không có thời gian."
     }
 ];
 
@@ -777,6 +1082,7 @@ const LEXIKON_FILTERS = [
     { id: "der", label: "🔵 Giống đực - der (Maskulinum)" },
     { id: "die", label: "🔴 Giống cái - die (Femininum)" },
     { id: "das", label: "🟢 Giống trung - das (Neutrum)" },
+    { id: "Thời gian & Lịch trình", label: "⏰ Thời gian, Thứ, Tháng & Lịch trình (Bài 5)" },
     { id: "Nhà ở & Phòng ốc", label: "🏠 Nhà ở & Phòng ốc (Menschen & Häuser)" },
     { id: "Nội thất & Đồ đạc", label: "🛋️ Nội thất & Đồ đạc (Möbel & Einrichtung)" },
     { id: "Quốc gia & Ngôn ngữ", label: "🌍 Quốc gia & Ngôn ngữ (Länder & Sprachen)" },
