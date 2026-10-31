@@ -291,9 +291,6 @@ function renderAuthUserUI() {
     updateArenaHeaderBadge();
 }
 
-    updateArenaHeaderBadge();
-}
-
 function updateArenaHeaderBadge() {
     const attemptsBadge = document.getElementById('arena-attempts-badge');
     const startBtn = document.getElementById('arena-start-btn');
