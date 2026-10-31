@@ -914,7 +914,7 @@ def seed_lesson_3():
     EXERCISE_TRANSLATIONS = {
     "1": "Thụy Sỹ là quốc gia đi với mạo từ giống cái: die Schweiz.",
     "2": "Bà Müller đến từ Thụy Sỹ. (Frau Müller kommt aus der Schweiz.)",
-    "3": "Hôm qua các bạn đã ở rạp hát, đúng không? (Gestern wart ihr im Theater, đúng không?)",
+    "3": "Hôm qua các bạn đã ở rạp hát, đúng không? (Gestern wart ihr im Theater, oder?)",
     "4": "ở Thổ Nhĩ Kỳ (in der Türkei)",
     "5": "Ngài sống ở Hải Phòng phải không? (Wohnen Sie in Hai Phong?)",
     "6": "phía Đông Bắc (der Nordosten)",
@@ -984,7 +984,7 @@ def seed_lesson_3():
         ),
         (
             lesson_id, "trac_nghiem",
-            "Câu 3: Điền dạng quá khứ Präteritum của 'sein' cho ngôi 'ihr': \"Gestern ___ ihr im Theater, đúng không?\"",
+            "Câu 3: Điền dạng quá khứ Präteritum của 'sein' cho ngôi 'ihr': \"Gestern ___ ihr im Theater, oder?\"",
             json.dumps(["wart", "warst", "waren", "war"]),
             "wart",
             "Ngôi 'ihr' đi với thì quá khứ đơn (Präteritum) của động từ 'sein' được chia là 'wart'.",
