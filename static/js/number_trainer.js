@@ -546,13 +546,14 @@ function generateNewNumberData(ex, fallbackIndex = null) {
         const names = ["Anna", "David", "Marc", "Frau Schiller", "Herr Nguyen", "Sophie", "Peter"];
         const chosenItem = db[Math.floor(Math.random() * db.length)];
         const chosenName = names[Math.floor(Math.random() * names.length)];
+        const personName = chosenName === "Herr Nguyen" ? "Herrn Nguyen" : chosenName;
 
         const indWord = chosenItem.gender === 'die' ? 'eine' : 'ein';
         const defWord = chosenItem.article; // der / die / das
 
-        ex.question = `[Mạo từ Sở Hữu (Random)]: Hoàn thành câu xác nhận đồ vật của ${chosenName}: "Ist das ___ ${chosenItem.word}?" → "Ja, das ist ___ ${chosenItem.word} von ${chosenName}." (Điền 2 từ mạo từ cách nhau bởi dấu phẩy):`;
+        ex.question = `[Mạo từ Sở Hữu (Random)]: Hoàn thành câu xác nhận đồ vật của ${chosenName}: "Ist das ___ ${chosenItem.word}?" → "Ja, das ist ___ ${chosenItem.word} von ${personName}." (Điền 2 từ mạo từ cách nhau bởi dấu phẩy):`;
         ex.correct_answer = `${indWord}, ${defWord}`;
-        ex.explanation = `'${chosenItem.word}' (${chosenItem.meaning}) mang giống ${defWord} → Mạo từ bất định là '${indWord}' và mạo từ xác định sở hữu là '${defWord} ${chosenItem.word} von ${chosenName}'.`;
+        ex.explanation = `'${chosenItem.word}' (${chosenItem.meaning}) mang giống ${defWord} → Mạo từ bất định là '${indWord}' và mạo từ xác định sở hữu là '${defWord} ${chosenItem.word} von ${personName}'.`;
         extra.translation = `Vâng, đó là ${chosenItem.meaning} của ${chosenName}.`;
         ex.extra_data = JSON.stringify(extra);
         ex.translation = extra.translation;
@@ -630,7 +631,6 @@ function generateNewNumberData(ex, fallbackIndex = null) {
             ex.explanation = `'${chosen.city}' nằm ở ${chosen.vi} của ${chosen.country} → Cụm giới từ là '${chosen.noun} von ${chosen.country}' (bên trong lãnh thổ).`;
             extra.translation = `${chosen.city} nằm ở ${chosen.vi} của ${chosen.country}.`;
         }
-        extra.translation = `${chosen.city} nằm ở ${chosen.vi} của ${chosen.country}.`;
         ex.extra_data = JSON.stringify(extra);
         ex.translation = extra.translation;
         return finalize(ex);
@@ -654,7 +654,7 @@ function generateNewNumberData(ex, fallbackIndex = null) {
                 vi: "Bạn đã từng ở Đức lần nào chưa?"
             },
             {
-                q: "Chọn dạng quá khứ (Präteritum) đúng của động từ 'sein' cho ngôi 'ihr': \"Gestern ___ ihr im Theater, đúng không?\"",
+                q: "Chọn dạng quá khứ (Präteritum) đúng của động từ 'sein' cho ngôi 'ihr': \"Gestern ___ ihr im Theater, oder?\"",
                 ans: "wart",
                 options: ["wart", "warst", "waren", "war"],
                 expl: "Ngôi 'ihr' đi với quá khứ của 'sein' chia là 'wart'.",
@@ -750,7 +750,7 @@ function generateNewNumberData(ex, fallbackIndex = null) {
         ex.question = `[Chia 'sein' ở Thì Präteritum (Random)]: Điền dạng quá khứ đúng của động từ 'sein' cho chủ ngữ '${chosenSub.label}': "${chosenTime.de} ___ ${chosenSub.pronoun} ${chosenPlace.de}."`;
         ex.correct_answer = chosenSub.form;
         ex.explanation = `Chủ ngữ '${chosenSub.pronoun}' đi với thì Quá khứ đơn (Präteritum) của 'sein' là '${chosenSub.form}'. (${chosenTime.de} ${chosenSub.form} ${chosenSub.pronoun} ${chosenPlace.de}).`;
-        extra.translation = `${chosenTime.vi}, ${chosenSub.vi} đã ở ${chosenPlace.vi}.`;
+        extra.translation = `${chosenTime.vi}, ${chosenSub.vi} đã ${chosenPlace.vi}.`;
         ex.extra_data = JSON.stringify(extra);
         ex.translation = extra.translation;
         return finalize(ex);
@@ -784,12 +784,12 @@ function generateNewNumberData(ex, fallbackIndex = null) {
                 ex.question = `[Giới từ 'aus' với Quốc gia có mạo từ (Random)]: Điền cụm giới từ 'đến từ' cho quốc gia '${chosen.country}': "Frau Müller kommt ___."`;
                 ex.correct_answer = chosen.aus;
                 ex.explanation = `'${chosen.country}' là quốc gia có mạo từ, khi kết hợp với 'aus' ở Dativ phải đổi thành '${chosen.aus}'.`;
-                extra.translation = `Bà Müller đến từ ${chosen.vi} (Frau Müller kommt ${chosen.aus}).`;
+                extra.translation = `Bà Müller đến từ ${chosen.vi}.`;
             } else {
                 ex.question = `[Giới từ 'in' với Quốc gia có mạo từ (Random)]: Điền cụm giới từ 'ở tại' cho quốc gia '${chosen.country}': "Herr Meier wohnt ___."`;
                 ex.correct_answer = chosen.in;
                 ex.explanation = `'${chosen.country}' ở Dativ khi đi với giới từ 'in' là '${chosen.in}'.`;
-                extra.translation = `Ông Meier sống ở ${chosen.vi} (Herr Meier wohnt ${chosen.in}).`;
+                extra.translation = `Ông Meier sống ở ${chosen.vi}.`;
             }
         } else {
             ex.question = `[Ngôn ngữ Quốc gia (Random)]: Ngôn ngữ chính được nói tại '${chosen.country}' là gì? (Ví dụ: Deutsch, Französisch, Spanisch...):`;
@@ -811,7 +811,9 @@ function generateNewNumberData(ex, fallbackIndex = null) {
                 wAlt: "Wie heißt du?",
                 jnQuestion: "Heißen Sie Anna?",
                 jnAlt: "Heißt du Anna?",
-                meaning: "Tôi tên là Anna."
+                meaning: "Tôi tên là Anna.",
+                wMeaning: "Ngài tên là gì? (hoặc: Bạn tên là gì?)",
+                jnMeaning: "Ngài tên là Anna phải không? (hoặc: Bạn tên là Anna phải không?)"
             },
             {
                 statement: "Ich wohne in Hai Phong.",
@@ -819,7 +821,9 @@ function generateNewNumberData(ex, fallbackIndex = null) {
                 wAlt: "Wo wohnst du?",
                 jnQuestion: "Wohnen Sie in Hai Phong?",
                 jnAlt: "Wohnst du in Hai Phong?",
-                meaning: "Tôi sống ở Hải Phòng."
+                meaning: "Tôi sống ở Hải Phòng.",
+                wMeaning: "Ngài sống ở đâu? (hoặc: Bạn sống ở đâu?)",
+                jnMeaning: "Ngài sống ở Hải Phòng phải không?"
             },
             {
                 statement: "Er macht die Hausaufgaben.",
@@ -827,7 +831,9 @@ function generateNewNumberData(ex, fallbackIndex = null) {
                 wAlt: "Was macht er?",
                 jnQuestion: "Macht er die Hausaufgaben?",
                 jnAlt: "Macht er die Hausaufgaben?",
-                meaning: "Anh ấy làm bài tập về nhà."
+                meaning: "Anh ấy làm bài tập về nhà.",
+                wMeaning: "Anh ấy đang làm gì?",
+                jnMeaning: "Anh ấy đang làm bài tập về nhà phải không?"
             },
             {
                 statement: "Sie ist Lehrerin.",
@@ -835,7 +841,9 @@ function generateNewNumberData(ex, fallbackIndex = null) {
                 wAlt: "Was ist sie von Beruf?",
                 jnQuestion: "Ist sie Lehrerin?",
                 jnAlt: "Ist sie Lehrerin?",
-                meaning: "Cô ấy là giáo viên."
+                meaning: "Cô ấy là giáo viên.",
+                wMeaning: "Cô ấy là ai? (hoặc: Cô ấy làm nghề gì?)",
+                jnMeaning: "Cô ấy là giáo viên phải không?"
             },
             {
                 statement: "Carlos kommt aus Wien.",
@@ -843,7 +851,9 @@ function generateNewNumberData(ex, fallbackIndex = null) {
                 wAlt: "Woher kommt er?",
                 jnQuestion: "Kommt Carlos aus Wien?",
                 jnAlt: "Kommt er aus Wien?",
-                meaning: "Carlos đến từ Viên."
+                meaning: "Carlos đến từ Viên.",
+                wMeaning: "Carlos đến từ đâu?",
+                jnMeaning: "Carlos đến từ Viên phải không?"
             },
             {
                 statement: "Hanoi liegt im Norden von Vietnam.",
@@ -851,7 +861,9 @@ function generateNewNumberData(ex, fallbackIndex = null) {
                 wAlt: "Wo liegt Hanoi?",
                 jnQuestion: "Liegt Hanoi im Norden von Vietnam?",
                 jnAlt: "Liegt Hanoi im Norden von Vietnam?",
-                meaning: "Hà Nội nằm ở miền Bắc Việt Nam."
+                meaning: "Hà Nội nằm ở miền Bắc Việt Nam.",
+                wMeaning: "Hà Nội nằm ở đâu?",
+                jnMeaning: "Hà Nội nằm ở miền Bắc Việt Nam phải không?"
             }
         ];
 
@@ -862,12 +874,13 @@ function generateNewNumberData(ex, fallbackIndex = null) {
             ex.question = `[Chuyển sang W-Frage (Random)]: Hãy chuyển câu trần thuật "${chosen.statement}" (${chosen.meaning}) sang câu hỏi có từ để hỏi (W-Frage):`;
             ex.correct_answer = `${chosen.wQuestion} / ${chosen.wAlt}`;
             ex.explanation = `Câu hỏi W-Frage tương ứng là: '${chosen.wQuestion}' (hoặc thân mật: '${chosen.wAlt}').`;
+            extra.translation = chosen.wMeaning;
         } else {
             ex.question = `[Chuyển sang Ja/Nein-Frage (Random)]: Hãy chuyển câu trần thuật "${chosen.statement}" (${chosen.meaning}) sang câu hỏi Có/Không (Ja/Nein-Frage):`;
             ex.correct_answer = `${chosen.jnQuestion} / ${chosen.jnAlt}`;
             ex.explanation = `Đẩy động từ lên đầu câu để tạo Ja/Nein-Frage: '${chosen.jnQuestion}' (hoặc: '${chosen.jnAlt}').`;
+            extra.translation = chosen.jnMeaning;
         }
-        extra.translation = chosen.meaning;
         ex.extra_data = JSON.stringify(extra);
         ex.translation = extra.translation;
         return finalize(ex);
@@ -1026,15 +1039,15 @@ function generateNewNumberData(ex, fallbackIndex = null) {
     // 13. Xử lý câu hỏi Tính từ Đối lập Miêu tả Nhà cửa (dynamic_adjective_antonym_quiz - Bài 4)
     if (extra.dynamic_adjective_antonym_quiz) {
         const adjPairs = [
-            { pos: "hell", neg: "dunkel", viPos: "sáng sủa", viNeg: "tối tăm", context: "Arbeitszimmer", nounVi: "phòng làm việc" },
-            { pos: "groß", neg: "klein", viPos: "rộng lớn", viNeg: "nhỏ hẹp", context: "Wohnzimmer", nounVi: "phòng khách" },
-            { pos: "ruhig", neg: "laut", viPos: "yên tĩnh", viNeg: "ồn ào", context: "Schlafzimmer", nounVi: "phòng ngủ" },
-            { pos: "lang", neg: "kurz", viPos: "dài", viNeg: "ngắn", context: "Flur", nounVi: "hành lang" },
-            { pos: "neu", neg: "alt", viPos: "mới", viNeg: "cũ / lâu năm", context: "Haus", nounVi: "ngôi nhà" },
-            { pos: "billig", neg: "teuer", viPos: "rẻ", viNeg: "đắt đỏ", context: "Wohnung", nounVi: "căn hộ" },
-            { pos: "schön", neg: "hässlich", viPos: "đẹp", viNeg: "xấu xí", context: "Garten", nounVi: "khu vườn" },
-            { pos: "modern", neg: "altmodisch", viPos: "hiện đại", viNeg: "lỗi thời / kiểu cũ", context: "Wohnzimmer", nounVi: "phòng khách" },
-            { pos: "gemütlich", neg: "ungemütlich", viPos: "ấm cúng", viNeg: "không ấm cúng / bất tiện", context: "Schlafzimmer", nounVi: "phòng ngủ" }
+            { pos: "hell", neg: "dunkel", viPos: "sáng sủa", viNeg: "tối tăm", context: "Arbeitszimmer", nounVi: "phòng làm việc", art: "Das" },
+            { pos: "groß", neg: "klein", viPos: "rộng lớn", viNeg: "nhỏ hẹp", context: "Wohnzimmer", nounVi: "phòng khách", art: "Das" },
+            { pos: "ruhig", neg: "laut", viPos: "yên tĩnh", viNeg: "ồn ào", context: "Schlafzimmer", nounVi: "phòng ngủ", art: "Das" },
+            { pos: "lang", neg: "kurz", viPos: "dài", viNeg: "ngắn", context: "Flur", nounVi: "hành lang", art: "Der" },
+            { pos: "neu", neg: "alt", viPos: "mới", viNeg: "cũ / lâu năm", context: "Haus", nounVi: "ngôi nhà", art: "Das" },
+            { pos: "billig", neg: "teuer", viPos: "rẻ", viNeg: "đắt đỏ", context: "Wohnung", nounVi: "căn hộ", art: "Die" },
+            { pos: "schön", neg: "hässlich", viPos: "đẹp", viNeg: "xấu xí", context: "Garten", nounVi: "khu vườn", art: "Der" },
+            { pos: "modern", neg: "altmodisch", viPos: "hiện đại", viNeg: "lỗi thời / kiểu cũ", context: "Wohnzimmer", nounVi: "phòng khách", art: "Das" },
+            { pos: "gemütlich", neg: "ungemütlich", viPos: "ấm cúng", viNeg: "không ấm cúng / bất tiện", context: "Schlafzimmer", nounVi: "phòng ngủ", art: "Das" }
         ];
 
         const pair = adjPairs[Math.floor(Math.random() * adjPairs.length)];
@@ -1052,10 +1065,10 @@ function generateNewNumberData(ex, fallbackIndex = null) {
             ex.explanation = `Tính từ '${sourceWord}' (${sourceVi}) có từ đối lập là '${targetWord}' (${targetVi}).`;
             extra.translation = `Từ trái nghĩa của '${sourceVi}' là '${targetVi}'.`;
         } else {
-            ex.question = `[Tính từ Miêu tả Nhà cửa (Random)]: Hoàn thành câu miêu tả sau bằng tính từ trái nghĩa với '${sourceWord}': "Das ${pair.context} ist nicht ${sourceWord}, sondern es ist ___."`;
+            ex.question = `[Tính từ Miêu tả Nhà cửa (Random)]: Hoàn thành câu miêu tả sau bằng tính từ trái nghĩa với '${sourceWord}': "${pair.art} ${pair.context} ist nicht ${sourceWord}, sondern es ist ___."`;
             ex.correct_answer = targetWord;
-            ex.explanation = `Từ đối lập với '${sourceWord}' (${sourceVi}) là '${targetWord}' (${targetVi}) → "Das ${pair.context} ist nicht ${sourceWord}, sondern es ist ${targetWord}."`;
-            extra.translation = `Căn ${pair.nounVi} không ${sourceVi}, mà nó ${targetVi}.`;
+            ex.explanation = `Từ đối lập với '${sourceWord}' (${sourceVi}) là '${targetWord}' (${targetVi}) → "${pair.art} ${pair.context} ist nicht ${sourceWord}, sondern es ist ${targetWord}."`;
+            extra.translation = `${pair.nounVi.charAt(0).toUpperCase() + pair.nounVi.slice(1)} không ${sourceVi}, mà nó ${targetVi}.`;
         }
         ex.extra_data = JSON.stringify(extra);
         ex.translation = extra.translation;
@@ -1168,6 +1181,9 @@ function generateNewNumberData(ex, fallbackIndex = null) {
         ex.options_json = JSON.stringify(options);
         ex.correct_answer = correct;
         ex.explanation = `Số ${num} được ghép từ hàng đơn vị + und + hàng chục: ${correct}.`;
+        extra.translation = `Số ${num}: ${correct}`;
+        ex.extra_data = JSON.stringify(extra);
+        ex.translation = extra.translation;
     }
     else if (mode === 'de_to_num') {
         const num = getRandomInt(min, max);
@@ -1175,14 +1191,19 @@ function generateNewNumberData(ex, fallbackIndex = null) {
         ex.question = `[Đức → Số (Random)]: Chuyển chữ số tiếng Đức sau thành số tự nhiên: '${german}'`;
         ex.correct_answer = String(num);
         ex.explanation = `'${german}' biểu thị con số tự nhiên ${num}.`;
+        extra.translation = `Số ${num}: ${german}`;
+        ex.extra_data = JSON.stringify(extra);
+        ex.translation = extra.translation;
     }
     else if (mode === 'listen_num') {
         const num = getRandomInt(min, max);
         const german = numberToGerman(num);
         extra.audio_text = german;
+        extra.translation = `Số ${num}: ${german}`;
         ex.extra_data = JSON.stringify(extra);
         ex.correct_answer = String(num);
         ex.explanation = `Âm thanh phát âm: '${german}' → Đáp án là số ${num}.`;
+        ex.translation = extra.translation;
     }
     else if (mode === 'num_to_de') {
         const num = getRandomInt(min, max);
@@ -1198,6 +1219,9 @@ function generateNewNumberData(ex, fallbackIndex = null) {
         ex.question = `Hãy viết số ${num} bằng chữ tiếng Đức${prefix}:`;
         ex.correct_answer = german;
         ex.explanation = `Số ${num} viết bằng chữ tiếng Đức chuẩn là: ${german}.`;
+        extra.translation = `Số ${num}: ${german}`;
+        ex.extra_data = JSON.stringify(extra);
+        ex.translation = extra.translation;
     }
     else if (mode === 'tens_to_de') {
         const tensList = [20, 30, 40, 50, 60, 70, 80, 90];
@@ -1206,6 +1230,9 @@ function generateNewNumberData(ex, fallbackIndex = null) {
         ex.question = `[Viết số tròn chục (Random)]: Hãy viết số ${num} bằng chữ tiếng Đức:`;
         ex.correct_answer = german;
         ex.explanation = `Số tròn chục ${num} được viết là: ${german}${num === 30 ? ' (chú ý chữ ß)' : ''}.`;
+        extra.translation = `Số ${num}: ${german}`;
+        ex.extra_data = JSON.stringify(extra);
+        ex.translation = extra.translation;
     }
     else if (mode === 'special_3digit_to_de') {
         const specials = [912, 815, 716, 617, 511, 418, 319, 212, 116, 707, 808, 909];
@@ -1214,6 +1241,9 @@ function generateNewNumberData(ex, fallbackIndex = null) {
         ex.question = `[Viết số 3 chữ số đặc biệt (Random)]: Hãy viết số ${num} bằng chữ tiếng Đức (viết liền không dấu cách):`;
         ex.correct_answer = german;
         ex.explanation = `Số ${num} viết bằng chữ tiếng Đức là: ${german}.`;
+        extra.translation = `Số ${num}: ${german}`;
+        ex.extra_data = JSON.stringify(extra);
+        ex.translation = extra.translation;
     }
     else if (mode === 'pair_num_to_de') {
         const n1 = getRandomInt(21, 99);
@@ -1225,6 +1255,9 @@ function generateNewNumberData(ex, fallbackIndex = null) {
         ex.question = `[Viết cặp 2 số (Random)]: Hãy viết số ${n1} và số ${n2} bằng chữ tiếng Đức (cách nhau bởi dấu phẩy):`;
         ex.correct_answer = `${de1}, ${de2}`;
         ex.explanation = `${n1} = ${de1}; ${n2} = ${de2}.`;
+        extra.translation = `Số ${n1} (${de1}) và số ${n2} (${de2})`;
+        ex.extra_data = JSON.stringify(extra);
+        ex.translation = extra.translation;
     }
     else if (mode === 'speak_num' || mode === 'arrange_num') {
         const num = getRandomInt(min, max);

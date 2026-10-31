@@ -704,6 +704,60 @@ def seed_lesson_1_part_2():
     # =========================================================================
     # KHO ĐÚNG 50 BÀI TẬP BÀI 1 (P2) THEO 7 DẠNG KỸ NĂNG & RANDOM ĐỔI ĐỀ
     # =========================================================================
+
+    EXERCISE_TRANSLATIONS = {
+    "1": "'Anna và tôi' tương đương với đại từ 'chúng tôi' (wir).",
+    "2": "Khi hỏi trực tiếp nhiều người bạn 'Anna và Peter', ta dùng đại từ 'các bạn' (ihr).",
+    "3": "Xưng hô trang trọng với ông/bà ta dùng đại từ lịch sự 'Ngài' (Sie).",
+    "4": "Bạn tên là: du heißt.",
+    "5": "Bạn làm việc: du arbeitest.",
+    "6": "Các bạn thuê: ihr mietet.",
+    "7": "Bạn đọc: du liest.",
+    "8": "Anh ấy chọn món / lấy: er nimmt.",
+    "9": "Anh ấy muốn: er möchte.",
+    "10": "'Zusammen oder getrennt?' = Thanh toán chung hay thanh toán riêng?",
+    "11": "Chào bạn, Anna và mình đang ở quán cà phê Kafka. (Hi, Anna und ich sind im Café Kafka.)",
+    "12": "Bạn đang ở đâu? Maria cũng ở đây nè. (Wo bist du? Maria ist auch da.)",
+    "13": "Hôm nay anh ấy không có thời gian. (Er hat heute keine Zeit.)",
+    "14": "Và các bạn sống ở đâu? - Chúng tôi sống ở Berlin. (Und wo wohnt ihr? - Wir wohnen in Berlin.)",
+    "15": "Đây là bạn tôi Peter, anh ấy đến từ nước Nga. (Das ist mein Freund Peter, er kommt aus Russland.)",
+    "16": "Bạn làm việc ở đâu? - Tôi làm việc ở bưu điện. (Wo arbeitest du? - Ich arbeite bei der Post.)",
+    "17": "Quý khách dùng đồ uống gì ạ? - Tôi uống cà phê với sữa. (Was trinken Sie? - Ich trinke Kaffee mit Milch.)",
+    "18": "Bạn dùng món gì? - Mình dùng trà. (Was nimmst du? - Ich nehme Tee.)",
+    "19": "Chúng tôi muốn thanh toán làm ơn. (Wir möchten bitte zahlen.)",
+    "20": "Tổng cộng hết 6,80 Euro. (Das macht 6,80 Euro.)",
+    "21": "Tôi uống cà phê với nhiều sữa. (Ich trinke Kaffee mit viel Milch.)",
+    "22": "Cho tôi một tách trà không đường làm ơn. (Tee ohne Zucker, bitte.)",
+    "23": "Chúng tôi muốn thanh toán làm ơn. (Wir möchten bitte zahlen.)",
+    "24": "Thanh toán chung hay thanh toán riêng? (Zusammen oder getrennt?)",
+    "25": "Tổng cộng hết 6,80 Euro. (Das macht 6,80 Euro.)",
+    "26": "Giá tiền: 1,29 € (ein Euro neunundzwanzig).",
+    "27": "Giá tiền: 2,99 € (zwei Euro neunundneunzig).",
+    "28": "Giá tiền: 9,86 € (neun Euro sechsundachtzig).",
+    "29": "Quý khách muốn uống gì ạ? (Was möchten Sie trinken?)",
+    "30": "Bạn đọc một quyển sách tiếng Đức. (Du liest ein deutsches Buch.)",
+    "31": "Anh ấy dùng một cốc trà với chanh. (Er nimmt einen Tee mit Zitrone.)",
+    "32": "Tổng cộng hết 4,50 Euro. (Das macht 4,50 Euro.)",
+    "33": "Tổng cộng hết 12,89 Euro. (Das macht 12,89 Euro.)",
+    "34": "Làm ơn thanh toán chung. (Zusammen, bitte.)",
+    "35": "Quý khách muốn uống gì ạ? (Was möchten Sie trinken?)",
+    "36": "Tôi uống cà phê với nhiều sữa. (Ich trinke Kaffee mit viel Milch.)",
+    "37": "Thanh toán chung hay thanh toán riêng? (Zusammen oder getrennt?)",
+    "38": "Cô giáo rất tốt bụng, cô ấy đến từ nước Mỹ. (Die Lehrerin ist nett, sie ist aus den USA.)",
+    "39": "Bạn làm việc ở đâu? Tôi làm việc ở bưu điện. (Wo arbeitest du? Ich arbeite bei der Post.)",
+    "40": "Đoạn hội thoại:\nMarc: Bạn đến từ đâu?\nAnna: Mình đến từ Brazil. Đây là bạn của mình, Peter, anh ấy đến từ Nga.\nMarc: Và các bạn sống ở đâu?\nAnna: Chúng mình sống ở Berlin. Cậu làm việc ở đâu?\nMarc: Mình làm việc ở bưu điện.",
+    "41": "Tin nhắn Café Kafka:\nMarc: Chào bạn, Anna và mình đang ở quán Café Kafka. Cậu ở đâu thế? Maria cũng ở đây. Cậu đến không?\nPeter: Ôi, các cậu đang ở Café Kafka à! Mình đang ở lớp học tiếng Đức. Cô giáo rất tốt bụng, cô ấy đến từ Mỹ.",
+    "42": "Tin nhắn Café Kafka:\nMarc: Chào bạn, Anna và mình đang ở quán Café Kafka. Cậu ở đâu thế? Maria cũng ở đây. Cậu đến không?\nPeter: Ôi, các cậu đang ở Café Kafka à! Mình đang ở lớp học tiếng Đức. Cô giáo rất tốt bụng, cô ấy đến từ Mỹ.",
+    "43": "Hội thoại tại quán cà phê:\nBồi bàn: Quý khách muốn dùng đồ uống gì ạ?\nAnna: Tôi uống cà phê nhiều sữa.\nSophie: Làm ơn cho tôi trà.\n...\nAnna và Sophie: Chúng tôi muốn thanh toán làm ơn.\nBồi bàn: Thanh toán chung hay riêng ạ?\nAnna: Làm ơn tính chung ạ.\nBồi bàn: Tổng cộng hết 6,80 Euro.",
+    "44": "Quý khách muốn uống gì ạ? (Was möchten Sie trinken?)",
+    "45": "Chúng tôi muốn thanh toán làm ơn. (Wir möchten bitte zahlen.)",
+    "46": "Các bạn thì / là / ở: ihr seid.",
+    "47": "Bạn có: du hast.",
+    "48": "Các bạn thuê: ihr mietet.",
+    "49": "Bạn làm việc: du arbeitest.",
+    "50": "Giá tiền: 3,99 € (drei Euro neunundneunzig)."
+}
+
     exercises = [
         # ---------------------------------------------------------------------
         # DẠNG 1: TRẮC NGHIỆM (trac_nghiem) - ĐÚNG 10 CÂU (Câu 1 -> 10)
@@ -1069,14 +1123,26 @@ def seed_lesson_1_part_2():
             "Câu 50 [Viết giá tiền Euro (Random)]: Hãy viết cách đọc giá tiền 3,99 € bằng chữ tiếng Đức (chấp nhận có hoặc không có chữ Cent):",
             None, "drei Euro neunundneunzig / 3,99 / 3,99 € / 3.99 / drei Euro neunundneunzig Cent",
             "3,99 € được viết là: 'drei Euro neunundneunzig'.", 30,
-            json.dumps({"dynamic_price": True, "dynamic_mode": "price_to_de", "euros": 3, "cents": 99, "translation": "3,99 Euro."}, ensure_ascii=False)
+            json.dumps({"dynamic_price": True, "dynamic_mode": "price_to_de", "euros": 3, "cents": 99, "translation": "Giá tiền: 3,99 € (drei Euro neunundneunzig)."}, ensure_ascii=False)
         )
     ]
 
     import random
     shuffled_exercises = []
-    for ex in exercises:
+    for idx, ex in enumerate(exercises):
         ex_list = list(ex)
+        q_num = idx + 1
+        extra_d = {}
+        if ex_list[7]:
+            try:
+                extra_d = json.loads(ex_list[7]) if isinstance(ex_list[7], str) else dict(ex_list[7])
+            except Exception:
+                extra_d = {}
+        trans_val = EXERCISE_TRANSLATIONS.get(str(q_num)) or EXERCISE_TRANSLATIONS.get(q_num)
+        if trans_val and not extra_d.get("translation"):
+            extra_d["translation"] = trans_val
+            # trans applied
+        ex_list[7] = json.dumps(extra_d, ensure_ascii=False) if extra_d else None
         if ex_list[1] == "trac_nghiem" and ex_list[3]:
             try:
                 opts = json.loads(ex_list[3])

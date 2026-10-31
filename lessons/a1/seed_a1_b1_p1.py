@@ -195,15 +195,15 @@ def seed_lesson_1_part_1():
                     <p>• <b>ei [aɪ̯]</b> → đọc là <b>ai</b>: <button onclick="speakGerman('mein, dein, eins, zwei, drei')" class="text-indigo-600 font-bold underline hover:text-indigo-800">🔊 mein, dein, eins, zwei, drei</button></p>
                     <p>• <b>ie [iː]</b> → đọc là <b>i kéo dài</b> (tuyệt đối không đọc "đai"): <button onclick="speakGerman('die, Sie, wie, sieben')" class="text-indigo-600 font-bold underline hover:text-indigo-800">🔊 die, Sie, wie, sieben</button></p>
                     <p>• <b>eu / äu [ɔʏ̯]</b> → đọc là <b>oi</b>: <button onclick="speakGerman('Deutsch, Verkäufer, neun')" class="text-indigo-600 font-bold underline hover:text-indigo-800">🔊 Deutsch, Verkäufer, neun</button></p>
-                    <p>• <b>ir</b> (i-ơ ngắn [ɪɐ̯]): <i>Kirche, Birne, Schirm</i> | <b>ir / ier</b> (i-ơ dài [iːɐ̯]): <button onclick="speakGerman('mir, dir, wir, vier, hier, das Bier, das Tier')" class="text-indigo-600 font-bold underline hover:text-indigo-800">🔊 mir, dir, wir, vier, hier, Bier, Tier</button></p>
-                    <p>• <b>ur</b> (u-ơ): <i>Kurs, Burg</i> | <b>ür</b> (uy-ơ): <button onclick="speakGerman('die Tür, für')" class="text-indigo-600 font-bold underline hover:text-indigo-800">🔊 Tür, für</button></p>
+                    <p>• <b>ir</b> (i-ơ ngắn [ɪɐ̯]): <button onclick="speakGerman('Kirche, Birne, Schirm')" class="text-indigo-600 font-bold underline hover:text-indigo-800">🔊 Kirche, Birne, Schirm</button> | <b>ir / ier</b> (i-ơ dài [iːɐ̯]): <button onclick="speakGerman('mir, dir, wir, vier, hier, das Bier, das Tier')" class="text-indigo-600 font-bold underline hover:text-indigo-800">🔊 mir, dir, wir, vier, hier, Bier, Tier</button></p>
+                    <p>• <b>ur</b> (u-ơ): <button onclick="speakGerman('Kurs, Burg')" class="text-indigo-600 font-bold underline hover:text-indigo-800">🔊 Kurs, Burg</button> | <b>ür</b> (uy-ơ): <button onclick="speakGerman('die Tür, für')" class="text-indigo-600 font-bold underline hover:text-indigo-800">🔊 Tür, für</button></p>
                     <p>• <b>or</b> (o-ơ ngắn [ɔɐ̯]): <button onclick="speakGerman('sorgen, Wort, Norden')" class="text-indigo-600 font-bold underline hover:text-indigo-800">🔊 sorgen, Wort, Norden</button> | <b>or</b> (ô-ơ dài [oːɐ̯]): <button onclick="speakGerman('Tor, Ohr, vor')" class="text-indigo-600 font-bold underline hover:text-indigo-800">🔊 Tor, Ohr, vor</button></p>
                     <p>• <b>er</b> (cuối từ không nhấn trọng âm → đọc là ơ ngắn [ɐ]): <button onclick="speakGerman('Vater, Mutter, oder, Verkäufer')" class="text-indigo-600 font-bold underline hover:text-indigo-800">🔊 Vater, Mutter, oder, Verkäufer</button> | <b>er</b> (nhấn trọng âm → đọc là ê-ơ [eːɐ̯]): <button onclick="speakGerman('der, wer, woher')" class="text-indigo-600 font-bold underline hover:text-indigo-800">🔊 der, wer, woher</button></p>
                 </div>
                 <div class="p-4 rounded-2xl bg-slate-50 border border-slate-200 space-y-2">
                     <p class="font-extrabold text-slate-900 text-sm">🅱️ Phụ âm & Tổ hợp phụ âm đặc trưng:</p>
                     <p>• <b>s [z]</b> (trước nguyên âm) → đọc như âm <b>z</b> tiếng Anh (hoặc d giọng Bắc): <button onclick="speakGerman('Sie, sorgen, sieben')" class="text-indigo-600 font-bold underline hover:text-indigo-800">🔊 Sie, sorgen, sieben</button></p>
-                    <p>• <b>v [f]</b> → đọc như <b>ph</b>: <button onclick="speakGerman('der Vater, vier')" class="text-indigo-600 font-bold underline hover:text-indigo-800">🔊 Vater, vier</button> | <b>w [v]</b> → đọc như <b>v</b>: <i>was, wer</i></p>
+                    <p>• <b>v [f]</b> → đọc như <b>ph</b>: <button onclick="speakGerman('der Vater, vier')" class="text-indigo-600 font-bold underline hover:text-indigo-800">🔊 Vater, vier</button> | <b>w [v]</b> → đọc như <b>v</b>: <button onclick="speakGerman('was, wer')" class="text-indigo-600 font-bold underline hover:text-indigo-800">🔊 was, wer</button></p>
                     <p>• <b>z [ts]</b> → siết hai hàm răng đọc <b>ts</b>: <button onclick="speakGerman('der Zahn, der Zoo, zehn, zwei')" class="text-indigo-600 font-bold underline hover:text-indigo-800">🔊 Zahn, Zoo, zehn</button></p>
                     <p>• <b>ch</b>: sau <b>a, o, u, au</b> đọc là <b>[x]</b> như <b>kh</b> (<button onclick="speakGerman('auch, der Koch, die Nacht')" class="text-indigo-600 font-bold underline hover:text-indigo-800">🔊 auch, Koch, Nacht</button>); còn lại đọc là <b>[ç]</b> như <b>ch nhẹ</b> xì hơi qua vòm miệng (<button onclick="speakGerman('ich, mich, dich, die Küche')" class="text-indigo-600 font-bold underline hover:text-indigo-800">🔊 ich, mich, dich, Küche</button>)</p>
                     <p>• <b>sch [ʃ]</b> (chu môi s nặng): <button onclick="speakGerman('die Schule, die Schuhe')" class="text-indigo-600 font-bold underline hover:text-indigo-800">🔊 Schule, Schuhe</button></p>
@@ -304,6 +304,60 @@ def seed_lesson_1_part_1():
     # 3. ĐỦ 50 BÀI TẬP PHÂN BỔ ĐÚNG THEO ĐẶC TẢ:
     # 10 trắc nghiệm + 8 điền khuyết + 8 dịch + 7 nghe + 5 nói + 4 đọc + 8 viết = 50 câu!
     passage_text = "Hội thoại tại lớp học tiếng Đức:\n- Lehrerin: Guten Morgen! Wie heißen Sie?\n- Anna: Guten Morgen! Ich heiße Anna.\n- Lehrerin: Woher kommen Sie, Anna?\n- Anna: Ich komme aus Vietnam.\n- Lehrerin: Und wo wohnen Sie?\n- Anna: Ich wohne in Hai Phong. Meine Hausnummer ist vierunddreißig."
+
+
+    EXERCISE_TRANSLATIONS = {
+    "1": "Phiên âm chữ J trong bảng chữ cái tiếng Đức: /jɔt/ (đọc nối âm i-ót / dót).",
+    "2": "Tên hai chữ cái V và W trong bảng chữ cái: V đọc là /faʊ̯/ và W đọc là /veː/.",
+    "3": "Phát âm nguyên âm đôi 'ie': đọc là âm 'i' kéo dài (/diː/, /ziː/).",
+    "4": "Phát âm tổ hợp nguyên âm 'eu' và 'äu': đọc là âm 'oi' (/ɔʏ̯/).",
+    "5": "Phát âm tổ hợp 'ch' sau a, o, u, au: đọc như âm 'kh' ở cuống họng (/x/).",
+    "6": "Phát âm 'sp' và 'st' ở đầu từ: chữ 's' đọc như âm 'sch' nặng (/ʃ/).",
+    "7": "Chào hỏi lịch sự khi mới gặp: Xin chào! (Hallo! / Guten Tag!).",
+    "8": "Cách viết số 16 và 17: sechzehn (16) và siebzehn (17).",
+    "9": "Cách viết các số tròn chục: dreißig (30), sechzig (60), siebzig (70).",
+    "10": "Số 21: einundzwanzig.",
+    "11": "Ngài là ai? -> Tôi là Anna. (Wer sind Sie? -> Ich bin Anna.)",
+    "12": "Ngài tên là gì? -> Tôi tên là Anna. (Wie heißen Sie? -> Ich heiße Anna.)",
+    "13": "Tên của Ngài là gì? -> Tên của tôi là Anna. (Wie ist Ihr Name? -> Mein Name ist Anna.)",
+    "14": "Ngài đến từ đâu? -> Tôi đến từ Việt Nam. (Woher kommen Sie? -> Ich komme aus Vietnam.)",
+    "15": "Ngài sống ở đâu? -> Tôi sống ở Hải Phòng. (Wo wohnen Sie? -> Ich wohne in Hai Phong.)",
+    "16": "Chào buổi sáng! (Guten Morgen!)",
+    "17": "Chúc ngủ ngon! (Gute Nacht!)",
+    "18": "Số ba mươi tư (34): vierunddreißig.",
+    "19": "Chào buổi sáng! (Guten Morgen!)",
+    "20": "Hẹn gặp lại! (Auf Wiedersehen!)",
+    "21": "Tôi đến từ Việt Nam. (Ich komme aus Vietnam.)",
+    "22": "Ngài sống ở đâu? (hoặc: Bạn sống ở đâu?) (Wo wohnen Sie?)",
+    "23": "Số 34: vierunddreißig.",
+    "24": "Số 47: siebenundvierzig.",
+    "25": "Số 238: zweihundertachtunddreißig.",
+    "26": "Số 1234: eintausendzweihundertvierunddreißig.",
+    "27": "Trường đại học (die Universität).",
+    "28": "Tạm biệt! (Tschüss!)",
+    "29": "Ngài đến từ đâu? (Woher kommen Sie?)",
+    "30": "Tên tôi là Anna. (Mein Name ist Anna.)",
+    "31": "Số 47: siebenundvierzig.",
+    "32": "Số 677: sechshundertsiebenundsiebzig.",
+    "33": "Số 1234: eintausendzweihundertvierunddreißig.",
+    "34": "Nhà bếp, bia và con thú. (Die Küche, das Bier und das Tier.)",
+    "35": "Tạm biệt! Chúng tôi tên là Anna và Ben. (Tschüss! Wir heißen Anna und Ben.)",
+    "36": "Xin chào! Tôi tên là Anna. Tôi đến từ Việt Nam. Tôi sống ở Hải Phòng. (Guten Tag! Ich heiße Anna. Ich komme aus Vietnam. Ich wohne in Hai Phong.)",
+    "37": "Hẹn gặp lại! Tạm biệt! Hẹn gặp lại ngày mai! (Auf Wiedersehen! Tschüss! Bis morgen!)",
+    "38": "Số hai mươi mốt (21): einundzwanzig.",
+    "39": "Hội thoại lớp học tiếng Đức:\n- Cô giáo: Chào buổi sáng! Em tên là gì?\n- Anna: Chào buổi sáng cô! Em tên là Anna.\n- Cô giáo: Em đến từ đâu, Anna?\n- Anna: Em đến từ Việt Nam ạ.\n- Cô giáo: Và em sống ở đâu?\n- Anna: Em sống ở Hải Phòng. Số nhà của em là 34.",
+    "40": "Hội thoại lớp học tiếng Đức:\n- Cô giáo: Chào buổi sáng! Em tên là gì?\n- Anna: Chào buổi sáng cô! Em tên là Anna.\n- Cô giáo: Em đến từ đâu, Anna?\n- Anna: Em đến từ Việt Nam ạ.\n- Cô giáo: Và em sống ở đâu?\n- Anna: Em sống ở Hải Phòng. Số nhà của em là 34.",
+    "41": "Hội thoại lớp học tiếng Đức:\n- Cô giáo: Chào buổi sáng! Em tên là gì?\n- Anna: Chào buổi sáng cô! Em tên là Anna.\n- Cô giáo: Em đến từ đâu, Anna?\n- Anna: Em đến từ Việt Nam ạ.\n- Cô giáo: Và em sống ở đâu?\n- Anna: Em sống ở Hải Phòng. Số nhà của em là 34.",
+    "42": "Hội thoại lớp học tiếng Đức:\n- Cô giáo: Chào buổi sáng! Em tên là gì?\n- Anna: Chào buổi sáng cô! Em tên là Anna.\n- Cô giáo: Em đến từ đâu, Anna?\n- Anna: Em đến từ Việt Nam ạ.\n- Cô giáo: Và em sống ở đâu?\n- Anna: Em sống ở Hải Phòng. Số nhà của em là 34.",
+    "43": "Số 16: sechzehn.",
+    "44": "Số 30: dreißig.",
+    "45": "Số 69: neunundsechzig.",
+    "46": "Số 83 (dreiundachtzig) và số 92 (zweiundneunzig).",
+    "47": "Số 677: sechshundertsiebenundsiebzig.",
+    "48": "Số 912: neunhundertzwölf.",
+    "49": "Số 1234: eintausendzweihundertvierunddreißig.",
+    "50": "Xin chào! Tôi tên là Anna. Tôi sống ở Hải Phòng. (Hallo! Ich heiße Anna. Ich wohne in Hai Phong.)"
+}
 
     exercises = [
         # =========================================================================
@@ -658,8 +712,20 @@ def seed_lesson_1_part_1():
 
     import random
     shuffled_exercises = []
-    for ex in exercises:
+    for idx, ex in enumerate(exercises):
         ex_list = list(ex)
+        q_num = idx + 1
+        extra_d = {}
+        if ex_list[7]:
+            try:
+                extra_d = json.loads(ex_list[7]) if isinstance(ex_list[7], str) else dict(ex_list[7])
+            except Exception:
+                extra_d = {}
+        trans_val = EXERCISE_TRANSLATIONS.get(str(q_num)) or EXERCISE_TRANSLATIONS.get(q_num)
+        if trans_val and not extra_d.get("translation"):
+            extra_d["translation"] = trans_val
+            # trans applied
+        ex_list[7] = json.dumps(extra_d, ensure_ascii=False) if extra_d else None
         if ex_list[1] == "trac_nghiem" and ex_list[3]:
             try:
                 opts = json.loads(ex_list[3])
