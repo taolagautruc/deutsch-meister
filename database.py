@@ -92,6 +92,7 @@ def init_db():
         studied_theory INTEGER DEFAULT 1,
         practice_completed INTEGER DEFAULT 0,
         best_practice_score INTEGER DEFAULT 0,
+        correct_exercises TEXT DEFAULT '[]',
         last_studied_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
         UNIQUE(user_id, lesson_id),
         FOREIGN KEY(user_id) REFERENCES users(id) ON DELETE CASCADE

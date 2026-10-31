@@ -177,6 +177,12 @@ async function checkCurrentAuthSession() {
         if (data.logged_in && data.user) {
             currentAuthUser = data.user;
             if (data.user.token) localStorage.setItem('dm_auth_token', data.user.token);
+            if (data.user.progress && typeof window.userLessonsProgress !== 'undefined') {
+                window.userLessonsProgress = Object.assign(window.userLessonsProgress || {}, data.user.progress);
+                if (typeof saveLocalLessonsProgress === 'function') saveLocalLessonsProgress();
+                if (typeof renderLessonList === 'function') renderLessonList();
+                if (typeof updateLessonProgressUI === 'function') updateLessonProgressUI();
+            }
             renderAuthUserUI();
             return;
         }
@@ -193,6 +199,12 @@ async function checkCurrentAuthSession() {
                 const restData = await restRes.json();
                 if (restData.logged_in && restData.user) {
                     currentAuthUser = restData.user;
+                    if (restData.user.progress && typeof window.userLessonsProgress !== 'undefined') {
+                        window.userLessonsProgress = Object.assign(window.userLessonsProgress || {}, restData.user.progress);
+                        if (typeof saveLocalLessonsProgress === 'function') saveLocalLessonsProgress();
+                        if (typeof renderLessonList === 'function') renderLessonList();
+                        if (typeof updateLessonProgressUI === 'function') updateLessonProgressUI();
+                    }
                     renderAuthUserUI();
                     return;
                 }
@@ -230,17 +242,24 @@ function renderAuthUserUI() {
                     🎟️ Đấu trường: ${rem}/2 lượt
                 </div>
                 <div class="relative group">
-                    <button class="flex items-center gap-2 px-2.5 py-1.5 rounded-xl bg-slate-100 hover:bg-slate-200 border border-slate-300/80 text-slate-800 text-xs font-bold transition cursor-pointer">
+                    <button class="flex items-center gap-2 px-2.5 py-1.5 rounded-xl bg-slate-100 hover:bg-slate-200 border border-slate-300/80 text-slate-800 text-xs font-bold transition cursor-pointer shadow-xs">
                         <span class="w-6 h-6 rounded-lg bg-indigo-600 text-white flex items-center justify-center text-[10px] font-black">${initials}</span>
-                        <span class="max-w-[100px] truncate">${currentAuthUser.username}</span>
+                        <span class="max-w-[130px] truncate flex items-center gap-1">
+                            <span>${currentAuthUser.username}</span>
+                            <span class="text-indigo-600 font-extrabold text-[11px]">(ID: #${currentAuthUser.id})</span>
+                        </span>
                     </button>
-                    <div class="hidden group-hover:block absolute right-0 top-full pt-1.5 w-48 z-50">
-                        <div class="bg-white rounded-2xl shadow-xl border border-slate-200 p-2.5 text-xs space-y-2">
-                            <div class="font-bold text-slate-900 border-b border-slate-100 pb-1.5">
-                                <div>👤 ${currentAuthUser.username}</div>
-                                <div class="text-[11px] text-slate-500 font-normal">Cấp độ: ${currentAuthUser.highest_level_code || 'A1'} - Bài ${currentAuthUser.highest_lesson_order || 1}</div>
+                    <div class="hidden group-hover:block absolute right-0 top-full pt-1.5 w-52 z-50">
+                        <div class="bg-white rounded-2xl shadow-xl border border-slate-200 p-3 text-xs space-y-2.5">
+                            <div class="font-bold text-slate-900 border-b border-slate-100 pb-2">
+                                <div class="flex items-center justify-between">
+                                    <span class="font-black text-sm text-slate-900">👤 ${currentAuthUser.username}</span>
+                                    <span class="px-2 py-0.5 rounded-md bg-indigo-100 text-indigo-700 font-mono text-[10px] font-extrabold">ID: #${currentAuthUser.id}</span>
+                                </div>
+                                <div class="text-[11px] text-slate-500 font-normal mt-0.5">Cấp độ: ${currentAuthUser.highest_level_code || 'A1'} - Bài ${currentAuthUser.highest_lesson_order || 1}</div>
                             </div>
-                            <div class="text-slate-600">
+                            <div class="text-slate-600 space-y-1">
+                                <div>⚡ Tổng tích luỹ: <b class="text-amber-600">${(currentAuthUser.total_exp || 0).toLocaleString('en-US')} EXP</b></div>
                                 <div>🏆 Kỷ lục: <b>${currentAuthUser.arena_best_score || 0}đ</b></div>
                                 <div>🎟️ Lượt hôm nay: <b>${rem}/2</b></div>
                             </div>
@@ -253,13 +272,14 @@ function renderAuthUserUI() {
             </div>
         `;
     } else {
+        const guestExp = (typeof window.userTotalExp === 'number') ? window.userTotalExp : (parseInt(localStorage.getItem('dm_guest_exp') || '0', 10));
         authContainer.innerHTML = `
             <div class="flex items-center gap-2 sm:gap-3">
                 <div class="px-2.5 sm:px-3 py-1.5 rounded-xl bg-orange-50 border border-orange-200 text-orange-700 text-xs sm:text-sm font-bold flex items-center gap-1">
                     🔥 <span id="user-streak">1</span> ngày
                 </div>
                 <div class="px-2.5 sm:px-3.5 py-1.5 rounded-xl bg-amber-50 border border-amber-200 text-amber-700 text-xs sm:text-sm font-extrabold flex items-center gap-1">
-                    ⚡ <span id="user-exp">0</span> EXP
+                    ⚡ <span id="user-exp">${guestExp.toLocaleString('en-US')}</span> EXP
                 </div>
                 <button onclick="openAuthModal('login')" class="px-3.5 py-2 rounded-xl bg-indigo-600 hover:bg-indigo-500 active:scale-95 text-white font-extrabold text-xs sm:text-sm shadow-sm transition flex items-center gap-1.5 cursor-pointer">
                     🔐 <span>Đăng nhập / Đua Top</span>
@@ -267,6 +287,9 @@ function renderAuthUserUI() {
             </div>
         `;
     }
+
+    updateArenaHeaderBadge();
+}
 
     updateArenaHeaderBadge();
 }
@@ -407,11 +430,24 @@ async function handleRegisterFormSubmit(e) {
         return;
     }
 
+    // Lấy EXP tích luỹ hiện tại và tiến độ của khách để kế thừa vĩnh viễn vào tài khoản mới
+    const currentExp = (typeof window.userTotalExp === 'number') ? window.userTotalExp : 0;
+    let guestProg = {};
+    try {
+        const rawP = localStorage.getItem('dm_lessons_progress_guest');
+        if (rawP) guestProg = JSON.parse(rawP);
+    } catch (err) {}
+
     try {
         const res = await fetch('/api/auth/register', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ username, password })
+            body: JSON.stringify({
+                username,
+                password,
+                initial_exp: currentExp,
+                guest_progress: guestProg
+            })
         });
         const data = await res.json();
         if (res.ok) {
@@ -419,10 +455,22 @@ async function handleRegisterFormSubmit(e) {
             if (data.token || (data.user && data.user.token)) {
                 localStorage.setItem('dm_auth_token', data.token || data.user.token);
             }
+            if (data.user && data.user.progress && typeof window.userLessonsProgress !== 'undefined') {
+                window.userLessonsProgress = Object.assign(window.userLessonsProgress || {}, data.user.progress);
+                if (typeof saveLocalLessonsProgress === 'function') saveLocalLessonsProgress();
+                if (typeof renderLessonList === 'function') renderLessonList();
+                if (typeof updateLessonProgressUI === 'function') updateLessonProgressUI();
+            }
             closeAuthModal();
             renderAuthUserUI();
             loadLeaderboardData();
-            alert(`🎉 Chúc mừng ${username}! Đăng ký thành công. Tài khoản của bạn đã được bảo lưu vĩnh viễn trên hệ thống.`);
+
+            const myId = (data.user && data.user.id) ? data.user.id : (data.user_id || '');
+            alert(`🎉 CHÚC MỪNG ${username} TẠO TÀI KHOẢN THÀNH CÔNG!\n\n` +
+                  `🔑 MÃ ID RIÊNG CỦA BẠN: #${myId}\n` +
+                  `👤 TÊN ĐĂNG NHẬP: ${username}\n` +
+                  `⚡ EXP ĐÃ BẢO LƯU: ${(data.user.total_exp || currentExp).toLocaleString('en-US')} EXP\n\n` +
+                  `📌 Hãy ghi nhớ Mã ID (#${myId}) hoặc Tên đăng nhập. Lần sau truy cập lại, bạn chỉ cần nhập Tên đăng nhập (hoặc Mã ID) + Mật khẩu là dữ liệu và tiến độ học sẽ được bảo lưu 100%!`);
         } else {
             errBox.innerText = data.error || "Đăng ký thất bại. Vui lòng thử lại!";
             errBox.classList.remove('hidden');
@@ -452,6 +500,12 @@ async function handleLoginFormSubmit(e) {
             if (data.token || (data.user && data.user.token)) {
                 localStorage.setItem('dm_auth_token', data.token || data.user.token);
             }
+            if (data.user && data.user.progress && typeof window.userLessonsProgress !== 'undefined') {
+                window.userLessonsProgress = Object.assign(window.userLessonsProgress || {}, data.user.progress);
+                if (typeof saveLocalLessonsProgress === 'function') saveLocalLessonsProgress();
+                if (typeof renderLessonList === 'function') renderLessonList();
+                if (typeof updateLessonProgressUI === 'function') updateLessonProgressUI();
+            }
             closeAuthModal();
             renderAuthUserUI();
             loadLeaderboardData();
@@ -470,6 +524,10 @@ async function handleUserLogout() {
         localStorage.removeItem('dm_auth_token');
         await fetch('/api/auth/logout', { method: 'POST' });
         currentAuthUser = null;
+        if (typeof window.userLessonsProgress !== 'undefined') {
+            window.userLessonsProgress = {};
+            if (typeof loadLessonsProgress === 'function') loadLessonsProgress();
+        }
         renderAuthUserUI();
         initArenaLobbyScreen();
         loadLeaderboardData();

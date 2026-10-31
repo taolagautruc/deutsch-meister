@@ -212,12 +212,56 @@
                         </div>
                         <div id="vocab-grid" class="grid grid-cols-1 md:grid-cols-3 gap-4"></div>
                     </div>
+
+                    <!-- KHỐI HOÀN THÀNH LÝ THUYẾT & NÚT TIẾP THEO -->
+                    <div id="theory-completion-card" class="bg-gradient-to-r from-indigo-50 via-white to-emerald-50 border-2 border-indigo-200/80 rounded-3xl p-6 shadow-sm flex flex-col sm:flex-row items-center justify-between gap-4">
+                        <div class="flex items-center gap-3.5">
+                            <div id="theory-status-icon" class="w-12 h-12 rounded-2xl bg-indigo-100 text-indigo-700 text-2xl flex items-center justify-center shrink-0 shadow-inner">
+                                📖
+                            </div>
+                            <div>
+                                <h4 class="font-extrabold text-slate-900 text-base flex items-center gap-2">
+                                    <span>Nắm Vững Toàn Bộ Lý Thuyết Bài Học?</span>
+                                    <span id="theory-status-badge" class="px-2.5 py-0.5 rounded-full text-xs font-extrabold bg-slate-200 text-slate-700">Chưa xong</span>
+                                </h4>
+                                <p class="text-xs text-slate-600 mt-1 leading-relaxed">
+                                    Nhấn nút bên cạnh để xác nhận đã học xong lý thuyết và tiếp tục sang phần bài tập thực hành!
+                                </p>
+                            </div>
+                        </div>
+                        <button id="btn-next-to-exercises" onclick="handleCompleteTheoryAndNext()" class="w-full sm:w-auto px-6 py-3.5 rounded-2xl bg-indigo-600 hover:bg-indigo-500 active:scale-95 text-white font-extrabold text-sm shadow-md transition flex items-center justify-center gap-2 cursor-pointer shrink-0">
+                            <span>Đã học xong lý thuyết • Tiếp theo</span>
+                            <span class="text-base">➡️</span>
+                        </button>
+                    </div>
                 </div>
             </div>
 
             <!-- PHÂN KHU 2: HỆ THỐNG 7 DẠNG BÀI TẬP -->
             <div id="subview-exercises" class="hidden space-y-6">
                 <div class="bg-white border border-slate-200 rounded-3xl p-6 shadow-sm space-y-6">
+                    <!-- THANH TIẾN ĐỘ BÀI TẬP (MỤC TIÊU 100%) -->
+                    <div id="practice-progress-card" class="p-4 sm:p-5 rounded-2xl bg-gradient-to-r from-slate-50 to-indigo-50/50 border border-slate-200 shadow-xs flex flex-wrap items-center justify-between gap-3">
+                        <div class="flex items-center gap-3">
+                            <div id="practice-progress-icon" class="w-11 h-11 rounded-2xl bg-amber-100 text-amber-700 flex items-center justify-center font-bold text-xl shrink-0 shadow-inner">
+                                ✍️
+                            </div>
+                            <div>
+                                <div class="flex items-center gap-2">
+                                    <span class="font-black text-sm text-slate-900">Tiến Độ Bài Tập:</span>
+                                    <span id="practice-progress-text" class="text-xs font-black text-indigo-700 font-mono">0/50 câu đúng (0%)</span>
+                                    <span id="practice-completion-badge" class="hidden px-2.5 py-0.5 rounded-full bg-emerald-600 text-white text-[11px] font-black shadow-xs">✅ ĐÃ ĐẠT 100%</span>
+                                </div>
+                                <div class="w-56 sm:w-80 h-2.5 bg-slate-200 rounded-full overflow-hidden mt-2 border border-slate-300/60">
+                                    <div id="practice-progress-bar" class="h-full bg-amber-500 rounded-full transition-all duration-300" style="width: 0%"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="practice-target-note" class="text-xs text-slate-600 flex items-center gap-1.5 font-medium">
+                            <span>🎯</span> <span>Yêu cầu: <b>Làm đúng đủ 100% các câu</b> để được công nhận hoàn thành bài tập.</span>
+                        </div>
+                    </div>
+
                     <div class="flex flex-wrap items-center justify-between gap-4 border-b border-slate-100 pb-4">
                         <div>
                             <div class="flex items-center gap-2">
@@ -405,9 +449,46 @@
 
         let currentLevelData = null;
         let currentLesson = null;
+        let currentLessonIndex = 0;
+        let userLessonsProgress = {}; // key: lesson_id -> { studied_theory, practice_completed, best_practice_score, correct_exercises }
         let currentFilterType = 'all';
         let activeInputId = null;
         let userTotalExp = 1450;
+
+        function getProgressStorageKey() {
+            const uid = (window.currentAuthUser && window.currentAuthUser.id) ? window.currentAuthUser.id : 'guest';
+            return 'dm_lessons_progress_' + uid;
+        }
+
+        function saveLocalLessonsProgress() {
+            try {
+                localStorage.setItem(getProgressStorageKey(), JSON.stringify(userLessonsProgress));
+            } catch (e) {}
+        }
+
+        async function loadLessonsProgress() {
+            try {
+                const raw = localStorage.getItem(getProgressStorageKey());
+                if (raw) {
+                    const parsed = JSON.parse(raw);
+                    if (parsed && typeof parsed === 'object') {
+                        userLessonsProgress = Object.assign(userLessonsProgress, parsed);
+                    }
+                }
+            } catch (e) {}
+
+            try {
+                const res = await fetch('/api/progress/all');
+                const data = await res.json();
+                if (data && data.progress) {
+                    userLessonsProgress = Object.assign(userLessonsProgress, data.progress);
+                    saveLocalLessonsProgress();
+                }
+            } catch (e) {}
+
+            renderLessonList();
+            updateLessonProgressUI();
+        }
 
         // Hệ thống phát âm chuẩn tiếng Đức với khóa giọng de-DE và Bảng ánh xạ
         const INLINE_GERMAN_MAP = {
@@ -554,8 +635,12 @@
             if (window.currentAuthUser && window.currentAuthUser.total_exp !== undefined) {
                 userTotalExp = Number(rawExp !== undefined ? rawExp : window.currentAuthUser.total_exp);
             } else {
-                userTotalExp = Number(rawExp !== undefined ? rawExp : 0);
+                userTotalExp = Number(rawExp !== undefined ? rawExp : (parseInt(localStorage.getItem('dm_guest_exp') || '0', 10)));
+                try {
+                    localStorage.setItem('dm_guest_exp', String(userTotalExp));
+                } catch (e) {}
             }
+            window.userTotalExp = userTotalExp;
             const userExpEl = document.getElementById('user-exp');
             if (userExpEl) userExpEl.innerText = userTotalExp.toLocaleString('en-US');
             const heroExpEl = document.getElementById('hero-exp');
@@ -634,22 +719,177 @@
             document.getElementById('ws-title').innerText = m.subTitle;
 
             const lessonList = document.getElementById('lesson-list');
-            if (currentLevelData.lessons.length === 0) {
+            if (!currentLevelData.lessons || currentLevelData.lessons.length === 0) {
                 lessonList.innerHTML = `<p class="text-sm text-slate-500 p-3 bg-slate-50 rounded-2xl">Chưa có bài học nào ở cấp độ ${code}. Hãy gửi tài liệu để nạp vào cơ sở dữ liệu!</p>`;
                 document.getElementById('current-lesson-title').innerText = `Cấp độ ${code} (Đang chờ tài liệu của bạn)`;
                 document.getElementById('current-lesson-grammar').innerHTML = "Nội dung lý thuyết và bài tập của cấp độ này đang được chuẩn bị.";
                 document.getElementById('vocab-grid').innerHTML = "";
                 document.getElementById('exercises-container').innerHTML = "";
             } else {
-                lessonList.innerHTML = currentLevelData.lessons.map((ls, idx) => `
-                    <button id="lesson-btn-${idx}" onclick="selectLesson(${idx})" class="w-full text-left px-4 py-3 rounded-2xl bg-white hover:bg-indigo-50 border border-slate-200 text-slate-800 text-sm font-bold transition flex items-center justify-between group">
-                        <span class="truncate pr-2">${ls.title}</span>
-                        <span class="text-[11px] px-2 py-0.5 rounded-lg bg-indigo-50 text-indigo-700 font-extrabold shrink-0 border border-indigo-200">50 câu</span>
-                    </button>
-                `).join('');
+                await loadLessonsProgress();
                 selectLesson(0);
             }
             switchMainView('workspace');
+        }
+
+        function renderLessonList() {
+            const lessonList = document.getElementById('lesson-list');
+            if (!lessonList || !currentLevelData || !currentLevelData.lessons) return;
+
+            lessonList.innerHTML = currentLevelData.lessons.map((ls, idx) => {
+                const p = userLessonsProgress[ls.id] || {};
+                const isTheoryDone = Boolean(p.studied_theory);
+                const correctCount = Array.isArray(p.correct_exercises) ? p.correct_exercises.length : (p.best_practice_score || 0);
+                const totalExercises = (ls.exercises && ls.exercises.length) ? ls.exercises.length : 50;
+                const isPracticeDone = Boolean(p.practice_completed) || (correctCount >= totalExercises && totalExercises > 0);
+                const isAllDone = isTheoryDone && isPracticeDone;
+                const isSelected = (idx === currentLessonIndex);
+
+                let btnClass = "";
+                let badgeHtml = "";
+                let titlePrefix = "";
+
+                if (isAllDone) {
+                    // HOÀN THÀNH 100% CẢ LÝ THUYẾT VÀ BÀI TẬP -> TÔ MÀU XANH LÁ VÀ ĐÁNH DẤU HOÀN THÀNH
+                    titlePrefix = `<span class="text-emerald-300 font-extrabold mr-1 shrink-0">✅</span>`;
+                    if (isSelected) {
+                        btnClass = "w-full text-left px-4 py-3 rounded-2xl bg-emerald-600 text-white shadow-lg border-2 border-emerald-400 text-sm font-bold transition flex items-center justify-between";
+                        badgeHtml = `<span class="text-[11px] px-2 py-0.5 rounded-lg bg-emerald-800 text-emerald-100 font-extrabold shrink-0 border border-emerald-400">✅ Đã xong</span>`;
+                    } else {
+                        btnClass = "w-full text-left px-4 py-3 rounded-2xl bg-emerald-50 hover:bg-emerald-100/90 border-2 border-emerald-400/90 text-emerald-950 text-sm font-bold transition flex items-center justify-between group shadow-xs";
+                        badgeHtml = `<span class="text-[11px] px-2 py-0.5 rounded-lg bg-emerald-600 text-white font-extrabold shrink-0 border border-emerald-500 shadow-xs">✅ Đã xong</span>`;
+                    }
+                } else if (isTheoryDone) {
+                    // Đã xong Lý thuyết, Bài tập chưa đủ 100%
+                    titlePrefix = `<span class="text-amber-500 font-extrabold mr-1 shrink-0">📖</span>`;
+                    if (isSelected) {
+                        btnClass = "w-full text-left px-4 py-3 rounded-2xl bg-indigo-600 text-white shadow-md border border-indigo-600 text-sm font-bold transition flex items-center justify-between";
+                        badgeHtml = `<span class="text-[11px] px-2 py-0.5 rounded-lg bg-white/20 text-white font-extrabold shrink-0 border border-white/30">📖 Xong LT • BT: ${correctCount}/${totalExercises}</span>`;
+                    } else {
+                        btnClass = "w-full text-left px-4 py-3 rounded-2xl bg-amber-50/40 hover:bg-amber-100/60 border border-amber-300 text-slate-800 text-sm font-bold transition flex items-center justify-between group";
+                        badgeHtml = `<span class="text-[11px] px-2 py-0.5 rounded-lg bg-amber-100 text-amber-800 font-extrabold shrink-0 border border-amber-200">📖 Xong LT • BT: ${correctCount}/${totalExercises}</span>`;
+                    }
+                } else {
+                    // Chưa hoàn thành
+                    if (isSelected) {
+                        btnClass = "w-full text-left px-4 py-3 rounded-2xl bg-indigo-600 text-white shadow-md border border-indigo-600 text-sm font-bold transition flex items-center justify-between";
+                        badgeHtml = `<span class="text-[11px] px-2 py-0.5 rounded-lg bg-white/20 text-white font-extrabold shrink-0 border border-white/30">${totalExercises} câu</span>`;
+                    } else {
+                        btnClass = "w-full text-left px-4 py-3 rounded-2xl bg-white hover:bg-indigo-50 border border-slate-200 text-slate-800 text-sm font-bold transition flex items-center justify-between group";
+                        badgeHtml = `<span class="text-[11px] px-2 py-0.5 rounded-lg bg-indigo-50 text-indigo-700 font-extrabold shrink-0 border border-indigo-200">${totalExercises} câu</span>`;
+                    }
+                }
+
+                return `
+                    <button id="lesson-btn-${idx}" onclick="selectLesson(${idx})" class="${btnClass}">
+                        <span class="truncate pr-2 flex items-center">${titlePrefix}<span>${ls.title}</span></span>
+                        ${badgeHtml}
+                    </button>
+                `;
+            }).join('');
+        }
+
+        function updateLessonProgressUI() {
+            if (!currentLesson) return;
+            const lId = currentLesson.id;
+            const p = userLessonsProgress[lId] || {};
+            const isTheoryDone = Boolean(p.studied_theory);
+            const correctCount = Array.isArray(p.correct_exercises) ? p.correct_exercises.length : (p.best_practice_score || 0);
+            const totalExercises = (currentLesson.exercises && currentLesson.exercises.length) ? currentLesson.exercises.length : 50;
+            const isPracticeDone = Boolean(p.practice_completed) || (correctCount >= totalExercises && totalExercises > 0);
+            const isAllDone = isTheoryDone && isPracticeDone;
+
+            // Cập nhật tiêu đề bài học
+            const titleEl = document.getElementById('current-lesson-title');
+            if (titleEl) {
+                if (isAllDone) {
+                    titleEl.innerHTML = `<span>${currentLesson.title}</span> <span class="ml-2 inline-flex items-center gap-1 px-3 py-1 rounded-full bg-emerald-600 text-white text-xs font-black shadow-xs tracking-wide">🏆 ĐÃ HOÀN THÀNH 100% (LÝ THUYẾT & BÀI TẬP)</span>`;
+                } else if (isTheoryDone) {
+                    titleEl.innerHTML = `<span>${currentLesson.title}</span> <span class="ml-2 inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-amber-100 text-amber-800 text-xs font-bold border border-amber-300">📖 Đã học Lý thuyết • Bài tập: ${correctCount}/${totalExercises}</span>`;
+                } else {
+                    titleEl.innerText = currentLesson.title;
+                }
+            }
+
+            // Cập nhật khối hoàn thành lý thuyết
+            const thBadge = document.getElementById('theory-status-badge');
+            const thIcon = document.getElementById('theory-status-icon');
+            const thBtn = document.getElementById('btn-next-to-exercises');
+            if (thBadge) {
+                if (isTheoryDone) {
+                    thBadge.className = "px-2.5 py-0.5 rounded-full text-xs font-black bg-emerald-600 text-white shadow-xs";
+                    thBadge.innerText = "✅ ĐÃ HOÀN THÀNH";
+                } else {
+                    thBadge.className = "px-2.5 py-0.5 rounded-full text-xs font-extrabold bg-slate-200 text-slate-700";
+                    thBadge.innerText = "Chưa hoàn thành";
+                }
+            }
+            if (thIcon) {
+                thIcon.className = isTheoryDone
+                    ? "w-12 h-12 rounded-2xl bg-emerald-100 text-emerald-700 text-2xl flex items-center justify-center shrink-0 shadow-inner"
+                    : "w-12 h-12 rounded-2xl bg-indigo-100 text-indigo-700 text-2xl flex items-center justify-center shrink-0 shadow-inner";
+            }
+            if (thBtn) {
+                thBtn.innerHTML = isTheoryDone
+                    ? `<span>Lý thuyết đã xong • Tiếp tục làm bài tập</span> <span class="text-base">➡️</span>`
+                    : `<span>Đã học xong lý thuyết • Tiếp theo</span> <span class="text-base">➡️</span>`;
+            }
+
+            // Cập nhật thanh tiến độ bài tập
+            const pct = Math.min(100, Math.round((correctCount / totalExercises) * 100));
+            const prgText = document.getElementById('practice-progress-text');
+            const prgBar = document.getElementById('practice-progress-bar');
+            const prgBadge = document.getElementById('practice-completion-badge');
+            const prgIcon = document.getElementById('practice-progress-icon');
+
+            if (prgText) prgText.innerText = `${correctCount}/${totalExercises} câu đúng (${pct}%)`;
+            if (prgBar) {
+                prgBar.style.width = `${pct}%`;
+                prgBar.className = isPracticeDone
+                    ? "h-full bg-emerald-500 rounded-full transition-all duration-300"
+                    : "h-full bg-amber-500 rounded-full transition-all duration-300";
+            }
+            if (prgBadge) {
+                prgBadge.classList.toggle('hidden', !isPracticeDone);
+            }
+            if (prgIcon) {
+                prgIcon.className = isPracticeDone
+                    ? "w-11 h-11 rounded-2xl bg-emerald-100 text-emerald-700 flex items-center justify-center font-bold text-xl shrink-0 shadow-inner"
+                    : "w-11 h-11 rounded-2xl bg-amber-100 text-amber-700 flex items-center justify-center font-bold text-xl shrink-0 shadow-inner";
+                prgIcon.innerText = isPracticeDone ? "🏆" : "✍️";
+            }
+        }
+
+        async function handleCompleteTheoryAndNext() {
+            if (!currentLesson) return;
+            const lId = currentLesson.id;
+            if (!userLessonsProgress[lId]) {
+                userLessonsProgress[lId] = {
+                    lesson_id: lId,
+                    studied_theory: true,
+                    practice_completed: false,
+                    correct_exercises: [],
+                    best_practice_score: 0
+                };
+            }
+            userLessonsProgress[lId].studied_theory = true;
+            saveLocalLessonsProgress();
+
+            try {
+                fetch('/api/progress/complete-theory', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        lesson_id: lId,
+                        level_code: (currentLevelData && currentLevelData.level && currentLevelData.level.code) ? currentLevelData.level.code : 'A1',
+                        lesson_order: currentLessonIndex + 1
+                    })
+                });
+            } catch (e) {}
+
+            renderLessonList();
+            updateLessonProgressUI();
+            switchSubTab('exercises');
         }
 
         let currentVocabFilter = 'all';
@@ -774,27 +1014,12 @@
         }
 
         function selectLesson(index) {
+            currentLessonIndex = index;
             currentLesson = currentLevelData.lessons[index];
-            document.getElementById('current-lesson-title').innerText = currentLesson.title;
             document.getElementById('current-lesson-grammar').innerHTML = currentLesson.grammar_content;
 
-            // Cập nhật trạng thái active trên danh sách bài học
-            if (currentLevelData && currentLevelData.lessons) {
-                currentLevelData.lessons.forEach((_, idx) => {
-                    const btn = document.getElementById(`lesson-btn-${idx}`);
-                    if (btn) {
-                        if (idx === index) {
-                            btn.className = "w-full text-left px-4 py-3 rounded-2xl bg-indigo-600 text-white shadow-md border border-indigo-600 text-sm font-bold transition flex items-center justify-between";
-                            const badge = btn.querySelector('span:last-child');
-                            if (badge) badge.className = "text-[11px] px-2 py-0.5 rounded-lg bg-white/20 text-white font-extrabold shrink-0 border border-white/30";
-                        } else {
-                            btn.className = "w-full text-left px-4 py-3 rounded-2xl bg-white hover:bg-indigo-50 border border-slate-200 text-slate-800 text-sm font-bold transition flex items-center justify-between group";
-                            const badge = btn.querySelector('span:last-child');
-                            if (badge) badge.className = "text-[11px] px-2 py-0.5 rounded-lg bg-indigo-50 text-indigo-700 font-extrabold shrink-0 border border-indigo-200";
-                        }
-                    }
-                });
-            }
+            renderLessonList();
+            updateLessonProgressUI();
 
             currentVocabFilter = 'all';
             renderVocabularies();
@@ -816,8 +1041,9 @@
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify({
-                        level_code: (currentLevelData && currentLevelData.code) ? currentLevelData.code : 'A1',
-                        lesson_order: (index + 1)
+                        level_code: (currentLevelData && currentLevelData.level && currentLevelData.level.code) ? currentLevelData.level.code : 'A1',
+                        lesson_order: (index + 1),
+                        lesson_id: currentLesson.id
                     })
                 }).catch(() => {});
             }
@@ -1149,6 +1375,49 @@
                     </div>
                 `;
                 await addExpToDatabase(ex.exp_reward);
+
+                if (currentLesson) {
+                    const lId = currentLesson.id;
+                    if (!userLessonsProgress[lId]) {
+                        userLessonsProgress[lId] = {
+                            lesson_id: lId,
+                            studied_theory: false,
+                            practice_completed: false,
+                            correct_exercises: [],
+                            best_practice_score: 0
+                        };
+                    }
+                    if (!Array.isArray(userLessonsProgress[lId].correct_exercises)) {
+                        userLessonsProgress[lId].correct_exercises = [];
+                    }
+                    if (!userLessonsProgress[lId].correct_exercises.includes(index)) {
+                        userLessonsProgress[lId].correct_exercises.push(index);
+                    }
+                    const totalEx = (currentLesson.exercises && currentLesson.exercises.length) ? currentLesson.exercises.length : 50;
+                    if (userLessonsProgress[lId].correct_exercises.length >= totalEx) {
+                        userLessonsProgress[lId].practice_completed = true;
+                    }
+                    userLessonsProgress[lId].best_practice_score = userLessonsProgress[lId].correct_exercises.length;
+                    saveLocalLessonsProgress();
+
+                    try {
+                        fetch('/api/progress/record-exercise', {
+                            method: 'POST',
+                            headers: { 'Content-Type': 'application/json' },
+                            body: JSON.stringify({
+                                lesson_id: lId,
+                                level_code: (currentLevelData && currentLevelData.level && currentLevelData.level.code) ? currentLevelData.level.code : 'A1',
+                                lesson_order: currentLessonIndex + 1,
+                                exercise_index: index,
+                                total_exercises: totalEx,
+                                is_correct: true
+                            })
+                        });
+                    } catch (e) {}
+
+                    updateLessonProgressUI();
+                    renderLessonList();
+                }
             } else {
                 feedback.className = "text-xs p-3.5 rounded-xl mt-2 bg-rose-50 text-rose-800 border border-rose-200";
                 const displayAns = String(ex.correct_answer || '').trim().replace(/[.]+$/, '');
@@ -1273,8 +1542,8 @@
             <form id="auth-form-login" onsubmit="handleLoginFormSubmit(event)" class="space-y-4">
                 <div id="login-error-box" class="p-3 rounded-xl bg-rose-50 border border-rose-200 text-rose-700 text-xs font-semibold hidden"></div>
                 <div>
-                    <label class="block text-xs font-bold text-slate-700 mb-1">Tên tài khoản (Username):</label>
-                    <input type="text" id="login-username" required placeholder="Nhập tên tài khoản..." class="w-full px-4 py-2.5 rounded-xl border border-slate-200 text-sm focus:outline-none focus:border-indigo-600">
+                    <label class="block text-xs font-bold text-slate-700 mb-1">Tên tài khoản hoặc Mã ID (Username hoặc User ID):</label>
+                    <input type="text" id="login-username" required placeholder="Nhập username hoặc mã số ID (VD: taolagautruc hoặc #5)..." class="w-full px-4 py-2.5 rounded-xl border border-slate-200 text-sm focus:outline-none focus:border-indigo-600">
                 </div>
                 <div>
                     <label class="block text-xs font-bold text-slate-700 mb-1">Mật khẩu:</label>

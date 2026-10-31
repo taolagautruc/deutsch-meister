@@ -63,6 +63,13 @@ def ensure_db_initialized():
             cursor.execute("ALTER TABLE users ADD COLUMN updated_at TIMESTAMP;")
             conn.commit()
 
+        # Đảm bảo bảng user_studied_lessons có cột correct_exercises
+        cursor.execute("PRAGMA table_info(user_studied_lessons);")
+        usl_cols = [col["name"] for col in cursor.fetchall()]
+        if "correct_exercises" not in usl_cols:
+            cursor.execute("ALTER TABLE user_studied_lessons ADD COLUMN correct_exercises TEXT DEFAULT '[]';")
+            conn.commit()
+
         cursor.execute("SELECT COUNT(*) as cnt FROM lessons WHERE title LIKE 'Bài 1 (P1)%';")
         if cursor.fetchone()["cnt"] == 0:
             from lessons.a1.seed_a1_b1_p1 import seed_lesson_1_part_1
@@ -204,6 +211,38 @@ def add_exp():
 # HỆ THỐNG ĐĂNG KÝ / ĐĂNG NHẬP / TIẾN ĐỘ & ĐẤU TRƯỜNG PHẢN XẠ 2 PHÚT (API)
 # =============================================================================
 
+def get_user_progress_dict(uid):
+    """Lấy từ điển tiến độ học tập chi tiết của từng bài học cho user"""
+    if not uid:
+        return {}
+    conn = get_connection()
+    c = conn.cursor()
+    c.execute("""
+        SELECT lesson_id, studied_theory, practice_completed, best_practice_score, correct_exercises
+        FROM user_studied_lessons
+        WHERE user_id = ?;
+    """, (uid,))
+    res = {}
+    for r in c.fetchall():
+        corr = []
+        if r["correct_exercises"]:
+            try:
+                corr = json.loads(r["correct_exercises"])
+            except Exception:
+                corr = []
+        th = bool(r["studied_theory"])
+        pr = bool(r["practice_completed"])
+        res[str(r["lesson_id"])] = {
+            "lesson_id": r["lesson_id"],
+            "studied_theory": th,
+            "practice_completed": pr,
+            "best_practice_score": r["best_practice_score"] or 0,
+            "correct_exercises": corr,
+            "all_completed": th and pr
+        }
+    conn.close()
+    return res
+
 @app.route("/api/auth/check-username", methods=["GET"])
 def check_username():
     """Kiểm tra tính hợp lệ & kiểm tra trùng tên không phân biệt hoa thường"""
@@ -229,10 +268,13 @@ def check_username():
 
 @app.route("/api/auth/register", methods=["POST"])
 def register():
-    """Đăng ký tài khoản cạnh tranh mới"""
+    """Đăng ký tài khoản cạnh tranh mới với mã ID riêng vĩnh viễn và kế thừa EXP tích luỹ"""
     data = request.get_json() or {}
     username = data.get("username", "").strip()
     password = data.get("password", "")
+    initial_exp = int(data.get("initial_exp", 0) or 0)
+    if initial_exp < 0:
+        initial_exp = 0
 
     if len(username) < 4 or len(username) > 24:
         return jsonify({"error": "Tên tài khoản phải từ 4 đến 24 ký tự!"}), 400
@@ -255,8 +297,8 @@ def register():
     auth_token = str(uuid.uuid4())
     c.execute("""
         INSERT INTO users (username, password_hash, token, highest_level_code, highest_lesson_order, total_exp, arena_best_score, arena_total_games, streak_days, last_active_date)
-        VALUES (?, ?, ?, 'A1', 1, 0, 0, 0, 1, ?);
-    """, (username, pwd_hash, auth_token, today))
+        VALUES (?, ?, ?, 'A1', 1, ?, 0, 0, 1, ?);
+    """, (username, pwd_hash, auth_token, initial_exp, today))
     user_id = c.lastrowid
 
     # Đánh dấu mặc định bài đầu tiên đã học
@@ -264,6 +306,30 @@ def register():
         INSERT OR IGNORE INTO user_studied_lessons (user_id, lesson_id, level_code, lesson_order, studied_theory)
         VALUES (?, 14, 'A1', 1, 1);
     """, (user_id,))
+
+    # Kế thừa tiến độ khách (nếu có lưu từ trước khi đăng ký)
+    guest_progress = data.get("guest_progress") or {}
+    if isinstance(guest_progress, dict):
+        for l_id_str, l_data in guest_progress.items():
+            try:
+                l_id = int(l_id_str)
+                th = 1 if l_data.get("studied_theory") else 0
+                pr = 1 if l_data.get("practice_completed") else 0
+                corr_list = l_data.get("correct_exercises") or []
+                sc = int(l_data.get("best_practice_score") or len(corr_list))
+                corr_json = json.dumps(corr_list)
+                c.execute("""
+                    INSERT INTO user_studied_lessons (user_id, lesson_id, level_code, lesson_order, studied_theory, practice_completed, best_practice_score, correct_exercises)
+                    VALUES (?, ?, 'A1', 1, ?, ?, ?, ?)
+                    ON CONFLICT(user_id, lesson_id) DO UPDATE SET
+                        studied_theory = MAX(studied_theory, ?),
+                        practice_completed = MAX(practice_completed, ?),
+                        best_practice_score = MAX(best_practice_score, ?),
+                        correct_exercises = ?;
+                """, (user_id, l_id, th, pr, sc, corr_json, th, pr, sc, corr_json))
+            except Exception:
+                pass
+
     conn.commit()
 
     c.execute("SELECT id, username, highest_level_code, highest_lesson_order, total_exp, arena_best_score, arena_total_games, streak_days FROM users WHERE id = ?;", (user_id,))
@@ -276,26 +342,36 @@ def register():
     user_dict["studied_lessons"] = [14]
     user_dict["arena_attempts_today"] = 0
     user_dict["arena_remaining_today"] = 2
+    user_dict["progress"] = get_user_progress_dict(user_id)
 
-    return jsonify({"message": f"Chào mừng {username}! Đăng ký thành công.", "user": user_dict, "token": auth_token})
+    return jsonify({
+        "message": f"Chúc mừng {username}! Tạo tài khoản thành công. Mã ID riêng của bạn là #{user_id}.",
+        "user": user_dict,
+        "token": auth_token,
+        "user_id": user_id
+    })
 
 @app.route("/api/auth/login", methods=["POST"])
 def login():
-    """Đăng nhập tài khoản thi đua"""
+    """Đăng nhập tài khoản bằng Tên tài khoản (Username) HOẶC Mã ID số (#id)"""
     data = request.get_json() or {}
-    username = data.get("username", "").strip()
+    raw_ident = data.get("username", "").strip()
     password = data.get("password", "")
 
-    if not username or not password:
-        return jsonify({"error": "Vui lòng nhập đầy đủ tên tài khoản và mật khẩu!"}), 400
+    if not raw_ident or not password:
+        return jsonify({"error": "Vui lòng nhập đầy đủ tên tài khoản / ID và mật khẩu!"}), 400
 
+    clean_id = raw_ident.lstrip("#")
     conn = get_connection()
     c = conn.cursor()
-    c.execute("SELECT * FROM users WHERE LOWER(username) = LOWER(?);", (username,))
+    if clean_id.isdigit():
+        c.execute("SELECT * FROM users WHERE id = ? OR LOWER(username) = LOWER(?);", (int(clean_id), raw_ident))
+    else:
+        c.execute("SELECT * FROM users WHERE LOWER(username) = LOWER(?);", (raw_ident,))
     row = c.fetchone()
     if not row or not check_password_hash(row["password_hash"], password):
         conn.close()
-        return jsonify({"error": "Tên tài khoản hoặc mật khẩu không chính xác!"}), 401
+        return jsonify({"error": "Tên tài khoản (hoặc ID) hoặc mật khẩu không chính xác!"}), 401
 
     user_dict = dict(row)
     user_dict.pop("password_hash", None)
@@ -320,8 +396,13 @@ def login():
 
     user_dict["arena_attempts_today"] = used
     user_dict["arena_remaining_today"] = max(0, 2 - used)
+    user_dict["progress"] = get_user_progress_dict(user_dict["id"])
 
-    return jsonify({"message": f"Đăng nhập thành công! Chào {user_dict['username']}.", "user": user_dict, "token": auth_token})
+    return jsonify({
+        "message": f"Đăng nhập thành công! Chào {user_dict['username']} (ID: #{user_dict['id']}).",
+        "user": user_dict,
+        "token": auth_token
+    })
 
 @app.route("/api/auth/restore-session", methods=["POST"])
 def restore_session():
@@ -356,6 +437,7 @@ def restore_session():
 
     user_dict["arena_attempts_today"] = used
     user_dict["arena_remaining_today"] = max(0, 2 - used)
+    user_dict["progress"] = get_user_progress_dict(user_dict["id"])
 
     return jsonify({"logged_in": True, "user": user_dict, "token": token})
 
@@ -367,7 +449,7 @@ def logout():
 
 @app.route("/api/auth/me", methods=["GET"])
 def get_me():
-    """Lấy thông tin người dùng hiện tại"""
+    """Lấy thông tin người dùng hiện tại kèm toàn bộ tiến độ học tập"""
     uid = session.get("user_id")
     if not uid:
         return jsonify({"logged_in": False, "user": None})
@@ -392,8 +474,17 @@ def get_me():
 
     user_dict["arena_attempts_today"] = used
     user_dict["arena_remaining_today"] = max(0, 2 - used)
+    user_dict["progress"] = get_user_progress_dict(uid)
 
     return jsonify({"logged_in": True, "user": user_dict})
+
+@app.route("/api/progress/all", methods=["GET"])
+def get_all_progress():
+    """Lấy toàn bộ tiến độ học tập của các bài học"""
+    uid = session.get("user_id")
+    if not uid:
+        return jsonify({"logged_in": False, "progress": {}})
+    return jsonify({"logged_in": True, "progress": get_user_progress_dict(uid)})
 
 @app.route("/api/progress/mark-studied", methods=["POST"])
 def mark_studied():
@@ -421,6 +512,110 @@ def mark_studied():
         """, (lesson_order, level_code, uid))
         conn.commit()
         conn.close()
+
+    return jsonify({"success": True, "lesson_id": lesson_id, "lesson_order": lesson_order})
+
+@app.route("/api/progress/complete-theory", methods=["POST"])
+def complete_theory():
+    """Đánh dấu người dùng đã hoàn thành phần lý thuyết của bài học"""
+    data = request.get_json() or {}
+    lesson_id = int(data.get("lesson_id", 14))
+    level_code = data.get("level_code", "A1")
+    lesson_order = int(data.get("lesson_order", 1))
+
+    uid = session.get("user_id")
+    if uid:
+        conn = get_connection()
+        c = conn.cursor()
+        c.execute("""
+            INSERT INTO user_studied_lessons (user_id, lesson_id, level_code, lesson_order, studied_theory, last_studied_at)
+            VALUES (?, ?, ?, ?, 1, CURRENT_TIMESTAMP)
+            ON CONFLICT(user_id, lesson_id) DO UPDATE SET studied_theory = 1, last_studied_at = CURRENT_TIMESTAMP;
+        """, (uid, lesson_id, level_code, lesson_order))
+        conn.commit()
+        conn.close()
+
+    progress = get_user_progress_dict(uid) if uid else {}
+    return jsonify({
+        "success": True,
+        "lesson_id": lesson_id,
+        "studied_theory": True,
+        "progress": progress
+    })
+
+@app.route("/api/progress/record-exercise", methods=["POST"])
+def record_exercise():
+    """Ghi nhận câu làm đúng trong bài tập và kiểm tra hoàn thành 100%"""
+    data = request.get_json() or {}
+    lesson_id = int(data.get("lesson_id", 14))
+    level_code = data.get("level_code", "A1")
+    lesson_order = int(data.get("lesson_order", 1))
+    exercise_index = int(data.get("exercise_index", 0))
+    total_exercises = int(data.get("total_exercises", 50))
+    is_correct = bool(data.get("is_correct", False))
+
+    uid = session.get("user_id")
+    if not uid:
+        return jsonify({
+            "success": True,
+            "logged_in": False,
+            "lesson_id": lesson_id,
+            "exercise_index": exercise_index,
+            "is_correct": is_correct
+        })
+
+    conn = get_connection()
+    c = conn.cursor()
+    c.execute("""
+        SELECT studied_theory, practice_completed, best_practice_score, correct_exercises
+        FROM user_studied_lessons
+        WHERE user_id = ? AND lesson_id = ?;
+    """, (uid, lesson_id))
+    row = c.fetchone()
+
+    studied_theory = 0
+    practice_completed = 0
+    correct_list = []
+
+    if row:
+        studied_theory = row["studied_theory"] or 0
+        practice_completed = row["practice_completed"] or 0
+        if row["correct_exercises"]:
+            try:
+                correct_list = json.loads(row["correct_exercises"])
+            except Exception:
+                correct_list = []
+
+    if is_correct and exercise_index not in correct_list:
+        correct_list.append(exercise_index)
+
+    if len(correct_list) >= total_exercises:
+        practice_completed = 1
+
+    score = len(correct_list)
+    correct_json = json.dumps(correct_list)
+
+    c.execute("""
+        INSERT INTO user_studied_lessons (user_id, lesson_id, level_code, lesson_order, studied_theory, practice_completed, best_practice_score, correct_exercises, last_studied_at)
+        VALUES (?, ?, ?, ?, ?, ?, ?, ?, CURRENT_TIMESTAMP)
+        ON CONFLICT(user_id, lesson_id) DO UPDATE SET
+            practice_completed = MAX(practice_completed, ?),
+            best_practice_score = MAX(best_practice_score, ?),
+            correct_exercises = ?,
+            last_studied_at = CURRENT_TIMESTAMP;
+    """, (uid, lesson_id, level_code, lesson_order, studied_theory, practice_completed, score, correct_json,
+          practice_completed, score, correct_json))
+    conn.commit()
+    conn.close()
+
+    return jsonify({
+        "success": True,
+        "lesson_id": lesson_id,
+        "correct_count": score,
+        "total_exercises": total_exercises,
+        "practice_completed": practice_completed == 1,
+        "all_completed": (studied_theory == 1 and practice_completed == 1)
+    })
 
     return jsonify({"success": True, "lesson_id": lesson_id, "lesson_order": lesson_order})
 
