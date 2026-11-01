@@ -1031,6 +1031,10 @@
             currentVocabFilter = 'all';
             renderVocabularies();
 
+            window.noiOShuffledRight = {};
+            window.noiOMatches = {};
+            window.noiOSelectedLeft = {};
+
             currentLesson.allRenderExercises = (currentLesson.exercises || []).map(ex => {
                 const copy = { ...ex };
                 if (copy.options && Array.isArray(copy.options) && copy.options.length > 1) {
@@ -1055,6 +1059,218 @@
                 }).catch(() => {});
             }
             filterExercises('all');
+        }
+
+        window.noiOShuffledRight = window.noiOShuffledRight || {};
+        window.noiOMatches = window.noiOMatches || {};
+        window.noiOSelectedLeft = window.noiOSelectedLeft || {};
+
+        const NOI_O_COLORS = [
+            { border: "border-emerald-500", bg: "bg-emerald-50", text: "text-emerald-950", badge: "bg-emerald-600 text-white" },
+            { border: "border-sky-500", bg: "bg-sky-50", text: "text-sky-950", badge: "bg-sky-600 text-white" },
+            { border: "border-purple-500", bg: "bg-purple-50", text: "text-purple-950", badge: "bg-purple-600 text-white" },
+            { border: "border-amber-500", bg: "bg-amber-50", text: "text-amber-950", badge: "bg-amber-600 text-white" }
+        ];
+
+        function getNoiOShuffledRight(exIdx, pairs) {
+            if (window.noiOShuffledRight[exIdx]) {
+                return window.noiOShuffledRight[exIdx];
+            }
+            const len = pairs.length;
+            let shuffled = pairs.map((_, idx) => idx);
+            // Xáo trộn đảm bảo không có vị trí nào trùng vị trí ban đầu (derangement)
+            let attempts = 0;
+            while (attempts < 50) {
+                shuffled = shuffled.sort(() => Math.random() - 0.5);
+                if (shuffled.every((val, idx) => val !== idx)) break;
+                attempts++;
+            }
+            if (shuffled.some((val, idx) => val === idx) && len >= 4) {
+                shuffled = [1, 2, 3, 0];
+            }
+            window.noiOShuffledRight[exIdx] = shuffled;
+            return shuffled;
+        }
+
+        function generateNoiOWidgetHtml(exIdx, ex, extra) {
+            const pairs = extra.noi_o_pairs || [];
+            const shuffled = getNoiOShuffledRight(exIdx, pairs);
+            const matches = window.noiOMatches[exIdx] || {};
+            const selectedLeft = window.noiOSelectedLeft[exIdx];
+
+            const rightToLeft = {};
+            for (const l in matches) {
+                rightToLeft[matches[l]] = parseInt(l, 10);
+            }
+            const matchedCount = Object.keys(matches).length;
+
+            const leftColsHtml = pairs.map((p, leftIdx) => {
+                const isMatched = (matches[leftIdx] !== undefined);
+                const isSelected = (selectedLeft === leftIdx);
+                let cardClass = "w-full text-left p-3 rounded-xl border transition cursor-pointer flex items-center justify-between ";
+                let badgeHtml = "";
+
+                if (isMatched) {
+                    const color = NOI_O_COLORS[leftIdx % NOI_O_COLORS.length];
+                    const matchedLetter = String.fromCharCode(65 + matches[leftIdx]);
+                    cardClass += `${color.border} ${color.bg} ${color.text} font-bold shadow-xs`;
+                    badgeHtml = `<span class="text-[11px] px-2 py-0.5 rounded-md ${color.badge} font-black shrink-0 ml-2">⇄ [${matchedLetter}]</span>`;
+                } else if (isSelected) {
+                    cardClass += "border-indigo-500 bg-indigo-50 text-indigo-950 font-bold ring-2 ring-indigo-500 shadow-md";
+                    badgeHtml = `<span class="text-[10px] px-2 py-0.5 rounded-md bg-indigo-600 text-white font-extrabold animate-pulse shrink-0 ml-2">Đang chọn...</span>`;
+                } else {
+                    cardClass += "border-slate-200 bg-white hover:bg-indigo-50/60 hover:border-indigo-300 text-slate-800 font-semibold shadow-2xs";
+                }
+
+                return `
+                    <div onclick="selectNoiOLeft(${exIdx}, ${leftIdx})" class="${cardClass}">
+                        <span class="text-xs sm:text-sm flex items-center gap-1.5"><b class="text-indigo-600">${leftIdx + 1}.</b> ${p.left}</span>
+                        <div class="flex items-center gap-1">
+                            ${badgeHtml}
+                            <button type="button" onclick="event.stopPropagation(); speakGerman('${p.left.replace(/'/g, "\\'")}')" class="p-1 rounded text-xs hover:bg-slate-200/60 cursor-pointer">🔊</button>
+                        </div>
+                    </div>
+                `;
+            }).join('');
+
+            const rightColsHtml = shuffled.map((origLeftIdx, rightPos) => {
+                const p = pairs[origLeftIdx];
+                const isMatched = (rightToLeft[rightPos] !== undefined);
+                const matchedLeftIdx = rightToLeft[rightPos];
+                let cardClass = "w-full text-left p-3 rounded-xl border transition cursor-pointer flex items-center justify-between ";
+                let badgeHtml = "";
+
+                if (isMatched) {
+                    const color = NOI_O_COLORS[matchedLeftIdx % NOI_O_COLORS.length];
+                    cardClass += `${color.border} ${color.bg} ${color.text} font-bold shadow-xs`;
+                    badgeHtml = `<span class="text-[11px] px-2 py-0.5 rounded-md ${color.badge} font-black shrink-0 ml-2">⇄ [${matchedLeftIdx + 1}]</span>`;
+                } else {
+                    cardClass += "border-slate-200 bg-white hover:bg-amber-50/60 hover:border-amber-300 text-slate-800 font-semibold shadow-2xs";
+                }
+
+                const letter = String.fromCharCode(65 + rightPos);
+                return `
+                    <div onclick="selectNoiORight(${exIdx}, ${rightPos})" class="${cardClass}">
+                        <span class="text-xs sm:text-sm flex items-center gap-1.5"><b class="text-amber-600">${letter}.</b> ${p.right}</span>
+                        <div class="flex items-center gap-1">
+                            ${badgeHtml}
+                            <button type="button" onclick="event.stopPropagation(); speakGerman('${p.right.replace(/'/g, "\\'")}')" class="p-1 rounded text-xs hover:bg-slate-200/60 cursor-pointer">🔊</button>
+                        </div>
+                    </div>
+                `;
+            }).join('');
+
+            return `
+                <div class="space-y-3 my-2">
+                    <div class="p-2.5 rounded-xl bg-indigo-50/80 border border-indigo-200 text-indigo-900 text-xs flex items-center justify-between flex-wrap gap-2">
+                        <span>👉 <b>Cách làm:</b> Bấm 1 ô ở <b>Cột Trái</b> rồi bấm 1 ô ở <b>Cột Phải</b> để ghép cặp. Bấm lại ô đã nối để hủy.</span>
+                        <span class="font-extrabold px-2.5 py-1 rounded-lg bg-indigo-600 text-white text-xs shrink-0">Đã nối: ${matchedCount}/${pairs.length}</span>
+                    </div>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                        <div class="space-y-2">
+                            <span class="font-bold text-indigo-950 text-xs uppercase tracking-wide block pb-0.5">📌 Cột Trái (Bấm chọn)</span>
+                            ${leftColsHtml}
+                        </div>
+                        <div class="space-y-2">
+                            <span class="font-bold text-amber-950 text-xs uppercase tracking-wide block pb-0.5">🔀 Cột Phải (Đã xáo trộn)</span>
+                            ${rightColsHtml}
+                        </div>
+                    </div>
+
+                    <div class="flex items-center justify-between pt-1">
+                        <button type="button" onclick="resetNoiOMatches(${exIdx})" class="px-3 py-1.5 rounded-xl border border-slate-300 text-slate-600 hover:bg-slate-100 text-xs font-semibold cursor-pointer transition">
+                            🔄 Hủy nối tất cả
+                        </button>
+                        <button type="button" onclick="checkNoiOAnswer(${exIdx})" class="px-6 py-2.5 rounded-xl bg-gradient-to-r from-indigo-600 to-indigo-700 hover:from-indigo-500 hover:to-indigo-600 text-white font-extrabold text-sm shadow-md transition cursor-pointer flex items-center gap-2">
+                            <span>Kiểm tra kết quả</span>
+                            <span>✓</span>
+                        </button>
+                    </div>
+                </div>
+            `;
+        }
+
+        function renderNoiOWidget(exIdx) {
+            const el = document.getElementById(`noi-o-widget-${exIdx}`);
+            if (!el || !currentLesson || !currentLesson.allRenderExercises) return;
+            const ex = currentLesson.allRenderExercises[exIdx];
+            let extra = {};
+            try {
+                extra = typeof ex.extra_data === 'string' ? JSON.parse(ex.extra_data) : (ex.extra_data || {});
+            } catch(e) {}
+            el.innerHTML = generateNoiOWidgetHtml(exIdx, ex, extra);
+        }
+
+        function selectNoiOLeft(exIdx, leftIdx) {
+            window.noiOMatches[exIdx] = window.noiOMatches[exIdx] || {};
+            if (window.noiOMatches[exIdx][leftIdx] !== undefined) {
+                delete window.noiOMatches[exIdx][leftIdx];
+                window.noiOSelectedLeft[exIdx] = null;
+            } else {
+                window.noiOSelectedLeft[exIdx] = leftIdx;
+            }
+            renderNoiOWidget(exIdx);
+        }
+
+        function selectNoiORight(exIdx, rightPos) {
+            window.noiOMatches[exIdx] = window.noiOMatches[exIdx] || {};
+            const selectedLeft = window.noiOSelectedLeft[exIdx];
+
+            if (selectedLeft !== null && selectedLeft !== undefined) {
+                for (const l in window.noiOMatches[exIdx]) {
+                    if (window.noiOMatches[exIdx][l] === rightPos) {
+                        delete window.noiOMatches[exIdx][l];
+                    }
+                }
+                window.noiOMatches[exIdx][selectedLeft] = rightPos;
+                window.noiOSelectedLeft[exIdx] = null;
+            } else {
+                for (const l in window.noiOMatches[exIdx]) {
+                    if (window.noiOMatches[exIdx][l] === rightPos) {
+                        delete window.noiOMatches[exIdx][l];
+                    }
+                }
+            }
+            renderNoiOWidget(exIdx);
+        }
+
+        function resetNoiOMatches(exIdx) {
+            window.noiOMatches[exIdx] = {};
+            window.noiOSelectedLeft[exIdx] = null;
+            renderNoiOWidget(exIdx);
+        }
+
+        function checkNoiOAnswer(exIdx) {
+            const ex = currentLesson.allRenderExercises[exIdx];
+            let extra = {};
+            try {
+                extra = typeof ex.extra_data === 'string' ? JSON.parse(ex.extra_data) : (ex.extra_data || {});
+            } catch(e) {}
+            const pairs = extra.noi_o_pairs || [];
+            const matches = window.noiOMatches[exIdx] || {};
+            const matchedCount = Object.keys(matches).length;
+
+            if (matchedCount < pairs.length) {
+                alert(`Bạn mới nối được ${matchedCount}/${pairs.length} cặp. Vui lòng bấm nối đủ cả 4 cặp trước khi kiểm tra!`);
+                return;
+            }
+
+            const shuffled = getNoiOShuffledRight(exIdx, pairs);
+            let allCorrect = true;
+            for (let i = 0; i < pairs.length; i++) {
+                const rightPos = matches[i];
+                if (rightPos === undefined || shuffled[rightPos] !== i) {
+                    allCorrect = false;
+                    break;
+                }
+            }
+
+            if (allCorrect) {
+                checkExerciseAnswer(exIdx, "ALL_CORRECT_MATCH");
+            } else {
+                checkExerciseAnswer(exIdx, "WRONG_MATCH");
+            }
         }
 
         function filterExercises(typeKey) {
@@ -1110,31 +1326,6 @@
                     }
                 }
 
-                if (ex.exercise_type === 'noi_o' && extra.noi_o_pairs && extra.noi_o_pairs.length > 0) {
-                    extraHtml = `
-                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 my-3">
-                            <div class="p-3.5 rounded-xl bg-indigo-50/60 border border-indigo-200 space-y-2">
-                                <span class="font-bold text-indigo-950 text-xs uppercase block border-b border-indigo-200 pb-1">Cột Trái</span>
-                                ${extra.noi_o_pairs.map((p, pIdx) => `
-                                    <div class="p-2 rounded-lg bg-white border border-indigo-100 text-xs font-semibold text-slate-800 flex items-center justify-between">
-                                        <span><b class="text-indigo-700">${pIdx + 1}.</b> ${p.left}</span>
-                                        <button onclick="speakGerman('${p.left.replace(/'/g, "\\'")}')" class="p-0.5 rounded text-xs hover:bg-indigo-50 cursor-pointer">🔊</button>
-                                    </div>
-                                `).join('')}
-                            </div>
-                            <div class="p-3.5 rounded-xl bg-amber-50/60 border border-amber-200 space-y-2">
-                                <span class="font-bold text-amber-950 text-xs uppercase block border-b border-amber-200 pb-1">Cột Phải</span>
-                                ${extra.noi_o_pairs.map((p, pIdx) => `
-                                    <div class="p-2 rounded-lg bg-white border border-amber-100 text-xs font-semibold text-slate-800 flex items-center justify-between">
-                                        <span><b class="text-amber-700">${String.fromCharCode(65 + pIdx)}.</b> ${p.right}</span>
-                                        <button onclick="speakGerman('${p.right.replace(/'/g, "\\'")}')" class="p-0.5 rounded text-xs hover:bg-amber-50 cursor-pointer">🔊</button>
-                                    </div>
-                                `).join('')}
-                            </div>
-                        </div>
-                    `;
-                }
-
                 if (extra.passage) {
                     extraHtml = `
                         <div class="p-4 rounded-xl bg-indigo-50/60 border border-indigo-200 text-xs sm:text-sm text-slate-800 whitespace-pre-line font-medium my-2">${extra.passage}</div>
@@ -1142,7 +1333,9 @@
                 }
 
                 let inputHtml = '';
-                if (ex.options && ex.options.length > 0) {
+                if (ex.exercise_type === 'noi_o' && extra.noi_o_pairs && extra.noi_o_pairs.length > 0) {
+                    inputHtml = `<div id="noi-o-widget-${i}">` + generateNoiOWidgetHtml(i, ex, extra) + `</div>`;
+                } else if (ex.options && ex.options.length > 0) {
                     inputHtml = `<div class="grid grid-cols-1 sm:grid-cols-2 gap-2.5 mt-3">
                         ${ex.options.map((opt, optIdx) => {
                             const letter = String.fromCharCode(65 + optIdx); // A, B, C, D
@@ -1321,25 +1514,18 @@
             const feedback = document.getElementById(`ex-feedback-${index}`);
             feedback.classList.remove('hidden');
 
-            let isCorrect = (typeof checkGermanAnswerEquivalence === 'function')
-                ? checkGermanAnswerEquivalence(userAnswer, ex.correct_answer)
-                : normalizeAnswer(userAnswer) === normalizeAnswer(ex.correct_answer);
-
             let extra = {};
             try {
                 extra = typeof ex.extra_data === 'string' ? JSON.parse(ex.extra_data) : (ex.extra_data || {});
             } catch (e) {}
 
-            if (!isCorrect && ex.exercise_type === 'noi_o' && extra.noi_o_pairs) {
-                const uClean = normalizeAnswer(userAnswer);
-                let matchCount = 0;
-                extra.noi_o_pairs.forEach((p, idx) => {
-                    const lNum = (idx + 1).toString();
-                    const rLetter = String.fromCharCode(97 + idx); // a, b, c, d
-                    if (uClean.includes(lNum) && uClean.includes(rLetter)) matchCount++;
-                    if (uClean.includes(normalizeAnswer(p.left)) || uClean.includes(normalizeAnswer(p.right))) matchCount++;
-                });
-                if (matchCount >= 2) isCorrect = true;
+            let isCorrect = false;
+            if (ex.exercise_type === 'noi_o') {
+                isCorrect = (userAnswer === "ALL_CORRECT_MATCH");
+            } else {
+                isCorrect = (typeof checkGermanAnswerEquivalence === 'function')
+                    ? checkGermanAnswerEquivalence(userAnswer, ex.correct_answer)
+                    : normalizeAnswer(userAnswer) === normalizeAnswer(ex.correct_answer);
             }
 
             const translation = getExerciseTranslation(ex, extra);
@@ -1485,14 +1671,19 @@
                 }
             } else {
                 feedback.className = "text-xs p-3.5 rounded-xl mt-2 bg-rose-50 text-rose-800 border border-rose-200";
-                const displayAns = String(ex.correct_answer || '').trim().replace(/[.]+$/, '');
+                let displayAns = String(ex.correct_answer || '').trim().replace(/[.]+$/, '');
+                let wrongTitle = "❌ Chưa chính xác.";
+                if (ex.exercise_type === 'noi_o' && extra.noi_o_pairs) {
+                    wrongTitle = "❌ Chưa chính xác (yêu cầu nối đúng 100% cả 4 cặp).";
+                    displayAns = extra.noi_o_pairs.map((p, idx) => `<b>${idx + 1}.</b> ${p.left} ⇄ <b>${p.right}</b>`).join(' &nbsp;|&nbsp; ');
+                }
                 feedback.innerHTML = `
                     <div class="space-y-1.5">
                         <div class="flex items-center gap-2">
-                            <span class="text-rose-700 font-extrabold text-sm">❌ Chưa chính xác.</span>
+                            <span class="text-rose-700 font-extrabold text-sm">${wrongTitle}</span>
                         </div>
                         <div class="text-rose-900 pt-0.5">
-                            Đáp án đúng là: <b class="font-extrabold text-rose-800">${displayAns}</b>
+                            Đáp án đúng là: <span class="font-extrabold text-rose-800">${displayAns}</span>
                         </div>
                         ${translationHtml}
                         <div class="text-rose-950 leading-relaxed pt-1">

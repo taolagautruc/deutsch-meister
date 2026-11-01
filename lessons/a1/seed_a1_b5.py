@@ -1096,19 +1096,19 @@ def seed_lesson_5():
         ),
         (
             lesson_id, "trac_nghiem",
-            "Câu 2: Cách đọc giờ đời thường (Inoffiziell) nào sau đây tương ứng với 2h30 (zwei Uhr dreißig)?",
-            json.dumps(["halb drei", "halb zwei", "Viertel nach zwei", "dreißig nach zwei"], ensure_ascii=False),
-            "halb drei",
-            "Trong tiếng Đức, giờ rưỡi dùng công thức 'halb + giờ kế tiếp (giờ + 1)'. Vì vậy 2h30 phải tính tới mốc 3 giờ là 'halb drei'.",
-            15, json.dumps({"dynamic_time_quiz": True})
+            "Câu 2: Cách đọc giờ đời thường (Inoffiziell) nào sau đây tương ứng với 08:15 (acht Uhr fünfzehn)?",
+            json.dumps(["Viertel nach acht", "Viertel vor acht", "halb acht", "acht nach Viertel"], ensure_ascii=False),
+            "Viertel nach acht",
+            "Mốc 08:15 là 8 giờ hơn 15 phút. Trong cách nói đời thường, 15 phút là một phần tư tiếng ('Viertel'), đi qua mốc 8 giờ dùng 'nach' -> 'Viertel nach acht'.",
+            15, json.dumps({"translation": "Mốc giờ 08:15: Viertel nach acht (8 giờ hơn 15 phút)"}, ensure_ascii=False)
         ),
         (
             lesson_id, "trac_nghiem",
-            "Câu 3: Cách đọc giờ đời thường nào sau đây tương ứng với 5h50 (fünf Uhr fünfzig)?",
-            json.dumps(["zehn vor sechs", "zehn nach fünf", "fünfzig nach fünf", "Viertel vor sechs"], ensure_ascii=False),
-            "zehn vor sechs",
-            "5h50 tức là còn thiếu 10 phút nữa là đến 6 giờ (6 giờ kém 10), áp dụng công thức 'Phút kém (zehn) + vor + Giờ kế tiếp (sechs)'.",
-            15, json.dumps({"dynamic_time_quiz": True})
+            "Câu 3: Cách đọc giờ đời thường nào sau đây tương ứng với 14:30 (vierzehn Uhr dreißig / 2h30 chiều)?",
+            json.dumps(["halb drei", "halb zwei", "Viertel nach zwei", "dreißig nach zwei"], ensure_ascii=False),
+            "halb drei",
+            "Trong cách nói giờ đời thường tiếng Đức, giờ rưỡi dùng công thức 'halb + giờ tiếp theo (giờ + 1)'. 2h30 tức là còn nửa tiếng nữa đến 3 giờ, do đó phải đọc là 'halb drei'.",
+            15, json.dumps({"translation": "Mốc giờ 14:30 / 2h30: halb drei (2 giờ rưỡi)"}, ensure_ascii=False)
         ),
         (
             lesson_id, "trac_nghiem",
@@ -1124,7 +1124,7 @@ def seed_lesson_5():
             json.dumps(["In der", "Am", "Im", "Um"], ensure_ascii=False),
             "In der",
             "Khác với các buổi khác mang giống đực (am Morgen, am Abend), riêng 'die Nacht' mang giống cái nên bắt buộc phải dùng cụm giới từ 'in der Nacht'.",
-            15, None
+            15, json.dumps({"translation": "Vào ban đêm tôi ngủ 8 tiếng. (In der Nacht schlafe ich acht Stunden.)"}, ensure_ascii=False)
         ),
         (
             lesson_id, "trac_nghiem",
@@ -1132,23 +1132,23 @@ def seed_lesson_5():
             json.dumps(["Von wann bis wann", "Um wie viel Uhr", "Woher", "Wer"], ensure_ascii=False),
             "Von wann bis wann",
             "Để hỏi khoảng thời gian bắt đầu và kết thúc tương ứng với câu trả lời 'Von ... bis ...', ta dùng cụm từ để hỏi 'Von wann bis wann...?'.",
-            15, None
+            15, json.dumps({"translation": "Bạn làm việc từ mấy giờ đến mấy giờ? (Von wann bis wann arbeitest du?)"}, ensure_ascii=False)
         ),
         (
             lesson_id, "trac_nghiem",
-            "Câu 7: Chọn dạng quá khứ đơn (Präteritum) đúng của 'haben' trong câu: 'Gestern ___ du kein Glück, aber heute hast du viel Glück.'",
-            json.dumps(["hattest", "hatte", "hattet", "warst"], ensure_ascii=False),
-            "hattest",
-            "Chủ ngữ là ngôi 'du' (bạn), động từ 'haben' chia ở thì quá khứ đơn (Präteritum) cho ngôi 'du' là 'hattest'.",
-            15, json.dumps({"dynamic_praeteritum_quiz": True})
+            "Câu 7: Chọn dạng quá khứ đơn (Präteritum) đúng của động từ 'haben' cho chủ ngữ 'wir': 'Gestern Abend ___ wir leider keine Zeit.'",
+            json.dumps(["hatten", "hatte", "hattet", "hattest"], ensure_ascii=False),
+            "hatten",
+            "Chủ ngữ là ngôi 'wir' (chúng tôi), động từ 'haben' ở thì quá khứ đơn (Präteritum) được chia là 'hatten'. Cả câu: 'Gestern Abend hatten wir leider keine Zeit.' (Tối hôm qua chúng tôi tiếc là không có thời gian).",
+            15, json.dumps({"translation": "Tối hôm qua chúng tôi tiếc là không có thời gian. (Gestern Abend hatten wir leider keine Zeit.)"}, ensure_ascii=False)
         ),
         (
             lesson_id, "trac_nghiem",
-            "Câu 8: Trong bức thư của Maria, câu hỏi cuối thư gửi cho các bạn của Thomas ('ihr') được viết như thế nào?",
-            json.dumps(["Hattet ihr eine tolle Party?", "Hattest ihr eine tolle Party?", "Hatten ihr eine tolle Party?", "Wart ihr eine tolle Party?"], ensure_ascii=False),
-            "Hattet ihr eine tolle Party?",
-            "Với chủ ngữ 'ihr' (các bạn), động từ 'haben' ở thì Präteritum được chia là 'hattet': 'Hattet ihr eine tolle Party?'.",
-            15, None
+            "Câu 8: Đọc đoạn thư sau của Maria gửi Thomas:\n„Lieber Thomas, wie geht es dir? Letzte Woche hatte ich Geburtstag und eine tolle Feier. Wie war dein Wochenende mit deinen Freunden? ___ ihr auch eine tolle Party?\nLiebe Grüße, Maria“\n\nChọn dạng chia đúng của động từ 'haben' ở thì Präteritum đi với ngôi 'ihr' để điền vào chỗ trống cuối thư:",
+            json.dumps(["Hattet", "Hattest", "Hatten", "Hatte"], ensure_ascii=False),
+            "Hattet",
+            "Chủ ngữ trong câu hỏi cuối thư là ngôi 'ihr' (các bạn). Động từ 'haben' ở thì quá khứ đơn (Präteritum) chia theo ngôi 'ihr' là 'hattet': 'Hattet ihr auch eine tolle Party?' (Các bạn cũng đã có một bữa tiệc tuyệt vời chứ?).",
+            15, json.dumps({"translation": "Các bạn cũng đã có một bữa tiệc tuyệt vời chứ? (Hattet ihr auch một bữa tiệc tuyệt vời chứ?)"}, ensure_ascii=False)
         ),
 
         # --- DẠNG 2: ĐIỀN KHUYẾT (dien_khuyet - 7 Câu) ---
@@ -1314,14 +1314,15 @@ def seed_lesson_5():
             lesson_id, "noi_o",
             "Câu 28 (Bài nối ô 1): Nối giờ chính thống ở cột trái với cách nói giờ đời thường tương ứng ở cột phải:",
             None,
-            "acht Uhr fünfzehn (8h15) - Viertel nach acht, neun Uhr zehn (9h10) - zehn nach neun, zwei Uhr dreißig (2h30) - halb drei, fünf Uhr fünfzig (5h50) - zehn vor sechs",
+            "acht Uhr fünfzehn - Viertel nach acht, neun Uhr zehn - zehn nach neun, zwei Uhr dreißig - halb drei, fünf Uhr fünfzig - zehn vor sechs",
             "8h15 = Viertel nach acht; 9h10 = zehn nach neun; 2h30 = halb drei; 5h50 = zehn vor sechs.",
             25, json.dumps({
+                "translation": "Nối giờ chính thống với cách nói giờ đời thường tương ứng.",
                 "noi_o_pairs": [
-                    {"left": "acht Uhr fünfzehn (8h15)", "right": "Viertel nach acht"},
-                    {"left": "neun Uhr zehn (9h10)", "right": "zehn nach neun"},
-                    {"left": "zwei Uhr dreißig (2h30)", "right": "halb drei"},
-                    {"left": "fünf Uhr fünfzig (5h50)", "right": "zehn vor sechs"}
+                    {"left": "acht Uhr fünfzehn", "right": "Viertel nach acht"},
+                    {"left": "neun Uhr zehn", "right": "zehn nach neun"},
+                    {"left": "zwei Uhr dreißig", "right": "halb drei"},
+                    {"left": "fünf Uhr fünfzig", "right": "zehn vor sechs"}
                 ]
             }, ensure_ascii=False)
         ),
@@ -1329,29 +1330,31 @@ def seed_lesson_5():
             lesson_id, "noi_o",
             "Câu 29 (Bài nối ô 2): Nối giới từ thời gian ở cột trái với danh từ phù hợp ở cột phải:",
             None,
-            "um - 8 Uhr (lúc 8 giờ), am - Sonntag / Morgen (vào Chủ nhật / buổi sáng), im - Juni / Sommer (vào tháng Sáu / mùa hè), in der - Nacht (vào ban đêm)",
-            "um đi với giờ (8 Uhr); am đi với thứ/buổi (Sonntag, Morgen); im đi với tháng/mùa (Juni, Sommer); in der đi với ban đêm (Nacht).",
+            "um - 8 Uhr, am - Sonntag / der Morgen, im - der Juni / der Sommer, in der - die Nacht",
+            "um đi với giờ (8 Uhr); am đi với thứ/buổi (Sonntag, Morgen); im đi với tháng/mùa (Juni, Sommer); in der đi với ban đêm (die Nacht).",
             25, json.dumps({
+                "translation": "Nối giới từ thời gian với danh từ phù hợp.",
                 "noi_o_pairs": [
-                    {"left": "um", "right": "8 Uhr (lúc 8 giờ)"},
-                    {"left": "am", "right": "Sonntag / Morgen (vào Chủ nhật / buổi sáng)"},
-                    {"left": "im", "right": "Juni / Sommer (vào tháng Sáu / mùa hè)"},
-                    {"left": "in der", "right": "Nacht (vào ban đêm)"}
+                    {"left": "um", "right": "8 Uhr"},
+                    {"left": "am", "right": "Sonntag / der Morgen"},
+                    {"left": "im", "right": "der Juni / der Sommer"},
+                    {"left": "in der", "right": "die Nacht"}
                 ]
             }, ensure_ascii=False)
         ),
         (
             lesson_id, "noi_o",
-            "Câu 30 (Bài nối ô 3): Nối các động từ trong bài ở cột trái với nghĩa tiếng Việt chính xác ở cột phải:",
+            "Câu 30 (Bài nối ô 3): Nối động từ ở cột trái với cụm hoạt động tiếng Đức tương ứng ở cột phải:",
             None,
-            "aufstehen - thức dậy (động từ tách), frühstücken - ăn sáng (động từ không tách), ausgehen - đi ra ngoài / đi chơi (động từ tách), aufmachen - mở ra (động từ tách)",
+            "aufstehen - um 7 Uhr morgens aus dem Bett, frühstücken - Kaffee trinken und Brot essen, ausgehen - am Freitagabend mit Freunden feiern, aufmachen - die Tür oder das Fenster öffnen",
             "aufstehen = thức dậy; frühstücken = ăn sáng; ausgehen = đi ra ngoài / đi chơi; aufmachen = mở ra.",
             25, json.dumps({
+                "translation": "Nối động từ với hoạt động tương ứng.",
                 "noi_o_pairs": [
-                    {"left": "aufstehen", "right": "thức dậy (động từ tách)"},
-                    {"left": "frühstücken", "right": "ăn sáng (động từ không tách)"},
-                    {"left": "ausgehen", "right": "đi ra ngoài / đi chơi (động từ tách)"},
-                    {"left": "aufmachen", "right": "mở ra (động từ tách)"}
+                    {"left": "aufstehen", "right": "um 7 Uhr morgens aus dem Bett"},
+                    {"left": "frühstücken", "right": "Kaffee trinken und Brot essen"},
+                    {"left": "ausgehen", "right": "am Freitagabend mit Freunden feiern"},
+                    {"left": "aufmachen", "right": "die Tür oder das Fenster öffnen"}
                 ]
             }, ensure_ascii=False)
         ),
@@ -1362,6 +1365,7 @@ def seed_lesson_5():
             "ich / er / sie / es - hatte, du - hattest, wir / sie / Sie - hatten, ihr - hattet",
             "ich/er/sie/es hatte; du hattest; wir/sie/Sie hatten; ihr hattet.",
             25, json.dumps({
+                "translation": "Nối đại từ với dạng chia quá khứ của haben.",
                 "noi_o_pairs": [
                     {"left": "ich / er / sie / es", "right": "hatte"},
                     {"left": "du", "right": "hattest"},
@@ -1372,16 +1376,17 @@ def seed_lesson_5():
         ),
         (
             lesson_id, "noi_o",
-            "Câu 32 (Bài nối ô 5): Nối các buổi trong ngày ở cột trái với khung giờ và nghĩa tiếng Việt ở cột phải:",
+            "Câu 32 (Bài nối ô 5): Nối các buổi trong ngày ở cột trái với khung giờ tương ứng ở cột phải:",
             None,
-            "der Morgen - 06:00 – 10:00 (Buổi sáng sớm), der Vormittag - 10:00 – 12:00 (Buổi sáng trước trưa), der Nachmittag - 14:00 – 18:00 (Buổi chiều), die Nacht - 22:00 – 06:00 (Ban đêm)",
+            "der Morgen - 06:00 – 10:00 Uhr, der Vormittag - 10:00 – 12:00 Uhr, der Nachmittag - 14:00 – 18:00 Uhr, die Nacht - 22:00 – 06:00 Uhr",
             "der Morgen: 6-10h; der Vormittag: 10-12h; der Nachmittag: 14-18h; die Nacht: 22-6h.",
             25, json.dumps({
+                "translation": "Nối các buổi trong ngày với khung giờ chuẩn.",
                 "noi_o_pairs": [
-                    {"left": "der Morgen", "right": "06:00 – 10:00 (Buổi sáng sớm)"},
-                    {"left": "der Vormittag", "right": "10:00 – 12:00 (Buổi sáng trước trưa)"},
-                    {"left": "der Nachmittag", "right": "14:00 – 18:00 (Buổi chiều)"},
-                    {"left": "die Nacht", "right": "22:00 – 06:00 (Ban đêm)"}
+                    {"left": "der Morgen", "right": "06:00 – 10:00 Uhr"},
+                    {"left": "der Vormittag", "right": "10:00 – 12:00 Uhr"},
+                    {"left": "der Nachmittag", "right": "14:00 – 18:00 Uhr"},
+                    {"left": "die Nacht", "right": "22:00 – 06:00 Uhr"}
                 ]
             }, ensure_ascii=False)
         ),
@@ -1392,6 +1397,7 @@ def seed_lesson_5():
             "Wann stehst du am Sonntag auf? - Am Sonntag stehe ich um 8 Uhr auf., Um wie viel Uhr frühstückst du? - Um 9 Uhr frühstücke ich., Von wann bis wann arbeitest du? - Von 8 bis 12 Uhr arbeite ich., Wann gehst du ins Bett? - Um 22 Uhr gehe ich ins Bett.",
             "Wann stehst du am Sonntag auf? → Am Sonntag stehe ich um 8 Uhr auf.; Um wie viel Uhr frühstückst du? → Um 9 Uhr frühstücke ich.; Von wann bis wann arbeitest du? → Von 8 bis 12 Uhr arbeite ich.; Wann gehst du ins Bett? → Um 22 Uhr gehe ich ins Bett.",
             25, json.dumps({
+                "translation": "Nối câu hỏi với câu trả lời tương ứng.",
                 "noi_o_pairs": [
                     {"left": "Wann stehst du am Sonntag auf?", "right": "Am Sonntag stehe ich um 8 Uhr auf."},
                     {"left": "Um wie viel Uhr frühstückst du?", "right": "Um 9 Uhr frühstücke ich."},
@@ -1404,19 +1410,19 @@ def seed_lesson_5():
         # --- DẠNG 6: ĐIỀN VÀO CHỖ TRỐNG ĐỂ TẠO THÀNH CÂU (dien_tao_cau - 5 Câu) ---
         (
             lesson_id, "dien_tao_cau",
-            "Câu 34: Điền 2 từ còn thiếu vào chỗ trống (cách nhau bởi dấu gạch chéo '/') để tạo câu: 'Am Sonntag ___ ich um 8 Uhr ___.' (Nghĩa: Vào Chủ nhật tôi thức dậy vào lúc 8 giờ; gợi ý động từ: 'aufstehen')",
+            "Câu 34: Điền 2 từ còn thiếu vào chỗ trống (cách nhau bởi dấu gạch chéo '/') để hoàn thành câu: 'Am Sonntag ___ ich um 8 Uhr ___.'",
             None,
-            "stehe / auf",
-            "Khi 'Am Sonntag' đứng đầu câu, động từ gốc 'stehe' đứng ở vị trí số 2 (trước chủ ngữ 'ich'), còn tiền tố 'auf' đứng ở cuối câu.",
-            20, None
+            "stehe / auf / stehe auf / wache / auf / wache auf",
+            "Khi 'Am Sonntag' đứng đầu câu, động từ gốc 'stehe' đứng ở vị trí số 2 (trước chủ ngữ 'ich'), còn tiền tố 'auf' đứng ở cuối câu (động từ tách 'aufstehen' / 'aufwachen').",
+            20, json.dumps({"translation": "Vào Chủ nhật tôi thức dậy vào lúc 8 giờ. (Am Sonntag stehe ich um 8 Uhr auf.)"}, ensure_ascii=False)
         ),
         (
             lesson_id, "dien_tao_cau",
-            "Câu 35: Điền 2 từ còn thiếu vào chỗ trống (cách nhau bởi dấu '/') để tạo câu: 'Ich ___ die Tür ___.' (Nghĩa: Tôi mở cánh cửa ra; gợi ý động từ: 'aufmachen')",
+            "Câu 35: Điền 2 từ còn thiếu vào chỗ trống (cách nhau bởi dấu '/') để hoàn thành câu: 'Ich ___ die Tür ___.'",
             None,
-            "mache / auf",
-            "Động từ tách 'aufmachen' chia cho ngôi 'ich': 'mache' đứng vị trí số 2 và 'auf' đứng cuối câu.",
-            20, None
+            "mache / auf / mache auf / mache / zu / mache zu / schließe / ab / schliesse / ab",
+            "Động từ tách 'aufmachen' (mở) hoặc 'zumachen' (đóng) chia cho ngôi 'ich': động từ gốc 'mache' đứng ở vị trí số 2 và tiền tố 'auf' (hoặc 'zu') đứng ở cuối câu.",
+            20, json.dumps({"translation": "Tôi mở cánh cửa ra (Ich mache die Tür auf) hoặc Tôi đóng cánh cửa lại (Ich mache die Tür zu)."}, ensure_ascii=False)
         ),
         (
             lesson_id, "dien_tao_cau",
@@ -1424,15 +1430,15 @@ def seed_lesson_5():
             None,
             "hatten / haben",
             "Với chủ ngữ 'wir', ở mệnh đề quá khứ ('Gestern') ta dùng 'hatten' (Präteritum), còn ở mệnh đề hiện tại ('heute') ta dùng 'haben' (Präsens).",
-            20, None
+            20, json.dumps({"translation": "Hôm qua chúng tôi bị hỏng xe, nhưng hôm nay chúng tôi không bị hỏng xe."}, ensure_ascii=False)
         ),
         (
             lesson_id, "dien_tao_cau",
-            "Câu 37: Điền 2 từ còn thiếu vào chỗ trống (cách nhau bởi dấu '/') để tạo câu lịch trình: 'Von 8 ___ 12 Uhr ___ ich.' (Nghĩa: Từ 8 giờ đến 12 giờ tôi làm việc)",
+            "Câu 37: Điền 2 từ còn thiếu vào chỗ trống (cách nhau bởi dấu '/') để tạo câu lịch trình: 'Von 8 ___ 12 Uhr ___ ich.'",
             None,
             "bis / arbeite",
             "Cấu trúc chỉ khoảng thời gian 'Von 8 bis 12 Uhr' đứng ở vị trí số 1, động từ 'arbeite' đứng ở vị trí số 2.",
-            20, None
+            20, json.dumps({"translation": "Từ 8 giờ đến 12 giờ tôi làm việc. (Von 8 bis 12 Uhr arbeite ich.)"}, ensure_ascii=False)
         ),
         (
             lesson_id, "dien_tao_cau",
@@ -1440,7 +1446,7 @@ def seed_lesson_5():
             None,
             "aus / gehe",
             "Động từ tách 'ausgehen' tách tiền tố 'aus' xuống cuối câu hỏi, và ở câu trả lời động từ gốc 'gehe' đứng ở vị trí số 2.",
-            20, None
+            20, json.dumps({"translation": "Khi nào bạn đi chơi vào thứ Sáu? — Vào thứ Sáu lúc 20 giờ tôi đi chơi."}, ensure_ascii=False)
         ),
 
         # --- DẠNG 7: NGHE GIỌNG BẢN XỨ DE-DE VÀ ĐIỀN TỪ (nghe_dien - 4 Câu) ---
@@ -1453,7 +1459,7 @@ def seed_lesson_5():
             20, json.dumps({
                 "audio_text": "Am Sonntag stehe ich um acht Uhr auf.",
                 "display_sentence": "Am Sonntag ___ ich um acht Uhr auf.",
-                "hint_vi": "Vào Chủ nhật tôi thức dậy vào lúc 8 giờ."
+                "translation": "Vào Chủ nhật tôi thức dậy vào lúc 8 giờ."
             }, ensure_ascii=False)
         ),
         (
@@ -1465,7 +1471,7 @@ def seed_lesson_5():
             20, json.dumps({
                 "audio_text": "Um neun Uhr frühstücke ich.",
                 "display_sentence": "Um neun Uhr ___ ich.",
-                "hint_vi": "Vào lúc 9 giờ tôi ăn sáng."
+                "translation": "Vào lúc 9 giờ tôi ăn sáng."
             }, ensure_ascii=False)
         ),
         (
@@ -1477,7 +1483,7 @@ def seed_lesson_5():
             20, json.dumps({
                 "audio_text": "Entschuldigung, wir waren gestern Abend nicht bei der Party. Wir hatten eine Panne.",
                 "display_sentence": "Entschuldigung, wir waren gestern Abend nicht bei der Party. Wir hatten eine ___.",
-                "hint_vi": "Xin lỗi, tối qua chúng mình không có mặt ở bữa tiệc. Chúng mình đã gặp một sự cố hỏng xe."
+                "translation": "Xin lỗi, tối qua chúng mình không có mặt ở bữa tiệc. Chúng mình đã gặp một sự cố hỏng xe."
             }, ensure_ascii=False)
         ),
         (
@@ -1489,7 +1495,7 @@ def seed_lesson_5():
             20, json.dumps({
                 "audio_text": "Gestern hatte er kein Geld, aber heute hat er viel Geld.",
                 "display_sentence": "Gestern ___ er kein Geld, aber heute hat er viel Geld.",
-                "hint_vi": "Hôm qua anh ấy đã không có tiền, nhưng hôm nay anh ấy có nhiều tiền."
+                "translation": "Hôm qua anh ấy đã không có tiền, nhưng hôm nay anh ấy có nhiều tiền."
             }, ensure_ascii=False)
         ),
 
