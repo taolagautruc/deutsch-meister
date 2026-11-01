@@ -1162,7 +1162,7 @@ def seed_lesson_5():
         ),
         (
             lesson_id, "dien_khuyet",
-            "Câu 10: Điền tiền tố tách còn thiếu vào cuối câu: 'Wann stehst du am Sonntag ___?' (Nghĩa: Khi nào bạn thức dậy vào Chủ nhật?)",
+            "Câu 10: Điền tiền tố tách còn thiếu vào cuối câu: 'Wann stehst du am Sonntag ___?'",
             None,
             "auf",
             "Động từ 'thức dậy' là 'aufstehen', khi chia với 'du' thì gốc 'stehst' đứng ở vị trí số 2 và tiền tố 'auf' đứng ở cuối câu.",
@@ -1170,7 +1170,7 @@ def seed_lesson_5():
         ),
         (
             lesson_id, "dien_khuyet",
-            "Câu 11: Điền tiền tố tách còn thiếu vào cuối câu: 'Am Freitag um 20 Uhr geht Lisa ___.' (Nghĩa: Vào thứ Sáu lúc 20 giờ Lisa đi chơi / đi ra ngoài.)",
+            "Câu 11: Điền tiền tố tách còn thiếu vào cuối câu: 'Am Freitag um 20 Uhr geht Lisa ___.'",
             None,
             "aus",
             "Động từ 'đi chơi / đi ra ngoài' là 'ausgehen' (Lisa geht ... aus).",

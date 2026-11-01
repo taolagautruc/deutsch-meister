@@ -388,14 +388,14 @@ Tuân thủ quy chuẩn mới áp dụng từ **Bài 5 (A1)** trở đi, kho **5
    * Đáp án chấp nhận: `["im", "Im"]`
    * Dịch nghĩa câu: *"Anh trai tôi có sinh nhật vào tháng Sáu."*
    * Giải thích: Tất cả 12 tháng trong năm (`der Januar` $\rightarrow$ `der Dezember`) đều đi với giới từ `im`.
-10. **Câu 10**: Điền tiền tố tách còn thiếu vào cuối câu: *„Wann stehst du am Sonntag ___?“* *(Nghĩa: Khi nào bạn thức dậy vào Chủ nhật?)*
+10. **Câu 10**: Điền tiền tố tách còn thiếu vào cuối câu: *„Wann stehst du am Sonntag ___?“*
     * Đáp án chấp nhận: `["auf"]`
     * Dịch nghĩa câu: *"Khi nào bạn thức dậy vào Chủ nhật?"*
     * Giải thích: Động từ *"thức dậy"* là `aufstehen`, khi chia với `du` thì `stehst` đứng ở vị trí số 2 và tiền tố `auf` đứng ở cuối câu.
-11. **Câu 11**: Điền tiền tố tách còn thiếu vào cuối câu: *„Am Freitag um 20 Uhr gehe ich ___.“* *(Nghĩa: Vào thứ Sáu lúc 20 giờ tôi đi chơi / đi ra ngoài.)*
+11. **Câu 11**: Điền tiền tố tách còn thiếu vào cuối câu: *„Am Freitag um 20 Uhr geht Lisa ___.“*
     * Đáp án chấp nhận: `["aus"]`
-    * Dịch nghĩa câu: *"Vào thứ Sáu lúc 20 giờ tôi đi ra ngoài / đi chơi."*
-    * Giải thích: Động từ *"đi chơi / đi ra ngoài"* là `ausgehen` (`ich gehe ... aus`).
+    * Dịch nghĩa câu: *"Vào thứ Sáu lúc 20 giờ Lisa đi chơi / đi ra ngoài."*
+    * Giải thích: Động từ *"đi chơi / đi ra ngoài"* là `ausgehen` (`Lisa geht ... aus`).
 12. **Câu 12**: Điền dạng chia đúng của động từ `haben` ở thì quá khứ đơn (`Präteritum`): *„Gestern ___ ich keine Zeit, aber heute habe ich viel Zeit.“*
     * Đáp án chấp nhận: `["hatte"]`
     * Dịch nghĩa câu: *"Hôm qua tôi đã không có thời gian, nhưng hôm nay tôi có nhiều thời gian."*
