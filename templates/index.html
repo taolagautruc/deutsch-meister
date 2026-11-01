@@ -384,10 +384,11 @@
                     "Quy tắc phát âm nguyên âm ghép & phụ âm",
                     "Hệ thống số đếm từ 0 đến 9.999",
                     "Đại từ nhân xưng, Chia động từ & Gọi đồ uống (P2)",
-                    "Sprache im Kurs: Động từ & Giống der/die/das (Bài 2)"
+                    "Sprache im Kurs: Động từ & Giống der/die/das (Bài 2)",
+                    "Dativ, Giới từ, Phương tiện, Số thứ tự & Ngày tháng (Bài 6)"
                 ],
-                lessonsCount: "3 Bài (P1, P2, Bài 2)",
-                exCount: "150 Bài (Đủ 7 dạng)"
+                lessonsCount: "7 Bài (Bài 1 P1, P2, Bài 2, 3, 4, 5, 6)",
+                exCount: "400 Bài (Đủ 9 dạng)"
             },
             "A2": {
                 badgeBg: "bg-blue-600",
@@ -1541,11 +1542,20 @@
             if (isCorrect) {
                 feedback.className = "text-xs p-3.5 rounded-xl mt-2 bg-emerald-50 text-emerald-800 border border-emerald-200";
                 let nextDynamicHtml = '';
-                const isDynamicEx = extra.dynamic_number || extra.dynamic_mode || extra.dynamic_price || extra.dynamic_conjugation || extra.dynamic_article_quiz || extra.dynamic_possessive_article || extra.dynamic_plural_quiz || extra.dynamic_direction_quiz || extra.dynamic_landmark_quiz || extra.dynamic_praeteritum_quiz || extra.dynamic_country_language_quiz || extra.dynamic_question_transform || extra.dynamic_nom_akk_quiz || extra.dynamic_possessiv_quiz || extra.dynamic_adjective_antonym_quiz || extra.dynamic_pronoun_replacement_quiz || extra.dynamic_house_translation_quiz || extra.dynamic_prep_quiz || extra.dynamic_time_quiz || extra.dynamic_trennbare_quiz;
+                const isDynamicEx = extra.dynamic_number || extra.dynamic_mode || extra.dynamic_price || extra.dynamic_conjugation || extra.dynamic_article_quiz || extra.dynamic_possessive_article || extra.dynamic_plural_quiz || extra.dynamic_direction_quiz || extra.dynamic_landmark_quiz || extra.dynamic_praeteritum_quiz || extra.dynamic_country_language_quiz || extra.dynamic_question_transform || extra.dynamic_nom_akk_quiz || extra.dynamic_possessiv_quiz || extra.dynamic_adjective_antonym_quiz || extra.dynamic_pronoun_replacement_quiz || extra.dynamic_house_translation_quiz || extra.dynamic_prep_quiz || extra.dynamic_time_quiz || extra.dynamic_trennbare_quiz || extra.dynamic_dativ_transport_quiz || extra.dynamic_ordinal_date_quiz || extra.dynamic_dativ_position_quiz;
                 if (isDynamicEx) {
                     let promptMsg = "🎯 Tuyệt vời! Bạn muốn rèn thêm phản xạ?";
                     let btnLabel = "🔄 Đổi đề khác để luyện tiếp";
-                    if (extra.dynamic_prep_quiz) {
+                    if (extra.dynamic_dativ_transport_quiz) {
+                        promptMsg = "🎯 Chuẩn xác! Bạn muốn rèn thêm phương tiện với Dativ (mit dem / mit der / zu Fuß)?";
+                        btnLabel = "🔄 Đổi câu phương tiện khác";
+                    } else if (extra.dynamic_ordinal_date_quiz) {
+                        promptMsg = "🎯 Xuất sắc! Bạn muốn rèn thêm số thứ tự & ngày tháng?";
+                        btnLabel = "🔄 Đổi ngày tháng khác";
+                    } else if (extra.dynamic_dativ_position_quiz) {
+                        promptMsg = "🎯 Tuyệt vời! Bạn muốn rèn thêm giới từ vị trí Dativ?";
+                        btnLabel = "🔄 Đổi ngữ cảnh vị trí khác";
+                    } else if (extra.dynamic_prep_quiz) {
                         promptMsg = "🎯 Chuẩn xác! Bạn muốn rèn thêm giới từ thời gian (um, am, im)?";
                         btnLabel = "🔄 Đổi câu giới từ khác";
                     } else if (extra.dynamic_time_quiz) {

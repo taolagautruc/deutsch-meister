@@ -1265,6 +1265,107 @@ function generateNewNumberData(ex, fallbackIndex = null) {
         return finalize(ex);
     }
 
+    // 19. Xử lý câu hỏi Phương tiện giao thông & Chủ ngữ đa dạng (dynamic_dativ_transport_quiz - Bài 6)
+    if (extra.dynamic_dativ_transport_quiz) {
+        const subjects = [
+            { name: "Mein Bruder", pronoun: "er", verbForm: "fährt", vi: "Anh trai tôi" },
+            { name: "Meine Mutter", pronoun: "sie", verbForm: "fährt", vi: "Mẹ tôi" },
+            { name: "Herr Schneider", pronoun: "er", verbForm: "fährt", vi: "Ông Schneider" },
+            { name: "Frau Wagner", pronoun: "sie", verbForm: "fährt", vi: "Bà Wagner" },
+            { name: "Wir", pronoun: "wir", verbForm: "fahren", vi: "Chúng tôi" },
+            { name: "Ihr", pronoun: "ihr", verbForm: "fahrt", vi: "Các bạn" },
+            { name: "Meine Eltern", pronoun: "sie_pl", verbForm: "fahren", vi: "Bố mẹ tôi" },
+            { name: "Die Studenten", pronoun: "sie_pl", verbForm: "fahren", vi: "Các sinh viên" }
+        ];
+        const vehicles = [
+            { prep: "mit der Straßenbahn", wrong: ["mit die Straßenbahn", "mit dem Straßenbahn", "mit den Straßenbahn"], noun: "die Straßenbahn", vi: "bằng tàu điện mặt đất" },
+            { prep: "mit dem Bus", wrong: ["mit der Bus", "mit den Bus", "mit das Bus"], noun: "der Bus", vi: "bằng xe buýt" },
+            { prep: "mit dem Zug", wrong: ["mit der Zug", "mit den Zug", "mit das Zug"], noun: "der Zug", vi: "bằng tàu hỏa" },
+            { prep: "mit der U-Bahn", wrong: ["mit die U-Bahn", "mit dem U-Bahn", "mit den U-Bahn"], noun: "die U-Bahn", vi: "bằng tàu điện ngầm" },
+            { prep: "mit dem Fahrrad", wrong: ["mit das Fahrrad", "mit der Fahrrad", "mit den Fahrrad"], noun: "das Fahrrad", vi: "bằng xe đạp" },
+            { prep: "mit dem Auto", wrong: ["mit das Auto", "mit der Auto", "mit den Auto"], noun: "das Auto", vi: "bằng ô tô" }
+        ];
+        const destinations = [
+            { text: "zur Arbeit", vi: "đi làm" },
+            { text: "zur Universität", vi: "đến trường đại học" },
+            { text: "zum Bahnhof", vi: "đến nhà ga" },
+            { text: "in die Stadt", vi: "vào thành phố" }
+        ];
+
+        const s = subjects[Math.floor(Math.random() * subjects.length)];
+        const v = vehicles[Math.floor(Math.random() * vehicles.length)];
+        const d = destinations[Math.floor(Math.random() * destinations.length)];
+
+        ex.question = `[Phương tiện Dativ (Random)]: Chọn cụm từ đúng để hoàn thành câu: '${s.name} ${s.verbForm} jeden Morgen ___ ${d.text}.'`;
+        ex.correct_answer = v.prep;
+        ex.explanation = `Giới từ 'mit' luôn đi với Cách 3 (Dativ). Danh từ '${v.noun}' ở Dativ chuyển thành '${v.prep}'.`;
+        extra.translation = `${s.vi} ${d.vi} mỗi buổi sáng ${v.vi}. (${s.name} ${s.verbForm} jeden Morgen ${v.prep} ${d.text}.)`;
+        const opts = [v.prep, ...v.wrong];
+        const shuffled = opts.sort(() => Math.random() - 0.5);
+        ex.options = shuffled;
+        ex.options_json = JSON.stringify(shuffled);
+        ex.extra_data = JSON.stringify(extra);
+        ex.translation = extra.translation;
+        return finalize(ex);
+    }
+
+    // 20. Xử lý câu hỏi Số thứ tự & Ngày tháng (dynamic_ordinal_date_quiz - Bài 6)
+    if (extra.dynamic_ordinal_date_quiz) {
+        const dateItems = [
+            { day: "1.", nom: "erste", dat: "ersten", month: "Mai", viMonth: "tháng Năm" },
+            { day: "3.", nom: "dritte", dat: "dritten", month: "März", viMonth: "tháng Ba" },
+            { day: "7.", nom: "siebte", dat: "siebten", month: "August", viMonth: "tháng Tám" },
+            { day: "8.", nom: "achte", dat: "achten", month: "März", viMonth: "tháng Ba" },
+            { day: "15.", nom: "fünfzehnte", dat: "fünfzehnten", month: "Oktober", viMonth: "tháng Mười" },
+            { day: "20.", nom: "zwanzigste", dat: "zwanzigsten", month: "September", viMonth: "tháng Chín" },
+            { day: "21.", nom: "einundzwanzigste", dat: "einundzwanzigsten", month: "Juni", viMonth: "tháng Sáu" }
+        ];
+        const item = dateItems[Math.floor(Math.random() * dateItems.length)];
+        const isDatMode = (Math.random() > 0.5);
+
+        if (isDatMode) {
+            ex.question = `[Ngày tháng Dativ (Random)]: Điền dạng chữ của số thứ tự (${item.day}) sau giới từ 'am' vào chỗ trống: 'Meine Schwester hat am ___ ${item.month} Geburtstag.'`;
+            ex.correct_answer = item.dat;
+            ex.explanation = `Sau giới từ 'am' (Dativ), số thứ tự '${item.day}' mang đuôi '-ten/-sten' là '${item.dat}'.`;
+            extra.translation = `Em gái tôi có sinh nhật vào ngày ${item.day.replace('.', '')} ${item.viMonth}.`;
+            extra.accepted_answers = [item.dat];
+        } else {
+            ex.question = `[Ngày tháng Nominativ (Random)]: Điền dạng chữ của số thứ tự (${item.day}) sau mạo từ 'der' vào chỗ trống: 'Heute ist der ___ ${item.month}.'`;
+            ex.correct_answer = item.nom;
+            ex.explanation = `Sau 'Heute ist der ...' (Nominativ), số thứ tự '${item.day}' mang đuôi '-te/-ste' là '${item.nom}'.`;
+            extra.translation = `Hôm nay là ngày ${item.day.replace('.', '')} ${item.viMonth}.`;
+            extra.accepted_answers = [item.nom];
+        }
+        ex.options = null;
+        ex.options_json = null;
+        ex.extra_data = JSON.stringify(extra);
+        ex.translation = extra.translation;
+        return finalize(ex);
+    }
+
+    // 21. Xử lý câu hỏi Giới từ vị trí Dativ (dynamic_dativ_position_quiz - Bài 6)
+    if (extra.dynamic_dativ_position_quiz) {
+        const posItems = [
+            { item: "Der schwere Drucker", verb: "steht", prep: "auf", target: "dem Schreibtisch", wrong: ["auf den Schreibtisch", "über dem Schreibtisch", "an der Schreibtisch"], exp: "'der Schreibtisch' ở bề mặt ngang có tiếp xúc dùng 'auf dem Schreibtisch'.", trans: "Chiếc máy in nặng đặt trên bàn làm việc." },
+            { item: "Das schöne Bild", verb: "hängt", prep: "an", target: "der Wand", wrong: ["an die Wand", "auf der Wand", "in der Wand"], exp: "'die Wand' (mặt thẳng đứng) dùng 'an der Wand'.", trans: "Bức tranh đẹp treo trên tường." },
+            { item: "Das Café", verb: "liegt", prep: "zwischen", target: "der Bank und dem Kino", wrong: ["zwischen die Bank und das Kino", "neben der Bank und der Kino", "in der Bank und dem Kino"], exp: "Giới từ 'zwischen' đi với Dativ của cả 2 danh từ: 'der Bank und dem Kino'.", trans: "Quán cà phê nằm giữa ngân hàng và rạp chiếu phim." },
+            { item: "Der große Parkplatz", verb: "liegt", prep: "hinter", target: "dem Krankenhaus", wrong: ["hinter das Krankenhaus", "vor der Krankenhaus", "neben den Krankenhaus"], exp: "'das Krankenhaus' ở Dativ đổi thành 'dem Krankenhaus'.", trans: "Bãi đỗ xe lớn nằm phía sau bệnh viện." },
+            { item: "Das Taxi", verb: "wartet", prep: "vor", target: "dem Hotel", wrong: ["vor das Hotel", "an dem Hotel", "in das Hotel"], exp: "'das Hotel' ở Dativ sau giới từ 'vor' đổi thành 'vor dem Hotel'.", trans: "Chiếc taxi đợi phía trước khách sạn." }
+        ];
+        const p = posItems[Math.floor(Math.random() * posItems.length)];
+        ex.question = `[Vị trí Dativ (Random)]: Chọn đáp án đúng chỉ vị trí: '${p.item} ${p.verb} ___.'`;
+        ex.correct_answer = `${p.prep} ${p.target}`;
+        ex.explanation = p.exp;
+        extra.translation = p.trans;
+        const opts = [`${p.prep} ${p.target}`, ...p.wrong];
+        const shuffled = opts.sort(() => Math.random() - 0.5);
+        ex.options = shuffled;
+        ex.options_json = JSON.stringify(shuffled);
+        ex.extra_data = JSON.stringify(extra);
+        ex.translation = extra.translation;
+        return finalize(ex);
+    }
+
     if (!extra.dynamic_number && !extra.dynamic_mode) return finalize(ex);
 
     const mode = extra.dynamic_mode;
@@ -1393,7 +1494,7 @@ function randomizeAllNumberExercises(exercisesList) {
         let isDynamic = false;
         try {
             const extra = typeof ex.extra_data === 'string' ? JSON.parse(ex.extra_data) : (ex.extra_data || {});
-            if (extra.dynamic_number || extra.dynamic_mode || extra.dynamic_price || extra.dynamic_conjugation || extra.dynamic_article_quiz || extra.dynamic_possessive_article || extra.dynamic_plural_quiz || extra.dynamic_direction_quiz || extra.dynamic_landmark_quiz || extra.dynamic_praeteritum_quiz || extra.dynamic_country_language_quiz || extra.dynamic_question_transform || extra.dynamic_nom_akk_quiz || extra.dynamic_possessiv_quiz || extra.dynamic_adjective_antonym_quiz || extra.dynamic_pronoun_replacement_quiz || extra.dynamic_house_translation_quiz || extra.dynamic_prep_quiz || extra.dynamic_time_quiz || extra.dynamic_trennbare_quiz) isDynamic = true;
+            if (extra.dynamic_number || extra.dynamic_mode || extra.dynamic_price || extra.dynamic_conjugation || extra.dynamic_article_quiz || extra.dynamic_possessive_article || extra.dynamic_plural_quiz || extra.dynamic_direction_quiz || extra.dynamic_landmark_quiz || extra.dynamic_praeteritum_quiz || extra.dynamic_country_language_quiz || extra.dynamic_question_transform || extra.dynamic_nom_akk_quiz || extra.dynamic_possessiv_quiz || extra.dynamic_adjective_antonym_quiz || extra.dynamic_pronoun_replacement_quiz || extra.dynamic_house_translation_quiz || extra.dynamic_prep_quiz || extra.dynamic_time_quiz || extra.dynamic_trennbare_quiz || extra.dynamic_dativ_transport_quiz || extra.dynamic_ordinal_date_quiz || extra.dynamic_dativ_position_quiz) isDynamic = true;
         } catch (e) {}
 
         if (isDynamic) {

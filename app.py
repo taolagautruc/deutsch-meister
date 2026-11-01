@@ -100,6 +100,11 @@ def ensure_db_initialized():
         if cursor.fetchone()["cnt"] == 0:
             from lessons.a1.seed_a1_b5 import seed_lesson_5
             seed_lesson_5()
+
+        cursor.execute("SELECT COUNT(*) as cnt FROM lessons WHERE title LIKE 'Bài 6%';")
+        if cursor.fetchone()["cnt"] == 0:
+            from lessons.a1.seed_a1_b6 import seed_lesson_6
+            seed_lesson_6()
             
         conn.close()
     except Exception as e:
