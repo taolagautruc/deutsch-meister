@@ -1029,18 +1029,18 @@ def seed_lesson_5():
     # TỪ ĐIỂN DỊCH NGHĨA TIẾNG VIỆT CHUẨN 100% CHO 50 BÀI TẬP BÀI 5
     # =========================================================================
     EXERCISE_TRANSLATIONS = {
-        1: "Vào Chủ nhật tôi thức dậy vào lúc 8 giờ.",
+        1: "Vào Chủ nhật anh ấy thức dậy vào lúc 8 giờ.",
         2: "2 giờ 30 phút (2 giờ rưỡi) đọc là 'halb drei'.",
         3: "5 giờ 50 phút (6 giờ kém 10 phút) đọc là 'zehn vor sechs'.",
-        4: "Trời nóng quá. Tôi mở cửa sổ ra.",
-        5: "Vào ban đêm tôi ngủ tám tiếng đồng hồ.",
-        6: "Bạn làm việc từ lúc nào đến lúc nào? — Từ 8 giờ đến 12 giờ tôi làm việc.",
+        4: "Trời nóng quá. Chúng tôi mở cửa sổ ra.",
+        5: "Vào ban đêm bọn trẻ ngủ tám tiếng đồng hồ.",
+        6: "Các bạn làm việc từ lúc nào đến lúc nào? — Từ 8 giờ đến 12 giờ chúng tôi làm việc.",
         7: "Hôm qua bạn đã không gặp may, nhưng hôm nay bạn có nhiều may mắn.",
         8: "Các bạn đã có một bữa tiệc tuyệt vời chứ?",
         9: "Anh trai tôi có sinh nhật vào tháng Sáu.",
         10: "Khi nào bạn thức dậy vào Chủ nhật?",
-        11: "Vào thứ Sáu lúc 20 giờ tôi đi ra ngoài / đi chơi.",
-        12: "Hôm qua tôi đã không có thời gian, nhưng hôm nay tôi có nhiều thời gian.",
+        11: "Vào thứ Sáu lúc 20 giờ Lisa đi ra ngoài / đi chơi.",
+        12: "Hôm qua anh ấy đã không có thời gian, nhưng hôm nay anh ấy có nhiều thời gian.",
         13: "Xin lỗi, tối qua chúng mình không có mặt ở bữa tiệc. Chúng mình đã gặp một sự cố hỏng xe.",
         14: "Joan đã có một chiếc điện thoại di động, nhưng cô ấy đã không có số của bạn.",
         15: "Bây giờ là 8 giờ 15 phút (Một phần tư giờ sau mốc 8 giờ).",
@@ -1062,23 +1062,23 @@ def seed_lesson_5():
         31: "Nối đại từ nhân xưng với dạng chia đúng của haben ở Präteritum.",
         32: "Nối các buổi trong ngày với khung giờ chuẩn.",
         33: "Nối câu hỏi lịch trình với câu trả lời tương ứng.",
-        34: "Vào Chủ nhật tôi thức dậy vào lúc 8 giờ. (Am Sonntag stehe ich um 8 Uhr auf.)",
-        35: "Tôi mở cánh cửa ra. (Ich mache die Tür auf.)",
+        34: "Vào Chủ nhật chúng tôi thức dậy vào lúc 8 giờ. (Am Sonntag stehen wir um 8 Uhr auf.)",
+        35: "Anh ấy mở cánh cửa ra. (Er macht die Tür auf.)",
         36: "Hôm qua chúng tôi đã gặp một sự cố, nhưng hôm nay chúng tôi không gặp sự cố nào.",
-        37: "Từ 8 giờ đến 12 giờ tôi làm việc. (Von 8 bis 12 Uhr arbeite ich.)",
-        38: "Bạn đi chơi vào thứ Sáu lúc nào? — Vào thứ Sáu lúc 20 giờ tôi đi chơi.",
-        39: "Vào Chủ nhật tôi thức dậy vào lúc 8 giờ.",
-        40: "Vào lúc 9 giờ tôi ăn sáng.",
+        37: "Từ 8 giờ đến 12 giờ các bạn làm việc. (Von 8 bis 12 Uhr arbeitet ihr.)",
+        38: "Khi nào các bạn đi chơi vào thứ Sáu? — Vào thứ Sáu lúc 20 giờ chúng tôi đi chơi.",
+        39: "Vào Chủ nhật anh ấy thức dậy vào lúc 8 giờ.",
+        40: "Vào lúc 9 giờ chúng tôi ăn sáng.",
         41: "Xin lỗi, tối qua chúng mình không có mặt ở bữa tiệc. Chúng mình đã gặp một sự cố hỏng xe.",
         42: "Hôm qua anh ấy đã không có tiền, nhưng hôm nay anh ấy có nhiều tiền.",
-        43: "Vào Chủ nhật tôi thức dậy lúc 8 giờ. (Am Sonntag stehe ich um 8 Uhr auf.)",
-        44: "Từ 8 giờ đến 12 giờ tôi làm việc. (Von 8 bis 12 Uhr arbeite ich.)",
-        45: "Hôm qua tôi không có thời gian, nhưng hôm nay tôi có nhiều thời gian.",
-        46: "Vào thứ Sáu lúc 20 giờ tôi đi chơi. (Am Freitag um 20 Uhr gehe ich aus.)",
-        47: "Tôi mở cửa / Tôi mở cánh cửa ra.",
-        48: "Vào lúc 12 giờ tôi nghỉ trưa.",
+        43: "Vào Chủ nhật chúng tôi thức dậy lúc 8 giờ. (Am Sonntag stehen wir um 8 Uhr auf.)",
+        44: "Từ 8 giờ đến 12 giờ anh ấy làm việc. (Von 8 bis 12 Uhr arbeitet er.)",
+        45: "Hôm qua chúng tôi không có thời gian, nhưng hôm nay chúng tôi có nhiều thời gian.",
+        46: "Vào thứ Sáu lúc 20 giờ họ đi chơi. (Am Freitag um 20 Uhr gehen sie aus.)",
+        47: "Cô ấy mở cửa / Cô ấy mở cánh cửa ra. (Sie macht die Tür auf.)",
+        48: "Vào lúc 12 giờ chúng tôi nghỉ trưa. (Um 12 Uhr machen wir Mittagspause.)",
         49: "Hôm qua chúng tôi đã gặp một sự cố, nhưng hôm nay chúng tôi không gặp sự cố nào.",
-        50: "Vào lúc 22 giờ tôi đi ngủ."
+        50: "Vào lúc 22 giờ anh ấy đi ngủ. (Um 22 Uhr geht er ins Bett.)"
     }
 
     # =========================================================================
@@ -1088,7 +1088,7 @@ def seed_lesson_5():
         # --- DẠNG 1: TRẮC NGHIỆM (trac_nghiem - 8 Câu) ---
         (
             lesson_id, "trac_nghiem",
-            "Câu 1: Chọn giới từ chỉ thời gian đúng điền vào câu: '___ Sonntag stehe ich ___ 8 Uhr auf.'",
+            "Câu 1: Chọn giới từ chỉ thời gian đúng điền vào câu: '___ Sonntag steht er ___ 8 Uhr auf.'",
             json.dumps(["Am / um", "Im / um", "Um / am", "Am / im"], ensure_ascii=False),
             "Am / um",
             "Thứ trong tuần ('Sonntag') đi với giới từ 'am'; giờ giấc cụ thể ('8 Uhr') đi với giới từ 'um'.",
@@ -1112,27 +1112,27 @@ def seed_lesson_5():
         ),
         (
             lesson_id, "trac_nghiem",
-            "Câu 4: Chọn dạng đúng của động từ tách 'aufmachen' (mở) cho câu: 'Es ist heiß. Ich ___ das Fenster ___.'",
-            json.dumps(["mache / auf", "aufmache / —", "machst / auf", "auf / mache"], ensure_ascii=False),
-            "mache / auf",
-            "Với động từ tách 'aufmachen', trong câu đơn động từ gốc 'machen' đứng ở vị trí số 2 chia theo ngôi 'ich' là 'mache', còn tiền tố 'auf' tách ra đứng ở cuối câu.",
+            "Câu 4: Chọn dạng đúng của động từ tách 'aufmachen' (mở) cho câu: 'Es ist heiß. Wir ___ das Fenster ___.'",
+            json.dumps(["machen / auf", "aufmachen / —", "macht / auf", "auf / mache"], ensure_ascii=False),
+            "machen / auf",
+            "Với động từ tách 'aufmachen', trong câu đơn động từ gốc 'machen' đứng ở vị trí số 2 chia theo ngôi 'wir' là 'machen', còn tiền tố 'auf' tách ra đứng ở cuối câu.",
             15, json.dumps({"dynamic_trennbare_quiz": True})
         ),
         (
             lesson_id, "trac_nghiem",
-            "Câu 5: Chọn giới từ đúng cho danh từ chỉ buổi 'die Nacht' (ban đêm): '___ Nacht schlafe ich acht Stunden.'",
+            "Câu 5: Chọn giới từ đúng cho danh từ chỉ buổi 'die Nacht' (ban đêm): '___ Nacht schlafen die Kinder acht Stunden.'",
             json.dumps(["In der", "Am", "Im", "Um"], ensure_ascii=False),
             "In der",
             "Khác với các buổi khác mang giống đực (am Morgen, am Abend), riêng 'die Nacht' mang giống cái nên bắt buộc phải dùng cụm giới từ 'in der Nacht'.",
-            15, json.dumps({"translation": "Vào ban đêm tôi ngủ 8 tiếng. (In der Nacht schlafe ich acht Stunden.)"}, ensure_ascii=False)
+            15, json.dumps({"translation": "Vào ban đêm bọn trẻ ngủ 8 tiếng. (In der Nacht schlafen die Kinder acht Stunden.)"}, ensure_ascii=False)
         ),
         (
             lesson_id, "trac_nghiem",
-            "Câu 6: Chọn từ để hỏi đúng cho câu trả lời 'Von 8 bis 12 Uhr arbeite ich.': '___ arbeitest du?'",
+            "Câu 6: Chọn từ để hỏi đúng cho câu trả lời 'Von 8 bis 12 Uhr arbeiten wir.': '___ arbeitet ihr?'",
             json.dumps(["Von wann bis wann", "Um wie viel Uhr", "Woher", "Wer"], ensure_ascii=False),
             "Von wann bis wann",
-            "Để hỏi khoảng thời gian bắt đầu và kết thúc tương ứng với câu trả lời 'Von ... bis ...', ta dùng cụm từ để hỏi 'Von wann bis wann...?'.",
-            15, json.dumps({"translation": "Bạn làm việc từ mấy giờ đến mấy giờ? (Von wann bis wann arbeitest du?)"}, ensure_ascii=False)
+            "Để hỏi khoảng thời gian bắt đầu và kết thúc tương ứng với câu trả lời 'Von ... bis ...', ta dùng cụm từ để hỏi 'Von wann bis wann...?'. Câu hỏi chia theo ngôi 'ihr' (các bạn): 'Von wann bis wann arbeitet ihr?'.",
+            15, json.dumps({"translation": "Các bạn làm việc từ mấy giờ đến mấy giờ? (Von wann bis wann arbeitet ihr?)"}, ensure_ascii=False)
         ),
         (
             lesson_id, "trac_nghiem",
@@ -1170,18 +1170,18 @@ def seed_lesson_5():
         ),
         (
             lesson_id, "dien_khuyet",
-            "Câu 11: Điền tiền tố tách còn thiếu vào cuối câu: 'Am Freitag um 20 Uhr gehe ich ___.' (Nghĩa: Vào thứ Sáu lúc 20 giờ tôi đi chơi / đi ra ngoài.)",
+            "Câu 11: Điền tiền tố tách còn thiếu vào cuối câu: 'Am Freitag um 20 Uhr geht Lisa ___.' (Nghĩa: Vào thứ Sáu lúc 20 giờ Lisa đi chơi / đi ra ngoài.)",
             None,
             "aus",
-            "Động từ 'đi chơi / đi ra ngoài' là 'ausgehen' (ich gehe ... aus).",
+            "Động từ 'đi chơi / đi ra ngoài' là 'ausgehen' (Lisa geht ... aus).",
             15, None
         ),
         (
             lesson_id, "dien_khuyet",
-            "Câu 12: Điền dạng chia đúng của động từ 'haben' ở thì quá khứ đơn (Präteritum): 'Gestern ___ ich keine Zeit, aber heute habe ich viel Zeit.'",
+            "Câu 12: Điền dạng chia đúng của động từ 'haben' ở thì quá khứ đơn (Präteritum): 'Gestern ___ er keine Zeit, aber heute hat er viel Zeit.'",
             None,
             "hatte",
-            "Ngôi 'ich' của động từ 'haben' ở thì Präteritum là 'hatte'.",
+            "Ngôi 'er' của động từ 'haben' ở thì Präteritum là 'hatte'.",
             15, None
         ),
         (
@@ -1194,7 +1194,7 @@ def seed_lesson_5():
         ),
         (
             lesson_id, "dien_khuyet",
-            "Câu 14: Điền dạng chia đúng của động từ 'haben' ở thì quá khứ đơn (Präteritum): 'Joan ___ ein Handy, aber sie hatte deine Nummer không.'",
+            "Câu 14: Điền dạng chia đúng của động từ 'haben' ở thì quá khứ đơn (Präteritum): 'Joan ___ ein Handy, aber sie hatte deine Nummer nicht.'",
             None,
             "hatte",
             "Chủ ngữ 'Joan' tương ứng với ngôi thứ 3 số ít (sie - cô ấy), nên 'haben' ở Präteritum chia là 'hatte'.",
@@ -1394,15 +1394,15 @@ def seed_lesson_5():
             lesson_id, "noi_o",
             "Câu 33 (Bài nối ô 6): Nối câu hỏi lịch trình (Tagesabläufe) ở cột trái với câu trả lời tương ứng ở cột phải:",
             None,
-            "Wann stehst du am Sonntag auf? - Am Sonntag stehe ich um 8 Uhr auf., Um wie viel Uhr frühstückst du? - Um 9 Uhr frühstücke ich., Von wann bis wann arbeitest du? - Von 8 bis 12 Uhr arbeite ich., Wann gehst du ins Bett? - Um 22 Uhr gehe ich ins Bett.",
-            "Wann stehst du am Sonntag auf? → Am Sonntag stehe ich um 8 Uhr auf.; Um wie viel Uhr frühstückst du? → Um 9 Uhr frühstücke ich.; Von wann bis wann arbeitest du? → Von 8 bis 12 Uhr arbeite ich.; Wann gehst du ins Bett? → Um 22 Uhr gehe ich ins Bett.",
+            "Wann steht Thomas am Sonntag auf? - Am Sonntag steht er um 8 Uhr auf., Um wie viel Uhr frühstückt ihr? - Um 9 Uhr frühstücken wir., Von wann bis wann arbeiten die Kollegen? - Von 8 bis 17 Uhr arbeiten sie., Wann geht das Kind ins Bett? - Um 21 Uhr geht es ins Bett.",
+            "Wann steht Thomas am Sonntag auf? → Am Sonntag steht er um 8 Uhr auf.; Um wie viel Uhr frühstückt ihr? → Um 9 Uhr frühstücken wir.; Von wann bis wann arbeiten die Kollegen? → Von 8 bis 17 Uhr arbeiten sie.; Wann geht das Kind ins Bett? → Um 21 Uhr geht es ins Bett.",
             25, json.dumps({
                 "translation": "Nối câu hỏi với câu trả lời tương ứng.",
                 "noi_o_pairs": [
-                    {"left": "Wann stehst du am Sonntag auf?", "right": "Am Sonntag stehe ich um 8 Uhr auf."},
-                    {"left": "Um wie viel Uhr frühstückst du?", "right": "Um 9 Uhr frühstücke ich."},
-                    {"left": "Von wann bis wann arbeitest du?", "right": "Von 8 bis 12 Uhr arbeite ich."},
-                    {"left": "Wann gehst du ins Bett?", "right": "Um 22 Uhr gehe ich ins Bett."}
+                    {"left": "Wann steht Thomas am Sonntag auf?", "right": "Am Sonntag steht er um 8 Uhr auf."},
+                    {"left": "Um wie viel Uhr frühstückt ihr?", "right": "Um 9 Uhr frühstücken wir."},
+                    {"left": "Von wann bis wann arbeiten die Kollegen?", "right": "Von 8 bis 17 Uhr arbeiten sie."},
+                    {"left": "Wann geht das Kind ins Bett?", "right": "Um 21 Uhr geht es ins Bett."}
                 ]
             }, ensure_ascii=False)
         ),
@@ -1410,19 +1410,19 @@ def seed_lesson_5():
         # --- DẠNG 6: ĐIỀN VÀO CHỖ TRỐNG ĐỂ TẠO THÀNH CÂU (dien_tao_cau - 5 Câu) ---
         (
             lesson_id, "dien_tao_cau",
-            "Câu 34: Điền 2 từ còn thiếu vào chỗ trống (cách nhau bởi dấu gạch chéo '/') để hoàn thành câu: 'Am Sonntag ___ ich um 8 Uhr ___.'",
+            "Câu 34: Điền 2 từ còn thiếu vào chỗ trống (cách nhau bởi dấu gạch chéo '/') để hoàn thành câu: 'Am Sonntag ___ wir um 8 Uhr ___.'",
             None,
-            "stehe / auf / stehe auf / wache / auf / wache auf",
-            "Khi 'Am Sonntag' đứng đầu câu, động từ gốc 'stehe' đứng ở vị trí số 2 (trước chủ ngữ 'ich'), còn tiền tố 'auf' đứng ở cuối câu (động từ tách 'aufstehen' / 'aufwachen').",
-            20, json.dumps({"translation": "Vào Chủ nhật tôi thức dậy vào lúc 8 giờ. (Am Sonntag stehe ich um 8 Uhr auf.)"}, ensure_ascii=False)
+            "stehen / auf / stehen auf / wachen / auf / wachen auf",
+            "Khi 'Am Sonntag' đứng đầu câu, động từ gốc 'stehen' đứng ở vị trí số 2 (trước chủ ngữ 'wir'), còn tiền tố 'auf' đứng ở cuối câu (động từ tách 'aufstehen' / 'aufwachen').",
+            20, json.dumps({"translation": "Vào Chủ nhật chúng tôi thức dậy vào lúc 8 giờ. (Am Sonntag stehen wir um 8 Uhr auf.)"}, ensure_ascii=False)
         ),
         (
             lesson_id, "dien_tao_cau",
-            "Câu 35: Điền 2 từ còn thiếu vào chỗ trống (cách nhau bởi dấu '/') để hoàn thành câu: 'Ich ___ die Tür ___.'",
+            "Câu 35: Điền 2 từ còn thiếu vào chỗ trống (cách nhau bởi dấu '/') để hoàn thành câu: 'Er ___ die Tür ___.'",
             None,
-            "mache / auf / mache auf / mache / zu / mache zu / schließe / ab / schliesse / ab",
-            "Động từ tách 'aufmachen' (mở) hoặc 'zumachen' (đóng) chia cho ngôi 'ich': động từ gốc 'mache' đứng ở vị trí số 2 và tiền tố 'auf' (hoặc 'zu') đứng ở cuối câu.",
-            20, json.dumps({"translation": "Tôi mở cánh cửa ra (Ich mache die Tür auf) hoặc Tôi đóng cánh cửa lại (Ich mache die Tür zu)."}, ensure_ascii=False)
+            "macht / auf / macht auf / macht / zu / macht zu / schließt / ab / schliesst / ab",
+            "Động từ tách 'aufmachen' (mở) hoặc 'zumachen' (đóng) chia cho ngôi 'er': động từ gốc 'macht' đứng ở vị trí số 2 và tiền tố 'auf' (hoặc 'zu') đứng ở cuối câu.",
+            20, json.dumps({"translation": "Anh ấy mở cánh cửa ra (Er macht die Tür auf) hoặc Anh ấy đóng cánh cửa lại (Er macht die Tür zu)."}, ensure_ascii=False)
         ),
         (
             lesson_id, "dien_tao_cau",
@@ -1434,44 +1434,44 @@ def seed_lesson_5():
         ),
         (
             lesson_id, "dien_tao_cau",
-            "Câu 37: Điền 2 từ còn thiếu vào chỗ trống (cách nhau bởi dấu '/') để tạo câu lịch trình: 'Von 8 ___ 12 Uhr ___ ich.'",
+            "Câu 37: Điền 2 từ còn thiếu vào chỗ trống (cách nhau bởi dấu '/') để tạo câu lịch trình: 'Von 8 ___ 12 Uhr ___ ihr.'",
             None,
-            "bis / arbeite",
-            "Cấu trúc chỉ khoảng thời gian 'Von 8 bis 12 Uhr' đứng ở vị trí số 1, động từ 'arbeite' đứng ở vị trí số 2.",
-            20, json.dumps({"translation": "Từ 8 giờ đến 12 giờ tôi làm việc. (Von 8 bis 12 Uhr arbeite ich.)"}, ensure_ascii=False)
+            "bis / arbeitet",
+            "Cấu trúc chỉ khoảng thời gian 'Von 8 bis 12 Uhr' đứng ở vị trí số 1, động từ 'arbeiten' chia theo ngôi 'ihr' là 'arbeitet' đứng ở vị trí số 2.",
+            20, json.dumps({"translation": "Từ 8 giờ đến 12 giờ các bạn làm việc. (Von 8 bis 12 Uhr arbeitet ihr.)"}, ensure_ascii=False)
         ),
         (
             lesson_id, "dien_tao_cau",
-            "Câu 38: Điền 2 từ còn thiếu vào chỗ trống (cách nhau bởi dấu '/') để hoàn thành cặp hỏi – đáp: 'Wann gehst du am Freitag ___? — Am Freitag um 20 Uhr ___ ich aus.'",
+            "Câu 38: Điền 2 từ còn thiếu vào chỗ trống (cách nhau bởi dấu '/') để hoàn thành cặp hỏi – đáp: 'Wann geht ihr am Freitag ___? — Am Freitag um 20 Uhr ___ wir aus.'",
             None,
-            "aus / gehe",
-            "Động từ tách 'ausgehen' tách tiền tố 'aus' xuống cuối câu hỏi, và ở câu trả lời động từ gốc 'gehe' đứng ở vị trí số 2.",
-            20, json.dumps({"translation": "Khi nào bạn đi chơi vào thứ Sáu? — Vào thứ Sáu lúc 20 giờ tôi đi chơi."}, ensure_ascii=False)
+            "aus / gehen",
+            "Động từ tách 'ausgehen' tách tiền tố 'aus' xuống cuối câu hỏi (ngôi 'ihr' chia là 'geht'), và ở câu trả lời động từ gốc 'gehen' chia theo ngôi 'wir' đứng ở vị trí số 2.",
+            20, json.dumps({"translation": "Khi nào các bạn đi chơi vào thứ Sáu? — Vào thứ Sáu lúc 20 giờ chúng tôi đi chơi."}, ensure_ascii=False)
         ),
 
         # --- DẠNG 7: NGHE GIỌNG BẢN XỨ DE-DE VÀ ĐIỀN TỪ (nghe_dien - 4 Câu) ---
         (
             lesson_id, "nghe_dien",
-            "Câu 39 [Luyện Nghe]: Nghe và điền từ còn thiếu vào chỗ trống: 'Am Sonntag ___ ich um acht Uhr auf.'",
+            "Câu 39 [Luyện Nghe]: Nghe và điền từ còn thiếu vào chỗ trống: 'Am Sonntag ___ er um acht Uhr auf.'",
             None,
-            "stehe",
-            "Động từ gốc 'stehe' đứng ở vị trí thứ 2 trong câu. Cả câu: 'Am Sonntag stehe ich um acht Uhr auf.' (Vào Chủ nhật tôi thức dậy vào lúc 8 giờ.)",
+            "steht",
+            "Động từ gốc 'steht' chia theo ngôi 'er' đứng ở vị trí thứ 2 trong câu. Cả câu: 'Am Sonntag steht er um acht Uhr auf.' (Vào Chủ nhật anh ấy thức dậy vào lúc 8 giờ.)",
             20, json.dumps({
-                "audio_text": "Am Sonntag stehe ich um acht Uhr auf.",
-                "display_sentence": "Am Sonntag ___ ich um acht Uhr auf.",
-                "translation": "Vào Chủ nhật tôi thức dậy vào lúc 8 giờ."
+                "audio_text": "Am Sonntag steht er um acht Uhr auf.",
+                "display_sentence": "Am Sonntag ___ er um acht Uhr auf.",
+                "translation": "Vào Chủ nhật anh ấy thức dậy vào lúc 8 giờ."
             }, ensure_ascii=False)
         ),
         (
             lesson_id, "nghe_dien",
-            "Câu 40 [Luyện Nghe]: Nghe và điền từ còn thiếu vào chỗ trống: 'Um neun Uhr ___ ich.'",
+            "Câu 40 [Luyện Nghe]: Nghe và điền từ còn thiếu vào chỗ trống: 'Um neun Uhr ___ wir.'",
             None,
-            "frühstücke / fruehstuecke",
-            "Động từ không tách 'frühstücken' chia ở ngôi 'ich' là 'frühstücke'. Cả câu: 'Um neun Uhr frühstücke ich.' (Vào lúc 9 giờ tôi ăn sáng.)",
+            "frühstücken / fruehstuecken",
+            "Động từ không tách 'frühstücken' chia ở ngôi 'wir' là 'frühstücken'. Cả câu: 'Um neun Uhr frühstücken wir.' (Vào lúc 9 giờ chúng tôi ăn sáng.)",
             20, json.dumps({
-                "audio_text": "Um neun Uhr frühstücke ich.",
-                "display_sentence": "Um neun Uhr ___ ich.",
-                "translation": "Vào lúc 9 giờ tôi ăn sáng."
+                "audio_text": "Um neun Uhr frühstücken wir.",
+                "display_sentence": "Um neun Uhr ___ wir.",
+                "translation": "Vào lúc 9 giờ chúng tôi ăn sáng."
             }, ensure_ascii=False)
         ),
         (
@@ -1502,51 +1502,51 @@ def seed_lesson_5():
         # --- DẠNG 8: DỊCH CÂU HOÀN CHỈNH VIỆT → ĐỨC (dich_cau_vd - 4 Câu) ---
         (
             lesson_id, "dich_cau_vd",
-            "Câu 43: Dịch câu sau sang tiếng Đức: 'Vào Chủ nhật tôi thức dậy lúc 8 giờ.'",
+            "Câu 43: Dịch câu sau sang tiếng Đức: 'Vào Chủ nhật chúng tôi thức dậy lúc 8 giờ.'",
             None,
-            "Am Sonntag stehe ich um 8 Uhr auf. / Am Sonntag stehe ich um acht Uhr auf. / Ich stehe am Sonntag um 8 Uhr auf. / Ich stehe am Sonntag um acht Uhr auf. / Um 8 Uhr stehe ich am Sonntag auf.",
-            "Chấp nhận cả cách đưa trạng ngữ 'Am Sonntag' lên đầu câu (đảo ngữ 'stehe ich') hoặc để chủ ngữ 'Ich stehe' ở đầu câu, miễn động từ 'stehe' ở vị trí số 2 và tiền tố 'auf' ở cuối câu.",
+            "Am Sonntag stehen wir um 8 Uhr auf. / Am Sonntag stehen wir um acht Uhr auf. / Wir stehen am Sonntag um 8 Uhr auf. / Wir stehen am Sonntag um acht Uhr auf. / Um 8 Uhr stehen wir am Sonntag auf.",
+            "Chấp nhận cả cách đưa trạng ngữ 'Am Sonntag' lên đầu câu (đảo ngữ 'stehen wir') hoặc để chủ ngữ 'Wir stehen' ở đầu câu, miễn động từ 'stehen' ở vị trí số 2 và tiền tố 'auf' ở cuối câu.",
             25, None
         ),
         (
             lesson_id, "dich_cau_vd",
-            "Câu 44: Dịch câu sau sang tiếng Đức: 'Từ 8 giờ đến 12 giờ tôi làm việc.'",
+            "Câu 44: Dịch câu sau sang tiếng Đức: 'Từ 8 giờ đến 12 giờ anh ấy làm việc.'",
             None,
-            "Von 8 bis 12 Uhr arbeite ich. / Von acht bis zwölf Uhr arbeite ich. / Ich arbeite von 8 bis 12 Uhr. / Ich arbeite von acht bis zwölf Uhr. / Von 8 Uhr bis 12 Uhr arbeite ich.",
-            "Cấu trúc 'von ... bis ...' kết hợp với động từ 'arbeiten' chia cho ngôi 'ich' là 'arbeite'.",
+            "Von 8 bis 12 Uhr arbeitet er. / Von acht bis zwölf Uhr arbeitet er. / Er arbeitet von 8 bis 12 Uhr. / Er arbeitet von acht bis十二 Uhr. / Er arbeitet von acht bis zwölf Uhr. / Von 8 Uhr bis 12 Uhr arbeitet er.",
+            "Cấu trúc 'von ... bis ...' kết hợp với động từ 'arbeiten' chia cho ngôi 'er' là 'arbeitet'.",
             25, None
         ),
         (
             lesson_id, "dich_cau_vd",
-            "Câu 45: Dịch câu sau sang tiếng Đức: 'Hôm qua tôi không có thời gian, nhưng hôm nay tôi có nhiều thời gian.'",
+            "Câu 45: Dịch câu sau sang tiếng Đức: 'Hôm qua chúng tôi không có thời gian, nhưng hôm nay chúng tôi có nhiều thời gian.'",
             None,
-            "Gestern hatte ich keine Zeit, aber heute habe ich viel Zeit. / Ich hatte gestern keine Zeit, aber heute habe ich viel Zeit. / Gestern hatte ich keine Zeit, aber ich habe heute viel Zeit. / Ich hatte gestern keine Zeit, aber ich habe heute viel Zeit.",
-            "Mệnh đề quá khứ với 'gestern' dùng 'hatte ich keine Zeit', mệnh đề hiện tại với 'heute' dùng 'habe ich viel Zeit'.",
+            "Gestern hatten wir keine Zeit, aber heute haben wir viel Zeit. / Wir hatten gestern keine Zeit, aber heute haben wir viel Zeit. / Gestern hatten wir keine Zeit, aber wir haben heute viel Zeit. / Wir hatten gestern keine Zeit, aber wir haben heute viel Zeit.",
+            "Mệnh đề quá khứ với 'gestern' dùng 'hatten wir keine Zeit', mệnh đề hiện tại với 'heute' dùng 'haben wir viel Zeit'.",
             25, None
         ),
         (
             lesson_id, "dich_cau_vd",
-            "Câu 46: Dịch câu sau sang tiếng Đức: 'Vào thứ Sáu lúc 20 giờ tôi đi chơi.'",
+            "Câu 46: Dịch câu sau sang tiếng Đức: 'Vào thứ Sáu lúc 20 giờ họ đi chơi.'",
             None,
-            "Am Freitag um 20 Uhr gehe ich aus. / Am Freitag um zwanzig Uhr gehe ich aus. / Ich gehe am Freitag um 20 Uhr aus. / Ich gehe am Freitag um zwanzig Uhr aus. / Am Freitag gehe ich um 20 Uhr aus.",
-            "Động từ tách 'ausgehen' chia cho ngôi 'ich': 'gehe' đứng ở vị trí số 2, tiền tố 'aus' tách ra đứng ở cuối câu.",
+            "Am Freitag um 20 Uhr gehen sie aus. / Am Freitag um zwanzig Uhr gehen sie aus. / Sie gehen am Freitag um 20 Uhr aus. / Sie gehen am Freitag um zwanzig Uhr aus. / Am Freitag gehen sie um 20 Uhr aus.",
+            "Động từ tách 'ausgehen' chia cho ngôi 'sie' (họ): 'gehen' đứng ở vị trí số 2, tiền tố 'aus' tách ra đứng ở cuối câu.",
             25, None
         ),
 
         # --- DẠNG 9: DỊCH CÂU HOÀN CHỈNH ĐỨC → VIỆT (dich_cau_dv - 4 Câu) ---
         (
             lesson_id, "dich_cau_dv",
-            "Câu 47: Dịch câu sau sang tiếng Việt: „Ich mache die Tür auf.“",
+            "Câu 47: Dịch câu sau sang tiếng Việt: „Sie macht die Tür auf.“",
             None,
-            "Tôi mở cửa / Tôi mở cánh cửa / Tôi mở cửa ra / Tôi mở cánh cửa ra / Mình mở cửa ra / Mình mở cánh cửa ra",
-            "'aufmachen' = mở ra; 'die Tür' = cánh cửa.",
+            "Cô ấy mở cửa / Cô ấy mở cánh cửa / Cô ấy mở cửa ra / Cô ấy mở cánh cửa ra / Bà ấy mở cửa / Bà ấy mở cánh cửa / Bà ấy mở cửa ra / Bà ấy mở cánh cửa ra",
+            "'aufmachen' = mở ra; 'die Tür' = cánh cửa; 'Sie macht die Tür auf' = Cô ấy mở cánh cửa ra.",
             25, None
         ),
         (
             lesson_id, "dich_cau_dv",
-            "Câu 48: Dịch câu sau sang tiếng Việt: „Um 12 Uhr mache ich Mittagspause.“",
+            "Câu 48: Dịch câu sau sang tiếng Việt: „Um 12 Uhr machen wir Mittagspause.“",
             None,
-            "Vào lúc 12 giờ tôi nghỉ trưa / Lúc 12 giờ tôi nghỉ trưa / 12 giờ tôi nghỉ trưa / Tôi nghỉ trưa vào lúc 12 giờ / Tôi nghỉ trưa lúc 12 giờ / Mình nghỉ trưa lúc 12 giờ",
+            "Vào lúc 12 giờ chúng tôi nghỉ trưa / Lúc 12 giờ chúng tôi nghỉ trưa / 12 giờ chúng tôi nghỉ trưa / Chúng tôi nghỉ trưa vào lúc 12 giờ / Chúng tôi nghỉ trưa lúc 12 giờ / Chúng mình nghỉ trưa lúc 12 giờ / Vào lúc 12 giờ chúng mình nghỉ trưa / Lúc 12 giờ chúng mình nghỉ trưa / 12 giờ chúng mình nghỉ trưa / Chúng mình nghỉ trưa vào lúc 12 giờ",
             "'Um 12 Uhr' = vào lúc 12 giờ; 'Mittagspause machen' = nghỉ trưa.",
             25, None
         ),
@@ -1560,9 +1560,9 @@ def seed_lesson_5():
         ),
         (
             lesson_id, "dich_cau_dv",
-            "Câu 50: Dịch câu sau sang tiếng Việt: „Um 22 Uhr gehe ich ins Bett.“",
+            "Câu 50: Dịch câu sau sang tiếng Việt: „Um 22 Uhr geht er ins Bett.“",
             None,
-            "Vào lúc 22 giờ tôi đi ngủ / Lúc 22 giờ tôi đi ngủ / 22 giờ tôi đi ngủ / Tôi đi ngủ vào lúc 22 giờ / Tôi đi ngủ lúc 22 giờ / Vào lúc 10 giờ tối tôi đi ngủ / Lúc 22 giờ tôi lên giường đi ngủ / Tôi lên giường đi ngủ lúc 22 giờ",
+            "Vào lúc 22 giờ anh ấy đi ngủ / Lúc 22 giờ anh ấy đi ngủ / 22 giờ anh ấy đi ngủ / Anh ấy đi ngủ vào lúc 22 giờ / Anh ấy đi ngủ lúc 22 giờ / Vào lúc 10 giờ tối anh ấy đi ngủ / Lúc 22 giờ anh ấy lên giường đi ngủ / Anh ấy lên giường đi ngủ lúc 22 giờ / Anh ấy đi ngủ lúc 10 giờ tối",
             "'Um 22 Uhr' = vào lúc 22 giờ; 'ins Bett gehen' = lên giường / đi ngủ.",
             25, None
         )

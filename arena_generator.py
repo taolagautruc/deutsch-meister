@@ -542,29 +542,29 @@ ARENA_DATA_BY_LESSON = {
             ]
         ],
         "sentences_vd": [
-            ("Vào Chủ nhật tôi thức dậy lúc 8 giờ.", ["Am Sonntag stehe ich um 8 Uhr auf.", "Am Sonntag stehe ich um acht Uhr auf.", "Ich stehe am Sonntag um 8 Uhr auf."]),
-            ("Từ 8 giờ đến 12 giờ tôi làm việc.", ["Von 8 bis 12 Uhr arbeite ich.", "Ich arbeite von 8 bis 12 Uhr."]),
-            ("Hôm qua tôi không có thời gian, nhưng hôm nay tôi có nhiều thời gian.", ["Gestern hatte ich keine Zeit, aber heute habe ich viel Zeit."]),
-            ("Vào thứ Sáu lúc 20 giờ tôi đi chơi.", ["Am Freitag um 20 Uhr gehe ich aus.", "Ich gehe am Freitag um 20 Uhr aus."])
+            ("Vào Chủ nhật chúng tôi thức dậy lúc 8 giờ.", ["Am Sonntag stehen wir um 8 Uhr auf.", "Am Sonntag stehen wir um acht Uhr auf.", "Wir stehen am Sonntag um 8 Uhr auf."]),
+            ("Từ 8 giờ đến 12 giờ anh ấy làm việc.", ["Von 8 bis 12 Uhr arbeitet er.", "Er arbeitet von 8 bis 12 Uhr."]),
+            ("Hôm qua chúng tôi không có thời gian, nhưng hôm nay chúng tôi có nhiều thời gian.", ["Gestern hatten wir keine Zeit, aber heute haben wir viel Zeit.", "Wir hatten gestern keine Zeit, aber heute haben wir viel Zeit."]),
+            ("Vào thứ Sáu lúc 20 giờ họ đi chơi.", ["Am Freitag um 20 Uhr gehen sie aus.", "Sie gehen am Freitag um 20 Uhr aus."])
         ],
         "sentences_dv": [
-            ("Ich mache die Tür auf.", ["Tôi mở cửa", "Tôi mở cánh cửa", "Tôi mở cửa ra", "Tôi mở cánh cửa ra", "Mình mở cửa ra"]),
-            ("Um 12 Uhr mache ich Mittagspause.", ["Vào lúc 12 giờ tôi nghỉ trưa", "Lúc 12 giờ tôi nghỉ trưa", "Tôi nghỉ trưa lúc 12 giờ", "12 giờ tôi nghỉ trưa"]),
+            ("Sie macht die Tür auf.", ["Cô ấy mở cửa", "Cô ấy mở cánh cửa", "Cô ấy mở cửa ra", "Cô ấy mở cánh cửa ra", "Bà ấy mở cửa ra"]),
+            ("Um 12 Uhr machen wir Mittagspause.", ["Vào lúc 12 giờ chúng tôi nghỉ trưa", "Lúc 12 giờ chúng tôi nghỉ trưa", "Chúng tôi nghỉ trưa lúc 12 giờ", "12 giờ chúng tôi nghỉ trưa", "Chúng mình nghỉ trưa lúc 12 giờ"]),
             ("Gestern hatten wir eine Panne, aber heute haben wir keine Panne.", ["Hôm qua chúng tôi đã gặp một sự cố, nhưng hôm nay chúng tôi không gặp sự cố nào", "Hôm qua chúng tôi có một sự cố hỏng xe, nhưng hôm nay chúng tôi không có sự cố nào"]),
-            ("Um 22 Uhr gehe ich ins Bett.", ["Vào lúc 22 giờ tôi đi ngủ", "Lúc 22 giờ tôi đi ngủ", "Tôi đi ngủ lúc 22 giờ", "22 giờ tôi đi ngủ"])
+            ("Um 22 Uhr geht er ins Bett.", ["Vào lúc 22 giờ anh ấy đi ngủ", "Lúc 22 giờ anh ấy đi ngủ", "Anh ấy đi ngủ lúc 22 giờ", "22 giờ anh ấy đi ngủ", "Anh ấy đi ngủ lúc 10 giờ tối"])
         ],
         "nghe_dien_items": [
             {
-                "audio_text": "Am Sonntag stehe ich um acht Uhr auf.",
-                "display_sentence": "Am Sonntag ___ ich um acht Uhr auf.",
-                "hint_vi": "Vào Chủ nhật tôi thức dậy vào lúc 8 giờ.",
-                "accepted_answers": ["stehe"]
+                "audio_text": "Am Sonntag steht er um acht Uhr auf.",
+                "display_sentence": "Am Sonntag ___ er um acht Uhr auf.",
+                "hint_vi": "Vào Chủ nhật anh ấy thức dậy vào lúc 8 giờ.",
+                "accepted_answers": ["steht"]
             },
             {
-                "audio_text": "Um neun Uhr frühstücke ich.",
-                "display_sentence": "Um neun Uhr ___ ich.",
-                "hint_vi": "Vào lúc 9 giờ tôi ăn sáng.",
-                "accepted_answers": ["frühstücke", "fruehstuecke"]
+                "audio_text": "Um neun Uhr frühstücken wir.",
+                "display_sentence": "Um neun Uhr ___ wir.",
+                "hint_vi": "Vào lúc 9 giờ chúng tôi ăn sáng.",
+                "accepted_answers": ["frühstücken", "fruehstuecken"]
             },
             {
                 "audio_text": "Entschuldigung, wir waren gestern Abend nicht bei der Party. Wir hatten eine Panne.",
@@ -581,11 +581,11 @@ ARENA_DATA_BY_LESSON = {
         ],
         "dien_tao_cau_items": [
             {
-                "question": "Điền vào 2 chỗ trống để tạo câu: 'Vào Chủ nhật tôi thức dậy vào lúc 8 giờ.'",
-                "display_frame": "Am Sonntag [1] ich um 8 Uhr [2].",
-                "word_bank_hints": ["stehe", "auf", "mache", "aus", "gehe"],
-                "accepted_answers": ["stehe / auf"],
-                "explanation": "Khi 'Am Sonntag' đứng đầu câu, động từ gốc 'stehe' đứng ở vị trí số 2, tiền tố 'auf' đứng ở cuối câu."
+                "question": "Điền vào 2 chỗ trống để tạo câu: 'Vào Chủ nhật chúng tôi thức dậy vào lúc 8 giờ.'",
+                "display_frame": "Am Sonntag [1] wir um 8 Uhr [2].",
+                "word_bank_hints": ["stehen", "auf", "macht", "aus", "gehen"],
+                "accepted_answers": ["stehen / auf"],
+                "explanation": "Khi 'Am Sonntag' đứng đầu câu, động từ gốc 'stehen' chia theo ngôi wir đứng ở vị trí số 2, tiền tố 'auf' đứng ở cuối câu."
             },
             {
                 "question": "Điền vào 2 chỗ trống để tạo câu đối chiếu: 'Hôm qua chúng tôi đã gặp một sự cố, nhưng hôm nay chúng tôi không gặp sự cố nào.'",

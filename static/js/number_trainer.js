@@ -1219,12 +1219,12 @@ function generateNewNumberData(ex, fallbackIndex = null) {
     // 17. Xử lý câu hỏi Giới từ thời gian (dynamic_prep_quiz - Bài 5)
     if (extra.dynamic_prep_quiz) {
         const prepItems = [
-            { question: "___ Sonntag stehe ich ___ 8 Uhr auf.", correct: "Am / um", wrong: ["Im / um", "Um / am", "Am / im"], exp: "Thứ trong tuần ('Sonntag') đi với 'am'; giờ giấc cụ thể ('8 Uhr') đi với 'um'.", trans: "Vào Chủ nhật tôi thức dậy vào lúc 8 giờ." },
+            { question: "___ Sonntag steht er ___ 8 Uhr auf.", correct: "Am / um", wrong: ["Im / um", "Um / am", "Am / im"], exp: "Thứ trong tuần ('Sonntag') đi với 'am'; giờ giấc cụ thể ('8 Uhr') đi với 'um'.", trans: "Vào Chủ nhật anh ấy thức dậy vào lúc 8 giờ." },
             { question: "___ Montag beginnt meine Arbeit ___ 9 Uhr.", correct: "Am / um", wrong: ["Im / um", "Um / am", "In der / um"], exp: "Thứ trong tuần ('Montag') đi với 'am'; giờ cụ thể ('9 Uhr') đi với 'um'.", trans: "Vào thứ Hai công việc của tôi bắt đầu vào lúc 9 giờ." },
             { question: "Mein Deutschkurs ist ___ Dienstag ___ 18 Uhr.", correct: "am / um", wrong: ["im / um", "um / am", "am / im"], exp: "Thứ trong tuần đi với 'am'; mốc giờ đi với 'um'.", trans: "Khóa học tiếng Đức của tôi diễn ra vào thứ Ba lúc 18 giờ." },
             { question: "___ Juni fahren wir nach Berlin, ___ Sommer ist das Wetter super.", correct: "Im / im", wrong: ["Am / am", "Um / im", "Im / am"], exp: "Tháng trong năm ('Juni') và mùa ('Sommer') đều đi với giới từ 'im'.", trans: "Vào tháng Sáu chúng tôi đi tới Berlin, vào mùa hè thời tiết rất tuyệt." },
-            { question: "___ Freitag ___ 20 Uhr gehe ich mit Freunden aus.", correct: "Am / um", wrong: ["Im / um", "Um / am", "In / um"], exp: "Thứ Sáu đi với 'am'; 20 Uhr đi với 'um'.", trans: "Vào thứ Sáu lúc 20 giờ tôi đi chơi với bạn bè." },
-            { question: "___ Morgen trinke ich Kaffee, aber ___ Nacht schlafe ich viel.", correct: "Am / in der", wrong: ["Im / am", "Am / am", "In der / am"], exp: "'der Morgen' đi với 'am'; ngoại lệ 'die Nacht' (giống cái) bắt buộc đi với 'in der Nacht'.", trans: "Vào buổi sáng tôi uống cà phê, nhưng vào ban đêm tôi ngủ nhiều." }
+            { question: "___ Freitag ___ 20 Uhr geht ihr mit Freunden aus.", correct: "Am / um", wrong: ["Im / um", "Um / am", "In / um"], exp: "Thứ Sáu đi với 'am'; 20 Uhr đi với 'um'.", trans: "Vào thứ Sáu lúc 20 giờ các bạn đi chơi với bạn bè." },
+            { question: "___ Morgen trinken sie Kaffee, aber ___ Nacht schlafen sie viel.", correct: "Am / in der", wrong: ["Im / am", "Am / am", "In der / am"], exp: "'der Morgen' đi với 'am'; ngoại lệ 'die Nacht' (giống cái) bắt buộc đi với 'in der Nacht'.", trans: "Vào buổi sáng họ uống cà phê, nhưng vào ban đêm họ ngủ nhiều." }
         ];
         const chosen = prepItems[Math.floor(Math.random() * prepItems.length)];
         ex.question = `[Giới từ thời gian (Random)]: Chọn giới từ thích hợp điền vào câu: '${chosen.question}'`;
@@ -1243,12 +1243,12 @@ function generateNewNumberData(ex, fallbackIndex = null) {
     // 18. Xử lý câu hỏi Động từ tách (dynamic_trennbare_quiz - Bài 5)
     if (extra.dynamic_trennbare_quiz) {
         const trennbareItems = [
-            { verb: "aufmachen", subject: "Ich", object: "das Fenster", stem: "mache", prefix: "auf", wrong: ["aufmache / —", "machst / auf", "auf / mache"], exp: "Động từ tách 'aufmachen': gốc 'mache' đứng ở V2 theo ngôi 'ich', tiền tố 'auf' đứng cuối câu.", trans: "Tôi mở cửa sổ ra." },
+            { verb: "aufmachen", subject: "Wir", object: "das Fenster", stem: "machen", prefix: "auf", wrong: ["aufmachen / —", "macht / auf", "auf / machen"], exp: "Động từ tách 'aufmachen': gốc 'machen' đứng ở V2 theo ngôi 'wir', tiền tố 'auf' đứng cuối câu.", trans: "Chúng tôi mở cửa sổ ra." },
             { verb: "zumachen", subject: "Er", object: "die Tür", stem: "macht", prefix: "zu", wrong: ["zumacht / —", "mache / zu", "macht / auf"], exp: "Động từ tách 'zumachen': gốc 'macht' đứng ở V2 theo ngôi 'er', tiền tố 'zu' đứng cuối câu.", trans: "Anh ấy đóng cánh cửa lại." },
             { verb: "aufstehen", subject: "Wir", object: "am Sonntag um 8 Uhr", stem: "stehen", prefix: "auf", wrong: ["aufstehen / —", "steht / auf", "stehen / aus"], exp: "Động từ tách 'aufstehen': gốc 'stehen' chia theo 'wir', tiền tố 'auf' đứng cuối câu.", trans: "Vào Chủ nhật chúng tôi thức dậy lúc 8 giờ." },
             { verb: "ausgehen", subject: "Du", object: "am Freitag um 20 Uhr", stem: "gehst", prefix: "aus", wrong: ["ausgehst / —", "gehe / aus", "geht / aus"], exp: "Động từ tách 'ausgehen': gốc 'gehst' chia theo 'du', tiền tố 'aus' đứng cuối câu.", trans: "Vào thứ Sáu lúc 20 giờ bạn đi chơi." },
             { verb: "einkaufen", subject: "Anna", object: "im Supermarkt", stem: "kauft", prefix: "ein", wrong: ["einkauft / —", "kaufe / ein", "kaufen / ein"], exp: "Động từ tách 'einkaufen': gốc 'kauft' chia theo 'Anna' (sie), tiền tố 'ein' đứng cuối câu.", trans: "Anna đi mua sắm ở siêu thị." },
-            { verb: "anmachen", subject: "Ich", object: "die Lampe am Abend", stem: "mache", prefix: "an", wrong: ["anmache / —", "macht / an", "mache / aus"], exp: "Động từ tách 'anmachen': gốc 'mache' chia theo 'ich', tiền tố 'an' đứng cuối câu.", trans: "Tôi bật đèn vào buổi tối." },
+            { verb: "anmachen", subject: "Ihr", object: "die Lampe am Abend", stem: "macht", prefix: "an", wrong: ["anmacht / —", "mache / an", "macht / aus"], exp: "Động từ tách 'anmachen': gốc 'macht' chia theo ngôi 'ihr', tiền tố 'an' đứng cuối câu.", trans: "Các bạn bật đèn vào buổi tối." },
             { verb: "fernsehen", subject: "Mein Vater", object: "am Abend gern", stem: "sieht", prefix: "fern", wrong: ["siehst / fern", "seht / fern", "fernsehen / —"], exp: "Động từ tách 'fernsehen': biến âm 'e -> ie' ở ngôi thứ 3 số ít là 'sieht', tiền tố 'fern' đứng cuối câu.", trans: "Vào buổi tối bố tôi thích xem tivi." }
         ];
         const chosen = trennbareItems[Math.floor(Math.random() * trennbareItems.length)];
