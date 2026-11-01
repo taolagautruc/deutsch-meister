@@ -775,6 +775,10 @@ function generateNewNumberData(ex, fallbackIndex = null) {
         ex.correct_answer = chosenSub.form;
         ex.explanation = `Chủ ngữ '${chosenSub.pronoun}' đi với thì Quá khứ đơn (Präteritum) của 'sein' là '${chosenSub.form}'. (${chosenTime.de} ${chosenSub.form} ${chosenSub.pronoun} ${chosenPlace.de}).`;
         extra.translation = `${chosenTime.vi}, ${chosenSub.vi} đã ${chosenPlace.vi}.`;
+        const forms = ["war", "warst", "waren", "wart"];
+        const shuffledOpts = [...forms].sort(() => Math.random() - 0.5);
+        ex.options = shuffledOpts;
+        ex.options_json = JSON.stringify(shuffledOpts);
         ex.extra_data = JSON.stringify(extra);
         ex.translation = extra.translation;
         return finalize(ex);
