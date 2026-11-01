@@ -287,6 +287,7 @@ def init_db():
         if u_count == 0:
             from werkzeug.security import generate_password_hash
             sample_users = [
+                ("taolagautruc", generate_password_hash("30012007", method="pbkdf2:sha256"), "A1", 1, 70, 0, 0, 1),
                 ("lukas_de", generate_password_hash("LukasPass123!", method="pbkdf2:sha256"), "B2", 10, 1890, 185, 12, 7),
                 ("Minh_Anh", generate_password_hash("MinhAnhPass123!", method="pbkdf2:sha256"), "B1", 8, 1620, 160, 9, 5),
                 ("HoangNam", generate_password_hash("HoangNamPass123!", method="pbkdf2:sha256"), "A2", 5, 1510, 140, 8, 4),
@@ -435,6 +436,7 @@ def init_db():
     if cursor.fetchone()[0] == 0:
         from werkzeug.security import generate_password_hash
         sample_users = [
+            ("taolagautruc", generate_password_hash("30012007", method="pbkdf2:sha256"), "A1", 1, 70, 0, 0, 1),
             ("lukas_de", generate_password_hash("LukasPass123!", method="pbkdf2:sha256"), "B2", 10, 1890, 185, 12, 7),
             ("Minh_Anh", generate_password_hash("MinhAnhPass123!", method="pbkdf2:sha256"), "B1", 8, 1620, 160, 9, 5),
             ("HoangNam", generate_password_hash("HoangNamPass123!", method="pbkdf2:sha256"), "A2", 5, 1510, 140, 8, 4),
