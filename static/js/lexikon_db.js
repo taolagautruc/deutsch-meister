@@ -544,7 +544,7 @@ const GERMAN_LEXIKON_DB = [
     {
         word: "Flur", article: "der", gender: "der", plural: "die Flure",
         indefinite: "ein Flur", negation: "kein Flur", akkusativ: "den / einen / keinen Flur",
-        meaning: "hành lang", category: "Nhà ở & Phòng ốc",
+        meaning: "hành lang", category: "Nhà ở & Phòng ốc • Tòa nhà, Văn phòng & Đồ vật Bàn làm việc (Bài 6)",
         rule: "Số nhiều thêm -e. Đại từ nhân xưng thay thế ở Nominativ là 'Er' (Er ist lang und dunkel).",
         example: "Das Haus hat einen Flur. Er ist lang und dunkel.",
         example_vi: "Ngôi nhà có một hành lang. Nó dài và tối."
@@ -560,7 +560,7 @@ const GERMAN_LEXIKON_DB = [
     {
         word: "Stock", article: "der", gender: "der", plural: "die Stöcke",
         indefinite: "ein Stock", negation: "kein Stock", akkusativ: "den / einen / keinen Stock",
-        meaning: "tầng lầu", category: "Nhà ở & Phòng ốc",
+        meaning: "tầng lầu", category: "Nhà ở & Phòng ốc • Tòa nhà, Văn phòng & Đồ vật Bàn làm việc (Bài 6)",
         rule: "Số nhiều biến âm o -> ö và thêm -e (die Stöcke). Thường đi với số thứ tự: im 1. Stock.",
         example: "Meine Wohnung liegt im zweiten Stock.",
         example_vi: "Căn hộ của tôi nằm ở tầng hai."
@@ -1071,6 +1071,350 @@ const GERMAN_LEXIKON_DB = [
         rule: "Danh từ giống cái (die Zeit). Thường dùng: keine Zeit haben (không có thời gian).",
         example: "Gestern hatte ich keine Zeit.",
         example_vi: "Hôm qua tôi đã không có thời gian."
+    },
+    {
+        word: "Bus", article: "der", gender: "der", plural: "die Busse",
+        indefinite: "ein Bus", negation: "kein Bus",
+        meaning: "xe buýt", category: "Phương tiện Giao thông & Địa điểm Thành phố (Bài 6)",
+        rule: "Danh từ giống đực (der Bus), số nhiều die Busse. Đi bằng xe buýt dùng mit dem Bus.",
+        example: "Mein Bruder fährt jeden Tag mit dem Bus zur Arbeit.",
+        example_vi: "Anh trai tôi đi làm mỗi ngày bằng xe buýt."
+    },
+    {
+        word: "Zug", article: "der", gender: "der", plural: "die Züge",
+        indefinite: "ein Zug", negation: "kein Zug",
+        meaning: "tàu hỏa", category: "Phương tiện Giao thông & Địa điểm Thành phố (Bài 6)",
+        rule: "Danh từ giống đực (der Zug), số nhiều biến âm u -> ü (die Züge). Đi bằng tàu hỏa dùng mit dem Zug.",
+        example: "Der Zug fährt um acht Uhr am Bahnhof ab.",
+        example_vi: "Chuyến tàu khởi hành lúc 8 giờ tại nhà ga."
+    },
+    {
+        word: "Wagen", article: "der", gender: "der", plural: "die Wagen",
+        indefinite: "ein Wagen", negation: "kein Wagen",
+        meaning: "xe hơi, ô tô cá nhân", category: "Phương tiện Giao thông & Địa điểm Thành phố (Bài 6)",
+        rule: "Danh từ giống đực (der Wagen). Đi bằng xe hơi dùng mit seinem Wagen.",
+        example: "Herr Müller fährt mit seinem Wagen ins Büro.",
+        example_vi: "Ông Müller lái chiếc xe hơi của ông ấy đến văn phòng."
+    },
+    {
+        word: "U-Bahn", article: "die", gender: "die", plural: "die U-Bahnen",
+        indefinite: "eine U-Bahn", negation: "keine U-Bahn",
+        meaning: "tàu điện ngầm", category: "Phương tiện Giao thông & Địa điểm Thành phố (Bài 6)",
+        rule: "Danh từ giống cái (die U-Bahn). Đi bằng tàu điện ngầm dùng mit der U-Bahn.",
+        example: "In Berlin fahren wir immer mit der U-Bahn.",
+        example_vi: "Ở Berlin chúng tôi luôn đi bằng tàu điện ngầm."
+    },
+    {
+        word: "S-Bahn", article: "die", gender: "die", plural: "die S-Bahnen",
+        indefinite: "eine S-Bahn", negation: "keine S-Bahn",
+        meaning: "tàu điện nhanh đô thị", category: "Phương tiện Giao thông & Địa điểm Thành phố (Bài 6)",
+        rule: "Danh từ giống cái (die S-Bahn). Đi bằng tàu điện đô thị dùng mit der S-Bahn.",
+        example: "Vom Flughafen fährt der Tourist mit der S-Bahn ins Stadtzentrum.",
+        example_vi: "Từ sân bay vị khách du lịch đi bằng tàu điện đô thị vào trung tâm thành phố."
+    },
+    {
+        word: "Straßenbahn", article: "die", gender: "die", plural: "die Straßenbahnen",
+        indefinite: "eine Straßenbahn", negation: "keine Straßenbahn",
+        meaning: "tàu điện mặt đất", category: "Phương tiện Giao thông & Địa điểm Thành phố (Bài 6)",
+        rule: "Danh từ giống cái (die Straßenbahn). Đi bằng tàu điện mặt đất dùng mit der Straßenbahn.",
+        example: "Am Wochenende fahren unsere Großeltern mit der Straßenbahn zum Markt.",
+        example_vi: "Vào cuối tuần ông bà của chúng tôi đi bằng tàu điện mặt đất ra chợ."
+    },
+    {
+        word: "Fähre", article: "die", gender: "die", plural: "die Fähren",
+        indefinite: "eine Fähre", negation: "keine Fähre",
+        meaning: "phà", category: "Phương tiện Giao thông & Địa điểm Thành phố (Bài 6)",
+        rule: "Danh từ giống cái (die Fähre). Đi bằng phà dùng mit der Fähre.",
+        example: "Wir fahren mit der Fähre auf die Insel.",
+        example_vi: "Chúng tôi đi bằng phà ra đảo."
+    },
+    {
+        word: "Auto", article: "das", gender: "das", plural: "die Autos",
+        indefinite: "ein Auto", negation: "kein Auto",
+        meaning: "ô tô, xe hơi", category: "Phương tiện Giao thông & Địa điểm Thành phố (Bài 6)",
+        rule: "Danh từ giống trung (das Auto). Đi bằng ô tô dùng mit dem Auto.",
+        example: "Am Sonntag fahren unsere Nachbarn mit dem Auto ans Meer.",
+        example_vi: "Vào Chủ nhật những người hàng xóm của chúng tôi đi bằng ô tô ra biển."
+    },
+    {
+        word: "Fahrrad", article: "das", gender: "das", plural: "die Fahrräder",
+        indefinite: "ein Fahrrad", negation: "kein Fahrrad",
+        meaning: "xe đạp", category: "Phương tiện Giao thông & Địa điểm Thành phố (Bài 6)",
+        rule: "Danh từ giống trung (das Fahrrad), số nhiều die Fahrräder. Đi bằng xe đạp dùng mit dem Fahrrad.",
+        example: "Bei schönem Wetter fährt sie mit dem Fahrrad zur Schule.",
+        example_vi: "Khi thời tiết đẹp cô ấy đi xe đạp tới trường."
+    },
+    {
+        word: "Motorrad", article: "das", gender: "das", plural: "die Motorräder",
+        indefinite: "ein Motorrad", negation: "kein Motorrad",
+        meaning: "xe mô tô", category: "Phương tiện Giao thông & Địa điểm Thành phố (Bài 6)",
+        rule: "Danh từ giống trung (das Motorrad). Đi bằng xe máy/mô tô dùng mit dem Motorrad.",
+        example: "In Vietnam fahren viele Menschen mit dem Motorrad zur Arbeit.",
+        example_vi: "Ở Việt Nam nhiều người đi làm bằng xe mô tô."
+    },
+    {
+        word: "Taxi", article: "das", gender: "das", plural: "die Taxis",
+        indefinite: "ein Taxi", negation: "kein Taxi",
+        meaning: "xe taxi", category: "Phương tiện Giao thông & Địa điểm Thành phố (Bài 6)",
+        rule: "Danh từ giống trung (das Taxi). Đi bằng taxi dùng mit dem Taxi.",
+        example: "Wir fahren mit dem Taxi nach Hause.",
+        example_vi: "Chúng tôi đi bằng taxi về nhà."
+    },
+    {
+        word: "Flugzeug", article: "das", gender: "das", plural: "die Flugzeuge",
+        indefinite: "ein Flugzeug", negation: "kein Flugzeug",
+        meaning: "máy bay", category: "Phương tiện Giao thông & Địa điểm Thành phố (Bài 6)",
+        rule: "Danh từ giống trung (das Flugzeug). Bay bằng máy bay dùng mit dem Flugzeug fliegen.",
+        example: "Im August fliegen wir mit dem Flugzeug nach Deutschland.",
+        example_vi: "Vào tháng Tám chúng tôi bay bằng máy bay sang Đức."
+    },
+    {
+        word: "Schiff", article: "das", gender: "das", plural: "die Schiffe",
+        indefinite: "ein Schiff", negation: "kein Schiff",
+        meaning: "tàu thủy lớn", category: "Phương tiện Giao thông & Địa điểm Thành phố (Bài 6)",
+        rule: "Danh từ giống trung (das Schiff). Đi bằng tàu thủy dùng mit dem Schiff fahren.",
+        example: "Die Touristen machen eine Reise mit dem Schiff.",
+        example_vi: "Những du khách thực hiện một chuyến du hành bằng tàu thủy."
+    },
+    {
+        word: "Fuß", article: "der", gender: "der", plural: "die Füße",
+        indefinite: "ein Fuß", negation: "kein Fuß",
+        meaning: "bàn chân (đi bộ)", category: "Phương tiện Giao thông & Địa điểm Thành phố (Bài 6)",
+        rule: "Ngoại lệ đi bộ trong tiếng Đức dùng cụm cố định zu Fuß gehen.",
+        example: "Die Schule ist gleich neben meinem Haus, deshalb gehe ich immer zu Fuß.",
+        example_vi: "Ngôi trường ở ngay cạnh nhà tôi, vì vậy tôi luôn đi bộ."
+    },
+    {
+        word: "Bahnhof", article: "der", gender: "der", plural: "die Bahnhöfe",
+        indefinite: "ein Bahnhof", negation: "kein Bahnhof",
+        meaning: "nhà ga xe lửa", category: "Phương tiện Giao thông & Địa điểm Thành phố (Bài 6)",
+        rule: "Danh từ giống đực (der Bahnhof). Đến nhà ga dùng zum Bahnhof, tại nhà ga dùng am Bahnhof.",
+        example: "Wie komme ich vom Hauptbahnhof zum Stadtmuseum?",
+        example_vi: "Tôi đi từ nhà ga trung tâm đến bảo tàng thành phố bằng cách nào?"
+    },
+    {
+        word: "Flughafen", article: "der", gender: "der", plural: "die Flughäfen",
+        indefinite: "ein Flughafen", negation: "kein Flughafen",
+        meaning: "sân bay", category: "Phương tiện Giao thông & Địa điểm Thành phố (Bài 6)",
+        rule: "Danh từ giống đực (der Flughafen). Đến sân bay dùng zum Flughafen, từ sân bay về dùng vom Flughafen.",
+        example: "Wann kommt deine Schwester heute Abend vom Flughafen zurück?",
+        example_vi: "Tối nay khi nào chị gái của bạn từ sân bay trở về?"
+    },
+    {
+        word: "Haltestelle", article: "die", gender: "die", plural: "die Haltestellen",
+        indefinite: "eine Haltestelle", negation: "keine Haltestelle",
+        meaning: "trạm dừng (xe buýt/tàu)", category: "Phương tiện Giao thông & Địa điểm Thành phố (Bài 6)",
+        rule: "Danh từ giống cái (die Haltestelle). Tại trạm dừng dùng an der Haltestelle.",
+        example: "Wann kommt der Bus an der Haltestelle an?",
+        example_vi: "Khi nào xe buýt đến trạm dừng?"
+    },
+    {
+        word: "Parkplatz", article: "der", gender: "der", plural: "die Parkplätze",
+        indefinite: "ein Parkplatz", negation: "kein Parkplatz",
+        meaning: "bãi đỗ xe", category: "Phương tiện Giao thông & Địa điểm Thành phố (Bài 6)",
+        rule: "Danh từ giống đực (der Parkplatz). Phía sau bệnh viện dùng hinter dem Krankenhaus.",
+        example: "Der große Parkplatz liegt direkt hinter dem Krankenhaus.",
+        example_vi: "Bãi đỗ xe lớn nằm ngay phía sau bệnh viện."
+    },
+    {
+        word: "Markt", article: "der", gender: "der", plural: "die Märkte",
+        indefinite: "ein Markt", negation: "kein Markt",
+        meaning: "khu chợ", category: "Phương tiện Giao thông & Địa điểm Thành phố (Bài 6)",
+        rule: "Danh từ giống đực (der Markt). Ra chợ dùng zum Markt hoặc auf dem Markt.",
+        example: "Meine Großeltern fahren gern mit der Straßenbahn zum Markt.",
+        example_vi: "Ông bà tôi thích đi bằng tàu điện mặt đất ra chợ."
+    },
+    {
+        word: "Park", article: "der", gender: "der", plural: "die Parks",
+        indefinite: "ein Park", negation: "kein Park",
+        meaning: "công viên", category: "Phương tiện Giao thông & Địa điểm Thành phố (Bài 6)",
+        rule: "Danh từ giống đực (der Park). Ở trong công viên dùng im Park.",
+        example: "Am Sonntag spielen die Kinder im Park mit ihren Freunden.",
+        example_vi: "Vào Chủ nhật bọn trẻ chơi ở trong công viên với những người bạn của chúng."
+    },
+    {
+        word: "Bank", article: "die", gender: "die", plural: "die Banken",
+        indefinite: "eine Bank", negation: "keine Bank",
+        meaning: "ngân hàng", category: "Phương tiện Giao thông & Địa điểm Thành phố (Bài 6)",
+        rule: "Danh từ giống cái (die Bank). Đến ngân hàng dùng zur Bank, làm việc ở ngân hàng dùng bei einer Bank.",
+        example: "Frau Bui arbeitet bei einer Bank in Berlin.",
+        example_vi: "Bà Bùi làm việc tại một ngân hàng ở Berlin."
+    },
+    {
+        word: "Post", article: "die", gender: "die", plural: "die Post",
+        indefinite: "eine Post", negation: "keine Post",
+        meaning: "bưu điện", category: "Phương tiện Giao thông & Địa điểm Thành phố (Bài 6)",
+        rule: "Danh từ giống cái (die Post). Đến bưu điện dùng zur Post, bên cạnh bưu điện dùng neben der Post.",
+        example: "Wie komme ich zum Bahnhof und zur Post?",
+        example_vi: "Tôi đi đến nhà ga và bưu điện bằng cách nào?"
+    },
+    {
+        word: "Bibliothek", article: "die", gender: "die", plural: "die Bibliotheken",
+        indefinite: "eine Bibliothek", negation: "keine Bibliothek",
+        meaning: "thư viện", category: "Phương tiện Giao thông & Địa điểm Thành phố (Bài 6)",
+        rule: "Danh từ giống cái (die Bibliothek). Đi bộ đến thư viện dùng zu Fuß zur Bibliothek.",
+        example: "Morgen gehen wir zu Fuß zur Bibliothek.",
+        example_vi: "Ngày mai chúng tôi đi bộ đến thư viện."
+    },
+    {
+        word: "Buchhandlung", article: "die", gender: "die", plural: "die Buchhandlungen",
+        indefinite: "eine Buchhandlung", negation: "keine Buchhandlung",
+        meaning: "hiệu sách", category: "Phương tiện Giao thông & Địa điểm Thành phố (Bài 6)",
+        rule: "Danh từ giống cái (die Buchhandlung). Giữa hiệu sách và rạp phim dùng zwischen der Buchhandlung und dem Kino.",
+        example: "Das Café liegt direkt zwischen der Buchhandlung und dem Kino.",
+        example_vi: "Quán cà phê nằm ngay giữa hiệu sách và rạp chiếu phim."
+    },
+    {
+        word: "Apotheke", article: "die", gender: "die", plural: "die Apotheken",
+        indefinite: "eine Apotheke", negation: "keine Apotheke",
+        meaning: "hiệu thuốc tây", category: "Phương tiện Giao thông & Địa điểm Thành phố (Bài 6)",
+        rule: "Danh từ giống cái (die Apotheke). Đối diện nhà ga dùng gegenüber vom Bahnhof.",
+        example: "Die Apotheke liegt direkt gegenüber vom Bahnhof.",
+        example_vi: "Hiệu thuốc nằm ngay đối diện nhà ga."
+    },
+    {
+        word: "Kirche", article: "die", gender: "die", plural: "die Kirchen",
+        indefinite: "eine Kirche", negation: "keine Kirche",
+        meaning: "nhà thờ", category: "Phương tiện Giao thông & Địa điểm Thành phố (Bài 6)",
+        rule: "Danh từ giống cái (die Kirche). Bên cạnh nhà thờ cổ dùng neben einer alten Kirche.",
+        example: "Das Museum liegt direkt vor dem Park und neben einer alten Kirche.",
+        example_vi: "Bảo tàng nằm ngay phía trước công viên và bên cạnh một nhà thờ cổ."
+    },
+    {
+        word: "Krankenhaus", article: "das", gender: "das", plural: "die Krankenhäuser",
+        indefinite: "ein Krankenhaus", negation: "kein Krankenhaus",
+        meaning: "bệnh viện", category: "Phương tiện Giao thông & Địa điểm Thành phố (Bài 6)",
+        rule: "Danh từ giống trung (das Krankenhaus). Phía sau bệnh viện dùng hinter dem Krankenhaus.",
+        example: "Der Parkplatz liegt direkt hinter dem Krankenhaus.",
+        example_vi: "Bãi đỗ xe nằm ngay phía sau bệnh viện."
+    },
+    {
+        word: "Hotel", article: "das", gender: "das", plural: "die Hotels",
+        indefinite: "ein Hotel", negation: "kein Hotel",
+        meaning: "khách sạn", category: "Phương tiện Giao thông & Địa điểm Thành phố (Bài 6)",
+        rule: "Danh từ giống trung (das Hotel). Phía trước khách sạn dùng vor dem Hotel.",
+        example: "Das Taxi wartet vor dem Hotel auf die Gäste.",
+        example_vi: "Chiếc taxi đang đợi khách phía trước khách sạn."
+    },
+    {
+        word: "Café", article: "das", gender: "das", plural: "die Cafés",
+        indefinite: "ein Café", negation: "kein Café",
+        meaning: "quán cà phê", category: "Phương tiện Giao thông & Địa điểm Thành phố (Bài 6)",
+        rule: "Danh từ giống trung (das Café). Trong quán cà phê dùng im Café.",
+        example: "Die Studenten sitzen im Café vor der Universität.",
+        example_vi: "Các sinh viên đang ngồi trong quán cà phê phía trước trường đại học."
+    },
+    {
+        word: "Kino", article: "das", gender: "das", plural: "die Kinos",
+        indefinite: "ein Kino", negation: "kein Kino",
+        meaning: "rạp chiếu phim", category: "Phương tiện Giao thông & Địa điểm Thành phố (Bài 6)",
+        rule: "Danh từ giống trung (das Kino). Giữa hiệu sách và rạp phim dùng zwischen der Buchhandlung und dem Kino.",
+        example: "Am Samstag gehen wir mit unseren Freunden ins Kino.",
+        example_vi: "Vào thứ Bảy chúng tôi đi xem phim cùng với những người bạn của chúng tôi."
+    },
+    {
+        word: "Museum", article: "das", gender: "das", plural: "die Museen",
+        indefinite: "ein Museum", negation: "kein Museum",
+        meaning: "bảo tàng", category: "Phương tiện Giao thông & Địa điểm Thành phố (Bài 6)",
+        rule: "Danh từ giống trung (das Museum). Đến bảo tàng thành phố dùng zum Stadtmuseum.",
+        example: "Wie komme ich vom Hauptbahnhof zum Stadtmuseum?",
+        example_vi: "Tôi đi từ nhà ga trung tâm đến bảo tàng thành phố bằng cách nào?"
+    },
+    {
+        word: "Stadtzentrum", article: "das", gender: "das", plural: "die Stadtzentren",
+        indefinite: "ein Stadtzentrum", negation: "kein Stadtzentrum",
+        meaning: "trung tâm thành phố", category: "Phương tiện Giao thông & Địa điểm Thành phố (Bài 6)",
+        rule: "Danh từ giống trung (das Stadtzentrum). Vào trung tâm thành phố dùng ins Stadtzentrum.",
+        example: "Vom Flughafen fährt der Tourist mit der S-Bahn ins Stadtzentrum.",
+        example_vi: "Từ sân bay vị khách du lịch đi bằng tàu điện đô thị vào trung tâm thành phố."
+    },
+    {
+        word: "Aufzug", article: "der", gender: "der", plural: "die Aufzüge",
+        indefinite: "ein Aufzug", negation: "kein Aufzug",
+        meaning: "thang máy", category: "Tòa nhà, Văn phòng & Đồ vật Bàn làm việc (Bài 6)",
+        rule: "Danh từ giống đực (der Aufzug). Bên cạnh thang máy dùng neben dem Aufzug.",
+        example: "Unser Büro liegt im zweiten Stock neben dem Aufzug.",
+        example_vi: "Văn phòng của chúng tôi nằm ở tầng hai bên cạnh thang máy."
+    },
+    {
+        word: "Eingang", article: "der", gender: "der", plural: "die Eingänge",
+        indefinite: "ein Eingang", negation: "kein Eingang",
+        meaning: "lối vào, cổng vào", category: "Tòa nhà, Văn phòng & Đồ vật Bàn làm việc (Bài 6)",
+        rule: "Danh từ giống đực (der Eingang). Bên cạnh lối vào dùng neben dem Eingang.",
+        example: "Die Rezeption befindet sich im Erdgeschoss neben dem Eingang.",
+        example_vi: "Quầy lễ tân nằm ở tầng trệt bên cạnh lối vào."
+    },
+    {
+        word: "Schreibtisch", article: "der", gender: "der", plural: "die Schreibtische",
+        indefinite: "ein Schreibtisch", negation: "kein Schreibtisch",
+        meaning: "bàn làm việc", category: "Tòa nhà, Văn phòng & Đồ vật Bàn làm việc (Bài 6)",
+        rule: "Danh từ giống đực (der Schreibtisch). Trên bàn làm việc dùng auf dem Schreibtisch.",
+        example: "Der Drucker steht auf dem Schreibtisch neben dem Computer.",
+        example_vi: "Chiếc máy in nằm trên bàn làm việc bên cạnh máy tính."
+    },
+    {
+        word: "Drucker", article: "der", gender: "der", plural: "die Drucker",
+        indefinite: "ein Drucker", negation: "kein Drucker",
+        meaning: "máy in", category: "Tòa nhà, Văn phòng & Đồ vật Bàn làm việc (Bài 6)",
+        rule: "Danh từ giống đực (der Drucker). Đặt trên mặt bàn làm việc dùng auf dem Schreibtisch.",
+        example: "Der schwere Drucker steht auf dem Schreibtisch.",
+        example_vi: "Chiếc máy in nặng đặt ở trên mặt bàn làm việc."
+    },
+    {
+        word: "Kalender", article: "der", gender: "der", plural: "die Kalender",
+        indefinite: "ein Kalender", negation: "kein Kalender",
+        meaning: "cuốn lịch", category: "Tòa nhà, Văn phòng & Đồ vật Bàn làm việc (Bài 6)",
+        rule: "Danh từ giống đực (der Kalender). Treo trên tường dùng an der Wand.",
+        example: "Der Kalender hängt an der Wand über dem Schreibtisch.",
+        example_vi: "Cuốn lịch treo trên tường phía trên bàn làm việc."
+    },
+    {
+        word: "Konferenzraum", article: "der", gender: "der", plural: "die Konferenzräume",
+        indefinite: "ein Konferenzraum", negation: "kein Konferenzraum",
+        meaning: "phòng họp, phòng hội nghị", category: "Tòa nhà, Văn phòng & Đồ vật Bàn làm việc (Bài 6)",
+        rule: "Danh từ giống đực (der Konferenzraum). Ở trong phòng họp dùng im Konferenzraum.",
+        example: "Die Mitarbeiter sitzen im Konferenzraum.",
+        example_vi: "Các nhân viên đang ngồi ở trong phòng họp."
+    },
+    {
+        word: "Treppe", article: "die", gender: "die", plural: "die Treppen",
+        indefinite: "eine Treppe", negation: "keine Treppe",
+        meaning: "cầu thang bộ", category: "Tòa nhà, Văn phòng & Đồ vật Bàn làm việc (Bài 6)",
+        rule: "Danh từ giống cái (die Treppe). Đi bằng cầu thang bộ dùng über die Treppe.",
+        example: "Sie müssen über die Treppe in den dritten Stock gehen.",
+        example_vi: "Ngài phải đi bằng cầu thang bộ lên tầng ba."
+    },
+    {
+        word: "Rezeption", article: "die", gender: "die", plural: "die Rezeptionen",
+        indefinite: "eine Rezeption", negation: "keine Rezeption",
+        meaning: "quầy lễ tân, quầy tiếp tân", category: "Tòa nhà, Văn phòng & Đồ vật Bàn làm việc (Bài 6)",
+        rule: "Danh từ giống cái (die Rezeption). Ở quầy lễ tân dùng an der Rezeption.",
+        example: "Die Rezeption befindet sich im Erdgeschoss neben dem Eingang.",
+        example_vi: "Quầy lễ tân nằm ở tầng trệt bên cạnh lối vào."
+    },
+    {
+        word: "Kantine", article: "die", gender: "die", plural: "die Kantinen",
+        indefinite: "eine Kantine", negation: "keine Kantine",
+        meaning: "nhà ăn, căng tin cơ quan", category: "Tòa nhà, Văn phòng & Đồ vật Bàn làm việc (Bài 6)",
+        rule: "Danh từ giống cái (die Kantine). Trong nhà ăn ở tầng trệt dùng in der Kantine im Erdgeschoss.",
+        example: "Die Kantine befindet sich im Erdgeschoss.",
+        example_vi: "Nhà ăn nằm ở tầng trệt."
+    },
+    {
+        word: "Erdgeschoss", article: "das", gender: "das", plural: "die Erdgeschosse",
+        indefinite: "ein Erdgeschoss", negation: "kein Erdgeschoss",
+        meaning: "tầng trệt", category: "Tòa nhà, Văn phòng & Đồ vật Bàn làm việc (Bài 6)",
+        rule: "Danh từ giống trung (das Erdgeschoss). Ở tầng trệt luôn dùng im Erdgeschoss.",
+        example: "Die Kantine befindet sich im Erdgeschoss und der Konferenzraum ist im siebten Stock.",
+        example_vi: "Nhà ăn nằm ở tầng trệt và phòng họp ở tầng bảy."
+    },
+    {
+        word: "Büro", article: "das", gender: "das", plural: "die Büros",
+        indefinite: "ein Büro", negation: "kein Büro",
+        meaning: "văn phòng làm việc", category: "Tòa nhà, Văn phòng & Đồ vật Bàn làm việc (Bài 6)",
+        rule: "Danh từ giống trung (das Büro). Ở văn phòng dùng im Büro.",
+        example: "Das Büro von Frau Schneider liegt im dritten Stock neben dem Aufzug.",
+        example_vi: "Văn phòng của bà Schneider nằm ở tầng ba bên cạnh thang máy."
     }
 ];
 
@@ -1079,6 +1423,8 @@ let currentLexikonSearchQuery = "";
 
 const LEXIKON_FILTERS = [
     { id: "all", label: "Tất cả" },
+    { id: "Phương tiện Giao thông", label: "🚆 Phương tiện Giao thông & Điểm đến (Bài 6)" },
+    { id: "Tòa nhà, Văn phòng", label: "🏢 Tòa nhà, Văn phòng & Bàn làm việc (Bài 6)" },
     { id: "der", label: "🔵 Giống đực - der (Maskulinum)" },
     { id: "die", label: "🔴 Giống cái - die (Femininum)" },
     { id: "das", label: "🟢 Giống trung - das (Neutrum)" },

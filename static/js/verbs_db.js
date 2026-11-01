@@ -299,7 +299,7 @@ const GERMAN_VERBS_DB = [
     {
         infinitiv: "fahren",
         meaning: "lái xe, đi xe (tàu, buýt...)",
-        group: "Biến âm gốc (Vokalwechsel)",
+        group: "Biến âm gốc (Vokalwechsel) • Di chuyển & Định hướng (Bài 6)",
         stem: "fahr-",
         ending: "-en",
         forms: { ich: "fahre", du: "fährst", er_sie_es: "fährt", wir: "fahren", ihr: "fahrt", sie_Sie: "fahren" },
@@ -420,7 +420,7 @@ const GERMAN_VERBS_DB = [
     {
         infinitiv: "helfen",
         meaning: "giúp đỡ, trợ giúp",
-        group: "Biến âm gốc (nehmen, lesen)",
+        group: "Biến âm gốc (nehmen, lesen) • Di chuyển & Định hướng (Bài 6)",
         stem: "helf- / hilf-",
         ending: "-en",
         forms: { ich: "helfe", du: "hilfst", er_sie_es: "hilft", wir: "helfen", ihr: "helft", sie_Sie: "helfen" },
@@ -597,6 +597,106 @@ const GERMAN_VERBS_DB = [
         forms: { ich: "frühstücke", du: "frühstückst", er_sie_es: "frühstückt", wir: "frühstücken", ihr: "frühstückt", sie_Sie: "frühstücken" },
         note: "Động từ quy tắc KHÔNG tách, chia đuôi chuẩn: -e, -st, -t, -en, -t, -en.",
         example: "Um 9 Uhr frühstücke ich."
+    },
+    {
+        infinitiv: "fliegen",
+        meaning: "bay, đi bằng máy bay",
+        group: "Quy tắc (Regelmäßig) • Di chuyển & Định hướng (Bài 6)",
+        stem: "flieg-",
+        ending: "-en",
+        forms: { ich: "fliege", du: "fliegst", er_sie_es: "fliegt", wir: "fliegen", ihr: "fliegt", sie_Sie: "fliegen" },
+        note: "Động từ quy tắc diễn tả hành động di chuyển bằng máy bay (fliegen mit dem Flugzeug).",
+        example: "Im August fliegen wir mit dem Flugzeug nach Deutschland."
+    },
+    {
+        infinitiv: "abfahren",
+        meaning: "khởi hành, xuất bến (tàu, xe)",
+        group: "Động từ tách (Trennbare Verben) • Di chuyển & Định hướng (Bài 6)",
+        stem: "ab- / fahr-",
+        ending: "-en",
+        forms: { ich: "fahre ... ab", du: "fährst ... ab", er_sie_es: "fährt ... ab", wir: "fahren ... ab", ihr: "fahrt ... ab", sie_Sie: "fahren ... ab" },
+        note: "Động từ tách 'ab-'. Gốc 'fahren' biến âm a -> ä ở ngôi du (fährst ab) và er/sie/es (fährt ab).",
+        example: "Der Zug fährt um acht Uhr am Bahnhof ab."
+    },
+    {
+        infinitiv: "ankommen",
+        meaning: "đến nơi (tàu, xe, người)",
+        group: "Động từ tách (Trennbare Verben) • Di chuyển & Định hướng (Bài 6)",
+        stem: "an- / komm-",
+        ending: "-en",
+        forms: { ich: "komme ... an", du: "kommst ... an", er_sie_es: "kommt ... an", wir: "kommen ... an", ihr: "kommt ... an", sie_Sie: "kommen ... an" },
+        note: "Động từ tách 'an-'. Đi với trạm dừng: an der Haltestelle ankommen.",
+        example: "Wann kommt der Bus an der Haltestelle an?"
+    },
+    {
+        infinitiv: "umsteigen",
+        meaning: "đổi tàu, chuyển tuyến xe",
+        group: "Động từ tách (Trennbare Verben) • Di chuyển & Định hướng (Bài 6)",
+        stem: "um- / steig-",
+        ending: "-en",
+        forms: { ich: "steige ... um", du: "steigst ... um", er_sie_es: "steigt ... um", wir: "steigen ... um", ihr: "steigt ... um", sie_Sie: "steigen ... um" },
+        note: "Động từ tách 'um-'. Thường dùng khi chuyển tàu ở nhà ga: am Bahnhof umsteigen.",
+        example: "Am Hauptbahnhof müssen die Fahrgäste umsteigen."
+    },
+    {
+        infinitiv: "einsteigen",
+        meaning: "lên tàu, lên xe",
+        group: "Động từ tách (Trennbare Verben) • Di chuyển & Định hướng (Bài 6)",
+        stem: "ein- / steig-",
+        ending: "-en",
+        forms: { ich: "steige ... ein", du: "steigst ... ein", er_sie_es: "steigt ... ein", wir: "steigen ... ein", ihr: "steigt ... ein", sie_Sie: "steigen ... ein" },
+        note: "Động từ tách 'ein-'. Trái nghĩa với aussteigen.",
+        example: "Bitte steigen Sie nhanh in den Bus ein!"
+    },
+    {
+        infinitiv: "aussteigen",
+        meaning: "xuống tàu, xuống xe",
+        group: "Động từ tách (Trennbare Verben) • Di chuyển & Định hướng (Bài 6)",
+        stem: "aus- / steig-",
+        ending: "-en",
+        forms: { ich: "steige ... aus", du: "steigst ... aus", er_sie_es: "steigt ... aus", wir: "steigen ... aus", ihr: "steigt ... aus", sie_Sie: "steigen ... aus" },
+        note: "Động từ tách 'aus-'. Ví dụ: an der nächsten Haltestelle aussteigen.",
+        example: "An der nächsten Haltestelle steige ich aus."
+    },
+    {
+        infinitiv: "stehen",
+        meaning: "đứng, nằm ở vị trí đứng (+ Dativ)",
+        group: "Quy tắc (Regelmäßig) • Di chuyển & Định hướng (Bài 6)",
+        stem: "steh-",
+        ending: "-en",
+        forms: { ich: "stehe", du: "stehst", er_sie_es: "steht", wir: "stehen", ihr: "steht", sie_Sie: "stehen" },
+        note: "Diễn tả vị trí tĩnh thẳng đứng, câu hỏi Wo? + Cách 3 (Dativ). Ví dụ: auf dem Schreibtisch stehen.",
+        example: "Der Drucker steht auf dem Schreibtisch neben dem Computer."
+    },
+    {
+        infinitiv: "sitzen",
+        meaning: "ngồi (+ Dativ)",
+        group: "Gốc -s, -ß, -z • Di chuyển & Định hướng (Bài 6)",
+        stem: "sitz-",
+        ending: "-en",
+        forms: { ich: "sitze", du: "sitzt", er_sie_es: "sitzt", wir: "sitzen", ihr: "sitzt", sie_Sie: "sitzen" },
+        note: "Gốc kết thúc bằng -z nên ngôi du nhận đuôi -t (du sitzt). Vị trí tĩnh Wo? + Dativ.",
+        example: "Die Studenten sitzen im Café vor der Universität."
+    },
+    {
+        infinitiv: "hängen",
+        meaning: "treo (+ Dativ)",
+        group: "Quy tắc (Regelmäßig) • Di chuyển & Định hướng (Bài 6)",
+        stem: "häng-",
+        ending: "-en",
+        forms: { ich: "hänge", du: "hängst", er_sie_es: "hängt", wir: "hängen", ihr: "hängt", sie_Sie: "hängen" },
+        note: "Diễn tả vật được treo ở vị trí tĩnh, câu hỏi Wo? + Cách 3 (Dativ). Ví dụ: an der Wand hängen.",
+        example: "Das Bild hängt an der Wand über dem Sofa."
+    },
+    {
+        infinitiv: "gefallen",
+        meaning: "làm ai thích / làm hài lòng (+ Dativ)",
+        group: "Biến âm gốc (Vokalwechsel) • Di chuyển & Định hướng (Bài 6)",
+        stem: "gefall-",
+        ending: "-en",
+        forms: { ich: "gefalle", du: "gefällst", er_sie_es: "gefällt", wir: "gefallen", ihr: "gefallt", sie_Sie: "gefallen" },
+        note: "Biến âm a -> ä ở du (gefällst) và er/sie/es (gefällt). Đòi hỏi tân ngữ nhận ở Cách 3 Dativ (etwas gefällt jemandem).",
+        example: "Die neue Wohnung im dritten Stock gefällt meinem Vater sehr."
     }
 ];
 
@@ -714,6 +814,7 @@ function speakAllPraeteritumForms(verbInfinitiv) {
 
 const VERB_GROUPS = [
     { id: "all", label: "Tất cả" },
+    { id: "Di chuyển & Định hướng", label: "🚆 Di chuyển, Định hướng & Dativ (Bài 6)" },
     { id: "Động từ tách", label: "Động từ tách (Trennbare Verben)" },
     { id: "Quy tắc", label: "Quy tắc (Regelmäßig)" },
     { id: "-s, -ß, -z", label: "Gốc -s, -ß, -z (heißen, tanzen)" },

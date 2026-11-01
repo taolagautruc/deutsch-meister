@@ -36,7 +36,8 @@ LESSON_ORDER_MAP = {
     16: ("A1", 3, "Bài 2: Đồ dùng, Giống der/die/das, Mạo từ, können"),
     17: ("A1", 4, "Bài 3: Địa danh, Phương hướng, Präteritum war/waren"),
     18: ("A1", 5, "Bài 4: Nhà ở, Nominativ vs Akkusativ, Mạo từ sở hữu"),
-    19: ("A1", 6, "Bài 5: Thời gian, Động từ tách, Haben in Präteritum")
+    19: ("A1", 6, "Bài 5: Thời gian, Động từ tách, Haben in Präteritum"),
+    20: ("A1", 7, "Bài 6: Dativ, Giới từ, Phương tiện, Số thứ tự, Ngày tháng năm")
 }
 
 def get_user_allowed_lessons(user_id):
@@ -593,6 +594,80 @@ ARENA_DATA_BY_LESSON = {
                 "word_bank_hints": ["hatten", "haben", "hatte", "habe", "waren"],
                 "accepted_answers": ["hatten / haben"],
                 "explanation": "Chủ ngữ wir: quá khứ dùng hatten, hiện tại dùng haben."
+            }
+        ]
+    },
+    # -------------------------------------------------------------------------
+    # BÀI 6: Dativ, Giới từ, Phương tiện, Số thứ tự, Ngày tháng năm
+    # -------------------------------------------------------------------------
+    7: {
+        "name": "Bài 6: Dativ, Giới từ, Phương tiện, Số thứ tự, Ngày tháng năm",
+        "vocab_pairs": [
+            ("der Bus", "xe buýt"),
+            ("der Zug", "tàu hỏa"),
+            ("die U-Bahn", "tàu điện ngầm"),
+            ("die Straßenbahn", "tàu điện mặt đất"),
+            ("das Fahrrad", "xe đạp"),
+            ("das Flugzeug", "máy bay"),
+            ("der Bahnhof", "nhà ga xe lửa"),
+            ("der Flughafen", "sân bay"),
+            ("die Haltestelle", "trạm dừng (xe buýt/tàu)"),
+            ("der Schreibtisch", "bàn làm việc"),
+            ("der Drucker", "máy in"),
+            ("der Aufzug", "thang máy"),
+            ("das Erdgeschoss", "tầng trệt"),
+            ("im dritten Stock", "ở tầng ba"),
+            ("zu Fuß", "đi bộ"),
+            ("am ersten Mai", "vào ngày mùng 1 tháng Năm"),
+            ("helfen", "giúp đỡ (+ Dativ)"),
+            ("gefallen", "làm hài lòng / thích (+ Dativ)")
+        ],
+        "noi_o_sets": [
+            [
+                {"left": "mit dem Bus", "right": "bằng xe buýt"},
+                {"left": "mit der U-Bahn", "right": "bằng tàu điện ngầm"},
+                {"left": "mit dem Fahrrad", "right": "bằng xe đạp"},
+                {"left": "zu Fuß", "right": "đi bộ"}
+            ],
+            [
+                {"left": "1. (erste)", "right": "am ersten"},
+                {"left": "3. (dritte)", "right": "am dritten"},
+                {"left": "7. (siebte)", "right": "am siebten"},
+                {"left": "20. (zwanzigste)", "right": "am zwanzigsten"}
+            ],
+            [
+                {"left": "der Bahnhof", "right": "zum Bahnhof (zu + dem)"},
+                {"left": "die Schule", "right": "zur Schule (zu + der)"},
+                {"left": "der Flughafen", "right": "vom Flughafen (von + dem)"},
+                {"left": "der Arzt", "right": "beim Arzt (bei + dem)"}
+            ]
+        ],
+        "sentences_vd": [
+            ("Anh trai tôi đi làm mỗi ngày bằng xe buýt.", ["Mein Bruder fährt jeden Tag mit dem Bus zur Arbeit.", "Jeden Tag fährt mein Bruder mit dem Bus zur Arbeit."]),
+            ("Văn phòng của bà Schneider nằm ở tầng ba bên cạnh thang máy.", ["Das Büro von Frau Schneider liegt im dritten Stock neben dem Aufzug."]),
+            ("Hôm nay là ngày mùng 8 tháng Ba.", ["Heute ist der achte März.", "Heute ist der 8. März."]),
+            ("Chiếc máy tính xách tay nằm trên bàn làm việc giữa cái đèn và điện thoại.", ["Der Laptop liegt auf dem Schreibtisch zwischen der Lampe und dem Telefon."])
+        ],
+        "sentences_dv": [
+            ("Am Wochenende fahren unsere Großeltern mit der Straßenbahn zum Markt.", ["Vào cuối tuần ông bà của chúng tôi đi bằng tàu điện ra chợ", "Cuối tuần ông bà chúng tôi đi chợ bằng tàu điện mặt đất"]),
+            ("Das Café liegt direkt zwischen der Buchhandlung und dem Kino.", ["Quán cà phê nằm ngay giữa hiệu sách và rạp chiếu phim", "Quán cà phê ở ngay giữa tiệm sách và rạp chiếu phim"]),
+            ("Die Kantine befindet sich im Erdgeschoss và phòng họp ở tầng bảy.", ["Nhà ăn nằm ở tầng trệt và phòng họp ở tầng bảy", "Căn tin ở tầng trệt còn phòng họp nằm ở tầng 7"]),
+            ("Vom ersten bis zum vierzehnten Juli bleibt unsere Arztpraxis geschlossen.", ["Từ ngày mùng 1 đến ngày 14 tháng 7 phòng khám bác sĩ của chúng tôi đóng cửa", "Từ ngày 1 đến ngày 14 tháng Bảy phòng khám của chúng tôi đóng cửa"])
+        ],
+        "dien_tao_cau_items": [
+            {
+                "question": "Điền vào 2 chỗ trống để tạo thành câu hoàn chỉnh:",
+                "display_frame": "Jeden Morgen [1] mein Bruder mit [2] U-Bahn zur Arbeit.",
+                "word_bank_hints": ["fährt", "der", "fliegt", "dem", "die"],
+                "accepted_answers": ["fährt / der", "fährt/der"],
+                "explanation": "Chủ ngữ mein Bruder chia động từ fährt; sau mit là Dativ của die U-Bahn -> der."
+            },
+            {
+                "question": "Điền vào 2 chỗ trống để tạo thành câu hoàn chỉnh:",
+                "display_frame": "Unser Büro liegt [1] zweiten Stock neben [2] Aufzug.",
+                "word_bank_hints": ["im", "dem", "am", "der", "in"],
+                "accepted_answers": ["im / dem", "im/dem"],
+                "explanation": "im zweiten Stock; neben dem Aufzug (der Aufzug ở Dativ là dem)."
             }
         ]
     }
