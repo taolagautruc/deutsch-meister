@@ -172,49 +172,59 @@ let arenaMatchingPairsState = {
 
 async function checkCurrentAuthSession() {
     try {
-        const res = await fetch('/api/auth/me');
+        const savedToken = localStorage.getItem('dm_auth_token') || '';
+        const headers = {};
+        if (savedToken) headers['Authorization'] = 'Bearer ' + savedToken;
+        const res = await fetch('/api/auth/me', { headers });
         const data = await res.json();
         if (data.logged_in && data.user) {
             currentAuthUser = data.user;
+            window.currentAuthUser = currentAuthUser;
             if (data.user.token) localStorage.setItem('dm_auth_token', data.user.token);
-            if (data.user.progress && typeof window.userLessonsProgress !== 'undefined') {
-                window.userLessonsProgress = Object.assign(window.userLessonsProgress || {}, data.user.progress);
-                if (typeof saveLocalLessonsProgress === 'function') saveLocalLessonsProgress();
-                if (typeof renderLessonList === 'function') renderLessonList();
-                if (typeof updateLessonProgressUI === 'function') updateLessonProgressUI();
-            }
             renderAuthUserUI();
+            if (typeof window.loadLessonsProgress === 'function') {
+                await window.loadLessonsProgress();
+            } else if (data.user.progress && typeof window.userLessonsProgress !== 'undefined') {
+                window.userLessonsProgress = Object.assign(window.userLessonsProgress || {}, data.user.progress);
+                if (typeof window.saveLocalLessonsProgress === 'function') window.saveLocalLessonsProgress();
+                if (typeof window.renderLessonList === 'function') window.renderLessonList();
+                if (typeof window.updateLessonProgressUI === 'function') window.updateLessonProgressUI();
+            }
             return;
         }
 
         // Tự động khôi phục tài khoản vĩnh viễn từ localStorage nếu cookie phiên bị trình duyệt xóa
-        const savedToken = localStorage.getItem('dm_auth_token');
         if (savedToken) {
             const restRes = await fetch('/api/auth/restore-session', {
                 method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
+                headers: { 'Content-Type': 'application/json', 'Authorization': 'Bearer ' + savedToken },
                 body: JSON.stringify({ token: savedToken })
             });
             if (restRes.ok) {
                 const restData = await restRes.json();
                 if (restData.logged_in && restData.user) {
                     currentAuthUser = restData.user;
-                    if (restData.user.progress && typeof window.userLessonsProgress !== 'undefined') {
-                        window.userLessonsProgress = Object.assign(window.userLessonsProgress || {}, restData.user.progress);
-                        if (typeof saveLocalLessonsProgress === 'function') saveLocalLessonsProgress();
-                        if (typeof renderLessonList === 'function') renderLessonList();
-                        if (typeof updateLessonProgressUI === 'function') updateLessonProgressUI();
-                    }
+                    window.currentAuthUser = currentAuthUser;
                     renderAuthUserUI();
+                    if (typeof window.loadLessonsProgress === 'function') {
+                        await window.loadLessonsProgress();
+                    } else if (restData.user.progress && typeof window.userLessonsProgress !== 'undefined') {
+                        window.userLessonsProgress = Object.assign(window.userLessonsProgress || {}, restData.user.progress);
+                        if (typeof window.saveLocalLessonsProgress === 'function') window.saveLocalLessonsProgress();
+                        if (typeof window.renderLessonList === 'function') window.renderLessonList();
+                        if (typeof window.updateLessonProgressUI === 'function') window.updateLessonProgressUI();
+                    }
                     return;
                 }
             }
         }
 
         currentAuthUser = null;
+        window.currentAuthUser = null;
         renderAuthUserUI();
     } catch (e) {
         currentAuthUser = null;
+        window.currentAuthUser = null;
         renderAuthUserUI();
     }
 }
@@ -432,8 +442,11 @@ async function handleRegisterFormSubmit(e) {
     let guestProg = {};
     try {
         const rawP = localStorage.getItem('dm_lessons_progress_guest');
-        if (rawP) guestProg = JSON.parse(rawP);
+        if (rawP) guestProg = JSON.parse(rawP) || {};
     } catch (err) {}
+    if (window.userLessonsProgress && typeof window.userLessonsProgress === 'object') {
+        guestProg = Object.assign({}, guestProg, window.userLessonsProgress);
+    }
 
     try {
         const res = await fetch('/api/auth/register', {
@@ -449,17 +462,29 @@ async function handleRegisterFormSubmit(e) {
         const data = await res.json();
         if (res.ok) {
             currentAuthUser = data.user;
+            window.currentAuthUser = currentAuthUser;
             if (data.token || (data.user && data.user.token)) {
                 localStorage.setItem('dm_auth_token', data.token || data.user.token);
             }
-            if (data.user && data.user.progress && typeof window.userLessonsProgress !== 'undefined') {
-                window.userLessonsProgress = Object.assign(window.userLessonsProgress || {}, data.user.progress);
-                if (typeof saveLocalLessonsProgress === 'function') saveLocalLessonsProgress();
-                if (typeof renderLessonList === 'function') renderLessonList();
-                if (typeof updateLessonProgressUI === 'function') updateLessonProgressUI();
-            }
+            const uKey = 'dm_lessons_progress_' + ((data.user && data.user.id) || 'guest');
+            try {
+                let userProg = {};
+                const rawU = localStorage.getItem(uKey);
+                if (rawU) userProg = JSON.parse(rawU) || {};
+                userProg = Object.assign({}, guestProg, userProg, (data.user && data.user.progress) || {});
+                localStorage.setItem(uKey, JSON.stringify(userProg));
+            } catch (err) {}
+
             closeAuthModal();
             renderAuthUserUI();
+            if (typeof window.loadLessonsProgress === 'function') {
+                await window.loadLessonsProgress();
+            } else if (data.user && data.user.progress && typeof window.userLessonsProgress !== 'undefined') {
+                window.userLessonsProgress = Object.assign(window.userLessonsProgress || {}, data.user.progress);
+                if (typeof window.saveLocalLessonsProgress === 'function') window.saveLocalLessonsProgress();
+                if (typeof window.renderLessonList === 'function') window.renderLessonList();
+                if (typeof window.updateLessonProgressUI === 'function') window.updateLessonProgressUI();
+            }
             loadLeaderboardData();
 
             const myId = (data.user && data.user.id) ? data.user.id : (data.user_id || '');
@@ -485,26 +510,54 @@ async function handleLoginFormSubmit(e) {
     const errBox = document.getElementById('login-error-box');
     errBox.classList.add('hidden');
 
+    // Lấy tiến trình học và exp hiện tại để gửi lên máy chủ gộp (không làm mất công sức học của người dùng)
+    const currentExp = (typeof window.userTotalExp === 'number') ? window.userTotalExp : 0;
+    let guestProg = {};
+    try {
+        const rawP = localStorage.getItem('dm_lessons_progress_guest');
+        if (rawP) guestProg = JSON.parse(rawP) || {};
+    } catch (err) {}
+    if (window.userLessonsProgress && typeof window.userLessonsProgress === 'object') {
+        guestProg = Object.assign({}, guestProg, window.userLessonsProgress);
+    }
+
     try {
         const res = await fetch('/api/auth/login', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ username, password })
+            body: JSON.stringify({
+                username,
+                password,
+                guest_progress: guestProg,
+                guest_exp: currentExp
+            })
         });
         const data = await res.json();
         if (res.ok) {
             currentAuthUser = data.user;
+            window.currentAuthUser = currentAuthUser;
             if (data.token || (data.user && data.user.token)) {
                 localStorage.setItem('dm_auth_token', data.token || data.user.token);
             }
-            if (data.user && data.user.progress && typeof window.userLessonsProgress !== 'undefined') {
-                window.userLessonsProgress = Object.assign(window.userLessonsProgress || {}, data.user.progress);
-                if (typeof saveLocalLessonsProgress === 'function') saveLocalLessonsProgress();
-                if (typeof renderLessonList === 'function') renderLessonList();
-                if (typeof updateLessonProgressUI === 'function') updateLessonProgressUI();
-            }
+            const uKey = 'dm_lessons_progress_' + ((data.user && data.user.id) || 'guest');
+            try {
+                let userProg = {};
+                const rawU = localStorage.getItem(uKey);
+                if (rawU) userProg = JSON.parse(rawU) || {};
+                userProg = Object.assign({}, guestProg, userProg, (data.user && data.user.progress) || {});
+                localStorage.setItem(uKey, JSON.stringify(userProg));
+            } catch (err) {}
+
             closeAuthModal();
             renderAuthUserUI();
+            if (typeof window.loadLessonsProgress === 'function') {
+                await window.loadLessonsProgress();
+            } else if (data.user && data.user.progress && typeof window.userLessonsProgress !== 'undefined') {
+                window.userLessonsProgress = Object.assign(window.userLessonsProgress || {}, data.user.progress);
+                if (typeof window.saveLocalLessonsProgress === 'function') window.saveLocalLessonsProgress();
+                if (typeof window.renderLessonList === 'function') window.renderLessonList();
+                if (typeof window.updateLessonProgressUI === 'function') window.updateLessonProgressUI();
+            }
             loadLeaderboardData();
         } else {
             if (data.not_found && username) {
@@ -535,8 +588,15 @@ async function quickRegisterFromLogin(uname) {
         alert("Vui lòng nhập mật khẩu tối thiểu 8 ký tự vào ô mật khẩu trước khi kích hoạt!");
         return;
     }
-    const currentExp = (typeof userTotalExp !== 'undefined') ? userTotalExp : 0;
-    const currentProgress = (typeof userLessonsProgress !== 'undefined') ? userLessonsProgress : {};
+    const currentExp = (typeof window.userTotalExp === 'number') ? window.userTotalExp : 0;
+    let guestProg = {};
+    try {
+        const rawP = localStorage.getItem('dm_lessons_progress_guest');
+        if (rawP) guestProg = JSON.parse(rawP) || {};
+    } catch (err) {}
+    if (window.userLessonsProgress && typeof window.userLessonsProgress === 'object') {
+        guestProg = Object.assign({}, guestProg, window.userLessonsProgress);
+    }
 
     try {
         const res = await fetch('/api/auth/register', {
@@ -546,23 +606,35 @@ async function quickRegisterFromLogin(uname) {
                 username: uname,
                 password: password,
                 initial_exp: currentExp,
-                guest_progress: currentProgress
+                guest_progress: guestProg
             })
         });
         const data = await res.json();
         if (res.ok) {
             currentAuthUser = data.user;
+            window.currentAuthUser = currentAuthUser;
             if (data.token || (data.user && data.user.token)) {
                 localStorage.setItem('dm_auth_token', data.token || data.user.token);
             }
-            if (data.user && data.user.progress && typeof window.userLessonsProgress !== 'undefined') {
-                window.userLessonsProgress = Object.assign(window.userLessonsProgress || {}, data.user.progress);
-                if (typeof saveLocalLessonsProgress === 'function') saveLocalLessonsProgress();
-                if (typeof renderLessonList === 'function') renderLessonList();
-                if (typeof updateLessonProgressUI === 'function') updateLessonProgressUI();
-            }
+            const uKey = 'dm_lessons_progress_' + ((data.user && data.user.id) || 'guest');
+            try {
+                let userProg = {};
+                const rawU = localStorage.getItem(uKey);
+                if (rawU) userProg = JSON.parse(rawU) || {};
+                userProg = Object.assign({}, guestProg, userProg, (data.user && data.user.progress) || {});
+                localStorage.setItem(uKey, JSON.stringify(userProg));
+            } catch (err) {}
+
             closeAuthModal();
             renderAuthUserUI();
+            if (typeof window.loadLessonsProgress === 'function') {
+                await window.loadLessonsProgress();
+            } else if (data.user && data.user.progress && typeof window.userLessonsProgress !== 'undefined') {
+                window.userLessonsProgress = Object.assign(window.userLessonsProgress || {}, data.user.progress);
+                if (typeof window.saveLocalLessonsProgress === 'function') window.saveLocalLessonsProgress();
+                if (typeof window.renderLessonList === 'function') window.renderLessonList();
+                if (typeof window.updateLessonProgressUI === 'function') window.updateLessonProgressUI();
+            }
             loadLeaderboardData();
 
             const myId = (data.user && data.user.id) ? data.user.id : (data.user_id || '');
@@ -586,9 +658,10 @@ async function handleUserLogout() {
         localStorage.removeItem('dm_auth_token');
         await fetch('/api/auth/logout', { method: 'POST' });
         currentAuthUser = null;
+        window.currentAuthUser = null;
         if (typeof window.userLessonsProgress !== 'undefined') {
             window.userLessonsProgress = {};
-            if (typeof loadLessonsProgress === 'function') loadLessonsProgress();
+            if (typeof window.loadLessonsProgress === 'function') window.loadLessonsProgress();
         }
         renderAuthUserUI();
         initArenaLobbyScreen();
