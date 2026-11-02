@@ -478,11 +478,17 @@ def seed_lesson_6():
                 <div class="p-4 rounded-2xl bg-slate-50 border border-slate-200 space-y-3">
                     <div class="flex items-center justify-between">
                         <h5 class="font-bold text-slate-800 flex items-center gap-2"><span>🏢</span> Hội Thoại 1: Trong Tòa Nhà Công Ty</h5>
-                        <button onclick="speakGerman('Entschuldigung, wo ist das Büro von Frau Schneider? Das Büro liegt im dritten Stock neben dem Aufzug.')" class="px-2.5 py-1 rounded-lg bg-indigo-50 hover:bg-indigo-100 text-indigo-700 text-xs font-bold cursor-pointer">🔊 Nghe Hội Thoại</button>
+                        <button onclick="speakGerman('Entschuldigung, wo ist das Büro von Frau Schneider? Das Büro liegt im dritten Stock neben dem Aufzug. Die Kantine befindet sich im Erdgeschoss.')" class="px-2.5 py-1 rounded-lg bg-indigo-50 hover:bg-indigo-100 text-indigo-700 text-xs font-bold cursor-pointer">🔊 Nghe Hội Thoại</button>
                     </div>
-                    <div class="space-y-2 text-xs sm:text-sm text-slate-700">
-                        <p><b>Khách:</b> „Entschuldigung, wo ist das Büro von Frau Schneider?“<br><span class="text-xs text-slate-500">(Xin lỗi, văn phòng của bà Schneider ở đâu ạ?)</span></p>
-                        <p><b>Lễ tân:</b> „Das Büro liegt <b>im dritten Stock</b> <b>neben dem Aufzug</b>. Die Kantine befindet sich <b>im Erdgeschoss</b>.“<br><span class="text-xs text-slate-500">(Văn phòng nằm ở tầng ba bên cạnh thang máy. Nhà ăn thì ở tầng trệt.)</span></p>
+                    <div class="space-y-2.5 text-xs sm:text-sm text-slate-700">
+                        <div class="flex items-start justify-between gap-2 p-2 rounded-xl bg-white border border-slate-200/60 shadow-xs">
+                            <p><b>Khách:</b> „Entschuldigung, wo ist das Büro von Frau Schneider?“<br><span class="text-xs text-slate-500">(Xin lỗi, văn phòng của bà Schneider ở đâu ạ?)</span></p>
+                            <button onclick="speakGerman('Entschuldigung, wo ist das Büro von Frau Schneider?')" title="Nghe câu này" class="shrink-0 p-1.5 rounded-lg bg-slate-100 hover:bg-indigo-100 text-indigo-600 cursor-pointer text-xs">🔊</button>
+                        </div>
+                        <div class="flex items-start justify-between gap-2 p-2 rounded-xl bg-white border border-slate-200/60 shadow-xs">
+                            <p><b>Lễ tân:</b> „Das Büro liegt <b>im dritten Stock</b> <b>neben dem Aufzug</b>. Die Kantine befindet sich <b>im Erdgeschoss</b>.“<br><span class="text-xs text-slate-500">(Văn phòng nằm ở tầng ba bên cạnh thang máy. Nhà ăn thì ở tầng trệt.)</span></p>
+                            <button onclick="speakGerman('Das Büro liegt im dritten Stock neben dem Aufzug. Die Kantine befindet sich im Erdgeschoss.')" title="Nghe câu này" class="shrink-0 p-1.5 rounded-lg bg-slate-100 hover:bg-indigo-100 text-indigo-600 cursor-pointer text-xs">🔊</button>
+                        </div>
                     </div>
                 </div>
 
@@ -490,11 +496,17 @@ def seed_lesson_6():
                 <div class="p-4 rounded-2xl bg-slate-50 border border-slate-200 space-y-3">
                     <div class="flex items-center justify-between">
                         <h5 class="font-bold text-slate-800 flex items-center gap-2"><span>🚆</span> Hội Thoại 2: Hỏi Đường & Phương Tiện</h5>
-                        <button onclick="speakGerman('Wie komme ich zum Bahnhof? Fahren Sie mit der Straßenbahn Linie 3 bis zum Markt.')" class="px-2.5 py-1 rounded-lg bg-indigo-50 hover:bg-indigo-100 text-indigo-700 text-xs font-bold cursor-pointer">🔊 Nghe Hội Thoại</button>
+                        <button onclick="speakGerman('Entschuldigung, wie komme ich zum Bahnhof? Fahren Sie mit der Straßenbahn Linie 3 bis zum Markt. Dort steigen Sie in den Bus um.')" class="px-2.5 py-1 rounded-lg bg-indigo-50 hover:bg-indigo-100 text-indigo-700 text-xs font-bold cursor-pointer">🔊 Nghe Hội Thoại</button>
                     </div>
-                    <div class="space-y-2 text-xs sm:text-sm text-slate-700">
-                        <p><b>Người đi đường:</b> „Entschuldigung, wie komme ich <b>zum Bahnhof</b>?“<br><span class="text-xs text-slate-500">(Xin lỗi, tôi đi đến nhà ga bằng cách nào ạ?)</span></p>
-                        <p><b>Cư dân:</b> „Fahren Sie <b>mit der Straßenbahn</b> Linie 3 <b>bis zum Markt</b>. Dort steigen Sie in den Bus um.“<br><span class="text-xs text-slate-500">(Bạn hãy đi bằng tàu điện mặt đất tuyến số 3 đến chợ. Tại đó bạn đổi sang xe buýt.)</span></p>
+                    <div class="space-y-2.5 text-xs sm:text-sm text-slate-700">
+                        <div class="flex items-start justify-between gap-2 p-2 rounded-xl bg-white border border-slate-200/60 shadow-xs">
+                            <p><b>Người đi đường:</b> „Entschuldigung, wie komme ich <b>zum Bahnhof</b>?“<br><span class="text-xs text-slate-500">(Xin lỗi, tôi đi đến nhà ga bằng cách nào ạ?)</span></p>
+                            <button onclick="speakGerman('Entschuldigung, wie komme ich zum Bahnhof?')" title="Nghe câu này" class="shrink-0 p-1.5 rounded-lg bg-slate-100 hover:bg-indigo-100 text-indigo-600 cursor-pointer text-xs">🔊</button>
+                        </div>
+                        <div class="flex items-start justify-between gap-2 p-2 rounded-xl bg-white border border-slate-200/60 shadow-xs">
+                            <p><b>Cư dân:</b> „Fahren Sie <b>mit der Straßenbahn</b> Linie 3 <b>bis zum Markt</b>. Dort steigen Sie in den Bus um.“<br><span class="text-xs text-slate-500">(Bạn hãy đi bằng tàu điện mặt đất tuyến số 3 đến chợ. Tại đó bạn đổi sang xe buýt.)</span></p>
+                            <button onclick="speakGerman('Fahren Sie mit der Straßenbahn Linie 3 bis zum Markt. Dort steigen Sie in den Bus um.')" title="Nghe câu này" class="shrink-0 p-1.5 rounded-lg bg-slate-100 hover:bg-indigo-100 text-indigo-600 cursor-pointer text-xs">🔊</button>
+                        </div>
                     </div>
                 </div>
             </div>
