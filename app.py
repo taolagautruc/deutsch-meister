@@ -102,7 +102,19 @@ def ensure_db_initialized():
             seed_lesson_5()
 
         cursor.execute("SELECT COUNT(*) as cnt FROM lessons WHERE title LIKE 'Bài 6%';")
-        if cursor.fetchone()["cnt"] == 0:
+        has_b6 = cursor.fetchone()["cnt"] > 0
+        need_reseed_b6 = not has_b6
+        if has_b6:
+            cursor.execute("SELECT extra_data FROM exercises WHERE lesson_id = 20 AND question LIKE '%Câu 58%' LIMIT 1;")
+            row_q58 = cursor.fetchone()
+            if row_q58 and 'dem Bahnhof / einem Bahnhof' in (row_q58["extra_data"] or ''):
+                need_reseed_b6 = True
+            cursor.execute("SELECT explanation FROM exercises WHERE lesson_id = 20 AND question LIKE '%Câu 43%' LIMIT 1;")
+            row_q43 = cursor.fetchone()
+            if row_q43 and ('$\\rightarrow$' in (row_q43["explanation"] or '') or 'NHÓM' in (row_q43["explanation"] or '')):
+                need_reseed_b6 = True
+
+        if need_reseed_b6:
             from lessons.a1.seed_a1_b6 import seed_lesson_6
             seed_lesson_6()
             
