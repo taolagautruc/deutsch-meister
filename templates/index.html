@@ -458,10 +458,19 @@
         let currentLevelData = null;
         let currentLesson = null;
         let currentLessonIndex = 0;
-        let userLessonsProgress = {}; // key: lesson_id -> { studied_theory, practice_completed, best_practice_score, correct_exercises }
+        window.userLessonsProgress = window.userLessonsProgress || {};
+        let userLessonsProgress = window.userLessonsProgress; // key: lesson_id -> { studied_theory, practice_completed, best_practice_score, correct_exercises }
         let currentFilterType = 'all';
         let activeInputId = null;
-        let userTotalExp = 1450;
+        window.userTotalExp = window.userTotalExp || 1450;
+        let userTotalExp = window.userTotalExp;
+
+        function getAuthHeaders() {
+            const token = localStorage.getItem('dm_auth_token') || '';
+            const headers = { 'Content-Type': 'application/json' };
+            if (token) headers['Authorization'] = 'Bearer ' + token;
+            return headers;
+        }
 
         function getProgressStorageKey() {
             const uid = (window.currentAuthUser && window.currentAuthUser.id) ? window.currentAuthUser.id : 'guest';
@@ -470,33 +479,111 @@
 
         function saveLocalLessonsProgress() {
             try {
+                window.userLessonsProgress = userLessonsProgress;
                 localStorage.setItem(getProgressStorageKey(), JSON.stringify(userLessonsProgress));
+                if (window.currentAuthUser && window.currentAuthUser.id) {
+                    try {
+                        const guestRaw = localStorage.getItem('dm_lessons_progress_guest');
+                        let guestProg = guestRaw ? JSON.parse(guestRaw) : {};
+                        guestProg = Object.assign({}, guestProg, userLessonsProgress);
+                        localStorage.setItem('dm_lessons_progress_guest', JSON.stringify(guestProg));
+                    } catch (e) {}
+                }
             } catch (e) {}
         }
 
         async function loadLessonsProgress() {
+            // 1. Nạp từ localStorage của tài khoản hiện tại
             try {
                 const raw = localStorage.getItem(getProgressStorageKey());
                 if (raw) {
                     const parsed = JSON.parse(raw);
                     if (parsed && typeof parsed === 'object') {
                         userLessonsProgress = Object.assign(userLessonsProgress, parsed);
+                        window.userLessonsProgress = userLessonsProgress;
                     }
                 }
             } catch (e) {}
 
+            // 2. Kế thừa dữ liệu từ guest nếu đã đăng nhập
+            if (window.currentAuthUser && window.currentAuthUser.id) {
+                try {
+                    const guestRaw = localStorage.getItem('dm_lessons_progress_guest');
+                    if (guestRaw) {
+                        const guestParsed = JSON.parse(guestRaw);
+                        if (guestParsed && typeof guestParsed === 'object') {
+                            for (const [lid, val] of Object.entries(guestParsed)) {
+                                if (!userLessonsProgress[lid]) {
+                                    userLessonsProgress[lid] = val;
+                                } else {
+                                    const cur = userLessonsProgress[lid];
+                                    const curCorr = cur.correct_exercises || [];
+                                    const gstCorr = val.correct_exercises || [];
+                                    const mergedCorr = Array.from(new Set([...curCorr, ...gstCorr])).sort((a,b) => a-b);
+                                    userLessonsProgress[lid] = {
+                                        studied_theory: Math.max(cur.studied_theory || 0, val.studied_theory || 0),
+                                        practice_completed: Math.max(cur.practice_completed || 0, val.practice_completed || 0),
+                                        best_practice_score: Math.max(cur.best_practice_score || 0, mergedCorr.length),
+                                        correct_exercises: mergedCorr
+                                    };
+                                }
+                            }
+                        }
+                    }
+                } catch (e) {}
+            }
+
+            // 3. Đồng bộ hai chiều với máy chủ qua /api/progress/sync
             try {
-                const res = await fetch('/api/progress/all');
+                const token = localStorage.getItem('dm_auth_token') || '';
+                const headers = { 'Content-Type': 'application/json' };
+                if (token) headers['Authorization'] = 'Bearer ' + token;
+
+                const res = await fetch('/api/progress/sync', {
+                    method: 'POST',
+                    headers: headers,
+                    body: JSON.stringify({
+                        progress: userLessonsProgress,
+                        total_exp: (typeof userTotalExp === 'number') ? userTotalExp : 0,
+                        auth_token: token
+                    })
+                });
                 const data = await res.json();
                 if (data && data.progress) {
-                    userLessonsProgress = Object.assign(userLessonsProgress, data.progress);
+                    for (const [lid, sVal] of Object.entries(data.progress)) {
+                        if (!userLessonsProgress[lid]) {
+                            userLessonsProgress[lid] = sVal;
+                        } else {
+                            const lVal = userLessonsProgress[lid];
+                            const lCorr = lVal.correct_exercises || [];
+                            const sCorr = sVal.correct_exercises || [];
+                            const mergedCorr = Array.from(new Set([...lCorr, ...sCorr])).sort((a,b) => a-b);
+                            userLessonsProgress[lid] = {
+                                studied_theory: Math.max(lVal.studied_theory || 0, sVal.studied_theory || 0),
+                                practice_completed: Math.max(lVal.practice_completed || 0, sVal.practice_completed || 0),
+                                best_practice_score: Math.max(lVal.best_practice_score || 0, sVal.best_practice_score || 0, mergedCorr.length),
+                                correct_exercises: mergedCorr
+                            };
+                        }
+                    }
                     saveLocalLessonsProgress();
                 }
             } catch (e) {}
 
+            window.userLessonsProgress = userLessonsProgress;
             renderLessonList();
             updateLessonProgressUI();
+            if (currentLesson && currentLesson.allRenderExercises && document.getElementById('exercises-container')) {
+                filterExercises(currentFilterType);
+            }
         }
+
+        window.getProgressStorageKey = getProgressStorageKey;
+        window.saveLocalLessonsProgress = saveLocalLessonsProgress;
+        window.loadLessonsProgress = loadLessonsProgress;
+        window.renderLessonList = renderLessonList;
+        window.updateLessonProgressUI = updateLessonProgressUI;
+        window.filterExercises = filterExercises;
 
         // Hệ thống phát âm chuẩn tiếng Đức với khóa giọng de-DE và Bảng ánh xạ
         const INLINE_GERMAN_MAP = {
@@ -886,11 +973,12 @@
             try {
                 fetch('/api/progress/complete-theory', {
                     method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
+                    headers: getAuthHeaders(),
                     body: JSON.stringify({
                         lesson_id: lId,
                         level_code: (currentLevelData && currentLevelData.level && currentLevelData.level.code) ? currentLevelData.level.code : 'A1',
-                        lesson_order: currentLessonIndex + 1
+                        lesson_order: currentLessonIndex + 1,
+                        auth_token: localStorage.getItem('dm_auth_token') || ''
                     })
                 });
             } catch (e) {}
@@ -1052,11 +1140,12 @@
             if (currentLesson) {
                 fetch('/api/progress/mark-studied', {
                     method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
+                    headers: getAuthHeaders(),
                     body: JSON.stringify({
                         level_code: (currentLevelData && currentLevelData.level && currentLevelData.level.code) ? currentLevelData.level.code : 'A1',
                         lesson_order: (index + 1),
-                        lesson_id: currentLesson.id
+                        lesson_id: currentLesson.id,
+                        auth_token: localStorage.getItem('dm_auth_token') || ''
                     })
                 }).catch(() => {});
             }
@@ -1275,10 +1364,25 @@
             }
         }
 
+        function isGermanMatch(ans, target) {
+            if (!ans || !target) return false;
+            if (typeof checkGermanAnswerEquivalence === 'function') {
+                return checkGermanAnswerEquivalence(ans, target);
+            }
+            if (typeof normalizeAnswer === 'function') {
+                return normalizeAnswer(ans) === normalizeAnswer(target);
+            }
+            return String(ans).trim().toLowerCase() === String(target).trim().toLowerCase();
+        }
+
         function filterExercises(typeKey) {
             currentFilterType = typeKey;
             const exContainer = document.getElementById('exercises-container');
             const list = currentLesson.allRenderExercises || [];
+
+            const currentProgress = (currentLesson && userLessonsProgress[currentLesson.id]) ? userLessonsProgress[currentLesson.id] : {};
+            const isAllCompleted = Boolean(currentProgress.practice_completed);
+            const correctExercisesSet = new Set(Array.isArray(currentProgress.correct_exercises) ? currentProgress.correct_exercises : []);
 
             const filterBarHtml = `
                 <div class="flex flex-wrap gap-2 pb-3 border-b border-slate-100">
@@ -1297,6 +1401,8 @@
 
             const exercisesHtml = list.map((ex, i) => {
                 if (currentFilterType !== 'all' && ex.exercise_type !== currentFilterType) return '';
+
+                const isDone = isAllCompleted || correctExercisesSet.has(i);
 
                 let extra = {};
                 try { extra = ex.extra_data ? JSON.parse(ex.extra_data) : {}; } catch (e) {}
@@ -1341,8 +1447,20 @@
                     inputHtml = `<div class="grid grid-cols-1 sm:grid-cols-2 gap-2.5 mt-3">
                         ${ex.options.map((opt, optIdx) => {
                             const letter = String.fromCharCode(65 + optIdx); // A, B, C, D
+                            const isCorrectOpt = isGermanMatch(opt, ex.correct_answer);
+                            if (isDone && isCorrectOpt) {
+                                return `
+                                    <button onclick="selectMultipleChoice(${i}, ${optIdx})" class="text-left px-4 py-3 rounded-xl bg-emerald-50 hover:bg-emerald-100/70 border-2 border-emerald-500 text-sm font-bold text-emerald-950 shadow-sm transition flex items-start justify-between gap-2.5 group cursor-pointer">
+                                        <div class="flex items-start gap-2.5">
+                                            <span class="w-6 h-6 rounded-lg bg-emerald-200 text-emerald-800 font-extrabold text-xs flex items-center justify-center shrink-0 border border-emerald-400 transition">${letter}</span>
+                                            <span class="pt-0.5">${opt}</span>
+                                        </div>
+                                        <span class="text-emerald-700 font-extrabold text-xs px-2 py-0.5 rounded-md bg-emerald-100 border border-emerald-300 shrink-0">✓ Đã chọn</span>
+                                    </button>
+                                `;
+                            }
                             return `
-                                <button onclick="selectMultipleChoice(${i}, ${optIdx})" class="text-left px-4 py-3 rounded-xl bg-white hover:bg-indigo-50 border border-slate-200 hover:border-indigo-300 text-sm font-bold text-slate-800 shadow-sm transition flex items-start gap-2.5 group cursor-pointer">
+                                <button onclick="selectMultipleChoice(${i}, ${optIdx})" class="text-left px-4 py-3 rounded-xl bg-white hover:bg-indigo-50 border border-slate-200 hover:border-indigo-300 text-sm font-bold text-slate-800 shadow-sm transition flex items-start gap-2.5 group cursor-pointer ${isDone ? 'opacity-80' : ''}">
                                     <span class="w-6 h-6 rounded-lg bg-slate-100 group-hover:bg-indigo-100 text-slate-700 group-hover:text-indigo-700 font-extrabold text-xs flex items-center justify-center shrink-0 border border-slate-200 group-hover:border-indigo-300 transition">${letter}</span>
                                     <span class="pt-0.5">${opt}</span>
                                 </button>
@@ -1350,11 +1468,12 @@
                         }).join('')}
                     </div>`;
                 } else {
+                    const cleanAns = isDone ? String(ex.correct_answer || '').split('/')[0].trim() : '';
                     inputHtml = `
                         <div class="flex gap-2 mt-3">
-                            <input id="ex-input-${i}" onfocus="activeInputId='ex-input-${i}'" onkeydown="handleExerciseInputKeydown(event, ${i})" type="text" placeholder="Nhập đáp án tiếng Đức của bạn... (nhấn Enter để kiểm tra và chuyển câu)" class="flex-1 px-4 py-2.5 rounded-xl bg-white border border-slate-200 text-sm focus:outline-none focus:border-indigo-500">
-                            <button onclick="checkExerciseAnswer(${i}, document.getElementById('ex-input-${i}').value)" class="px-5 py-2.5 rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white font-bold text-sm shadow-sm transition cursor-pointer">
-                                Kiểm tra
+                            <input id="ex-input-${i}" value="${cleanAns.replace(/"/g, '&quot;')}" onfocus="activeInputId='ex-input-${i}'" onkeydown="handleExerciseInputKeydown(event, ${i})" type="text" placeholder="Nhập đáp án tiếng Đức của bạn... (nhấn Enter để kiểm tra và chuyển câu)" class="flex-1 px-4 py-2.5 rounded-xl ${isDone ? 'bg-emerald-50/40 border-2 border-emerald-400 font-bold text-emerald-950' : 'bg-white border border-slate-200'} text-sm focus:outline-none focus:border-indigo-500">
+                            <button onclick="checkExerciseAnswer(${i}, document.getElementById('ex-input-${i}').value)" class="px-5 py-2.5 rounded-xl ${isDone ? 'bg-emerald-600 hover:bg-emerald-700' : 'bg-indigo-600 hover:bg-indigo-500'} text-white font-bold text-sm shadow-sm transition cursor-pointer shrink-0">
+                                ${isDone ? '✓ Đã xong' : 'Kiểm tra'}
                             </button>
                         </div>
                     `;
@@ -1362,16 +1481,58 @@
 
                 const displayQuestion = (typeof ensureQuestionNumber === 'function') ? ensureQuestionNumber(ex.question, ex.question, i + 1) : ex.question;
 
+                const translation = getExerciseTranslation(ex, extra);
+                let translationHtml = '';
+                if (translation) {
+                    translationHtml = `
+                        <div class="mt-2.5 p-3 rounded-xl bg-indigo-50 border border-indigo-200 text-indigo-950 font-medium leading-relaxed">
+                            <span class="font-bold text-indigo-700">📖 Dịch nghĩa:</span> ${translation}
+                        </div>
+                    `;
+                }
+
+                const cardBorder = isDone
+                    ? 'bg-white border-2 border-emerald-400 shadow-md ring-1 ring-emerald-300/40'
+                    : 'bg-slate-50 border border-slate-200';
+
+                const statusBadge = isDone
+                    ? `<span class="px-2 py-0.5 rounded-md bg-emerald-100 text-emerald-700 font-black text-[11px] flex items-center gap-1 border border-emerald-300">✓ ĐÃ HOÀN THÀNH</span>`
+                    : '';
+
+                const expBadge = isDone
+                    ? `<span class="text-emerald-700 font-extrabold flex items-center gap-1">⚡ +${ex.exp_reward} EXP <span class="text-[11px] px-1.5 py-0.2 rounded bg-emerald-100 text-emerald-800 font-bold">(Đã nhận)</span></span>`
+                    : `<span class="text-amber-600 font-extrabold">⚡ +${ex.exp_reward} EXP</span>`;
+
+                const feedbackHtml = isDone
+                    ? `
+                        <div id="ex-feedback-${i}" class="text-xs p-3.5 rounded-xl mt-2 bg-emerald-50 text-emerald-800 border border-emerald-200">
+                            <div class="space-y-1.5">
+                                <div class="flex items-center gap-2">
+                                    <span class="text-emerald-700 font-extrabold text-sm">✅ Đã hoàn thành chính xác!</span>
+                                    <span class="text-emerald-800 font-bold">(+${ex.exp_reward} EXP)</span>
+                                </div>
+                                ${translationHtml}
+                                <div class="text-emerald-900 leading-relaxed pt-1">
+                                    <span class="font-bold">💡 Giải thích:</span> ${ex.explanation}
+                                </div>
+                            </div>
+                        </div>
+                    `
+                    : `<div id="ex-feedback-${i}" class="hidden text-xs p-3.5 rounded-xl mt-2"></div>`;
+
                 return `
-                    <div id="ex-card-${i}" class="p-5 rounded-2xl bg-slate-50 border border-slate-200 space-y-2">
+                    <div id="ex-card-${i}" class="p-5 rounded-2xl ${cardBorder} space-y-2 transition-all">
                         <div class="flex items-center justify-between text-xs">
-                            <span class="px-2.5 py-1 rounded-lg bg-indigo-100 text-indigo-700 font-extrabold uppercase">${TYPE_LABELS[ex.exercise_type] || ex.exercise_type}</span>
-                            <span class="text-amber-600 font-extrabold">⚡ +${ex.exp_reward} EXP</span>
+                            <div class="flex items-center gap-2">
+                                <span class="px-2.5 py-1 rounded-lg bg-indigo-100 text-indigo-700 font-extrabold uppercase">${TYPE_LABELS[ex.exercise_type] || ex.exercise_type}</span>
+                                ${statusBadge}
+                            </div>
+                            ${expBadge}
                         </div>
                         <p class="font-bold text-slate-900 text-sm sm:text-base">${displayQuestion}</p>
                         ${extraHtml}
                         ${inputHtml}
-                        <div id="ex-feedback-${i}" class="hidden text-xs p-3.5 rounded-xl mt-2"></div>
+                        ${feedbackHtml}
                     </div>
                 `;
             }).join('');
@@ -1665,14 +1826,15 @@
                     try {
                         fetch('/api/progress/record-exercise', {
                             method: 'POST',
-                            headers: { 'Content-Type': 'application/json' },
+                            headers: getAuthHeaders(),
                             body: JSON.stringify({
                                 lesson_id: lId,
                                 level_code: (currentLevelData && currentLevelData.level && currentLevelData.level.code) ? currentLevelData.level.code : 'A1',
                                 lesson_order: currentLessonIndex + 1,
                                 exercise_index: index,
                                 total_exercises: totalEx,
-                                is_correct: true
+                                is_correct: true,
+                                auth_token: localStorage.getItem('dm_auth_token') || ''
                             })
                         });
                     } catch (e) {}
@@ -1755,10 +1917,16 @@
 
         async function addExpToDatabase(expAmount) {
             try {
+                const token = localStorage.getItem('dm_auth_token') || '';
+                const headers = { 'Content-Type': 'application/json' };
+                if (token) headers['Authorization'] = 'Bearer ' + token;
                 const res = await fetch('/api/exp/add', {
                     method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify({ exp: expAmount })
+                    headers: headers,
+                    body: JSON.stringify({
+                        exp: expAmount,
+                        auth_token: token
+                    })
                 });
                 const data = await res.json();
                 if (data && data.user) {

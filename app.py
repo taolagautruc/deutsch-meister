@@ -201,11 +201,45 @@ def get_level_data(level_code):
     conn.close()
     return jsonify({"level": dict(level), "lessons": lessons})
 
+def get_current_user_id():
+    """Lấy user_id từ Flask session hoặc Token Authorization/Header/Body (đa nền tảng, chống mất phiên trên Safari/Mobile)"""
+    uid = session.get("user_id")
+    if uid:
+        return uid
+    
+    token = ""
+    auth_header = request.headers.get("Authorization", "")
+    if auth_header.startswith("Bearer "):
+        token = auth_header[7:].strip()
+    if not token:
+        token = request.headers.get("X-Auth-Token", "").strip()
+    if not token and request.is_json:
+        try:
+            body = request.get_json(silent=True) or {}
+            token = body.get("auth_token", "").strip()
+        except Exception:
+            token = ""
+            
+    if token:
+        try:
+            conn = get_connection()
+            c = conn.cursor()
+            c.execute("SELECT id FROM users WHERE token = ?;", (token,))
+            row = c.fetchone()
+            conn.close()
+            if row:
+                session.permanent = True
+                session["user_id"] = row["id"]
+                return row["id"]
+        except Exception:
+            pass
+    return None
+
 @app.route("/api/exp/add", methods=["POST"])
 def add_exp():
     data = request.get_json() or {}
     exp_gained = int(data.get("exp", 10))
-    uid = session.get("user_id")
+    uid = get_current_user_id()
     conn = get_connection()
     cursor = conn.cursor()
     if uid:
@@ -419,6 +453,59 @@ def login():
     session["user_id"] = user_dict["id"]
     user_dict["token"] = auth_token
 
+    # Kế thừa / gộp tiến độ làm bài từ phiên khách nếu có
+    guest_exp = int(data.get("guest_exp", 0) or 0)
+    if guest_exp > (user_dict.get("total_exp") or 0):
+        c.execute("UPDATE users SET total_exp = ? WHERE id = ?;", (guest_exp, user_dict["id"]))
+        user_dict["total_exp"] = guest_exp
+
+    guest_progress = data.get("guest_progress") or {}
+    if isinstance(guest_progress, dict):
+        for l_id_str, l_data in guest_progress.items():
+            try:
+                l_id = int(l_id_str)
+                th = 1 if l_data.get("studied_theory") else 0
+                pr = 1 if l_data.get("practice_completed") else 0
+                corr_list = l_data.get("correct_exercises") or []
+                
+                c.execute("""
+                    SELECT level_code, lesson_order, studied_theory, practice_completed, best_practice_score, correct_exercises
+                    FROM user_studied_lessons
+                    WHERE user_id = ? AND lesson_id = ?;
+                """, (user_dict["id"], l_id))
+                exist_row = c.fetchone()
+                
+                if exist_row:
+                    old_corr = []
+                    if exist_row["correct_exercises"]:
+                        try:
+                            old_corr = json.loads(exist_row["correct_exercises"])
+                        except Exception:
+                            old_corr = []
+                    merged_corr = sorted(list(set(old_corr + corr_list)))
+                    merged_th = max(exist_row["studied_theory"] or 0, th)
+                    merged_pr = max(exist_row["practice_completed"] or 0, pr)
+                    merged_score = max(exist_row["best_practice_score"] or 0, len(merged_corr))
+                    c.execute("""
+                        UPDATE user_studied_lessons
+                        SET studied_theory = ?,
+                            practice_completed = ?,
+                            best_practice_score = ?,
+                            correct_exercises = ?,
+                            last_studied_at = CURRENT_TIMESTAMP
+                        WHERE user_id = ? AND lesson_id = ?;
+                    """, (merged_th, merged_pr, merged_score, json.dumps(merged_corr), user_dict["id"], l_id))
+                else:
+                    score = len(corr_list)
+                    c.execute("""
+                        INSERT INTO user_studied_lessons (user_id, lesson_id, level_code, lesson_order, studied_theory, practice_completed, best_practice_score, correct_exercises)
+                        VALUES (?, ?, 'A1', 1, ?, ?, ?, ?);
+                    """, (user_dict["id"], l_id, th, pr, score, json.dumps(corr_list)))
+            except Exception as e:
+                print("Error merging login guest progress:", e)
+
+    conn.commit()
+
     # Lấy danh sách bài đã học
     c.execute("SELECT lesson_id FROM user_studied_lessons WHERE user_id = ?;", (user_dict["id"],))
     user_dict["studied_lessons"] = [r["lesson_id"] for r in c.fetchall()]
@@ -484,7 +571,7 @@ def logout():
 @app.route("/api/auth/me", methods=["GET"])
 def get_me():
     """Lấy thông tin người dùng hiện tại kèm toàn bộ tiến độ học tập"""
-    uid = session.get("user_id")
+    uid = get_current_user_id()
     if not uid:
         return jsonify({"logged_in": False, "user": None})
 
@@ -515,7 +602,7 @@ def get_me():
 @app.route("/api/progress/all", methods=["GET"])
 def get_all_progress():
     """Lấy toàn bộ tiến độ học tập của các bài học"""
-    uid = session.get("user_id")
+    uid = get_current_user_id()
     if not uid:
         return jsonify({"logged_in": False, "progress": {}})
     return jsonify({"logged_in": True, "progress": get_user_progress_dict(uid)})
@@ -528,7 +615,7 @@ def mark_studied():
     level_code = data.get("level_code", "A1")
     lesson_order = int(data.get("lesson_order", 1))
 
-    uid = session.get("user_id")
+    uid = get_current_user_id()
     if uid:
         conn = get_connection()
         c = conn.cursor()
@@ -561,7 +648,7 @@ def complete_theory():
     level_code = data.get("level_code", "A1")
     lesson_order = int(data.get("lesson_order", 1))
 
-    uid = session.get("user_id")
+    uid = get_current_user_id()
     if uid:
         conn = get_connection()
         c = conn.cursor()
@@ -592,7 +679,7 @@ def record_exercise():
     total_exercises = int(data.get("total_exercises", 50))
     is_correct = bool(data.get("is_correct", False))
 
-    uid = session.get("user_id")
+    uid = get_current_user_id()
     if not uid:
         return jsonify({
             "success": True,
@@ -652,19 +739,92 @@ def record_exercise():
 
     return jsonify({
         "success": True,
+        "logged_in": True,
         "lesson_id": lesson_id,
         "correct_count": score,
         "total_exercises": total_exercises,
-        "practice_completed": practice_completed == 1,
-        "all_completed": (studied_theory == 1 and practice_completed == 1)
+        "practice_completed": final_practice_completed == 1,
+        "all_completed": (studied_theory == 1 and final_practice_completed == 1)
     })
 
-    return jsonify({"success": True, "lesson_id": lesson_id, "lesson_order": lesson_order})
+@app.route("/api/progress/sync", methods=["POST"])
+def sync_progress():
+    """Đồng bộ hai chiều toàn diện giữa máy khách (localStorage) và máy chủ (DB)"""
+    uid = get_current_user_id()
+    data = request.get_json() or {}
+    client_progress = data.get("progress") or {}
+    client_exp = int(data.get("total_exp", 0) or 0)
+
+    if not uid:
+        return jsonify({"logged_in": False, "progress": client_progress})
+
+    conn = get_connection()
+    c = conn.cursor()
+
+    if client_exp > 0:
+        c.execute("SELECT total_exp FROM users WHERE id = ?;", (uid,))
+        urow = c.fetchone()
+        if urow and client_exp > (urow["total_exp"] or 0):
+            c.execute("UPDATE users SET total_exp = ? WHERE id = ?;", (client_exp, uid))
+
+    if isinstance(client_progress, dict):
+        for l_id_str, l_data in client_progress.items():
+            try:
+                l_id = int(l_id_str)
+                th = 1 if l_data.get("studied_theory") else 0
+                pr = 1 if l_data.get("practice_completed") else 0
+                client_corr = l_data.get("correct_exercises") or []
+                
+                c.execute("""
+                    SELECT level_code, lesson_order, studied_theory, practice_completed, best_practice_score, correct_exercises
+                    FROM user_studied_lessons
+                    WHERE user_id = ? AND lesson_id = ?;
+                """, (uid, l_id))
+                row = c.fetchone()
+                
+                if row:
+                    db_corr = []
+                    if row["correct_exercises"]:
+                        try:
+                            db_corr = json.loads(row["correct_exercises"])
+                        except Exception:
+                            db_corr = []
+                    merged_corr = sorted(list(set(db_corr + client_corr)))
+                    merged_th = max(row["studied_theory"] or 0, th)
+                    merged_pr = max(row["practice_completed"] or 0, pr)
+                    merged_score = max(row["best_practice_score"] or 0, len(merged_corr))
+                    c.execute("""
+                        UPDATE user_studied_lessons
+                        SET studied_theory = ?,
+                            practice_completed = ?,
+                            best_practice_score = ?,
+                            correct_exercises = ?,
+                            last_studied_at = CURRENT_TIMESTAMP
+                        WHERE user_id = ? AND lesson_id = ?;
+                    """, (merged_th, merged_pr, merged_score, json.dumps(merged_corr), uid, l_id))
+                else:
+                    score = len(client_corr)
+                    c.execute("""
+                        INSERT INTO user_studied_lessons (user_id, lesson_id, level_code, lesson_order, studied_theory, practice_completed, best_practice_score, correct_exercises)
+                        VALUES (?, ?, 'A1', 1, ?, ?, ?, ?);
+                    """, (uid, l_id, th, pr, score, json.dumps(client_corr)))
+            except Exception as e:
+                print("Error in sync_progress:", e)
+
+    conn.commit()
+    conn.close()
+
+    server_progress = get_user_progress_dict(uid)
+    return jsonify({
+        "logged_in": True,
+        "progress": server_progress,
+        "message": "Đã đồng bộ tiến trình học tập thành công!"
+    })
 
 @app.route("/api/arena/start", methods=["POST"])
 def arena_start():
     """Bắt đầu ván Đấu trường 2 phút (chặn nếu đã chơi >= 2 lần/ngày)"""
-    uid = session.get("user_id")
+    uid = get_current_user_id()
     if not uid:
         return jsonify({"error": "Vui lòng đăng nhập hoặc đăng ký tài khoản để tham gia Đấu trường Đua Top!"}), 401
 
@@ -707,7 +867,7 @@ def arena_start():
 @app.route("/api/arena/finish", methods=["POST"])
 def arena_finish():
     """Tổng kết ván Đấu trường và cộng điểm"""
-    uid = session.get("user_id")
+    uid = get_current_user_id()
     if not uid:
         return jsonify({"error": "Chưa đăng nhập!"}), 401
 
