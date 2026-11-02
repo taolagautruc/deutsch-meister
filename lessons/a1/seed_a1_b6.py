@@ -1137,7 +1137,7 @@ def seed_lesson_6():
                 "question": "Câu 1: Chọn cụm từ đúng để hoàn thành câu: „Meine Mutter fährt jeden Morgen ___ zur Arbeit.“",
                 "options_json": "[\"mit die Straßenbahn\", \"mit der Straßenbahn\", \"mit dem Straßenbahn\", \"mit den Straßenbahn\"]",
                 "correct_answer": "mit der Straßenbahn",
-                "explanation": "Giới từ mit luôn đi với Cách 3 (Dativ). Danh từ die Straßenbahn mang giống cái (Femininum), nên ở Dativ mạo từ die biến đổi thành der $\\rightarrow$ mit der Straßenbahn.",
+                "explanation": "Giới từ mit luôn đi với Cách 3 (Dativ). Danh từ die Straßenbahn mang giống cái (Femininum), nên ở Dativ mạo từ die biến đổi thành der → mit der Straßenbahn.",
                 "exp_reward": 15,
                 "extra_data": {
                         "translation": "Mẹ tôi đi làm mỗi buổi sáng bằng tàu điện mặt đất.",
@@ -1172,7 +1172,7 @@ def seed_lesson_6():
         {
                 "q_num": 4,
                 "type": "trac_nghiem",
-                "question": "Câu 4: Chọn đáp án đúng ngữ pháp Cách 3 (`Dativ`): „Am Wochenende macht Herr Wagner einen Ausflug mit ___.“",
+                "question": "Câu 4: Chọn đáp án đúng ngữ pháp Cách 3 (Dativ): „Am Wochenende macht Herr Wagner einen Ausflug mit ___.“",
                 "options_json": "[\"seine Kinder\", \"seinen Kinder\", \"seinen Kindern\", \"seinem Kindern\"]",
                 "correct_answer": "seinen Kindern",
                 "explanation": "Sau giới từ mit là Cách 3 (Dativ). Ở dạng số nhiều (Plural), mạo từ sở hữu seine đổi thành seinen và danh từ số nhiều Kinder bắt buộc phải cộng thêm đuôi -n thành seinen Kindern.",
@@ -1187,7 +1187,7 @@ def seed_lesson_6():
                 "question": "Câu 5: Chọn dạng mạo từ sở hữu đúng: „Kinder, wohnt ihr noch bei ___ Eltern oder habt ihr schon eine eigene Wohnung?“",
                 "options_json": "[\"eure\", \"eurem\", \"eurer\", \"euren\"]",
                 "correct_answer": "euren",
-                "explanation": "Chủ ngữ đang được hỏi là ihr (các bạn/các con) $\\rightarrow$ gốc sở hữu là euer. Đi sau giới từ bei (+ Dativ) và trước danh từ số nhiều Eltern, euer thêm đuôi -en và lược chữ e ở giữa thành euren Eltern.",
+                "explanation": "Chủ ngữ đang được hỏi là ihr (các bạn/các con) → gốc sở hữu là euer. Đi sau giới từ bei (+ Dativ) và trước danh từ số nhiều Eltern, euer thêm đuôi -en và lược chữ e ở giữa thành euren Eltern.",
                 "exp_reward": 15,
                 "extra_data": {
                         "translation": "Các con ơi, các con vẫn còn sống ở nhà bố mẹ của các con hay là đã có một căn hộ riêng rồi?"
@@ -1196,7 +1196,7 @@ def seed_lesson_6():
         {
                 "q_num": 6,
                 "type": "trac_nghiem",
-                "question": "Câu 6: Chọn đáp án đúng: „Das Geschenk auf dem Tisch ist von ___ Lehrerin.“ (của cô giáo chúng tôi)",
+                "question": "Câu 6: Chọn đáp án đúng: „Das Geschenk auf dem Tisch ist von ___ Lehrerin.“",
                 "options_json": "[\"unsere\", \"unserer\", \"unserem\", \"unseren\"]",
                 "correct_answer": "unserer",
                 "explanation": "Sau giới từ von là Cách 3 (Dativ). Danh từ die Lehrerin mang giống cái (Femininum), nên gốc sở hữu unser (của chúng tôi) nhận đuôi -er thành unserer Lehrerin.",
@@ -1235,7 +1235,7 @@ def seed_lesson_6():
                 "question": "Câu 9: Chọn phương án đúng: „Wo liegt die neue Buchhandlung? — Sie liegt direkt zwischen ___ Supermarkt und ___ Post.“",
                 "options_json": "[\"den / die\", \"dem / der\", \"der / dem\", \"einem / eine\"]",
                 "correct_answer": "dem / der",
-                "explanation": "Câu hỏi Wo? với giới từ zwischen đòi hỏi cả 2 danh từ phía sau đều phải chia ở Cách 3 (Dativ): der Supermarkt (giống đực) $\\rightarrow$ dem Supermarkt; die Post (giống cái) $\\rightarrow$ der Post.",
+                "explanation": "Câu hỏi Wo? với giới từ zwischen đòi hỏi cả 2 danh từ phía sau đều phải chia ở Cách 3 (Dativ): der Supermarkt (giống đực) → dem Supermarkt; die Post (giống cái) → der Post.",
                 "exp_reward": 15,
                 "extra_data": {
                         "translation": "Hiệu sách mới nằm ở đâu? — Nó nằm ngay giữa siêu thị và bưu điện.",
@@ -1270,7 +1270,7 @@ def seed_lesson_6():
         {
                 "q_num": 12,
                 "type": "trac_nghiem",
-                "question": "Câu 12: Dãy số thứ tự nào sau đây được viết ĐÚNG HOÀN TOÀN cho các mốc `1. — 3. — 7. — 8.` ở Cách 1 (`Nominativ`)?",
+                "question": "Câu 12: Dãy số thứ tự nào sau đây được viết ĐÚNG HOÀN TOÀN cho các mốc 1. — 3. — 7. — 8. ở Cách 1 (Nominativ)?",
                 "options_json": "[\"der einsigste — der dreite — der siebente — der achtte\", \"der erste — der dritte — der siebte — der achte\", \"der erste — der dreite — der siebte — der achte\", \"der ersten — der dritten — der siebten — der achten\"]",
                 "correct_answer": "der erste — der dritte — der siebte — der achte",
                 "explanation": "Bốn số thứ tự bất quy tắc từ 1 đến 19 ở Nominativ là: 1. -> erste, 3. -> dritte, 7. -> siebte (bỏ -en), 8. -> achte (chỉ có một chữ t).",
@@ -1283,10 +1283,10 @@ def seed_lesson_6():
         {
                 "q_num": 13,
                 "type": "trac_nghiem",
-                "question": "Câu 13: Số thứ tự của `23.` sau mạo từ `der` ở Cách 1 (`Nominativ`) được viết như thế nào?",
+                "question": "Câu 13: Số thứ tự của 23. sau mạo từ der ở Cách 1 (Nominativ) được viết như thế nào?",
                 "options_json": "[\"derdreiundzwanzigste\", \"der dritteundzwanzigste\", \"der dreiundzwanzigste\", \"der dreiundzwanzigsten\"]",
                 "correct_answer": "der dreiundzwanzigste",
-                "explanation": "Từ 20 trở đi, số thứ tự được tạo bằng cách thêm đuôi -ste vào cuối số đếm: dreiundzwanzig + -ste $\\rightarrow$ der dreiundzwanzigste (phần hàng đơn vị drei ở đầu giữ nguyên, không đổi thành dritte).",
+                "explanation": "Từ 20 trở đi, số thứ tự được tạo bằng cách thêm đuôi -ste vào cuối số đếm: dreiundzwanzig + -ste → der dreiundzwanzigste (phần hàng đơn vị drei ở đầu giữ nguyên, không đổi thành dritte).",
                 "exp_reward": 15,
                 "extra_data": {
                         "translation": "Thứ hai mươi ba (ngày 23).",
@@ -1296,7 +1296,7 @@ def seed_lesson_6():
         {
                 "q_num": 14,
                 "type": "trac_nghiem",
-                "question": "Câu 14: Chọn cặp từ đúng cho cuộc hội thoại: „Welcher Tag ist heute? — Heute ist der ___ Oktober (`20.10.`). Und wann fliegt ihr nach Wien? — Wir fliegen am ___ Oktober (`25.10.`).“",
+                "question": "Câu 14: Chọn cặp từ đúng cho cuộc hội thoại: „Welcher Tag ist heute? — Heute ist der ___ Oktober (20.10.). Und wann fliegt ihr nach Wien? — Wir fliegen am ___ Oktober (25.10.).“",
                 "options_json": "[\"zwanzigsten / fünfundzwanzigste\", \"zwanzigste / fünfundzwanzigsten\", \"zwanzig / fünfundzwanzig\", \"zwanzigster / fünfundzwanzigster\"]",
                 "correct_answer": "zwanzigste / fünfundzwanzigsten",
                 "explanation": "Sau Heute ist der ... (Nominativ) dùng đuôi -ste (der zwanzigste Oktober). Sau giới từ am (Dativ) bắt buộc phải thêm -n thành đuôi -sten (am fünfundzwanzigsten Oktober).",
@@ -1349,7 +1349,7 @@ def seed_lesson_6():
                 "question": "Câu 18: Chọn câu hoàn chỉnh đúng ngữ pháp 100%:",
                 "options_json": "[\"Am drittem Mai fahren wir mit den Zug zu unseren Freunden.\", \"Am dritten Mai fahren wir mit dem Zug zu unseren Freunden.\", \"Im dritten Mai fahren wir mit dem Zug nach unseren Freunden.\", \"Am dritte Mai fährt wir mit der Zug bei unseren Freunde.\"]",
                 "correct_answer": "Am dritten Mai fahren wir mit dem Zug zu unseren Freunden.",
-                "explanation": "Ngày cụ thể dùng Am dritten Mai; phương tiện der Zug dùng mit dem Zug; đi tới chỗ người dùng zu + Dativ số nhiều là zu unseren Freunden (danh từ Freunde thêm -n).\n\n---\n\n#### NHÓM 2: ĐIỀN KHUYẾT (dienkhuyet — 15 Câu: Câu 19 $\\rightarrow$ Câu 33)",
+                "explanation": "Ngày cụ thể dùng Am dritten Mai; phương tiện der Zug dùng mit dem Zug; đi tới chỗ người dùng zu + Dativ số nhiều là zu unseren Freunden (danh từ Freunde thêm -n).",
                 "exp_reward": 15,
                 "extra_data": {
                         "translation": "Vào ngày mùng 3 tháng Năm, chúng tôi đi bằng tàu hỏa tới chỗ những người bạn của chúng tôi."
@@ -1358,7 +1358,7 @@ def seed_lesson_6():
         {
                 "q_num": 19,
                 "type": "dien_khuyet",
-                "question": "Câu 19: Điền giới từ thu gọn thích hợp (`zu + der`) vào chỗ trống: „Jeden Morgen geht mein Sohn um 7 Uhr zu Fuß ___ Schule.“",
+                "question": "Câu 19: Điền giới từ thu gọn thích hợp vào chỗ trống: „Jeden Morgen geht mein Sohn um 7 Uhr zu Fuß ___ Schule.“",
                 "options_json": null,
                 "correct_answer": "zur",
                 "explanation": "die Schule mang giống cái; đi đến trường dùng zu + der Schule viết tắt bắt buộc thành zur Schule.",
@@ -1373,7 +1373,7 @@ def seed_lesson_6():
         {
                 "q_num": 20,
                 "type": "dien_khuyet",
-                "question": "Câu 20: Điền giới từ thu gọn thích hợp (`von + dem`) vào chỗ trống: „Wann kommt deine Schwester heute Abend ___ Flughafen zurück?“",
+                "question": "Câu 20: Điền giới từ thu gọn thích hợp vào chỗ trống: „Wann kommt deine Schwester heute Abend ___ Flughafen zurück?“",
                 "options_json": null,
                 "correct_answer": "vom",
                 "explanation": "Từ một địa điểm trở về dùng giới từ von + Dativ; der Flughafen mang giống đực nên von + dem viết tắt thành vom Flughafen.",
@@ -1388,7 +1388,7 @@ def seed_lesson_6():
         {
                 "q_num": 21,
                 "type": "dien_khuyet",
-                "question": "Câu 21: Điền giới từ thu gọn thích hợp (`bei + dem`) vào chỗ trống: „Gestern war mein Großvater zwei Stunden ___ Arzt.“",
+                "question": "Câu 21: Điền giới từ thu gọn thích hợp vào chỗ trống: „Gestern war mein Großvater zwei Stunden ___ Arzt.“",
                 "options_json": null,
                 "correct_answer": "beim",
                 "explanation": "Ở chỗ bác sĩ (der Arzt) dùng bei + dem Arzt viết tắt thành beim Arzt.",
@@ -1403,7 +1403,7 @@ def seed_lesson_6():
         {
                 "q_num": 22,
                 "type": "dien_khuyet",
-                "question": "Câu 22: Điền mạo từ xác định đúng ở Cách 3 (`Dativ`) vào chỗ trống: „Warum sitzt der Hund immer unter ___ Esstisch?“",
+                "question": "Câu 22: Điền mạo từ xác định đúng ở Cách 3 (Dativ) vào chỗ trống: „Warum sitzt der Hund immer unter ___ Esstisch?“",
                 "options_json": null,
                 "correct_answer": "dem",
                 "explanation": "Câu chỉ vị trí tĩnh (sitzt — Wo?) sau giới từ unter chia ở Dativ. der Esstisch (giống đực) đổi thành unter dem Esstisch.",
@@ -1419,7 +1419,7 @@ def seed_lesson_6():
         {
                 "q_num": 23,
                 "type": "dien_khuyet",
-                "question": "Câu 23: Điền mạo từ sở hữu đúng của ngôi `er` (`sein-`) ở Cách 3 (`Dativ`) vào chỗ trống: „Peter spricht gerade im Flur mit ___ Chefin.“",
+                "question": "Câu 23: Điền mạo từ sở hữu đúng của ngôi er (sein-) ở Cách 3 (Dativ) vào chỗ trống: „Peter spricht gerade im Flur mit ___ Chefin.“",
                 "options_json": null,
                 "correct_answer": "seiner",
                 "explanation": "Sau giới từ mit là Dativ. Danh từ die Chefin mang giống cái, nên gốc sở hữu sein- của Peter (er) thêm đuôi -er thành seiner Chefin.",
@@ -1435,7 +1435,7 @@ def seed_lesson_6():
         {
                 "q_num": 24,
                 "type": "dien_khuyet",
-                "question": "Câu 24: Điền mạo từ sở hữu đúng của ngôi `Sie` (`Ihr-` viết hoa) ở Cách 3 (`Dativ`) vào chỗ trống: „Herr Direktor, der Brief liegt auf ___ Schreibtisch neben dem Laptop.“",
+                "question": "Câu 24: Điền mạo từ sở hữu đúng của ngôi Sie (Ihr- viết hoa) ở Cách 3 (Dativ) vào chỗ trống: „Herr Direktor, der Brief liegt auf ___ Schreibtisch neben dem Laptop.“",
                 "options_json": null,
                 "correct_answer": "Ihrem",
                 "explanation": "der Schreibtisch mang giống đực, ở Dativ sau giới từ auf thì mạo từ sở hữu của ngôi Sie là Ihrem Schreibtisch.",
@@ -1451,7 +1451,7 @@ def seed_lesson_6():
         {
                 "q_num": 25,
                 "type": "dien_khuyet",
-                "question": "Câu 25: Điền dạng đúng của danh từ số nhiều `die Freunde` (những người bạn) ở Cách 3 (`Dativ`) vào chỗ trống: „Am Samstag gehen wir mit unseren ___ ins Kino.“",
+                "question": "Câu 25: Điền dạng đúng của danh từ số nhiều die Freunde ở Cách 3 (Dativ) vào chỗ trống: „Am Samstag gehen wir mit unseren ___ ins Kino.“",
                 "options_json": null,
                 "correct_answer": "Freunden",
                 "explanation": "Ở Cách 3 (Dativ) số nhiều, danh từ die Freunde bắt buộc phải thêm đuôi -n thành Freunden.",
@@ -1466,7 +1466,7 @@ def seed_lesson_6():
         {
                 "q_num": 26,
                 "type": "dien_khuyet",
-                "question": "Câu 26: Điền dạng chia đúng của động từ `fahren` theo chủ ngữ vào chỗ trống: „Frau Kien, wann ___ der nächste Bus zum Hauptbahnhof?“",
+                "question": "Câu 26: Điền dạng chia đúng của động từ fahren theo chủ ngữ vào chỗ trống: „Frau Kien, wann ___ der nächste Bus zum Hauptbahnhof?“",
                 "options_json": null,
                 "correct_answer": "fährt",
                 "explanation": "Chủ ngữ của câu hỏi là der nächste Bus (ngôi thứ 3 số ít er), nên động từ fahren biến âm a -> ä thành fährt.",
@@ -1549,7 +1549,7 @@ def seed_lesson_6():
                 "question": "Câu 31: Điền dạng chữ của số thứ tự trong ngoặc đơn vào chỗ trống: „Der Deutschkurs beginnt am ___ (20.) September.“",
                 "options_json": null,
                 "correct_answer": "zwanzigsten",
-                "explanation": "Từ số 20 trở đi, số thứ tự dùng đuôi -ste (Nominativ) và -sten (Dativ sau am) $\\rightarrow$ am zwanzigsten September.",
+                "explanation": "Từ số 20 trở đi, số thứ tự dùng đuôi -ste (Nominativ) và -sten (Dativ sau am) → am zwanzigsten September.",
                 "exp_reward": 15,
                 "extra_data": {
                         "accepted_answers": [
@@ -1578,10 +1578,10 @@ def seed_lesson_6():
         {
                 "q_num": 33,
                 "type": "dien_khuyet",
-                "question": "Câu 33: Điền dạng chia đúng của động từ `gefallen` vào chỗ trống: „Wie ___ dir das neue Fahrrad von deinem Bruder?“",
+                "question": "Câu 33: Điền dạng chia đúng của động từ gefallen vào chỗ trống: „Wie ___ dir das neue Fahrrad von deinem Bruder?“",
                 "options_json": null,
                 "correct_answer": "gefällt",
-                "explanation": "Chủ ngữ của câu là das neue Fahrrad (ngôi es), nên động từ gefallen biến âm a -> ä thành gefällt (đi với tân ngữ Dativ là dir).\n\n---\n\n#### NHÓM 3: DỊCH NGHĨA TỪ / CỤM TỪ VIỆT $\\rightarrow$ ĐỨC (dichnghiavd — 12 Câu: Câu 34 $\\rightarrow$ Câu 45)",
+                "explanation": "Chủ ngữ của câu là das neue Fahrrad (ngôi es), nên động từ gefallen biến âm a -> ä thành gefällt (đi với tân ngữ Dativ là dir).",
                 "exp_reward": 15,
                 "extra_data": {
                         "accepted_answers": [
@@ -1646,7 +1646,7 @@ def seed_lesson_6():
                 "question": "Câu 37: Dịch sang tiếng Đức: \"ở tầng trệt\"",
                 "options_json": null,
                 "correct_answer": "im Erdgeschoss",
-                "explanation": "Tầng trệt là danh từ giống trung das Erdgeschoss $\\rightarrow$ ở tầng trệt là im Erdgeschoss.",
+                "explanation": "Tầng trệt là danh từ giống trung das Erdgeschoss → ở tầng trệt là im Erdgeschoss.",
                 "exp_reward": 15,
                 "extra_data": {
                         "accepted_answers": [
@@ -1662,7 +1662,7 @@ def seed_lesson_6():
                 "question": "Câu 38: Dịch sang tiếng Đức: \"ở tầng ba\"",
                 "options_json": null,
                 "correct_answer": "im dritten Stock",
-                "explanation": "Tầng lầu là der Stock (hoặc die Etage), số thứ tự 3 ở Dativ là dritten $\\rightarrow$ im dritten Stock.",
+                "explanation": "Tầng lầu là der Stock (hoặc die Etage), số thứ tự 3 ở Dativ là dritten → im dritten Stock.",
                 "exp_reward": 15,
                 "extra_data": {
                         "accepted_answers": [
@@ -1747,7 +1747,7 @@ def seed_lesson_6():
                 "question": "Câu 43: Dịch cụm vị trí sau sang tiếng Đức: \"phía trước khách sạn\"",
                 "options_json": null,
                 "correct_answer": "vor dem Hotel",
-                "explanation": "Giới từ \"phía trước\" là vor; das Hotel (giống trung) ở Cách 3 (Dativ) đổi thành dem Hotel $\\rightarrow$ vor dem Hotel.",
+                "explanation": "Giới từ \"phía trước\" là vor; das Hotel (giống trung) ở Cách 3 (Dativ) đổi thành dem Hotel → vor dem Hotel.",
                 "exp_reward": 15,
                 "extra_data": {
                         "accepted_answers": [
@@ -1762,7 +1762,7 @@ def seed_lesson_6():
                 "question": "Câu 44: Dịch cụm ngày tháng sau sang tiếng Đức: \"vào ngày mùng 1 tháng Năm\"",
                 "options_json": null,
                 "correct_answer": "am ersten Mai",
-                "explanation": "Giới từ am + số thứ tự 1. ở Dativ (ersten) + Mai $\\rightarrow$ am ersten Mai.",
+                "explanation": "Giới từ am + số thứ tự 1. ở Dativ (ersten) + Mai → am ersten Mai.",
                 "exp_reward": 15,
                 "extra_data": {
                         "accepted_answers": [
@@ -1777,10 +1777,10 @@ def seed_lesson_6():
         {
                 "q_num": 45,
                 "type": "dich_nghia_vd",
-                "question": "Câu 45: Dịch cụm vị trí sau sang tiếng Đức: \"đang ở nhà / đi về nhà\" (Ghi theo thứ tự: `ở nhà / về nhà`)",
+                "question": "Câu 45: Dịch cụm vị trí sau sang tiếng Đức: \"đang ở nhà / đi về nhà\" (Ghi theo thứ tự: ở nhà / về nhà)",
                 "options_json": null,
                 "correct_answer": "zu Hause / nach Hause",
-                "explanation": "zu Hause dùng cho trạng thái tĩnh (đang ở nhà - Wo?), còn nach Hause dùng cho hành động di chuyển (đi về nhà - Wohin?).\n\n---\n\n#### NHÓM 4: DỊCH NGHĨA TỪ / CỤM TỪ ĐỨC $\\rightarrow$ VIỆT (dichnghiadv — 12 Câu: Câu 46 $\\rightarrow$ Câu 57)",
+                "explanation": "zu Hause dùng cho trạng thái tĩnh (đang ở nhà - Wo?), còn nach Hause dùng cho hành động di chuyển (đi về nhà - Wohin?).",
                 "exp_reward": 15,
                 "extra_data": {
                         "accepted_answers": [
@@ -1850,7 +1850,7 @@ def seed_lesson_6():
                 "question": "Câu 49: Dịch sang tiếng Việt: „an der Rezeption“",
                 "options_json": null,
                 "correct_answer": "ở quầy lễ tân",
-                "explanation": "die Rezeption là quầy lễ tân; ở tại quầy lễ tân dùng giới từ an + Dativ $\\rightarrow$ an der Rezeption.",
+                "explanation": "die Rezeption là quầy lễ tân; ở tại quầy lễ tân dùng giới từ an + Dativ → an der Rezeption.",
                 "exp_reward": 15,
                 "extra_data": {
                         "accepted_answers": [
@@ -1996,7 +1996,7 @@ def seed_lesson_6():
                 "question": "Câu 57: Dịch sang tiếng Việt: „die Tastatur und die Maus“",
                 "options_json": null,
                 "correct_answer": "bàn phím và chuột",
-                "explanation": "die Tastatur = bàn phím máy tính; die Maus = con chuột máy tính.\n\n---\n\n#### NHÓM 5: NỐI Ô TỪ TRÁI QUA PHẢI (noio — 10 Bài: Câu 58 $\\rightarrow$ Câu 67, mỗi bài 4 cặp)",
+                "explanation": "die Tastatur = bàn phím máy tính; die Maus = con chuột máy tính.",
                 "exp_reward": 15,
                 "extra_data": {
                         "accepted_answers": [
@@ -2463,7 +2463,7 @@ def seed_lesson_6():
                 "question": "Câu 77: Điền 2 từ còn thiếu vào các chỗ trống (ngăn cách bởi dấu /): 'Das schöne Bild hängt an ___ Wand über ___ Sofa.'",
                 "options_json": null,
                 "correct_answer": "der / dem",
-                "explanation": "die Wand (giống cái) ở Dativ là an der Wand; das Sofa (giống trung) ở Dativ là über dem Sofa.\n\n---\n\n#### NHÓM 7: NGHE GIỌNG BẢN XỨ de-DE VÀ ĐIỀN TỪ (nghedien — 9 Câu: Câu 78 $\\rightarrow$ Câu 86)",
+                "explanation": "die Wand (giống cái) ở Dativ là an der Wand; das Sofa (giống trung) ở Dativ là über dem Sofa.",
                 "exp_reward": 20,
                 "extra_data": {
                         "accepted_answers": [
@@ -2620,7 +2620,7 @@ def seed_lesson_6():
                 "question": "Câu 86 [Luyện Nghe]: Nghe và điền từ còn thiếu vào chỗ trống: 'Der große Parkplatz liegt direkt ___ dem Krankenhaus.'",
                 "options_json": null,
                 "correct_answer": "hinter",
-                "explanation": "Giới từ chỉ vị trí hinter có nghĩa là ở phía sau.\n\n---\n\n#### NHÓM 8: DỊCH CÂU HOÀN CHỈNH VIỆT $\\rightarrow$ ĐỨC (dichcauvd — 7 Câu: Câu 87 $\\rightarrow$ Câu 93, chấm đa đáp án linh hoạt)",
+                "explanation": "Giới từ chỉ vị trí hinter có nghĩa là ở phía sau.",
                 "exp_reward": 20,
                 "extra_data": {
                         "audio_text": "Der große Parkplatz liegt direkt hinter dem Krankenhaus.",
@@ -2745,7 +2745,7 @@ def seed_lesson_6():
                 "question": "Câu 93: Dịch câu sau sang tiếng Đức: \"Trường học ở ngay cạnh nhà tôi nên tôi luôn đi bộ.\"",
                 "options_json": null,
                 "correct_answer": "Die Schule liegt direkt neben meinem Haus, deshalb gehe ich immer zu Fuß. / Die Schule ist neben meinem Haus, also gehe ich immer zu Fuß. / Die Schule ist gleich neben meinem Haus. Ich gehe immer zu Fuß. / Die Schule liegt neben meinem Haus. Ich gehe immer zu Fuß.",
-                "explanation": "Bên cạnh nhà tôi (das Haus) ở Dativ là neben meinem Haus; đi bộ là zu Fuß gehen.\n\n---\n\n#### NHÓM 9: DỊCH CÂU HOÀN CHỈNH ĐỨC $\\rightarrow$ VIỆT (dichcaudv — 7 Câu: Câu 94 $\\rightarrow$ Câu 100, chấm đa đáp án linh hoạt)",
+                "explanation": "Bên cạnh nhà tôi (das Haus) ở Dativ là neben meinem Haus; đi bộ là zu Fuß gehen.",
                 "exp_reward": 25,
                 "extra_data": {
                         "accepted_answers": [
@@ -2867,7 +2867,7 @@ def seed_lesson_6():
                 "question": "Câu 100: Dịch câu sau sang tiếng Việt: „Vom ersten bis zum vierzehnten Juli bleibt unsere Arztpraxis geschlossen.“",
                 "options_json": null,
                 "correct_answer": "Từ ngày mùng 1 đến ngày 14 tháng 7 phòng khám bác sĩ của chúng tôi đóng cửa / Từ ngày 1 đến ngày 14 tháng Bảy phòng khám của chúng tôi đóng cửa / Từ 1/7 đến 14/7 phòng mạch của chúng tôi nghỉ đóng cửa",
-                "explanation": "Vom ersten bis zum vierzehnten Juli = từ ngày 1 đến ngày 14 tháng 7; die Arztpraxis = phòng khám bác sĩ.\n\n---",
+                "explanation": "Vom ersten bis zum vierzehnten Juli = từ ngày 1 đến ngày 14 tháng 7; die Arztpraxis = phòng khám bác sĩ.",
                 "exp_reward": 25,
                 "extra_data": {
                         "accepted_answers": [

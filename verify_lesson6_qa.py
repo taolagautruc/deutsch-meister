@@ -5,6 +5,7 @@ Kiểm tra 6 tiêu chí bắt buộc theo Ma trận đặc tả kỹ thuật Bà
 
 import sys
 import os
+import re
 import json
 import sqlite3
 import subprocess
@@ -101,10 +102,20 @@ def run_tests():
         # 3.1. Tuyệt đối không để lộ Nghĩa tiếng Việt trên đề bài
         assert "(Nghĩa:" not in q_text and "(Dịch nghĩa:" not in q_text and "Gợi ý nghĩa:" not in q_text, \
             f"❌ LỖI RÒ RỈ: Câu {q_num} bị lộ nghĩa tiếng Việt trên đề bài: '{q_text}'"
+        assert "(của cô giáo chúng tôi)" not in q_text, f"❌ LỖI RÒ RỈ: Câu {q_num} bị lộ bản dịch phụ trong ngoặc: '{q_text}'"
+        if q_num in [19, 20, 21]:
+            assert not re.search(r'\(\s*[a-zäöüß]+\s*\+\s*[a-zäöüß]+\s*\)', q_text, re.I), \
+                f"❌ LỖI RÒ RỈ CÔNG THỨC: Câu {q_num} bị lộ công thức trong đề bài: '{q_text}'"
 
         # 3.2. Mọi câu hỏi đều phải có bản dịch trong extra_data['translation']
         trans = extra.get("translation")
         assert trans and len(trans.strip()) > 3, f"❌ LỖI: Câu {q_num} thiếu extra_data['translation']!"
+
+        # 3.2.1. Không được để sót công thức LaTeX hoặc section markdown trong explanation
+        exp_text = ex["explanation"] or ""
+        assert "$" not in exp_text, f"❌ LỖI LATEX: Câu {q_num} còn sót ký hiệu $: '{exp_text}'"
+        assert "\\rightarrow" not in exp_text and "\\longleftrightarrow" not in exp_text, f"❌ LỖI LATEX: Câu {q_num} còn mã LaTeX: '{exp_text}'"
+        assert "---" not in exp_text and "####" not in exp_text, f"❌ LỖI SECTION HEADER: Câu {q_num} bị dính section header: '{exp_text}'"
 
         # 3.3. Kiểm tra trắc nghiệm
         if etype == "trac_nghiem":

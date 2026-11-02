@@ -1423,7 +1423,7 @@
             const trimmed = str.trim();
             if (trimmed.length < 2) return true;
             // Loại bỏ các câu suy luận ngữ pháp hoặc chỉ thị làm bài
-            if (/^(động từ|cụm từ|từ cần điền|đáp án|cần điền|chủ ngữ|ngôi|âm thanh phát|câu nghe được|điền|chọn|kết hợp|lưu ý|quy tắc)/i.test(trimmed)) {
+            if (/^(động từ|cụm từ|từ cần điền|đáp án|cần điền|chủ ngữ|ngôi\s+(thứ|\d|ich|du|er|sie|es|wir|ihr|man|số ít|số nhiều)|âm thanh phát|câu nghe được|điền|chọn|kết hợp|lưu ý|quy tắc)/i.test(trimmed)) {
                 return true;
             }
             return false;
