@@ -28,6 +28,33 @@ print(f"✅ Đã trích xuất {len(b6_vocab_list)} từ vựng Bài 6 từ lexi
 q_splits = list(re.finditer(r'\n(\d+)\.\s+\*\*Câu\s+(\d+)([^\*]*)\*\*:\s*(.*?)(?=\n\d+\.\s+\*\*Câu|\n## PHẦN 4|$)', spec_text, re.DOTALL))
 print(f"✅ Đã tìm thấy {len(q_splits)} khối câu hỏi trong file đặc tả.")
 
+def clean_explanation_text(exp):
+    if not exp:
+        return ""
+    # Cắt bỏ các section header bị dính do regex greedy
+    exp = re.split(r'\n\s*---\s*|\n\s*####', exp)[0].strip()
+    # Chuyển đổi toàn bộ ký hiệu LaTeX sang Unicode mũi tên
+    exp = exp.replace(r'$\rightarrow$', '→')
+    exp = exp.replace(r'$\longleftrightarrow$', '⇄')
+    exp = exp.replace(r'\rightarrow', '→')
+    exp = exp.replace(r'\longleftrightarrow', '⇄')
+    # Bóc tách các công thức $...$ còn sót
+    exp = re.sub(r'\$([^\$]+)\$', r'\1', exp)
+    exp = exp.replace('$', '')
+    exp = re.sub(r'[*_`]', '', exp).strip()
+    return exp
+
+def clean_question_text(q_num, raw_p):
+    clean_p = re.sub(r'\*\s*\(Gợi ý:[^\)]*\)\s*\*?', '', raw_p).strip()
+    clean_p = re.sub(r'\*+', '', clean_p).strip()
+    # Loại bỏ gợi ý công thức bị lộ trong ngoặc như (`zu + der`), (`von + dem`), (`bei + dem`)
+    clean_p = re.sub(r'\s*\(\s*`?[a-zäöüß]+\s*\+\s*[a-zäöüß]+`?\s*\)', '', clean_p, flags=re.IGNORECASE).strip()
+    # Loại bỏ bản dịch tiếng Việt bị lộ trong ngoặc đơn trên đề bài
+    clean_p = re.sub(r'\s*\(của\s+cô\s+giáo\s+chúng\s+tôi\)', '', clean_p, flags=re.IGNORECASE).strip()
+    clean_p = re.sub(r'\s*\(những\s+người\s+bạn\)', '', clean_p, flags=re.IGNORECASE).strip()
+    clean_p = clean_p.replace('`', '')
+    return f"Câu {q_num}: {clean_p}"
+
 parsed_exercises = []
 for idx, m in enumerate(q_splits):
     q_num = int(m.group(2))
@@ -65,9 +92,7 @@ for idx, m in enumerate(q_splits):
     if ex_type == "trac_nghiem":
         p_match = re.search(r'^(.*?)(?=\n\s*\*\s*Đáp án:)', body, re.DOTALL)
         raw_p = p_match.group(1).strip() if p_match else body.split('\n')[0].strip()
-        clean_p = re.sub(r'\*\s*\(Gợi ý:[^\)]*\)\s*\*?', '', raw_p).strip()
-        clean_p = re.sub(r'\*+', '', clean_p).strip()
-        question = f"Câu {q_num}: {clean_p}"
+        question = clean_question_text(q_num, raw_p)
         
         opts = []
         correct = None
@@ -84,8 +109,7 @@ for idx, m in enumerate(q_splits):
         trans = trans_m.group(1).strip() if trans_m else ''
         
         exp_m = re.search(r'Giải thích:\s*(.*?)(?=\n\s*\*|\n\s*Dịch|$)', body, re.DOTALL)
-        explanation = exp_m.group(1).strip() if exp_m else ''
-        explanation = re.sub(r'[*_`]', '', explanation).strip()
+        explanation = clean_explanation_text(exp_m.group(1) if exp_m else '')
         
         extra_data = {"translation": trans}
         if q_num in [1, 2]:
@@ -97,9 +121,7 @@ for idx, m in enumerate(q_splits):
 
     elif ex_type == "dien_khuyet":
         raw_p = body.split('\n')[0].strip()
-        clean_p = re.sub(r'\*\s*\(Gợi ý:[^\)]*\)\s*\*?', '', raw_p).strip()
-        clean_p = re.sub(r'\*+', '', clean_p).strip()
-        question = f"Câu {q_num}: {clean_p}"
+        question = clean_question_text(q_num, raw_p)
         options_json = None
         
         ans_m = re.search(r'Đáp án chấp nhận:\s*(`\[.*?\]`|\[.*?\])', body)
@@ -110,8 +132,7 @@ for idx, m in enumerate(q_splits):
         trans = trans_m.group(1).strip() if trans_m else ''
         
         exp_m = re.search(r'Giải thích:\s*(.*?)(?=\n\s*\*|\n\s*Dịch|$)', body, re.DOTALL)
-        explanation = exp_m.group(1).strip() if exp_m else ''
-        explanation = re.sub(r'[*_`]', '', explanation).strip()
+        explanation = clean_explanation_text(exp_m.group(1) if exp_m else '')
         
         extra_data = {"accepted_answers": acc_ans, "translation": trans}
         if q_num in [27, 28, 29, 30, 31]:
@@ -121,39 +142,37 @@ for idx, m in enumerate(q_splits):
 
     elif ex_type == "dich_nghia_vd":
         raw_p = body.split('\n')[0].strip()
-        clean_p = re.sub(r'\*+', '', raw_p).strip()
-        question = f"Câu {q_num}: {clean_p}"
+        question = clean_question_text(q_num, raw_p)
         options_json = None
         
         ans_m = re.search(r'Đáp án chấp nhận:\s*(`\[.*?\]`|\[.*?\])', body)
         acc_ans = json.loads(ans_m.group(1).replace('`', '')) if ans_m else []
         correct_answer = acc_ans[0]
         
-        trans_m = re.search(r'["“](.*?)["”]', clean_p)
-        trans = trans_m.group(1) if trans_m else clean_p
+        clean_p_trans = re.sub(r'\*+', '', raw_p).strip()
+        trans_m = re.search(r'["“](.*?)["”]', clean_p_trans)
+        trans = trans_m.group(1) if trans_m else clean_p_trans
         
         exp_m = re.search(r'Giải thích:\s*(.*?)(?=\n\s*\*|\n\s*Dịch|$)', body, re.DOTALL)
-        explanation = exp_m.group(1).strip() if exp_m else ''
-        explanation = re.sub(r'[*_`]', '', explanation).strip()
+        explanation = clean_explanation_text(exp_m.group(1) if exp_m else '')
         
         extra_data = {"accepted_answers": acc_ans, "translation": f"{trans} = {correct_answer}"}
 
     elif ex_type == "dich_nghia_dv":
         raw_p = body.split('\n')[0].strip()
-        clean_p = re.sub(r'\*+', '', raw_p).strip()
-        question = f"Câu {q_num}: {clean_p}"
+        question = clean_question_text(q_num, raw_p)
         options_json = None
         
         ans_m = re.search(r'Đáp án chấp nhận:\s*(`\[.*?\]`|\[.*?\])', body)
         acc_ans = json.loads(ans_m.group(1).replace('`', '')) if ans_m else []
         correct_answer = acc_ans[0]
         
-        trans_m = re.search(r'[„"“](.*?)[”"]', clean_p)
-        de_w = trans_m.group(1) if trans_m else clean_p
+        clean_p_trans = re.sub(r'\*+', '', raw_p).strip()
+        trans_m = re.search(r'[„"“](.*?)[”"]', clean_p_trans)
+        de_w = trans_m.group(1) if trans_m else clean_p_trans
         
         exp_m = re.search(r'Giải thích:\s*(.*?)(?=\n\s*\*|\n\s*Dịch|$)', body, re.DOTALL)
-        explanation = exp_m.group(1).strip() if exp_m else ''
-        explanation = re.sub(r'[*_`]', '', explanation).strip()
+        explanation = clean_explanation_text(exp_m.group(1) if exp_m else '')
         
         extra_data = {"accepted_answers": acc_ans, "translation": f"{de_w} = {correct_answer}"}
 
@@ -168,8 +187,7 @@ for idx, m in enumerate(q_splits):
         correct_answer = ", ".join([f"{p['left']} - {p['right']}" for p in pairs])
         
         exp_m = re.search(r'Giải thích:\s*(.*?)(?=\n\s*\*|\n\s*Dịch|$)', body, re.DOTALL)
-        explanation = exp_m.group(1).strip() if exp_m else "Nối chính xác 100% cả 4 cặp tương ứng."
-        explanation = re.sub(r'[*_`]', '', explanation).strip()
+        explanation = clean_explanation_text(exp_m.group(1) if exp_m else "Nối chính xác 100% cả 4 cặp tương ứng.")
         
         trans = f"Bài tập nối 4 cặp thẻ chuẩn kiến thức {topic}."
         extra_data = {"noi_o_pairs": pairs, "translation": trans}
@@ -196,8 +214,7 @@ for idx, m in enumerate(q_splits):
         trans = trans_m.group(1) if trans_m else ''
         
         exp_m = re.search(r'Giải thích:\s*(.*?)(?=\n\s*\*|\n\s*Dịch|$)', body, re.DOTALL)
-        explanation = exp_m.group(1).strip() if exp_m else ''
-        explanation = re.sub(r'[*_`]', '', explanation).strip()
+        explanation = clean_explanation_text(exp_m.group(1) if exp_m else '')
         
         question = f"Câu {q_num}: Điền 2 từ còn thiếu vào các chỗ trống (ngăn cách bởi dấu /): '{display_q}'"
         options_json = None
@@ -216,8 +233,7 @@ for idx, m in enumerate(q_splits):
         correct_answer = acc[0]
         
         exp_m = re.search(r'Giải thích:\s*(.*?)(?=\n\s*\*|\n\s*Dịch|$)', body, re.DOTALL)
-        explanation = exp_m.group(1).strip() if exp_m else ''
-        explanation = re.sub(r'[*_`]', '', explanation).strip()
+        explanation = clean_explanation_text(exp_m.group(1) if exp_m else '')
         
         question = f"Câu {q_num} [Luyện Nghe]: Nghe và điền từ còn thiếu vào chỗ trống: '{disp}'"
         options_json = None
@@ -230,42 +246,42 @@ for idx, m in enumerate(q_splits):
 
     elif ex_type == "dich_cau_vd":
         line1 = body.split('\n')[0].strip()
-        clean_p = re.sub(r'\*+', '', line1)
-        question = f"Câu {q_num}: {clean_p}"
+        question = clean_question_text(q_num, line1)
         options_json = None
         
         acc_block_m = re.search(r'accepted_answers`?:\s*(.*?)(?=\n\s*\*?\s*Giải thích:|\n\s*\*?\s*Dịch:|$)', body, re.DOTALL)
         acc = re.findall(r'["“]([^"”]+)["”]', acc_block_m.group(1)) if acc_block_m else []
         correct_answer = " / ".join(acc[:4]) if acc else ""
         
-        trans_m = re.search(r'["“](.*?)["”]', clean_p)
-        trans = trans_m.group(1) if trans_m else clean_p
+        clean_p_trans = re.sub(r'\*+', '', line1).strip()
+        trans_m = re.search(r'["“](.*?)["”]', clean_p_trans)
+        trans = trans_m.group(1) if trans_m else clean_p_trans
         
         exp_m = re.search(r'Giải thích:\s*(.*?)(?=\n\s*\*|\n\s*Dịch|$)', body, re.DOTALL)
-        explanation = exp_m.group(1).strip() if exp_m else ''
-        explanation = re.sub(r'[*_`]', '', explanation).strip()
+        explanation = clean_explanation_text(exp_m.group(1) if exp_m else '')
         
         extra_data = {"accepted_answers": acc, "translation": trans}
 
     elif ex_type == "dich_cau_dv":
         line1 = body.split('\n')[0].strip()
-        clean_p = re.sub(r'\*+', '', line1)
-        question = f"Câu {q_num}: {clean_p}"
+        question = clean_question_text(q_num, line1)
         options_json = None
         
         acc_block_m = re.search(r'accepted_answers`?:\s*(.*?)(?=\n\s*\*?\s*Giải thích:|\n\s*\*?\s*Dịch:|$)', body, re.DOTALL)
         acc = re.findall(r'["“]([^"”]+)["”]', acc_block_m.group(1)) if acc_block_m else []
         correct_answer = " / ".join(acc[:4]) if acc else ""
         
-        trans_m = re.search(r'[„"“](.*?)[”"]', clean_p)
-        de_w = trans_m.group(1) if trans_m else clean_p
+        clean_p_trans = re.sub(r'\*+', '', line1).strip()
+        trans_m = re.search(r'[„"“](.*?)[”"]', clean_p_trans)
+        de_w = trans_m.group(1) if trans_m else clean_p_trans
         
         exp_m = re.search(r'Giải thích:\s*(.*?)(?=\n\s*\*|\n\s*Dịch|$)', body, re.DOTALL)
-        explanation = exp_m.group(1).strip() if exp_m else ''
-        explanation = re.sub(r'[*_`]', '', explanation).strip()
+        explanation = clean_explanation_text(exp_m.group(1) if exp_m else '')
         
         extra_data = {"accepted_answers": acc, "translation": de_w}
 
+    # Final safety sanitation
+    explanation = clean_explanation_text(explanation)
     parsed_exercises.append({
         "q_num": q_num,
         "type": ex_type,
