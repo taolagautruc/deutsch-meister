@@ -1104,7 +1104,7 @@ def seed_lesson_6():
     for item in vocab_raw:
         vocabularies.append((
             lesson_id,
-            f"{item['article']} {item['word']}",
+            item["word"],
             item["article"],
             item["meaning"],
             f"{item['example']} ({item['example_vi']})"

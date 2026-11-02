@@ -967,9 +967,10 @@
                     badgeStyle = "bg-amber-600 text-white";
                 }
 
+                const cleanWord = (v.german_word || '').replace(new RegExp(`^${v.article}\\s+`, 'i'), '').trim();
                 const fullWord = (v.article === 'der' || v.article === 'die' || v.article === 'das')
-                    ? `${v.article} ${v.german_word}`
-                    : v.german_word;
+                    ? `${v.article} ${cleanWord}`
+                    : (v.german_word || '');
                 const safeSpeak = fullWord.replace(/'/g, "\\'");
                 const deSentenceMatch = v.example_sentence ? v.example_sentence.match(/^([^(]+)/) : null;
                 const deSentence = deSentenceMatch ? deSentenceMatch[1].trim() : v.example_sentence;
