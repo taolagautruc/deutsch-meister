@@ -182,7 +182,7 @@ for idx, m in enumerate(q_splits):
         question = f"Câu {q_num} (Bài nối ô {q_num - 57}): Nối các ô ở cột trái với ô tương ứng ở cột phải ({topic}):"
         options_json = None
         
-        pair_matches = re.findall(r'\*\s*`([^`]+)`\s*\$\\longleftrightarrow\$\s*`([^`]+)`', body)
+        pair_matches = re.findall(r'\*\s*`([^`]+)`\s*(?:\$\\longleftrightarrow\$|⇄)\s*`([^`]+)`', body)
         pairs = [{"left": l.strip(), "right": r.strip()} for l, r in pair_matches]
         correct_answer = ", ".join([f"{p['left']} - {p['right']}" for p in pairs])
         

@@ -2012,26 +2012,26 @@ def seed_lesson_6():
                 "type": "noi_o",
                 "question": "Câu 58 (Bài nối ô 1): Nối các ô ở cột trái với ô tương ứng ở cột phải (Biến đổi mạo từ sang Cách 3 Dativ):",
                 "options_json": null,
-                "correct_answer": "der Bahnhof (Maskulinum) - dem Bahnhof / einem Bahnhof, die Haltestelle (Femininum) - der Haltestelle / einer Haltestelle, das Flugzeug (Neutrum) - dem Flugzeug / einem Flugzeug, die Kinder (Plural) - den Kindern (danh từ cộng thêm -n)",
+                "correct_answer": "Đi bằng tàu điện ngầm (danh từ giống Cái: die U-Bahn) - mit der U-Bahn (die biến đổi thành der), Gặp nhau ở nhà ga (danh từ giống Đực: der Bahnhof) - am Bahnhof (an + dem gộp thành am), Đỗ xe phía trước khách sạn (danh từ giống Trung: das Hotel) - vor dem Hotel (das biến đổi thành dem), Đi dã ngoại cùng bọn trẻ (danh từ Số nhiều: die Kinder) - mit den Kindern (die biến đổi thành den + thêm đuôi -n)",
                 "explanation": "Nối chính xác 100% cả 4 cặp tương ứng.",
                 "exp_reward": 25,
                 "extra_data": {
                         "noi_o_pairs": [
                                 {
-                                        "left": "der Bahnhof (Maskulinum)",
-                                        "right": "dem Bahnhof / einem Bahnhof"
+                                        "left": "Đi bằng tàu điện ngầm (danh từ giống Cái: die U-Bahn)",
+                                        "right": "mit der U-Bahn (die biến đổi thành der)"
                                 },
                                 {
-                                        "left": "die Haltestelle (Femininum)",
-                                        "right": "der Haltestelle / einer Haltestelle"
+                                        "left": "Gặp nhau ở nhà ga (danh từ giống Đực: der Bahnhof)",
+                                        "right": "am Bahnhof (an + dem gộp thành am)"
                                 },
                                 {
-                                        "left": "das Flugzeug (Neutrum)",
-                                        "right": "dem Flugzeug / einem Flugzeug"
+                                        "left": "Đỗ xe phía trước khách sạn (danh từ giống Trung: das Hotel)",
+                                        "right": "vor dem Hotel (das biến đổi thành dem)"
                                 },
                                 {
-                                        "left": "die Kinder (Plural)",
-                                        "right": "den Kindern (danh từ cộng thêm -n)"
+                                        "left": "Đi dã ngoại cùng bọn trẻ (danh từ Số nhiều: die Kinder)",
+                                        "right": "mit den Kindern (die biến đổi thành den + thêm đuôi -n)"
                                 }
                         ],
                         "translation": "Bài tập nối 4 cặp thẻ chuẩn kiến thức Biến đổi mạo từ sang Cách 3 Dativ."
@@ -2042,26 +2042,26 @@ def seed_lesson_6():
                 "type": "noi_o",
                 "question": "Câu 59 (Bài nối ô 2): Nối các ô ở cột trái với ô tương ứng ở cột phải (Các dạng gộp giới từ + mạo từ ở Dativ):",
                 "options_json": null,
-                "correct_answer": "zu + dem (đến địa điểm đực/trung) - zum (VD: zum Bahnhof), zu + der (đến địa điểm cái) - zur (VD: zur Schule / zur Arbeit), von + dem (từ địa điểm đực/trung) - vom (VD: vom Flughafen), bei + dem (ở tại chỗ đực/trung) - beim (VD: beim Arzt)",
+                "correct_answer": "Đi bộ đến trường học (địa điểm giống Cái) - zur Schule (viết gọn bắt buộc của zu + der Schule), Đi tàu ra ga chính (địa điểm giống Đực) - zum Hauptbahnhof (viết gọn bắt buộc của zu + dem Hauptbahnhof), Đang ở chỗ bác sĩ khám bệnh (người / chuyên gia) - beim Arzt (viết gọn bắt buộc của bei + dem Arzt), Đón người thân trở về từ sân bay (địa điểm xuất phát) - vom Flughafen (viết gọn bắt buộc của von + dem Flughafen)",
                 "explanation": "Nối chính xác 100% cả 4 cặp tương ứng.",
                 "exp_reward": 25,
                 "extra_data": {
                         "noi_o_pairs": [
                                 {
-                                        "left": "zu + dem (đến địa điểm đực/trung)",
-                                        "right": "zum (VD: zum Bahnhof)"
+                                        "left": "Đi bộ đến trường học (địa điểm giống Cái)",
+                                        "right": "zur Schule (viết gọn bắt buộc của zu + der Schule)"
                                 },
                                 {
-                                        "left": "zu + der (đến địa điểm cái)",
-                                        "right": "zur (VD: zur Schule / zur Arbeit)"
+                                        "left": "Đi tàu ra ga chính (địa điểm giống Đực)",
+                                        "right": "zum Hauptbahnhof (viết gọn bắt buộc của zu + dem Hauptbahnhof)"
                                 },
                                 {
-                                        "left": "von + dem (từ địa điểm đực/trung)",
-                                        "right": "vom (VD: vom Flughafen)"
+                                        "left": "Đang ở chỗ bác sĩ khám bệnh (người / chuyên gia)",
+                                        "right": "beim Arzt (viết gọn bắt buộc của bei + dem Arzt)"
                                 },
                                 {
-                                        "left": "bei + dem (ở tại chỗ đực/trung)",
-                                        "right": "beim (VD: beim Arzt)"
+                                        "left": "Đón người thân trở về từ sân bay (địa điểm xuất phát)",
+                                        "right": "vom Flughafen (viết gọn bắt buộc của von + dem Flughafen)"
                                 }
                         ],
                         "translation": "Bài tập nối 4 cặp thẻ chuẩn kiến thức Các dạng gộp giới từ + mạo từ ở Dativ."

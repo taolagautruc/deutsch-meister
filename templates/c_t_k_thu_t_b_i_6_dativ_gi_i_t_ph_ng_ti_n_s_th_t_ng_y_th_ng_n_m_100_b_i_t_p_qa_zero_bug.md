@@ -30,7 +30,7 @@
 
 ## PHẦN 1: MỞ RỘNG CỘNG DỒN 2 TAB TRA CỨU TRÊN THANH ĐIỀU HƯỚNG
 
-Giữ nguyên toàn bộ dữ liệu của Bài 1 $\rightarrow$ Bài 5 trong 2 tab **"📖 Chia động từ"** và **"🏷️ Từ vựng & Giống"**, đồng thời bổ sung nối tiếp dữ liệu của **Bài 6**:
+Giữ nguyên toàn bộ dữ liệu của Bài 1 → Bài 5 trong 2 tab **"📖 Chia động từ"** và **"🏷️ Từ vựng & Giống"**, đồng thời bổ sung nối tiếp dữ liệu của **Bài 6**:
 
 ### 1.1. Bổ sung vào Tab `"📖 Chia động từ"` (`static/js/verbs_db.js`)
 Bổ sung **12 động từ trọng tâm của Bài 6** (nhóm di chuyển, định hướng vị trí và hoạt động giao thông), kèm phát âm `de-DE` cho từng ngôi và câu ví dụ chuẩn:
@@ -103,8 +103,8 @@ Bài học thứ 7 trong danh sách Cấp độ A1 (`lesson_order = 7`):
 > * **Giống đực (`Maskulinum - der`)** và **Giống trung (`Neutrum - das`)** biến đổi **GIỐNG HỆT NHAU**: đều chuyển sang đuôi **`-m`** (**`dem / einem / keinem / meinem`**).
 > * **Giống cái (`Femininum - die`)**: chuyển sang đuôi **`-r`** (**`der / einer / keiner / meiner`**).
 > * **Số nhiều (`Plural - die`)**: Mạo từ chuyển sang đuôi **`-n`** (**`den / — / keinen / meinen`**) **VÀ ĐẶC BIỆT: Danh từ số nhiều bắt buộc phải cộng thêm đuôi `-n` ở cuối** (nếu bản thân danh từ số nhiều đó chưa kết thúc bằng `-n` hoặc `-s`)!
->   * *Ví dụ cộng thêm `-n`*: `die Tische` $\rightarrow$ `auf den Tische` + **`n`** = **`auf den Tischen`**; `die Kinder` $\rightarrow$ **`mit den Kindern`**; `die Stühle` $\rightarrow$ **`auf den Stühlen`**; `die Häuser` $\rightarrow$ **`zwischen den Häusern`**.
->   * *Ví dụ giữ nguyên vì đã có `-n` hoặc `-s`*: `die Taschen` $\rightarrow$ **`in den Taschen`**; `die Autos` $\rightarrow$ **`zwischen den Autos`**; `die Büros` $\rightarrow$ **`in den Büros`**.
+>   * *Ví dụ cộng thêm `-n`*: `die Tische` → `auf den Tische` + **`n`** = **`auf den Tischen`**; `die Kinder` → **`mit den Kindern`**; `die Stühle` → **`auf den Stühlen`**; `die Häuser` → **`zwischen den Häusern`**.
+>   * *Ví dụ giữ nguyên vì đã có `-n` hoặc `-s`*: `die Taschen` → **`in den Taschen`**; `die Autos` → **`zwischen den Autos`**; `die Büros` → **`in den Büros`**.
 
 ---
 
@@ -121,18 +121,18 @@ Bài học thứ 7 trong danh sách Cấp độ A1 (`lesson_order = 7`):
 #### 1.4. Bảng 3: Đại Ma Trận Mạo Từ Sở Hữu (`Possessivartikel`) Theo 9 Ngôi Nhân Xưng Ở Cả 3 Cách (`Nominativ` – `Akkusativ` – `Dativ`)
 > **Quy tắc dễ nhớ nhất**: Gốc sở hữu (`mein-, dein-, sein-, ihr-, unser-, euer-, Ihr-`) luôn mang **đuôi giống hệt mạo từ phủ định `kein`** ở từng Cách:
 > * Ở **`Dativ`**: Giống đực (`m`) thêm **`-em`** | Giống cái (`f`) thêm **`-er`** | Giống trung (`n`) thêm **`-em`** | Số nhiều (`Pl`) thêm **`-en`** (+ Danh từ thêm **`-n`**).
-> * **Lưu ý đặc biệt với ngôi `ihr (các bạn)` $\rightarrow$ gốc `euer`**: Khi thêm đuôi bắt đầu bằng nguyên âm (`-e, -en, -em, -er`), chữ `e` trước chữ `r` thường được lược bỏ: **`eurem`** (hoặc *euerem*), **`eurer`** (hoặc *euerer*), **`eurem`**, **`euren`**.
+> * **Lưu ý đặc biệt với ngôi `ihr (các bạn)` → gốc `euer`**: Khi thêm đuôi bắt đầu bằng nguyên âm (`-e, -en, -em, -er`), chữ `e` trước chữ `r` thường được lược bỏ: **`eurem`** (hoặc *euerem*), **`eurer`** (hoặc *euerer*), **`eurem`**, **`euren`**.
 
 | Ngôi Nhân Xưng & Gốc Sở Hữu | Cách (`Kasus`) | Giống Đực (`Maskulinum - der`)<br>*VD: Vater / Tisch* | Giống Cái (`Femininum - die`)<br>*VD: Mutter / Tasche* | Giống Trung (`Neutrum - das`)<br>*VD: Kind / Auto* | Số Nhiều (`Plural - die`)<br>*VD: Eltern / Freunde (+n)* |
 | :--- | :---: | :---: | :---: | :---: | :---: |
-| **1. `ich` (tôi)**<br>$\rightarrow$ **`mein-`** | `Nominativ`<br>`Akkusativ`<br>**`Dativ`** | mein<br>mein**en**<br><span style="color:#f59e0b">**mein<u>em</u>**</span> | mein**e**<br>mein**e**<br><span style="color:#f59e0b">**mein<u>er</u>**</span> | mein<br>mein<br><span style="color:#f59e0b">**mein<u>em</u>**</span> | mein**e**<br>mein**e**<br><span style="color:#f59e0b">**mein<u>en</u> (+ -n)**</span> |
-| **2. `du` (bạn)**<br>$\rightarrow$ **`dein-`** | `Nominativ`<br>`Akkusativ`<br>**`Dativ`** | dein<br>dein**en**<br><span style="color:#f59e0b">**dein<u>em</u>**</span> | dein**e**<br>dein**e**<br><span style="color:#f59e0b">**dein<u>er</u>**</span> | dein<br>dein<br><span style="color:#f59e0b">**dein<u>em</u>**</span> | dein**e**<br>dein**e**<br><span style="color:#f59e0b">**dein<u>en</u> (+ -n)**</span> |
-| **3. `er / es` (anh ấy / nó)**<br>$\rightarrow$ **`sein-`** | `Nominativ`<br>`Akkusativ`<br>**`Dativ`** | sein<br>sein**en**<br><span style="color:#f59e0b">**sein<u>em</u>**</span> | sein**e**<br>sein**e**<br><span style="color:#f59e0b">**sein<u>er</u>**</span> | sein<br>sein<br><span style="color:#f59e0b">**sein<u>em</u>**</span> | sein**e**<br>sein**e**<br><span style="color:#f59e0b">**sein<u>en</u> (+ -n)**</span> |
-| **4. `sie` (cô ấy)**<br>$\rightarrow$ **`ihr-`** | `Nominativ`<br>`Akkusativ`<br>**`Dativ`** | ihr<br>ihr**en**<br><span style="color:#f59e0b">**ihr<u>em</u>**</span> | ihr**e**<br>ihr**e**<br><span style="color:#f59e0b">**ihr<u>er</u>**</span> | ihr<br>ihr<br><span style="color:#f59e0b">**ihr<u>em</u>**</span> | ihr**e**<br>ihr**e**<br><span style="color:#f59e0b">**ihr<u>en</u> (+ -n)**</span> |
-| **5. `wir` (chúng tôi)**<br>$\rightarrow$ **`unser-`** | `Nominativ`<br>`Akkusativ`<br>**`Dativ`** | unser<br>unser**en**<br><span style="color:#f59e0b">**unser<u>em</u>**</span> | unser**e**<br>unser**e**<br><span style="color:#f59e0b">**unser<u>er</u>**</span> | unser<br>unser<br><span style="color:#f59e0b">**unser<u>em</u>**</span> | unser**e**<br>unser**e**<br><span style="color:#f59e0b">**unser<u>en</u> (+ -n)**</span> |
-| **6. `ihr` (các bạn)**<br>$\rightarrow$ **`euer-`** ⚠️ | `Nominativ`<br>`Akkusativ`<br>**`Dativ`** | euer<br>**eur<u>en</u>**<br><span style="color:#f59e0b">**eur<u>em</u>**</span> | **eur<u>e</u>**<br>**eur<u>e</u>**<br><span style="color:#f59e0b">**eur<u>er</u>**</span> | euer<br>euer<br><span style="color:#f59e0b">**eur<u>em</u>**</span> | **eur<u>e</u>**<br>**eur<u>e</u>**<br><span style="color:#f59e0b">**eur<u>en</u> (+ -n)**</span> |
-| **7. `sie` (họ)**<br>$\rightarrow$ **`ihr-`** | `Nominativ`<br>`Akkusativ`<br>**`Dativ`** | ihr<br>ihr**en**<br><span style="color:#f59e0b">**ihr<u>em</u>**</span> | ihr**e**<br>ihr**e**<br><span style="color:#f59e0b">**ihr<u>er</u>**</span> | ihr<br>ihr<br><span style="color:#f59e0b">**ihr<u>em</u>**</span> | ihr**e**<br>ihr**e**<br><span style="color:#f59e0b">**ihr<u>en</u> (+ -n)**</span> |
-| **8. `Sie` (Ngài)**<br>$\rightarrow$ **`Ihr-`** *(Viết hoa)* | `Nominativ`<br>`Akkusativ`<br>**`Dativ`** | Ihr<br>Ihr**en**<br><span style="color:#f59e0b">**Ihr<u>em</u>**</span> | Ihr**e**<br>Ihr**e**<br><span style="color:#f59e0b">**Ihr<u>er</u>**</span> | Ihr<br>Ihr<br><span style="color:#f59e0b">**Ihr<u>em</u>**</span> | Ihr**e**<br>Ihr**e**<br><span style="color:#f59e0b">**Ihr<u>en</u> (+ -n)**</span> |
+| **1. `ich` (tôi)**<br>→ **`mein-`** | `Nominativ`<br>`Akkusativ`<br>**`Dativ`** | mein<br>mein**en**<br><span style="color:#f59e0b">**mein<u>em</u>**</span> | mein**e**<br>mein**e**<br><span style="color:#f59e0b">**mein<u>er</u>**</span> | mein<br>mein<br><span style="color:#f59e0b">**mein<u>em</u>**</span> | mein**e**<br>mein**e**<br><span style="color:#f59e0b">**mein<u>en</u> (+ -n)**</span> |
+| **2. `du` (bạn)**<br>→ **`dein-`** | `Nominativ`<br>`Akkusativ`<br>**`Dativ`** | dein<br>dein**en**<br><span style="color:#f59e0b">**dein<u>em</u>**</span> | dein**e**<br>dein**e**<br><span style="color:#f59e0b">**dein<u>er</u>**</span> | dein<br>dein<br><span style="color:#f59e0b">**dein<u>em</u>**</span> | dein**e**<br>dein**e**<br><span style="color:#f59e0b">**dein<u>en</u> (+ -n)**</span> |
+| **3. `er / es` (anh ấy / nó)**<br>→ **`sein-`** | `Nominativ`<br>`Akkusativ`<br>**`Dativ`** | sein<br>sein**en**<br><span style="color:#f59e0b">**sein<u>em</u>**</span> | sein**e**<br>sein**e**<br><span style="color:#f59e0b">**sein<u>er</u>**</span> | sein<br>sein<br><span style="color:#f59e0b">**sein<u>em</u>**</span> | sein**e**<br>sein**e**<br><span style="color:#f59e0b">**sein<u>en</u> (+ -n)**</span> |
+| **4. `sie` (cô ấy)**<br>→ **`ihr-`** | `Nominativ`<br>`Akkusativ`<br>**`Dativ`** | ihr<br>ihr**en**<br><span style="color:#f59e0b">**ihr<u>em</u>**</span> | ihr**e**<br>ihr**e**<br><span style="color:#f59e0b">**ihr<u>er</u>**</span> | ihr<br>ihr<br><span style="color:#f59e0b">**ihr<u>em</u>**</span> | ihr**e**<br>ihr**e**<br><span style="color:#f59e0b">**ihr<u>en</u> (+ -n)**</span> |
+| **5. `wir` (chúng tôi)**<br>→ **`unser-`** | `Nominativ`<br>`Akkusativ`<br>**`Dativ`** | unser<br>unser**en**<br><span style="color:#f59e0b">**unser<u>em</u>**</span> | unser**e**<br>unser**e**<br><span style="color:#f59e0b">**unser<u>er</u>**</span> | unser<br>unser<br><span style="color:#f59e0b">**unser<u>em</u>**</span> | unser**e**<br>unser**e**<br><span style="color:#f59e0b">**unser<u>en</u> (+ -n)**</span> |
+| **6. `ihr` (các bạn)**<br>→ **`euer-`** ⚠️ | `Nominativ`<br>`Akkusativ`<br>**`Dativ`** | euer<br>**eur<u>en</u>**<br><span style="color:#f59e0b">**eur<u>em</u>**</span> | **eur<u>e</u>**<br>**eur<u>e</u>**<br><span style="color:#f59e0b">**eur<u>er</u>**</span> | euer<br>euer<br><span style="color:#f59e0b">**eur<u>em</u>**</span> | **eur<u>e</u>**<br>**eur<u>e</u>**<br><span style="color:#f59e0b">**eur<u>en</u> (+ -n)**</span> |
+| **7. `sie` (họ)**<br>→ **`ihr-`** | `Nominativ`<br>`Akkusativ`<br>**`Dativ`** | ihr<br>ihr**en**<br><span style="color:#f59e0b">**ihr<u>em</u>**</span> | ihr**e**<br>ihr**e**<br><span style="color:#f59e0b">**ihr<u>er</u>**</span> | ihr<br>ihr<br><span style="color:#f59e0b">**ihr<u>em</u>**</span> | ihr**e**<br>ihr**e**<br><span style="color:#f59e0b">**ihr<u>en</u> (+ -n)**</span> |
+| **8. `Sie` (Ngài)**<br>→ **`Ihr-`** *(Viết hoa)* | `Nominativ`<br>`Akkusativ`<br>**`Dativ`** | Ihr<br>Ihr**en**<br><span style="color:#f59e0b">**Ihr<u>em</u>**</span> | Ihr**e**<br>Ihr**e**<br><span style="color:#f59e0b">**Ihr<u>er</u>**</span> | Ihr<br>Ihr<br><span style="color:#f59e0b">**Ihr<u>em</u>**</span> | Ihr**e**<br>Ihr**e**<br><span style="color:#f59e0b">**Ihr<u>en</u> (+ -n)**</span> |
 
 ---
 
@@ -153,9 +153,9 @@ Bài học thứ 7 trong danh sách Cấp độ A1 (`lesson_order = 7`):
 
 ---
 
-#### 2.2. Bảng 2: 9 Giới Từ Chỉ Vị Trí (`Lokale Präpositionen`) Với Câu Hỏi `Wo?` *(Ở đâu? $\rightarrow$ + Dativ)*
+#### 2.2. Bảng 2: 9 Giới Từ Chỉ Vị Trí (`Lokale Präpositionen`) Với Câu Hỏi `Wo?` *(Ở đâu? → + Dativ)*
 > **Quy tắc phân biệt `Wo?` và `Wohin?`**:
-> * Khi hỏi **`Wo?` *(Ở đâu?)* $\rightarrow$ Chỉ vị trí tĩnh tại** (thường đi với các động từ **`sein`** *ở*, **`liegen`** *nằm*, **`stehen`** *đứng*, **`sitzen`** *ngồi*, **`hängen`** *treo*, **`wohnen`** *sống*, **`arbeiten`** *làm việc*) $\rightarrow$ **BẮT BUỘC CHIA CÁCH 3 (`DATIV`)**!
+> * Khi hỏi **`Wo?` *(Ở đâu?)* → Chỉ vị trí tĩnh tại** (thường đi với các động từ **`sein`** *ở*, **`liegen`** *nằm*, **`stehen`** *đứng*, **`sitzen`** *ngồi*, **`hängen`** *treo*, **`wohnen`** *sống*, **`arbeiten`** *làm việc*) → **BẮT BUỘC CHIA CÁCH 3 (`DATIV`)**!
 > * **Các dạng viết tắt chuẩn bắt buộc**:
 >   * **`in + dem = im`** (*trong*: `im Büro`, `im ersten Stock`, `im Erdgeschoss`)
 >   * **`an + dem = am`** (*sát cạnh / tại*: `am Fenster`, `am Schreibtisch`, `am Bahnhof`)
@@ -184,44 +184,44 @@ Bài học thứ 7 trong danh sách Cấp độ A1 (`lesson_order = 7`):
 
 | Nhóm Giống | Danh Từ Nguyên Mẫu (`Nominativ`) | Dạng Số Nhiều (`Plural`) | Nghĩa Tiếng Việt | Cụm Đi Bằng Phương Tiện (`mit + Dativ`) + Động Từ Chuẩn | Câu Ví Dụ Thực Tế Đa Ngôi (`🔊 de-DE` + Dịch Nghĩa) |
 | :--- | :--- | :--- | :--- | :--- | :--- |
-| <span style="color:#3b82f6">**Giống đực (`der` $\rightarrow$ `mit dem`)**</span> | **der Bus** | die Busse | xe buýt | **mit dem Bus** fahren | *„Meine Schwester fährt jeden Morgen **mit dem Bus** zur Schule.“* *(Em gái tôi đi đến trường mỗi sáng bằng xe buýt.)* |
-| <span style="color:#3b82f6">**Giống đực (`der` $\rightarrow$ `mit dem`)**</span> | **der Zug** | die Züge | tàu hỏa | **mit dem Zug** fahren | *„Fahren Sie lieber **mit dem Zug** oder mit dem Auto nach München?“* *(Ngài thích đi tới München bằng tàu hỏa hay bằng ô tô hơn?)* |
-| <span style="color:#3b82f6">**Giống đực (`der` $\rightarrow$ `mit dem`)**</span> | **der Pkw / der Wagen** | die Pkws / die Wagen | xe hơi cá nhân | **mit dem Wagen** fahren | *„Herr Müller fährt heute **mit seinem Wagen** ins Büro.“* *(Hôm nay ông Müller lái chiếc xe hơi của ông ấy đến văn phòng.)* |
-| <span style="color:#f43f5e">**Giống cái (`die` $\rightarrow$ `mit der`)**</span> | **die U-Bahn** | die U-Bahnen | tàu điện ngầm | **mit der U-Bahn** fahren | *„In Berlin fahren wir immer **mit der U-Bahn**, das ist sehr schnell.“* *(Ở Berlin chúng tôi luôn đi bằng tàu điện ngầm, nó rất nhanh.)* |
-| <span style="color:#f43f5e">**Giống cái (`die` $\rightarrow$ `mit der`)**</span> | **die S-Bahn** | die S-Bahnen | tàu điện nhanh đô thị | **mit der S-Bahn** fahren | *„Vom Flughafen fährt der Tourist **mit der S-Bahn** ins Stadtzentrum.“* *(Từ sân bay vị khách du lịch đi bằng tàu điện đô thị vào trung tâm thành phố.)* |
-| <span style="color:#f43f5e">**Giống cái (`die` $\rightarrow$ `mit der`)**</span> | **die Straßenbahn**<br>*(/ die Tram)* | die Straßenbahnen | tàu điện mặt đất | **mit der Straßenbahn** fahren | *„Meine Großeltern fahren gern **mit der Straßenbahn** zum Markt.“* *(Ông bà tôi thích đi bằng tàu điện mặt đất ra chợ.)* |
-| <span style="color:#f43f5e">**Giống cái (`die` $\rightarrow$ `mit der`)**</span> | **die Fähre** | die Fähren | phà | **mit der Fähre** fahren | *„Wir fahren **mit der Fähre** auf die Insel.“* *(Chúng tôi đi bằng phà ra đảo.)* |
-| <span style="color:#10b981">**Giống trung (`das` $\rightarrow$ `mit dem`)**</span> | **das Auto** | die Autos | ô tô | **mit dem Auto** fahren | *„Am Sonntag fahren unsere Nachbarn **mit dem Auto** ans Meer.“* *(Vào Chủ nhật những người hàng xóm của chúng tôi đi bằng ô tô ra biển.)* |
-| <span style="color:#10b981">**Giống trung (`das` $\rightarrow$ `mit dem`)**</span> | **das Fahrrad**<br>*(/ **das Rad**)* | die Fahrräder<br>*(/ die Räder)* | xe đạp | **mit dem Fahrrad / mit dem Rad** fahren | *„Bei schönem Wetter fährst du doch gern **mit dem Fahrrad** zur Uni, oder?“* *(Khi thời tiết đẹp bạn thích đi xe đạp tới trường đại học phải không?)* |
-| <span style="color:#10b981">**Giống trung (`das` $\rightarrow$ `mit dem`)**</span> | **das Motorrad** / **das Moped** | die Motorräder / die Mopeds | xe mô tô / xe máy | **mit dem Motorrad / Moped** fahren | *„In Vietnam fahren viele Menschen **mit dem Moped** zur Arbeit.“* *(Ở Việt Nam nhiều người đi làm bằng xe máy.)* |
-| <span style="color:#10b981">**Giống trung (`das` $\rightarrow$ `mit dem`)**</span> | **das Taxi** | die Taxis | xe taxi | **mit dem Taxi** fahren | *„Es ist schon spät. Nehmen wir ein Taxi? — Ja, wir fahren **mit dem Taxi** nach Hause.“* *(Đã muộn rồi. Chúng ta bắt một chiếc taxi nhé? — Ừ, chúng ta đi bằng taxi về nhà.)* |
-| <span style="color:#10b981">**Giống trung (`das` $\rightarrow$ `mit dem`)**</span> | **das Flugzeug** | die Flugzeuge | máy bay | **mit dem Flugzeug** fliegen | *„Fliegt ihr im Sommer **mit dem Flugzeug** nach Spanien?“* *(Mùa hè các bạn có bay bằng máy bay sang Tây Ban Nha không?)* |
-| <span style="color:#10b981">**Giống trung (`das` $\rightarrow$ `mit dem`)**</span> | **das Schiff** | die Schiffe | tàu thủy lớn | **mit dem Schiff** fahren | *„Die Touristen machen eine Reise **mit dem Schiff**.“* *(Những du khách thực hiện một chuyến du hành bằng tàu thủy.)* |
-| <span style="color:#f59e0b">**Cụm đặc biệt (Đi bộ)**</span> | **der Fuß** | die Füße | bàn chân $\rightarrow$ **đi bộ** | **zu Fuß gehen** ⚠️ | *„Die Schule ist gleich neben meinem Haus. Ich gehe immer **zu Fuß**.“* *(Ngôi trường ở ngay cạnh nhà tôi. Tôi luôn đi bộ.)* |
+| <span style="color:#3b82f6">**Giống đực (`der` → `mit dem`)**</span> | **der Bus** | die Busse | xe buýt | **mit dem Bus** fahren | *„Meine Schwester fährt jeden Morgen **mit dem Bus** zur Schule.“* *(Em gái tôi đi đến trường mỗi sáng bằng xe buýt.)* |
+| <span style="color:#3b82f6">**Giống đực (`der` → `mit dem`)**</span> | **der Zug** | die Züge | tàu hỏa | **mit dem Zug** fahren | *„Fahren Sie lieber **mit dem Zug** oder mit dem Auto nach München?“* *(Ngài thích đi tới München bằng tàu hỏa hay bằng ô tô hơn?)* |
+| <span style="color:#3b82f6">**Giống đực (`der` → `mit dem`)**</span> | **der Pkw / der Wagen** | die Pkws / die Wagen | xe hơi cá nhân | **mit dem Wagen** fahren | *„Herr Müller fährt heute **mit seinem Wagen** ins Büro.“* *(Hôm nay ông Müller lái chiếc xe hơi của ông ấy đến văn phòng.)* |
+| <span style="color:#f43f5e">**Giống cái (`die` → `mit der`)**</span> | **die U-Bahn** | die U-Bahnen | tàu điện ngầm | **mit der U-Bahn** fahren | *„In Berlin fahren wir immer **mit der U-Bahn**, das ist sehr schnell.“* *(Ở Berlin chúng tôi luôn đi bằng tàu điện ngầm, nó rất nhanh.)* |
+| <span style="color:#f43f5e">**Giống cái (`die` → `mit der`)**</span> | **die S-Bahn** | die S-Bahnen | tàu điện nhanh đô thị | **mit der S-Bahn** fahren | *„Vom Flughafen fährt der Tourist **mit der S-Bahn** ins Stadtzentrum.“* *(Từ sân bay vị khách du lịch đi bằng tàu điện đô thị vào trung tâm thành phố.)* |
+| <span style="color:#f43f5e">**Giống cái (`die` → `mit der`)**</span> | **die Straßenbahn**<br>*(/ die Tram)* | die Straßenbahnen | tàu điện mặt đất | **mit der Straßenbahn** fahren | *„Meine Großeltern fahren gern **mit der Straßenbahn** zum Markt.“* *(Ông bà tôi thích đi bằng tàu điện mặt đất ra chợ.)* |
+| <span style="color:#f43f5e">**Giống cái (`die` → `mit der`)**</span> | **die Fähre** | die Fähren | phà | **mit der Fähre** fahren | *„Wir fahren **mit der Fähre** auf die Insel.“* *(Chúng tôi đi bằng phà ra đảo.)* |
+| <span style="color:#10b981">**Giống trung (`das` → `mit dem`)**</span> | **das Auto** | die Autos | ô tô | **mit dem Auto** fahren | *„Am Sonntag fahren unsere Nachbarn **mit dem Auto** ans Meer.“* *(Vào Chủ nhật những người hàng xóm của chúng tôi đi bằng ô tô ra biển.)* |
+| <span style="color:#10b981">**Giống trung (`das` → `mit dem`)**</span> | **das Fahrrad**<br>*(/ **das Rad**)* | die Fahrräder<br>*(/ die Räder)* | xe đạp | **mit dem Fahrrad / mit dem Rad** fahren | *„Bei schönem Wetter fährst du doch gern **mit dem Fahrrad** zur Uni, oder?“* *(Khi thời tiết đẹp bạn thích đi xe đạp tới trường đại học phải không?)* |
+| <span style="color:#10b981">**Giống trung (`das` → `mit dem`)**</span> | **das Motorrad** / **das Moped** | die Motorräder / die Mopeds | xe mô tô / xe máy | **mit dem Motorrad / Moped** fahren | *„In Vietnam fahren viele Menschen **mit dem Moped** zur Arbeit.“* *(Ở Việt Nam nhiều người đi làm bằng xe máy.)* |
+| <span style="color:#10b981">**Giống trung (`das` → `mit dem`)**</span> | **das Taxi** | die Taxis | xe taxi | **mit dem Taxi** fahren | *„Es ist schon spät. Nehmen wir ein Taxi? — Ja, wir fahren **mit dem Taxi** nach Hause.“* *(Đã muộn rồi. Chúng ta bắt một chiếc taxi nhé? — Ừ, chúng ta đi bằng taxi về nhà.)* |
+| <span style="color:#10b981">**Giống trung (`das` → `mit dem`)**</span> | **das Flugzeug** | die Flugzeuge | máy bay | **mit dem Flugzeug** fliegen | *„Fliegt ihr im Sommer **mit dem Flugzeug** nach Spanien?“* *(Mùa hè các bạn có bay bằng máy bay sang Tây Ban Nha không?)* |
+| <span style="color:#10b981">**Giống trung (`das` → `mit dem`)**</span> | **das Schiff** | die Schiffe | tàu thủy lớn | **mit dem Schiff** fahren | *„Die Touristen machen eine Reise **mit dem Schiff**.“* *(Những du khách thực hiện một chuyến du hành bằng tàu thủy.)* |
+| <span style="color:#f59e0b">**Cụm đặc biệt (Đi bộ)**</span> | **der Fuß** | die Füße | bàn chân → **đi bộ** | **zu Fuß gehen** ⚠️ | *„Die Schule ist gleich neben meinem Haus. Ich gehe immer **zu Fuß**.“* *(Ngôi trường ở ngay cạnh nhà tôi. Tôi luôn đi bộ.)* |
 
 ---
 
 #### 3.2. Bảng Từ Vựng Định Hướng Trong Tòa Nhà, Văn Phòng & Thành Phố (`Orientierung im Haus, im Büro & in der Stadt`)
-| Chủ Đề | Giống Đực (`der` $\rightarrow$ Dativ `dem / im / am`) | Giống Cái (`die` $\rightarrow$ Dativ `der / in der / an der`) | Giống Trung (`das` $\rightarrow$ Dativ `dem / im`) |
+| Chủ Đề | Giống Đực (`der` → Dativ `dem / im / am`) | Giống Cái (`die` → Dativ `der / in der / an der`) | Giống Trung (`das` → Dativ `dem / im`) |
 | :--- | :--- | :--- | :--- |
-| **Tòa nhà & Tầng lầu (`Im Gebäude`)** | • **der Stock** *(tầng lầu $\rightarrow$ im 1. Stock)*<br>• **der Aufzug / der Fahrstuhl** *(thang máy)*<br>• **der Eingang** *(lối vào)*<br>• **der Ausgang** *(lối ra)*<br>• **der Flur** *(hành lang)*<br>• **der Keller** *(tầng hầm $\rightarrow$ im Keller)* | • **die Etage** *(tầng lầu $\rightarrow$ in der 2. Etage)*<br>• **die Treppe** *(cầu thang bộ)*<br>• **die Rezeption** *(quầy lễ tân $\rightarrow$ an der Rezeption)*<br>• **die Kantine / die Mensa** *(nhà ăn $\rightarrow$ in der Kantine)*<br>• **die Toilette** *(nhà vệ sinh)* | • **das Erdgeschoss** *(tầng trệt $\rightarrow$ **im Erdgeschoss**)*<br>• **das Büro** *(văn phòng $\rightarrow$ im Büro)*<br>• **das Dachgeschoss** *(tầng áp mái)*<br>• **das Zimmer** *(căn phòng)* |
-| **Đồ vật Văn phòng (`Im Büro`)** | • **der Schreibtisch** *(bàn làm việc)*<br>• **der Computer / der Laptop** *(máy tính)*<br>• **der Bildschirm / der Monitor** *(màn hình)*<br>• **der Drucker** *(máy in)*<br>• **der Kalender** *(lịch)*<br>• **der Papierkorb** *(sọt rác)*<br>• **der Konferenzraum** *(phòng họp)* | • **die Tastatur** *(bàn phím)*<br>• **die Maus** *(chuột máy tính)*<br>• **die Kaffeetasse** *(tách cà phê)*<br>• **die Pflanze** *(cây cảnh)*<br>• **die Wand** *(bức tường $\rightarrow$ an der Wand)*<br>• **die Tür** *(cánh cửa $\rightarrow$ an der Tür)* | • **das Telefon** *(điện thoại bàn)*<br>• **das Bücherregal** *(giá sách)*<br>• **das Bild** *(bức tranh)*<br>• **das Fenster** *(cửa sổ $\rightarrow$ am Fenster)*<br>• **das Sofa** *(ghế sofa $\rightarrow$ auf dem Sofa)* |
-| **Địa điểm Thành phố (`In der Stadt`)** | • **der Bahnhof** *(nhà ga $\rightarrow$ am/zum Bahnhof)*<br>• **der Flughafen** *(sân bay $\rightarrow$ am/zum Flughafen)*<br>• **der Parkplatz** *(bãi đỗ xe)*<br>• **der Supermarkt** *(siêu thị)*<br>• **der Markt** *(chợ $\rightarrow$ auf dem Markt)*<br>• **der Park** *(công viên $\rightarrow$ im Park)* | • **die Haltestelle** *(trạm xe buýt/tàu điện $\rightarrow$ an der Haltestelle)*<br>• **die Bank** *(ngân hàng)*<br>• **die Post** *(bưu điện $\rightarrow$ bei/neben der Post)*<br>• **die Bibliothek** *(thư viện)*<br>• **die Buchhandlung** *(hiệu sách)*<br>• **die Apotheke** *(hiệu thuốc)*<br>• **die Kirche** *(nhà thờ)*<br>• **die Polizei** *(đồn cảnh sát)* | • **das Krankenhaus** *(bệnh viện)*<br>• **das Hotel** *(khách sạn)*<br>• **das Café** *(quán cà phê)*<br>• **das Restaurant** *(nhà hàng)*<br>• **das Kino** *(rạp chiếu phim)*<br>• **das Theater** *(nhà hát)*<br>• **das Museum** *(bảo tàng)*<br>• **das Stadtzentrum** *(trung tâm thành phố)* |
+| **Tòa nhà & Tầng lầu (`Im Gebäude`)** | • **der Stock** *(tầng lầu → im 1. Stock)*<br>• **der Aufzug / der Fahrstuhl** *(thang máy)*<br>• **der Eingang** *(lối vào)*<br>• **der Ausgang** *(lối ra)*<br>• **der Flur** *(hành lang)*<br>• **der Keller** *(tầng hầm → im Keller)* | • **die Etage** *(tầng lầu → in der 2. Etage)*<br>• **die Treppe** *(cầu thang bộ)*<br>• **die Rezeption** *(quầy lễ tân → an der Rezeption)*<br>• **die Kantine / die Mensa** *(nhà ăn → in der Kantine)*<br>• **die Toilette** *(nhà vệ sinh)* | • **das Erdgeschoss** *(tầng trệt → **im Erdgeschoss**)*<br>• **das Büro** *(văn phòng → im Büro)*<br>• **das Dachgeschoss** *(tầng áp mái)*<br>• **das Zimmer** *(căn phòng)* |
+| **Đồ vật Văn phòng (`Im Büro`)** | • **der Schreibtisch** *(bàn làm việc)*<br>• **der Computer / der Laptop** *(máy tính)*<br>• **der Bildschirm / der Monitor** *(màn hình)*<br>• **der Drucker** *(máy in)*<br>• **der Kalender** *(lịch)*<br>• **der Papierkorb** *(sọt rác)*<br>• **der Konferenzraum** *(phòng họp)* | • **die Tastatur** *(bàn phím)*<br>• **die Maus** *(chuột máy tính)*<br>• **die Kaffeetasse** *(tách cà phê)*<br>• **die Pflanze** *(cây cảnh)*<br>• **die Wand** *(bức tường → an der Wand)*<br>• **die Tür** *(cánh cửa → an der Tür)* | • **das Telefon** *(điện thoại bàn)*<br>• **das Bücherregal** *(giá sách)*<br>• **das Bild** *(bức tranh)*<br>• **das Fenster** *(cửa sổ → am Fenster)*<br>• **das Sofa** *(ghế sofa → auf dem Sofa)* |
+| **Địa điểm Thành phố (`In der Stadt`)** | • **der Bahnhof** *(nhà ga → am/zum Bahnhof)*<br>• **der Flughafen** *(sân bay → am/zum Flughafen)*<br>• **der Parkplatz** *(bãi đỗ xe)*<br>• **der Supermarkt** *(siêu thị)*<br>• **der Markt** *(chợ → auf dem Markt)*<br>• **der Park** *(công viên → im Park)* | • **die Haltestelle** *(trạm xe buýt/tàu điện → an der Haltestelle)*<br>• **die Bank** *(ngân hàng)*<br>• **die Post** *(bưu điện → bei/neben der Post)*<br>• **die Bibliothek** *(thư viện)*<br>• **die Buchhandlung** *(hiệu sách)*<br>• **die Apotheke** *(hiệu thuốc)*<br>• **die Kirche** *(nhà thờ)*<br>• **die Polizei** *(đồn cảnh sát)* | • **das Krankenhaus** *(bệnh viện)*<br>• **das Hotel** *(khách sạn)*<br>• **das Café** *(quán cà phê)*<br>• **das Restaurant** *(nhà hàng)*<br>• **das Kino** *(rạp chiếu phim)*<br>• **das Theater** *(nhà hát)*<br>• **das Museum** *(bảo tàng)*<br>• **das Stadtzentrum** *(trung tâm thành phố)* |
 
 ---
 
 ### HỌC PHẦN 4: SỐ THỨ TỰ (`ORDINALZAHLEN / ORDNUNGSZAHLEN`)
 
-#### 4.1. Quy tắc Cấu tạo Số thứ tự từ Số đếm (`Kardinalzahlen` $\rightarrow$ `Ordinalzahlen`)
+#### 4.1. Quy tắc Cấu tạo Số thứ tự từ Số đếm (`Kardinalzahlen` → `Ordinalzahlen`)
 1. **Cách ký hiệu bằng chữ số**: Trong tiếng Đức, khi viết một con số kèm theo **dấu chấm (`.`) ngay phía sau** (ví dụ: **`1.`**, **`2.`**, **`3.`**, **`15.`**, **`20.`**), dấu chấm đó biểu thị đây là **Số thứ tự** (*thứ nhất, thứ hai, thứ ba...*), bắt buộc phải đọc theo đuôi số thứ tự chứ không đọc như số đếm!
 2. **Hai nhóm công thức cấu tạo**:
    * **Nhóm 1 — Từ `1.` đến `19.`**:
      $$\text{Số đếm} + \text{\textbf{-te}} \text{ (ở Nominativ sau } der/die/das\text{)} \quad \Big| \quad \text{Số đếm} + \text{\textbf{-ten}} \text{ (ở Dativ sau } am, im, vom, bis\text{ zum)}$$
      * ⚠️ **4 Trường hợp Bất quy tắc bắt buộc thuộc lòng trong nhóm 1–19**:
-       1. **`1.`** (`eins` $\rightarrow$ gốc **`erst-`**): **der/die/das <u>erste</u>** | **am/im <u>ersten</u>** *(thứ nhất / tầng 1 / ngày mùng 1)*
-       2. **`3.`** (`drei` $\rightarrow$ gốc **`dritt-`**): **der/die/das <u>dritte</u>** | **am/im <u>dritten</u>** *(thứ ba / tầng 3 / ngày mùng 3)*
-       3. **`7.`** (`sieben` $\rightarrow$ lược `-en` thành **`siebt-`**): **der/die/das <u>siebte</u>** | **am/im <u>siebten</u>** *(thứ bảy / tầng 7 / ngày mùng 7)*
-       4. **`8.`** (`acht` $\rightarrow$ đã có sẵn `-t` nên chỉ thêm `-e`/`-en` thành **`acht-`**): **der/die/das <u>achte</u>** | **am/im <u>achten</u>** *(thứ tám / tầng 8 / ngày mùng 8)*
+       1. **`1.`** (`eins` → gốc **`erst-`**): **der/die/das <u>erste</u>** | **am/im <u>ersten</u>** *(thứ nhất / tầng 1 / ngày mùng 1)*
+       2. **`3.`** (`drei` → gốc **`dritt-`**): **der/die/das <u>dritte</u>** | **am/im <u>dritten</u>** *(thứ ba / tầng 3 / ngày mùng 3)*
+       3. **`7.`** (`sieben` → lược `-en` thành **`siebt-`**): **der/die/das <u>siebte</u>** | **am/im <u>siebten</u>** *(thứ bảy / tầng 7 / ngày mùng 7)*
+       4. **`8.`** (`acht` → đã có sẵn `-t` nên chỉ thêm `-e`/`-en` thành **`acht-`**): **der/die/das <u>achte</u>** | **am/im <u>achten</u>** *(thứ tám / tầng 8 / ngày mùng 8)*
    * **Nhóm 2 — Từ `20.` trở đi (`20. -> 31., 100., 1000.`)**:
      $$\text{Số đếm} + \text{\textbf{-ste}} \text{ (ở Nominativ sau } der/die/das\text{)} \quad \Big| \quad \text{Số đếm} + \text{\textbf{-sten}} \text{ (ở Dativ sau } am, im, vom, bis\text{ zum)}$$
      * *Lưu ý với số ghép (ví dụ `21.`, `23.`, `27.`, `28.`)*: Chỉ biến đổi thành số thứ tự ở phần chục phía cuối (`-zwanzigste`), phần hàng đơn vị phía trước vẫn giữ nguyên như số đếm (`einundzwanzigste`, `dreiundzwanzigste`, `siebenundzwanzigste`)!
@@ -241,10 +241,10 @@ Bài học thứ 7 trong danh sách Cấp độ A1 (`lesson_order = 7`):
 | **`10.`** | zehn | **der/die/das zehnte** | **am/im zehnten** | *im **zehnten** Stock (ở tầng 10)* |
 | **`11.`** | elf | **der/die/das elfte** | **am/im elften** | *der **elfte** November (ngày 11/11)* |
 | **`12.`** | zwölf | **der/die/das zwölfte** | **am/im zwölften** | *der **zwölfte** Monat ist der Dezember (tháng thứ 12 là tháng 12)* |
-| **`13. -> 19.`** | dreizehn $\rightarrow$ neunzehn | **dreizehnte $\rightarrow$ neunzehnte** | **dreizehnten $\rightarrow$ neunzehnten** | *am **fünfzehnten** August (15/8) / am **achtzehnten** April (18/4)* |
+| **`13. -> 19.`** | dreizehn → neunzehn | **dreizehnte → neunzehnte** | **dreizehnten → neunzehnten** | *am **fünfzehnten** August (15/8) / am **achtzehnten** April (18/4)* |
 | **`20.`** ⚠️ | zwanzig | **der/die/das zwanzig<u>ste</u>** | **am/im zwanzig<u>sten</u>** | *Heute ist der **zwanzigste** Oktober (Hôm nay là ngày 20/10)* |
 | **`21.`** | einundzwanzig | **einundzwanzig<u>ste</u>** | **einundzwanzig<u>sten</u>** | *am **einundzwanzigsten** Juni (vào ngày 21/6)* |
-| **`22. -> 29.`** | zweiundzwanzig $\rightarrow$ neunundzwanzig | **...undzwanzig<u>ste</u>** | **...undzwanzig<u>sten</u>** | *am **vierundzwanzigsten** Dezember (vào ngày 24/12)* |
+| **`22. -> 29.`** | zweiundzwanzig → neunundzwanzig | **...undzwanzig<u>ste</u>** | **...undzwanzig<u>sten</u>** | *am **vierundzwanzigsten** Dezember (vào ngày 24/12)* |
 | **`30.`** | dreißig | **der/die/das dreißig<u>ste</u>** | **am/im dreißig<u>sten</u>** | *am **dreißigsten** April (vào ngày 30/4)* |
 | **`31.`** | einunddreißig | **einunddreißig<u>ste</u>** | **einunddreißig<u>sten</u>** | *am **einunddreißigsten** Dezember ist Silvester (31/12 là Giao thừa)* |
 | **`100.`** | hundert | **der/die/das hundert<u>ste</u>** | **am/im hundert<u>sten</u>** | *der **hundertste** Geburtstag (sinh nhật lần thứ 100)* |
@@ -257,24 +257,24 @@ Bài học thứ 7 trong danh sách Cấp độ A1 (`lesson_order = 7`):
 
 | Tình Huống Giao Tiếp | Câu Hỏi Chuẩn (`🔊 de-DE`) | Công Thức Trả Lời & Cách Chia | 2 Cách Đọc Tháng (Bằng Tên Tháng hoặc Bằng Số Thứ Tự Tháng) | Giải Thích Ngữ Pháp |
 | :--- | :--- | :--- | :--- | :--- |
-| **1. Nói hôm nay là ngày mấy**<br>*(Đóng vai trò vị ngữ sau động từ `sein` $\rightarrow$ **Cách 1 `Nominativ`**)* | • **Welcher Tag ist heute?**<br>• **Der Wievielte ist heute?**<br>• **Welches Datum haben wir heute?** *(nếu dùng `haben` thì chia `den + -ten`)* | **Heute ist <u>der</u> + `[Số thứ tự -te / -ste]` + `[Tháng]`** | • **`01.05.`**: *Heute ist **der erste Mai**.* (hoặc: *Heute ist **der erste Fünfte**.*)<br>• **`23.11.`**: *Heute ist **der dreiundzwanzigste November**.* (hoặc: *... **der dreiundzwanzigste Elfte**.*) | Sau `Heute ist der ...` là **Cách 1 (`Nominativ`)** nên số thứ tự chỉ mang đuôi **`-te`** (từ 1–19) hoặc **`-ste`** (từ 20 trở đi). |
-| **2. Nói một sự kiện diễn ra vào ngày mấy**<br>*(Có giới từ **`am`** = `an + dem` $\rightarrow$ **Cách 3 `Dativ`**)* | • **Wann hast du Geburtstag?** *(Sinh nhật bạn khi nào?)*<br>• **Wann beginnt der Kurs?**<br>• **Am Wievielten kommst du?** | **<u>Am</u> + `[Số thứ tự -ten / -sten]` + `[Tháng]`** | • **`07.03.`**: *Ich habe **am siebten März** Geburtstag.* (hoặc: ***am siebten Dritten***)<br>• **`28.09.`**: *Der Kurs beginnt **am achtundzwanzigsten September**.* (hoặc: ***am achtundzwanzigsten Neunten***) | Vì **`am`** là viết tắt của `an + dem` (**Cách 3 `Dativ`**), nên mọi số thứ tự đứng sau `am` bắt buộc phải kết thúc bằng **`-ten`** (1–19) hoặc **`-sten`** (từ 20 trở đi). |
-| **3. Khoảng thời gian từ ngày ... đến ngày ...**<br>*(Có giới từ **`vom ... bis zum ...`** $\rightarrow$ Cả 2 vế đều chia **Cách 3 `Dativ`**)* | • **Von wann bis wann haben Sie Urlaub?** *(Ngài nghỉ phép từ khi nào đến khi nào?)*<br>• **Wann ist die Konferenz?** | **<u>vom</u> + `[-ten/-sten]` + <u>bis (zum)</u> + `[-ten/-sten]` + `[Tháng]`** | • **`03.08. – 18.08.`**: *Wir haben **vom dritten bis zum achtzehnten August** Urlaub.*<br>• **`20.12. – 02.01.`**: *Das Büro ist **vom zwanzigsten Dezember bis zum zweiten Januar** geschlossen.* | `vom` = `von + dem` (Dativ) và `zum` = `zu + dem` (Dativ), do đó **cả ngày bắt đầu và ngày kết thúc đều phải thêm đuôi `-n` (`-ten` / `-sten`)**. |
+| **1. Nói hôm nay là ngày mấy**<br>*(Đóng vai trò vị ngữ sau động từ `sein` → **Cách 1 `Nominativ`**)* | • **Welcher Tag ist heute?**<br>• **Der Wievielte ist heute?**<br>• **Welches Datum haben wir heute?** *(nếu dùng `haben` thì chia `den + -ten`)* | **Heute ist <u>der</u> + `[Số thứ tự -te / -ste]` + `[Tháng]`** | • **`01.05.`**: *Heute ist **der erste Mai**.* (hoặc: *Heute ist **der erste Fünfte**.*)<br>• **`23.11.`**: *Heute ist **der dreiundzwanzigste November**.* (hoặc: *... **der dreiundzwanzigste Elfte**.*) | Sau `Heute ist der ...` là **Cách 1 (`Nominativ`)** nên số thứ tự chỉ mang đuôi **`-te`** (từ 1–19) hoặc **`-ste`** (từ 20 trở đi). |
+| **2. Nói một sự kiện diễn ra vào ngày mấy**<br>*(Có giới từ **`am`** = `an + dem` → **Cách 3 `Dativ`**)* | • **Wann hast du Geburtstag?** *(Sinh nhật bạn khi nào?)*<br>• **Wann beginnt der Kurs?**<br>• **Am Wievielten kommst du?** | **<u>Am</u> + `[Số thứ tự -ten / -sten]` + `[Tháng]`** | • **`07.03.`**: *Ich habe **am siebten März** Geburtstag.* (hoặc: ***am siebten Dritten***)<br>• **`28.09.`**: *Der Kurs beginnt **am achtundzwanzigsten September**.* (hoặc: ***am achtundzwanzigsten Neunten***) | Vì **`am`** là viết tắt của `an + dem` (**Cách 3 `Dativ`**), nên mọi số thứ tự đứng sau `am` bắt buộc phải kết thúc bằng **`-ten`** (1–19) hoặc **`-sten`** (từ 20 trở đi). |
+| **3. Khoảng thời gian từ ngày ... đến ngày ...**<br>*(Có giới từ **`vom ... bis zum ...`** → Cả 2 vế đều chia **Cách 3 `Dativ`**)* | • **Von wann bis wann haben Sie Urlaub?** *(Ngài nghỉ phép từ khi nào đến khi nào?)*<br>• **Wann ist die Konferenz?** | **<u>vom</u> + `[-ten/-sten]` + <u>bis (zum)</u> + `[-ten/-sten]` + `[Tháng]`** | • **`03.08. – 18.08.`**: *Wir haben **vom dritten bis zum achtzehnten August** Urlaub.*<br>• **`20.12. – 02.01.`**: *Das Büro ist **vom zwanzigsten Dezember bis zum zweiten Januar** geschlossen.* | `vom` = `von + dem` (Dativ) và `zum` = `zu + dem` (Dativ), do đó **cả ngày bắt đầu và ngày kết thúc đều phải thêm đuôi `-n` (`-ten` / `-sten`)**. |
 
 ---
 
 #### 5.2. Quy tắc Đọc Năm (`Jahreszahlen`) & Cách Đặt Giới Từ Trước Năm
 1. **Cách phân tách đọc số Năm**:
    * **Từ năm `1100` đến `1999`**: Chia đôi thành **2 số đầu (đọc với đơn vị `hundert` = trăm) + 2 số cuối**.
-     * `1990` = `19` (*neunzehn*) + `hundert` + `90` (*neunzig*) $\rightarrow$ **`neunzehnhundertneunzig`**
-     * `1995` = `19` (*neunzehn*) + `hundert` + `95` (*fünfundneunzig*) $\rightarrow$ **`neunzehnhundertfünfundneunzig`**
-     * `1989` = `19` (*neunzehn*) + `hundert` + `89` (*neunundachtzig*) $\rightarrow$ **`neunzehnhundertneunundachtzig`**
-     * `1945` = `19` (*neunzehn*) + `hundert` + `45` (*fünfundvierzig*) $\rightarrow$ **`neunzehnhundertfünfundvierzig`**
+     * `1990` = `19` (*neunzehn*) + `hundert` + `90` (*neunzig*) → **`neunzehnhundertneunzig`**
+     * `1995` = `19` (*neunzehn*) + `hundert` + `95` (*fünfundneunzig*) → **`neunzehnhundertfünfundneunzig`**
+     * `1989` = `19` (*neunzehn*) + `hundert` + `89` (*neunundachtzig*) → **`neunzehnhundertneunundachtzig`**
+     * `1945` = `19` (*neunzehn*) + `hundert` + `45` (*fünfundvierzig*) → **`neunzehnhundertfünfundvierzig`**
    * **Từ năm `2000` trở đi**: Đọc theo hàng nghìn chuẩn (**`zweitausend` + phần số còn lại**).
-     * `2000` $\rightarrow$ **`zweitausend`**
-     * `2004` $\rightarrow$ **`zweitausendvier`**
-     * `2015` $\rightarrow$ **`zweitausendfünfzehn`**
-     * `2026` $\rightarrow$ **`zweitausendsechsundzwanzig`**
+     * `2000` → **`zweitausend`**
+     * `2004` → **`zweitausendvier`**
+     * `2015` → **`zweitausendfünfzehn`**
+     * `2026` → **`zweitausendsechsundzwanzig`**
 2. **Quy tắc Giới từ khi nói *"Vào năm ..."* (Cực kỳ quan trọng)**:
    * **Cách 1 (Phổ biến nhất)**: **KHÔNG dùng giới từ**, đặt trực tiếp con số năm vào câu:
      * *„Mein Bruder ist **1998** in Hanoi geboren.“ (Anh trai tôi sinh năm 1998 tại Hà Nội.)*
@@ -327,24 +327,24 @@ Theo đúng yêu cầu của người dùng, quy mô bài tập của **Bài 6**
 | :---: | :--- | :--- | :---: | :--- |
 | **1** | **`trac_nghiem`** | **Trắc nghiệm (Multiple Choice)** | **18 câu** | • Biến đổi mạo từ xác định/không xác định/phủ định ở `Dativ` (`dem, der, den + -n`)<br>• Mạo từ sở hữu ở `Dativ` với đủ 9 ngôi (`meinem, deiner, seinem, ihrer, unserem, eurem, Ihrem`)<br>• Giới từ `mit, nach, aus, zu (zum/zur), von (vom), bei (beim)`<br>• 9 giới từ vị trí `Wo? + Dativ` (`in, an, auf, neben, vor, hinter, über, unter, zwischen`)<br>• Phương tiện giao thông & động từ `fahren / fliegen / zu Fuß gehen`<br>• Số thứ tự (`erste, dritte, siebte, achte, zwanzigste`) & Ngày tháng năm (`der erste Mai` vs. `am ersten Mai` vs. `vom ... bis zum ...`). |
 | **2** | **`dien_khuyet`** | **Điền khuyết (Fill in the Blank)** | **15 câu** | • Điền mạo từ `Dativ` hoặc đuôi sở hữu (`-em, -er, -en`)<br>• Điền giới từ thu gọn (`im, am, zum, zur, vom, beim`)<br>• Điền dạng số thứ tự đúng của ngày tháng và tầng lầu (`ersten, dritten, siebten, achten, zwanzigsten...`)<br>• Điền dạng chia đúng của động từ biến âm (`fährst, fährt, hilft, gefällt`). |
-| **3** | **`dich_nghia_vd`** | **Dịch từ/cụm từ: Việt $\rightarrow$ Đức** | **12 câu** | Dịch các phương tiện giao thông (`bằng tàu điện ngầm, bằng máy bay, đi bộ...`), địa điểm/tòa nhà (`ở tầng trệt, ở tầng ba, trạm xe buýt, thang máy...`), cụm ngày tháng (`vào ngày 8 tháng 3, từ ngày 2 đến ngày 15...`) sang tiếng Đức. |
-| **4** | **`dich_nghia_dv`** | **Dịch từ/cụm từ: Đức $\rightarrow$ Việt** | **12 câu** | Dịch các cụm giới từ `Dativ`, vị trí đồ vật trên bàn làm việc, số thứ tự và ngày tháng năm sang tiếng Việt (`mit der Straßenbahn, im Erdgeschoss, zwischen dem Stuhl und dem Schreibtisch, am einundzwanzigsten Juni...`). |
+| **3** | **`dich_nghia_vd`** | **Dịch từ/cụm từ: Việt → Đức** | **12 câu** | Dịch các phương tiện giao thông (`bằng tàu điện ngầm, bằng máy bay, đi bộ...`), địa điểm/tòa nhà (`ở tầng trệt, ở tầng ba, trạm xe buýt, thang máy...`), cụm ngày tháng (`vào ngày 8 tháng 3, từ ngày 2 đến ngày 15...`) sang tiếng Đức. |
+| **4** | **`dich_nghia_dv`** | **Dịch từ/cụm từ: Đức → Việt** | **12 câu** | Dịch các cụm giới từ `Dativ`, vị trí đồ vật trên bàn làm việc, số thứ tự và ngày tháng năm sang tiếng Việt (`mit der Straßenbahn, im Erdgeschoss, zwischen dem Stuhl und dem Schreibtisch, am einundzwanzigsten Juni...`). |
 | **5** | **`noi_o`** | **Nối ô từ trái qua phải (Matching Pairs)** | **10 bài** | 10 bài ghép cặp (mỗi bài 4 cặp = 40 mệnh đề):<br>• Bài 1: Nối Giống ở Nominativ $\leftrightarrow$ Dạng mạo từ ở Dativ (`der -> dem`, `die -> der`, `das -> dem`, `die Pl -> den + -n`)<br>• Bài 2: Nối Giới từ + Mạo từ $\leftrightarrow$ Dạng viết tắt (`zu + dem -> zum`, `zu + der -> zur`, `von + dem -> vom`, `bei + dem -> beim`)<br>• Bài 3: Nối Phương tiện $\leftrightarrow$ Cụm `mit + Dativ` (`die U-Bahn -> mit der U-Bahn`, `das Flugzeug -> mit dem Flugzeug`, `der Zug -> mit dem Zug`, `der Fuß -> zu Fuß`)<br>• Bài 4: Nối Số đếm $\leftrightarrow$ Số thứ tự bất quy tắc (`eins -> erste`, `drei -> dritte`, `sieben -> siebte`, `zwanzig -> zwanzigste`)<br>• Bài 5: Nối Vị trí tiếng Đức $\leftrightarrow$ Nghĩa tiếng Việt (`auf dem Tisch`, `unter dem Stuhl`, `über dem Sofa`, `hinter dem Haus`)<br>• Bài 6: Nối Câu hỏi định hướng $\leftrightarrow$ Câu trả lời chuẩn (`Wo? / Wohin? / Womit? / Wann?`)<br>• Bài 7: Nối Mốc ngày số $\leftrightarrow$ Cách đọc sau `am` (`am 1.5. -> am ersten Mai`, `am 3.8. -> am dritten August`, `am 7.10. -> am siebten Oktober`, `am 20.12. -> am zwanzigsten Dezember`)<br>• Bài 8: Nối Năm số $\leftrightarrow$ Cách đọc chữ (`1995`, `1989`, `2004`, `2026`)<br>• Bài 9: Nối Đại từ nhân xưng $\leftrightarrow$ Mạo từ sở hữu ở Dativ (`ich -> meinem/meiner`, `wir -> unserem/unserer`, `ihr -> eurem/eurer`, `er -> seinem/seiner`)<br>• Bài 10: Nối Địa điểm thành phố $\leftrightarrow$ Hoạt động tương ứng (`am Bahnhof, an der Haltestelle, in der Kantine, an der Rezeption`). |
 | **6** | **`dien_tao_cau`** | **Điền vào chỗ trống để tạo thành câu** | **10 câu** | Điền 2–3 vị trí ngữ pháp trong câu phức hợp (kết hợp chia động từ `fährt/fliegt/steht/hängt` + giới từ `Dativ` + mạo từ sở hữu / số thứ tự) với đa dạng chủ ngữ (`du, er, sie, wir, ihr, meine Eltern, die Kinder`). |
 | **7** | **`nghe_dien`** | **Nghe giọng đọc `de-DE` và điền từ** | **9 câu** | Nghe câu phát âm chuẩn `de-DE` (hỗ trợ cả `1.0x` và `0.65x`) và điền từ chính xác: nghe phương tiện giao thông (`Straßenbahn`, `Flugzeug`), nghe vị trí tầng lầu (`Erdgeschoss`, `dritten`), nghe giới từ vị trí (`zwischen`, `hinter`), nghe ngày tháng năm sinh (`fünfzehnten`, `zwanzigsten`, `Kinder`). |
-| **8** | **`dich_cau_vd`** | **Dịch câu: Việt $\rightarrow$ Đức** | **7 câu** | Dịch câu hoàn chỉnh đa chủ ngữ từ tiếng Việt sang tiếng Đức (chấm linh hoạt đa đáp án): câu về phương tiện giao thông, vị trí đồ vật trên bàn làm việc, địa điểm trong thành phố, tầng lầu và ngày tháng năm sinh. |
-| **9** | **`dich_cau_dv`** | **Dịch câu: Đức $\rightarrow$ Việt** | **7 câu** | Dịch câu hoàn chỉnh từ tiếng Đức sang tiếng Việt (chấm linh hoạt đa đáp án): câu có mạo từ sở hữu ở Dativ, số nhiều thêm `-n` ở Dativ, khoảng ngày `vom ... bis zum ...`, và vị trí trong tòa nhà. |
+| **8** | **`dich_cau_vd`** | **Dịch câu: Việt → Đức** | **7 câu** | Dịch câu hoàn chỉnh đa chủ ngữ từ tiếng Việt sang tiếng Đức (chấm linh hoạt đa đáp án): câu về phương tiện giao thông, vị trí đồ vật trên bàn làm việc, địa điểm trong thành phố, tầng lầu và ngày tháng năm sinh. |
+| **9** | **`dich_cau_dv`** | **Dịch câu: Đức → Việt** | **7 câu** | Dịch câu hoàn chỉnh từ tiếng Đức sang tiếng Việt (chấm linh hoạt đa đáp án): câu có mạo từ sở hữu ở Dativ, số nhiều thêm `-n` ở Dativ, khoảng ngày `vom ... bis zum ...`, và vị trí trong tòa nhà. |
 | | | **TỔNG CỘNG BÀI 6** | **100 CÂU** | **Đầy đủ 9 dạng bài + Đa dạng hóa Ngôi/Số/Ngữ cảnh + QA 100%** |
 
 ---
 
 ### 3.2. Danh Sách Chi Tiết 100 Câu Hỏi Chuẩn Xác Của Bài 6 (Để Seed Vào `lessons/a1/seed_a1_b6.py`)
 
-#### NHÓM 1: TRẮC NGHIỆM (`trac_nghiem` — 18 Câu: Câu 1 $\rightarrow$ Câu 18)
+#### NHÓM 1: TRẮC NGHIỆM (`trac_nghiem` — 18 Câu: Câu 1 → Câu 18)
 1. **Câu 1 (Phương tiện giống cái `die` ở Dativ)**: Chọn cụm từ đúng để hoàn thành câu: *„Meine Mutter fährt jeden Morgen ___ zur Arbeit.“* *(Gợi ý: `die Straßenbahn` - tàu điện mặt đất)*
    * Đáp án: `A. mit die Straßenbahn` | `B. mit der Straßenbahn` (Đúng) | `C. mit dem Straßenbahn` | `D. mit den Straßenbahn`
    * Dịch nghĩa câu: *"Mẹ tôi đi làm mỗi buổi sáng bằng tàu điện mặt đất."*
-   * Giải thích: Giới từ `mit` luôn đi với Cách 3 (`Dativ`). Danh từ `die Straßenbahn` mang giống cái (`Femininum`), nên ở `Dativ` mạo từ `die` biến đổi thành `der` $\rightarrow$ `mit der Straßenbahn`.
+   * Giải thích: Giới từ `mit` luôn đi với Cách 3 (`Dativ`). Danh từ `die Straßenbahn` mang giống cái (`Femininum`), nên ở `Dativ` mạo từ `die` biến đổi thành `der` → `mit der Straßenbahn`.
 2. **Câu 2 (Phương tiện giống trung `das` & Động từ biến âm `fahren`)**: Chọn phương án đúng điền vào 2 chỗ trống: *„Womit ___ dein Bruder zur Universität? — Er ___ ___ Fahrrad.“*
    * Đáp án: `A. fährt / fährt mit dem` (Đúng) | `B. fahrst / fährt mit das` | `C. fährt / fahrt mit einem` | `D. fahren / fährt zu dem`
    * Dịch nghĩa câu: *"Anh trai của bạn đi đến trường đại học bằng phương tiện gì? — Anh ấy đi bằng xe đạp."*
@@ -360,7 +360,7 @@ Theo đúng yêu cầu của người dùng, quy mô bài tập của **Bài 6**
 5. **Câu 5 (Mạo từ sở hữu ngôi `ihr - các bạn` ở `Dativ`)**: Chọn dạng mạo từ sở hữu đúng: *„Kinder, wohnt ihr noch bei ___ Eltern oder habt ihr schon eine eigene Wohnung?“*
    * Đáp án: `A. eure` | `B. eurem` | `C. eurer` | `D. euren` (Đúng)
    * Dịch nghĩa câu: *"Các con ơi, các con vẫn còn sống ở nhà bố mẹ của các con hay là đã có một căn hộ riêng rồi?"*
-   * Giải thích: Chủ ngữ đang được hỏi là `ihr` (các bạn/các con) $\rightarrow$ gốc sở hữu là `euer`. Đi sau giới từ `bei` (+ `Dativ`) và trước danh từ số nhiều `Eltern`, `euer` thêm đuôi `-en` và lược chữ `e` ở giữa thành **`euren Eltern`**.
+   * Giải thích: Chủ ngữ đang được hỏi là `ihr` (các bạn/các con) → gốc sở hữu là `euer`. Đi sau giới từ `bei` (+ `Dativ`) và trước danh từ số nhiều `Eltern`, `euer` thêm đuôi `-en` và lược chữ `e` ở giữa thành **`euren Eltern`**.
 6. **Câu 6 (Mạo từ sở hữu ngôi `wir` với danh từ giống cái ở `Dativ`)**: Chọn đáp án đúng: *„Das Geschenk auf dem Tisch ist von ___ Lehrerin.“* *(của cô giáo chúng tôi)*
    * Đáp án: `A. unsere` | `B. unserer` (Đúng) | `C. unserem` | `D. unseren`
    * Dịch nghĩa câu: *"Món quà ở trên bàn là của cô giáo chúng tôi."*
@@ -376,7 +376,7 @@ Theo đúng yêu cầu của người dùng, quy mô bài tập của **Bài 6**
 9. **Câu 9 (Giới từ vị trí `zwischen` với 2 danh từ khác giống ở `Dativ`)**: Chọn phương án đúng: *„Wo liegt die neue Buchhandlung? — Sie liegt direkt zwischen ___ Supermarkt und ___ Post.“* *(Gợi ý: `der Supermarkt` & `die Post`)*
    * Đáp án: `A. den / die` | `B. dem / der` (Đúng) | `C. der / dem` | `D. einem / eine`
    * Dịch nghĩa câu: *"Hiệu sách mới nằm ở đâu? — Nó nằm ngay giữa siêu thị và bưu điện."*
-   * Giải thích: Câu hỏi `Wo?` với giới từ `zwischen` đòi hỏi cả 2 danh từ phía sau đều phải chia ở Cách 3 (`Dativ`): `der Supermarkt` (giống đực) $\rightarrow$ **`dem Supermarkt`**; `die Post` (giống cái) $\rightarrow$ **`der Post`**.
+   * Giải thích: Câu hỏi `Wo?` với giới từ `zwischen` đòi hỏi cả 2 danh từ phía sau đều phải chia ở Cách 3 (`Dativ`): `der Supermarkt` (giống đực) → **`dem Supermarkt`**; `die Post` (giống cái) → **`der Post`**.
 10. **Câu 10 (Phân biệt `auf` và `über` / `an` khi miêu tả phòng làm việc)**: Chọn giới từ vị trí đúng: *„Der schwere Drucker steht ___ dem Schreibtisch, und das schöne Familienfoto hängt ___ der Wand.“*
     * Đáp án: `A. über / auf` | `B. auf / an` (Đúng) | `C. an / in` | `D. unter / neben`
     * Dịch nghĩa câu: *"Chiếc máy in nặng đặt ở trên mặt bàn làm việc, và bức ảnh gia đình đẹp đẽ treo ở trên tường."*
@@ -392,7 +392,7 @@ Theo đúng yêu cầu của người dùng, quy mô bài tập của **Bài 6**
 13. **Câu 13 (Số thứ tự từ 20 trở đi)**: Số thứ tự của **`23.`** sau mạo từ `der` ở Cách 1 (`Nominativ`) được viết như thế nào?
     * Đáp án: `A. derdreiundzwanzigste` | `B. der dritteundzwanzigste` | `C. der dreiundzwanzigste` (Đúng) | `D. der dreiundzwanzigsten`
     * Dịch nghĩa câu: *"Thứ hai mươi ba (ngày 23)."*
-    * Giải thích: Từ 20 trở đi, số thứ tự được tạo bằng cách thêm đuôi **`-ste`** vào cuối số đếm: `dreiundzwanzig` + `-ste` $\rightarrow$ **`der dreiundzwanzigste`** (phần hàng đơn vị `drei` ở đầu giữ nguyên, không đổi thành *dritte*).
+    * Giải thích: Từ 20 trở đi, số thứ tự được tạo bằng cách thêm đuôi **`-ste`** vào cuối số đếm: `dreiundzwanzig` + `-ste` → **`der dreiundzwanzigste`** (phần hàng đơn vị `drei` ở đầu giữ nguyên, không đổi thành *dritte*).
 14. **Câu 14 (Phân biệt `der + -te/-ste` và `am + -ten/-sten` khi nói Ngày tháng)**: Chọn cặp từ đúng cho cuộc hội thoại: *„Welcher Tag ist heute? — Heute ist der ___ Oktober (`20.10.`). Und wann fliegt ihr nach Wien? — Wir fliegen am ___ Oktober (`25.10.`).“*
     * Đáp án: `A. zwanzigsten / fünfundzwanzigste` | `B. zwanzigste / fünfundzwanzigsten` (Đúng) | `C. zwanzig / fünfundzwanzig` | `D. zwanzigster / fünfundzwanzigster`
     * Dịch nghĩa câu: *"Hôm nay là ngày mấy? — Hôm nay là ngày 20 tháng Mười. Và khi nào các bạn bay đi Viên? — Chúng tôi bay vào ngày 25 tháng Mười."*
@@ -420,7 +420,7 @@ Theo đúng yêu cầu của người dùng, quy mô bài tập của **Bài 6**
 
 ---
 
-#### NHÓM 2: ĐIỀN KHUYẾT (`dien_khuyet` — 15 Câu: Câu 19 $\rightarrow$ Câu 33)
+#### NHÓM 2: ĐIỀN KHUYẾT (`dien_khuyet` — 15 Câu: Câu 19 → Câu 33)
 19. **Câu 19**: Điền giới từ thu gọn thích hợp (`zu + der`) vào chỗ trống: *„Jeden Morgen geht mein Sohn um 7 Uhr zu Fuß ___ Schule.“*
     * Đáp án chấp nhận: `["zur"]`
     * Dịch nghĩa câu: *"Mỗi buổi sáng con trai tôi đi bộ đến trường lúc 7 giờ."*
@@ -472,7 +472,7 @@ Theo đúng yêu cầu của người dùng, quy mô bài tập của **Bài 6**
 31. **Câu 31**: Điền dạng chữ của số thứ tự trong ngoặc đơn vào chỗ trống: *„Der Deutschkurs beginnt am ___ (20.) September.“*
     * Đáp án chấp nhận: `["zwanzigsten"]`
     * Dịch nghĩa câu: *"Khóa học tiếng Đức bắt đầu vào ngày 20 tháng Chín."*
-    * Giải thích: Từ số 20 trở đi, số thứ tự dùng đuôi `-ste` (`Nominativ`) và **`-sten`** (`Dativ` sau `am`) $\rightarrow$ **`am zwanzigsten September`**.
+    * Giải thích: Từ số 20 trở đi, số thứ tự dùng đuôi `-ste` (`Nominativ`) và **`-sten`** (`Dativ` sau `am`) → **`am zwanzigsten September`**.
 32. **Câu 32**: Điền giới từ chỉ vị trí phù hợp với bức tranh và bức tường: *„In unserem Wohnzimmer hängt eine große Uhr ___ der Wand.“*
     * Đáp án chấp nhận: `["an"]`
     * Dịch nghĩa câu: *"Trong phòng khách của chúng tôi có một chiếc đồng hồ lớn treo trên tường."*
@@ -484,7 +484,7 @@ Theo đúng yêu cầu của người dùng, quy mô bài tập của **Bài 6**
 
 ---
 
-#### NHÓM 3: DỊCH NGHĨA TỪ / CỤM TỪ VIỆT $\rightarrow$ ĐỨC (`dich_nghia_vd` — 12 Câu: Câu 34 $\rightarrow$ Câu 45)
+#### NHÓM 3: DỊCH NGHĨA TỪ / CỤM TỪ VIỆT → ĐỨC (`dich_nghia_vd` — 12 Câu: Câu 34 → Câu 45)
 34. **Câu 34**: Dịch sang tiếng Đức: ***"bằng tàu điện ngầm"***
     * Đáp án chấp nhận: `["mit der U-Bahn", "mit der U Bahn"]`
     * Giải thích: `die U-Bahn` (giống cái) đi sau giới từ `mit` (`Dativ`) biến đổi thành **`mit der U-Bahn`**.
@@ -496,10 +496,10 @@ Theo đúng yêu cầu của người dùng, quy mô bài tập của **Bài 6**
     * Giải thích: Cụm cố định chỉ việc đi bộ trong tiếng Đức là **`zu Fuß`** (hoặc **`zu Fuß gehen`**).
 37. **Câu 37**: Dịch sang tiếng Đức: ***"ở tầng trệt"***
     * Đáp án chấp nhận: `["im Erdgeschoss", "in dem Erdgeschoss"]`
-    * Giải thích: Tầng trệt là danh từ giống trung `das Erdgeschoss` $\rightarrow$ ở tầng trệt là **`im Erdgeschoss`**.
+    * Giải thích: Tầng trệt là danh từ giống trung `das Erdgeschoss` → ở tầng trệt là **`im Erdgeschoss`**.
 38. **Câu 38**: Dịch sang tiếng Đức: ***"ở tầng ba"***
     * Đáp án chấp nhận: `["im dritten Stock", "im 3. Stock", "in der dritten Etage", "in der 3. Etage"]`
-    * Giải thích: Tầng lầu là `der Stock` (hoặc `die Etage`), số thứ tự 3 ở `Dativ` là `dritten` $\rightarrow$ **`im dritten Stock`**.
+    * Giải thích: Tầng lầu là `der Stock` (hoặc `die Etage`), số thứ tự 3 ở `Dativ` là `dritten` → **`im dritten Stock`**.
 39. **Câu 39**: Dịch sang tiếng Đức (kèm mạo từ): ***"trạm dừng (xe buýt / tàu điện)"***
     * Đáp án chấp nhận: `["die Haltestelle", "Haltestelle", "die Bushaltestelle"]`
     * Giải thích: Trạm dừng phương tiện công cộng là danh từ giống cái **`die Haltestelle`** (số nhiều: `die Haltestellen`).
@@ -514,17 +514,17 @@ Theo đúng yêu cầu của người dùng, quy mô bài tập của **Bài 6**
     * Giải thích: Máy in là danh từ giống đực **`der Drucker`**.
 43. **Câu 43**: Dịch cụm vị trí sau sang tiếng Đức: ***"phía trước khách sạn"***
     * Đáp án chấp nhận: `["vor dem Hotel"]`
-    * Giải thích: Giới từ *"phía trước"* là `vor`; `das Hotel` (giống trung) ở Cách 3 (`Dativ`) đổi thành `dem Hotel` $\rightarrow$ **`vor dem Hotel`**.
+    * Giải thích: Giới từ *"phía trước"* là `vor`; `das Hotel` (giống trung) ở Cách 3 (`Dativ`) đổi thành `dem Hotel` → **`vor dem Hotel`**.
 44. **Câu 44**: Dịch cụm ngày tháng sau sang tiếng Đức: ***"vào ngày mùng 1 tháng Năm"***
     * Đáp án chấp nhận: `["am ersten Mai", "am 1. Mai", "am ersten Fünften", "am 1.5."]`
-    * Giải thích: Giới từ `am` + số thứ tự `1.` ở `Dativ` (`ersten`) + `Mai` $\rightarrow$ **`am ersten Mai`**.
+    * Giải thích: Giới từ `am` + số thứ tự `1.` ở `Dativ` (`ersten`) + `Mai` → **`am ersten Mai`**.
 45. **Câu 45**: Dịch cụm vị trí sau sang tiếng Đức: ***"đang ở nhà / đi về nhà"*** (Ghi theo thứ tự: `ở nhà / về nhà`)
     * Đáp án chấp nhận: `["zu Hause / nach Hause", "zu Hause, nach Hause", "zuhause / nachhause"]`
     * Giải thích: **`zu Hause`** dùng cho trạng thái tĩnh *(đang ở nhà - Wo?)*, còn **`nach Hause`** dùng cho hành động di chuyển *(đi về nhà - Wohin?)*.
 
 ---
 
-#### NHÓM 4: DỊCH NGHĨA TỪ / CỤM TỪ ĐỨC $\rightarrow$ VIỆT (`dich_nghia_dv` — 12 Câu: Câu 46 $\rightarrow$ Câu 57)
+#### NHÓM 4: DỊCH NGHĨA TỪ / CỤM TỪ ĐỨC → VIỆT (`dich_nghia_dv` — 12 Câu: Câu 46 → Câu 57)
 46. **Câu 46**: Dịch sang tiếng Việt: ***„mit der S-Bahn“***
     * Đáp án chấp nhận: `["bằng tàu điện nhanh", "bằng tàu điện đô thị", "bằng tàu S-Bahn", "bằng tàu điện", "với tàu điện đô thị"]`
     * Giải thích: `die S-Bahn` (*Stadtschnellbahn*) là tàu điện nhanh đô thị; `mit der S-Bahn` = bằng tàu điện đô thị.
@@ -536,7 +536,7 @@ Theo đúng yêu cầu của người dùng, quy mô bài tập của **Bài 6**
     * Giải thích: `der Konferenzraum` (`die Konferenz` + `der Raum`) có nghĩa là phòng họp / phòng hội nghị.
 49. **Câu 49**: Dịch sang tiếng Việt: ***„an der Rezeption“***
     * Đáp án chấp nhận: `["ở quầy lễ tân", "tại quầy lễ tân", "ở lễ tân", "tại bàn tiếp tân"]`
-    * Giải thích: `die Rezeption` là quầy lễ tân; ở tại quầy lễ tân dùng giới từ `an` + `Dativ` $\rightarrow$ `an der Rezeption`.
+    * Giải thích: `die Rezeption` là quầy lễ tân; ở tại quầy lễ tân dùng giới từ `an` + `Dativ` → `an der Rezeption`.
 50. **Câu 50**: Dịch sang tiếng Việt: ***„zwischen dem Stuhl und dem Schreibtisch“***
     * Đáp án chấp nhận: `["ở giữa cái ghế và bàn làm việc", "giữa ghế và bàn làm việc", "nằm giữa chiếc ghế và cái bàn làm việc", "ở giữa ghế và bàn viết"]`
     * Giải thích: `zwischen` = ở giữa; `der Stuhl` = cái ghế; `der Schreibtisch` = bàn làm việc.
@@ -564,61 +564,61 @@ Theo đúng yêu cầu của người dùng, quy mô bài tập của **Bài 6**
 
 ---
 
-#### NHÓM 5: NỐI Ô TỪ TRÁI QUA PHẢI (`noi_o` — 10 Bài: Câu 58 $\rightarrow$ Câu 67, mỗi bài 4 cặp)
+#### NHÓM 5: NỐI Ô TỪ TRÁI QUA PHẢI (`noi_o` — 10 Bài: Câu 58 → Câu 67, mỗi bài 4 cặp)
 58. **Câu 58 (Bài nối ô 1 — Biến đổi mạo từ sang Cách 3 `Dativ`)**:
-    * `der Bahnhof (Maskulinum)` $\longleftrightarrow$ `dem Bahnhof / einem Bahnhof`
-    * `die Haltestelle (Femininum)` $\longleftrightarrow$ `der Haltestelle / einer Haltestelle`
-    * `das Flugzeug (Neutrum)` $\longleftrightarrow$ `dem Flugzeug / einem Flugzeug`
-    * `die Kinder (Plural)` $\longleftrightarrow$ `den Kindern (danh từ cộng thêm -n)`
+    * `Đi bằng tàu điện ngầm (danh từ giống Cái: die U-Bahn)` ⇄ `mit der U-Bahn (die biến đổi thành der)`
+    * `Gặp nhau ở nhà ga (danh từ giống Đực: der Bahnhof)` ⇄ `am Bahnhof (an + dem gộp thành am)`
+    * `Đỗ xe phía trước khách sạn (danh từ giống Trung: das Hotel)` ⇄ `vor dem Hotel (das biến đổi thành dem)`
+    * `Đi dã ngoại cùng bọn trẻ (danh từ Số nhiều: die Kinder)` ⇄ `mit den Kindern (die biến đổi thành den + thêm đuôi -n)`
 59. **Câu 59 (Bài nối ô 2 — Các dạng gộp giới từ + mạo từ ở `Dativ`)**:
-    * `zu + dem (đến địa điểm đực/trung)` $\longleftrightarrow$ `zum (VD: zum Bahnhof)`
-    * `zu + der (đến địa điểm cái)` $\longleftrightarrow$ `zur (VD: zur Schule / zur Arbeit)`
-    * `von + dem (từ địa điểm đực/trung)` $\longleftrightarrow$ `vom (VD: vom Flughafen)`
-    * `bei + dem (ở tại chỗ đực/trung)` $\longleftrightarrow$ `beim (VD: beim Arzt)`
+    * `Đi bộ đến trường học (địa điểm giống Cái)` ⇄ `zur Schule (viết gọn bắt buộc của zu + der Schule)`
+    * `Đi tàu ra ga chính (địa điểm giống Đực)` ⇄ `zum Hauptbahnhof (viết gọn bắt buộc của zu + dem Hauptbahnhof)`
+    * `Đang ở chỗ bác sĩ khám bệnh (người / chuyên gia)` ⇄ `beim Arzt (viết gọn bắt buộc của bei + dem Arzt)`
+    * `Đón người thân trở về từ sân bay (địa điểm xuất phát)` ⇄ `vom Flughafen (viết gọn bắt buộc của von + dem Flughafen)`
 60. **Câu 60 (Bài nối ô 3 — Phương tiện giao thông & Cách diễn đạt chuẩn)**:
-    * `die U-Bahn (tàu điện ngầm)` $\longleftrightarrow$ `mit der U-Bahn fahren`
-    * `das Flugzeug (máy bay)` $\longleftrightarrow$ `mit dem Flugzeug fliegen`
-    * `das Fahrrad (xe đạp)` $\longleftrightarrow$ `mit dem Fahrrad fahren`
-    * `der Fuß (đi bộ - ngoại lệ)` $\longleftrightarrow$ `zu Fuß gehen`
+    * `die U-Bahn (tàu điện ngầm)` ⇄ `mit der U-Bahn fahren`
+    * `das Flugzeug (máy bay)` ⇄ `mit dem Flugzeug fliegen`
+    * `das Fahrrad (xe đạp)` ⇄ `mit dem Fahrrad fahren`
+    * `der Fuß (đi bộ - ngoại lệ)` ⇄ `zu Fuß gehen`
 61. **Câu 61 (Bài nối ô 4 — Giới từ vị trí `Wo?` trên bàn làm việc)**:
-    * `auf dem Schreibtisch` $\longleftrightarrow$ `nằm ở trên mặt bàn làm việc (có tiếp xúc)`
-    * `unter dem Schreibtisch` $\longleftrightarrow$ `đặt ở dưới gầm bàn làm việc`
-    * `neben der Tastatur` $\longleftrightarrow$ `nằm ở bên cạnh bàn phím`
-    * `an der Wand über dem Tisch` $\longleftrightarrow$ `treo trên tường phía trên cái bàn`
+    * `auf dem Schreibtisch` ⇄ `nằm ở trên mặt bàn làm việc (có tiếp xúc)`
+    * `unter dem Schreibtisch` ⇄ `đặt ở dưới gầm bàn làm việc`
+    * `neben der Tastatur` ⇄ `nằm ở bên cạnh bàn phím`
+    * `an der Wand über dem Tisch` ⇄ `treo trên tường phía trên cái bàn`
 62. **Câu 62 (Bài nối ô 5 — Số đếm sang Số thứ tự bất quy tắc & từ 20)**:
-    * `1 (eins)` $\longleftrightarrow$ `der erste / am ersten`
-    * `3 (drei)` $\longleftrightarrow$ `der dritte / am dritten`
-    * `7 (sieben)` $\longleftrightarrow$ `der siebte / am siebten`
-    * `20 (zwanzig)` $\longleftrightarrow$ `der zwanzigste / am zwanzigsten`
+    * `1 (eins)` ⇄ `der erste / am ersten`
+    * `3 (drei)` ⇄ `der dritte / am dritten`
+    * `7 (sieben)` ⇄ `der siebte / am siebten`
+    * `20 (zwanzig)` ⇄ `der zwanzigste / am zwanzigsten`
 63. **Câu 63 (Bài nối ô 6 — Ngày tháng bằng số sang Cách đọc sau giới từ `am`)**:
-    * `am 01.01.` $\longleftrightarrow$ `am ersten Januar`
-    * `am 08.03.` $\longleftrightarrow$ `am achten März`
-    * `am 15.08.` $\longleftrightarrow$ `am fünfzehnten August`
-    * `am 24.12.` $\longleftrightarrow$ `am vierundzwanzigsten Dezember`
+    * `am 01.01.` ⇄ `am ersten Januar`
+    * `am 08.03.` ⇄ `am achten März`
+    * `am 15.08.` ⇄ `am fünfzehnten August`
+    * `am 24.12.` ⇄ `am vierundzwanzigsten Dezember`
 64. **Câu 64 (Bài nối ô 7 — Năm bằng số sang Cách đọc chữ tiếng Đức)**:
-    * `1945` $\longleftrightarrow$ `neunzehnhundertfünfundvierzig`
-    * `1989` $\longleftrightarrow$ `neunzehnhundertneunundachtzig`
-    * `1998` $\longleftrightarrow$ `neunzehnhundertachtundneunzig`
-    * `2026` $\longleftrightarrow$ `zweitausendsechsundzwanzig`
+    * `1945` ⇄ `neunzehnhundertfünfundvierzig`
+    * `1989` ⇄ `neunzehnhundertneunundachtzig`
+    * `1998` ⇄ `neunzehnhundertachtundneunzig`
+    * `2026` ⇄ `zweitausendsechsundzwanzig`
 65. **Câu 65 (Bài nối ô 8 — Đại từ nhân xưng sang Mạo từ sở hữu ở `Dativ`)**:
-    * `ich (tôi)` $\longleftrightarrow$ `mit meinem Bruder / mit meiner Schwester`
-    * `sie (cô ấy)` $\longleftrightarrow$ `mit ihrem Bruder / mit ihrer Schwester`
-    * `wir (chúng tôi)` $\longleftrightarrow$ `mit unserem Bruder / mit unserer Schwester`
-    * `ihr (các bạn)` $\longleftrightarrow$ `mit eurem Bruder / mit eurer Schwester`
+    * `ich (tôi)` ⇄ `mit meinem Bruder / mit meiner Schwester`
+    * `sie (cô ấy)` ⇄ `mit ihrem Bruder / mit ihrer Schwester`
+    * `wir (chúng tôi)` ⇄ `mit unserem Bruder / mit unserer Schwester`
+    * `ihr (các bạn)` ⇄ `mit eurem Bruder / mit eurer Schwester`
 66. **Câu 66 (Bài nối ô 9 — Câu hỏi định hướng & Thời gian sang Câu trả lời)**:
-    * `Womit fährt Herr Müller nach Berlin?` $\longleftrightarrow$ `Er fährt mit dem Zug.`
-    * `Wo ist das Büro von Frau Schneider?` $\longleftrightarrow$ `Es liegt im dritten Stock neben dem Aufzug.`
-    * `Welcher Tag ist heute?` $\longleftrightarrow$ `Heute ist der zwölfte Oktober.`
-    * `Wann hast du Geburtstag?` $\longleftrightarrow$ `Ich habe am siebten Mai Geburtstag.`
+    * `Womit fährt Herr Müller nach Berlin?` ⇄ `Er fährt mit dem Zug.`
+    * `Wo ist das Büro von Frau Schneider?` ⇄ `Es liegt im dritten Stock neben dem Aufzug.`
+    * `Welcher Tag ist heute?` ⇄ `Heute ist der zwölfte Oktober.`
+    * `Wann hast du Geburtstag?` ⇄ `Ich habe am siebten Mai Geburtstag.`
 67. **Câu 67 (Bài nối ô 10 — Động từ Bài 6 sang Nghĩa & Quy tắc biến âm)**:
-    * `fahren (du fährst, er fährt)` $\longleftrightarrow$ `đi bằng xe/tàu (biến âm a -> ä)`
-    * `umsteigen (steigt ... um)` $\longleftrightarrow$ `đổi tàu / chuyển tuyến xe (động từ tách)`
-    * `helfen (du hilfst, er hilft + Dativ)` $\longleftrightarrow$ `giúp đỡ ai đó (biến âm e -> i)`
-    * `hängen (hängt + Wo? Dativ)` $\longleftrightarrow$ `treo ở đâu đó (vị trí tĩnh)`
+    * `fahren (du fährst, er fährt)` ⇄ `đi bằng xe/tàu (biến âm a -> ä)`
+    * `umsteigen (steigt ... um)` ⇄ `đổi tàu / chuyển tuyến xe (động từ tách)`
+    * `helfen (du hilfst, er hilft + Dativ)` ⇄ `giúp đỡ ai đó (biến âm e -> i)`
+    * `hängen (hängt + Wo? Dativ)` ⇄ `treo ở đâu đó (vị trí tĩnh)`
 
 ---
 
-#### NHÓM 6: ĐIỀN VÀO CHỖ TRỐNG ĐỂ TẠO THÀNH CÂU (`dien_tao_cau` — 10 Câu: Câu 68 $\rightarrow$ Câu 77)
+#### NHÓM 6: ĐIỀN VÀO CHỖ TRỐNG ĐỂ TẠO THÀNH CÂU (`dien_tao_cau` — 10 Câu: Câu 68 → Câu 77)
 68. **Câu 68**: Điền 2 từ còn thiếu để hoàn thành câu: *„Mỗi buổi sáng anh trai tôi đi làm bằng tàu điện ngầm.“*
     * Khung câu hiển thị: `Jeden Morgen [1] mein Bruder mit [2] U-Bahn zur Arbeit.` (Gợi ý: `fahren`, `die U-Bahn`)
     * Đáp án từng ô: Ô 1 = `["fährt", "faehrt"]`, Ô 2 = `["der"]`.
@@ -662,7 +662,7 @@ Theo đúng yêu cầu của người dùng, quy mô bài tập của **Bài 6**
 
 ---
 
-#### NHÓM 7: NGHE GIỌNG BẢN XỨ `de-DE` VÀ ĐIỀN TỪ (`nghe_dien` — 9 Câu: Câu 78 $\rightarrow$ Câu 86)
+#### NHÓM 7: NGHE GIỌNG BẢN XỨ `de-DE` VÀ ĐIỀN TỪ (`nghe_dien` — 9 Câu: Câu 78 → Câu 86)
 78. **Câu 78**:
     * `audio_text`: *"Meine Kollegin fährt jeden Tag mit der Straßenbahn ins Büro."*
     * `display_sentence`: *"Meine Kollegin fährt jeden Tag mit der ___ ins Büro."*
@@ -720,7 +720,7 @@ Theo đúng yêu cầu của người dùng, quy mô bài tập của **Bài 6**
 
 ---
 
-#### NHÓM 8: DỊCH CÂU HOÀN CHỈNH VIỆT $\rightarrow$ ĐỨC (`dich_cau_vd` — 7 Câu: Câu 87 $\rightarrow$ Câu 93, chấm đa đáp án linh hoạt)
+#### NHÓM 8: DỊCH CÂU HOÀN CHỈNH VIỆT → ĐỨC (`dich_cau_vd` — 7 Câu: Câu 87 → Câu 93, chấm đa đáp án linh hoạt)
 87. **Câu 87**: Dịch câu sau sang tiếng Đức: ***"Anh trai tôi đi làm mỗi ngày bằng xe buýt."***
     * `accepted_answers`:
       * `"Mein Bruder fährt jeden Tag mit dem Bus zur Arbeit."`
@@ -773,7 +773,7 @@ Theo đúng yêu cầu của người dùng, quy mô bài tập của **Bài 6**
 
 ---
 
-#### NHÓM 9: DỊCH CÂU HOÀN CHỈNH ĐỨC $\rightarrow$ VIỆT (`dich_cau_dv` — 7 Câu: Câu 94 $\rightarrow$ Câu 100, chấm đa đáp án linh hoạt)
+#### NHÓM 9: DỊCH CÂU HOÀN CHỈNH ĐỨC → VIỆT (`dich_cau_dv` — 7 Câu: Câu 94 → Câu 100, chấm đa đáp án linh hoạt)
 94. **Câu 94**: Dịch câu sau sang tiếng Việt: ***„Am Wochenende fahren unsere Großeltern mit der Straßenbahn zum Markt.“***
     * `accepted_answers`:
       * `"Vào cuối tuần ông bà của chúng tôi đi bằng tàu điện ra chợ"`
@@ -844,8 +844,8 @@ Theo đúng yêu cầu của người dùng, quy mô bài tập của **Bài 6**
 
 ### 4.2. Engine 2: Biến thiên Liên Tục Số Thứ Tự, Tầng Lầu & Ngày – Tháng – Năm (`Dynamic Date, Floor & Year Generator`)
 * **Tự động sinh ngẫu nhiên**:
-  * **Ngày (`1.` $\rightarrow$ `31.`)** kết hợp với **12 Tháng (`Januar` $\rightarrow$ `Dezember`)** và **Năm (`1950` $\rightarrow$ `2026`)**.
-  * **Tầng lầu (`im Erdgeschoss`, `im 1. Stock` $\rightarrow$ `im 25. Stock`)** kết hợp với các phòng ban (`das Büro, die Kantine, der Konferenzraum, die Personalabteilung, die Bibliothek, die Arztpraxis`).
+  * **Ngày (`1.` → `31.`)** kết hợp với **12 Tháng (`Januar` → `Dezember`)** và **Năm (`1950` → `2026`)**.
+  * **Tầng lầu (`im Erdgeschoss`, `im 1. Stock` → `im 25. Stock`)** kết hợp với các phòng ban (`das Büro, die Kantine, der Konferenzraum, die Personalabteilung, die Bibliothek, die Arztpraxis`).
 * Hệ thống có sẵn bảng tra từ điển đầy đủ cho cả **31 số thứ tự** ở 2 dạng `Nominativ (-te/-ste)` và `Dativ (-ten/-sten)` để khi random ra bất kỳ ngày nào (ví dụ `03.04.`, `07.09.`, `08.11.`, `16.02.`, `21.06.`, `28.10.`, `31.12.`), cả đề bài, phát âm TTS `de-DE`, đáp án và giải thích đều tự động cập nhật chính xác tuyệt đối!
 
 ### 4.3. Engine 3: Biến thiên Không Gian 9 Giới Từ Vị Trí (`Spatial Layout Engine: Wo? + Dativ`)
@@ -860,7 +860,7 @@ Theo đúng yêu cầu của người dùng, quy mô bài tập của **Bài 6**
 
 Sau khi code xong Bài 6, Antigravity IDE **BẮT BUỘC** phải viết và chạy kịch bản kiểm thử tự động (`verify_lesson6_qa.py`) để kiểm tra 6 tiêu chí sau trước khi hoàn tất:
 
-1. **Kiểm tra Bảo toàn Tuyệt đối Bài 1 $\rightarrow$ Bài 5 (`Zero-Regression Check`)**:
+1. **Kiểm tra Bảo toàn Tuyệt đối Bài 1 → Bài 5 (`Zero-Regression Check`)**:
    * Xác nhận trong cơ sở dữ liệu `deutsch_meister.db`: **Bài 1 (P1), Bài 1 (P2), Bài 2, Bài 3, Bài 4, Bài 5** vẫn giữ nguyên 100% nội dung lý thuyết, từ vựng và số lượng câu hỏi bài tập, không có bất kỳ bài học cũ nào bị xóa hay thay đổi.
 2. **Kiểm tra Quy mô 100 Câu hỏi & Đủ 9 Dạng Bài Tập của Bài 6 (`100-Question & 9-Type Verification`)**:
    * Xác nhận **Bài 6** có đúng **100 câu hỏi** (`trac_nghiem`: 18, `dien_khuyet`: 15, `dich_nghia_vd`: 12, `dich_nghia_dv`: 12, `noi_o`: 10, `dien_tao_cau`: 10, `nghe_dien`: 9, `dich_cau_vd`: 7, `dich_cau_dv`: 7).
