@@ -519,7 +519,7 @@ function generateNewNumberData(ex, fallbackIndex = null) {
         ex.question = `[Mạo từ & Phủ định (Random)]: Hoàn thành câu trả lời phủ định: "Ist das ${qIndefinite} ${item1.word}?" → "Nein, das ist ___ ${item1.word}. Das ist ___ ${item2.word}." (Điền 2 từ mạo từ cách nhau bởi dấu phẩy):`;
         ex.correct_answer = `${negWord}, ${indWord}`;
         ex.explanation = `'${item1.word}' mang giống ${item1.article} nên phủ định dùng '${negWord}'; '${item2.word}' mang giống ${item2.article} nên dùng '${indWord}'.`;
-        extra.translation = `Không, đó không phải là một ${item1.meaning}. Đó là một ${item2.meaning}.`;
+        extra.translation = `Ist das ${qIndefinite} ${item1.word}? → Nein, das ist ${negWord} ${item1.word}. Das ist ${indWord} ${item2.word}. = Đây có phải là ${item1.meaning} không? → Không, đó không phải là ${item1.meaning}. Đó là một ${item2.meaning}.`;
         ex.extra_data = JSON.stringify(extra);
         ex.translation = extra.translation;
         return finalize(ex);
@@ -554,7 +554,7 @@ function generateNewNumberData(ex, fallbackIndex = null) {
         ex.question = `[Mạo từ Sở Hữu (Random)]: Hoàn thành câu xác nhận đồ vật của ${chosenName}: "Ist das ___ ${chosenItem.word}?" → "Ja, das ist ___ ${chosenItem.word} von ${personName}." (Điền 2 từ mạo từ cách nhau bởi dấu phẩy):`;
         ex.correct_answer = `${indWord}, ${defWord}`;
         ex.explanation = `'${chosenItem.word}' (${chosenItem.meaning}) mang giống ${defWord} → Mạo từ bất định là '${indWord}' và mạo từ xác định sở hữu là '${defWord} ${chosenItem.word} von ${personName}'.`;
-        extra.translation = `Vâng, đó là ${chosenItem.meaning} của ${chosenName}.`;
+        extra.translation = `Ist das ${indWord} ${chosenItem.word}? → Ja, das ist ${defWord} ${chosenItem.word} von ${personName}. = Đây có phải là ${chosenItem.meaning} không? → Vâng, đó là ${chosenItem.meaning} của ${chosenName}.`;
         ex.extra_data = JSON.stringify(extra);
         ex.translation = extra.translation;
         return finalize(ex);
@@ -571,20 +571,20 @@ function generateNewNumberData(ex, fallbackIndex = null) {
                 x.gender !== 'verb' && x.plural && x.plural.startsWith('die ')
               )
             : [
-                { word: "Tisch", article: "der", plural: "die Tische", rule: "Thêm -e" },
-                { word: "Stuhl", article: "der", plural: "die Stühle", rule: "Biến âm u -> ü và thêm -e" },
-                { word: "Brille", article: "die", plural: "die Brillen", rule: "Thêm -n" },
-                { word: "Buch", article: "das", plural: "die Bücher", rule: "Biến âm u -> ü và thêm -er" },
-                { word: "Heft", article: "das", plural: "die Hefte", rule: "Thêm -e" },
-                { word: "Wörterbuch", article: "das", plural: "die Wörterbücher", rule: "Số nhiều theo Buch (die Wörterbücher)" },
-                { word: "Handy", article: "das", plural: "die Handys", rule: "Thêm -s" }
+                { word: "Tisch", article: "der", plural: "die Tische", rule: "Thêm -e", meaning: "chiếc bàn" },
+                { word: "Stuhl", article: "der", plural: "die Stühle", rule: "Biến âm u -> ü và thêm -e", meaning: "chiếc ghế" },
+                { word: "Brille", article: "die", plural: "die Brillen", rule: "Thêm -n", meaning: "kính mắt" },
+                { word: "Buch", article: "das", plural: "die Bücher", rule: "Biến âm u -> ü và thêm -er", meaning: "quyển sách" },
+                { word: "Heft", article: "das", plural: "die Hefte", rule: "Thêm -e", meaning: "quyển vở" },
+                { word: "Wörterbuch", article: "das", plural: "die Wörterbücher", rule: "Số nhiều theo Buch (die Wörterbücher)", meaning: "cuốn từ điển" },
+                { word: "Handy", article: "das", plural: "die Handys", rule: "Thêm -s", meaning: "điện thoại" }
             ];
         const chosenItem = db[Math.floor(Math.random() * db.length)];
 
         ex.question = `[Số Nhiều Danh Từ (Random)]: Hãy viết dạng số nhiều (kèm mạo từ 'die') của danh từ '${chosenItem.article} ${chosenItem.word}':`;
         ex.correct_answer = chosenItem.plural;
         ex.explanation = `'${chosenItem.article} ${chosenItem.word}' khi chuyển sang số nhiều là '${chosenItem.plural}'. ${chosenItem.rule || ''}`;
-        extra.translation = `Những ${chosenItem.meaning || chosenItem.word}.`;
+        extra.translation = `${chosenItem.article} ${chosenItem.word} (${chosenItem.meaning || ''}) → ${chosenItem.plural} (những ${chosenItem.meaning || chosenItem.word})`;
         ex.extra_data = JSON.stringify(extra);
         ex.translation = extra.translation;
         return finalize(ex);
