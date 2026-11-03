@@ -1742,9 +1742,16 @@
             if (ex.exercise_type === 'noi_o') {
                 isCorrect = (userAnswer === "ALL_CORRECT_MATCH");
             } else {
-                isCorrect = (typeof checkGermanAnswerEquivalence === 'function')
-                    ? checkGermanAnswerEquivalence(userAnswer, ex.correct_answer)
-                    : normalizeAnswer(userAnswer) === normalizeAnswer(ex.correct_answer);
+                const candidates = [ex.correct_answer];
+                if (extra && Array.isArray(extra.accepted_answers)) {
+                    candidates.push(...extra.accepted_answers);
+                }
+                isCorrect = candidates.some(cand => {
+                    if (!cand) return false;
+                    return (typeof checkGermanAnswerEquivalence === 'function')
+                        ? checkGermanAnswerEquivalence(userAnswer, cand)
+                        : normalizeAnswer(userAnswer) === normalizeAnswer(cand);
+                });
             }
 
             const translation = getExerciseTranslation(ex, extra);
