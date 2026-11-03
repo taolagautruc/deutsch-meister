@@ -437,7 +437,7 @@ function checkGermanAnswerEquivalence(userAns, correctAns) {
     // Bỏ từ phụ "ở", "bằng", "với", "đi" ở đầu câu dịch cụm từ ngắn
     const stripLeadingPrep = (s) => s.replace(/^(ở|tại|trong|bằng|với|đi)\s+/i, '');
     if (stripLeadingPrep(uVn) === stripLeadingPrep(cVn)) return true;
-    if (stripLeadingPrep(uNo || uVnNoAcc) === stripLeadingPrep(cNo || cVnNoAcc)) return true;
+    if (stripLeadingPrep(uVnNoAcc) === stripLeadingPrep(cVnNoAcc)) return true;
 
     // Hoán vị cặp danh từ nối bằng "và" (ví dụ: chuột và bàn phím <-> bàn phím và chuột)
     if (uVn.includes(' và ') && cVn.includes(' và ')) {
