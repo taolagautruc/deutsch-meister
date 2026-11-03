@@ -720,10 +720,6 @@
                 : "px-4 py-2.5 rounded-xl text-sm font-bold whitespace-nowrap shrink-0 text-slate-600 hover:text-slate-900 transition";
 
             if (!isTheory && currentLesson && currentLesson.allRenderExercises) {
-                // Tự động đổi đề ngẫu nhiên mới cho toàn bộ câu hỏi số đếm khi mở tab Bài tập
-                if (typeof randomizeAllNumberExercises === 'function') {
-                    randomizeAllNumberExercises(currentLesson.allRenderExercises);
-                }
                 if (typeof updateEngineBannerUI === 'function') {
                     updateEngineBannerUI();
                 }
@@ -845,7 +841,7 @@
             lessonList.innerHTML = currentLevelData.lessons.map((ls, idx) => {
                 const p = userLessonsProgress[ls.id] || {};
                 const isTheoryDone = Boolean(p.studied_theory);
-                const correctCount = Array.isArray(p.correct_exercises) ? p.correct_exercises.length : (p.best_practice_score || 0);
+                const correctCount = Array.isArray(p.correct_exercises) ? Math.max(p.correct_exercises.length, p.best_practice_score || 0) : (p.best_practice_score || 0);
                 const totalExercises = (ls.exercises && ls.exercises.length) ? ls.exercises.length : 50;
                 const isPracticeDone = Boolean(p.practice_completed) || (correctCount >= totalExercises && totalExercises > 0);
                 const isAllDone = isTheoryDone && isPracticeDone;
@@ -900,7 +896,7 @@
             const lId = currentLesson.id;
             const p = userLessonsProgress[lId] || {};
             const isTheoryDone = Boolean(p.studied_theory);
-            const correctCount = Array.isArray(p.correct_exercises) ? p.correct_exercises.length : (p.best_practice_score || 0);
+            const correctCount = Array.isArray(p.correct_exercises) ? Math.max(p.correct_exercises.length, p.best_practice_score || 0) : (p.best_practice_score || 0);
             const totalExercises = (currentLesson.exercises && currentLesson.exercises.length) ? currentLesson.exercises.length : 50;
             const isPracticeDone = Boolean(p.practice_completed) || (correctCount >= totalExercises && totalExercises > 0);
             const isAllDone = isTheoryDone && isPracticeDone;
@@ -1137,21 +1133,23 @@
             window.noiOSelectedLeft = {};
 
             if (!window.lessonPracticeMode) window.lessonPracticeMode = {};
-            if (!window.lessonPracticeMode[currentLesson.id]) {
-                const p = userLessonsProgress[currentLesson.id] || {};
-                window.lessonPracticeMode[currentLesson.id] = p.practice_completed ? 'review' : 'practice';
-            }
+            window.lessonPracticeMode[currentLesson.id] = 'normal';
 
-            currentLesson.allRenderExercises = (currentLesson.exercises || []).map(ex => {
-                const copy = { ...ex };
-                if (copy.options && Array.isArray(copy.options) && copy.options.length > 1) {
-                    copy.options = shuffleArray(copy.options);
+            const p = userLessonsProgress[currentLesson.id] || {};
+            const hasExistingProgress = (Array.isArray(p.correct_exercises) && p.correct_exercises.length > 0) || Boolean(p.practice_completed) || ((p.best_practice_score || 0) > 0);
+
+            currentLesson.allRenderExercises = (currentLesson.exercises || []).map(ex => ({ ...ex }));
+
+            // Chỉ ngẫu nhiên hóa ban đầu nếu người học CHƯA CÓ tiến trình nào của bài này
+            if (!hasExistingProgress) {
+                currentLesson.allRenderExercises.forEach(ex => {
+                    if (ex.options && Array.isArray(ex.options) && ex.options.length > 1) {
+                        ex.options = shuffleArray(ex.options);
+                    }
+                });
+                if (typeof randomizeAllNumberExercises === 'function') {
+                    randomizeAllNumberExercises(currentLesson.allRenderExercises);
                 }
-                return copy;
-            });
-
-            if (typeof randomizeAllNumberExercises === 'function') {
-                randomizeAllNumberExercises(currentLesson.allRenderExercises);
             }
             // Tự động đồng bộ tiến độ học để mở khóa câu hỏi trong Đấu trường
             if (currentLesson) {
@@ -1210,10 +1208,11 @@
 
             const currentProgress = (currentLesson && userLessonsProgress[currentLesson.id]) ? userLessonsProgress[currentLesson.id] : {};
             const isAllCompleted = Boolean(currentProgress.practice_completed);
-            const isPracticeMode = Boolean(window.lessonPracticeMode && window.lessonPracticeMode[currentLesson.id] === 'practice');
-            const isDoneReview = !isPracticeMode && isAllCompleted;
+            const isRetakeMode = Boolean(window.lessonPracticeMode && window.lessonPracticeMode[currentLesson.id] === 'retake');
+            const correctExercisesSet = new Set(Array.isArray(currentProgress.correct_exercises) ? currentProgress.correct_exercises : []);
+            const isDoneThis = !isRetakeMode && (isAllCompleted || correctExercisesSet.has(exIdx));
 
-            if (isDoneReview && Object.keys(matches).length === 0 && pairs.length > 0) {
+            if (isDoneThis && Object.keys(matches).length === 0 && pairs.length > 0) {
                 matches = {};
                 pairs.forEach((_, leftIdx) => {
                     const rightPos = shuffled.indexOf(leftIdx);
@@ -1417,9 +1416,22 @@
 
             const currentProgress = (currentLesson && userLessonsProgress[currentLesson.id]) ? userLessonsProgress[currentLesson.id] : {};
             const isAllCompleted = Boolean(currentProgress.practice_completed);
-            const isPracticeMode = Boolean(window.lessonPracticeMode && window.lessonPracticeMode[currentLesson.id] === 'practice');
+            const isRetakeMode = Boolean(window.lessonPracticeMode && window.lessonPracticeMode[currentLesson.id] === 'retake');
             const sessionSet = (window.sessionPracticeAnswers && window.sessionPracticeAnswers[currentLesson.id]) ? window.sessionPracticeAnswers[currentLesson.id] : new Set();
-            const correctExercisesSet = new Set(Array.isArray(currentProgress.correct_exercises) ? currentProgress.correct_exercises : []);
+
+            let correctExercisesList = Array.isArray(currentProgress.correct_exercises) ? [...currentProgress.correct_exercises] : [];
+            const bestScore = currentProgress.best_practice_score || 0;
+            // Tự động bảo toàn và điền đủ chỉ mục câu hỏi đã làm nếu danh sách correct_exercises thiếu so với best_practice_score
+            if (correctExercisesList.length < bestScore) {
+                for (let k = 0; k < bestScore && k < list.length; k++) {
+                    if (!correctExercisesList.includes(k)) {
+                        correctExercisesList.push(k);
+                    }
+                }
+                currentProgress.correct_exercises = correctExercisesList;
+                saveLocalLessonsProgress();
+            }
+            const correctExercisesSet = new Set(correctExercisesList);
 
             const filterBarHtml = `
                 <div class="flex flex-wrap gap-2 pb-3 border-b border-slate-100">
@@ -1440,7 +1452,9 @@
                 if (currentFilterType !== 'all' && ex.exercise_type !== currentFilterType) return '';
 
                 let isDone = false;
-                if (isPracticeMode) {
+                if (ex._retrying) {
+                    isDone = false;
+                } else if (isRetakeMode) {
                     isDone = sessionSet.has(i);
                 } else {
                     isDone = isAllCompleted || correctExercisesSet.has(i);
@@ -1857,6 +1871,7 @@
                         };
                     }
                     const wasAlreadyCompleted = Boolean(userLessonsProgress[lId].practice_completed);
+                    if (ex) delete ex._retrying;
 
                     if (!Array.isArray(userLessonsProgress[lId].correct_exercises)) {
                         userLessonsProgress[lId].correct_exercises = [];
@@ -1876,6 +1891,9 @@
                         sessionCount
                     );
                     saveLocalLessonsProgress();
+                    if (typeof updateEngineBannerUI === 'function') {
+                        updateEngineBannerUI();
+                    }
 
                     try {
                         fetch('/api/progress/record-exercise', {
@@ -1970,6 +1988,8 @@
 
         function refreshSingleExercise(index) {
             const ex = currentLesson.allRenderExercises[index];
+            if (!ex) return;
+            ex._retrying = true;
             if (typeof generateNewNumberData === 'function') {
                 generateNewNumberData(ex, index + 1);
             }
@@ -1992,8 +2012,8 @@
             if (!currentLesson) return;
             const lId = currentLesson.id;
             if (!window.lessonPracticeMode) window.lessonPracticeMode = {};
-            const curMode = window.lessonPracticeMode[lId] || 'review';
-            window.lessonPracticeMode[lId] = (curMode === 'review') ? 'practice' : 'review';
+            const curMode = window.lessonPracticeMode[lId] || 'normal';
+            window.lessonPracticeMode[lId] = (curMode === 'retake') ? 'normal' : 'retake';
             updateEngineBannerUI();
             filterExercises(currentFilterType);
         }
@@ -2003,7 +2023,9 @@
             const lId = currentLesson.id;
             const p = userLessonsProgress[lId] || {};
             const isCompleted = Boolean(p.practice_completed);
-            const mode = (window.lessonPracticeMode && window.lessonPracticeMode[lId]) || (isCompleted ? 'review' : 'practice');
+            const mode = (window.lessonPracticeMode && window.lessonPracticeMode[lId]) || 'normal';
+            const correctCount = Array.isArray(p.correct_exercises) ? Math.max(p.correct_exercises.length, p.best_practice_score || 0) : (p.best_practice_score || 0);
+            const totalEx = (currentLesson.exercises && currentLesson.exercises.length) ? currentLesson.exercises.length : 100;
 
             const pill = document.getElementById('engine-status-pill');
             const desc = document.getElementById('engine-status-desc');
@@ -2011,30 +2033,30 @@
 
             if (!pill || !desc) return;
 
-            if (mode === 'practice') {
+            if (mode === 'retake') {
+                pill.className = "px-2 py-0.5 rounded-md bg-indigo-100 text-indigo-800 text-[10px] font-bold";
+                pill.innerText = "Luyện tập lại (Đang làm)";
+                desc.innerText = "Bộ đề ngẫu nhiên mới đã sẵn sàng. Bạn có thể luyện tập không giới hạn (tiến trình và điểm tích lũy trước đó của bạn luôn được bảo lưu an toàn).";
+                if (btnToggle) {
+                    btnToggle.classList.remove('hidden');
+                    btnToggle.innerHTML = "<span>👁️</span> Quay lại tiến trình đã lưu";
+                }
+            } else {
                 if (isCompleted) {
                     pill.className = "px-2 py-0.5 rounded-md bg-emerald-100 text-emerald-800 text-[10px] font-bold";
-                    pill.innerText = "Luyện tập lại (Đang làm)";
-                    desc.innerText = "Bộ đề ngẫu nhiên mới đã sẵn sàng. Bạn có thể làm lại để ôn tập kiến thức (thành tích hoàn thành 100% trước đó luôn được bảo lưu vĩnh viễn).";
-                    if (btnToggle) {
-                        btnToggle.classList.remove('hidden');
-                        btnToggle.innerHTML = "<span>👁️</span> Xem lại đáp án đã làm";
-                    }
+                    pill.innerText = "Đã hoàn thành 100%";
+                    desc.innerText = "Bạn đã hoàn thành xuất sắc toàn bộ bài tập của bài này. Bấm 'Đổi bộ đề ngẫu nhiên mới' để tạo lượt ôn tập mới.";
+                } else if (correctCount > 0) {
+                    pill.className = "px-2 py-0.5 rounded-md bg-indigo-100 text-indigo-800 text-[10px] font-bold";
+                    pill.innerText = `Đang học (${correctCount}/${totalEx} câu đã xong)`;
+                    desc.innerText = `Tiến trình của bạn đã được bảo lưu. Bạn có thể tiếp tục làm từ câu ${correctCount + 1}.`;
                 } else {
                     pill.className = "px-2 py-0.5 rounded-md bg-amber-100 text-amber-800 text-[10px] font-bold";
                     pill.innerText = "Dynamic Engine";
-                    desc.innerText = "Mỗi lần luyện tập, hệ thống tự động sinh số đếm, giá tiền Euro (€) hoặc câu chia động từ ngẫu nhiên mới.";
-                    if (btnToggle) {
-                        btnToggle.classList.add('hidden');
-                    }
+                    desc.innerText = "Mỗi bài tập giúp bạn rèn phản xạ chính xác. Tiến trình làm bài được lưu tự động vào tài khoản.";
                 }
-            } else {
-                pill.className = "px-2 py-0.5 rounded-md bg-indigo-100 text-indigo-800 text-[10px] font-bold";
-                pill.innerText = "Xem lại đáp án";
-                desc.innerText = "Bạn đang xem lại toàn bộ đáp án và giải thích chi tiết. Bấm 'Đổi bộ đề ngẫu nhiên mới' để làm bài luyện tập lại.";
                 if (btnToggle) {
-                    btnToggle.classList.remove('hidden');
-                    btnToggle.innerHTML = "<span>✏️</span> Vào làm bài luyện tập";
+                    btnToggle.classList.add('hidden');
                 }
             }
         }
@@ -2043,7 +2065,7 @@
             if (currentLesson && currentLesson.allRenderExercises) {
                 const lId = currentLesson.id;
                 if (!window.lessonPracticeMode) window.lessonPracticeMode = {};
-                window.lessonPracticeMode[lId] = 'practice';
+                window.lessonPracticeMode[lId] = 'retake';
 
                 if (!window.sessionPracticeAnswers) window.sessionPracticeAnswers = {};
                 window.sessionPracticeAnswers[lId] = new Set();
@@ -2056,6 +2078,7 @@
                     randomizeAllNumberExercises(currentLesson.allRenderExercises);
                 }
                 currentLesson.allRenderExercises.forEach(ex => {
+                    delete ex._retrying;
                     if (ex && ex.options && Array.isArray(ex.options) && ex.options.length > 1) {
                         ex.options = shuffleArray(ex.options);
                     }
@@ -2065,10 +2088,11 @@
 
                 const toast = document.createElement('div');
                 toast.className = "fixed bottom-5 right-5 z-50 px-4 py-3 rounded-2xl bg-slate-900 text-white font-bold text-xs shadow-2xl border border-slate-700 flex items-center gap-2 animate-in fade-in slide-in-from-bottom duration-200";
-                toast.innerHTML = "<span>🎲</span> Đã tạo bộ đề ngẫu nhiên mới! Tất cả câu hỏi đã được làm mới để bạn luyện tập (Thành tích 100% của bạn luôn được bảo lưu).";
+                toast.innerHTML = "<span>🎲</span> Đã tạo bộ đề ngẫu nhiên mới! Tất cả câu hỏi đã được làm mới để bạn luyện tập (Thành tích của bạn luôn được bảo lưu).";
                 document.body.appendChild(toast);
                 setTimeout(() => {
-                    toast.remove();
+                    toast.classList.add('opacity-0', 'transition-opacity', 'duration-300');
+                    setTimeout(() => toast.remove(), 300);
                 }, 3500);
             }
         }
