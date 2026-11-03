@@ -37,7 +37,6 @@ def seed_lesson_6():
     # Xóa dữ liệu cũ của Bài 6 nếu có để cập nhật sạch sẽ (Bảo toàn tuyệt đối Bài 1 -> Bài 5)
     cursor.execute("DELETE FROM vocabularies WHERE lesson_id = ?;", (lesson_id,))
     cursor.execute("DELETE FROM exercises WHERE lesson_id = ?;", (lesson_id,))
-    cursor.execute("DELETE FROM lessons WHERE id = ?;", (lesson_id,))
 
     lesson_title = 'Bài 6: "Dativ - Giới từ trong Dativ - Phương tiện giao thông - Số thứ tự - Ngày tháng năm (Orientierung)"'
 
@@ -514,10 +513,15 @@ def seed_lesson_6():
     </div>
 """
 
-    cursor.execute("""
-        INSERT INTO lessons (id, level_id, title, grammar_content)
-        VALUES (?, ?, ?, ?);
-    """, (lesson_id, a1_id, lesson_title, grammar_html))
+    if existing_lesson:
+        cursor.execute("""
+            UPDATE lessons SET title = ?, grammar_content = ? WHERE id = ?;
+        """, (lesson_title, grammar_html, lesson_id))
+    else:
+        cursor.execute("""
+            INSERT INTO lessons (id, level_id, title, grammar_content)
+            VALUES (?, ?, ?, ?);
+        """, (lesson_id, a1_id, lesson_title, grammar_html))
 
     # =========================================================================
     # DANH MỤC 45 TỪ VỰNG TRỌNG TÂM BÀI 6 (KHỚP 100% VỚI LEXIKON_DB.JS)
@@ -1140,8 +1144,7 @@ def seed_lesson_6():
                 "explanation": "Giới từ mit luôn đi với Cách 3 (Dativ). Danh từ die Straßenbahn mang giống cái (Femininum), nên ở Dativ mạo từ die biến đổi thành der → mit der Straßenbahn.",
                 "exp_reward": 15,
                 "extra_data": {
-                        "translation": "Mẹ tôi đi làm mỗi buổi sáng bằng tàu điện mặt đất.",
-                        "dynamic_dativ_transport_quiz": true
+                        "translation": "Mẹ tôi đi làm mỗi buổi sáng bằng tàu điện mặt đất."
                 }
         },
         {
@@ -1153,8 +1156,7 @@ def seed_lesson_6():
                 "explanation": "Chủ ngữ dein Bruder (= ngôi er) nên động từ fahren biến âm a -> ä thành fährt. Danh từ das Fahrrad mang giống trung nên sau mit (Dativ) biến đổi thành mit dem Fahrrad.",
                 "exp_reward": 15,
                 "extra_data": {
-                        "translation": "Anh trai của bạn đi đến trường đại học bằng phương tiện gì? — Anh ấy đi bằng xe đạp.",
-                        "dynamic_dativ_transport_quiz": true
+                        "translation": "Anh trai của bạn đi đến trường đại học bằng phương tiện gì? — Anh ấy đi bằng xe đạp."
                 }
         },
         {
@@ -1238,8 +1240,7 @@ def seed_lesson_6():
                 "explanation": "Câu hỏi Wo? với giới từ zwischen đòi hỏi cả 2 danh từ phía sau đều phải chia ở Cách 3 (Dativ): der Supermarkt (giống đực) → dem Supermarkt; die Post (giống cái) → der Post.",
                 "exp_reward": 15,
                 "extra_data": {
-                        "translation": "Hiệu sách mới nằm ở đâu? — Nó nằm ngay giữa siêu thị và bưu điện.",
-                        "dynamic_dativ_position_quiz": true
+                        "translation": "Hiệu sách mới nằm ở đâu? — Nó nằm ngay giữa siêu thị và bưu điện."
                 }
         },
         {
@@ -1251,8 +1252,7 @@ def seed_lesson_6():
                 "explanation": "Đặt tiếp xúc trên bề mặt nằm ngang (der Schreibtisch) dùng auf dem Schreibtisch; treo tiếp xúc trên bề mặt thẳng đứng (die Wand - giống cái) dùng an der Wand.",
                 "exp_reward": 15,
                 "extra_data": {
-                        "translation": "Chiếc máy in nặng đặt ở trên mặt bàn làm việc, và bức ảnh gia đình đẹp đẽ treo ở trên tường.",
-                        "dynamic_dativ_position_quiz": true
+                        "translation": "Chiếc máy in nặng đặt ở trên mặt bàn làm việc, và bức ảnh gia đình đẹp đẽ treo ở trên tường."
                 }
         },
         {
@@ -1276,8 +1276,7 @@ def seed_lesson_6():
                 "explanation": "Bốn số thứ tự bất quy tắc từ 1 đến 19 ở Nominativ là: 1. -> erste, 3. -> dritte, 7. -> siebte (bỏ -en), 8. -> achte (chỉ có một chữ t).",
                 "exp_reward": 15,
                 "extra_data": {
-                        "translation": "Thứ nhất — Thứ ba — Thứ bảy — Thứ tám.",
-                        "dynamic_ordinal_date_quiz": true
+                        "translation": "Thứ nhất — Thứ ba — Thứ bảy — Thứ tám."
                 }
         },
         {
@@ -1289,8 +1288,7 @@ def seed_lesson_6():
                 "explanation": "Từ 20 trở đi, số thứ tự được tạo bằng cách thêm đuôi -ste vào cuối số đếm: dreiundzwanzig + -ste → der dreiundzwanzigste (phần hàng đơn vị drei ở đầu giữ nguyên, không đổi thành dritte).",
                 "exp_reward": 15,
                 "extra_data": {
-                        "translation": "Thứ hai mươi ba (ngày 23).",
-                        "dynamic_ordinal_date_quiz": true
+                        "translation": "Thứ hai mươi ba (ngày 23)."
                 }
         },
         {
@@ -1302,8 +1300,7 @@ def seed_lesson_6():
                 "explanation": "Sau Heute ist der ... (Nominativ) dùng đuôi -ste (der zwanzigste Oktober). Sau giới từ am (Dativ) bắt buộc phải thêm -n thành đuôi -sten (am fünfundzwanzigsten Oktober).",
                 "exp_reward": 15,
                 "extra_data": {
-                        "translation": "Hôm nay là ngày mấy? — Hôm nay là ngày 20 tháng Mười. Và khi nào các bạn bay đi Viên? — Chúng tôi bay vào ngày 25 tháng Mười.",
-                        "dynamic_ordinal_date_quiz": true
+                        "translation": "Hôm nay là ngày mấy? — Hôm nay là ngày 20 tháng Mười. Và khi nào các bạn bay đi Viên? — Chúng tôi bay vào ngày 25 tháng Mười."
                 }
         },
         {
@@ -1315,8 +1312,7 @@ def seed_lesson_6():
                 "explanation": "Trong cấu trúc vom ... bis zum ..., cả vom (von + dem) và zum (zu + dem) đều ở Cách 3 (Dativ), nên cả hai số thứ tự đều phải chia đuôi -ten (vom ersten bis zum vierzehnten Juli).",
                 "exp_reward": 15,
                 "extra_data": {
-                        "translation": "Các đồng nghiệp của chúng tôi có kỳ nghỉ hè từ ngày mùng 1 đến ngày 14 tháng Bảy.",
-                        "dynamic_ordinal_date_quiz": true
+                        "translation": "Các đồng nghiệp của chúng tôi có kỳ nghỉ hè từ ngày mùng 1 đến ngày 14 tháng Bảy."
                 }
         },
         {
@@ -1403,33 +1399,31 @@ def seed_lesson_6():
         {
                 "q_num": 22,
                 "type": "dien_khuyet",
-                "question": "Câu 22: Điền mạo từ xác định đúng ở Cách 3 (Dativ) vào chỗ trống: „Warum sitzt der Hund immer unter ___ Esstisch?“",
+                "question": "Câu 22: Điền mạo từ xác định đúng ở Cách 3 (Dativ) vào chỗ trống: „Viele Fahrgäste warten am Morgen an ___ Haltestelle (die Haltestelle).“",
                 "options_json": null,
-                "correct_answer": "dem",
-                "explanation": "Câu chỉ vị trí tĩnh (sitzt — Wo?) sau giới từ unter chia ở Dativ. der Esstisch (giống đực) đổi thành unter dem Esstisch.",
+                "correct_answer": "der",
+                "explanation": "Danh từ die Haltestelle mang giống cái (Femininum). Sau giới từ chỉ vị trí an (trả lời câu hỏi Wo? - Ở đâu?) thuộc Cách 3 (Dativ), mạo từ xác định đổi từ die thành der (an der Haltestelle).",
                 "exp_reward": 15,
                 "extra_data": {
                         "accepted_answers": [
-                                "dem"
+                                "der"
                         ],
-                        "translation": "Tại sao chú chó luôn ngồi ở dưới gầm bàn ăn thế?",
-                        "dynamic_dativ_position_quiz": true
+                        "translation": "Nhiều hành khách đứng đợi ở trạm dừng vào buổi sáng."
                 }
         },
         {
                 "q_num": 23,
                 "type": "dien_khuyet",
-                "question": "Câu 23: Điền mạo từ sở hữu đúng của ngôi er (sein-) ở Cách 3 (Dativ) vào chỗ trống: „Peter spricht gerade im Flur mit ___ Chefin.“",
+                "question": "Câu 23: Điền mạo từ sở hữu đúng của ngôi er (sein-) ở Cách 3 (Dativ) vào chỗ trống: „Thomas fährt jeden Sonntag mit ___ Fahrrad (das Fahrrad) durch den Park.“",
                 "options_json": null,
-                "correct_answer": "seiner",
-                "explanation": "Sau giới từ mit là Dativ. Danh từ die Chefin mang giống cái, nên gốc sở hữu sein- của Peter (er) thêm đuôi -er thành seiner Chefin.",
+                "correct_answer": "seinem",
+                "explanation": "Sau giới từ mit bắt buộc dùng Cách 3 (Dativ). Danh từ das Fahrrad mang giống trung (Neutrum), nên gốc mạo từ sở hữu sein- của Thomas (ngôi er) nhận đuôi -em thành seinem Fahrrad.",
                 "exp_reward": 15,
                 "extra_data": {
                         "accepted_answers": [
-                                "seiner"
+                                "seinem"
                         ],
-                        "translation": "Peter đang nói chuyện ở ngoài hành lang với nữ giám đốc của anh ấy.",
-                        "dynamic_dativ_position_quiz": true
+                        "translation": "Thomas đạp xe đạp của anh ấy qua công viên vào mỗi Chủ nhật."
                 }
         },
         {
@@ -1444,8 +1438,7 @@ def seed_lesson_6():
                         "accepted_answers": [
                                 "Ihrem"
                         ],
-                        "translation": "Thưa Ngài Giám đốc, bức thư nằm ở trên bàn làm việc của Ngài bên cạnh chiếc máy tính xách tay.",
-                        "dynamic_dativ_position_quiz": true
+                        "translation": "Thưa Ngài Giám đốc, bức thư nằm ở trên bàn làm việc của Ngài bên cạnh chiếc máy tính xách tay."
                 }
         },
         {
@@ -1491,8 +1484,7 @@ def seed_lesson_6():
                         "accepted_answers": [
                                 "ersten"
                         ],
-                        "translation": "Phòng nhân sự nằm ở tầng một.",
-                        "dynamic_ordinal_date_quiz": true
+                        "translation": "Phòng nhân sự nằm ở tầng một."
                 }
         },
         {
@@ -1507,8 +1499,7 @@ def seed_lesson_6():
                         "accepted_answers": [
                                 "siebten"
                         ],
-                        "translation": "Căn hộ mới của chúng tôi nằm ở tầng bảy.",
-                        "dynamic_ordinal_date_quiz": true
+                        "translation": "Căn hộ mới của chúng tôi nằm ở tầng bảy."
                 }
         },
         {
@@ -1523,24 +1514,22 @@ def seed_lesson_6():
                         "accepted_answers": [
                                 "dritte"
                         ],
-                        "translation": "Hôm nay là ngày mấy? — Hôm nay là ngày mùng 3 tháng Tư.",
-                        "dynamic_ordinal_date_quiz": true
+                        "translation": "Hôm nay là ngày mấy? — Hôm nay là ngày mùng 3 tháng Tư."
                 }
         },
         {
                 "q_num": 30,
                 "type": "dien_khuyet",
-                "question": "Câu 30: Điền dạng chữ của số thứ tự trong ngoặc đơn vào chỗ trống: „Wann hat deine Mutter Geburtstag? — Sie hat am ___ (8.) März Geburtstag.“",
+                "question": "Câu 30: Điền dạng chữ của số thứ tự trong ngoặc đơn vào chỗ trống: „Wann feiert deine Schwester ihren Geburtstag? — Sie feiert am ___ (8.) März ihren Geburtstag.“",
                 "options_json": null,
                 "correct_answer": "achten",
-                "explanation": "Số thứ tự của 8 là achte (chỉ có 1 chữ t); đứng sau giới từ am (Dativ) thêm -n thành am achten März.",
+                "explanation": "Số thứ tự của mốc 8 là achte (chỉ viết một chữ t). Đứng sau giới từ am (Dativ chỉ thời điểm ngày), số thứ tự bắt buộc thêm đuôi -n thành am achten März.",
                 "exp_reward": 15,
                 "extra_data": {
                         "accepted_answers": [
                                 "achten"
                         ],
-                        "translation": "Mẹ của bạn có sinh nhật vào khi nào? — Bà ấy có sinh nhật vào ngày mùng 8 tháng Ba.",
-                        "dynamic_ordinal_date_quiz": true
+                        "translation": "Khi nào chị gái của bạn tổ chức sinh nhật? — Chị ấy tổ chức sinh nhật vào ngày mùng 8 tháng Ba."
                 }
         },
         {
@@ -1555,24 +1544,22 @@ def seed_lesson_6():
                         "accepted_answers": [
                                 "zwanzigsten"
                         ],
-                        "translation": "Khóa học tiếng Đức bắt đầu vào ngày 20 tháng Chín.",
-                        "dynamic_ordinal_date_quiz": true
+                        "translation": "Khóa học tiếng Đức bắt đầu vào ngày 20 tháng Chín."
                 }
         },
         {
                 "q_num": 32,
                 "type": "dien_khuyet",
-                "question": "Câu 32: Điền giới từ chỉ vị trí phù hợp với bức tranh và bức tường: „In unserem Wohnzimmer hängt eine große Uhr ___ der Wand.“",
+                "question": "Câu 32: Điền giới từ chỉ vị trí thích hợp vào chỗ trống: „In unserem neuen Wohnzimmer hängt eine moderne Uhr ___ der Wand.“",
                 "options_json": null,
                 "correct_answer": "an",
-                "explanation": "Treo áp sát lên bề mặt thẳng đứng (die Wand) dùng giới từ an (an der Wand).",
+                "explanation": "Khi miêu tả đồ vật treo áp sát tiếp xúc trên bề mặt thẳng đứng như bức tường (die Wand), trong tiếng Đức bắt buộc dùng giới từ an (an der Wand).",
                 "exp_reward": 15,
                 "extra_data": {
                         "accepted_answers": [
                                 "an"
                         ],
-                        "translation": "Trong phòng khách của chúng tôi có một chiếc đồng hồ lớn treo trên tường.",
-                        "dynamic_dativ_position_quiz": true
+                        "translation": "Trong phòng khách mới của chúng tôi có một chiếc đồng hồ hiện đại treo trên tường."
                 }
         },
         {
