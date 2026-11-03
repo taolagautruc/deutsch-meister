@@ -328,7 +328,133 @@ function checkGermanAnswerEquivalence(userAns, correctAns) {
         if (normPolite(uDe) === normPolite(cDe)) return true;
     }
 
-    // 14. Dịch sang tiếng Việt - Linh hoạt đại từ nhân xưng & từ đồng nghĩa:
+    // 14. Dịch sang tiếng Việt - Linh hoạt ngữ nghĩa, cấu trúc câu, ngày tháng, vị trí & từ đồng nghĩa:
+    const replaceVnPhrases = (text, phraseList, replacement) => {
+        let res = " " + text + " ";
+        const sorted = [...phraseList].sort((a,b) => b.length - a.length);
+        for (const p of sorted) {
+            const escaped = p.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+            const re = new RegExp(`(^|\\s)${escaped}(?=\\s|$)`, "gi");
+            res = res.replace(re, ` ${replacement}`);
+        }
+        return res.trim().replace(/\s+/g, " ");
+    };
+
+    const normalizeVietnameseAnswer = (s) => {
+        let str = baseClean(s);
+
+        // Chuẩn hóa ngày tháng & số thứ tự tiếng Việt
+        str = replaceVnPhrases(str, ['tháng mười hai', 'tháng 12'], 'tháng 12');
+        str = replaceVnPhrases(str, ['tháng mười một', 'tháng 11'], 'tháng 11');
+        str = replaceVnPhrases(str, ['tháng mười', 'tháng 10'], 'tháng 10');
+        str = replaceVnPhrases(str, ['tháng chín', 'tháng 9'], 'tháng 9');
+        str = replaceVnPhrases(str, ['tháng tám', 'tháng 8'], 'tháng 8');
+        str = replaceVnPhrases(str, ['tháng bảy', 'tháng bẩy', 'tháng 7'], 'tháng 7');
+        str = replaceVnPhrases(str, ['tháng sáu', 'tháng 6'], 'tháng 6');
+        str = replaceVnPhrases(str, ['tháng năm', 'tháng 5'], 'tháng 5');
+        str = replaceVnPhrases(str, ['tháng tư', 'tháng bốn', 'tháng 4'], 'tháng 4');
+        str = replaceVnPhrases(str, ['tháng ba', 'tháng 3'], 'tháng 3');
+        str = replaceVnPhrases(str, ['tháng hai', 'tháng 2'], 'tháng 2');
+        str = replaceVnPhrases(str, ['tháng một', 'tháng giêng', 'tháng 1'], 'tháng 1');
+
+        // Chuẩn hóa số tầng
+        str = replaceVnPhrases(str, ['tầng bảy', 'tầng bẩy', 'tầng 7'], 'tầng 7');
+        str = replaceVnPhrases(str, ['tầng ba', 'tầng 3'], 'tầng 3');
+        str = replaceVnPhrases(str, ['tầng hai', 'tầng 2'], 'tầng 2');
+        str = replaceVnPhrases(str, ['tầng một', 'tầng 1'], 'tầng 1');
+
+        // Chuẩn hóa năm 2002
+        str = str.replace(/năm\s+hai\s+(nghìn|ngàn)\s+(không\s+trăm\s+)?(lẻ|linh)?\s*hai/gi, 'năm 2002');
+
+        // Định dạng ngày tháng
+        str = str.replace(/vào\s+ngày\s+mùng\s+(\d+)/gi, 'ngày $1');
+        str = str.replace(/vào\s+ngày\s+(\d+)/gi, 'ngày $1');
+        str = str.replace(/ngày\s+mùng\s+(\d+)/gi, 'ngày $1');
+        str = str.replace(/(\d{1,2})\s*\/\s*(\d{1,2})(?:\s*\/\s*(\d{4}))?/g, (m, d, mo, y) => {
+            return y ? `${d} tháng ${mo} năm ${y}` : `${d} tháng ${mo}`;
+        });
+        str = str.replace(/từ\s+ngày\s+(mùng\s+)?(\d+)\s+đến\s+(ngày\s+)?(\d+)/gi, 'từ $2 đến $4');
+        str = str.replace(/từ\s+(\d+)\s+đến\s+(\d+)/gi, 'từ $1 đến $2');
+        str = str.replace(/ngày\s+(\d+)/gi, '$1');
+        str = str.replace(/mùng\s+(\d+)/gi, '$1');
+
+        // Giới từ vị trí
+        str = replaceVnPhrases(str, ['nằm ở', 'tọa lạc ở', 'tọa lạc tại', 'ở tại', 'ở trong', 'được đặt ở', 'được đặt tại'], 'ở');
+        str = replaceVnPhrases(str, ['ở tại', 'tại'], 'ở');
+        str = replaceVnPhrases(str, ['ở phía sau', 'phía sau', 'ở đằng sau', 'đằng sau', 'ở sau'], 'sau');
+        str = replaceVnPhrases(str, ['ở phía trước', 'phía trước', 'ở đằng trước', 'đằng trước', 'ở trước'], 'trước');
+        str = replaceVnPhrases(str, ['ở phía trên', 'phía trên', 'ở trên'], 'trên');
+        str = replaceVnPhrases(str, ['ở phía dưới', 'phía dưới', 'ở dưới', 'dưới gầm', 'ở dưới gầm'], 'dưới');
+        str = replaceVnPhrases(str, ['ngay ở giữa', 'ngay giữa', 'ở ngay giữa', 'nằm ngay giữa', 'ở giữa'], 'giữa');
+        str = replaceVnPhrases(str, ['ở ngay cạnh'], 'ngay cạnh');
+
+        // Từ vựng & cụm từ đồng nghĩa
+        str = replaceVnPhrases(str, ['căn tin', 'căng tin', 'canteen', 'quán ăn'], 'nhà ăn');
+        str = replaceVnPhrases(str, ['phòng hội nghị', 'phòng họp hội nghị'], 'phòng họp');
+        str = replaceVnPhrases(str, ['con gái của tôi', 'đứa con gái của tôi', 'đứa con gái tôi'], 'con gái tôi');
+        str = replaceVnPhrases(str, ['ông bà của chúng tôi', 'ông bà chúng tôi', 'ông bà của tôi', 'ông bà của chúng mình', 'ông bà chúng mình'], 'ông bà tôi');
+        str = replaceVnPhrases(str, ['bố mẹ của tôi', 'ba mẹ tôi', 'ba mẹ của tôi', 'cha mẹ tôi', 'cha mẹ của tôi'], 'bố mẹ tôi');
+        str = replaceVnPhrases(str, ['sinh vào ngày', 'sinh ngày', 'được sinh ra vào ngày', 'được sinh vào ngày', 'được sinh ngày', 'chào đời ngày', 'chào đời vào ngày', 'được sinh ra ngày', 'sinh ra', 'được sinh ra', 'được sinh', 'chào đời'], 'sinh');
+        str = replaceVnPhrases(str, ['sau giờ làm việc', 'sau khi tan làm', 'sau khi làm việc', 'sau ca làm', 'sau khi tan sở', 'sau tan làm', 'sau tan sở'], 'sau giờ làm');
+        str = replaceVnPhrases(str, ['không đi về nhà ngay', 'không về nhà liền', 'không đi về nhà liền', 'không về nhà lập tức', 'không lập tức về nhà'], 'không về nhà ngay');
+        str = replaceVnPhrases(str, ['gặp gỡ', 'hẹn gặp'], 'gặp');
+        str = replaceVnPhrases(str, ['những người bạn của tôi', 'bạn bè của mình', 'những người bạn tôi', 'bạn bè của tôi', 'bạn bè tôi', 'bạn của tôi'], 'bạn tôi');
+        str = replaceVnPhrases(str, ['phòng khám bác sĩ của chúng tôi', 'phòng khám của chúng tôi', 'phòng mạch của chúng tôi', 'phòng khám bác sĩ chúng tôi', 'phòng mạch chúng tôi', 'phòng khám chúng tôi'], 'phòng khám');
+        str = replaceVnPhrases(str, ['nghỉ đóng cửa', 'nghỉ làm việc', 'tạm đóng cửa', 'ngừng mở cửa', 'sẽ đóng cửa'], 'đóng cửa');
+        str = replaceVnPhrases(str, ['ở trong công viên', 'trong công viên'], 'ở công viên');
+        str = replaceVnPhrases(str, ['còn'], 'và');
+        str = replaceVnPhrases(str, ['bức ảnh', 'tấm ảnh', 'tấm hình', 'bức hình'], 'bức ảnh');
+        str = replaceVnPhrases(str, ['gia đình to'], 'gia đình lớn');
+        str = replaceVnPhrases(str, ['được treo trên tường', 'treo ở trên tường', 'treo trên bức tường', 'được treo trên bức tường'], 'treo trên tường');
+        str = replaceVnPhrases(str, ['ghế sô pha', 'sô pha', 'sofa'], 'ghế sofa');
+        str = replaceVnPhrases(str, ['chiếc ghế', 'cái ghế'], 'ghế');
+        str = replaceVnPhrases(str, ['chiếc bàn làm việc', 'cái bàn làm việc', 'bàn viết'], 'bàn làm việc');
+        str = replaceVnPhrases(str, ['chiếc bàn', 'cái bàn'], 'bàn');
+        str = replaceVnPhrases(str, ['con chuột máy tính', 'chuột máy tính', 'con chuột'], 'chuột');
+        str = replaceVnPhrases(str, ['tàu điện mặt đất', 'tàu điện trên mặt đất', 'xe điện mặt đất', 'xe điện', 'tàu điện'], 'tàu điện');
+        str = replaceVnPhrases(str, ['tàu điện đô thị', 'tàu s-bahn', 'tàu nhanh s-bahn', 'tàu s bahn', 's-bahn', 's bahn'], 'tàu điện nhanh');
+        str = replaceVnPhrases(str, ['tiệm cà phê', 'quán cafe', 'tiệm cafe'], 'quán cà phê');
+        str = replaceVnPhrases(str, ['tiệm sách', 'nhà sách'], 'hiệu sách');
+        str = replaceVnPhrases(str, ['rạp phim'], 'rạp chiếu phim');
+        str = replaceVnPhrases(str, ['ở quầy lễ tân', 'tại quầy lễ tân', 'ở lễ tân', 'tại lễ tân', 'ở bàn lễ tân', 'tại bàn tiếp tân'], 'ở quầy lễ tân');
+        str = replaceVnPhrases(str, ['ở chỗ bố mẹ tôi', 'ở nhà bố mẹ tôi', 'ở với bố mẹ tôi', 'với bố mẹ tôi', 'ở cùng bố mẹ tôi', 'tại nhà bố mẹ tôi'], 'ở nhà bố mẹ tôi');
+        str = replaceVnPhrases(str, ['đến chợ', 'đi chợ bằng', 'ra chợ bằng'], 'ra chợ');
+        str = replaceVnPhrases(str, ['đi bằng', 'đi'], 'đi');
+        str = replaceVnPhrases(str, ['vào cuối tuần'], 'cuối tuần');
+
+        return str.trim().replace(/\s+/g, ' ');
+    };
+
+    const uVn = normalizeVietnameseAnswer(userAns);
+    const cVn = normalizeVietnameseAnswer(correctAns);
+    if (uVn === cVn) return true;
+
+    // Không phân biệt có dấu / không dấu tiếng Việt
+    const uVnNoAcc = stripVnAccents(uVn);
+    const cVnNoAcc = stripVnAccents(cVn);
+    if (uVnNoAcc === cVnNoAcc) return true;
+
+    // Bỏ từ phụ "ở", "bằng", "với", "đi" ở đầu câu dịch cụm từ ngắn
+    const stripLeadingPrep = (s) => s.replace(/^(ở|tại|trong|bằng|với|đi)\s+/i, '');
+    if (stripLeadingPrep(uVn) === stripLeadingPrep(cVn)) return true;
+    if (stripLeadingPrep(uNo || uVnNoAcc) === stripLeadingPrep(cNo || cVnNoAcc)) return true;
+
+    // Hoán vị cặp danh từ nối bằng "và" (ví dụ: chuột và bàn phím <-> bàn phím và chuột)
+    if (uVn.includes(' và ') && cVn.includes(' và ')) {
+        const uParts = uVn.split(' và ').map(s => s.trim());
+        const cParts = cVn.split(' và ').map(s => s.trim());
+        if (uParts.length === 2 && cParts.length === 2) {
+            if (uParts[0] === cParts[1] && uParts[1] === cParts[0]) return true;
+        }
+    }
+    if (uVnNoAcc.includes(' va ') && cVnNoAcc.includes(' va ')) {
+        const uParts = uVnNoAcc.split(' va ').map(s => s.trim());
+        const cParts = cVnNoAcc.split(' va ').map(s => s.trim());
+        if (uParts.length === 2 && cParts.length === 2) {
+            if (uParts[0] === cParts[1] && uParts[1] === cParts[0]) return true;
+        }
+    }
+
     const normalizeVnPronouns = (s) => {
         const stripped = stripVnAccents(s);
         return stripped

@@ -1783,8 +1783,8 @@ def seed_lesson_6():
                 "type": "dich_nghia_dv",
                 "question": "Câu 46: Dịch sang tiếng Việt: „mit der S-Bahn“",
                 "options_json": null,
-                "correct_answer": "bằng tàu điện nhanh",
-                "explanation": "die S-Bahn (Stadtschnellbahn) là tàu điện nhanh đô thị; mit der S-Bahn = bằng tàu điện đô thị.",
+                "correct_answer": "bằng tàu điện nhanh / bằng tàu điện / bằng tàu S-Bahn / bằng tàu điện đô thị / đi bằng tàu điện nhanh",
+                "explanation": "die S-Bahn (Stadtschnellbahn) là tàu điện nhanh đô thị; mit der S-Bahn = bằng tàu điện nhanh / tàu điện đô thị.",
                 "exp_reward": 15,
                 "extra_data": {
                         "accepted_answers": [
@@ -1792,7 +1792,9 @@ def seed_lesson_6():
                                 "bằng tàu điện đô thị",
                                 "bằng tàu S-Bahn",
                                 "bằng tàu điện",
-                                "với tàu điện đô thị"
+                                "với tàu điện đô thị",
+                                "đi bằng tàu điện nhanh",
+                                "bằng tàu nhanh S-Bahn"
                         ],
                         "translation": "Dịch sang tiếng Việt: „mit der S-Bahn“ = bằng tàu điện nhanh"
                 }
@@ -1802,15 +1804,16 @@ def seed_lesson_6():
                 "type": "dich_nghia_dv",
                 "question": "Câu 47: Dịch sang tiếng Việt: „die Straßenbahn“",
                 "options_json": null,
-                "correct_answer": "tàu điện",
-                "explanation": "die Straßenbahn là tàu điện chạy trên đường phố (tàu điện mặt đất).",
+                "correct_answer": "tàu điện / xe điện / tàu điện mặt đất / tàu điện trên mặt đất / xe điện mặt đất",
+                "explanation": "die Straßenbahn là tàu điện chạy trên đường phố (tàu điện mặt đất / xe điện).",
                 "exp_reward": 15,
                 "extra_data": {
                         "accepted_answers": [
                                 "tàu điện",
                                 "tàu điện mặt đất",
                                 "xe điện",
-                                "tàu điện trên mặt đất"
+                                "tàu điện trên mặt đất",
+                                "xe điện mặt đất"
                         ],
                         "translation": "Dịch sang tiếng Việt: „die Straßenbahn“ = tàu điện"
                 }
@@ -1820,13 +1823,14 @@ def seed_lesson_6():
                 "type": "dich_nghia_dv",
                 "question": "Câu 48: Dịch sang tiếng Việt: „der Konferenzraum“",
                 "options_json": null,
-                "correct_answer": "phòng họp",
+                "correct_answer": "phòng họp / phòng hội nghị / phòng họp hội nghị",
                 "explanation": "der Konferenzraum (die Konferenz + der Raum) có nghĩa là phòng họp / phòng hội nghị.",
                 "exp_reward": 15,
                 "extra_data": {
                         "accepted_answers": [
                                 "phòng họp",
-                                "phòng hội nghị"
+                                "phòng hội nghị",
+                                "phòng họp hội nghị"
                         ],
                         "translation": "Dịch sang tiếng Việt: „der Konferenzraum“ = phòng họp"
                 }
@@ -1836,7 +1840,7 @@ def seed_lesson_6():
                 "type": "dich_nghia_dv",
                 "question": "Câu 49: Dịch sang tiếng Việt: „an der Rezeption“",
                 "options_json": null,
-                "correct_answer": "ở quầy lễ tân",
+                "correct_answer": "ở quầy lễ tân / tại quầy lễ tân / ở lễ tân / tại lễ tân / ở bàn tiếp tân / tại bàn lễ tân",
                 "explanation": "die Rezeption là quầy lễ tân; ở tại quầy lễ tân dùng giới từ an + Dativ → an der Rezeption.",
                 "exp_reward": 15,
                 "extra_data": {
@@ -1844,7 +1848,10 @@ def seed_lesson_6():
                                 "ở quầy lễ tân",
                                 "tại quầy lễ tân",
                                 "ở lễ tân",
-                                "tại bàn tiếp tân"
+                                "tại lễ tân",
+                                "ở bàn tiếp tân",
+                                "tại bàn tiếp tân",
+                                "tại bàn lễ tân"
                         ],
                         "translation": "Dịch sang tiếng Việt: „an der Rezeption“ = ở quầy lễ tân"
                 }
@@ -1854,13 +1861,17 @@ def seed_lesson_6():
                 "type": "dich_nghia_dv",
                 "question": "Câu 50: Dịch sang tiếng Việt: „zwischen dem Stuhl und dem Schreibtisch“",
                 "options_json": null,
-                "correct_answer": "ở giữa cái ghế và bàn làm việc",
+                "correct_answer": "ở giữa cái ghế và bàn làm việc / giữa cái ghế và bàn làm việc / ở giữa ghế và bàn làm việc / giữa ghế và bàn làm việc / giữa cái ghế và cái bàn làm việc / ở giữa cái ghế và cái bàn làm việc",
                 "explanation": "zwischen = ở giữa; der Stuhl = cái ghế; der Schreibtisch = bàn làm việc.",
                 "exp_reward": 15,
                 "extra_data": {
                         "accepted_answers": [
                                 "ở giữa cái ghế và bàn làm việc",
+                                "giữa cái ghế và bàn làm việc",
+                                "ở giữa ghế và bàn làm việc",
                                 "giữa ghế và bàn làm việc",
+                                "giữa cái ghế và cái bàn làm việc",
+                                "ở giữa cái ghế và cái bàn làm việc",
                                 "nằm giữa chiếc ghế và cái bàn làm việc",
                                 "ở giữa ghế và bàn viết"
                         ],
@@ -1872,15 +1883,19 @@ def seed_lesson_6():
                 "type": "dich_nghia_dv",
                 "question": "Câu 51: Dịch sang tiếng Việt: „hinter dem Bahnhof“",
                 "options_json": null,
-                "correct_answer": "ở phía sau nhà ga",
+                "correct_answer": "ở phía sau nhà ga / phía sau nhà ga / ở đằng sau nhà ga / đằng sau nhà ga / sau nhà ga / ở sau nhà ga",
                 "explanation": "Giới từ hinter có nghĩa là ở phía sau / đằng sau; der Bahnhof = nhà ga.",
                 "exp_reward": 15,
                 "extra_data": {
                         "accepted_answers": [
                                 "ở phía sau nhà ga",
                                 "phía sau nhà ga",
+                                "ở đằng sau nhà ga",
                                 "đằng sau nhà ga",
-                                "sau nhà ga"
+                                "sau nhà ga",
+                                "ở sau nhà ga",
+                                "phía sau ga tàu",
+                                "sau ga tàu"
                         ],
                         "translation": "Dịch sang tiếng Việt: „hinter dem Bahnhof“ = ở phía sau nhà ga"
                 }
@@ -1890,13 +1905,16 @@ def seed_lesson_6():
                 "type": "dich_nghia_dv",
                 "question": "Câu 52: Dịch sang tiếng Việt: „unter dem Tisch“",
                 "options_json": null,
-                "correct_answer": "dưới bàn",
+                "correct_answer": "dưới bàn / ở dưới bàn / dưới cái bàn / ở dưới cái bàn / phía dưới bàn / dưới gầm bàn / ở dưới gầm bàn",
                 "explanation": "Giới từ unter có nghĩa là ở phía dưới / dưới gầm.",
                 "exp_reward": 15,
                 "extra_data": {
                         "accepted_answers": [
                                 "dưới bàn",
                                 "ở dưới bàn",
+                                "dưới cái bàn",
+                                "ở dưới cái bàn",
+                                "phía dưới bàn",
                                 "dưới gầm bàn",
                                 "ở dưới gầm bàn",
                                 "phía dưới cái bàn"
@@ -1909,14 +1927,18 @@ def seed_lesson_6():
                 "type": "dich_nghia_dv",
                 "question": "Câu 53: Dịch sang tiếng Việt: „über dem Sofa“",
                 "options_json": null,
-                "correct_answer": "phía trên ghế sofa",
+                "correct_answer": "phía trên ghế sofa / ở phía trên ghế sofa / trên ghế sofa / ở trên ghế sofa / phía trên ghế sô pha / trên ghế sô pha",
                 "explanation": "Giới từ über chỉ vị trí ở phía trên cao hơn vật mốc (không tiếp xúc trực tiếp với bề mặt sofa).",
                 "exp_reward": 15,
                 "extra_data": {
                         "accepted_answers": [
                                 "phía trên ghế sofa",
                                 "ở phía trên ghế sofa",
-                                "trên ghế sofa (không tiếp xúc)",
+                                "trên ghế sofa",
+                                "ở trên ghế sofa",
+                                "phía trên ghế sô pha",
+                                "trên ghế sô pha",
+                                "ở phía trên ghế sô pha",
                                 "treo phía trên ghế sô pha"
                         ],
                         "translation": "Dịch sang tiếng Việt: „über dem Sofa“ = phía trên ghế sofa"
@@ -1927,7 +1949,7 @@ def seed_lesson_6():
                 "type": "dich_nghia_dv",
                 "question": "Câu 54: Dịch sang tiếng Việt: „bei meinen Eltern“",
                 "options_json": null,
-                "correct_answer": "ở chỗ bố mẹ tôi",
+                "correct_answer": "ở chỗ bố mẹ tôi / ở nhà bố mẹ tôi / ở với bố mẹ tôi / với bố mẹ tôi / ở chỗ cha mẹ tôi / ở chỗ ba mẹ tôi / ở cùng bố mẹ tôi",
                 "explanation": "Giới từ bei + người có nghĩa là ở tại nhà / chỗ của người đó (bei meinen Eltern = ở nhà bố mẹ tôi).",
                 "exp_reward": 15,
                 "extra_data": {
@@ -1935,7 +1957,11 @@ def seed_lesson_6():
                                 "ở chỗ bố mẹ tôi",
                                 "ở nhà bố mẹ tôi",
                                 "tại nhà bố mẹ tôi",
-                                "với bố mẹ tôi"
+                                "với bố mẹ tôi",
+                                "ở cùng bố mẹ tôi",
+                                "ở chỗ cha mẹ tôi",
+                                "ở nhà ba mẹ tôi",
+                                "ở chỗ ba mẹ tôi"
                         ],
                         "translation": "Dịch sang tiếng Việt: „bei meinen Eltern“ = ở chỗ bố mẹ tôi"
                 }
@@ -1945,7 +1971,7 @@ def seed_lesson_6():
                 "type": "dich_nghia_dv",
                 "question": "Câu 55: Dịch sang tiếng Việt: „am einundzwanzigsten Juni“",
                 "options_json": null,
-                "correct_answer": "vào ngày 21 tháng 6",
+                "correct_answer": "vào ngày 21 tháng 6 / ngày 21 tháng 6 / vào ngày 21 tháng Sáu / ngày 21 tháng Sáu / ngày 21/6 / vào ngày 21/6 / 21/6",
                 "explanation": "einundzwanzigsten là số thứ tự 21. ở Cách 3 (Dativ) sau giới từ am; Juni = tháng Sáu.",
                 "exp_reward": 15,
                 "extra_data": {
@@ -1953,7 +1979,10 @@ def seed_lesson_6():
                                 "vào ngày 21 tháng 6",
                                 "vào ngày 21 tháng Sáu",
                                 "ngày 21 tháng 6",
+                                "ngày 21 tháng Sáu",
                                 "ngày 21/6",
+                                "21/6",
+                                "vào ngày 21/6",
                                 "vào ngày hai mươi mốt tháng Sáu"
                         ],
                         "translation": "Dịch sang tiếng Việt: „am einundzwanzigsten Juni“ = vào ngày 21 tháng 6"
@@ -1964,15 +1993,18 @@ def seed_lesson_6():
                 "type": "dich_nghia_dv",
                 "question": "Câu 56: Dịch sang tiếng Việt: „vom dritten bis zum zehnten August“",
                 "options_json": null,
-                "correct_answer": "từ ngày 3 đến ngày 10 tháng 8",
+                "correct_answer": "từ ngày 3 đến ngày 10 tháng 8 / từ ngày mùng 3 đến ngày 10 tháng 8 / từ ngày 3 đến 10 tháng 8 / từ 3 đến 10 tháng 8 / từ ngày 3 đến ngày 10 tháng Tám / từ 3/8 đến 10/8",
                 "explanation": "vom ... bis zum ... = từ ngày ... đến ngày ...; dritten = ngày 3; zehnten = ngày 10; August = tháng Tám.",
                 "exp_reward": 15,
                 "extra_data": {
                         "accepted_answers": [
                                 "từ ngày 3 đến ngày 10 tháng 8",
+                                "từ ngày mùng 3 đến ngày 10 tháng 8",
                                 "từ ngày mùng 3 đến ngày 10 tháng Tám",
+                                "từ ngày 3 đến 10 tháng 8",
+                                "từ 3 đến 10 tháng 8",
                                 "từ 3/8 đến 10/8",
-                                "từ ngày 3 đến 10 tháng 8"
+                                "từ ngày 3/8 đến 10/8"
                         ],
                         "translation": "Dịch sang tiếng Việt: „vom dritten bis zum zehnten August“ = từ ngày 3 đến ngày 10 tháng 8"
                 }
@@ -1982,12 +2014,15 @@ def seed_lesson_6():
                 "type": "dich_nghia_dv",
                 "question": "Câu 57: Dịch sang tiếng Việt: „die Tastatur und die Maus“",
                 "options_json": null,
-                "correct_answer": "bàn phím và chuột",
+                "correct_answer": "bàn phím và chuột / bàn phím và con chuột / chuột và bàn phím / con chuột và bàn phím / bàn phím và chuột máy tính",
                 "explanation": "die Tastatur = bàn phím máy tính; die Maus = con chuột máy tính.",
                 "exp_reward": 15,
                 "extra_data": {
                         "accepted_answers": [
                                 "bàn phím và chuột",
+                                "bàn phím và con chuột",
+                                "chuột và bàn phím",
+                                "con chuột và bàn phím",
                                 "bàn phím và con chuột máy tính",
                                 "bàn phím và chuột máy tính"
                         ],
@@ -2749,15 +2784,19 @@ def seed_lesson_6():
                 "type": "dich_cau_dv",
                 "question": "Câu 94: Dịch câu sau sang tiếng Việt: „Am Wochenende fahren unsere Großeltern mit der Straßenbahn zum Markt.“",
                 "options_json": null,
-                "correct_answer": "Vào cuối tuần ông bà của chúng tôi đi bằng tàu điện ra chợ / Cuối tuần ông bà chúng tôi đi chợ bằng tàu điện mặt đất / Vào cuối tuần ông bà tôi đi bằng tàu điện mặt đất đến chợ / Cuối tuần ông bà của chúng mình đi tàu điện ra chợ",
-                "explanation": "unsere Großeltern = ông bà của chúng tôi; mit der Straßenbahn = bằng tàu điện mặt đất; zum Markt = ra chợ / đến chợ.",
+                "correct_answer": "Vào cuối tuần ông bà của chúng tôi đi bằng tàu điện ra chợ / Cuối tuần ông bà chúng tôi đi chợ bằng tàu điện mặt đất / Vào cuối tuần ông bà tôi đi bằng tàu điện mặt đất đến chợ / Cuối tuần ông bà của chúng mình đi tàu điện ra chợ / Cuối tuần ông bà tôi đi tàu điện ra chợ / Cuối tuần ông bà của chúng tôi đi xe điện ra chợ / Vào cuối tuần ông bà của tôi đi xe điện đến chợ",
+                "explanation": "unsere Großeltern = ông bà của chúng tôi; mit der Straßenbahn = bằng tàu điện mặt đất / xe điện; zum Markt = ra chợ / đến chợ.",
                 "exp_reward": 25,
                 "extra_data": {
                         "accepted_answers": [
                                 "Vào cuối tuần ông bà của chúng tôi đi bằng tàu điện ra chợ",
                                 "Cuối tuần ông bà chúng tôi đi chợ bằng tàu điện mặt đất",
                                 "Vào cuối tuần ông bà tôi đi bằng tàu điện mặt đất đến chợ",
-                                "Cuối tuần ông bà của chúng mình đi tàu điện ra chợ"
+                                "Cuối tuần ông bà của chúng mình đi tàu điện ra chợ",
+                                "Cuối tuần ông bà tôi đi tàu điện ra chợ",
+                                "Cuối tuần ông bà của chúng tôi đi xe điện ra chợ",
+                                "Vào cuối tuần ông bà của tôi đi xe điện đến chợ",
+                                "Cuối tuần ông bà chúng tôi đi xe điện ra chợ"
                         ],
                         "translation": "Dịch câu sau sang tiếng Việt: „Am Wochenende fahren unsere Großeltern mit der Straßenbahn zum Markt.“"
                 }
@@ -2767,14 +2806,19 @@ def seed_lesson_6():
                 "type": "dich_cau_dv",
                 "question": "Câu 95: Dịch câu sau sang tiếng Việt: „Das Café liegt direkt zwischen der Buchhandlung und dem Kino.“",
                 "options_json": null,
-                "correct_answer": "Quán cà phê nằm ngay giữa hiệu sách và rạp chiếu phim / Quán cà phê ở ngay giữa tiệm sách và rạp chiếu phim / Quán cà phê nằm ở giữa hiệu sách và rạp phim",
+                "correct_answer": "Quán cà phê nằm ngay giữa hiệu sách và rạp chiếu phim / Quán cà phê ở ngay giữa tiệm sách và rạp chiếu phim / Quán cà phê nằm ở giữa hiệu sách và rạp phim / Quán cà phê ở giữa hiệu sách và rạp chiếu phim / Tiệm cà phê nằm ở giữa hiệu sách và rạp phim / Quán cafe nằm ngay giữa nhà sách và rạp phim / Quán cà phê nằm giữa tiệm sách và rạp phim",
                 "explanation": "zwischen der Buchhandlung und dem Kino = ở giữa hiệu sách và rạp chiếu phim.",
                 "exp_reward": 25,
                 "extra_data": {
                         "accepted_answers": [
                                 "Quán cà phê nằm ngay giữa hiệu sách và rạp chiếu phim",
                                 "Quán cà phê ở ngay giữa tiệm sách và rạp chiếu phim",
-                                "Quán cà phê nằm ở giữa hiệu sách và rạp phim"
+                                "Quán cà phê nằm ở giữa hiệu sách và rạp phim",
+                                "Quán cà phê ở giữa hiệu sách và rạp chiếu phim",
+                                "Tiệm cà phê nằm ở giữa hiệu sách và rạp phim",
+                                "Quán cafe nằm ngay giữa nhà sách và rạp phim",
+                                "Quán cà phê nằm giữa tiệm sách và rạp phim",
+                                "Quán cafe ở giữa hiệu sách và rạp phim"
                         ],
                         "translation": "Dịch câu sau sang tiếng Việt: „Das Café liegt direkt zwischen der Buchhandlung und dem Kino.“"
                 }
@@ -2784,14 +2828,19 @@ def seed_lesson_6():
                 "type": "dich_cau_dv",
                 "question": "Câu 96: Dịch câu sau sang tiếng Việt: „Die Kantine befindet sich im Erdgeschoss und der Konferenzraum ist im siebten Stock.“",
                 "options_json": null,
-                "correct_answer": "Nhà ăn nằm ở tầng trệt và phòng họp ở tầng bảy / Căn tin ở tầng trệt còn phòng họp nằm ở tầng 7 / Nhà ăn ở tầng trệt và phòng hội nghị nằm ở tầng bảy",
-                "explanation": "die Kantine = nhà ăn / căng tin; im Erdgeschoss = ở tầng trệt; im siebten Stock = ở tầng bảy.",
+                "correct_answer": "Căn tin ở tầng trệt và phòng họp nằm ở tầng 7 / Nhà ăn nằm ở tầng trệt và phòng họp ở tầng bảy / Căn tin ở tầng trệt còn phòng họp nằm ở tầng 7 / Nhà ăn ở tầng trệt và phòng hội nghị nằm ở tầng bảy / Căn tin nằm ở tầng trệt và phòng họp ở tầng 7 / Căng tin ở tầng trệt và phòng họp ở tầng 7 / Nhà ăn ở tầng trệt và phòng họp nằm ở tầng 7",
+                "explanation": "die Kantine = nhà ăn / căng tin / căn tin; im Erdgeschoss = ở tầng trệt; im siebten Stock = ở tầng bảy / tầng 7.",
                 "exp_reward": 25,
                 "extra_data": {
                         "accepted_answers": [
+                                "Căn tin ở tầng trệt và phòng họp nằm ở tầng 7",
                                 "Nhà ăn nằm ở tầng trệt và phòng họp ở tầng bảy",
                                 "Căn tin ở tầng trệt còn phòng họp nằm ở tầng 7",
-                                "Nhà ăn ở tầng trệt và phòng hội nghị nằm ở tầng bảy"
+                                "Nhà ăn ở tầng trệt và phòng hội nghị nằm ở tầng bảy",
+                                "Căn tin nằm ở tầng trệt và phòng họp ở tầng 7",
+                                "Căng tin ở tầng trệt và phòng họp ở tầng 7",
+                                "Nhà ăn ở tầng trệt và phòng họp nằm ở tầng 7",
+                                "Căn tin ở tầng trệt và phòng họp ở tầng 7"
                         ],
                         "translation": "Dịch câu sau sang tiếng Việt: „Die Kantine befindet sich im Erdgeschoss und der Konferenzraum ist im siebten Stock.“"
                 }
@@ -2801,15 +2850,20 @@ def seed_lesson_6():
                 "type": "dich_cau_dv",
                 "question": "Câu 97: Dịch câu sau sang tiếng Việt: „Meine Tochter ist am dritten Oktober zweitausendzwei in Berlin geboren.“",
                 "options_json": null,
-                "correct_answer": "Con gái tôi sinh vào ngày mùng 3 tháng 10 năm 2002 tại Berlin / Con gái của tôi sinh ngày 3 tháng 10 năm 2002 ở Berlin / Con gái tôi sinh ngày 3/10/2002 ở Berlin / Con gái tôi sinh vào ngày ba tháng Mười năm 2002 tại Berlin",
+                "correct_answer": "Con gái tôi sinh vào ngày 3 tháng 10 năm 2002 ở Berlin / Con gái tôi sinh vào ngày mùng 3 tháng 10 năm 2002 tại Berlin / Con gái của tôi sinh ngày 3 tháng 10 năm 2002 ở Berlin / Con gái tôi sinh ngày 3/10/2002 ở Berlin / Con gái tôi sinh ngày 3 tháng 10 năm 2002 ở Berlin / Con gái tôi sinh vào ngày 3 tháng 10 năm 2002 tại Berlin / Con gái tôi sinh vào ngày ba tháng Mười năm 2002 tại Berlin / Con gái tôi sinh ngày 3 tháng 10 năm 2002 tại Berlin",
                 "explanation": "am dritten Oktober zweitausendzwei = vào ngày 3 tháng 10 năm 2002; ist ... geboren = sinh ra.",
                 "exp_reward": 25,
                 "extra_data": {
                         "accepted_answers": [
+                                "Con gái tôi sinh vào ngày 3 tháng 10 năm 2002 ở Berlin",
                                 "Con gái tôi sinh vào ngày mùng 3 tháng 10 năm 2002 tại Berlin",
                                 "Con gái của tôi sinh ngày 3 tháng 10 năm 2002 ở Berlin",
                                 "Con gái tôi sinh ngày 3/10/2002 ở Berlin",
-                                "Con gái tôi sinh vào ngày ba tháng Mười năm 2002 tại Berlin"
+                                "Con gái tôi sinh ngày 3 tháng 10 năm 2002 ở Berlin",
+                                "Con gái tôi sinh vào ngày 3 tháng 10 năm 2002 tại Berlin",
+                                "Con gái tôi sinh vào ngày ba tháng Mười năm 2002 tại Berlin",
+                                "Con gái tôi sinh ngày 3 tháng 10 năm 2002 tại Berlin",
+                                "con gái tôi sinh vào ngày 3 tháng 10 năm 2002 ở berlin"
                         ],
                         "translation": "Dịch câu sau sang tiếng Việt: „Meine Tochter ist am dritten Oktober zweitausendzwei in Berlin geboren.“"
                 }
@@ -2819,16 +2873,20 @@ def seed_lesson_6():
                 "type": "dich_cau_dv",
                 "question": "Câu 98: Dịch câu sau sang tiếng Việt: „Nach der Arbeit gehe ich nicht sofort nach Hause, sondern ich treffe mich mit meinen Freunden im Park.“",
                 "options_json": null,
-                "correct_answer": "Sau giờ làm việc tôi không đi về nhà ngay mà tôi gặp gỡ những người bạn của tôi ở trong công viên / Sau khi tan làm tôi không về nhà ngay mà hẹn gặp bạn bè của mình trong công viên / Sau giờ làm tôi không về nhà liền mà gặp những người bạn của tôi ở công viên",
-                "explanation": "Nach der Arbeit = sau giờ làm việc; nach Hause gehen = đi về nhà; mit meinen Freunden = với những người bạn của tôi (Dativ số nhiều); im Park = ở trong công viên.",
+                "correct_answer": "Sau giờ làm việc tôi không về nhà ngay mà tôi gặp gỡ những người bạn của tôi ở công viên / Sau giờ làm việc tôi không đi về nhà ngay mà tôi gặp gỡ những người bạn của tôi ở trong công viên / Sau khi tan làm tôi không về nhà ngay mà hẹn gặp bạn bè của mình trong công viên / Sau giờ làm tôi không về nhà liền mà gặp những người bạn của tôi ở công viên / Sau giờ làm việc tôi không về nhà ngay mà gặp bạn bè ở công viên / Sau giờ làm tôi không về nhà ngay mà gặp gỡ bạn bè của tôi ở công viên",
+                "explanation": "Nach der Arbeit = sau giờ làm việc / sau giờ làm; nach Hause gehen = đi về nhà; mit meinen Freunden = với những người bạn của tôi (Dativ số nhiều); im Park = ở công viên / trong công viên.",
                 "exp_reward": 25,
                 "extra_data": {
                         "accepted_answers": [
+                                "Sau giờ làm việc tôi không về nhà ngay mà tôi gặp gỡ những người bạn của tôi ở công viên",
                                 "Sau giờ làm việc tôi không đi về nhà ngay mà tôi gặp gỡ những người bạn của tôi ở trong công viên",
                                 "Sau khi tan làm tôi không về nhà ngay mà hẹn gặp bạn bè của mình trong công viên",
-                                "Sau giờ làm tôi không về nhà liền mà gặp những người bạn của tôi ở công viên"
+                                "Sau giờ làm tôi không về nhà liền mà gặp những người bạn của tôi ở công viên",
+                                "Sau giờ làm việc tôi không về nhà ngay mà gặp bạn bè ở công viên",
+                                "Sau giờ làm tôi không về nhà ngay mà gặp gỡ bạn bè của tôi ở công viên",
+                                "sau giờ làm việc tôi không về nhà ngay mà tôi gặp gỡ những người bạn của tôi ở công viên"
                         ],
-                        "translation": "Dịch câu sau sang tiếng Việt: „Nach der Arbeit gehe ich nicht sofort nach Hause, sondern ich treffe mich mit meinen Freunden im Park.“"
+                        "translation": "Dịch câu sau sang tiếng Việt: „Nach der Arbeit gehe ich không sofort nach Hause, sondern ich treffe mich mit meinen Freunden im Park.“"
                 }
         },
         {
@@ -2836,14 +2894,17 @@ def seed_lesson_6():
                 "type": "dich_cau_dv",
                 "question": "Câu 99: Dịch câu sau sang tiếng Việt: „Das große Familienfoto hängt an der Wand über dem Sofa.“",
                 "options_json": null,
-                "correct_answer": "Bức ảnh gia đình lớn treo trên tường phía trên ghế sofa / Tấm ảnh gia đình lớn được treo ở trên tường phía trên ghế sô pha / Bức ảnh gia đình to treo trên bức tường phía trên ghế sofa",
+                "correct_answer": "Bức ảnh gia đình lớn treo trên tường phía trên ghế sofa / Tấm ảnh gia đình lớn được treo ở trên tường phía trên ghế sô pha / Bức ảnh gia đình to treo trên bức tường phía trên ghế sofa / Bức ảnh gia đình lớn treo ở trên tường phía trên ghế sofa / Tấm hình gia đình lớn treo trên tường phía trên ghế sofa / Bức ảnh gia đình to treo trên tường phía trên ghế sofa",
                 "explanation": "an der Wand = trên tường (tiếp xúc mặt đứng); über dem Sofa = phía trên ghế sofa (không tiếp xúc).",
                 "exp_reward": 25,
                 "extra_data": {
                         "accepted_answers": [
                                 "Bức ảnh gia đình lớn treo trên tường phía trên ghế sofa",
                                 "Tấm ảnh gia đình lớn được treo ở trên tường phía trên ghế sô pha",
-                                "Bức ảnh gia đình to treo trên bức tường phía trên ghế sofa"
+                                "Bức ảnh gia đình to treo trên bức tường phía trên ghế sofa",
+                                "Bức ảnh gia đình lớn treo ở trên tường phía trên ghế sofa",
+                                "Tấm hình gia đình lớn treo trên tường phía trên ghế sofa",
+                                "Bức ảnh gia đình to treo trên tường phía trên ghế sofa"
                         ],
                         "translation": "Dịch câu sau sang tiếng Việt: „Das große Familienfoto hängt an der Wand über dem Sofa.“"
                 }
@@ -2853,14 +2914,18 @@ def seed_lesson_6():
                 "type": "dich_cau_dv",
                 "question": "Câu 100: Dịch câu sau sang tiếng Việt: „Vom ersten bis zum vierzehnten Juli bleibt unsere Arztpraxis geschlossen.“",
                 "options_json": null,
-                "correct_answer": "Từ ngày mùng 1 đến ngày 14 tháng 7 phòng khám bác sĩ của chúng tôi đóng cửa / Từ ngày 1 đến ngày 14 tháng Bảy phòng khám của chúng tôi đóng cửa / Từ 1/7 đến 14/7 phòng mạch của chúng tôi nghỉ đóng cửa",
-                "explanation": "Vom ersten bis zum vierzehnten Juli = từ ngày 1 đến ngày 14 tháng 7; die Arztpraxis = phòng khám bác sĩ.",
+                "correct_answer": "Từ ngày 1 đến ngày 14 tháng 7 phòng khám của chúng tôi đóng cửa / Từ ngày mùng 1 đến ngày 14 tháng 7 phòng khám bác sĩ của chúng tôi đóng cửa / Từ ngày 1 đến ngày 14 tháng Bảy phòng khám của chúng tôi đóng cửa / Từ ngày 1 đến ngày 14 tháng 7 phòng khám chúng tôi đóng cửa / Từ 1/7 đến 14/7 phòng mạch của chúng tôi nghỉ đóng cửa / Từ ngày 1 đến 14 tháng 7 phòng khám của chúng tôi đóng cửa / Từ ngày mùng 1 đến ngày 14 tháng 7 phòng khám của chúng tôi đóng cửa",
+                "explanation": "Vom ersten bis zum vierzehnten Juli = từ ngày 1 đến ngày 14 tháng 7; die Arztpraxis = phòng khám bác sĩ / phòng khám.",
                 "exp_reward": 25,
                 "extra_data": {
                         "accepted_answers": [
+                                "Từ ngày 1 đến ngày 14 tháng 7 phòng khám của chúng tôi đóng cửa",
                                 "Từ ngày mùng 1 đến ngày 14 tháng 7 phòng khám bác sĩ của chúng tôi đóng cửa",
                                 "Từ ngày 1 đến ngày 14 tháng Bảy phòng khám của chúng tôi đóng cửa",
-                                "Từ 1/7 đến 14/7 phòng mạch của chúng tôi nghỉ đóng cửa"
+                                "Từ ngày 1 đến ngày 14 tháng 7 phòng khám chúng tôi đóng cửa",
+                                "Từ 1/7 đến 14/7 phòng mạch của chúng tôi nghỉ đóng cửa",
+                                "Từ ngày 1 đến 14 tháng 7 phòng khám của chúng tôi đóng cửa",
+                                "Từ ngày mùng 1 đến ngày 14 tháng 7 phòng khám của chúng tôi đóng cửa"
                         ],
                         "translation": "Dịch câu sau sang tiếng Việt: „Vom ersten bis zum vierzehnten Juli bleibt unsere Arztpraxis geschlossen.“"
                 }
