@@ -2382,7 +2382,7 @@ def seed_lesson_6():
         {
                 "q_num": 71,
                 "type": "dien_tao_cau",
-                "question": "Câu 71: Điền 2 từ còn thiếu vào các chỗ trống (ngăn cách bởi dấu /): 'Heute ist der ___ Mai, und morgen am ___ Mai fliegen wir nach Italien.'",
+                "question": "Câu 71: Điền dạng chữ của số thứ tự cho ngày 1. và ngày 2. vào các chỗ trống (ngăn cách bởi dấu /): 'Heute ist der ___ (1.) Mai, und morgen am ___ (2.) Mai fliegen wir nach Italien.'",
                 "options_json": null,
                 "correct_answer": "erste / zweiten",
                 "explanation": "Sau Heute ist der ... (Nominativ) dùng đuôi -te (erste); sau am (Dativ) dùng đuôi -ten (zweiten).",
@@ -2390,7 +2390,16 @@ def seed_lesson_6():
                 "extra_data": {
                         "accepted_answers": [
                                 "erste / zweiten",
-                                "erste/zweiten"
+                                "erste/zweiten",
+                                "Erste / Zweiten",
+                                "erste / zweite",
+                                "erste/zweite",
+                                "1. / 2.",
+                                "1./2.",
+                                "1 / 2",
+                                "1/2",
+                                "erste / 2.",
+                                "1. / zweiten"
                         ],
                         "translation": "„Hôm nay là ngày mùng 1 tháng Năm, và ngày mai vào ngày mùng 2 tháng Năm chúng tôi bay sang Ý."
                 }
@@ -2398,7 +2407,7 @@ def seed_lesson_6():
         {
                 "q_num": 72,
                 "type": "dien_tao_cau",
-                "question": "Câu 72: Điền 2 từ còn thiếu vào các chỗ trống (ngăn cách bởi dấu /): 'Am Sonntag spielen die Kinder ___ Park mit ihren ___.'",
+                "question": "Câu 72: Điền 2 từ còn thiếu vào các chỗ trống (ngăn cách bởi dấu /): 'Am Sonntag spielen die Kinder ___ Park mit ihren ___ (Freunde).'",
                 "options_json": null,
                 "correct_answer": "im / Freunden",
                 "explanation": "Trong công viên (der Park) là im Park; danh từ số nhiều Freunde ở Cách 3 (Dativ) sau mit ihren bắt buộc thêm -n thành Freunden.",
@@ -2406,7 +2415,9 @@ def seed_lesson_6():
                 "extra_data": {
                         "accepted_answers": [
                                 "im / Freunden",
-                                "im/Freunden"
+                                "im/Freunden",
+                                "Im / Freunden",
+                                "im / freunden"
                         ],
                         "translation": "„Vào Chủ nhật bọn trẻ chơi ở trong công viên với những người bạn của chúng."
                 }
@@ -2414,7 +2425,7 @@ def seed_lesson_6():
         {
                 "q_num": 73,
                 "type": "dien_tao_cau",
-                "question": "Câu 73: Điền 2 từ còn thiếu vào các chỗ trống (ngăn cách bởi dấu /): 'Habt ihr vom ___ bis zum ___ August Urlaub?'",
+                "question": "Câu 73: Điền dạng chữ của số thứ tự cho ngày 7. và ngày 20. vào các chỗ trống (ngăn cách bởi dấu /): 'Habt ihr vom ___ (7.) bis zum ___ (20.) August Urlaub?'",
                 "options_json": null,
                 "correct_answer": "siebten / zwanzigsten",
                 "explanation": "Cả hai vị trí sau vom và bis zum đều chia ở Dativ: 7. -> siebten, 20. -> zwanzigsten.",
@@ -2422,7 +2433,16 @@ def seed_lesson_6():
                 "extra_data": {
                         "accepted_answers": [
                                 "siebten / zwanzigsten",
-                                "siebten/zwanzigsten"
+                                "siebten/zwanzigsten",
+                                "Siebten / Zwanzigsten",
+                                "siebte / zwanzigste",
+                                "siebte/zwanzigste",
+                                "7. / 20.",
+                                "7./20.",
+                                "7 / 20",
+                                "7/20",
+                                "siebten / 20.",
+                                "7. / zwanzigsten"
                         ],
                         "translation": "„Các bạn có kỳ nghỉ từ ngày mùng 7 đến ngày 20 tháng Tám phải không?"
                 }
