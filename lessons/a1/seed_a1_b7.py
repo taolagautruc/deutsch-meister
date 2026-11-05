@@ -228,7 +228,7 @@ def seed_lesson_7():
                     <span>🗣️</span> 1.3. Ba Mẫu Câu Hỏi & Ba Cách Trả Lời Nghề Nghiệp Chuẩn Ngữ Pháp
                 </h5>
                 <div class="p-3 rounded-xl bg-rose-50 border border-rose-200 text-xs text-rose-800">
-                    ⚠️ <b>LƯU Ý CỐT LÕI:</b> Khi nói nghề nghiệp với cấu trúc <code>sein + [Nghề]</code> hoặc <code>arbeiten als + [Nghề]</code>, <b>TUYỆT ĐỐI KHÔNG DÙNG MẠO TỪ ein/eine</b>! Nói: <i>„Ich bin Lehrer.“</i> hoặc <i>„Ich arbeite als Programmierer.“</i> (Không nói: <i>„Ich bin ein Lehrer.“</i>).
+                    ⚠️ <b>LƯU Ý CỐT LÕI:</b> Khi chỉ nói tên nghề nghiệp với cấu trúc <code>sein + [Nghề]</code> hoặc <code>arbeiten als + [Nghề]</code>, <b>không dùng mạo từ ein/eine</b>: <i>„Ich bin Lehrer.“</i> hoặc <i>„Ich arbeite als Programmierer.“</i> (Không nói: <i>„Ich bin ein Lehrer.“</i>). <b>Ngoại lệ bắt buộc:</b> Nếu có tính từ đi kèm bổ nghĩa cho nghề thì <b>phải dùng mạo từ</b>: <i>„Sie ist eine gute Ärztin.“</i>, <i>„Frau Becker ist eine erfahrene Taxifahrerin.“</i>, <i>„Anna ist eine fleißige Schülerin.“</i>
                 </div>
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-3 text-xs sm:text-sm">
                     <div class="p-3 rounded-xl bg-slate-50 border border-slate-200 space-y-1">
@@ -445,7 +445,7 @@ def seed_lesson_7():
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-xs sm:text-sm">
                     <div class="p-4 rounded-2xl bg-slate-50 border border-slate-200 space-y-2">
                         <span class="font-bold text-indigo-700">LUÔN ĐI VỚI AKKUSATIV (FUDGE-BO):</span>
-                        <p class="text-slate-700"><b>für</b> (cho), <b>ohne</b> (không có), <b>durch</b> (xuyên qua), <b>um</b> (xung quanh/vào lúc), <b>gegen</b> (chống lại/khoảng).</p>
+                        <p class="text-slate-700"><b>F</b>ür (cho), <b>U</b>m (vào lúc/xung quanh), <b>D</b>urch (xuyên qua), <b>G</b>egen (khoảng/chống lại), <b>E</b>ntlang (dọc theo), <b>B</b>is (cho đến), <b>O</b>hne (không có).</p>
                         <p class="text-emerald-700"><i>„Das Telefon ist wichtig <b>für <u>sie</u></b> / <b>für <u>den</u> Chef</b>.“</i></p>
                     </div>
                     <div class="p-4 rounded-2xl bg-slate-50 border border-slate-200 space-y-2">
@@ -1288,53 +1288,53 @@ def seed_lesson_7():
     raw_exercises = [
         {
                 "type": "trac_nghiem",
-                "question": "Câu 1: Chọn phương án đúng để hoàn thành cuộc hội thoại: 'Was machen Sie beruflich, Frau Lindner? — Ich arbeite ___ Programmiererin bei einer IT-Firma.'",
+                "question": "Câu 1: Chọn phương án đúng hoàn thành câu giới thiệu nghề nghiệp: 'Herr Hoffmann arbeitet seit drei Jahren ___ Mechatroniker in München.'",
                 "options": [
-                        "wie eine",
+                        "wie ein",
                         "als",
                         "von",
                         "für"
                 ],
                 "correct_answer": "als",
-                "explanation": "Khi dùng động từ 'arbeiten' để giới thiệu nghề nghiệp, tiếng Đức dùng giới từ 'als' + danh từ nghề nghiệp không có mạo từ (Ich arbeite als Programmiererin).",
+                "explanation": "Khi dùng động từ 'arbeiten' để giới thiệu nghề nghiệp, tiếng Đức dùng cấu trúc 'arbeiten als + [Nghề nghiệp]' không có mạo từ (Herr Hoffmann arbeitet als Mechatroniker).",
                 "exp_reward": 15,
                 "extra_data": {
                         "accepted_answers": [
                                 "als"
                         ],
-                        "translation": "Công việc chuyên môn của bà là gì, thưa bà Lindner? — Tôi làm nghề lập trình viên tại một công ty công nghệ thông tin."
+                        "translation": "Ông Hoffmann làm nghề thợ cơ khí ở Munich từ ba năm nay."
                 }
         },
         {
                 "type": "trac_nghiem",
-                "question": "Câu 2: Chọn câu đúng ngữ pháp tiếng Đức khi giới thiệu nghề nghiệp của anh trai:",
+                "question": "Câu 2: Chọn câu đúng ngữ pháp tiếng Đức khi miêu tả nghề nghiệp có tính từ đi kèm:",
                 "options": [
-                        "Mein Bruder ist einen Lehrer von Beruf.",
-                        "Mein Bruder ist Lehrer von Beruf.",
-                        "Mein Bruder arbeitet von Beruf Lehrer.",
-                        "Mein Bruder ist der Lehrer beruflich."
+                        "Frau Schneider ist sehr fleißige Verkäuferin.",
+                        "Frau Schneider ist eine sehr fleißige Verkäuferin.",
+                        "Frau Schneider arbeitet als eine Verkäuferin.",
+                        "Frau Schneider ist einer fleißige Verkäuferin."
                 ],
-                "correct_answer": "Mein Bruder ist Lehrer von Beruf.",
-                "explanation": "Với cấu trúc '[Chủ ngữ] + sein + [Nghề nghiệp] + von Beruf', danh từ chỉ nghề nghiệp đứng một mình không dùng mạo từ ein/einen.",
+                "correct_answer": "Frau Schneider ist eine sehr fleißige Verkäuferin.",
+                "explanation": "Quy tắc nghề nghiệp: Bình thường nói tên nghề không dùng mạo từ (Sie ist Verkäuferin), nhưng khi có tính từ bổ nghĩa (sehr fleißige) thì BẮT BUỘC phải dùng mạo từ không xác định (eine sehr fleißige Verkäuferin).",
                 "exp_reward": 15,
                 "extra_data": {
                         "accepted_answers": [
-                                "Mein Bruder ist Lehrer von Beruf."
+                                "Frau Schneider ist eine sehr fleißige Verkäuferin."
                         ],
-                        "translation": "Anh trai tôi làm nghề giáo viên."
+                        "translation": "Bà Schneider là một nữ nhân viên bán hàng rất chăm chỉ."
                 }
         },
         {
                 "type": "trac_nghiem",
                 "question": "Câu 3: Cặp danh từ nghề nghiệp Nam – Nữ nào dưới đây được viết ĐÚNG CHÍNH TẢ 100%?",
                 "options": [
-                        "der Koch -> die Kochin / der Arzt -> die Arztin",
-                        "der Koch -> die Köchin / der Arzt -> die Ärztin",
+                        "der Hausmann -> die Hausmännerin / der Krankenpfleger -> die Krankenpfleger",
                         "der Koch -> die Köcherin / der Arzt -> die Ärztinn",
-                        "der Hausmann -> die Hausmännin / der Krankenpfleger -> die Krankenpfleger"
+                        "der Koch -> die Köchin / der Arzt -> die Ärztin",
+                        "der Koch -> die Kochin / der Arzt -> die Arztin"
                 ],
                 "correct_answer": "der Koch -> die Köchin / der Arzt -> die Ärztin",
-                "explanation": "Hai danh từ der Koch và der Arzt khi chuyển sang giống cái (Femininum) vừa thêm hậu tố -in vừa phải thêm dấu Umlaut trên nguyên âm gốc: die Köchin và die Ärztin.",
+                "explanation": "Hai danh từ der Koch và der Arzt khi chuyển sang giống cái (Femininum) vừa thêm hậu tố -in vừa phải thêm dấu Umlaut trên nguyên âm gốc: die Köchin và die Ärztin. Phương án D thiếu dấu Umlaut là sai chính tả.",
                 "exp_reward": 15,
                 "extra_data": {
                         "accepted_answers": [
@@ -1365,21 +1365,21 @@ def seed_lesson_7():
         },
         {
                 "type": "trac_nghiem",
-                "question": "Câu 5: Chọn giới từ và mạo từ đúng: 'Wo arbeitet deine Schwester? — Sie ist Floristin und arbeitet ___ Blumengeschäft neben dem Bahnhof.'",
+                "question": "Câu 5: Chọn dạng chia đúng của động từ khuyết thiếu: 'Mein Kollege ist Programmierer von Beruf. Er ___ drei moderne Programmiersprachen fließend sprechen.'",
                 "options": [
-                        "ins",
-                        "in der",
-                        "im",
-                        "auf dem"
+                        "könnt",
+                        "kannst",
+                        "kann",
+                        "können"
                 ],
-                "correct_answer": "im",
-                "explanation": "Câu hỏi Wo? (làm việc ở đâu) đòi hỏi Cách 3 (Dativ). das Blumengeschäft mang giống trung nên in + dem viết tắt là im Blumengeschäft.",
+                "correct_answer": "kann",
+                "explanation": "Động từ können diễn tả khả năng/năng lực chuyên môn. Với ngôi er/sie/es, können chia là 'kann' (đổi nguyên âm ö -> a và không thêm đuôi -t).",
                 "exp_reward": 15,
                 "extra_data": {
                         "accepted_answers": [
-                                "im"
+                                "kann"
                         ],
-                        "translation": "Chị gái của bạn làm việc ở đâu? — Chị ấy là người bán hoa và làm việc ở trong cửa hàng hoa bên cạnh nhà ga."
+                        "translation": "Đồng nghiệp của tôi làm nghề lập trình viên. Anh ấy có thể nói trôi chảy ba ngôn ngữ lập trình hiện đại."
                 }
         },
         {
@@ -1404,110 +1404,110 @@ def seed_lesson_7():
         },
         {
                 "type": "trac_nghiem",
-                "question": "Câu 7: Chọn phương án đúng: 'Kinder, heute habt ihr Ferien! ___ ihr bis 9 Uhr schlafen?'",
+                "question": "Câu 7: Chọn phương án đúng diễn tả quy định an toàn lao động: 'Auf der Baustelle ___ die Arbeiter ohne Schutzhelm nicht arbeiten.'",
                 "options": [
-                        "Könnt",
-                        "Kannst",
-                        "Können",
-                        "Kannt"
+                        "dürft",
+                        "darf",
+                        "dürfen",
+                        "darfst"
                 ],
-                "correct_answer": "Könnt",
-                "explanation": "Chủ ngữ là ihr (các con/các bạn), động từ können giữ nguyên nguyên âm ö và chia đuôi -t thành könnt.",
+                "correct_answer": "dürfen",
+                "explanation": "Chủ ngữ 'die Arbeiter' là danh từ số nhiều (họ - sie). Động từ dürfen chia theo ngôi số nhiều là 'dürfen'. Kết hợp với 'nicht' diễn tả điều cấm đoán tuyệt đối trên công trường.",
                 "exp_reward": 15,
                 "extra_data": {
                         "accepted_answers": [
-                                "Könnt"
+                                "dürfen"
                         ],
-                        "translation": "Các con ơi, hôm nay các con được nghỉ lễ! Các con có thể ngủ đến 9 giờ không?"
+                        "translation": "Trên công trường xây dựng, các công nhân không được phép làm việc khi không đội mũ bảo hộ."
                 }
         },
         {
                 "type": "trac_nghiem",
-                "question": "Câu 8: Chọn câu đúng trật tự từ ngữ pháp tiếng Đức:",
+                "question": "Câu 8: Chọn dạng chia đúng của 'wollen': 'Nach dem Abitur an der Schule ___ meine Schwester Medizin an der Universität studieren.'",
                 "options": [
-                        "Um 16.30 Uhr muss Paula ihre Tochter vom Kindergarten abholt.",
-                        "Um 16.30 Uhr holt Paula ihre Tochter vom Kindergarten müssen ab.",
-                        "Um 16.30 Uhr muss Paula ihre Tochter vom Kindergarten abholen.",
-                        "Um 16.30 Uhr muss abholen Paula ihre Tochter vom Kindergarten."
+                        "willst",
+                        "wollt",
+                        "will",
+                        "wollen"
                 ],
-                "correct_answer": "Um 16.30 Uhr muss Paula ihre Tochter vom Kindergarten abholen.",
-                "explanation": "Khi có động từ khuyết thiếu muss đứng ở vị trí số 2, động từ tách abholen không tách nữa mà giữ nguyên dạng nguyên mẫu (Infinitiv) đứng ở cuối câu.",
+                "correct_answer": "will",
+                "explanation": "Động từ wollen diễn tả nguyện vọng, ý chí quyết tâm. Với chủ ngữ 'meine Schwester' (ngôi sie số ít), wollen đổi nguyên âm o -> i thành 'will' (ngôi ich và er/sie/es đều là will).",
                 "exp_reward": 15,
                 "extra_data": {
                         "accepted_answers": [
-                                "Um 16.30 Uhr muss Paula ihre Tochter vom Kindergarten abholen."
+                                "will"
                         ],
-                        "translation": "Lúc 16 giờ 30 phút Paula phải đón con gái của mình từ trường mẫu giáo."
+                        "translation": "Sau khi tốt nghiệp trung học phổ thông, em gái tôi muốn học ngành Y tại trường đại học."
                 }
         },
         {
                 "type": "trac_nghiem",
-                "question": "Câu 9: Chọn cặp từ đúng điền vào câu: 'Bei ihrer Arbeit braucht Petra ___ Computer und ___ großen Schreibtisch.'",
+                "question": "Câu 9: Chọn dạng chia đúng của 'sollen': 'Der Arzt rät dem Patienten: „Herr Braun, Sie haben hohes Fieber. Sie ___ viel Tee trinken und im Bett bleiben.“'",
                 "options": [
-                        "ein / ein",
-                        "einen / einen",
-                        "einem / einem",
-                        "den / dem"
+                        "sollt",
+                        "sollen",
+                        "soll",
+                        "sollst"
                 ],
-                "correct_answer": "einen / einen",
-                "explanation": "Động từ brauchen (cần cái gì) luôn đi với tân ngữ trực tiếp ở Cách 4 (Akkusativ). Cả der Computer và der Schreibtisch đều mang giống đực (Maskulinum), nên mạo từ ein đổi thành einen.",
+                "correct_answer": "sollen",
+                "explanation": "Động từ sollen dùng để truyền đạt lời khuyên hoặc yêu cầu từ người có thẩm quyền (như bác sĩ). Đi với ngôi lịch sự 'Sie' thì động từ giữ nguyên là 'sollen'.",
                 "exp_reward": 15,
                 "extra_data": {
                         "accepted_answers": [
-                                "einen / einen"
+                                "sollen"
                         ],
-                        "translation": "Trong công việc của mình, Petra cần một chiếc máy tính và một cái bàn làm việc lớn."
+                        "translation": "Bác sĩ khuyên bệnh nhân: „Thưa ông Braun, ông bị sốt cao. Ông nên uống nhiều trà và ở trên giường.“"
                 }
         },
         {
                 "type": "trac_nghiem",
-                "question": "Câu 10: Chọn phương án đúng: 'Herr Weber arbeitet heute von zu Hause. Er braucht ___ Anzug, sondern nur ___ Laptop.'",
+                "question": "Câu 10: Chọn câu có cấu trúc khung câu (Satzklammer) đúng ngữ pháp tiếng Đức:",
                 "options": [
-                        "kein / ein",
-                        "keinen / einen",
-                        "keinem / einem",
-                        "keine / eine"
+                        "Im Restaurant muss der Kellner servieren das Essen schnell.",
+                        "Im Restaurant muss der Kellner das Essen den Gästen schnell servieren.",
+                        "Im Restaurant der Kellner muss servieren das Essen schnell.",
+                        "Im Restaurant muss servieren der Kellner schnell das Essen."
                 ],
-                "correct_answer": "keinen / einen",
-                "explanation": "Cả der Anzug và der Laptop đều là danh từ giống đực làm tân ngữ trực tiếp (Akkusativ) sau động từ braucht, nên chia là keinen Anzug và einen Laptop.",
+                "correct_answer": "Im Restaurant muss der Kellner das Essen den Gästen schnell servieren.",
+                "explanation": "Quy tắc Satzklammer (khung câu): Động từ khuyết thiếu (muss) đứng ở vị trí số 2, toàn bộ các tân ngữ và trạng từ đứng ở giữa, và động từ nguyên mẫu (servieren) bắt buộc phải đứng ở cuối câu cùng.",
                 "exp_reward": 15,
                 "extra_data": {
                         "accepted_answers": [
-                                "keinen / einen"
+                                "Im Restaurant muss der Kellner das Essen den Gästen schnell servieren."
                         ],
-                        "translation": "Hôm nay ông Weber làm việc tại nhà. Ông ấy không cần bộ vest nào cả mà chỉ cần một chiếc máy tính xách tay."
+                        "translation": "Trong nhà hàng, người phục vụ phải nhanh chóng bưng thức ăn cho thực khách."
                 }
         },
         {
                 "type": "trac_nghiem",
-                "question": "Câu 11: Chọn phương án đúng: 'Die Sekretärin muss heute Vormittag ___ Chef und ___ Kunden anrufen.'",
+                "question": "Câu 11: Chọn mạo từ đúng ở Cách 4 (Akkusativ): 'Der Kellner bringt ___ frischen Kaffee (der Kaffee) an den Tisch.'",
                 "options": [
-                        "ihren / ihre",
-                        "ihrem / ihren",
-                        "ihre / ihren",
-                        "ihr / ihre"
+                        "der",
+                        "dem",
+                        "den",
+                        "das"
                 ],
-                "correct_answer": "ihren / ihre",
-                "explanation": "Động từ anrufen (gọi điện cho ai) đi với Cách 4 (Akkusativ). Với der Chef (giống đực), mạo từ sở hữu của cô ấy (ihr-) đổi thành ihren Chef; với die Kunden (số nhiều) ở Akkusativ thì giữ nguyên đuôi -e là ihre Kunden.",
+                "correct_answer": "den",
+                "explanation": "Danh từ 'Kaffee' mang giống đực (der Kaffee). Làm tân ngữ trực tiếp chịu tác động của hành động 'bringen' nên chia ở Cách 4 (Akkusativ): mạo từ der chuyển thành den.",
                 "exp_reward": 15,
                 "extra_data": {
                         "accepted_answers": [
-                                "ihren / ihre"
+                                "den"
                         ],
-                        "translation": "Nữ thư ký sáng nay phải gọi điện cho ông sếp của cô ấy và các khách hàng của cô ấy."
+                        "translation": "Người phục vụ mang cà phê tươi đến bàn."
                 }
         },
         {
                 "type": "trac_nghiem",
-                "question": "Câu 12: Chọn cặp mạo từ đúng điền vào 2 câu sau: '1. Die Ärztin untersucht ___ kranken Mann. — 2. Die Krankenschwester hilft ___ kranken Mann.'",
+                "question": "Câu 12: Phân biệt Akkusativ vs. Dativ — Chọn cặp mạo từ đúng: '1. Die Ärztin untersucht ___ kranken Mann (Akkusativ). — 2. Die Krankenschwester hilft ___ kranken Mann (Dativ).'",
                 "options": [
-                        "den / den",
-                        "dem / den",
                         "den / dem",
-                        "der / dem"
+                        "dem / den",
+                        "den / den",
+                        "dem / dem"
                 ],
                 "correct_answer": "den / dem",
-                "explanation": "Động từ untersuchen (khám bệnh cho ai) đòi hỏi Cách 4 (Akkusativ) -> den kranken Mann. Ngược lại, động từ helfen (giúp đỡ ai) bắt buộc đi với Cách 3 (Dativ) -> dem kranken Mann.",
+                "explanation": "Động từ untersuchen đòi hỏi tân ngữ trực tiếp ở Cách 4 (Akkusativ: der Mann -> den Mann). Động từ helfen đòi hỏi tân ngữ ở Cách 3 (Dativ: der Mann -> dem Mann).",
                 "exp_reward": 15,
                 "extra_data": {
                         "accepted_answers": [
@@ -1519,91 +1519,91 @@ def seed_lesson_7():
         },
         {
                 "type": "trac_nghiem",
-                "question": "Câu 13: Chọn phương án đúng hoàn thành câu: '___ seiner Arbeit im Krankenhaus hat der Arzt wenig Pause, aber die Arbeit ist sehr wichtig ___ seine Patienten.'",
+                "question": "Câu 13: Chọn mạo từ đúng: 'Für seine tägliche Arbeit im Büro kauft der Sekretär ___ neuen Drucker (der Drucker).'",
                 "options": [
-                        "Für / bei",
-                        "Bei / für",
-                        "Mit / von",
-                        "Zu / ohne"
+                        "ein",
+                        "einen",
+                        "einem",
+                        "einer"
                 ],
-                "correct_answer": "Bei / für",
-                "explanation": "Cụm 'Trong công việc của mình' dùng Bei seiner Arbeit (bei + Dativ), còn 'quan trọng đối với ai' dùng wichtig für + Akkusativ (für seine Patienten).",
+                "correct_answer": "einen",
+                "explanation": "Động từ kaufen đòi hỏi tân ngữ trực tiếp ở Cách 4 (Akkusativ). Danh từ der Drucker là giống đực, nên mạo từ không xác định ein đổi sang Akkusativ là einen.",
                 "exp_reward": 15,
                 "extra_data": {
                         "accepted_answers": [
-                                "Bei / für"
+                                "einen"
                         ],
-                        "translation": "Trong công việc của mình ở bệnh viện, vị bác sĩ có ít thời gian nghỉ giải lao, nhưng công việc đó rất quan trọng đối với các bệnh nhân của ông ấy."
+                        "translation": "Cho công việc hằng ngày ở văn phòng, nam thư ký mua một chiếc máy in mới."
                 }
         },
         {
                 "type": "trac_nghiem",
-                "question": "Câu 14: Chọn phương án đúng điền vào 2 chỗ trống: 'Um 8.30 Uhr bringt Frank seine Tochter ___ Kindergarten (Wohin?), und um 16.30 Uhr holt Paula die Tochter ___ Kindergarten (Woher?) ab.'",
+                "question": "Câu 14: Chọn mạo từ phủ định đúng: 'Heute ist Sonntag und der Schüler hat schulfrei. Er braucht ___ Wecker (der Wecker).'",
                 "options": [
-                        "im / in den",
-                        "in den / vom",
-                        "zum / im",
-                        "in dem / von der"
+                        "kein",
+                        "keinen",
+                        "keinem",
+                        "keine"
                 ],
-                "correct_answer": "in den / vom",
-                "explanation": "Đưa vào trường mẫu giáo (bringen -> câu hỏi Wohin? + Akkusativ) với danh từ giống đực der Kindergarten là in den Kindergarten. Đón từ trường mẫu giáo về (abholen -> von + Dativ) là vom Kindergarten.",
+                "correct_answer": "keinen",
+                "explanation": "Động từ brauchen đi với Cách 4 (Akkusativ). Danh từ der Wecker mang giống đực, do đó mạo từ phủ định kein đổi thành keinen.",
                 "exp_reward": 15,
                 "extra_data": {
                         "accepted_answers": [
-                                "in den / vom"
+                                "keinen"
                         ],
-                        "translation": "Lúc 8 giờ 30 phút Frank đưa con gái vào trường mẫu giáo, và lúc 16 giờ 30 phút Paula đón con gái từ trường mẫu giáo về."
+                        "translation": "Hôm nay là Chủ nhật và học sinh được nghỉ học. Cậu ấy không cần đồng hồ báo thức."
                 }
         },
         {
                 "type": "trac_nghiem",
-                "question": "Câu 15: Chọn cặp từ đúng: 'Herr Müller bringt sein Auto ___ Werkstatt (Wohin?). Dort repariert der Mechatroniker das Auto ___ Werkstatt (Wo?).'",
+                "question": "Câu 15: Chọn cặp giới từ đúng luôn đi với Cách 4: 'Der Trainer kauft neue Bälle ___ sein Team und läuft niemals ___ seine Sportschuhe.'",
                 "options": [
-                        "in die / in der",
-                        "in der / in die",
-                        "zur / in die",
-                        "in eine / in eine"
+                        "für / ohne",
+                        "mit / für",
+                        "zu / von",
+                        "bei / mit"
                 ],
-                "correct_answer": "in die / in der",
-                "explanation": "Danh từ die Werkstatt mang giống cái (Femininum). Khi di chuyển vào xưởng (Wohin? + Akkusativ) dùng in die Werkstatt; khi làm việc ở bên trong xưởng (Wo? + Dativ) dùng in der Werkstatt.",
+                "correct_answer": "für / ohne",
+                "explanation": "Hai giới từ 'für' (dành cho) và 'ohne' (không có) thuộc nhóm FUDGE-BO luôn luôn đòi hỏi danh từ đi sau chia ở Cách 4 (Akkusativ): für sein Team, ohne seine Sportschuhe.",
                 "exp_reward": 15,
                 "extra_data": {
                         "accepted_answers": [
-                                "in die / in der"
+                                "für / ohne"
                         ],
-                        "translation": "Ông Müller mang chiếc ô tô của mình vào xưởng sửa chữa. Ở đó người thợ cơ khí sửa chiếc ô tô ở trong xưởng."
+                        "translation": "Huấn luyện viên mua những quả bóng mới cho đội của mình và không bao giờ chạy mà không có giày thể thao."
                 }
         },
         {
                 "type": "trac_nghiem",
-                "question": "Câu 16: Chọn phương án đúng: 'Um 19 Uhr bringt die Mutter ihren Sohn ___ Bett. Um 20 Uhr liegt er schon ___ Bett und schläft.'",
+                "question": "Câu 16: Chọn dạng mạo từ sở hữu đúng: 'Der Taxifahrer holt ___ Wagen (der Wagen) am Morgen aus der Garage.'",
                 "options": [
-                        "im / ins",
-                        "ins / im",
-                        "in dem / in das",
-                        "ans / am"
+                        "sein",
+                        "seinen",
+                        "seinem",
+                        "seiner"
                 ],
-                "correct_answer": "ins / im",
-                "explanation": "Đưa lên giường (bringen — di chuyển Wohin?) dùng in + das = ins Bett (Akkusativ). Nằm ngủ trên giường (liegen/schlafen — vị trí tĩnh Wo?) dùng in + dem = im Bett (Dativ).",
+                "correct_answer": "seinen",
+                "explanation": "Chủ ngữ là der Taxifahrer (ngôi er), gốc sở hữu là sein-. Danh từ der Wagen mang giống đực làm tân ngữ trực tiếp (Akkusativ) cho holt, nên mạo từ sở hữu đổi thành seinen.",
                 "exp_reward": 15,
                 "extra_data": {
                         "accepted_answers": [
-                                "ins / im"
+                                "seinen"
                         ],
-                        "translation": "Lúc 19 giờ người mẹ đưa con trai lên giường ngủ. Lúc 20 giờ cậu bé đã nằm trên giường và ngủ."
+                        "translation": "Người tài xế taxi lấy chiếc xe của mình ra khỏi gara vào buổi sáng."
                 }
         },
         {
                 "type": "trac_nghiem",
                 "question": "Câu 17: Chọn phương án đúng ngữ pháp: 'Der Chef kauft ___ Sekretärin (die Sekretärin) ___ neuen Computer (der Computer).'",
                 "options": [
-                        "die / einen",
-                        "der / einen",
                         "der / ein",
-                        "einer / dem"
+                        "einer / dem",
+                        "die / einen",
+                        "der / einen"
                 ],
                 "correct_answer": "der / einen",
-                "explanation": "Trong câu có 2 tân ngữ: Người nhận lợi ích (Wem? cho nữ thư ký) chia ở Cách 3 (Dativ) -> der Sekretärin; Vật được mua (Was? một chiếc máy tính mới) chia ở Cách 4 (Akkusativ) -> einen neuen Computer.",
+                "explanation": "Trong câu có 2 tân ngữ: Người nhận lợi ích (Wem? cho nữ thư ký) chia ở Cách 3 (Dativ: die -> der Sekretärin); Vật được mua (Was? một chiếc máy tính mới) chia ở Cách 4 (Akkusativ: der -> einen neuen Computer). Phương án A, B, C đều sai ngữ pháp.",
                 "exp_reward": 15,
                 "extra_data": {
                         "accepted_answers": [
@@ -1634,221 +1634,218 @@ def seed_lesson_7():
         },
         {
                 "type": "dien_khuyet",
-                "question": "Câu 19: Điền giới từ chỉ nghề nghiệp thích hợp vào chỗ trống: 'Mein Onkel arbeitet seit fünf Jahren ___ Taxifahrer in Hamburg.'",
+                "question": "Câu 19: Điền dạng chia đúng của động từ khuyết thiếu 'können' vào chỗ trống: 'Am Samstag haben wir frei. ___ ihr mit uns ins Restaurant kommen?'",
                 "options": null,
-                "correct_answer": "als",
-                "explanation": "Cụm arbeiten als + [Nghề nghiệp] dùng để nói làm nghề gì.",
+                "correct_answer": "Könnt",
+                "explanation": "Chủ ngữ là 'ihr' (các bạn). Động từ können chia cho ngôi ihr là könnt (giữ nguyên âm ö và thêm đuôi -t). Đứng đầu câu hỏi đảo ngữ nên viết hoa Könnt.",
                 "exp_reward": 15,
                 "extra_data": {
                         "accepted_answers": [
-                                "als"
+                                "Könnt",
+                                "könnt"
                         ],
-                        "translation": "Chú của tôi làm nghề tài xế taxi ở Hamburg từ 5 năm nay."
+                        "translation": "Thứ Bảy chúng tôi được nghỉ. Các bạn có thể đi nhà hàng cùng chúng tôi không?"
                 }
         },
         {
                 "type": "dien_khuyet",
-                "question": "Câu 20: Điền danh từ nghề nghiệp dạng Nữ (Femininum) tương ứng với 'der Arzt' vào chỗ trống: 'Meine Tante arbeitet im Krankenhaus. Sie ist ___ von Beruf.'",
-                "options": null,
-                "correct_answer": "Ärztin",
-                "explanation": "der Arzt khi chuyển sang danh từ nghề nghiệp nữ phải thêm dấu Umlaut và đuôi -in thành Ärztin.",
-                "exp_reward": 15,
-                "extra_data": {
-                        "accepted_answers": [
-                                "Ärztin",
-                                "Aerztin"
-                        ],
-                        "translation": "Dì của tôi làm việc ở trong bệnh viện. Dì ấy làm nghề nữ bác sĩ."
-                }
-        },
-        {
-                "type": "dien_khuyet",
-                "question": "Câu 21: Điền danh từ nghề nghiệp dạng Nữ (Femininum) tương ứng với 'der Koch' vào chỗ trống: 'Frau Bui kocht sehr gut in einem großen Restaurant. Sie arbeitet als ___.'",
-                "options": null,
-                "correct_answer": "Köchin",
-                "explanation": "der Koch chuyển sang giống cái thêm Umlaut o -> ö và -in thành Köchin.",
-                "exp_reward": 15,
-                "extra_data": {
-                        "accepted_answers": [
-                                "Köchin",
-                                "Koechin"
-                        ],
-                        "translation": "Bà Bùi nấu ăn rất ngon trong một nhà hàng lớn. Bà ấy làm nghề nữ đầu bếp."
-                }
-        },
-        {
-                "type": "dien_khuyet",
-                "question": "Câu 22: Điền dạng chia đúng của động từ khuyết thiếu 'müssen' vào chỗ trống: 'Ich habe morgen eine Prüfung, deshalb ___ ich heute Abend viel lernen.'",
-                "options": null,
-                "correct_answer": "muss",
-                "explanation": "Ngôi thứ nhất số ít (ich) của động từ müssen là muss.",
-                "exp_reward": 15,
-                "extra_data": {
-                        "accepted_answers": [
-                                "muss"
-                        ],
-                        "translation": "Ngày mai tôi có một kỳ thi, vì vậy tối nay tôi phải học bài nhiều."
-                }
-        },
-        {
-                "type": "dien_khuyet",
-                "question": "Câu 23: Điền dạng chia đúng của động từ khuyết thiếu 'müssen' vào chỗ trống: 'Wann ___ du morgen früh zur Arbeit fahren, Lukas?'",
+                "question": "Câu 20: Điền dạng chia đúng của động từ khuyết thiếu 'müssen' vào chỗ trống: 'Wie viele Stunden ___ du pro Tag im Büro arbeiten?'",
                 "options": null,
                 "correct_answer": "musst",
-                "explanation": "Ngôi thứ hai số ít (du) của động từ müssen là musst.",
+                "explanation": "Chủ ngữ là 'du'. Động từ müssen đổi ü -> u và chia đuôi -st thành musst.",
                 "exp_reward": 15,
                 "extra_data": {
                         "accepted_answers": [
                                 "musst"
                         ],
-                        "translation": "Sáng sớm mai bạn phải đi làm lúc mấy giờ thế, Lukas?"
+                        "translation": "Bạn phải làm việc bao nhiêu tiếng mỗi ngày ở văn phòng?"
                 }
         },
         {
                 "type": "dien_khuyet",
-                "question": "Câu 24: Điền dạng chia đúng của động từ khuyết thiếu 'können' vào chỗ trống: 'Herr Müller hat heute Ferien. Er ___ bis 8 Uhr schlafen.'",
+                "question": "Câu 21: Điền dạng chia đúng của động từ khuyết thiếu 'dürfen' vào chỗ trống: 'Hier ist eine gefährliche Baustelle. ___ Besucher das Gelände betreten?'",
                 "options": null,
-                "correct_answer": "kann",
-                "explanation": "Ngôi thứ ba số ít (er) của động từ können là kann (không có đuôi -t).",
+                "correct_answer": "Dürfen",
+                "explanation": "Chủ ngữ 'Besucher' là danh từ số nhiều (những vị khách). Động từ dürfen giữ nguyên là Dürfen ở đầu câu hỏi.",
                 "exp_reward": 15,
                 "extra_data": {
                         "accepted_answers": [
-                                "kann"
+                                "Dürfen",
+                                "dürfen"
                         ],
-                        "translation": "Ông Müller hôm nay có kỳ nghỉ. Ông ấy có thể ngủ đến 8 giờ."
+                        "translation": "Đây là công trường nguy hiểm. Khách tham quan có được phép đi vào khu vực này không?"
                 }
         },
         {
                 "type": "dien_khuyet",
-                "question": "Câu 25: Điền dạng chia đúng của động từ khuyết thiếu 'möchten' vào chỗ trống: 'Anna ist Schülerin, aber später ___ sie Medizin an der Universität studieren.'",
+                "question": "Câu 22: Điền dạng chia đúng của động từ khuyết thiếu 'wollen' vào chỗ trống: 'Nächste Woche ___ wir einen schönen Ausflug mit der Familie machen.'",
                 "options": null,
-                "correct_answer": "möchte",
-                "explanation": "Ngôi thứ ba số ít (sie - cô ấy) của möchten là möchte.",
+                "correct_answer": "wollen",
+                "explanation": "Chủ ngữ là 'wir' (chúng tôi). Động từ wollen giữ nguyên dạng nguyên mẫu là wollen.",
                 "exp_reward": 15,
                 "extra_data": {
                         "accepted_answers": [
-                                "möchte",
-                                "moechte"
+                                "wollen"
                         ],
-                        "translation": "Anna là học sinh, nhưng sau này cô ấy muốn học ngành Y ở trường đại học."
+                        "translation": "Tuần tới chúng tôi muốn có một chuyến dã ngoại tuyệt đẹp cùng gia đình."
                 }
         },
         {
                 "type": "dien_khuyet",
-                "question": "Câu 26: Điền dạng nguyên mẫu của động từ tách 'aufstehen' vào cuối câu có Modalverb: 'Am Sonntag müssen wir nicht früh ___.'",
-                "options": null,
-                "correct_answer": "aufstehen",
-                "explanation": "Khi câu đã có động từ khuyết thiếu müssen ở vị trí số 2, động từ tách aufstehen giữ nguyên dạng nguyên mẫu viết liền ở cuối câu.",
-                "exp_reward": 15,
-                "extra_data": {
-                        "accepted_answers": [
-                                "aufstehen"
-                        ],
-                        "translation": "Vào Chủ nhật chúng tôi không phải thức dậy sớm."
-                }
-        },
-        {
-                "type": "dien_khuyet",
-                "question": "Câu 27: Điền mạo từ thích hợp vào chỗ trống: 'Für seine Arbeit im Büro braucht mein Bruder ___ schnellen Laptop.'",
-                "options": null,
-                "correct_answer": "einen",
-                "explanation": "Động từ brauchen đòi hỏi Cách 4 (Akkusativ). der Laptop mang giống đực nên ein đổi thành einen.",
-                "exp_reward": 15,
-                "extra_data": {
-                        "accepted_answers": [
-                                "einen",
-                                "den"
-                        ],
-                        "translation": "Cho công việc của mình ở văn phòng, anh trai tôi cần một chiếc máy tính xách tay nhanh."
-                }
-        },
-        {
-                "type": "dien_khuyet",
-                "question": "Câu 28: Điền mạo từ thích hợp vào chỗ trống: 'Ich trinke meinen Tee bitte ohne Zucker, ich brauche ___ Löffel.'",
-                "options": null,
-                "correct_answer": "keinen",
-                "explanation": "der Löffel mang giống đực, làm tân ngữ trực tiếp (Akkusativ) sau brauche, nên kein đổi thành keinen.",
-                "exp_reward": 15,
-                "extra_data": {
-                        "accepted_answers": [
-                                "keinen",
-                                "einen"
-                        ],
-                        "translation": "Tôi uống trà không đường, tôi không cần cái thìa nào cả."
-                }
-        },
-        {
-                "type": "dien_khuyet",
-                "question": "Câu 29: Điền mạo từ thích hợp vào chỗ trống: 'Der Programmierer ruft ___ Chef im Büro an.'",
-                "options": null,
-                "correct_answer": "seinen",
-                "explanation": "Động từ anrufen đi với Cách 4 (Akkusativ). der Chef mang giống đực nên gốc sở hữu sein- của er đổi thành seinen.",
-                "exp_reward": 15,
-                "extra_data": {
-                        "accepted_answers": [
-                                "seinen",
-                                "den"
-                        ],
-                        "translation": "Lập trình viên gọi điện cho ông sếp của anh ấy ở văn phòng."
-                }
-        },
-        {
-                "type": "dien_khuyet",
-                "question": "Câu 30: Điền mạo từ thích hợp vào chỗ trống: 'Jeden Morgen um 8 Uhr bringt Frau Rausch ihren Sohn in ___ Kindergarten.'",
+                "question": "Câu 23: Điền mạo từ xác định đúng ở Cách 4 (Akkusativ) vào chỗ trống: 'Der Lehrer korrigiert ___ schwierigen Test der Schüler am Schreibtisch.'",
                 "options": null,
                 "correct_answer": "den",
-                "explanation": "Hành động đưa con đến trường mẫu giáo (bringen -> câu hỏi Wohin?) dùng Cách 4 (Akkusativ): der Kindergarten -> in den Kindergarten.",
+                "explanation": "Danh từ 'der Test' mang giống đực. Làm tân ngữ trực tiếp cho động từ korrigieren nên đổi thành den.",
+                "exp_reward": 15,
+                "extra_data": {
+                        "accepted_answers": [
+                                "den"
+                        ],
+                        "translation": "Thầy giáo chấm bài kiểm tra khó của học sinh tại bàn làm việc."
+                }
+        },
+        {
+                "type": "dien_khuyet",
+                "question": "Câu 24: Điền mạo từ không xác định đúng ở Cách 4 (Akkusativ) vào chỗ trống: 'Im Blumengeschäft bestellt der Kunde ___ bunten Blumenstrauß (der Blumenstrauß).'",
+                "options": null,
+                "correct_answer": "einen",
+                "explanation": "Danh từ 'der Blumenstrauß' mang giống đực, làm tân ngữ trực tiếp cho bestellt nên mạo từ ein đổi thành einen.",
+                "exp_reward": 15,
+                "extra_data": {
+                        "accepted_answers": [
+                                "einen"
+                        ],
+                        "translation": "Ở cửa hàng hoa, người khách đặt một bó hoa rực rỡ sắc màu."
+                }
+        },
+        {
+                "type": "dien_khuyet",
+                "question": "Câu 25: Điền mạo từ phủ định đúng ở Cách 4 (Akkusativ) vào chỗ trống: 'Heute scheint den ganzen Tag die Sonne, ich brauche ___ Regenschirm (der Regenschirm).'",
+                "options": null,
+                "correct_answer": "keinen",
+                "explanation": "Động từ brauchen đi với Cách 4 (Akkusativ). Danh từ der Regenschirm là giống đực nên kein đổi thành keinen.",
+                "exp_reward": 15,
+                "extra_data": {
+                        "accepted_answers": [
+                                "keinen"
+                        ],
+                        "translation": "Hôm nay trời nắng cả ngày, tôi không cần chiếc ô nào cả."
+                }
+        },
+        {
+                "type": "dien_khuyet",
+                "question": "Câu 26: Điền mạo từ sở hữu của ngôi 'ich' (mein-) đúng ở Cách 4 vào chỗ trống: 'Vor der Konferenz rufe ich ___ Kollegen (der Kollege) noch einmal an.'",
+                "options": null,
+                "correct_answer": "meinen",
+                "explanation": "Động từ anrufen đòi hỏi tân ngữ Akkusativ. Chủ ngữ ich -> gốc mein-. Trước danh từ giống đực der Kollege đổi thành meinen.",
+                "exp_reward": 15,
+                "extra_data": {
+                        "accepted_answers": [
+                                "meinen"
+                        ],
+                        "translation": "Trước hội nghị, tôi gọi điện cho người đồng nghiệp của mình một lần nữa."
+                }
+        },
+        {
+                "type": "dien_khuyet",
+                "question": "Câu 27: Điền mạo từ thích hợp vào chỗ trống: 'Die Trainerin lobt ___ besten Sportler (der Sportler) nach dem Spiel.'",
+                "options": null,
+                "correct_answer": "ihren",
+                "explanation": "Động từ loben (khen ngợi) đi với Cách 4 (Akkusativ). Danh từ der Sportler mang giống đực nên mạo từ sở hữu của cô ấy ihr- đổi thành ihren (hoặc mạo từ xác định den).",
+                "exp_reward": 15,
+                "extra_data": {
+                        "accepted_answers": [
+                                "ihren",
+                                "den"
+                        ],
+                        "translation": "Nữ huấn luyện viên khen ngợi vận động viên xuất sắc nhất của mình sau trận đấu."
+                }
+        },
+        {
+                "type": "dien_khuyet",
+                "question": "Câu 28: Điền mạo từ thích hợp vào chỗ trống: 'Der Koch kauft frische Zutaten ___ das Abendessen.'",
+                "options": null,
+                "correct_answer": "für",
+                "explanation": "Giới từ für luôn luôn đòi hỏi danh từ đi sau chia ở Cách 4 (Akkusativ): für das Abendessen (cho bữa tối).",
+                "exp_reward": 15,
+                "extra_data": {
+                        "accepted_answers": [
+                                "für",
+                                "fuer"
+                        ],
+                        "translation": "Người đầu bếp mua các nguyên liệu tươi ngon cho bữa tối."
+                }
+        },
+        {
+                "type": "dien_khuyet",
+                "question": "Câu 29: Điền mạo từ thích hợp vào chỗ trống: 'Der Student kann ___ sein Wörterbuch den Fachtext nicht verstehen.'",
+                "options": null,
+                "correct_answer": "ohne",
+                "explanation": "Giới từ ohne mang nghĩa 'không có / thiếu' và luôn đi với Akkusativ (ohne sein Wörterbuch).",
+                "exp_reward": 15,
+                "extra_data": {
+                        "accepted_answers": [
+                                "ohne"
+                        ],
+                        "translation": "Cậu sinh viên không thể hiểu được bài đọc chuyên ngành nếu thiếu cuốn từ điển."
+                }
+        },
+        {
+                "type": "dien_khuyet",
+                "question": "Câu 30: Điền từ thích hợp vào chỗ trống: 'Der Kunde parkt den Wagen und geht in ___ Supermarkt (der Supermarkt).'",
+                "options": null,
+                "correct_answer": "den",
+                "explanation": "Động từ gehen chỉ sự di chuyển (hướng đi Wohin?) đòi hỏi in + Akkusativ: in den Supermarkt.",
                 "exp_reward": 15,
                 "extra_data": {
                         "accepted_answers": [
                                 "den",
                                 "einen"
                         ],
-                        "translation": "Mỗi buổi sáng lúc 8 giờ bà Rausch đưa con trai mình vào trường mẫu giáo."
+                        "translation": "Người khách hàng đỗ xe và đi vào trong siêu thị."
                 }
         },
         {
                 "type": "dien_khuyet",
-                "question": "Câu 31: Điền từ thích hợp vào chỗ trống: 'Es ist schon 22 Uhr. Die Kinder müssen jetzt ___ Bett gehen.'",
+                "question": "Câu 31: Điền từ thích hợp vào chỗ trống: 'Nach dem langen Arbeitstag legt sich der Arzt müde ___ Bett (das Bett).'",
                 "options": null,
                 "correct_answer": "ins",
-                "explanation": "Đi lên giường ngủ (Wohin? + Akkusativ) với danh từ giống trung das Bett dùng in + das gộp thành ins Bett.",
+                "explanation": "Hành động nằm lên giường (di chuyển Wohin? + Akkusativ) với danh từ giống trung das Bett được rút gọn in + das = ins Bett.",
                 "exp_reward": 15,
                 "extra_data": {
                         "accepted_answers": [
                                 "ins",
                                 "in das"
                         ],
-                        "translation": "Đã 22 giờ rồi. Bọn trẻ bây giờ phải đi lên giường ngủ."
+                        "translation": "Sau một ngày làm việc dài, vị bác sĩ mệt mỏi ngả lưng lên giường."
                 }
         },
         {
                 "type": "dien_khuyet",
-                "question": "Câu 32: Điền mạo từ thích hợp vào chỗ trống: 'Die Sekretärin hilft ___ neuen Praktikanten bei der Arbeit.'",
+                "question": "Câu 32: Điền từ thích hợp vào chỗ trống: 'Die Mechatronikerin prüft die Bremsen des Autos in ___ Werkstatt (die Werkstatt).'",
                 "options": null,
-                "correct_answer": "dem",
-                "explanation": "Động từ helfen luôn đi với Cách 3 (Dativ), nên der Praktikant chuyển thành dem neuen Praktikanten.",
+                "correct_answer": "der",
+                "explanation": "Câu hỏi Wo? (vị trí tĩnh) đòi hỏi Cách 3 (Dativ). Danh từ die Werkstatt mang giống cái nên in + der = in der Werkstatt.",
                 "exp_reward": 15,
                 "extra_data": {
                         "accepted_answers": [
-                                "dem",
-                                "einem"
+                                "der"
                         ],
-                        "translation": "Nữ thư ký giúp đỡ nam thực tập sinh mới trong công việc."
+                        "translation": "Nữ thợ cơ khí kiểm tra phanh xe hơi ở trong xưởng sửa chữa."
                 }
         },
         {
                 "type": "dien_khuyet",
-                "question": "Câu 33: Điền dạng chia đúng của động từ 'unterrichten' theo chủ ngữ vào chỗ trống: 'Herr Müller ist Lehrer von Beruf und ___ Mathematik an einer Schule.'",
+                "question": "Câu 33: Điền mạo từ thích hợp ở Cách 3 (Dativ) vào chỗ trống: 'Der erfahrene Krankenpfleger hilft ___ jungen Ärztin (die Ärztin) bei der Operation.'",
                 "options": null,
-                "correct_answer": "unterrichtet",
-                "explanation": "Động từ unterrichten có gốc kết thúc bằng -t (unterricht-), nên ở ngôi thứ 3 số ít (er) phải thêm -e- trước -t thành unterrichtet.",
+                "correct_answer": "der",
+                "explanation": "Động từ helfen luôn luôn đòi hỏi tân ngữ ở Cách 3 (Dativ). Danh từ die Ärztin (giống cái) chuyển mạo từ thành der Ärztin.",
                 "exp_reward": 15,
                 "extra_data": {
                         "accepted_answers": [
-                                "unterrichtet"
+                                "der"
                         ],
-                        "translation": "Ông Müller làm nghề giáo viên và giảng dạy môn Toán tại một trường học."
+                        "translation": "Người nam điều dưỡng giàu kinh nghiệm giúp đỡ nữ bác sĩ trẻ trong ca phẫu thuật."
                 }
         },
         {
@@ -2236,205 +2233,205 @@ def seed_lesson_7():
         },
         {
                 "type": "noi_o",
-                "question": "Câu 58: Nối Nghề nghiệp với Hoạt động đặc trưng tương ứng:",
+                "question": "Câu 58: Nối Nghề nghiệp với Nhiệm vụ chuyên môn đặc trưng tương ứng:",
                 "options": null,
                 "correct_answer": "Hoàn thành nối ô",
-                "explanation": "Nghề giáo viên giảng dạy học sinh, bác sĩ khám bệnh nhân, thợ cơ khí sửa ô tô, lập trình viên viết phần mềm.",
+                "explanation": "Thợ hoa bó hoa và bán hoa hồng; thợ cơ khí sửa động cơ và kiểm tra phanh; người phục vụ bưng bê món ăn; công nhân xây dựng các tòa nhà hiện đại.",
                 "exp_reward": 20,
                 "extra_data": {
                         "noi_o_pairs": [
                                 {
-                                        "left": "der Lehrer / die Lehrerin",
-                                        "right": "unterrichtet Schüler (giảng dạy học sinh)"
+                                        "left": "Florist / Floristin",
+                                        "right": "bindet Blumensträuße und verkauft Rosen im Blumengeschäft"
                                 },
                                 {
-                                        "left": "der Arzt / die Ärztin",
-                                        "right": "untersucht Patienten (khám cho bệnh nhân)"
+                                        "left": "KFZ-Mechatroniker / Mechatronikerin",
+                                        "right": "repariert defekte Motoren und prüft Bremsen in der Werkstatt"
                                 },
                                 {
-                                        "left": "der KFZ-Mechatroniker",
-                                        "right": "repariert Autos (sửa chữa xe ô tô)"
+                                        "left": "Kellner / Kellnerin",
+                                        "right": "serviert Getränke und bringt Speisen an den Tisch"
                                 },
                                 {
-                                        "left": "der Programmierer",
-                                        "right": "schreibt Computerprogramme (viết chương trình máy tính)"
+                                        "left": "Bauarbeiter / Bauarbeiterin",
+                                        "right": "baut moderne Gebäude und trägt Schutzhelm auf der Baustelle"
                                 }
                         ],
-                        "translation": "Nối các cặp tương ứng giữa 2 cột."
+                        "translation": "Nối nghề nghiệp với nhiệm vụ chuyên môn tương ứng."
                 }
         },
         {
                 "type": "noi_o",
-                "question": "Câu 59: Nối Nghề nghiệp với Hoạt động đặc trưng tương ứng (Phần 2):",
+                "question": "Câu 59: Nối Nghề nghiệp với Nơi làm việc chuẩn ngữ pháp ở Cách 3 (Dativ):",
                 "options": null,
                 "correct_answer": "Hoàn thành nối ô",
-                "explanation": "Thợ làm tóc cắt tóc, nhân viên bán hàng bán giày dép, thợ hoa bán hoa, đầu bếp nấu món ăn ngon.",
+                "explanation": "Nữ nhân viên bán hàng làm việc trong siêu thị/cửa hàng giày; đầu bếp trong bếp nhà hàng; học sinh và thầy giáo trong phòng học; huấn luyện viên và vận động viên trong sân vận động.",
                 "exp_reward": 20,
                 "extra_data": {
                         "noi_o_pairs": [
                                 {
-                                        "left": "der Friseur / die Friseurin",
-                                        "right": "schneidet Haare (cắt tóc)"
+                                        "left": "die Verkäuferin",
+                                        "right": "im Supermarkt oder im Schuhgeschäft (in + dem)"
                                 },
                                 {
-                                        "left": "der Verkäufer / die Verkäuferin",
-                                        "right": "verkauft Schuhe (bán giày dép)"
+                                        "left": "der Koch",
+                                        "right": "in der Restaurantküche am Herd (in + der)"
                                 },
                                 {
-                                        "left": "der Florist / die Floristin",
-                                        "right": "verkauft Blumen (bán hoa tươi)"
+                                        "left": "die Schülerin und der Lehrer",
+                                        "right": "im Klassenzimmer am Gymnasium (in + dem)"
                                 },
                                 {
-                                        "left": "der Koch / die Köchin",
-                                        "right": "kocht leckere Speisen (nấu những món ăn ngon)"
+                                        "left": "die Trainerin und der Sportler",
+                                        "right": "im großen Fußballstadion (in + dem)"
                                 }
                         ],
-                        "translation": "Nối các cặp tương ứng giữa 2 cột."
+                        "translation": "Nối nghề nghiệp với nơi làm việc tương ứng."
                 }
         },
         {
                 "type": "noi_o",
-                "question": "Câu 60: Nối Nghề nghiệp với Nơi làm việc chuẩn ở Dativ:",
+                "question": "Câu 60: Nối Cụm động từ cố định với Giới từ & Ý nghĩa đi kèm:",
                 "options": null,
                 "correct_answer": "Hoàn thành nối ô",
-                "explanation": "Giáo viên làm việc ở trường học/trung tâm ngoại ngữ, bác sĩ và y tá ở bệnh viện, thợ cơ khí ở xưởng, thợ tóc ở tiệm làm tóc.",
+                "explanation": "arbeiten als + Nghề nghiệp; telefonieren mit + Dativ; danken für + Akkusativ; helfen bei + Dativ.",
                 "exp_reward": 20,
                 "extra_data": {
                         "noi_o_pairs": [
                                 {
-                                        "left": "der Lehrer",
-                                        "right": "arbeitet an einer Schule / im Sprachzentrum"
+                                        "left": "arbeiten als",
+                                        "right": "chỉ chức danh nghề nghiệp (không dùng ein/eine)"
                                 },
                                 {
-                                        "left": "die Ärztin und der Krankenpfleger",
-                                        "right": "arbeiten im Krankenhaus"
+                                        "left": "telefonieren mit",
+                                        "right": "gọi điện thoại với đối tác hoặc khách hàng (mit + Dativ)"
                                 },
                                 {
-                                        "left": "der KFZ-Mechatroniker",
-                                        "right": "arbeitet in einer Werkstatt"
+                                        "left": "danken für",
+                                        "right": "cảm ơn vì sự giúp đỡ nhiệt tình (für + Akkusativ)"
                                 },
                                 {
-                                        "left": "die Friseurin",
-                                        "right": "arbeitet im Friseursalon"
+                                        "left": "helfen bei",
+                                        "right": "hỗ trợ, giúp đỡ trong công việc hay học tập (bei + Dativ)"
                                 }
                         ],
-                        "translation": "Nối các cặp tương ứng giữa 2 cột."
+                        "translation": "Nối cụm động từ với giới từ và ý nghĩa đi kèm."
                 }
         },
         {
                 "type": "noi_o",
-                "question": "Câu 61: Nối Danh từ Nghề nghiệp Nam với Dạng Nữ đặc biệt:",
+                "question": "Câu 61: Nối Động từ khuyết thiếu với Ý nghĩa & Mục đích sử dụng thực tế:",
                 "options": null,
                 "correct_answer": "Hoàn thành nối ô",
-                "explanation": "Các trường hợp biến đổi đặc biệt sang giống cái: thêm Umlaut (Ärztin, Köchin), đổi gốc (Hausfrau), và danh xưng truyền thống (Krankenschwester).",
+                "explanation": "müssen = bắt buộc/bổn phận; können = khả năng/năng lực; không được phép = cấm đoán; wollen = ý chí/kế hoạch tương lai.",
                 "exp_reward": 20,
                 "extra_data": {
                         "noi_o_pairs": [
                                 {
-                                        "left": "der Arzt (nam bác sĩ)",
-                                        "right": "die Ärztin (thêm Umlaut ä + -in)"
+                                        "left": "müssen (phải)",
+                                        "right": "diễn tả bổn phận, quy định hoặc bắt buộc khách quan"
                                 },
                                 {
-                                        "left": "der Koch (nam đầu bếp)",
-                                        "right": "die Köchin (thêm Umlaut ö + -in)"
+                                        "left": "können (có thể)",
+                                        "right": "diễn tả khả năng, năng lực chuyên môn hoặc cơ hội"
                                 },
                                 {
-                                        "left": "der Hausmann (nam nội trợ)",
-                                        "right": "die Hausfrau (đổi gốc sang -frau)"
+                                        "left": "nicht dürfen (không được phép)",
+                                        "right": "diễn tả điều cấm đoán tuyệt đối, an toàn lao động"
                                 },
                                 {
-                                        "left": "der Krankenpfleger (nam điều dưỡng)",
-                                        "right": "die Krankenschwester / die Krankenpflegerin"
+                                        "left": "wollen (muốn / dự định)",
+                                        "right": "diễn tả ý chí quyết tâm mạnh mẽ, kế hoạch tương lai"
                                 }
                         ],
-                        "translation": "Nối các cặp tương ứng giữa 2 cột."
+                        "translation": "Nối động từ khuyết thiếu với ý nghĩa thực tế."
                 }
         },
         {
                 "type": "noi_o",
-                "question": "Câu 62: Nối Chủ ngữ với Dạng chia của Động từ khuyết thiếu müssen và können:",
+                "question": "Câu 62: Nối Chủ ngữ với Dạng chia đúng của Modalverb wollen & dürfen:",
                 "options": null,
                 "correct_answer": "Hoàn thành nối ô",
-                "explanation": "Quy tắc chia Modalverben: ngôi 1 và 3 số ít đổi nguyên âm và không có đuôi; ngôi du thêm -st; ngôi ihr giữ nguyên âm gốc và thêm đuôi -t.",
+                "explanation": "Quy tắc chia Modalverb: ngôi ich và ngôi er/sie/es luôn giống hệt nhau và không có đuôi -t.",
                 "exp_reward": 20,
                 "extra_data": {
                         "noi_o_pairs": [
                                 {
-                                        "left": "ich / er / sie / es (với müssen)",
-                                        "right": "muss (đổi ü -> u, không có đuôi)"
+                                        "left": "ich / er / sie (cô ấy)",
+                                        "right": "will / darf (đổi nguyên âm và không có đuôi -t)"
                                 },
                                 {
-                                        "left": "ich / er / sie / es (với können)",
-                                        "right": "kann (đổi ö -> a, không có đuôi)"
+                                        "left": "du",
+                                        "right": "willst / darfst (thêm đuôi -st theo quy tắc)"
                                 },
                                 {
-                                        "left": "du (với müssen & können)",
-                                        "right": "musst / kannst (thêm đuôi -st)"
+                                        "left": "ihr",
+                                        "right": "wollt / dürft (thêm đuôi -t và giữ nguyên âm)"
                                 },
                                 {
-                                        "left": "ihr (với müssen & können)",
-                                        "right": "müsst / könnt (giữ Umlaut, thêm đuôi -t)"
+                                        "left": "wir / sie (họ) / Sie",
+                                        "right": "wollen / dürfen (giữ nguyên dạng nguyên mẫu)"
                                 }
                         ],
-                        "translation": "Nối các cặp tương ứng giữa 2 cột."
+                        "translation": "Nối chủ ngữ với dạng chia đúng của động từ khuyết thiếu."
                 }
         },
         {
                 "type": "noi_o",
-                "question": "Câu 63: Nối Câu hỏi Nghề nghiệp & Nơi làm việc với Câu trả lời chuẩn:",
+                "question": "Câu 63: Nối Câu hỏi phỏng vấn công việc với Câu trả lời phù hợp ngữ cảnh:",
                 "options": null,
                 "correct_answer": "Hoàn thành nối ô",
-                "explanation": "Cặp câu hỏi và câu trả lời hoàn chỉnh tương ứng về nghề nghiệp, nơi làm việc và nhiệm vụ công việc.",
+                "explanation": "Hỏi nghề nghiệp -> trả lời làm nghề gì; hỏi nơi làm việc -> trả lời địa điểm; hỏi nhiệm vụ -> trả lời việc phải làm; hỏi cảm nhận -> trả lời mức độ yêu thích công việc.",
                 "exp_reward": 20,
                 "extra_data": {
                         "noi_o_pairs": [
                                 {
-                                        "left": "Was sind Sie von Beruf?",
-                                        "right": "Ich bin Sekretärin von Beruf."
+                                        "left": "Was machen Sie beruflich, Herr Bauer?",
+                                        "right": "Ich arbeite als Mechatroniker bei einer Autofirma."
                                 },
                                 {
-                                        "left": "Als was arbeitet dein Bruder?",
-                                        "right": "Er arbeitet als Programmierer."
+                                        "left": "Wo arbeiten Sie jeden Tag?",
+                                        "right": "In einer modernen Werkstatt am Stadtrand."
                                 },
                                 {
-                                        "left": "Wo arbeitet Frau Wagner?",
-                                        "right": "Sie arbeitet im Blumengeschäft."
+                                        "left": "Welche Aufgaben müssen Sie übernehmen?",
+                                        "right": "Ich muss Fahrzeuge warten und Fehler diagnostizieren."
                                 },
                                 {
-                                        "left": "Was muss Petra im Büro machen?",
-                                        "right": "Sie muss ihre Kunden anrufen."
+                                        "left": "Wie gefällt Ihnen die Arbeit?",
+                                        "right": "Sehr gut, ich kann viele neue Technologien lernen."
                                 }
                         ],
-                        "translation": "Nối các cặp tương ứng giữa 2 cột."
+                        "translation": "Nối câu hỏi phỏng vấn với câu trả lời phù hợp."
                 }
         },
         {
                 "type": "noi_o",
-                "question": "Câu 64: Phân biệt Động từ đi với Cách 4 (Akkusativ) vs. Động từ đi với Cách 3 (Dativ):",
+                "question": "Câu 64: Nối Động từ với Danh từ tân ngữ theo Cách (Akkusativ vs. Dativ):",
                 "options": null,
                 "correct_answer": "Hoàn thành nối ô",
-                "explanation": "Động từ Akkusativ chỉ tân ngữ trực tiếp (cần, tìm, gọi, khám); Động từ Dativ quy định người nhận tác động (giúp đỡ, cảm ơn, thích, thuộc về).",
+                "explanation": "untersuchen và anrufen đi với Akkusativ (den Patienten, meinen Kollegen); helfen và gehören đi với Dativ (der Dame, dem Trainer).",
                 "exp_reward": 20,
                 "extra_data": {
                         "noi_o_pairs": [
                                 {
-                                        "left": "brauchen (cần) & suchen (tìm)",
-                                        "right": "luôn đi với Cách 4 (Akkusativ: einen Computer)"
+                                        "left": "untersuchen (Akkusativ - tân ngữ trực tiếp)",
+                                        "right": "den kranken Patienten im Behandlungszimmer"
                                 },
                                 {
-                                        "left": "anrufen (gọi điện) & untersuchen (khám)",
-                                        "right": "luôn đi với Cách 4 (Akkusativ: den Patienten)"
+                                        "left": "helfen (Dativ - người nhận sự giúp đỡ)",
+                                        "right": "der älteren Dame beim Überqueren der Straße"
                                 },
                                 {
-                                        "left": "helfen (giúp đỡ) & danken (cảm ơn)",
-                                        "right": "luôn đi với Cách 3 (Dativ: dem Arzt)"
+                                        "left": "anrufen (Akkusativ - người được gọi điện)",
+                                        "right": "meinen besten Kollegen im Büro"
                                 },
                                 {
-                                        "left": "gefallen (làm ai thích) & gehören (thuộc về)",
-                                        "right": "luôn đi với Cách 3 (Dativ: meiner Mutter)"
+                                        "left": "gehören (Dativ - người sở hữu)",
+                                        "right": "dem neuen Trainer der Fußballmannschaft"
                                 }
                         ],
-                        "translation": "Nối các cặp tương ứng giữa 2 cột."
+                        "translation": "Nối động từ với danh từ tân ngữ theo Cách phù hợp."
                 }
         },
         {
@@ -2526,432 +2523,466 @@ def seed_lesson_7():
         },
         {
                 "type": "dien_tao_cau",
-                "question": "Câu 68: Điền 2 từ còn thiếu vào các chỗ trống (ngăn cách bởi dấu /): 'Um 6.15 Uhr [1] Paula [2].' (Gợi ý: 'Lúc 6 giờ 15 phút Paula phải thức dậy.')",
+                "question": "Câu 68: Điền 2 từ còn thiếu vào các chỗ trống (ngăn cách bởi dấu /): 'Nachts [1] die Taxifahrer sehr vorsichtig [2].' (Gợi ý: 'Ban đêm các tài xế taxi phải lái xe rất cẩn thận.')",
                 "options": null,
-                "correct_answer": "muss / aufstehen",
-                "explanation": "Động từ khuyết thiếu müssen chia theo ngôi thứ 3 số ít (Paula) là muss đứng ở vị trí số 2; động từ tách aufstehen giữ nguyên mẫu viết liền ở cuối câu.",
+                "correct_answer": "müssen / fahren",
+                "explanation": "Động từ khuyết thiếu müssen chia cho danh từ số nhiều die Taxifahrer là müssen ở vị trí số 2; động từ fahren ở dạng nguyên mẫu đứng cuối câu.",
                 "exp_reward": 20,
                 "extra_data": {
                         "accepted_answers": [
-                                "muss / aufstehen",
-                                "muss/aufstehen"
+                                "müssen / fahren",
+                                "müssen/fahren",
+                                "muessen / fahren",
+                                "muessen/fahren"
                         ],
-                        "display_frame": "Um 6.15 Uhr [1] Paula [2].",
-                        "translation": "Lúc 6 giờ 15 phút Paula phải thức dậy."
+                        "display_frame": "Nachts [1] die Taxifahrer sehr vorsichtig [2].",
+                        "translation": "Ban đêm các tài xế taxi phải lái xe rất cẩn thận."
                 }
         },
         {
                 "type": "dien_tao_cau",
-                "question": "Câu 69: Điền 2 từ còn thiếu vào các chỗ trống (ngăn cách bởi dấu /): 'Von 20 bis 22 Uhr [1] sie [2].' (Gợi ý: 'Từ 20 giờ đến 22 giờ cô ấy có thể xem tivi.')",
+                "question": "Câu 69: Điền 2 từ còn thiếu vào các chỗ trống (ngăn cách bởi dấu /): 'Der Kellner [1] das Essen nhanh an den Tisch [2].' (Gợi ý: 'Người bồi bàn có thể mang thức ăn nhanh đến bàn.')",
                 "options": null,
-                "correct_answer": "kann / fernsehen",
-                "explanation": "können chia cho ngôi sie (cô ấy) là kann ở vị trí số 2; động từ tách fernsehen giữ nguyên mẫu ở cuối câu.",
+                "correct_answer": "kann / bringen",
+                "explanation": "Động từ können chia cho ngôi thứ ba số ít der Kellner là kann ở vị trí số 2; động từ bringen giữ nguyên mẫu ở cuối câu.",
                 "exp_reward": 20,
                 "extra_data": {
                         "accepted_answers": [
-                                "kann / fernsehen",
-                                "kann/fernsehen"
+                                "kann / bringen",
+                                "kann/bringen"
                         ],
-                        "display_frame": "Von 20 bis 22 Uhr [1] sie [2].",
-                        "translation": "Từ 20 giờ đến 22 giờ cô ấy có thể xem tivi."
+                        "display_frame": "Der Kellner [1] das Essen schnell an den Tisch [2].",
+                        "translation": "Người bồi bàn có thể mang thức ăn nhanh đến bàn."
                 }
         },
         {
                 "type": "dien_tao_cau",
-                "question": "Câu 70: Điền 2 từ còn thiếu vào các chỗ trống (ngăn cách bởi dấu /): 'Um 16.30 Uhr muss sie ihre Tochter [1] Kindergarten [2].' (Gợi ý: 'Lúc 16 giờ 30 phút cô ấy phải đón con gái của mình từ trường mẫu giáo.')",
+                "question": "Câu 70: Điền 2 từ còn thiếu vào các chỗ trống (ngăn cách bởi dấu /): 'In der Universitätsbibliothek [1] man nicht laut [2].' (Gợi ý: 'Trong thư viện trường đại học người ta không được phép nói to.')",
                 "options": null,
-                "correct_answer": "vom / abholen",
-                "explanation": "Đón từ trường mẫu giáo dùng von + dem = vom Kindergarten; động từ abholen đứng nguyên mẫu ở cuối câu sau muss.",
+                "correct_answer": "darf / sprechen",
+                "explanation": "Đại từ bất định man đi với dạng chia ngôi thứ 3 số ít: dürfen đổi thành darf; động từ sprechen nguyên mẫu đứng cuối câu.",
                 "exp_reward": 20,
                 "extra_data": {
                         "accepted_answers": [
-                                "vom / abholen",
-                                "vom/abholen"
+                                "darf / sprechen",
+                                "darf/sprechen"
                         ],
-                        "display_frame": "Um 16.30 Uhr muss sie ihre Tochter [1] Kindergarten [2].",
-                        "translation": "Lúc 16 giờ 30 phút cô ấy phải đón con gái của mình từ trường mẫu giáo."
+                        "display_frame": "In der Universitätsbibliothek [1] man nicht laut [2].",
+                        "translation": "Trong thư viện trường đại học người ta không được phép nói to."
                 }
         },
         {
                 "type": "dien_tao_cau",
-                "question": "Câu 71: Điền 2 từ còn thiếu vào các chỗ trống (ngăn cách bởi dấu /): 'Bei [1] Arbeit braucht Petra [2] Computer und einen großen Schreibtisch.' (Gợi ý: 'Trong công việc của mình, Petra cần một chiếc máy tính và một chiếc bàn làm việc lớn.')",
+                "question": "Câu 71: Điền 2 từ còn thiếu vào các chỗ trống (ngăn cách bởi dấu /): 'Der Trainer [1] morgen ein wichtiges Fußballtraining [2].' (Gợi ý: 'Ngày mai huấn luyện viên muốn dẫn dắt một buổi tập bóng đá quan trọng.')",
                 "options": null,
-                "correct_answer": "ihrer / einen",
-                "explanation": "Sau giới từ Bei là Cách 3 (Dativ) với die Arbeit (giống cái) -> Bei ihrer Arbeit. Sau động từ braucht là Cách 4 (Akkusativ) với der Computer (giống đực) -> einen Computer.",
+                "correct_answer": "will / leiten",
+                "explanation": "Động từ wollen chia cho der Trainer (er) là will ở vị trí số 2; động từ nguyên mẫu leiten (hoặc organisieren/machen) đứng ở cuối câu.",
                 "exp_reward": 20,
                 "extra_data": {
                         "accepted_answers": [
-                                "ihrer / einen",
-                                "ihrer/einen"
+                                "will / leiten",
+                                "will/leiten",
+                                "will / machen",
+                                "will/machen",
+                                "will / organisieren",
+                                "will/organisieren"
                         ],
-                        "display_frame": "Bei [1] Arbeit braucht Petra [2] Computer und einen großen Schreibtisch.",
-                        "translation": "Trong công việc của mình, Petra cần một chiếc máy tính và một cái bàn làm việc lớn."
+                        "display_frame": "Der Trainer [1] morgen ein wichtiges Fußballtraining [2].",
+                        "translation": "Ngày mai huấn luyện viên muốn dẫn dắt một buổi tập bóng đá quan trọng."
                 }
         },
         {
                 "type": "dien_tao_cau",
-                "question": "Câu 72: Điền 2 từ còn thiếu vào các chỗ trống (ngăn cách bởi dấu /): 'Am Morgen bringt Frank die Tochter in [1] Kindergarten, und am Nachmittag spielt sie [2] Kindergarten.' (Gợi ý: 'Buổi sáng Frank đưa con gái vào trường mẫu giáo, và buổi chiều con bé chơi ở trong trường mẫu giáo.')",
+                "question": "Câu 72: Điền 2 từ còn thiếu vào các chỗ trống (ngăn cách bởi dấu /): 'Der Patient mit Fieber [1] täglich viel Wasser [2].' (Gợi ý: 'Người bệnh nhân bị sốt nên uống nhiều nước mỗi ngày.')",
                 "options": null,
-                "correct_answer": "den / im",
-                "explanation": "Đưa vào trường mẫu giáo (Wohin? + Akkusativ) là in den Kindergarten; chơi ở trong trường mẫu giáo (Wo? + Dativ) là im Kindergarten.",
+                "correct_answer": "soll / trinken",
+                "explanation": "Động từ sollen truyền đạt lời khuyên y tế, chia cho der Patient (er) là soll; động từ nguyên mẫu trinken đứng ở cuối câu.",
                 "exp_reward": 20,
                 "extra_data": {
                         "accepted_answers": [
-                                "den / im",
-                                "den/im"
+                                "soll / trinken",
+                                "soll/trinken"
                         ],
-                        "display_frame": "Am Morgen bringt Frank die Tochter in [1] Kindergarten, und am Nachmittag spielt sie [2] Kindergarten.",
-                        "translation": "Buổi sáng Frank đưa con gái vào trường mẫu giáo, và buổi chiều con bé chơi ở trong trường mẫu giáo."
+                        "display_frame": "Der Patient mit Fieber [1] täglich viel Wasser [2].",
+                        "translation": "Người bệnh nhân bị sốt nên uống nhiều nước mỗi ngày."
                 }
         },
         {
                 "type": "dien_tao_cau",
-                "question": "Câu 73: Điền 2 từ còn thiếu vào các chỗ trống (ngăn cách bởi dấu /): 'Der Arzt untersucht [1] Patienten [2] Krankenhaus.' (Gợi ý: 'Vị bác sĩ khám cho người bệnh nhân ở trong bệnh viện.')",
+                "question": "Câu 73: Điền 2 từ còn thiếu vào các chỗ trống (ngăn cách bởi dấu /): 'Heute Nachmittag [1] der Hausmann frische Lebensmittel [2].' (Gợi ý: 'Chiều nay người đàn ông nội trợ muốn mua thực phẩm tươi.')",
                 "options": null,
-                "correct_answer": "den / im",
-                "explanation": "untersuchen đi với Akkusativ (den Patienten), còn nơi chốn tĩnh Wo? với das Krankenhaus đi với Dativ (im Krankenhaus).",
+                "correct_answer": "möchte / einkaufen",
+                "explanation": "Động từ möchten chia cho ngôi er (der Hausmann) là möchte; động từ tách einkaufen giữ nguyên mẫu viết liền ở cuối câu.",
                 "exp_reward": 20,
                 "extra_data": {
                         "accepted_answers": [
-                                "den / im",
-                                "den/im"
+                                "möchte / einkaufen",
+                                "möchte/einkaufen",
+                                "moechte / einkaufen",
+                                "moechte/einkaufen",
+                                "möchte / kaufen",
+                                "möchte/kaufen"
                         ],
-                        "display_frame": "Der Arzt untersucht [1] Patienten [2] Krankenhaus.",
-                        "translation": "Vị bác sĩ khám cho người bệnh nhân ở trong bệnh viện."
+                        "display_frame": "Heute Nachmittag [1] der Hausmann frische Lebensmittel [2].",
+                        "translation": "Chiều nay người đàn ông nội trợ muốn mua thực phẩm tươi."
                 }
         },
         {
                 "type": "dien_tao_cau",
-                "question": "Câu 74: Điền 2 từ còn thiếu vào các chỗ trống (ngăn cách bởi dấu /): 'Meine Schwester arbeitet als [1] und [2] sehr gut kochen.' (Gợi ý: 'Chị gái của tôi làm nghề nữ đầu bếp và có thể nấu ăn rất giỏi.')",
+                "question": "Câu 74: Điền 2 từ còn thiếu vào các chỗ trống (ngăn cách bởi dấu /): 'Die Floristin [1] wunderschöne Blumen an die Kunden [2].' (Gợi ý: 'Nữ thợ hoa phải giao những bông hoa tuyệt đẹp cho khách hàng.')",
                 "options": null,
-                "correct_answer": "Köchin / kann",
-                "explanation": "Nữ đầu bếp là Köchin; động từ können chia cho meine Schwester (sie) là kann.",
+                "correct_answer": "muss / liefern",
+                "explanation": "Động từ müssen chia cho die Floristin (sie) là muss; động từ liefern (hoặc verkaufen) giữ nguyên mẫu ở cuối câu.",
                 "exp_reward": 20,
                 "extra_data": {
                         "accepted_answers": [
-                                "Köchin / kann",
-                                "Köchin/kann",
-                                "Koechin / kann",
-                                "Koechin/kann"
+                                "muss / liefern",
+                                "muss/liefern",
+                                "muss / verkaufen",
+                                "muss/verkaufen"
                         ],
-                        "display_frame": "Meine Schwester arbeitet als [1] und [2] sehr gut kochen.",
-                        "translation": "Chị gái của tôi làm nghề nữ đầu bếp và có thể nấu ăn rất giỏi."
+                        "display_frame": "Die Floristin [1] wunderschöne Blumen an die Kunden [2].",
+                        "translation": "Nữ thợ hoa phải giao những bông hoa tuyệt đẹp cho khách hàng."
                 }
         },
         {
                 "type": "dien_tao_cau",
-                "question": "Câu 75: Điền 2 từ còn thiếu vào các chỗ trống (ngăn cách bởi dấu /): 'Der Krankenpfleger gibt [1] Arzt [2] Kuli.' (Gợi ý: 'Người nam điều dưỡng đưa cho vị bác sĩ một chiếc bút bi.')",
+                "question": "Câu 75: Điền 2 từ còn thiếu vào các chỗ trống (ngăn cách bởi dấu /): 'Im Sprachzentrum [1] die Schüler fleißig Deutsch [2].' (Gợi ý: 'Ở trung tâm ngôn ngữ các học viên có thể học tiếng Đức chăm chỉ.')",
                 "options": null,
-                "correct_answer": "dem / einen",
-                "explanation": "Người nhận (Wem? cho bác sĩ) chia ở Cách 3 (Dativ) -> dem Arzt; vật được đưa (Was? một chiếc bút bi) chia ở Cách 4 (Akkusativ) -> einen Kuli.",
+                "correct_answer": "können / lernen",
+                "explanation": "Chủ ngữ die Schüler là số nhiều nên können giữ nguyên; động từ lernen đứng ở cuối câu.",
                 "exp_reward": 20,
                 "extra_data": {
                         "accepted_answers": [
-                                "dem / einen",
-                                "dem/einen"
+                                "können / lernen",
+                                "können/lernen",
+                                "koennen / lernen",
+                                "koennen/lernen"
                         ],
-                        "display_frame": "Der Krankenpfleger gibt [1] Arzt [2] Kuli.",
-                        "translation": "Người nam điều dưỡng đưa cho vị bác sĩ một chiếc bút bi."
+                        "display_frame": "Im Sprachzentrum [1] die Schüler fleißig Deutsch [2].",
+                        "translation": "Ở trung tâm ngôn ngữ các học viên có thể học tiếng Đức chăm chỉ."
                 }
         },
         {
                 "type": "dien_tao_cau",
-                "question": "Câu 76: Điền 2 từ còn thiếu vào các chỗ trống (ngăn cách bởi dấu /): 'Um 12.30 Uhr [1] er das Auto in [2] Werkstatt.' (Gợi ý: 'Lúc 12 giờ 30 phút anh ấy mang chiếc ô tô vào xưởng sửa chữa.')",
+                "question": "Câu 76: Điền 2 từ còn thiếu vào các chỗ trống (ngăn cách bởi dấu /): 'Die Programmiererin [1] einen neuen Laptop für ihre Arbeit [2].' (Gợi ý: 'Nữ lập trình viên muốn mua một chiếc máy tính xách tay mới cho công việc.')",
                 "options": null,
-                "correct_answer": "bringt / die",
-                "explanation": "Động từ bringen chia ở ngôi er là bringt; mang vào xưởng (Wohin? + Akkusativ) với danh từ giống cái die Werkstatt là in die Werkstatt.",
+                "correct_answer": "will / kaufen",
+                "explanation": "Động từ wollen chia cho ngôi sie là will ở vị trí số 2; động từ kaufen đứng ở cuối câu.",
                 "exp_reward": 20,
                 "extra_data": {
                         "accepted_answers": [
-                                "bringt / die",
-                                "bringt/die"
+                                "will / kaufen",
+                                "will/kaufen",
+                                "möchte / kaufen",
+                                "möchte/kaufen"
                         ],
-                        "display_frame": "Um 12.30 Uhr [1] er das Auto in [2] Werkstatt.",
-                        "translation": "Lúc 12 giờ 30 phút anh ấy mang chiếc ô tô vào xưởng sửa chữa."
+                        "display_frame": "Die Programmiererin [1] einen neuen Laptop für ihre Arbeit [2].",
+                        "translation": "Nữ lập trình viên muốn mua một chiếc máy tính xách tay mới cho công việc."
                 }
         },
         {
                 "type": "dien_tao_cau",
-                "question": "Câu 77: Điền 2 từ còn thiếu vào các chỗ trống (ngăn cách bởi dấu /): '[1] ihr am Samstag [2] Büro arbeiten?' (Gợi ý: 'Các bạn có phải làm việc vào thứ Bảy ở trong văn phòng không?')",
+                "question": "Câu 77: Điền 2 từ còn thiếu vào các chỗ trống (ngăn cách bởi dấu /): 'Nach der langen Nachtschicht [1] der Krankenpfleger ruhig [2].' (Gợi ý: 'Sau ca trực đêm dài người nam điều dưỡng được phép ngủ yên tĩnh.')",
                 "options": null,
-                "correct_answer": "Müsst / im",
-                "explanation": "Câu hỏi đảo động từ khuyết thiếu müssen với chủ ngữ ihr là Müsst ihr ...?; làm việc ở trong văn phòng (Wo? + Dativ) là im Büro.",
+                "correct_answer": "darf / schlafen",
+                "explanation": "Động từ dürfen chia cho der Krankenpfleger là darf ở vị trí 2; động từ schlafen giữ nguyên mẫu ở cuối câu.",
                 "exp_reward": 20,
                 "extra_data": {
                         "accepted_answers": [
-                                "Müsst / im",
-                                "Müsst/im",
-                                "müsst / im",
-                                "müsst/im",
-                                "Muesst / im",
-                                "muesst / im"
+                                "darf / schlafen",
+                                "darf/schlafen",
+                                "kann / schlafen",
+                                "kann/schlafen"
                         ],
-                        "display_frame": "[1] ihr am Samstag [2] Büro arbeiten?",
-                        "translation": "Các bạn có phải làm việc vào thứ Bảy ở trong văn phòng không?"
+                        "display_frame": "Nach der langen Nachtschicht [1] der Krankenpfleger ruhig [2].",
+                        "translation": "Sau ca trực đêm dài người nam điều dưỡng được phép ngủ yên tĩnh."
                 }
         },
         {
                 "type": "nghe_dien",
-                "question": "Câu 78: Nghe phát âm tiếng Đức và điền từ còn thiếu vào chỗ trống: 'Paula Rausch ist 35 Jahre alt und arbeitet als ___.'",
+                "question": "Câu 78: Nghe phát âm tiếng Đức và điền từ còn thiếu vào chỗ trống: 'Der Koch bereitet köstliche Gerichte in der ___ zu.'",
                 "options": null,
-                "correct_answer": "Programmiererin",
-                "explanation": "Danh từ chỉ nữ lập trình viên là die Programmiererin.",
+                "correct_answer": "Küche",
+                "explanation": "Danh từ chỉ nơi làm việc của đầu bếp là die Küche (in der Küche = trong nhà bếp).",
                 "exp_reward": 20,
                 "extra_data": {
-                        "audio_text": "Paula Rausch ist fünfunddreißig Jahre alt und arbeitet als Programmiererin.",
+                        "audio_text": "Der Koch bereitet köstliche Gerichte in der Küche zu.",
                         "accepted_answers": [
-                                "Programmiererin"
+                                "Küche",
+                                "Kueche",
+                                "küche",
+                                "kueche"
                         ],
-                        "hint_vi": "Paula Rausch 35 tuổi và làm nghề nữ lập trình viên.",
-                        "translation": "Paula Rausch 35 tuổi và làm nghề nữ lập trình viên."
+                        "hint_vi": "Người đầu bếp chuẩn bị các món ăn ngon trong nhà bếp.",
+                        "translation": "Người đầu bếp chuẩn bị các món ăn ngon trong nhà bếp."
                 }
         },
         {
                 "type": "nghe_dien",
-                "question": "Câu 79: Nghe phát âm tiếng Đức và điền từ còn thiếu vào chỗ trống: 'Der KFZ-Mechatroniker repariert Autos in einer ___.'",
+                "question": "Câu 79: Nghe phát âm tiếng Đức và điền từ còn thiếu vào chỗ trống: 'Die Studentin besucht am Nachmittag eine Vorlesung an der ___.'",
                 "options": null,
-                "correct_answer": "Werkstatt",
-                "explanation": "Danh từ die Werkstatt có nghĩa là xưởng sửa chữa (in einer Werkstatt).",
+                "correct_answer": "Universität",
+                "explanation": "Nơi học tập của sinh viên đại học là die Universität (an der Universität = tại trường đại học).",
                 "exp_reward": 20,
                 "extra_data": {
-                        "audio_text": "Der KFZ-Mechatroniker repariert Autos in einer Werkstatt.",
+                        "audio_text": "Die Studentin besucht am Nachmittag eine Vorlesung an der Universität.",
                         "accepted_answers": [
-                                "Werkstatt"
+                                "Universität",
+                                "Universitaet",
+                                "universität",
+                                "universitaet",
+                                "Uni",
+                                "uni"
                         ],
-                        "hint_vi": "Người thợ cơ khí ô tô sửa chữa xe hơi ở trong một xưởng sửa chữa.",
-                        "translation": "Người thợ cơ khí ô tô sửa chữa xe hơi ở trong một xưởng sửa chữa."
+                        "hint_vi": "Nữ sinh viên tham dự một buổi giảng tại trường đại học vào buổi chiều.",
+                        "translation": "Nữ sinh viên tham dự một buổi giảng tại trường đại học vào buổi chiều."
                 }
         },
         {
                 "type": "nghe_dien",
-                "question": "Câu 80: Nghe phát âm tiếng Đức và điền từ còn thiếu vào chỗ trống: 'Der Arzt ___ jeden Tag viele Patienten im Krankenhaus.'",
+                "question": "Câu 80: Nghe phát âm tiếng Đức và điền từ còn thiếu vào chỗ trống: 'Der Verkäufer berät die Kunden freundlich im ___.'",
                 "options": null,
-                "correct_answer": "untersucht",
-                "explanation": "Động từ untersuchen (khám bệnh) chia ở ngôi thứ 3 số ít (der Arzt) là untersucht.",
+                "correct_answer": "Schuhgeschäft",
+                "explanation": "Cửa hàng bán giày dép là das Schuhgeschäft (im Schuhgeschäft).",
                 "exp_reward": 20,
                 "extra_data": {
-                        "audio_text": "Der Arzt untersucht jeden Tag viele Patienten im Krankenhaus.",
+                        "audio_text": "Der Verkäufer berät die Kunden freundlich im Schuhgeschäft.",
                         "accepted_answers": [
-                                "untersucht"
+                                "Schuhgeschäft",
+                                "Schuhgeschaeft",
+                                "schuhgeschäft",
+                                "schuhgeschaeft"
                         ],
-                        "hint_vi": "Vị bác sĩ khám cho nhiều bệnh nhân mỗi ngày ở trong bệnh viện.",
-                        "translation": "Vị bác sĩ khám cho nhiều bệnh nhân mỗi ngày ở trong bệnh viện."
+                        "hint_vi": "Người bán hàng tư vấn khách hàng thân thiện ở trong cửa hàng giày.",
+                        "translation": "Người bán hàng tư vấn khách hàng thân thiện ở trong cửa hàng giày."
                 }
         },
         {
                 "type": "nghe_dien",
-                "question": "Câu 81: Nghe phát âm tiếng Đức và điền từ còn thiếu vào chỗ trống: 'Bei ihrer Arbeit braucht Petra ___ schnellen Computer und einen großen Schreibtisch.'",
+                "question": "Câu 81: Nghe phát âm tiếng Đức và điền từ còn thiếu vào chỗ trống: 'Die Friseurin macht eine sehr schöne moderne Frisur im ___.'",
                 "options": null,
-                "correct_answer": "einen",
-                "explanation": "Sau động từ braucht (Akkusativ), mạo từ không xác định của der Computer là einen.",
+                "correct_answer": "Friseursalon",
+                "explanation": "Tiệm làm tóc là der Friseursalon (im Friseursalon).",
                 "exp_reward": 20,
                 "extra_data": {
-                        "audio_text": "Bei ihrer Arbeit braucht Petra einen schnellen Computer und einen großen Schreibtisch.",
+                        "audio_text": "Die Friseurin macht eine sehr schöne moderne Frisur im Friseursalon.",
                         "accepted_answers": [
-                                "einen"
+                                "Friseursalon",
+                                "friseursalon"
                         ],
-                        "hint_vi": "Trong công việc của mình, Petra cần một chiếc máy tính nhanh và một cái bàn làm việc lớn.",
-                        "translation": "Trong công việc của mình, Petra cần một chiếc máy tính nhanh và một cái bàn làm việc lớn."
+                        "hint_vi": "Nữ thợ làm tóc làm một kiểu tóc hiện đại rất đẹp trong tiệm làm tóc.",
+                        "translation": "Nữ thợ làm tóc làm một kiểu tóc hiện đại rất đẹp trong tiệm làm tóc."
                 }
         },
         {
                 "type": "nghe_dien",
-                "question": "Câu 82: Nghe phát âm tiếng Đức và điền từ còn thiếu vào chỗ trống: 'Um 16.30 Uhr muss sie ihre Tochter vom Kindergarten ___.'",
+                "question": "Câu 82: Nghe phát âm tiếng Đức và điền từ còn thiếu vào chỗ trống: 'Auf der ___ müssen alle Arbeiter einen Schutzhelm tragen.'",
                 "options": null,
-                "correct_answer": "abholen",
-                "explanation": "Động từ tách abholen đứng ở cuối câu ở dạng nguyên mẫu khi đi cùng muss.",
+                "correct_answer": "Baustelle",
+                "explanation": "Công trường xây dựng là die Baustelle (auf der Baustelle).",
                 "exp_reward": 20,
                 "extra_data": {
-                        "audio_text": "Um sechzehn Uhr dreißig muss sie ihre Tochter vom Kindergarten abholen.",
+                        "audio_text": "Auf der Baustelle müssen alle Arbeiter einen Schutzhelm tragen.",
                         "accepted_answers": [
-                                "abholen"
+                                "Baustelle",
+                                "baustelle"
                         ],
-                        "hint_vi": "Lúc 16 giờ 30 phút cô ấy phải đón con gái của mình từ trường mẫu giáo.",
-                        "translation": "Lúc 16 giờ 30 phút cô ấy phải đón con gái của mình từ trường mẫu giáo."
+                        "hint_vi": "Trên công trường tất cả công nhân phải đội mũ bảo hộ.",
+                        "translation": "Trên công trường tất cả công nhân phải đội mũ bảo hộ."
                 }
         },
         {
                 "type": "nghe_dien",
-                "question": "Câu 83: Nghe phát âm tiếng Đức và điền từ còn thiếu vào chỗ trống: 'Frank Müller ist ___ von Beruf und hat jetzt Ferien.'",
+                "question": "Câu 83: Nghe phát âm tiếng Đức và điền từ còn thiếu vào chỗ trống: 'Der Trainer leitet das Training für die Mannschaft im ___.'",
                 "options": null,
-                "correct_answer": "Lehrer",
-                "explanation": "Danh từ chỉ nam giáo viên là der Lehrer (Er ist Lehrer von Beruf).",
+                "correct_answer": "Stadion",
+                "explanation": "Sân vận động thể thao là das Stadion (im Stadion).",
                 "exp_reward": 20,
                 "extra_data": {
-                        "audio_text": "Frank Müller ist Lehrer von Beruf und hat jetzt Ferien.",
+                        "audio_text": "Der Trainer leitet das Training für die Mannschaft im Stadion.",
                         "accepted_answers": [
-                                "Lehrer"
+                                "Stadion",
+                                "stadion"
                         ],
-                        "hint_vi": "Frank Müller làm nghề giáo viên và hiện đang có kỳ nghỉ.",
-                        "translation": "Frank Müller làm nghề giáo viên và hiện đang có kỳ nghỉ."
+                        "hint_vi": "Huấn luyện viên điều hành buổi tập cho đội bóng ở sân vận động.",
+                        "translation": "Huấn luyện viên điều hành buổi tập cho đội bóng ở sân vận động."
                 }
         },
         {
                 "type": "nghe_dien",
-                "question": "Câu 84: Nghe phát âm tiếng Đức và điền từ còn thiếu vào chỗ trống: 'Die Floristin verkauft schöne Blumen im ___.'",
+                "question": "Câu 84: Nghe phát âm tiếng Đức và điền từ còn thiếu vào chỗ trống: 'Der Sekretär schreibt wichtige E-Mails an seinem ___.'",
                 "options": null,
-                "correct_answer": "Blumengeschäft",
-                "explanation": "Danh từ das Blumengeschäft có nghĩa là cửa hàng hoa (im Blumengeschäft).",
+                "correct_answer": "Computer",
+                "explanation": "Thiết bị văn phòng để gõ email là der Computer (am Computer / an seinem Computer).",
                 "exp_reward": 20,
                 "extra_data": {
-                        "audio_text": "Die Floristin verkauft schöne Blumen im Blumengeschäft.",
+                        "audio_text": "Der Sekretär schreibt wichtige E-Mails an seinem Computer.",
                         "accepted_answers": [
-                                "Blumengeschäft",
-                                "Blumengeschaeft"
+                                "Computer",
+                                "computer"
                         ],
-                        "hint_vi": "Người nữ bán hoa bán những bông hoa đẹp ở trong cửa hàng hoa.",
-                        "translation": "Người nữ bán hoa bán những bông hoa đẹp ở trong cửa hàng hoa."
+                        "hint_vi": "Nam thư ký viết những email quan trọng trên máy tính của mình.",
+                        "translation": "Nam thư ký viết những email quan trọng trên máy tính của mình."
                 }
         },
         {
                 "type": "nghe_dien",
-                "question": "Câu 85: Nghe phát âm tiếng Đức và điền từ còn thiếu vào chỗ trống: 'Sie muss ihre ___ im Büro oft anrufen.'",
+                "question": "Câu 85: Nghe phát âm tiếng Đức và điền từ còn thiếu vào chỗ trống: 'Viele Ausländer lernen gemeinsam Deutsch im ___.'",
                 "options": null,
-                "correct_answer": "Kunden",
-                "explanation": "Danh từ số nhiều die Kunden có nghĩa là những khách hàng.",
+                "correct_answer": "Sprachzentrum",
+                "explanation": "Trung tâm ngoại ngữ là das Sprachzentrum (im Sprachzentrum).",
                 "exp_reward": 20,
                 "extra_data": {
-                        "audio_text": "Sie muss ihre Kunden im Büro oft anrufen.",
+                        "audio_text": "Viele Ausländer lernen gemeinsam Deutsch im Sprachzentrum.",
                         "accepted_answers": [
-                                "Kunden"
+                                "Sprachzentrum",
+                                "sprachzentrum"
                         ],
-                        "hint_vi": "Cô ấy thường xuyên phải gọi điện cho các khách hàng của mình ở trong văn phòng.",
-                        "translation": "Cô ấy thường xuyên phải gọi điện cho các khách hàng của mình ở trong văn phòng."
+                        "hint_vi": "Nhiều người nước ngoài cùng nhau học tiếng Đức ở trung tâm ngoại ngữ.",
+                        "translation": "Nhiều người nước ngoài cùng nhau học tiếng Đức ở trung tâm ngoại ngữ."
                 }
         },
         {
                 "type": "nghe_dien",
-                "question": "Câu 86: Nghe phát âm tiếng Đức và điền từ còn thiếu vào chỗ trống: 'Um 19 Uhr bringt der Vater seine Tochter ___ Bett.'",
+                "question": "Câu 86: Nghe phát âm tiếng Đức và điền từ còn thiếu vào chỗ trống: 'Die Krankenschwester misst die Temperatur für den ___.'",
                 "options": null,
-                "correct_answer": "ins",
-                "explanation": "Cụm ins Bett bringen (in + das Bett — Wohin? Akkusativ) có nghĩa là đưa lên giường đi ngủ.",
+                "correct_answer": "Patienten",
+                "explanation": "Người bệnh nhân ở Cách 4 (Akkusativ N-Deklination) là den Patienten.",
                 "exp_reward": 20,
                 "extra_data": {
-                        "audio_text": "Um neunzehn Uhr bringt der Vater seine Tochter ins Bett.",
+                        "audio_text": "Die Krankenschwester misst die Temperatur für den Patienten.",
                         "accepted_answers": [
-                                "ins"
+                                "Patienten",
+                                "Patient",
+                                "patienten",
+                                "patient"
                         ],
-                        "hint_vi": "Lúc 19 giờ người bố đưa con gái của mình lên giường đi ngủ.",
-                        "translation": "Lúc 19 giờ người bố đưa con gái của mình lên giường đi ngủ."
+                        "hint_vi": "Nữ y tá đo nhiệt độ cho người bệnh nhân.",
+                        "translation": "Nữ y tá đo nhiệt độ cho người bệnh nhân."
                 }
         },
         {
                 "type": "dich_cau_vd",
-                "question": "Câu 87: Dịch câu sau sang tiếng Đức: 'Bạn làm nghề gì? — Tôi làm nghề lập trình viên.'",
+                "question": "Câu 87: Dịch câu sau sang tiếng Đức: 'Nam nhân viên bán hàng tư vấn khách hàng rất thân thiện trong siêu thị.'",
                 "options": null,
-                "correct_answer": "Was bist du von Beruf? Ich arbeite als Programmierer.",
-                "explanation": "Hỏi nghề nghiệp thân mật dùng Was bist du von Beruf? hoặc Was machst du beruflich?; trả lời dùng Ich bin Programmierer hoặc Ich arbeite als Programmierer.",
+                "correct_answer": "Der Verkäufer berät die Kunden sehr freundlich im Supermarkt.",
+                "explanation": "Nam nhân viên bán hàng là Der Verkäufer; động từ beraten biến âm a -> ä (berät) đi với Akkusativ (die Kunden); ở trong siêu thị là im Supermarkt.",
                 "exp_reward": 25,
                 "extra_data": {
                         "accepted_answers": [
-                                "Was bist du von Beruf? Ich arbeite als Programmierer.",
-                                "Was bist du von Beruf? Ich bin Programmierer.",
-                                "Was bist du von Beruf? Ich bin Programmierer von Beruf.",
-                                "Was machst du beruflich? Ich arbeite als Programmierer.",
-                                "Was machst du beruflich? Ich bin Programmiererin.",
-                                "Was machst du beruflich? Ich bin Programmierer."
+                                "Der Verkäufer berät die Kunden sehr freundlich im Supermarkt.",
+                                "Der Verkäufer berät im Supermarkt die Kunden rất freundlich.",
+                                "Im Supermarkt berät der Verkäufer die Kunden sehr freundlich.",
+                                "Der Verkaeufer beraet die Kunden sehr freundlich im Supermarkt.",
+                                "Der Verkäufer berät Kunden sehr freundlich im Supermarkt."
                         ],
-                        "translation": "Bạn làm nghề gì? — Tôi làm nghề lập trình viên."
+                        "translation": "Nam nhân viên bán hàng tư vấn khách hàng rất thân thiện trong siêu thị."
                 }
         },
         {
                 "type": "dich_cau_vd",
-                "question": "Câu 88: Dịch câu sau sang tiếng Đức: 'Lúc 7 giờ 15 phút cô ấy phải đi bằng xe buýt đến chỗ làm.'",
+                "question": "Câu 88: Dịch câu sau sang tiếng Đức: 'Nữ thợ làm tóc có thể tạo một kiểu tóc rất đẹp.'",
                 "options": null,
-                "correct_answer": "Um 7.15 Uhr muss sie mit dem Bus zur Arbeit fahren.",
-                "explanation": "Động từ khuyết thiếu muss đứng ở vị trí số 2, động từ chính fahren đứng nguyên mẫu ở cuối câu; phương tiện mit dem Bus và đích đến zur Arbeit đều chia ở Dativ.",
+                "correct_answer": "Die Friseurin kann eine sehr schöne Frisur machen.",
+                "explanation": "Nữ thợ làm tóc là Die Friseurin; có thể là kann (Modalverb ở vị trí số 2); động từ nguyên mẫu machen đứng ở cuối câu.",
                 "exp_reward": 25,
                 "extra_data": {
                         "accepted_answers": [
-                                "Um 7.15 Uhr muss sie mit dem Bus zur Arbeit fahren.",
-                                "Um Viertel nach sieben muss sie mit dem Bus zur Arbeit fahren.",
-                                "Sie muss um 7.15 Uhr mit dem Bus zur Arbeit fahren.",
-                                "Um sieben Uhr fünfzehn muss sie mit dem Bus zur Arbeit fahren."
+                                "Die Friseurin kann eine sehr schöne Frisur machen.",
+                                "Die Friseurin kann eine sehr schöne Frisur kreieren.",
+                                "Die Friseurin kann eine sehr schoene Frisur machen.",
+                                "Eine sehr schöne Frisur kann die Friseurin machen.",
+                                "Die Friseurin kann eine schöne Frisur machen."
                         ],
-                        "translation": "Lúc 7 giờ 15 phút cô ấy phải đi bằng xe buýt đến chỗ làm."
+                        "translation": "Nữ thợ làm tóc có thể tạo một kiểu tóc rất đẹp."
                 }
         },
         {
                 "type": "dich_cau_vd",
-                "question": "Câu 89: Dịch câu sau sang tiếng Đức: 'Trong công việc của mình, Petra cần một chiếc máy tính và một cái bàn làm việc lớn.'",
+                "question": "Câu 89: Dịch câu sau sang tiếng Đức: 'Các học sinh phải nộp bài tập về nhà cho thầy giáo.'",
                 "options": null,
-                "correct_answer": "Bei ihrer Arbeit braucht Petra einen Computer und einen großen Schreibtisch.",
-                "explanation": "Bei ihrer Arbeit chia ở Dativ; sau động từ braucht thì cả der Computer và der Schreibtisch đều chia ở Akkusativ (einen Computer und einen großen Schreibtisch).",
+                "correct_answer": "Die Schüler müssen dem Lehrer die Hausaufgaben abgeben.",
+                "explanation": "Chủ ngữ die Schüler số nhiều đi với müssen; thầy giáo là người nhận ở Dativ (dem Lehrer); bài tập về nhà là Akkusativ (die Hausaufgaben); abgeben đứng cuối câu.",
                 "exp_reward": 25,
                 "extra_data": {
                         "accepted_answers": [
-                                "Bei ihrer Arbeit braucht Petra einen Computer und einen großen Schreibtisch.",
-                                "Petra braucht bei ihrer Arbeit einen Computer und einen großen Schreibtisch.",
-                                "Für ihre Arbeit braucht Petra einen Computer und einen großen Schreibtisch."
+                                "Die Schüler müssen dem Lehrer die Hausaufgaben abgeben.",
+                                "Die Schüler müssen die Hausaufgaben dem Lehrer abgeben.",
+                                "Die Schueler muessen dem Lehrer die Hausaufgaben abgeben.",
+                                "Dem Lehrer müssen die Schüler die Hausaufgaben abgeben.",
+                                "Die Schüler müssen dem Lehrer ihre Hausaufgaben abgeben."
                         ],
-                        "translation": "Trong công việc của mình, Petra cần một chiếc máy tính và một cái bàn làm việc lớn."
+                        "translation": "Các học sinh phải nộp bài tập về nhà cho thầy giáo."
                 }
         },
         {
                 "type": "dich_cau_vd",
-                "question": "Câu 90: Dịch câu sau sang tiếng Đức: 'Người thợ cơ khí sửa chữa ô tô ở trong một xưởng sửa chữa.'",
+                "question": "Câu 90: Dịch câu sau sang tiếng Đức: 'Ở trong bệnh viện, người ta không được phép hút thuốc lá.'",
                 "options": null,
-                "correct_answer": "Der Mechatroniker repariert Autos in einer Werkstatt.",
-                "explanation": "Tân ngữ trực tiếp Autos ở Akkusativ, còn nơi làm việc tĩnh in einer Werkstatt chia ở Dativ.",
+                "correct_answer": "Im Krankenhaus darf man nicht rauchen.",
+                "explanation": "Ở bệnh viện là Im Krankenhaus; đại từ man chia động từ darf ở vị trí 2; không được phép hút thuốc là darf ... nicht rauchen.",
                 "exp_reward": 25,
                 "extra_data": {
                         "accepted_answers": [
-                                "Der Mechatroniker repariert Autos in einer Werkstatt.",
-                                "Der KFZ-Mechatroniker repariert Autos in einer Werkstatt.",
-                                "Der Mechatroniker repariert das Auto in einer Werkstatt.",
-                                "In einer Werkstatt repariert der KFZ-Mechatroniker Autos."
+                                "Im Krankenhaus darf man nicht rauchen.",
+                                "Man darf im Krankenhaus nicht rauchen.",
+                                "In dem Krankenhaus darf man nicht rauchen.",
+                                "Im Krankenhaus darf man keine Zigaretten rauchen."
                         ],
-                        "translation": "Người thợ cơ khí sửa chữa ô tô ở trong một xưởng sửa chữa."
+                        "translation": "Ở trong bệnh viện, người ta không được phép hút thuốc lá."
                 }
         },
         {
                 "type": "dich_cau_vd",
-                "question": "Câu 91: Dịch câu sau sang tiếng Đức: 'Lúc 8 giờ 30 phút anh ấy phải đưa con gái vào trường mẫu giáo.'",
+                "question": "Câu 91: Dịch câu sau sang tiếng Đức: 'Người phụ nữ nội trợ chuẩn bị bữa tối cho cả gia đình trong bếp.'",
                 "options": null,
-                "correct_answer": "Um 8.30 Uhr muss er die Tochter in den Kindergarten bringen.",
-                "explanation": "Đưa con gái vào trường mẫu giáo (bringen -> di chuyển Wohin?) dùng Cách 4 (Akkusativ): in den Kindergarten.",
+                "correct_answer": "Die Hausfrau bereitet das Abendessen für die Familie in der Küche zu.",
+                "explanation": "Người phụ nữ nội trợ là Die Hausfrau; chuẩn bị là zubereiten (động từ tách: bereitet ... zu); cho gia đình là für die Familie (Akkusativ); trong bếp là in der Küche (Dativ).",
                 "exp_reward": 25,
                 "extra_data": {
                         "accepted_answers": [
-                                "Um 8.30 Uhr muss er die Tochter in den Kindergarten bringen.",
-                                "Um halb neun muss er die Tochter in den Kindergarten bringen.",
-                                "Um 8.30 Uhr muss er seine Tochter in den Kindergarten bringen.",
-                                "Er muss um 8.30 Uhr seine Tochter in den Kindergarten bringen."
+                                "Die Hausfrau bereitet das Abendessen für die Familie in der Küche zu.",
+                                "In der Küche bereitet die Hausfrau das Abendessen für die Familie zu.",
+                                "Die Hausfrau bereitet in der Küche das Abendessen für die Familie zu.",
+                                "Die Hausfrau kocht das Abendessen für die Familie in der Küche.",
+                                "Die Hausfrau bereitet das Abendessen fuer die Familie in der Kueche zu."
                         ],
-                        "translation": "Lúc 8 giờ 30 phút anh ấy phải đưa con gái vào trường mẫu giáo."
+                        "translation": "Người phụ nữ nội trợ chuẩn bị bữa tối cho cả gia đình trong bếp."
                 }
         },
         {
                 "type": "dich_cau_vd",
-                "question": "Câu 92: Dịch câu sau sang tiếng Đức: 'Nữ bác sĩ khám cho các bệnh nhân ở trong bệnh viện.'",
+                "question": "Câu 92: Dịch câu sau sang tiếng Đức: 'Vị huấn luyện viên giúp đỡ các cầu thủ trẻ trong sân vận động.'",
                 "options": null,
-                "correct_answer": "Die Ärztin untersucht Patienten im Krankenhaus.",
-                "explanation": "Nữ bác sĩ là Die Ärztin; khám cho bệnh nhân là untersucht Patienten (Akkusativ); ở trong bệnh viện là im Krankenhaus (Dativ).",
+                "correct_answer": "Der Trainer hilft den jungen Spielern im Stadion.",
+                "explanation": "Huấn luyện viên là Der Trainer; động từ helfen biến âm e -> i thành hilft và bắt buộc đi với Dativ số nhiều (den jungen Spielern); trong sân vận động là im Stadion.",
                 "exp_reward": 25,
                 "extra_data": {
                         "accepted_answers": [
-                                "Die Ärztin untersucht Patienten im Krankenhaus.",
-                                "Die Ärztin untersucht die Patienten im Krankenhaus.",
-                                "Im Krankenhaus untersucht die Ärztin Patienten."
+                                "Der Trainer hilft den jungen Spielern im Stadion.",
+                                "Im Stadion hilft der Trainer den jungen Spielern.",
+                                "Der Trainer hilft im Stadion den jungen Spielern.",
+                                "Der Trainer hilft jungen Spielern im Stadion."
                         ],
-                        "translation": "Nữ bác sĩ khám cho các bệnh nhân ở trong bệnh viện."
+                        "translation": "Vị huấn luyện viên giúp đỡ các cầu thủ trẻ trong sân vận động."
                 }
         },
         {
                 "type": "dich_cau_vd",
-                "question": "Câu 93: Dịch câu sau sang tiếng Đức: 'Người điều dưỡng giúp đỡ vị bác sĩ mỗi ngày.'",
+                "question": "Câu 93: Dịch câu sau sang tiếng Đức: 'Nam thư ký gọi điện cho khách hàng vì một cuộc hẹn quan trọng.'",
                 "options": null,
-                "correct_answer": "Der Krankenpfleger hilft dem Arzt jeden Tag.",
-                "explanation": "Động từ helfen biến âm e -> i thành hilft và bắt buộc đi với Cách 3 (Dativ): der Arzt -> dem Arzt.",
+                "correct_answer": "Der Sekretär ruft den Kunden für einen wichtigen Termin an.",
+                "explanation": "Nam thư ký là Der Sekretär; động từ anrufen là động từ tách (ruft ... an) đi với Akkusativ (den Kunden); vì một cuộc hẹn là für einen wichtigen Termin (Akkusativ).",
                 "exp_reward": 25,
                 "extra_data": {
                         "accepted_answers": [
-                                "Der Krankenpfleger hilft dem Arzt jeden Tag.",
-                                "Jeden Tag hilft der Krankenpfleger dem Arzt.",
-                                "Die Krankenschwester hilft dem Arzt jeden Tag.",
-                                "Die Krankenpflegerin hilft dem Arzt jeden Tag."
+                                "Der Sekretär ruft den Kunden für einen wichtigen Termin an.",
+                                "Für einen wichtigen Termin ruft der Sekretär den Kunden an.",
+                                "Der Sekretaer ruft den Kunden fuer einen wichtigen Termin an.",
+                                "Der Sekretär ruft für einen wichtigen Termin den Kunden an."
                         ],
-                        "translation": "Người điều dưỡng giúp đỡ vị bác sĩ mỗi ngày."
+                        "translation": "Nam thư ký gọi điện cho khách hàng vì một cuộc hẹn quan trọng."
                 }
         },
         {
