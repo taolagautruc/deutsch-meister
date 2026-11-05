@@ -1509,8 +1509,8 @@ const GERMAN_LEXIKON_DB = [
         indefinite: "eine Mechatronikerin", negation: "keine Mechatronikerin",
         meaning: "nữ thợ cơ khí ô tô", category: "Danh từ Nghề nghiệp Nam & Nữ (Berufe - Bài 7)",
         rule: "Nữ thợ cơ khí ô tô (KFZ-Mechatronikerin).",
-        example: "Sie lernt fleißig und möchte eine Mechatronikerin werden.",
-        example_vi: "Cô ấy học tập chăm chỉ và muốn trở thành một nữ thợ cơ khí."
+        example: "Sie lernt fleißig und möchte Mechatronikerin werden.",
+        example_vi: "Cô ấy học tập chăm chỉ và muốn trở thành nữ thợ cơ khí."
     },
     {
         word: "Trainer", article: "der", gender: "der", plural: "die Trainer",
@@ -1557,8 +1557,8 @@ const GERMAN_LEXIKON_DB = [
         indefinite: "eine Schülerin", negation: "keine Schülerin",
         meaning: "nữ học sinh (phổ thông)", category: "Danh từ Nghề nghiệp Nam & Nữ (Berufe - Bài 7)",
         rule: "Danh từ giống cái (die Schülerin), số nhiều die Schülerinnen.",
-        example: "Anna ist một fleißige Schülerin am Gymnasium.",
-        example_vi: "Anna là một nữ học sinh chăm chỉ tại trường chuyên."
+        example: "Anna ist eine fleißige Schülerin am Gymnasium.",
+        example_vi: "Anna là một nữ học sinh chăm chỉ tại trường THPT (Gymnasium)."
     },
     {
         word: "Student", article: "der", gender: "der", plural: "die Studenten",
@@ -1810,10 +1810,10 @@ const GERMAN_LEXIKON_DB = [
     },
     {
         word: "Patient", article: "der", gender: "der", plural: "die Patienten",
-        indefinite: "ein Patient", negation: "kein Patient",
+        indefinite: "ein Patient", negation: "kein Patient", akkusativ: "den / einen / keinen Patienten",
         meaning: "bệnh nhân", category: "Nơi làm việc & Hoạt động Công việc (Arbeitsorte & Alltag - Bài 7)",
         rule: "Danh từ giống đực N-Deklination (der Patient). Tân ngữ Akkusativ sau untersuchen: den Patienten untersuchen.",
-        example: "Der Arzt untersucht den kranken Patient im Behandlungszimmer.",
+        example: "Der Arzt untersucht den kranken Patienten im Behandlungszimmer.",
         example_vi: "Bác sĩ khám cho bệnh nhân bị ốm ở trong phòng khám bệnh."
     }
 ];
