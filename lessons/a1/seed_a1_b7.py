@@ -1751,42 +1751,45 @@ def seed_lesson_7():
         },
         {
                 "type": "dien_khuyet",
-                "question": "Câu 27: Điền mạo từ không xác định đúng ở Cách 4 (Akkusativ) vào chỗ trống: 'Für seine Arbeit im Büro braucht mein Bruder ___ schnellen Laptop.'",
+                "question": "Câu 27: Điền mạo từ thích hợp vào chỗ trống: 'Für seine Arbeit im Büro braucht mein Bruder ___ schnellen Laptop.'",
                 "options": null,
                 "correct_answer": "einen",
                 "explanation": "Động từ brauchen đòi hỏi Cách 4 (Akkusativ). der Laptop mang giống đực nên ein đổi thành einen.",
                 "exp_reward": 15,
                 "extra_data": {
                         "accepted_answers": [
-                                "einen"
+                                "einen",
+                                "den"
                         ],
                         "translation": "Cho công việc của mình ở văn phòng, anh trai tôi cần một chiếc máy tính xách tay nhanh."
                 }
         },
         {
                 "type": "dien_khuyet",
-                "question": "Câu 28: Điền mạo từ phủ định 'kein' đúng ở Cách 4 (Akkusativ) vào chỗ trống: 'Ich trinke meinen Tee bitte ohne Zucker, ich brauche ___ Löffel.'",
+                "question": "Câu 28: Điền mạo từ thích hợp vào chỗ trống: 'Ich trinke meinen Tee bitte ohne Zucker, ich brauche ___ Löffel.'",
                 "options": null,
                 "correct_answer": "keinen",
                 "explanation": "der Löffel mang giống đực, làm tân ngữ trực tiếp (Akkusativ) sau brauche, nên kein đổi thành keinen.",
                 "exp_reward": 15,
                 "extra_data": {
                         "accepted_answers": [
-                                "keinen"
+                                "keinen",
+                                "einen"
                         ],
                         "translation": "Tôi uống trà không đường, tôi không cần cái thìa nào cả."
                 }
         },
         {
                 "type": "dien_khuyet",
-                "question": "Câu 29: Điền mạo từ sở hữu của ngôi 'er' (sein-) đúng ở Cách 4 (Akkusativ) vào chỗ trống: 'Der Programmierer ruft ___ Chef im Büro an.'",
+                "question": "Câu 29: Điền mạo từ thích hợp vào chỗ trống: 'Der Programmierer ruft ___ Chef im Büro an.'",
                 "options": null,
                 "correct_answer": "seinen",
                 "explanation": "Động từ anrufen đi với Cách 4 (Akkusativ). der Chef mang giống đực nên gốc sở hữu sein- của er đổi thành seinen.",
                 "exp_reward": 15,
                 "extra_data": {
                         "accepted_answers": [
-                                "seinen"
+                                "seinen",
+                                "den"
                         ],
                         "translation": "Lập trình viên gọi điện cho ông sếp của anh ấy ở văn phòng."
                 }
