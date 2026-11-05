@@ -116,9 +116,15 @@ def ensure_db_initialized():
                 seed_lesson_3()
 
         cursor.execute("SELECT COUNT(*) as cnt FROM lessons WHERE title LIKE 'Bài 4%';")
-        if cursor.fetchone()["cnt"] == 0:
+        has_b4 = cursor.fetchone()["cnt"] > 0
+        if not has_b4:
             from lessons.a1.seed_a1_b4 import seed_lesson_4
             seed_lesson_4()
+        else:
+            cursor.execute("SELECT COUNT(*) as cnt FROM vocabularies WHERE lesson_id = 18 AND german_word = 'Stock' AND vietnamese_meaning LIKE '%die Stockwerke%';")
+            if cursor.fetchone()["cnt"] == 0:
+                from lessons.a1.seed_a1_b4 import seed_lesson_4
+                seed_lesson_4()
 
         cursor.execute("SELECT COUNT(*) as cnt FROM lessons WHERE title LIKE 'Bài 5%';")
         if cursor.fetchone()["cnt"] == 0:

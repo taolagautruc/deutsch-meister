@@ -558,10 +558,10 @@ const GERMAN_LEXIKON_DB = [
         example_vi: "Căn hộ có một tầng hầm."
     },
     {
-        word: "Stock", article: "der", gender: "der", plural: "die Stöcke",
+        word: "Stock", article: "der", gender: "der", plural: "die Stockwerke",
         indefinite: "ein Stock", negation: "kein Stock", akkusativ: "den / einen / keinen Stock",
         meaning: "tầng lầu", category: "Nhà ở & Phòng ốc • Tòa nhà, Văn phòng & Đồ vật Bàn làm việc (Bài 6)",
-        rule: "Số nhiều biến âm o -> ö và thêm -e (die Stöcke). Thường đi với số thứ tự: im 1. Stock.",
+        rule: "Số nhiều dùng die Stockwerke (với nghĩa tầng lầu). Ghi chú: der erste Stock = lầu 1 (tầng 2 theo cách đếm Việt Nam); die Stöcke = những cây gậy (nghĩa khác).",
         example: "Meine Wohnung liegt im zweiten Stock.",
         example_vi: "Căn hộ của tôi nằm ở tầng hai."
     },
