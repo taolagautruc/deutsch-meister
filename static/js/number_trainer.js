@@ -444,6 +444,56 @@ function checkGermanAnswerEquivalence(userAns, correctAns) {
         str = replaceVnPhrases(str, ['đi bằng', 'đi'], 'đi');
         str = replaceVnPhrases(str, ['vào cuối tuần'], 'cuối tuần');
 
+        // Chuẩn hóa linh hoạt Dịch Đức -> Việt (Bài 7 & toàn hệ thống):
+        // 1. Thời gian & buổi
+        str = replaceVnPhrases(str, ['16 giờ 30 phút', '16 giờ 30', '16h30 phút', '16h30', '4 giờ rưỡi chiều'], '16 giờ 30');
+        str = replaceVnPhrases(str, ['vào lúc 16 giờ 30', 'vào 16 giờ 30', 'lúc 16 giờ 30'], 'lúc 16 giờ 30');
+        str = replaceVnPhrases(str, ['vào buổi sáng', 'buổi sáng'], 'buổi sáng');
+        str = replaceVnPhrases(str, ['vào buổi chiều', 'buổi chiều'], 'buổi chiều');
+        str = replaceVnPhrases(str, ['ngủ đến 7 giờ', 'ngủ tới 7 giờ', 'ngủ đến 7h', 'ngủ tới 7h'], 'ngủ đến 7 giờ');
+        str = replaceVnPhrases(str, ['từ 20 đến 22 giờ', 'từ 20h đến 22h', 'từ 20 giờ đến 22 giờ', 'từ 8 giờ đến 10 giờ tối', 'từ 8h đến 10h tối'], 'từ 20 đến 22 giờ');
+
+        // 2. Nghề nghiệp & hoạt động
+        str = replaceVnPhrases(str, ['làm nghề giáo viên', 'làm giáo viên', 'là một giáo viên', 'nghề của frank müller là giáo viên', 'nghề của frank muller là giáo viên', 'là giáo viên'], 'là giáo viên');
+        str = replaceVnPhrases(str, ['có kỳ nghỉ', 'có kì nghỉ', 'được nghỉ lễ', 'được nghỉ phép', 'được nghỉ', 'có ngày nghỉ'], 'có kỳ nghỉ');
+        str = replaceVnPhrases(str, ['cho nên có thể', 'nên có thể', 'và có thể'], 'và có thể');
+        str = replaceVnPhrases(str, ['cô giáo', 'nữ giáo viên'], 'cô giáo');
+        str = replaceVnPhrases(str, ['giảng dạy học sinh', 'dạy học sinh', 'giảng dạy', 'dạy học', 'dạy'], 'dạy');
+        str = replaceVnPhrases(str, ['người thợ cắt tóc', 'người thợ làm tóc', 'thợ làm tóc', 'thợ cắt tóc'], 'thợ cắt tóc');
+        str = replaceVnPhrases(str, ['đang cắt tóc cho', 'cắt tóc cho'], 'cắt tóc cho');
+
+        // 3. Gia đình & nhân xưng
+        str = replaceVnPhrases(str, ['con gái của mình', 'con gái của cô ấy', 'con gái mình', 'con gái cô ấy', 'con gái'], 'con gái');
+        str = replaceVnPhrases(str, ['anh trai của tôi', 'em trai của tôi', 'anh trai tôi', 'em trai tôi', 'anh tôi', 'em tôi'], 'anh trai tôi');
+
+        // 4. Địa điểm
+        str = replaceVnPhrases(str, ['từ trường mẫu giáo về', 'từ trường mầm non về', 'từ nhà trẻ về', 'từ trường mẫu giáo', 'từ trường mầm non', 'từ nhà trẻ', 'ở trường mẫu giáo', 'tại trường mẫu giáo', 'ở trường mầm non', 'tại trường mầm non', 'ở nhà trẻ', 'tại nhà trẻ', 'trường mầm non', 'nhà trẻ', 'trường mẫu giáo'], 'trường mẫu giáo');
+        str = replaceVnPhrases(str, ['tại một trường học', 'ở một trường học', 'tại trường học', 'ở trường học', 'ở một ngôi trường', 'tại một ngôi trường', 'ở trường', 'tại trường', 'trường học'], 'trường');
+        str = replaceVnPhrases(str, ['ở trường đại học', 'tại trường đại học', 'ở một trường đại học', 'tại một trường đại học', 'ở đại học', 'tại đại học', 'trường đại học'], 'đại học');
+        str = replaceVnPhrases(str, ['ở trong phòng khách', 'trong phòng khách', 'ở phòng khách', 'phòng khách'], 'phòng khách');
+        str = replaceVnPhrases(str, ['ở trong tiệm làm tóc', 'trong tiệm làm tóc', 'ở tiệm làm tóc', 'tại tiệm làm tóc', 'ở trong tiệm cắt tóc', 'trong tiệm cắt tóc', 'ở tiệm cắt tóc', 'tại tiệm cắt tóc', 'ở trong quán cắt tóc', 'trong quán cắt tóc', 'ở quán cắt tóc', 'ở trong hiệu cắt tóc', 'trong hiệu cắt tóc', 'ở hiệu cắt tóc', 'ở trong salon tóc', 'trong salon tóc', 'ở salon tóc', 'tại salon tóc', 'tiệm cắt tóc', 'tiệm làm tóc', 'salon tóc'], 'tiệm cắt tóc');
+        str = replaceVnPhrases(str, ['vào xưởng sửa chữa', 'đến xưởng sửa chữa', 'tới xưởng sửa chữa', 'vào xưởng sửa xe', 'đến xưởng sửa xe', 'tới xưởng sửa xe', 'vào gara', 'đến gara', 'tới gara', 'gara ô tô', 'xưởng sửa chữa', 'xưởng sửa xe', 'tiệm sửa xe', 'gara'], 'xưởng sửa chữa');
+
+        // 5. Xe cộ & đi lại
+        str = replaceVnPhrases(str, ['chiếc xe hơi của mình', 'xe hơi của mình', 'chiếc ô tô của mình', 'ô tô của mình', 'chiếc xe của mình', 'xe của mình', 'chiếc xe hơi', 'xe hơi', 'chiếc ô tô', 'ô tô', 'chiếc xe', 'xe'], 'ô tô');
+        str = replaceVnPhrases(str, ['đi đến buổi tập bóng đá', 'đi tới buổi tập bóng đá', 'đi đến buổi tập đá bóng', 'đi tới buổi tập đá bóng', 'đi tập bóng đá', 'đi tập đá bóng', 'buổi tập đá bóng', 'buổi tập bóng đá', 'tập đá bóng', 'tập bóng đá'], 'tập bóng đá');
+        str = replaceVnPhrases(str, ['rồi sau đó', 'và sau đó', 'sau đó rồi', 'sau đó'], 'sau đó');
+        str = replaceVnPhrases(str, ['đem', 'đưa', 'mang'], 'mang');
+
+        // 6. Điện thoại & khách hàng
+        str = replaceVnPhrases(str, ['chiếc điện thoại đó', 'chiếc điện thoại này', 'cái điện thoại đó', 'cái điện thoại này', 'chiếc điện thoại', 'cái điện thoại', 'điện thoại'], 'điện thoại');
+        str = replaceVnPhrases(str, ['rất quan trọng đối với cô ấy', 'rất quan trọng với cô ấy', 'rất quan trọng cho cô ấy', 'quan trọng đối với cô ấy', 'quan trọng với cô ấy'], 'rất quan trọng với cô ấy');
+        str = replaceVnPhrases(str, ['đối với cô ấy', 'với cô ấy'], 'với cô ấy');
+        str = replaceVnPhrases(str, ['bởi vì', 'vì thế vì', 'vì'], 'vì');
+        str = replaceVnPhrases(str, ['gọi điện thoại cho', 'gọi điện cho', 'gọi cho'], 'gọi điện cho');
+        str = replaceVnPhrases(str, ['thường xuyên phải gọi điện', 'phải thường xuyên gọi điện', 'thường phải gọi điện', 'thường xuyên gọi điện', 'thường gọi điện', 'phải gọi điện thường xuyên'], 'thường xuyên phải gọi điện');
+        str = replaceVnPhrases(str, ['các khách hàng của mình', 'khách hàng của mình', 'các khách hàng của cô ấy', 'khách hàng của cô ấy', 'những khách hàng của mình', 'các khách hàng', 'những khách hàng', 'khách hàng'], 'khách hàng');
+
+        // 7. Giải trí & bữa tối
+        str = replaceVnPhrases(str, ['xem truyền hình', 'xem tv', 'xem tivi', 'xem ti vi'], 'xem tivi');
+        str = replaceVnPhrases(str, ['sau khi cô ấy đã làm', 'sau khi cô ấy làm', 'sau khi cô ấy đã nấu', 'sau khi cô ấy nấu', 'sau khi đã làm', 'sau khi làm', 'sau khi đã nấu', 'sau khi nấu', 'sau khi làm xong', 'sau khi nấu xong', 'sau đó cô ấy đã làm', 'sau đó cô ấy làm'], 'sau khi làm');
+        str = replaceVnPhrases(str, ['bữa tối', 'bữa ăn tối', 'cơm tối'], 'bữa tối');
+
         return str.trim().replace(/\s+/g, ' ');
     };
 
