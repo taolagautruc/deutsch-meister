@@ -192,7 +192,7 @@ def generate_seed_script():
                     <span>🗣️</span> 1.3. Ba Mẫu Câu Hỏi & Ba Cách Trả Lời Nghề Nghiệp Chuẩn Ngữ Pháp
                 </h5>
                 <div class="p-3 rounded-xl bg-rose-50 border border-rose-200 text-xs text-rose-800">
-                    ⚠️ <b>LƯU Ý CỐT LÕI:</b> Khi nói nghề nghiệp với cấu trúc <code>sein + [Nghề]</code> hoặc <code>arbeiten als + [Nghề]</code>, <b>TUYỆT ĐỐI KHÔNG DÙNG MẠO TỪ ein/eine</b>! Nói: <i>„Ich bin Lehrer.“</i> hoặc <i>„Ich arbeite als Programmierer.“</i> (Không nói: <i>„Ich bin ein Lehrer.“</i>).
+                    ⚠️ <b>LƯU Ý CỐT LÕI:</b> Khi chỉ nói tên nghề nghiệp với cấu trúc <code>sein + [Nghề]</code> hoặc <code>arbeiten als + [Nghề]</code>, <b>không dùng mạo từ ein/eine</b>: <i>„Ich bin Lehrer.“</i> hoặc <i>„Ich arbeite als Programmierer.“</i> (Không nói: <i>„Ich bin ein Lehrer.“</i>). <b>Ngoại lệ bắt buộc:</b> Nếu có tính từ đi kèm bổ nghĩa cho nghề thì <b>phải dùng mạo từ</b>: <i>„Sie ist eine gute Ärztin.“</i>, <i>„Frau Becker ist eine erfahrene Taxifahrerin.“</i>, <i>„Anna ist eine fleißige Schülerin.“</i>
                 </div>
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-3 text-xs sm:text-sm">
                     <div class="p-3 rounded-xl bg-slate-50 border border-slate-200 space-y-1">
@@ -409,7 +409,7 @@ def generate_seed_script():
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-xs sm:text-sm">
                     <div class="p-4 rounded-2xl bg-slate-50 border border-slate-200 space-y-2">
                         <span class="font-bold text-indigo-700">LUÔN ĐI VỚI AKKUSATIV (FUDGE-BO):</span>
-                        <p class="text-slate-700"><b>für</b> (cho), <b>ohne</b> (không có), <b>durch</b> (xuyên qua), <b>um</b> (xung quanh/vào lúc), <b>gegen</b> (chống lại/khoảng).</p>
+                        <p class="text-slate-700"><b>F</b>ür (cho), <b>U</b>m (vào lúc/xung quanh), <b>D</b>urch (xuyên qua), <b>G</b>egen (khoảng/chống lại), <b>E</b>ntlang (dọc theo), <b>B</b>is (cho đến), <b>O</b>hne (không có).</p>
                         <p class="text-emerald-700"><i>„Das Telefon ist wichtig <b>für <u>sie</u></b> / <b>für <u>den</u> Chef</b>.“</i></p>
                     </div>
                     <div class="p-4 rounded-2xl bg-slate-50 border border-slate-200 space-y-2">
