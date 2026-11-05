@@ -697,6 +697,146 @@ const GERMAN_VERBS_DB = [
         forms: { ich: "gefalle", du: "gefällst", er_sie_es: "gefällt", wir: "gefallen", ihr: "gefallt", sie_Sie: "gefallen" },
         note: "Biến âm a -> ä ở du (gefällst) và er/sie/es (gefällt). Đòi hỏi tân ngữ nhận ở Cách 3 Dativ (etwas gefällt jemandem).",
         example: "Die neue Wohnung im dritten Stock gefällt meinem Vater sehr."
+    },
+    {
+        infinitiv: "müssen",
+        meaning: "phải, bắt buộc phải làm gì",
+        group: "Động từ khuyết thiếu (Modalverben) • Nghề nghiệp & Hoạt động (Bài 7)",
+        stem: "müss- / muss-",
+        ending: "-en",
+        forms: { ich: "muss", du: "musst", er_sie_es: "muss", wir: "müssen", ihr: "müsst", sie_Sie: "müssen" },
+        note: "Modalverb: đổi nguyên âm ü -> u ở số ít. Ngôi ich và er/sie/es chia giống nhau (muss, không có đuôi -t). Động từ chính đứng nguyên mẫu ở cuối câu.",
+        example: "Um sechs Uhr fünfzehn muss Paula aufstehen."
+    },
+    {
+        infinitiv: "können",
+        meaning: "có thể, có khả năng / biết làm gì",
+        group: "Động từ khuyết thiếu (Modalverben) • Nghề nghiệp & Hoạt động (Bài 7)",
+        stem: "könn- / kann-",
+        ending: "-en",
+        forms: { ich: "kann", du: "kannst", er_sie_es: "kann", wir: "können", ihr: "könnt", sie_Sie: "können" },
+        note: "Modalverb: đổi nguyên âm ö -> a ở số ít. Ngôi ich và er/sie/es chia giống nhau (kann, không có đuôi -t). Động từ chính đứng nguyên mẫu ở cuối câu.",
+        example: "Mein Bruder kann sehr gut kochen und Autos reparieren."
+    },
+    {
+        infinitiv: "wollen",
+        meaning: "muốn (ý định mạnh mẽ, kế hoạch)",
+        group: "Động từ khuyết thiếu (Modalverben) • Nghề nghiệp & Hoạt động (Bài 7)",
+        stem: "woll- / will-",
+        ending: "-en",
+        forms: { ich: "will", du: "willst", er_sie_es: "will", wir: "wollen", ihr: "wollt", sie_Sie: "wollen" },
+        note: "Modalverb: đổi nguyên âm o -> i ở số ít. Ngôi ich và er/sie/es chia giống nhau (will, không có đuôi -t).",
+        example: "Nach dem Studium will mein Sohn als Programmierer arbeiten."
+    },
+    {
+        infinitiv: "dürfen",
+        meaning: "được phép làm gì",
+        group: "Động từ khuyết thiếu (Modalverben) • Nghề nghiệp & Hoạt động (Bài 7)",
+        stem: "dürf- / darf-",
+        ending: "-en",
+        forms: { ich: "darf", du: "darfst", er_sie_es: "darf", wir: "dürfen", ihr: "dürft", sie_Sie: "dürfen" },
+        note: "Modalverb: đổi nguyên âm ü -> a ở số ít. Ngôi ich và er/sie/es chia giống nhau (darf, không có đuôi -t).",
+        example: "Im Krankenhaus darf man nicht rauchen."
+    },
+    {
+        infinitiv: "sollen",
+        meaning: "nên, được giao nhiệm vụ làm gì",
+        group: "Động từ khuyết thiếu (Modalverben) • Nghề nghiệp & Hoạt động (Bài 7)",
+        stem: "soll-",
+        ending: "-en",
+        forms: { ich: "soll", du: "sollst", er_sie_es: "soll", wir: "sollen", ihr: "sollt", sie_Sie: "sollen" },
+        note: "Modalverb: giữ nguyên nguyên âm o ở tất cả các ngôi. Ngôi ich và er/sie/es chia giống nhau (soll, không có đuôi -t).",
+        example: "Die Sekretärin soll heute viele Kunden anrufen."
+    },
+    {
+        infinitiv: "unterrichten",
+        meaning: "giảng dạy, dạy học",
+        group: "Gốc -t, -d • Nghề nghiệp & Hoạt động (Bài 7)",
+        stem: "unterricht-",
+        ending: "-en",
+        forms: { ich: "unterrichte", du: "unterrichtest", er_sie_es: "unterrichtet", wir: "unterrichten", ihr: "unterrichtet", sie_Sie: "unterrichten" },
+        note: "Gốc kết thúc bằng -t nên thêm -e- ở các ngôi du, er/sie/es, ihr. Tiền tố unter- không tách.",
+        example: "Frau Weber unterrichtet Schüler an einer Schule in Berlin."
+    },
+    {
+        infinitiv: "untersuchen",
+        meaning: "khám bệnh, kiểm tra (+ Akkusativ)",
+        group: "Quy tắc (Regelmäßig) • Nghề nghiệp & Hoạt động (Bài 7)",
+        stem: "untersuch-",
+        ending: "-en",
+        forms: { ich: "untersuche", du: "untersuchst", er_sie_es: "untersucht", wir: "untersuchen", ihr: "untersucht", sie_Sie: "untersuchen" },
+        note: "Động từ đi với tân ngữ trực tiếp Cách 4 (Akkusativ): den Patienten untersuchen. Tiền tố unter- không tách.",
+        example: "Der Arzt untersucht jeden Tag viele Patienten im Krankenhaus."
+    },
+    {
+        infinitiv: "reparieren",
+        meaning: "sửa chữa (+ Akkusativ)",
+        group: "Quy tắc đuôi -ieren • Nghề nghiệp & Hoạt động (Bài 7)",
+        stem: "reparier-",
+        ending: "-en",
+        forms: { ich: "repariere", du: "reparierst", er_sie_es: "repariert", wir: "reparieren", ihr: "repariert", sie_Sie: "reparieren" },
+        note: "Động từ mượn gốc tiếng Latinh kết thúc bằng -ieren, chia quy tắc, đi với Akkusativ (Autos reparieren).",
+        example: "Der KFZ-Mechatroniker repariert das Auto in einer Werkstatt."
+    },
+    {
+        infinitiv: "verkaufen",
+        meaning: "bán hàng (+ Akkusativ)",
+        group: "Quy tắc (Regelmäßig) • Nghề nghiệp & Hoạt động (Bài 7)",
+        stem: "verkauf-",
+        ending: "-en",
+        forms: { ich: "verkaufe", du: "verkaufst", er_sie_es: "verkauft", wir: "verkaufen", ihr: "verkauft", sie_Sie: "verkaufen" },
+        note: "Tiền tố ver- không bao giờ tách. Đi với tân ngữ trực tiếp Akkusativ (Schuhe verkaufen).",
+        example: "Die Verkäuferin verkauft moderne Schuhe im Schuhgeschäft."
+    },
+    {
+        infinitiv: "schneiden",
+        meaning: "cắt (tóc, giấy, vải)",
+        group: "Gốc -t, -d • Nghề nghiệp & Hoạt động (Bài 7)",
+        stem: "schneid-",
+        ending: "-en",
+        forms: { ich: "schneide", du: "schneidest", er_sie_es: "schneidet", wir: "schneiden", ihr: "schneidet", sie_Sie: "schneiden" },
+        note: "Gốc kết thúc bằng -d nên chèn thêm -e- ở du schneidest, er/sie/es schneidet, ihr schneidet.",
+        example: "Der Friseur schneidet die Haare im Friseursalon."
+    },
+    {
+        infinitiv: "brauchen",
+        meaning: "cần cái gì (+ Akkusativ)",
+        group: "Quy tắc (Regelmäßig) • Nghề nghiệp & Hoạt động (Bài 7)",
+        stem: "brauch-",
+        ending: "-en",
+        forms: { ich: "brauche", du: "brauchst", er_sie_es: "braucht", wir: "brauchen", ihr: "braucht", sie_Sie: "brauchen" },
+        note: "Luôn đòi hỏi tân ngữ trực tiếp ở Cách 4 (Akkusativ): einen Computer brauchen.",
+        example: "Bei ihrer Arbeit braucht Petra einen schnellen Computer und einen großen Schreibtisch."
+    },
+    {
+        infinitiv: "bringen",
+        meaning: "mang, đưa, dẫn (ai/cái gì đi đâu)",
+        group: "Quy tắc (Regelmäßig) • Nghề nghiệp & Hoạt động (Bài 7)",
+        stem: "bring-",
+        ending: "-en",
+        forms: { ich: "bringe", du: "bringst", er_sie_es: "bringt", wir: "bringen", ihr: "bringt", sie_Sie: "bringen" },
+        note: "Đưa ai/cái gì đến đâu thường đi với giới từ chỉ hướng Wohin? + Akkusativ: in den Kindergarten bringen, ins Bett bringen.",
+        example: "Um acht Uhr dreißig muss Frank seine Tochter in den Kindergarten bringen."
+    },
+    {
+        infinitiv: "abholen",
+        meaning: "đón (ai), lấy (đồ)",
+        group: "Động từ tách (Trennbare Verben) • Nghề nghiệp & Hoạt động (Bài 7)",
+        stem: "ab-hol-",
+        ending: "-en",
+        forms: { ich: "hole ... ab", du: "holst ... ab", er_sie_es: "holt ... ab", wir: "holen ... ab", ihr: "holt ... ab", sie_Sie: "holen ... ab" },
+        note: "Động từ tách: tiền tố ab- tách ra cuối câu ở thì hiện tại đơn. Khi có Modalverb, abholen đứng nguyên mẫu ở cuối câu.",
+        example: "Am Nachmittag holt die Mutter ihren Sohn vom Kindergarten ab."
+    },
+    {
+        infinitiv: "schlafen",
+        meaning: "ngủ",
+        group: "Biến âm gốc (Vokalwechsel) • Nghề nghiệp & Hoạt động (Bài 7)",
+        stem: "schlaf- / schläf-",
+        ending: "-en",
+        forms: { ich: "schlafe", du: "schläfst", er_sie_es: "schläft", wir: "schlafen", ihr: "schlaft", sie_Sie: "schlafen" },
+        note: "Biến âm a -> ä ở ngôi du (du schläfst) và er/sie/es (er schläft).",
+        example: "Herr Müller hat heute Ferien, deshalb kann er bis sieben Uhr schlafen."
     }
 ];
 
@@ -718,7 +858,7 @@ function formatConjugatedForm(verb, personKey, value) {
             return `<span class="font-black text-amber-700 bg-amber-50 px-2 py-0.5 rounded-md border border-amber-200">${value}</span>`;
         }
     }
-    if (vInf === "möchten") {
+    if (["möchten", "müssen", "können", "wollen", "dürfen", "sollen"].includes(vInf)) {
         if (personKey === "ich" || personKey === "er_sie_es") {
             return `<span class="font-black text-rose-700 bg-rose-50 px-2 py-0.5 rounded-md border border-rose-200">${value}</span>`;
         }
@@ -814,6 +954,7 @@ function speakAllPraeteritumForms(verbInfinitiv) {
 
 const VERB_GROUPS = [
     { id: "all", label: "Tất cả" },
+    { id: "Động từ khuyết thiếu", label: "⭐ Động từ khuyết thiếu & Nghề nghiệp (Bài 7)" },
     { id: "Di chuyển & Định hướng", label: "🚆 Di chuyển, Định hướng & Dativ (Bài 6)" },
     { id: "Động từ tách", label: "Động từ tách (Trennbare Verben)" },
     { id: "Quy tắc", label: "Quy tắc (Regelmäßig)" },

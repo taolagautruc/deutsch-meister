@@ -37,7 +37,8 @@ LESSON_ORDER_MAP = {
     17: ("A1", 4, "Bài 3: Địa danh, Phương hướng, Präteritum war/waren"),
     18: ("A1", 5, "Bài 4: Nhà ở, Nominativ vs Akkusativ, Mạo từ sở hữu"),
     19: ("A1", 6, "Bài 5: Thời gian, Động từ tách, Haben in Präteritum"),
-    20: ("A1", 7, "Bài 6: Dativ, Giới từ, Phương tiện, Số thứ tự, Ngày tháng năm")
+    20: ("A1", 7, "Bài 6: Dativ, Giới từ, Phương tiện, Số thứ tự, Ngày tháng năm"),
+    21: ("A1", 8, "Bài 7: Beruf, Modalverben, Akkusativ vs Dativ")
 }
 
 def get_user_allowed_lessons(user_id):
@@ -670,6 +671,97 @@ ARENA_DATA_BY_LESSON = {
                 "explanation": "im zweiten Stock; neben dem Aufzug (der Aufzug ở Dativ là dem)."
             }
         ]
+    },
+    8: {
+        "name": "Bài 7: Nghề nghiệp, Modalverben, Akkusativ vs. Dativ",
+        "vocab_pairs": [
+            ("der Programmierer", "nam lập trình viên"),
+            ("die Programmiererin", "nữ lập trình viên"),
+            ("der KFZ-Mechatroniker", "thợ cơ khí ô tô"),
+            ("die Werkstatt", "xưởng sửa chữa"),
+            ("der Arzt", "bác sĩ"),
+            ("die Ärztin", "nữ bác sĩ"),
+            ("die Floristin", "nữ người bán hoa"),
+            ("das Blumengeschäft", "cửa hàng hoa"),
+            ("der Friseursalon", "tiệm làm tóc"),
+            ("der Supermarkt", "siêu thị"),
+            ("der Kindergarten", "trường mẫu giáo"),
+            ("müssen", "phải, bắt buộc"),
+            ("können", "có thể, biết làm"),
+            ("wollen", "muốn (kế hoạch)"),
+            ("dürfen", "được phép"),
+            ("brauchen", "cần (+ Akkusativ)"),
+            ("untersuchen", "khám bệnh (+ Akkusativ)"),
+            ("helfen", "giúp đỡ (+ Dativ)")
+        ],
+        "noi_o_sets": [
+            [
+                {"left": "der Programmierer", "right": "schreibt Computerprogramme"},
+                {"left": "der KFZ-Mechatroniker", "right": "repariert Autos in einer Werkstatt"},
+                {"left": "die Ärztin", "right": "untersucht Patienten im Krankenhaus"},
+                {"left": "die Floristin", "right": "verkauft Blumen im Blumengeschäft"}
+            ],
+            [
+                {"left": "der Koch", "right": "die Köchin"},
+                {"left": "der Arzt", "right": "die Ärztin"},
+                {"left": "der Hausmann", "right": "die Hausfrau"},
+                {"left": "der Krankenpfleger", "right": "die Krankenpflegerin"}
+            ],
+            [
+                {"left": "brauchen / suchen", "right": "luôn đi với Akkusativ (einen Computer)"},
+                {"left": "helfen / gefallen", "right": "luôn đi với Dativ (dem Arzt)"},
+                {"left": "in den Kindergarten (Wohin?)", "right": "Akkusativ (hướng di chuyển)"},
+                {"left": "im Kindergarten (Wo?)", "right": "Dativ (vị trí tĩnh)"}
+            ]
+        ],
+        "sentences_vd": [
+            ("Tôi làm nghề lập trình viên tại một công ty công nghệ thông tin.", ["Ich arbeite als Programmierer bei einer IT-Firma.", "Ich bin Programmierer bei einer IT-Firma."]),
+            ("Lúc 6 giờ 15 phút Paula phải thức dậy.", ["Um 6.15 Uhr muss Paula aufstehen.", "Paula muss um 6.15 Uhr aufstehen."]),
+            ("Người thợ cơ khí sửa xe ô tô trong một xưởng sửa chữa.", ["Der Mechatroniker repariert Autos in einer Werkstatt.", "Der KFZ-Mechatroniker repariert Autos in einer Werkstatt."]),
+            ("Trong công việc của mình, cô ấy cần một chiếc máy tính nhanh.", ["Bei ihrer Arbeit braucht sie einen schnellen Computer."])
+        ],
+        "sentences_dv": [
+            ("Um 16.30 Uhr muss Paula ihre Tochter vom Kindergarten abholen.", ["Lúc 16 giờ 30 phút Paula phải đón con gái từ trường mẫu giáo", "Lúc 16h30 Paula phải đón con gái từ trường mầm non"]),
+            ("Frank Müller ist Lehrer von Beruf und hat jetzt Ferien.", ["Frank Müller làm nghề giáo viên và hiện đang có kỳ nghỉ", "Frank Müller là giáo viên và hiện có kỳ nghỉ"]),
+            ("Der Arzt untersucht jeden Tag viele Patienten im Krankenhaus.", ["Bác sĩ khám cho nhiều bệnh nhân mỗi ngày ở trong bệnh viện", "Bác sĩ khám bệnh nhân mỗi ngày trong bệnh viện"]),
+            ("Um 19 Uhr bringt der Vater seine Tochter ins Bett.", ["Lúc 19 giờ người bố đưa con gái lên giường đi ngủ", "Lúc 19 giờ người cha đưa con gái vào giường ngủ"])
+        ],
+        "nghe_dien_items": [
+            {
+                "audio_text": "Paula Rausch arbeitet als Programmiererin.",
+                "display_sentence": "Paula Rausch arbeitet als ___.",
+                "hint_vi": "Paula Rausch làm nghề nữ lập trình viên.",
+                "accepted_answers": ["Programmiererin"]
+            },
+            {
+                "audio_text": "Der KFZ-Mechatroniker repariert Autos in einer Werkstatt.",
+                "display_sentence": "Der KFZ-Mechatroniker repariert Autos in einer ___.",
+                "hint_vi": "Thợ cơ khí sửa xe trong xưởng.",
+                "accepted_answers": ["Werkstatt"]
+            },
+            {
+                "audio_text": "Bei ihrer Arbeit braucht Petra einen Computer.",
+                "display_sentence": "Bei ihrer Arbeit braucht Petra ___ Computer.",
+                "hint_vi": "Trong công việc của mình, Petra cần một chiếc máy tính.",
+                "accepted_answers": ["einen"]
+            }
+        ],
+        "dien_tao_cau_items": [
+            {
+                "question": "Điền vào 2 chỗ trống để hoàn thành câu:",
+                "display_frame": "Um 6.15 Uhr [1] Paula [2].",
+                "word_bank_hints": ["muss", "aufstehen", "aufsteht", "kann", "steht auf"],
+                "accepted_answers": ["muss / aufstehen", "muss/aufstehen"],
+                "explanation": "Động từ khuyết thiếu muss ở vị trí 2, động từ tách aufstehen đứng nguyên mẫu ở cuối câu."
+            },
+            {
+                "question": "Điền vào 2 chỗ trống để hoàn thành câu (phân biệt Wohin? vs. Wo?):",
+                "display_frame": "Frank bringt die Tochter in [1] Kindergarten und sie spielt [2] Kindergarten.",
+                "word_bank_hints": ["den", "im", "dem", "in", "das"],
+                "accepted_answers": ["den / im", "den/im"],
+                "explanation": "Wohin? -> in den Kindergarten (Akkusativ); Wo? -> im Kindergarten (Dativ)."
+            }
+        ]
     }
 }
 
@@ -981,6 +1073,39 @@ def generate_varied_doc_hieu_questions(allowed_orders, count=15):
             'correct_answer': 'Joan',
             'accepted_answers': ['Joan'],
             'explanation': "Trong thư Maria viết: 'Ich hatte kein Handy... Joan hatte ein Handy, aber sie hatte deine Nummer nicht.'"
+        })
+
+    # 7. BÀI 7: Một ngày làm việc của Lập trình viên Paula Rausch
+    if 8 in allowed_orders:
+        passage_b7 = (
+            "Paula Rausch ist 35 Jahre alt. Sie arbeitet als Programmiererin bei einer IT-Firma.\n"
+            "Um 6.15 Uhr muss sie aufstehen. Um 7.15 Uhr muss sie mit dem Bus zur Arbeit fahren.\n"
+            "Von 7.30 bis 15 Uhr arbeitet sie im Büro. Um 16.30 Uhr muss sie ihre Tochter vom Kindergarten abholen.\n"
+            "Um 18.30 Uhr macht sie das Abendessen. Von 20 bis 22 Uhr kann sie fernsehen."
+        )
+        pool.append({
+            'type': 'doc_hieu',
+            'type_label': 'Đọc hiểu đoạn văn',
+            'points_correct': 12,
+            'points_wrong': -4,
+            'passage': passage_b7,
+            'question': 'Paula Rausch làm nghề gì và làm việc ở đâu?',
+            'options': ['Lập trình viên tại một công ty IT', 'Giáo viên tại trường học', 'Bác sĩ tại bệnh viện', 'Người bán hoa tại cửa hàng hoa'],
+            'correct_answer': 'Lập trình viên tại một công ty IT',
+            'accepted_answers': ['Lập trình viên tại một công ty IT', 'Programmiererin', 'als Programmiererin bei einer IT-Firma'],
+            'explanation': "Trong đoạn văn viết: 'Sie arbeitet als Programmiererin bei einer IT-Firma.'"
+        })
+        pool.append({
+            'type': 'doc_hieu',
+            'type_label': 'Đọc hiểu đoạn văn',
+            'points_correct': 12,
+            'points_wrong': -4,
+            'passage': passage_b7,
+            'question': 'Lúc 16 giờ 30 phút Paula Rausch phải làm việc gì?',
+            'options': ['Đón con gái từ trường mẫu giáo', 'Nấu bữa tối cho gia đình', 'Đi xe buýt đến chỗ làm', 'Xem tivi trong phòng khách'],
+            'correct_answer': 'Đón con gái từ trường mẫu giáo',
+            'accepted_answers': ['Đón con gái từ trường mẫu giáo', 'ihre Tochter vom Kindergarten abholen'],
+            'explanation': "Trong đoạn văn viết: 'Um 16.30 Uhr muss sie ihre Tochter vom Kindergarten abholen.'"
         })
 
     random.shuffle(pool)

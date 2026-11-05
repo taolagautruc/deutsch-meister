@@ -1415,6 +1415,406 @@ const GERMAN_LEXIKON_DB = [
         rule: "Danh từ giống trung (das Büro). Ở văn phòng dùng im Büro.",
         example: "Das Büro von Frau Schneider liegt im dritten Stock neben dem Aufzug.",
         example_vi: "Văn phòng của bà Schneider nằm ở tầng ba bên cạnh thang máy."
+    },
+    {
+        word: "Programmierer", article: "der", gender: "der", plural: "die Programmierer",
+        indefinite: "ein Programmierer", negation: "kein Programmierer",
+        meaning: "nam lập trình viên", category: "Danh từ Nghề nghiệp Nam & Nữ (Berufe - Bài 7)",
+        rule: "Danh từ giống đực (der Programmierer). Số nhiều giữ nguyên die Programmierer.",
+        example: "Paula Rausch arbeitet mit einem Programmierer im Büro zusammen.",
+        example_vi: "Paula Rausch làm việc cùng một nam lập trình viên ở văn phòng."
+    },
+    {
+        word: "Programmiererin", article: "die", gender: "die", plural: "die Programmiererinnen",
+        indefinite: "eine Programmiererin", negation: "keine Programmiererin",
+        meaning: "nữ lập trình viên", category: "Danh từ Nghề nghiệp Nam & Nữ (Berufe - Bài 7)",
+        rule: "Danh từ giống cái kết thúc bằng -in. Số nhiều gấp đôi -nn thành die Programmiererinnen.",
+        example: "Paula Rausch ist 35 Jahre alt und arbeitet als Programmiererin.",
+        example_vi: "Paula Rausch 35 tuổi và làm nghề nữ lập trình viên."
+    },
+    {
+        word: "Taxifahrer", article: "der", gender: "der", plural: "die Taxifahrer",
+        indefinite: "ein Taxifahrer", negation: "kein Taxifahrer",
+        meaning: "nam tài xế taxi", category: "Danh từ Nghề nghiệp Nam & Nữ (Berufe - Bài 7)",
+        rule: "Danh từ giống đực (der Taxifahrer). Nghề nghiệp nói sein + Taxifahrer hoặc arbeiten als Taxifahrer.",
+        example: "Mein Onkel arbeitet seit fünf Jahren als Taxifahrer in Hamburg.",
+        example_vi: "Chú tôi làm nghề tài xế taxi ở Hamburg từ 5 năm nay."
+    },
+    {
+        word: "Taxifahrerin", article: "die", gender: "die", plural: "die Taxifahrerinnen",
+        indefinite: "eine Taxifahrerin", negation: "keine Taxifahrerin",
+        meaning: "nữ tài xế taxi", category: "Danh từ Nghề nghiệp Nam & Nữ (Berufe - Bài 7)",
+        rule: "Danh từ giống cái. Số nhiều thêm -nen: die Taxifahrerinnen.",
+        example: "Frau Becker ist eine erfahrene Taxifahrerin in Berlin.",
+        example_vi: "Bà Becker là một nữ tài xế taxi giàu kinh nghiệm ở Berlin."
+    },
+    {
+        word: "Krankenpfleger", article: "der", gender: "der", plural: "die Krankenpfleger",
+        indefinite: "ein Krankenpfleger", negation: "kein Krankenpfleger",
+        meaning: "nam điều dưỡng / y tá", category: "Danh từ Nghề nghiệp Nam & Nữ (Berufe - Bài 7)",
+        rule: "Danh từ giống đực chỉ nam y tá, chăm sóc bệnh nhân trong bệnh viện.",
+        example: "Der Krankenpfleger hilft dem Arzt jeden Tag im Krankenhaus.",
+        example_vi: "Người nam điều dưỡng giúp đỡ bác sĩ mỗi ngày ở bệnh viện."
+    },
+    {
+        word: "Krankenpflegerin", article: "die", gender: "die", plural: "die Krankenpflegerinnen",
+        indefinite: "eine Krankenpflegerin", negation: "keine Krankenpflegerin",
+        meaning: "nữ điều dưỡng / y tá", category: "Danh từ Nghề nghiệp Nam & Nữ (Berufe - Bài 7)",
+        rule: "Danh từ giống cái chỉ nữ y tá (hoặc die Krankenschwester).",
+        example: "Meine Tante arbeitet als Krankenpflegerin auf der Station.",
+        example_vi: "Dì tôi làm nghề nữ điều dưỡng ở khoa điều trị."
+    },
+    {
+        word: "Florist", article: "der", gender: "der", plural: "die Floristen",
+        indefinite: "ein Florist", negation: "kein Florist",
+        meaning: "nam nhân viên bán hoa / cắm hoa", category: "Danh từ Nghề nghiệp Nam & Nữ (Berufe - Bài 7)",
+        rule: "Danh từ giống đực thuộc nhóm N-Deklination: số nhiều die Floristen.",
+        example: "Der Florist bindet wunderschöne Blumen für die Hochzeit.",
+        example_vi: "Người nam thợ hoa bó những bông hoa tuyệt đẹp cho đám cưới."
+    },
+    {
+        word: "Floristin", article: "die", gender: "die", plural: "die Floristinnen",
+        indefinite: "eine Floristin", negation: "keine Floristin",
+        meaning: "nữ nhân viên bán hoa", category: "Danh từ Nghề nghiệp Nam & Nữ (Berufe - Bài 7)",
+        rule: "Danh từ giống cái (die Floristin). Nơi làm việc im Blumengeschäft.",
+        example: "Die Floristin verkauft schöne Blumen im Blumengeschäft.",
+        example_vi: "Người nữ bán hoa bán những bông hoa đẹp ở trong cửa hàng hoa."
+    },
+    {
+        word: "Verkäufer", article: "der", gender: "der", plural: "die Verkäufer",
+        indefinite: "ein Verkäufer", negation: "kein Verkäufer",
+        meaning: "nam nhân viên bán hàng", category: "Danh từ Nghề nghiệp Nam & Nữ (Berufe - Bài 7)",
+        rule: "Danh từ giống đực. Bán hàng trong siêu thị hoặc cửa hàng.",
+        example: "Der Verkäufer berät die Kunden freundlich im Supermarkt.",
+        example_vi: "Nam nhân viên bán hàng tư vấn khách hàng thân thiện ở siêu thị."
+    },
+    {
+        word: "Verkäuferin", article: "die", gender: "die", plural: "die Verkäuferinnen",
+        indefinite: "eine Verkäuferin", negation: "keine Verkäuferin",
+        meaning: "nữ nhân viên bán hàng", category: "Danh từ Nghề nghiệp Nam & Nữ (Berufe - Bài 7)",
+        rule: "Danh từ giống cái (die Verkäuferin). Số nhiều die Verkäuferinnen.",
+        example: "Die Verkäuferin verkauft moderne Schuhe im Schuhgeschäft.",
+        example_vi: "Nữ nhân viên bán hàng bán những đôi giày hiện đại ở trong cửa hàng giày."
+    },
+    {
+        word: "Mechatroniker", article: "der", gender: "der", plural: "die Mechatroniker",
+        indefinite: "ein Mechatroniker", negation: "kein Mechatroniker",
+        meaning: "nam thợ cơ khí ô tô", category: "Danh từ Nghề nghiệp Nam & Nữ (Berufe - Bài 7)",
+        rule: "Thợ cơ khí điện tử ô tô (KFZ-Mechatroniker), làm việc in einer Werkstatt.",
+        example: "Der Mechatroniker repariert das Auto in einer Werkstatt.",
+        example_vi: "Người thợ cơ khí sửa chiếc ô tô ở trong một xưởng sửa chữa."
+    },
+    {
+        word: "Mechatronikerin", article: "die", gender: "die", plural: "die Mechatronikerinnen",
+        indefinite: "eine Mechatronikerin", negation: "keine Mechatronikerin",
+        meaning: "nữ thợ cơ khí ô tô", category: "Danh từ Nghề nghiệp Nam & Nữ (Berufe - Bài 7)",
+        rule: "Nữ thợ cơ khí ô tô (KFZ-Mechatronikerin).",
+        example: "Sie lernt fleißig und möchte eine Mechatronikerin werden.",
+        example_vi: "Cô ấy học tập chăm chỉ và muốn trở thành một nữ thợ cơ khí."
+    },
+    {
+        word: "Trainer", article: "der", gender: "der", plural: "die Trainer",
+        indefinite: "ein Trainer", negation: "kein Trainer",
+        meaning: "nam huấn luyện viên", category: "Danh từ Nghề nghiệp Nam & Nữ (Berufe - Bài 7)",
+        rule: "Danh từ giống đực (der Trainer), làm việc im Fitnessstudio hoặc im Stadion.",
+        example: "Der Trainer leitet das Training im Fitnessstudio.",
+        example_vi: "Huấn luyện viên phụ trách buổi tập ở phòng gym."
+    },
+    {
+        word: "Trainerin", article: "die", gender: "die", plural: "die Trainerinnen",
+        indefinite: "eine Trainerin", negation: "keine Trainerin",
+        meaning: "nữ huấn luyện viên", category: "Danh từ Nghề nghiệp Nam & Nữ (Berufe - Bài 7)",
+        rule: "Danh từ giống cái (die Trainerin), số nhiều die Trainerinnen.",
+        example: "Unsere Trainerin hilft den Sportlern jeden Tag im Stadion.",
+        example_vi: "Nữ huấn luyện viên của chúng tôi giúp đỡ các vận động viên mỗi ngày ở sân vận động."
+    },
+    {
+        word: "Lehrer", article: "der", gender: "der", plural: "die Lehrer",
+        indefinite: "ein Lehrer", negation: "kein Lehrer",
+        meaning: "nam giáo viên", category: "Danh từ Nghề nghiệp Nam & Nữ (Berufe - Bài 7)",
+        rule: "Danh từ giống đực (der Lehrer). Cấu trúc Er ist Lehrer von Beruf không dùng mạo từ.",
+        example: "Frank Müller ist Lehrer von Beruf und hat jetzt Ferien.",
+        example_vi: "Frank Müller làm nghề giáo viên và hiện đang có kỳ nghỉ."
+    },
+    {
+        word: "Lehrerin", article: "die", gender: "die", plural: "die Lehrerinnen",
+        indefinite: "eine Lehrerin", negation: "keine Lehrerin",
+        meaning: "nữ giáo viên", category: "Danh từ Nghề nghiệp Nam & Nữ (Berufe - Bài 7)",
+        rule: "Danh từ giống cái (die Lehrerin). Giảng dạy ở trường: an einer Schule unterrichten.",
+        example: "Die Lehrerin unterrichtet Schüler an einer Schule in Berlin.",
+        example_vi: "Nữ giáo viên giảng dạy học sinh tại một trường học ở Berlin."
+    },
+    {
+        word: "Schüler", article: "der", gender: "der", plural: "die Schüler",
+        indefinite: "ein Schüler", negation: "kein Schüler",
+        meaning: "nam học sinh (phổ thông)", category: "Danh từ Nghề nghiệp Nam & Nữ (Berufe - Bài 7)",
+        rule: "Danh từ giống đực (der Schüler), học sinh cấp 1 đến cấp 3.",
+        example: "Der Schüler lernt viele Fächer in der Schule.",
+        example_vi: "Cậu học sinh học nhiều môn học ở trường."
+    },
+    {
+        word: "Schülerin", article: "die", gender: "die", plural: "die Schülerinnen",
+        indefinite: "eine Schülerin", negation: "keine Schülerin",
+        meaning: "nữ học sinh (phổ thông)", category: "Danh từ Nghề nghiệp Nam & Nữ (Berufe - Bài 7)",
+        rule: "Danh từ giống cái (die Schülerin), số nhiều die Schülerinnen.",
+        example: "Anna ist một fleißige Schülerin am Gymnasium.",
+        example_vi: "Anna là một nữ học sinh chăm chỉ tại trường chuyên."
+    },
+    {
+        word: "Student", article: "der", gender: "der", plural: "die Studenten",
+        indefinite: "ein Student", negation: "kein Student",
+        meaning: "nam sinh viên (đại học)", category: "Danh từ Nghề nghiệp Nam & Nữ (Berufe - Bài 7)",
+        rule: "Danh từ giống đực nhóm N-Deklination: der Student, des Studenten, die Studenten.",
+        example: "Der Student studiert Informatik an der Universität.",
+        example_vi: "Nam sinh viên học ngành công nghệ thông tin tại trường đại học."
+    },
+    {
+        word: "Studentin", article: "die", gender: "die", plural: "die Studentinnen",
+        indefinite: "eine Studentin", negation: "keine Studentin",
+        meaning: "nữ sinh viên (đại học)", category: "Danh từ Nghề nghiệp Nam & Nữ (Berufe - Bài 7)",
+        rule: "Danh từ giống cái (die Studentin). Học đại học: an der Universität studieren.",
+        example: "Die Studentin liest viele deutsche Fachbücher in der Bibliothek.",
+        example_vi: "Nữ sinh viên đọc nhiều sách chuyên ngành tiếng Đức trong thư viện."
+    },
+    {
+        word: "Sekretär", article: "der", gender: "der", plural: "die Sekretäre",
+        indefinite: "ein Sekretär", negation: "kein Sekretär",
+        meaning: "nam thư ký", category: "Danh từ Nghề nghiệp Nam & Nữ (Berufe - Bài 7)",
+        rule: "Danh từ giống đực (der Sekretär), số nhiều die Sekretäre.",
+        example: "Der Sekretär vereinbart wichtige Termine mit Kunden.",
+        example_vi: "Nam thư ký sắp xếp các cuộc hẹn quan trọng với khách hàng."
+    },
+    {
+        word: "Sekretärin", article: "die", gender: "die", plural: "die Sekretärinnen",
+        indefinite: "eine Sekretärin", negation: "keine Sekretärin",
+        meaning: "nữ thư ký", category: "Danh từ Nghề nghiệp Nam & Nữ (Berufe - Bài 7)",
+        rule: "Danh từ giống cái (die Sekretärin). Viết email và gọi điện: E-Mails schreiben und Kunden anrufen.",
+        example: "Die Sekretärin schreibt E-Mails und ruft Kunden im Büro an.",
+        example_vi: "Nữ thư ký viết email và gọi điện cho khách hàng ở văn phòng."
+    },
+    {
+        word: "Friseur", article: "der", gender: "der", plural: "die Friseure",
+        indefinite: "ein Friseur", negation: "kein Friseur",
+        meaning: "nam thợ cắt tóc", category: "Danh từ Nghề nghiệp Nam & Nữ (Berufe - Bài 7)",
+        rule: "Danh từ giống đực (der Friseur). Nơi làm việc im Friseursalon.",
+        example: "Der Friseur schneidet meinem Bruder im Friseursalon die Haare.",
+        example_vi: "Người thợ làm tóc cắt tóc cho anh trai tôi ở trong tiệm làm tóc."
+    },
+    {
+        word: "Friseurin", article: "die", gender: "die", plural: "die Friseurinnen",
+        indefinite: "eine Friseurin", negation: "keine Friseurin",
+        meaning: "nữ thợ làm tóc", category: "Danh từ Nghề nghiệp Nam & Nữ (Berufe - Bài 7)",
+        rule: "Danh từ giống cái (die Friseurin), số nhiều die Friseurinnen.",
+        example: "Die Friseurin macht eine sehr schöne moderne Frisur.",
+        example_vi: "Nữ thợ làm tóc làm một kiểu tóc hiện đại rất đẹp."
+    },
+    {
+        word: "Kellner", article: "der", gender: "der", plural: "die Kellner",
+        indefinite: "ein Kellner", negation: "kein Kellner",
+        meaning: "nam nhân viên phục vụ bàn", category: "Danh từ Nghề nghiệp Nam & Nữ (Berufe - Bài 7)",
+        rule: "Danh từ giống đực (der Kellner). Phục vụ thực khách im Restaurant.",
+        example: "Der Kellner bringt den Gästen das Essen im Restaurant.",
+        example_vi: "Người bồi bàn mang thức ăn cho thực khách ở nhà hàng."
+    },
+    {
+        word: "Kellnerin", article: "die", gender: "die", plural: "die Kellnerinnen",
+        indefinite: "eine Kellnerin", negation: "keine Kellnerin",
+        meaning: "nữ nhân viên phục vụ bàn", category: "Danh từ Nghề nghiệp Nam & Nữ (Berufe - Bài 7)",
+        rule: "Danh từ giống cái (die Kellnerin), số nhiều die Kellnerinnen.",
+        example: "Die Kellnerin bedient Gäste freundlich im Café.",
+        example_vi: "Nữ phục vụ bàn phục vụ thực khách thân thiện ở quán cà phê."
+    },
+    {
+        word: "Koch", article: "der", gender: "der", plural: "die Köche",
+        indefinite: "ein Koch", negation: "kein Koch",
+        meaning: "nam đầu bếp", category: "Danh từ Nghề nghiệp Nam & Nữ (Berufe - Bài 7)",
+        rule: "Danh từ giống đực đặc biệt: số nhiều đổi biến âm die Köche.",
+        example: "Der Koch bereitet köstliche Gerichte in der Küche zu.",
+        example_vi: "Người đầu bếp chuẩn bị những món ăn ngon tuyệt trong nhà bếp."
+    },
+    {
+        word: "Köchin", article: "die", gender: "die", plural: "die Köchinnen",
+        indefinite: "eine Köchin", negation: "keine Köchin",
+        meaning: "nữ đầu bếp", category: "Danh từ Nghề nghiệp Nam & Nữ (Berufe - Bài 7)",
+        rule: "Danh từ giống cái đặc biệt: thêm Umlaut ö và đuôi -in thành die Köchin.",
+        example: "Frau Bui ist eine talentierte Köchin in einem Restaurant.",
+        example_vi: "Bà Bùi là một nữ đầu bếp tài năng trong một nhà hàng."
+    },
+    {
+        word: "Arzt", article: "der", gender: "der", plural: "die Ärzte",
+        indefinite: "ein Arzt", negation: "kein Arzt",
+        meaning: "nam bác sĩ", category: "Danh từ Nghề nghiệp Nam & Nữ (Berufe - Bài 7)",
+        rule: "Danh từ giống đực đặc biệt: số nhiều thêm Umlaut die Ärzte.",
+        example: "Der Arzt untersucht jeden Tag viele Patienten im Krankenhaus.",
+        example_vi: "Bác sĩ khám cho nhiều bệnh nhân mỗi ngày ở trong bệnh viện."
+    },
+    {
+        word: "Ärztin", article: "die", gender: "die", plural: "die Ärztinnen",
+        indefinite: "eine Ärztin", negation: "keine Ärztin",
+        meaning: "nữ bác sĩ", category: "Danh từ Nghề nghiệp Nam & Nữ (Berufe - Bài 7)",
+        rule: "Danh từ giống cái đặc biệt: thêm Umlaut ä và đuôi -in thành die Ärztin.",
+        example: "Die Ärztin hilft kranken Menschen mit großer Geduld.",
+        example_vi: "Nữ bác sĩ giúp đỡ những người bệnh bằng sự kiên nhẫn to lớn."
+    },
+    {
+        word: "Hausmann", article: "der", gender: "der", plural: "die Hausmänner",
+        indefinite: "ein Hausmann", negation: "kein Hausmann",
+        meaning: "người đàn ông nội trợ", category: "Danh từ Nghề nghiệp Nam & Nữ (Berufe - Bài 7)",
+        rule: "Danh từ giống đực (der Hausmann), số nhiều die Hausmänner.",
+        example: "Mein Onkel ist Hausmann und kümmert sich um die Kinder.",
+        example_vi: "Chú tôi là người nội trợ và chăm sóc con cái."
+    },
+    {
+        word: "Hausfrau", article: "die", gender: "die", plural: "die Hausfrauen",
+        indefinite: "eine Hausfrau", negation: "keine Hausfrau",
+        meaning: "người phụ nữ nội trợ", category: "Danh từ Nghề nghiệp Nam & Nữ (Berufe - Bài 7)",
+        rule: "Danh từ giống cái chuyển từ gốc -mann sang -frau: die Hausfrau.",
+        example: "Meine Großmutter war viele Jahre Hausfrau und kochte gern.",
+        example_vi: "Bà tôi đã làm nội trợ nhiều năm và rất thích nấu ăn."
+    },
+    {
+        word: "Friseursalon", article: "der", gender: "der", plural: "die Friseursalons",
+        indefinite: "ein Friseursalon", negation: "kein Friseursalon",
+        meaning: "tiệm làm tóc, salon tóc", category: "Nơi làm việc & Hoạt động Công việc (Arbeitsorte & Alltag - Bài 7)",
+        rule: "Danh từ giống đực (der Friseursalon). Trả lời Wo? dùng im Friseursalon (in + dem).",
+        example: "Der Friseur arbeitet jeden Tag im Friseursalon.",
+        example_vi: "Người thợ làm tóc làm việc mỗi ngày ở trong tiệm làm tóc."
+    },
+    {
+        word: "Supermarkt", article: "der", gender: "der", plural: "die Supermärkte",
+        indefinite: "ein Supermarkt", negation: "kein Supermarkt",
+        meaning: "siêu thị", category: "Nơi làm việc & Hoạt động Công việc (Arbeitsorte & Alltag - Bài 7)",
+        rule: "Danh từ giống đực (der Supermarkt). Trả lời Wo? dùng im Supermarkt.",
+        example: "Frau Lindner kauft frische Lebensmittel im Supermarkt ein.",
+        example_vi: "Bà Lindner mua thực phẩm tươi ở trong siêu thị."
+    },
+    {
+        word: "Kindergarten", article: "der", gender: "der", plural: "die Kindergärten",
+        indefinite: "ein Kindergarten", negation: "kein Kindergarten",
+        meaning: "trường mẫu giáo, nhà trẻ", category: "Nơi làm việc & Hoạt động Công việc (Arbeitsorte & Alltag - Bài 7)",
+        rule: "Danh từ giống đực. Di chuyển Wohin? -> in den Kindergarten; ở lại Wo? -> im Kindergarten.",
+        example: "Um 8.30 Uhr bringt Frank seine Tochter in den Kindergarten.",
+        example_vi: "Lúc 8 giờ 30 phút Frank đưa con gái vào trường mẫu giáo."
+    },
+    {
+        word: "Schule", article: "die", gender: "die", plural: "die Schulen",
+        indefinite: "eine Schule", negation: "keine Schule",
+        meaning: "trường học (phổ thông)", category: "Nơi làm việc & Hoạt động Công việc (Arbeitsorte & Alltag - Bài 7)",
+        rule: "Danh từ giống cái (die Schule). Trả lời Wo? dùng an einer Schule hoặc in der Schule.",
+        example: "Frau Weber unterrichtet viele Schüler an einer Schule in Berlin.",
+        example_vi: "Bà Weber giảng dạy nhiều học sinh tại một trường học ở Berlin."
+    },
+    {
+        word: "Universität", article: "die", gender: "die", plural: "die Universitäten",
+        indefinite: "eine Universität", negation: "keine Universität",
+        meaning: "trường đại học", category: "Nơi làm việc & Hoạt động Công việc (Arbeitsorte & Alltag - Bài 7)",
+        rule: "Danh từ giống cái đuôi -tät. Trả lời Wo? dùng an der Universität / an einer Hochschule.",
+        example: "Mein Bruder studiert Informatik an der Universität.",
+        example_vi: "Anh trai tôi học ngành tin học tại trường đại học."
+    },
+    {
+        word: "Werkstatt", article: "die", gender: "die", plural: "die Werkstätten",
+        indefinite: "eine Werkstatt", negation: "keine Werkstatt",
+        meaning: "xưởng sửa chữa", category: "Nơi làm việc & Hoạt động Công việc (Arbeitsorte & Alltag - Bài 7)",
+        rule: "Danh từ giống cái (die Werkstatt). Di chuyển Wohin? -> in die Werkstatt; ở tại Wo? -> in der Werkstatt.",
+        example: "Der KFZ-Mechatroniker repariert das Auto in einer Werkstatt.",
+        example_vi: "Người thợ cơ khí ô tô sửa chiếc xe trong một xưởng sửa chữa."
+    },
+    {
+        word: "Baustelle", article: "die", gender: "die", plural: "die Baustellen",
+        indefinite: "eine Baustelle", negation: "keine Baustelle",
+        meaning: "công trường xây dựng", category: "Nơi làm việc & Hoạt động Công việc (Arbeitsorte & Alltag - Bài 7)",
+        rule: "Danh từ giống cái (die Baustelle). Trả lời Wo? dùng auf der Baustelle / auf einer Baustelle.",
+        example: "Die Arbeiter tragen Helme auf der Baustelle.",
+        example_vi: "Các công nhân đội mũ bảo hộ trên công trường xây dựng."
+    },
+    {
+        word: "Firma", article: "die", gender: "die", plural: "die Firmen",
+        indefinite: "eine Firma", negation: "keine Firma",
+        meaning: "công ty, doanh nghiệp", category: "Nơi làm việc & Hoạt động Công việc (Arbeitsorte & Alltag - Bài 7)",
+        rule: "Danh từ giống cái (die Firma). Trả lời Wo? dùng in einer Firma hoặc bei einer IT-Firma.",
+        example: "Paula Rausch arbeitet als Programmiererin bei einer IT-Firma.",
+        example_vi: "Paula Rausch làm nghề lập trình viên tại một công ty công nghệ thông tin."
+    },
+    {
+        word: "Krankenhaus", article: "das", gender: "das", plural: "die Krankenhäuser",
+        indefinite: "ein Krankenhaus", negation: "kein Krankenhaus",
+        meaning: "bệnh viện", category: "Nơi làm việc & Hoạt động Công việc (Arbeitsorte & Alltag - Bài 7)",
+        rule: "Danh từ giống trung (das Krankenhaus). Trả lời Wo? dùng im Krankenhaus (in + dem).",
+        example: "Der Arzt untersucht die Patienten im Krankenhaus.",
+        example_vi: "Bác sĩ khám cho các bệnh nhân ở trong bệnh viện."
+    },
+    {
+        word: "Restaurant", article: "das", gender: "das", plural: "die Restaurants",
+        indefinite: "ein Restaurant", negation: "kein Restaurant",
+        meaning: "nhà hàng", category: "Nơi làm việc & Hoạt động Công việc (Arbeitsorte & Alltag - Bài 7)",
+        rule: "Danh từ giống trung gốc Pháp (das Restaurant). Trả lời Wo? dùng im Restaurant.",
+        example: "Die Köchin kocht leckere Spezialitäten im Restaurant.",
+        example_vi: "Nữ đầu bếp nấu các món đặc sản ngon miệng ở trong nhà hàng."
+    },
+    {
+        word: "Blumengeschäft", article: "das", gender: "das", plural: "die Blumengeschäfte",
+        indefinite: "ein Blumengeschäft", negation: "kein Blumengeschäft",
+        meaning: "cửa hàng hoa tươi", category: "Nơi làm việc & Hoạt động Công việc (Arbeitsorte & Alltag - Bài 7)",
+        rule: "Danh từ ghép giống trung (das Blumengeschäft). Trả lời Wo? dùng im Blumengeschäft.",
+        example: "Die Floristin verkauft bunte Rosen im Blumengeschäft.",
+        example_vi: "Người nữ bán hoa bán hoa hồng nhiều màu sắc ở trong cửa hàng hoa."
+    },
+    {
+        word: "Schuhgeschäft", article: "das", gender: "das", plural: "die Schuhgeschäfte",
+        indefinite: "ein Schuhgeschäft", negation: "kein Schuhgeschäft",
+        meaning: "cửa hàng giày dép", category: "Nơi làm việc & Hoạt động Công việc (Arbeitsorte & Alltag - Bài 7)",
+        rule: "Danh từ ghép giống trung (das Schuhgeschäft). Trả lời Wo? dùng im Schuhgeschäft.",
+        example: "Die Verkäuferin verkauft modische Schuhe im Schuhgeschäft.",
+        example_vi: "Nữ nhân viên bán hàng bán giày thời trang ở trong cửa hàng giày."
+    },
+    {
+        word: "Sprachzentrum", article: "das", gender: "das", plural: "die Sprachzentren",
+        indefinite: "ein Sprachzentrum", negation: "kein Sprachzentrum",
+        meaning: "trung tâm ngoại ngữ", category: "Nơi làm việc & Hoạt động Công việc (Arbeitsorte & Alltag - Bài 7)",
+        rule: "Danh từ giống trung đuôi -um đổi số nhiều sang -en: die Sprachzentren. Dùng im Sprachzentrum.",
+        example: "Wir lernen jeden Tag Deutsch im Sprachzentrum.",
+        example_vi: "Chúng tôi học tiếng Đức mỗi ngày ở trong trung tâm ngoại ngữ."
+    },
+    {
+        word: "Bett", article: "das", gender: "das", plural: "die Betten",
+        indefinite: "ein Bett", negation: "kein Bett",
+        meaning: "chiếc giường ngủ", category: "Nơi làm việc & Hoạt động Công việc (Arbeitsorte & Alltag - Bài 7)",
+        rule: "Danh từ giống trung (das Bett). Hướng di chuyển Wohin? -> ins Bett; Vị trí tĩnh Wo? -> im Bett.",
+        example: "Um neunzehn Uhr bringt Frank seine Tochter ins Bett.",
+        example_vi: "Lúc 19 giờ Frank đưa con gái của mình lên giường đi ngủ."
+    },
+    {
+        word: "Fitnessstudio", article: "das", gender: "das", plural: "die Fitnessstudios",
+        indefinite: "ein Fitnessstudio", negation: "kein Fitnessstudio",
+        meaning: "phòng tập thể hình, gym", category: "Nơi làm việc & Hoạt động Công việc (Arbeitsorte & Alltag - Bài 7)",
+        rule: "Danh từ giống trung (das Fitnessstudio). Trả lời Wo? dùng im Fitnessstudio.",
+        example: "Der Trainer trainiert fleißig Sportler im Fitnessstudio.",
+        example_vi: "Huấn luyện viên rèn luyện chăm chỉ cho vận động viên ở phòng gym."
+    },
+    {
+        word: "Stadion", article: "das", gender: "das", plural: "die Stadien",
+        indefinite: "ein Stadion", negation: "kein Stadion",
+        meaning: "sân vận động", category: "Nơi làm việc & Hoạt động Công việc (Arbeitsorte & Alltag - Bài 7)",
+        rule: "Danh từ giống trung (das Stadion), số nhiều die Stadien. Trả lời Wo? dùng im Stadion.",
+        example: "Am Wochenende spielen Fußballer im großen Stadion.",
+        example_vi: "Vào cuối tuần các cầu thủ thi đấu ở trong sân vận động lớn."
+    },
+    {
+        word: "Computer", article: "der", gender: "der", plural: "die Computer",
+        indefinite: "ein Computer", negation: "kein Computer",
+        meaning: "máy vi tính", category: "Nơi làm việc & Hoạt động Công việc (Arbeitsorte & Alltag - Bài 7)",
+        rule: "Danh từ giống đực (der Computer). Tân ngữ Akkusativ sau brauchen: einen Computer brauchen.",
+        example: "Bei ihrer Arbeit braucht Petra May einen schnellen Computer.",
+        example_vi: "Trong công việc của mình, Petra May cần một chiếc máy tính nhanh."
+    },
+    {
+        word: "Patient", article: "der", gender: "der", plural: "die Patienten",
+        indefinite: "ein Patient", negation: "kein Patient",
+        meaning: "bệnh nhân", category: "Nơi làm việc & Hoạt động Công việc (Arbeitsorte & Alltag - Bài 7)",
+        rule: "Danh từ giống đực N-Deklination (der Patient). Tân ngữ Akkusativ sau untersuchen: den Patienten untersuchen.",
+        example: "Der Arzt untersucht den kranken Patient im Behandlungszimmer.",
+        example_vi: "Bác sĩ khám cho bệnh nhân bị ốm ở trong phòng khám bệnh."
     }
 ];
 
@@ -1423,6 +1823,8 @@ let currentLexikonSearchQuery = "";
 
 const LEXIKON_FILTERS = [
     { id: "all", label: "Tất cả" },
+    { id: "Berufe", label: "👨‍💼 Nghề nghiệp Nam & Nữ (Bài 7)" },
+    { id: "Arbeitsorte", label: "🏢 Nơi làm việc & Đời sống (Bài 7)" },
     { id: "Phương tiện Giao thông", label: "🚆 Phương tiện Giao thông & Điểm đến (Bài 6)" },
     { id: "Tòa nhà, Văn phòng", label: "🏢 Tòa nhà, Văn phòng & Bàn làm việc (Bài 6)" },
     { id: "der", label: "🔵 Giống đực - der (Maskulinum)" },
