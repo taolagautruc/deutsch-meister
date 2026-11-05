@@ -127,9 +127,15 @@ def ensure_db_initialized():
                 seed_lesson_4()
 
         cursor.execute("SELECT COUNT(*) as cnt FROM lessons WHERE title LIKE 'Bài 5%';")
-        if cursor.fetchone()["cnt"] == 0:
+        has_b5 = cursor.fetchone()["cnt"] > 0
+        if not has_b5:
             from lessons.a1.seed_a1_b5 import seed_lesson_5
             seed_lesson_5()
+        else:
+            cursor.execute("SELECT COUNT(*) as cnt FROM vocabularies WHERE lesson_id = 19 AND german_word = 'Oktober' AND vietnamese_meaning LIKE '%kein Plural%';")
+            if cursor.fetchone()["cnt"] == 0:
+                from lessons.a1.seed_a1_b5 import seed_lesson_5
+                seed_lesson_5()
 
         cursor.execute("SELECT COUNT(*) as cnt FROM lessons WHERE title LIKE 'Bài 6%';")
         has_b6 = cursor.fetchone()["cnt"] > 0
@@ -143,7 +149,7 @@ def ensure_db_initialized():
             row_q43 = cursor.fetchone()
             if row_q43 and ('$\\rightarrow$' in (row_q43["explanation"] or '') or 'NHÓM' in (row_q43["explanation"] or '')):
                 need_reseed_b6 = True
-            cursor.execute("SELECT COUNT(*) as cnt FROM vocabularies WHERE lesson_id = 20 AND vietnamese_meaning LIKE '%Pl:%';")
+            cursor.execute("SELECT COUNT(*) as cnt FROM vocabularies WHERE lesson_id = 20 AND german_word = 'Post' AND vietnamese_meaning LIKE '%kein Plural%';")
             if cursor.fetchone()["cnt"] == 0:
                 need_reseed_b6 = True
 
