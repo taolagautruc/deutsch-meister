@@ -466,16 +466,16 @@ Toàn bộ **100 câu hỏi (`100 Unique Exercises`)** dưới đây đã đư�
     * Đáp án chấp nhận: `["aufstehen"]`
     * Dịch nghĩa câu: *"Vào Chủ nhật chúng tôi không phải thức dậy sớm."*
     * Giải thích: Khi câu đã có động từ khuyết thiếu `müssen` ở vị trí số 2, động từ tách `aufstehen` giữ nguyên dạng nguyên mẫu viết liền ở cuối câu.
-27. **Câu 27**: Điền mạo từ không xác định đúng ở Cách 4 (`Akkusativ`) vào chỗ trống: *„Für seine Arbeit im Büro braucht mein Bruder ___ schnellen Laptop.“* *(Gợi ý: `der Laptop`)*
-    * Đáp án chấp nhận: `["einen"]`
+27. **Câu 27**: Điền mạo từ thích hợp vào chỗ trống: *„Für seine Arbeit im Büro braucht mein Bruder ___ schnellen Laptop.“*
+    * Đáp án chấp nhận: `["einen", "den"]`
     * Dịch nghĩa câu: *"Cho công việc của mình ở văn phòng, anh trai tôi cần một chiếc máy tính xách tay nhanh."*
     * Giải thích: Động từ `brauchen` đòi hỏi Cách 4 (`Akkusativ`). `der Laptop` mang giống đực nên `ein` đổi thành **`einen`**.
-28. **Câu 28**: Điền mạo từ phủ định `kein` đúng ở Cách 4 (`Akkusativ`) vào chỗ trống: *„Ich trinke meinen Tee bitte ohne Zucker, ich brauche ___ Löffel.“* *(Gợi ý: `der Löffel` - cái thìa)*
-    * Đáp án chấp nhận: `["keinen"]`
+28. **Câu 28**: Điền mạo từ thích hợp vào chỗ trống: *„Ich trinke meinen Tee bitte ohne Zucker, ich brauche ___ Löffel.“*
+    * Đáp án chấp nhận: `["keinen", "einen"]`
     * Dịch nghĩa câu: *"Tôi uống trà không đường, tôi không cần cái thìa nào cả."*
     * Giải thích: `der Löffel` mang giống đực, làm tân ngữ trực tiếp (`Akkusativ`) sau `brauche`, nên `kein` đổi thành **`keinen`**.
-29. **Câu 29**: Điền mạo từ sở hữu của ngôi `er` (`sein-`) đúng ở Cách 4 (`Akkusativ`) vào chỗ trống: *„Der Programmierer ruft ___ Chef im Büro an.“* *(Gợi ý: `der Chef`)*
-    * Đáp án chấp nhận: `["seinen"]`
+29. **Câu 29**: Điền mạo từ thích hợp vào chỗ trống: *„Der Programmierer ruft ___ Chef im Büro an.“*
+    * Đáp án chấp nhận: `["seinen", "den"]`
     * Dịch nghĩa câu: *"Lập trình viên gọi điện cho ông sếp của anh ấy ở văn phòng."*
     * Giải thích: Động từ `anrufen` đi với Cách 4 (`Akkusativ`). `der Chef` mang giống đực nên gốc sở hữu `sein-` của `er` đổi thành **`seinen`**.
 30. **Câu 30**: Điền mạo từ xác định đúng (phân biệt `Wohin? Akkusativ`) vào chỗ trống: *„Jeden Morgen um 8 Uhr bringt Frau Rausch ihren Sohn in ___ Kindergarten.“* *(Gợi ý: `der Kindergarten`)*
