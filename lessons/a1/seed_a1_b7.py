@@ -227,9 +227,8 @@ def seed_lesson_7():
                 <h5 class="text-sm font-bold text-slate-800 flex items-center gap-2">
                     <span>🗣️</span> 1.3. Ba Mẫu Câu Hỏi & Ba Cách Trả Lời Nghề Nghiệp Chuẩn Ngữ Pháp
                 </h5>
-                <div class="p-3 rounded-xl bg-rose-50 border border-rose-200 text-xs text-rose-800 space-y-1">
-                    <p>⚠️ <b>LƯU Ý CỐT LÕI:</b> Khi chỉ nói tên nghề nghiệp với cấu trúc <code>sein + [Nghề]</code>, <code>arbeiten als + [Nghề]</code> hoặc <code>werden + [Nghề]</code>, <b>không dùng mạo từ ein/eine</b>! Nói: <i>„Ich bin Lehrer.“</i>, <i>„Ich arbeite als Programmierer.“</i> hoặc <i>„Sie möchte Mechatronikerin werden.“</i> (Không nói: <i>„Ich bin ein Lehrer.“</i>).</p>
-                    <p class="text-rose-950 font-medium">💡 <b>Ngoại lệ bắt buộc:</b> Nếu có <b>tính từ đi kèm</b> bổ nghĩa cho nghề nghiệp thì <b>bắt buộc phải dùng mạo từ</b>: <i>„Sie ist eine gute Ärztin.“</i> / <i>„Frau Becker ist eine erfahrene Taxifahrerin.“</i> / <i>„Anna ist eine fleißige Schülerin.“</i></p>
+                <div class="p-3 rounded-xl bg-rose-50 border border-rose-200 text-xs text-rose-800">
+                    ⚠️ <b>LƯU Ý CỐT LÕI:</b> Khi nói nghề nghiệp với cấu trúc <code>sein + [Nghề]</code> hoặc <code>arbeiten als + [Nghề]</code>, <b>TUYỆT ĐỐI KHÔNG DÙNG MẠO TỪ ein/eine</b>! Nói: <i>„Ich bin Lehrer.“</i> hoặc <i>„Ich arbeite als Programmierer.“</i> (Không nói: <i>„Ich bin ein Lehrer.“</i>).
                 </div>
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-3 text-xs sm:text-sm">
                     <div class="p-3 rounded-xl bg-slate-50 border border-slate-200 space-y-1">
@@ -445,9 +444,8 @@ def seed_lesson_7():
                 </h5>
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-xs sm:text-sm">
                     <div class="p-4 rounded-2xl bg-slate-50 border border-slate-200 space-y-2">
-                        <span class="font-bold text-indigo-700">LUÔN ĐI VỚI AKKUSATIV (DOGFU):</span>
-                        <p class="text-slate-700"><b>D</b>urch (xuyên qua), <b>O</b>hne (không có), <b>G</b>egen (chống lại/khoảng), <b>F</b>ür (cho), <b>U</b>m (xung quanh/vào lúc).</p>
-                        <p class="text-slate-500 text-xs"><i>(Mẹo mở rộng FUDGE-BO đầy đủ: thêm <b>B</b>is - cho đến, <b>E</b>ntlang - dọc theo)</i></p>
+                        <span class="font-bold text-indigo-700">LUÔN ĐI VỚI AKKUSATIV (FUDGE-BO):</span>
+                        <p class="text-slate-700"><b>für</b> (cho), <b>ohne</b> (không có), <b>durch</b> (xuyên qua), <b>um</b> (xung quanh/vào lúc), <b>gegen</b> (chống lại/khoảng).</p>
                         <p class="text-emerald-700"><i>„Das Telefon ist wichtig <b>für <u>sie</u></b> / <b>für <u>den</u> Chef</b>.“</i></p>
                     </div>
                     <div class="p-4 rounded-2xl bg-slate-50 border border-slate-200 space-y-2">
@@ -1258,7 +1256,7 @@ def seed_lesson_7():
                 "plural": "die Patienten",
                 "indefinite": "ein Patient",
                 "negation": "kein Patient",
-                "akkusativ": "den / einen / keinen Patienten",
+                "akkusativ": "den / einen / keinen Patient",
                 "meaning": "bệnh nhân",
                 "category": "Nơi làm việc & Hoạt động Công việc (Arbeitsorte & Alltag - Bài 7)",
                 "rule": "Danh từ giống đực N-Deklination (der Patient). Tân ngữ Akkusativ sau untersuchen: den Patienten untersuchen.",
@@ -2966,10 +2964,26 @@ def seed_lesson_7():
                 "extra_data": {
                         "accepted_answers": [
                                 "Lúc 16 giờ 30 phút Paula phải đón con gái của mình từ trường mẫu giáo",
+                                "Lúc 16 giờ 30 Paula phải đón con gái của mình từ trường mẫu giáo",
+                                "Vào 16 giờ 30 Paula phải đón con gái của cô ấy từ trường mẫu giáo",
+                                "Vào 16 giờ 30 phút Paula phải đón con gái của cô ấy từ trường mẫu giáo",
                                 "Vào lúc 16h30 Paula phải đón con gái từ nhà trẻ về",
+                                "Lúc 16h30 Paula phải đón con gái từ trường mẫu giáo",
+                                "Vào 16h30 Paula phải đón con gái của cô ấy từ trường mẫu giáo",
+                                "Vào lúc 16 giờ 30 Paula phải đón con gái từ trường mẫu giáo",
+                                "Lúc 16h30 phút Paula phải đón con gái từ trường mẫu giáo",
                                 "Lúc 4 giờ rưỡi chiều Paula phải đón con gái của cô ấy từ trường mầm non",
-                                "Lúc 16 giờ 30 Paula phải đón con gái từ trường mẫu giáo",
-                                "Lúc 16h30 phút Paula phải đón con gái từ trường mẫu giáo"
+                                "Vào 4 giờ rưỡi chiều Paula phải đón con gái từ trường mẫu giáo",
+                                "Lúc 16 giờ 30 phút Paula phải đón con gái từ trường mầm non",
+                                "Lúc 16 giờ 30 Paula phải đón con gái từ nhà trẻ",
+                                "Vào 16 giờ 30 Paula phải đón con gái mình từ trường mầm non",
+                                "Vào 16 giờ 30 Paula phải đón con gái từ trường mẫu giáo",
+                                "Lúc 16h30 Paula phải đón con gái của mình từ trường mẫu giáo",
+                                "16h30 Paula phải đón con gái từ trường mẫu giáo",
+                                "16 giờ 30 Paula phải đón con gái của mình từ trường mẫu giáo",
+                                "Paula phải đón con gái của mình từ trường mẫu giáo lúc 16 giờ 30",
+                                "Paula phải đón con gái từ trường mẫu giáo lúc 16h30",
+                                "Paula phải đón con gái của cô ấy từ trường mầm non lúc 16 giờ 30"
                         ],
                         "translation": "Um 16.30 Uhr muss Paula ihre Tochter vom Kindergarten abholen."
                 }
@@ -2984,9 +2998,25 @@ def seed_lesson_7():
                 "extra_data": {
                         "accepted_answers": [
                                 "Frank Müller làm nghề giáo viên nhưng hôm nay anh ấy có kỳ nghỉ và có thể ngủ đến 7 giờ",
-                                "Nghề của Frank Müller là giáo viên nhưng hôm nay anh ấy được nghỉ lễ và có thể ngủ tới 7 giờ",
+                                "Frank Müller là giáo viên nhưng hôm nay anh ấy có kỳ nghỉ và có thể ngủ đến 7 giờ",
+                                "Frank Müller là giáo viên nhưng hôm nay anh ấy có kì nghỉ và có thể ngủ đến 7 giờ",
+                                "Frank Müller là giáo viên nhưng hôm nay anh ấy được nghỉ và có thể ngủ đến 7 giờ",
+                                "Frank Müller làm nghề giáo viên nhưng hôm nay anh ấy được nghỉ và có thể ngủ đến 7 giờ",
+                                "Frank Müller làm nghề giáo viên nhưng hôm nay anh ấy có kỳ nghỉ và có thể ngủ tới 7 giờ",
                                 "Frank Müller là giáo viên nhưng hôm nay anh ấy có kỳ nghỉ nên có thể ngủ đến 7 giờ",
-                                "Frank Müller làm nghề giáo viên nhưng hôm nay anh ấy có kỳ nghỉ nên có thể ngủ tới 7 giờ"
+                                "Frank Müller làm nghề giáo viên nhưng hôm nay anh ấy có kỳ nghỉ nên có thể ngủ đến 7 giờ",
+                                "Frank Müller là một giáo viên nhưng hôm nay anh ấy có kỳ nghỉ và có thể ngủ đến 7 giờ",
+                                "Frank Müller làm giáo viên nhưng hôm nay anh ấy có kỳ nghỉ và có thể ngủ đến 7 giờ",
+                                "Nghề của Frank Müller là giáo viên nhưng hôm nay anh ấy được nghỉ lễ và có thể ngủ tới 7 giờ",
+                                "Nghề của Frank Müller là giáo viên nhưng hôm nay anh ấy có kỳ nghỉ và có thể ngủ đến 7 giờ",
+                                "Frank Müller là giáo viên nhưng hôm nay ông ấy có kỳ nghỉ và có thể ngủ đến 7 giờ",
+                                "Frank Müller làm nghề giáo viên nhưng hôm nay ông ấy được nghỉ và có thể ngủ đến 7 giờ",
+                                "Frank Müller là giáo viên nhưng hôm nay anh ấy có kỳ nghỉ và có thể ngủ đến 7h",
+                                "Frank Müller làm nghề giáo viên nhưng hôm nay anh ấy có kỳ nghỉ và có thể ngủ đến 7h",
+                                "Frank Müller là giáo viên, nhưng hôm nay anh ấy có kỳ nghỉ và có thể ngủ đến 7 giờ",
+                                "Frank Müller là giáo viên, nhưng hôm nay anh ấy được nghỉ và có thể ngủ đến 7 giờ",
+                                "Frank Müller làm nghề giáo viên, nhưng hôm nay anh ấy có kì nghỉ và có thể ngủ đến 7 giờ",
+                                "Frank Müller là giáo viên nhưng hôm nay anh ấy được nghỉ phép và có thể ngủ đến 7 giờ"
                         ],
                         "translation": "Frank Müller ist Lehrer von Beruf, aber heute hat er Ferien und kann bis 7 Uhr schlafen."
                 }
@@ -3001,9 +3031,24 @@ def seed_lesson_7():
                 "extra_data": {
                         "accepted_answers": [
                                 "Chiếc điện thoại rất quan trọng đối với cô ấy vì cô ấy thường xuyên phải gọi điện cho các khách hàng của mình",
+                                "Chiếc điện thoại rất quan trọng với cô ấy vì cô ấy thường xuyên phải gọi điện cho các khách hàng của mình",
+                                "chiếc điện thoại đó rất quan trọng với cô ấy, vì cô ấy thường xuyên phải gọi điện cho các khách hàng của mình",
+                                "Chiếc điện thoại đó rất quan trọng đối với cô ấy vì cô ấy thường xuyên phải gọi điện cho các khách hàng của mình",
+                                "Chiếc điện thoại đó rất quan trọng với cô ấy vì cô ấy thường phải gọi điện cho khách hàng của mình",
                                 "Điện thoại rất quan trọng với cô ấy bởi vì cô ấy phải gọi điện cho khách hàng của mình thường xuyên",
+                                "Điện thoại rất quan trọng đối với cô ấy vì cô ấy thường xuyên phải gọi điện cho khách hàng của mình",
                                 "Cái điện thoại rất quan trọng đối với cô ấy vì cô ấy thường phải gọi cho khách hàng",
-                                "Chiếc điện thoại rất quan trọng với cô ấy vì cô ấy phải thường xuyên gọi điện cho khách hàng"
+                                "Cái điện thoại đó rất quan trọng với cô ấy vì cô ấy thường xuyên phải gọi điện cho khách hàng của mình",
+                                "Chiếc điện thoại rất quan trọng với cô ấy vì cô ấy phải thường xuyên gọi điện cho khách hàng",
+                                "Chiếc điện thoại rất quan trọng đối với cô ấy vì cô ấy thường phải gọi điện cho khách hàng",
+                                "Điện thoại rất quan trọng đối với cô ấy vì cô ấy thường phải gọi cho khách hàng của mình",
+                                "Chiếc điện thoại rất quan trọng với cô ấy bởi vì cô ấy thường xuyên phải gọi điện cho các khách hàng của mình",
+                                "Điện thoại rất quan trọng với cô ấy vì cô ấy thường xuyên phải gọi điện cho khách hàng",
+                                "Cái điện thoại rất quan trọng với cô ấy vì cô ấy thường xuyên phải gọi điện cho các khách hàng của mình",
+                                "Chiếc điện thoại đó rất quan trọng đối với cô ấy vì cô ấy phải thường xuyên gọi điện cho khách hàng",
+                                "Điện thoại rất quan trọng cho cô ấy vì cô ấy thường xuyên phải gọi điện cho khách hàng của mình",
+                                "Chiếc điện thoại rất quan trọng cho cô ấy vì cô ấy thường xuyên phải gọi điện cho các khách hàng của mình",
+                                "Chiếc điện thoại này rất quan trọng với cô ấy vì cô ấy thường xuyên phải gọi điện cho khách hàng của mình"
                         ],
                         "translation": "Das Telefon ist sehr wichtig für sie, denn sie muss ihre Kunden oft anrufen."
                 }
@@ -3018,9 +3063,23 @@ def seed_lesson_7():
                 "extra_data": {
                         "accepted_answers": [
                                 "Vào buổi chiều ông Müller mang chiếc ô tô của mình vào xưởng sửa chữa rồi sau đó đi đến buổi tập bóng đá",
+                                "Vào buổi chiều ông Müller đem chiếc xe hơi của mình đến xưởng sửa chữa và sau đó đi đến buổi tập đá bóng",
+                                "vào buổi chiều ông Müller đem chiếc xe hơi của mình đến xưởng sửa chữa và sau đó đi đến buổi tập đá bóng",
                                 "Buổi chiều ông Müller đưa xe hơi vào xưởng sửa chữa và sau đó đi tập đá bóng",
                                 "Vào buổi chiều anh Müller đem ô tô tới xưởng sửa xe rồi đi tập bóng đá",
-                                "Buổi chiều ông Müller mang ô tô vào xưởng sửa chữa rồi đi đến buổi tập bóng đá"
+                                "Buổi chiều ông Müller mang ô tô vào xưởng sửa chữa rồi đi đến buổi tập bóng đá",
+                                "Vào buổi chiều ông Müller mang ô tô vào xưởng sửa chữa và sau đó đi đến buổi tập bóng đá",
+                                "Vào buổi chiều ông Müller mang chiếc ô tô của mình đến xưởng sửa chữa rồi sau đó đi tập bóng đá",
+                                "Buổi chiều ông Müller mang xe hơi của mình vào xưởng sửa chữa và sau đó đi đến buổi tập bóng đá",
+                                "Vào buổi chiều ông Müller đem ô tô của mình đến xưởng sửa chữa rồi đi tập đá bóng",
+                                "Vào buổi chiều ông Müller đưa chiếc ô tô của mình đến gara rồi sau đó đi tập bóng đá",
+                                "Buổi chiều ông Müller đem chiếc ô tô của mình vào xưởng sửa chữa rồi sau đó đi đến buổi tập bóng đá",
+                                "Buổi chiều ông Müller mang xe vào xưởng sửa chữa và sau đó đi tập bóng đá",
+                                "Vào buổi chiều ông Müller đem xe hơi vào xưởng sửa chữa và sau đó đi đến buổi tập bóng đá",
+                                "Buổi chiều ông Müller đem xe hơi của mình đến xưởng sửa chữa rồi sau đó đi tập đá bóng",
+                                "Vào buổi chiều ông Müller mang xe của mình tới xưởng sửa xe rồi đi tập bóng đá",
+                                "Ông Müller vào buổi chiều mang ô tô vào xưởng sửa chữa rồi sau đó đi tập bóng đá",
+                                "Vào buổi chiều ông Müller mang ô tô đến tiệm sửa xe rồi sau đó đi đến buổi tập bóng đá"
                         ],
                         "translation": "Am Nachmittag bringt Herr Müller sein Auto in die Werkstatt und geht dann zum Fußballtraining."
                 }
@@ -3035,9 +3094,23 @@ def seed_lesson_7():
                 "extra_data": {
                         "accepted_answers": [
                                 "Cô giáo buổi sáng dạy học sinh tại một trường học và buổi chiều dạy sinh viên ở trường đại học",
+                                "Cô giáo dạy học sinh ở trường học vào buổi sáng và dạy sinh viên ở trường đại học vào buổi chiều",
+                                "cô giáo dạy học sinh ở trường học vào buổi sáng và dạy sinh viên ở trường đại học vào buổi chiều",
+                                "Cô giáo dạy học sinh tại một trường học vào buổi sáng và dạy sinh viên ở trường đại học vào buổi chiều",
+                                "Cô giáo dạy học sinh tại trường học vào buổi sáng và dạy sinh viên tại trường đại học vào buổi chiều",
+                                "Cô giáo dạy học sinh ở một trường học vào buổi sáng và dạy sinh viên ở trường đại học vào buổi chiều",
                                 "Nữ giáo viên dạy học sinh ở một ngôi trường vào buổi sáng và dạy sinh viên tại trường đại học vào buổi chiều",
                                 "Buổi sáng cô giáo giảng dạy học sinh ở trường phổ thông và buổi chiều dạy sinh viên ở trường đại học",
-                                "Nữ giáo viên buổi sáng dạy học sinh tại một trường học và buổi chiều dạy sinh viên ở trường đại học"
+                                "Nữ giáo viên buổi sáng dạy học sinh tại một trường học và buổi chiều dạy sinh viên ở trường đại học",
+                                "Buổi sáng cô giáo dạy học sinh tại một trường học và buổi chiều dạy sinh viên ở trường đại học",
+                                "Vào buổi sáng cô giáo dạy học sinh ở trường học và vào buổi chiều dạy sinh viên ở trường đại học",
+                                "Cô giáo buổi sáng giảng dạy học sinh ở một trường học và buổi chiều giảng dạy sinh viên ở trường đại học",
+                                "Nữ giáo viên dạy học sinh ở trường học vào buổi sáng và dạy sinh viên ở trường đại học vào buổi chiều",
+                                "Cô giáo buổi sáng dạy học sinh ở trường và buổi chiều dạy sinh viên ở trường đại học",
+                                "Cô giáo buổi sáng dạy học sinh tại trường học và buổi chiều dạy sinh viên tại trường đại học",
+                                "Buổi sáng cô giáo dạy học sinh ở trường học và buổi chiều dạy sinh viên tại trường đại học",
+                                "Cô giáo dạy học sinh ở trường vào buổi sáng và dạy sinh viên ở đại học vào buổi chiều",
+                                "Nữ giáo viên buổi sáng dạy học sinh ở trường học và buổi chiều dạy sinh viên ở đại học"
                         ],
                         "translation": "Die Lehrerin unterrichtet vormittags Schüler an einer Schule und nachmittags Studenten an der Universität."
                 }
@@ -3052,9 +3125,28 @@ def seed_lesson_7():
                 "extra_data": {
                         "accepted_answers": [
                                 "Từ 20 đến 22 giờ Paula có thể xem tivi ở trong phòng khách sau khi cô ấy đã làm bữa tối",
-                                "Từ 8 giờ đến 10 giờ tối Paula có thể xem truyền hình trong phòng khách sau khi làm xong bữa tối",
+                                "Từ 20 đến 22 giờ Paula có thể xem tivi ở phòng khách sau khi cô ấy đã làm bữa tối",
+                                "Từ 20 đến 22 giờ Paula có thể xem tivi ở phòng khách sau khi làm bữa tối",
+                                "Từ 20 đến 22 giờ Paula có thể xem tivi ở phòng khách sau khi cô ấy làm bữa tối",
+                                "Từ 20 đến 22 giờ Paula có thể xem tivi trong phòng khách sau khi nấu bữa tối",
+                                "Từ 20 đến 22 giờ Paula có thể xem tivi trong phòng khách sau khi cô ấy đã nấu bữa tối",
+                                "Từ 20 đến 22 giờ Paula có thể xem tivi ở phòng khách sau khi đã làm bữa tối",
+                                "Từ 20h đến 22h Paula có thể xem tivi ở phòng khách sau khi làm bữa tối",
                                 "Từ 20 giờ đến 22 giờ Paula có thể xem tivi trong phòng khách sau khi nấu bữa tối",
-                                "Từ 20 đến 22 giờ Paula có thể xem tivi ở phòng khách sau khi làm bữa tối"
+                                "Từ 20 giờ đến 22 giờ Paula có thể xem tivi ở phòng khách sau khi cô ấy làm bữa tối",
+                                "Từ 8 giờ đến 10 giờ tối Paula có thể xem truyền hình trong phòng khách sau khi làm xong bữa tối",
+                                "Từ 8 giờ đến 10 giờ tối Paula có thể xem tivi ở trong phòng khách sau khi nấu bữa tối",
+                                "Từ 8h đến 10h tối Paula có thể xem tivi ở phòng khách sau khi làm bữa tối",
+                                "Từ 20 đến 22 giờ Paula có thể xem TV trong phòng khách sau khi làm bữa tối",
+                                "Từ 20 đến 22 giờ Paula có thể xem tivi ở phòng khách sau khi cô ấy nấu xong bữa tối",
+                                "Từ 20 đến 22 giờ Paula có thể xem tivi ở trong phòng khách sau khi hoàn thành bữa tối",
+                                "Paula có thể xem tivi ở phòng khách từ 20 đến 22 giờ sau khi làm bữa tối",
+                                "Paula có thể xem tivi trong phòng khách từ 20 đến 22 giờ sau khi cô ấy đã làm bữa tối",
+                                "Từ 20 đến 22 giờ Paula có thể xem ti vi ở phòng khách sau khi cô ấy đã làm bữa tối",
+                                "Từ 20 đến 22 giờ Paula có thể xem tivi ở phòng khách, sau khi cô ấy đã làm bữa tối",
+                                "từ 20 đến 22 giờ Paula có thể xem tivi ở phòng khách sau khi cô ấy đã làm bữa tối",
+                                "từ 20 đến 22 giờ Paula có thể xem tivi ở phòng khách sau đó cô ấy đã làm bữa tối",
+                                "Từ 20 đến 22 giờ Paula có thể xem tivi ở phòng khách sau đó cô ấy đã làm bữa tối"
                         ],
                         "translation": "Von 20 bis 22 Uhr kann Paula im Wohnzimmer fernsehen, nachdem sie das Abendessen gemacht hat."
                 }
@@ -3069,9 +3161,31 @@ def seed_lesson_7():
                 "extra_data": {
                         "accepted_answers": [
                                 "Người thợ cắt tóc cắt tóc cho anh trai tôi ở trong tiệm làm tóc",
+                                "thợ cắt tóc cắt tóc cho em trai tôi ở tiệm cắt tóc",
+                                "Thợ cắt tóc cắt tóc cho em trai tôi ở tiệm cắt tóc",
+                                "Thợ cắt tóc cắt tóc cho anh trai tôi ở tiệm cắt tóc",
+                                "Thợ cắt tóc cắt tóc cho anh trai tôi trong tiệm làm tóc",
                                 "Thợ làm tóc cắt tóc cho anh trai của tôi tại tiệm cắt tóc",
+                                "Thợ làm tóc cắt tóc cho em trai của tôi tại tiệm cắt tóc",
                                 "Người thợ làm tóc đang cắt tóc cho anh tôi ở trong salon tóc",
-                                "Thợ cắt tóc cắt tóc cho anh trai tôi trong tiệm làm tóc"
+                                "Người thợ làm tóc cắt tóc cho em tôi ở trong salon tóc",
+                                "Người thợ cắt tóc cắt tóc cho em trai tôi ở trong tiệm làm tóc",
+                                "Người thợ cắt tóc cắt tóc cho em trai tôi ở tiệm cắt tóc",
+                                "Người thợ cắt tóc cắt tóc cho anh trai tôi tại tiệm cắt tóc",
+                                "Thợ cắt tóc cắt tóc cho em trai tôi tại tiệm cắt tóc",
+                                "Thợ cắt tóc cắt tóc cho anh trai tôi tại tiệm cắt tóc",
+                                "Người thợ làm tóc cắt tóc cho anh trai tôi ở tiệm làm tóc",
+                                "Người thợ làm tóc cắt tóc cho em trai tôi ở tiệm làm tóc",
+                                "Thợ làm tóc cắt tóc cho anh trai tôi ở trong salon tóc",
+                                "Thợ làm tóc cắt tóc cho em trai tôi ở trong salon tóc",
+                                "Thợ cắt tóc cắt tóc cho anh trai tôi ở trong quán cắt tóc",
+                                "Thợ cắt tóc cắt tóc cho em trai tôi ở trong quán cắt tóc",
+                                "Người thợ cắt tóc đang cắt tóc cho anh trai tôi ở tiệm cắt tóc",
+                                "Người thợ cắt tóc đang cắt tóc cho em trai tôi ở tiệm cắt tóc",
+                                "Thợ cắt tóc cắt tóc cho anh tôi ở tiệm cắt tóc",
+                                "Thợ cắt tóc cắt tóc cho em tôi ở tiệm cắt tóc",
+                                "Thợ cắt tóc cắt tóc cho anh trai của tôi ở tiệm cắt tóc",
+                                "Thợ cắt tóc cắt tóc cho em trai của tôi ở tiệm cắt tóc"
                         ],
                         "translation": "Der Friseur schneidet meinem Bruder im Friseursalon die Haare."
                 }

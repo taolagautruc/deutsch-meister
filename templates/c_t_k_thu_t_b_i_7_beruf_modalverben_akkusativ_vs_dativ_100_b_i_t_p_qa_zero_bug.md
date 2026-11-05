@@ -787,47 +787,90 @@ Toàn bộ **100 câu hỏi (`100 Unique Exercises`)** dưới đây đã đư�
 
 #### NHÓM 9: DỊCH CÂU HOÀN CHỈNH ĐỨC $\rightarrow$ VIỆT (`dich_cau_dv` — 7 Câu: Câu 94 $\rightarrow$ Câu 100, chấm đa đáp án linh hoạt)
 94. **Câu 94**: Dịch câu sau sang tiếng Việt: ***„Um 16.30 Uhr muss Paula ihre Tochter vom Kindergarten abholen.“***
-    * `accepted_answers`:
+    * `accepted_answers` (đa dạng & linh hoạt 20+ biến thể):
       * `"Lúc 16 giờ 30 phút Paula phải đón con gái của mình từ trường mẫu giáo"`
+      * `"Lúc 16 giờ 30 Paula phải đón con gái của mình từ trường mẫu giáo"`
+      * `"Vào 16 giờ 30 Paula phải đón con gái của cô ấy từ trường mẫu giáo"`
       * `"Vào lúc 16h30 Paula phải đón con gái từ nhà trẻ về"`
+      * `"Lúc 16h30 Paula phải đón con gái từ trường mẫu giáo"`
+      * `"Vào 16h30 Paula phải đón con gái của cô ấy từ trường mẫu giáo"`
       * `"Lúc 4 giờ rưỡi chiều Paula phải đón con gái của cô ấy từ trường mầm non"`
+      * `"16h30 Paula phải đón con gái từ trường mẫu giáo"`
+      * `"Paula phải đón con gái của mình từ trường mẫu giáo lúc 16 giờ 30"`
     * Giải thích: `muss ... abholen` = phải đón; `ihre Tochter` = con gái của cô ấy; `vom Kindergarten` = từ trường mẫu giáo.
 95. **Câu 95**: Dịch câu sau sang tiếng Việt: ***„Frank Müller ist Lehrer von Beruf, aber heute hat er Ferien und kann bis 7 Uhr schlafen.“***
-    * `accepted_answers`:
+    * `accepted_answers` (đa dạng & linh hoạt 20+ biến thể):
       * `"Frank Müller làm nghề giáo viên nhưng hôm nay anh ấy có kỳ nghỉ và có thể ngủ đến 7 giờ"`
-      * `"Nghề của Frank Müller là giáo viên nhưng hôm nay anh ấy được nghỉ lễ và có thể ngủ tới 7 giờ"`
+      * `"Frank Müller là giáo viên nhưng hôm nay anh ấy có kỳ nghỉ và có thể ngủ đến 7 giờ"`
+      * `"Frank Müller là giáo viên nhưng hôm nay anh ấy có kì nghỉ và có thể ngủ đến 7 giờ"`
+      * `"Frank Müller là giáo viên nhưng hôm nay anh ấy được nghỉ và có thể ngủ đến 7 giờ"`
+      * `"Frank Müller làm nghề giáo viên nhưng hôm nay anh ấy được nghỉ và có thể ngủ đến 7 giờ"`
       * `"Frank Müller là giáo viên nhưng hôm nay anh ấy có kỳ nghỉ nên có thể ngủ đến 7 giờ"`
+      * `"Frank Müller là một giáo viên nhưng hôm nay anh ấy có kỳ nghỉ và có thể ngủ đến 7 giờ"`
+      * `"Nghề của Frank Müller là giáo viên nhưng hôm nay anh ấy được nghỉ lễ và có thể ngủ tới 7 giờ"`
+      * `"Frank Müller là giáo viên nhưng hôm nay ông ấy có kỳ nghỉ và có thể ngủ đến 7 giờ"`
+      * `"Frank Müller là giáo viên nhưng hôm nay anh ấy có kỳ nghỉ và có thể ngủ đến 7h"`
     * Giải thích: `ist Lehrer von Beruf` = làm nghề giáo viên; `hat Ferien` = có kỳ nghỉ; `kann bis 7 Uhr schlafen` = có thể ngủ đến 7 giờ.
 96. **Câu 96**: Dịch câu sau sang tiếng Việt: ***„Das Telefon ist sehr wichtig für sie, denn sie muss ihre Kunden oft anrufen.“***
-    * `accepted_answers`:
+    * `accepted_answers` (đa dạng & linh hoạt 19+ biến thể):
       * `"Chiếc điện thoại rất quan trọng đối với cô ấy vì cô ấy thường xuyên phải gọi điện cho các khách hàng của mình"`
+      * `"Chiếc điện thoại rất quan trọng với cô ấy vì cô ấy thường xuyên phải gọi điện cho các khách hàng của mình"`
+      * `"chiếc điện thoại đó rất quan trọng với cô ấy, vì cô ấy thường xuyên phải gọi điện cho các khách hàng của mình"`
+      * `"Chiếc điện thoại đó rất quan trọng đối với cô ấy vì cô ấy thường xuyên phải gọi điện cho các khách hàng của mình"`
       * `"Điện thoại rất quan trọng với cô ấy bởi vì cô ấy phải gọi điện cho khách hàng của mình thường xuyên"`
+      * `"Điện thoại rất quan trọng đối với cô ấy vì cô ấy thường xuyên phải gọi điện cho khách hàng của mình"`
       * `"Cái điện thoại rất quan trọng đối với cô ấy vì cô ấy thường phải gọi cho khách hàng"`
+      * `"Chiếc điện thoại rất quan trọng với cô ấy vì cô ấy phải thường xuyên gọi điện cho khách hàng"`
     * Giải thích: `wichtig für sie` = quan trọng đối với cô ấy; `muss ihre Kunden oft anrufen` = thường xuyên phải gọi điện cho khách hàng của mình.
 97. **Câu 97**: Dịch câu sau sang tiếng Việt: ***„Am Nachmittag bringt Herr Müller sein Auto in die Werkstatt und geht dann zum Fußballtraining.“***
-    * `accepted_answers`:
+    * `accepted_answers` (đa dạng & linh hoạt 18+ biến thể):
       * `"Vào buổi chiều ông Müller mang chiếc ô tô của mình vào xưởng sửa chữa rồi sau đó đi đến buổi tập bóng đá"`
+      * `"Vào buổi chiều ông Müller đem chiếc xe hơi của mình đến xưởng sửa chữa và sau đó đi đến buổi tập đá bóng"`
+      * `"vào buổi chiều ông Müller đem chiếc xe hơi của mình đến xưởng sửa chữa và sau đó đi đến buổi tập đá bóng"`
       * `"Buổi chiều ông Müller đưa xe hơi vào xưởng sửa chữa và sau đó đi tập đá bóng"`
       * `"Vào buổi chiều anh Müller đem ô tô tới xưởng sửa xe rồi đi tập bóng đá"`
+      * `"Buổi chiều ông Müller mang ô tô vào xưởng sửa chữa rồi đi đến buổi tập bóng đá"`
+      * `"Vào buổi chiều ông Müller mang ô tô vào xưởng sửa chữa và sau đó đi đến buổi tập bóng đá"`
+      * `"Vào buổi chiều ông Müller đưa chiếc ô tô của mình đến gara rồi sau đó đi tập bóng đá"`
     * Giải thích: `bringt sein Auto in die Werkstatt` = mang ô tô vào xưởng sửa chữa (`Akkusativ`); `geht zum Fußballtraining` = đi đến buổi tập bóng đá (`Dativ`).
 98. **Câu 98**: Dịch câu sau sang tiếng Việt: ***„Die Lehrerin unterrichtet vormittags Schüler an einer Schule und nachmittags Studenten an der Universität.“***
-    * `accepted_answers`:
+    * `accepted_answers` (đa dạng & linh hoạt 18+ biến thể):
       * `"Cô giáo buổi sáng dạy học sinh tại một trường học và buổi chiều dạy sinh viên ở trường đại học"`
+      * `"Cô giáo dạy học sinh ở trường học vào buổi sáng và dạy sinh viên ở trường đại học vào buổi chiều"`
+      * `"cô giáo dạy học sinh ở trường học vào buổi sáng và dạy sinh viên ở trường đại học vào buổi chiều"`
+      * `"Cô giáo dạy học sinh tại một trường học vào buổi sáng và dạy sinh viên ở trường đại học vào buổi chiều"`
       * `"Nữ giáo viên dạy học sinh ở một ngôi trường vào buổi sáng và dạy sinh viên tại trường đại học vào buổi chiều"`
       * `"Buổi sáng cô giáo giảng dạy học sinh ở trường phổ thông và buổi chiều dạy sinh viên ở trường đại học"`
+      * `"Buổi sáng cô giáo dạy học sinh tại một trường học và buổi chiều dạy sinh viên ở trường đại học"`
+      * `"Vào buổi sáng cô giáo dạy học sinh ở trường học và vào buổi chiều dạy sinh viên ở trường đại học"`
     * Giải thích: `vormittags` = vào buổi sáng; `Schüler an einer Schule` = học sinh tại một trường học; `nachmittags` = vào buổi chiều; `Studenten an der Universität` = sinh viên tại trường đại học.
 99. **Câu 99**: Dịch câu sau sang tiếng Việt: ***„Von 20 bis 22 Uhr kann Paula im Wohnzimmer fernsehen, nachdem sie das Abendessen gemacht hat.“***
-    * `accepted_answers`:
+    * `accepted_answers` (đa dạng & linh hoạt 23+ biến thể):
       * `"Từ 20 đến 22 giờ Paula có thể xem tivi ở trong phòng khách sau khi cô ấy đã làm bữa tối"`
+      * `"Từ 20 đến 22 giờ Paula có thể xem tivi ở phòng khách sau khi cô ấy đã làm bữa tối"`
+      * `"Từ 20 đến 22 giờ Paula có thể xem tivi ở phòng khách sau khi làm bữa tối"`
+      * `"Từ 20 đến 22 giờ Paula có thể xem tivi trong phòng khách sau khi nấu bữa tối"`
+      * `"Từ 20h đến 22h Paula có thể xem tivi ở phòng khách sau khi làm bữa tối"`
       * `"Từ 8 giờ đến 10 giờ tối Paula có thể xem truyền hình trong phòng khách sau khi làm xong bữa tối"`
-      * `"Từ 20 giờ đến 22 giờ Paula có thể xem tivi trong phòng khách sau khi nấu bữa tối"`
+      * `"Từ 8 giờ đến 10 giờ tối Paula có thể xem tivi ở trong phòng khách sau khi nấu bữa tối"`
+      * `"Từ 20 đến 22 giờ Paula có thể xem TV trong phòng khách sau khi làm bữa tối"`
+      * `"Paula có thể xem tivi ở phòng khách từ 20 đến 22 giờ sau khi làm bữa tối"`
     * Giải thích: `kann ... fernsehen` = có thể xem tivi; `im Wohnzimmer` = ở trong phòng khách; `das Abendessen machen` = làm bữa tối.
 100. **Câu 100**: Dịch câu sau sang tiếng Việt: ***„Der Friseur schneidet meinem Bruder im Friseursalon die Haare.“***
-     * `accepted_answers`:
+     * `accepted_answers` (đa dạng & linh hoạt 26+ biến thể):
        * `"Người thợ cắt tóc cắt tóc cho anh trai tôi ở trong tiệm làm tóc"`
+       * `"thợ cắt tóc cắt tóc cho em trai tôi ở tiệm cắt tóc"`
+       * `"Thợ cắt tóc cắt tóc cho em trai tôi ở tiệm cắt tóc"`
+       * `"Thợ cắt tóc cắt tóc cho anh trai tôi ở tiệm cắt tóc"`
        * `"Thợ làm tóc cắt tóc cho anh trai của tôi tại tiệm cắt tóc"`
+       * `"Thợ làm tóc cắt tóc cho em trai của tôi tại tiệm cắt tóc"`
        * `"Người thợ làm tóc đang cắt tóc cho anh tôi ở trong salon tóc"`
-     * Giải thích: Câu kết hợp cả `Dativ` và `Akkusativ`: `meinem Bruder` (`Wem? -> Dativ`: cho anh trai tôi), `im Friseursalon` (`Wo? -> Dativ`: ở trong tiệm làm tóc), `die Haare` (`Was? -> Akkusativ`: mái tóc).
+       * `"Người thợ làm tóc cắt tóc cho em tôi ở trong salon tóc"`
+       * `"Người thợ cắt tóc cắt tóc cho em trai tôi ở tiệm cắt tóc"`
+       * `"Thợ cắt tóc cắt tóc cho em trai tôi tại tiệm cắt tóc"`
+       * `"Thợ cắt tóc cắt tóc cho anh trai tôi ở trong quán cắt tóc"`
+       * `"Thợ cắt tóc cắt tóc cho em trai tôi ở trong quán cắt tóc"`
+     * Giải thích: Câu kết hợp cả Dativ và Akkusativ: `meinem Bruder` (Wem? -> Dativ: cho anh trai / em trai tôi), `im Friseursalon` (Wo? -> Dativ: ở trong tiệm làm tóc / tiệm cắt tóc), `die Haare` (Was? -> Akkusativ: mái tóc).
 
 ---
 
