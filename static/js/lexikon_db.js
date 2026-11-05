@@ -945,7 +945,7 @@ const GERMAN_LEXIKON_DB = [
         example_vi: "Vào ban đêm tôi ngủ tám tiếng đồng hồ."
     },
     {
-        word: "Januar", article: "der", gender: "der", plural: "die Januare",
+        word: "Januar", article: "der", gender: "der", plural: "kein Plural (Plural selten)",
         indefinite: "ein Januar", negation: "kein Januar",
         meaning: "tháng Một", category: "Thời gian & Lịch trình",
         rule: "Tất cả 12 tháng đều mang giống đực (der) và đi với giới từ im.",
@@ -953,7 +953,7 @@ const GERMAN_LEXIKON_DB = [
         example_vi: "Vào tháng Một trời ở Đức rất lạnh."
     },
     {
-        word: "Februar", article: "der", gender: "der", plural: "die Februare",
+        word: "Februar", article: "der", gender: "der", plural: "kein Plural (Plural selten)",
         indefinite: "ein Februar", negation: "kein Februar",
         meaning: "tháng Hai", category: "Thời gian & Lịch trình",
         rule: "Tháng trong năm mang giống đực (der), đi với im Februar.",
@@ -961,7 +961,7 @@ const GERMAN_LEXIKON_DB = [
         example_vi: "Vào tháng Hai tháng chỉ có 28 hoặc 29 ngày."
     },
     {
-        word: "März", article: "der", gender: "der", plural: "die Märze",
+        word: "März", article: "der", gender: "der", plural: "kein Plural (Plural selten)",
         indefinite: "ein März", negation: "kein März",
         meaning: "tháng Ba", category: "Thời gian & Lịch trình",
         rule: "Tháng trong năm mang giống đực (der), đi với im März.",
@@ -969,7 +969,7 @@ const GERMAN_LEXIKON_DB = [
         example_vi: "Vào tháng Ba mùa xuân bắt đầu."
     },
     {
-        word: "April", article: "der", gender: "der", plural: "die Aprile",
+        word: "April", article: "der", gender: "der", plural: "kein Plural (Plural selten)",
         indefinite: "ein April", negation: "kein April",
         meaning: "tháng Tư", category: "Thời gian & Lịch trình",
         rule: "Tháng trong năm mang giống đực (der), đi với im April.",
@@ -977,7 +977,7 @@ const GERMAN_LEXIKON_DB = [
         example_vi: "Anh trai tôi có sinh nhật vào tháng Tư."
     },
     {
-        word: "Mai", article: "der", gender: "der", plural: "die Maie",
+        word: "Mai", article: "der", gender: "der", plural: "kein Plural (Plural selten)",
         indefinite: "ein Mai", negation: "kein Mai",
         meaning: "tháng Năm", category: "Thời gian & Lịch trình",
         rule: "Tháng trong năm mang giống đực (der), đi với im Mai.",
@@ -985,7 +985,7 @@ const GERMAN_LEXIKON_DB = [
         example_vi: "Vào tháng Năm thời tiết ở Berlin rất đẹp."
     },
     {
-        word: "Juni", article: "der", gender: "der", plural: "die Junis",
+        word: "Juni", article: "der", gender: "der", plural: "kein Plural (Plural selten)",
         indefinite: "ein Juni", negation: "kein Juni",
         meaning: "tháng Sáu", category: "Thời gian & Lịch trình",
         rule: "Tháng trong năm mang giống đực (der), đi với im Juni.",
@@ -993,7 +993,7 @@ const GERMAN_LEXIKON_DB = [
         example_vi: "Vào tháng Sáu chúng tôi đi sang Ý."
     },
     {
-        word: "Juli", article: "der", gender: "der", plural: "die Julis",
+        word: "Juli", article: "der", gender: "der", plural: "kein Plural (Plural selten)",
         indefinite: "ein Juli", negation: "kein Juli",
         meaning: "tháng Bảy", category: "Thời gian & Lịch trình",
         rule: "Tháng trong năm mang giống đực (der), đi với im Juli.",
@@ -1001,7 +1001,7 @@ const GERMAN_LEXIKON_DB = [
         example_vi: "Vào tháng Bảy các sinh viên có kỳ nghỉ hè."
     },
     {
-        word: "August", article: "der", gender: "der", plural: "die Auguste",
+        word: "August", article: "der", gender: "der", plural: "kein Plural (Plural selten)",
         indefinite: "ein August", negation: "kein August",
         meaning: "tháng Tám", category: "Thời gian & Lịch trình",
         rule: "Tháng trong năm mang giống đực (der), đi với im August.",
@@ -1009,7 +1009,7 @@ const GERMAN_LEXIKON_DB = [
         example_vi: "Vào tháng Tám trời ở Việt Nam thường nóng."
     },
     {
-        word: "September", article: "der", gender: "der", plural: "die September",
+        word: "September", article: "der", gender: "der", plural: "kein Plural (Plural selten)",
         indefinite: "ein September", negation: "kein September",
         meaning: "tháng Chín", category: "Thời gian & Lịch trình",
         rule: "Tháng trong năm mang giống đực (der), đi với im September.",
@@ -1017,7 +1017,7 @@ const GERMAN_LEXIKON_DB = [
         example_vi: "Vào tháng Chín việc học đại học của tôi bắt đầu."
     },
     {
-        word: "Oktober", article: "der", gender: "der", plural: "die Oktobere",
+        word: "Oktober", article: "der", gender: "der", plural: "kein Plural (Plural selten)",
         indefinite: "ein Oktober", negation: "kein Oktober",
         meaning: "tháng Mười", category: "Thời gian & Lịch trình",
         rule: "Tháng trong năm mang giống đực (der), đi với im Oktober.",
@@ -1025,7 +1025,7 @@ const GERMAN_LEXIKON_DB = [
         example_vi: "Vào tháng Mười mùa thu rất đẹp."
     },
     {
-        word: "November", article: "der", gender: "der", plural: "die November",
+        word: "November", article: "der", gender: "der", plural: "kein Plural (Plural selten)",
         indefinite: "ein November", negation: "kein November",
         meaning: "tháng Mười Một", category: "Thời gian & Lịch trình",
         rule: "Tháng trong năm mang giống đực (der), đi với im November.",
@@ -1033,7 +1033,7 @@ const GERMAN_LEXIKON_DB = [
         example_vi: "Vào tháng Mười Một tôi làm việc nhiều."
     },
     {
-        word: "Dezember", article: "der", gender: "der", plural: "die Dezember",
+        word: "Dezember", article: "der", gender: "der", plural: "kein Plural (Plural selten)",
         indefinite: "ein Dezember", negation: "kein Dezember",
         meaning: "tháng Mười Hai", category: "Thời gian & Lịch trình",
         rule: "Tháng trong năm mang giống đực (der), đi với im Dezember.",
@@ -1241,10 +1241,10 @@ const GERMAN_LEXIKON_DB = [
         example_vi: "Bà Bùi làm việc tại một ngân hàng ở Berlin."
     },
     {
-        word: "Post", article: "die", gender: "die", plural: "die Post",
+        word: "Post", article: "die", gender: "die", plural: "kein Plural (die Postämter = các bưu điện)",
         indefinite: "eine Post", negation: "keine Post",
         meaning: "bưu điện", category: "Phương tiện Giao thông & Địa điểm Thành phố (Bài 6)",
-        rule: "Danh từ giống cái (die Post). Đến bưu điện dùng zur Post, bên cạnh bưu điện dùng neben der Post.",
+        rule: "Danh từ giống cái (die Post). Không dùng số nhiều (hoặc dùng die Postämter = các bưu điện). Đến bưu điện dùng zur Post, bên cạnh bưu điện dùng neben der Post.",
         example: "Wie komme ich zum Bahnhof und zur Post?",
         example_vi: "Tôi đi đến nhà ga và bưu điện bằng cách nào?"
     },
