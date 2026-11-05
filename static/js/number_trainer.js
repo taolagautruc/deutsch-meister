@@ -1492,6 +1492,235 @@ function generateNewNumberData(ex, fallbackIndex = null) {
         return finalize(ex);
     }
 
+    // 22. Xử lý câu hỏi Nghề nghiệp, Hoạt động & Nơi làm việc (dynamic_profession_quiz - Bài 7)
+    if (extra.dynamic_profession_quiz) {
+        const subjects = [
+            { name: "Herr Weber", gender: "m", vi: "Ông Weber", pronoun: "er" },
+            { name: "Frau Lindner", gender: "f", vi: "Bà Lindner", pronoun: "sie" },
+            { name: "Mein Bruder", gender: "m", vi: "Anh trai tôi", pronoun: "er" },
+            { name: "Meine Schwester", gender: "f", vi: "Chị gái tôi", pronoun: "sie" },
+            { name: "Lukas", gender: "m", vi: "Lukas", pronoun: "er" },
+            { name: "Anna", gender: "f", vi: "Anna", pronoun: "sie" },
+            { name: "Herr Schmidt", gender: "m", vi: "Ông Schmidt", pronoun: "er" },
+            { name: "Frau Wagner", gender: "f", vi: "Bà Wagner", pronoun: "sie" }
+        ];
+        const professionData = [
+            { m: "KFZ-Mechatroniker", f: "KFZ-Mechatronikerin", verb: "repariert Autos", workplace: "in einer Werkstatt", wrongWorkplaces: ["im Friseursalon", "im Krankenhaus", "im Supermarkt"], viProfM: "thợ cơ khí ô tô", viProfF: "nữ thợ cơ khí ô tô", viAct: "sửa xe hơi", viWp: "trong xưởng sửa chữa" },
+            { m: "Arzt", f: "Ärztin", verb: "untersucht Patienten", workplace: "im Krankenhaus", wrongWorkplaces: ["in einer Werkstatt", "im Blumengeschäft", "an einer Schule"], viProfM: "bác sĩ nam", viProfF: "nữ bác sĩ", viAct: "khám cho bệnh nhân", viWp: "trong bệnh viện" },
+            { m: "Florist", f: "Floristin", verb: "verkauft schöne Blumen", workplace: "im Blumengeschäft", wrongWorkplaces: ["im Friseursalon", "im Krankenhaus", "in einer Werkstatt"], viProfM: "người bán hoa", viProfF: "nữ người bán hoa", viAct: "bán những bông hoa đẹp", viWp: "trong cửa hàng hoa" },
+            { m: "Friseur", f: "Friseurin", verb: "schneidet Haare", workplace: "im Friseursalon", wrongWorkplaces: ["in einer IT-Firma", "im Supermarkt", "im Krankenhaus"], viProfM: "thợ làm tóc", viProfF: "nữ thợ làm tóc", viAct: "cắt tóc", viWp: "trong tiệm làm tóc" },
+            { m: "Programmierer", f: "Programmiererin", verb: "schreibt Computerprogramme", workplace: "im Büro", wrongWorkplaces: ["im Restaurant", "in einer Werkstatt", "im Blumengeschäft"], viProfM: "lập trình viên nam", viProfF: "nữ lập trình viên", viAct: "viết chương trình máy tính", viWp: "trong văn phòng" },
+            { m: "Lehrer", f: "Lehrerin", verb: "unterrichtet Schüler", workplace: "an einer Schule", wrongWorkplaces: ["im Friseursalon", "in einer Werkstatt", "im Schuhgeschäft"], viProfM: "thầy giáo", viProfF: "cô giáo", viAct: "giảng dạy học sinh", viWp: "tại một trường học" },
+            { m: "Koch", f: "Köchin", verb: "kocht leckere Speisen", workplace: "im Restaurant", wrongWorkplaces: ["im Büro", "an einer Schule", "im Blumengeschäft"], viProfM: "đầu bếp nam", viProfF: "nữ đầu bếp", viAct: "nấu những món ăn ngon", viWp: "trong nhà hàng" },
+            { m: "Verkäufer", f: "Verkäuferin", verb: "verkauft Schuhe", workplace: "im Schuhgeschäft", wrongWorkplaces: ["im Krankenhaus", "in einer Werkstatt", "an einer Schule"], viProfM: "nam nhân viên bán hàng", viProfF: "nữ nhân viên bán hàng", viAct: "bán giày", viWp: "trong tiệm giày" }
+        ];
+
+        const s = subjects[Math.floor(Math.random() * subjects.length)];
+        const p = professionData[Math.floor(Math.random() * professionData.length)];
+        const targetProf = (s.gender === "m") ? p.m : p.f;
+        const viProf = (s.gender === "m") ? p.viProfM : p.viProfF;
+
+        const isWorkplaceQuestion = Math.random() > 0.5;
+        if (isWorkplaceQuestion) {
+            ex.question = `[Nghề nghiệp & Nơi làm việc (Random)]: Chọn cụm nơi làm việc đúng ở Dativ: '${s.name} arbeitet als ${targetProf} ___.'`;
+            ex.correct_answer = p.workplace;
+            ex.explanation = `Nghề nghiệp '${targetProf}' làm việc ở '${p.workplace}' (câu hỏi Wo? + Cách 3 Dativ).`;
+            extra.translation = `${s.vi} làm việc với tư cách là ${viProf} ${p.viWp}.`;
+            const opts = [p.workplace, ...p.wrongWorkplaces].sort(() => Math.random() - 0.5);
+            ex.options = opts;
+            ex.options_json = JSON.stringify(opts);
+        } else {
+            ex.question = `[Nghề nghiệp & Hoạt động (Random)]: Chọn hoạt động đúng với nghề nghiệp: 'Als ${targetProf} ___ ${s.name} jeden Tag.'`;
+            ex.correct_answer = p.verb;
+            ex.explanation = `Hoạt động đặc trưng của '${targetProf}' là '${p.verb}'.`;
+            extra.translation = `Với tư cách là ${viProf}, ${s.vi} ${p.viAct} mỗi ngày.`;
+            const otherVerbs = professionData.filter(x => x !== p).map(x => x.verb).slice(0, 3);
+            const opts = [p.verb, ...otherVerbs].sort(() => Math.random() - 0.5);
+            ex.options = opts;
+            ex.options_json = JSON.stringify(opts);
+        }
+        ex.extra_data = JSON.stringify(extra);
+        ex.translation = extra.translation;
+        return finalize(ex);
+    }
+
+    // 23. Xử lý câu hỏi Lịch trình & Modalverben Satzklammer (dynamic_modalverb_schedule_quiz - Bài 7)
+    if (extra.dynamic_modalverb_schedule_quiz) {
+        const characters = [
+            { name: "Paula", pronoun: "sie", verbMuss: "muss", verbKann: "kann", vi: "Paula" },
+            { name: "Frank", pronoun: "er", verbMuss: "muss", verbKann: "kann", vi: "Frank" },
+            { name: "Mein Bruder", pronoun: "er", verbMuss: "muss", verbKann: "kann", vi: "Anh trai tôi" },
+            { name: "Meine Schwester", pronoun: "sie", verbMuss: "muss", verbKann: "kann", vi: "Chị gái tôi" },
+            { name: "Wir", pronoun: "wir", verbMuss: "müssen", verbKann: "können", vi: "Chúng tôi" },
+            { name: "Ihr", pronoun: "ihr", verbMuss: "müsst", verbKann: "könnt", vi: "Các bạn" }
+        ];
+        const scheduleTasks = [
+            { time: "Um 6.15 Uhr", modal: "müssen", infinitive: "aufstehen", viAction: "thức dậy", exp: "Động từ tách 'aufstehen' giữ nguyên mẫu ở cuối câu khi đi với Modalverb." },
+            { time: "Um 7.15 Uhr", modal: "müssen", infinitive: "mit dem Bus zur Arbeit fahren", viAction: "đi xe buýt đến chỗ làm", exp: "Động từ 'fahren' đứng nguyên mẫu ở cuối khung câu Satzklammer." },
+            { time: "Um 8.30 Uhr", modal: "müssen", infinitive: "die Tochter in den Kindergarten bringen", viAction: "đưa con gái vào trường mẫu giáo", exp: "Động từ 'bringen' (Wohin? in den Kindergarten) đứng nguyên mẫu ở cuối câu." },
+            { time: "Um 16.30 Uhr", modal: "müssen", infinitive: "die Tochter vom Kindergarten abholen", viAction: "đón con gái từ trường mẫu giáo", exp: "Động từ tách 'abholen' không tách mà giữ nguyên mẫu ở cuối câu khi có Modalverb." },
+            { time: "Von 20 bis 22 Uhr", modal: "können", infinitive: "im Wohnzimmer fernsehen", viAction: "xem tivi trong phòng khách", exp: "Động từ tách 'fernsehen' đứng nguyên mẫu ở cuối câu." },
+            { time: "Am Sonntag", modal: "können", infinitive: "bis 8 Uhr schlafen", viAction: "ngủ đến 8 giờ", exp: "Động từ 'schlafen' đứng nguyên mẫu ở cuối câu sau Modalverb können." }
+        ];
+
+        const char = characters[Math.floor(Math.random() * characters.length)];
+        const task = scheduleTasks[Math.floor(Math.random() * scheduleTasks.length)];
+        const modalForm = (task.modal === "müssen") ? char.verbMuss : char.verbKann;
+
+        ex.question = `[Lịch trình & Modalverben (Random)]: Chọn dạng chia đúng của Modalverb '${task.modal}': '${task.time} ___ ${char.name} ${task.infinitive}.'`;
+        ex.correct_answer = modalForm;
+        ex.explanation = `Chủ ngữ '${char.name}' (${char.pronoun}) đi với dạng chia '${modalForm}'. ${task.exp}`;
+        extra.translation = `${task.time} ${char.vi} ${(task.modal === "müssen") ? "phải" : "có thể"} ${task.viAction}.`;
+
+        const wrongModals = (task.modal === "müssen") 
+            ? ["musst", "müsst", "müssen", "muss"].filter(x => x !== modalForm).slice(0, 3)
+            : ["kannst", "könnt", "können", "kann"].filter(x => x !== modalForm).slice(0, 3);
+
+        const opts = [modalForm, ...wrongModals].sort(() => Math.random() - 0.5);
+        ex.options = opts;
+        ex.options_json = JSON.stringify(opts);
+        ex.extra_data = JSON.stringify(extra);
+        ex.translation = extra.translation;
+        return finalize(ex);
+    }
+
+    // 24. Xử lý câu hỏi Phân biệt Akkusativ vs. Dativ (dynamic_akkdativ_kontrast_quiz - Bài 7)
+    if (extra.dynamic_akkdativ_kontrast_quiz) {
+        const contrastItems = [
+            {
+                type: "verb",
+                sentence: "Die Ärztin untersucht ___ Patienten im Behandlungszimmer.",
+                correct: "den",
+                wrong: ["dem", "der", "des"],
+                exp: "Động từ 'untersuchen' (khám bệnh) đòi hỏi tân ngữ trực tiếp ở Cách 4 (Akkusativ): der Patient -> den Patienten.",
+                trans: "Nữ bác sĩ khám cho người bệnh nhân ở trong phòng điều trị."
+            },
+            {
+                type: "verb",
+                sentence: "Der Krankenpfleger hilft ___ Arzt bei der Untersuchung.",
+                correct: "dem",
+                wrong: ["den", "der", "das"],
+                exp: "Động từ 'helfen' (giúp đỡ) luôn đi với Cách 3 (Dativ): der Arzt -> dem Arzt.",
+                trans: "Người nam điều dưỡng giúp đỡ bác sĩ trong ca khám bệnh."
+            },
+            {
+                type: "verb",
+                sentence: "Bei ihrer Arbeit braucht Petra ___ Computer und einen Schreibtisch.",
+                correct: "einen",
+                wrong: ["einem", "ein", "einer"],
+                exp: "Động từ 'brauchen' đi với Cách 4 (Akkusativ): der Computer -> einen Computer.",
+                trans: "Trong công việc của mình, Petra cần một chiếc máy tính và một cái bàn làm việc."
+            },
+            {
+                type: "wohin_wo",
+                sentence: "Um 8.30 Uhr bringt Frank seine Tochter in ___ Kindergarten.",
+                correct: "den",
+                wrong: ["dem", "der", "das"],
+                exp: "Hành động đưa con đến trường mẫu giáo trả lời câu hỏi Wohin? (hướng di chuyển) -> Cách 4 Akkusativ: in den Kindergarten.",
+                trans: "Lúc 8 giờ 30 phút Frank đưa con gái mình vào trường mẫu giáo."
+            },
+            {
+                type: "wohin_wo",
+                sentence: "Von 9 bis 15 Uhr spielt das Kind ___ Kindergarten.",
+                correct: "im",
+                wrong: ["in den", "ins", "an dem"],
+                exp: "Chơi ở trong trường mẫu giáo trả lời câu hỏi Wo? (vị trí tĩnh) -> Cách 3 Dativ: in + dem = im Kindergarten.",
+                trans: "Từ 9 đến 15 giờ đứa bé chơi ở trong trường mẫu giáo."
+            },
+            {
+                type: "wohin_wo",
+                sentence: "Herr Müller bringt das Auto in ___ Werkstatt.",
+                correct: "die",
+                wrong: ["der", "dem", "den"],
+                exp: "Mang xe vào xưởng (Wohin? di chuyển) -> Cách 4 Akkusativ với giống cái 'die Werkstatt': in die Werkstatt.",
+                trans: "Ông Müller mang chiếc xe vào xưởng sửa chữa."
+            },
+            {
+                type: "wohin_wo",
+                sentence: "Der Mechaniker repariert das Auto in ___ Werkstatt.",
+                correct: "der",
+                wrong: ["die", "dem", "den"],
+                exp: "Sửa xe trong xưởng (Wo? vị trí tĩnh) -> Cách 3 Dativ với giống cái 'die Werkstatt': in der Werkstatt.",
+                trans: "Người thợ sửa xe ở trong xưởng sửa chữa."
+            },
+            {
+                type: "prep",
+                sentence: "Das moderne Smartphone ist sehr wichtig für ___ Chef.",
+                correct: "den",
+                wrong: ["dem", "der", "des"],
+                exp: "Giới từ 'für' luôn đi với Cách 4 (Akkusativ): der Chef -> den Chef.",
+                trans: "Chiếc điện thoại thông minh hiện đại rất quan trọng đối với ông sếp."
+            },
+            {
+                type: "prep",
+                sentence: "Paula fährt jeden Morgen mit ___ Bus zur Arbeit.",
+                correct: "dem",
+                wrong: ["den", "der", "das"],
+                exp: "Giới từ 'mit' luôn đi với Cách 3 (Dativ): der Bus -> dem Bus.",
+                trans: "Paula đi làm mỗi buổi sáng bằng xe buýt."
+            }
+        ];
+
+        const item = contrastItems[Math.floor(Math.random() * contrastItems.length)];
+        ex.question = `[Akkusativ vs. Dativ (Random)]: Chọn từ thích hợp điền vào chỗ trống: '${item.sentence}'`;
+        ex.correct_answer = item.correct;
+        ex.explanation = item.exp;
+        extra.translation = item.trans;
+
+        const opts = [item.correct, ...item.wrong].sort(() => Math.random() - 0.5);
+        ex.options = opts;
+        ex.options_json = JSON.stringify(opts);
+        ex.extra_data = JSON.stringify(extra);
+        ex.translation = extra.translation;
+        return finalize(ex);
+    }
+
+    // 25. Xử lý câu hỏi Mạo từ sở hữu Akkusativ 9 ngôi (dynamic_possessivartikel_akkusativ_quiz - Bài 7)
+    if (extra.dynamic_possessivartikel_akkusativ_quiz) {
+        const persons = [
+            { pronoun: "ich", stem: "mein", vi: "tôi" },
+            { pronoun: "du", stem: "dein", vi: "bạn" },
+            { pronoun: "er", stem: "sein", vi: "anh ấy" },
+            { pronoun: "sie", stem: "ihr", vi: "cô ấy" },
+            { pronoun: "wir", stem: "unser", vi: "chúng tôi" },
+            { pronoun: "ihr", stem: "euer", vi: "các bạn" },
+            { pronoun: "Sie", stem: "Ihr", vi: "Ngài" }
+        ];
+        const objects = [
+            { word: "Computer", gender: "m", ending: "en", vi: "chiếc máy tính" },
+            { word: "Laptop", gender: "m", ending: "en", vi: "chiếc laptop" },
+            { word: "Chef", gender: "m", ending: "en", vi: "ông sếp" },
+            { word: "Tochter", gender: "f", ending: "e", vi: "con gái" },
+            { word: "Kunden", gender: "pl", ending: "e", vi: "các khách hàng" },
+            { word: "Auto", gender: "n", ending: "", vi: "chiếc ô tô" }
+        ];
+
+        const p = persons[Math.floor(Math.random() * persons.length)];
+        const o = objects[Math.floor(Math.random() * objects.length)];
+
+        let correct = "";
+        if (p.pronoun === "ihr") {
+            if (o.ending === "en") correct = "euren";
+            else if (o.ending === "e") correct = "eure";
+            else correct = "euer";
+        } else {
+            correct = p.stem + o.ending;
+        }
+
+        ex.question = `[Sở hữu Akkusativ (Random)]: Điền mạo từ sở hữu của ngôi '${p.pronoun}' ở Cách 4 (Akkusativ) trước danh từ '${o.word}': 'Brauchst du ___ ${o.word}?'`;
+        ex.correct_answer = correct;
+        ex.explanation = `Ngôi '${p.pronoun}' có gốc '${p.stem}-'. Với danh từ '${o.word}' ở Akkusativ, đuôi biến đổi tương ứng là '${correct}'.`;
+        extra.translation = `Bạn có cần ${o.vi} của ${p.vi} không?`;
+
+        const wrongVariants = [p.stem, p.stem + "em", p.stem + "er", p.stem + "es"].filter(x => x !== correct);
+        const opts = [correct, ...wrongVariants].slice(0, 4).sort(() => Math.random() - 0.5);
+        ex.options = opts;
+        ex.options_json = JSON.stringify(opts);
+        ex.extra_data = JSON.stringify(extra);
+        ex.translation = extra.translation;
+        return finalize(ex);
+    }
+
     if (!extra.dynamic_number && !extra.dynamic_mode) return finalize(ex);
 
     const mode = extra.dynamic_mode;
