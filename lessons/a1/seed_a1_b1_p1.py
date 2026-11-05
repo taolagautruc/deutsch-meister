@@ -275,7 +275,7 @@ def seed_lesson_1_part_1():
         (lesson_id, "Zahn", "der", "Cái răng (Pl: die Zähne)", "Der Zahn ist weiß. (Cái răng màu trắng.)"),
         (lesson_id, "Zoo", "der", "Sở thú (Pl: die Zoos)", "Wir gehen in den Zoo. (Chúng tôi đi sở thú.)"),
         (lesson_id, "Koch", "der", "Đầu bếp (nam) (Pl: die Köche)", "Der Koch kocht sehr gut. (Người đầu bếp nấu ăn rất ngon.)"),
-        (lesson_id, "Sport", "der", "Thể thao (Pl: die Sportarten)", "Sport ist gesund. (Thể thao tốt cho sức khỏe.)"),
+        (lesson_id, "Sport", "der", "Thể thao (Pl: kein Plural; ghi chú: die Sportarten = các môn thể thao)", "Sport ist gesund. (Thể thao tốt cho sức khỏe.)"),
         (lesson_id, "Tag", "der", "Ngày / Ban ngày (Pl: die Tage)", "Guten Tag! Wie geht es Ihnen? (Xin chào! Ngài có khỏe không?)"),
         (lesson_id, "Morgen", "der", "Buổi sáng (Pl: die Morgen)", "Guten Morgen! (Chào buổi sáng!)"),
         (lesson_id, "Abend", "der", "Buổi tối (Pl: die Abende)", "Guten Abend! (Chào buổi tối!)"),
@@ -294,7 +294,7 @@ def seed_lesson_1_part_1():
         (lesson_id, "Tor", "das", "Cái cổng / Khung thành (Pl: die Tore)", "Das Brandenburger Tor ist in Berlin. (Cổng Brandenburg ở Berlin.)"),
         (lesson_id, "Rad", "das", "Bánh xe / Xe đạp (Pl: die Räder)", "Ich fahre mit dem Rad. (Tôi đi bằng xe đạp.)"),
         (lesson_id, "Spiel", "das", "Trò chơi / Trận đấu (Pl: die Spiele)", "Das Spiel ist super. (Trận đấu rất tuyệt vời.)"),
-        (lesson_id, "Wort", "das", "Từ vựng / Lời nói (Pl: die Wörter)", "Das Wort ist neu. (Từ này mới.)"),
+        (lesson_id, "Wort", "das", "Từ (đơn vị ngôn ngữ) / Lời nói (Pl: die Wörter (các từ riêng lẻ) hoặc die Worte (lời nói, phát ngôn))", "Das Wort ist neu. (Từ này mới.)"),
         (lesson_id, "Land", "das", "Đất nước / Quốc gia (Pl: die Länder)", "Vietnam ist ein schönes Land. (Việt Nam là một đất nước đẹp.)"),
         (lesson_id, "Haus", "das", "Ngôi nhà (Pl: die Häuser)", "Das Haus ist groß. (Ngôi nhà lớn.)"),
         (lesson_id, "Buch", "das", "Quyển sách (Pl: die Bücher)", "Das Buch ist gut. (Quyển sách rất hay.)")
