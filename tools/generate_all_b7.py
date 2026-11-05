@@ -160,7 +160,7 @@ def build_full_seed_script():
         ),
         (
             "Câu 10: Chọn phương án đúng: 'Herr Weber arbeitet heute von zu Hause. Er braucht ___ Anzug, sondern nur ___ Laptop.'",
-            ["kein / ein", "keinen / einen", "keinem / một", "keine / eine"],
+            ["kein / ein", "keinen / einen", "keinem / einem", "keine / eine"],
             "keinen / einen",
             "Cả der Anzug và der Laptop đều là danh từ giống đực làm tân ngữ trực tiếp (Akkusativ) sau động từ braucht, nên chia là keinen Anzug và einen Laptop.",
             {"accepted_answers": ["keinen / einen"], "translation": "Hôm nay ông Weber làm việc tại nhà. Ông ấy không cần bộ vest nào cả mà chỉ cần một chiếc máy tính xách tay."}

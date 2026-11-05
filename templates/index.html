@@ -1744,18 +1744,10 @@
             }
         }
 
-        function normalizeAnswer(str) {
-            return (str || "")
-                .trim()
-                .toLowerCase()
-                .replace(/[.,!?;:\"\'„“”«»‘`’–—\-\(\)\[\]\{\}\/\\~]+/g, " ")
-                .replace(/\s+/g, " ")
-                .trim();
-        }
-
-        async function checkExerciseAnswer(index, userAnswer) {
+        async function checkExerciseAnswer(index, userAnswer, selectedOptIndex = null) {
             const ex = currentLesson.allRenderExercises[index];
             const feedback = document.getElementById(`ex-feedback-${index}`);
+            const card = document.getElementById(`ex-card-${index}`);
             feedback.classList.remove('hidden');
 
             let extra = {};
@@ -1763,9 +1755,20 @@
                 extra = typeof ex.extra_data === 'string' ? JSON.parse(ex.extra_data) : (ex.extra_data || {});
             } catch (e) {}
 
+            const isMultipleChoice = Boolean(ex.options && Array.isArray(ex.options) && ex.options.length > 0);
+            const correctOptIdx = isMultipleChoice ? getCorrectOptionIndex(ex) : -1;
+
             let isCorrect = false;
             if (ex.exercise_type === 'noi_o') {
                 isCorrect = (userAnswer === "ALL_CORRECT_MATCH");
+            } else if (isMultipleChoice) {
+                let chosenIdx = selectedOptIndex;
+                if (chosenIdx === null || chosenIdx === undefined) {
+                    chosenIdx = ex.options.findIndex(opt => normalizeAnswer(opt) === normalizeAnswer(userAnswer));
+                }
+                isCorrect = (chosenIdx !== -1 && chosenIdx === correctOptIdx);
+                ex._selectedOptIndex = chosenIdx;
+                ex._isUserCorrect = isCorrect;
             } else {
                 const candidates = [ex.correct_answer];
                 if (extra && Array.isArray(extra.accepted_answers)) {
@@ -1961,14 +1964,26 @@
                             checkBtn.innerText = "✓ Đã xong";
                         }
                     }
-                    if (card && ex.options && ex.options.length > 0) {
+                    if (card && isMultipleChoice) {
                         const optButtons = card.querySelectorAll('button[onclick^="selectMultipleChoice"]');
-                        optButtons.forEach(btn => {
-                            if (isGermanMatch(btn.innerText, ex.correct_answer)) {
+                        optButtons.forEach((btn, bIdx) => {
+                            const letter = String.fromCharCode(65 + bIdx);
+                            const optText = ex.options[bIdx] || '';
+                            if (bIdx === correctOptIdx) {
                                 btn.className = "text-left px-4 py-3 rounded-xl bg-emerald-50 hover:bg-emerald-100/70 border-2 border-emerald-500 text-sm font-bold text-emerald-950 shadow-sm transition flex items-start justify-between gap-2.5 group cursor-pointer";
-                                if (!btn.innerHTML.includes('✓ Đã chọn')) {
-                                    btn.innerHTML += `<span class="text-emerald-700 font-extrabold text-xs px-2 py-0.5 rounded-md bg-emerald-100 border border-emerald-300 shrink-0">✓ Đã chọn</span>`;
-                                }
+                                btn.innerHTML = `
+                                    <div class="flex items-start gap-2.5">
+                                        <span class="w-6 h-6 rounded-lg bg-emerald-200 text-emerald-800 font-extrabold text-xs flex items-center justify-center shrink-0 border border-emerald-400 transition">${letter}</span>
+                                        <span class="pt-0.5">${optText}</span>
+                                    </div>
+                                    <span class="text-emerald-700 font-extrabold text-xs px-2 py-0.5 rounded-md bg-emerald-100 border border-emerald-300 shrink-0">✓ Đã chọn</span>
+                                `;
+                            } else {
+                                btn.className = "text-left px-4 py-3 rounded-xl bg-white/70 border border-slate-200 text-sm font-medium text-slate-500 shadow-sm transition flex items-start gap-2.5 opacity-60 cursor-pointer";
+                                btn.innerHTML = `
+                                    <span class="w-6 h-6 rounded-lg bg-slate-100 text-slate-500 font-extrabold text-xs flex items-center justify-center shrink-0 border border-slate-200 transition">${letter}</span>
+                                    <span class="pt-0.5">${optText}</span>
+                                `;
                             }
                         });
                     }
@@ -1977,6 +1992,39 @@
                     renderLessonList();
                 }
             } else {
+                if (card && isMultipleChoice) {
+                    const optButtons = card.querySelectorAll('button[onclick^="selectMultipleChoice"]');
+                    optButtons.forEach((btn, bIdx) => {
+                        const letter = String.fromCharCode(65 + bIdx);
+                        const optText = ex.options[bIdx] || '';
+                        if (bIdx === ex._selectedOptIndex) {
+                            btn.className = "text-left px-4 py-3 rounded-xl bg-rose-50 hover:bg-rose-100/70 border-2 border-rose-500 text-sm font-bold text-rose-950 shadow-sm transition flex items-start justify-between gap-2.5 group cursor-pointer";
+                            btn.innerHTML = `
+                                <div class="flex items-start gap-2.5">
+                                    <span class="w-6 h-6 rounded-lg bg-rose-200 text-rose-800 font-extrabold text-xs flex items-center justify-center shrink-0 border border-rose-400 transition">${letter}</span>
+                                    <span class="pt-0.5">${optText}</span>
+                                </div>
+                                <span class="text-rose-700 font-extrabold text-xs px-2 py-0.5 rounded-md bg-rose-100 border border-rose-300 shrink-0">✗ Đã chọn</span>
+                            `;
+                        } else if (bIdx === correctOptIdx) {
+                            btn.className = "text-left px-4 py-3 rounded-xl bg-emerald-50 hover:bg-emerald-100/70 border-2 border-emerald-500 text-sm font-bold text-emerald-950 shadow-sm transition flex items-start justify-between gap-2.5 group cursor-pointer";
+                            btn.innerHTML = `
+                                <div class="flex items-start gap-2.5">
+                                    <span class="w-6 h-6 rounded-lg bg-emerald-200 text-emerald-800 font-extrabold text-xs flex items-center justify-center shrink-0 border border-emerald-400 transition">${letter}</span>
+                                    <span class="pt-0.5">${optText}</span>
+                                </div>
+                                <span class="text-emerald-700 font-extrabold text-xs px-2 py-0.5 rounded-md bg-emerald-100 border border-emerald-300 shrink-0">✓ Đáp án đúng</span>
+                            `;
+                        } else {
+                            btn.className = "text-left px-4 py-3 rounded-xl bg-white/70 border border-slate-200 text-sm font-medium text-slate-500 shadow-sm transition flex items-start gap-2.5 opacity-60 cursor-pointer";
+                            btn.innerHTML = `
+                                <span class="w-6 h-6 rounded-lg bg-slate-100 text-slate-500 font-extrabold text-xs flex items-center justify-center shrink-0 border border-slate-200 transition">${letter}</span>
+                                <span class="pt-0.5">${optText}</span>
+                            `;
+                        }
+                    });
+                }
+
                 feedback.className = "text-xs p-3.5 rounded-xl mt-2 bg-rose-50 text-rose-800 border border-rose-200";
                 let displayAns = String(ex.correct_answer || '').trim().replace(/[.]+$/, '');
                 let wrongTitle = "❌ Chưa chính xác.";
@@ -2014,7 +2062,7 @@
         function selectMultipleChoice(exIndex, optIndex) {
             const ex = currentLesson.allRenderExercises[exIndex];
             if (ex && ex.options && ex.options[optIndex] !== undefined) {
-                checkExerciseAnswer(exIndex, ex.options[optIndex]);
+                checkExerciseAnswer(exIndex, ex.options[optIndex], optIndex);
             }
         }
 
@@ -2022,6 +2070,8 @@
             const ex = currentLesson.allRenderExercises[index];
             if (!ex) return;
             ex._retrying = true;
+            delete ex._selectedOptIndex;
+            delete ex._isUserCorrect;
             if (typeof generateNewNumberData === 'function') {
                 generateNewNumberData(ex, index + 1);
             }
