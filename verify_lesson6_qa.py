@@ -156,8 +156,9 @@ def run_tests():
         # Phải chứa danh từ (chấp nhận biến âm hoặc số nhiều)
         has_match = (w.lower() in ex.lower()) or (w == "Fuß" and "fuß" in ex.lower()) or (w == "Stock" and "stock" in ex.lower())
         assert has_match, f"❌ LỖI: Câu ví dụ '{ex}' không chứa từ vựng '{w}'!"
+        assert "(Pl:" in v["vietnamese_meaning"], f"❌ LỖI: Thẻ từ vựng '{v['german_word']}' thiếu dạng số nhiều (Pl: ...)!"
 
-    print(f"   ✅ 45/45 từ vựng có ví dụ chứa chính xác danh từ mục tiêu và dịch nghĩa (PASSED)")
+    print(f"   ✅ 45/45 từ vựng có ví dụ chứa danh từ mục tiêu và dạng số nhiều (Pl: ...) đầy đủ (PASSED)")
     print("✅ TEST 4: Vocabulary Card Match Check ĐẠT 100%!")
 
     # -------------------------------------------------------------------------

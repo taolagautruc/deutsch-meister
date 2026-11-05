@@ -152,8 +152,9 @@ def run_tests():
         ex = v["example_sentence"]
         has_match = (w.lower() in ex.lower())
         assert has_match, f"❌ LỖI: Câu ví dụ '{ex}' không chứa từ vựng '{w}'!"
+        assert "(Pl:" in v["vietnamese_meaning"], f"❌ LỖI: Thẻ từ vựng '{v['german_word']}' thiếu dạng số nhiều (Pl: ...)!"
 
-    print("   ✅ 50/50 từ vựng có ví dụ chứa chính xác danh từ mục tiêu và dịch nghĩa (PASSED)")
+    print("   ✅ 50/50 từ vựng có ví dụ chứa danh từ mục tiêu và dạng số nhiều (Pl: ...) đầy đủ (PASSED)")
     print("✅ TEST 4: Vocabulary Card Match Check ĐẠT 100%!")
 
     # -------------------------------------------------------------------------
@@ -230,3 +231,4 @@ def run_tests():
 
 if __name__ == "__main__":
     run_tests()
+
