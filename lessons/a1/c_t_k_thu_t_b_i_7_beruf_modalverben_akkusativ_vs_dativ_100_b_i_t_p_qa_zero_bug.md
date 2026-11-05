@@ -423,7 +423,7 @@ Toàn bộ **100 câu hỏi (`100 Unique Exercises`)** dưới đây đã đư�
     * Dịch nghĩa câu: *"Lúc 19 giờ người mẹ đưa con trai lên giường ngủ. Lúc 20 giờ cậu bé đã nằm trên giường và ngủ."*
     * Giải thích: Đưa lên giường (`bringen` — di chuyển `Wohin?`) dùng `in + das` = **`ins Bett`** (`Akkusativ`). Nằm ngủ trên giường (`liegen/schlafen` — vị trí tĩnh `Wo?`) dùng `in + dem` = **`im Bett`** (`Dativ`).
 17. **Câu 17 (Câu có cả 2 tân ngữ `Dativ` [Người nhận] + `Akkusativ` [Vật được trao])**: Chọn phương án đúng ngữ pháp: *„Der Chef kauft ___ Sekretärin (`die Sekretärin`) ___ neuen Computer (`der Computer`).“*
-    * Đáp án: `A. die / einen` | `B. der / einen` (Đúng) | `C. der / einem` | `D. einer / den`
+    * Đáp án: `A. die / einen` | `B. der / einen` (Đúng) | `C. der / ein` | `D. einer / dem`
     * Dịch nghĩa câu: *"Người sếp mua cho nữ thư ký một chiếc máy tính mới."*
     * Giải thích: Trong câu có 2 tân ngữ: Người nhận lợi ích (`Wem?` *cho nữ thư ký*) chia ở **Cách 3 (`Dativ`)** $\rightarrow$ **`der Sekretärin`**; Vật được mua (`Was?` *một chiếc máy tính mới*) chia ở **Cách 4 (`Akkusativ`)** $\rightarrow$ **`einen neuen Computer`**.
 18. **Câu 18 (Mạo từ sở hữu ngôi `ihr - các bạn` ở `Akkusativ` giống đực)**: Chọn dạng mạo từ sở hữu đúng: *„Liebe Schüler, ihr müsst morgen ___ Lehrer fragen und ___ Hefte mitbringen!“* *(Gợi ý: `der Lehrer` & `die Hefte`)*
