@@ -613,21 +613,27 @@ Toàn bộ **100 câu hỏi (`100 Unique Exercises`)** dưới đây đã đư�
     * `anrufen (gọi điện) & untersuchen (khám)` $\longleftrightarrow$ `luôn đi với Cách 4 (Akkusativ: den Patienten)`
     * `helfen (giúp đỡ) & danken (cảm ơn)` $\longleftrightarrow$ `luôn đi với Cách 3 (Dativ: dem Arzt)`
     * `gefallen (làm ai thích) & gehören (thuộc về)` $\longleftrightarrow$ `luôn đi với Cách 3 (Dativ: meiner Mutter)`
-65. **Câu 65 (Bài nối ô 8 — Đối chiếu trực tiếp `Wohin? (Akkusativ)` và `Wo? (Dativ)`)**:
-    * `in den Kindergarten bringen (Wohin?)` $\longleftrightarrow$ `im Kindergarten spielen (Wo?)`
-    * `in die Werkstatt fahren (Wohin?)` $\longleftrightarrow$ `in der Werkstatt reparieren (Wo?)`
-    * `ins Bett gehen (Wohin?)` $\longleftrightarrow$ `im Bett schlafen (Wo?)`
-    * `ins Büro kommen (Wohin?)` $\longleftrightarrow$ `im Büro arbeiten (Wo?)`
+65. **Câu 65 (Bài nối ô 8 — Ghép hành động và danh từ chỉ địa điểm với cụm giới từ `Wohin?` hoặc `Wo?`)**:
+    * `gehen + der Supermarkt (Wohin?)` $\longleftrightarrow$ `in den Supermarkt (Cách 4 - Akkusativ giống đực)`
+    * `einkaufen + der Supermarkt (Wo?)` $\longleftrightarrow$ `im Supermarkt (Cách 3 - Dativ giống đực: in + dem)`
+    * `fahren + die Schule (Wohin?)` $\longleftrightarrow$ `in die Schule (Cách 4 - Akkusativ giống cái)`
+    * `lernen + das Klassenzimmer (Wo?)` $\longleftrightarrow$ `im Klassenzimmer (Cách 3 - Dativ giống trung: in + dem)`
+    * Dịch nghĩa: `1. đi vào siêu thị | 2. mua sắm ở trong siêu thị | 3. đi đến trường học | 4. học bài ở trong phòng học.`
+    * Giải thích: Các động từ chỉ sự di chuyển (`gehen, fahren -> Wohin?`) đi với giới từ `in` + Cách 4 (`Akkusativ: in den Supermarkt, in die Schule`). Các động từ chỉ hoạt động tại chỗ (`einkaufen, lernen -> Wo?`) đi với giới từ `in` + Cách 3 (`Dativ: in + dem = im Supermarkt, im Klassenzimmer`).
 66. **Câu 66 (Bài nối ô 9 — Biến đổi Từ hạn định từ `Nominativ` sang `Akkusativ`)**:
-    * `der Tisch / ein Computer (Maskulinum)` $\longleftrightarrow$ `den Tisch / einen Computer (đổi sang đuôi -en)`
-    * `die Tasche / meine Tochter (Femininum)` $\longleftrightarrow$ `die Tasche / meine Tochter (giữ nguyên)`
-    * `das Buch / kein Auto (Neutrum)` $\longleftrightarrow$ `das Buch / kein Auto (giữ nguyên)`
-    * `die Bücher / ihre Kunden (Plural)` $\longleftrightarrow$ `die Bücher / ihre Kunden (giữ nguyên, không thêm -n)`
-67. **Câu 67 (Bài nối ô 10 — Lịch trình trong ngày của Paula Rausch & Frank Müller)**:
-    * `Paula: um 6.15 Uhr` $\longleftrightarrow$ `muss sie aufstehen`
-    * `Paula: um 16.30 Uhr` $\longleftrightarrow$ `muss sie ihre Tochter vom Kindergarten abholen`
-    * `Frank: bis 7.00 Uhr` $\longleftrightarrow$ `kann er schlafen, weil er Ferien hat`
-    * `Frank: um 12.30 Uhr` $\longleftrightarrow$ `bringt er das Auto in die Werkstatt`
+    * `Giống đực (Maskulinum): der Stuhl / ein Stift` $\longleftrightarrow$ `Er kauft den Stuhl / einen Stift. (đổi sang đuôi -en)`
+    * `Giống cái (Femininum): die Lampe / meine Brille` $\longleftrightarrow$ `Ich suche die Lampe / meine Brille. (giữ nguyên đuôi -e)`
+    * `Giống trung (Neutrum): das Handy / kein Geld` $\longleftrightarrow$ `Sie hat das Handy / kein Geld. (giữ nguyên dạng gốc)`
+    * `Số nhiều (Plural): die Stifte / eure Taschen` $\longleftrightarrow$ `Wir brauchen die Stifte / eure Taschen. (giữ nguyên, không thêm -n)`
+    * Dịch nghĩa: `1-C: Anh ấy mua cái ghế / một cây bút | 2-A: Tôi tìm cái đèn / kính của tôi | 3-D: Cô ấy có điện thoại / không có tiền | 4-B: Chúng tôi cần những cây bút / những chiếc túi của các bạn.`
+    * Giải thích: Khi chuyển từ Cách 1 (`Nominativ`) sang Cách 4 (`Akkusativ`), chỉ duy nhất danh từ giống đực (`Maskulinum`) biến đổi mạo từ sang đuôi `-en` (`der -> den, ein -> einen`). Danh từ giống cái, giống trung và số nhiều giữ nguyên mạo từ như ở Nominativ.
+67. **Câu 67 (Bài nối ô 10 — Nối Tình huống với Hoạt động dùng động từ khuyết thiếu phù hợp)**:
+    * `Ich arbeite heute im Spätdienst (ca muộn),` $\longleftrightarrow$ `deshalb kann ich am Morgen bis 9.00 Uhr schlafen.`
+    * `Mein Sohn ist heute leider krank,` $\longleftrightarrow$ `deshalb darf er heute nicht in die Schule gehen.`
+    * `Habt ihr morgen frei,` $\longleftrightarrow$ `oder müsst ihr um 8.00 Uhr in der Firma sein?`
+    * `Frau Klein arbeitet als Sekretärin im Büro` $\longleftrightarrow$ `und sie kann sehr schnell E-Mails schreiben.`
+    * Dịch nghĩa: `1-C: Hôm nay tôi làm ca muộn, vì vậy buổi sáng tôi có thể ngủ đến 9 giờ. | 2-D: Hôm nay con trai tôi không may bị ốm, vì vậy cậu bé không được phép đến trường. | 3-A: Ngày mai các bạn được nghỉ, hay các bạn phải có mặt ở công ty lúc 8 giờ? | 4-B: Bà Klein làm thư ký ở văn phòng và bà ấy có thể viết email rất nhanh.`
+    * Giải thích: Dựa vào đại từ nhân xưng và ngữ cảnh: 1 (`Ich -> kann ich`); 2 (`Mein Sohn -> er` bị ốm nên không được đi học: `darf er nicht`); 3 (`ihr -> müsst ihr`); 4 (`Frau Klein -> sie kann`).
 
 ---
 

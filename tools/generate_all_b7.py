@@ -408,38 +408,46 @@ def build_full_seed_script():
             "Động từ Akkusativ chỉ tân ngữ trực tiếp (cần, tìm, gọi, khám); Động từ Dativ quy định người nhận tác động (giúp đỡ, cảm ơn, thích, thuộc về)."
         ),
         (
-            "Câu 65: Đối chiếu trực tiếp giữa Hướng di chuyển Wohin? (Akkusativ) và Vị trí tĩnh Wo? (Dativ):",
+            "Câu 65: Ghép hành động và danh từ chỉ địa điểm (Cột Trái) với cụm giới từ chỉ hướng Wohin? hoặc vị trí Wo? đúng ngữ pháp (Cột Phải):",
             [
-                {"left": "in den Kindergarten bringen (Wohin?)", "right": "im Kindergarten spielen (Wo?)"},
-                {"left": "in die Werkstatt fahren (Wohin?)", "right": "in der Werkstatt reparieren (Wo?)"},
-                {"left": "ins Bett gehen (Wohin?)", "right": "im Bett schlafen (Wo?)"},
-                {"left": "ins Büro kommen (Wohin?)", "right": "im Büro arbeiten (Wo?)"}
+                {"left": "gehen + der Supermarkt (Wohin?)", "right": "in den Supermarkt (Cách 4 - Akkusativ giống đực)"},
+                {"left": "einkaufen + der Supermarkt (Wo?)", "right": "im Supermarkt (Cách 3 - Dativ giống đực: in + dem)"},
+                {"left": "fahren + die Schule (Wohin?)", "right": "in die Schule (Cách 4 - Akkusativ giống cái)"},
+                {"left": "lernen + das Klassenzimmer (Wo?)", "right": "im Klassenzimmer (Cách 3 - Dativ giống trung: in + dem)"}
             ],
-            "Wohin? (hướng di chuyển) dùng Akkusativ (in den Kindergarten, in die Werkstatt, ins Bett, ins Büro); Wo? (vị trí tĩnh) dùng Dativ (im Kindergarten, in der Werkstatt, im Bett, im Büro)."
+            "Các động từ chỉ sự di chuyển (gehen, fahren -> Wohin?) đi với giới từ in + Cách 4 (Akkusativ: in den Supermarkt, in die Schule). Các động từ chỉ hoạt động tại chỗ (einkaufen, lernen -> Wo?) đi với giới từ in + Cách 3 (Dativ: in + dem = im Supermarkt, im Klassenzimmer).",
+            "1. đi vào siêu thị | 2. mua sắm ở trong siêu thị | 3. đi đến trường học | 4. học bài ở trong phòng học."
         ),
         (
-            "Câu 66: Biến đổi Từ hạn định từ Nominativ sang Akkusativ:",
+            "Câu 66: Ghép cụm danh từ ở Cách 1 (Nominativ - Chủ ngữ) với dạng biến đổi đúng sang Cách 4 (Akkusativ - Tân ngữ trực tiếp):",
             [
-                {"left": "der Tisch / ein Computer (Maskulinum)", "right": "den Tisch / einen Computer (đổi sang đuôi -en)"},
-                {"left": "die Tasche / meine Tochter (Femininum)", "right": "die Tasche / meine Tochter (giữ nguyên)"},
-                {"left": "das Buch / kein Auto (Neutrum)", "right": "das Buch / kein Auto (giữ nguyên)"},
-                {"left": "die Bücher / ihre Kunden (Plural)", "right": "die Bücher / ihre Kunden (giữ nguyên, không thêm -n)"}
+                {"left": "Giống đực (Maskulinum): der Stuhl / ein Stift", "right": "Er kauft den Stuhl / einen Stift. (đổi sang đuôi -en)"},
+                {"left": "Giống cái (Femininum): die Lampe / meine Brille", "right": "Ich suche die Lampe / meine Brille. (giữ nguyên đuôi -e)"},
+                {"left": "Giống trung (Neutrum): das Handy / kein Geld", "right": "Sie hat das Handy / kein Geld. (giữ nguyên dạng gốc)"},
+                {"left": "Số nhiều (Plural): die Stifte / eure Taschen", "right": "Wir brauchen die Stifte / eure Taschen. (giữ nguyên, không thêm -n)"}
             ],
-            "Ở Cách 4 Akkusativ, chỉ duy nhất giống đực (der) biến đổi đuôi sang -en; giống cái, giống trung và số nhiều giữ nguyên dạng Nominativ."
+            "Khi chuyển từ Cách 1 (Nominativ) sang Cách 4 (Akkusativ), chỉ duy nhất danh từ giống đực (Maskulinum) biến đổi mạo từ sang đuôi -en (der -> den, ein -> einen). Danh từ giống cái, giống trung và số nhiều giữ nguyên mạo từ như ở Nominativ.",
+            "1-C: Anh ấy mua cái ghế / một cây bút | 2-A: Tôi tìm cái đèn / kính của tôi | 3-D: Cô ấy có điện thoại / không có tiền | 4-B: Chúng tôi cần những cây bút / những chiếc túi của các bạn."
         ),
         (
-            "Câu 67: Nối Mốc thời gian với Hoạt động trong lịch trình của Paula Rausch & Frank Müller:",
+            "Câu 67: Nối Tình huống ở vế đầu (Cột Trái) với Hoạt động dùng động từ khuyết thiếu phù hợp về cả ngữ pháp lẫn ngữ nghĩa (Cột Phải):",
             [
-                {"left": "Paula: um 6.15 Uhr", "right": "muss sie aufstehen"},
-                {"left": "Paula: um 16.30 Uhr", "right": "muss sie ihre Tochter vom Kindergarten abholen"},
-                {"left": "Frank: bis 7.00 Uhr", "right": "kann er schlafen, weil er Ferien hat"},
-                {"left": "Frank: um 12.30 Uhr", "right": "bringt er das Auto in die Werkstatt"}
+                {"left": "Ich arbeite heute im Spätdienst (ca muộn),", "right": "deshalb kann ich am Morgen bis 9.00 Uhr schlafen."},
+                {"left": "Mein Sohn ist heute leider krank,", "right": "deshalb darf er heute nicht in die Schule gehen."},
+                {"left": "Habt ihr morgen frei,", "right": "oder müsst ihr um 8.00 Uhr in der Firma sein?"},
+                {"left": "Frau Klein arbeitet als Sekretärin im Büro", "right": "und sie kann sehr schnell E-Mails schreiben."}
             ],
-            "Lịch trình hàng ngày thực tế của Paula Rausch và Frank Müller trong đoạn văn bài học."
+            "Dựa vào đại từ nhân xưng và ngữ cảnh: 1 (Ich -> kann ich); 2 (Mein Sohn -> er bị ốm nên không được đi học: darf er nicht); 3 (ihr -> müsst ihr); 4 (Frau Klein -> sie kann).",
+            "1-C: Hôm nay tôi làm ca muộn, vì vậy buổi sáng tôi có thể ngủ đến 9 giờ. | 2-D: Hôm nay con trai tôi không may bị ốm, vì vậy cậu bé không được phép đến trường. | 3-A: Ngày mai các bạn được nghỉ, hay các bạn phải có mặt ở công ty lúc 8 giờ? | 4-B: Bà Klein làm thư ký ở văn phòng và bà ấy có thể viết email rất nhanh."
         )
     ]
 
-    for q, pairs, exp in noi_o_data:
+    for item in noi_o_data:
+        if len(item) == 4:
+            q, pairs, exp, trans = item
+        else:
+            q, pairs, exp = item
+            trans = "Nối các cặp tương ứng giữa 2 cột."
         ex_list.append({
             "type": "noi_o",
             "question": q,
@@ -449,7 +457,7 @@ def build_full_seed_script():
             "exp_reward": 20,
             "extra_data": {
                 "noi_o_pairs": pairs,
-                "translation": "Nối các cặp tương ứng giữa 2 cột."
+                "translation": trans
             }
         })
 
