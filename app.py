@@ -113,13 +113,22 @@ def ensure_db_initialized():
             row_q43 = cursor.fetchone()
             if row_q43 and ('$\\rightarrow$' in (row_q43["explanation"] or '') or 'NHÓM' in (row_q43["explanation"] or '')):
                 need_reseed_b6 = True
+            cursor.execute("SELECT COUNT(*) as cnt FROM vocabularies WHERE lesson_id = 20 AND vietnamese_meaning LIKE '%Pl:%';")
+            if cursor.fetchone()["cnt"] == 0:
+                need_reseed_b6 = True
 
         if need_reseed_b6:
             from lessons.a1.seed_a1_b6 import seed_lesson_6
             seed_lesson_6()
 
         cursor.execute("SELECT COUNT(*) as cnt FROM lessons WHERE title LIKE 'Bài 7%';")
-        if cursor.fetchone()["cnt"] == 0:
+        has_b7 = cursor.fetchone()["cnt"] > 0
+        need_reseed_b7 = not has_b7
+        if has_b7:
+            cursor.execute("SELECT COUNT(*) as cnt FROM vocabularies WHERE lesson_id = 21 AND vietnamese_meaning LIKE '%Pl:%';")
+            if cursor.fetchone()["cnt"] == 0:
+                need_reseed_b7 = True
+        if need_reseed_b7:
             from lessons.a1.seed_a1_b7 import seed_lesson_7
             seed_lesson_7()
             

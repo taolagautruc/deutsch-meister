@@ -724,12 +724,14 @@ def seed_lesson_7():
 
     vocabularies = []
     for item in vocab_raw:
+        meaning = f"{{item['meaning']}} (Pl: {{item['plural']}})" if item.get("plural") else item["meaning"]
+        example_str = f"{{item['example']}} ({{item['example_vi']}})" if item.get("example_vi") else item["example"]
         vocabularies.append((
             lesson_id,
             f"{{item['article']}} {{item['word']}}",
             item["article"],
-            item["meaning"],
-            item["example"]
+            meaning,
+            example_str
         ))
 
     cursor.executemany("""

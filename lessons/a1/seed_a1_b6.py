@@ -1118,11 +1118,12 @@ def seed_lesson_6():
 
     vocabularies = []
     for item in vocab_raw:
+        meaning = f"{item['meaning']} (Pl: {item['plural']})" if item.get("plural") else item["meaning"]
         vocabularies.append((
             lesson_id,
             item["word"],
             item["article"],
-            item["meaning"],
+            meaning,
             f"{item['example']} ({item['example_vi']})"
         ))
 

@@ -515,3 +515,4 @@ def generate_seed_script():
     return grammar_html
 
 print('Helper script test passed.')
+
