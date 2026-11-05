@@ -72,24 +72,48 @@ def ensure_db_initialized():
                 conn.commit()
 
         cursor.execute("SELECT COUNT(*) as cnt FROM lessons WHERE title LIKE 'Bài 1 (P1)%';")
-        if cursor.fetchone()["cnt"] == 0:
+        has_b1_p1 = cursor.fetchone()["cnt"] > 0
+        if not has_b1_p1:
             from lessons.a1.seed_a1_b1_p1 import seed_lesson_1_part_1
             seed_lesson_1_part_1()
+        else:
+            cursor.execute("SELECT COUNT(*) as cnt FROM vocabularies WHERE lesson_id = 14 AND vietnamese_meaning LIKE '%Pl:%';")
+            if cursor.fetchone()["cnt"] == 0:
+                from lessons.a1.seed_a1_b1_p1 import seed_lesson_1_part_1
+                seed_lesson_1_part_1()
             
         cursor.execute("SELECT COUNT(*) as cnt FROM lessons WHERE title LIKE 'Bài 1 (P2)%';")
-        if cursor.fetchone()["cnt"] == 0:
+        has_b1_p2 = cursor.fetchone()["cnt"] > 0
+        if not has_b1_p2:
             from lessons.a1.seed_a1_b1_p2 import seed_lesson_1_part_2
             seed_lesson_1_part_2()
+        else:
+            cursor.execute("SELECT COUNT(*) as cnt FROM vocabularies WHERE lesson_id = 15 AND vietnamese_meaning LIKE '%Pl:%';")
+            if cursor.fetchone()["cnt"] == 0:
+                from lessons.a1.seed_a1_b1_p2 import seed_lesson_1_part_2
+                seed_lesson_1_part_2()
             
         cursor.execute("SELECT COUNT(*) as cnt FROM lessons WHERE title LIKE 'Bài 2%';")
-        if cursor.fetchone()["cnt"] == 0:
+        has_b2 = cursor.fetchone()["cnt"] > 0
+        if not has_b2:
             from lessons.a1.seed_a1_b2 import seed_lesson_2
             seed_lesson_2()
+        else:
+            cursor.execute("SELECT COUNT(*) as cnt FROM vocabularies WHERE lesson_id = 16 AND vietnamese_meaning LIKE '%Pl:%';")
+            if cursor.fetchone()["cnt"] == 0:
+                from lessons.a1.seed_a1_b2 import seed_lesson_2
+                seed_lesson_2()
 
         cursor.execute("SELECT COUNT(*) as cnt FROM lessons WHERE title LIKE 'Bài 3%';")
-        if cursor.fetchone()["cnt"] == 0:
+        has_b3 = cursor.fetchone()["cnt"] > 0
+        if not has_b3:
             from lessons.a1.seed_a1_b3 import seed_lesson_3
             seed_lesson_3()
+        else:
+            cursor.execute("SELECT COUNT(*) as cnt FROM vocabularies WHERE lesson_id = 17 AND vietnamese_meaning LIKE '%Pl:%';")
+            if cursor.fetchone()["cnt"] == 0:
+                from lessons.a1.seed_a1_b3 import seed_lesson_3
+                seed_lesson_3()
 
         cursor.execute("SELECT COUNT(*) as cnt FROM lessons WHERE title LIKE 'Bài 4%';")
         if cursor.fetchone()["cnt"] == 0:
