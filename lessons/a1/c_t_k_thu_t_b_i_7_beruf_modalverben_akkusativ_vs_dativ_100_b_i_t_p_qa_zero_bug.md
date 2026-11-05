@@ -478,16 +478,16 @@ Toàn bộ **100 câu hỏi (`100 Unique Exercises`)** dưới đây đã đư�
     * Đáp án chấp nhận: `["seinen", "den"]`
     * Dịch nghĩa câu: *"Lập trình viên gọi điện cho ông sếp của anh ấy ở văn phòng."*
     * Giải thích: Động từ `anrufen` đi với Cách 4 (`Akkusativ`). `der Chef` mang giống đực nên gốc sở hữu `sein-` của `er` đổi thành **`seinen`**.
-30. **Câu 30**: Điền mạo từ xác định đúng (phân biệt `Wohin? Akkusativ`) vào chỗ trống: *„Jeden Morgen um 8 Uhr bringt Frau Rausch ihren Sohn in ___ Kindergarten.“* *(Gợi ý: `der Kindergarten`)*
-    * Đáp án chấp nhận: `["den"]`
+30. **Câu 30**: Điền mạo từ thích hợp vào chỗ trống: *„Jeden Morgen um 8 Uhr bringt Frau Rausch ihren Sohn in ___ Kindergarten.“*
+    * Đáp án chấp nhận: `["den", "einen"]`
     * Dịch nghĩa câu: *"Mỗi buổi sáng lúc 8 giờ bà Rausch đưa con trai mình vào trường mẫu giáo."*
     * Giải thích: Hành động đưa con đến trường mẫu giáo (`bringen` $\rightarrow$ câu hỏi `Wohin?`) dùng **Cách 4 (`Akkusativ`)**: `der Kindergarten` $\rightarrow$ **`in den Kindergarten`**.
-31. **Câu 31**: Điền giới từ thu gọn (`in + das`) chỉ hướng di chuyển `Wohin?` (`Akkusativ`) vào chỗ trống: *„Es ist schon 22 Uhr. Die Kinder müssen jetzt ___ Bett gehen.“* *(Gợi ý: `das Bett`)*
-    * Đáp án chấp nhận: `["ins"]`
+31. **Câu 31**: Điền từ thích hợp vào chỗ trống: *„Es ist schon 22 Uhr. Die Kinder müssen jetzt ___ Bett gehen.“*
+    * Đáp án chấp nhận: `["ins", "in das"]`
     * Dịch nghĩa câu: *"Đã 22 giờ rồi. Bọn trẻ bây giờ phải đi lên giường ngủ."*
     * Giải thích: Đi lên giường ngủ (`Wohin? + Akkusativ`) với danh từ giống trung `das Bett` dùng `in + das` gộp thành **`ins Bett`**.
-32. **Câu 32**: Điền mạo từ xác định đúng ở Cách 3 (`Dativ`) sau động từ `helfen`: *„Die Sekretärin hilft ___ neuen Praktikanten bei der Arbeit.“* *(Gợi ý: `der Praktikant`)*
-    * Đáp án chấp nhận: `["dem"]`
+32. **Câu 32**: Điền mạo từ thích hợp vào chỗ trống: *„Die Sekretärin hilft ___ neuen Praktikanten bei der Arbeit.“*
+    * Đáp án chấp nhận: `["dem", "einem"]`
     * Dịch nghĩa câu: *"Nữ thư ký giúp đỡ nam thực tập sinh mới trong công việc."*
     * Giải thích: Động từ `helfen` luôn đi với Cách 3 (`Dativ`), nên `der Praktikant` chuyển thành **`dem neuen Praktikanten`**.
 33. **Câu 33**: Điền dạng chia đúng của động từ `unterrichten` theo chủ ngữ vào chỗ trống: *„Herr Müller ist Lehrer von Beruf und ___ Mathematik an einer Schule.“*

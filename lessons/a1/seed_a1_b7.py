@@ -1796,42 +1796,45 @@ def seed_lesson_7():
         },
         {
                 "type": "dien_khuyet",
-                "question": "Câu 30: Điền mạo từ xác định đúng (phân biệt Wohin? Akkusativ) vào chỗ trống: 'Jeden Morgen um 8 Uhr bringt Frau Rausch ihren Sohn in ___ Kindergarten.'",
+                "question": "Câu 30: Điền mạo từ thích hợp vào chỗ trống: 'Jeden Morgen um 8 Uhr bringt Frau Rausch ihren Sohn in ___ Kindergarten.'",
                 "options": null,
                 "correct_answer": "den",
                 "explanation": "Hành động đưa con đến trường mẫu giáo (bringen -> câu hỏi Wohin?) dùng Cách 4 (Akkusativ): der Kindergarten -> in den Kindergarten.",
                 "exp_reward": 15,
                 "extra_data": {
                         "accepted_answers": [
-                                "den"
+                                "den",
+                                "einen"
                         ],
                         "translation": "Mỗi buổi sáng lúc 8 giờ bà Rausch đưa con trai mình vào trường mẫu giáo."
                 }
         },
         {
                 "type": "dien_khuyet",
-                "question": "Câu 31: Điền giới từ thu gọn (in + das) chỉ hướng di chuyển Wohin? (Akkusativ) vào chỗ trống: 'Es ist schon 22 Uhr. Die Kinder müssen jetzt ___ Bett gehen.'",
+                "question": "Câu 31: Điền từ thích hợp vào chỗ trống: 'Es ist schon 22 Uhr. Die Kinder müssen jetzt ___ Bett gehen.'",
                 "options": null,
                 "correct_answer": "ins",
                 "explanation": "Đi lên giường ngủ (Wohin? + Akkusativ) với danh từ giống trung das Bett dùng in + das gộp thành ins Bett.",
                 "exp_reward": 15,
                 "extra_data": {
                         "accepted_answers": [
-                                "ins"
+                                "ins",
+                                "in das"
                         ],
                         "translation": "Đã 22 giờ rồi. Bọn trẻ bây giờ phải đi lên giường ngủ."
                 }
         },
         {
                 "type": "dien_khuyet",
-                "question": "Câu 32: Điền mạo từ xác định đúng ở Cách 3 (Dativ) sau động từ 'helfen': 'Die Sekretärin hilft ___ neuen Praktikanten bei der Arbeit.'",
+                "question": "Câu 32: Điền mạo từ thích hợp vào chỗ trống: 'Die Sekretärin hilft ___ neuen Praktikanten bei der Arbeit.'",
                 "options": null,
                 "correct_answer": "dem",
                 "explanation": "Động từ helfen luôn đi với Cách 3 (Dativ), nên der Praktikant chuyển thành dem neuen Praktikanten.",
                 "exp_reward": 15,
                 "extra_data": {
                         "accepted_answers": [
-                                "dem"
+                                "dem",
+                                "einem"
                         ],
                         "translation": "Nữ thư ký giúp đỡ nam thực tập sinh mới trong công việc."
                 }
