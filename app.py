@@ -110,7 +110,7 @@ def ensure_db_initialized():
             from lessons.a1.seed_a1_b3 import seed_lesson_3
             seed_lesson_3()
         else:
-            cursor.execute("SELECT COUNT(*) as cnt FROM vocabularies WHERE lesson_id = 17 AND vietnamese_meaning LIKE '%Pl:%';")
+            cursor.execute("SELECT COUNT(*) as cnt FROM vocabularies WHERE lesson_id = 17 AND german_word = 'USA' AND vietnamese_meaning LIKE '%nur Plural%';")
             if cursor.fetchone()["cnt"] == 0:
                 from lessons.a1.seed_a1_b3 import seed_lesson_3
                 seed_lesson_3()

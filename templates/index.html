@@ -1085,7 +1085,7 @@
                     const baseMeaning = plMatch[2] ? `${plMatch[1].trim()} (${plMatch[2].trim()})` : plMatch[1].trim();
                     const plInfo = plMatch[3].trim();
                     const plClean = plInfo.replace(/^Pl:\s*/i, '');
-                    const canSpeakPl = !/^(kein|không|-)/i.test(plClean.trim());
+                    const canSpeakPl = !/^(kein|không|nur|-)/i.test(plClean.trim());
                     const safePlSpeak = plClean.split(/[\(;]|\bhoặc\b/)[0].trim().replace(/'/g, "\\'");
                     meaningHtml = `
                         <p class="text-sm text-indigo-600 font-bold">${baseMeaning}</p>
