@@ -227,8 +227,9 @@ def seed_lesson_7():
                 <h5 class="text-sm font-bold text-slate-800 flex items-center gap-2">
                     <span>🗣️</span> 1.3. Ba Mẫu Câu Hỏi & Ba Cách Trả Lời Nghề Nghiệp Chuẩn Ngữ Pháp
                 </h5>
-                <div class="p-3 rounded-xl bg-rose-50 border border-rose-200 text-xs text-rose-800">
-                    ⚠️ <b>LƯU Ý CỐT LÕI:</b> Khi nói nghề nghiệp với cấu trúc <code>sein + [Nghề]</code> hoặc <code>arbeiten als + [Nghề]</code>, <b>TUYỆT ĐỐI KHÔNG DÙNG MẠO TỪ ein/eine</b>! Nói: <i>„Ich bin Lehrer.“</i> hoặc <i>„Ich arbeite als Programmierer.“</i> (Không nói: <i>„Ich bin ein Lehrer.“</i>).
+                <div class="p-3 rounded-xl bg-rose-50 border border-rose-200 text-xs text-rose-800 space-y-1">
+                    <p>⚠️ <b>LƯU Ý CỐT LÕI:</b> Khi chỉ nói tên nghề nghiệp với cấu trúc <code>sein + [Nghề]</code>, <code>arbeiten als + [Nghề]</code> hoặc <code>werden + [Nghề]</code>, <b>không dùng mạo từ ein/eine</b>! Nói: <i>„Ich bin Lehrer.“</i>, <i>„Ich arbeite als Programmierer.“</i> hoặc <i>„Sie möchte Mechatronikerin werden.“</i> (Không nói: <i>„Ich bin ein Lehrer.“</i>).</p>
+                    <p class="text-rose-950 font-medium">💡 <b>Ngoại lệ bắt buộc:</b> Nếu có <b>tính từ đi kèm</b> bổ nghĩa cho nghề nghiệp thì <b>bắt buộc phải dùng mạo từ</b>: <i>„Sie ist eine gute Ärztin.“</i> / <i>„Frau Becker ist eine erfahrene Taxifahrerin.“</i> / <i>„Anna ist eine fleißige Schülerin.“</i></p>
                 </div>
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-3 text-xs sm:text-sm">
                     <div class="p-3 rounded-xl bg-slate-50 border border-slate-200 space-y-1">
@@ -444,8 +445,9 @@ def seed_lesson_7():
                 </h5>
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-xs sm:text-sm">
                     <div class="p-4 rounded-2xl bg-slate-50 border border-slate-200 space-y-2">
-                        <span class="font-bold text-indigo-700">LUÔN ĐI VỚI AKKUSATIV (FUDGE-BO):</span>
-                        <p class="text-slate-700"><b>für</b> (cho), <b>ohne</b> (không có), <b>durch</b> (xuyên qua), <b>um</b> (xung quanh/vào lúc), <b>gegen</b> (chống lại/khoảng).</p>
+                        <span class="font-bold text-indigo-700">LUÔN ĐI VỚI AKKUSATIV (DOGFU):</span>
+                        <p class="text-slate-700"><b>D</b>urch (xuyên qua), <b>O</b>hne (không có), <b>G</b>egen (chống lại/khoảng), <b>F</b>ür (cho), <b>U</b>m (xung quanh/vào lúc).</p>
+                        <p class="text-slate-500 text-xs"><i>(Mẹo mở rộng FUDGE-BO đầy đủ: thêm <b>B</b>is - cho đến, <b>E</b>ntlang - dọc theo)</i></p>
                         <p class="text-emerald-700"><i>„Das Telefon ist wichtig <b>für <u>sie</u></b> / <b>für <u>den</u> Chef</b>.“</i></p>
                     </div>
                     <div class="p-4 rounded-2xl bg-slate-50 border border-slate-200 space-y-2">
@@ -728,8 +730,8 @@ def seed_lesson_7():
                 "meaning": "nữ thợ cơ khí ô tô",
                 "category": "Danh từ Nghề nghiệp Nam & Nữ (Berufe - Bài 7)",
                 "rule": "Nữ thợ cơ khí ô tô (KFZ-Mechatronikerin).",
-                "example": "Sie lernt fleißig und möchte eine Mechatronikerin werden.",
-                "example_vi": "Cô ấy học tập chăm chỉ và muốn trở thành một nữ thợ cơ khí."
+                "example": "Sie lernt fleißig und möchte Mechatronikerin werden.",
+                "example_vi": "Cô ấy học tập chăm chỉ và muốn trở thành nữ thợ cơ khí."
         },
         {
                 "word": "Trainer",
@@ -813,7 +815,7 @@ def seed_lesson_7():
                 "category": "Danh từ Nghề nghiệp Nam & Nữ (Berufe - Bài 7)",
                 "rule": "Danh từ giống cái (die Schülerin), số nhiều die Schülerinnen.",
                 "example": "Anna ist eine fleißige Schülerin am Gymnasium.",
-                "example_vi": "Anna là một nữ học sinh chăm chỉ tại trường chuyên."
+                "example_vi": "Anna là một nữ học sinh chăm chỉ tại trường THPT (Gymnasium)."
         },
         {
                 "word": "Student",
@@ -1256,11 +1258,11 @@ def seed_lesson_7():
                 "plural": "die Patienten",
                 "indefinite": "ein Patient",
                 "negation": "kein Patient",
-                "akkusativ": "den / einen / keinen Patient",
+                "akkusativ": "den / einen / keinen Patienten",
                 "meaning": "bệnh nhân",
                 "category": "Nơi làm việc & Hoạt động Công việc (Arbeitsorte & Alltag - Bài 7)",
                 "rule": "Danh từ giống đực N-Deklination (der Patient). Tân ngữ Akkusativ sau untersuchen: den Patienten untersuchen.",
-                "example": "Der Arzt untersucht den kranken Patient im Behandlungszimmer.",
+                "example": "Der Arzt untersucht den kranken Patienten im Behandlungszimmer.",
                 "example_vi": "Bác sĩ khám cho bệnh nhân bị ốm ở trong phòng khám bệnh."
         }
 ]

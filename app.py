@@ -161,8 +161,9 @@ def ensure_db_initialized():
         has_b7 = cursor.fetchone()["cnt"] > 0
         need_reseed_b7 = not has_b7
         if has_b7:
-            cursor.execute("SELECT COUNT(*) as cnt FROM vocabularies WHERE lesson_id = 21 AND vietnamese_meaning LIKE '%Pl:%';")
-            if cursor.fetchone()["cnt"] == 0:
+            cursor.execute("SELECT example_sentence FROM vocabularies WHERE lesson_id = 21 AND german_word LIKE '%Patient%' LIMIT 1;")
+            row_pat = cursor.fetchone()
+            if not row_pat or 'kranken Patienten' not in (row_pat["example_sentence"] or ''):
                 need_reseed_b7 = True
         if need_reseed_b7:
             from lessons.a1.seed_a1_b7 import seed_lesson_7
