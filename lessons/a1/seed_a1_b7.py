@@ -1467,7 +1467,7 @@ def seed_lesson_7():
                 "options": [
                         "kein / ein",
                         "keinen / einen",
-                        "keinem / một",
+                        "keinem / einem",
                         "keine / eine"
                 ],
                 "correct_answer": "keinen / einen",

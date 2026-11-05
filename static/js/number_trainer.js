@@ -102,6 +102,18 @@ function priceToGerman(euros, cents) {
 function checkGermanAnswerEquivalence(userAns, correctAns) {
     if (!userAns || !correctAns) return false;
 
+    // 0. Nếu cả userAns và correctAns đều chứa dấu / (dạng điền nhiều chỗ trống: den / dem, seinen / seinen)
+    if (userAns.includes('/') && correctAns.includes('/')) {
+        const uParts = userAns.split('/').map(p => p.trim());
+        const cParts = correctAns.split('/').map(p => p.trim());
+        if (uParts.length === cParts.length && uParts.length > 1) {
+            if (uParts.every((u, idx) => checkGermanAnswerEquivalence(u, cParts[idx]))) {
+                return true;
+            }
+            return false;
+        }
+    }
+
     // 1. Phân tách nếu có nhiều phương án đáp án chuẩn (cách nhau bởi /, ||, \n, hoặc)
     if (correctAns.includes('/') || correctAns.includes('||') || correctAns.includes('\n') || /\s+hoặc\s+/i.test(correctAns)) {
         const alts = correctAns.split(/\/|\|\||\n|\s+hoặc\s+/i).map(a => a.trim()).filter(Boolean);
@@ -222,11 +234,21 @@ function checkGermanAnswerEquivalence(userAns, correctAns) {
 
     // 8. Chuẩn hóa tiếng Việt (bỏ dấu) & tên địa danh:
     const stripVnAccents = (str) => {
-        return str
+        // Bảo vệ các ký tự Umlaut & Eszett tiếng Đức không bị tách dấu bởi NFD Unicode
+        const protectedStr = String(str || "")
+            .replace(/ä/g, '__ae__').replace(/Ä/g, '__Ae__')
+            .replace(/ö/g, '__oe__').replace(/Ö/g, '__Oe__')
+            .replace(/ü/g, '__ue__').replace(/Ü/g, '__Ue__')
+            .replace(/ß/g, '__ss__');
+        return protectedStr
             .normalize("NFD")
             .replace(/[\u0300-\u036f]/g, "")
             .replace(/đ/g, "d")
-            .replace(/Đ/g, "D");
+            .replace(/Đ/g, "D")
+            .replace(/__ae__/g, 'ä').replace(/__Ae__/g, 'Ä')
+            .replace(/__oe__/g, 'ö').replace(/__Oe__/g, 'Ö')
+            .replace(/__ue__/g, 'ü').replace(/__Ue__/g, 'Ü')
+            .replace(/__ss__/g, 'ß');
     };
 
     const normalizeLocations = (s) => {
