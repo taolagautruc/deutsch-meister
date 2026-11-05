@@ -1601,8 +1601,8 @@ def seed_lesson_7():
                 "options": [
                         "die / einen",
                         "der / einen",
-                        "der / một",
-                        "einer / den"
+                        "der / ein",
+                        "einer / dem"
                 ],
                 "correct_answer": "der / einen",
                 "explanation": "Trong câu có 2 tân ngữ: Người nhận lợi ích (Wem? cho nữ thư ký) chia ở Cách 3 (Dativ) -> der Sekretärin; Vật được mua (Was? một chiếc máy tính mới) chia ở Cách 4 (Akkusativ) -> einen neuen Computer.",
