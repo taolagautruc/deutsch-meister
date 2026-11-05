@@ -77,7 +77,7 @@ def ensure_db_initialized():
             from lessons.a1.seed_a1_b1_p1 import seed_lesson_1_part_1
             seed_lesson_1_part_1()
         else:
-            cursor.execute("SELECT COUNT(*) as cnt FROM vocabularies WHERE lesson_id = 14 AND vietnamese_meaning LIKE '%Pl:%';")
+            cursor.execute("SELECT COUNT(*) as cnt FROM vocabularies WHERE lesson_id = 14 AND german_word = 'Sport' AND vietnamese_meaning LIKE '%kein Plural%';")
             if cursor.fetchone()["cnt"] == 0:
                 from lessons.a1.seed_a1_b1_p1 import seed_lesson_1_part_1
                 seed_lesson_1_part_1()
@@ -88,7 +88,7 @@ def ensure_db_initialized():
             from lessons.a1.seed_a1_b1_p2 import seed_lesson_1_part_2
             seed_lesson_1_part_2()
         else:
-            cursor.execute("SELECT COUNT(*) as cnt FROM vocabularies WHERE lesson_id = 15 AND vietnamese_meaning LIKE '%Pl:%';")
+            cursor.execute("SELECT COUNT(*) as cnt FROM vocabularies WHERE lesson_id = 15 AND german_word = 'Milch' AND vietnamese_meaning LIKE '%kein Plural%';")
             if cursor.fetchone()["cnt"] == 0:
                 from lessons.a1.seed_a1_b1_p2 import seed_lesson_1_part_2
                 seed_lesson_1_part_2()
@@ -99,7 +99,7 @@ def ensure_db_initialized():
             from lessons.a1.seed_a1_b2 import seed_lesson_2
             seed_lesson_2()
         else:
-            cursor.execute("SELECT COUNT(*) as cnt FROM vocabularies WHERE lesson_id = 16 AND vietnamese_meaning LIKE '%Pl:%';")
+            cursor.execute("SELECT COUNT(*) as cnt FROM vocabularies WHERE lesson_id = 16 AND german_word = 'Papier' AND vietnamese_meaning LIKE '%kein Plural%';")
             if cursor.fetchone()["cnt"] == 0:
                 from lessons.a1.seed_a1_b2 import seed_lesson_2
                 seed_lesson_2()
