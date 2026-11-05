@@ -98,7 +98,7 @@ def seed_lesson_4():
                             <button onclick="speakGerman('der Keller')" class="p-1 rounded bg-blue-100 hover:bg-blue-200 text-xs cursor-pointer">🔊</button>
                         </li>
                         <li class="flex items-start justify-between gap-1">
-                            <div><b>der Stock</b> <span class="text-slate-500 text-xs">(Pl: die Stöcke; hoặc das Stockwerk, Pl: die Stockwerke)</span><br><span class="text-xs text-slate-600">Tầng lầu (ở Đức: das Erdgeschoss = tầng trệt, nên der 1. Stock = lầu 1 / tầng 2)</span></div>
+                            <div><b>der Stock</b> <span class="text-slate-500 text-xs">(Pl: die Stockwerke)</span><br><span class="text-xs text-slate-600">Tầng lầu (der 1. Stock = lầu 1 / tầng 2 theo cách đếm Việt Nam; die Stöcke = những cây gậy)</span></div>
                             <button onclick="speakGerman('der Stock')" class="p-1 rounded bg-blue-100 hover:bg-blue-200 text-xs cursor-pointer">🔊</button>
                         </li>
                     </ul>
@@ -581,7 +581,7 @@ def seed_lesson_4():
                     <div class="p-3 rounded-xl bg-slate-50 border border-slate-200"><b>billig / günstig</b> (rẻ) >< <b>teuer</b> (đắt)</div>
                     <div class="p-3 rounded-xl bg-slate-50 border border-slate-200"><b>schön</b> (đẹp) >< <b>hässlich</b> (xấu)</div>
                     <div class="p-3 rounded-xl bg-slate-50 border border-slate-200"><b>modern</b> (hiện đại) >< <b>altmodisch</b> (lỗi thời / kiểu cũ)</div>
-                    <div class="p-3 rounded-xl bg-slate-50 border border-slate-200"><b>gemütlich</b> (ấm cúng) >< <b>ungemütlich</b> (không ấm cúng / bất tiện)</div>
+                    <div class="p-3 rounded-xl bg-slate-50 border border-slate-200"><b>gemütlich</b> (ấm cúng) >< <b>ungemütlich</b> (không ấm cúng, khó chịu)</div>
                 </div>
             </div>
         </div>
@@ -672,7 +672,7 @@ def seed_lesson_4():
         (lesson_id, "Balkon", "der", "ban công (Pl: die Balkone)", "Oben gibt es einen Balkon. (Ở phía trên có một ban công.)"),
         (lesson_id, "Flur", "der", "hành lang (Pl: die Flure)", "Das Haus hat einen Flur. Er ist lang und dunkel. (Ngôi nhà có một hành lang. Nó dài và tối.)"),
         (lesson_id, "Keller", "der", "tầng hầm (Pl: die Keller)", "Die Wohnung hat einen Keller. (Căn hộ có một tầng hầm.)"),
-        (lesson_id, "Stock", "der", "tầng lầu (Pl: die Stöcke; hoặc das Stockwerk, Pl: die Stockwerke; der erste Stock = lầu 1 / tầng 2)", "Die Wohnung liegt im ersten Stock. (Căn hộ nằm ở lầu 1 / tầng 2.)"),
+        (lesson_id, "Stock", "der", "tầng lầu (Pl: die Stockwerke; ghi chú: der erste Stock = lầu 1 (tầng 2 theo cách đếm Việt Nam); die Stöcke = những cây gậy (nghĩa khác))", "Die Wohnung liegt im ersten Stock. (Căn hộ nằm ở lầu 1 / tầng 2.)"),
         (lesson_id, "Wohnung", "die", "căn hộ (Pl: die Wohnungen)", "Wir suchen eine Wohnung in Berlin. (Chúng tôi đang tìm một căn hộ ở Berlin.)"),
         (lesson_id, "Küche", "die", "phòng bếp (Pl: die Küchen)", "Ich finde die Küche zu klein. (Tôi thấy căn bếp quá nhỏ.)"),
         (lesson_id, "Garage", "die", "nhà để xe / ga-ra (Pl: die Garagen)", "Das Haus hat eine Garage. (Ngôi nhà có một nhà để xe.)"),
@@ -720,7 +720,7 @@ def seed_lesson_4():
         (lesson_id, "modern", "Adj.", "hiện đại", "Das Wohnzimmer ist modern. (Phòng khách thì hiện đại.)"),
         (lesson_id, "altmodisch", "Adj.", "lỗi thời, kiểu cũ", "Ich finde das Sofa ein bisschen altmodisch. (Tôi thấy chiếc ghế sofa hơi lỗi thời một chút.)"),
         (lesson_id, "gemütlich", "Adj.", "ấm cúng, thoải mái", "Mein Schlafzimmer ist gemütlich. (Phòng ngủ của tôi thì ấm cúng.)"),
-        (lesson_id, "ungemütlich", "Adj.", "không ấm cúng, bất tiện", "Der Flur ist dunkel und ungemütlich. (Hành lang tối và không ấm cúng.)")
+        (lesson_id, "ungemütlich", "Adj.", "không ấm cúng, khó chịu", "Der Flur ist dunkel und ungemütlich. (Hành lang tối và không ấm cúng.)")
     ]
 
     cursor.executemany("""

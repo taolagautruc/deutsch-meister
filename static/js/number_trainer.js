@@ -1201,7 +1201,7 @@ function generateNewNumberData(ex, fallbackIndex = null) {
             { pos: "billig", neg: "teuer", viPos: "rẻ", viNeg: "đắt đỏ", context: "Wohnung", nounVi: "căn hộ", art: "Die" },
             { pos: "schön", neg: "hässlich", viPos: "đẹp", viNeg: "xấu xí", context: "Garten", nounVi: "khu vườn", art: "Der" },
             { pos: "modern", neg: "altmodisch", viPos: "hiện đại", viNeg: "lỗi thời / kiểu cũ", context: "Wohnzimmer", nounVi: "phòng khách", art: "Das" },
-            { pos: "gemütlich", neg: "ungemütlich", viPos: "ấm cúng", viNeg: "không ấm cúng / bất tiện", context: "Schlafzimmer", nounVi: "phòng ngủ", art: "Das" }
+            { pos: "gemütlich", neg: "ungemütlich", viPos: "ấm cúng", viNeg: "không ấm cúng, khó chịu", context: "Schlafzimmer", nounVi: "phòng ngủ", art: "Das" }
         ];
 
         const pair = adjPairs[Math.floor(Math.random() * adjPairs.length)];
