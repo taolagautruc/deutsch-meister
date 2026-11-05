@@ -1080,18 +1080,18 @@
 
                 // Tách dạng số nhiều nếu có (Pl: ...) để hiển thị chuyên nghiệp & có phát âm riêng
                 let meaningHtml = `<p class="text-sm text-indigo-600 font-bold">${v.vietnamese_meaning}</p>`;
-                const plMatch = (v.vietnamese_meaning || '').match(/^(.*?)\s*\((Pl:\s*[^)]+)\)\s*$/i);
+                const plMatch = (v.vietnamese_meaning || '').match(/^(.*?)\s*\((?:(.*?);\s*)?(Pl:\s*.+)\)\s*$/i);
                 if (plMatch) {
-                    const baseMeaning = plMatch[1].trim();
-                    const plInfo = plMatch[2].trim();
+                    const baseMeaning = plMatch[2] ? `${plMatch[1].trim()} (${plMatch[2].trim()})` : plMatch[1].trim();
+                    const plInfo = plMatch[3].trim();
                     const plClean = plInfo.replace(/^Pl:\s*/i, '');
-                    const safePlSpeak = plClean.replace(/'/g, "\\'");
                     const canSpeakPl = !/^(kein|không|-)/i.test(plClean.trim());
+                    const safePlSpeak = plClean.split(/[\(;]|\bhoặc\b/)[0].trim().replace(/'/g, "\\'");
                     meaningHtml = `
                         <p class="text-sm text-indigo-600 font-bold">${baseMeaning}</p>
                         <div class="mt-1.5 flex items-center justify-between gap-1 text-xs px-2.5 py-1 rounded-lg bg-white/90 border border-slate-200/80 shadow-2xs">
-                            <span class="text-slate-600 font-medium"><span class="font-bold text-slate-700">Plural:</span> <span class="text-indigo-700 font-bold">${plClean}</span></span>
-                            ${canSpeakPl ? `<button onclick="speakGerman('${safePlSpeak}')" title="Nghe phát âm dạng số nhiều" class="text-slate-400 hover:text-indigo-600 transition cursor-pointer text-xs p-0.5">🔊</button>` : ''}
+                            <span class="text-slate-600 font-medium leading-snug"><span class="font-bold text-slate-700">Plural:</span> <span class="text-indigo-700 font-bold">${plClean}</span></span>
+                            ${canSpeakPl ? `<button onclick="speakGerman('${safePlSpeak}')" title="Nghe phát âm dạng số nhiều" class="text-slate-400 hover:text-indigo-600 transition cursor-pointer text-xs p-0.5 shrink-0">🔊</button>` : ''}
                         </div>
                     `;
                 }

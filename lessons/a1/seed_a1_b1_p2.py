@@ -636,7 +636,7 @@ def seed_lesson_1_part_2():
     vocabs = [
         (lesson_id, "Kaffee", "der", "Cà phê (Pl: die Kaffees)", "Ich trinke Kaffee mit viel Milch. (Tôi uống cà phê với nhiều sữa.)"),
         (lesson_id, "Tee", "der", "Trà (Pl: die Tees)", "Ich nehme Tee ohne Zucker, bitte. (Cho tôi dùng trà không đường ạ.)"),
-        (lesson_id, "Milch", "die", "Sữa (Pl: die Milche)", "Möchten Sie Kaffee mit Milch? (Ngài muốn dùng cà phê có sữa không?)"),
+        (lesson_id, "Milch", "die", "Sữa (Pl: kein Plural)", "Möchten Sie Kaffee mit Milch? (Ngài muốn dùng cà phê có sữa không?)"),
         (lesson_id, "Zucker", "der", "Đường (Pl: die Zucker)", "Tee ohne Zucker, bitte. (Làm ơn cho một ly trà không đường.)"),
         (lesson_id, "Cola", "die", "Nước ngọt Cola (Pl: die Colas)", "Er trinkt eine Cola. (Anh ấy uống một ly/chai nước ngọt Cola.)"),
         (lesson_id, "Wasser", "das", "Nước lọc (Pl: die Wässer)", "Ein Glas Wasser, bitte. (Làm ơn cho một ly nước lọc.)"),
@@ -644,7 +644,7 @@ def seed_lesson_1_part_2():
         (lesson_id, "Wein", "der", "Rượu vang (Pl: die Weine)", "Wir trinken Wein im Restaurant. (Chúng tôi uống rượu vang trong nhà hàng.)"),
         (lesson_id, "Kakao", "der", "Ca cao (Pl: die Kakaos)", "Ich möchte Kakao trinken. (Tôi muốn uống ca cao.)"),
         (lesson_id, "Saft", "der", "Nước ép hoa quả (Pl: die Säfte)", "Der Saft ist sehr lecker. (Nước ép hoa quả rất ngon.)"),
-        (lesson_id, "Eis", "das", "Đá lạnh / Kem (Pl: die Eissorten)", "Cola mit Eis, bitte. (Làm ơn cho một ly Cola có đá.)"),
+        (lesson_id, "Eis", "das", "Đá lạnh / Kem (Pl: kein Plural; ghi chú: die Eissorten = các loại kem)", "Cola mit Eis, bitte. (Làm ơn cho một ly Cola có đá.)"),
         (lesson_id, "Café", "das", "Quán cà phê (Pl: die Cafés)", "Wir sind im Café Kafka. (Chúng tôi đang ở quán cà phê Kafka.)"),
         (lesson_id, "Kellner", "der", "Nam bồi bàn / Nam nhân viên phục vụ (nữ: die Kellnerin) (Pl: die Kellner)", "Der Kellner fragt: Was möchten Sie trinken? (Người bồi bàn hỏi: Ngài muốn uống gì?)"),
         (lesson_id, "Euro", "der", "Đồng tiền Euro (€) (Pl: die Euro)", "Das macht 6,80 Euro. (Tổng cộng hết 6,80 Euro.)"),
