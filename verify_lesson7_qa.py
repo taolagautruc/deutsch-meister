@@ -205,7 +205,13 @@ def run_tests():
 
     console.log('✅ Frontend JS Databases: 50 danh từ, 14 động từ và 4 Randomizer Engines Bài 7 hợp lệ 100%');
     """
-    res = subprocess.run(['node', '-e', node_test], capture_output=True, text=True)
+    import shutil
+    node_bin = shutil.which('node') or (
+        '/usr/local/bin/node' if os.path.exists('/usr/local/bin/node') else (
+            '/opt/homebrew/bin/node' if os.path.exists('/opt/homebrew/bin/node') else 'node'
+        )
+    )
+    res = subprocess.run([node_bin, '-e', node_test], capture_output=True, text=True)
     assert res.returncode == 0, f"❌ LỖI Node.js check: {res.stderr}"
     print("   " + res.stdout.strip())
     print("✅ TEST 5: JavaScript & Frontend Compatibility Check ĐẠT 100%!")
