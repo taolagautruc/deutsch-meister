@@ -212,7 +212,7 @@ def build_full_seed_script():
             "Câu 17: Chọn phương án đúng ngữ pháp: 'Der Chef kauft ___ Sekretärin ___ neuen Computer.'",
             ["der / ein", "einer / dem", "die / einen", "der / einen"],
             "der / einen",
-            "Trong câu có 2 tân ngữ: Người nhận lợi ích (Wem? cho nữ thư ký) chia ở Cách 3 (Dativ: die -> der Sekretärin); Vật được mua (Was? một chiếc máy tính mới) chia ở Cách 4 (Akkusativ: der -> einen neuen Computer). Phương án A, B, D đều sai ngữ pháp.",
+            "Trong câu có 2 tân ngữ: Người nhận lợi ích (Wem? cho nữ thư ký) chia ở Cách 3 (Dativ: die -> der Sekretärin); Vật được mua (Was? một chiếc máy tính mới) chia ở Cách 4 (Akkusativ: der -> einen neuen Computer).",
             {"accepted_answers": ["der / einen"], "translation": "Người sếp mua cho nữ thư ký một chiếc máy tính mới."}
         ),
         (

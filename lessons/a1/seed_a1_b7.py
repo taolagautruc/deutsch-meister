@@ -1603,7 +1603,7 @@ def seed_lesson_7():
                         "der / einen"
                 ],
                 "correct_answer": "der / einen",
-                "explanation": "Trong câu có 2 tân ngữ: Người nhận lợi ích (Wem? cho nữ thư ký) chia ở Cách 3 (Dativ: die -> der Sekretärin); Vật được mua (Was? một chiếc máy tính mới) chia ở Cách 4 (Akkusativ: der -> einen neuen Computer). Phương án A, B, D đều sai ngữ pháp.",
+                "explanation": "Trong câu có 2 tân ngữ: Người nhận lợi ích (Wem? cho nữ thư ký) chia ở Cách 3 (Dativ: die -> der Sekretärin); Vật được mua (Was? một chiếc máy tính mới) chia ở Cách 4 (Akkusativ: der -> einen neuen Computer).",
                 "exp_reward": 15,
                 "extra_data": {
                         "accepted_answers": [
