@@ -1480,7 +1480,7 @@ def seed_lesson_7():
         },
         {
                 "type": "trac_nghiem",
-                "question": "Câu 11: Chọn mạo từ đúng ở Cách 4 (Akkusativ): 'Der Kellner bringt ___ frischen Kaffee (der Kaffee) an den Tisch.'",
+                "question": "Câu 11: Chọn mạo từ đúng: 'Der Kellner bringt ___ frischen Kaffee an den Tisch.'",
                 "options": [
                         "der",
                         "dem",
@@ -1499,7 +1499,7 @@ def seed_lesson_7():
         },
         {
                 "type": "trac_nghiem",
-                "question": "Câu 12: Phân biệt Akkusativ vs. Dativ — Chọn cặp mạo từ đúng: '1. Die Ärztin untersucht ___ kranken Mann (Akkusativ). — 2. Die Krankenschwester hilft ___ kranken Mann (Dativ).'",
+                "question": "Câu 12: Chọn cặp mạo từ đúng: '1. Die Ärztin untersucht ___ kranken Mann. — 2. Die Krankenschwester hilft ___ kranken Mann.'",
                 "options": [
                         "den / dem",
                         "dem / den",
@@ -1519,7 +1519,7 @@ def seed_lesson_7():
         },
         {
                 "type": "trac_nghiem",
-                "question": "Câu 13: Chọn mạo từ đúng: 'Für seine tägliche Arbeit im Büro kauft der Sekretär ___ neuen Drucker (der Drucker).'",
+                "question": "Câu 13: Chọn mạo từ đúng: 'Für seine tägliche Arbeit im Büro kauft der Sekretär ___ neuen Drucker.'",
                 "options": [
                         "ein",
                         "einen",
@@ -1538,7 +1538,7 @@ def seed_lesson_7():
         },
         {
                 "type": "trac_nghiem",
-                "question": "Câu 14: Chọn mạo từ phủ định đúng: 'Heute ist Sonntag und der Schüler hat schulfrei. Er braucht ___ Wecker (der Wecker).'",
+                "question": "Câu 14: Chọn mạo từ phủ định đúng: 'Heute ist Sonntag und der Schüler hat schulfrei. Er braucht ___ Wecker.'",
                 "options": [
                         "kein",
                         "keinen",
@@ -1557,7 +1557,7 @@ def seed_lesson_7():
         },
         {
                 "type": "trac_nghiem",
-                "question": "Câu 15: Chọn cặp giới từ đúng luôn đi với Cách 4: 'Der Trainer kauft neue Bälle ___ sein Team und läuft niemals ___ seine Sportschuhe.'",
+                "question": "Câu 15: Chọn cặp giới từ đúng: 'Der Trainer kauft neue Bälle ___ sein Team und läuft niemals ___ seine Sportschuhe.'",
                 "options": [
                         "für / ohne",
                         "mit / für",
@@ -1576,7 +1576,7 @@ def seed_lesson_7():
         },
         {
                 "type": "trac_nghiem",
-                "question": "Câu 16: Chọn dạng mạo từ sở hữu đúng: 'Der Taxifahrer holt ___ Wagen (der Wagen) am Morgen aus der Garage.'",
+                "question": "Câu 16: Chọn dạng mạo từ sở hữu đúng: 'Der Taxifahrer holt ___ Wagen am Morgen aus der Garage.'",
                 "options": [
                         "sein",
                         "seinen",
@@ -1595,7 +1595,7 @@ def seed_lesson_7():
         },
         {
                 "type": "trac_nghiem",
-                "question": "Câu 17: Chọn phương án đúng ngữ pháp: 'Der Chef kauft ___ Sekretärin (die Sekretärin) ___ neuen Computer (der Computer).'",
+                "question": "Câu 17: Chọn phương án đúng ngữ pháp: 'Der Chef kauft ___ Sekretärin ___ neuen Computer.'",
                 "options": [
                         "der / ein",
                         "einer / dem",

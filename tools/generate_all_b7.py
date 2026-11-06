@@ -167,49 +167,49 @@ def build_full_seed_script():
             {"accepted_answers": ["Im Restaurant muss der Kellner das Essen den Gästen schnell servieren."], "translation": "Trong nhà hàng, người phục vụ phải nhanh chóng bưng thức ăn cho thực khách."}
         ),
         (
-            "Câu 11: Chọn mạo từ đúng ở Cách 4 (Akkusativ): 'Der Kellner bringt ___ frischen Kaffee (der Kaffee) an den Tisch.'",
+            "Câu 11: Chọn mạo từ đúng: 'Der Kellner bringt ___ frischen Kaffee an den Tisch.'",
             ["der", "dem", "den", "das"],
             "den",
             "Danh từ 'Kaffee' mang giống đực (der Kaffee). Làm tân ngữ trực tiếp chịu tác động của hành động 'bringen' nên chia ở Cách 4 (Akkusativ): mạo từ der chuyển thành den.",
             {"accepted_answers": ["den"], "translation": "Người phục vụ mang cà phê tươi đến bàn."}
         ),
         (
-            "Câu 12: Phân biệt Akkusativ vs. Dativ — Chọn cặp mạo từ đúng: '1. Die Ärztin untersucht ___ kranken Mann (Akkusativ). — 2. Die Krankenschwester hilft ___ kranken Mann (Dativ).'",
+            "Câu 12: Chọn cặp mạo từ đúng: '1. Die Ärztin untersucht ___ kranken Mann. — 2. Die Krankenschwester hilft ___ kranken Mann.'",
             ["den / dem", "dem / den", "den / den", "dem / dem"],
             "den / dem",
             "Động từ untersuchen đòi hỏi tân ngữ trực tiếp ở Cách 4 (Akkusativ: der Mann -> den Mann). Động từ helfen đòi hỏi tân ngữ ở Cách 3 (Dativ: der Mann -> dem Mann).",
             {"accepted_answers": ["den / dem"], "translation": "1. Nữ bác sĩ khám cho người đàn ông bị ốm. — 2. Nữ y tá giúp đỡ người đàn ông bị ốm.", "dynamic_akkdativ_kontrast_quiz": True}
         ),
         (
-            "Câu 13: Chọn mạo từ đúng: 'Für seine tägliche Arbeit im Büro kauft der Sekretär ___ neuen Drucker (der Drucker).'",
+            "Câu 13: Chọn mạo từ đúng: 'Für seine tägliche Arbeit im Büro kauft der Sekretär ___ neuen Drucker.'",
             ["ein", "einen", "einem", "einer"],
             "einen",
             "Động từ kaufen đòi hỏi tân ngữ trực tiếp ở Cách 4 (Akkusativ). Danh từ der Drucker là giống đực, nên mạo từ không xác định ein đổi sang Akkusativ là einen.",
             {"accepted_answers": ["einen"], "translation": "Cho công việc hằng ngày ở văn phòng, nam thư ký mua một chiếc máy in mới."}
         ),
         (
-            "Câu 14: Chọn mạo từ phủ định đúng: 'Heute ist Sonntag und der Schüler hat schulfrei. Er braucht ___ Wecker (der Wecker).'",
+            "Câu 14: Chọn mạo từ phủ định đúng: 'Heute ist Sonntag und der Schüler hat schulfrei. Er braucht ___ Wecker.'",
             ["kein", "keinen", "keinem", "keine"],
             "keinen",
             "Động từ brauchen đi với Cách 4 (Akkusativ). Danh từ der Wecker mang giống đực, do đó mạo từ phủ định kein đổi thành keinen.",
             {"accepted_answers": ["keinen"], "translation": "Hôm nay là Chủ nhật và học sinh được nghỉ học. Cậu ấy không cần đồng hồ báo thức."}
         ),
         (
-            "Câu 15: Chọn cặp giới từ đúng luôn đi với Cách 4: 'Der Trainer kauft neue Bälle ___ sein Team und läuft niemals ___ seine Sportschuhe.'",
+            "Câu 15: Chọn cặp giới từ đúng: 'Der Trainer kauft neue Bälle ___ sein Team und läuft niemals ___ seine Sportschuhe.'",
             ["für / ohne", "mit / für", "zu / von", "bei / mit"],
             "für / ohne",
             "Hai giới từ 'für' (dành cho) và 'ohne' (không có) thuộc nhóm FUDGE-BO luôn luôn đòi hỏi danh từ đi sau chia ở Cách 4 (Akkusativ): für sein Team, ohne seine Sportschuhe.",
             {"accepted_answers": ["für / ohne"], "translation": "Huấn luyện viên mua những quả bóng mới cho đội của mình và không bao giờ chạy mà không có giày thể thao."}
         ),
         (
-            "Câu 16: Chọn dạng mạo từ sở hữu đúng: 'Der Taxifahrer holt ___ Wagen (der Wagen) am Morgen aus der Garage.'",
+            "Câu 16: Chọn dạng mạo từ sở hữu đúng: 'Der Taxifahrer holt ___ Wagen am Morgen aus der Garage.'",
             ["sein", "seinen", "seinem", "seiner"],
             "seinen",
             "Chủ ngữ là der Taxifahrer (ngôi er), gốc sở hữu là sein-. Danh từ der Wagen mang giống đực làm tân ngữ trực tiếp (Akkusativ) cho holt, nên mạo từ sở hữu đổi thành seinen.",
             {"accepted_answers": ["seinen"], "translation": "Người tài xế taxi lấy chiếc xe của mình ra khỏi gara vào buổi sáng."}
         ),
         (
-            "Câu 17: Chọn phương án đúng ngữ pháp: 'Der Chef kauft ___ Sekretärin (die Sekretärin) ___ neuen Computer (der Computer).'",
+            "Câu 17: Chọn phương án đúng ngữ pháp: 'Der Chef kauft ___ Sekretärin ___ neuen Computer.'",
             ["der / ein", "einer / dem", "die / einen", "der / einen"],
             "der / einen",
             "Trong câu có 2 tân ngữ: Người nhận lợi ích (Wem? cho nữ thư ký) chia ở Cách 3 (Dativ: die -> der Sekretärin); Vật được mua (Was? một chiếc máy tính mới) chia ở Cách 4 (Akkusativ: der -> einen neuen Computer). Phương án A, B, C đều sai ngữ pháp.",
