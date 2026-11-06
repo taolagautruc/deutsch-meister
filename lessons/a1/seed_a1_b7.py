@@ -1302,7 +1302,7 @@ def seed_lesson_7():
                         "accepted_answers": [
                                 "als"
                         ],
-                        "translation": "Ông Hoffmann làm nghề thợ cơ khí ở Munich từ ba năm nay."
+                        "translation": "Ông Hoffmann làm kỹ thuật viên cơ điện tử ở Munich được ba năm rồi."
                 }
         },
         {
@@ -1334,7 +1334,7 @@ def seed_lesson_7():
                         "der Koch -> die Kochin / der Arzt -> die Arztin"
                 ],
                 "correct_answer": "der Koch -> die Köchin / der Arzt -> die Ärztin",
-                "explanation": "Hai danh từ der Koch và der Arzt khi chuyển sang giống cái (Femininum) vừa thêm hậu tố -in vừa phải thêm dấu Umlaut trên nguyên âm gốc: die Köchin và die Ärztin. Phương án D thiếu dấu Umlaut là sai chính tả.",
+                "explanation": "Hai danh từ der Koch và der Arzt khi chuyển sang giống cái (Femininum) vừa thêm hậu tố -in vừa phải thêm dấu Umlaut trên nguyên âm gốc: die Köchin và die Ärztin. Dạng die Kochin / die Arztin thiếu dấu Umlaut nên sai chính tả.",
                 "exp_reward": 15,
                 "extra_data": {
                         "accepted_answers": [
@@ -1353,13 +1353,13 @@ def seed_lesson_7():
                         "schneidet / im Friseursalon"
                 ],
                 "correct_answer": "repariert / in einer Werkstatt",
-                "explanation": "KFZ-Mechatroniker là thợ cơ khí ô tô; công việc là repariert Autos (sửa ô tô) và nơi làm việc (Wo? + Dativ) là in einer Werkstatt (die Werkstatt -> in einer Werkstatt).",
+                "explanation": "KFZ-Mechatroniker là kỹ thuật viên cơ điện tử ô tô; công việc là repariert Autos (sửa ô tô) và nơi làm việc (Wo? + Dativ) là in einer Werkstatt (die Werkstatt -> in einer Werkstatt).",
                 "exp_reward": 15,
                 "extra_data": {
                         "accepted_answers": [
                                 "repariert / in einer Werkstatt"
                         ],
-                        "translation": "Một người thợ cơ khí ô tô sửa chữa xe hơi và làm việc ở trong một xưởng sửa chữa.",
+                        "translation": "Một kỹ thuật viên cơ điện tử ô tô (KFZ-Mechatroniker) sửa chữa xe hơi và làm việc ở trong một xưởng sửa chữa.",
                         "dynamic_profession_quiz": true
                 }
         },
@@ -1398,7 +1398,7 @@ def seed_lesson_7():
                         "accepted_answers": [
                                 "muss"
                         ],
-                        "translation": "Paula Rausch làm nghề lập trình viên. Mỗi buổi sáng cô ấy đã phải thức dậy lúc 6 giờ 15 phút.",
+                        "translation": "Paula Rausch làm nghề lập trình viên. Mỗi buổi sáng cô ấy phải thức dậy lúc 6 giờ 15.",
                         "dynamic_modalverb_schedule_quiz": true
                 }
         },
@@ -1464,16 +1464,16 @@ def seed_lesson_7():
                 "question": "Câu 10: Chọn câu có cấu trúc khung câu (Satzklammer) đúng ngữ pháp tiếng Đức:",
                 "options": [
                         "Im Restaurant muss der Kellner servieren das Essen schnell.",
-                        "Im Restaurant muss der Kellner das Essen den Gästen schnell servieren.",
+                        "Im Restaurant muss der Kellner den Gästen das Essen schnell servieren.",
                         "Im Restaurant der Kellner muss servieren das Essen schnell.",
                         "Im Restaurant muss servieren der Kellner schnell das Essen."
                 ],
-                "correct_answer": "Im Restaurant muss der Kellner das Essen den Gästen schnell servieren.",
+                "correct_answer": "Im Restaurant muss der Kellner den Gästen das Essen schnell servieren.",
                 "explanation": "Quy tắc Satzklammer (khung câu): Động từ khuyết thiếu (muss) đứng ở vị trí số 2, toàn bộ các tân ngữ và trạng từ đứng ở giữa, và động từ nguyên mẫu (servieren) bắt buộc phải đứng ở cuối câu cùng.",
                 "exp_reward": 15,
                 "extra_data": {
                         "accepted_answers": [
-                                "Im Restaurant muss der Kellner das Essen den Gästen schnell servieren."
+                                "Im Restaurant muss der Kellner den Gästen das Essen schnell servieren."
                         ],
                         "translation": "Trong nhà hàng, người phục vụ phải nhanh chóng bưng thức ăn cho thực khách."
                 }

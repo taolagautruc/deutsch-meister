@@ -101,7 +101,7 @@ def build_full_seed_script():
             ["wie ein", "als", "von", "für"],
             "als",
             "Khi dùng động từ 'arbeiten' để giới thiệu nghề nghiệp, tiếng Đức dùng cấu trúc 'arbeiten als + [Nghề nghiệp]' không có mạo từ (Herr Hoffmann arbeitet als Mechatroniker).",
-            {"accepted_answers": ["als"], "translation": "Ông Hoffmann làm nghề thợ cơ khí ở Munich từ ba năm nay."}
+            {"accepted_answers": ["als"], "translation": "Ông Hoffmann làm kỹ thuật viên cơ điện tử ở Munich được ba năm rồi."}
         ),
         (
             "Câu 2: Chọn câu đúng ngữ pháp tiếng Đức khi miêu tả nghề nghiệp có tính từ đi kèm:",
@@ -114,15 +114,15 @@ def build_full_seed_script():
             "Câu 3: Cặp danh từ nghề nghiệp Nam – Nữ nào dưới đây được viết ĐÚNG CHÍNH TẢ 100%?",
             ["der Hausmann -> die Hausmännerin / der Krankenpfleger -> die Krankenpfleger", "der Koch -> die Köcherin / der Arzt -> die Ärztinn", "der Koch -> die Köchin / der Arzt -> die Ärztin", "der Koch -> die Kochin / der Arzt -> die Arztin"],
             "der Koch -> die Köchin / der Arzt -> die Ärztin",
-            "Hai danh từ der Koch và der Arzt khi chuyển sang giống cái (Femininum) vừa thêm hậu tố -in vừa phải thêm dấu Umlaut trên nguyên âm gốc: die Köchin và die Ärztin. Phương án D thiếu dấu Umlaut là sai chính tả.",
+            "Hai danh từ der Koch và der Arzt khi chuyển sang giống cái (Femininum) vừa thêm hậu tố -in vừa phải thêm dấu Umlaut trên nguyên âm gốc: die Köchin và die Ärztin. Dạng die Kochin / die Arztin thiếu dấu Umlaut nên sai chính tả.",
             {"accepted_answers": ["der Koch -> die Köchin / der Arzt -> die Ärztin"], "translation": "Nam đầu bếp -> Nữ đầu bếp / Nam bác sĩ -> Nữ bác sĩ."}
         ),
         (
             "Câu 4: Chọn phương án đúng hoàn thành câu: 'Ein KFZ-Mechatroniker ___ Autos und arbeitet ___.'",
             ["verkauft / im Schuhgeschäft", "untersucht / im Krankenhaus", "repariert / in einer Werkstatt", "schneidet / im Friseursalon"],
             "repariert / in einer Werkstatt",
-            "KFZ-Mechatroniker là thợ cơ khí ô tô; công việc là repariert Autos (sửa ô tô) và nơi làm việc (Wo? + Dativ) là in einer Werkstatt (die Werkstatt -> in einer Werkstatt).",
-            {"accepted_answers": ["repariert / in einer Werkstatt"], "translation": "Một người thợ cơ khí ô tô sửa chữa xe hơi và làm việc ở trong một xưởng sửa chữa.", "dynamic_profession_quiz": True}
+            "KFZ-Mechatroniker là kỹ thuật viên cơ điện tử ô tô; công việc là repariert Autos (sửa ô tô) và nơi làm việc (Wo? + Dativ) là in einer Werkstatt (die Werkstatt -> in einer Werkstatt).",
+            {"accepted_answers": ["repariert / in einer Werkstatt"], "translation": "Một kỹ thuật viên cơ điện tử ô tô (KFZ-Mechatroniker) sửa chữa xe hơi và làm việc ở trong một xưởng sửa chữa.", "dynamic_profession_quiz": True}
         ),
         (
             "Câu 5: Chọn dạng chia đúng của động từ khuyết thiếu: 'Mein Kollege ist Programmierer von Beruf. Er ___ drei moderne Programmiersprachen fließend sprechen.'",
@@ -136,7 +136,7 @@ def build_full_seed_script():
             ["müsst", "musst", "muss", "müssen"],
             "muss",
             "Với động từ khuyết thiếu müssen, ngôi ich và ngôi er/sie/es chia giống hệt nhau là muss (đổi ü -> u và không có đuôi -t).",
-            {"accepted_answers": ["muss"], "translation": "Paula Rausch làm nghề lập trình viên. Mỗi buổi sáng cô ấy đã phải thức dậy lúc 6 giờ 15 phút.", "dynamic_modalverb_schedule_quiz": True}
+            {"accepted_answers": ["muss"], "translation": "Paula Rausch làm nghề lập trình viên. Mỗi buổi sáng cô ấy phải thức dậy lúc 6 giờ 15.", "dynamic_modalverb_schedule_quiz": True}
         ),
         (
             "Câu 7: Chọn phương án đúng diễn tả quy định an toàn lao động: 'Auf der Baustelle ___ die Arbeiter ohne Schutzhelm nicht arbeiten.'",
@@ -161,10 +161,10 @@ def build_full_seed_script():
         ),
         (
             "Câu 10: Chọn câu có cấu trúc khung câu (Satzklammer) đúng ngữ pháp tiếng Đức:",
-            ["Im Restaurant muss der Kellner servieren das Essen schnell.", "Im Restaurant muss der Kellner das Essen den Gästen schnell servieren.", "Im Restaurant der Kellner muss servieren das Essen schnell.", "Im Restaurant muss servieren der Kellner schnell das Essen."],
-            "Im Restaurant muss der Kellner das Essen den Gästen schnell servieren.",
+            ["Im Restaurant muss der Kellner servieren das Essen schnell.", "Im Restaurant muss der Kellner den Gästen das Essen schnell servieren.", "Im Restaurant der Kellner muss servieren das Essen schnell.", "Im Restaurant muss servieren der Kellner schnell das Essen."],
+            "Im Restaurant muss der Kellner den Gästen das Essen schnell servieren.",
             "Quy tắc Satzklammer (khung câu): Động từ khuyết thiếu (muss) đứng ở vị trí số 2, toàn bộ các tân ngữ và trạng từ đứng ở giữa, và động từ nguyên mẫu (servieren) bắt buộc phải đứng ở cuối câu cùng.",
-            {"accepted_answers": ["Im Restaurant muss der Kellner das Essen den Gästen schnell servieren."], "translation": "Trong nhà hàng, người phục vụ phải nhanh chóng bưng thức ăn cho thực khách."}
+            {"accepted_answers": ["Im Restaurant muss der Kellner den Gästen das Essen schnell servieren."], "translation": "Trong nhà hàng, người phục vụ phải nhanh chóng bưng thức ăn cho thực khách."}
         ),
         (
             "Câu 11: Chọn mạo từ đúng: 'Der Kellner bringt ___ frischen Kaffee an den Tisch.'",
