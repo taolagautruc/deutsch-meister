@@ -607,13 +607,23 @@ def build_full_seed_script():
             "Câu 87: Dịch câu sau sang tiếng Đức: 'Nam nhân viên bán hàng tư vấn khách hàng rất thân thiện trong siêu thị.'",
             [
                 "Der Verkäufer berät die Kunden sehr freundlich im Supermarkt.",
-                "Der Verkäufer berät im Supermarkt die Kunden rất freundlich.",
+                "Der Verkäufer berät die Kunden im Supermarkt sehr freundlich.",
+                "Der Verkäufer berät im Supermarkt die Kunden sehr freundlich.",
                 "Im Supermarkt berät der Verkäufer die Kunden sehr freundlich.",
+                "Im Supermarkt berät der Verkäufer sehr freundlich die Kunden.",
+                "Der Verkäufer berät den Kunden sehr freundlich im Supermarkt.",
+                "Der Verkäufer berät den Kunden im Supermarkt sehr freundlich.",
+                "Der Verkäufer berät im Supermarkt den Kunden sehr freundlich.",
+                "Im Supermarkt berät der Verkäufer den Kunden sehr freundlich.",
                 "Der Verkaeufer beraet die Kunden sehr freundlich im Supermarkt.",
-                "Der Verkäufer berät Kunden sehr freundlich im Supermarkt."
+                "Im Supermarkt beraet der Verkaeufer die Kunden sehr freundlich.",
+                "Der Verkaeufer beraet den Kunden sehr freundlich im Supermarkt.",
+                "Im Supermarkt beraet der Verkaeufer den Kunden sehr freundlich.",
+                "Der Verkäufer berät Kunden sehr freundlich im Supermarkt.",
+                "Im Supermarkt berät der Verkäufer Kunden sehr freundlich."
             ],
             "Der Verkäufer berät die Kunden sehr freundlich im Supermarkt.",
-            "Nam nhân viên bán hàng là Der Verkäufer; động từ beraten biến âm a -> ä (berät) đi với Akkusativ (die Kunden); ở trong siêu thị là im Supermarkt.",
+            "Nam nhân viên bán hàng là Der Verkäufer. Động từ beraten (biến âm a -> ä thành berät cho ngôi số ít er) đòi hỏi tân ngữ ở Cách 4 (Akkusativ): 'die Kunden' (khách hàng số nhiều) hoặc 'den Kunden' (khách hàng số ít). Ở trong siêu thị là cụm chỉ vị trí Wo? + Dativ: 'im Supermarkt'. Có thể đảo trạng ngữ 'Im Supermarkt' lên đầu câu.",
             "Nam nhân viên bán hàng tư vấn khách hàng rất thân thiện trong siêu thị."
         ),
         (
@@ -634,12 +644,17 @@ def build_full_seed_script():
             [
                 "Die Schüler müssen dem Lehrer die Hausaufgaben abgeben.",
                 "Die Schüler müssen die Hausaufgaben dem Lehrer abgeben.",
-                "Die Schueler muessen dem Lehrer die Hausaufgaben abgeben.",
+                "Die Schüler müssen dem Lehrer die Hausaufgabe abgeben.",
+                "Die Schüler müssen die Hausaufgabe dem Lehrer abgeben.",
                 "Dem Lehrer müssen die Schüler die Hausaufgaben abgeben.",
-                "Die Schüler müssen dem Lehrer ihre Hausaufgaben abgeben."
+                "Die Hausaufgaben müssen die Schüler dem Lehrer abgeben.",
+                "Die Schüler müssen dem Lehrer ihre Hausaufgaben abgeben.",
+                "Die Schüler müssen ihre Hausaufgaben dem Lehrer abgeben.",
+                "Die Schueler muessen dem Lehrer die Hausaufgaben abgeben.",
+                "Die Schueler muessen die Hausaufgaben dem Lehrer abgeben."
             ],
             "Die Schüler müssen dem Lehrer die Hausaufgaben abgeben.",
-            "Chủ ngữ die Schüler số nhiều đi với müssen; thầy giáo là người nhận ở Dativ (dem Lehrer); bài tập về nhà là Akkusativ (die Hausaufgaben); abgeben đứng cuối câu.",
+            "Chủ ngữ 'die Schüler' (số nhiều) đi với động từ khuyết thiếu 'müssen' ở vị trí số 2; động từ nguyên mẫu 'abgeben' đứng cuối câu. Người nhận chia ở Cách 3 (Dativ: 'dem Lehrer'); vật được nộp chia ở Cách 4 (Akkusativ: 'die Hausaufgaben'). Cả hai trật tự tân ngữ 'dem Lehrer die Hausaufgaben' (mặc định Dativ trước Akkusativ) và 'die Hausaufgaben dem Lehrer' đều hoàn toàn chính xác.",
             "Các học sinh phải nộp bài tập về nhà cho thầy giáo."
         ),
         (
@@ -648,10 +663,15 @@ def build_full_seed_script():
                 "Im Krankenhaus darf man nicht rauchen.",
                 "Man darf im Krankenhaus nicht rauchen.",
                 "In dem Krankenhaus darf man nicht rauchen.",
-                "Im Krankenhaus darf man keine Zigaretten rauchen."
+                "Man darf in dem Krankenhaus nicht rauchen.",
+                "Man darf nicht im Krankenhaus rauchen.",
+                "Im Krankenhaus darf man keine Zigaretten rauchen.",
+                "Man darf im Krankenhaus keine Zigaretten rauchen.",
+                "Im Krankenhaus darf man keine Zigarette rauchen.",
+                "Man darf im Krankenhaus keine Zigarette rauchen."
             ],
             "Im Krankenhaus darf man nicht rauchen.",
-            "Ở bệnh viện là Im Krankenhaus; đại từ man chia động từ darf ở vị trí 2; không được phép hút thuốc là darf ... nicht rauchen.",
+            "Đại từ bất định 'man' đi với dạng chia ngôi thứ 3 số ít của động từ dürfen là 'darf' ở vị trí số 2; động từ nguyên mẫu 'rauchen' đứng ở cuối câu. Không được phép là 'darf ... nicht'. Cụm chỉ địa điểm 'im Krankenhaus' (in + dem) có thể đứng đầu câu hoặc đứng sau động từ ('Man darf im Krankenhaus nicht rauchen').",
             "Ở trong bệnh viện, người ta không được phép hút thuốc lá."
         ),
         (
@@ -673,26 +693,48 @@ def build_full_seed_script():
                 "Der Trainer hilft den jungen Spielern im Stadion.",
                 "Im Stadion hilft der Trainer den jungen Spielern.",
                 "Der Trainer hilft im Stadion den jungen Spielern.",
-                "Der Trainer hilft jungen Spielern im Stadion."
+                "Der Trainer hilft jungen Spielern im Stadion.",
+                "Im Stadion hilft der Trainer jungen Spielern."
             ],
             "Der Trainer hilft den jungen Spielern im Stadion.",
-            "Huấn luyện viên là Der Trainer; động từ helfen biến âm e -> i thành hilft và bắt buộc đi với Dativ số nhiều (den jungen Spielern); trong sân vận động là im Stadion.",
+            "Huấn luyện viên là Der Trainer. Động từ helfen (biến âm e -> i thành hilft cho ngôi thứ 3 số ít) luôn luôn đi với Cách 3 (Dativ); ở câu này tân ngữ là số nhiều nên dùng 'den jungen Spielern'. Quy tắc Dativ số nhiều: mạo từ đổi thành den và danh từ bắt buộc thêm đuôi -n (die Spieler -> den Spielern, người học lưu ý tránh viết thiếu đuôi -n thành den jungen Spieler). Ở trong sân vận động là cụm chỉ vị trí Wo? + Dativ: 'im Stadion'.",
             "Vị huấn luyện viên giúp đỡ các cầu thủ trẻ trong sân vận động."
         ),
         (
             "Câu 93: Dịch câu sau sang tiếng Đức: 'Nam thư ký gọi điện cho khách hàng vì một cuộc hẹn quan trọng.'",
             [
                 "Der Sekretär ruft den Kunden für einen wichtigen Termin an.",
+                "Der Sekretär ruft die Kunden für einen wichtigen Termin an.",
+                "Der Sekretär ruft die Kunden für die wichtigen Termine an.",
+                "Der Sekretär ruft den Kunden für die wichtigen Termine an.",
+                "Der Sekretär ruft die Kunden für wichtige Termine an.",
+                "Der Sekretär ruft den Kunden für wichtige Termine an.",
+                "Der Sekretär ruft den Kunden wegen eines wichtigen Termins an.",
+                "Der Sekretär ruft die Kunden wegen eines wichtigen Termins an.",
+                "Der Sekretär ruft die Kunden wegen der wichtigen Termine an.",
+                "Der Sekretär ruft den Kunden wegen der wichtigen Termine an.",
                 "Für einen wichtigen Termin ruft der Sekretär den Kunden an.",
+                "Für einen wichtigen Termin ruft der Sekretär die Kunden an.",
+                "Für die wichtigen Termine ruft der Sekretär den Kunden an.",
+                "Für die wichtigen Termine ruft der Sekretär die Kunden an.",
+                "Für wichtige Termine ruft der Sekretär den Kunden an.",
+                "Für wichtige Termine ruft der Sekretär die Kunden an.",
+                "Wegen eines wichtigen Termins ruft der Sekretär den Kunden an.",
+                "Wegen eines wichtigen Termins ruft der Sekretär die Kunden an.",
+                "Der Sekretär ruft für einen wichtigen Termin den Kunden an.",
+                "Der Sekretär ruft für einen wichtigen Termin die Kunden an.",
+                "Der Sekretär ruft wegen eines wichtigen Termins den Kunden an.",
+                "Der Sekretär ruft wegen eines wichtigen Termins die Kunden an.",
                 "Der Sekretaer ruft den Kunden fuer einen wichtigen Termin an.",
-                "Der Sekretär ruft für einen wichtigen Termin den Kunden an."
+                "Der Sekretaer ruft die Kunden fuer einen wichtigen Termin an.",
+                "Der Sekretaer ruft den Kunden fuer die wichtigen Termine an.",
+                "Der Sekretaer ruft die Kunden fuer die wichtigen Termine an."
             ],
             "Der Sekretär ruft den Kunden für einen wichtigen Termin an.",
-            "Nam thư ký là Der Sekretär; động từ anrufen là động từ tách (ruft ... an) đi với Akkusativ (den Kunden); vì một cuộc hẹn là für einen wichtigen Termin (Akkusativ).",
+            "Nam thư ký là Der Sekretär; động từ anrufen là động từ tách (ruft ... an) đòi hỏi tân ngữ ở Cách 4 (Akkusativ). Từ 'khách hàng' trong tiếng Việt có thể hiểu là số ít ('den Kunden' - danh từ N-Deklination der Kunde đổi thành den Kunden) hoặc số nhiều ('die Kunden'). Cụm chỉ lý do có thể dùng giới từ für + Akkusativ ('für einen wichtigen Termin' hoặc số nhiều 'für die wichtigen Termine') hoặc wegen + Genitiv ('wegen eines wichtigen Termins').",
             "Nam thư ký gọi điện cho khách hàng vì một cuộc hẹn quan trọng."
         )
     ]
-
     for q, ans, corr, exp, trans in vd_sentences:
         ex_list.append({
             "type": "dich_cau_vd",
