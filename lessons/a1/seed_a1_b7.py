@@ -1692,7 +1692,7 @@ def seed_lesson_7():
         },
         {
                 "type": "dien_khuyet",
-                "question": "Câu 23: Điền mạo từ xác định đúng ở Cách 4 (Akkusativ) vào chỗ trống: 'Der Lehrer korrigiert ___ schwierigen Test der Schüler am Schreibtisch.'",
+                "question": "Câu 23: Điền mạo từ xác định thích hợp vào chỗ trống: 'Der Lehrer korrigiert ___ schwierigen Test der Schüler am Schreibtisch.'",
                 "options": null,
                 "correct_answer": "den",
                 "explanation": "Danh từ 'der Test' mang giống đực. Làm tân ngữ trực tiếp cho động từ korrigieren nên đổi thành den.",
@@ -1706,7 +1706,7 @@ def seed_lesson_7():
         },
         {
                 "type": "dien_khuyet",
-                "question": "Câu 24: Điền mạo từ không xác định đúng ở Cách 4 (Akkusativ) vào chỗ trống: 'Im Blumengeschäft bestellt der Kunde ___ bunten Blumenstrauß (der Blumenstrauß).'",
+                "question": "Câu 24: Điền mạo từ không xác định thích hợp vào chỗ trống: 'Im Blumengeschäft bestellt der Kunde ___ bunten Blumenstrauß.'",
                 "options": null,
                 "correct_answer": "einen",
                 "explanation": "Danh từ 'der Blumenstrauß' mang giống đực, làm tân ngữ trực tiếp cho bestellt nên mạo từ ein đổi thành einen.",
@@ -1720,7 +1720,7 @@ def seed_lesson_7():
         },
         {
                 "type": "dien_khuyet",
-                "question": "Câu 25: Điền mạo từ phủ định đúng ở Cách 4 (Akkusativ) vào chỗ trống: 'Heute scheint den ganzen Tag die Sonne, ich brauche ___ Regenschirm (der Regenschirm).'",
+                "question": "Câu 25: Điền mạo từ phủ định thích hợp vào chỗ trống: 'Heute scheint den ganzen Tag die Sonne, ich brauche ___ Regenschirm.'",
                 "options": null,
                 "correct_answer": "keinen",
                 "explanation": "Động từ brauchen đi với Cách 4 (Akkusativ). Danh từ der Regenschirm là giống đực nên kein đổi thành keinen.",
@@ -1734,7 +1734,7 @@ def seed_lesson_7():
         },
         {
                 "type": "dien_khuyet",
-                "question": "Câu 26: Điền mạo từ sở hữu của ngôi 'ich' (mein-) đúng ở Cách 4 vào chỗ trống: 'Vor der Konferenz rufe ich ___ Kollegen (der Kollege) noch einmal an.'",
+                "question": "Câu 26: Điền mạo từ sở hữu của ngôi 'ich' (mein-) thích hợp vào chỗ trống: 'Vor der Konferenz rufe ich ___ Kollegen noch einmal an.'",
                 "options": null,
                 "correct_answer": "meinen",
                 "explanation": "Động từ anrufen đòi hỏi tân ngữ Akkusativ. Chủ ngữ ich -> gốc mein-. Trước danh từ giống đực der Kollege đổi thành meinen.",
@@ -1748,7 +1748,7 @@ def seed_lesson_7():
         },
         {
                 "type": "dien_khuyet",
-                "question": "Câu 27: Điền mạo từ thích hợp vào chỗ trống: 'Die Trainerin lobt ___ besten Sportler (der Sportler) nach dem Spiel.'",
+                "question": "Câu 27: Điền mạo từ thích hợp vào chỗ trống: 'Die Trainerin lobt ___ besten Sportler nach dem Spiel.'",
                 "options": null,
                 "correct_answer": "ihren",
                 "explanation": "Động từ loben (khen ngợi) đi với Cách 4 (Akkusativ). Danh từ der Sportler mang giống đực nên mạo từ sở hữu của cô ấy ihr- đổi thành ihren (hoặc mạo từ xác định den).",
@@ -1763,7 +1763,7 @@ def seed_lesson_7():
         },
         {
                 "type": "dien_khuyet",
-                "question": "Câu 28: Điền mạo từ thích hợp vào chỗ trống: 'Der Koch kauft frische Zutaten ___ das Abendessen.'",
+                "question": "Câu 28: Điền giới từ thích hợp vào chỗ trống: 'Der Koch kauft frische Zutaten ___ das Abendessen.'",
                 "options": null,
                 "correct_answer": "für",
                 "explanation": "Giới từ für luôn luôn đòi hỏi danh từ đi sau chia ở Cách 4 (Akkusativ): für das Abendessen (cho bữa tối).",
@@ -1778,7 +1778,7 @@ def seed_lesson_7():
         },
         {
                 "type": "dien_khuyet",
-                "question": "Câu 29: Điền mạo từ thích hợp vào chỗ trống: 'Der Student kann ___ sein Wörterbuch den Fachtext nicht verstehen.'",
+                "question": "Câu 29: Điền giới từ thích hợp vào chỗ trống: 'Der Student kann ___ sein Wörterbuch den Fachtext nicht verstehen.'",
                 "options": null,
                 "correct_answer": "ohne",
                 "explanation": "Giới từ ohne mang nghĩa 'không có / thiếu' và luôn đi với Akkusativ (ohne sein Wörterbuch).",
@@ -1792,7 +1792,7 @@ def seed_lesson_7():
         },
         {
                 "type": "dien_khuyet",
-                "question": "Câu 30: Điền từ thích hợp vào chỗ trống: 'Der Kunde parkt den Wagen und geht in ___ Supermarkt (der Supermarkt).'",
+                "question": "Câu 30: Điền từ thích hợp vào chỗ trống: 'Der Kunde parkt den Wagen und geht in ___ Supermarkt.'",
                 "options": null,
                 "correct_answer": "den",
                 "explanation": "Động từ gehen chỉ sự di chuyển (hướng đi Wohin?) đòi hỏi in + Akkusativ: in den Supermarkt.",
@@ -1807,7 +1807,7 @@ def seed_lesson_7():
         },
         {
                 "type": "dien_khuyet",
-                "question": "Câu 31: Điền từ thích hợp vào chỗ trống: 'Nach dem langen Arbeitstag legt sich der Arzt müde ___ Bett (das Bett).'",
+                "question": "Câu 31: Điền từ thích hợp vào chỗ trống: 'Nach dem langen Arbeitstag legt sich der Arzt müde ___ Bett.'",
                 "options": null,
                 "correct_answer": "ins",
                 "explanation": "Hành động nằm lên giường (di chuyển Wohin? + Akkusativ) với danh từ giống trung das Bett được rút gọn in + das = ins Bett.",
@@ -1822,7 +1822,7 @@ def seed_lesson_7():
         },
         {
                 "type": "dien_khuyet",
-                "question": "Câu 32: Điền từ thích hợp vào chỗ trống: 'Die Mechatronikerin prüft die Bremsen des Autos in ___ Werkstatt (die Werkstatt).'",
+                "question": "Câu 32: Điền từ thích hợp vào chỗ trống: 'Die Mechatronikerin prüft die Bremsen des Autos in ___ Werkstatt.'",
                 "options": null,
                 "correct_answer": "der",
                 "explanation": "Câu hỏi Wo? (vị trí tĩnh) đòi hỏi Cách 3 (Dativ). Danh từ die Werkstatt mang giống cái nên in + der = in der Werkstatt.",
@@ -1836,7 +1836,7 @@ def seed_lesson_7():
         },
         {
                 "type": "dien_khuyet",
-                "question": "Câu 33: Điền mạo từ thích hợp ở Cách 3 (Dativ) vào chỗ trống: 'Der erfahrene Krankenpfleger hilft ___ jungen Ärztin (die Ärztin) bei der Operation.'",
+                "question": "Câu 33: Điền mạo từ thích hợp vào chỗ trống: 'Der erfahrene Krankenpfleger hilft ___ jungen Ärztin bei der Operation.'",
                 "options": null,
                 "correct_answer": "der",
                 "explanation": "Động từ helfen luôn luôn đòi hỏi tân ngữ ở Cách 3 (Dativ). Danh từ die Ärztin (giống cái) chuyển mạo từ thành der Ärztin.",
@@ -2262,7 +2262,7 @@ def seed_lesson_7():
         },
         {
                 "type": "noi_o",
-                "question": "Câu 59: Nối Nghề nghiệp với Nơi làm việc chuẩn ngữ pháp ở Cách 3 (Dativ):",
+                "question": "Câu 59: Nối Nghề nghiệp với Nơi làm việc chuẩn ngữ pháp:",
                 "options": null,
                 "correct_answer": "Hoàn thành nối ô",
                 "explanation": "Nữ nhân viên bán hàng làm việc trong siêu thị/cửa hàng giày; đầu bếp trong bếp nhà hàng; học sinh và thầy giáo trong phòng học; huấn luyện viên và vận động viên trong sân vận động.",
@@ -2407,7 +2407,7 @@ def seed_lesson_7():
         },
         {
                 "type": "noi_o",
-                "question": "Câu 64: Nối Động từ với Danh từ tân ngữ theo Cách (Akkusativ vs. Dativ):",
+                "question": "Câu 64: Nối Động từ với Danh từ tân ngữ phù hợp ngữ pháp:",
                 "options": null,
                 "correct_answer": "Hoàn thành nối ô",
                 "explanation": "untersuchen và anrufen đi với Akkusativ (den Patienten, meinen Kollegen); helfen và gehören đi với Dativ (der Dame, dem Trainer).",
