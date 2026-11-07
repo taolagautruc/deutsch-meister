@@ -331,7 +331,7 @@ def build_full_seed_script():
             "exp_reward": 15,
             "extra_data": {
                 "accepted_answers": ans,
-                "translation": q.split("'")[1] if "'" in q else corr
+                "translation": corr
             }
         })
 
@@ -924,7 +924,7 @@ def build_full_seed_script():
             "exp_reward": 25,
             "extra_data": {
                 "accepted_answers": ans,
-                "translation": trans
+                "translation": corr
             }
         })
 

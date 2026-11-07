@@ -195,6 +195,7 @@ def ensure_db_initialized():
                     OR question LIKE '%(die Ärztin)%' OR question LIKE '%(der Blumenstrauß)%' 
                     OR question LIKE '%(der Regenschirm)%' OR question LIKE '%(der Kollege)%'
                     OR question LIKE '%ở Cách 4%' OR question LIKE '%ở Cách 3%'
+                    OR (exercise_type = 'dich_nghia_dv' AND extra_data LIKE '%der Taxifahrer%')
                 )
                 AND question NOT LIKE '%Câu 66%'
                 LIMIT 1;
