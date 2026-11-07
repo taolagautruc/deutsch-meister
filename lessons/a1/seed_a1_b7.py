@@ -2449,7 +2449,7 @@ def seed_lesson_7():
                                 },
                                 {
                                         "left": "Wo untersucht die Ärztin den Patienten?",
-                                        "right": "Im Behandlungszimmer der Klinik."
+                                        "right": "Im Behandlungszimmer."
                                 },
                                 {
                                         "left": "Wohin geht die Lehrerin nach der Pause?",
@@ -2460,7 +2460,7 @@ def seed_lesson_7():
                                         "right": "In der modernen Restaurantküche."
                                 }
                         ],
-                        "translation": "1. 'Tài xế taxi chở hành khách đi đâu?' — 'Đi thẳng đến sân bay.' | 2. 'Nữ bác sĩ khám bệnh nhân ở đâu?' — 'Ở trong phòng khám của bệnh viện.' | 3. 'Cô giáo đi đâu sau giờ giải lao?' — 'Quay trở lại trong phòng học.' | 4. 'Đầu bếp nấu bữa trưa ở đâu?' — 'Ở trong gian bếp nhà hàng hiện đại.'"
+                        "translation": "1. 'Tài xế taxi chở du khách đi đâu?' — 'Đi thẳng đến sân bay.' | 2. 'Nữ bác sĩ khám bệnh nhân ở đâu?' — 'Ở trong phòng khám bệnh.' | 3. 'Cô giáo đi đâu sau giờ giải lao?' — 'Quay trở lại trong phòng học.' | 4. 'Đầu bếp nấu bữa trưa ở đâu?' — 'Ở trong gian bếp nhà hàng hiện đại.'"
                 }
         },
         {
@@ -2468,7 +2468,7 @@ def seed_lesson_7():
                 "question": "Câu 66: Nối Hoạt động công việc (Cột Trái) với Dụng cụ cần thiết tương ứng (Cột Phải):",
                 "options": null,
                 "correct_answer": "Hoàn thành nối ô",
-                "explanation": "Sự biến đổi của mạo từ theo 4 giống khi làm tân ngữ trực tiếp (Cách 4 - Akkusativ): 1. Giống đực (Maskulinum - der Schraubenschlüssel): Biến đổi mạo từ sang đuôi -en khi làm tân ngữ cho động từ suchen: 'einen passenden Schraubenschlüssel'. 2. Giống trung (Neutrum - das Fieberthermometer): Giữ nguyên mạo từ giống như Nominativ khi làm tân ngữ cho brauchen: 'ein genaues Fieberthermometer'. 3. Giống cái (Femininum - die Computertastatur): Giữ nguyên mạo từ đuôi -e khi làm tân ngữ cho kaufen: 'eine moderne Computertastatur'. 4. Số nhiều (Plural - die Lehrbücher): Giữ nguyên mạo từ số nhiều khi làm tân ngữ cho sammeln: 'alle wichtigen Lehrbücher'. Cả 4 câu đều gắn liền với hoạt động và dụng cụ chuyên môn của từng ngành nghề.",
+                "explanation": "Sự biến đổi của mạo từ theo 3 giống và số nhiều khi làm tân ngữ trực tiếp (Cách 4 - Akkusativ): 1. Giống đực (Maskulinum - der Schraubenschlüssel): Biến đổi mạo từ sang đuôi -en khi làm tân ngữ cho động từ suchen: 'einen passenden Schraubenschlüssel'. 2. Giống trung (Neutrum - das Fieberthermometer): Giữ nguyên mạo từ giống như Nominativ khi làm tân ngữ cho brauchen: 'ein genaues Fieberthermometer'. 3. Giống cái (Femininum - die Computertastatur): Giữ nguyên mạo từ đuôi -e khi làm tân ngữ cho kaufen: 'eine moderne Computertastatur'. 4. Số nhiều (Plural - die Lehrbücher): Giữ nguyên mạo từ số nhiều khi làm tân ngữ cho sammeln: 'alle wichtigen Lehrbücher'. Cả 4 câu đều gắn liền với hoạt động và dụng cụ chuyên môn của từng ngành nghề.",
                 "exp_reward": 20,
                 "extra_data": {
                         "noi_o_pairs": [
@@ -2477,11 +2477,11 @@ def seed_lesson_7():
                                         "right": "deshalb sucht er einen passenden Schraubenschlüssel."
                                 },
                                 {
-                                        "left": "Die Ärztin muss die Körpertemperatur des Patienten messen,",
+                                        "left": "Die Ärztin muss die Körpertemperatur messen,",
                                         "right": "deshalb braucht sie ein genaues Fieberthermometer."
                                 },
                                 {
-                                        "left": "Die Sekretärin muss eine dringende E-Mail tippen,",
+                                        "left": "Die Sekretärin muss den ganzen Tag E-Mails tippen,",
                                         "right": "deshalb kauft sie eine moderne Computertastatur."
                                 },
                                 {
@@ -2489,7 +2489,7 @@ def seed_lesson_7():
                                         "right": "deshalb sammelt er alle wichtigen Lehrbücher."
                                 }
                         ],
-                        "translation": "1. Thợ cơ điện tử phải siết chặt ốc vít ở động cơ, vì vậy anh ấy tìm một chiếc cờ lê phù hợp. | 2. Nữ bác sĩ phải đo thân nhiệt của bệnh nhân, vì vậy cô ấy cần một chiếc nhiệt kế chính xác. | 3. Nữ thư ký phải gõ một bức thư điện tử khẩn, vì vậy cô ấy mua một chiếc bàn phím máy tính hiện đại. | 4. Thầy giáo chuẩn bị bài giảng cho ngày mai, vì vậy thầy thu thập tất cả các sách giáo khoa quan trọng."
+                        "translation": "1. Kỹ thuật viên cơ điện tử phải siết chặt ốc vít ở động cơ, vì vậy anh ấy tìm một chiếc cờ lê phù hợp. | 2. Nữ bác sĩ phải đo thân nhiệt, vì vậy cô ấy cần một chiếc nhiệt kế chính xác. | 3. Nữ thư ký phải gõ email cả ngày, vì vậy cô ấy mua một chiếc bàn phím máy tính hiện đại. | 4. Thầy giáo chuẩn bị bài giảng cho ngày mai, vì vậy thầy thu thập tất cả các sách giáo khoa quan trọng."
                 }
         },
         {

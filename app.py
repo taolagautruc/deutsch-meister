@@ -220,6 +220,11 @@ def ensure_db_initialized():
                     OR extra_data LIKE '%gehen + der Supermarkt%'
                     OR question LIKE '%Câu 65: Ghép hành động%'
                     OR question LIKE '%Câu 66: Ghép danh từ theo Giống%'
+                    OR extra_data LIKE '%der Klinik%'
+                    OR extra_data LIKE '%des Patienten%'
+                    OR extra_data LIKE '%dringende E-Mail%'
+                    OR extra_data LIKE '%Thợ cơ điện tử%'
+                    OR extra_data LIKE '%hành khách%'
                 )
                 LIMIT 1;
             """, (b7_id,))

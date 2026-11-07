@@ -421,23 +421,23 @@ def build_full_seed_script():
             "Câu 65: Nối Câu hỏi về Địa điểm (Cột Trái) với Câu trả lời chuẩn ngữ pháp (Cột Phải):",
             [
                 {"left": "Wohin fährt der Taxifahrer den Touristen?", "right": "Direkt an den Flughafen."},
-                {"left": "Wo untersucht die Ärztin den Patienten?", "right": "Im Behandlungszimmer der Klinik."},
+                {"left": "Wo untersucht die Ärztin den Patienten?", "right": "Im Behandlungszimmer."},
                 {"left": "Wohin geht die Lehrerin nach der Pause?", "right": "Zurück in das Klassenzimmer."},
                 {"left": "Wo kocht der Koch das Mittagessen?", "right": "In der modernen Restaurantküche."}
             ],
             "Phân biệt câu hỏi hướng di chuyển (Wohin? + Akkusativ) và vị trí tại chỗ (Wo? + Dativ): 1. 'Wohin fährt der Taxifahrer...?' hỏi hướng di chuyển đến sân bay, đòi hỏi giới từ an + Akkusativ: danh từ giống đực der Flughafen đổi thành 'an den Flughafen'. 2. 'Wo untersucht die Ärztin...?' hỏi vị trí khám bệnh tại chỗ, đòi hỏi giới từ in + Dativ: danh từ giống trung das Behandlungszimmer đổi in + dem thành 'im Behandlungszimmer'. 3. 'Wohin geht die Lehrerin...?' hỏi hướng đi vào phòng học, đòi hỏi giới từ in + Akkusativ: danh từ giống trung das Klassenzimmer giữ nguyên 'in das Klassenzimmer'. 4. 'Wo kocht der Koch...?' hỏi vị trí nấu ăn tại chỗ, đòi hỏi giới từ in + Dativ: danh từ giống cái die Restaurantküche đổi in + der thành 'in der modernen Restaurantküche'.",
-            "1. 'Tài xế taxi chở hành khách đi đâu?' — 'Đi thẳng đến sân bay.' | 2. 'Nữ bác sĩ khám bệnh nhân ở đâu?' — 'Ở trong phòng khám của bệnh viện.' | 3. 'Cô giáo đi đâu sau giờ giải lao?' — 'Quay trở lại trong phòng học.' | 4. 'Đầu bếp nấu bữa trưa ở đâu?' — 'Ở trong gian bếp nhà hàng hiện đại.'"
+            "1. 'Tài xế taxi chở du khách đi đâu?' — 'Đi thẳng đến sân bay.' | 2. 'Nữ bác sĩ khám bệnh nhân ở đâu?' — 'Ở trong phòng khám bệnh.' | 3. 'Cô giáo đi đâu sau giờ giải lao?' — 'Quay trở lại trong phòng học.' | 4. 'Đầu bếp nấu bữa trưa ở đâu?' — 'Ở trong gian bếp nhà hàng hiện đại.'"
         ),
         (
             "Câu 66: Nối Hoạt động công việc (Cột Trái) với Dụng cụ cần thiết tương ứng (Cột Phải):",
             [
                 {"left": "Der Mechatroniker muss Schrauben am Motor festziehen,", "right": "deshalb sucht er einen passenden Schraubenschlüssel."},
-                {"left": "Die Ärztin muss die Körpertemperatur des Patienten messen,", "right": "deshalb braucht sie ein genaues Fieberthermometer."},
-                {"left": "Die Sekretärin muss eine dringende E-Mail tippen,", "right": "deshalb kauft sie eine moderne Computertastatur."},
+                {"left": "Die Ärztin muss die Körpertemperatur messen,", "right": "deshalb braucht sie ein genaues Fieberthermometer."},
+                {"left": "Die Sekretärin muss den ganzen Tag E-Mails tippen,", "right": "deshalb kauft sie eine moderne Computertastatur."},
                 {"left": "Der Lehrer bereitet den Unterricht für morgen vor,", "right": "deshalb sammelt er alle wichtigen Lehrbücher."}
             ],
-            "Sự biến đổi của mạo từ theo 4 giống khi làm tân ngữ trực tiếp (Cách 4 - Akkusativ): 1. Giống đực (Maskulinum - der Schraubenschlüssel): Biến đổi mạo từ sang đuôi -en khi làm tân ngữ cho động từ suchen: 'einen passenden Schraubenschlüssel'. 2. Giống trung (Neutrum - das Fieberthermometer): Giữ nguyên mạo từ giống như Nominativ khi làm tân ngữ cho brauchen: 'ein genaues Fieberthermometer'. 3. Giống cái (Femininum - die Computertastatur): Giữ nguyên mạo từ đuôi -e khi làm tân ngữ cho kaufen: 'eine moderne Computertastatur'. 4. Số nhiều (Plural - die Lehrbücher): Giữ nguyên mạo từ số nhiều khi làm tân ngữ cho sammeln: 'alle wichtigen Lehrbücher'. Cả 4 câu đều gắn liền với hoạt động và dụng cụ chuyên môn của từng ngành nghề.",
-            "1. Thợ cơ điện tử phải siết chặt ốc vít ở động cơ, vì vậy anh ấy tìm một chiếc cờ lê phù hợp. | 2. Nữ bác sĩ phải đo thân nhiệt của bệnh nhân, vì vậy cô ấy cần một chiếc nhiệt kế chính xác. | 3. Nữ thư ký phải gõ một bức thư điện tử khẩn, vì vậy cô ấy mua một chiếc bàn phím máy tính hiện đại. | 4. Thầy giáo chuẩn bị bài giảng cho ngày mai, vì vậy thầy thu thập tất cả các sách giáo khoa quan trọng."
+            "Sự biến đổi của mạo từ theo 3 giống và số nhiều khi làm tân ngữ trực tiếp (Cách 4 - Akkusativ): 1. Giống đực (Maskulinum - der Schraubenschlüssel): Biến đổi mạo từ sang đuôi -en khi làm tân ngữ cho động từ suchen: 'einen passenden Schraubenschlüssel'. 2. Giống trung (Neutrum - das Fieberthermometer): Giữ nguyên mạo từ giống như Nominativ khi làm tân ngữ cho brauchen: 'ein genaues Fieberthermometer'. 3. Giống cái (Femininum - die Computertastatur): Giữ nguyên mạo từ đuôi -e khi làm tân ngữ cho kaufen: 'eine moderne Computertastatur'. 4. Số nhiều (Plural - die Lehrbücher): Giữ nguyên mạo từ số nhiều khi làm tân ngữ cho sammeln: 'alle wichtigen Lehrbücher'. Cả 4 câu đều gắn liền với hoạt động và dụng cụ chuyên môn của từng ngành nghề.",
+            "1. Kỹ thuật viên cơ điện tử phải siết chặt ốc vít ở động cơ, vì vậy anh ấy tìm một chiếc cờ lê phù hợp. | 2. Nữ bác sĩ phải đo thân nhiệt, vì vậy cô ấy cần một chiếc nhiệt kế chính xác. | 3. Nữ thư ký phải gõ email cả ngày, vì vậy cô ấy mua một chiếc bàn phím máy tính hiện đại. | 4. Thầy giáo chuẩn bị bài giảng cho ngày mai, vì vậy thầy thu thập tất cả các sách giáo khoa quan trọng."
         ),
         (
             "Câu 67: Nối Tình huống ở vế đầu (Cột Trái) với Hoạt động dùng động từ khuyết thiếu phù hợp (Cột Phải):",
