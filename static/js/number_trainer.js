@@ -99,8 +99,10 @@ function priceToGerman(euros, cents) {
  * 10. Chuẩn hóa số đếm:
  *    "5" <-> "fünf", "einhundert" <-> "hundert", v.v.
  */
-function checkGermanAnswerEquivalence(userAns, correctAns) {
+function checkGermanAnswerEquivalence(userAns, correctAns, options = {}) {
     if (!userAns || !correctAns) return false;
+
+    const isMultiSlot = (typeof options === 'boolean' ? options : Boolean(options && options.isMultiSlot));
 
     // 0. Nếu cả userAns và correctAns đều chứa dấu / (dạng điền nhiều chỗ trống: den / dem, seinen / seinen)
     if (userAns.includes('/') && correctAns.includes('/')) {
@@ -114,8 +116,32 @@ function checkGermanAnswerEquivalence(userAns, correctAns) {
         }
     }
 
+    // 0b. Dạng điền nhiều chỗ trống (isMultiSlot hoặc câu hỏi có dạng [1] ... [2] hoặc đáp án dạng từ1 / từ2):
+    // Bắt buộc câu trả lời phải có đủ số lượng slot tương ứng; tuyệt đối không chấp nhận nếu người dùng chỉ điền 1 từ!
+    const cParts = correctAns.includes('/') ? correctAns.split('/').map(p => p.trim()).filter(Boolean) : [];
+    const isMultiSlotPattern = isMultiSlot || 
+        (Boolean(options && options.question) && (options.question.includes('[1]') || options.question.includes('ngăn cách bởi dấu /'))) ||
+        (correctAns.includes(' / ') && cParts.length > 1 && !correctAns.includes('||') && !/\s+hoặc\s+/i.test(correctAns) && !correctAns.includes('!') && !correctAns.includes('?') && !correctAns.includes('.'));
+
+    if (isMultiSlotPattern && cParts.length > 1) {
+        let uParts = [];
+        if (userAns.includes('/')) {
+            uParts = userAns.split('/').map(p => p.trim()).filter(Boolean);
+        } else if (userAns.includes(',') || userAns.includes(';')) {
+            uParts = userAns.split(/[,;]/).map(p => p.trim()).filter(Boolean);
+        } else {
+            uParts = userAns.trim().split(/\s+/).map(p => p.trim()).filter(Boolean);
+        }
+        if (uParts.length === cParts.length) {
+            return uParts.every((u, idx) => checkGermanAnswerEquivalence(u, cParts[idx]));
+        }
+        // Người dùng thiếu slot (ví dụ chỉ điền 1 từ [1]): KHÔNG chấp nhận!
+        return false;
+    }
+
     // 1. Phân tách nếu có nhiều phương án đáp án chuẩn (cách nhau bởi /, ||, \n, hoặc)
-    if (correctAns.includes('/') || correctAns.includes('||') || correctAns.includes('\n') || /\s+hoặc\s+/i.test(correctAns)) {
+    // LƯU Ý: Với dạng điền nhiều chỗ trống (isMultiSlotPattern), tuyệt đối không phân tách dấu / thành các phương án độc lập
+    if (!isMultiSlotPattern && (correctAns.includes('/') || correctAns.includes('||') || correctAns.includes('\n') || /\s+hoặc\s+/i.test(correctAns))) {
         const alts = correctAns.split(/\/|\|\||\n|\s+hoặc\s+/i).map(a => a.trim()).filter(Boolean);
         if (alts.some(alt => checkGermanAnswerEquivalence(userAns, alt))) {
             return true;

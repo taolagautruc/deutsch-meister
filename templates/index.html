@@ -1753,10 +1753,17 @@
                         }).join('')}
                     </div>`;
                 } else {
-                    const cleanAns = isDone ? String(ex.correct_answer || '').split('/')[0].trim() : (ex._userAnswer || '');
+                    const isMultiSlot = (ex.exercise_type === 'dien_tao_cau') || 
+                                        (Boolean(ex.question) && (ex.question.includes('[1]') || ex.question.includes('ngăn cách bởi dấu /') || ex.question.includes('cách nhau bởi dấu /') || /điền\s+[2-9]\s+từ/i.test(ex.question)));
+                    const cleanAns = isDone 
+                        ? (ex._userAnswer || (isMultiSlot ? String(ex.correct_answer || '').trim() : String(ex.correct_answer || '').split('/')[0].trim())) 
+                        : (ex._userAnswer || '');
+                    const placeholderText = isMultiSlot 
+                        ? 'Điền 2 từ ngăn cách bởi dấu / (ví dụ: từ 1 / từ 2)...' 
+                        : 'Nhập đáp án tiếng Đức của bạn... (nhấn Enter để kiểm tra và chuyển câu)';
                     inputHtml = `
                         <div class="flex gap-2 mt-3">
-                            <input id="ex-input-${i}" value="${cleanAns.replace(/"/g, '&quot;')}" onfocus="activeInputId='ex-input-${i}'" onkeydown="handleExerciseInputKeydown(event, ${i})" type="text" placeholder="Nhập đáp án tiếng Đức của bạn... (nhấn Enter để kiểm tra và chuyển câu)" class="flex-1 px-4 py-2.5 rounded-xl ${isDone ? 'bg-emerald-50/40 border-2 border-emerald-400 font-bold text-emerald-950' : 'bg-white border border-slate-200'} text-sm focus:outline-none focus:border-indigo-500">
+                            <input id="ex-input-${i}" value="${cleanAns.replace(/"/g, '&quot;')}" onfocus="activeInputId='ex-input-${i}'" onkeydown="handleExerciseInputKeydown(event, ${i})" type="text" placeholder="${placeholderText}" class="flex-1 px-4 py-2.5 rounded-xl ${isDone ? 'bg-emerald-50/40 border-2 border-emerald-400 font-bold text-emerald-950' : 'bg-white border border-slate-200'} text-sm focus:outline-none focus:border-indigo-500">
                             <button onclick="checkExerciseAnswer(${i}, document.getElementById('ex-input-${i}').value)" class="px-5 py-2.5 rounded-xl ${isDone ? 'bg-emerald-600 hover:bg-emerald-700' : 'bg-indigo-600 hover:bg-indigo-500'} text-white font-bold text-sm shadow-sm transition cursor-pointer shrink-0">
                                 ${isDone ? '✓ Đã xong' : 'Kiểm tra'}
                             </button>
@@ -1995,16 +2002,51 @@
                 ex._selectedOptIndex = chosenIdx;
                 ex._isUserCorrect = isCorrect;
             } else {
-                const candidates = [ex.correct_answer];
-                if (extra && Array.isArray(extra.accepted_answers)) {
-                    candidates.push(...extra.accepted_answers);
+                const isMultiSlot = (ex.exercise_type === 'dien_tao_cau') || 
+                                    (Boolean(ex.question) && (ex.question.includes('[1]') || ex.question.includes('ngăn cách bởi dấu /') || ex.question.includes('cách nhau bởi dấu /') || /điền\s+[2-9]\s+từ/i.test(ex.question)));
+
+                if (isMultiSlot) {
+                    const candidates = [ex.correct_answer];
+                    if (extra && Array.isArray(extra.accepted_answers)) {
+                        candidates.push(...extra.accepted_answers);
+                    }
+                    const rawUser = String(userAnswer || '').trim();
+                    let uParts = [];
+                    if (rawUser.includes('/')) {
+                        uParts = rawUser.split('/').map(p => p.trim()).filter(Boolean);
+                    } else if (rawUser.includes(',') || rawUser.includes(';')) {
+                        uParts = rawUser.split(/[,;]/).map(p => p.trim()).filter(Boolean);
+                    } else {
+                        uParts = rawUser.split(/\s+/).map(p => p.trim()).filter(Boolean);
+                    }
+
+                    // Nếu người dùng chỉ nhập 1 từ duy nhất (hoặc để trống): BẮT BUỘC KHÔNG CHẤP NHẬN vì thiếu từ ở vị trí [2]
+                    if (uParts.length < 2) {
+                        isCorrect = false;
+                    } else {
+                        isCorrect = candidates.some(cand => {
+                            if (!cand) return false;
+                            const cParts = String(cand).split('/').map(p => p.trim()).filter(Boolean);
+                            if (cParts.length !== uParts.length) return false;
+                            return uParts.every((u, idx) => {
+                                return (typeof checkGermanAnswerEquivalence === 'function')
+                                    ? checkGermanAnswerEquivalence(u, cParts[idx])
+                                    : normalizeAnswer(u) === normalizeAnswer(cParts[idx]);
+                            });
+                        });
+                    }
+                } else {
+                    const candidates = [ex.correct_answer];
+                    if (extra && Array.isArray(extra.accepted_answers)) {
+                        candidates.push(...extra.accepted_answers);
+                    }
+                    isCorrect = candidates.some(cand => {
+                        if (!cand) return false;
+                        return (typeof checkGermanAnswerEquivalence === 'function')
+                            ? checkGermanAnswerEquivalence(userAnswer, cand)
+                            : normalizeAnswer(userAnswer) === normalizeAnswer(cand);
+                    });
                 }
-                isCorrect = candidates.some(cand => {
-                    if (!cand) return false;
-                    return (typeof checkGermanAnswerEquivalence === 'function')
-                        ? checkGermanAnswerEquivalence(userAnswer, cand)
-                        : normalizeAnswer(userAnswer) === normalizeAnswer(cand);
-                });
             }
 
             const translation = getExerciseTranslation(ex, extra);
@@ -2300,6 +2342,12 @@
                 if (ex.exercise_type === 'noi_o' && extra.noi_o_pairs) {
                     wrongTitle = "❌ Chưa chính xác (yêu cầu nối đúng 100% cả 4 cặp).";
                     displayAns = extra.noi_o_pairs.map((p, idx) => `<b>${idx + 1}.</b> ${p.left} ⇄ <b>${p.right}</b>`).join(' &nbsp;|&nbsp; ');
+                } else if (isMultiSlot) {
+                    const rawUser = String(userAnswer || '').trim();
+                    const uPartsCount = rawUser.includes('/') ? rawUser.split('/').filter(p => p.trim()).length : (rawUser.includes(',') || rawUser.includes(';')) ? rawUser.split(/[,;]/).filter(p => p.trim()).length : rawUser.split(/\s+/).filter(Boolean).length;
+                    if (uPartsCount < 2) {
+                        wrongTitle = "❌ Chưa chính xác (bạn cần điền đủ cả 2 từ ngăn cách bởi dấu /).";
+                    }
                 }
                 feedback.innerHTML = `
                     <div class="space-y-1.5">
