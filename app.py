@@ -225,6 +225,8 @@ def ensure_db_initialized():
                     OR extra_data LIKE '%dringende E-Mail%'
                     OR extra_data LIKE '%Thợ cơ điện tử%'
                     OR extra_data LIKE '%hành khách%'
+                    OR explanation LIKE '%bắt buộc đi với Dativ số nhiều%'
+                    OR extra_data LIKE '%rất freundlich%'
                 )
                 LIMIT 1;
             """, (b7_id,))
