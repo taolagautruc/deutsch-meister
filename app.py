@@ -216,6 +216,10 @@ def ensure_db_initialized():
                     OR extra_data LIKE '%(Akkusativ - tân ngữ%'
                     OR extra_data LIKE '%Nối các cặp tương ứng giữa 2 cột.%'
                     OR extra_data LIKE '%Nối chủ ngữ với dạng chia đúng của động từ khuyết thiếu.%'
+                    OR extra_data LIKE '%Maskulinum: der Stuhl%'
+                    OR extra_data LIKE '%gehen + der Supermarkt%'
+                    OR question LIKE '%Câu 65: Ghép hành động%'
+                    OR question LIKE '%Câu 66: Ghép danh từ theo Giống%'
                 )
                 LIMIT 1;
             """, (b7_id,))
