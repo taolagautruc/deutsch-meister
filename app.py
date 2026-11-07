@@ -93,38 +93,50 @@ def ensure_db_initialized():
                 from lessons.a1.seed_a1_b1_p2 import seed_lesson_1_part_2
                 seed_lesson_1_part_2()
             
-        cursor.execute("SELECT COUNT(*) as cnt FROM lessons WHERE title LIKE 'Bài 2%';")
-        has_b2 = cursor.fetchone()["cnt"] > 0
-        if not has_b2:
+        cursor.execute("SELECT id FROM lessons WHERE title LIKE 'Bài 2%' LIMIT 1;")
+        row_b2 = cursor.fetchone()
+        need_reseed_b2 = not bool(row_b2)
+        if row_b2:
+            b2_id = row_b2["id"]
+            cursor.execute("SELECT id FROM exercises WHERE lesson_id = ? AND question LIKE '%ở cách 1%' LIMIT 1;", (b2_id,))
+            if cursor.fetchone():
+                need_reseed_b2 = True
+            cursor.execute("SELECT COUNT(*) as cnt FROM vocabularies WHERE lesson_id = ? AND german_word = 'Papier' AND vietnamese_meaning LIKE '%kein Plural%';", (b2_id,))
+            if cursor.fetchone()["cnt"] == 0:
+                need_reseed_b2 = True
+        if need_reseed_b2:
             from lessons.a1.seed_a1_b2 import seed_lesson_2
             seed_lesson_2()
-        else:
-            cursor.execute("SELECT COUNT(*) as cnt FROM vocabularies WHERE lesson_id = 16 AND german_word = 'Papier' AND vietnamese_meaning LIKE '%kein Plural%';")
-            if cursor.fetchone()["cnt"] == 0:
-                from lessons.a1.seed_a1_b2 import seed_lesson_2
-                seed_lesson_2()
 
-        cursor.execute("SELECT COUNT(*) as cnt FROM lessons WHERE title LIKE 'Bài 3%';")
-        has_b3 = cursor.fetchone()["cnt"] > 0
-        if not has_b3:
+        cursor.execute("SELECT id FROM lessons WHERE title LIKE 'Bài 3%' LIMIT 1;")
+        row_b3 = cursor.fetchone()
+        need_reseed_b3 = not bool(row_b3)
+        if row_b3:
+            b3_id = row_b3["id"]
+            cursor.execute("SELECT id FROM exercises WHERE lesson_id = ? AND (question LIKE '%ở Dativ%' OR question LIKE '%cho quốc gia có mạo từ giống cái%') LIMIT 1;", (b3_id,))
+            if cursor.fetchone():
+                need_reseed_b3 = True
+            cursor.execute("SELECT COUNT(*) as cnt FROM vocabularies WHERE lesson_id = ? AND german_word = 'USA' AND vietnamese_meaning LIKE '%nur Plural%';", (b3_id,))
+            if cursor.fetchone()["cnt"] == 0:
+                need_reseed_b3 = True
+        if need_reseed_b3:
             from lessons.a1.seed_a1_b3 import seed_lesson_3
             seed_lesson_3()
-        else:
-            cursor.execute("SELECT COUNT(*) as cnt FROM vocabularies WHERE lesson_id = 17 AND german_word = 'USA' AND vietnamese_meaning LIKE '%nur Plural%';")
-            if cursor.fetchone()["cnt"] == 0:
-                from lessons.a1.seed_a1_b3 import seed_lesson_3
-                seed_lesson_3()
 
-        cursor.execute("SELECT COUNT(*) as cnt FROM lessons WHERE title LIKE 'Bài 4%';")
-        has_b4 = cursor.fetchone()["cnt"] > 0
-        if not has_b4:
+        cursor.execute("SELECT id FROM lessons WHERE title LIKE 'Bài 4%' LIMIT 1;")
+        row_b4 = cursor.fetchone()
+        need_reseed_b4 = not bool(row_b4)
+        if row_b4:
+            b4_id = row_b4["id"]
+            cursor.execute("SELECT id FROM exercises WHERE lesson_id = ? AND (question LIKE '%trước danh từ giống%' OR question LIKE '%(der Schlüssel)%') LIMIT 1;", (b4_id,))
+            if cursor.fetchone():
+                need_reseed_b4 = True
+            cursor.execute("SELECT COUNT(*) as cnt FROM vocabularies WHERE lesson_id = ? AND german_word = 'Stock' AND vietnamese_meaning LIKE '%die Stockwerke%';", (b4_id,))
+            if cursor.fetchone()["cnt"] == 0:
+                need_reseed_b4 = True
+        if need_reseed_b4:
             from lessons.a1.seed_a1_b4 import seed_lesson_4
             seed_lesson_4()
-        else:
-            cursor.execute("SELECT COUNT(*) as cnt FROM vocabularies WHERE lesson_id = 18 AND german_word = 'Stock' AND vietnamese_meaning LIKE '%die Stockwerke%';")
-            if cursor.fetchone()["cnt"] == 0:
-                from lessons.a1.seed_a1_b4 import seed_lesson_4
-                seed_lesson_4()
 
         cursor.execute("SELECT COUNT(*) as cnt FROM lessons WHERE title LIKE 'Bài 5%';")
         has_b5 = cursor.fetchone()["cnt"] > 0
@@ -137,19 +149,31 @@ def ensure_db_initialized():
                 from lessons.a1.seed_a1_b5 import seed_lesson_5
                 seed_lesson_5()
 
-        cursor.execute("SELECT COUNT(*) as cnt FROM lessons WHERE title LIKE 'Bài 6%';")
-        has_b6 = cursor.fetchone()["cnt"] > 0
-        need_reseed_b6 = not has_b6
-        if has_b6:
-            cursor.execute("SELECT extra_data FROM exercises WHERE lesson_id = 20 AND question LIKE '%Câu 58%' LIMIT 1;")
+        cursor.execute("SELECT id FROM lessons WHERE title LIKE 'Bài 6%' LIMIT 1;")
+        row_b6 = cursor.fetchone()
+        need_reseed_b6 = not bool(row_b6)
+        if row_b6:
+            b6_id = row_b6["id"]
+            cursor.execute("""
+                SELECT id FROM exercises 
+                WHERE lesson_id = ? 
+                AND (
+                    question LIKE '%(die Haltestelle)%' OR question LIKE '%(das Fahrrad)%'
+                    OR question LIKE '%ở Cách 1%' OR question LIKE '%ở Cách 3%'
+                )
+                LIMIT 1;
+            """, (b6_id,))
+            if cursor.fetchone():
+                need_reseed_b6 = True
+            cursor.execute("SELECT extra_data FROM exercises WHERE lesson_id = ? AND question LIKE '%Câu 58%' LIMIT 1;", (b6_id,))
             row_q58 = cursor.fetchone()
             if row_q58 and 'dem Bahnhof / einem Bahnhof' in (row_q58["extra_data"] or ''):
                 need_reseed_b6 = True
-            cursor.execute("SELECT explanation FROM exercises WHERE lesson_id = 20 AND question LIKE '%Câu 43%' LIMIT 1;")
+            cursor.execute("SELECT explanation FROM exercises WHERE lesson_id = ? AND question LIKE '%Câu 43%' LIMIT 1;", (b6_id,))
             row_q43 = cursor.fetchone()
             if row_q43 and ('$\\rightarrow$' in (row_q43["explanation"] or '') or 'NHÓM' in (row_q43["explanation"] or '')):
                 need_reseed_b6 = True
-            cursor.execute("SELECT COUNT(*) as cnt FROM vocabularies WHERE lesson_id = 20 AND german_word = 'Post' AND vietnamese_meaning LIKE '%kein Plural%';")
+            cursor.execute("SELECT COUNT(*) as cnt FROM vocabularies WHERE lesson_id = ? AND german_word = 'Post' AND vietnamese_meaning LIKE '%kein Plural%';", (b6_id,))
             if cursor.fetchone()["cnt"] == 0:
                 need_reseed_b6 = True
 
@@ -157,11 +181,27 @@ def ensure_db_initialized():
             from lessons.a1.seed_a1_b6 import seed_lesson_6
             seed_lesson_6()
 
-        cursor.execute("SELECT COUNT(*) as cnt FROM lessons WHERE title LIKE 'Bài 7%';")
-        has_b7 = cursor.fetchone()["cnt"] > 0
-        need_reseed_b7 = not has_b7
-        if has_b7:
-            cursor.execute("SELECT example_sentence FROM vocabularies WHERE lesson_id = 21 AND german_word LIKE '%Patient%' LIMIT 1;")
+        cursor.execute("SELECT id FROM lessons WHERE title LIKE 'Bài 7%' LIMIT 1;")
+        row_b7 = cursor.fetchone()
+        need_reseed_b7 = not bool(row_b7)
+        if row_b7:
+            b7_id = row_b7["id"]
+            cursor.execute("""
+                SELECT id FROM exercises 
+                WHERE lesson_id = ? 
+                AND (
+                    question LIKE '%(der Sportler)%' OR question LIKE '%(der Supermarkt)%' 
+                    OR question LIKE '%(das Bett)%' OR question LIKE '%(die Werkstatt)%' 
+                    OR question LIKE '%(die Ärztin)%' OR question LIKE '%(der Blumenstrauß)%' 
+                    OR question LIKE '%(der Regenschirm)%' OR question LIKE '%(der Kollege)%'
+                    OR question LIKE '%ở Cách 4%' OR question LIKE '%ở Cách 3%'
+                )
+                AND question NOT LIKE '%Câu 66%'
+                LIMIT 1;
+            """, (b7_id,))
+            if cursor.fetchone():
+                need_reseed_b7 = True
+            cursor.execute("SELECT example_sentence FROM vocabularies WHERE lesson_id = ? AND german_word LIKE '%Patient%' LIMIT 1;", (b7_id,))
             row_pat = cursor.fetchone()
             if not row_pat or 'kranken Patienten' not in (row_pat["example_sentence"] or ''):
                 need_reseed_b7 = True
