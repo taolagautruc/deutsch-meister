@@ -572,7 +572,7 @@ def seed_lesson_2():
         ),
         (
             lesson_id, "trac_nghiem",
-            "Câu 10 [Mạo từ phủ định]: Để phủ định danh từ số nhiều ở cách 1 (ví dụ: 'Das sind ___ Bücher'), ta dùng từ nào?",
+            "Câu 10 [Mạo từ phủ định]: Để phủ định danh từ số nhiều (ví dụ: 'Das sind ___ Bücher'), ta dùng từ nào?",
             json.dumps(["keine", "kein", "nicht", "keinen"]),
             "keine",
             "Phủ định danh từ số nhiều ở Nominativ dùng 'keine' (Das sind keine Bücher).", 10, None

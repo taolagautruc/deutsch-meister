@@ -1175,7 +1175,7 @@ def seed_lesson_6():
         {
                 "q_num": 4,
                 "type": "trac_nghiem",
-                "question": "Câu 4: Chọn đáp án đúng ngữ pháp Cách 3 (Dativ): „Am Wochenende macht Herr Wagner einen Ausflug mit ___.“",
+                "question": "Câu 4: Chọn đáp án đúng ngữ pháp: „Am Wochenende macht Herr Wagner einen Ausflug mit ___.“",
                 "options_json": "[\"seine Kinder\", \"seinen Kinder\", \"seinen Kindern\", \"seinem Kindern\"]",
                 "correct_answer": "seinen Kindern",
                 "explanation": "Sau giới từ mit là Cách 3 (Dativ). Ở dạng số nhiều (Plural), mạo từ sở hữu seine đổi thành seinen và danh từ số nhiều Kinder bắt buộc phải cộng thêm đuôi -n thành seinen Kindern.",
@@ -1271,7 +1271,7 @@ def seed_lesson_6():
         {
                 "q_num": 12,
                 "type": "trac_nghiem",
-                "question": "Câu 12: Dãy số thứ tự nào sau đây được viết ĐÚNG HOÀN TOÀN cho các mốc 1. — 3. — 7. — 8. ở Cách 1 (Nominativ)?",
+                "question": "Câu 12: Dãy số thứ tự nào sau đây được viết ĐÚNG HOÀN TOÀN cho các mốc 1. — 3. — 7. — 8.?",
                 "options_json": "[\"der einsigste — der dreite — der siebente — der achtte\", \"der erste — der dritte — der siebte — der achte\", \"der erste — der dreite — der siebte — der achte\", \"der ersten — der dritten — der siebten — der achten\"]",
                 "correct_answer": "der erste — der dritte — der siebte — der achte",
                 "explanation": "Bốn số thứ tự bất quy tắc từ 1 đến 19 ở Nominativ là: 1. -> erste, 3. -> dritte, 7. -> siebte (bỏ -en), 8. -> achte (chỉ có một chữ t).",
@@ -1283,7 +1283,7 @@ def seed_lesson_6():
         {
                 "q_num": 13,
                 "type": "trac_nghiem",
-                "question": "Câu 13: Số thứ tự của 23. sau mạo từ der ở Cách 1 (Nominativ) được viết như thế nào?",
+                "question": "Câu 13: Số thứ tự của 23. sau mạo từ 'der' được viết như thế nào?",
                 "options_json": "[\"derdreiundzwanzigste\", \"der dritteundzwanzigste\", \"der dreiundzwanzigste\", \"der dreiundzwanzigsten\"]",
                 "correct_answer": "der dreiundzwanzigste",
                 "explanation": "Từ 20 trở đi, số thứ tự được tạo bằng cách thêm đuôi -ste vào cuối số đếm: dreiundzwanzig + -ste → der dreiundzwanzigste (phần hàng đơn vị drei ở đầu giữ nguyên, không đổi thành dritte).",
@@ -1400,7 +1400,7 @@ def seed_lesson_6():
         {
                 "q_num": 22,
                 "type": "dien_khuyet",
-                "question": "Câu 22: Điền mạo từ xác định đúng ở Cách 3 (Dativ) vào chỗ trống: „Viele Fahrgäste warten am Morgen an ___ Haltestelle (die Haltestelle).“",
+                "question": "Câu 22: Điền mạo từ xác định thích hợp vào chỗ trống: „Viele Fahrgäste warten am Morgen an ___ Haltestelle.“",
                 "options_json": null,
                 "correct_answer": "der",
                 "explanation": "Danh từ die Haltestelle mang giống cái (Femininum). Sau giới từ chỉ vị trí an (trả lời câu hỏi Wo? - Ở đâu?) thuộc Cách 3 (Dativ), mạo từ xác định đổi từ die thành der (an der Haltestelle).",
@@ -1415,7 +1415,7 @@ def seed_lesson_6():
         {
                 "q_num": 23,
                 "type": "dien_khuyet",
-                "question": "Câu 23: Điền mạo từ sở hữu đúng của ngôi er (sein-) ở Cách 3 (Dativ) vào chỗ trống: „Thomas fährt jeden Sonntag mit ___ Fahrrad (das Fahrrad) durch den Park.“",
+                "question": "Câu 23: Điền mạo từ sở hữu đúng của ngôi 'er' (sein-) vào chỗ trống: „Thomas fährt jeden Sonntag mit ___ Fahrrad durch den Park.“",
                 "options_json": null,
                 "correct_answer": "seinem",
                 "explanation": "Sau giới từ mit bắt buộc dùng Cách 3 (Dativ). Danh từ das Fahrrad mang giống trung (Neutrum), nên gốc mạo từ sở hữu sein- của Thomas (ngôi er) nhận đuôi -em thành seinem Fahrrad.",
@@ -1430,7 +1430,7 @@ def seed_lesson_6():
         {
                 "q_num": 24,
                 "type": "dien_khuyet",
-                "question": "Câu 24: Điền mạo từ sở hữu đúng của ngôi Sie (Ihr- viết hoa) ở Cách 3 (Dativ) vào chỗ trống: „Herr Direktor, der Brief liegt auf ___ Schreibtisch neben dem Laptop.“",
+                "question": "Câu 24: Điền mạo từ sở hữu đúng của ngôi 'Sie' (Ihr- viết hoa) vào chỗ trống: „Herr Direktor, der Brief liegt auf ___ Schreibtisch neben dem Laptop.“",
                 "options_json": null,
                 "correct_answer": "Ihrem",
                 "explanation": "der Schreibtisch mang giống đực, ở Dativ sau giới từ auf thì mạo từ sở hữu của ngôi Sie là Ihrem Schreibtisch.",
@@ -1445,7 +1445,7 @@ def seed_lesson_6():
         {
                 "q_num": 25,
                 "type": "dien_khuyet",
-                "question": "Câu 25: Điền dạng đúng của danh từ số nhiều die Freunde ở Cách 3 (Dativ) vào chỗ trống: „Am Samstag gehen wir mit unseren ___ ins Kino.“",
+                "question": "Câu 25: Điền dạng đúng của danh từ 'die Freunde' vào chỗ trống: „Am Samstag gehen wir mit unseren ___ ins Kino.“",
                 "options_json": null,
                 "correct_answer": "Freunden",
                 "explanation": "Ở Cách 3 (Dativ) số nhiều, danh từ die Freunde bắt buộc phải thêm đuôi -n thành Freunden.",

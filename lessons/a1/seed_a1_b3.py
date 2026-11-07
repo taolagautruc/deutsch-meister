@@ -976,7 +976,7 @@ def seed_lesson_3():
         ),
         (
             lesson_id, "trac_nghiem",
-            "Câu 2: Chọn mạo từ thích hợp ở Dativ đi với giới từ 'aus' cho quốc gia có mạo từ giống cái: \"Frau Müller kommt aus ___ Schweiz.\"",
+            "Câu 2: Chọn mạo từ thích hợp đi với giới từ 'aus' vào chỗ trống: \"Frau Müller kommt aus ___ Schweiz.\"",
             json.dumps(["der", "die", "den", "dem"]),
             "der",
             "'die Schweiz' là quốc gia có mạo từ giống cái, sau giới từ 'aus' (Dativ) mạo từ 'die' đổi thành 'der' → 'aus der Schweiz'.",
@@ -992,7 +992,7 @@ def seed_lesson_3():
         ),
         (
             lesson_id, "trac_nghiem",
-            "Câu 4: Cụm giới từ nào diễn đạt đúng quy tắc ngữ pháp khi nói 'ở tại Thổ Nhĩ Kỳ' (in + Dativ với quốc gia giống cái 'die Türkei')?",
+            "Câu 4: Cụm giới từ nào diễn đạt đúng quy tắc ngữ pháp khi nói 'ở tại Thổ Nhĩ Kỳ'?",
             json.dumps(["in der Türkei", "in die Türkei", "im Türkei", "in Türkei"]),
             "in der Türkei",
             "'die Türkei' là quốc gia giống cái, khi kết hợp với giới từ chỉ vị trí 'in' (Dativ) mạo từ đổi thành 'in der Türkei'.",
@@ -1107,7 +1107,7 @@ def seed_lesson_3():
         ),
         (
             lesson_id, "dien_khuyet",
-            "Câu 18: Điền mạo từ ở Dativ sau giới từ 'aus': 'Meine Tante kommt aus ___ Schweiz.'",
+            "Câu 18: Điền mạo từ thích hợp vào chỗ trống: 'Meine Tante kommt aus ___ Schweiz.'",
             None,
             "der",
             "'die Schweiz' mang giống cái, sau giới từ 'aus' đổi thành 'der' ('aus der Schweiz').",
@@ -1115,7 +1115,7 @@ def seed_lesson_3():
         ),
         (
             lesson_id, "dien_khuyet",
-            "Câu 19: Điền mạo từ ở Dativ sau giới từ 'in': 'New York liegt in ___ USA.'",
+            "Câu 19: Điền mạo từ thích hợp vào chỗ trống: 'New York liegt in ___ USA.'",
             None,
             "den",
             "'die USA' là danh từ số nhiều, sau giới từ 'in' đổi thành 'den' ('in den USA').",

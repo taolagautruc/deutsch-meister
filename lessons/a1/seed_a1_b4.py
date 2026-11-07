@@ -939,7 +939,7 @@ def seed_lesson_4():
         ),
         (
             lesson_id, "dien_khuyet",
-            "Câu 18: Điền mạo từ sở hữu của 'wir' trước danh từ giống cái: 'Das ist ___ Wohnung.' (Căn hộ của chúng tôi)",
+            "Câu 18: Điền mạo từ sở hữu thích hợp của ngôi 'wir' vào chỗ trống: 'Das ist ___ Wohnung.' (Căn hộ của chúng tôi)",
             None,
             "unsere",
             "Người sở hữu 'wir' → gốc 'unser'. 'die Wohnung' mang giống cái nên thêm '-e' thành 'unsere Wohnung'.",
@@ -947,7 +947,7 @@ def seed_lesson_4():
         ),
         (
             lesson_id, "dien_khuyet",
-            "Câu 19: Điền mạo từ sở hữu của ngôi 'ihr' (các bạn) trước danh từ giống đực ở Akkusativ: 'Wir besuchen ___ Garten.' (khu vườn của các bạn)",
+            "Câu 19: Điền mạo từ sở hữu thích hợp của ngôi 'ihr' (các bạn) vào chỗ trống: 'Wir besuchen ___ Garten.' (khu vườn của các bạn)",
             None,
             "euren",
             "Gốc 'euer' khi thêm đuôi '-en' ở Akkusativ sẽ lược bỏ 'e' ở giữa: 'euer + en' → 'euren'.",
@@ -955,7 +955,7 @@ def seed_lesson_4():
         ),
         (
             lesson_id, "dien_khuyet",
-            "Câu 20: Điền mạo từ sở hữu của 'er' trước danh từ giống trung: 'Das ist ___ Haus.' (Ngôi nhà của anh ấy)",
+            "Câu 20: Điền mạo từ sở hữu thích hợp của ngôi 'er' vào chỗ trống: 'Das ist ___ Haus.' (Ngôi nhà của anh ấy)",
             None,
             "sein",
             "Người sở hữu là 'er' (anh ấy) → gốc 'sein'. 'das Haus' mang giống trung nên giữ nguyên: 'sein Haus'.",
@@ -963,7 +963,7 @@ def seed_lesson_4():
         ),
         (
             lesson_id, "dien_khuyet",
-            "Câu 21: Điền mạo từ sở hữu của 'sie' (cô ấy) trước danh từ giống đực ở Akkusativ: 'Sie sucht ___ Schlüssel.' (Chìa khóa của cô ấy - der Schlüssel)",
+            "Câu 21: Điền mạo từ sở hữu thích hợp của ngôi 'sie' (cô ấy) vào chỗ trống: 'Sie sucht ___ Schlüssel.' (Chìa khóa của cô ấy)",
             None,
             "ihren",
             "Cô ấy ('sie') → gốc 'ihr'. 'der Schlüssel' (giống đực) sau 'sucht' (Akkusativ) thêm đuôi '-en' → 'ihren Schlüssel'.",
@@ -1166,7 +1166,7 @@ def seed_lesson_4():
         ),
         (
             lesson_id, "doc",
-            "Câu 44 [Đọc hiểu Thư Julia]: Julia cảm thấy nhà bếp (die Küche) như thế nào? (Điền cụm 2 từ tiếng Đức)",
+            "Câu 44 [Đọc hiểu Thư Julia]: Julia cảm thấy nhà bếp (Küche) như thế nào? (Điền cụm 2 từ tiếng Đức)",
             None,
             "zu klein / quá nhỏ / sie ist zu klein / nhỏ quá",
             "Julia viết: '...aber ich finde die Küche zu klein.'",
@@ -1174,7 +1174,7 @@ def seed_lesson_4():
         ),
         (
             lesson_id, "doc",
-            "Câu 45 [Đọc hiểu Thư Julia]: Hành lang (der Flur) của ngôi nhà được miêu tả bằng 2 tính từ nào? (Điền dạng '... und ...')",
+            "Câu 45 [Đọc hiểu Thư Julia]: Hành lang (Flur) của ngôi nhà được miêu tả bằng 2 tính từ nào? (Điền dạng '... und ...')",
             None,
             "lang und dunkel / dunkel und lang / dài và tối / tối và dài",
             "Julia viết: 'Das Haus hat einen Flur. Er ist lang und dunkel.'",
@@ -1184,7 +1184,7 @@ def seed_lesson_4():
         # --- DẠNG 7: VIẾT LẠI CÂU & BIẾN ĐỔI NGỮ PHÁP (5 CÂU) ---
         (
             lesson_id, "viet",
-            "Câu 46: Viết lại câu sau sang câu có động từ 'haben' ở Akkusativ: 'Das ist ein Garten.' → 'Wir haben ___.'",
+            "Câu 46: Viết lại câu sau dùng động từ 'haben': 'Das ist ein Garten.' → 'Wir haben ___.'",
             None,
             "einen Garten / den Garten / Garten",
             "Chuyển từ Nominativ 'ein Garten' sang Akkusativ sau 'haben': 'Wir haben einen Garten.'",
