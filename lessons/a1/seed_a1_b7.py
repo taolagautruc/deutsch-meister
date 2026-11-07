@@ -2436,60 +2436,60 @@ def seed_lesson_7():
         },
         {
                 "type": "noi_o",
-                "question": "Câu 65: Ghép hành động và địa điểm (Cột Trái) với cụm giới từ chỉ hướng Wohin? hoặc vị trí Wo? (Cột Phải):",
+                "question": "Câu 65: Nối Câu hỏi về Địa điểm (Cột Trái) với Câu trả lời chuẩn ngữ pháp (Cột Phải):",
                 "options": null,
                 "correct_answer": "Hoàn thành nối ô",
-                "explanation": "Phân biệt hướng di chuyển Wohin? (Akkusativ) vs. Vị trí tĩnh Wo? (Dativ): 1. gehen chỉ hành động di chuyển (Wohin?) đòi hỏi in + Akkusativ: danh từ giống đực der Supermarkt đổi thành 'in den Supermarkt'. 2. einkaufen chỉ hành động tại chỗ (Wo?) đòi hỏi in + Dativ: danh từ giống đực der Supermarkt đổi in + dem thành 'im Supermarkt'. 3. fahren chỉ hành động di chuyển (Wohin?) đòi hỏi in + Akkusativ: danh từ giống cái die Schule giữ nguyên mạo từ 'in die Schule'. 4. lernen chỉ hoạt động tại chỗ (Wo?) đòi hỏi in + Dativ: danh từ giống trung das Klassenzimmer đổi in + dem thành 'im Klassenzimmer'.",
+                "explanation": "Phân biệt câu hỏi hướng di chuyển (Wohin? + Akkusativ) và vị trí tại chỗ (Wo? + Dativ): 1. 'Wohin fährt der Taxifahrer...?' hỏi hướng di chuyển đến sân bay, đòi hỏi giới từ an + Akkusativ: danh từ giống đực der Flughafen đổi thành 'an den Flughafen'. 2. 'Wo untersucht die Ärztin...?' hỏi vị trí khám bệnh tại chỗ, đòi hỏi giới từ in + Dativ: danh từ giống trung das Behandlungszimmer đổi in + dem thành 'im Behandlungszimmer'. 3. 'Wohin geht die Lehrerin...?' hỏi hướng đi vào phòng học, đòi hỏi giới từ in + Akkusativ: danh từ giống trung das Klassenzimmer giữ nguyên 'in das Klassenzimmer'. 4. 'Wo kocht der Koch...?' hỏi vị trí nấu ăn tại chỗ, đòi hỏi giới từ in + Dativ: danh từ giống cái die Restaurantküche đổi in + der thành 'in der modernen Restaurantküche'.",
                 "exp_reward": 20,
                 "extra_data": {
                         "noi_o_pairs": [
                                 {
-                                        "left": "gehen + der Supermarkt (Wohin?)",
-                                        "right": "in den Supermarkt"
+                                        "left": "Wohin fährt der Taxifahrer den Touristen?",
+                                        "right": "Direkt an den Flughafen."
                                 },
                                 {
-                                        "left": "einkaufen + der Supermarkt (Wo?)",
-                                        "right": "im Supermarkt"
+                                        "left": "Wo untersucht die Ärztin den Patienten?",
+                                        "right": "Im Behandlungszimmer der Klinik."
                                 },
                                 {
-                                        "left": "fahren + die Schule (Wohin?)",
-                                        "right": "in die Schule"
+                                        "left": "Wohin geht die Lehrerin nach der Pause?",
+                                        "right": "Zurück in das Klassenzimmer."
                                 },
                                 {
-                                        "left": "lernen + das Klassenzimmer (Wo?)",
-                                        "right": "im Klassenzimmer"
+                                        "left": "Wo kocht der Koch das Mittagessen?",
+                                        "right": "In der modernen Restaurantküche."
                                 }
                         ],
-                        "translation": "1. gehen + der Supermarkt (Wohin?): đi vào trong siêu thị | 2. einkaufen + der Supermarkt (Wo?): mua sắm ở trong siêu thị | 3. fahren + die Schule (Wohin?): đi/lái xe đến trường học | 4. lernen + das Klassenzimmer (Wo?): học bài ở trong phòng học."
+                        "translation": "1. 'Tài xế taxi chở hành khách đi đâu?' — 'Đi thẳng đến sân bay.' | 2. 'Nữ bác sĩ khám bệnh nhân ở đâu?' — 'Ở trong phòng khám của bệnh viện.' | 3. 'Cô giáo đi đâu sau giờ giải lao?' — 'Quay trở lại trong phòng học.' | 4. 'Đầu bếp nấu bữa trưa ở đâu?' — 'Ở trong gian bếp nhà hàng hiện đại.'"
                 }
         },
         {
                 "type": "noi_o",
-                "question": "Câu 66: Ghép danh từ theo Giống (Cột Trái) với câu biến đổi sang Tân ngữ Cách 4 tương ứng (Cột Phải):",
+                "question": "Câu 66: Nối Hoạt động công việc (Cột Trái) với Dụng cụ cần thiết tương ứng (Cột Phải):",
                 "options": null,
                 "correct_answer": "Hoàn thành nối ô",
-                "explanation": "Quy tắc biến đổi mạo từ từ Cách 1 (Nominativ) sang Cách 4 (Akkusativ): 1. Giống đực (Maskulinum): Là giống DUY NHẤT bị biến đổi mạo từ sang đuôi -en (der -> den, ein -> einen): Er kauft den Stuhl / einen Stift. 2. Giống cái (Femininum): Mạo từ giữ nguyên dạng đuôi -e giống như Nominativ (die, meine): Ich suche die Lampe / meine Brille. 3. Giống trung (Neutrum): Mạo từ giữ nguyên dạng gốc giống như Nominativ (das, kein): Sie hat das Handy / kein Geld. 4. Số nhiều (Plural): Mạo từ giữ nguyên dạng giống như Nominativ (die, eure): Wir brauchen die Stifte / eure Taschen.",
+                "explanation": "Sự biến đổi của mạo từ theo 4 giống khi làm tân ngữ trực tiếp (Cách 4 - Akkusativ): 1. Giống đực (Maskulinum - der Schraubenschlüssel): Biến đổi mạo từ sang đuôi -en khi làm tân ngữ cho động từ suchen: 'einen passenden Schraubenschlüssel'. 2. Giống trung (Neutrum - das Fieberthermometer): Giữ nguyên mạo từ giống như Nominativ khi làm tân ngữ cho brauchen: 'ein genaues Fieberthermometer'. 3. Giống cái (Femininum - die Computertastatur): Giữ nguyên mạo từ đuôi -e khi làm tân ngữ cho kaufen: 'eine moderne Computertastatur'. 4. Số nhiều (Plural - die Lehrbücher): Giữ nguyên mạo từ số nhiều khi làm tân ngữ cho sammeln: 'alle wichtigen Lehrbücher'. Cả 4 câu đều gắn liền với hoạt động và dụng cụ chuyên môn của từng ngành nghề.",
                 "exp_reward": 20,
                 "extra_data": {
                         "noi_o_pairs": [
                                 {
-                                        "left": "Maskulinum: der Stuhl / ein Stift",
-                                        "right": "Er kauft den Stuhl / einen Stift."
+                                        "left": "Der Mechatroniker muss Schrauben am Motor festziehen,",
+                                        "right": "deshalb sucht er einen passenden Schraubenschlüssel."
                                 },
                                 {
-                                        "left": "Femininum: die Lampe / meine Brille",
-                                        "right": "Ich suche die Lampe / meine Brille."
+                                        "left": "Die Ärztin muss die Körpertemperatur des Patienten messen,",
+                                        "right": "deshalb braucht sie ein genaues Fieberthermometer."
                                 },
                                 {
-                                        "left": "Neutrum: das Handy / kein Geld",
-                                        "right": "Sie hat das Handy / kein Geld."
+                                        "left": "Die Sekretärin muss eine dringende E-Mail tippen,",
+                                        "right": "deshalb kauft sie eine moderne Computertastatur."
                                 },
                                 {
-                                        "left": "Plural: die Stifte / eure Taschen",
-                                        "right": "Wir brauchen die Stifte / eure Taschen."
+                                        "left": "Der Lehrer bereitet den Unterricht für morgen vor,",
+                                        "right": "deshalb sammelt er alle wichtigen Lehrbücher."
                                 }
                         ],
-                        "translation": "1. Maskulinum: Anh ấy mua chiếc ghế / một chiếc bút. | 2. Femininum: Tôi đang tìm chiếc đèn / cặp kính của tôi. | 3. Neutrum: Cô ấy có chiếc điện thoại di động / không có tiền. | 4. Plural: Chúng tôi cần những chiếc bút / những chiếc túi của các bạn."
+                        "translation": "1. Thợ cơ điện tử phải siết chặt ốc vít ở động cơ, vì vậy anh ấy tìm một chiếc cờ lê phù hợp. | 2. Nữ bác sĩ phải đo thân nhiệt của bệnh nhân, vì vậy cô ấy cần một chiếc nhiệt kế chính xác. | 3. Nữ thư ký phải gõ một bức thư điện tử khẩn, vì vậy cô ấy mua một chiếc bàn phím máy tính hiện đại. | 4. Thầy giáo chuẩn bị bài giảng cho ngày mai, vì vậy thầy thu thập tất cả các sách giáo khoa quan trọng."
                 }
         },
         {
