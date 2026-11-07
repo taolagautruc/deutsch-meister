@@ -341,114 +341,114 @@ def build_full_seed_script():
     # -------------------------------------------------------------------------
     noi_o_data = [
         (
-            "Câu 58: Nối Nghề nghiệp với Nhiệm vụ chuyên môn đặc trưng tương ứng:",
+            "Câu 58: Nối Nghề nghiệp (Cột Trái) với Nhiệm vụ chuyên môn đặc trưng (Cột Phải):",
             [
                 {"left": "Florist / Floristin", "right": "bindet Blumensträuße und verkauft Rosen im Blumengeschäft"},
                 {"left": "KFZ-Mechatroniker / Mechatronikerin", "right": "repariert defekte Motoren und prüft Bremsen in der Werkstatt"},
                 {"left": "Kellner / Kellnerin", "right": "serviert Getränke und bringt Speisen an den Tisch"},
                 {"left": "Bauarbeiter / Bauarbeiterin", "right": "baut moderne Gebäude und trägt Schutzhelm auf der Baustelle"}
             ],
-            "Thợ hoa bó hoa và bán hoa hồng; thợ cơ khí sửa động cơ và kiểm tra phanh; người phục vụ bưng bê món ăn; công nhân xây dựng các tòa nhà hiện đại.",
-            "Nối nghề nghiệp với nhiệm vụ chuyên môn tương ứng."
+            "Nối nghề nghiệp với nhiệm vụ và nơi làm việc đặc trưng: 1. Florist/in (thợ hoa) làm việc tại Blumengeschäft, nhiệm vụ là cắm hoa (bindet Blumensträuße) và bán hoa (verkauft Rosen). 2. KFZ-Mechatroniker/in (kỹ thuật viên cơ điện tử ô tô) làm việc trong Werkstatt, nhiệm vụ là sửa động cơ (repariert Motoren) và kiểm tra phanh (prüft Bremsen). 3. Kellner/in (nhân viên phục vụ bàn) làm việc tại quán ăn/nhà hàng, nhiệm vụ là bưng đồ uống (serviert Getränke) và mang món ăn ra bàn (bringt Speisen an den Tisch). 4. Bauarbeiter/in (công nhân xây dựng) làm việc tại Baustelle, nhiệm vụ là xây nhà (baut Gebäude) và phải đội mũ bảo hộ lao động (trägt Schutzhelm).",
+            "1. Thợ hoa: cắm/bó hoa và bán hoa hồng trong cửa hàng hoa. | 2. Kỹ thuật viên cơ điện tử ô tô: sửa chữa động cơ hỏng và kiểm tra phanh trong xưởng sửa chữa. | 3. Nhân viên phục vụ bàn: bưng đồ uống và mang món ăn đến bàn cho khách. | 4. Công nhân xây dựng: xây các tòa nhà hiện đại và đội mũ bảo hộ trên công trường."
         ),
         (
-            "Câu 59: Nối Nghề nghiệp với Nơi làm việc chuẩn ngữ pháp:",
+            "Câu 59: Nối Nghề nghiệp (Cột Trái) với Nơi làm việc chuẩn ngữ pháp (Cột Phải):",
             [
-                {"left": "die Verkäuferin", "right": "im Supermarkt oder im Schuhgeschäft (in + dem)"},
-                {"left": "der Koch", "right": "in der Restaurantküche am Herd (in + der)"},
-                {"left": "die Schülerin und der Lehrer", "right": "im Klassenzimmer am Gymnasium (in + dem)"},
-                {"left": "die Trainerin und der Sportler", "right": "im großen Fußballstadion (in + dem)"}
+                {"left": "die Verkäuferin", "right": "im Supermarkt oder im Schuhgeschäft"},
+                {"left": "der Koch", "right": "in der Restaurantküche am Herd"},
+                {"left": "die Schülerin und der Lehrer", "right": "im Klassenzimmer am Gymnasium"},
+                {"left": "die Trainerin und der Sportler", "right": "im großen Fußballstadion"}
             ],
-            "Nữ nhân viên bán hàng làm việc trong siêu thị/cửa hàng giày; đầu bếp trong bếp nhà hàng; học sinh và thầy giáo trong phòng học; huấn luyện viên và vận động viên trong sân vận động.",
-            "Nối nghề nghiệp với nơi làm việc tương ứng."
+            "Vị trí nơi làm việc (câu hỏi Wo? - Ở đâu?) đi với giới từ in + Cách 3 (Dativ): 1. die Verkäuferin bán hàng ở siêu thị/tiệm giày: der Supermarkt / das Schuhgeschäft là giống đực/trung nên in + dem rút gọn thành 'im Supermarkt / im Schuhgeschäft'. 2. der Koch nấu nướng trong bếp: die Restaurantküche là danh từ giống cái nên in + der chuyển thành 'in der Restaurantküche'. 3. die Schülerin & der Lehrer dạy và học ở trường: das Klassenzimmer là giống trung nên in + dem rút gọn thành 'im Klassenzimmer'. 4. die Trainerin & der Sportler tập luyện ở sân vận động: das Fußballstadion là giống trung nên in + dem rút gọn thành 'im großen Fußballstadion'.",
+            "1. Nữ nhân viên bán hàng: ở trong siêu thị hoặc trong cửa hàng giày. | 2. Nam đầu bếp: ở trong gian bếp nhà hàng bên cạnh bếp nấu. | 3. Nữ học sinh và nam thầy giáo: ở trong phòng học tại trường trung học. | 4. Nữ huấn luyện viên và nam vận động viên: ở trong sân vận động bóng đá lớn."
         ),
         (
-            "Câu 60: Nối Cụm động từ cố định với Giới từ & Ý nghĩa đi kèm:",
+            "Câu 60: Nối Cụm động từ cố định (Cột Trái) với Thành phần đi kèm phù hợp ngữ pháp (Cột Phải):",
             [
-                {"left": "arbeiten als", "right": "chỉ chức danh nghề nghiệp (không dùng ein/eine)"},
-                {"left": "telefonieren mit", "right": "gọi điện thoại với đối tác hoặc khách hàng (mit + Dativ)"},
-                {"left": "danken für", "right": "cảm ơn vì sự giúp đỡ nhiệt tình (für + Akkusativ)"},
-                {"left": "helfen bei", "right": "hỗ trợ, giúp đỡ trong công việc hay học tập (bei + Dativ)"}
+                {"left": "arbeiten als", "right": "Mechatroniker bei einer Autofirma"},
+                {"left": "telefonieren mit", "right": "dem Kunden im Büro"},
+                {"left": "danken für", "right": "die große Hilfe der Kollegen"},
+                {"left": "helfen bei", "right": "der schweren Arbeit am Computer"}
             ],
-            "arbeiten als + Nghề nghiệp; telefonieren mit + Dativ; danken für + Akkusativ; helfen bei + Dativ.",
-            "Nối cụm động từ với giới từ và ý nghĩa đi kèm."
+            "Quy tắc ngữ pháp của các cụm động từ đi kèm giới từ cố định: 1. 'arbeiten als' đi trực tiếp với tên nghề nghiệp mà không dùng mạo từ (không dùng ein/der): arbeiten als Mechatroniker. 2. 'telefonieren mit' luôn đòi hỏi Cách 3 (Dativ): danh từ giống đực der Kunde đổi thành 'mit dem Kunden'. 3. 'danken für' luôn đòi hỏi Cách 4 (Akkusativ): danh từ giống cái die Hilfe giữ nguyên mạo từ 'für die große Hilfe'. 4. 'helfen bei' luôn đòi hỏi Cách 3 (Dativ): danh từ giống cái die Arbeit đổi mạo từ thành 'bei der schweren Arbeit'.",
+            "1. làm việc với tư cách là kỹ thuật viên cơ điện tử tại một công ty ô tô | 2. gọi điện thoại với khách hàng ở văn phòng | 3. cảm ơn vì sự giúp đỡ to lớn của các đồng nghiệp | 4. giúp đỡ trong công việc nặng nhọc bên máy vi tính."
         ),
         (
-            "Câu 61: Nối Động từ khuyết thiếu với Ý nghĩa & Mục đích sử dụng thực tế:",
+            "Câu 61: Nối Động từ khuyết thiếu (Cột Trái) với Tình huống thực tế sử dụng (Cột Phải):",
             [
-                {"left": "müssen (phải)", "right": "diễn tả bổn phận, quy định hoặc bắt buộc khách quan"},
-                {"left": "können (có thể)", "right": "diễn tả khả năng, năng lực chuyên môn hoặc cơ hội"},
-                {"left": "nicht dürfen (không được phép)", "right": "diễn tả điều cấm đoán tuyệt đối, an toàn lao động"},
-                {"left": "wollen (muốn / dự định)", "right": "diễn tả ý chí quyết tâm mạnh mẽ, kế hoạch tương lai"}
+                {"left": "müssen", "right": "Die Ampel ist rot, alle Autos stoppen hier."},
+                {"left": "können", "right": "Er spricht fließend vier Fremdsprachen."},
+                {"left": "nicht dürfen", "right": "Hier ist eine Baustelle, Betreten verboten!"},
+                {"left": "wollen", "right": "Wir haben einen festen Plan für die Zukunft."}
             ],
-            "müssen = bắt buộc/bổn phận; können = khả năng/năng lực; không được phép = cấm đoán; wollen = ý chí/kế hoạch tương lai.",
-            "Nối động từ khuyết thiếu với ý nghĩa thực tế."
+            "Bản chất và ngữ cảnh sử dụng của 4 động từ khuyết thiếu: 1. 'müssen' diễn tả sự bắt buộc khách quan, luật lệ hoặc quy định bắt buộc phải tuân theo (đèn đỏ thì xe cộ bắt buộc phải dừng). 2. 'können' diễn tả năng lực, khả năng chuyên môn hoặc kỹ năng cá nhân (khả năng nói được 4 ngoại ngữ). 3. 'nicht dürfen' diễn tả sự cấm đoán tuyệt đối, liên quan đến an toàn lao động hoặc biển báo cấm (cấm người ngoài vào công trường nguy hiểm). 4. 'wollen' diễn tả ý chí quyết tâm mạnh mẽ, mong muốn chủ quan hoặc kế hoạch đã định sẵn cho tương lai.",
+            "1. müssen: Đèn giao thông màu đỏ, tất cả ô tô phải dừng lại ở đây. | 2. können: Anh ấy có thể nói trôi chảy bốn thứ tiếng ngoại ngữ. | 3. nicht dürfen: Đây là công trường xây dựng, cấm vào (không được phép vào)! | 4. wollen: Chúng tôi có một kế hoạch kiên định cho tương lai (muốn / quyết tâm thực hiện)."
         ),
         (
-            "Câu 62: Nối Chủ ngữ với Dạng chia đúng của Modalverb wollen & dürfen:",
+            "Câu 62: Nối Chủ ngữ (Cột Trái) với Dạng chia đúng của Modalverb wollen & dürfen (Cột Phải):",
             [
-                {"left": "ich / er / sie (cô ấy)", "right": "will / darf (đổi nguyên âm và không có đuôi -t)"},
-                {"left": "du", "right": "willst / darfst (thêm đuôi -st theo quy tắc)"},
-                {"left": "ihr", "right": "wollt / dürft (thêm đuôi -t và giữ nguyên âm)"},
-                {"left": "wir / sie (họ) / Sie", "right": "wollen / dürfen (giữ nguyên dạng nguyên mẫu)"}
+                {"left": "ich / er / sie / es", "right": "will / darf"},
+                {"left": "du", "right": "willst / darfst"},
+                {"left": "ihr", "right": "wollt / dürft"},
+                {"left": "wir / sie / Sie", "right": "wollen / dürfen"}
             ],
-            "Quy tắc chia Modalverb: ngôi ich và ngôi er/sie/es luôn giống hệt nhau và không có đuôi -t.",
-            "Nối chủ ngữ với dạng chia đúng của động từ khuyết thiếu."
+            "Quy tắc chia động từ khuyết thiếu wollen (muốn) và dürfen (được phép): 1. Ngôi 'ich' và ngôi số ít 'er/sie/es' luôn chia giống hệt nhau, đổi nguyên âm (o -> i, ü -> a) và hoàn toàn KHÔNG có đuôi động từ (-t): ich/er/sie/es will, darf. 2. Ngôi 'du' đổi nguyên âm và thêm đuôi -st theo quy tắc chia: du willst, darfst. 3. Ngôi 'ihr' giữ nguyên âm gốc của động từ (o, ü) và thêm đuôi -t: ihr wollt, dürft. 4. Ngôi số nhiều 'wir', 'sie' (họ) và ngôi lịch sự 'Sie' giữ nguyên dạng nguyên mẫu tận cùng đuôi -en: wir/sie/Sie wollen, dürfen.",
+            "1. ich / er / sie / es: tôi / anh ấy / cô ấy / nó muốn / được phép | 2. du: bạn muốn / được phép | 3. ihr: các bạn muốn / được phép | 4. wir / sie / Sie: chúng tôi / họ / Ngài muốn / được phép."
         ),
         (
-            "Câu 63: Nối Câu hỏi phỏng vấn công việc với Câu trả lời phù hợp ngữ cảnh:",
+            "Câu 63: Nối Câu hỏi phỏng vấn công việc (Cột Trái) với Câu trả lời phù hợp ngữ cảnh (Cột Phải):",
             [
                 {"left": "Was machen Sie beruflich, Herr Bauer?", "right": "Ich arbeite als Mechatroniker bei einer Autofirma."},
                 {"left": "Wo arbeiten Sie jeden Tag?", "right": "In einer modernen Werkstatt am Stadtrand."},
                 {"left": "Welche Aufgaben müssen Sie übernehmen?", "right": "Ich muss Fahrzeuge warten und Fehler diagnostizieren."},
                 {"left": "Wie gefällt Ihnen die Arbeit?", "right": "Sehr gut, ich kann viele neue Technologien lernen."}
             ],
-            "Hỏi nghề nghiệp -> trả lời làm nghề gì; hỏi nơi làm việc -> trả lời địa điểm; hỏi nhiệm vụ -> trả lời việc phải làm; hỏi cảm nhận -> trả lời mức độ yêu thích công việc.",
-            "Nối câu hỏi phỏng vấn với câu trả lời phù hợp."
+            "Đối chiếu ngữ cảnh câu hỏi và câu trả lời trong phỏng vấn nghề nghiệp: 1. 'Was machen Sie beruflich?' (hỏi nghề nghiệp) -> trả lời bằng cấu trúc chức danh nghề 'Ich arbeite als Mechatroniker...'. 2. 'Wo arbeiten Sie...?' (hỏi địa điểm làm việc) -> trả lời bằng cụm chỉ nơi chốn 'In einer modernen Werkstatt...'. 3. 'Welche Aufgaben müssen Sie übernehmen?' (hỏi nhiệm vụ công việc) -> trả lời bằng các hành động chuyên môn 'Ich muss Fahrzeuge warten und Fehler diagnostizieren'. 4. 'Wie gefällt Ihnen die Arbeit?' (hỏi cảm nhận/mức độ yêu thích) -> trả lời bằng đánh giá tích cực 'Sehr gut, ich kann viele neue Technologien lernen'.",
+            "1. 'Thưa ông Bauer, ông làm nghề gì?' — 'Tôi làm kỹ thuật viên cơ điện tử tại một công ty ô tô.' | 2. 'Hằng ngày ông làm việc ở đâu?' — 'Trong một xưởng sửa chữa hiện đại ở ngoại ô thành phố.' | 3. 'Ông phải đảm nhận những nhiệm vụ nào?' — 'Tôi phải bảo dưỡng xe cộ và chẩn đoán lỗi hỏng.' | 4. 'Ông thấy công việc này thế nào?' — 'Rất tốt, tôi có thể học hỏi nhiều công nghệ mới.'"
         ),
         (
-            "Câu 64: Nối Động từ với Danh từ tân ngữ phù hợp ngữ pháp:",
+            "Câu 64: Nối Động từ (Cột Trái) với Cụm danh từ tân ngữ phù hợp ngữ pháp (Cột Phải):",
             [
-                {"left": "untersuchen (Akkusativ - tân ngữ trực tiếp)", "right": "den kranken Patienten im Behandlungszimmer"},
-                {"left": "helfen (Dativ - người nhận sự giúp đỡ)", "right": "der älteren Dame beim Überqueren der Straße"},
-                {"left": "anrufen (Akkusativ - người được gọi điện)", "right": "meinen besten Kollegen im Büro"},
-                {"left": "gehören (Dativ - người sở hữu)", "right": "dem neuen Trainer der Fußballmannschaft"}
+                {"left": "untersuchen", "right": "den kranken Patienten im Behandlungszimmer"},
+                {"left": "helfen", "right": "der älteren Dame beim Überqueren der Straße"},
+                {"left": "anrufen", "right": "meinen besten Kollegen im Büro"},
+                {"left": "gehören", "right": "dem neuen Trainer der Fußballmannschaft"}
             ],
-            "untersuchen và anrufen đi với Akkusativ (den Patienten, meinen Kollegen); helfen và gehören đi với Dativ (der Dame, dem Trainer).",
-            "Nối động từ với danh từ tân ngữ theo Cách phù hợp."
+            "Quy tắc đòi hỏi Cách (Kasus) của từng động từ: 1. 'untersuchen' (khám bệnh) đòi hỏi tân ngữ trực tiếp ở Cách 4 (Akkusativ): danh từ giống đực der Patient (danh từ N-Deklination) đổi thành 'den kranken Patienten'. 2. 'helfen' (giúp đỡ) luôn đòi hỏi tân ngữ ở Cách 3 (Dativ): danh từ giống cái die Dame đổi mạo từ thành 'der älteren Dame'. 3. 'anrufen' (gọi điện cho ai) đòi hỏi tân ngữ ở Cách 4 (Akkusativ): danh từ giống đực der Kollege (mein-) đổi thành 'meinen besten Kollegen'. 4. 'gehören' (thuộc về ai) luôn đòi hỏi tân ngữ ở Cách 3 (Dativ): danh từ giống đực der Trainer đổi mạo từ thành 'dem neuen Trainer'.",
+            "1. untersuchen: khám cho bệnh nhân bị ốm ở trong phòng khám bệnh | 2. helfen: giúp đỡ bà cụ lớn tuổi khi băng qua đường | 3. anrufen: gọi điện thoại cho người đồng nghiệp thân nhất của tôi ở văn phòng | 4. gehören: thuộc về vị huấn luyện viên mới của đội bóng đá."
         ),
         (
-            "Câu 65: Ghép hành động và danh từ chỉ địa điểm (Cột Trái) với cụm giới từ chỉ hướng Wohin? hoặc vị trí Wo? đúng ngữ pháp (Cột Phải):",
+            "Câu 65: Ghép hành động và địa điểm (Cột Trái) với cụm giới từ chỉ hướng Wohin? hoặc vị trí Wo? (Cột Phải):",
             [
-                {"left": "gehen + der Supermarkt (Wohin?)", "right": "in den Supermarkt (Cách 4 - Akkusativ giống đực)"},
-                {"left": "einkaufen + der Supermarkt (Wo?)", "right": "im Supermarkt (Cách 3 - Dativ giống đực: in + dem)"},
-                {"left": "fahren + die Schule (Wohin?)", "right": "in die Schule (Cách 4 - Akkusativ giống cái)"},
-                {"left": "lernen + das Klassenzimmer (Wo?)", "right": "im Klassenzimmer (Cách 3 - Dativ giống trung: in + dem)"}
+                {"left": "gehen + der Supermarkt (Wohin?)", "right": "in den Supermarkt"},
+                {"left": "einkaufen + der Supermarkt (Wo?)", "right": "im Supermarkt"},
+                {"left": "fahren + die Schule (Wohin?)", "right": "in die Schule"},
+                {"left": "lernen + das Klassenzimmer (Wo?)", "right": "im Klassenzimmer"}
             ],
-            "Các động từ chỉ sự di chuyển (gehen, fahren -> Wohin?) đi với giới từ in + Cách 4 (Akkusativ: in den Supermarkt, in die Schule). Các động từ chỉ hoạt động tại chỗ (einkaufen, lernen -> Wo?) đi với giới từ in + Cách 3 (Dativ: in + dem = im Supermarkt, im Klassenzimmer).",
-            "1. đi vào siêu thị | 2. mua sắm ở trong siêu thị | 3. đi đến trường học | 4. học bài ở trong phòng học."
+            "Phân biệt hướng di chuyển Wohin? (Akkusativ) vs. Vị trí tĩnh Wo? (Dativ): 1. gehen chỉ hành động di chuyển (Wohin?) đòi hỏi in + Akkusativ: danh từ giống đực der Supermarkt đổi thành 'in den Supermarkt'. 2. einkaufen chỉ hành động tại chỗ (Wo?) đòi hỏi in + Dativ: danh từ giống đực der Supermarkt đổi in + dem thành 'im Supermarkt'. 3. fahren chỉ hành động di chuyển (Wohin?) đòi hỏi in + Akkusativ: danh từ giống cái die Schule giữ nguyên mạo từ 'in die Schule'. 4. lernen chỉ hoạt động tại chỗ (Wo?) đòi hỏi in + Dativ: danh từ giống trung das Klassenzimmer đổi in + dem thành 'im Klassenzimmer'.",
+            "1. gehen + der Supermarkt (Wohin?): đi vào trong siêu thị | 2. einkaufen + der Supermarkt (Wo?): mua sắm ở trong siêu thị | 3. fahren + die Schule (Wohin?): đi/lái xe đến trường học | 4. lernen + das Klassenzimmer (Wo?): học bài ở trong phòng học."
         ),
         (
-            "Câu 66: Ghép cụm danh từ ở Cách 1 (Nominativ - Chủ ngữ) với dạng biến đổi đúng sang Cách 4 (Akkusativ - Tân ngữ trực tiếp):",
+            "Câu 66: Ghép danh từ theo Giống (Cột Trái) với câu biến đổi sang Tân ngữ Cách 4 tương ứng (Cột Phải):",
             [
-                {"left": "Giống đực (Maskulinum): der Stuhl / ein Stift", "right": "Er kauft den Stuhl / einen Stift. (đổi sang đuôi -en)"},
-                {"left": "Giống cái (Femininum): die Lampe / meine Brille", "right": "Ich suche die Lampe / meine Brille. (giữ nguyên đuôi -e)"},
-                {"left": "Giống trung (Neutrum): das Handy / kein Geld", "right": "Sie hat das Handy / kein Geld. (giữ nguyên dạng gốc)"},
-                {"left": "Số nhiều (Plural): die Stifte / eure Taschen", "right": "Wir brauchen die Stifte / eure Taschen. (giữ nguyên, không thêm -n)"}
+                {"left": "Maskulinum: der Stuhl / ein Stift", "right": "Er kauft den Stuhl / einen Stift."},
+                {"left": "Femininum: die Lampe / meine Brille", "right": "Ich suche die Lampe / meine Brille."},
+                {"left": "Neutrum: das Handy / kein Geld", "right": "Sie hat das Handy / kein Geld."},
+                {"left": "Plural: die Stifte / eure Taschen", "right": "Wir brauchen die Stifte / eure Taschen."}
             ],
-            "Khi chuyển từ Cách 1 (Nominativ) sang Cách 4 (Akkusativ), chỉ duy nhất danh từ giống đực (Maskulinum) biến đổi mạo từ sang đuôi -en (der -> den, ein -> einen). Danh từ giống cái, giống trung và số nhiều giữ nguyên mạo từ như ở Nominativ.",
-            "1-C: Anh ấy mua cái ghế / một cây bút | 2-A: Tôi tìm cái đèn / kính của tôi | 3-D: Cô ấy có điện thoại / không có tiền | 4-B: Chúng tôi cần những cây bút / những chiếc túi của các bạn."
+            "Quy tắc biến đổi mạo từ từ Cách 1 (Nominativ) sang Cách 4 (Akkusativ): 1. Giống đực (Maskulinum): Là giống DUY NHẤT bị biến đổi mạo từ sang đuôi -en (der -> den, ein -> einen): Er kauft den Stuhl / einen Stift. 2. Giống cái (Femininum): Mạo từ giữ nguyên dạng đuôi -e giống như Nominativ (die, meine): Ich suche die Lampe / meine Brille. 3. Giống trung (Neutrum): Mạo từ giữ nguyên dạng gốc giống như Nominativ (das, kein): Sie hat das Handy / kein Geld. 4. Số nhiều (Plural): Mạo từ giữ nguyên dạng giống như Nominativ (die, eure): Wir brauchen die Stifte / eure Taschen.",
+            "1. Maskulinum: Anh ấy mua chiếc ghế / một chiếc bút. | 2. Femininum: Tôi đang tìm chiếc đèn / cặp kính của tôi. | 3. Neutrum: Cô ấy có chiếc điện thoại di động / không có tiền. | 4. Plural: Chúng tôi cần những chiếc bút / những chiếc túi của các bạn."
         ),
         (
-            "Câu 67: Nối Tình huống ở vế đầu (Cột Trái) với Hoạt động dùng động từ khuyết thiếu phù hợp về cả ngữ pháp lẫn ngữ nghĩa (Cột Phải):",
+            "Câu 67: Nối Tình huống ở vế đầu (Cột Trái) với Hoạt động dùng động từ khuyết thiếu phù hợp (Cột Phải):",
             [
-                {"left": "Ich arbeite heute im Spätdienst (ca muộn),", "right": "deshalb kann ich am Morgen bis 9.00 Uhr schlafen."},
+                {"left": "Ich arbeite heute im Spätdienst,", "right": "deshalb kann ich am Morgen bis 9.00 Uhr schlafen."},
                 {"left": "Mein Sohn ist heute leider krank,", "right": "deshalb darf er heute nicht in die Schule gehen."},
                 {"left": "Habt ihr morgen frei,", "right": "oder müsst ihr um 8.00 Uhr in der Firma sein?"},
-                {"left": "Frau Klein arbeitet als Sekretärin im Büro", "right": "und sie kann sehr schnell E-Mails schreiben."}
+                {"left": "Frau Klein arbeitet als Sekretärin im Büro,", "right": "und sie kann sehr schnell E-Mails schreiben."}
             ],
-            "Dựa vào đại từ nhân xưng và ngữ cảnh: 1 (Ich -> kann ich); 2 (Mein Sohn -> er bị ốm nên không được đi học: darf er nicht); 3 (ihr -> müsst ihr); 4 (Frau Klein -> sie kann).",
-            "1-C: Hôm nay tôi làm ca muộn, vì vậy buổi sáng tôi có thể ngủ đến 9 giờ. | 2-D: Hôm nay con trai tôi không may bị ốm, vì vậy cậu bé không được phép đến trường. | 3-A: Ngày mai các bạn được nghỉ, hay các bạn phải có mặt ở công ty lúc 8 giờ? | 4-B: Bà Klein làm thư ký ở văn phòng và bà ấy có thể viết email rất nhanh."
+            "Ghép nối dựa trên sự hòa hợp chủ ngữ và ngữ nghĩa của Modalverb: 1. Chủ ngữ 'Ich' tương ứng với cách chia 'kann ich' (làm ca muộn nên buổi sáng có thể ngủ dậy muộn). 2. Chủ ngữ 'Mein Sohn' (ngôi er) bị ốm tương ứng với sự cấm đoán 'darf er nicht' (bị ốm nên không được phép đến trường để tránh lây bệnh). 3. Câu hỏi với chủ ngữ 'ihr' đi liền với vế 'oder müsst ihr' (hỏi các bạn được nghỉ hay phải có mặt ở công ty lúc 8 giờ). 4. Chủ ngữ 'Frau Klein' (ngôi sie) làm thư ký tương ứng với năng lực chuyên môn 'sie kann sehr schnell E-Mails schreiben'.",
+            "1. Hôm nay tôi làm ca muộn, vì vậy buổi sáng tôi có thể ngủ đến 9 giờ. | 2. Hôm nay con trai tôi không may bị ốm, vì vậy cháu không được phép đến trường. | 3. Ngày mai các bạn được nghỉ, hay các bạn phải có mặt ở công ty lúc 8 giờ? | 4. Bà Klein làm thư ký ở văn phòng, và bà ấy có thể gõ email rất nhanh."
         )
     ]
 
