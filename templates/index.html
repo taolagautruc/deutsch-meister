@@ -1763,7 +1763,7 @@
                         : 'Nhập đáp án tiếng Đức của bạn... (nhấn Enter để kiểm tra và chuyển câu)';
                     inputHtml = `
                         <div class="flex gap-2 mt-3">
-                            <input id="ex-input-${i}" value="${cleanAns.replace(/"/g, '&quot;')}" onfocus="activeInputId='ex-input-${i}'" onkeydown="handleExerciseInputKeydown(event, ${i})" type="text" placeholder="${placeholderText}" class="flex-1 px-4 py-2.5 rounded-xl ${isDone ? 'bg-emerald-50/40 border-2 border-emerald-400 font-bold text-emerald-950' : 'bg-white border border-slate-200'} text-sm focus:outline-none focus:border-indigo-500">
+                            <input id="ex-input-${i}" value="${cleanAns.replace(/"/g, '&quot;')}" oninput="handleExerciseInputChange(${i})" onfocus="activeInputId='ex-input-${i}'" onkeydown="handleExerciseInputKeydown(event, ${i})" type="text" placeholder="${placeholderText}" class="flex-1 px-4 py-2.5 rounded-xl ${isDone ? 'bg-emerald-50/40 border-2 border-emerald-400 font-bold text-emerald-950' : 'bg-white border border-slate-200'} text-sm focus:outline-none focus:border-indigo-500">
                             <button onclick="checkExerciseAnswer(${i}, document.getElementById('ex-input-${i}').value)" class="px-5 py-2.5 rounded-xl ${isDone ? 'bg-emerald-600 hover:bg-emerald-700' : 'bg-indigo-600 hover:bg-indigo-500'} text-white font-bold text-sm shadow-sm transition cursor-pointer shrink-0">
                                 ${isDone ? '✓ Đã xong' : 'Kiểm tra'}
                             </button>
@@ -1843,6 +1843,25 @@
                 setTimeout(() => {
                     focusNextExercise(index);
                 }, 220);
+            }
+        }
+
+        function handleExerciseInputChange(index) {
+            const inputEl = document.getElementById(`ex-input-${index}`);
+            if (!inputEl) return;
+            const card = document.getElementById(`ex-card-${index}`);
+            const checkBtn = inputEl.nextElementSibling;
+
+            // Nếu thẻ hoặc ô input đang ở trạng thái báo đỏ (làm sai trước đó)
+            if (card && card.classList.contains('border-rose-300')) {
+                card.className = "p-5 rounded-2xl bg-white border border-slate-200 space-y-2 transition-all";
+            }
+            if (inputEl.classList.contains('border-rose-400') || inputEl.classList.contains('bg-rose-50/40')) {
+                inputEl.className = "flex-1 px-4 py-2.5 rounded-xl bg-slate-50 border border-slate-200 focus:border-indigo-500 focus:bg-white text-sm font-semibold text-slate-800 focus:outline-none transition";
+            }
+            if (checkBtn && checkBtn.innerText.includes('Thử lại')) {
+                checkBtn.className = "px-5 py-2.5 rounded-xl bg-indigo-600 hover:bg-indigo-700 text-white font-bold text-sm shadow-sm transition cursor-pointer shrink-0";
+                checkBtn.innerText = "Kiểm tra";
             }
         }
 
@@ -2003,7 +2022,14 @@
                 ex._isUserCorrect = isCorrect;
             } else {
                 const isMultiSlot = (ex.exercise_type === 'dien_tao_cau') || 
-                                    (Boolean(ex.question) && (ex.question.includes('[1]') || ex.question.includes('ngăn cách bởi dấu /') || ex.question.includes('cách nhau bởi dấu /') || /điền\s+[2-9]\s+từ/i.test(ex.question)));
+                                    (Boolean(ex.question) && (
+                                        ex.question.includes('[1]') || 
+                                        ex.question.includes('ngăn cách bởi dấu /') || 
+                                        ex.question.includes('cách nhau bởi dấu /') || 
+                                        ex.question.includes('ngăn cách bởi dấu phẩy') || 
+                                        ex.question.includes('cách nhau bởi dấu phẩy') || 
+                                        /điền\s+[2-9]\s+từ/i.test(ex.question)
+                                    ));
 
                 if (isMultiSlot) {
                     const candidates = [ex.correct_answer];
@@ -2024,13 +2050,40 @@
                     if (uParts.length < 2) {
                         isCorrect = false;
                     } else {
-                        isCorrect = candidates.some(cand => {
+                        // Mở rộng các phương án nếu có biến thể ngăn cách bởi ||, \n, hoặc
+                        const expandedCandidates = [];
+                        candidates.forEach(cand => {
+                            if (!cand) return;
+                            if (typeof cand === 'string' && (cand.includes('||') || cand.includes('\n') || /\s+hoặc\s+/i.test(cand))) {
+                                cand.split(/\|\||\n|\s+hoặc\s+/i).forEach(p => {
+                                    const tr = p.trim();
+                                    if (tr) expandedCandidates.push(tr);
+                                });
+                            } else {
+                                expandedCandidates.push(cand);
+                            }
+                        });
+
+                        isCorrect = expandedCandidates.some(cand => {
                             if (!cand) return false;
-                            const cParts = String(cand).split('/').map(p => p.trim()).filter(Boolean);
+                            // 1. Kiểm tra khớp toàn chuỗi trước (nếu người dùng gõ trực tiếp tương đương)
+                            if (typeof checkGermanAnswerEquivalence === 'function' && checkGermanAnswerEquivalence(rawUser, cand, { isMultiSlot: false })) {
+                                return true;
+                            }
+                            // 2. Tách từng slot của đáp án mẫu
+                            let cParts = [];
+                            if (String(cand).includes('/')) {
+                                cParts = String(cand).split('/').map(p => p.trim()).filter(Boolean);
+                            } else if (String(cand).includes(',') || String(cand).includes(';')) {
+                                cParts = String(cand).split(/[,;]/).map(p => p.trim()).filter(Boolean);
+                            } else {
+                                cParts = String(cand).split(/\s+/).map(p => p.trim()).filter(Boolean);
+                            }
+
                             if (cParts.length !== uParts.length) return false;
                             return uParts.every((u, idx) => {
                                 return (typeof checkGermanAnswerEquivalence === 'function')
-                                    ? checkGermanAnswerEquivalence(u, cParts[idx])
+                                    ? checkGermanAnswerEquivalence(u, cParts[idx], { isMultiSlot: false })
                                     : normalizeAnswer(u) === normalizeAnswer(cParts[idx]);
                             });
                         });
@@ -2040,10 +2093,23 @@
                     if (extra && Array.isArray(extra.accepted_answers)) {
                         candidates.push(...extra.accepted_answers);
                     }
-                    isCorrect = candidates.some(cand => {
+                    // Tách các phương án độc lập nếu ngăn cách bởi /, ||, \n, hoặc
+                    const expandedCandidates = [];
+                    candidates.forEach(cand => {
+                        if (!cand) return;
+                        expandedCandidates.push(cand);
+                        if (typeof cand === 'string' && (cand.includes('/') || cand.includes('||') || cand.includes('\n') || /\s+hoặc\s+/i.test(cand))) {
+                            cand.split(/\/|\|\||\n|\s+hoặc\s+/i).forEach(p => {
+                                const tr = p.trim();
+                                if (tr) expandedCandidates.push(tr);
+                            });
+                        }
+                    });
+
+                    isCorrect = expandedCandidates.some(cand => {
                         if (!cand) return false;
                         return (typeof checkGermanAnswerEquivalence === 'function')
-                            ? checkGermanAnswerEquivalence(userAnswer, cand)
+                            ? checkGermanAnswerEquivalence(userAnswer, cand, { isMultiSlot: false, question: ex.question })
                             : normalizeAnswer(userAnswer) === normalizeAnswer(cand);
                     });
                 }
