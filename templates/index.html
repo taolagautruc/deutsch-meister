@@ -1925,12 +1925,12 @@
 
             const isMultipleChoice = Boolean(ex.options && Array.isArray(ex.options) && ex.options.length > 0);
             const correctOptIdx = isMultipleChoice ? getCorrectOptionIndex(ex) : -1;
+            let chosenIdx = selectedOptIndex;
 
             let isCorrect = false;
             if (ex.exercise_type === 'noi_o') {
                 isCorrect = (userAnswer === "ALL_CORRECT_MATCH");
             } else if (isMultipleChoice) {
-                let chosenIdx = selectedOptIndex;
                 if (chosenIdx === null || chosenIdx === undefined) {
                     chosenIdx = ex.options.findIndex(opt => normalizeAnswer(opt) === normalizeAnswer(userAnswer));
                 }
@@ -2077,11 +2077,11 @@
                     if (ex) {
                         delete ex._retrying;
                         ex._isUserCorrect = true;
-                        ex._userAnswer = (isMultipleChoice && ex.options && ex.options[selectedOptionIdx] !== undefined)
-                            ? ex.options[selectedOptionIdx]
-                            : val;
-                        if (selectedOptionIdx !== undefined) {
-                            ex._selectedOptIndex = selectedOptionIdx;
+                        ex._userAnswer = (isMultipleChoice && ex.options && ex.options[chosenIdx] !== undefined)
+                            ? ex.options[chosenIdx]
+                            : userAnswer;
+                        if (chosenIdx !== undefined && chosenIdx !== null) {
+                            ex._selectedOptIndex = chosenIdx;
                         }
                     }
 
@@ -2172,11 +2172,11 @@
             } else {
                 if (ex) {
                     ex._isUserCorrect = false;
-                    ex._userAnswer = (isMultipleChoice && ex.options && ex.options[selectedOptionIdx] !== undefined)
-                        ? ex.options[selectedOptionIdx]
-                        : val;
-                    if (selectedOptionIdx !== undefined) {
-                        ex._selectedOptIndex = selectedOptionIdx;
+                    ex._userAnswer = (isMultipleChoice && ex.options && ex.options[chosenIdx] !== undefined)
+                        ? ex.options[chosenIdx]
+                        : userAnswer;
+                    if (chosenIdx !== undefined && chosenIdx !== null) {
+                        ex._selectedOptIndex = chosenIdx;
                     }
                 }
                 if (currentLesson) {
