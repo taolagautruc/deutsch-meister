@@ -116,34 +116,51 @@ function checkGermanAnswerEquivalence(userAns, correctAns, options = {}) {
         }
     }
 
-    // 0b. Dạng điền nhiều chỗ trống (isMultiSlot hoặc câu hỏi có dạng [1] ... [2] hoặc đáp án dạng từ1 / từ2):
-    // Bắt buộc câu trả lời phải có đủ số lượng slot tương ứng; tuyệt đối không chấp nhận nếu người dùng chỉ điền 1 từ!
-    const cParts = correctAns.includes('/') ? correctAns.split('/').map(p => p.trim()).filter(Boolean) : [];
+    // 0b. Dạng điền nhiều chỗ trống (CHỈ kích hoạt khi isMultiSlot rõ ràng hoặc câu hỏi có dạng [1] ... [2] hoặc ghi chú ngăn cách):
+    // Tuyệt đối không tự suy đoán chỉ vì correctAns chứa dấu / vì dấu / thường là dấu phân cách các phương án tương đương (ví dụ die Stühle / Stühle, câu dịch / câu dịch...)
     const isMultiSlotPattern = isMultiSlot || 
-        (Boolean(options && options.question) && (options.question.includes('[1]') || options.question.includes('ngăn cách bởi dấu /'))) ||
-        (correctAns.includes(' / ') && cParts.length > 1 && !correctAns.includes('||') && !/\s+hoặc\s+/i.test(correctAns) && !correctAns.includes('!') && !correctAns.includes('?') && !correctAns.includes('.'));
+        (Boolean(options && options.question) && (
+            options.question.includes('[1]') || 
+            options.question.includes('ngăn cách bởi dấu /') ||
+            options.question.includes('cách nhau bởi dấu /') ||
+            options.question.includes('ngăn cách bởi dấu phẩy') ||
+            options.question.includes('cách nhau bởi dấu phẩy') ||
+            /điền\s+[2-9]\s+từ/i.test(options.question)
+        ));
 
-    if (isMultiSlotPattern && cParts.length > 1) {
-        let uParts = [];
-        if (userAns.includes('/')) {
-            uParts = userAns.split('/').map(p => p.trim()).filter(Boolean);
-        } else if (userAns.includes(',') || userAns.includes(';')) {
-            uParts = userAns.split(/[,;]/).map(p => p.trim()).filter(Boolean);
+    if (isMultiSlotPattern) {
+        let cParts = [];
+        if (correctAns.includes('/')) {
+            cParts = correctAns.split('/').map(p => p.trim()).filter(Boolean);
+        } else if (correctAns.includes(',') || correctAns.includes(';')) {
+            cParts = correctAns.split(/[,;]/).map(p => p.trim()).filter(Boolean);
         } else {
-            uParts = userAns.trim().split(/\s+/).map(p => p.trim()).filter(Boolean);
+            cParts = correctAns.trim().split(/\s+/).map(p => p.trim()).filter(Boolean);
         }
-        if (uParts.length === cParts.length) {
-            return uParts.every((u, idx) => checkGermanAnswerEquivalence(u, cParts[idx]));
+
+        if (cParts.length > 1) {
+            let uParts = [];
+            if (userAns.includes('/')) {
+                uParts = userAns.split('/').map(p => p.trim()).filter(Boolean);
+            } else if (userAns.includes(',') || userAns.includes(';')) {
+                uParts = userAns.split(/[,;]/).map(p => p.trim()).filter(Boolean);
+            } else {
+                uParts = userAns.trim().split(/\s+/).map(p => p.trim()).filter(Boolean);
+            }
+
+            if (uParts.length === cParts.length) {
+                return uParts.every((u, idx) => checkGermanAnswerEquivalence(u, cParts[idx], { isMultiSlot: false }));
+            }
+            // Người dùng thiếu slot (ví dụ chỉ điền 1 từ [1]): KHÔNG chấp nhận!
+            return false;
         }
-        // Người dùng thiếu slot (ví dụ chỉ điền 1 từ [1]): KHÔNG chấp nhận!
-        return false;
     }
 
     // 1. Phân tách nếu có nhiều phương án đáp án chuẩn (cách nhau bởi /, ||, \n, hoặc)
     // LƯU Ý: Với dạng điền nhiều chỗ trống (isMultiSlotPattern), tuyệt đối không phân tách dấu / thành các phương án độc lập
     if (!isMultiSlotPattern && (correctAns.includes('/') || correctAns.includes('||') || correctAns.includes('\n') || /\s+hoặc\s+/i.test(correctAns))) {
         const alts = correctAns.split(/\/|\|\||\n|\s+hoặc\s+/i).map(a => a.trim()).filter(Boolean);
-        if (alts.some(alt => checkGermanAnswerEquivalence(userAns, alt))) {
+        if (alts.some(alt => checkGermanAnswerEquivalence(userAns, alt, { isMultiSlot: false }))) {
             return true;
         }
     }
