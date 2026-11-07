@@ -206,6 +206,21 @@ def ensure_db_initialized():
             row_pat = cursor.fetchone()
             if not row_pat or 'kranken Patienten' not in (row_pat["example_sentence"] or ''):
                 need_reseed_b7 = True
+            cursor.execute("""
+                SELECT id FROM exercises 
+                WHERE lesson_id = ? 
+                AND exercise_type = 'noi_o'
+                AND (
+                    extra_data LIKE '%(cô ấy)%' 
+                    OR extra_data LIKE '%(in + dem)%'
+                    OR extra_data LIKE '%(Akkusativ - tân ngữ%'
+                    OR extra_data LIKE '%Nối các cặp tương ứng giữa 2 cột.%'
+                    OR extra_data LIKE '%Nối chủ ngữ với dạng chia đúng của động từ khuyết thiếu.%'
+                )
+                LIMIT 1;
+            """, (b7_id,))
+            if cursor.fetchone():
+                need_reseed_b7 = True
         if need_reseed_b7:
             from lessons.a1.seed_a1_b7 import seed_lesson_7
             seed_lesson_7()
