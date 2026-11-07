@@ -1192,7 +1192,12 @@ function handleArenaAnswer(userAnswer) {
             isCorrect = evaluateFlexibleTranslation(userAnswer, q.accepted_answers || [q.correct_answer], 'de');
         }
     } else if (q.type === 'dien_tao_cau') {
-        isCorrect = evaluateFlexibleTranslation(userAnswer, q.accepted_answers || [q.correct_answer], 'de');
+        const uParts = String(userAnswer || '').trim().split(/\s*[\/,;]\s*/).filter(Boolean);
+        if (uParts.length < 2) {
+            isCorrect = false;
+        } else {
+            isCorrect = evaluateFlexibleTranslation(userAnswer, q.accepted_answers || [q.correct_answer], 'de');
+        }
     }
 
     const ptsDelta = isCorrect ? q.points_correct : q.points_wrong;
