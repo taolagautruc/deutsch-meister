@@ -1876,6 +1876,27 @@
         }
 
         function getExerciseTranslation(ex, extra) {
+            // Xác định xem câu hỏi có phải yêu cầu dịch sang tiếng Việt không (Đức -> Việt)
+            const isDeToVi = (ex && (ex.exercise_type === 'dich_nghia_dv' || ex.exercise_type === 'dich_cau_dv' || ex.exercise_type === 'dich')) &&
+                             (ex.question && /(?:sang tiếng việt|đức\s*→\s*việt|dịch câu sau sang tiếng việt)/i.test(ex.question));
+
+            if (isDeToVi) {
+                // Với dạng dịch Đức -> Việt, bản dịch hiển thị bắt buộc phải là tiếng Việt:
+                if (extra && extra.translation && typeof extra.translation === 'string') {
+                    let trans = extra.translation.trim();
+                    if (trans.includes('=')) {
+                        const parts = trans.split('=');
+                        const viPart = parts[parts.length - 1].trim();
+                        if (hasVietnameseChars(viPart) && !isInvalidTranslationString(viPart)) return viPart;
+                    }
+                    if (hasVietnameseChars(trans) && !isInvalidTranslationString(trans)) return trans;
+                }
+                if (ex && ex.correct_answer) {
+                    const firstOpt = ex.correct_answer.split('/')[0].trim();
+                    if (hasVietnameseChars(firstOpt) && !isInvalidTranslationString(firstOpt)) return firstOpt;
+                }
+            }
+
             // 1. Kiểm tra extra.translation hoặc ex.translation
             if (extra && extra.translation && typeof extra.translation === 'string' && extra.translation.trim()) {
                 const trans = extra.translation.trim();
@@ -1895,7 +1916,7 @@
             }
 
             // 2. Nếu là dạng dịch Đức -> Việt: đáp án đúng chính là tiếng Việt
-            if (ex && ex.exercise_type === 'dich' && ex.question && /(?:đức\s*→\s*việt|sang tiếng việt)/i.test(ex.question)) {
+            if (ex && (ex.exercise_type === 'dich' || ex.exercise_type === 'dich_nghia_dv' || ex.exercise_type === 'dich_cau_dv') && ex.question && /(?:đức\s*→\s*việt|sang tiếng việt)/i.test(ex.question)) {
                 if (ex.correct_answer) {
                     const firstOpt = ex.correct_answer.split('/')[0].trim();
                     if (hasVietnameseChars(firstOpt) && !isInvalidTranslationString(firstOpt)) return firstOpt;
@@ -1903,7 +1924,7 @@
             }
 
             // 3. Nếu là dạng dịch Việt -> Đức: câu tiếng Việt nằm trong dấu ngoặc kép của đề bài
-            if (ex && ex.exercise_type === 'dich' && ex.question && /(?:việt\s*→\s*đức|sang tiếng đức)/i.test(ex.question)) {
+            if (ex && (ex.exercise_type === 'dich' || ex.exercise_type === 'dich_nghia_vd' || ex.exercise_type === 'dich_cau_vd') && ex.question && /(?:việt\s*→\s*đức|sang tiếng đức)/i.test(ex.question)) {
                 const matchVi = ex.question.match(/['"„]([^'"“]+)['"”]/);
                 if (matchVi && hasVietnameseChars(matchVi[1]) && !isInvalidTranslationString(matchVi[1])) {
                     return matchVi[1].trim();

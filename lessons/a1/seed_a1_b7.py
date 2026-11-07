@@ -2050,7 +2050,7 @@ def seed_lesson_7():
                                 "nam tài xế taxi và nữ tài xế taxi",
                                 "lái xe taxi"
                         ],
-                        "translation": "der Taxifahrer / die Taxifahrerin"
+                        "translation": "tài xế taxi"
                 }
         },
         {
@@ -2067,7 +2067,7 @@ def seed_lesson_7():
                                 "đàn ông nội trợ và phụ nữ nội trợ",
                                 "nội trợ"
                         ],
-                        "translation": "der Hausmann / die Hausfrau"
+                        "translation": "người nội trợ"
                 }
         },
         {
@@ -2084,7 +2084,7 @@ def seed_lesson_7():
                                 "người phục vụ nhà hàng",
                                 "nam bồi bàn và nữ bồi bàn"
                         ],
-                        "translation": "der Kellner / die Kellnerin"
+                        "translation": "nhân viên phục vụ bàn"
                 }
         },
         {
@@ -2100,7 +2100,7 @@ def seed_lesson_7():
                                 "nam thư ký và nữ thư ký",
                                 "người thư ký"
                         ],
-                        "translation": "der Sekretär / die Sekretärin"
+                        "translation": "thư ký"
                 }
         },
         {
@@ -2116,7 +2116,7 @@ def seed_lesson_7():
                                 "giảng dạy học sinh tại một ngôi trường",
                                 "dạy học sinh tại một trường học"
                         ],
-                        "translation": "Schüler an einer Schule unterrichten"
+                        "translation": "dạy học sinh ở một trường học"
                 }
         },
         {
@@ -2132,7 +2132,7 @@ def seed_lesson_7():
                                 "viết các chương trình máy tính",
                                 "lập trình phần mềm máy tính"
                         ],
-                        "translation": "Computerprogramme schreiben"
+                        "translation": "viết chương trình máy tính"
                 }
         },
         {
@@ -2148,7 +2148,7 @@ def seed_lesson_7():
                                 "đón con gái từ nhà trẻ về",
                                 "đón cô con gái ở trường mầm non"
                         ],
-                        "translation": "die Tochter vom Kindergarten abholen"
+                        "translation": "đón con gái từ trường mẫu giáo"
                 }
         },
         {
@@ -2164,7 +2164,7 @@ def seed_lesson_7():
                                 "đưa xe hơi đến xưởng sửa chữa",
                                 "đem ô tô vào xưởng"
                         ],
-                        "translation": "das Auto in die Werkstatt bringen"
+                        "translation": "mang ô tô vào xưởng sửa chữa"
                 }
         },
         {
@@ -2180,7 +2180,7 @@ def seed_lesson_7():
                                 "đi tập đá bóng",
                                 "đi tới buổi huấn luyện bóng đá"
                         ],
-                        "translation": "zum Fußballtraining gehen"
+                        "translation": "đi đến buổi tập bóng đá"
                 }
         },
         {
@@ -2196,7 +2196,7 @@ def seed_lesson_7():
                                 "gọi điện thoại cho khách hàng tại văn phòng",
                                 "gọi cho khách hàng ở văn phòng"
                         ],
-                        "translation": "Kunden im Büro anrufen"
+                        "translation": "gọi điện cho khách hàng ở trong văn phòng"
                 }
         },
         {
@@ -2212,7 +2212,7 @@ def seed_lesson_7():
                                 "phải, có thể, muốn",
                                 "bắt buộc phải - có thể - muốn"
                         ],
-                        "translation": "müssen — können — möchten"
+                        "translation": "phải - có thể - muốn"
                 }
         },
         {
@@ -2228,7 +2228,7 @@ def seed_lesson_7():
                                 "bán giày dép tại tiệm giày",
                                 "bán giày trong tiệm giày"
                         ],
-                        "translation": "im Schuhgeschäft Schuhe verkaufen"
+                        "translation": "bán giày ở trong cửa hàng giày"
                 }
         },
         {
@@ -3016,7 +3016,7 @@ def seed_lesson_7():
                                 "Paula phải đón con gái từ trường mẫu giáo lúc 16h30",
                                 "Paula phải đón con gái của cô ấy từ trường mầm non lúc 16 giờ 30"
                         ],
-                        "translation": "Um 16.30 Uhr muss Paula ihre Tochter vom Kindergarten abholen."
+                        "translation": "Lúc 16 giờ 30 phút Paula phải đón con gái của mình từ trường mẫu giáo"
                 }
         },
         {
@@ -3049,7 +3049,7 @@ def seed_lesson_7():
                                 "Frank Müller làm nghề giáo viên, nhưng hôm nay anh ấy có kì nghỉ và có thể ngủ đến 7 giờ",
                                 "Frank Müller là giáo viên nhưng hôm nay anh ấy được nghỉ phép và có thể ngủ đến 7 giờ"
                         ],
-                        "translation": "Frank Müller ist Lehrer von Beruf, aber heute hat er Ferien und kann bis 7 Uhr schlafen."
+                        "translation": "Frank Müller làm nghề giáo viên nhưng hôm nay anh ấy có kỳ nghỉ và có thể ngủ đến 7 giờ"
                 }
         },
         {
@@ -3081,7 +3081,7 @@ def seed_lesson_7():
                                 "Chiếc điện thoại rất quan trọng cho cô ấy vì cô ấy thường xuyên phải gọi điện cho các khách hàng của mình",
                                 "Chiếc điện thoại này rất quan trọng với cô ấy vì cô ấy thường xuyên phải gọi điện cho khách hàng của mình"
                         ],
-                        "translation": "Das Telefon ist sehr wichtig für sie, denn sie muss ihre Kunden oft anrufen."
+                        "translation": "Chiếc điện thoại rất quan trọng đối với cô ấy vì cô ấy thường xuyên phải gọi điện cho các khách hàng của mình"
                 }
         },
         {
@@ -3112,7 +3112,7 @@ def seed_lesson_7():
                                 "Ông Müller vào buổi chiều mang ô tô vào xưởng sửa chữa rồi sau đó đi tập bóng đá",
                                 "Vào buổi chiều ông Müller mang ô tô đến tiệm sửa xe rồi sau đó đi đến buổi tập bóng đá"
                         ],
-                        "translation": "Am Nachmittag bringt Herr Müller sein Auto in die Werkstatt und geht dann zum Fußballtraining."
+                        "translation": "Vào buổi chiều ông Müller mang chiếc ô tô của mình vào xưởng sửa chữa rồi sau đó đi đến buổi tập bóng đá"
                 }
         },
         {
@@ -3143,7 +3143,7 @@ def seed_lesson_7():
                                 "Cô giáo dạy học sinh ở trường vào buổi sáng và dạy sinh viên ở đại học vào buổi chiều",
                                 "Nữ giáo viên buổi sáng dạy học sinh ở trường học và buổi chiều dạy sinh viên ở đại học"
                         ],
-                        "translation": "Die Lehrerin unterrichtet vormittags Schüler an einer Schule und nachmittags Studenten an der Universität."
+                        "translation": "Cô giáo buổi sáng dạy học sinh tại một trường học và buổi chiều dạy sinh viên ở trường đại học"
                 }
         },
         {
@@ -3179,7 +3179,7 @@ def seed_lesson_7():
                                 "từ 20 đến 22 giờ Paula có thể xem tivi ở phòng khách sau đó cô ấy đã làm bữa tối",
                                 "Từ 20 đến 22 giờ Paula có thể xem tivi ở phòng khách sau đó cô ấy đã làm bữa tối"
                         ],
-                        "translation": "Von 20 bis 22 Uhr kann Paula im Wohnzimmer fernsehen, nachdem sie das Abendessen gemacht hat."
+                        "translation": "Từ 20 đến 22 giờ Paula có thể xem tivi ở trong phòng khách sau khi cô ấy đã làm bữa tối"
                 }
         },
         {
@@ -3218,7 +3218,7 @@ def seed_lesson_7():
                                 "Thợ cắt tóc cắt tóc cho anh trai của tôi ở tiệm cắt tóc",
                                 "Thợ cắt tóc cắt tóc cho em trai của tôi ở tiệm cắt tóc"
                         ],
-                        "translation": "Der Friseur schneidet meinem Bruder im Friseursalon die Haare."
+                        "translation": "Người thợ cắt tóc cắt tóc cho anh trai tôi ở trong tiệm làm tóc"
                 }
         }
 ]
