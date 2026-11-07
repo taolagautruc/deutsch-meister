@@ -1231,10 +1231,46 @@
                 // Khôi phục chính xác phiên làm bài dở dang của người dùng
                 window.lessonPracticeMode[lId] = activeSession.mode || 'normal';
                 window.sessionPracticeAnswers[lId] = new Set(activeSession.sessionAnswers || []);
-                currentLesson.allRenderExercises = activeSession.allRenderExercises;
+
+                // Đồng bộ nội dung câu hỏi mới nhất từ database nhưng bảo toàn 100% tiến trình làm bài của người dùng
+                const freshList = (currentLesson.exercises || []).map(ex => ({ ...ex }));
+                const savedList = Array.isArray(activeSession.allRenderExercises) ? activeSession.allRenderExercises : [];
+
+                if (freshList.length > 0 && freshList.length === savedList.length) {
+                    currentLesson.allRenderExercises = freshList.map((freshEx, idx) => {
+                        const savedEx = savedList[idx] || {};
+                        // Nếu là câu sinh số động (dynamic), giữ lại câu sinh số
+                        if (savedEx._isDynamicallyRandomized) {
+                            return { ...freshEx, ...savedEx };
+                        }
+                        // Luôn lấy đề bài, đáp án đúng, giải thích, dữ liệu bổ sung mới nhất từ database
+                        const merged = { ...freshEx };
+                        // Bảo toàn các trạng thái tương tác của người dùng
+                        if (savedEx.options && Array.isArray(savedEx.options)) {
+                            const freshNorm = (freshEx.options || []).map(o => normalizeAnswer(o)).sort().join('||');
+                            const savedNorm = savedEx.options.map(o => normalizeAnswer(o)).sort().join('||');
+                            if (freshNorm === savedNorm) {
+                                merged.options = savedEx.options;
+                            }
+                        }
+                        if (savedEx._selectedOptIndex !== undefined) merged._selectedOptIndex = savedEx._selectedOptIndex;
+                        if (savedEx._isUserCorrect !== undefined) merged._isUserCorrect = savedEx._isUserCorrect;
+                        if (savedEx._userAnswer !== undefined) merged._userAnswer = savedEx._userAnswer;
+                        if (savedEx._retrying !== undefined) merged._retrying = savedEx._retrying;
+                        return merged;
+                    });
+                } else if (savedList.length > 0) {
+                    currentLesson.allRenderExercises = savedList;
+                } else {
+                    currentLesson.allRenderExercises = freshList;
+                }
+
                 window.noiOMatches = activeSession.noiOMatches || {};
                 window.noiOShuffledRight = activeSession.noiOShuffledRight || {};
                 window.noiOSelectedLeft = {};
+
+                // Cập nhật lại session trong localStorage với nội dung câu hỏi mới nhất
+                saveActiveLessonSession(lId);
             } else {
                 window.noiOShuffledRight = {};
                 window.noiOMatches = {};
