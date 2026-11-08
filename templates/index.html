@@ -1754,13 +1754,17 @@
                     </div>`;
                 } else {
                     const isMultiSlot = (ex.exercise_type === 'dien_tao_cau') || 
-                                        (Boolean(ex.question) && (ex.question.includes('[1]') || ex.question.includes('ngăn cách bởi dấu /') || ex.question.includes('cách nhau bởi dấu /') || /điền\s+[2-9]\s+từ/i.test(ex.question)));
+                                        (Boolean(ex.question) && (ex.question.includes('[1]') || ex.question.includes('ngăn cách bởi dấu /') || ex.question.includes('cách nhau bởi dấu /') || ex.question.includes('ngăn cách bởi dấu phẩy') || ex.question.includes('cách nhau bởi dấu phẩy') || /điền\s+[2-9]\s+từ/i.test(ex.question)));
+                    const isDeToVi = (ex && (ex.exercise_type === 'dich_nghia_dv' || ex.exercise_type === 'dich_cau_dv' || ex.exercise_type === 'dich')) &&
+                                     (ex.question && /(?:sang tiếng việt|đức\s*→\s*việt|dịch câu sau sang tiếng việt)/i.test(ex.question));
                     const cleanAns = isDone 
                         ? (ex._userAnswer || (isMultiSlot ? String(ex.correct_answer || '').trim() : String(ex.correct_answer || '').split('/')[0].trim())) 
                         : (ex._userAnswer || '');
                     const placeholderText = isMultiSlot 
                         ? 'Điền 2 từ ngăn cách bởi dấu / (ví dụ: từ 1 / từ 2)...' 
-                        : 'Nhập đáp án tiếng Đức của bạn... (nhấn Enter để kiểm tra và chuyển câu)';
+                        : (isDeToVi 
+                            ? 'Nhập bản dịch tiếng Việt của bạn... (nhấn Enter để kiểm tra và chuyển câu)' 
+                            : 'Nhập đáp án tiếng Đức của bạn... (nhấn Enter để kiểm tra và chuyển câu)');
                     inputHtml = `
                         <div class="flex gap-2 mt-3">
                             <input id="ex-input-${i}" value="${cleanAns.replace(/"/g, '&quot;')}" oninput="handleExerciseInputChange(${i})" onfocus="activeInputId='ex-input-${i}'" onkeydown="handleExerciseInputKeydown(event, ${i})" type="text" placeholder="${placeholderText}" class="flex-1 px-4 py-2.5 rounded-xl ${isDone ? 'bg-emerald-50/40 border-2 border-emerald-400 font-bold text-emerald-950' : 'bg-white border border-slate-200'} text-sm focus:outline-none focus:border-indigo-500">
@@ -2010,6 +2014,16 @@
             const correctOptIdx = isMultipleChoice ? getCorrectOptionIndex(ex) : -1;
             let chosenIdx = selectedOptIndex;
 
+            const isMultiSlot = (ex.exercise_type === 'dien_tao_cau') || 
+                                (Boolean(ex.question) && (
+                                    ex.question.includes('[1]') || 
+                                    ex.question.includes('ngăn cách bởi dấu /') || 
+                                    ex.question.includes('cách nhau bởi dấu /') || 
+                                    ex.question.includes('ngăn cách bởi dấu phẩy') || 
+                                    ex.question.includes('cách nhau bởi dấu phẩy') || 
+                                    /điền\s+[2-9]\s+từ/i.test(ex.question)
+                                ));
+
             let isCorrect = false;
             if (ex.exercise_type === 'noi_o') {
                 isCorrect = (userAnswer === "ALL_CORRECT_MATCH");
@@ -2021,16 +2035,6 @@
                 ex._selectedOptIndex = chosenIdx;
                 ex._isUserCorrect = isCorrect;
             } else {
-                const isMultiSlot = (ex.exercise_type === 'dien_tao_cau') || 
-                                    (Boolean(ex.question) && (
-                                        ex.question.includes('[1]') || 
-                                        ex.question.includes('ngăn cách bởi dấu /') || 
-                                        ex.question.includes('cách nhau bởi dấu /') || 
-                                        ex.question.includes('ngăn cách bởi dấu phẩy') || 
-                                        ex.question.includes('cách nhau bởi dấu phẩy') || 
-                                        /điền\s+[2-9]\s+từ/i.test(ex.question)
-                                    ));
-
                 if (isMultiSlot) {
                     const candidates = [ex.correct_answer];
                     if (extra && Array.isArray(extra.accepted_answers)) {
@@ -2403,32 +2407,50 @@
                 }
 
                 feedback.className = "text-xs p-3.5 rounded-xl mt-2 bg-rose-50 text-rose-800 border border-rose-200";
-                let displayAns = String(ex.correct_answer || '').trim().replace(/[.]+$/, '');
-                let wrongTitle = "❌ Chưa chính xác.";
-                if (ex.exercise_type === 'noi_o' && extra.noi_o_pairs) {
-                    wrongTitle = "❌ Chưa chính xác (yêu cầu nối đúng 100% cả 4 cặp).";
-                    displayAns = extra.noi_o_pairs.map((p, idx) => `<b>${idx + 1}.</b> ${p.left} ⇄ <b>${p.right}</b>`).join(' &nbsp;|&nbsp; ');
-                } else if (isMultiSlot) {
-                    const rawUser = String(userAnswer || '').trim();
-                    const uPartsCount = rawUser.includes('/') ? rawUser.split('/').filter(p => p.trim()).length : (rawUser.includes(',') || rawUser.includes(';')) ? rawUser.split(/[,;]/).filter(p => p.trim()).length : rawUser.split(/\s+/).filter(Boolean).length;
-                    if (uPartsCount < 2) {
-                        wrongTitle = "❌ Chưa chính xác (bạn cần điền đủ cả 2 từ ngăn cách bởi dấu /).";
+                try {
+                    let displayAns = String(ex.correct_answer || '').trim().replace(/[.]+$/, '');
+                    let wrongTitle = "❌ Chưa chính xác.";
+                    if (ex.exercise_type === 'noi_o' && extra.noi_o_pairs) {
+                        wrongTitle = "❌ Chưa chính xác (yêu cầu nối đúng 100% cả 4 cặp).";
+                        displayAns = extra.noi_o_pairs.map((p, idx) => `<b>${idx + 1}.</b> ${p.left} ⇄ <b>${p.right}</b>`).join(' &nbsp;|&nbsp; ');
+                    } else if (isMultiSlot) {
+                        const rawUser = String(userAnswer || '').trim();
+                        const uPartsCount = rawUser.includes('/') ? rawUser.split('/').filter(p => p.trim()).length : (rawUser.includes(',') || rawUser.includes(';')) ? rawUser.split(/[,;]/).filter(p => p.trim()).length : rawUser.split(/\s+/).filter(Boolean).length;
+                        if (uPartsCount < 2) {
+                            wrongTitle = "❌ Chưa chính xác (bạn cần điền đủ cả 2 từ ngăn cách bởi dấu /).";
+                        }
                     }
+                    feedback.innerHTML = `
+                        <div class="space-y-1.5">
+                            <div class="flex items-center gap-2">
+                                <span class="text-rose-700 font-extrabold text-sm">${wrongTitle}</span>
+                            </div>
+                            <div class="text-rose-900 pt-0.5">
+                                Đáp án đúng là: <span class="font-extrabold text-rose-800">${displayAns}</span>
+                            </div>
+                            ${translationHtml}
+                            <div class="text-rose-950 leading-relaxed pt-1">
+                                <span class="font-bold">💡 Giải thích:</span> ${ex.explanation || ''}
+                            </div>
+                        </div>
+                    `;
+                } catch (err) {
+                    console.error("Error rendering feedback:", err);
+                    feedback.innerHTML = `
+                        <div class="space-y-1.5">
+                            <div class="flex items-center gap-2">
+                                <span class="text-rose-700 font-extrabold text-sm">❌ Chưa chính xác.</span>
+                            </div>
+                            <div class="text-rose-900 pt-0.5">
+                                Đáp án đúng là: <span class="font-extrabold text-rose-800">${String(ex.correct_answer || '').trim()}</span>
+                            </div>
+                            ${translationHtml}
+                            <div class="text-rose-950 leading-relaxed pt-1">
+                                <span class="font-bold">💡 Giải thích:</span> ${ex.explanation || ''}
+                            </div>
+                        </div>
+                    `;
                 }
-                feedback.innerHTML = `
-                    <div class="space-y-1.5">
-                        <div class="flex items-center gap-2">
-                            <span class="text-rose-700 font-extrabold text-sm">${wrongTitle}</span>
-                        </div>
-                        <div class="text-rose-900 pt-0.5">
-                            Đáp án đúng là: <span class="font-extrabold text-rose-800">${displayAns}</span>
-                        </div>
-                        ${translationHtml}
-                        <div class="text-rose-950 leading-relaxed pt-1">
-                            <span class="font-bold">💡 Giải thích:</span> ${ex.explanation}
-                        </div>
-                    </div>
-                `;
             }
         }
 

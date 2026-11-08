@@ -831,7 +831,17 @@ def build_full_seed_script():
                 "Chiếc điện thoại đó rất quan trọng đối với cô ấy vì cô ấy phải thường xuyên gọi điện cho khách hàng",
                 "Điện thoại rất quan trọng cho cô ấy vì cô ấy thường xuyên phải gọi điện cho khách hàng của mình",
                 "Chiếc điện thoại rất quan trọng cho cô ấy vì cô ấy thường xuyên phải gọi điện cho các khách hàng của mình",
-                "Chiếc điện thoại này rất quan trọng với cô ấy vì cô ấy thường xuyên phải gọi điện cho khách hàng của mình"
+                "Chiếc điện thoại này rất quan trọng với cô ấy vì cô ấy thường xuyên phải gọi điện cho khách hàng của mình",
+                "Điện thoại thì rất quan trọng với cô ấy bởi vì cô ấy phải thường xuyên gọi khách hàng",
+                "Điện thoại rất quan trọng với cô ấy bởi vì cô ấy phải thường xuyên gọi khách hàng",
+                "Điện thoại thì rất quan trọng với cô ấy vì cô ấy phải thường xuyên gọi khách hàng",
+                "Điện thoại rất quan trọng với cô ấy vì cô ấy phải thường xuyên gọi khách hàng",
+                "Chiếc điện thoại thì rất quan trọng với cô ấy vì cô ấy thường xuyên phải gọi khách hàng",
+                "Chiếc điện thoại rất quan trọng với cô ấy vì cô ấy thường xuyên phải gọi khách hàng",
+                "Chiếc điện thoại thì rất quan trọng đối với cô ấy vì cô ấy thường xuyên phải gọi khách hàng",
+                "Điện thoại thì rất quan trọng đối với cô ấy vì cô ấy thường xuyên phải gọi khách hàng",
+                "Điện thoại thì rất quan trọng đối với cô ấy bởi vì cô ấy phải thường xuyên gọi khách hàng",
+                "Chiếc điện thoại thì rất quan trọng đối với cô ấy bởi vì cô ấy phải thường xuyên gọi khách hàng"
             ],
             "Chiếc điện thoại rất quan trọng đối với cô ấy vì cô ấy thường xuyên phải gọi điện cho các khách hàng của mình",
             "wichtig für sie = quan trọng đối với cô ấy; muss ihre Kunden oft anrufen = thường xuyên phải gọi điện cho khách hàng của mình.",

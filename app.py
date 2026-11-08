@@ -227,6 +227,7 @@ def ensure_db_initialized():
                     OR extra_data LIKE '%hành khách%'
                     OR explanation LIKE '%bắt buộc đi với Dativ số nhiều%'
                     OR extra_data LIKE '%rất freundlich%'
+                    OR extra_data NOT LIKE '%Điện thoại thì rất quan trọng%'
                 )
                 LIMIT 1;
             """, (b7_id,))
