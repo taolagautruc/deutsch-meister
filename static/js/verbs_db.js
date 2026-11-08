@@ -837,7 +837,132 @@ const GERMAN_VERBS_DB = [
         forms: { ich: "schlafe", du: "schläfst", er_sie_es: "schläft", wir: "schlafen", ihr: "schlaft", sie_Sie: "schlafen" },
         note: "Biến âm a -> ä ở ngôi du (du schläfst) và er/sie/es (er schläft).",
         example: "Herr Müller hat heute Ferien, deshalb kann er bis sieben Uhr schlafen."
+    },
+
+    // =========================================================================
+    // ĐỘNG TỪ BÀI 8: THÀNH PHỐ, CHỈ ĐƯỜNG & MODALVERB WOLLEN
+    // =========================================================================
+    {
+        infinitiv: "wollen",
+        meaning: "muốn (thể hiện ý định mạnh mẽ, kế hoạch chắc chắn)",
+        group: "Động từ khuyết thiếu (Modalverben) • Thành phố & Chỉ đường (Bài 8)",
+        stem: "woll- / will-",
+        ending: "-en",
+        forms: { ich: "will", du: "willst", er_sie_es: "will", wir: "wollen", ihr: "wollt", sie_Sie: "wollen" },
+        note: "Động từ khuyết thiếu trọng tâm Bài 8. Đổi nguyên âm o -> i ở cả 3 ngôi số ít. Ngôi ich và er/sie/es bằng nhau và không có đuôi (ich will, er will).",
+        example: "In Deutschland will ich an der Humboldt-Universität studieren."
+    },
+    {
+        infinitiv: "bummeln",
+        meaning: "đi dạo phố, tản bộ ngắm cảnh / mua sắm",
+        group: "Quy tắc (Regelmäßig) • Thành phố & Chỉ đường (Bài 8)",
+        stem: "bummel-",
+        ending: "-n",
+        forms: { ich: "bummle (bummele)", du: "bummelst", er_sie_es: "bummelt", wir: "bummeln", ihr: "bummelt", sie_Sie: "bummeln" },
+        note: "Động từ có đuôi -eln. Ở ngôi ich thường lược bỏ nguyên âm e trước l (ich bummle).",
+        example: "Anschließend wollen Maria und ich auf der Friedrichstraße bummeln."
+    },
+    {
+        infinitiv: "vorbeigehen",
+        meaning: "đi ngang qua (đi bộ)",
+        group: "Động từ tách (Trennbare Verben) • Thành phố & Chỉ đường (Bài 8)",
+        stem: "geh- (tiền tố vorbei-)",
+        ending: "-en",
+        forms: { ich: "gehe ... vorbei", du: "gehst ... vorbei", er_sie_es: "geht ... vorbei", wir: "gehen ... vorbei", ihr: "geht ... vorbei", sie_Sie: "gehen ... vorbei" },
+        note: "Động từ tách với tiền tố vorbei-. Luôn kết hợp với giới từ an + Dativ + vorbei.",
+        example: "Gehen Sie zuerst an der Bank und an der Kirche vorbei!"
+    },
+    {
+        infinitiv: "vorbeifahren",
+        meaning: "lái xe / đi xe ngang qua",
+        group: "Động từ tách (Trennbare Verben) • Thành phố & Chỉ đường (Bài 8)",
+        stem: "fahr- / fähr- (tiền tố vorbei-)",
+        ending: "-en",
+        forms: { ich: "fahre ... vorbei", du: "fährst ... vorbei", er_sie_es: "fährt ... vorbei", wir: "fahren ... vorbei", ihr: "fahrt ... vorbei", sie_Sie: "fahren ... vorbei" },
+        note: "Động từ tách vừa biến âm a -> ä ở ngôi du/er/sie/es vừa tách tiền tố vorbei-. Đi với an + Dativ + vorbei.",
+        example: "Der Sightseeing-Bus fährt am Bundeskanzleramt vorbei."
+    },
+    {
+        infinitiv: "laufen",
+        meaning: "đi bộ / chạy bộ",
+        group: "Biến âm gốc (Vokalwechsel) • Thành phố & Chỉ đường (Bài 8)",
+        stem: "lauf- / läuf-",
+        ending: "-en",
+        forms: { ich: "laufe", du: "läufst", er_sie_es: "läuft", wir: "laufen", ihr: "lauft", sie_Sie: "laufen" },
+        note: "Biến âm đôi au -> äu ở ngôi du (du läufst) và er/sie/es (er läuft).",
+        example: "Paula und Alex laufen über die Schlossbrücke."
+    },
+    {
+        infinitiv: "sehen",
+        meaning: "nhìn thấy, xem",
+        group: "Biến âm gốc (Vokalwechsel) • Thành phố & Chỉ đường (Bài 8)",
+        stem: "seh- / sieh-",
+        ending: "-en",
+        forms: { ich: "sehe", du: "siehst", er_sie_es: "sieht", wir: "sehen", ihr: "seht", sie_Sie: "sehen" },
+        note: "Biến âm e -> ie ở ngôi du (du siehst) và er/sie/es (er sieht). Dùng chỉ đường: Rechts sehen Sie die Post.",
+        example: "Rechts neben der Ampel sehen Sie die Post."
+    },
+    {
+        infinitiv: "abbiegen",
+        meaning: "rẽ, quẹo (trái / phải)",
+        group: "Động từ tách (Trennbare Verben) • Thành phố & Chỉ đường (Bài 8)",
+        stem: "bieg- (tiền tố ab-)",
+        ending: "-en",
+        forms: { ich: "biege ... ab", du: "biegst ... ab", er_sie_es: "biegt ... ab", wir: "biegen ... ab", ihr: "biegt ... ab", sie_Sie: "biegen ... ab" },
+        note: "Động từ tách với tiền tố ab-. Thường đi kèm trạng từ chỉ hướng links (trái) hoặc rechts (phải).",
+        example: "An der zweiten Kreuzung müssen Sie links abbiegen."
+    },
+    {
+        infinitiv: "überqueren",
+        meaning: "băng qua (đường, cầu, quảng trường)",
+        group: "Quy tắc (Regelmäßig) • Thành phố & Chỉ đường (Bài 8)",
+        stem: "überquer-",
+        ending: "-en",
+        forms: { ich: "überquere", du: "überquerst", er_sie_es: "überquert", wir: "überqueren", ihr: "überquert", sie_Sie: "überqueren" },
+        note: "Tiền tố über- ở đây KHÔNG tách. Động từ đòi hỏi tân ngữ trực tiếp ở Cách 4 (Akkusativ).",
+        example: "Bitte überqueren Sie die Straße an der Ampel!"
+    },
+    {
+        infinitiv: "besichtigen",
+        meaning: "tham quan, ngắm cảnh (danh lam thắng cảnh, bảo tàng)",
+        group: "Quy tắc (Regelmäßig) • Thành phố & Chỉ đường (Bài 8)",
+        stem: "besichtig-",
+        ending: "-en",
+        forms: { ich: "besichtige", du: "besichtigst", er_sie_es: "besichtigt", wir: "besichtigen", ihr: "besichtigt", sie_Sie: "besichtigen" },
+        note: "Tiền tố không tách be-, đi với tân ngữ ở Cách 4 (Akkusativ).",
+        example: "Die Touristen wollen heute den Reichstag und das Schloss Bellevue besichtigen."
+    },
+    {
+        infinitiv: "studieren",
+        meaning: "học đại học, nghiên cứu chuyên ngành",
+        group: "Quy tắc đuôi -ieren • Thành phố & Chỉ đường (Bài 8)",
+        stem: "studier-",
+        ending: "-en",
+        forms: { ich: "studiere", du: "studierst", er_sie_es: "studiert", wir: "studieren", ihr: "studiert", sie_Sie: "studieren" },
+        note: "Động từ có đuôi -ieren, chia theo quy tắc chuẩn: -e, -st, -t, -en, -t, -en.",
+        example: "Mein Cousin will nächstes Jahr in Berlin Architektur studieren."
+    },
+    {
+        infinitiv: "hören",
+        meaning: "nghe (nhạc, hòa nhạc)",
+        group: "Quy tắc (Regelmäßig) • Thành phố & Chỉ đường (Bài 8)",
+        stem: "hör-",
+        ending: "-en",
+        forms: { ich: "höre", du: "hörst", er_sie_es: "hört", wir: "hören", ihr: "hört", sie_Sie: "hören" },
+        note: "Động từ quy tắc, giữ nguyên âm biến đổi ö ở tất cả các ngôi.",
+        example: "Am Nachmittag gehen sie in den Berliner Dom und hören ein Orgelkonzert."
+    },
+    {
+        infinitiv: "wenden",
+        meaning: "quay đầu xe, quay đầu lại",
+        group: "Gốc -t, -d • Thành phố & Chỉ đường (Bài 8)",
+        stem: "wend-",
+        ending: "-en",
+        forms: { ich: "wende", du: "wendest", er_sie_es: "wendet", wir: "wenden", ihr: "wendet", sie_Sie: "wenden" },
+        note: "Gốc kết thúc bằng -d nên các ngôi du, er/sie/es, ihr chèn thêm nguyên âm đệm -e- (du wendest, er wendet).",
+        example: "Sie fahren in die falsche Richtung, bitte wenden Sie an der nächsten Kreuzung!"
     }
+
 ];
 
 let currentVerbFilterGroup = "all";
@@ -954,6 +1079,7 @@ function speakAllPraeteritumForms(verbInfinitiv) {
 
 const VERB_GROUPS = [
     { id: "all", label: "Tất cả" },
+    { id: "Thành phố & Chỉ đường", label: "🏙️ Thành phố & Chỉ đường (Bài 8)" },
     { id: "Động từ khuyết thiếu", label: "⭐ Động từ khuyết thiếu & Nghề nghiệp (Bài 7)" },
     { id: "Di chuyển & Định hướng", label: "🚆 Di chuyển, Định hướng & Dativ (Bài 6)" },
     { id: "Động từ tách", label: "Động từ tách (Trennbare Verben)" },

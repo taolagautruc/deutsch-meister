@@ -38,7 +38,8 @@ LESSON_ORDER_MAP = {
     18: ("A1", 5, "Bài 4: Nhà ở, Nominativ vs Akkusativ, Mạo từ sở hữu"),
     19: ("A1", 6, "Bài 5: Thời gian, Động từ tách, Haben in Präteritum"),
     20: ("A1", 7, "Bài 6: Dativ, Giới từ, Phương tiện, Số thứ tự, Ngày tháng năm"),
-    21: ("A1", 8, "Bài 7: Beruf, Modalverben, Akkusativ vs Dativ")
+    21: ("A1", 8, "Bài 7: Beruf, Modalverben, Akkusativ vs Dativ"),
+    22: ("A1", 9, "Bài 8: Stadt, Wegbeschreibung, Modalverben wollen")
 }
 
 def get_user_allowed_lessons(user_id):
@@ -760,6 +761,89 @@ ARENA_DATA_BY_LESSON = {
                 "word_bank_hints": ["den", "im", "dem", "in", "das"],
                 "accepted_answers": ["den / im", "den/im"],
                 "explanation": "Wohin? -> in den Kindergarten (Akkusativ); Wo? -> im Kindergarten (Dativ)."
+            }
+        ]
+    },
+    9: {
+        "name": "Bài 8: Thành phố, Hỏi đường / Chỉ đường & Modalverben wollen",
+        "vocab_pairs": [
+            ("der Bahnhof", "nhà ga tàu hỏa"),
+            ("der Flughafen", "sân bay"),
+            ("der Supermarkt", "siêu thị"),
+            ("die Kirche", "nhà thờ"),
+            ("die Brücke", "cây cầu"),
+            ("die Post", "bưu điện"),
+            ("das Schloss", "lâu đài, cung điện"),
+            ("das Brandenburger Tor", "Cổng thành Brandenburg"),
+            ("der Reichstag", "Tòa nhà Quốc hội Đức"),
+            ("die Museumsinsel", "Đảo Bảo tàng"),
+            ("wollen", "muốn (kế hoạch/ý định)"),
+            ("bummeln", "đi dạo phố, tản bộ"),
+            ("vorbeigehen", "đi ngang qua"),
+            ("überqueren", "băng qua đường/cầu"),
+            ("geradeaus", "đi thẳng về phía trước"),
+            ("rechts / links", "bên phải / bên trái")
+        ],
+        "noi_o_sets": [
+            [
+                {"left": "an ... vorbei", "right": "Dativ (an der Bank vorbei)"},
+                {"left": "durch ...", "right": "Akkusativ (durch das Tor)"},
+                {"left": "über ...", "right": "Akkusativ (über die Brücke)"},
+                {"left": "... entlang", "right": "Akkusativ (die Straße entlang)"}
+            ],
+            [
+                {"left": "zum Brandenburger Tor", "right": "zu + Dativ (hướng tới địa điểm)"},
+                {"left": "in den Berliner Dom", "right": "in + Akkusativ (bước vào bên trong)"},
+                {"left": "ich / er / sie / es", "right": "will (chia Modalverb wollen)"},
+                {"left": "wir / sie / Sie", "right": "wollen (giữ nguyên mẫu đuôi -en)"}
+            ]
+        ],
+        "sentences_vd": [
+            ("Xin lỗi, làm thế nào tôi đi đến được bưu điện?", ["Entschuldigung, wie komme ich zur Post?", "Entschuldigung, wie komme ich zur Post"]),
+            ("Đầu tiên Ngài đi thẳng, sau đó rẽ phải ở con đường thứ nhất.", ["Zuerst gehen Sie geradeaus, dann die erste Straße rechts.", "Zuerst gehen Sie geradeaus, dann gehen Sie die erste Straße rechts."]),
+            ("Họ đi xe buýt ngang qua Phủ Thủ tướng và đi bộ qua cầu Schlossbrücke.", ["Sie fahren mit dem Bus am Bundeskanzleramt vorbei und laufen über die Schlossbrücke."]),
+            ("Tối nay chúng tôi muốn xem một bộ phim ở trong rạp chiếu phim.", ["Heute Abend wollen wir noch einen Film im Kino sehen.", "Wir wollen heute Abend einen Film im Kino sehen."])
+        ],
+        "sentences_dv": [
+            ("Zuerst gehen Sie geradeaus und dann an der Bank vorbei.", ["Đầu tiên Ngài đi thẳng và sau đó đi ngang qua ngân hàng", "Trước tiên hãy đi thẳng rồi đi ngang qua ngân hàng"]),
+            ("Am Nachmittag gehen sie in den Berliner Dom und hören ein Konzert.", ["Vào buổi chiều họ đi vào Nhà thờ lớn Berlin và nghe một buổi hòa nhạc", "Buổi chiều họ vào Nhà thờ lớn Berlin nghe hòa nhạc"]),
+            ("Anschließend wollen Maria und ich auf der Friedrichstraße bummeln.", ["Tiếp ngay sau đó Maria và tôi muốn đi dạo phố trên đường Friedrich", "Sau đó Maria và tôi muốn đi dạo trên đường Friedrich"]),
+            ("Die Touristen gehen durch das alte Stadttor und über die Brücke.", ["Các du khách đi xuyên qua cổng thành cổ và qua cây cầu", "Du khách đi qua cổng thành cổ và qua cây cầu"])
+        ],
+        "nghe_dien_items": [
+            {
+                "audio_text": "Zuerst gehen Sie geradeaus und dann die erste Straße rechts.",
+                "display_sentence": "Zuerst gehen Sie ___ und dann die erste Straße rechts.",
+                "hint_vi": "Đầu tiên Ngài đi thẳng...",
+                "accepted_answers": ["geradeaus"]
+            },
+            {
+                "audio_text": "Paula und Alex gehen zum Brandenburger Tor.",
+                "display_sentence": "Paula und Alex gehen ___ Brandenburger Tor.",
+                "hint_vi": "Paula và Alex đi đến Cổng Brandenburg.",
+                "accepted_answers": ["zum"]
+            },
+            {
+                "audio_text": "In Deutschland will mein Bruder studieren.",
+                "display_sentence": "In Deutschland ___ mein Bruder studieren.",
+                "hint_vi": "Ở Đức anh trai tôi muốn học đại học.",
+                "accepted_answers": ["will"]
+            }
+        ],
+        "dien_tao_cau_items": [
+            {
+                "question": "Điền vào 2 chỗ trống để hoàn thành câu chỉ đường:",
+                "display_frame": "Dann gehen Sie die erste Straße [1], an der Bank [2].",
+                "word_bank_hints": ["rechts", "vorbei", "links", "geradeaus", "über"],
+                "accepted_answers": ["rechts / vorbei", "rechts/vorbei"],
+                "explanation": "Rẽ phải là rechts; đi ngang qua là an der Bank vorbei."
+            },
+            {
+                "question": "Điền vào 2 chỗ trống để hoàn thành câu (phân biệt zum vs. in den):",
+                "display_frame": "Sie gehen [1] Brandenburger Tor und dann [2] Berliner Dom.",
+                "word_bank_hints": ["zum", "in den", "zur", "im", "ins"],
+                "accepted_answers": ["zum / in den", "zum/in den"],
+                "explanation": "zum Brandenburger Tor (đến chụp ảnh ngoài cổng); in den Berliner Dom (bước vào trong nghe nhạc)."
             }
         ]
     }

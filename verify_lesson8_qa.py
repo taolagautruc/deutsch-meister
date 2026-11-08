@@ -1,0 +1,143 @@
+import sqlite3
+import json
+import os
+import sys
+
+def verify():
+    print("=" * 60)
+    print("🚀 BẮT ĐẦU KIỂM THỬ TOÀN DIỆN QA BÀI 8 (ZERO-BUG VERIFICATION)")
+    print("=" * 60)
+
+    conn = sqlite3.connect("deutsch_meister.db")
+    conn.row_factory = sqlite3.Row
+    cursor = conn.cursor()
+
+    # 1. Zero regression on previous lessons
+    print("\n[TEST 1] Kiểm tra bảo toàn dữ liệu Bài 1 P1 -> Bài 7 (Zero Regression):")
+    cursor.execute("SELECT id, title FROM lessons ORDER BY id ASC;")
+    lessons = cursor.fetchall()
+    print(f"Tổng số bài học trong DB: {len(lessons)}")
+    for l in lessons:
+        cursor.execute("SELECT COUNT(*) as cnt FROM exercises WHERE lesson_id = ?;", (l["id"],))
+        ex_cnt = cursor.fetchone()["cnt"]
+        cursor.execute("SELECT COUNT(*) as cnt FROM vocabularies WHERE lesson_id = ?;", (l["id"],))
+        voc_cnt = cursor.fetchone()["cnt"]
+        print(f"  • ID {l['id']}: '{l['title'][:55]}...' -> {voc_cnt} từ vựng, {ex_cnt} bài tập")
+        assert ex_cnt > 0, f"Lỗi: Bài {l['id']} bị mất bài tập!"
+    print("✅ TEST 1 PASS: Tất cả các bài 1 P1 -> Bài 7 nguyên vẹn 100%!")
+
+    # 2. Check Lesson 8 details
+    print("\n[TEST 2] Kiểm tra Bài 8 (lesson_id = 22):")
+    cursor.execute("SELECT id, title, grammar_content FROM lessons WHERE id = 22 OR title LIKE 'Bài 8%';")
+    b8 = cursor.fetchone()
+    assert b8 is not None, "❌ Lỗi: Không tìm thấy Bài 8 trong database!"
+    b8_id = b8["id"]
+    print(f"  • Lesson ID: {b8_id}")
+    print(f"  • Tiêu đề: {b8['title']}")
+    assert "14 Danh Lam Thắng Cảnh Berlin" in b8["grammar_content"], "❌ Thiếu Phần 1: Địa điểm & Danh lam thắng cảnh Berlin"
+    assert "Nghệ Thuật Hỏi Đường & Chỉ Đường" in b8["grammar_content"], "❌ Thiếu Phần 2: Hỏi đường & Chỉ đường"
+    assert "zu + Dativ" in b8["grammar_content"], "❌ Thiếu Phần 3: zu + Dativ vs in + Akkusativ"
+    assert "4 Động Từ Khuyết Thiếu" in b8["grammar_content"], "❌ Thiếu Phần 4: Động từ khuyết thiếu"
+    assert "Paula & Alex Khám Phá Berlin" in b8["grammar_content"], "❌ Thiếu Phần 5: Đoạn văn mẫu"
+    print("✅ TEST 2 PASS: Đầy đủ 5 Học phần Lý thuyết chuyên sâu!")
+
+    # 3. Check 50 vocabularies of Lesson 8
+    print("\n[TEST 3] Kiểm tra 50 Từ vựng Bài 8:")
+    cursor.execute("SELECT COUNT(*) as cnt FROM vocabularies WHERE lesson_id = ?;", (b8_id,))
+    v_cnt = cursor.fetchone()["cnt"]
+    assert v_cnt == 50, f"❌ Lỗi: Số lượng từ vựng là {v_cnt}, kỳ vọng đúng 50!"
+    cursor.execute("SELECT german_word, article, vietnamese_meaning, example_sentence FROM vocabularies WHERE lesson_id = ? LIMIT 5;", (b8_id,))
+    sample_v = cursor.fetchall()
+    for sv in sample_v:
+        print(f"  • {sv['german_word']} ({sv['article']}): {sv['vietnamese_meaning']} | VD: {sv['example_sentence'][:40]}...")
+    print("✅ TEST 3 PASS: Đủ 50/50 từ vựng danh lam thắng cảnh & giao thông thành phố!")
+
+    # 4. Check 100 exercises of Lesson 8
+    print("\n[TEST 4] Kiểm tra 100 Bài tập độc nhất của Bài 8:")
+    cursor.execute("SELECT id, exercise_type, question, options_json, correct_answer, explanation, exp_reward, extra_data FROM exercises WHERE lesson_id = ? ORDER BY id ASC;", (b8_id,))
+    exercises = cursor.fetchall()
+    assert len(exercises) == 100, f"❌ Lỗi: Số bài tập là {len(exercises)}, kỳ vọng đúng 100!"
+
+    # Duplicate check
+    q_texts = [e["question"] for e in exercises]
+    unique_q = set(q_texts)
+    assert len(unique_q) == 100, f"❌ Lỗi: Có {100 - len(unique_q)} câu hỏi bị trùng lặp tiêu đề!"
+
+    # Distribution check
+    type_counts = {}
+    for e in exercises:
+        t = e["exercise_type"]
+        type_counts[t] = type_counts.get(t, 0) + 1
+    
+    expected_dist = {
+        "trac_nghiem": 18,
+        "dien_khuyet": 15,
+        "dich_nghia_vd": 12,
+        "dich_nghia_dv": 12,
+        "noi_o": 10,
+        "dien_tao_cau": 10,
+        "nghe_dien": 9,
+        "dich_cau_vd": 7,
+        "dich_cau_dv": 7
+    }
+    print("  Phân bố bài tập:")
+    for k, expected_num in expected_dist.items():
+        actual_num = type_counts.get(k, 0)
+        print(f"  • {k:15}: {actual_num} câu (Kỳ vọng: {expected_num})")
+        assert actual_num == expected_num, f"❌ Lỗi phân bố ở {k}: {actual_num} != {expected_num}"
+    print("✅ TEST 4 PASS: ĐÚNG 100 bài tập 9 dạng độc nhất, 0% trùng lặp!")
+
+    # 5. Check 'noi_o' (Q58 -> Q67)
+    print("\n[TEST 5] Kiểm tra chất lượng nhóm Nối ô (Câu 58 -> 67):")
+    noi_o_list = [e for e in exercises if e["exercise_type"] == "noi_o"]
+    assert len(noi_o_list) == 10, "❌ Lỗi: Không đủ 10 câu nối ô!"
+    for idx, e in enumerate(noi_o_list, 58):
+        extra = json.loads(e["extra_data"])
+        pairs = extra.get("noi_o_pairs", [])
+        assert len(pairs) == 4, f"❌ Câu {idx} không đủ 4 cặp!"
+        # Check no Vietnamese in left or right boxes
+        viet_chars = "àáạảãâầấậẩẫăằắặẳẵèéẹẻẽêềếệểễìíịỉĩòóọỏõôồốộổỗơờớợởỡùúụủũưừứựửữỳýỵỷỹđ"
+        for p in pairs:
+            for ch in viet_chars:
+                assert ch not in p["left"].lower(), f"❌ Câu {idx} có tiếng Việt trong ô chọn trái: {p['left']}"
+                assert ch not in p["right"].lower(), f"❌ Câu {idx} có tiếng Việt trong ô chọn phải: {p['right']}"
+        # Check 4 pairs translated
+        trans = extra.get("translation", "")
+        assert "1." in trans and "2." in trans and "3." in trans and "4." in trans, f"❌ Câu {idx} không dịch đủ 4 cặp!"
+        # Check 4 pairs explained
+        exp = e["explanation"]
+        assert "1." in exp and "2." in exp and "3." in exp and "4." in exp, f"❌ Câu {idx} không giải thích đủ 4 cặp!"
+    print("✅ TEST 5 PASS: Cả 10 bài nối ô không có tiếng Việt trong ô chọn, dịch và giải thích đủ 4 cặp 100%!")
+
+    # 6. Check 'dien_tao_cau' (Q68 -> Q77)
+    print("\n[TEST 6] Kiểm tra nhóm Điền tạo câu (Câu 68 -> 77):")
+    dtc_list = [e for e in exercises if e["exercise_type"] == "dien_tao_cau"]
+    assert len(dtc_list) == 10, "❌ Lỗi: Không đủ 10 câu điền tạo câu!"
+    for idx, e in enumerate(dtc_list, 68):
+        corr = e["correct_answer"]
+        assert "/" in corr, f"❌ Câu {idx} đáp án không có dấu '/': {corr}"
+        extra = json.loads(e["extra_data"])
+        acc = extra.get("accepted_answers", [])
+        assert len(acc) >= 2, f"❌ Câu {idx} thiếu biến thể accepted_answers: {acc}"
+        for a in acc:
+            assert "/" in a or "," in a, f"❌ Câu {idx} accepted_answer không có dấu ngăn cách: {a}"
+    print("✅ TEST 6 PASS: Cả 10 bài điền tạo câu chuẩn cấu trúc 2 từ ngăn cách bởi dấu /!")
+
+    # 7. Check 'dich_cau' (Q87 -> Q100)
+    print("\n[TEST 7] Kiểm tra nhóm Dịch câu V->Đ và Đ->V (Câu 87 -> 100):")
+    trans_list = [e for e in exercises if e["exercise_type"] in ("dich_cau_vd", "dich_cau_dv")]
+    assert len(trans_list) == 14, "❌ Lỗi: Không đủ 14 câu dịch câu!"
+    for e in trans_list:
+        extra = json.loads(e["extra_data"])
+        acc = extra.get("accepted_answers", [])
+        assert len(acc) >= 2, f"❌ Câu {e['question'][:20]} thiếu đa đáp án: {acc}"
+        assert e["explanation"] is not None and len(e["explanation"]) > 10, f"❌ Câu {e['question'][:20]} thiếu giải thích chi tiết!"
+    print("✅ TEST 7 PASS: Cả 14 bài dịch câu có đa đáp án linh hoạt và lời giải sư phạm đầy đủ!")
+
+    conn.close()
+    print("\n" + "=" * 60)
+    print("🎉 TOÀN BỘ 7/7 BÀI TEST QA BÀI 8 ĐẠT TIÊU CHUẨN 100% PASS!")
+    print("=" * 60)
+
+if __name__ == "__main__":
+    verify()
