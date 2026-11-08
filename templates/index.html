@@ -376,6 +376,7 @@
     <!-- ========================================================= -->
     <script src="/static/js/audio_tts.js"></script>
     <script src="/static/js/number_trainer.js"></script>
+    <script src="/static/js/city_map_svg.js"></script>
     <script src="/static/js/verbs_db.js"></script>
     <script src="/static/js/lexikon_db.js"></script>
     <script src="/static/js/arena_engine.js"></script>
@@ -1214,6 +1215,9 @@
             currentLessonIndex = index;
             currentLesson = currentLevelData.lessons[index];
             document.getElementById('current-lesson-grammar').innerHTML = currentLesson.grammar_content;
+            if (typeof initLesson8Visuals === 'function') {
+                initLesson8Visuals();
+            }
 
             renderLessonList();
             updateLessonProgressUI();
@@ -1645,6 +1649,11 @@
                 try { extra = ex.extra_data ? JSON.parse(ex.extra_data) : {}; } catch (e) {}
 
                 let extraHtml = '';
+                if (extra.visual_svg || extra.map_scenario) {
+                    if (typeof renderExerciseSvg === 'function') {
+                        extraHtml += renderExerciseSvg(extra);
+                    }
+                }
                 if (ex.exercise_type === 'nghe' || ex.exercise_type === 'nghe_dien') {
                     const textToSpeak = (extra.audio_text || ex.correct_answer).replace(/'/g, "\\'");
                     extraHtml = `
@@ -2132,11 +2141,23 @@
             if (isCorrect) {
                 feedback.className = "text-xs p-3.5 rounded-xl mt-2 bg-emerald-50 text-emerald-800 border border-emerald-200";
                 let nextDynamicHtml = '';
-                const isDynamicEx = extra.dynamic_number || extra.dynamic_mode || extra.dynamic_price || extra.dynamic_conjugation || extra.dynamic_article_quiz || extra.dynamic_possessive_article || extra.dynamic_plural_quiz || extra.dynamic_direction_quiz || extra.dynamic_landmark_quiz || extra.dynamic_praeteritum_quiz || extra.dynamic_country_language_quiz || extra.dynamic_question_transform || extra.dynamic_nom_akk_quiz || extra.dynamic_possessiv_quiz || extra.dynamic_adjective_antonym_quiz || extra.dynamic_pronoun_replacement_quiz || extra.dynamic_house_translation_quiz || extra.dynamic_prep_quiz || extra.dynamic_time_quiz || extra.dynamic_trennbare_quiz || extra.dynamic_dativ_transport_quiz || extra.dynamic_ordinal_date_quiz || extra.dynamic_dativ_position_quiz;
+                const isDynamicEx = extra.dynamic_number || extra.dynamic_mode || extra.dynamic_price || extra.dynamic_conjugation || extra.dynamic_article_quiz || extra.dynamic_possessive_article || extra.dynamic_plural_quiz || extra.dynamic_direction_quiz || extra.dynamic_landmark_quiz || extra.dynamic_praeteritum_quiz || extra.dynamic_country_language_quiz || extra.dynamic_question_transform || extra.dynamic_nom_akk_quiz || extra.dynamic_possessiv_quiz || extra.dynamic_adjective_antonym_quiz || extra.dynamic_pronoun_replacement_quiz || extra.dynamic_house_translation_quiz || extra.dynamic_prep_quiz || extra.dynamic_time_quiz || extra.dynamic_trennbare_quiz || extra.dynamic_dativ_transport_quiz || extra.dynamic_ordinal_date_quiz || extra.dynamic_dativ_position_quiz || extra.dynamic_direction_card || extra.dynamic_modal_wollen || extra.dynamic_berlin_route || extra.dynamic_city_map;
                 if (isDynamicEx) {
                     let promptMsg = "🎯 Tuyệt vời! Bạn muốn rèn thêm phản xạ?";
                     let btnLabel = "🔄 Đổi đề khác để luyện tiếp";
-                    if (extra.dynamic_dativ_transport_quiz) {
+                    if (extra.dynamic_direction_card) {
+                        promptMsg = "🎯 Tuyệt vời! Bạn muốn rèn thêm khẩu lệnh sơ đồ chỉ đường?";
+                        btnLabel = "🔄 Đổi sơ đồ chỉ đường khác";
+                    } else if (extra.dynamic_modal_wollen) {
+                        promptMsg = "🎯 Xuất sắc! Bạn muốn rèn thêm động từ khuyết thiếu wollen?";
+                        btnLabel = "🔄 Đổi câu wollen khác";
+                    } else if (extra.dynamic_berlin_route) {
+                        promptMsg = "🎯 Chuẩn xác! Bạn muốn rèn thêm địa danh Berlin & giới từ?";
+                        btnLabel = "🔄 Đổi hành trình khác";
+                    } else if (extra.dynamic_city_map) {
+                        promptMsg = "🎯 Xuất sắc! Bạn muốn thử lộ trình bản đồ khác?";
+                        btnLabel = "🔄 Đổi lộ trình bản đồ khác";
+                    } else if (extra.dynamic_dativ_transport_quiz) {
                         promptMsg = "🎯 Chuẩn xác! Bạn muốn rèn thêm phương tiện với Dativ (mit dem / mit der / zu Fuß)?";
                         btnLabel = "🔄 Đổi câu phương tiện khác";
                     } else if (extra.dynamic_ordinal_date_quiz) {
@@ -2480,6 +2501,9 @@
             delete ex._userAnswer;
             if (typeof generateNewNumberData === 'function') {
                 generateNewNumberData(ex, index + 1);
+            }
+            if (typeof generateNewCityMapData === 'function') {
+                generateNewCityMapData(ex, index + 1);
             }
             if (ex && ex.options && Array.isArray(ex.options) && ex.options.length > 1) {
                 ex.options = shuffleArray(ex.options);

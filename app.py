@@ -236,6 +236,23 @@ def ensure_db_initialized():
         if need_reseed_b7:
             from lessons.a1.seed_a1_b7 import seed_lesson_7
             seed_lesson_7()
+
+        cursor.execute("SELECT id FROM lessons WHERE title LIKE 'Bài 8%' LIMIT 1;")
+        row_b8 = cursor.fetchone()
+        need_reseed_b8 = not bool(row_b8)
+        if row_b8:
+            b8_id = row_b8["id"]
+            cursor.execute("SELECT COUNT(*) as cnt FROM exercises WHERE lesson_id = ?;", (b8_id,))
+            cnt_row = cursor.fetchone()
+            if not cnt_row or cnt_row["cnt"] < 100:
+                need_reseed_b8 = True
+            cursor.execute("SELECT COUNT(*) as cnt FROM vocabularies WHERE lesson_id = ?;", (b8_id,))
+            cnt_v = cursor.fetchone()
+            if not cnt_v or cnt_v["cnt"] < 50:
+                need_reseed_b8 = True
+        if need_reseed_b8:
+            from lessons.a1.seed_a1_b8 import seed_lesson_8
+            seed_lesson_8()
             
         conn.close()
     except Exception as e:

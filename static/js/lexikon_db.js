@@ -1816,6 +1816,410 @@ const GERMAN_LEXIKON_DB = [
         example: "Der Arzt untersucht den kranken Patienten im Behandlungszimmer.",
         example_vi: "Bác sĩ khám cho bệnh nhân bị ốm ở trong phòng khám bệnh."
     }
+,
+    // =========================================================================
+    // TỪ VỰNG BÀI 8: THÀNH PHỐ, DANH LAM THẮNG CẢNH BERLIN & CHỈ ĐƯỜNG
+    // =========================================================================
+    {
+        word: "Bahnhof", article: "der", gender: "der", plural: "die Bahnhöfe",
+        indefinite: "ein Bahnhof", negation: "kein Bahnhof",
+        meaning: "nhà ga tàu hỏa", category: "Địa điểm trong Thành phố & Giao thông Chỉ đường (In der Stadt & Wegbeschreibung - Bài 8)",
+        rule: "Danh từ giống đực (der), số nhiều biến âm a -> ä và thêm đuôi -e (die Bahnhöfe).",
+        example: "Entschuldigung, wie komme ich zum Bahnhof?",
+        example_vi: "Xin lỗi, làm thế nào tôi đi đến được nhà ga?"
+    },
+    {
+        word: "Hauptbahnhof", article: "der", gender: "der", plural: "die Hauptbahnhöfe",
+        indefinite: "ein Hauptbahnhof", negation: "kein Hauptbahnhof",
+        meaning: "nhà ga trung tâm", category: "Địa điểm trong Thành phố & Giao thông Chỉ đường (In der Stadt & Wegbeschreibung - Bài 8)",
+        rule: "Danh từ ghép với der Bahnhof (Haupt + Bahnhof), số nhiều: die Hauptbahnhöfe.",
+        example: "Der Zug nach München fährt vom Hauptbahnhof ab.",
+        example_vi: "Chuyến tàu đi München khởi hành từ nhà ga trung tâm."
+    },
+    {
+        word: "Hafen", article: "der", gender: "der", plural: "die Häfen",
+        indefinite: "ein Hafen", negation: "kein Hafen",
+        meaning: "cảng biển", category: "Địa điểm trong Thành phố & Giao thông Chỉ đường (In der Stadt & Wegbeschreibung - Bài 8)",
+        rule: "Danh từ giống đực (der), số nhiều biến âm a -> ä (die Häfen).",
+        example: "In Hamburg besichtigen wir den großen Hafen.",
+        example_vi: "Ở Hamburg chúng tôi tham quan cảng biển lớn."
+    },
+    {
+        word: "Flughafen", article: "der", gender: "der", plural: "die Flughäfen",
+        indefinite: "ein Flughafen", negation: "kein Flughafen",
+        meaning: "sân bay", category: "Địa điểm trong Thành phố & Giao thông Chỉ đường (In der Stadt & Wegbeschreibung - Bài 8)",
+        rule: "Danh từ ghép (Flug + der Hafen), số nhiều: die Flughäfen.",
+        example: "Der Taxifahrer fährt schnell zum Flughafen.",
+        example_vi: "Người tài xế taxi lái xe nhanh đến sân bay."
+    },
+    {
+        word: "Markt", article: "der", gender: "der", plural: "die Märkte",
+        indefinite: "ein Markt", negation: "kein Markt",
+        meaning: "chợ, khu chợ", category: "Địa điểm trong Thành phố & Giao thông Chỉ đường (In der Stadt & Wegbeschreibung - Bài 8)",
+        rule: "Danh từ giống đực (der), số nhiều biến âm a -> ä và thêm đuôi -e (die Märkte).",
+        example: "Am Samstag kaufe ich frisches Obst auf dem Markt.",
+        example_vi: "Vào thứ Bảy tôi mua hoa quả tươi ở chợ."
+    },
+    {
+        word: "Supermarkt", article: "der", gender: "der", plural: "die Supermärkte",
+        indefinite: "ein Supermarkt", negation: "kein Supermarkt",
+        meaning: "siêu thị", category: "Địa điểm trong Thành phố & Giao thông Chỉ đường (In der Stadt & Wegbeschreibung - Bài 8)",
+        rule: "Danh từ ghép (Super + der Markt), số nhiều: die Supermärkte.",
+        example: "Er geht nach der Arbeit in den Supermarkt einkaufen.",
+        example_vi: "Anh ấy đi vào siêu thị mua sắm sau giờ làm việc."
+    },
+    {
+        word: "Platz", article: "der", gender: "der", plural: "die Plätze",
+        indefinite: "ein Platz", negation: "kein Platz",
+        meaning: "quảng trường, chỗ", category: "Địa điểm trong Thành phố & Giao thông Chỉ đường (In der Stadt & Wegbeschreibung - Bài 8)",
+        rule: "Danh từ giống đực (der), số nhiều biến âm a -> ä và thêm -e (die Plätze). Băng qua quảng trường: über den Platz.",
+        example: "Gehen Sie geradeaus über den Platz!",
+        example_vi: "Ngài hãy đi thẳng băng qua quảng trường!"
+    },
+    {
+        word: "Park", article: "der", gender: "der", plural: "die Parks",
+        indefinite: "ein Park", negation: "kein Park",
+        meaning: "công viên", category: "Địa điểm trong Thành phố & Giao thông Chỉ đường (In der Stadt & Wegbeschreibung - Bài 8)",
+        rule: "Danh từ giống đực (der), số nhiều thêm -s (die Parks). Đi xuyên qua công viên: durch den Park.",
+        example: "Am Nachmittag spazieren wir gern durch den Park.",
+        example_vi: "Vào buổi chiều chúng tôi thích đi dạo xuyên qua công viên."
+    },
+    {
+        word: "Zoo", article: "der", gender: "der", plural: "die Zoos",
+        indefinite: "ein Zoo", negation: "kein Zoo",
+        meaning: "vườn bách thú, sở thú", category: "Địa điểm trong Thành phố & Giao thông Chỉ đường (In der Stadt & Wegbeschreibung - Bài 8)",
+        rule: "Danh từ giống đực vay mượn, số nhiều thêm -s (die Zoos).",
+        example: "Am Wochenende besuchen viele Familien den Zoo.",
+        example_vi: "Vào cuối tuần nhiều gia đình đi tham quan sở thú."
+    },
+    {
+        word: "Turm", article: "der", gender: "der", plural: "die Türme",
+        indefinite: "ein Turm", negation: "kein Turm",
+        meaning: "tòa tháp, ngọn tháp", category: "Địa điểm trong Thành phố & Giao thông Chỉ đường (In der Stadt & Wegbeschreibung - Bài 8)",
+        rule: "Danh từ giống đực (der), số nhiều biến âm u -> ü và thêm -e (die Türme).",
+        example: "Von diesem Turm hat man eine schöne Aussicht.",
+        example_vi: "Từ ngọn tháp này người ta có một tầm nhìn rất đẹp."
+    },
+    {
+        word: "Dom", article: "der", gender: "der", plural: "die Dome",
+        indefinite: "ein Dom", negation: "kein Dom",
+        meaning: "nhà thờ lớn, thánh đường", category: "Địa điểm trong Thành phố & Giao thông Chỉ đường (In der Stadt & Wegbeschreibung - Bài 8)",
+        rule: "Danh từ giống đực (der), số nhiều thêm đuôi -e (die Dome).",
+        example: "Am Nachmittag gehen sie in den Berliner Dom und hören ein Konzert.",
+        example_vi: "Vào buổi chiều họ đi vào Nhà thờ lớn Berlin và nghe một buổi hòa nhạc."
+    },
+    {
+        word: "Stadt", article: "die", gender: "die", plural: "die Städte",
+        indefinite: "eine Stadt", negation: "keine Stadt",
+        meaning: "thành phố", category: "Địa điểm trong Thành phố & Giao thông Chỉ đường (In der Stadt & Wegbeschreibung - Bài 8)",
+        rule: "Danh từ giống cái (die), số nhiều biến âm a -> ä và thêm -e (die Städte).",
+        example: "Berlin ist eine sehr interessante Stadt.",
+        example_vi: "Berlin là một thành phố rất thú vị."
+    },
+    {
+        word: "Kirche", article: "die", gender: "die", plural: "die Kirchen",
+        indefinite: "eine Kirche", negation: "keine Kirche",
+        meaning: "nhà thờ", category: "Địa điểm trong Thành phố & Giao thông Chỉ đường (In der Stadt & Wegbeschreibung - Bài 8)",
+        rule: "Danh từ giống cái (die), số nhiều thêm -n (die Kirchen). Đi ngang qua nhà thờ: an der Kirche vorbei.",
+        example: "Gehen Sie an der Kirche vorbei und dann links!",
+        example_vi: "Ngài hãy đi ngang qua nhà thờ rồi sau đó rẽ trái!"
+    },
+    {
+        word: "Schule", article: "die", gender: "die", plural: "die Schulen",
+        indefinite: "eine Schule", negation: "keine Schule",
+        meaning: "trường học", category: "Địa điểm trong Thành phố & Giao thông Chỉ đường (In der Stadt & Wegbeschreibung - Bài 8)",
+        rule: "Danh từ giống cái (die), số nhiều thêm -n (die Schulen).",
+        example: "Die Kinder gehen jeden Morgen zur Schule.",
+        example_vi: "Những đứa trẻ đi đến trường học mỗi buổi sáng."
+    },
+    {
+        word: "Brücke", article: "die", gender: "die", plural: "die Brücken",
+        indefinite: "eine Brücke", negation: "keine Brücke",
+        meaning: "cây cầu", category: "Địa điểm trong Thành phố & Giao thông Chỉ đường (In der Stadt & Wegbeschreibung - Bài 8)",
+        rule: "Danh từ giống cái (die), số nhiều thêm -n (die Brücken). Đi qua cầu: über die Brücke.",
+        example: "Paula und Alex laufen über die Schlossbrücke.",
+        example_vi: "Paula và Alex đi bộ qua cầu Schlossbrücke."
+    },
+    {
+        word: "Bank", article: "die", gender: "die", plural: "die Banken / die Bänke",
+        indefinite: "eine Bank", negation: "keine Bank",
+        meaning: "ngân hàng (tiền) / ghế băng dài", category: "Địa điểm trong Thành phố & Giao thông Chỉ đường (In der Stadt & Wegbeschreibung - Bài 8)",
+        rule: "Phân biệt 2 nghĩa: Ngân hàng có số nhiều là die Banken; Ghế băng dài có số nhiều là die Bänke. Đi ngang qua: an der Bank vorbei.",
+        example: "Dann gehen Sie die erste Straße rechts, an der Bank vorbei.",
+        example_vi: "Sau đó Ngài hãy rẽ phải ở con đường thứ nhất, đi ngang qua ngân hàng."
+    },
+    {
+        word: "Post", article: "die", gender: "die", plural: "nur Singular",
+        indefinite: "eine Post", negation: "keine Post",
+        meaning: "bưu điện, ngành bưu chính", category: "Địa điểm trong Thành phố & Giao thông Chỉ đường (In der Stadt & Wegbeschreibung - Bài 8)",
+        rule: "Danh từ giống cái (die), thường chỉ dùng ở số ít (nur Singular). Đi tới bưu điện: zur Post.",
+        example: "Rechts neben der Ampel sehen Sie die Post.",
+        example_vi: "Ở bên phải cạnh đèn giao thông, Ngài sẽ nhìn thấy bưu điện."
+    },
+    {
+        word: "Straße", article: "die", gender: "die", plural: "die Straßen",
+        indefinite: "eine Straße", negation: "keine Straße",
+        meaning: "con đường, phố", category: "Địa điểm trong Thành phố & Giao thông Chỉ đường (In der Stadt & Wegbeschreibung - Bài 8)",
+        rule: "Danh từ giống cái (die), số nhiều thêm -n (die Straßen). Đi dọc theo con đường: die Straße entlang.",
+        example: "Gehen Sie bitte diese Straße entlang bis zur Kreuzung!",
+        example_vi: "Xin Ngài hãy đi dọc theo con đường này cho đến ngã tư!"
+    },
+    {
+        word: "Ampel", article: "die", gender: "die", plural: "die Ampeln",
+        indefinite: "eine Ampel", negation: "keine Ampel",
+        meaning: "đèn giao thông", category: "Địa điểm trong Thành phố & Giao thông Chỉ đường (In der Stadt & Wegbeschreibung - Bài 8)",
+        rule: "Danh từ giống cái (die), số nhiều thêm -n (die Ampeln). Cho đến đèn giao thông: bis zur Ampel.",
+        example: "Gehen Sie geradeaus bis zur Ampel!",
+        example_vi: "Ngài hãy đi thẳng cho đến đèn giao thông!"
+    },
+    {
+        word: "Kreuzung", article: "die", gender: "die", plural: "die Kreuzungen",
+        indefinite: "eine Kreuzung", negation: "keine Kreuzung",
+        meaning: "ngã tư, giao lộ", category: "Địa điểm trong Thành phố & Giao thông Chỉ đường (In der Stadt & Wegbeschreibung - Bài 8)",
+        rule: "Hậu tố -ung luôn mang giống cái (die), số nhiều thêm -en (die Kreuzungen). Cho đến ngã tư: bis zur Kreuzung.",
+        example: "An der zweiten Kreuzung biegen Sie bitte rechts ab!",
+        example_vi: "Tại ngã tư thứ hai xin Ngài hãy rẽ phải!"
+    },
+    {
+        word: "Disko", article: "die", gender: "die", plural: "die Diskos",
+        indefinite: "eine Disko", negation: "keine Disko",
+        meaning: "vũ trường, quán bar nhạc", category: "Địa điểm trong Thành phố & Giao thông Chỉ đường (In der Stadt & Wegbeschreibung - Bài 8)",
+        rule: "Danh từ giống cái (die), số nhiều thêm -s (die Diskos). Đi vào vũ trường: in die Disko.",
+        example: "Am Abend gehen die Jugendlichen in die Disko.",
+        example_vi: "Vào buổi tối các bạn thanh thiếu niên đi vào vũ trường."
+    },
+    {
+        word: "Schloss", article: "das", gender: "das", plural: "die Schlösser",
+        indefinite: "ein Schloss", negation: "kein Schloss",
+        meaning: "lâu đài, cung điện", category: "Địa điểm trong Thành phố & Giao thông Chỉ đường (In der Stadt & Wegbeschreibung - Bài 8)",
+        rule: "Danh từ giống trung (das), số nhiều biến âm o -> ö và thêm -er (die Schlösser).",
+        example: "In Deutschland gibt es viele alte Schlösser.",
+        example_vi: "Ở nước Đức có rất nhiều lâu đài cổ kính."
+    },
+    {
+        word: "Stadttor", article: "das", gender: "das", plural: "die Stadttore",
+        indefinite: "ein Stadttor", negation: "kein Stadttor",
+        meaning: "cổng thành", category: "Địa điểm trong Thành phố & Giao thông Chỉ đường (In der Stadt & Wegbeschreibung - Bài 8)",
+        rule: "Danh từ ghép giống trung (die Stadt + das Tor), số nhiều: die Stadttore. Đi xuyên qua cổng: durch das Stadttor.",
+        example: "Die Touristen gehen durch das alte Stadttor.",
+        example_vi: "Các du khách đi xuyên qua cổng thành cổ."
+    },
+    {
+        word: "Kino", article: "das", gender: "das", plural: "die Kinos",
+        indefinite: "ein Kino", negation: "kein Kino",
+        meaning: "rạp chiếu phim", category: "Địa điểm trong Thành phố & Giao thông Chỉ đường (In der Stadt & Wegbeschreibung - Bài 8)",
+        rule: "Danh từ giống trung (das), số nhiều thêm -s (die Kinos). Đi vào rạp chiếu phim: ins Kino (in + das).",
+        example: "Heute Abend wollen wir noch einen Film im Kino sehen.",
+        example_vi: "Tối nay chúng tôi còn muốn xem một bộ phim ở trong rạp chiếu phim."
+    },
+    {
+        word: "Krankenhaus", article: "das", gender: "das", plural: "die Krankenhäuser",
+        indefinite: "ein Krankenhaus", negation: "kein Krankenhaus",
+        meaning: "bệnh viện", category: "Địa điểm trong Thành phố & Giao thông Chỉ đường (In der Stadt & Wegbeschreibung - Bài 8)",
+        rule: "Danh từ ghép giống trung (krank + das Haus), số nhiều: die Krankenhäuser.",
+        example: "Der Arzt arbeitet jeden Tag im Krankenhaus.",
+        example_vi: "Bác sĩ làm việc mỗi ngày ở trong bệnh viện."
+    },
+    {
+        word: "Einkaufszentrum", article: "das", gender: "das", plural: "die Einkaufszentren",
+        indefinite: "ein Einkaufszentrum", negation: "kein Einkaufszentrum",
+        meaning: "trung tâm thương mại", category: "Địa điểm trong Thành phố & Giao thông Chỉ đường (In der Stadt & Wegbeschreibung - Bài 8)",
+        rule: "Đuôi -um đổi thành -en ở số nhiều: die Einkaufszentren. Giống trung (das).",
+        example: "Am Samstag gehen viele Leute ins Einkaufszentrum.",
+        example_vi: "Vào thứ Bảy nhiều người đi vào trung tâm thương mại."
+    },
+    {
+        word: "Hotel", article: "das", gender: "das", plural: "die Hotels",
+        indefinite: "ein Hotel", negation: "kein Hotel",
+        meaning: "khách sạn", category: "Địa điểm trong Thành phố & Giao thông Chỉ đường (In der Stadt & Wegbeschreibung - Bài 8)",
+        rule: "Danh từ giống trung (das), số nhiều thêm -s (die Hotels).",
+        example: "Die Touristen übernachten in einem modernen Hotel.",
+        example_vi: "Các du khách nghỉ qua đêm trong một khách sạn hiện đại."
+    },
+    {
+        word: "Museum", article: "das", gender: "das", plural: "die Museen",
+        indefinite: "ein Museum", negation: "kein Museum",
+        meaning: "viện bảo tàng", category: "Địa điểm trong Thành phố & Giao thông Chỉ đường (In der Stadt & Wegbeschreibung - Bài 8)",
+        rule: "Đuôi -um đổi thành -en ở số nhiều: die Museen. Giống trung (das).",
+        example: "Morgen wollen wir das historische Museum besuchen.",
+        example_vi: "Ngày mai chúng tôi muốn đi tham quan viện bảo tàng lịch sử."
+    },
+    {
+        word: "Rathaus", article: "das", gender: "das", plural: "die Rathäuser",
+        indefinite: "ein Rathaus", negation: "kein Rathaus",
+        meaning: "tòa thị chính", category: "Địa điểm trong Thành phố & Giao thông Chỉ đường (In der Stadt & Wegbeschreibung - Bài 8)",
+        rule: "Danh từ ghép giống trung (der Rat + das Haus), số nhiều: die Rathäuser.",
+        example: "Vor dem Rathaus gibt es einen schönen Marktplatz.",
+        example_vi: "Ở phía trước tòa thị chính có một quảng trường chợ đẹp."
+    },
+    {
+        word: "Theater", article: "das", gender: "das", plural: "die Theater",
+        indefinite: "ein Theater", negation: "kein Theater",
+        meaning: "nhà hát kịch", category: "Địa điểm trong Thành phố & Giao thông Chỉ đường (In der Stadt & Wegbeschreibung - Bài 8)",
+        rule: "Danh từ giống trung (das), giữ nguyên dạng ở số nhiều (die Theater).",
+        example: "Am Wochenende gehen wir ins Theater.",
+        example_vi: "Vào cuối tuần chúng tôi đi xem kịch ở nhà hát."
+    },
+    {
+        word: "Reichstag", article: "der", gender: "der", plural: "die Reichstage",
+        indefinite: "ein Reichstag", negation: "kein Reichstag",
+        meaning: "Tòa nhà Quốc hội Đức", category: "Danh lam Thắng cảnh tại Thủ đô Berlin (Sehenswürdigkeiten in Berlin - Bài 8)",
+        rule: "Danh lam thắng cảnh Berlin giống đực (vì der Tag). Đi tới: zum Reichstag.",
+        example: "Die Touristen stehen vor dem Reichstag und fotografieren die Glaskuppel.",
+        example_vi: "Các du khách đứng trước Tòa nhà Quốc hội và chụp ảnh mái vòm kính."
+    },
+    {
+        word: "Alexanderplatz", article: "der", gender: "der", plural: "nur Singular",
+        indefinite: "ein Alexanderplatz", negation: "kein Alexanderplatz",
+        meaning: "Quảng trường Alexander", category: "Danh lam Thắng cảnh tại Thủ đô Berlin (Sehenswürdigkeiten in Berlin - Bài 8)",
+        rule: "Quảng trường nổi tiếng ở Berlin mang giống đực (vì der Platz). Đi tới: zum Alexanderplatz.",
+        example: "Wir treffen uns heute Nachmittag am Alexanderplatz.",
+        example_vi: "Chúng ta hẹn gặp nhau vào chiều nay ở Quảng trường Alexander."
+    },
+    {
+        word: "Potsdamer Platz", article: "der", gender: "der", plural: "nur Singular",
+        indefinite: "ein Potsdamer Platz", negation: "kein Potsdamer Platz",
+        meaning: "Quảng trường Potsdam", category: "Danh lam Thắng cảnh tại Thủ đô Berlin (Sehenswürdigkeiten in Berlin - Bài 8)",
+        rule: "Quảng trường hiện đại tại Berlin mang giống đực (vì der Platz).",
+        example: "Am Potsdamer Platz gibt es viele moderne Hochhäuser und Kinos.",
+        example_vi: "Ở Quảng trường Potsdam có rất nhiều tòa nhà cao tầng hiện đại và rạp chiếu phim."
+    },
+    {
+        word: "Berliner Dom", article: "der", gender: "der", plural: "nur Singular",
+        indefinite: "ein Berliner Dom", negation: "kein Berliner Dom",
+        meaning: "Nhà thờ lớn Berlin", category: "Danh lam Thắng cảnh tại Thủ đô Berlin (Sehenswürdigkeiten in Berlin - Bài 8)",
+        rule: "Thánh đường lớn ở Berlin mang giống đực (vì der Dom). Đi vào trong: in den Berliner Dom.",
+        example: "Am Nachmittag gehen sie in den Berliner Dom und hören ein Konzert.",
+        example_vi: "Vào buổi chiều họ đi vào Nhà thờ lớn Berlin và nghe một buổi hòa nhạc."
+    },
+    {
+        word: "Fernsehturm", article: "der", gender: "der", plural: "die Fernsehtürme",
+        indefinite: "ein Fernsehturm", negation: "kein Fernsehturm",
+        meaning: "Tháp truyền hình Berlin", category: "Danh lam Thắng cảnh tại Thủ đô Berlin (Sehenswürdigkeiten in Berlin - Bài 8)",
+        rule: "Tòa tháp cao nhất nước Đức tại Berlin mang giống đực (vì der Turm).",
+        example: "Der Fernsehturm ist das höchste Bauwerk in ganz Deutschland.",
+        example_vi: "Tháp truyền hình là công trình kiến trúc cao nhất trên toàn nước Đức."
+    },
+    {
+        word: "Humboldt-Universität", article: "die", gender: "die", plural: "die Humboldt-Universitäten",
+        indefinite: "eine Humboldt-Universität", negation: "keine Humboldt-Universität",
+        meaning: "Trường Đại học Humboldt", category: "Danh lam Thắng cảnh tại Thủ đô Berlin (Sehenswürdigkeiten in Berlin - Bài 8)",
+        rule: "Hậu tố -tät luôn mang giống cái (die). Đi tới: zur Humboldt-Universität.",
+        example: "In Deutschland will mein Bruder an der Humboldt-Universität studieren.",
+        example_vi: "Ở Đức anh trai tôi muốn học đại học tại trường Đại học Humboldt."
+    },
+    {
+        word: "Staatsoper", article: "die", gender: "die", plural: "die Staatsopern",
+        indefinite: "eine Staatsoper", negation: "keine Staatsoper",
+        meaning: "Nhà hát Opera Quốc gia Berlin", category: "Danh lam Thắng cảnh tại Thủ đô Berlin (Sehenswürdigkeiten in Berlin - Bài 8)",
+        rule: "Danh lam thắng cảnh mang giống cái (vì die Oper). Đi tới: zur Staatsoper.",
+        example: "Heute Abend besuchen wir eine berühmte Oper in der Staatsoper.",
+        example_vi: "Tối nay chúng tôi đi xem một vở nhạc kịch nổi tiếng ở Nhà hát Opera Quốc gia."
+    },
+    {
+        word: "Friedrichstraße", article: "die", gender: "die", plural: "nur Singular",
+        indefinite: "eine Friedrichstraße", negation: "keine Friedrichstraße",
+        meaning: "Phố mua sắm Friedrich", category: "Danh lam Thắng cảnh tại Thủ đô Berlin (Sehenswürdigkeiten in Berlin - Bài 8)",
+        rule: "Con phố thương mại sầm uất tại Berlin mang giống cái (vì die Straße). Đi dọc phố: die Friedrichstraße entlang.",
+        example: "Anschließend wollen Maria und ich auf der Friedrichstraße bummeln.",
+        example_vi: "Tiếp sau đó Maria và tôi muốn đi dạo phố trên đường Friedrich."
+    },
+    {
+        word: "Museumsinsel", article: "die", gender: "die", plural: "nur Singular",
+        indefinite: "eine Museumsinsel", negation: "keine Museumsinsel",
+        meaning: "Đảo Bảo tàng Berlin", category: "Danh lam Thắng cảnh tại Thủ đô Berlin (Sehenswürdigkeiten in Berlin - Bài 8)",
+        rule: "Quần thể bảo tàng di sản UNESCO mang giống cái (vì die Insel - hòn đảo). Đi tới: zur Museumsinsel.",
+        example: "Auf der Museumsinsel liegen fünf weltberühmte Museen.",
+        example_vi: "Trên Đảo Bảo tàng có năm viện bảo tàng nổi tiếng khắp thế giới."
+    },
+    {
+        word: "Alte Nationalgalerie", article: "die", gender: "die", plural: "nur Singular",
+        indefinite: "eine Alte Nationalgalerie", negation: "keine Alte Nationalgalerie",
+        meaning: "Khu triển lãm Quốc gia Cũ", category: "Danh lam Thắng cảnh tại Thủ đô Berlin (Sehenswürdigkeiten in Berlin - Bài 8)",
+        rule: "Hậu tố -ie luôn mang giống cái (die). Đi vào trong: in die Alte Nationalgalerie.",
+        example: "Danach will ich in die Alte Nationalgalerie gehen.",
+        example_vi: "Tiếp theo tôi muốn đi vào Khu triển lãm Quốc gia Cũ."
+    },
+    {
+        word: "Bundeskanzleramt", article: "das", gender: "das", plural: "nur Singular",
+        indefinite: "ein Bundeskanzleramt", negation: "kein Bundeskanzleramt",
+        meaning: "Phủ Thủ tướng Liên bang Đức", category: "Danh lam Thắng cảnh tại Thủ đô Berlin (Sehenswürdigkeiten in Berlin - Bài 8)",
+        rule: "Trụ sở làm việc của Thủ tướng Đức mang giống trung (vì das Amt - cơ quan/phủ). Chạy xe ngang qua: am Bundeskanzleramt vorbei.",
+        example: "Sie fahren mit dem Bus am Bundeskanzleramt vorbei.",
+        example_vi: "Họ đi xe buýt ngang qua Phủ Thủ tướng."
+    },
+    {
+        word: "Brandenburger Tor", article: "das", gender: "das", plural: "nur Singular",
+        indefinite: "ein Brandenburger Tor", negation: "kein Brandenburger Tor",
+        meaning: "Cổng thành Brandenburg", category: "Danh lam Thắng cảnh tại Thủ đô Berlin (Sehenswürdigkeiten in Berlin - Bài 8)",
+        rule: "Biểu tượng lịch sử của Berlin và nước Đức mang giống trung (vì das Tor). Đi tới: zum Brandenburger Tor.",
+        example: "Paula und Alex gehen zum Brandenburger Tor und machen viele Fotos.",
+        example_vi: "Paula và Alex đi đến Cổng Brandenburg và chụp nhiều bức ảnh."
+    },
+    {
+        word: "Schloss Bellevue", article: "das", gender: "das", plural: "nur Singular",
+        indefinite: "ein Schloss Bellevue", negation: "kein Schloss Bellevue",
+        meaning: "Cung điện Bellevue", category: "Danh lam Thắng cảnh tại Thủ đô Berlin (Sehenswürdigkeiten in Berlin - Bài 8)",
+        rule: "Nơi làm việc của Tổng thống Đức mang giống trung (vì das Schloss).",
+        example: "Das Schloss Bellevue ist der Amtssitz des deutschen Bundespräsidenten.",
+        example_vi: "Cung điện Bellevue là nơi làm việc chính thức của Tổng thống Liên bang Đức."
+    },
+    {
+        word: "Sony Center", article: "das", gender: "das", plural: "nur Singular",
+        indefinite: "ein Sony Center", negation: "kein Sony Center",
+        meaning: "Trung tâm phức hợp Sony", category: "Danh lam Thắng cảnh tại Thủ đô Berlin (Sehenswürdigkeiten in Berlin - Bài 8)",
+        rule: "Trung tâm thương mại & rạp chiếu phim hiện đại mang giống trung (vì das Center).",
+        example: "Wir schauen uns das moderne Dach im Sony Center an.",
+        example_vi: "Chúng tôi ngắm nhìn mái vòm hiện đại ở Trung tâm Sony."
+    },
+    {
+        word: "Stadtrundfahrt", article: "die", gender: "die", plural: "die Stadtrundfahrten",
+        indefinite: "eine Stadtrundfahrt", negation: "keine Stadtrundfahrt",
+        meaning: "chuyến tham quan thành phố", category: "Địa điểm trong Thành phố & Giao thông Chỉ đường (In der Stadt & Wegbeschreibung - Bài 8)",
+        rule: "Danh từ ghép giống cái (die Stadt + die Fahrt), số nhiều: die Stadtrundfahrten.",
+        example: "Wir wollen heute eine Stadtrundfahrt in Berlin machen.",
+        example_vi: "Hôm nay chúng tôi muốn thực hiện một chuyến tham quan vòng quanh thành phố ở Berlin."
+    },
+    {
+        word: "Fluss", article: "der", gender: "der", plural: "die Flüsse",
+        indefinite: "ein Fluss", negation: "kein Fluss",
+        meaning: "dòng sông", category: "Địa điểm trong Thành phố & Giao thông Chỉ đường (In der Stadt & Wegbeschreibung - Bài 8)",
+        rule: "Danh từ giống đực (der), số nhiều biến âm u -> ü và thêm -e (die Flüsse).",
+        example: "Die Spree ist ein bekannter Fluss in Berlin.",
+        example_vi: "Spree là một dòng sông nổi tiếng ở Berlin."
+    },
+    {
+        word: "Fußgänger", article: "der", gender: "der", plural: "die Fußgänger",
+        indefinite: "ein Fußgänger", negation: "kein Fußgänger",
+        meaning: "người đi bộ", category: "Địa điểm trong Thành phố & Giao thông Chỉ đường (In der Stadt & Wegbeschreibung - Bài 8)",
+        rule: "Hậu tố -er chỉ người mang giống đực (der), giữ nguyên ở số nhiều (die Fußgänger).",
+        example: "An der Kreuzung müssen Fußgänger auf die Ampel achten.",
+        example_vi: "Tại ngã tư người đi bộ phải chú ý đến đèn giao thông."
+    },
+    {
+        word: "Haltestelle", article: "die", gender: "die", plural: "die Haltestellen",
+        indefinite: "eine Haltestelle", negation: "keine Haltestelle",
+        meaning: "trạm dừng, điểm đỗ xe buýt / tàu", category: "Địa điểm trong Thành phố & Giao thông Chỉ đường (In der Stadt & Wegbeschreibung - Bài 8)",
+        rule: "Danh từ ghép giống cái (die Stelle), số nhiều thêm -n (die Haltestellen).",
+        example: "Der Bus hält an der nächsten Haltestelle.",
+        example_vi: "Chiếc xe buýt dừng lại ở trạm dừng tiếp theo."
+    },
+    {
+        word: "Ticket", article: "das", gender: "das", plural: "die Tickets",
+        indefinite: "ein Ticket", negation: "kein Ticket",
+        meaning: "vé (xe buýt, tàu hỏa, tham quan)", category: "Địa điểm trong Thành phố & Giao thông Chỉ đường (In der Stadt & Wegbeschreibung - Bài 8)",
+        rule: "Từ vay mượn giống trung (das), số nhiều thêm -s (die Tickets).",
+        example: "Sie kauft ein Ticket für die Stadtrundfahrt.",
+        example_vi: "Cô ấy mua một chiếc vé cho chuyến tham quan thành phố."
+    },
+    {
+        word: "Zentrum", article: "das", gender: "das", plural: "die Zentren",
+        indefinite: "ein Zentrum", negation: "kein Zentrum",
+        meaning: "trung tâm thành phố", category: "Địa điểm trong Thành phố & Giao thông Chỉ đường (In der Stadt & Wegbeschreibung - Bài 8)",
+        rule: "Hậu tố -um đổi thành -en ở số nhiều: die Zentren. Giống trung (das). Đi tới trung tâm: ins Zentrum.",
+        example: "Die Museumsinsel liegt direkt im Zentrum von Berlin.",
+        example_vi: "Đảo Bảo tàng nằm ngay tại trung tâm của Berlin."
+    }
 ];
 
 let currentLexikonFilter = "all";
@@ -1823,6 +2227,8 @@ let currentLexikonSearchQuery = "";
 
 const LEXIKON_FILTERS = [
     { id: "all", label: "Tất cả" },
+    { id: "In der Stadt", label: "🏙️ Địa điểm Thành phố & Chỉ đường (Bài 8)" },
+    { id: "Sehenswürdigkeiten in Berlin", label: "🏛️ Danh lam Thắng cảnh Berlin (Bài 8)" },
     { id: "Berufe", label: "👨‍💼 Nghề nghiệp Nam & Nữ (Bài 7)" },
     { id: "Arbeitsorte", label: "🏢 Nơi làm việc & Đời sống (Bài 7)" },
     { id: "Phương tiện Giao thông", label: "🚆 Phương tiện Giao thông & Điểm đến (Bài 6)" },
@@ -1853,7 +2259,7 @@ function updateLexikonUI() {
         if (currentLexikonFilter === "der" || currentLexikonFilter === "die" || currentLexikonFilter === "das") {
             matchFilter = item.gender === currentLexikonFilter;
         } else if (currentLexikonFilter !== "all") {
-            matchFilter = item.category === currentLexikonFilter;
+            matchFilter = item.category === currentLexikonFilter || (item.category && item.category.toLowerCase().includes(currentLexikonFilter.toLowerCase()));
         }
 
         const matchSearch = !q ||
@@ -1881,7 +2287,7 @@ function updateLexikonUI() {
         } else if (f.id === "der" || f.id === "die" || f.id === "das") {
             count = GERMAN_LEXIKON_DB.filter(x => x.gender === f.id).length;
         } else {
-            count = GERMAN_LEXIKON_DB.filter(x => x.category === f.id).length;
+            count = GERMAN_LEXIKON_DB.filter(x => x.category === f.id || (x.category && x.category.toLowerCase().includes(f.id.toLowerCase()))).length;
         }
 
         const isActive = currentLexikonFilter === f.id;
