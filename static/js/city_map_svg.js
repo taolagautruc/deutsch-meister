@@ -377,7 +377,7 @@
                 <rect x="0" y="52" width="300" height="74" fill="#38bdf8"/>
                 <path d="M0 68 Q 75 58 150 68 T 300 68" fill="none" stroke="#0284c7" stroke-width="3"/>
                 <path d="M0 108 Q 75 98 150 108 T 300 108" fill="none" stroke="#0284c7" stroke-width="3"/>
-                <text x="35" y="118" font-size="8.5" font-weight="bold" fill="#0369a1">Fluss Spree (der)</text>
+                <text x="48" y="116" font-size="8.5" font-weight="extrabold" fill="#0284c7" text-anchor="middle">Fluss Spree</text>
                 <!-- Cây cầu bắc qua sông -->
                 <rect x="100" y="15" width="100" height="150" rx="6" fill="#334155" stroke="#475569" stroke-width="2"/>
                 <rect x="94" y="15" width="6" height="150" fill="#94a3b8"/>
@@ -407,11 +407,11 @@
                 <path d="M60 180 C 100 110, 200 110, 240 0 L 290 0 C 250 110, 150 110, 110 180 Z" fill="#334155"/>
                 <path d="M85 180 C 125 110, 225 110, 265 0" fill="none" stroke="#ffffff" stroke-width="3" stroke-dasharray="10 8"/>
                 <!-- Badge ngữ pháp góc trên bên trái -->
-                <rect x="10" y="10" width="145" height="26" rx="6" fill="#fefce8" stroke="#fde047" stroke-width="1.5"/>
-                <text x="82.5" y="27" font-size="10.5" font-weight="black" fill="#a16207" text-anchor="middle">AKKUSATIV + entlang</text>
-                <!-- Nhãn tên đường góc trên bên phải -->
-                <rect x="175" y="10" width="115" height="26" rx="6" fill="#f8fafc" stroke="#94a3b8" stroke-width="1.5"/>
-                <text x="232.5" y="27" font-size="9" font-weight="extrabold" fill="#1e293b" text-anchor="middle">die Friedrichstraße</text>
+                <rect x="10" y="10" width="145" height="25" rx="6" fill="#fefce8" stroke="#fde047" stroke-width="1.5"/>
+                <text x="82.5" y="26.5" font-size="10.5" font-weight="black" fill="#a16207" text-anchor="middle">AKKUSATIV + entlang</text>
+                <!-- Nhãn tên đường đặt phía dưới badge ngữ pháp bên trái, hoàn toàn tách biệt khỏi mũi tên -->
+                <rect x="10" y="40" width="125" height="24" rx="6" fill="#f8fafc" stroke="#94a3b8" stroke-width="1.5"/>
+                <text x="72.5" y="56" font-size="9" font-weight="extrabold" fill="#1e293b" text-anchor="middle">die Friedrichstraße</text>
                 <!-- Mũi tên chạy dọc theo con đường -->
                 <path d="M85 168 C 125 105, 225 105, 265 20" fill="none" stroke="#ca8a04" stroke-width="6" stroke-linecap="round"/>
                 <polygon points="268,8 253,22 271,28" fill="#a16207"/>
@@ -486,7 +486,7 @@
             <!-- Tên các con đường -->
             <text x="84" y="352" font-size="8.5" font-weight="bold" fill="#94a3b8" text-anchor="middle">Friedrichstraße</text>
             <text x="244" y="352" font-size="8.5" font-weight="bold" fill="#94a3b8" text-anchor="middle">Wilhelmstraße</text>
-            <text x="404" y="18" font-size="8.5" font-weight="bold" fill="#94a3b8" text-anchor="middle">Alexanderstraße</text>
+            <text x="404" y="352" font-size="8.5" font-weight="bold" fill="#94a3b8" text-anchor="middle">Alexanderstraße</text>
             <text x="18" y="286" font-size="8.5" font-weight="bold" fill="#94a3b8">Leipziger Str.</text>
             <text x="18" y="166" font-size="8.5" font-weight="bold" fill="#94a3b8">Behrenstraße</text>
             <text x="18" y="56" font-size="8.5" font-weight="bold" fill="#94a3b8">Unter den Linden</text>
@@ -495,8 +495,8 @@
             <!-- 1. Vị trí Start (Sie sind hier) trên Friedrichstraße giữa Leipziger Str. và Behrenstraße -->
             <circle cx="84" cy="235" r="13" fill="#f43f5e" stroke="#ffffff" stroke-width="2.5"/>
             <circle cx="84" cy="235" r="4.5" fill="#ffffff"/>
-            <text x="84" y="253" font-size="9.5" font-weight="black" fill="#f43f5e" text-anchor="middle">📍 START</text>
-            <text x="84" y="264" font-size="7.5" font-weight="bold" fill="#fda4af" text-anchor="middle">(Sie sind hier)</text>
+            <text x="104" y="232" font-size="10" font-weight="black" fill="#f43f5e" text-anchor="start">📍 START</text>
+            <text x="104" y="244" font-size="8" font-weight="bold" fill="#fda4af" text-anchor="start">(Sie sind hier)</text>
 
             <!-- 2. Ngân hàng Bank (trên đường Behrenstraße giữa ngã 1 và 2) -->
             <rect x="125" y="105" width="75" height="40" rx="6" fill="#1e3a8a" stroke="#3b82f6" stroke-width="1.5"/>
@@ -517,11 +517,11 @@
             <text x="485" y="26" font-size="14" text-anchor="middle">📮</text>
             <text x="485" y="40" font-size="10" font-weight="black" fill="#fef08a" text-anchor="middle">DIE POST</text>
             <!-- Đèn giao thông Ampel ngay trước Bưu điện -->
-            <rect x="408" y="22" width="12" height="24" rx="2" fill="#000000" stroke="#eab308" stroke-width="1"/>
-            <circle cx="414" cy="27" r="2" fill="#ef4444"/>
-            <circle cx="414" cy="34" r="2" fill="#f59e0b"/>
-            <circle cx="414" cy="41" r="2" fill="#10b981"/>
-            <text x="414" y="15" font-size="7.5" font-weight="bold" fill="#fbbf24" text-anchor="middle">Ampel 🚦</text>
+            <rect x="408" y="20" width="12" height="24" rx="2" fill="#000000" stroke="#eab308" stroke-width="1"/>
+            <circle cx="414" cy="25" r="2" fill="#ef4444"/>
+            <circle cx="414" cy="32" r="2" fill="#f59e0b"/>
+            <circle cx="414" cy="39" r="2" fill="#10b981"/>
+            <text x="414" y="14" font-size="7.5" font-weight="bold" fill="#fbbf24" text-anchor="middle">Ampel 🚦</text>
 
             <!-- 6. Ga tàu Bahnhof ở góc phải dưới -->
             <rect x="440" y="110" width="90" height="40" rx="6" fill="#1e293b" stroke="#64748b" stroke-width="1.5"/>
@@ -530,9 +530,9 @@
             <!-- ================= LỘ TRÌNH 1 (XANH DƯƠNG) ================= -->
             ${isRoute1 ? `
             <g id="route-1-layer">
-                <!-- Đường đi: Start(84,235) -> thẳng lên ngã 1(84,172) -> rẽ phải qua Bank tới ngã 2(244,172) -> rẽ trái lên ngã 3(244,62) -> rẽ phải đường Unter den Linden tới Ampel(404,62) -> Post ngay trước mắt -->
-                <path d="M 84 235 L 84 172 L 244 172 L 244 62 L 404 62" fill="none" stroke="#3b82f6" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
-                <path d="M 84 235 L 84 172 L 244 172 L 244 62 L 404 62" fill="none" stroke="#93c5fd" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="10 8"/>
+                <!-- Đường đi: Start(84,235) -> thẳng lên ngã 1(84,172) -> rẽ phải qua Bank tới ngã 2(244,172) -> rẽ trái lên ngã 3(244,62) -> rẽ phải đường Unter den Linden tới Ampel(414,62) -> Post ngay trước mắt -->
+                <path d="M 84 235 L 84 172 L 244 172 L 244 62 L 414 62" fill="none" stroke="#3b82f6" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M 84 235 L 84 172 L 244 172 L 244 62 L 414 62" fill="none" stroke="#93c5fd" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="10 8"/>
                 <!-- Mũi tên chỉ hướng chặng 1 (đi thẳng lên ngã 1) -->
                 <polygon points="84,198 78,210 90,210" fill="#2563eb"/>
                 <!-- Mũi tên rẽ phải qua Bank -->
@@ -542,26 +542,26 @@
                 <!-- Mũi tên rẽ phải đường Unter den Linden tới Ampel -->
                 <polygon points="340,62 328,56 328,68" fill="#2563eb"/>
                 <!-- Đích đến Post -->
-                <circle cx="440" cy="40" r="12" fill="#3b82f6" stroke="#ffffff" stroke-width="2"/>
-                <text x="440" y="44" font-size="9" font-weight="black" fill="#ffffff" text-anchor="middle">ZIEL</text>
+                <circle cx="414" cy="62" r="11" fill="#3b82f6" stroke="#ffffff" stroke-width="2"/>
+                <text x="414" y="65" font-size="8.5" font-weight="black" fill="#ffffff" text-anchor="middle">ZIEL</text>
             </g>
             ` : ''}
 
             <!-- ================= LỘ TRÌNH 2 (XANH LÁ) ================= -->
             ${isRoute2 ? `
             <g id="route-2-layer">
-                <!-- Lộ trình 2: Start(84,235) -> Đi thẳng qua ngã 1 -> lên ngã 2 bên phải(84,62) -> rẽ phải đi thẳng băng qua ngã tư -> tới Ampel/Post(404,62) -->
-                <path d="M 84 235 L 84 62 L 404 62" fill="none" stroke="#10b981" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
-                <path d="M 84 235 L 84 62 L 404 62" fill="none" stroke="#a7f3d0" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="10 8"/>
+                <!-- Lộ trình 2: Start(84,235) -> Đi thẳng qua ngã 1 -> lên ngã 2 bên phải(84,62) -> rẽ phải đi thẳng băng qua ngã tư -> tới Ampel/Post(414,62) -->
+                <path d="M 84 235 L 84 62 L 414 62" fill="none" stroke="#10b981" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M 84 235 L 84 62 L 414 62" fill="none" stroke="#a7f3d0" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="10 8"/>
                 <!-- Mũi tên thẳng lên -->
                 <polygon points="84,198 78,210 90,210" fill="#059669"/>
                 <polygon points="84,110 78,122 90,122" fill="#059669"/>
                 <!-- Mũi tên rẽ phải ngã tư 2 đi thẳng băng qua -->
                 <polygon points="180,62 168,56 168,68" fill="#059669"/>
                 <polygon points="310,62 298,56 298,68" fill="#059669"/>
-                <!-- Đích đến -->
-                <circle cx="440" cy="40" r="12" fill="#10b981" stroke="#ffffff" stroke-width="2"/>
-                <text x="440" y="44" font-size="9" font-weight="black" fill="#ffffff" text-anchor="middle">ZIEL</text>
+                <!-- Đích đến tại Ampel sát Post -->
+                <circle cx="414" cy="62" r="11" fill="#10b981" stroke="#ffffff" stroke-width="2"/>
+                <text x="414" y="65" font-size="8.5" font-weight="black" fill="#ffffff" text-anchor="middle">ZIEL</text>
             </g>
             ` : ''}
         </svg>`;
@@ -596,7 +596,7 @@
             <div class="my-3 space-y-2">
                 <div class="p-2 rounded-xl bg-blue-50 border border-blue-200 text-blue-900 text-xs font-semibold flex items-center justify-between">
                     <span>🔵 Đang hiển thị Lộ trình 1 (màu xanh dương) trên bản đồ thành phố</span>
-                    <button type="button" onclick="speakGerman('Zuerst gehen Sie geradeaus. Dann gehen Sie die erste Straße rechts, an der Bank vorbei. Dann gehen Sie bis zur zweiten Kreuzung und dort links. Danach gehen Sie die Straße Unter den Linden rechts bis zur Ampel. Die Post sehen Sie dann direkt vor sich.', 1.0)" class="px-2.5 py-1 rounded-lg bg-blue-600 hover:bg-blue-700 text-white font-bold text-xs cursor-pointer">
+                    <button type="button" onclick="speakGerman('Zuerst gehen Sie geradeaus. Dann gehen Sie die erste Straße rechts, an der Bank vorbei. Dann gehen Sie bis zur nächsten Kreuzung und dort links. Danach gehen Sie rechts und die Straße Unter den Linden entlang bis zur Ampel. Die Post sehen Sie dann direkt vor sich.', 1.0)" class="px-2.5 py-1 rounded-lg bg-blue-600 hover:bg-blue-700 text-white font-bold text-xs cursor-pointer">
                         🔊 Nghe lộ trình
                     </button>
                 </div>
@@ -609,7 +609,7 @@
             <div class="my-3 space-y-2">
                 <div class="p-2 rounded-xl bg-emerald-50 border border-emerald-200 text-emerald-900 text-xs font-semibold flex items-center justify-between">
                     <span>🟢 Đang hiển thị Lộ trình 2 (màu xanh lá) trên bản đồ thành phố</span>
-                    <button type="button" onclick="speakGerman('Zuerst gehen Sie geradeaus, bis zur zweiten Kreuzung rechts. Dann gehen Sie geradeaus, über die Kreuzung. Links sehen Sie die Post.', 1.0)" class="px-2.5 py-1 rounded-lg bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-xs cursor-pointer">
+                    <button type="button" onclick="speakGerman('Zuerst gehen Sie geradeaus, bis zur zweiten Kreuzung rechts. Dann gehen Sie geradeaus, über die Kreuzung, bis zur Ampel. Links sehen Sie die Post.', 1.0)" class="px-2.5 py-1 rounded-lg bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-xs cursor-pointer">
                         🔊 Nghe lộ trình
                     </button>
                 </div>
@@ -667,24 +667,24 @@
                     <div class="p-4 rounded-2xl bg-blue-50 border border-blue-200 space-y-2 text-xs sm:text-sm text-blue-950">
                         <div class="flex items-center justify-between">
                             <span class="font-extrabold text-blue-800">🔵 Lộ trình 1: Đi qua Ngân hàng tới Bưu điện</span>
-                            <button onclick="speakGerman('Zuerst gehen Sie geradeaus. Dann gehen Sie die erste Straße rechts, an der Bank vorbei. Dann gehen Sie bis zur zweiten Kreuzung und dort links. Danach gehen Sie die Straße Unter den Linden rechts bis zur Ampel. Die Post sehen Sie dann direkt vor sich.', 1.0)" class="px-3 py-1 rounded-lg bg-blue-600 hover:bg-blue-700 text-white font-bold text-xs cursor-pointer flex items-center gap-1">
+                            <button onclick="speakGerman('Zuerst gehen Sie geradeaus. Dann gehen Sie die erste Straße rechts, an der Bank vorbei. Dann gehen Sie bis zur nächsten Kreuzung und dort links. Danach gehen Sie rechts und die Straße Unter den Linden entlang bis zur Ampel. Die Post sehen Sie dann direkt vor sich.', 1.0)" class="px-3 py-1 rounded-lg bg-blue-600 hover:bg-blue-700 text-white font-bold text-xs cursor-pointer flex items-center gap-1">
                                 🔊 Nghe phát âm chuẩn de-DE
                             </button>
                         </div>
-                        <p class="italic font-serif">„<b>Zuerst</b> gehen Sie geradeaus. <b>Dann</b> gehen Sie die erste Straße rechts, <b>an der Bank vorbei</b>. <b>Dann</b> gehen Sie bis zur zweiten Kreuzung und dort links. <b>Danach</b> gehen Sie die Straße Unter den Linden rechts <b>bis zur Ampel</b>. <b>Die Post</b> sehen Sie dann <b>direkt vor sich</b>.“</p>
-                        <p class="text-xs text-blue-800 font-medium"><b>Dịch nghĩa:</b> Đầu tiên Ngài đi thẳng. Sau đó Ngài rẽ phải ở con đường thứ nhất, đi ngang qua ngân hàng. Sau đó Ngài đi đến ngã tư thứ hai và rẽ trái ở đó. Tiếp theo Ngài rẽ phải vào đường Unter den Linden, đi cho đến đèn giao thông. Ngài sẽ thấy bưu điện ngay phía trước.</p>
+                        <p class="italic font-serif">„<b>Zuerst</b> gehen Sie geradeaus. <b>Dann</b> gehen Sie die erste Straße rechts, <b>an der Bank vorbei</b>. <b>Dann</b> gehen Sie bis zur nächsten Kreuzung und dort links. <b>Danach</b> gehen Sie rechts und die Straße Unter den Linden entlang <b>bis zur Ampel</b>. <b>Die Post</b> sehen Sie dann <b>direkt vor sich</b>.“</p>
+                        <p class="text-xs text-blue-800 font-medium"><b>Dịch nghĩa:</b> Đầu tiên Ngài đi thẳng. Sau đó Ngài rẽ phải ở con đường thứ nhất, đi ngang qua ngân hàng. Sau đó Ngài đi đến ngã tư tiếp theo và rẽ trái ở đó. Tiếp theo Ngài rẽ phải và đi dọc theo đường Unter den Linden cho đến đèn giao thông. Ngài sẽ thấy bưu điện ngay phía trước.</p>
                     </div>`;
             } else if (route === 'route2') {
                 descWrap.innerHTML = `
                     <div class="p-4 rounded-2xl bg-emerald-50 border border-emerald-200 space-y-2 text-xs sm:text-sm text-emerald-950">
                         <div class="flex items-center justify-between">
                             <span class="font-extrabold text-emerald-800">🟢 Lộ trình 2: Đi thẳng lên ngã tư thứ 2 rồi rẽ phải</span>
-                            <button onclick="speakGerman('Zuerst gehen Sie geradeaus, bis zur zweiten Kreuzung rechts. Dann gehen Sie geradeaus, über die Kreuzung. Links sehen Sie die Post.', 1.0)" class="px-3 py-1 rounded-lg bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-xs cursor-pointer flex items-center gap-1">
+                            <button onclick="speakGerman('Zuerst gehen Sie geradeaus, bis zur zweiten Kreuzung rechts. Dann gehen Sie geradeaus, über die Kreuzung, bis zur Ampel. Links sehen Sie die Post.', 1.0)" class="px-3 py-1 rounded-lg bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-xs cursor-pointer flex items-center gap-1">
                                 🔊 Nghe phát âm chuẩn de-DE
                             </button>
                         </div>
-                        <p class="italic font-serif">„<b>Zuerst</b> gehen Sie geradeaus, <b>bis zur zweiten Kreuzung rechts</b>. <b>Dann</b> gehen Sie geradeaus, <b>über die Kreuzung</b>. Links sehen Sie <b>die Post</b>.“</p>
-                        <p class="text-xs text-emerald-800 font-medium"><b>Dịch nghĩa:</b> Đầu tiên Ngài đi thẳng cho đến ngã tư thứ hai thì rẽ phải. Sau đó Ngài đi thẳng, băng qua ngã tư. Ở bên trái Ngài sẽ nhìn thấy bưu điện.</p>
+                        <p class="italic font-serif">„<b>Zuerst</b> gehen Sie geradeaus, <b>bis zur zweiten Kreuzung rechts</b>. <b>Dann</b> gehen Sie geradeaus, <b>über die Kreuzung</b>, <b>bis zur Ampel</b>. Links sehen Sie <b>die Post</b>.“</p>
+                        <p class="text-xs text-emerald-800 font-medium"><b>Dịch nghĩa:</b> Đầu tiên Ngài đi thẳng cho đến ngã tư thứ hai thì rẽ phải. Sau đó Ngài đi thẳng, băng qua ngã tư, cho đến đèn giao thông. Ở bên trái Ngài sẽ nhìn thấy bưu điện.</p>
                     </div>`;
             } else {
                 descWrap.innerHTML = `

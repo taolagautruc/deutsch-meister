@@ -141,18 +141,18 @@ def build_lesson_8_seed():
             {"visual_svg": "spatial_contrast_tor_bruecke", "translation": "Đầu tiên các du khách đi xuyên qua cổng thành, và tiếp theo họ đi bộ qua cây cầu."}
         ),
         (
-            "Câu 7: Hãy theo dõi lộ trình sau trên Bản đồ thành phố bên trên: 'Zuerst gehen Sie geradeaus. Dann gehen Sie die erste Straße rechts, an der Bank vorbei. Dann gehen Sie bis zur zweiten Kreuzung und dort links. Danach gehen Sie die Straße Unter den Linden rechts bis zur Ampel.' — Tòa nhà bạn nhìn thấy ngay trước mắt (direkt vor sich) tại điểm cuối là gì?",
+            "Câu 7: Hãy theo dõi lộ trình sau trên Bản đồ thành phố bên trên: 'Zuerst gehen Sie geradeaus. Dann gehen Sie die erste Straße rechts, an der Bank vorbei. Dann gehen Sie bis zur nächsten Kreuzung und dort links. Danach gehen Sie rechts und die Straße Unter den Linden entlang bis zur Ampel.' — Tòa nhà bạn nhìn thấy ngay trước mắt (direkt vor sich) tại điểm cuối là gì?",
             ["das Kino", "die Bank", "die Post", "der Bahnhof"],
             "die Post",
             "Theo đúng hướng di chuyển tới đèn giao thông (Ampel) trên bản đồ thành phố, tòa nhà ngay phía trước chính là 'die Post' (Bưu điện).",
             {"visual_svg": "city_grid_map_quiz_1", "translation": "Ngay phía trước Ngài nhìn thấy bưu điện (die Post)."}
         ),
         (
-            "Câu 8: Quan sát Lộ trình số 2 (màu xanh lá) trên bản đồ bên trên và chọn từ đúng điền vào chỗ trống: 'Zuerst gehen Sie geradeaus, bis zur ___ Kreuzung rechts. Dann gehen Sie geradeaus, ___ die Kreuzung. Links sehen Sie die Post.'",
+            "Câu 8: Quan sát Lộ trình số 2 (màu xanh lá) trên bản đồ bên trên và chọn từ đúng điền vào chỗ trống: 'Zuerst gehen Sie geradeaus, bis zur ___ Kreuzung rechts. Dann gehen Sie geradeaus, ___ die Kreuzung, bis zur Ampel. Links sehen Sie die Post.'",
             ["ersten / durch", "zweiten / über", "zweiten / an", "dritten / um"],
             "zweiten / über",
-            "Đường màu xanh lá đi thẳng tới ngã tư thứ hai ('bis zur zweiten Kreuzung rechts'), sau đó đi thẳng băng qua ngã tư tiếp theo ('über die Kreuzung').",
-            {"visual_svg": "city_grid_map_quiz_2", "translation": "Đầu tiên Ngài đi thẳng đến ngã tư thứ hai rẽ phải, sau đó đi thẳng băng qua ngã tư."}
+            "Đường màu xanh lá đi thẳng tới ngã tư thứ hai ('bis zur zweiten Kreuzung rechts'), sau đó đi thẳng băng qua ngã tư tiếp theo ('über die Kreuzung') cho đến đèn giao thông ('bis zur Ampel').",
+            {"visual_svg": "city_grid_map_quiz_2", "translation": "Đầu tiên Ngài đi thẳng đến ngã tư thứ hai rẽ phải, sau đó đi thẳng băng qua ngã tư cho đến đèn giao thông."}
         ),
         (
             "Câu 9: Dòng nào dưới đây liệt kê ĐÚNG 100% cả mạo từ số ít và dạng số nhiều của các danh từ địa điểm trong thành phố?",
@@ -625,11 +625,11 @@ def build_lesson_8_seed():
             {"visual_svg": "city_grid_map_quiz_1", "translation": "Sau đó Ngài hãy rẽ phải ở con đường thứ nhất, đi ngang qua ngân hàng."}
         ),
         (
-            "Câu 69: Quan sát Bản đồ Lộ trình 2 bên trên và điền 2 từ còn thiếu vào các chỗ trống (ngăn cách bởi dấu /): 'Zuerst gehen Sie geradeaus, bis [1] zweiten Kreuzung rechts. Dann gehen Sie [2] die Kreuzung.' (Gợi ý: 'Đầu tiên Ngài đi thẳng cho đến ngã tư thứ hai bên phải, sau đó đi băng qua ngã tư.')",
+            "Câu 69: Quan sát Bản đồ Lộ trình 2 bên trên và điền 2 từ còn thiếu vào các chỗ trống (ngăn cách bởi dấu /): 'Zuerst gehen Sie geradeaus, bis [1] zweiten Kreuzung rechts. Dann gehen Sie [2] die Kreuzung, bis zur Ampel.' (Gợi ý: 'Đầu tiên Ngài đi thẳng cho đến ngã tư thứ hai bên phải, sau đó đi băng qua ngã tư cho đến đèn giao thông.')",
             "zur / über",
             ["zur / über", "zur/über", "zur / ueber", "zur/ueber"],
             "'Cho đến ngã tư thứ hai' là bis zur zweiten Kreuzung; 'băng qua ngã tư' là über die Kreuzung. Bạn cần điền đủ cả 2 từ ngăn cách bởi dấu /.",
-            {"visual_svg": "city_grid_map_quiz_2", "translation": "Đầu tiên Ngài đi thẳng cho đến ngã tư thứ hai bên phải, sau đó đi băng qua ngã tư."}
+            {"visual_svg": "city_grid_map_quiz_2", "translation": "Đầu tiên Ngài đi thẳng cho đến ngã tư thứ hai bên phải, sau đó đi băng qua ngã tư cho đến đèn giao thông."}
         ),
         (
             "Câu 70: Điền 2 từ còn thiếu vào các chỗ trống (ngăn cách bởi dấu /): 'Sie fahren mit dem Bus [1] Bundeskanzleramt vorbei und laufen [2] die Schlossbrücke.' (Gợi ý: 'Họ đi xe buýt ngang qua Phủ Thủ tướng và đi bộ qua cầu Schlossbrücke.')",
@@ -924,16 +924,16 @@ def build_lesson_8_seed():
     # -------------------------------------------------------------------------
     trans_sent_dv = [
         (
-            "Câu 94: Dịch câu sau sang tiếng Việt: 'Zuerst gehen Sie geradeaus, bis zur zweiten Kreuzung rechts. Dann gehen Sie geradeaus, über die Kreuzung. Links sehen Sie die Post.'",
-            "Đầu tiên Ngài đi thẳng cho đến ngã tư thứ hai thì rẽ phải. Sau đó Ngài đi thẳng, băng qua ngã tư. Ở bên trái Ngài sẽ nhìn thấy bưu điện.",
+            "Câu 94: Dịch câu sau sang tiếng Việt: 'Zuerst gehen Sie geradeaus, bis zur zweiten Kreuzung rechts. Dann gehen Sie geradeaus, über die Kreuzung, bis zur Ampel. Links sehen Sie die Post.'",
+            "Đầu tiên Ngài đi thẳng cho đến ngã tư thứ hai thì rẽ phải. Sau đó Ngài đi thẳng, băng qua ngã tư, cho đến đèn giao thông. Ở bên trái Ngài sẽ nhìn thấy bưu điện.",
             [
-                "Đầu tiên Ngài đi thẳng cho đến ngã tư thứ hai thì rẽ phải. Sau đó Ngài đi thẳng, băng qua ngã tư. Ở bên trái Ngài sẽ nhìn thấy bưu điện.",
-                "Trước tiên hãy đi thẳng đến ngã tư thứ hai bên phải. Sau đó đi thẳng băng qua ngã tư. Bên trái bạn sẽ thấy bưu điện.",
-                "Đầu tiên Ngài đi thẳng tới ngã tư thứ hai bên tay phải, sau đó đi thẳng qua ngã tư, bên trái Ngài thấy bưu điện.",
-                "Đầu tiên bạn đi thẳng đến ngã tư thứ hai bên phải. Sau đó bạn đi thẳng qua ngã tư. Bên trái bạn sẽ thấy bưu điện."
+                "Đầu tiên Ngài đi thẳng cho đến ngã tư thứ hai thì rẽ phải. Sau đó Ngài đi thẳng, băng qua ngã tư, cho đến đèn giao thông. Ở bên trái Ngài sẽ nhìn thấy bưu điện.",
+                "Trước tiên hãy đi thẳng đến ngã tư thứ hai bên phải. Sau đó đi thẳng băng qua ngã tư cho đến đèn giao thông. Bên trái bạn sẽ thấy bưu điện.",
+                "Đầu tiên Ngài đi thẳng tới ngã tư thứ hai bên tay phải, sau đó đi thẳng qua ngã tư đến đèn giao thông, bên trái Ngài thấy bưu điện.",
+                "Đầu tiên bạn đi thẳng đến ngã tư thứ hai bên phải. Sau đó bạn đi thẳng qua ngã tư cho đến đèn giao thông. Bên trái bạn sẽ thấy bưu điện."
             ],
             "Đây là toàn bộ câu miêu tả Lộ trình số 2 trên bản đồ chỉ đường tới Bưu điện (die Post).",
-            "Đầu tiên Ngài đi thẳng cho đến ngã tư thứ hai thì rẽ phải. Sau đó Ngài đi thẳng, băng qua ngã tư. Ở bên trái Ngài sẽ nhìn thấy bưu điện."
+            "Đầu tiên Ngài đi thẳng cho đến ngã tư thứ hai thì rẽ phải. Sau đó Ngài đi thẳng, băng qua ngã tư, cho đến đèn giao thông. Ở bên trái Ngài sẽ nhìn thấy bưu điện."
         ),
         (
             "Câu 95: Dịch câu sau sang tiếng Việt: 'Paula und Alex kommen aus Madrid. Sie besuchen Freunde in Berlin und gehen zuerst zum Brandenburger Tor.'",
