@@ -79,7 +79,7 @@ def build_full_lesson8_seed_script():
                                     • <b>die Kirche</b> (Pl: <i>die Kirchen</i>): nhà thờ<br>
                                     • <b>die Schule</b> (Pl: <i>die Schulen</i>): trường học<br>
                                     • <b>die Brücke</b> (Pl: <i>die Brücken</i>): cây cầu<br>
-                                    • <b>die Bank</b> (Pl: <i>die Banken / Bänke</i>)<br>
+                                    • <b>die Bank</b> (Pl: <i>die Banken / Bänke</i>): ngân hàng / ghế băng<br>
                                     • <b>die Post</b> (nur Sg.): bưu điện<br>
                                     • <b>die Straße</b> (Pl: <i>die Straßen</i>): con đường, phố<br>
                                     • <b>die Ampel</b> (Pl: <i>die Ampeln</i>): đèn giao thông<br>
@@ -90,8 +90,8 @@ def build_full_lesson8_seed_script():
                                     • <b>das Schloss</b> (Pl: <i>die Schlösser</i>): lâu đài<br>
                                     • <b>das Stadttor</b> (Pl: <i>die Stadttore</i>): cổng thành<br>
                                     • <b>das Kino</b> (Pl: <i>die Kinos</i>): rạp chiếu phim<br>
-                                    • <b>das Krankenhaus</b> (Pl: <i>die Krankenhäuser</i>)<br>
-                                    • <b>das Einkaufszentrum</b> (Pl: <i>die Einkaufszentren</i>)<br>
+                                    • <b>das Krankenhaus</b> (Pl: <i>die Krankenhäuser</i>): bệnh viện<br>
+                                    • <b>das Einkaufszentrum</b> (Pl: <i>die Einkaufszentren</i>): trung tâm thương mại<br>
                                     • <b>das Hotel</b> (Pl: <i>die Hotels</i>): khách sạn<br>
                                     • <b>das Museum</b> (Pl: <i>die Museen</i>): bảo tàng<br>
                                     • <b>das Rathaus</b> (Pl: <i>die Rathäuser</i>): tòa thị chính<br>
@@ -160,22 +160,22 @@ def build_full_lesson8_seed_script():
                     <div class="p-3.5 rounded-2xl bg-slate-50 border border-slate-200 space-y-1">
                         <div class="font-bold text-indigo-700">1. Entschuldigung, ich suche + [Akkusativ].</div>
                         <p class="text-slate-600">Động từ <i>suchen</i> luôn đòi hỏi Cách 4: <i>den Bahnhof / die Post / das Kino</i>.</p>
-                        <p class="text-slate-500 italic">„Entschuldigung, ich suche das Kino.“</p>
+                        <p class="text-slate-500 italic">„Entschuldigung, ich suche das Kino.“ <span class="not-italic text-slate-500 text-xs">(Xin lỗi, tôi đang tìm rạp chiếu phim.)</span></p>
                     </div>
                     <div class="p-3.5 rounded-2xl bg-slate-50 border border-slate-200 space-y-1">
                         <div class="font-bold text-indigo-700">2. Entschuldigung, wo ist + [Nominativ]?</div>
                         <p class="text-slate-600">Động từ <i>sein (ist)</i> luôn đi với Cách 1: <i>der Bahnhof / eine Bank / das Kino</i>.</p>
-                        <p class="text-slate-500 italic">„Entschuldigung, wo ist hier eine Bank?“</p>
+                        <p class="text-slate-500 italic">„Entschuldigung, wo ist hier eine Bank?“ <span class="not-italic text-slate-500 text-xs">(Xin lỗi, ở đây có ngân hàng nào không?)</span></p>
                     </div>
                     <div class="p-3.5 rounded-2xl bg-slate-50 border border-slate-200 space-y-1">
                         <div class="font-bold text-indigo-700">3. Entschuldigung, wo geht es + [Hướng đích]?</div>
                         <p class="text-slate-600">Dùng <i>zum / zur</i> hoặc <i>ins / in die</i>: Đi lối nào để tới...</p>
-                        <p class="text-slate-500 italic">„Entschuldigung, wo geht es zum Bahnhof?“</p>
+                        <p class="text-slate-500 italic">„Entschuldigung, wo geht es zum Bahnhof?“ <span class="not-italic text-slate-500 text-xs">(Xin lỗi, đi lối nào để tới nhà ga?)</span></p>
                     </div>
                     <div class="p-3.5 rounded-2xl bg-slate-50 border border-slate-200 space-y-1">
                         <div class="font-bold text-indigo-700">4. Entschuldigung, wie komme ich + [Hướng đích]?</div>
                         <p class="text-slate-600">Mẫu câu hỏi đường phổ biến nhất: Làm thế nào tôi đến được...</p>
-                        <p class="text-slate-500 italic">„Entschuldigung, wie komme ich zur Post?“</p>
+                        <p class="text-slate-500 italic">„Entschuldigung, wie komme ich zur Post?“ <span class="not-italic text-slate-500 text-xs">(Xin lỗi, làm thế nào tôi đến được bưu điện?)</span></p>
                     </div>
                 </div>
             </div>
