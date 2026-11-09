@@ -1953,8 +1953,8 @@ const GERMAN_LEXIKON_DB = [
         indefinite: "eine Post", negation: "keine Post",
         meaning: "bưu điện, ngành bưu chính", category: "Địa điểm trong Thành phố & Giao thông Chỉ đường (In der Stadt & Wegbeschreibung - Bài 8)",
         rule: "Danh từ giống cái (die), thường chỉ dùng ở số ít (nur Singular). Đi tới bưu điện: zur Post.",
-        example: "Rechts neben der Ampel sehen Sie die Post.",
-        example_vi: "Ở bên phải cạnh đèn giao thông, Ngài sẽ nhìn thấy bưu điện."
+        example: "Direkt hinter der Ampel sehen Sie die Post.",
+        example_vi: "Ngay sau đèn giao thông, Ngài sẽ thấy bưu điện."
     },
     {
         word: "Straße", article: "die", gender: "die", plural: "die Straßen",
