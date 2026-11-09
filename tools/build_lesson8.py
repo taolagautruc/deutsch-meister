@@ -34,7 +34,7 @@ def build_lesson_8_seed():
         ('Schule', 'die', 'die', 'die Schulen', 'eine Schule', 'keine Schule', 'trường học', cat1, 'Danh từ giống cái (die), số nhiều thêm -n (die Schulen).', 'Die Kinder gehen jeden Morgen zur Schule.', 'Những đứa trẻ đi đến trường học mỗi buổi sáng.'),
         ('Brücke', 'die', 'die', 'die Brücken', 'eine Brücke', 'keine Brücke', 'cây cầu', cat1, 'Danh từ giống cái (die), số nhiều thêm -n (die Brücken). Đi qua cầu: über die Brücke.', 'Paula und Alex laufen über die Schlossbrücke.', 'Paula và Alex đi bộ qua cầu Schlossbrücke.'),
         ('Bank', 'die', 'die', 'die Banken / die Bänke', 'eine Bank', 'keine Bank', 'ngân hàng / ghế băng dài', cat1, 'Phân biệt 2 nghĩa: Ngân hàng có số nhiều là die Banken; Ghế băng dài có số nhiều là die Bänke. Đi ngang qua: an der Bank vorbei.', 'Dann gehen Sie die erste Straße rechts, an der Bank vorbei.', 'Sau đó Ngài hãy rẽ phải ở con đường thứ nhất, đi ngang qua ngân hàng.'),
-        ('Post', 'die', 'die', 'nur Singular', 'eine Post', 'keine Post', 'bưu điện, ngành bưu chính', cat1, 'Danh từ giống cái (die), thường chỉ dùng ở số ít (nur Singular). Đi tới bưu điện: zur Post.', 'Rechts neben der Ampel sehen Sie die Post.', 'Ở bên phải cạnh đèn giao thông, Ngài sẽ nhìn thấy bưu điện.'),
+        ('Post', 'die', 'die', 'nur Singular', 'eine Post', 'keine Post', 'bưu điện, ngành bưu chính', cat1, 'Danh từ giống cái (die), thường chỉ dùng ở số ít (nur Singular). Đi tới bưu điện: zur Post.', 'Direkt hinter der Ampel sehen Sie die Post.', 'Ngay sau đèn giao thông, Ngài sẽ thấy bưu điện.'),
         ('Straße', 'die', 'die', 'die Straßen', 'eine Straße', 'keine Straße', 'con đường, phố', cat1, 'Danh từ giống cái (die), số nhiều thêm -n (die Straßen). Đi dọc theo con đường: die Straße entlang.', 'Gehen Sie bitte diese Straße entlang bis zur Kreuzung!', 'Xin Ngài hãy đi dọc theo con đường này cho đến ngã tư!'),
         ('Ampel', 'die', 'die', 'die Ampeln', 'eine Ampel', 'keine Ampel', 'đèn giao thông', cat1, 'Danh từ giống cái (die), số nhiều thêm -n (die Ampeln). Cho đến đèn giao thông: bis zur Ampel.', 'Gehen Sie geradeaus bis zur Ampel!', 'Ngài hãy đi thẳng cho đến đèn giao thông!'),
         ('Kreuzung', 'die', 'die', 'die Kreuzungen', 'eine Kreuzung', 'keine Kreuzung', 'ngã tư, giao lộ', cat1, 'Hậu tố -ung luôn mang giống cái (die), số nhiều thêm -en (die Kreuzungen). Cho đến ngã tư: bis zur Kreuzung.', 'An der zweiten Kreuzung biegen Sie bitte rechts ab!', 'Tại ngã tư thứ hai xin Ngài hãy rẽ phải!'),
@@ -141,11 +141,11 @@ def build_lesson_8_seed():
             {"visual_svg": "spatial_contrast_tor_bruecke", "translation": "Đầu tiên các du khách đi xuyên qua cổng thành, và tiếp theo họ đi bộ qua cây cầu."}
         ),
         (
-            "Câu 7: Hãy theo dõi lộ trình sau trên Bản đồ thành phố bên trên: 'Zuerst gehen Sie geradeaus. Dann gehen Sie die erste Straße rechts, an der Bank vorbei. Dann gehen Sie bis zur zweiten Kreuzung und dort links. Danach gehen Sie bis zur Ampel.' — Tòa nhà nằm ở bên tay phải (rechts) của bạn tại điểm cuối là gì?",
+            "Câu 7: Hãy theo dõi lộ trình sau trên Bản đồ thành phố bên trên: 'Zuerst gehen Sie geradeaus. Dann gehen Sie die erste Straße rechts, an der Bank vorbei. Dann gehen Sie bis zur zweiten Kreuzung und dort links. Danach gehen Sie die Straße Unter den Linden rechts bis zur Ampel.' — Tòa nhà bạn nhìn thấy ngay trước mắt (direkt vor sich) tại điểm cuối là gì?",
             ["das Kino", "die Bank", "die Post", "der Bahnhof"],
             "die Post",
-            "Theo đúng hướng di chuyển từ dưới lên tới đèn giao thông (Ampel) trên bản đồ thành phố, phía bên tay phải (rechts) chính là 'die Post' (Bưu điện).",
-            {"visual_svg": "city_grid_map_quiz_1", "translation": "Ở bên phải Ngài nhìn thấy bưu điện (die Post)."}
+            "Theo đúng hướng di chuyển tới đèn giao thông (Ampel) trên bản đồ thành phố, tòa nhà ngay phía trước chính là 'die Post' (Bưu điện).",
+            {"visual_svg": "city_grid_map_quiz_1", "translation": "Ngay phía trước Ngài nhìn thấy bưu điện (die Post)."}
         ),
         (
             "Câu 8: Quan sát Lộ trình số 2 (màu xanh lá) trên bản đồ bên trên và chọn từ đúng điền vào chỗ trống: 'Zuerst gehen Sie geradeaus, bis zur ___ Kreuzung rechts. Dann gehen Sie geradeaus, ___ die Kreuzung. Links sehen Sie die Post.'",
