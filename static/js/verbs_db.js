@@ -348,7 +348,7 @@ const GERMAN_VERBS_DB = [
     },
     {
         infinitiv: "wollen",
-        meaning: "muốn (ý chí chủ quan)",
+        meaning: "muốn / định làm (kế hoạch, trực tiếp)",
         group: "Bất quy tắc & Khuyết thiếu (Unregelmäßig & Modalverben)",
         stem: "woll-",
         ending: "-en",
@@ -844,12 +844,12 @@ const GERMAN_VERBS_DB = [
     // =========================================================================
     {
         infinitiv: "wollen",
-        meaning: "muốn (thể hiện ý định mạnh mẽ, kế hoạch chắc chắn)",
+        meaning: "muốn / định làm (kế hoạch, trực tiếp; không dùng gọi món)",
         group: "Động từ khuyết thiếu (Modalverben) • Thành phố & Chỉ đường (Bài 8)",
         stem: "woll- / will-",
         ending: "-en",
         forms: { ich: "will", du: "willst", er_sie_es: "will", wir: "wollen", ihr: "wollt", sie_Sie: "wollen" },
-        note: "Động từ khuyết thiếu trọng tâm Bài 8. Đổi nguyên âm o -> i ở cả 3 ngôi số ít. Ngôi ich và er/sie/es bằng nhau và không có đuôi (ich will, er will).",
+        note: "wollen = muốn/định làm (trực tiếp, mạnh hơn möchten; không dùng khi gọi món hay nhờ người lạ, hãy dùng möchten). Đổi nguyên âm o -> i ở cả 3 ngôi số ít. Ngôi ich và er/sie/es bằng nhau và không có đuôi (ich will, er will).",
         example: "In Deutschland will ich an der Humboldt-Universität studieren."
     },
     {

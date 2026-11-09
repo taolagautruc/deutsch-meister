@@ -220,45 +220,29 @@ def seed_lesson_8():
                     <div class="p-4 rounded-2xl bg-slate-50 border border-slate-200 space-y-2">
                         <span class="text-xs font-black px-2.5 py-1 rounded-full bg-blue-100 text-blue-800">SƠ ĐỒ 1: an + DATIV + vorbei</span>
                         <div id="svg-diag-vorbei">
-                            <script>
-                                document.addEventListener("DOMContentLoaded", function() {
-                                    if (typeof getSpatialDiagramSvg === 'function') {
-                                        document.getElementById('svg-diag-vorbei').innerHTML = getSpatialDiagramSvg('vorbei', '100%', 150);
-                                    }
-                                });
-                            </script>
+                            <svg viewBox="0 0 300 180" width="100%" height="150" class="w-full max-w-md mx-auto rounded-2xl shadow-sm border border-slate-200 bg-white"><rect x="0" y="0" width="300" height="180" fill="#f8fafc"/><rect x="30" y="0" width="100" height="180" fill="#334155"/><line x1="80" y1="5" x2="80" y2="175" stroke="#ffffff" stroke-width="3" stroke-dasharray="10 8"/><rect x="130" y="0" width="15" height="180" fill="#cbd5e1"/><rect x="155" y="30" width="130" height="120" rx="8" fill="#f1f5f9" stroke="#475569" stroke-width="2"/><rect x="165" y="42" width="24" height="24" fill="#38bdf8" rx="3"/><rect x="198" y="42" width="24" height="24" fill="#38bdf8" rx="3"/><rect x="231" y="42" width="24" height="24" fill="#38bdf8" rx="3"/><rect x="190" y="100" width="35" height="50" fill="#475569" rx="3"/><text x="220" y="85" font-size="11" font-weight="black" fill="#1e293b" text-anchor="middle">UNIVERSITÄT</text><text x="220" y="98" font-size="9" font-weight="bold" fill="#0284c7" text-anchor="middle">(die / Femininum)</text><rect x="20" y="12" width="170" height="26" rx="6" fill="#eff6ff" stroke="#93c5fd" stroke-width="1.5"/><text x="105" y="29" font-size="11" font-weight="black" fill="#1d4ed8" text-anchor="middle">an + DATIV + vorbei</text><path d="M80 165 L80 35" fill="none" stroke="#2563eb" stroke-width="6" stroke-linecap="round"/><polygon points="80,18 70,38 90,38" fill="#1d4ed8"/><circle cx="80" cy="165" r="5" fill="#1d4ed8"/><rect x="15" y="145" width="205" height="24" rx="6" fill="#fef3c7" stroke="#f59e0b"/><text x="117" y="161" font-size="9.5" font-weight="bold" fill="#92400e" text-anchor="middle">👉 an der Universität vorbei</text></svg>
                         </div>
                         <p class="text-xs text-slate-600">Đi ngang qua bên cạnh tòa nhà mà không rẽ vào trong: <i>an der Universität vorbei / am Dom vorbei</i>.</p>
                     </div>
                     <div class="p-4 rounded-2xl bg-slate-50 border border-slate-200 space-y-2">
                         <span class="text-xs font-black px-2.5 py-1 rounded-full bg-rose-100 text-rose-800">SƠ ĐỒ 2: durch + AKKUSATIV</span>
                         <div id="svg-diag-durch">
-                            <script>
-                                document.addEventListener("DOMContentLoaded", function() {
-                                    if (typeof getSpatialDiagramSvg === 'function') {
-                                        document.getElementById('svg-diag-durch').innerHTML = getSpatialDiagramSvg('durch', '100%', 150);
-                                    }
-                                });
-                            </script>
+                            <svg viewBox="0 0 300 180" width="100%" height="150" class="w-full max-w-md mx-auto rounded-2xl shadow-sm border border-slate-200 bg-white"><rect x="0" y="0" width="300" height="180" fill="#f8fafc"/><rect x="90" y="0" width="120" height="180" fill="#334155"/><rect x="20" y="45" width="260" height="85" rx="6" fill="#e2e8f0" stroke="#475569" stroke-width="2.5"/><path d="M105 130 L105 75 A 45 45 0 0 1 195 75 L195 130 Z" fill="#334155" stroke="#1e293b" stroke-width="2"/><rect x="35" y="55" width="30" height="75" fill="#cbd5e1" stroke="#64748b"/><rect x="235" y="55" width="30" height="75" fill="#cbd5e1" stroke="#64748b"/><polygon points="150,22 80,45 220,45" fill="#be123c"/><circle cx="150" cy="15" r="6" fill="#fbbf24"/><text x="150" y="40" font-size="11" font-weight="black" fill="#ffffff" text-anchor="middle">Brandenburger Tor (das)</text><rect x="20" y="12" width="170" height="26" rx="6" fill="#fdf2f8" stroke="#f472b6" stroke-width="1.5"/><text x="105" y="29" font-size="11" font-weight="black" fill="#be185d" text-anchor="middle">durch + AKKUSATIV</text><path d="M150 168 L150 25" fill="none" stroke="#e11d48" stroke-width="6" stroke-linecap="round"/><polygon points="150,10 140,30 160,30" fill="#be123c"/><circle cx="150" cy="168" r="5" fill="#be123c"/><rect x="50" y="145" width="200" height="24" rx="6" fill="#fef3c7" stroke="#f59e0b"/><text x="150" y="161" font-size="9.5" font-weight="bold" fill="#92400e" text-anchor="middle">👉 durch das Tor (xuyên qua lòng cổng)</text></svg>
                         </div>
                         <p class="text-xs text-slate-600">Đi xuyên qua chính giữa lòng cổng vòm hoặc công viên: <i>durch das Tor / durch den Park</i>.</p>
                     </div>
                     <div class="p-4 rounded-2xl bg-slate-50 border border-slate-200 space-y-2">
                         <span class="text-xs font-black px-2.5 py-1 rounded-full bg-emerald-100 text-emerald-800">SƠ ĐỒ 3: über + AKKUSATIV</span>
                         <div id="svg-diag-ueber">
-                            <script>
-                                document.addEventListener("DOMContentLoaded", function() {
-                                    if (typeof getSpatialDiagramSvg === 'function') {
-                                        document.getElementById('svg-diag-ueber').innerHTML = getSpatialDiagramSvg('ueber', '100%', 150);
-                                    }
-                                });
-                            </script>
+                            <svg viewBox="0 0 300 180" width="100%" height="150" class="w-full max-w-md mx-auto rounded-2xl shadow-sm border border-slate-200 bg-white"><rect x="0" y="0" width="300" height="180" fill="#f8fafc"/><rect x="0" y="50" width="300" height="75" fill="#38bdf8"/><path d="M0 65 Q 75 55 150 65 T 300 65" fill="none" stroke="#0284c7" stroke-width="3"/><path d="M0 105 Q 75 95 150 105 T 300 105" fill="none" stroke="#0284c7" stroke-width="3"/><rect x="100" y="15" width="100" height="150" rx="6" fill="#334155" stroke="#475569" stroke-width="2"/><rect x="94" y="15" width="6" height="150" fill="#94a3b8"/><rect x="200" y="15" width="6" height="150" fill="#94a3b8"/><line x1="150" y1="20" x2="150" y2="160" stroke="#ffffff" stroke-width="2" stroke-dasharray="8 6"/><text x="50" y="45" font-size="10" font-weight="extrabold" fill="#0369a1">die Schlossbrücke</text><rect x="20" y="12" width="170" height="26" rx="6" fill="#f0fdf4" stroke="#86efac" stroke-width="1.5"/><text x="105" y="29" font-size="11" font-weight="black" fill="#15803d" text-anchor="middle">über + AKKUSATIV</text><path d="M150 168 L150 25" fill="none" stroke="#16a34a" stroke-width="6" stroke-linecap="round"/><polygon points="150,10 140,30 160,30" fill="#15803d"/><circle cx="150" cy="168" r="5" fill="#15803d"/><rect x="50" y="145" width="200" height="24" rx="6" fill="#fef3c7" stroke="#f59e0b"/><text x="150" y="161" font-size="9.5" font-weight="bold" fill="#92400e" text-anchor="middle">👉 über die Brücke (băng qua mặt cầu)</text></svg>
                         </div>
                         <p class="text-xs text-slate-600">Đi vượt qua trên mặt cầu, mặt quảng trường: <i>über die Brücke / über den Platz</i>.</p>
                     </div>
                     <div class="p-4 rounded-2xl bg-slate-50 border border-slate-200 space-y-2">
                         <span class="text-xs font-black px-2.5 py-1 rounded-full bg-amber-100 text-amber-800">SƠ ĐỒ 4: AKKUSATIV + entlang</span>
-                        <div id="svg-diag-entlang"></div>
+                        <div id="svg-diag-entlang">
+                            <svg viewBox="0 0 300 180" width="100%" height="150" class="w-full max-w-md mx-auto rounded-2xl shadow-sm border border-slate-200 bg-white"><rect x="0" y="0" width="300" height="180" fill="#f8fafc"/><path d="M60 180 C 100 110, 200 110, 240 0 L 290 0 C 250 110, 150 110, 110 180 Z" fill="#334155"/><path d="M85 180 C 125 110, 225 110, 265 0" fill="none" stroke="#ffffff" stroke-width="3" stroke-dasharray="10 8"/><rect x="20" y="12" width="210" height="26" rx="6" fill="#fefce8" stroke="#fde047" stroke-width="1.5"/><text x="125" y="29" font-size="11" font-weight="black" fill="#a16207" text-anchor="middle">AKKUSATIV + entlang</text><path d="M85 168 C 125 105, 225 105, 265 20" fill="none" stroke="#ca8a04" stroke-width="6" stroke-linecap="round"/><polygon points="268,8 253,22 271,28" fill="#a16207"/><circle cx="85" cy="168" r="5" fill="#a16207"/><rect x="30" y="145" width="240" height="24" rx="6" fill="#fef3c7" stroke="#f59e0b"/><text x="150" y="161" font-size="9.5" font-weight="bold" fill="#92400e" text-anchor="middle">👉 die Straße entlang (dọc theo con đường)</text></svg>
+                        </div>
                         <p class="text-xs text-slate-600">Đi dọc theo chiều dài con đường (từ <i>entlang</i> đứng SAU danh từ): <i>die Straße entlang</i>.</p>
                     </div>
                 </div>
@@ -312,11 +296,11 @@ def seed_lesson_8():
                     <div class="p-4 rounded-2xl bg-blue-50 border border-blue-200 space-y-2 text-xs sm:text-sm text-blue-950">
                         <div class="flex items-center justify-between">
                             <span class="font-extrabold text-blue-800">🔵 Lộ trình 1: Đi qua Ngân hàng tới Bưu điện</span>
-                            <button onclick="speakGerman('Zuerst gehen Sie geradeaus. Dann gehen Sie die erste Straße rechts, an der Bank vorbei. Dann gehen Sie bis zur zweiten Kreuzung links. Danach gehen Sie bis zur Ampel. Rechts sehen Sie die Post.', 1.0)" class="px-3 py-1 rounded-lg bg-blue-600 hover:bg-blue-700 text-white font-bold text-xs cursor-pointer flex items-center gap-1">
+                            <button onclick="speakGerman('Zuerst gehen Sie geradeaus. Dann gehen Sie die erste Straße rechts, an der Bank vorbei. Dann gehen Sie bis zur zweiten Kreuzung und dort links. Danach gehen Sie bis zur Ampel. Rechts sehen Sie die Post.', 1.0)" class="px-3 py-1 rounded-lg bg-blue-600 hover:bg-blue-700 text-white font-bold text-xs cursor-pointer flex items-center gap-1">
                                 🔊 Nghe phát âm chuẩn de-DE
                             </button>
                         </div>
-                        <p class="italic font-serif">„<b>Zuerst</b> gehen Sie geradeaus. <b>Dann</b> gehen Sie die erste Straße rechts, <b>an der Bank vorbei</b>. <b>Dann</b> gehen Sie bis zur zweiten Kreuzung links. <b>Danach</b> gehen Sie <b>bis zur Ampel</b>. Rechts sehen Sie <b>die Post</b>.“</p>
+                        <p class="italic font-serif">„<b>Zuerst</b> gehen Sie geradeaus. <b>Dann</b> gehen Sie die erste Straße rechts, <b>an der Bank vorbei</b>. <b>Dann</b> gehen Sie bis zur zweiten Kreuzung und dort links. <b>Danach</b> gehen Sie <b>bis zur Ampel</b>. Rechts sehen Sie <b>die Post</b>.“</p>
                         <p class="text-xs text-blue-800 font-medium"><b>Dịch nghĩa:</b> Đầu tiên Ngài đi thẳng. Sau đó Ngài rẽ phải ở con đường thứ nhất, đi ngang qua ngân hàng. Sau đó Ngài đi đến ngã tư thứ hai thì rẽ trái. Tiếp theo Ngài đi cho đến đèn giao thông. Ở bên phải Ngài sẽ nhìn thấy bưu điện.</p>
                     </div>
                 </div>
@@ -370,6 +354,18 @@ def seed_lesson_8():
                     </tbody>
                 </table>
             </div>
+
+            <!-- LƯU Ý THỰC TẾ ZU VS IN -->
+            <div class="p-4 rounded-2xl bg-amber-50/70 border border-amber-200 text-xs sm:text-sm text-amber-950 space-y-2 leading-relaxed">
+                <div class="font-bold flex items-center gap-1.5 text-amber-900">
+                    <span>💡</span> Hướng Dẫn Sử Dụng Thực Tế (Không phải luật tuyệt đối):
+                </div>
+                <ul class="list-disc list-inside space-y-1 text-slate-700">
+                    <li><b>zu</b> thường dùng cho <b>người, cơ quan, nơi làm việc/học tập, ga, bưu điện</b>: <i>zum Arzt, zur Schule, zur Arbeit, zum Bahnhof, zur Post</i>.</li>
+                    <li><b>in</b> thường dùng cho <b>nơi giải trí, mua sắm, tham quan</b>: <i>ins Kino, ins Museum, in den Supermarkt, in die Disko</i>.</li>
+                    <li>Một số nơi dùng được cả hai (<i>zum Supermarkt</i> hoặc <i>in den Supermarkt</i>), nên bảng chỉ là hướng dẫn phân biệt sắc thái, không phải luật tuyệt đối.</li>
+                </ul>
+            </div>
         </div>
 
         <!-- HỌC PHẦN 4: MA TRẬN 4 ĐỘNG TỪ KHUYẾT THIẾU -->
@@ -380,8 +376,8 @@ def seed_lesson_8():
             </div>
 
             <div class="p-4 rounded-2xl bg-purple-50 border border-purple-200 text-xs sm:text-sm text-purple-950 space-y-2">
-                <p class="font-bold flex items-center gap-2"><span>⭐</span> Điểm Mới Trọng Tâm: Động từ khuyết thiếu 'wollen' (muốn — ý định/kế hoạch mạnh mẽ):</p>
-                <p>Khác với <i>möchten</i> (muốn lịch sự khi gọi món hoặc mong ước), <b>wollen</b> diễn đạt kế hoạch hoặc quyết tâm chắc chắn. Biến âm: <b>o -> i</b> ở số ít: <i>ich will, du willst, er/sie/es will</i>. Lưu ý: ngôi <b>ich</b> bằng ngôi <b>er/sie/es</b> và không có đuôi <b>-t</b>!</p>
+                <p class="font-bold flex items-center gap-2"><span>⭐</span> Điểm Mới Trọng Tâm: Động từ khuyết thiếu 'wollen' (muốn / định làm):</p>
+                <p><b>wollen = muốn/định làm</b> (trực tiếp, mạnh hơn <i>möchten</i>). <b>Không dùng để gọi món hoặc nhờ người lạ</b>, hãy nói <i>Ich möchte einen Kaffee</i>. Biến âm: <b>o -> i</b> ở số ít: <i>ich will, du willst, er/sie/es will</i>. Lưu ý: ngôi <b>ich</b> bằng ngôi <b>er/sie/es</b> và không có đuôi <b>-t</b>!</p>
             </div>
 
             <div class="overflow-x-auto rounded-2xl border border-slate-200">
@@ -459,7 +455,7 @@ def seed_lesson_8():
                             🔊 Nghe de-DE
                         </button>
                     </div>
-                    <p class="italic font-serif text-slate-800 leading-relaxed">„Paula und Alex kommen aus Madrid. Sie besuchen Freunde in Berlin. Sie gehen <b>zum Brandenburger Tor</b> und machen viele Fotos. Sie fahren mit dem Bus <b>am Bundeskanzleramt vorbei</b> und laufen <b>über die Schlossbrücke</b>. Am Nachmittag gehen sie <b>in den Berliner Dom</b> và hören ein Konzert. Am Abend essen sie Pizza und gehen danach <b>in die Disko</b> ‚Von Euch‘.“</p>
+                    <p class="italic font-serif text-slate-800 leading-relaxed">„Paula und Alex kommen aus Madrid. Sie besuchen Freunde in Berlin. Sie gehen <b>zum Brandenburger Tor</b> und machen viele Fotos. Sie fahren mit dem Bus <b>am Bundeskanzleramt vorbei</b> und laufen <b>über die Schlossbrücke</b>. Am Nachmittag gehen sie <b>in den Berliner Dom</b> und hören ein Konzert. Am Abend essen sie Pizza und gehen danach <b>in die Disko</b> ‚Von Euch‘.“</p>
                     <p class="text-slate-600 text-xs"><b>Dịch nghĩa:</b> Paula và Alex đến từ Madrid. Họ thăm bạn bè ở Berlin. Họ đi đến Cổng Brandenburg chụp ảnh. Họ đi xe buýt ngang qua Phủ Thủ tướng và đi bộ qua cầu Schlossbrücke. Buổi chiều họ vào Nhà thờ lớn Berlin nghe hòa nhạc. Buổi tối họ ăn pizza và vào vũ trường 'Von Euch'.</p>
                 </div>
 
@@ -1343,7 +1339,7 @@ def seed_lesson_8():
         },
         {
                 "type": "trac_nghiem",
-                "question": "Câu 7: Hãy theo dõi lộ trình sau trên Bản đồ thành phố bên trên: 'Zuerst gehen Sie geradeaus. Dann gehen Sie die erste Straße rechts, an der Bank vorbei. Dann gehen Sie bis zur zweiten Kreuzung links. Danach gehen Sie bis zur Ampel.' — Tòa nhà nằm ở bên tay phải (rechts) của bạn tại điểm cuối là gì?",
+                "question": "Câu 7: Hãy theo dõi lộ trình sau trên Bản đồ thành phố bên trên: 'Zuerst gehen Sie geradeaus. Dann gehen Sie die erste Straße rechts, an der Bank vorbei. Dann gehen Sie bis zur zweiten Kreuzung und dort links. Danach gehen Sie bis zur Ampel.' — Tòa nhà nằm ở bên tay phải (rechts) của bạn tại điểm cuối là gì?",
                 "options": [
                         "das Kino",
                         "die Bank",
@@ -2061,19 +2057,22 @@ def seed_lesson_8():
         },
         {
                 "type": "dich_nghia_dv",
-                "question": "Câu 51: Dịch sang tiếng Việt: 'Gehen Sie bis zur zweiten Kreuzung links!'",
+                "question": "Câu 51: Dịch sang tiếng Việt: 'Gehen Sie bis zur zweiten Kreuzung und dort links!'",
                 "options": null,
                 "correct_answer": "Ngài hãy đi cho đến ngã tư thứ hai thì rẽ trái",
-                "explanation": "bis zur zweiten Kreuzung links = đi đến ngã tư thứ hai rồi rẽ trái.",
+                "explanation": "bis zur zweiten Kreuzung und dort links = đi đến ngã tư thứ hai và rẽ trái ở đó (thì rẽ trái).",
                 "exp_reward": 20,
                 "extra_data": {
                         "accepted_answers": [
                                 "Ngài hãy đi cho đến ngã tư thứ hai thì rẽ trái",
-                                "Hãy đi tới ngã tư thứ hai bên trái",
+                                "Ngài hãy đi tới ngã tư thứ hai thì rẽ trái",
+                                "Ngài hãy đi cho đến ngã tư thứ hai và rẽ trái ở đó",
+                                "Ngài hãy đi đến ngã tư thứ hai và rẽ trái ở đó",
                                 "Đi đến ngã tư thứ hai rồi rẽ trái",
-                                "Ngài hãy đi tới ngã tư thứ hai rẽ trái"
+                                "Hãy đi tới ngã tư thứ hai bên trái",
+                                "Đi đến ngã tư thứ hai rẽ trái"
                         ],
-                        "translation": "Gehen Sie bis zur zweiten Kreuzung links!: Ngài hãy đi cho đến ngã tư thứ hai thì rẽ trái"
+                        "translation": "Gehen Sie bis zur zweiten Kreuzung und dort links!: Ngài hãy đi cho đến ngã tư thứ hai thì rẽ trái"
                 }
         },
         {
@@ -2440,8 +2439,8 @@ def seed_lesson_8():
                 "type": "noi_o",
                 "question": "Câu 67: Nối Trạng từ Trình tự Thời gian (Cột Trái) với Hành động Chỉ đường trên Bản đồ (Cột Phải):",
                 "options": null,
-                "correct_answer": "Zuerst = gehen Sie geradeaus. | Dann = gehen Sie die erste Straße rechts, an der Bank vorbei. | Danach = gehen Sie bis zur zweiten Kreuzung links und bis zur Ampel. | Rechts = sehen Sie die Post.",
-                "explanation": "Khung trình tự chỉ đường Lộ trình 1: 1. Zuerst mở đầu hành trình đi thẳng từ điểm xuất phát. 2. Dann chỉ bước tiếp theo rẽ phải qua ngân hàng. 3. Danach chỉ chặng kế tiếp rẽ trái ở ngã tư 2 và đến đèn giao thông. 4. Rechts chỉ vị trí đích đến của tòa nhà bưu điện nằm bên tay phải.",
+                "correct_answer": "Zuerst = gehen Sie geradeaus. | Dann = gehen Sie die erste Straße rechts, an der Bank vorbei. | Danach = gehen Sie bis zur zweiten Kreuzung und dort links, bis zur Ampel. | Rechts = sehen Sie die Post.",
+                "explanation": "Khung trình tự chỉ đường Lộ trình 1: 1. Zuerst mở đầu hành trình đi thẳng từ điểm xuất phát. 2. Dann chỉ bước tiếp theo rẽ phải qua ngân hàng. 3. Danach chỉ chặng kế tiếp đi đến ngã tư thứ hai rẽ trái ở đó và đến đèn giao thông. 4. Rechts chỉ vị trí đích đến của tòa nhà bưu điện nằm bên tay phải.",
                 "exp_reward": 20,
                 "extra_data": {
                         "noi_o_pairs": [
@@ -2455,14 +2454,14 @@ def seed_lesson_8():
                                 },
                                 {
                                         "left": "Danach",
-                                        "right": "gehen Sie bis zur zweiten Kreuzung links und bis zur Ampel."
+                                        "right": "gehen Sie bis zur zweiten Kreuzung und dort links, bis zur Ampel."
                                 },
                                 {
                                         "left": "Rechts",
                                         "right": "sehen Sie die Post."
                                 }
                         ],
-                        "translation": "1. Zuerst: Đầu tiên Ngài đi thẳng. | 2. Dann: Sau đó Ngài rẽ phải ở con đường thứ nhất, đi ngang qua ngân hàng. | 3. Danach: Tiếp theo Ngài đi đến ngã tư thứ hai rẽ trái và đi cho đến đèn giao thông. | 4. Rechts: Ở bên phải Ngài sẽ nhìn thấy bưu điện."
+                        "translation": "1. Zuerst: Đầu tiên Ngài đi thẳng. | 2. Dann: Sau đó Ngài rẽ phải ở con đường thứ nhất, đi ngang qua ngân hàng. | 3. Danach: Tiếp theo Ngài đi đến ngã tư thứ hai và rẽ trái ở đó, đi cho đến đèn giao thông. | 4. Rechts: Ở bên phải Ngài sẽ nhìn thấy bưu điện."
                 }
         },
         {
@@ -2649,13 +2648,13 @@ def seed_lesson_8():
                 "explanation": "Danh từ 'die Kreuzung' có nghĩa là ngã tư, giao lộ (bis zur zweiten Kreuzung).",
                 "exp_reward": 20,
                 "extra_data": {
-                        "audio_text": "Gehen Sie bitte bis zur zweiten Kreuzung links und danach bis zur Ampel.",
-                        "display_sentence": "Gehen Sie bitte bis zur zweiten ___ links und danach bis zur Ampel.",
-                        "hint_vi": "Xin Ngài hãy đi cho đến ngã tư thứ hai bên trái và tiếp theo đi cho đến đèn giao thông.",
+                        "audio_text": "Gehen Sie bitte bis zur zweiten Kreuzung und dort links, danach bis zur Ampel.",
+                        "display_sentence": "Gehen Sie bitte bis zur zweiten ___ und dort links, danach bis zur Ampel.",
+                        "hint_vi": "Xin Ngài hãy đi cho đến ngã tư thứ hai thì rẽ trái, tiếp theo đi cho đến đèn giao thông.",
                         "accepted_answers": [
                                 "Kreuzung"
                         ],
-                        "translation": "Xin Ngài hãy đi cho đến ngã tư thứ hai bên trái và tiếp theo đi cho đến đèn giao thông."
+                        "translation": "Xin Ngài hãy đi cho đến ngã tư thứ hai thì rẽ trái, tiếp theo đi cho đến đèn giao thông."
                 }
         },
         {
@@ -2814,19 +2813,23 @@ def seed_lesson_8():
         },
         {
                 "type": "dich_cau_vd",
-                "question": "Câu 89: Dịch câu chỉ đường sau sang tiếng Đức: 'Ngài hãy đi cho đến ngã tư thứ hai bên trái, tiếp theo đi cho đến đèn giao thông.'",
+                "question": "Câu 89: Dịch câu chỉ đường sau sang tiếng Đức: 'Ngài hãy đi cho đến ngã tư thứ hai thì rẽ trái, tiếp theo đi cho đến đèn giao thông.'",
                 "options": null,
-                "correct_answer": "Gehen Sie bis zur zweiten Kreuzung links, danach gehen Sie bis zur Ampel.",
-                "explanation": "Cả die Kreuzung và die Ampel đều đi với bis zur (bis zu + der Dativ).",
+                "correct_answer": "Gehen Sie bis zur zweiten Kreuzung und dort links, danach gehen Sie bis zur Ampel.",
+                "explanation": "Đi đến ngã tư thứ hai và rẽ trái ở đó: 'bis zur zweiten Kreuzung und dort links'; cho đến đèn giao thông: 'bis zur Ampel' (bis zu + der Dativ).",
                 "exp_reward": 25,
                 "extra_data": {
                         "accepted_answers": [
+                                "Gehen Sie bis zur zweiten Kreuzung und dort links, danach gehen Sie bis zur Ampel.",
+                                "Gehen Sie bis zur zweiten Kreuzung und dort links und danach bis zur Ampel.",
+                                "Dann gehen Sie bis zur zweiten Kreuzung und dort links. Danach gehen Sie bis zur Ampel.",
+                                "Gehen Sie bitte bis zur zweiten Kreuzung und dort links und danach bis zur Ampel.",
+                                "Gehen Sie bitte bis zur zweiten Kreuzung und dort links, danach gehen Sie bis zur Ampel.",
                                 "Gehen Sie bis zur zweiten Kreuzung links, danach gehen Sie bis zur Ampel.",
                                 "Gehen Sie bis zur zweiten Kreuzung links und danach bis zur Ampel.",
-                                "Dann gehen Sie bis zur zweiten Kreuzung links. Danach gehen Sie bis zur Ampel.",
-                                "Gehen Sie bitte bis zur zweiten Kreuzung links und danach bis zur Ampel."
+                                "Dann gehen Sie bis zur zweiten Kreuzung links. Danach gehen Sie bis zur Ampel."
                         ],
-                        "translation": "Ngài hãy đi cho đến ngã tư thứ hai bên trái, tiếp theo đi cho đến đèn giao thông."
+                        "translation": "Ngài hãy đi cho đến ngã tư thứ hai thì rẽ trái, tiếp theo đi cho đến đèn giao thông."
                 }
         },
         {

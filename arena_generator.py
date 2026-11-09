@@ -777,7 +777,7 @@ ARENA_DATA_BY_LESSON = {
             ("das Brandenburger Tor", "Cổng thành Brandenburg"),
             ("der Reichstag", "Tòa nhà Quốc hội Đức"),
             ("die Museumsinsel", "Đảo Bảo tàng"),
-            ("wollen", "muốn (kế hoạch/ý định)"),
+            ("wollen", "muốn / định làm"),
             ("bummeln", "đi dạo phố, tản bộ"),
             ("vorbeigehen", "đi ngang qua"),
             ("überqueren", "băng qua đường/cầu"),

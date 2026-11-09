@@ -1431,7 +1431,7 @@ def seed_lesson_7():
                         "wollen"
                 ],
                 "correct_answer": "will",
-                "explanation": "Động từ wollen diễn tả nguyện vọng, ý chí quyết tâm. Với chủ ngữ 'meine Schwester' (ngôi sie số ít), wollen đổi nguyên âm o -> i thành 'will' (ngôi ich và er/sie/es đều là will).",
+                "explanation": "Động từ wollen diễn tả mong muốn, dự định làm (kế hoạch tương lai). Với chủ ngữ 'meine Schwester' (ngôi sie số ít), wollen đổi nguyên âm o -> i thành 'will' (ngôi ich và er/sie/es đều là will).",
                 "exp_reward": 15,
                 "extra_data": {
                         "accepted_answers": [
@@ -2323,7 +2323,7 @@ def seed_lesson_7():
                 "question": "Câu 61: Nối Động từ khuyết thiếu (Cột Trái) với Tình huống thực tế sử dụng (Cột Phải):",
                 "options": null,
                 "correct_answer": "Hoàn thành nối ô",
-                "explanation": "Bản chất và ngữ cảnh sử dụng của 4 động từ khuyết thiếu: 1. 'müssen' diễn tả sự bắt buộc khách quan, luật lệ hoặc quy định bắt buộc phải tuân theo (đèn đỏ thì xe cộ bắt buộc phải dừng). 2. 'können' diễn tả năng lực, khả năng chuyên môn hoặc kỹ năng cá nhân (khả năng nói được 4 ngoại ngữ). 3. 'nicht dürfen' diễn tả sự cấm đoán tuyệt đối, liên quan đến an toàn lao động hoặc biển báo cấm (cấm người ngoài vào công trường nguy hiểm). 4. 'wollen' diễn tả ý chí quyết tâm mạnh mẽ, mong muốn chủ quan hoặc kế hoạch đã định sẵn cho tương lai.",
+                "explanation": "Bản chất và ngữ cảnh sử dụng của 4 động từ khuyết thiếu: 1. 'müssen' diễn tả sự bắt buộc khách quan, luật lệ hoặc quy định bắt buộc phải tuân theo (đèn đỏ thì xe cộ bắt buộc phải dừng). 2. 'können' diễn tả năng lực, khả năng chuyên môn hoặc kỹ năng cá nhân (khả năng nói được 4 ngoại ngữ). 3. 'nicht dürfen' diễn tả sự cấm đoán tuyệt đối, liên quan đến an toàn lao động hoặc biển báo cấm (cấm người ngoài vào công trường nguy hiểm). 4. 'wollen' diễn tả mong muốn, dự định hoặc kế hoạch đã định sẵn cho tương lai.",
                 "exp_reward": 20,
                 "extra_data": {
                         "noi_o_pairs": [
