@@ -587,7 +587,7 @@
             <div class="my-3 space-y-2">
                 <div class="p-2 rounded-xl bg-blue-50 border border-blue-200 text-blue-900 text-xs font-semibold flex items-center justify-between">
                     <span>🔵 Đang hiển thị Lộ trình 1 (màu xanh dương) trên bản đồ thành phố</span>
-                    <button type="button" onclick="speakGerman('Zuerst gehen Sie geradeaus. Dann gehen Sie die erste Straße rechts, an der Bank vorbei. Dann gehen Sie bis zur zweiten Kreuzung links. Danach gehen Sie bis zur Ampel.', 1.0)" class="px-2.5 py-1 rounded-lg bg-blue-600 hover:bg-blue-700 text-white font-bold text-xs cursor-pointer">
+                    <button type="button" onclick="speakGerman('Zuerst gehen Sie geradeaus. Dann gehen Sie die erste Straße rechts, an der Bank vorbei. Dann gehen Sie bis zur zweiten Kreuzung und dort links. Danach gehen Sie bis zur Ampel.', 1.0)" class="px-2.5 py-1 rounded-lg bg-blue-600 hover:bg-blue-700 text-white font-bold text-xs cursor-pointer">
                         🔊 Nghe lộ trình
                     </button>
                 </div>
@@ -658,11 +658,11 @@
                     <div class="p-4 rounded-2xl bg-blue-50 border border-blue-200 space-y-2 text-xs sm:text-sm text-blue-950">
                         <div class="flex items-center justify-between">
                             <span class="font-extrabold text-blue-800">🔵 Lộ trình 1: Đi qua Ngân hàng tới Bưu điện</span>
-                            <button onclick="speakGerman('Zuerst gehen Sie geradeaus. Dann gehen Sie die erste Straße rechts, an der Bank vorbei. Dann gehen Sie bis zur zweiten Kreuzung links. Danach gehen Sie bis zur Ampel. Rechts sehen Sie die Post.', 1.0)" class="px-3 py-1 rounded-lg bg-blue-600 hover:bg-blue-700 text-white font-bold text-xs cursor-pointer flex items-center gap-1">
+                            <button onclick="speakGerman('Zuerst gehen Sie geradeaus. Dann gehen Sie die erste Straße rechts, an der Bank vorbei. Dann gehen Sie bis zur zweiten Kreuzung und dort links. Danach gehen Sie bis zur Ampel. Rechts sehen Sie die Post.', 1.0)" class="px-3 py-1 rounded-lg bg-blue-600 hover:bg-blue-700 text-white font-bold text-xs cursor-pointer flex items-center gap-1">
                                 🔊 Nghe phát âm chuẩn de-DE
                             </button>
                         </div>
-                        <p class="italic font-serif">„<b>Zuerst</b> gehen Sie geradeaus. <b>Dann</b> gehen Sie die erste Straße rechts, <b>an der Bank vorbei</b>. <b>Dann</b> gehen Sie bis zur zweiten Kreuzung links. <b>Danach</b> gehen Sie <b>bis zur Ampel</b>. Rechts sehen Sie <b>die Post</b>.“</p>
+                        <p class="italic font-serif">„<b>Zuerst</b> gehen Sie geradeaus. <b>Dann</b> gehen Sie die erste Straße rechts, <b>an der Bank vorbei</b>. <b>Dann</b> gehen Sie bis zur zweiten Kreuzung und dort links. <b>Danach</b> gehen Sie <b>bis zur Ampel</b>. Rechts sehen Sie <b>die Post</b>.“</p>
                         <p class="text-xs text-blue-800 font-medium"><b>Dịch nghĩa:</b> Đầu tiên Ngài đi thẳng. Sau đó Ngài rẽ phải ở con đường thứ nhất, đi ngang qua ngân hàng. Sau đó Ngài đi đến ngã tư thứ hai thì rẽ trái. Tiếp theo Ngài đi cho đến đèn giao thông. Ở bên phải Ngài sẽ nhìn thấy bưu điện.</p>
                     </div>`;
             } else if (route === 'route2') {
@@ -823,31 +823,31 @@
     // =========================================================================
     function initLesson8Visuals() {
         const vorbeiEl = document.getElementById('svg-diag-vorbei');
-        if (vorbeiEl && !vorbeiEl.hasChildNodes()) {
+        if (vorbeiEl && !vorbeiEl.querySelector('svg')) {
             vorbeiEl.innerHTML = getSpatialDiagramSvg('vorbei', '100%', 150);
         }
         const durchEl = document.getElementById('svg-diag-durch');
-        if (durchEl && !durchEl.hasChildNodes()) {
+        if (durchEl && !durchEl.querySelector('svg')) {
             durchEl.innerHTML = getSpatialDiagramSvg('durch', '100%', 150);
         }
         const ueberEl = document.getElementById('svg-diag-ueber');
-        if (ueberEl && !ueberEl.hasChildNodes()) {
+        if (ueberEl && !ueberEl.querySelector('svg')) {
             ueberEl.innerHTML = getSpatialDiagramSvg('ueber', '100%', 150);
         }
         const entlangEl = document.getElementById('svg-diag-entlang');
-        if (entlangEl && !entlangEl.hasChildNodes()) {
+        if (entlangEl && !entlangEl.querySelector('svg')) {
             entlangEl.innerHTML = getSpatialDiagramSvg('entlang', '100%', 150);
         }
         const mapEl = document.getElementById('b8-interactive-city-map-container');
-        if (mapEl && !mapEl.hasChildNodes()) {
+        if (mapEl && !mapEl.querySelector('svg')) {
             mapEl.innerHTML = getCityGridMapSvg('route1');
         }
         const contrastEl = document.getElementById('svg-spatial-contrast');
-        if (contrastEl && !contrastEl.hasChildNodes()) {
+        if (contrastEl && !contrastEl.querySelector('svg')) {
             contrastEl.innerHTML = getSpatialContrastSvg();
         }
         const cardsGridEl = document.getElementById('b8-direction-cards-grid');
-        if (cardsGridEl && !cardsGridEl.hasChildNodes()) {
+        if (cardsGridEl && !cardsGridEl.querySelector('.grid')) {
             cardsGridEl.innerHTML = renderAllDirectionCardsGrid();
         }
     }

@@ -141,7 +141,7 @@ def build_lesson_8_seed():
             {"visual_svg": "spatial_contrast_tor_bruecke", "translation": "Đầu tiên các du khách đi xuyên qua cổng thành, và tiếp theo họ đi bộ qua cây cầu."}
         ),
         (
-            "Câu 7: Hãy theo dõi lộ trình sau trên Bản đồ thành phố bên trên: 'Zuerst gehen Sie geradeaus. Dann gehen Sie die erste Straße rechts, an der Bank vorbei. Dann gehen Sie bis zur zweiten Kreuzung links. Danach gehen Sie bis zur Ampel.' — Tòa nhà nằm ở bên tay phải (rechts) của bạn tại điểm cuối là gì?",
+            "Câu 7: Hãy theo dõi lộ trình sau trên Bản đồ thành phố bên trên: 'Zuerst gehen Sie geradeaus. Dann gehen Sie die erste Straße rechts, an der Bank vorbei. Dann gehen Sie bis zur zweiten Kreuzung und dort links. Danach gehen Sie bis zur Ampel.' — Tòa nhà nằm ở bên tay phải (rechts) của bạn tại điểm cuối là gì?",
             ["das Kino", "die Bank", "die Post", "der Bahnhof"],
             "die Post",
             "Theo đúng hướng di chuyển từ dưới lên tới đèn giao thông (Ampel) trên bản đồ thành phố, phía bên tay phải (rechts) chính là 'die Post' (Bưu điện).",
@@ -442,7 +442,7 @@ def build_lesson_8_seed():
         ("Câu 48: Dịch sang tiếng Việt: 'die Alte Nationalgalerie'", "khu triển lãm quốc gia cũ", ["khu triển lãm quốc gia cũ", "khu trưng bày nghệ thuật quốc gia", "phòng triển lãm quốc gia cổ", "khu triển lãm quốc gia"], "die Alte Nationalgalerie là Khu triển lãm Quốc gia (Cũ) nằm trên Đảo Bảo tàng ở Berlin.", "die Alte Nationalgalerie: khu triển lãm quốc gia cũ"),
         ("Câu 49: Dịch sang tiếng Việt: 'das Schloss Bellevue'", "cung điện Bellevue", ["cung điện Bellevue", "lâu đài Bellevue"], "das Schloss Bellevue là Cung điện Bellevue (nơi làm việc chính thức của Tổng thống Đức ở Berlin).", "das Schloss Bellevue: cung điện Bellevue"),
         ("Câu 50: Dịch sang tiếng Việt: 'Gehen Sie die erste Straße rechts!'", "Ngài hãy rẽ phải ở con đường thứ nhất", ["Ngài hãy rẽ phải ở con đường thứ nhất", "Hãy đi con đường đầu tiên bên phải", "Rẽ phải ở đường đầu tiên", "Ngài hãy đi đường thứ nhất bên tay phải"], "die erste Straße rechts = rẽ phải ở con đường thứ nhất / đầu tiên.", "Gehen Sie die erste Straße rechts!: Ngài hãy rẽ phải ở con đường thứ nhất"),
-        ("Câu 51: Dịch sang tiếng Việt: 'Gehen Sie bis zur zweiten Kreuzung links!'", "Ngài hãy đi cho đến ngã tư thứ hai thì rẽ trái", ["Ngài hãy đi cho đến ngã tư thứ hai thì rẽ trái", "Hãy đi tới ngã tư thứ hai bên trái", "Đi đến ngã tư thứ hai rồi rẽ trái", "Ngài hãy đi tới ngã tư thứ hai rẽ trái"], "bis zur zweiten Kreuzung links = đi đến ngã tư thứ hai rồi rẽ trái.", "Gehen Sie bis zur zweiten Kreuzung links!: Ngài hãy đi cho đến ngã tư thứ hai thì rẽ trái"),
+        ("Câu 51: Dịch sang tiếng Việt: 'Gehen Sie bis zur zweiten Kreuzung und dort links!'", "Ngài hãy đi cho đến ngã tư thứ hai thì rẽ trái", ["Ngài hãy đi cho đến ngã tư thứ hai thì rẽ trái", "Ngài hãy đi tới ngã tư thứ hai thì rẽ trái", "Ngài hãy đi cho đến ngã tư thứ hai và rẽ trái ở đó", "Ngài hãy đi đến ngã tư thứ hai và rẽ trái ở đó", "Đi đến ngã tư thứ hai rồi rẽ trái", "Hãy đi tới ngã tư thứ hai bên trái", "Đi đến ngã tư thứ hai rẽ trái"], "bis zur zweiten Kreuzung und dort links = đi đến ngã tư thứ hai và rẽ trái ở đó (thì rẽ trái).", "Gehen Sie bis zur zweiten Kreuzung und dort links!: Ngài hãy đi cho đến ngã tư thứ hai thì rẽ trái"),
         ("Câu 52: Dịch sang tiếng Việt: 'Gehen Sie über den Platz und durch das Stadttor!'", "Ngài hãy đi băng qua quảng trường và xuyên qua cổng thành", ["Ngài hãy đi băng qua quảng trường và xuyên qua cổng thành", "Hãy đi qua quảng trường và đi xuyên qua cổng thành", "Đi qua quảng trường và xuyên qua cổng thành"], "über den Platz = băng qua quảng trường; durch das Stadttor = xuyên qua cổng thành.", "Gehen Sie über den Platz und durch das Stadttor!: Ngài hãy đi băng qua quảng trường và xuyên qua cổng thành"),
         ("Câu 53: Dịch sang tiếng Việt: 'auf der Friedrichstraße bummeln'", "đi dạo phố trên đường Friedrich", ["đi dạo phố trên đường Friedrich", "dạo chơi mua sắm trên phố Friedrich", "tản bộ trên đường Friedrich", "đi dạo trên đường Friedrich"], "Động từ bummeln có nghĩa là đi dạo phố, tản bộ ngắm cảnh/cửa hàng.", "auf der Friedrichstraße bummeln: đi dạo phố trên đường Friedrich"),
         ("Câu 54: Dịch sang tiếng Việt: 'Entschuldigung, wie komme ich ins Kino?'", "Xin lỗi, làm thế nào tôi đi đến được rạp chiếu phim?", ["Xin lỗi, làm thế nào tôi đi đến được rạp chiếu phim?", "Xin lỗi, tôi đi tới rạp chiếu phim bằng cách nào?", "Xin lỗi, đi đến rạp chiếu phim như thế nào?", "Xin lỗi làm sao tôi đến rạp chiếu phim?"], "Wie komme ich ins Kino? là câu hỏi đường lịch sự để đi tới rạp chiếu phim.", "Entschuldigung, wie komme ich ins Kino?: Xin lỗi, làm thế nào tôi đi đến được rạp chiếu phim?"),
@@ -584,11 +584,11 @@ def build_lesson_8_seed():
             [
                 {"left": "Zuerst", "right": "gehen Sie geradeaus."},
                 {"left": "Dann", "right": "gehen Sie die erste Straße rechts, an der Bank vorbei."},
-                {"left": "Danach", "right": "gehen Sie bis zur zweiten Kreuzung links und bis zur Ampel."},
+                {"left": "Danach", "right": "gehen Sie bis zur zweiten Kreuzung und dort links, bis zur Ampel."},
                 {"left": "Rechts", "right": "sehen Sie die Post."}
             ],
-            "1. Zuerst: Đầu tiên Ngài đi thẳng. | 2. Dann: Sau đó Ngài rẽ phải ở con đường thứ nhất, đi ngang qua ngân hàng. | 3. Danach: Tiếp theo Ngài đi đến ngã tư thứ hai rẽ trái và đi cho đến đèn giao thông. | 4. Rechts: Ở bên phải Ngài sẽ nhìn thấy bưu điện.",
-            "Khung trình tự chỉ đường Lộ trình 1: 1. Zuerst mở đầu hành trình đi thẳng từ điểm xuất phát. 2. Dann chỉ bước tiếp theo rẽ phải qua ngân hàng. 3. Danach chỉ chặng kế tiếp rẽ trái ở ngã tư 2 và đến đèn giao thông. 4. Rechts chỉ vị trí đích đến của tòa nhà bưu điện nằm bên tay phải."
+            "1. Zuerst: Đầu tiên Ngài đi thẳng. | 2. Dann: Sau đó Ngài rẽ phải ở con đường thứ nhất, đi ngang qua ngân hàng. | 3. Danach: Tiếp theo Ngài đi đến ngã tư thứ hai và rẽ trái ở đó, đi cho đến đèn giao thông. | 4. Rechts: Ở bên phải Ngài sẽ nhìn thấy bưu điện.",
+            "Khung trình tự chỉ đường Lộ trình 1: 1. Zuerst mở đầu hành trình đi thẳng từ điểm xuất phát. 2. Dann chỉ bước tiếp theo rẽ phải qua ngân hàng. 3. Danach chỉ chặng kế tiếp đi đến ngã tư thứ hai rẽ trái ở đó và đến đèn giao thông. 4. Rechts chỉ vị trí đích đến của tòa nhà bưu điện nằm bên tay phải."
         )
     ]
 
@@ -722,11 +722,11 @@ def build_lesson_8_seed():
         ),
         (
             "Câu 79: Nghe phát âm chuẩn de-DE và điền danh từ còn thiếu vào chỗ trống:",
-            "Gehen Sie bitte bis zur zweiten Kreuzung links und danach bis zur Ampel.",
-            "Gehen Sie bitte bis zur zweiten ___ links und danach bis zur Ampel.",
+            "Gehen Sie bitte bis zur zweiten Kreuzung und dort links, danach bis zur Ampel.",
+            "Gehen Sie bitte bis zur zweiten ___ und dort links, danach bis zur Ampel.",
             "Kreuzung",
             ["Kreuzung"],
-            "Xin Ngài hãy đi cho đến ngã tư thứ hai bên trái và tiếp theo đi cho đến đèn giao thông.",
+            "Xin Ngài hãy đi cho đến ngã tư thứ hai thì rẽ trái, tiếp theo đi cho đến đèn giao thông.",
             "Danh từ 'die Kreuzung' có nghĩa là ngã tư, giao lộ (bis zur zweiten Kreuzung)."
         ),
         (
@@ -841,16 +841,20 @@ def build_lesson_8_seed():
             "Đầu tiên Ngài đi thẳng, sau đó Ngài rẽ phải ở con đường thứ nhất, đi ngang qua ngân hàng."
         ),
         (
-            "Câu 89: Dịch câu chỉ đường sau sang tiếng Đức: 'Ngài hãy đi cho đến ngã tư thứ hai bên trái, tiếp theo đi cho đến đèn giao thông.'",
-            "Gehen Sie bis zur zweiten Kreuzung links, danach gehen Sie bis zur Ampel.",
+            "Câu 89: Dịch câu chỉ đường sau sang tiếng Đức: 'Ngài hãy đi cho đến ngã tư thứ hai thì rẽ trái, tiếp theo đi cho đến đèn giao thông.'",
+            "Gehen Sie bis zur zweiten Kreuzung und dort links, danach gehen Sie bis zur Ampel.",
             [
+                "Gehen Sie bis zur zweiten Kreuzung und dort links, danach gehen Sie bis zur Ampel.",
+                "Gehen Sie bis zur zweiten Kreuzung und dort links und danach bis zur Ampel.",
+                "Dann gehen Sie bis zur zweiten Kreuzung und dort links. Danach gehen Sie bis zur Ampel.",
+                "Gehen Sie bitte bis zur zweiten Kreuzung und dort links und danach bis zur Ampel.",
+                "Gehen Sie bitte bis zur zweiten Kreuzung und dort links, danach gehen Sie bis zur Ampel.",
                 "Gehen Sie bis zur zweiten Kreuzung links, danach gehen Sie bis zur Ampel.",
                 "Gehen Sie bis zur zweiten Kreuzung links und danach bis zur Ampel.",
-                "Dann gehen Sie bis zur zweiten Kreuzung links. Danach gehen Sie bis zur Ampel.",
-                "Gehen Sie bitte bis zur zweiten Kreuzung links und danach bis zur Ampel."
+                "Dann gehen Sie bis zur zweiten Kreuzung links. Danach gehen Sie bis zur Ampel."
             ],
-            "Cả die Kreuzung và die Ampel đều đi với bis zur (bis zu + der Dativ).",
-            "Ngài hãy đi cho đến ngã tư thứ hai bên trái, tiếp theo đi cho đến đèn giao thông."
+            "Đi đến ngã tư thứ hai và rẽ trái ở đó: 'bis zur zweiten Kreuzung und dort links'; cho đến đèn giao thông: 'bis zur Ampel' (bis zu + der Dativ).",
+            "Ngài hãy đi cho đến ngã tư thứ hai thì rẽ trái, tiếp theo đi cho đến đèn giao thông."
         ),
         (
             "Câu 90: Dịch câu sau sang tiếng Đức: 'Họ đi xe buýt ngang qua Phủ Thủ tướng và đi bộ qua cầu Schlossbrücke.'",

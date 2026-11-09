@@ -39,7 +39,15 @@ def verify():
     assert "zu + Dativ" in b8["grammar_content"], "❌ Thiếu Phần 3: zu + Dativ vs in + Akkusativ"
     assert "4 Động Từ Khuyết Thiếu" in b8["grammar_content"], "❌ Thiếu Phần 4: Động từ khuyết thiếu"
     assert "Paula & Alex Khám Phá Berlin" in b8["grammar_content"], "❌ Thiếu Phần 5: Đoạn văn mẫu"
-    print("✅ TEST 2 PASS: Đầy đủ 5 Học phần Lý thuyết chuyên sâu!")
+
+    # Các kiểm tra bổ sung theo yêu cầu tinh chỉnh lý thuyết
+    assert "và hören" not in b8["grammar_content"], "❌ Còn sót 'và hören' trong tiếng Đức!"
+    assert "und hören ein Konzert" in b8["grammar_content"], "❌ Thiếu 'und hören ein Konzert'!"
+    assert "und dort links" in b8["grammar_content"], "❌ Lộ trình 1 chưa sửa thành 'und dort links'!"
+    assert "svg-diag-vorbei" in b8["grammar_content"] and "<svg" in b8["grammar_content"], "❌ Thiếu SVG Sơ đồ 1!"
+    assert "Không dùng để gọi món" in b8["grammar_content"], "❌ Thiếu cảnh báo sắc thái wollen trong khung tím!"
+    assert "Không phải luật tuyệt đối" in b8["grammar_content"], "❌ Thiếu lưu ý thực tế dưới bảng zu/in!"
+    print("✅ TEST 2 PASS: Đầy đủ 5 Học phần Lý thuyết chuyên sâu & đã tinh chỉnh 100% chuẩn xác!")
 
     # 3. Check 50 vocabularies of Lesson 8
     print("\n[TEST 3] Kiểm tra 50 Từ vựng Bài 8:")

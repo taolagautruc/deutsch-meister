@@ -237,11 +237,13 @@ def ensure_db_initialized():
             from lessons.a1.seed_a1_b7 import seed_lesson_7
             seed_lesson_7()
 
-        cursor.execute("SELECT id FROM lessons WHERE title LIKE 'Bài 8%' LIMIT 1;")
+        cursor.execute("SELECT id, grammar_content FROM lessons WHERE title LIKE 'Bài 8%' LIMIT 1;")
         row_b8 = cursor.fetchone()
         need_reseed_b8 = not bool(row_b8)
         if row_b8:
             b8_id = row_b8["id"]
+            if "và hören" in (row_b8["grammar_content"] or '') or "und dort links" not in (row_b8["grammar_content"] or ''):
+                need_reseed_b8 = True
             cursor.execute("SELECT COUNT(*) as cnt FROM exercises WHERE lesson_id = ?;", (b8_id,))
             cnt_row = cursor.fetchone()
             if not cnt_row or cnt_row["cnt"] < 100:

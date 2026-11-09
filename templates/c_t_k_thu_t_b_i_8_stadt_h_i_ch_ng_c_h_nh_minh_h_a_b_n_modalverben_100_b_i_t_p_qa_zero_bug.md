@@ -184,7 +184,7 @@ Antigravity IDE phải hiển thị **Lưới 12 Thẻ Hình Chỉ Đường b�
 Antigravity IDE phải vẽ một **Bản đồ Đường phố Tương tác bằng SVG** tái hiện chính xác sơ đồ trên bảng viết (với người đứng ở góc dưới bên trái `📍 Start`, tòa nhà **`🏦 Bank`** nằm ở đường ngang thứ 2, và **`📮 Post` + `🚦 Ampel`** nằm ở góc trên bên phải), cho phép người dùng bấm xem 2 lộ trình thực tế:
 
 * **Lộ trình 1 (Đường màu xanh dương — Đi qua Ngân hàng)**:
-  > **Tiếng Đức (`🔊 de-DE`)**: *„**Zuerst** gehen Sie geradeaus. **Dann** gehen Sie die erste Straße rechts, **an der Bank vorbei**. **Dann** gehen Sie bis zur zweiten Kreuzung links. **Danach** gehen Sie **bis zur Ampel**. Rechts sehen Sie **die Post**.“*
+  > **Tiếng Đức (`🔊 de-DE`)**: *„**Zuerst** gehen Sie geradeaus. **Dann** gehen Sie die erste Straße rechts, **an der Bank vorbei**. **Dann** gehen Sie bis zur zweiten Kreuzung und dort links. **Danach** gehen Sie **bis zur Ampel**. Rechts sehen Sie **die Post**.“*
   > **Dịch nghĩa**: *„Đầu tiên Ngài đi thẳng. Sau đó Ngài rẽ phải ở con đường thứ nhất, đi ngang qua ngân hàng. Sau đó Ngài đi đến ngã tư thứ hai thì rẽ trái. Tiếp theo Ngài đi cho đến đèn giao thông. Ở bên phải Ngài sẽ nhìn thấy bưu điện.“*
 * **Lộ trình 2 (Đường màu xanh lá — Đi thẳng lên ngã tư thứ 2 rồi rẽ phải)**:
   > **Tiếng Đức (`🔊 de-DE`)**: *„**Zuerst** gehen Sie geradeaus, **bis zur zweiten Kreuzung rechts**. **Dann** gehen Sie geradeaus, **über die Kreuzung**. Links sehen Sie **die Post**.“*
@@ -202,15 +202,20 @@ Trong đoạn văn về **Paula và Alex ở Berlin** trên bảng viết, có h
 | **Biến đổi mạo từ theo giống** | • Giống đực (`der`): **`zum`** (*zum Bahnhof, zum Flughafen, zum Reichstag, zum Alexanderplatz*)<br>• Giống trung (`das`): **`zum`** (*zum Brandenburger Tor, zum Schloss Bellevue*)<br>• Giống cái (`die`): **`zur`** (*zur Post, zur Bank, zur Kirche, zur Schule, zur Ampel, zur Kreuzung*) | • Giống đực (`der`): **`in den`** (*in den Berliner Dom, in den Supermarkt, in den Park, in den Zoo*)<br>• Giống trung (`das`): **`ins`** (*ins Kino, ins Theater, ins Museum, ins Einkaufszentrum, ins Hotel*)<br>• Giống cái (`die`): **`in die`** (*in die Disko, in die Nationalgalerie, in die Staatsoper, in die Kirche*) |
 | **Ví dụ đối chiếu từ bài giảng (`🔊 de-DE`)** | • *„Paula und Alex gehen **<u>zum</u> Brandenburger Tor** und machen viele Fotos.“* *(Paula và Alex đi **đến Cổng Brandenburg** và chụp nhiều bức ảnh — đứng ở khu vực cổng chụp ảnh).*<br>• *„Gehen Sie **bis <u>zur</u> Ampel** / **bis <u>zur</u> Kreuzung**!“* *(Hãy đi **đến chỗ đèn giao thông / ngã tư**!)* | • *„Am Nachmittag gehen sie **<u>in den</u> Berliner Dom** und hören ein Konzert.“* *(Buổi chiều họ đi **vào trong Nhà thờ lớn Berlin** và nghe hòa nhạc).*<br>• *„Am Abend gehen sie **<u>in die</u> Disko** ‚Von Euch‘.“* *(Buổi tối họ đi **vào vũ trường** 'Von Euch'.)*<br>• *„Danach will ich **<u>in die</u> Nationalgalerie** gehen.“* *(Tiếp theo tôi muốn đi **vào Khu triển lãm Quốc gia**.)* |
 
+> 💡 **Hướng dẫn sử dụng thực tế (không phải luật tuyệt đối)**:
+> - **`zu`** thường dùng cho **người, cơ quan, nơi làm việc/học tập, ga, bưu điện**: *zum Arzt, zur Schule, zur Arbeit, zum Bahnhof, zur Post*.
+> - **`in`** thường dùng cho **nơi giải trí, mua sắm, tham quan**: *ins Kino, ins Museum, in den Supermarkt, in die Disko*.
+> - Một số nơi dùng được cả hai (*zum Supermarkt* hoặc *in den Supermarkt*), nên bảng chỉ là hướng dẫn phân biệt sắc thái, không phải luật tuyệt đối.
+
 ---
 
 ### HỌC PHẦN 4: HỆ THỐNG BẢNG MA TRẬN 4 ĐỘNG TỪ KHUYẾT THIẾU (`MÖCHTEN - KÖNNEN - MÜSSEN - WOLLEN`) & TRẠNG TỪ TRÌNH TỰ
 
 #### 4.1. Bảng Ma Trận Đối Chiếu 4 Động Từ Khuyết Thiếu Trọng Tâm Trên Bảng Viết (`Berlin sehen`)
-> **Điểm mới trọng tâm của Bài 8**: Bổ sung động từ khuyết thiếu **`wollen` *(muốn — thể hiện ý định mạnh mẽ, quyết tâm hoặc kế hoạch rõ ràng)*** và đặt cạnh **`möchten` *(muốn — lịch sự, nhã nhặn khi gọi món hoặc đề xuất)***.
+> **Điểm mới trọng tâm của Bài 8**: Bổ sung động từ khuyết thiếu **`wollen` = muốn/định làm** (trực tiếp, mạnh hơn *`möchten`*). **Không dùng để gọi món hoặc nhờ người lạ**, hãy nói *„Ich möchte einen Kaffee“*.
 > * Lưu ý biến âm của **`wollen`**: Đổi nguyên âm gốc **`o -> i`** ở cả 3 ngôi số ít (`ich will`, `du willst`, `er/sie/es will`), và ngôi `ich` bằng ngôi `er/sie/es` (`will` — không có đuôi `-e` hay `-t`!).
 
-| Ngôi Nhân Xưng | 1. **`möchten`**<br>*(muốn — lịch sự, ước muốn)* | 2. **`können`**<br>*(có thể, có khả năng)* | 3. **`müssen`**<br>*(phải, bắt buộc)* | 4. **`wollen`** ⭐<br>*(muốn — ý định/kế hoạch mạnh)* |
+| Ngôi Nhân Xưng | 1. **`möchten`**<br>*(muốn — lịch sự, ước muốn)* | 2. **`können`**<br>*(có thể, có khả năng)* | 3. **`müssen`**<br>*(phải, bắt buộc)* | 4. **`wollen`** ⭐<br>*(muốn / định làm)* |
 | :--- | :---: | :---: | :---: | :---: |
 | **`ich`** *(tôi)* | **möchte** | **kann** | **muss** | <span style="color:#ec4899">**will**</span> ⚠️ |
 | **`du`** *(bạn)* | **möchtest** | **kannst** | **musst** | <span style="color:#ec4899">**willst**</span> ⚠️ |
@@ -223,7 +228,7 @@ Trong đoạn văn về **Paula và Alex ở Berlin** trên bảng viết, có h
   1. *„Ich **möchte** Kaffee **trinken**.“* *(Tôi muốn uống cà phê — lời gọi đồ lịch sự).*
   2. *„Ich **kann** gut **kochen**.“* *(Tôi có thể nấu ăn ngon — chỉ kỹ năng).*
   3. *„Am Wochenende **muss** ich **arbeiten**.“* *(Vào cuối tuần tôi phải làm việc — sự bắt buộc).*
-  4. *„In Deutschland **will** ich **studieren**.“* *(Ở Đức tôi muốn học đại học — kế hoạch/mục tiêu quyết tâm).*
+  4. *„In Deutschland **will** ich **studieren**.“* *(Ở Đức tôi muốn học đại học — kế hoạch/dự định tương lai).*
 
 ---
 
@@ -304,7 +309,7 @@ Toàn bộ **100 câu hỏi (`100 Unique Exercises`)** dưới đây đã đư�
    * Giải thích: Đi xuyên qua lòng cổng vòm dùng **`durch + Akkusativ`** (`durch das Stadttor`); đi vượt qua mặt cầu dùng **`über + Akkusativ`** (`über die Brücke`).
 7. **Câu 7 (Nhìn Bản đồ Lưới Đường Phố SVG — Đọc lộ trình tìm Điểm Đích)**:
    * `visual_svg`: Render **`city_grid_map_quiz_1`** *(Bản đồ hiển thị vạch đường đi từ `📍 Start`: đi thẳng $\rightarrow$ rẽ phải ở đường thứ nhất $\rightarrow$ đi ngang qua `🏦 Bank` $\rightarrow$ rẽ trái ở ngã tư thứ hai $\rightarrow$ đi tới `🚦 Ampel` $\rightarrow$ nhìn sang bên phải là tòa nhà **`📮 Post`**, bên trái là **`🎬 Kino`**)*.
-   * `question`: Hãy theo dõi lộ trình sau trên **Bản đồ thành phố** bên trên: *„Zuerst gehen Sie geradeaus. Dann gehen Sie die erste Straße rechts, an der Bank vorbei. Dann gehen Sie bis zur zweiten Kreuzung links. Danach gehen Sie bis zur Ampel.“* — Tòa nhà nằm ở **bên tay phải (`rechts`)** của bạn tại điểm cuối là gì?
+   * `question`: Hãy theo dõi lộ trình sau trên **Bản đồ thành phố** bên trên: *„Zuerst gehen Sie geradeaus. Dann gehen Sie die erste Straße rechts, an der Bank vorbei. Dann gehen Sie bis zur zweiten Kreuzung und dort links. Danach gehen Sie bis zur Ampel.“* — Tòa nhà nằm ở **bên tay phải (`rechts`)** của bạn tại điểm cuối là gì?
    * Đáp án: `A. das Kino` | `B. die Bank` | `C. die Post` (Đúng) | `D. der Bahnhof`
    * Dịch nghĩa câu: *"Đầu tiên Ngài đi thẳng. Sau đó rẽ phải ở đường thứ nhất, đi ngang qua ngân hàng. Sau đó đi đến ngã tư thứ hai rẽ trái. Tiếp theo đi đến đèn giao thông. Ở bên phải Ngài nhìn thấy bưu điện."*
    * Giải thích: Theo đúng hướng di chuyển từ dưới lên tới đèn giao thông (`Ampel`) trên bản đồ, phía bên tay phải (`rechts`) chính là **`die Post`** (Bưu điện).
@@ -504,9 +509,9 @@ Toàn bộ **100 câu hỏi (`100 Unique Exercises`)** dưới đây đã đư�
 50. **Câu 50**: Dịch sang tiếng Việt: ***„Gehen Sie die erste Straße rechts!“***
     * Đáp án chấp nhận: `["Ngài hãy rẽ phải ở con đường thứ nhất", "Hãy đi con đường đầu tiên bên phải", "Rẽ phải ở đường đầu tiên", "Ngài hãy đi đường thứ nhất bên tay phải"]`
     * Giải thích: `die erste Straße rechts` = rẽ phải ở con đường thứ nhất / đầu tiên.
-51. **Câu 51**: Dịch sang tiếng Việt: ***„Gehen Sie bis zur zweiten Kreuzung links!“***
-    * Đáp án chấp nhận: `["Ngài hãy đi cho đến ngã tư thứ hai thì rẽ trái", "Hãy đi tới ngã tư thứ hai bên trái", "Đi đến ngã tư thứ hai rồi rẽ trái"]`
-    * Giải thích: `bis zur zweiten Kreuzung links` = đi đến ngã tư thứ hai rồi rẽ trái.
+51. **Câu 51**: Dịch sang tiếng Việt: ***„Gehen Sie bis zur zweiten Kreuzung und dort links!“***
+    * Đáp án chấp nhận: `["Ngài hãy đi cho đến ngã tư thứ hai thì rẽ trái", "Ngài hãy đi tới ngã tư thứ hai thì rẽ trái", "Ngài hãy đi cho đến ngã tư thứ hai và rẽ trái ở đó", "Ngài hãy đi đến ngã tư thứ hai và rẽ trái ở đó", "Đi đến ngã tư thứ hai rồi rẽ trái", "Hãy đi tới ngã tư thứ hai bên trái"]`
+    * Giải thích: `bis zur zweiten Kreuzung und dort links` = đi đến ngã tư thứ hai và rẽ trái ở đó (thì rẽ trái).
 52. **Câu 52**: Dịch sang tiếng Việt: ***„Gehen Sie über den Platz und durch das Stadttor!“***
     * Đáp án chấp nhận: `["Ngài hãy đi băng qua quảng trường và xuyên qua cổng thành", "Hãy đi qua quảng trường và đi xuyên qua cổng thành"]`
     * Giải thích: `über den Platz` = băng qua quảng trường; `durch das Stadttor` = xuyên qua cổng thành.
@@ -577,7 +582,7 @@ Toàn bộ **100 câu hỏi (`100 Unique Exercises`)** dưới đây đã đư�
 67. **Câu 67 (Bài nối ô 10 — Sắp xếp 4 Bước Chỉ Đường Từ Điểm Xuất Phát Tới Bưu Điện)**:
     * `Bước 1 (Zuerst)` $\longleftrightarrow$ `gehen Sie geradeaus.`
     * `Bước 2 (Dann)` $\longleftrightarrow$ `gehen Sie die erste Straße rechts, an der Bank vorbei.`
-    * `Bước 3 (Danach)` $\longleftrightarrow$ `gehen Sie bis zur zweiten Kreuzung links und bis zur Ampel.`
+    * `Bước 3 (Danach)` $\longleftrightarrow$ `gehen Sie bis zur zweiten Kreuzung und dort links, bis zur Ampel.`
     * `Bước 4 (Am Ziel)` $\longleftrightarrow$ `Rechts sehen Sie die Post.`
 
 ---
@@ -634,9 +639,9 @@ Toàn bộ **100 câu hỏi (`100 Unique Exercises`)** dưới đây đã đư�
     * `accepted_answers`: `["geradeaus"]`
     * Giải thích: Từ chỉ hướng *"đi thẳng"* là `geradeaus`.
 79. **Câu 79**:
-    * `audio_text`: *"Gehen Sie bitte bis zur zweiten Kreuzung links und danach bis zur Ampel."*
-    * `display_sentence`: *"Gehen Sie bitte bis zur zweiten ___ links und danach bis zur Ampel."*
-    * `hint_vi`: *"Xin Ngài hãy đi cho đến ngã tư thứ hai bên trái và tiếp theo đi cho đến đèn giao thông."*
+    * `audio_text`: *"Gehen Sie bitte bis zur zweiten Kreuzung und dort links, danach bis zur Ampel."*
+    * `display_sentence`: *"Gehen Sie bitte bis zur zweiten ___ und dort links, danach bis zur Ampel."*
+    * `hint_vi`: *"Xin Ngài hãy đi cho đến ngã tư thứ hai thì rẽ trái, tiếp theo đi cho đến đèn giao thông."*
     * `accepted_answers`: `["Kreuzung"]`
     * Giải thích: Danh từ `die Kreuzung` có nghĩa là ngã tư, giao lộ.
 80. **Câu 80**:
@@ -697,12 +702,15 @@ Toàn bộ **100 câu hỏi (`100 Unique Exercises`)** dưới đây đã đư�
       * `"Zuerst gehen Sie geradeaus. Dann gehen Sie die erste Straße rechts, an der Bank vorbei."`
       * `"Gehen Sie zuerst geradeaus und dann die erste Straße rechts, an der Bank vorbei."`
     * Giải thích: `Zuerst gehen Sie geradeaus`, `die erste Straße rechts`, và `an der Bank vorbei` (`an + Dativ + vorbei`).
-89. **Câu 89**: Dịch câu chỉ đường sau sang tiếng Đức: ***"Ngài hãy đi cho đến ngã tư thứ hai bên trái, tiếp theo đi cho đến đèn giao thông."***
+89. **Câu 89**: Dịch câu chỉ đường sau sang tiếng Đức: ***"Ngài hãy đi cho đến ngã tư thứ hai thì rẽ trái, tiếp theo đi cho đến đèn giao thông."***
     * `accepted_answers`:
+      * `"Gehen Sie bis zur zweiten Kreuzung und dort links, danach gehen Sie bis zur Ampel."`
+      * `"Gehen Sie bis zur zweiten Kreuzung und dort links und danach bis zur Ampel."`
+      * `"Dann gehen Sie bis zur zweiten Kreuzung und dort links. Danach gehen Sie bis zur Ampel."`
+      * `"Gehen Sie bitte bis zur zweiten Kreuzung und dort links, danach gehen Sie bis zur Ampel."`
       * `"Gehen Sie bis zur zweiten Kreuzung links, danach gehen Sie bis zur Ampel."`
       * `"Gehen Sie bis zur zweiten Kreuzung links und danach bis zur Ampel."`
-      * `"Dann gehen Sie bis zur zweiten Kreuzung links. Danach gehen Sie bis zur Ampel."`
-    * Giải thích: Cả `die Kreuzung` và `die Ampel` đều đi với `bis zur` (`bis zu + der`).
+    * Giải thích: `bis zur zweiten Kreuzung und dort links` (đi đến ngã tư thứ hai và rẽ trái ở đó); `bis zur Ampel` (`bis zu + der`).
 90. **Câu 90**: Dịch câu sau sang tiếng Đức: ***"Họ đi xe buýt ngang qua Phủ Thủ tướng và đi bộ qua cầu Schlossbrücke."***
     * `accepted_answers`:
       * `"Sie fahren mit dem Bus am Bundeskanzleramt vorbei und laufen über die Schlossbrücke."`
