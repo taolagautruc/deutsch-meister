@@ -620,12 +620,16 @@ function ensureQuestionNumber(origQuestion, newQuestionBody, fallbackIndex = nul
     const target = (newQuestionBody !== undefined && newQuestionBody !== null) ? newQuestionBody : origQuestion;
     if (!target) return target || '';
     const src = (origQuestion || '').trim();
-    const match = src.match(/^(Câu\s+\d+\s*)/i);
-    const prefix = match ? match[1] : (fallbackIndex != null ? `Câu ${fallbackIndex} ` : '');
+    const match = src.match(/^(Câu\s+\d+)[:.]?\s*/i);
+    const prefix = match ? `${match[1]}: ` : (fallbackIndex != null ? `Câu ${fallbackIndex}: ` : '');
 
     const cleanTarget = target.trim();
-    if (prefix && !cleanTarget.match(/^Câu\s+\d+/i)) {
-        return `${prefix.trim()} ${cleanTarget}`;
+    if (cleanTarget.match(/^Câu\s+\d+[:.]?\s*/i)) {
+        // Chuẩn hóa tiền tố có dấu hai chấm nếu đang thiếu
+        return cleanTarget.replace(/^(Câu\s+\d+)[:.]?\s*/i, '$1: ');
+    }
+    if (prefix) {
+        return `${prefix}${cleanTarget}`;
     }
     return cleanTarget;
 }

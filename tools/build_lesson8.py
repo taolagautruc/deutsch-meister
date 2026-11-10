@@ -100,7 +100,7 @@ def build_lesson_8_seed():
     mcqs = [
         # --- CÂU 1 (Tourist, START → Kino) ---
         (
-            """Một du khách đứng ở điểm START và hỏi đường. Hãy đọc lời chỉ đường, đối chiếu với bản đồ và chọn nơi du khách đang tìm.
+            """Câu 1: Một du khách đứng ở điểm START và hỏi đường. Hãy đọc lời chỉ đường, đối chiếu với bản đồ và chọn nơi du khách đang tìm.
 „Gehen Sie zuerst geradeaus über die erste Kreuzung! An der zweiten Kreuzung biegen Sie rechts ab. Gehen Sie dann am Krankenhaus vorbei bis zur Ampel. Direkt hinter der Ampel liegt das Gebäude links.“""",
             [
                 "Das Schloss",
@@ -118,7 +118,7 @@ def build_lesson_8_seed():
 
         # --- CÂU 2 (Jonas, đường xanh → Einkaufszentrum) ---
         (
-            "Bạn của bạn là Jonas muốn đến Einkaufszentrum. Lời chỉ đường nào khớp chính xác với lộ trình màu xanh trên bản đồ?",
+            "Câu 2: Bạn của bạn là Jonas muốn đến Einkaufszentrum. Lời chỉ đường nào khớp chính xác với lộ trình màu xanh trên bản đồ?",
             [
                 "Geh geradeaus und nimm die zweite Straße links. Geh über die Brücke und dann durch den Park. Das Einkaufszentrum liegt rechts.",
                 "Geh geradeaus und nimm die dritte Straße rechts. Geh über die Brücke und dann durch den Park. Das Einkaufszentrum liegt rechts.",
@@ -135,15 +135,15 @@ def build_lesson_8_seed():
 
         # --- CÂU 3 (3 hình 1→2→3) ---
         (
-            "Chọn chuỗi câu tiếng Đức mô tả đúng ba hình (1 → 2 → 3) và hoàn toàn đúng ngữ pháp.",
+            "Câu 3: Chọn chuỗi câu tiếng Đức mô tả đúng ba hình (1 → 2 → 3) và hoàn toàn đúng ngữ pháp.",
             [
                 "Zuerst gehen wir an die Staatsoper vorbei, dann durch das Stadttor und danach den Fluss entlang.",
                 "Zuerst gehen wir am Staatsoper vorbei, dann durch das Stadttor und danach den Fluss entlang.",
                 "Zuerst gehen wir an der Staatsoper vorbei, dann durch das Stadttor und danach den Fluss entlang.",
-                "Zuerst gehen wir an der Staatsoper vorbei, dann durch dem Stadttor und danach den Fluss entlang."
+                "Zuerst gehen wir durch das Stadttor, dann an der Staatsoper vorbei und danach den Fluss entlang."
             ],
             "Zuerst gehen wir an der Staatsoper vorbei, dann durch das Stadttor und danach den Fluss entlang.",
-            "(1) die Staatsoper (giống cái) → 'an der Staatsoper vorbei' (an + Dativ). (2) das Stadttor (giống trung) → 'durch das Stadttor' (durch + Akkusativ). (3) der Fluss (giống đực) → 'den Fluss entlang' (entlang đặt sau danh từ + Akkusativ). Thứ tự khớp hình 1 → 2 → 3.",
+            "(1) die Staatsoper (giống cái) → 'an der Staatsoper vorbei' (an + Dativ). (2) das Stadttor (giống trung) → 'durch das Stadttor' (durch + Akkusativ). (3) der Fluss (giống đực) → 'den Fluss entlang' (entlang đặt sau danh từ + Akkusativ). Thứ tự khớp hình 1 → 2 → 3. Đáp án 'Zuerst gehen wir durch das Stadttor, dann an der Staatsoper vorbei und danach den Fluss entlang' tuy đúng ngữ pháp nhưng sai thứ tự so với các hình (hình 1 là Staatsoper, hình 2 là Stadttor).",
             {
                 "visual_svg": "quiz_spatial_3_steps",
                 "translation": "Đầu tiên chúng ta đi ngang qua Nhà hát Opera, sau đó đi xuyên qua cổng thành và tiếp theo đi dọc theo dòng sông."
@@ -152,7 +152,7 @@ def build_lesson_8_seed():
 
         # --- CÂU 4 (câu hỏi SAI ngữ pháp) ---
         (
-            "Một bà cụ lớn tuổi hỏi đường bạn trên phố ở Berlin. Câu hỏi nào dưới đây SAI ngữ pháp?",
+            "Câu 4: Một bà cụ hỏi bạn đường trên phố ở Berlin. Câu hỏi nào dưới đây SAI ngữ pháp?",
             [
                 "Entschuldigung, wo finde ich das Bundeskanzleramt?",
                 "Entschuldigung, wie komme ich zum Museumsinsel?",
@@ -160,7 +160,7 @@ def build_lesson_8_seed():
                 "Entschuldigung, wo geht es hier zum Hauptbahnhof?"
             ],
             "Entschuldigung, wie komme ich zum Museumsinsel?",
-            "die Museumsinsel là danh từ giống cái (vì die Insel) → khi hỏi đường dùng cấu trúc zu + Dativ, zu + der biến thành 'zur Museumsinsel', không thể dùng 'zum' (zum = zu + dem, chỉ dành cho giống đực và giống trung). Các câu hỏi còn lại đều đúng ngữ pháp.",
+            "die Museumsinsel là danh từ giống cái (vì die Insel) → khi hỏi đường dùng cấu trúc zu + Dativ, zu + der biến thành 'zur Museumsinsel', không thể dùng 'zum' (câu đúng phải là: 'Entschuldigung, wie komme ich zur Museumsinsel?'). Câu hỏi 'wo geht es hier zum Hauptbahnhof?' là đúng ngữ pháp vì der Hauptbahnhof là danh từ giống đực → zu + dem = zum.",
             {
                 "translation": "Xin lỗi, làm thế nào tôi đến được Đảo Bảo tàng?"
             }
@@ -168,7 +168,7 @@ def build_lesson_8_seed():
 
         # --- CÂU 5 (Clara và Tim → Rathaus) ---
         (
-            """Bạn chỉ đường cho Clara và Tim trên bản đồ. Chọn đáp án điền đúng vào các chỗ trống.
+            """Câu 5: Bạn chỉ đường cho Clara và Tim trên bản đồ. Chọn đáp án điền đúng vào các chỗ trống.
 „Clara und Tim suchen das historische Rathaus. Du erklärst ihnen den Weg: ‚Geht zuerst ___ Humboldt-Universität und ___ Berliner Dom vorbei, dann geradeaus bis ___ Ampel und über ___ Marktplatz!‘“""",
             [
                 "an der / am / zum / den",
@@ -186,7 +186,7 @@ def build_lesson_8_seed():
 
         # --- CÂU 6 (cùng mạo từ) ---
         (
-            "Hàng nào có cả 4 danh từ cùng một mạo từ xác định ở số ít?",
+            "Câu 6: Hàng nào có cả 4 danh từ cùng một mạo từ xác định ở số ít?",
             [
                 "Staatsoper – Brücke – Stadttor – Friedrichstraße",
                 "Schloss – Einkaufszentrum – Bank – Bundeskanzleramt",
@@ -196,13 +196,13 @@ def build_lesson_8_seed():
             "Reichstag – Hafen – Fernsehturm – Potsdamer Platz",
             "Hàng 'Reichstag – Hafen – Fernsehturm – Potsdamer Platz' đều là danh từ giống đực mang mạo từ 'der' (der Reichstag, der Hafen, der Fernsehturm, der Potsdamer Platz). Hàng có Staatsoper lẫn 'das Stadttor' (còn lại là die). Hàng có Schloss lẫn 'die Bank' (còn lại là das). Hàng có Bahnhof lẫn 'die Museumsinsel' (còn lại là der).",
             {
-                "translation": "Tòa nhà Quốc hội – cảng biển – tháp truyền hình – Quảng trường Potsdam (đều là danh từ giống đực mang mạo từ 'der')."
+                "translation": "Tòa nhà Quốc hội – cảng – tháp truyền hình – Quảng trường Potsdam."
             }
         ),
 
         # --- CÂU 7 (số nhiều) ---
         (
-            "Các đại đô thị ở châu Âu. Câu nào dùng ĐÚNG tất cả các dạng số nhiều?",
+            "Câu 7: Câu nào dưới đây mô tả một đại đô thị châu Âu và dùng ĐÚNG tất cả các dạng số nhiều?",
             [
                 "In dieser Metropole gibt es drei Flughäfe, vier alte Schlösser, zwei große Einkaufszentren und viele grüne Parks.",
                 "In dieser Metropole gibt es drei Flughäfen, vier alte Schlösser, zwei große Einkaufszentren und viele grüne Parks.",
@@ -210,7 +210,7 @@ def build_lesson_8_seed():
                 "In dieser Metropole gibt es drei Flughäfen, vier alte Schlösser, zwei große Einkaufszentren und viele grüne Parken."
             ],
             "In dieser Metropole gibt es drei Flughäfen, vier alte Schlösser, zwei große Einkaufszentren und viele grüne Parks.",
-            "der Flughafen → die Flughäfen (biến âm a → ä và thêm -en); das Schloss → die Schlösser (thêm Umlaut và -er); das Einkaufszentrum → die Einkaufszentren (đuôi -um đổi thành -en); der Park → die Parks (mượn từ tiếng Anh, số nhiều thêm -s).",
+            "der Flughafen → die Flughäfen (chỉ biến âm a → ä, không thêm đuôi vì Flughafen đã kết thúc bằng -en); das Schloss → die Schlösser (biến âm + đuôi -er); das Einkaufszentrum → die Einkaufszentren (đuôi -um đổi thành -en); der Park → die Parks (từ vay mượn nước ngoài, số nhiều thêm -s).",
             {
                 "translation": "Ở đại đô thị này có ba sân bay, bốn lâu đài cổ, hai trung tâm thương mại lớn và nhiều công viên xanh mát."
             }
