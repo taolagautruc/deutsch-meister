@@ -1219,139 +1219,139 @@ def seed_lesson_8():
     exercises_raw = [
         {
                 "type": "trac_nghiem",
-                "question": "Câu 1: Ein Tourist steht am Punkt START und fragt nach dem Weg. Sie sagen: ‚Gehen Sie zuerst geradeaus über die erste Kreuzung! An der zweiten Kreuzung biegen Sie rechts ab. Gehen Sie dann am Krankenhaus vorbei bis zur Ampel. Direkt links neben der Ampel liegt das Gebäude.‘ — Welches Ziel sucht der Tourist?",
+                "question": "Một du khách đứng ở điểm START và hỏi đường. Hãy đọc lời chỉ đường, đối chiếu với bản đồ và chọn nơi du khách đang tìm.\n„Gehen Sie zuerst geradeaus über die erste Kreuzung! An der zweiten Kreuzung biegen Sie rechts ab. Gehen Sie dann am Krankenhaus vorbei bis zur Ampel. Direkt hinter der Ampel liegt das Gebäude links.“",
                 "options": [
-                        "A. Das Kino",
-                        "B. Den Bahnhof",
-                        "C. Das Schloss",
-                        "D. Die Post"
+                        "Das Schloss",
+                        "Das Kino",
+                        "Die Post",
+                        "Der Bahnhof"
                 ],
-                "correct_answer": "A. Das Kino",
-                "explanation": "Dò trên bản đồ từ START: đi thẳng qua ngã tư 1 -> đến ngã tư 2 rẽ phải -> đi ngang qua Bệnh viện ('am Krankenhaus vorbei') tới đèn giao thông ('bis zur Ampel'), nhìn sang bên trái ('links') chính là Rạp chiếu phim ('das Kino').",
+                "correct_answer": "Das Kino",
+                "explanation": "Từ START đi thẳng qua ngã tư 1 → ngã tư 2 rẽ phải (vào Behrenstr.) → đi qua Krankenhaus ('am Krankenhaus vorbei') tới Ampel ('bis zur Ampel') → ngay sau Ampel, bên trái là Kino.",
                 "exp_reward": 20,
                 "extra_data": {
                         "accepted_answers": [
-                                "A. Das Kino"
+                                "Das Kino"
                         ],
-                        "translation": "Một vị khách du lịch đứng ở điểm START và hỏi đường. Bạn nói: 'Đầu tiên Ngài hãy đi thẳng băng qua ngã tư thứ nhất! Ở ngã tư thứ hai Ngài rẽ phải. Sau đó Ngài đi ngang qua bệnh viện cho đến đèn giao thông. Ngay bên trái cạnh đèn giao thông là tòa nhà đó.' — Vị khách du lịch đang tìm đích đến nào?",
+                        "translation": "Đầu tiên bạn hãy đi thẳng qua ngã tư thứ nhất! Ở ngã tư thứ hai bạn hãy rẽ phải. Sau đó bạn đi qua bệnh viện cho đến đèn giao thông. Ngay phía sau đèn giao thông là tòa nhà ở bên trái.",
                         "visual_svg": "map_route_finder_1"
                 }
         },
         {
                 "type": "trac_nghiem",
-                "question": "Câu 2: Dein Freund Jonas möchte zum Einkaufszentrum gehen. Welche Wegbeschreibung passt genau zur blauen Route auf der Karte?",
+                "question": "Bạn của bạn là Jonas muốn đến Einkaufszentrum. Lời chỉ đường nào khớp chính xác với lộ trình màu xanh trên bản đồ?",
                 "options": [
-                        "A. Geh zuerst geradeaus, dann die dritte Straße links! Lauf durch den Park und über die Brücke! Rechts siehst du das Einkaufszentrum.",
-                        "B. Geh zuerst geradeaus, dann die zweite Straße rechts! Lauf am Park vorbei und durch die Brücke! Links siehst du das Einkaufszentrum.",
-                        "C. Geh zuerst die erste Straße links, dann durch dem Park und über der Brücke bis zum Einkaufszentrum!",
-                        "D. Geh geradeaus bis zur dritten Kreuzung rechts, dann den Park entlang und an der Brücke vorbei!"
+                        "Geh geradeaus und nimm die zweite Straße links. Geh über die Brücke und dann durch den Park. Das Einkaufszentrum liegt rechts.",
+                        "Geh geradeaus und nimm die dritte Straße rechts. Geh über die Brücke und dann durch den Park. Das Einkaufszentrum liegt rechts.",
+                        "Geh geradeaus und nimm die dritte Straße links. Geh über die Brücke und dann durch den Park. Das Einkaufszentrum liegt rechts.",
+                        "Geh geradeaus und nimm die dritte Straße links. Geh durch den Park und dann über die Brücke. Das Einkaufszentrum liegt rechts."
                 ],
-                "correct_answer": "A. Geh zuerst geradeaus, dann die dritte Straße links! Lauf durch den Park und über die Brücke! Rechts siehst du das Einkaufszentrum.",
-                "explanation": "Lộ trình trên bản đồ: đi thẳng ('geradeaus') -> rẽ trái ở đường thứ 3 ('die dritte Straße links') -> đi xuyên qua công viên ('durch den Park' — 'durch + Akkusativ' với 'der Park') -> đi qua cầu ('über die Brücke' — 'über + Akkusativ' với 'die Brücke').",
+                "correct_answer": "Geh geradeaus und nimm die dritte Straße links. Geh über die Brücke und dann durch den Park. Das Einkaufszentrum liegt rechts.",
+                "explanation": "Thứ tự trên bản đồ là đi thẳng → ngã tư thứ 3 rẽ trái → qua cầu ('über die Brücke') → xuyên công viên ('durch den Park') → Einkaufszentrum bên phải. Câu 'nimm die zweite Straße links' sai vì ngã rẽ thực tế là đường thứ ba. Câu 'dritte Straße rechts' sai vì đường rẽ sang bên trái. Câu 'durch den Park und dann über die Brücke' sai thứ tự vì trên lộ trình bạn đi qua cầu trước rồi mới đi xuyên qua công viên.",
                 "exp_reward": 20,
                 "extra_data": {
                         "accepted_answers": [
-                                "A. Geh zuerst geradeaus, dann die dritte Straße links! Lauf durch den Park und über die Brücke! Rechts siehst du das Einkaufszentrum."
+                                "Geh geradeaus und nimm die dritte Straße links. Geh über die Brücke und dann durch den Park. Das Einkaufszentrum liegt rechts."
                         ],
-                        "translation": "Người bạn Jonas của bạn muốn đi đến trung tâm thương mại. Lời chỉ đường nào khớp chính xác với lộ trình màu xanh trên bản đồ?",
+                        "translation": "Bạn hãy đi thẳng và đi vào con đường thứ ba bên trái. Hãy đi qua cầu và sau đó đi xuyên qua công viên. Trung tâm thương mại nằm ở bên phải.",
                         "visual_svg": "map_route_line_2"
                 }
         },
         {
                 "type": "trac_nghiem",
-                "question": "Câu 3: Welche Satzkette beschreibt die drei Bilder (1 -> 2 -> 3) grammatikalisch völlig korrekt?",
+                "question": "Chọn chuỗi câu tiếng Đức mô tả đúng ba hình (1 → 2 → 3) và hoàn toàn đúng ngữ pháp.",
                 "options": [
-                        "A. Zuerst gehen wir an der Staatsoper vorbei, dann den Fluss entlang und danach durch das Stadttor.",
-                        "B. Zuerst gehen wir an die Staatsoper vorbei, dann entlang dem Fluss und danach über das Stadttor.",
-                        "C. Zuerst gehen wir am Staatsoper vorbei, dann durch den Fluss und danach am Stadttor vorbei.",
-                        "D. Zuerst gehen wir durch die Staatsoper, dann über den Fluss und danach das Stadttor entlang."
+                        "Zuerst gehen wir an die Staatsoper vorbei, dann durch das Stadttor und danach den Fluss entlang.",
+                        "Zuerst gehen wir am Staatsoper vorbei, dann durch das Stadttor und danach den Fluss entlang.",
+                        "Zuerst gehen wir an der Staatsoper vorbei, dann durch das Stadttor und danach den Fluss entlang.",
+                        "Zuerst gehen wir an der Staatsoper vorbei, dann durch dem Stadttor und danach den Fluss entlang."
                 ],
-                "correct_answer": "A. Zuerst gehen wir an der Staatsoper vorbei, dann den Fluss entlang und danach durch das Stadttor.",
-                "explanation": "1. Đi ngang qua 'die Staatsoper' (giống cái) dùng 'an + Dativ + vorbei' -> an der Staatsoper vorbei. 2. Đi dọc theo 'der Fluss' (giống đực) dùng 'Akkusativ + entlang' -> den Fluss entlang. 3. Đi xuyên qua 'das Stadttor' (giống trung) dùng 'durch + Akkusativ' -> durch das Stadttor.",
+                "correct_answer": "Zuerst gehen wir an der Staatsoper vorbei, dann durch das Stadttor und danach den Fluss entlang.",
+                "explanation": "(1) die Staatsoper (giống cái) → 'an der Staatsoper vorbei' (an + Dativ). (2) das Stadttor (giống trung) → 'durch das Stadttor' (durch + Akkusativ). (3) der Fluss (giống đực) → 'den Fluss entlang' (entlang đặt sau danh từ + Akkusativ). Thứ tự khớp hình 1 → 2 → 3.",
                 "exp_reward": 20,
                 "extra_data": {
                         "accepted_answers": [
-                                "A. Zuerst gehen wir an der Staatsoper vorbei, dann den Fluss entlang und danach durch das Stadttor."
+                                "Zuerst gehen wir an der Staatsoper vorbei, dann durch das Stadttor und danach den Fluss entlang."
                         ],
-                        "translation": "Chuỗi câu nào miêu tả cả 3 bức hình (1 -> 2 -> 3) hoàn toàn đúng ngữ pháp?",
+                        "translation": "Đầu tiên chúng ta đi ngang qua Nhà hát Opera, sau đó đi xuyên qua cổng thành và tiếp theo đi dọc theo dòng sông.",
                         "visual_svg": "quiz_spatial_3_steps"
                 }
         },
         {
                 "type": "trac_nghiem",
-                "question": "Câu 4: Eine ältere Dame spricht Sie auf der Straße in Berlin an. Welcher Fragesatz ist grammatikalisch FALSCH?",
+                "question": "Một bà cụ lớn tuổi hỏi đường bạn trên phố ở Berlin. Câu hỏi nào dưới đây SAI ngữ pháp?",
                 "options": [
-                        "A. Entschuldigung, ich suche das Bundeskanzleramt.",
-                        "B. Entschuldigung, wie komme ich zum Museumsinsel?",
-                        "C. Entschuldigung, wo geht es hier zum Hauptbahnhof?",
-                        "D. Entschuldigung, wo ist hier eine Bank?"
+                        "Entschuldigung, wo finde ich das Bundeskanzleramt?",
+                        "Entschuldigung, wie komme ich zum Museumsinsel?",
+                        "Entschuldigung, wo ist hier eine Bank?",
+                        "Entschuldigung, wo geht es hier zum Hauptbahnhof?"
                 ],
-                "correct_answer": "B. Entschuldigung, wie komme ich zum Museumsinsel?",
-                "explanation": "Danh từ 'die Museumsinsel' (Đảo Bảo tàng) mang giống cái ('die' — vì 'die Insel'), nên khi đi với giới từ 'zu + Dativ' bắt buộc phải dùng 'zur Museumsinsel' ('zu + der'), không được dùng 'zum'.",
+                "correct_answer": "Entschuldigung, wie komme ich zum Museumsinsel?",
+                "explanation": "die Museumsinsel là danh từ giống cái (vì die Insel) → khi hỏi đường dùng cấu trúc zu + Dativ, zu + der biến thành 'zur Museumsinsel', không thể dùng 'zum' (zum = zu + dem, chỉ dành cho giống đực và giống trung). Các câu hỏi còn lại đều đúng ngữ pháp.",
                 "exp_reward": 20,
                 "extra_data": {
                         "accepted_answers": [
-                                "B. Entschuldigung, wie komme ich zum Museumsinsel?"
+                                "Entschuldigung, wie komme ich zum Museumsinsel?"
                         ],
-                        "translation": "Một bà lão hỏi chuyện bạn trên đường phố ở Berlin. Câu hỏi đường nào dưới đây bị SAI ngữ pháp?"
+                        "translation": "Xin lỗi, làm thế nào tôi đến được Đảo Bảo tàng?"
                 }
         },
         {
                 "type": "trac_nghiem",
-                "question": "Câu 5: Deine Freunde Clara und Tim suchen das historische Rathaus. Du erklärst ihnen den Weg auf der Karte: ‚Geht zuerst ___ Humboldt-Universität und ___ Berliner Dom vorbei, dann geradeaus bis ___ Ampel und über ___ Marktplatz!‘",
+                "question": "Bạn chỉ đường cho Clara và Tim trên bản đồ. Chọn đáp án điền đúng vào các chỗ trống.\n„Clara und Tim suchen das historische Rathaus. Du erklärst ihnen den Weg: ‚Geht zuerst ___ Humboldt-Universität und ___ Berliner Dom vorbei, dann geradeaus bis ___ Ampel und über ___ Marktplatz!‘“",
                 "options": [
-                        "A. an der / am / zur / den",
-                        "B. an die / an den / zu der / dem",
-                        "C. am / an der / zum / das",
-                        "D. an der / am / zum / den"
+                        "an der / am / zum / den",
+                        "an der / am / zur / dem",
+                        "an der / am / zur / den",
+                        "am / an der / zur / den"
                 ],
-                "correct_answer": "A. an der / am / zur / den",
-                "explanation": "'die Humboldt-Universität' (f) -> an der ... vorbei; 'der Berliner Dom' (m) -> am ... vorbei; 'die Ampel' (f) -> bis zur Ampel; 'der Marktplatz' (m) sau 'über + Akkusativ' -> über den Marktplatz.",
+                "correct_answer": "an der / am / zur / den",
+                "explanation": "die Humboldt-Universität (giống cái) → 'an der Humboldt-Universität vorbei' (an + Dativ); der Berliner Dom (giống đực) → 'am Berliner Dom vorbei' (an + dem = am); die Ampel (giống cái) → 'bis zur Ampel' (zu + der = zur); der Marktplatz (giống đực) đi với 'über + Akkusativ' khi chỉ hướng di chuyển → 'über den Marktplatz'.",
                 "exp_reward": 20,
                 "extra_data": {
                         "accepted_answers": [
-                                "A. an der / am / zur / den"
+                                "an der / am / zur / den"
                         ],
-                        "translation": "Hai người bạn Clara và Tim của bạn đang tìm tòa thị chính cổ. Bạn giải thích đường đi trên bản đồ cho họ: 'Đầu tiên các bạn hãy đi ngang qua Đại học Humboldt và Nhà thờ lớn Berlin, sau đó đi thẳng cho đến đèn giao thông và băng qua quảng trường chợ!'",
+                        "translation": "Clara và Tim đang tìm tòa thị chính lịch sử. Bạn giải thích đường đi cho họ: 'Đầu tiên các bạn hãy đi qua Đại học Humboldt và đi qua Nhà thờ lớn Berlin, sau đó đi thẳng cho đến đèn giao thông và đi băng qua quảng trường chợ!'",
                         "visual_svg": "map_route_line_3"
                 }
         },
         {
                 "type": "trac_nghiem",
-                "question": "Câu 6: In welcher Reihe haben ALLE vier Substantive denselben Artikel im Singular?",
+                "question": "Hàng nào có cả 4 danh từ cùng một mạo từ xác định ở số ít?",
                 "options": [
-                        "A. der Reichstag — der Hafen — der Fernsehturm — der Potsdamer Platz",
-                        "B. die Staatsoper — die Brücke — die Stadttor — die Friedrichstraße",
-                        "C. das Schloss — das Einkaufszentrum — das Bank — das Bundeskanzleramt",
-                        "D. der Bahnhof — der Markt — der Museumsinsel — der Zoo"
+                        "Staatsoper – Brücke – Stadttor – Friedrichstraße",
+                        "Schloss – Einkaufszentrum – Bank – Bundeskanzleramt",
+                        "Reichstag – Hafen – Fernsehturm – Potsdamer Platz",
+                        "Bahnhof – Markt – Museumsinsel – Zoo"
                 ],
-                "correct_answer": "A. der Reichstag — der Hafen — der Fernsehturm — der Potsdamer Platz",
-                "explanation": "Ở câu A, cả 4 danh từ đều mang giống đực ('der'): der Reichstag, der Hafen, der Fernsehturm, der Potsdamer Platz. (Câu B sai vì das Stadttor; Câu C sai vì die Bank; Câu D sai vì die Museumsinsel).",
+                "correct_answer": "Reichstag – Hafen – Fernsehturm – Potsdamer Platz",
+                "explanation": "Hàng 'Reichstag – Hafen – Fernsehturm – Potsdamer Platz' đều là danh từ giống đực mang mạo từ 'der' (der Reichstag, der Hafen, der Fernsehturm, der Potsdamer Platz). Hàng có Staatsoper lẫn 'das Stadttor' (còn lại là die). Hàng có Schloss lẫn 'die Bank' (còn lại là das). Hàng có Bahnhof lẫn 'die Museumsinsel' (còn lại là der).",
                 "exp_reward": 20,
                 "extra_data": {
                         "accepted_answers": [
-                                "A. der Reichstag — der Hafen — der Fernsehturm — der Potsdamer Platz"
+                                "Reichstag – Hafen – Fernsehturm – Potsdamer Platz"
                         ],
-                        "translation": "Ở dòng nào TẤT CẢ 4 danh từ đều có cùng một mạo từ ở dạng số ít?"
+                        "translation": "Tòa nhà Quốc hội – cảng biển – tháp truyền hình – Quảng trường Potsdam (đều là danh từ giống đực mang mạo từ 'der')."
                 }
         },
         {
                 "type": "trac_nghiem",
-                "question": "Câu 7: Großstädte in Europa: Welcher Satz verwendet ALLE Pluralformen korrekt?",
+                "question": "Các đại đô thị ở châu Âu. Câu nào dùng ĐÚNG tất cả các dạng số nhiều?",
                 "options": [
-                        "A. In dieser Metropole gibt es drei Flughäfen, vier alte Schlösser, zwei große Einkaufszentren und viele grüne Parks.",
-                        "B. In dieser Metropole gibt es drei Flughafën, vier alte Schlosse, zwei große Einkaufszentrums und viele grüne Parke.",
-                        "C. In dieser Metropole gibt es drei Flughäfe, vier alte Schlösse, zwei große Einkaufszentren und viele grüne Parks.",
-                        "D. In dieser Metropole gibt es zwei Hauptposten, fünf Bahnhofen und zehn Krankenhauser."
+                        "In dieser Metropole gibt es drei Flughäfe, vier alte Schlösser, zwei große Einkaufszentren und viele grüne Parks.",
+                        "In dieser Metropole gibt es drei Flughäfen, vier alte Schlösser, zwei große Einkaufszentren und viele grüne Parks.",
+                        "In dieser Metropole gibt es drei Flughäfen, vier alte Schlösser, zwei große Einkaufszentrums und viele grüne Parks.",
+                        "In dieser Metropole gibt es drei Flughäfen, vier alte Schlösser, zwei große Einkaufszentren und viele grüne Parken."
                 ],
-                "correct_answer": "A. In dieser Metropole gibt es drei Flughäfen, vier alte Schlösser, zwei große Einkaufszentren und viele grüne Parks.",
-                "explanation": "'der Flughafen' -> die Flughäfen; 'das Schloss' -> die Schlösser; 'das Einkaufszentrum' -> die Einkaufszentren; 'der Park' -> die Parks. (Lưu ý: die Post chỉ dùng ở số ít, Bahnhof -> Bahnhöfe, Krankenhaus -> Krankenhäuser).",
+                "correct_answer": "In dieser Metropole gibt es drei Flughäfen, vier alte Schlösser, zwei große Einkaufszentren und viele grüne Parks.",
+                "explanation": "der Flughafen → die Flughäfen (biến âm a → ä và thêm -en); das Schloss → die Schlösser (thêm Umlaut và -er); das Einkaufszentrum → die Einkaufszentren (đuôi -um đổi thành -en); der Park → die Parks (mượn từ tiếng Anh, số nhiều thêm -s).",
                 "exp_reward": 20,
                 "extra_data": {
                         "accepted_answers": [
-                                "A. In dieser Metropole gibt es drei Flughäfen, vier alte Schlösser, zwei große Einkaufszentren und viele grüne Parks."
+                                "In dieser Metropole gibt es drei Flughäfen, vier alte Schlösser, zwei große Einkaufszentren und viele grüne Parks."
                         ],
-                        "translation": "Các đại đô thị ở châu Âu: Câu nào sử dụng TẤT CẢ các dạng số nhiều chính xác?"
+                        "translation": "Ở đại đô thị này có ba sân bay, bốn lâu đài cổ, hai trung tâm thương mại lớn và nhiều công viên xanh mát."
                 }
         },
         {

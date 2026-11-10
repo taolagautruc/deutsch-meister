@@ -580,7 +580,7 @@
         return svg;
     }
 
-    // 1. map_route_finder_1 (Câu 1: START, ngã 1 qua thẳng, ngã 2 rẽ phải, qua Krankenhaus tới Ampel, bên trái là Kino)
+    // 1. map_route_finder_1 (Câu 1: START -> ngã 1 qua thẳng -> ngã 2 rẽ phải -> qua Krankenhaus bên trái -> tới Ampel ở ngã tư -> Kino bên trái ngay sau Ampel)
     function getMapRouteFinder1Svg() {
         return `
         <svg viewBox="0 0 520 320" width="100%" class="w-full max-w-xl mx-auto rounded-2xl shadow-sm border border-slate-300 bg-slate-900 overflow-hidden">
@@ -601,59 +601,60 @@
             <line x1="0" y1="60" x2="520" y2="60" stroke="#334155" stroke-width="2" stroke-dasharray="6 5"/>
 
             <!-- Tên các con đường -->
-            <text x="82" y="312" font-size="8" font-weight="bold" fill="#94a3b8" text-anchor="middle">Friedrichstr.</text>
-            <text x="242" y="312" font-size="8" font-weight="bold" fill="#94a3b8" text-anchor="middle">Wilhelmstr.</text>
-            <text x="402" y="312" font-size="8" font-weight="bold" fill="#94a3b8" text-anchor="middle">Alexanderstr.</text>
-            <text x="12" y="255" font-size="8" font-weight="bold" fill="#94a3b8">Leipziger Str.</text>
-            <text x="12" y="155" font-size="8" font-weight="bold" fill="#94a3b8">Behrenstr.</text>
-            <text x="12" y="55" font-size="8" font-weight="bold" fill="#94a3b8">Unter den Linden</text>
+            <text x="82" y="312" font-size="8.5" font-weight="bold" fill="#94a3b8" text-anchor="middle">Friedrichstr.</text>
+            <text x="242" y="312" font-size="8.5" font-weight="bold" fill="#94a3b8" text-anchor="middle">Wilhelmstr.</text>
+            <text x="402" y="312" font-size="8.5" font-weight="bold" fill="#94a3b8" text-anchor="middle">Alexanderstr.</text>
+            <text x="12" y="255" font-size="8.5" font-weight="bold" fill="#94a3b8">Leipziger Str.</text>
+            <text x="12" y="155" font-size="8.5" font-weight="bold" fill="#94a3b8">Behrenstr.</text>
+            <text x="12" y="55" font-size="8.5" font-weight="bold" fill="#94a3b8">Unter den Linden</text>
 
             <!-- Điểm START -->
             <circle cx="82" cy="290" r="12" fill="#ef4444" stroke="#ffffff" stroke-width="2.5"/>
             <text x="82" y="294" font-size="8.5" font-weight="black" fill="#ffffff" text-anchor="middle">START</text>
 
-            <!-- Tòa nhà Krankenhaus (ở giữa ngã 2 trên Behrenstraße) -->
-            <rect x="120" y="95" width="85" height="38" rx="6" fill="#1e3a8a" stroke="#3b82f6" stroke-width="1.5"/>
-            <text x="162.5" y="114" font-size="12" text-anchor="middle">🏥</text>
-            <text x="162.5" y="126" font-size="8.5" font-weight="bold" fill="#bfdbfe" text-anchor="middle">Krankenhaus</text>
+            <!-- Tòa nhà Krankenhaus (nằm bên trái của đường Behrenstraße, trước khi tới ngã tư Ampel) -->
+            <rect x="120" y="92" width="85" height="40" rx="6" fill="#1e3a8a" stroke="#3b82f6" stroke-width="1.5"/>
+            <text x="162.5" y="112" font-size="12" text-anchor="middle">🏥</text>
+            <text x="162.5" y="125" font-size="8.5" font-weight="bold" fill="#bfdbfe" text-anchor="middle">Krankenhaus</text>
 
-            <!-- Cột đèn giao thông Ampel tại ngã tư Wilhelmstr./Behrenstr. -->
-            <rect x="268" y="142" width="12" height="24" rx="2" fill="#020617" stroke="#eab308" stroke-width="1"/>
-            <circle cx="274" cy="147" r="2.5" fill="#ef4444"/>
-            <circle cx="274" cy="154" r="2.5" fill="#f59e0b"/>
-            <circle cx="274" cy="161" r="2.5" fill="#10b981"/>
-            <text x="274" y="137" font-size="7" font-weight="bold" fill="#fde047" text-anchor="middle">Ampel 🚦</text>
+            <!-- Cột đèn giao thông Ampel tại đúng ngã tư Behrenstr. x Wilhelmstr. -->
+            <rect x="236" y="142" width="12" height="24" rx="2" fill="#020617" stroke="#eab308" stroke-width="1"/>
+            <circle cx="242" cy="147" r="2.5" fill="#ef4444"/>
+            <circle cx="242" cy="154" r="2.5" fill="#f59e0b"/>
+            <circle cx="242" cy="161" r="2.5" fill="#10b981"/>
+            <text x="242" y="136" font-size="7.5" font-weight="bold" fill="#fde047" text-anchor="middle">Ampel 🚦</text>
 
-            <!-- Tòa nhà Kino (nằm bên trái bên cạnh cột đèn giao thông) -->
-            <rect x="285" y="95" width="80" height="38" rx="6" fill="#581c87" stroke="#a855f7" stroke-width="1.5"/>
-            <text x="325" y="114" font-size="12" text-anchor="middle">🎬</text>
-            <text x="325" y="126" font-size="8.5" font-weight="bold" fill="#e9d5ff" text-anchor="middle">Kino</text>
+            <!-- Tòa nhà Kino (nằm bên trái ngay sau Ampel trên Behrenstraße) -->
+            <rect x="275" y="92" width="85" height="40" rx="6" fill="#581c87" stroke="#a855f7" stroke-width="1.5"/>
+            <text x="317.5" y="112" font-size="12" text-anchor="middle">🎬</text>
+            <text x="317.5" y="125" font-size="8.5" font-weight="bold" fill="#e9d5ff" text-anchor="middle">Kino</text>
 
-            <!-- Tòa nhà khác gây nhiễu: Schloss, Post, Bahnhof -->
+            <!-- Tòa nhà khác: Schloss, Post, Bahnhof -->
             <rect x="120" y="5" width="85" height="30" rx="5" fill="#3f3f46" stroke="#71717a" stroke-width="1.5"/>
             <text x="162.5" y="24" font-size="8" font-weight="bold" fill="#e4e4e7" text-anchor="middle">🏰 Schloss</text>
 
-            <rect x="435" y="95" width="75" height="38" rx="6" fill="#854d0e" stroke="#eab308" stroke-width="1.5"/>
-            <text x="472.5" y="114" font-size="12" text-anchor="middle">📮</text>
-            <text x="472.5" y="126" font-size="8.5" font-weight="bold" fill="#fef08a" text-anchor="middle">Post</text>
+            <rect x="435" y="92" width="75" height="40" rx="6" fill="#854d0e" stroke="#eab308" stroke-width="1.5"/>
+            <text x="472.5" y="112" font-size="12" text-anchor="middle">📮</text>
+            <text x="472.5" y="125" font-size="8.5" font-weight="bold" fill="#fef08a" text-anchor="middle">Post</text>
 
             <rect x="435" y="242" width="75" height="35" rx="5" fill="#1e293b" stroke="#64748b" stroke-width="1.5"/>
             <text x="472.5" y="264" font-size="8" font-weight="bold" fill="#cbd5e1" text-anchor="middle">🚉 Bahnhof</text>
         </svg>`;
     }
 
-    // 2. map_route_line_2 (Câu 2: Route xanh dương đi thẳng qua ngã 1, 2, đến đường thứ 3 rẽ trái, qua Park, qua Brücke, tới Einkaufszentrum)
+    // 2. map_route_line_2 (Câu 2: START -> thẳng -> ngã tư 3 rẽ trái -> qua Brücke trước -> xuyên Park sau -> Einkaufszentrum bên phải)
     function getMapRouteLine2Svg() {
         return `
         <svg viewBox="0 0 520 320" width="100%" class="w-full max-w-xl mx-auto rounded-2xl shadow-sm border border-slate-300 bg-slate-900 overflow-hidden">
             <rect x="0" y="0" width="520" height="320" fill="#0f172a"/>
             <!-- Dòng sông xanh chạy dọc bên trái -->
-            <rect x="135" y="0" width="30" height="320" fill="#0284c7"/>
-            <text x="150" y="160" font-size="7" font-weight="bold" fill="#bae6fd" text-anchor="middle" transform="rotate(-90 150 160)">Spree</text>
+            <rect x="145" y="0" width="30" height="320" fill="#0284c7"/>
+            <text x="160" y="30" font-size="8.5" font-weight="bold" fill="#bae6fd" text-anchor="middle">Spree</text>
+            <text x="160" y="290" font-size="8.5" font-weight="bold" fill="#bae6fd" text-anchor="middle">Spree</text>
 
-            <!-- Khối công viên Park ở giữa bên trái -->
-            <rect x="65" y="55" width="60" height="110" rx="8" fill="#065f46" stroke="#059669" stroke-width="1.5"/>
-            <text x="95" y="115" font-size="9" font-weight="bold" fill="#6ee7b7" text-anchor="middle">🌳 Park</text>
+            <!-- Khối công viên Park ở góc bên trái, phía dưới đường số 3 (không chồng lên Einkaufszentrum) -->
+            <rect x="45" y="60" width="80" height="85" rx="8" fill="#065f46" stroke="#059669" stroke-width="1.5"/>
+            <text x="85" y="130" font-size="8.5" font-weight="bold" fill="#6ee7b7" text-anchor="middle">🌳 Park</text>
 
             <!-- Lưới đường -->
             <rect x="200" y="0" width="40" height="320" fill="#1e293b"/>
@@ -664,69 +665,70 @@
             <rect x="0" y="160" width="520" height="36" fill="#1e293b"/>
             <rect x="0" y="60" width="520" height="36" fill="#1e293b"/>
 
-            <!-- Cầu bắc qua sông Spree trên đường số 3 -->
-            <rect x="133" y="58" width="34" height="40" rx="2" fill="#475569" stroke="#94a3b8" stroke-width="1.5"/>
-            <text x="150" y="53" font-size="7.5" font-weight="bold" fill="#cbd5e1" text-anchor="middle">🌉 Brücke</text>
+            <!-- Cầu bắc qua sông Spree trên đường số 3 (gọn gàng, không che đường xanh) -->
+            <rect x="143" y="56" width="34" height="44" rx="2" fill="#334155" stroke="#94a3b8" stroke-width="1.5"/>
+            <line x1="143" y1="58" x2="177" y2="58" stroke="#cbd5e1" stroke-width="2.5"/>
+            <line x1="143" y1="98" x2="177" y2="98" stroke="#cbd5e1" stroke-width="2.5"/>
+            <text x="160" y="50" font-size="8" font-weight="bold" fill="#cbd5e1" text-anchor="middle">🌉 Brücke</text>
 
             <!-- START trên đường dọc chính -->
             <circle cx="220" cy="295" r="11" fill="#ef4444" stroke="#ffffff" stroke-width="2"/>
             <text x="220" y="299" font-size="8" font-weight="black" fill="#ffffff" text-anchor="middle">START</text>
 
-            <!-- Tòa nhà Einkaufszentrum ở bên phải sau khi qua công viên -->
-            <rect x="10" y="7" width="115" height="42" rx="6" fill="#064e3b" stroke="#10b981" stroke-width="1.5"/>
-            <text x="67.5" y="25" font-size="11" text-anchor="middle">🛍️</text>
-            <text x="67.5" y="38" font-size="8" font-weight="bold" fill="#a7f3d0" text-anchor="middle">Einkaufszentrum</text>
+            <!-- Tòa nhà Einkaufszentrum ở bên phải sau khi qua công viên (phía bắc đường, không chồng lên Park) -->
+            <rect x="10" y="8" width="115" height="44" rx="6" fill="#064e3b" stroke="#10b981" stroke-width="1.5"/>
+            <text x="67.5" y="26" font-size="11" text-anchor="middle">🛍️</text>
+            <text x="67.5" y="40" font-size="8.5" font-weight="bold" fill="#a7f3d0" text-anchor="middle">Einkaufszentrum</text>
 
-            <!-- ĐƯỜNG VẼ MÀU XANH DƯƠNG (blaue Route) -->
-            <path d="M 220 295 L 220 78 L 60 78 L 60 49" fill="none" stroke="#3b82f6" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
-            <path d="M 220 295 L 220 78 L 60 78 L 60 49" fill="none" stroke="#93c5fd" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="6 4"/>
+            <!-- ĐƯỜNG VẼ MÀU XANH DƯƠNG (blaue Route): Đi thẳng -> ngã 3 rẽ trái -> qua cầu -> xuyên qua công viên -> Einkaufszentrum bên phải -->
+            <path d="M 220 295 L 220 78 L 35 78 L 35 52" fill="none" stroke="#3b82f6" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M 220 295 L 220 78 L 35 78 L 35 52" fill="none" stroke="#93c5fd" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="6 4"/>
             <polygon points="220,185 214,197 226,197" fill="#1d4ed8"/>
-            <polygon points="120,78 132,72 132,84" fill="#1d4ed8"/>
-            <circle cx="60" cy="49" r="6" fill="#3b82f6" stroke="#ffffff" stroke-width="1.5"/>
+            <polygon points="160,78 172,72 172,84" fill="#1d4ed8"/>
+            <polygon points="85,78 97,72 97,84" fill="#1d4ed8"/>
+            <circle cx="35" cy="52" r="6" fill="#3b82f6" stroke="#ffffff" stroke-width="1.5"/>
         </svg>`;
     }
 
-    // 3. quiz_spatial_3_steps (Câu 3: Sơ đồ 3 bước 1. Vorbei, 2. Durch, 3. Entlang - KHÔNG CHỮ GỢI Ý NGỮ PHÁP)
+    // 3. quiz_spatial_3_steps (Câu 3: Sơ đồ 3 hình 1 -> 2 -> 3: Staatsoper, Stadttor, Fluss)
     function getQuizSpatial3StepsSvg() {
         return `
         <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 my-2">
             <div class="p-3 rounded-2xl bg-slate-50 border border-slate-200 text-center space-y-1.5">
-                <span class="text-xs font-black text-blue-700 bg-blue-100 px-2 py-0.5 rounded-full">Bước 1</span>
+                <span class="inline-flex items-center justify-center w-6 h-6 rounded-full bg-blue-600 text-white font-black text-xs">1</span>
                 <svg viewBox="0 0 160 120" width="100%" class="rounded-xl border border-slate-200 bg-white mx-auto">
                     <rect x="0" y="0" width="160" height="120" fill="#f8fafc"/>
                     <rect x="15" y="0" width="50" height="120" fill="#334155"/>
                     <rect x="80" y="25" width="70" height="70" rx="6" fill="#e2e8f0" stroke="#64748b" stroke-width="1.5"/>
-                    <text x="115" y="55" font-size="16" text-anchor="middle">🏛️</text>
-                    <text x="115" y="75" font-size="8.5" font-weight="bold" fill="#334155" text-anchor="middle">Museum</text>
+                    <text x="115" y="55" font-size="16" text-anchor="middle">🎭</text>
+                    <text x="115" y="75" font-size="8.5" font-weight="bold" fill="#334155" text-anchor="middle">Staatsoper</text>
                     <path d="M 40 110 L 40 18" fill="none" stroke="#2563eb" stroke-width="5" stroke-linecap="round"/>
                     <polygon points="40,10 32,25 48,25" fill="#1d4ed8"/>
                     <circle cx="40" cy="110" r="4" fill="#1d4ed8"/>
                 </svg>
-                <div class="text-[11px] text-slate-500 font-medium">Lướt ngoài rìa tòa nhà</div>
             </div>
 
             <div class="p-3 rounded-2xl bg-slate-50 border border-slate-200 text-center space-y-1.5">
-                <span class="text-xs font-black text-rose-700 bg-rose-100 px-2 py-0.5 rounded-full">Bước 2</span>
+                <span class="inline-flex items-center justify-center w-6 h-6 rounded-full bg-rose-600 text-white font-black text-xs">2</span>
                 <svg viewBox="0 0 160 120" width="100%" class="rounded-xl border border-slate-200 bg-white mx-auto">
                     <rect x="0" y="0" width="160" height="120" fill="#f8fafc"/>
                     <rect x="55" y="0" width="50" height="120" fill="#334155"/>
-                    <rect x="15" y="40" width="130" height="40" rx="4" fill="#cbd5e1" stroke="#475569" stroke-width="2"/>
-                    <path d="M 60 80 L 60 55 A 20 20 0 0 1 100 55 L 100 80 Z" fill="#334155"/>
-                    <text x="80" y="32" font-size="8" font-weight="bold" fill="#475569" text-anchor="middle">⛩️ Stadttor</text>
+                    <rect x="15" y="42" width="130" height="42" rx="4" fill="#cbd5e1" stroke="#475569" stroke-width="2"/>
+                    <path d="M 60 84 L 60 58 A 20 20 0 0 1 100 58 L 100 84 Z" fill="#334155"/>
+                    <text x="80" y="32" font-size="8.5" font-weight="bold" fill="#334155" text-anchor="middle">🏰 Stadttor</text>
                     <path d="M 80 112 L 80 12" fill="none" stroke="#e11d48" stroke-width="5" stroke-linecap="round"/>
                     <polygon points="80,5 72,20 88,20" fill="#be123c"/>
                     <circle cx="80" cy="112" r="4" fill="#be123c"/>
                 </svg>
-                <div class="text-[11px] text-slate-500 font-medium">Đâm xuyên qua cổng</div>
             </div>
 
             <div class="p-3 rounded-2xl bg-slate-50 border border-slate-200 text-center space-y-1.5">
-                <span class="text-xs font-black text-emerald-700 bg-emerald-100 px-2 py-0.5 rounded-full">Bước 3</span>
+                <span class="inline-flex items-center justify-center w-6 h-6 rounded-full bg-emerald-600 text-white font-black text-xs">3</span>
                 <svg viewBox="0 0 160 120" width="100%" class="rounded-xl border border-slate-200 bg-white mx-auto">
                     <rect x="0" y="0" width="160" height="120" fill="#f8fafc"/>
-                    <!-- Bờ kênh nước -->
+                    <!-- Bờ sông -->
                     <rect x="110" y="0" width="50" height="120" fill="#38bdf8"/>
-                    <text x="135" y="65" font-size="7.5" font-weight="bold" fill="#0369a1" text-anchor="middle" transform="rotate(-90 135 65)">Kanal</text>
+                    <text x="135" y="65" font-size="8" font-weight="bold" fill="#0369a1" text-anchor="middle" transform="rotate(-90 135 65)">Fluss</text>
                     <!-- Con đường song song -->
                     <rect x="30" y="0" width="60" height="120" fill="#334155"/>
                     <path d="M 60 110 L 60 15" fill="none" stroke="#16a34a" stroke-width="5" stroke-linecap="round"/>
@@ -737,42 +739,54 @@
                     <circle cx="20" cy="70" r="6" fill="#10b981"/>
                     <circle cx="20" cy="100" r="6" fill="#10b981"/>
                 </svg>
-                <div class="text-[11px] text-slate-500 font-medium">Chạy dọc theo bờ kênh</div>
             </div>
         </div>`;
     }
 
-    // 4. map_route_line_3 (Câu 5: Bản đồ lộ trình đỏ rẽ nhầm ngã 1 thay vì ngã 2)
+    // 4. map_route_line_3 (Câu 5: START -> qua Humboldt-Universität -> qua Berliner Dom -> tới Ampel -> qua Marktplatz -> Rathaus)
     function getMapRouteLine3Svg() {
         return `
-        <svg viewBox="0 0 500 300" width="100%" class="w-full max-w-xl mx-auto rounded-2xl shadow-sm border border-slate-300 bg-slate-900 overflow-hidden">
-            <rect x="0" y="0" width="500" height="300" fill="#0f172a"/>
+        <svg viewBox="0 0 520 300" width="100%" class="w-full max-w-xl mx-auto rounded-2xl shadow-sm border border-slate-300 bg-slate-900 overflow-hidden">
+            <rect x="0" y="0" width="520" height="300" fill="#0f172a"/>
             <!-- Lưới đường -->
-            <rect x="70" y="0" width="44" height="300" fill="#1e293b"/>
-            <rect x="250" y="0" width="44" height="300" fill="#1e293b"/>
-            <rect x="0" y="210" width="500" height="40" fill="#1e293b"/>
-            <rect x="0" y="80" width="500" height="40" fill="#1e293b"/>
-
-            <text x="20" y="235" font-size="8.5" font-weight="bold" fill="#94a3b8">1. Kreuzung</text>
-            <text x="20" y="105" font-size="8.5" font-weight="bold" fill="#94a3b8">2. Kreuzung</text>
+            <rect x="65" y="0" width="46" height="300" fill="#1e293b"/>
+            <line x1="88" y1="0" x2="88" y2="300" stroke="#334155" stroke-width="2" stroke-dasharray="6 5"/>
+            <rect x="0" y="55" width="520" height="42" fill="#1e293b"/>
+            <line x1="0" y1="76" x2="520" y2="76" stroke="#334155" stroke-width="2" stroke-dasharray="6 5"/>
 
             <!-- START -->
-            <circle cx="92" cy="280" r="11" fill="#3b82f6" stroke="#ffffff" stroke-width="2"/>
-            <text x="92" y="284" font-size="8" font-weight="black" fill="#ffffff" text-anchor="middle">START</text>
+            <circle cx="88" cy="265" r="12" fill="#3b82f6" stroke="#ffffff" stroke-width="2.5"/>
+            <text x="88" y="269" font-size="8.5" font-weight="black" fill="#ffffff" text-anchor="middle">START</text>
 
-            <!-- Tòa nhà Bank ở ngã 2 -->
-            <rect x="135" y="45" width="80" height="32" rx="4" fill="#1e3a8a" stroke="#3b82f6" stroke-width="1.5"/>
-            <text x="175" y="66" font-size="8.5" font-weight="bold" fill="#bfdbfe" text-anchor="middle">🏦 Bank</text>
+            <!-- Tòa nhà Humboldt-Universität bên lề đường (ngang qua) -->
+            <rect x="125" y="190" width="130" height="38" rx="5" fill="#1e293b" stroke="#64748b" stroke-width="1.5"/>
+            <text x="190" y="214" font-size="8.5" font-weight="bold" fill="#e2e8f0" text-anchor="middle">🏛️ Humboldt-Universität</text>
 
-            <!-- Tòa nhà Schloss ở cuối đường -->
-            <rect x="320" y="45" width="80" height="32" rx="4" fill="#3f3f46" stroke="#71717a" stroke-width="1.5"/>
-            <text x="360" y="66" font-size="8.5" font-weight="bold" fill="#e4e4e7" text-anchor="middle">🏰 Schloss</text>
+            <!-- Tòa nhà Berliner Dom bên lề đường (ngang qua) -->
+            <rect x="125" y="115" width="130" height="38" rx="5" fill="#3f3f46" stroke="#71717a" stroke-width="1.5"/>
+            <text x="190" y="139" font-size="8.5" font-weight="bold" fill="#fef08a" text-anchor="middle">⛪ Berliner Dom</text>
 
-            <!-- Đường vẽ màu đỏ SAI: Rẽ phải ngay ở ngã 1 (210) thay vì ngã 2 (80) -->
-            <path d="M 92 280 L 92 230 L 360 230" fill="none" stroke="#ef4444" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
-            <polygon points="200,230 188,224 188,236" fill="#b91c1c"/>
-            <circle cx="360" cy="230" r="7" fill="#ef4444" stroke="#ffffff" stroke-width="2"/>
-            <text x="360" y="215" font-size="8" font-weight="black" fill="#ef4444" text-anchor="middle">⚠️ Rẽ nhầm ở đây</text>
+            <!-- Cột đèn giao thông Ampel tại ngã rẽ -->
+            <rect x="115" y="60" width="12" height="24" rx="2" fill="#000" stroke="#f59e0b" stroke-width="1"/>
+            <circle cx="121" cy="65" r="2" fill="#ef4444"/>
+            <circle cx="121" cy="72" r="2" fill="#f59e0b"/>
+            <circle cx="121" cy="79" r="2" fill="#10b981"/>
+            <text x="121" y="52" font-size="7.5" font-weight="bold" fill="#fde047" text-anchor="middle">Ampel 🚦</text>
+
+            <!-- Quảng trường Marktplatz -->
+            <circle cx="270" cy="76" r="32" fill="#fef3c7" stroke="#f59e0b" stroke-width="2"/>
+            <text x="270" y="79" font-size="8.5" font-weight="extrabold" fill="#92400e" text-anchor="middle">Marktplatz</text>
+
+            <!-- Tòa thị chính Rathaus (ĐÍCH ĐẾN) -->
+            <rect x="350" y="45" width="145" height="48" rx="6" fill="#854d0e" stroke="#eab308" stroke-width="2"/>
+            <text x="422.5" y="68" font-size="12" text-anchor="middle">🏛️</text>
+            <text x="422.5" y="82" font-size="9" font-weight="black" fill="#fef08a" text-anchor="middle">Rathaus (ZIEL)</text>
+
+            <!-- Lộ trình màu xanh dương từ START -> qua Universität -> qua Dom -> tới Ampel -> qua Marktplatz -> Rathaus -->
+            <path d="M 88 265 L 88 76 L 350 76" fill="none" stroke="#3b82f6" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+            <polygon points="88,155 82,167 94,167" fill="#2563eb"/>
+            <polygon points="175,76 163,70 163,82" fill="#2563eb"/>
+            <polygon points="320,76 308,70 308,82" fill="#2563eb"/>
         </svg>`;
     }
 
@@ -979,92 +993,92 @@
         if (!svgKey) return '';
 
         let innerContent = '';
-        let badgeLabel = 'SƠ ĐỒ CHỈ ĐƯỜNG';
+        let badgeLabel = 'BẢN ĐỒ';
         let badgeColor = 'bg-blue-100 text-blue-800 border-blue-300';
 
         switch (svgKey) {
             case 'map_route_finder_1':
                 innerContent = getMapRouteFinder1Svg();
-                badgeLabel = 'BẢN ĐỒ ĐỊNH HƯỚNG: TÌM ĐÍCH ĐẾN';
-                badgeColor = 'bg-rose-100 text-rose-800 border-rose-300';
+                badgeLabel = 'BẢN ĐỒ';
+                badgeColor = 'bg-blue-100 text-blue-800 border-blue-300';
                 break;
             case 'map_route_line_2':
                 innerContent = getMapRouteLine2Svg();
-                badgeLabel = 'BẢN ĐỒ: LỘ TRÌNH MÀU XANH DƯƠNG';
+                badgeLabel = 'BẢN ĐỒ';
                 badgeColor = 'bg-blue-100 text-blue-800 border-blue-300';
                 break;
             case 'quiz_spatial_3_steps':
                 innerContent = getQuizSpatial3StepsSvg();
-                badgeLabel = 'SƠ ĐỒ 3 BƯỚC KHÔNG GIAN THỰC CHIẾN';
+                badgeLabel = 'HÌNH MINH HỌA';
                 badgeColor = 'bg-indigo-100 text-indigo-800 border-indigo-300';
                 break;
             case 'map_route_line_3':
                 innerContent = getMapRouteLine3Svg();
-                badgeLabel = 'BẢN ĐỒ: KIỂM TRA LỖI LỘ TRÌNH ĐỎ';
-                badgeColor = 'bg-amber-100 text-amber-800 border-amber-300';
+                badgeLabel = 'BẢN ĐỒ';
+                badgeColor = 'bg-blue-100 text-blue-800 border-blue-300';
                 break;
             case 'map_error_check_1':
                 innerContent = getMapErrorCheck1Svg();
-                badgeLabel = 'BẢN ĐỒ: LỘ TRÌNH TỪ GA TRUNG TÂM';
+                badgeLabel = 'BẢN ĐỒ';
                 badgeColor = 'bg-amber-100 text-amber-800 border-amber-300';
                 break;
             case 'map_fill_1':
                 innerContent = getMapFill1Svg();
-                badgeLabel = 'SƠ ĐỒ LỘ TRÌNH ĐIỀN KHUYẾT 1';
+                badgeLabel = 'BẢN ĐỒ';
                 badgeColor = 'bg-emerald-100 text-emerald-800 border-emerald-300';
                 break;
             case 'map_fill_2':
                 innerContent = getMapFill2Svg();
-                badgeLabel = 'SƠ ĐỒ LỘ TRÌNH ĐIỀN KHUYẾT 2';
+                badgeLabel = 'BẢN ĐỒ';
                 badgeColor = 'bg-emerald-100 text-emerald-800 border-emerald-300';
                 break;
             case 'quiz_icon_bridge':
                 innerContent = getQuizIconBridgeSvg();
-                badgeLabel = 'HÌNH ẢNH MINH HỌA VƯỢT CẦU';
+                badgeLabel = 'HÌNH MINH HỌA';
                 badgeColor = 'bg-teal-100 text-teal-800 border-teal-300';
                 break;
             case 'quiz_icon_gate':
                 innerContent = getQuizIconGateSvg();
-                badgeLabel = 'HÌNH ẢNH MINH HỌA XUYÊN CỔNG';
+                badgeLabel = 'HÌNH MINH HỌA';
                 badgeColor = 'bg-rose-100 text-rose-800 border-rose-300';
                 break;
             case 'quiz_icon_along':
                 innerContent = getQuizIconAlongSvg();
-                badgeLabel = 'HÌNH ẢNH MINH HỌA DỌC BỜ / CON ĐƯỜNG';
+                badgeLabel = 'HÌNH MINH HỌA';
                 badgeColor = 'bg-amber-100 text-amber-800 border-amber-300';
                 break;
             case 'map_build_1':
                 innerContent = getMapBuild1Svg();
-                badgeLabel = 'SƠ ĐỒ TẠO CÂU CHỈ ĐƯỜNG 1';
+                badgeLabel = 'BẢN ĐỒ';
                 badgeColor = 'bg-indigo-100 text-indigo-800 border-indigo-300';
                 break;
             case 'map_build_2':
                 innerContent = getMapBuild2Svg();
-                badgeLabel = 'SƠ ĐỒ TẠO CÂU CHỈ ĐƯỜNG 2';
+                badgeLabel = 'BẢN ĐỒ';
                 badgeColor = 'bg-purple-100 text-purple-800 border-purple-300';
                 break;
             case 'city_grid_map_quiz_1':
                 innerContent = getCityGridMapSvg('route1', 'quiz1');
-                badgeLabel = 'BẢN ĐỒ LƯỚI ĐƯỜNG PHỐ — LỘ TRÌNH 1';
+                badgeLabel = 'BẢN ĐỒ';
                 badgeColor = 'bg-blue-100 text-blue-800 border-blue-300';
                 break;
             case 'city_grid_map_quiz_2':
                 innerContent = getCityGridMapSvg('route2', 'quiz2');
-                badgeLabel = 'BẢN ĐỒ LƯỚI ĐƯỜNG PHỐ — LỘ TRÌNH 2';
+                badgeLabel = 'BẢN ĐỒ';
                 badgeColor = 'bg-emerald-100 text-emerald-800 border-emerald-300';
                 break;
             default:
                 if (svgKey.startsWith('direction_card_')) {
                     const cardCode = svgKey.replace('direction_card_', '');
                     innerContent = `<div class="flex justify-center my-3">${getCleanDirectionSvg(cardCode, 200, 140)}</div>`;
-                    badgeLabel = `HÌNH CHỈ ĐƯỜNG: ${cardCode.toUpperCase()}`;
+                    badgeLabel = 'HÌNH MINH HỌA';
                 } else if (svgKey === 'spatial_diagram_vorbei') {
                     innerContent = `<div class="my-3">${getSpatialDiagramSvg('vorbei', 340, 180)}</div>`;
-                    badgeLabel = 'SƠ ĐỒ KHÔNG GIAN';
+                    badgeLabel = 'HÌNH MINH HỌA';
                     badgeColor = 'bg-indigo-100 text-indigo-800 border-indigo-300';
                 } else if (svgKey === 'spatial_contrast_tor_bruecke') {
                     innerContent = `<div class="my-3">${getSpatialContrastSvg()}</div>`;
-                    badgeLabel = 'ĐỐI CHIẾU KHÔNG GIAN';
+                    badgeLabel = 'HÌNH MINH HỌA';
                     badgeColor = 'bg-purple-100 text-purple-800 border-purple-300';
                 } else {
                     return '';
@@ -1077,7 +1091,6 @@
                 <span class="px-2.5 py-0.5 rounded-full text-xs font-extrabold border ${badgeColor}">
                     ${badgeLabel}
                 </span>
-                <span class="text-[11px] text-slate-500 font-medium">Quan sát hình minh họa & định hướng</span>
             </div>
             ${innerContent}
         </div>`;
