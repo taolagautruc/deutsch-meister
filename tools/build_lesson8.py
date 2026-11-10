@@ -215,137 +215,161 @@ def build_lesson_8_seed():
                 "translation": "Ở đại đô thị này có ba sân bay, bốn lâu đài cổ, hai trung tâm thương mại lớn và nhiều công viên xanh mát."
             }
         ),
+        # --- CÂU 8 (Banken / Bänken) ---
         (
-            "Câu 8: Ergänzen Sie die passenden Pluralformen: ‚In der Innenstadt arbeiten viele Menschen in den internationalen ___, und im Stadtpark sitzen die Rentner gern auf den sonnigen ___.‘",
+            """Câu 8: Chọn đáp án điền đúng vào hai chỗ trống.
+‚In der Innenstadt arbeiten viele Menschen in den internationalen ___, und im Stadtpark sitzen die Rentner gern auf den sonnigen ___.‘""",
             [
-                "A. Banken / Bänken",
-                "B. Bänken / Banken",
-                "C. Banken / Banken",
-                "D. Bänke / Bänke"
+                "Banken / Banken",
+                "Banken / Bänken",
+                "Bänken / Bänken",
+                "Banken / Bänke"
             ],
-            "A. Banken / Bänken",
-            "'die Bank' nghĩa là ngân hàng có số nhiều là 'die Banken' (ở Dativ Plural sau 'in den' là Banken). 'die Bank' nghĩa là ghế băng dài có số nhiều là 'die Bänke' (ở Dativ Plural sau 'auf den' thêm -n thành Bänken).",
-            {"translation": "Điền dạng số nhiều phù hợp: 'Ở khu trung tâm thành phố nhiều người làm việc trong các ngân hàng quốc tế, và trong công viên thành phố những người hưu trí thích ngồi trên những chiếc ghế băng dài đầy nắng.'"}
+            "Banken / Bänken",
+            "Cùng một từ 'die Bank' nhưng hai nghĩa có hai số nhiều khác nhau: ngân hàng → 'die Banken'; ghế băng → 'die Bänke' (có Umlaut). Sau 'in den' và 'auf den' (Dativ số nhiều) danh từ phải có đuôi -n: 'in den Banken' (đã có sẵn -n), 'auf den Bänken'. Đáp án 'Banken' cho ghế băng thiếu Umlaut; 'Bänken' cho ngân hàng dùng sai dạng; 'Bänke' thiếu đuôi -n ở Dativ số nhiều.",
+            {"translation": "Ở khu trung tâm thành phố, nhiều người làm việc trong các ngân hàng quốc tế, còn trong công viên thành phố, những người về hưu thích ngồi trên những chiếc ghế băng đầy nắng."}
         ),
+        # --- CÂU 9 (Staatsoper / Alexanderplatz) ---
         (
-            "Câu 9: Am Samstagabend möchten meine Cousine und ich ___ Staatsoper gehen, denn heute singt ein berühmter Tenor ___ Staatsoper. Davor fahren wir noch kurz ___ Alexanderplatz.",
+            """Câu 9: Chọn đáp án điền đúng vào ba chỗ trống.
+Am Samstagabend möchten meine Cousine und ich ___ Staatsoper gehen, denn dann singt ein berühmter Tenor ___ Staatsoper. Davor fahren wir noch kurz ___ Alexanderplatz.""",
             [
-                "A. in die / in der / zum",
-                "B. in der / in die / in den",
-                "C. zur / in die / am",
-                "D. ins / im / zum"
+                "in die / in der / zum",
+                "in der / in der / zum",
+                "in die / in die / zum",
+                "in die / in der / zur"
             ],
-            "A. in die / in der / zum",
-            "1. 'gehen' (di chuyển vào trong 'Wohin?' + Akkusativ) với 'die Staatsoper' -> in die Staatsoper. 2. 'singen' (hành động ở vị trí tĩnh 'Wo?' + Dativ) với 'die Staatsoper' -> in der Staatsoper. 3. Đi tới quảng trường 'der Alexanderplatz' ('zu + Dativ') -> zum Alexanderplatz.",
-            {"translation": "Tối thứ Bảy chị họ tôi và tôi muốn đi vào Nhà hát Opera Quốc gia, vì hôm nay một giọng nam cao nổi tiếng hát ở trong Nhà hát Opera. Trước đó chúng tôi còn đi qua Quảng trường Alexander một lát."}
+            "in die / in der / zum",
+            "Động từ 'gehen' chỉ hướng di chuyển vào trong (Wohin?) với 'die Staatsoper' đi với in + Akkusativ → 'in die Staatsoper'; 'singen' chỉ hành động diễn ra tại chỗ (Wo?) đi với in + Dativ → 'in der Staatsoper'; 'der Alexanderplatz' đi với zu + Dativ → 'zu + dem = zum'. Các đáp án có 'in der' sau 'gehen' hoặc 'in die' sau 'singt' sai vì nhầm hướng di chuyển với vị trí; 'zur' sai vì Alexanderplatz là danh từ giống đực.",
+            {"translation": "Tối thứ Bảy, em họ (hoặc chị họ) của tôi và tôi muốn đi vào Nhà hát Opera Quốc gia, vì lúc đó một giọng nam cao nổi tiếng sẽ hát trong nhà hát. Trước đó chúng tôi còn ghé nhanh tới Quảng trường Alexander."}
         ),
+        # --- CÂU 10 (Reiseleiter Spree / Brücke / Tunnel) ---
         (
-            "Câu 10: Der Reiseleiter sagt zu den Gästen: ‚Wir spazieren jetzt zuerst die Spree ___, gehen dann ___ die alte Holzbrücke und laufen schließlich ___ den dunklen Tunnel zum Schloss.‘",
+            """Câu 10: Một hướng dẫn viên du lịch nói với đoàn khách. Chọn đáp án điền đúng vào ba chỗ trống.
+‚Wir spazieren jetzt zuerst die Spree ___, gehen dann ___ die alte Holzbrücke und laufen schließlich ___ den dunklen Tunnel zum Schloss.‘""",
             [
-                "A. entlang / über / durch",
-                "B. über / durch / entlang",
-                "C. durch / entlang / über",
-                "D. vorbei / über / in"
+                "vorbei / über / in",
+                "über / durch / entlang",
+                "entlang / über / durch",
+                "durch / entlang / über"
             ],
-            "A. entlang / über / durch",
-            "Đi dọc theo sông Spree (đứng sau danh từ) dùng 'entlang' ('die Spree entlang'); đi vượt qua trên mặt cầu dùng 'über' ('über die alte Holzbrücke'); đi xuyên qua lòng đường hầm ('der Tunnel') dùng 'durch' ('durch den dunklen Tunnel').",
-            {"translation": "Người hướng dẫn viên du lịch nói với các vị khách: 'Bây giờ đầu tiên chúng ta đi dạo dọc theo sông Spree, sau đó đi qua cây cầu gỗ cổ và cuối cùng đi bộ xuyên qua đường hầm tối để tới cung điện.'"}
+            "entlang / über / durch",
+            "Đi dọc theo dòng sông Spree (đặt sau danh từ) dùng 'entlang' ('die Spree entlang'); đi vượt qua trên mặt cầu dùng 'über' ('über die alte Holzbrücke'); đi xuyên qua lòng đường hầm tối ('der Tunnel') dùng 'durch' ('durch den dunklen Tunnel'). Các đáp án khác sai vì dùng nhầm giới từ hoặc đảo lộn thứ tự không khớp với từng chặng di chuyển.",
+            {"translation": "Hướng dẫn viên du lịch nói với các vị khách: 'Bây giờ đầu tiên chúng ta đi dạo dọc theo sông Spree, sau đó đi qua cây cầu gỗ cổ và cuối cùng đi bộ xuyên qua đường hầm tối để tới cung điện.'"}
         ),
+        # --- CÂU 11 (Familie Schneider) ---
         (
-            "Câu 11: Familie Schneider ist neu in München. Herr Schneider ___ unbedingt das Deutsche Museum besichtigen, aber seine Kinder sind müde und ___ nicht mehr weit laufen. Deshalb ___ sie jetzt ein Taxi zum Hotel nehmen.",
+            """Câu 11: Một gia đình đang du lịch ở München. Chọn đáp án điền đúng vào ba chỗ trống.
+Familie Schneider ist neu in München. Herr Schneider ___ unbedingt das Deutsche Museum besichtigen, aber seine Kinder sind müde und ___ không mehr weit laufen. Deshalb ___ alle jetzt ein Taxi zum Hotel nehmen.""".replace("không", "nicht"),
             [
-                "A. will / können / müssen",
-                "B. wollen / kann / muss",
-                "C. willst / könnt / möchten",
-                "D. möchte / müssen / will"
+                "will / können / müssen",
+                "wollen / können / müssen",
+                "will / kann / müssen",
+                "will / können / muss"
             ],
-            "A. will / können / müssen",
-            "'Herr Schneider' (er) -> will; 'seine Kinder' (sie - số nhiều) -> können; 'sie' (họ) -> müssen.",
-            {"translation": "Gia đình ông Schneider mới đến München. Ông Schneider nhất định muốn tham quan Bảo tàng Đức, nhưng các con của ông đã mỏi chân và không thể đi bộ xa thêm nữa. Vì vậy bây giờ họ phải bắt một chiếc taxi về khách sạn."}
+            "will / können / müssen",
+            "Chủ ngữ 'Herr Schneider' (ngôi er số ít) → 'will'; 'seine Kinder' (ngôi sie số nhiều) → 'können'; 'alle' (đại từ làm chủ ngữ số nhiều) → 'müssen'. Các đáp án khác sai vì chia động từ không khớp chủ ngữ: 'wollen' với 'Herr Schneider', 'kann' với 'seine Kinder', 'muss' với 'alle'.",
+            {"translation": "Gia đình Schneider mới đến München. Ông Schneider nhất định muốn tham quan Bảo tàng Đức, nhưng các con của ông đã mỏi chân và không thể đi bộ xa thêm nữa. Vì vậy bây giờ tất cả họ phải bắt một chiếc taxi về khách sạn."}
         ),
+        # --- CÂU 12 (Chỉ đường Theater - bản đồ lỗi hướng) ---
         (
-            "Câu 12: Ein Passant erklärt Ihnen den Weg zum Schloss Bellevue nach der Karte oben. In welchem Satz hat er einen Richtungsfehler im Vergleich zur eingezeichneten Route gemacht?",
+            "Câu 12: Một người qua đường chỉ đường tới Theater cho bạn, dựa theo bản đồ. Trong câu nào người đó nói SAI hướng so với lộ trình vẽ trên bản đồ?",
             [
-                "A. Zuerst gehen Sie vom Startpunkt aus geradeaus bis zur ersten Kreuzung.",
-                "B. An der ersten Kreuzung biegen Sie bitte rechts ab.",
-                "C. Danach gehen Sie geradeaus an der Schule vorbei.",
-                "D. Zum Schluss laufen Sie über die Brücke, und rechts sehen Sie das Schloss Bellevue."
+                "Gehen Sie zuerst geradeaus über die erste Kreuzung.",
+                "An der zweiten Kreuzung biegen Sie links ab.",
+                "Danach gehen Sie an der Kirche vorbei, die links von Ihnen liegt.",
+                "Dann biegen Sie noch einmal rechts ab, und das Theater liegt direkt vor Ihnen."
             ],
-            "B. An der ersten Kreuzung biegen Sie bitte rechts ab.",
-            "Trên bản đồ, tại ngã tư thứ nhất ('an der ersten Kreuzung'), mũi tên quẹo sang bên trái ('links'), nhưng câu B lại nói 'rechts' (bên phải).",
-            {"visual_svg": "map_error_check_1", "translation": "Một người đi đường giải thích cho bạn đường tới Cung điện Bellevue theo bản đồ trên. Ở câu nào người đó đã chỉ SAI hướng so với lộ trình vẽ trên bản đồ?"}
+            "Danach gehen Sie an der Kirche vorbei, die links von Ihnen liegt.",
+            "Trên bản đồ, đường đi thẳng qua ngã tư thứ nhất, rẽ trái ở ngã tư thứ hai rồi đi dọc theo đường ngang. Nhà thờ (Kirche) nằm phía trên đường, tức bên PHẢI người đi ('rechts'), nhưng câu này lại nói 'links'. Ba câu còn lại khớp với lộ trình.",
+            {
+                "visual_svg": "map_error_check_1",
+                "translation": "Một người qua đường chỉ đường tới Theater cho bạn, dựa theo bản đồ. Trong câu nào người đó nói SAI hướng so với lộ trình vẽ trên bản đồ? — Người qua đường nói sai hướng của nhà thờ."
+            }
         ),
+        # --- CÂU 13 (Hỏi đường Hauptbahnhof / Kirche) ---
         (
-            "Câu 13: Touristen im Stadtzentrum: ‚Entschuldigung, wir suchen ___ neuen Hauptbahnhof.‘ — ‚Gehen Sie einfach an ___ alten Kirche vorbei, dann steht ___ Hauptbahnhof direkt vor Ihnen!‘",
+            """Câu 13: Du khách hỏi đường ở trung tâm thành phố. Chọn đáp án điền đúng vào ba chỗ trống.
+‚Entschuldigung, wir suchen ___ neuen Hauptbahnhof.‘ — ‚Gehen Sie einfach an ___ alten Kirche vorbei, dann steht ___ Hauptbahnhof direkt vor Ihnen!‘""",
             [
-                "A. den / der / der",
-                "B. der / die / den",
-                "C. dem / der / der",
-                "D. den / die / dem"
+                "den / der / der",
+                "dem / der / der",
+                "den / die / der",
+                "den / der / den"
             ],
-            "A. den / der / der",
-            "1. Sau động từ 'suchen' cần Akkusativ ('der Hauptbahnhof' -> den). 2. Trong cụm 'an ... vorbei' cần Dativ ('die Kirche' -> der). 3. Chủ ngữ của động từ 'steht' ở Nominativ ('der Hauptbahnhof' -> der).",
-            {"translation": "Du khách ở trung tâm thành phố: 'Xin lỗi, chúng tôi đang tìm nhà ga trung tâm mới.' — 'Các ngài cứ đi ngang qua nhà thờ cổ, sau đó nhà ga trung tâm nằm ngay trước mặt các ngài!'"}
+            "den / der / der",
+            "1. Động từ 'suchen' đòi hỏi tân ngữ trực tiếp ở Akkusativ; 'der Hauptbahnhof' (giống đực) đổi thành 'den neuen Hauptbahnhof'. 2. Cụm giới từ 'an … vorbei' luôn đi với Dativ; 'die Kirche' (giống cái) đổi thành 'an der alten Kirche vorbei'. 3. Trong mệnh đề 'dann steht ___ Hauptbahnhof', danh từ làm chủ ngữ ở Nominativ nên giữ nguyên mạo từ 'der Hauptbahnhof'. Các đáp án khác sai vì: 'dem' sai vì sau 'suchen' cần Akkusativ; 'die' sai vì 'an … vorbei' cần Dativ; 'den' ở chỗ thứ ba sai vì chủ ngữ của 'steht' ở Nominativ.",
+            {"translation": "'Xin lỗi, chúng tôi đang tìm nhà ga trung tâm mới.' — 'Quý vị cứ đi ngang qua nhà thờ cổ, sau đó nhà ga trung tâm sẽ nằm ngay trước mặt quý vị!'"}
         ),
+        # --- CÂU 14 (Taxi ở Wien) ---
         (
-            "Câu 14: Taxifahrer in Wien: ‚Muss ich hier schon abbiegen?‘ — ‚Nein, fahren Sie bitte erst die ___ Straße links und halten Sie dann an der ___ Ampel vor dem Theater!‘",
+            """Câu 14: Một hành khách và một tài xế taxi ở Viên trò chuyện. Chọn đáp án điền đúng vào hai chỗ trống.
+Taxifahrer: Muss ich hier schon abbiegen?
+Fahrgast: Nein, fahren Sie bitte erst die ___ Straße links und halten Sie dann an der ___ Ampel vor dem Theater!""",
             [
-                "A. dritte / zweiten",
-                "B. dritten / zweite",
-                "C. dritter / zweiter",
-                "D. dem dritten / der zweite"
+                "dritten / zweiten",
+                "dritte / zweiten",
+                "dritte / zweite",
+                "dritter / zweiten"
             ],
-            "A. dritte / zweiten",
-            "Trong cụm 'die ___ Straße links' (Akkusativ giống cái sau 'die'), số thứ tự có đuôi -e ('die dritte Straße'). Trong cụm 'an der ___ Ampel' (Dativ giống cái sau 'an der'), số thứ tự bắt buộc thêm đuôi -en ('an der zweiten Ampel').",
-            {"translation": "Tài xế taxi ở Viên: 'Tôi phải rẽ ngay ở đây rồi à?' — 'Không, xin anh hãy chạy tới con đường thứ ba mới rẽ trái rồi dừng lại ở chỗ đèn giao thông thứ hai trước nhà hát!'"}
+            "dritte / zweiten",
+            "Số thứ tự đứng sau 'die' (giống cái ở Akkusativ) nhận đuôi -e ('die dritte Straße'); đứng sau 'an der' (giống cái ở Dativ) nhận đuôi -en ('an der zweiten Ampel'). Đáp án 'dritten' sai vì Akkusativ giống cái nhận đuôi -e; 'zweite' sai vì Dativ giống cái phải nhận đuôi -en; 'dritter' sai vì đây không phải biến cách mạnh không có mạo từ.",
+            {"translation": "Tài xế taxi: 'Tôi phải rẽ ngay ở đây à?' — Hành khách: 'Không, trước tiên xin hãy đi vào con đường thứ ba bên trái, rồi dừng lại ở đèn giao thông thứ hai trước nhà hát!'"}
         ),
+        # --- CÂU 15 (Trật tự từ) ---
         (
-            "Câu 15: Welcher Satz über den Familienausflug in Hamburg hat die einzig richtige Wortstellung (Verb auf Position 2)?",
+            "Câu 15: Chọn câu có trật tự từ đúng duy nhất.",
             [
-                "A. Zuerst wir wollen den großen Hafen besichtigen, und danach wir gehen ins Fischrestaurant.",
-                "B. Zuerst wollen wir den großen Hafen besichtigen, und danach möchten die Kinder eine Hafenrundfahrt machen.",
-                "C. Zuerst wollen besichtigen wir den großen Hafen, und danach die Kinder möchten Eis essen.",
-                "D. Wir zuerst wollen den großen Hafen besichtigen, und anschließend wollen gehen wir in den Zoo."
+                "Zuerst wollen wir den großen Hafen besichtigen, und danach möchten die Kinder Eis essen.",
+                "Zuerst wir wollen den großen Hafen besichtigen, und danach möchten die Kinder Eis essen.",
+                "Zuerst wollen wir den großen Hafen besichtigen, und danach die Kinder möchten Eis essen.",
+                "Zuerst wollen besichtigen wir den großen Hafen, und danach möchten die Kinder Eis essen."
             ],
-            "B. Zuerst wollen wir den großen Hafen besichtigen, und danach möchten die Kinder eine Hafenrundfahrt machen.",
-            "Khi trạng từ 'Zuerst' hoặc 'danach' đứng đầu mệnh đề (vị trí số 1), động từ khuyết thiếu đã chia ('wollen', 'möchten') bắt buộc phải đứng ngay vị trí số 2 trước chủ ngữ ('Zuerst wollen wir...', 'danach möchten die Kinder...'), còn động từ nguyên mẫu ('besichtigen', 'machen') đứng ở cuối câu.",
-            {"translation": "Câu nào kể về chuyến dã ngoại gia đình ở Hamburg có trật tự từ đúng duy nhất (Động từ chia ở vị trí số 2)?"}
+            "Zuerst wollen wir den großen Hafen besichtigen, und danach möchten die Kinder Eis essen.",
+            "Khi trạng từ thời gian ('Zuerst', 'danach') đứng đầu câu hoặc đầu mệnh đề, động từ đã chia ('wollen', 'möchten') phải đứng ngay sau nó, còn động từ nguyên mẫu ('besichtigen', 'essen') đứng ở cuối câu. Liên từ 'und' kết nối hai mệnh đề độc lập mà không thay đổi trật tự từ. Các đáp án sai vì: câu thứ hai đặt 'wir' trước động từ; câu thứ ba đặt 'die Kinder' trước động từ ở mệnh đề sau 'und'; câu thứ tư đặt 'besichtigen' sai chỗ, phải ở cuối mệnh đề.",
+            {"translation": "Đầu tiên chúng tôi muốn tham quan cảng lớn, và sau đó bọn trẻ muốn ăn kem."}
         ),
+        # --- CÂU 16 (Đi Schloss Sanssouci) ---
         (
-            "Câu 16: Wie kommen deine Großeltern morgen vom Hotel zum Schloss Sanssouci? — Sie fahren zuerst mit ___ U-Bahn bis ___ Hauptbahnhof und nehmen dort ___ Bus direkt ___ Schloss.",
+            """Câu 16: Ông bà của bạn cần đi từ khách sạn tới cung điện Sanssouci vào ngày mai. Chọn đáp án điền đúng vào bốn chỗ trống.
+Wie kommen deine Großeltern morgen vom Hotel zum Schloss Sanssouci? — Sie fahren zuerst mit ___ S-Bahn bis ___ Hauptbahnhof und nehmen dort ___ Bus direkt ___ Schloss.""",
             [
-                "A. der / zum / den / zum",
-                "B. die / zur / der / ins",
-                "C. dem / am / den / nach",
-                "D. der / in den / dem / zum"
+                "die / zum / den / zum",
+                "der / zur / den / zum",
+                "der / zum / den / zum",
+                "der / zum / dem / zum"
             ],
-            "A. der / zum / den / zum",
-            "1. 'mit + Dativ': 'die U-Bahn' -> mit der U-Bahn. 2. 'bis zu + Dativ': 'der Hauptbahnhof' -> bis zum Hauptbahnhof. 3. 'nehmen + Akkusativ': 'der Bus' -> nehmen den Bus. 4. 'zu + Dativ': 'das Schloss' -> zum Schloss.",
-            {"translation": "Ngày mai ông bà của bạn đi từ khách sạn đến Cung điện Sanssouci bằng cách nào? — Đầu tiên ông bà đi bằng tàu điện ngầm cho đến nhà ga trung tâm và ở đó bắt chiếc xe buýt đi thẳng tới cung điện."}
+            "der / zum / den / zum",
+            "1. 'mit' luôn đi với Dativ: 'die S-Bahn' → 'mit der S-Bahn'. 2. 'bis zu' đi với Dativ: 'der Hauptbahnhof' → 'bis zum Hauptbahnhof'. 3. 'nehmen' cần tân ngữ Akkusativ: 'der Bus' → 'nehmen den Bus'. 4. 'zu + Dativ': 'das Schloss' → 'zum Schloss'. Các đáp án khác sai vì: 'die' sau 'mit' sai do 'mit' luôn đi với Dativ; 'zur Hauptbahnhof' sai vì der Hauptbahnhof giống đực; 'dem Bus' sai vì 'nehmen' cần Akkusativ.",
+            {"translation": "Ông bà của bạn ngày mai đi từ khách sạn đến Cung điện Sanssouci bằng cách nào? — Đầu tiên ông bà đi bằng tàu điện S-Bahn cho đến nhà ga trung tâm và ở đó bắt xe buýt đi thẳng tới cung điện."}
         ),
+        # --- CÂU 17 (Tài xế hỏi đường đi sân bay) ---
         (
-            "Câu 17: Ein Autofahrer fragt Sie nach dem Weg zum Flughafen. Welche Antwort ist logisch und grammatikalisch richtig?",
+            "Câu 17: Một tài xế ô tô hỏi bạn cách đi ra sân bay. Chọn câu trả lời vừa hợp logic vừa đúng ngữ pháp.",
             [
-                "A. Fahren Sie diese Hauptstraße entlang, dann über die große Brücke und nach der zweiten Ampel rechts auf die Autobahn zum Flughafen!",
-                "B. Gehen Sie zu Fuß durch das Wohnzimmer und über den kleinen Supermarkt bis in den Flughafen!",
-                "C. Fahren Sie am Flughafen vorbei, durch die Post und dann unter der Bank entlang!",
-                "D. Laufen Sie mit dem Auto an die Kreuzung vorbei und biegen Sie auf der Ampel ab!"
+                "Fahren Sie diese Hauptstraße entlang, dann über die große Brücke und nach der zweiten Ampel rechts zum Flughafen!",
+                "Fahren Sie diese Hauptstraße entlang, dann über die große Brücke und nach der zweiten Ampel rechts zum Hauptbahnhof!",
+                "Fahren Sie diese Hauptstraße entlang, dann über die große Brücke und nach die zweite Ampel rechts zum Flughafen!",
+                "Gehen Sie zu Fuß diese Hauptstraße entlang, dann über die große Brücke und nach der zweiten Ampel rechts zum Flughafen!"
             ],
-            "A. Fahren Sie diese Hauptstraße entlang, dann über die große Brücke und nach der zweiten Ampel rechts auf die Autobahn zum Flughafen!",
-            "Tài xế đang lái xe nên dùng mệnh lệnh 'Fahren Sie...': chạy dọc theo đường chính ('diese Hauptstraße entlang'), qua cây cầu lớn ('über die große Brücke') và sau đèn giao thông thứ hai rẽ phải lên đường cao tốc ra sân bay ('zum Flughafen').",
-            {"translation": "Một tài xế ô tô hỏi bạn đường ra sân bay. Câu trả lời nào vừa hợp logic thực tế vừa đúng ngữ pháp?"}
+            "Fahren Sie diese Hauptstraße entlang, dann über die große Brücke und nach der zweiten Ampel rechts zum Flughafen!",
+            "Tài xế đang điều khiển ô tô nên dùng động từ 'Fahren Sie...', đi dọc đường chính ('diese Hauptstraße entlang'), qua trên cây cầu ('über die große Brücke'), sau đèn giao thông thứ hai ('nach der zweiten Ampel' vì nach + Dativ) và đích đến đúng câu hỏi là sân bay ('zum Flughafen'). Các câu còn lại sai vì: một câu chỉ nhầm đích đến là nhà ga trung tâm; một câu sai ngữ pháp 'nach die zweite Ampel'; một câu sai logic thực tế vì bảo người đang lái xe hãy đi bộ ('Gehen Sie zu Fuß').",
+            {"translation": "Một tài xế ô tô hỏi bạn cách đi ra sân bay. Câu trả lời nào vừa hợp logic thực tế vừa đúng ngữ pháp?"}
         ),
+        # --- CÂU 18 (Bảng thông tin nhà ga / Friedrichsbrücke) ---
         (
-            "Câu 18: Lesen Sie die Informationstafel am Bahnhof: ‚Vom Hauptbahnhof erreichen Sie die Museumsinsel in 15 Minuten zu Fuß: Gehen Sie durch den Bahnhofspark, über die Friedrichbrücke und an der Staatsoper vorbei.‘ — Was müssen die Besucher auf diesem Weg tun?",
+            """Câu 18: Đọc bảng thông tin tại nhà ga rồi trả lời câu hỏi.
+‚Vom Hauptbahnhof erreichen Sie die Museumsinsel in 15 Minuten zu Fuß: Gehen Sie durch den Bahnhofspark, über die Friedrichsbrücke und an der Staatsoper vorbei.‘
+Khách tham quan phải làm gì trên quãng đường này?""",
             [
-                "A. Sie müssen eine Brücke überqueren und einen Park durchqueren.",
-                "B. Sie müssen mit dem Bus in die Staatsoper hineingehen.",
-                "C. Sie müssen vor der Brücke links zum Flughafen abbiegen.",
-                "D. Sie dürfen den Bahnhofspark nicht betreten."
+                "Sie müssen vor der Brücke links zum großen Flughafen abbiegen.",
+                "Sie müssen einen Park durchqueren und eine Brücke überqueren.",
+                "Sie müssen mit dem Linienbus direkt in die Staatsoper hineingehen.",
+                "Sie dürfen den schönen Bahnhofspark auf keinen Fall betreten."
             ],
-            "A. Sie müssen eine Brücke überqueren und einen Park durchqueren.",
-            "'durch den Bahnhofspark gehen' = đi xuyên qua một công viên ('einen Park durchqueren'); 'über die Friedrichbrücke gehen' = băng qua một cây cầu ('eine Brücke überqueren').",
-            {"translation": "Hãy đọc bảng thông tin tại nhà ga: 'Từ nhà ga trung tâm, quý khách đi bộ 15 phút là tới Đảo Bảo tàng: Hãy đi xuyên qua công viên nhà ga, đi qua cầu Friedrich và đi ngang qua Nhà hát Opera Quốc gia.' — Khách tham quan phải làm gì trên quãng đường này?"}
+            "Sie müssen einen Park durchqueren und eine Brücke überqueren.",
+            "'durch den Bahnhofspark gehen' tương đương với 'einen Park durchqueren' (đi xuyên qua công viên); 'über die Friedrichsbrücke gehen' tương đương với 'eine Brücke überqueren' (băng qua cầu). Các đáp án khác sai vì bảng thông tin không hề yêu cầu rẽ trái ra sân bay, không bảo đi xe buýt vào nhà hát, và cũng không cấm khách bước vào công viên.",
+            {"translation": "Đọc bảng thông tin tại nhà ga: 'Từ nhà ga trung tâm, quý vị đi bộ 15 phút là tới Đảo Bảo tàng: Hãy đi xuyên qua công viên nhà ga, đi qua cầu Friedrichs và đi ngang qua Nhà hát Opera Quốc gia.' — Khách tham quan phải làm gì trên quãng đường này?"}
         )
     ]
 
