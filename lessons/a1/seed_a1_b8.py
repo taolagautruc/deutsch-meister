@@ -1389,7 +1389,7 @@ def seed_lesson_8():
                         "accepted_answers": [
                                 "in die / in der / zum"
                         ],
-                        "translation": "Tối thứ Bảy, em họ (hoặc chị họ) của tôi và tôi muốn đi vào Nhà hát Opera Quốc gia, vì lúc đó một giọng nam cao nổi tiếng sẽ hát trong nhà hát. Trước đó chúng tôi còn ghé nhanh tới Quảng trường Alexander."
+                        "translation": "Tối thứ Bảy, chị (em) họ của tôi và tôi muốn đi vào Nhà hát Opera Quốc gia, vì lúc đó một giọng nam cao nổi tiếng sẽ hát trong nhà hát. Trước đó chúng tôi còn ghé nhanh tới Quảng trường Alexander."
                 }
         },
         {
@@ -1402,7 +1402,7 @@ def seed_lesson_8():
                         "durch / entlang / über"
                 ],
                 "correct_answer": "entlang / über / durch",
-                "explanation": "Đi dọc theo dòng sông Spree (đặt sau danh từ) dùng 'entlang' ('die Spree entlang'); đi vượt qua trên mặt cầu dùng 'über' ('über die alte Holzbrücke'); đi xuyên qua lòng đường hầm tối ('der Tunnel') dùng 'durch' ('durch den dunklen Tunnel'). Các đáp án khác sai vì dùng nhầm giới từ hoặc đảo lộn thứ tự không khớp với từng chặng di chuyển.",
+                "explanation": "Đi dọc theo dòng sông Spree (đặt sau danh từ) dùng 'entlang' ('die Spree entlang'); đi vượt qua trên mặt cầu dùng 'über' ('über die alte Holzbrücke'); đi xuyên qua lòng đường hầm tối ('der Tunnel') dùng 'durch' ('durch den dunklen Tunnel'). Các đáp án khác sai vì giới từ không khớp với từng chặng: đi dọc sông dùng 'entlang', đi qua cầu dùng 'über', đi xuyên đường hầm dùng 'durch'.",
                 "exp_reward": 20,
                 "extra_data": {
                         "accepted_answers": [
@@ -1446,7 +1446,7 @@ def seed_lesson_8():
                         "accepted_answers": [
                                 "Danach gehen Sie an der Kirche vorbei, die links von Ihnen liegt."
                         ],
-                        "translation": "Một người qua đường chỉ đường tới Theater cho bạn, dựa theo bản đồ. Trong câu nào người đó nói SAI hướng so với lộ trình vẽ trên bản đồ? — Người qua đường nói sai hướng của nhà thờ.",
+                        "translation": "Sau đó bạn đi ngang qua nhà thờ, nhà thờ nằm bên trái bạn.",
                         "visual_svg": "map_error_check_1"
                 }
         },
@@ -1471,7 +1471,7 @@ def seed_lesson_8():
         },
         {
                 "type": "trac_nghiem",
-                "question": "Câu 14: Một hành khách và một tài xế taxi ở Viên trò chuyện. Chọn đáp án điền đúng vào hai chỗ trống.\nTaxifahrer: Muss ich hier schon abbiegen?\nFahrgast: Nein, fahren Sie bitte erst die ___ Straße links und halten Sie dann an der ___ Ampel vor dem Theater!",
+                "question": "Câu 14: Một hành khách và một tài xế taxi ở Viên trò chuyện. Chọn đáp án điền đúng vào hai chỗ trống.\nTaxifahrer: Muss ich hier schon abbiegen?\nFahrgast: Nein, nehmen Sie bitte erst die ___ Straße links und halten Sie dann an der ___ Ampel vor dem Theater!",
                 "options": [
                         "dritten / zweiten",
                         "dritte / zweiten",
@@ -1479,7 +1479,7 @@ def seed_lesson_8():
                         "dritter / zweiten"
                 ],
                 "correct_answer": "dritte / zweiten",
-                "explanation": "Số thứ tự đứng sau 'die' (giống cái ở Akkusativ) nhận đuôi -e ('die dritte Straße'); đứng sau 'an der' (giống cái ở Dativ) nhận đuôi -en ('an der zweiten Ampel'). Đáp án 'dritten' sai vì Akkusativ giống cái nhận đuôi -e; 'zweite' sai vì Dativ giống cái phải nhận đuôi -en; 'dritter' sai vì đây không phải biến cách mạnh không có mạo từ.",
+                "explanation": "Số thứ tự đứng sau 'die' (giống cái ở Akkusativ, sau 'nehmen') nhận đuôi -e: 'die dritte Straße'. Đứng sau 'an der' (giống cái ở Dativ) nhận đuôi -en: 'an der zweiten Ampel'. Các đáp án khác sai vì: 'dritten' dùng đuôi -en sau 'die'; 'zweite' dùng đuôi -e sau 'an der'; 'dritter' dùng đuôi -er, không dùng cho danh từ giống cái sau 'die'.",
                 "exp_reward": 20,
                 "extra_data": {
                         "accepted_answers": [
@@ -1498,7 +1498,7 @@ def seed_lesson_8():
                         "Zuerst wollen besichtigen wir den großen Hafen, und danach möchten die Kinder Eis essen."
                 ],
                 "correct_answer": "Zuerst wollen wir den großen Hafen besichtigen, und danach möchten die Kinder Eis essen.",
-                "explanation": "Khi trạng từ thời gian ('Zuerst', 'danach') đứng đầu câu hoặc đầu mệnh đề, động từ đã chia ('wollen', 'möchten') phải đứng ngay sau nó, còn động từ nguyên mẫu ('besichtigen', 'essen') đứng ở cuối câu. Liên từ 'und' kết nối hai mệnh đề độc lập mà không thay đổi trật tự từ. Các đáp án sai vì: câu thứ hai đặt 'wir' trước động từ; câu thứ ba đặt 'die Kinder' trước động từ ở mệnh đề sau 'und'; câu thứ tư đặt 'besichtigen' sai chỗ, phải ở cuối mệnh đề.",
+                "explanation": "Khi trạng từ thời gian ('Zuerst', 'danach') đứng đầu câu hoặc đầu mệnh đề, động từ đã chia ('wollen', 'möchten') phải đứng ngay sau nó, còn động từ nguyên mẫu ('besichtigen', 'essen') đứng ở cuối câu. Liên từ 'und' kết nối hai mệnh đề độc lập mà không thay đổi trật tự từ. Các đáp án sai vì: 'Zuerst wir wollen…' đặt 'wir' trước động từ chia; '…und danach die Kinder möchten…' đặt 'die Kinder' trước động từ chia ở mệnh đề sau 'und'; 'Zuerst wollen besichtigen wir…' đặt 'besichtigen' sai chỗ, động từ nguyên mẫu phải đứng ở cuối mệnh đề.",
                 "exp_reward": 20,
                 "extra_data": {
                         "accepted_answers": [
@@ -1542,7 +1542,7 @@ def seed_lesson_8():
                         "accepted_answers": [
                                 "Fahren Sie diese Hauptstraße entlang, dann über die große Brücke und nach der zweiten Ampel rechts zum Flughafen!"
                         ],
-                        "translation": "Một tài xế ô tô hỏi bạn cách đi ra sân bay. Câu trả lời nào vừa hợp logic thực tế vừa đúng ngữ pháp?"
+                        "translation": "Hãy lái xe dọc theo con đường chính này, sau đó qua cây cầu lớn, và sau đèn giao thông thứ hai rẽ phải để tới sân bay!"
                 }
         },
         {
