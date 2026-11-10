@@ -500,7 +500,7 @@ def seed_lesson_2():
     "47": "Những chiếc bàn: die Tische.",
     "48": "Vâng, đó là điện thoại của Anna. (Ja, das ist das Handy von Anna.)",
     "49": "Những chiếc ghế: die Stühle.",
-    "50": "Không, đó không phải là kính mắt. Đó là một cái bàn. (Nein, das ist keine Brille. Das ist ein Tisch.)"
+    "50": "Không, đó không phải là cái cốc. Đó là một quyển vở. (Nein, das ist kein Becher. Das ist ein Heft.)"
 }
 
     exercises = [
