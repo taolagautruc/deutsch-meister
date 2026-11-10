@@ -801,7 +801,7 @@
         </svg>`;
     }
 
-    // 5. map_error_check_1 (Câu 12: Hauptbahnhof -> thẳng ngã 1 -> rẽ trái ngã 2 -> qua Kirche -> tới Theater)
+    // 5. map_error_check_1 (Câu 12: Hauptbahnhof -> thẳng ngã 1 -> rẽ trái ngã 2 -> qua Kirche bên phải -> rẽ phải tới Theater)
     function getMapErrorCheck1Svg() {
         return `
         <svg viewBox="0 0 500 300" width="100%" class="w-full max-w-xl mx-auto rounded-2xl shadow-sm border border-slate-300 bg-slate-900 overflow-hidden">
@@ -810,11 +810,11 @@
             <rect x="0" y="200" width="500" height="40" fill="#1e293b"/>
             <rect x="0" y="80" width="500" height="40" fill="#1e293b"/>
 
-            <!-- Hauptbahnhof (START) -->
-            <rect x="225" y="250" width="94" height="38" rx="6" fill="#1e293b" stroke="#64748b" stroke-width="1.5"/>
+            <!-- Hauptbahnhof (START) - Khung nới rộng 170px chứa trọn vẹn nhãn không bị tràn -->
+            <rect x="187" y="250" width="170" height="38" rx="6" fill="#1e293b" stroke="#64748b" stroke-width="1.5"/>
             <text x="272" y="274" font-size="8.5" font-weight="bold" fill="#e2e8f0" text-anchor="middle">🚉 Hauptbahnhof (START)</text>
 
-            <!-- Kirche ở giữa đường rẽ trái -->
+            <!-- Kirche ở phía trên đường ngang thứ 2 (nằm bên PHẢI người đi khi đi về hướng tây) -->
             <rect x="130" y="35" width="70" height="38" rx="5" fill="#3f3f46" stroke="#71717a" stroke-width="1.5"/>
             <text x="165" y="59" font-size="8" font-weight="bold" fill="#e4e4e7" text-anchor="middle">⛪ Kirche</text>
 
@@ -825,7 +825,8 @@
             <!-- Tuyến đường mũi tên vàng -->
             <path d="M 272 250 L 272 100 L 58 100 L 58 75" fill="none" stroke="#eab308" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
             <polygon points="272,160 266,172 278,172" fill="#ca8a04"/>
-            <polygon points="180,100 192,94 192,106" fill="#ca8a04"/>
+            <polygon points="170,100 182,94 182,106" fill="#ca8a04"/>
+            <polygon points="58,74 52,86 64,86" fill="#ca8a04"/>
         </svg>`;
     }
 
