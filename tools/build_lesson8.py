@@ -395,49 +395,59 @@ Khách tham quan phải làm gì trên quãng đường này?""",
     # =========================================================================
     fill_ins = [
         (
-            "Câu 19: „Entschuldigung, wie komme ich zum Krankenhaus?“ — „Gehen Sie zuerst geradeaus an ___ Bank vorbei und biegen Sie dann links ab!“",
+            """Câu 19: Điền một từ thích hợp vào chỗ trống.
+Tourist: Entschuldigung, wie komme ich zum Krankenhaus?
+Passant: Gehen Sie zuerst geradeaus an ___ Bank vorbei und biegen Sie dann links ab!""",
             "der",
-            ["der"],
+            ["der", "dieser", "einer", "jener"],
             "Danh từ Bank mang giống cái ('die Bank'). Trong cấu trúc 'an + Dativ + vorbei', mạo từ die đổi thành 'der' ('an der Bank vorbei').",
-            {"visual_svg": "map_fill_1", "translation": "Xin lỗi, làm thế nào tôi đi đến được bệnh viện? — Đầu tiên Ngài hãy đi thẳng ngang qua ngân hàng rồi sau đó rẽ trái!"}
+            {"visual_svg": "map_fill_1", "translation": "Đầu tiên bạn hãy đi thẳng ngang qua ngân hàng rồi sau đó rẽ trái!"}
         ),
         (
-            "Câu 20: „Fährt dieser Bus zum Kunstmuseum?“ — „Ja, er fährt direkt ___ alten Schloss vorbei und hält dann vor dem Museum.“",
+            """Câu 20: Điền một từ thích hợp vào chỗ trống.
+Fahrgast: Fährt dieser Bus zum Kunstmuseum?
+Busfahrer: Ja, er fährt direkt ___ alten Schloss vorbei und hält dann vor dem Museum.""",
             "am",
-            ["am", "an dem"],
+            ["am", "an dem", "an diesem", "an einem"],
             "Danh từ Schloss mang giống trung ('das Schloss'). Đi với cấu trúc 'an + Dativ + vorbei', an + dem gộp thành 'am' ('am alten Schloss vorbei').",
             {"visual_svg": "map_fill_2", "translation": "Chuyến xe buýt này có chạy tới bảo tàng nghệ thuật không? — Có, nó chạy ngang qua ngay cung điện cổ rồi dừng trước bảo tàng."}
         ),
         (
-            "Câu 21: „Um zur Museumsinsel zu kommen, müsst ihr zuerst ___ die große Brücke laufen.“",
+            """Câu 21: Điền một từ thích hợp vào chỗ trống.
+Um zur Museumsinsel zu kommen, müsst ihr zuerst ___ die große Brücke laufen.""",
             "über",
             ["über", "ueber"],
             "Đi vượt qua / băng qua mặt cầu ('die Brücke') dùng giới từ 'über' (+ Akkusativ).",
             {"visual_svg": "quiz_icon_bridge", "translation": "Để đi đến được Đảo Bảo tàng, đầu tiên các bạn phải đi bộ qua cây cầu lớn."}
         ),
         (
-            "Câu 22: „Wenn du in die Altstadt willst, musst du zu Fuß ___ das historische Stadttor gehen.“",
+            """Câu 22: Điền một từ thích hợp vào chỗ trống.
+Wenn du in die Altstadt willst, musst du zu Fuß ___ das historische Stadttor gehen.""",
             "durch",
-            ["durch", "durchs"],
+            ["durch"],
             "Đi xuyên qua lòng cổng thành ('das Stadttor') dùng giới từ 'durch' (+ Akkusativ).",
             {"visual_svg": "quiz_icon_gate", "translation": "Nếu bạn muốn vào khu phố cổ, bạn phải đi bộ xuyên qua cổng thành lịch sử."}
         ),
         (
-            "Câu 23: „Gehen Sie einfach diese breite Straße ___! Nach etwa dreihundert Metern sehen Sie links den Zoo.“",
+            """Câu 23: Điền một từ thích hợp vào chỗ trống.
+Gehen Sie einfach diese breite Straße ___! Nach etwa dreihundert Metern sehen Sie links den Zoo.""",
             "entlang",
             ["entlang"],
             "Từ chỉ hướng đi dọc theo đứng sau danh từ ở Akkusativ ('diese breite Straße') là 'entlang'.",
-            {"visual_svg": "quiz_icon_along", "translation": "Ngài cứ đi dọc theo con đường rộng này! Sau khoảng ba trăm mét Ngài sẽ nhìn thấy sở thú ở bên trái."}
+            {"visual_svg": "quiz_icon_along", "translation": "Bạn cứ đi dọc theo con đường rộng này! Sau khoảng ba trăm mét bạn sẽ nhìn thấy sở thú ở bên trái."}
         ),
         (
-            "Câu 24: „Fahren Sie mit dem Fahrrad immer geradeaus bis ___ dritten Kreuzung und biegen Sie dort rechts ab!“",
+            """Câu 24: Điền một từ thích hợp vào chỗ trống.
+Fahren Sie mit dem Fahrrad immer geradeaus bis ___ dritten Kreuzung und biegen Sie dort rechts ab!""",
             "zur",
             ["zur", "zu der"],
             "Danh từ Kreuzung mang giống cái ('die Kreuzung'). Sau giới từ kép 'bis zu + Dativ', zu + der viết tắt thành 'zur' ('bis zur dritten Kreuzung').",
-            {"translation": "Ngài cứ đạp xe thẳng mãi cho đến ngã tư thứ ba và rẽ phải ở đó!"}
+            {"translation": "Bạn cứ đạp xe thẳng mãi cho đến ngã tư thứ ba và rẽ phải ở đó!"}
         ),
         (
-            "Câu 25: „Wie weit fährt die Straßenbahn Linie 4?“ — „Sie fährt vom Rathaus durch das Zentrum bis ___ Hafen.“",
+            """Câu 25: Điền một từ thích hợp vào chỗ trống.
+Fahrgast: Wie weit fährt die Straßenbahn Linie 4?
+Passant: Sie fährt vom Rathaus durch das Zentrum bis ___ Hafen.""",
             "zum",
             ["zum", "zu dem"],
             "Danh từ Hafen (cảng biển) mang giống đực ('der Hafen'). Sau 'bis zu + Dativ', zu + dem viết tắt thành 'zum' ('bis zum Hafen').",
