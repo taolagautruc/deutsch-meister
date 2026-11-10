@@ -1566,22 +1566,25 @@ def seed_lesson_8():
         },
         {
                 "type": "dien_khuyet",
-                "question": "Câu 19: „Entschuldigung, wie komme ich zum Krankenhaus?“ — „Gehen Sie zuerst geradeaus an ___ Bank vorbei und biegen Sie dann links ab!“",
+                "question": "Câu 19: Điền một từ thích hợp vào chỗ trống.\nTourist: Entschuldigung, wie komme ich zum Krankenhaus?\nPassant: Gehen Sie zuerst geradeaus an ___ Bank vorbei und biegen Sie dann links ab!",
                 "options": null,
                 "correct_answer": "der",
                 "explanation": "Danh từ Bank mang giống cái ('die Bank'). Trong cấu trúc 'an + Dativ + vorbei', mạo từ die đổi thành 'der' ('an der Bank vorbei').",
                 "exp_reward": 20,
                 "extra_data": {
                         "accepted_answers": [
-                                "der"
+                                "der",
+                                "dieser",
+                                "einer",
+                                "jener"
                         ],
-                        "translation": "Xin lỗi, làm thế nào tôi đi đến được bệnh viện? — Đầu tiên Ngài hãy đi thẳng ngang qua ngân hàng rồi sau đó rẽ trái!",
+                        "translation": "Đầu tiên bạn hãy đi thẳng ngang qua ngân hàng rồi sau đó rẽ trái!",
                         "visual_svg": "map_fill_1"
                 }
         },
         {
                 "type": "dien_khuyet",
-                "question": "Câu 20: „Fährt dieser Bus zum Kunstmuseum?“ — „Ja, er fährt direkt ___ alten Schloss vorbei und hält dann vor dem Museum.“",
+                "question": "Câu 20: Điền một từ thích hợp vào chỗ trống.\nFahrgast: Fährt dieser Bus zum Kunstmuseum?\nBusfahrer: Ja, er fährt direkt ___ alten Schloss vorbei und hält dann vor dem Museum.",
                 "options": null,
                 "correct_answer": "am",
                 "explanation": "Danh từ Schloss mang giống trung ('das Schloss'). Đi với cấu trúc 'an + Dativ + vorbei', an + dem gộp thành 'am' ('am alten Schloss vorbei').",
@@ -1589,7 +1592,9 @@ def seed_lesson_8():
                 "extra_data": {
                         "accepted_answers": [
                                 "am",
-                                "an dem"
+                                "an dem",
+                                "an diesem",
+                                "an einem"
                         ],
                         "translation": "Chuyến xe buýt này có chạy tới bảo tàng nghệ thuật không? — Có, nó chạy ngang qua ngay cung điện cổ rồi dừng trước bảo tàng.",
                         "visual_svg": "map_fill_2"
@@ -1597,7 +1602,7 @@ def seed_lesson_8():
         },
         {
                 "type": "dien_khuyet",
-                "question": "Câu 21: „Um zur Museumsinsel zu kommen, müsst ihr zuerst ___ die große Brücke laufen.“",
+                "question": "Câu 21: Điền một từ thích hợp vào chỗ trống.\nUm zur Museumsinsel zu kommen, müsst ihr zuerst ___ die große Brücke laufen.",
                 "options": null,
                 "correct_answer": "über",
                 "explanation": "Đi vượt qua / băng qua mặt cầu ('die Brücke') dùng giới từ 'über' (+ Akkusativ).",
@@ -1613,15 +1618,14 @@ def seed_lesson_8():
         },
         {
                 "type": "dien_khuyet",
-                "question": "Câu 22: „Wenn du in die Altstadt willst, musst du zu Fuß ___ das historische Stadttor gehen.“",
+                "question": "Câu 22: Điền một từ thích hợp vào chỗ trống.\nWenn du in die Altstadt willst, musst du zu Fuß ___ das historische Stadttor gehen.",
                 "options": null,
                 "correct_answer": "durch",
                 "explanation": "Đi xuyên qua lòng cổng thành ('das Stadttor') dùng giới từ 'durch' (+ Akkusativ).",
                 "exp_reward": 20,
                 "extra_data": {
                         "accepted_answers": [
-                                "durch",
-                                "durchs"
+                                "durch"
                         ],
                         "translation": "Nếu bạn muốn vào khu phố cổ, bạn phải đi bộ xuyên qua cổng thành lịch sử.",
                         "visual_svg": "quiz_icon_gate"
@@ -1629,7 +1633,7 @@ def seed_lesson_8():
         },
         {
                 "type": "dien_khuyet",
-                "question": "Câu 23: „Gehen Sie einfach diese breite Straße ___! Nach etwa dreihundert Metern sehen Sie links den Zoo.“",
+                "question": "Câu 23: Điền một từ thích hợp vào chỗ trống.\nGehen Sie einfach diese breite Straße ___! Nach etwa dreihundert Metern sehen Sie links den Zoo.",
                 "options": null,
                 "correct_answer": "entlang",
                 "explanation": "Từ chỉ hướng đi dọc theo đứng sau danh từ ở Akkusativ ('diese breite Straße') là 'entlang'.",
@@ -1638,13 +1642,13 @@ def seed_lesson_8():
                         "accepted_answers": [
                                 "entlang"
                         ],
-                        "translation": "Ngài cứ đi dọc theo con đường rộng này! Sau khoảng ba trăm mét Ngài sẽ nhìn thấy sở thú ở bên trái.",
+                        "translation": "Bạn cứ đi dọc theo con đường rộng này! Sau khoảng ba trăm mét bạn sẽ nhìn thấy sở thú ở bên trái.",
                         "visual_svg": "quiz_icon_along"
                 }
         },
         {
                 "type": "dien_khuyet",
-                "question": "Câu 24: „Fahren Sie mit dem Fahrrad immer geradeaus bis ___ dritten Kreuzung und biegen Sie dort rechts ab!“",
+                "question": "Câu 24: Điền một từ thích hợp vào chỗ trống.\nFahren Sie mit dem Fahrrad immer geradeaus bis ___ dritten Kreuzung und biegen Sie dort rechts ab!",
                 "options": null,
                 "correct_answer": "zur",
                 "explanation": "Danh từ Kreuzung mang giống cái ('die Kreuzung'). Sau giới từ kép 'bis zu + Dativ', zu + der viết tắt thành 'zur' ('bis zur dritten Kreuzung').",
@@ -1654,12 +1658,12 @@ def seed_lesson_8():
                                 "zur",
                                 "zu der"
                         ],
-                        "translation": "Ngài cứ đạp xe thẳng mãi cho đến ngã tư thứ ba và rẽ phải ở đó!"
+                        "translation": "Bạn cứ đạp xe thẳng mãi cho đến ngã tư thứ ba và rẽ phải ở đó!"
                 }
         },
         {
                 "type": "dien_khuyet",
-                "question": "Câu 25: „Wie weit fährt die Straßenbahn Linie 4?“ — „Sie fährt vom Rathaus durch das Zentrum bis ___ Hafen.“",
+                "question": "Câu 25: Điền một từ thích hợp vào chỗ trống.\nFahrgast: Wie weit fährt die Straßenbahn Linie 4?\nPassant: Sie fährt vom Rathaus durch das Zentrum bis ___ Hafen.",
                 "options": null,
                 "correct_answer": "zum",
                 "explanation": "Danh từ Hafen (cảng biển) mang giống đực ('der Hafen'). Sau 'bis zu + Dativ', zu + dem viết tắt thành 'zum' ('bis zum Hafen').",
