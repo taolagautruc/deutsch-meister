@@ -456,8 +456,8 @@ Passant: Sie fährt vom Rathaus durch das Zentrum bis ___ Hafen.""",
         (
             "Câu 26: „Es regnet stark! Komm, wir gehen schnell ___ Einkaufszentrum dort drüben und trinken einen heißen Kakao!“",
             "ins",
-            ["ins", "in das"],
-            "Danh từ Einkaufszentrum mang giống trung ('das Einkaufszentrum'). Đi bước vào bên trong ('Wohin?' + Akkusativ) dùng in + das = 'ins'.",
+            ["ins", "in das", "zum", "zu dem"],
+            "Danh từ Einkaufszentrum mang giống trung ('das Einkaufszentrum'). Đi bước vào bên trong ('Wohin?' + Akkusativ) dùng in + das = 'ins'. Cách nói 'zum Einkaufszentrum' (đi tới trung tâm thương mại) cũng đúng ngữ pháp và được chấp nhận.",
             {"translation": "Trời mưa to quá! Nào, chúng mình đi nhanh vào trong trung tâm thương mại ở đằng kia và uống một cốc ca cao nóng đi!"}
         ),
         (
@@ -465,48 +465,48 @@ Passant: Sie fährt vom Rathaus durch das Zentrum bis ___ Hafen.""",
             "in die",
             ["in die"],
             "'Alte Nationalgalerie' mang giống cái ('die'). Đi vào bên trong ('Wohin?' + Akkusativ) dùng 'in die'.",
-            {"translation": "Cô của tôi rất quan tâm đến nghệ thuật, vì vậy chiều nay cô ấy đi vào Khu triển lãm Quốc gia Cũ."}
+            {"translation": "Cô của tôi rất quan tâm đến nghệ thuật, vì vậy chiều nay cô ấy đi vào Phòng trưng bày Quốc gia Cũ."}
         ),
         (
-            "Câu 28: „Das Wetter ist heute wunderbar. Gehen wir am Nachmittag mit den Kindern ___ großen Stadtpark oder lieber in den Zoo?“",
+            "Câu 28: „Das Wetter ist heute wunderbar. Gehen wir am Nachmittag mit den Kindern ___ großen Stadtpark oder lieber an den See?“",
             "in den",
-            ["in den"],
-            "Danh từ Stadtpark ('der Park') mang giống đực. Khi chỉ hướng đi vào ('Wohin?' + Akkusativ), der đổi thành den -> 'in den'.",
-            {"translation": "Thời tiết hôm nay tuyệt đẹp. Chiều nay chúng ta đi cùng bọn trẻ vào công viên lớn của thành phố hay đi vào sở thú hơn?"}
+            ["in den", "zum", "zu dem", "durch den"],
+            "Danh từ der Stadtpark mang giống đực. Khi chỉ hướng đi vào bên trong ('Wohin?' + Akkusativ), der đổi thành den → 'in den'. Các cách nói như 'zum großen Stadtpark' hay 'durch den großen Stadtpark' cũng đúng ngữ pháp nên được chấp nhận.",
+            {"translation": "Thời tiết hôm nay tuyệt đẹp. Chiều nay chúng ta đi cùng bọn trẻ vào công viên lớn của thành phố, hay đi ra hồ thì hơn?"}
         ),
         (
             "Câu 29: „Mein Onkel fotografiert sehr gern. In Berlin ___ er unbedingt auf den Fernsehturm fahren und die Stadt von oben fotografieren.“",
             "will",
-            ["will"],
-            "Chủ ngữ 'er' ('mein Onkel') là ngôi thứ 3 số ít; động từ khuyết thiếu wollen biến âm o -> i và không có đuôi thành 'will'.",
+            ["will", "möchte", "muss"],
+            "Chủ ngữ 'er' ('mein Onkel') là ngôi thứ 3 số ít; động từ khuyết thiếu wollen biến âm o -> i và không có đuôi thành 'will'. 'möchte' và 'muss' cũng phù hợp với câu này nên được chấp nhận.",
             {"translation": "Chú của tôi rất thích chụp ảnh. Ở Berlin chú ấy nhất định muốn đi lên Tháp truyền hình và chụp ảnh thành phố từ trên cao."}
         ),
         (
             "Câu 30: „Hallo Leon, hallo Mia! Ihr seid schon am Alexanderplatz. Was ___ ihr denn danach noch in der Innenstadt unternehmen?“",
             "wollt",
-            ["wollt"],
-            "Với chủ ngữ ngôi thứ 2 số nhiều 'ihr' (các bạn), động từ wollen chia thành 'wollt'.",
+            ["wollt", "möchtet"],
+            "Với chủ ngữ ngôi thứ 2 số nhiều 'ihr' (các bạn), động từ wollen chia thành 'wollt'. 'möchtet' cũng đúng và được chấp nhận.",
             {"translation": "Chào Leon, chào Mia! Hai bạn đã ở Quảng trường Alexander rồi. Thế sau đó hai bạn còn muốn làm gì ở khu trung tâm thành phố nữa?"}
         ),
         (
             "Câu 31: „Geh einfach über die kleine Brücke und dann 100 Meter geradeaus! Direkt auf der linken Seite ___ du schon die gelbe Post.“",
             "siehst",
-            ["siehst"],
-            "Động từ sehen (nhìn thấy) là động từ mạnh biến âm e -> ie ở ngôi du ('du siehst') và er/sie/es ('er sieht'). Vì chỉ đường cho bạn ở ngôi du, đáp án đúng là 'siehst'.",
-            {"translation": "Cậu cứ đi qua cây cầu nhỏ rồi đi thẳng 100 mét! Ngay ở phía bên tay trái cậu sẽ nhìn thấy bưu điện màu vàng."}
+            ["siehst", "findest", "entdeckst", "erkennst"],
+            "Động từ sehen (nhìn thấy) là động từ mạnh biến âm e -> ie ở ngôi du ('du siehst') và er/sie/es ('er sieht'). Vì chỉ đường cho bạn ở ngôi du, đáp án đúng là 'siehst'. 'findest', 'entdeckst', 'erkennst' cũng hợp nghĩa và được chấp nhận.",
+            {"translation": "Bạn cứ đi qua cây cầu nhỏ rồi đi thẳng 100 mét! Ngay ở phía bên tay trái bạn sẽ nhìn thấy bưu điện màu vàng."}
         ),
         (
             "Câu 32: „Nimm am besten die Buslinie 100! Dieser Bus ___ am Reichstag, am Brandenburger Tor und am Schloss Bellevue vorbei.“",
             "fährt",
-            ["fährt", "faehrt"],
-            "Chủ ngữ 'Dieser Bus' là ngôi thứ 3 số ít (er). Động từ tách vorbeifahren tách tiền tố vorbei xuống cuối câu, phần gốc fahren biến âm a -> ä thành 'fährt'.",
+            ["fährt", "faehrt", "kommt"],
+            "Chủ ngữ 'Dieser Bus' là ngôi thứ 3 số ít (er). Động từ tách vorbeifahren tách tiền tố vorbei xuống cuối câu, phần gốc fahren biến âm a -> ä thành 'fährt'. 'kommt' ('kommt … vorbei') cũng đúng và được chấp nhận.",
             {"translation": "Tốt nhất bạn hãy đi tuyến xe buýt số 100! Chuyến xe buýt này chạy ngang qua Tòa nhà Quốc hội, Cổng Brandenburg và Cung điện Bellevue."}
         ),
         (
             "Câu 33: „Das Wetter in Berlin ist sonnig. Nach dem Mittagessen wollen meine Schwester und ich zwei Stunden auf dem Kurfürstendamm ___.“",
             "bummeln",
-            ["bummeln"],
-            "Sau động từ khuyết thiếu wollen, động từ chính đứng ở cuối câu ở dạng nguyên mẫu: 'bummeln' (đi dạo phố, tản bộ ngắm cảnh/mua sắm).",
+            ["bummeln", "spazieren", "flanieren", "schlendern", "laufen", "gehen", "shoppen", "einkaufen", "spazieren gehen"],
+            "Sau động từ khuyết thiếu wollen, động từ chính đứng ở cuối câu ở dạng nguyên mẫu: 'bummeln' (đi dạo phố, tản bộ ngắm cảnh/mua sắm). Các động từ như spazieren, flanieren, schlendern, laufen, gehen, shoppen, einkaufen cũng hợp nghĩa nên được chấp nhận.",
             {"translation": "Thời tiết ở Berlin nắng đẹp. Sau bữa trưa, chị gái tôi và tôi muốn đi dạo phố hai tiếng đồng hồ trên đại lộ Kurfürstendamm."}
         )
     ]
@@ -536,8 +536,8 @@ Passant: Sie fährt vom Rathaus durch das Zentrum bis ___ Hafen.""",
             "Câu 34: Dịch sang tiếng Đức (bắt buộc kèm mạo từ xác định ở số ít): 'nhà ga trung tâm'",
             "der Hauptbahnhof",
             ["der Hauptbahnhof"],
-            "Nhà ga trung tâm là danh từ giống đực der Hauptbahnhof (vì der Bahnhof).",
-            "nhà ga trung tâm: der Hauptbahnhof"
+            "Nhà ga trung tâm là danh từ giống đực der Hauptbahnhof (vì der Bahnhof). Hauptbahnhof = Haupt (chính) + Bahnhof (nhà ga), thường viết tắt là Hbf.",
+            "nhà ga trung tâm = der Hauptbahnhof (Hbf)"
         ),
         (
             "Câu 35: Dịch sang tiếng Đức (bắt buộc kèm mạo từ xác định ở số ít): 'sân bay'",
