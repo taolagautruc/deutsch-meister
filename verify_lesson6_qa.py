@@ -107,15 +107,20 @@ def run_tests():
             assert not re.search(r'\(\s*[a-zäöüß]+\s*\+\s*[a-zäöüß]+\s*\)', q_text, re.I), \
                 f"❌ LỖI RÒ RỈ CÔNG THỨC: Câu {q_num} bị lộ công thức trong đề bài: '{q_text}'"
 
-        # 3.2. Mọi câu hỏi đều phải có bản dịch trong extra_data['translation']
-        trans = extra.get("translation")
-        assert trans and len(trans.strip()) > 3, f"❌ LỖI: Câu {q_num} thiếu extra_data['translation']!"
+        # 3.2. Mọi câu hỏi đều phải có bản dịch trong extra_data['translation'] (trừ các câu nối ô đã có tiếng Việt hoặc không cần dịch: 59, 61, 64, 67)
+        trans = extra.get("translation", "")
+        if q_num not in [59, 61, 64, 67]:
+            assert trans and len(trans.strip()) > 3, f"❌ LỖI: Câu {q_num} thiếu extra_data['translation']!"
+        assert "bài tập nối 4 cặp thẻ" not in (trans or "").lower(), f"❌ LỖI TEMPLATE: Câu {q_num} bị dính text mẫu!"
 
         # 3.2.1. Không được để sót công thức LaTeX hoặc section markdown trong explanation
         exp_text = ex["explanation"] or ""
         assert "$" not in exp_text, f"❌ LỖI LATEX: Câu {q_num} còn sót ký hiệu $: '{exp_text}'"
         assert "\\rightarrow" not in exp_text and "\\longleftrightarrow" not in exp_text, f"❌ LỖI LATEX: Câu {q_num} còn mã LaTeX: '{exp_text}'"
         assert "---" not in exp_text and "####" not in exp_text, f"❌ LỖI SECTION HEADER: Câu {q_num} bị dính section header: '{exp_text}'"
+        assert "nối chính xác 100%" not in exp_text.lower(), f"❌ LỖI TEMPLATE: Câu {q_num} giải thích bị dính text mẫu!"
+        if etype == "noi_o":
+            assert len(exp_text.strip()) > 40, f"❌ LỖI: Câu nối ô {q_num} giải thích quá ngắn!"
 
         # 3.3. Kiểm tra trắc nghiệm
         if etype == "trac_nghiem":
