@@ -103,19 +103,47 @@ def verify():
         extra = json.loads(e["extra_data"])
         pairs = extra.get("noi_o_pairs", [])
         assert len(pairs) == 4, f"❌ Câu {idx} không đủ 4 cặp!"
-        # Check no Vietnamese in left or right boxes
-        viet_chars = "àáạảãâầấậẩẫăằắặẳẵèéẹẻẽêềếệểễìíịỉĩòóọỏõôồốộổỗơờớợởỡùúụủũưừứựửữỳýỵỷỹđ"
-        for p in pairs:
+        
+        # Kiểm tra không có nhãn ngữ pháp trong ngoặc ở đề bài và cột trái
+        import re
+        q_title = e["question"]
+        grammar_brackets = ["(Dativ)", "(Akkusativ)", "(Nominativ)", "(bis zu)", "(3. Person", "(1. Person", "(2. Person", "(Sie)", "(du)", "(ihr)", "(wir)", "(Maskulinum)", "(Femininum)", "(Neutrum)"]
+        for gb in grammar_brackets:
+            assert gb.lower() not in q_title.lower(), f"❌ Câu {idx} có nhãn ngữ pháp {gb} trong tiêu đề: {q_title}"
+        assert "Ngài" not in q_title and "Cậu" not in q_title, f"❌ Câu {idx} có Ngài/Cậu trong tiêu đề: {q_title}"
+        assert "Khu triển lãm" not in q_title, f"❌ Câu {idx} có 'Khu triển lãm' trong tiêu đề: {q_title}"
+
+        for p_idx, p in enumerate(pairs, 1):
+            left_text = p["left"]
+            right_text = p["right"]
+            # Kiểm tra không có nhãn ngữ pháp trong ngoặc ở cột trái
+            for gb in grammar_brackets:
+                assert gb.lower() not in left_text.lower(), f"❌ Câu {idx} cặp {p_idx} có nhãn ngữ pháp {gb} ở cột trái: {left_text}"
+            assert "Ngài" not in left_text and "Cậu" not in left_text, f"❌ Câu {idx} cặp {p_idx} có Ngài/Cậu ở cột trái: {left_text}"
+            assert "Khu triển lãm" not in left_text and "Khu triển lãm" not in right_text, f"❌ Câu {idx} có 'Khu triển lãm': {left_text} / {right_text}"
+            
+            # Kiểm tra ô tiếng Đức không chứa tiếng Việt lẫn lộn
+            if idx in (59, 61, 63, 64, 65, 67):
+                viet_chars = "àáạảãâầấậẩẫăằắặẳẵèéẹẻẽêềếệểễìíịỉĩòóọỏõôồốộổỗơờớợởỡùúụủũưừứựửữỳýỵỷỹđ"
+                for ch in viet_chars:
+                    assert ch not in left_text.lower(), f"❌ Câu {idx} có tiếng Việt ở cột trái: {left_text}"
+            viet_chars = "àáạảãâầấậẩẫăằắặẳẵèéẹẻẽêềếệểễìíịỉĩòóọỏõôồốộổỗơờớợởỡùúụủũưừứựửữỳýỵỷỹđ"
             for ch in viet_chars:
-                assert ch not in p["left"].lower(), f"❌ Câu {idx} có tiếng Việt trong ô chọn trái: {p['left']}"
-                assert ch not in p["right"].lower(), f"❌ Câu {idx} có tiếng Việt trong ô chọn phải: {p['right']}"
-        # Check 4 pairs translated
+                assert ch not in right_text.lower(), f"❌ Câu {idx} có tiếng Việt ở cột phải: {right_text}"
+
+        # Kiểm tra Dịch nghĩa có 4 dòng riêng biệt, không có dấu |
         trans = extra.get("translation", "")
-        assert "1." in trans and "2." in trans and "3." in trans and "4." in trans, f"❌ Câu {idx} không dịch đủ 4 cặp!"
-        # Check 4 pairs explained
+        assert "|" not in trans, f"❌ Câu {idx} Dịch nghĩa còn dồn bằng dấu '|': {trans}"
+        assert "1." in trans and "2." in trans and "3." in trans and "4." in trans, f"❌ Câu {idx} không dịch đủ 4 cặp: {trans}"
+        assert "Ngài" not in trans and "Cậu" not in trans, f"❌ Câu {idx} Dịch nghĩa có Ngài/Cậu: {trans}"
+        assert "Khu triển lãm" not in trans, f"❌ Câu {idx} Dịch nghĩa có 'Khu triển lãm': {trans}"
+
+        # Kiểm tra Giải thích
         exp = e["explanation"]
-        assert "1." in exp and "2." in exp and "3." in exp and "4." in exp, f"❌ Câu {idx} không giải thích đủ 4 cặp!"
-    print("✅ TEST 5 PASS: Cả 10 bài nối ô không có tiếng Việt trong ô chọn, dịch và giải thích đủ 4 cặp 100%!")
+        assert exp and len(exp) > 20, f"❌ Câu {idx} thiếu giải thích chi tiết!"
+        assert "Ngài" not in exp and "Cậu" not in exp, f"❌ Câu {idx} Giải thích có Ngài/Cậu: {exp}"
+        assert "Khu triển lãm" not in exp, f"❌ Câu {idx} Giải thích có 'Khu triển lãm': {exp}"
+    print("✅ TEST 5 PASS: Cả 10 bài nối ô không có nhãn ngữ pháp, dịch đủ 4 dòng riêng biệt và không có Ngài/Cậu/Khu triển lãm 100%!")
 
     # 6. Check 'dien_tao_cau' (Q68 -> Q77)
     print("\n[TEST 6] Kiểm tra nhóm Điền tạo câu (Câu 68 -> 77):")

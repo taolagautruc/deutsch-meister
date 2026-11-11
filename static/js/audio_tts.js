@@ -273,6 +273,28 @@ function speakGerman(rawText, rate = 0.9) {
 }
 
 /**
+ * Phát âm tiếng Việt bằng giọng vi-VN chuẩn cho các ô giao diện/tình huống tiếng Việt
+ * @param {string} rawText Chuỗi tiếng Việt
+ * @param {number} rate Tốc độ đọc (mặc định 0.95)
+ */
+function speakVietnamese(rawText, rate = 0.95) {
+    if (!rawText || typeof window === 'undefined') return;
+    const textTrimmed = String(rawText).trim();
+    if ('speechSynthesis' in window) {
+        try {
+            window.speechSynthesis.cancel();
+            const u = new SpeechSynthesisUtterance(textTrimmed);
+            u.lang = 'vi-VN';
+            u.rate = rate || 0.95;
+            u.pitch = 1.0;
+            window.speechSynthesis.speak(u);
+        } catch (e) {
+            console.warn('SpeechSynthesis VI err:', e);
+        }
+    }
+}
+
+/**
  * Phát âm thanh dự phòng qua endpoint Google German TTS trên máy chủ Flask
  */
 function playFallbackAudio(text) {
@@ -288,6 +310,7 @@ function playFallbackAudio(text) {
 
 if (typeof window !== 'undefined') {
     window.speakGerman = speakGerman;
+    window.speakVietnamese = speakVietnamese;
     window.getBestGermanVoice = getBestGermanVoice;
     window.playFallbackAudio = playFallbackAudio;
     window.GERMAN_PRONUNCIATION_MAP = GERMAN_PRONUNCIATION_MAP;

@@ -59,7 +59,7 @@ def build_lesson_8_seed():
         ('Staatsoper', 'die', 'die', 'die Staatsopern', 'eine Staatsoper', 'keine Staatsoper', 'Nhà hát Opera Quốc gia Berlin', cat2, 'Danh lam thắng cảnh mang giống cái (vì die Oper). Đi tới: zur Staatsoper.', 'Heute Abend besuchen wir eine berühmte Oper in der Staatsoper.', 'Tối nay chúng tôi đi xem một vở nhạc kịch nổi tiếng ở Nhà hát Opera Quốc gia.'),
         ('Friedrichstraße', 'die', 'die', 'nur Singular', 'eine Friedrichstraße', 'keine Friedrichstraße', 'Phố mua sắm Friedrich', cat2, 'Con phố thương mại sầm uất tại Berlin mang giống cái (vì die Straße). Đi dọc phố: die Friedrichstraße entlang.', 'Anschließend wollen Maria und ich auf der Friedrichstraße bummeln.', 'Tiếp sau đó Maria và tôi muốn đi dạo phố trên đường Friedrich.'),
         ('Museumsinsel', 'die', 'die', 'nur Singular', 'eine Museumsinsel', 'keine Museumsinsel', 'Đảo Bảo tàng Berlin', cat2, 'Quần thể viện bảo tàng nổi tiếng thế giới mang giống cái (vì die Insel - hòn đảo).', 'Auf der Museumsinsel besichtigen wir berühmte Kunstwerke.', 'Trên Đảo Bảo tàng chúng tôi tham quan các tác phẩm nghệ thuật nổi tiếng.'),
-        ('Alte Nationalgalerie', 'die', 'die', 'die Alten Nationalgalerien', 'eine Alte Nationalgalerie', 'keine Alte Nationalgalerie', 'Khu triển lãm Quốc gia Cũ', cat2, 'Hậu tố -ie luôn mang giống cái (die Galerie). Đi vào: in die Alte Nationalgalerie.', 'Danach will ich in die Alte Nationalgalerie gehen.', 'Sau đó tôi muốn đi vào Khu triển lãm Quốc gia Cũ.'),
+        ('Alte Nationalgalerie', 'die', 'die', 'die Alten Nationalgalerien', 'eine Alte Nationalgalerie', 'keine Alte Nationalgalerie', 'Phòng trưng bày Quốc gia Cũ', cat2, 'Hậu tố -ie luôn mang giống cái (die Galerie). Đi vào: in die Alte Nationalgalerie.', 'Danach will ich in die Alte Nationalgalerie gehen.', 'Sau đó tôi muốn đi vào Phòng trưng bày Quốc gia Cũ.'),
         ('Bundeskanzleramt', 'das', 'das', 'die Bundeskanzlerämter', 'ein Bundeskanzleramt', 'kein Bundeskanzleramt', 'Phủ Thủ tướng Liên bang', cat2, 'Danh lam thắng cảnh mang giống trung (vì das Amt - cơ quan).', 'Sie fahren mit dem Bus am Bundeskanzleramt vorbei.', 'Họ đi xe buýt ngang qua Phủ Thủ tướng Liên bang.'),
         ('Brandenburger Tor', 'das', 'das', 'nur Singular', 'ein Brandenburger Tor', 'kein Brandenburger Tor', 'Cổng thành Brandenburg', cat2, 'Biểu tượng lịch sử nước Đức mang giống trung (vì das Tor). Đi tới: zum Brandenburger Tor.', 'Sie gehen zum Brandenburger Tor und machen viele Fotos.', 'Họ đi đến Cổng Brandenburg và chụp nhiều bức ảnh.'),
         ('Schloss Bellevue', 'das', 'das', 'nur Singular', 'ein Schloss Bellevue', 'kein Schloss Bellevue', 'Cung điện Bellevue', cat2, 'Dinh thự Tổng thống Đức mang giống trung (vì das Schloss).', 'Das Schloss Bellevue liegt mitten im Tiergarten an der Spree.', 'Cung điện Bellevue nằm giữa công viên Tiergarten bên bờ sông Spree.'),
@@ -298,7 +298,7 @@ Familie Schneider ist neu in München. Herr Schneider ___ unbedingt das Deutsche
                 "den / der / den"
             ],
             "den / der / der",
-            "1. Động từ 'suchen' đòi hỏi tân ngữ trực tiếp ở Akkusativ; 'der Hauptbahnhof' (giống đực) đổi thành 'den neuen Hauptbahnhof'. 2. Cụm giới từ 'an … vorbei' luôn đi với Dativ; 'die Kirche' (giống cái) đổi thành 'an der alten Kirche vorbei'. 3. Trong mệnh đề 'dann steht ___ Hauptbahnhof', danh từ làm chủ ngữ ở Nominativ nên giữ nguyên mạo từ 'der Hauptbahnhof'. Các đáp án khác sai vì: 'dem' sai vì sau 'suchen' cần Akkusativ; 'die' sai vì 'an … vorbei' cần Dativ; 'den' ở chỗ thứ ba sai vì chủ ngữ của 'steht' ở Nominativ.",
+            """1. Động từ 'suchen' đòi hỏi tân ngữ trực tiếp ở Akkusativ; 'der Hauptbahnhof' (giống đực) đổi thành 'den neuen Hauptbahnhof'. 2. Cụm giới từ 'an … vorbei' luôn đi với Dativ; 'die Kirche' (giống cái) đổi thành 'an der alten Kirche vorbei'. 3. Trong mệnh đề 'dann steht ___ Hauptbahnhof', danh từ làm chủ ngữ ở Nominativ nên giữ nguyên mạo từ 'der Hauptbahnhof'. Các đáp án khác sai vì: 'dem' sai vì sau 'suchen' cần Akkusativ; 'die' sai vì 'an … vorbei' cần Dativ; 'den' ở chỗ thứ ba sai vì chủ ngữ của 'steht' ở Nominativ.""",
             {"translation": "'Xin lỗi, chúng tôi đang tìm nhà ga trung tâm mới.' — 'Quý vị cứ đi ngang qua nhà thờ cổ, sau đó nhà ga trung tâm sẽ nằm ngay trước mặt quý vị!'"}
         ),
         # --- CÂU 14 (Taxi ở Wien) ---
@@ -340,7 +340,7 @@ Wie kommen deine Großeltern morgen vom Hotel zum Schloss Sanssouci? — Sie fah
                 "der / zum / dem / zum"
             ],
             "der / zum / den / zum",
-            "1. 'mit' luôn đi với Dativ: 'die S-Bahn' → 'mit der S-Bahn'. 2. 'bis zu' đi với Dativ: 'der Hauptbahnhof' → 'bis zum Hauptbahnhof'. 3. 'nehmen' cần tân ngữ Akkusativ: 'der Bus' → 'nehmen den Bus'. 4. 'zu + Dativ': 'das Schloss' → 'zum Schloss'. Các đáp án khác sai vì: 'die' sau 'mit' sai do 'mit' luôn đi với Dativ; 'zur Hauptbahnhof' sai vì der Hauptbahnhof giống đực; 'dem Bus' sai vì 'nehmen' cần Akkusativ.",
+            """1. 'mit' luôn đi với Dativ: 'die S-Bahn' → 'mit der S-Bahn'. 2. 'bis zu' đi với Dativ: 'der Hauptbahnhof' → 'bis zum Hauptbahnhof'. 3. 'nehmen' cần tân ngữ Akkusativ: 'der Bus' → 'nehmen den Bus'. 4. 'zu + Dativ': 'das Schloss' → 'zum Schloss'. Các đáp án khác sai vì: 'die' sau 'mit' sai do 'mit' luôn đi với Dativ; 'zur Hauptbahnhof' sai vì der Hauptbahnhof giống đực; 'dem Bus' sai vì 'nehmen' cần Akkusativ.""",
             {"translation": "Ông bà của bạn ngày mai đi từ khách sạn đến Cung điện Sanssouci bằng cách nào? — Đầu tiên ông bà đi bằng tàu điện S-Bahn cho đến nhà ga trung tâm và ở đó bắt xe buýt đi thẳng tới cung điện."}
         ),
         # --- CÂU 17 (Tài xế hỏi đường đi sân bay) ---
@@ -750,125 +750,65 @@ Passant: Sie fährt vom Rathaus durch das Zentrum bis ___ Hafen.""",
     # (Đảm bảo: Cả 10 bài không có tiếng Việt trong ô chọn trái/phải!)
     # =========================================================================
     match_exercises = [
-        # 58
         (
-            "Câu 58: Nối Tình huống của Khách du lịch (Cột Trái) với Câu Hỏi Đường phù hợp (Cột Phải):",
-            [
-                {"left": "Du suchst ein Medikament und fragst nach dem Ort (Wo? + Nominativ)", "right": "Entschuldigung, wo ist hier eine Apotheke?"},
-                {"left": "Du stehst auf der Straße und suchst direkt den Ort (suchen + Akkusativ)", "right": "Entschuldigung, ich suche den Hauptbahnhof."},
-                {"left": "Du möchtest den Weg zu einer Sehenswürdigkeit wissen (zu + Dativ)", "right": "Entschuldigung, wie komme ich zum Brandenburger Tor?"},
-                {"left": "Du möchtest in ein Gebäude hineingehen (in + Akkusativ)", "right": "Entschuldigung, wo geht es hier ins Stadtmuseum?"}
-            ],
-            "1. Bạn tìm thuốc và hỏi địa điểm (Wo? + Nominativ): Xin lỗi, ở đây có hiệu thuốc nào không? | 2. Bạn đứng trên đường và tìm thẳng địa điểm (suchen + Akkusativ): Xin lỗi, tôi đang tìm nhà ga trung tâm. | 3. Bạn muốn biết đường tới danh thắng (zu + Dativ): Xin lỗi, làm thế nào tôi đến được Cổng Brandenburg? | 4. Bạn muốn bước vào trong tòa nhà (in + Akkusativ): Xin lỗi, đi lối nào để vào trong bảo tàng thành phố?",
-            "Phân tích 4 mẫu câu hỏi đường: 1. Động từ 'sein' (wo ist) đòi hỏi Nominativ. 2. Động từ 'suchen' đòi hỏi tân ngữ Akkusativ (den Hauptbahnhof). 3. 'wie komme ich' đi với zu + Dativ (zum Brandenburger Tor). 4. 'wo geht es' đi với in + Akkusativ khi vào trong tòa nhà (ins Stadtmuseum)."
+            'Câu 58: Nối tình huống (cột trái) với câu hỏi đường phù hợp (cột phải).',
+            [{'left': 'Bạn cần mua thuốc và hỏi xem quanh đây có hiệu thuốc nào không.', 'right': 'Entschuldigung, wo ist hier eine Apotheke?'}, {'left': 'Bạn nói với người qua đường rằng bạn đang tìm nhà ga trung tâm.', 'right': 'Entschuldigung, ich suche den Hauptbahnhof.'}, {'left': 'Bạn hỏi cách đi đến Cổng Brandenburg.', 'right': 'Entschuldigung, wie komme ich zum Brandenburger Tor?'}, {'left': 'Bạn hỏi lối vào bảo tàng thành phố.', 'right': 'Entschuldigung, wo geht es hier ins Stadtmuseum?'}],
+            '1. Xin lỗi, quanh đây có hiệu thuốc nào không?\n2. Xin lỗi, tôi đang tìm nhà ga trung tâm.\n3. Xin lỗi, làm thế nào tôi đến được Cổng Brandenburg?\n4. Xin lỗi, lối nào ở đây dẫn vào bảo tàng thành phố?',
+            "1. 'Wo ist …?' hỏi vị trí; 'sein' đi với Nominativ nên 'eine Apotheke'. 2. 'suchen' đòi Akkusativ: der Hauptbahnhof → 'den Hauptbahnhof'. 3. 'wie komme ich' đi với zu + Dativ: zu + dem = 'zum Brandenburger Tor'. 4. 'Wo geht es hier ins …?' dùng in + Akkusativ khi vào bên trong một tòa nhà: in + das = 'ins Stadtmuseum'."
         ),
-        # 59
         (
-            "Câu 59: Nối Động từ Chỉ đường (Cột Trái) với Cụm Giới từ Không gian tương ứng (Cột Phải):",
-            [
-                {"left": "Bitte gehen Sie an ...", "right": "der alten Kirche und am Rathaus vorbei!"},
-                {"left": "Bitte laufen Sie durch ...", "right": "den grünen Stadtpark und das große Stadttor!"},
-                {"left": "Bitte fahren Sie über ...", "right": "die neue Brücke und den Marktplatz!"},
-                {"left": "Bitte spazieren Sie ...", "right": "die Friedrichstraße und den Kanal entlang!"}
-            ],
-            "1. Xin Ngài hãy đi ngang qua: nhà thờ cổ và tòa thị chính! | 2. Xin Ngài hãy đi bộ xuyên qua: công viên thành phố xanh tươi và cổng thành lớn! | 3. Xin Ngài hãy lái xe băng qua: cây cầu mới và quảng trường chợ! | 4. Xin Ngài hãy đi dạo: dọc theo phố Friedrich và con kênh!",
-            "Quy tắc giới từ không gian: 1. an + Dativ + vorbei (an der alten Kirche, am Rathaus vorbei). 2. durch + Akkusativ (durch den Stadtpark, durch das Stadttor). 3. über + Akkusativ (über die Brücke, über den Marktplatz). 4. Danh từ ở Akkusativ + entlang (die Friedrichstraße entlang, den Kanal entlang)."
+            'Câu 59: Nối phần đầu câu (cột trái) với phần còn lại (cột phải) để được câu chỉ đường đúng ngữ pháp.',
+            [{'left': 'Bitte gehen Sie an ...', 'right': 'der alten Kirche und am Rathaus vorbei!'}, {'left': 'Bitte laufen Sie durch ...', 'right': 'den grünen Stadtpark und das große Stadttor!'}, {'left': 'Bitte fahren Sie über ...', 'right': 'die neue Brücke und den Marktplatz!'}, {'left': 'Bitte spazieren Sie ...', 'right': 'die Friedrichstraße und den Kanal entlang!'}],
+            '1. Xin quý vị hãy đi ngang qua nhà thờ cổ và tòa thị chính!\n2. Xin quý vị hãy đi bộ xuyên qua công viên thành phố xanh tươi và cổng thành lớn!\n3. Xin quý vị hãy lái xe qua cây cầu mới và quảng trường chợ!\n4. Xin quý vị hãy đi dạo dọc theo phố Friedrich và dọc theo con kênh!',
+            'Quy tắc giới từ không gian: 1. an + Dativ + vorbei (an der alten Kirche, am Rathaus vorbei). 2. durch + Akkusativ (durch den Stadtpark, durch das Stadttor). 3. über + Akkusativ (über die Brücke, über den Marktplatz). 4. Danh từ ở Akkusativ + entlang (die Friedrichstraße entlang, den Kanal entlang).'
         ),
-        # 60
         (
-            "Câu 60: Nối Cặp Địa điểm (Cột Trái) với Cụm 'bis zu' tương ứng (Cột Phải):",
-            [
-                {"left": "der Flughafen & der Hafen", "right": "Fahren Sie geradeaus bis zum Flughafen / bis zum Hafen!"},
-                {"left": "die Kreuzung & die Ampel", "right": "Gehen Sie geradeaus bis zur Kreuzung / bis zur Ampel!"},
-                {"left": "das Stadttor & das Einkaufszentrum", "right": "Laufen Sie geradeaus bis zum Stadttor / bis zum Einkaufszentrum!"},
-                {"left": "die zweite Straße & die Staatsoper", "right": "Gehen Sie geradeaus bis zur zweiten Straße / bis zur Staatsoper!"}
-            ],
-            "1. Sân bay & cảng biển (Maskulinum): Hãy lái xe đi thẳng cho đến sân bay / cho đến cảng biển! | 2. Ngã tư & đèn giao thông (Femininum): Hãy đi thẳng cho đến ngã tư / cho đến đèn giao thông! | 3. Cổng thành & trung tâm thương mại (Neutrum): Hãy đi bộ thẳng cho đến cổng thành / cho đến trung tâm thương mại! | 4. Con đường thứ hai & Nhà hát Opera (Femininum): Hãy đi thẳng cho đến con đường thứ hai / cho đến Nhà hát Opera!",
-            "Cấu trúc 'bis zu + Dativ': 1. Danh từ giống đực (der): zu + dem = 'zum' (zum Flughafen, zum Hafen). 2. Danh từ giống cái (die): zu + der = 'zur' (zur Kreuzung, zur Ampel). 3. Danh từ giống trung (das): zu + dem = 'zum' (zum Stadttor, zum Einkaufszentrum). 4. Danh từ giống cái đi kèm số thứ tự hoặc tên riêng: zu + der = 'zur' (zur zweiten Straße, zur Staatsoper)."
+            'Câu 60: Nối câu chỉ đường tiếng Việt (cột trái) với câu tiếng Đức tương ứng (cột phải).',
+            [{'left': 'Đi thẳng cho đến sân bay.', 'right': 'Fahren Sie geradeaus bis zum Flughafen!'}, {'left': 'Đi thẳng cho đến ngã tư.', 'right': 'Gehen Sie geradeaus bis zur Kreuzung!'}, {'left': 'Đi thẳng cho đến cổng thành.', 'right': 'Laufen Sie geradeaus bis zum Stadttor!'}, {'left': 'Đi thẳng cho đến Nhà hát Opera.', 'right': 'Gehen Sie geradeaus bis zur Staatsoper!'}],
+            '1. Hãy lái xe đi thẳng cho đến sân bay!\n2. Hãy đi thẳng cho đến ngã tư!\n3. Hãy đi bộ thẳng cho đến cổng thành!\n4. Hãy đi thẳng cho đến Nhà hát Opera!',
+            "'bis' đi với zu + Dativ. der Flughafen → zu + dem = 'zum Flughafen'; die Kreuzung → zu + der = 'zur Kreuzung'; das Stadttor → 'zum Stadttor'; die Staatsoper → 'zur Staatsoper'."
         ),
-        # 61
         (
-            "Câu 61: Nối Nhóm Địa danh (Cột Trái) với Cấu trúc 'in + Akkusativ/Dativ' tương ứng (Cột Phải):",
-            [
-                {"left": "Berliner Dom, Zoo, Supermarkt (Maskulinum)", "right": "Wir gehen am Nachmittag in den Berliner Dom / in den Zoo."},
-                {"left": "Disko, Staatsoper, Nationalgalerie (Femininum)", "right": "Wir gehen heute Abend in die Disko / in die Staatsoper."},
-                {"left": "Kino, Einkaufszentrum, Theater (Neutrum)", "right": "Wir gehen am Wochenende ins Kino / ins Einkaufszentrum."},
-                {"left": "Konzert, Film (Wo? -> Dativ)", "right": "Wir hören ein Konzert im Berliner Dom / sehen einen Film im Kino."}
-            ],
-            "1. Nhà thờ lớn, sở thú, siêu thị (Giống đực - Akkusativ): Buổi chiều chúng tôi đi vào Nhà thờ lớn Berlin / vào sở thú. | 2. Vũ trường, Nhà hát Opera, Khu triển lãm (Giống cái - Akkusativ): Tối nay chúng tôi đi vào vũ trường / vào Nhà hát Opera. | 3. Rạp phim, trung tâm thương mại, nhà hát kịch (Giống trung - Akkusativ): Cuối tuần chúng tôi đi vào rạp chiếu phim / vào trung tâm thương mại. | 4. Nghe hòa nhạc, xem phim (Vị trí tĩnh Wo? -> Dativ): Chúng tôi nghe hòa nhạc ở trong Nhà thờ lớn / xem phim ở trong rạp.",
-            "Quy tắc giới từ 'in': 1. Di chuyển vào trong (Wohin? + Akkusativ): giống đực dùng 'in den' (in den Berliner Dom, in den Zoo). 2. Giống cái dùng 'in die' (in die Disko, in die Staatsoper). 3. Giống trung dùng 'in das' = 'ins' (ins Kino, ins Einkaufszentrum). 4. Vị trí tĩnh diễn ra sự việc (Wo? + Dativ): giống đực/trung dùng 'in dem' = 'im' (im Berliner Dom, im Kino)."
+            'Câu 61: Nối câu có chỗ trống (cột trái) với từ cần điền (cột phải).',
+            [{'left': 'Am Nachmittag gehen wir ___ Zoo.', 'right': 'in den'}, {'left': 'Heute Abend gehen wir ___ Disko.', 'right': 'in die'}, {'left': 'Am Wochenende gehen wir ___ Einkaufszentrum.', 'right': 'ins'}, {'left': 'Wir hören ein Konzert ___ Berliner Dom.', 'right': 'im'}],
+            '1. Buổi chiều chúng tôi đi đến sở thú.\n2. Tối nay chúng tôi đi đến vũ trường.\n3. Cuối tuần chúng tôi đi đến trung tâm thương mại.\n4. Chúng tôi nghe hòa nhạc trong Nhà thờ lớn Berlin.',
+            "Hỏi 'Wohin?' (di chuyển vào trong) dùng in + Akkusativ: der Zoo → 'in den Zoo'; die Disko → 'in die Disko'; das Einkaufszentrum → in + das = 'ins'. Hỏi 'Wo?' (hành động diễn ra bên trong) dùng in + Dativ: der Berliner Dom → in + dem = 'im Berliner Dom'."
         ),
-        # 62
         (
-            "Câu 62: Nối Đối tượng Giao tiếp (Cột Trái) với Lời Chỉ đường phù hợp (Cột Phải):",
-            [
-                {"left": "Höfliche Anrede an eine ältere Dame (Sie)", "right": "Gehen Sie bitte die erste Straße rechts und dann bis zur Ampel!"},
-                {"left": "Wegbeschreibung für den besten Freund (du)", "right": "Geh bitte die erste Straße rechts und lauf dann über den Platz!"},
-                {"left": "Wegbeschreibung für zwei Mitschüler (ihr)", "right": "Geht bitte die erste Straße rechts und fahrt dann mit dem Bus!"},
-                {"left": "Vorschlag für die ganze Gruppe (wir)", "right": "Gehen wir zuerst durch den Park und danach ins Restaurant!"}
-            ],
-            "1. Lời nói lịch sự với một quý bà lớn tuổi (ngôi Sie): Xin Ngài hãy đi con đường thứ nhất bên phải và sau đó đi cho đến đèn giao thông! | 2. Chỉ đường cho bạn thân nhất (ngôi du): Cậu hãy đi con đường thứ nhất bên phải và sau đó chạy băng qua quảng trường! | 3. Chỉ đường cho hai người bạn cùng lớp (ngôi ihr): Các bạn hãy đi con đường thứ nhất bên phải và sau đó đi bằng xe buýt! | 4. Đề xuất cho cả nhóm bạn bè (ngôi wir): Đầu tiên chúng ta hãy đi xuyên qua công viên và sau đó vào quán cà phê!",
-            "Các ngôi giao tiếp trong câu chỉ đường: 1. Ngôi lịch sự 'Sie': đảo động từ lên đầu kèm đại từ 'Gehen Sie...'. 2. Ngôi thân mật số ít 'du': dùng thể mệnh lệnh bỏ đuôi -st và bỏ đại từ 'Geh... / Lauf...'. 3. Ngôi thân mật số nhiều 'ihr': dùng thể mệnh lệnh giữ đuôi -t và bỏ đại từ 'Geht... / Fahrt...'. 4. Lời rủ rê nhóm 'wir': đảo động từ lên trước 'Gehen wir...'."
+            'Câu 62: Nối đối tượng giao tiếp (cột trái) với lời chỉ đường phù hợp (cột phải).',
+            [{'left': 'Bạn chỉ đường lịch sự cho một bà cụ lớn tuổi không quen biết.', 'right': 'Gehen Sie bitte die erste Straße rechts und dann bis zur Ampel!'}, {'left': 'Bạn chỉ đường cho người bạn thân nhất của mình.', 'right': 'Geh bitte die erste Straße rechts und lauf dann über den Platz!'}, {'left': 'Bạn chỉ đường cho hai bạn cùng lớp.', 'right': 'Geht bitte die erste Straße rechts und fahrt dann mit dem Bus!'}, {'left': 'Bạn rủ cả nhóm, gồm cả bạn, cùng đi.', 'right': 'Gehen wir zuerst durch den Park und danach ins Restaurant!'}],
+            '1. Xin quý vị hãy đi con đường thứ nhất bên phải rồi đi tiếp đến đèn giao thông!\n2. Bạn hãy đi con đường thứ nhất bên phải rồi đi bộ qua quảng trường nhé!\n3. Các bạn hãy đi con đường thứ nhất bên phải rồi đi tiếp bằng xe buýt!\n4. Đầu tiên chúng ta hãy đi xuyên qua công viên rồi vào nhà hàng nhé!',
+            "Với 'Sie': động từ đứng đầu câu, theo sau là Sie ('Gehen Sie…'). Với 'du': bỏ đuôi -st và bỏ đại từ ('Geh…', 'Lauf…'). Với 'ihr': giữ đuôi -t và bỏ đại từ ('Geht…', 'Fahrt…'). Với 'wir': động từ đứng đầu, theo sau là wir ('Gehen wir…'), dùng để rủ cùng làm."
         ),
-        # 63
         (
-            "Câu 63: Nối Chủ ngữ (Cột Trái) với Câu Động từ Khuyết thiếu tương ứng (Cột Phải):",
-            [
-                {"left": "Meine Cousine Lena (3. Person Singular)", "right": "will nächstes Jahr an der Humboldt-Universität Medizin studieren."},
-                {"left": "Mein Bruder und ich (1. Person Plural)", "right": "wollen morgen Vormittag eine Schifffahrt auf der Spree machen."},
-                {"left": "Du (2. Person Singular)", "right": "musst an der dritten Kreuzung links abbiegen und vor der Bank halten."},
-                {"left": "Ihr (2. Person Plural)", "right": "könnt vom Alexanderplatz zu Fuß bis zur Museumsinsel gehen."}
-            ],
-            "1. Chị họ Lena của tôi (Ngôi thứ 3 số ít): muốn học ngành y tại Đại học Humboldt vào năm tới. | 2. Anh trai tôi và tôi (Ngôi thứ nhất số nhiều wir): muốn đi du thuyền trên sông Spree vào sáng mai. | 3. Bạn (Ngôi thứ 2 số ít du): phải rẽ trái ở ngã tư thứ ba và dừng lại trước ngân hàng. | 4. Các bạn (Ngôi thứ 2 số nhiều ihr): có thể đi bộ từ Quảng trường Alexander cho đến Đảo Bảo tàng.",
+            'Câu 63: Nối chủ ngữ (cột trái) với phần còn lại của câu (cột phải).',
+            [{'left': 'Meine Cousine Lena', 'right': 'will nächstes Jahr an der Humboldt-Universität Medizin studieren.'}, {'left': 'Mein Bruder und ich', 'right': 'wollen morgen Vormittag eine Schifffahrt auf der Spree machen.'}, {'left': 'Du', 'right': 'musst an der dritten Kreuzung links abbiegen und vor der Bank halten.'}, {'left': 'Ihr', 'right': 'könnt vom Alexanderplatz zu Fuß bis zur Museumsinsel gehen.'}],
+            '1. Chị (em) họ Lena của tôi muốn học ngành y tại Đại học Humboldt vào năm tới.\n2. Anh (em) trai tôi và tôi muốn đi du thuyền trên sông Spree vào sáng mai.\n3. Bạn phải rẽ trái ở ngã tư thứ ba và dừng lại trước ngân hàng.\n4. Các bạn có thể đi bộ từ Quảng trường Alexander đến Đảo Bảo tàng.',
             "Chia Modalverben theo các ngôi: 1. Ngôi thứ 3 số ít (sie = Lena) của wollen chia là 'will'. 2. Chủ ngữ ghép 'Mein Bruder und ich' = wir chia wollen là 'wollen'. 3. Ngôi du chia müssen là 'musst'. 4. Ngôi ihr chia können là 'könnt'."
         ),
-        # 64
         (
-            "Câu 64: Nối Danh từ Địa điểm Số Ít (Cột Trái) với Dạng Số Nhiều tương ứng (Cột Phải):",
-            [
-                {"left": "der Bahnhof / der Hafen / der Markt", "right": "die Bahnhöfe / die Häfen / die Märkte"},
-                {"left": "das Schloss / das Krankenhaus / das Rathaus", "right": "die Schlösser / die Krankenhäuser / die Rathäuser"},
-                {"left": "das Einkaufszentrum / das Museum", "right": "die Einkaufszentren / die Museen"},
-                {"left": "die Brücke / die Kreuzung / die Ampel", "right": "die Brücken / die Kreuzungen / die Ampeln"}
-            ],
-            "1. Nhà ga / cảng biển / khu chợ: các nhà ga / các cảng biển / các khu chợ. | 2. Lâu đài / bệnh viện / tòa thị chính: các lâu đài / các bệnh viện / các tòa thị chính. | 3. Trung tâm thương mại / viện bảo tàng: các trung tâm thương mại / các viện bảo tàng. | 4. Cây cầu / ngã tư / đèn giao thông: những cây cầu / những ngã tư / những cột đèn giao thông.",
-            "Quy tắc chuyển số nhiều danh từ địa điểm: 1. Danh từ giống đực thêm Umlaut và đuôi -e (Bahnhöfe, Häfen, Märkte). 2. Danh từ giống trung tận cùng bằng Haus/Schloss thêm Umlaut và đuôi -er (Schlösser, Krankenhäuser, Rathäuser). 3. Danh từ gốc Latin đuôi -um đổi thành -en (Einkaufszentren, Museen). 4. Danh từ giống cái thêm đuôi -n/-en (Brücken, Kreuzungen, Ampeln)."
+            'Câu 64: Nối danh từ địa điểm số ít (cột trái) với dạng số nhiều tương ứng (cột phải).',
+            [{'left': 'Bahnhof / Hafen / Markt', 'right': 'die Bahnhöfe / die Häfen / die Märkte'}, {'left': 'Schloss / Krankenhaus / Rathaus', 'right': 'die Schlösser / die Krankenhäuser / die Rathäuser'}, {'left': 'Einkaufszentrum / Museum', 'right': 'die Einkaufszentren / die Museen'}, {'left': 'Brücke / Kreuzung / Ampel', 'right': 'die Brücken / die Kreuzungen / die Ampeln'}],
+            '1. Dạng số nhiều tương ứng là các nhà ga / các cảng biển / các khu chợ.\n2. Dạng số nhiều tương ứng là các lâu đài / các bệnh viện / các tòa thị chính.\n3. Dạng số nhiều tương ứng là các trung tâm thương mại / các viện bảo tàng.\n4. Dạng số nhiều tương ứng là những cây cầu / những ngã tư / những cột đèn giao thông.',
+            'Quy tắc chuyển số nhiều danh từ địa điểm: 1. Danh từ giống đực thêm Umlaut và đuôi -e (Bahnhöfe, Häfen, Märkte). 2. Danh từ giống trung tận cùng bằng Haus/Schloss thêm Umlaut và đuôi -er (Schlösser, Krankenhäuser, Rathäuser). 3. Danh từ có gốc ngoại lai hoặc đuôi -um đổi thành -en (Einkaufszentren, Museen). 4. Danh từ giống cái thêm đuôi -n/-en (Brücken, Kreuzungen, Ampeln).'
         ),
-        # 65
         (
-            "Câu 65: Nối Danh lam Thắng cảnh Berlin (Cột Trái) với Hoạt động thực tế phù hợp (Cột Phải):",
-            [
-                {"left": "Auf dem Fernsehturm am Alexanderplatz", "right": "kann man ganz Berlin von oben sehen."},
-                {"left": "Auf der Museumsinsel und in der Alten Nationalgalerie", "right": "wollen die Touristen berühmte Kunstwerke besichtigen."},
-                {"left": "Auf der langen Friedrichstraße", "right": "möchten viele Besucher am Nachmittag bummeln und einkaufen."},
-                {"left": "Vor dem Brandenburger Tor und dem Reichstag", "right": "machen die Reisegruppen immer viele Erinnerungsfotos."}
-            ],
-            "1. Trên Tháp truyền hình ở Quảng trường Alexander: người ta có thể nhìn thấy toàn cảnh Berlin từ trên cao. | 2. Trên Đảo Bảo tàng và trong Khu triển lãm Quốc gia Cũ: các du khách muốn tham quan các tác phẩm nghệ thuật nổi tiếng. | 3. Trên phố mua sắm Friedrich dài: nhiều khách tham quan muốn đi dạo và mua sắm vào buổi chiều. | 4. Phía trước Cổng Brandenburg và Tòa nhà Quốc hội: các đoàn du lịch luôn chụp rất nhiều bức ảnh kỷ niệm.",
-            "Hoạt động gắn liền với địa danh Berlin: 1. Fernsehturm cao 368m là nơi ngắm toàn cảnh thành phố (von oben sehen). 2. Museumsinsel và Alte Nationalgalerie là trung tâm nghệ thuật và bảo tàng (Kunstwerke besichtigen). 3. Friedrichstraße là phố thương mại mua sắm sầm uất (bummeln und einkaufen). 4. Brandenburger Tor và Reichstag là biểu tượng lịch sử để chụp ảnh kỷ niệm (Erinnerungsfotos machen)."
+            'Câu 65: Ghép phần đầu câu (cột trái) với phần còn lại (cột phải) để được câu hoàn chỉnh đúng ngữ pháp.',
+            [{'left': 'Auf dem Fernsehturm am Alexanderplatz', 'right': 'kann man ganz Berlin von oben sehen.'}, {'left': 'Auf der Museumsinsel und in der Alten Nationalgalerie', 'right': 'wollen die Touristen berühmte Kunstwerke besichtigen.'}, {'left': 'Auf der langen Friedrichstraße', 'right': 'möchten viele Besucher am Nachmittag bummeln und einkaufen.'}, {'left': 'Vor dem Brandenburger Tor und dem Reichstag', 'right': 'machen die Reisegruppen immer viele Erinnerungsfotos.'}],
+            '1. Trên Tháp truyền hình ở Quảng trường Alexander, người ta có thể nhìn thấy toàn cảnh Berlin từ trên cao.\n2. Trên Đảo Bảo tàng và trong Phòng trưng bày Quốc gia Cũ, du khách muốn tham quan các tác phẩm nghệ thuật nổi tiếng.\n3. Trên phố Friedrich dài, nhiều khách tham quan muốn đi dạo và mua sắm vào buổi chiều.\n4. Trước Cổng Brandenburg và Tòa nhà Quốc hội, các đoàn du lịch luôn chụp rất nhiều ảnh kỷ niệm.',
+            'Hoạt động gắn liền với địa danh Berlin: 1. Fernsehturm cao 368m là nơi ngắm toàn cảnh thành phố (von oben sehen). 2. Museumsinsel và Alte Nationalgalerie là trung tâm nghệ thuật và bảo tàng (Kunstwerke besichtigen). 3. Friedrichstraße là phố thương mại mua sắm sầm uất (bummeln und einkaufen). 4. Brandenburger Tor và Reichstag là biểu tượng lịch sử để chụp ảnh kỷ niệm (Erinnerungsfotos machen).'
         ),
-        # 66
         (
-            "Câu 66: Nối Trình tự Chỉ đường (Cột Trái) với Mệnh đề Di chuyển tương ứng (Cột Phải):",
-            [
-                {"left": "Erster Schritt (Zuerst)", "right": "gehen Sie vom Bahnhofsvorplatz geradeaus die Kaiserstraße entlang."},
-                {"left": "Zweiter Schritt (Dann)", "right": "biegen Sie an der zweiten Kreuzung vor der Bank links ab."},
-                {"left": "Dritter Schritt (Danach)", "right": "laufen Sie über die kleine Brücke und am Stadtpark vorbei."},
-                {"left": "Letzter Schritt (Zum Schluss)", "right": "sehen Sie direkt rechts nach der Ampel Ihr Hotel."}
-            ],
-            "1. Bước thứ nhất (Đầu tiên): Ngài hãy đi từ quảng trường trước nhà ga đi thẳng dọc theo phố Kaiser. | 2. Bước thứ hai (Sau đó): Ngài hãy rẽ trái ở ngã tư thứ hai phía trước ngân hàng. | 3. Bước thứ ba (Tiếp theo): Ngài hãy đi bộ qua cây cầu nhỏ và đi ngang qua công viên thành phố. | 4. Bước cuối cùng (Cuối cùng): Ngài sẽ nhìn thấy khách sạn của mình ở ngay bên phải sau cột đèn giao thông.",
-            "Trình tự logic của bài chỉ đường: 1. Bắt đầu bằng 'Zuerst' xuất phát từ điểm ban đầu. 2. Tiếp diễn bằng 'Dann' với hành động rẽ hướng. 3. Kết nối bằng 'Danach' vượt qua các chướng ngại vật/cột mốc. 4. Kết thúc bằng 'Zum Schluss' xác định tòa nhà đích đến."
+            'Câu 66: Nối trình tự chỉ đường (cột trái) với mệnh đề di chuyển tương ứng (cột phải).',
+            [{'left': 'Erster Schritt (Zuerst)', 'right': 'gehen Sie vom Bahnhofsvorplatz geradeaus die Kaiserstraße entlang.'}, {'left': 'Zweiter Schritt (Dann)', 'right': 'laufen Sie über die kleine Brücke und am Stadtpark vorbei.'}, {'left': 'Dritter Schritt (Danach)', 'right': 'biegen Sie nach dem Stadtpark an der zweiten Kreuzung links ab.'}, {'left': 'Letzter Schritt (Zum Schluss)', 'right': 'sehen Sie direkt rechts nach der Ampel Ihr Hotel.'}],
+            '1. Trước tiên, quý vị đi thẳng từ quảng trường trước nhà ga dọc theo phố Kaiser.\n2. Sau đó, quý vị đi bộ qua cây cầu nhỏ và đi ngang qua công viên thành phố.\n3. Tiếp theo, sau công viên, quý vị rẽ trái ở ngã tư thứ hai.\n4. Cuối cùng, ngay bên phải sau đèn giao thông, quý vị sẽ thấy khách sạn của mình.',
+            "Thứ tự được xác định bằng các mốc trong câu: bước đầu bắt đầu từ Bahnhofsvorplatz (điểm xuất phát); bước hai đi qua cầu và ngang qua Stadtpark; bước ba rẽ 'nach dem Stadtpark' (sau công viên) nên phải đến sau bước hai; bước cuối là nhìn thấy khách sạn, tức điểm đến. Sau từ nối ở đầu câu (Zuerst, Dann, Danach, Zum Schluss), động từ chia đứng ngay sau, rồi mới đến chủ ngữ: 'Zuerst gehen Sie …'."
         ),
-        # 67
         (
-            "Câu 67: Nối Câu hỏi Phương hướng (Cột Trái) với Câu trả lời đúng Ngữ pháp (Cột Phải):",
-            [
-                {"left": "Wo wartet dein Freund auf dich? (Dativ)", "right": "Er steht direkt vor dem Kino / an der zweiten Ampel."},
-                {"left": "Wohin läufst du so schnell? (Akkusativ)", "right": "Ich laufe schnell in das Kino / über die Straße."},
-                {"left": "Wo fährt der Sightseeing-Bus entlang? (Dativ)", "right": "Er fährt am Schloss Bellevue und an der Universität vorbei."},
-                {"left": "Wohin fährt der Sightseeing-Bus jetzt? (Akkusativ)", "right": "Er fährt jetzt durch das Stadttor auf den großen Platz."}
-            ],
-            "1. Bạn của bạn đang đợi bạn ở đâu? (Vị trí tĩnh - Dativ): Anh ấy đang đứng ngay trước rạp chiếu phim / ở cột đèn giao thông thứ hai. | 2. Bạn đang chạy nhanh đi đâu thế? (Hướng di chuyển - Akkusativ): Tôi đang chạy nhanh vào trong rạp chiếu phim / qua bên kia đường. | 3. Chiếc xe buýt tham quan chạy dọc theo đâu? (Đi ngang qua - Dativ): Nó chạy ngang qua Cung điện Bellevue và trường Đại học. | 4. Bây giờ chiếc xe buýt tham quan chạy đi đâu? (Xuyên qua hướng tới - Akkusativ): Bây giờ nó chạy xuyên qua cổng thành đi ra quảng trường lớn.",
-            "Phân biệt Wo? (Dativ) và Wohin? (Akkusativ): 1. Câu hỏi 'Wo?' hỏi vị trí đứng tĩnh đòi hỏi Dativ (vor dem Kino, an der Ampel). 2. Câu hỏi 'Wohin?' hỏi hướng đích chuyển động đòi hỏi Akkusativ (in das Kino, über die Straße). 3. Hành động đi ngang qua địa điểm dùng an + Dativ + vorbei. 4. Hành động đi xuyên qua và tiến vào không gian mới dùng durch + Akkusativ."
+            'Câu 67: Nối câu hỏi (cột trái) với câu trả lời đúng ngữ pháp (cột phải).',
+            [{'left': 'Wo wartet dein Freund auf dich?', 'right': 'Er steht direkt vor dem Kino / an der zweiten Ampel.'}, {'left': 'Wohin läufst du so schnell?', 'right': 'Ich laufe schnell in das Kino / über die Straße.'}, {'left': 'Wo fährt der Sightseeing-Bus vorbei?', 'right': 'Er fährt am Schloss Bellevue und an der Universität vorbei.'}, {'left': 'Wohin fährt der Sightseeing-Bus?', 'right': 'Er fährt durch das Stadttor auf den großen Platz.'}],
+            '1. Bạn của bạn đang đợi bạn ở đâu? — Anh ấy đứng ngay trước rạp chiếu phim / ở đèn giao thông thứ hai.\n2. Bạn chạy nhanh đi đâu thế? — Tôi chạy nhanh vào rạp chiếu phim / qua bên kia đường.\n3. Xe buýt tham quan chạy ngang qua những nơi nào? — Nó chạy ngang qua Cung điện Bellevue và trường Đại học.\n4. Xe buýt tham quan chạy đi đâu? — Nó chạy xuyên qua cổng thành ra quảng trường lớn.',
+            "'Wo?' hỏi vị trí, nơi sự việc diễn ra → Dativ: 'vor dem Kino', 'an der zweiten Ampel', 'am Schloss … vorbei' (an + dem), 'an der Universität vorbei'. 'Wohin?' hỏi hướng di chuyển → Akkusativ: 'in das Kino', 'über die Straße', 'durch das Stadttor', 'auf den großen Platz'. 'an … vorbei' luôn đi với Dativ; 'durch' luôn đi với Akkusativ."
         )
     ]
 
@@ -1267,17 +1207,17 @@ Passant: Sie fährt vom Rathaus durch das Zentrum bis ___ Hafen.""",
         ),
         (
             "Câu 99: Dịch câu sau sang tiếng Việt: „Am Vormittag wollen die Studenten in die Alte Nationalgalerie gehen, aber am Abend möchten sie lieber einen Film im Kino sehen.“",
-            "Vào buổi sáng các sinh viên muốn đi vào Khu triển lãm Quốc gia Cũ, nhưng vào buổi tối họ lại thích xem một bộ phim ở trong rạp chiếu phim hơn.",
+            "Vào buổi sáng các sinh viên muốn đi vào Phòng trưng bày Quốc gia Cũ, nhưng vào buổi tối họ lại thích xem một bộ phim ở trong rạp chiếu phim hơn.",
             [
-                "Vào buổi sáng các sinh viên muốn đi vào Khu triển lãm Quốc gia Cũ, nhưng vào buổi tối họ lại thích xem một bộ phim ở trong rạp chiếu phim hơn.",
-                "Vào buổi sáng các sinh viên muốn đi vào Khu triển lãm Quốc gia Cũ, nhưng vào buổi tối họ lại thích xem một bộ phim ở trong rạp chiếu phim hơn",
-                "Buổi sáng những người sinh viên muốn vào Khu triển lãm Quốc gia Cũ, nhưng buổi tối họ muốn xem phim trong rạp hơn.",
-                "Buổi sáng những người sinh viên muốn vào Khu triển lãm Quốc gia Cũ, nhưng buổi tối họ muốn xem phim trong rạp hơn",
-                "Buổi sáng sinh viên muốn đi vào Khu triển lãm Quốc gia Cũ, nhưng buổi tối họ thích xem một bộ phim trong rạp chiếu phim hơn.",
-                "Buổi sáng sinh viên muốn đi vào Khu triển lãm Quốc gia Cũ, nhưng buổi tối họ thích xem một bộ phim trong rạp chiếu phim hơn"
+                "Vào buổi sáng các sinh viên muốn đi vào Phòng trưng bày Quốc gia Cũ, nhưng vào buổi tối họ lại thích xem một bộ phim ở trong rạp chiếu phim hơn.",
+                "Vào buổi sáng các sinh viên muốn đi vào Phòng trưng bày Quốc gia Cũ, nhưng vào buổi tối họ lại thích xem một bộ phim ở trong rạp chiếu phim hơn",
+                "Buổi sáng những người sinh viên muốn vào Phòng trưng bày Quốc gia Cũ, nhưng buổi tối họ muốn xem phim trong rạp hơn.",
+                "Buổi sáng những người sinh viên muốn vào Phòng trưng bày Quốc gia Cũ, nhưng buổi tối họ muốn xem phim trong rạp hơn",
+                "Buổi sáng sinh viên muốn đi vào Phòng trưng bày Quốc gia Cũ, nhưng buổi tối họ thích xem một bộ phim trong rạp chiếu phim hơn.",
+                "Buổi sáng sinh viên muốn đi vào Phòng trưng bày Quốc gia Cũ, nhưng buổi tối họ thích xem một bộ phim trong rạp chiếu phim hơn"
             ],
             "Đối chiếu 'in die Alte Nationalgalerie gehen' (Wohin? + Akkusativ) và 'im Kino sehen' (Wo? + Dativ).",
-            "Vào buổi sáng các sinh viên muốn đi vào Khu triển lãm Quốc gia Cũ, nhưng vào buổi tối họ lại thích xem một bộ phim ở trong rạp chiếu phim hơn."
+            "Vào buổi sáng các sinh viên muốn đi vào Phòng trưng bày Quốc gia Cũ, nhưng vào buổi tối họ lại thích xem một bộ phim ở trong rạp chiếu phim hơn."
         ),
         (
             "Câu 100: Dịch câu sau sang tiếng Việt: „Biegen Sie bitte vor dem großen Einkaufszentrum links ab, fahren Sie durch den kurzen Tunnel und halten Sie direkt neben der Bank!“",

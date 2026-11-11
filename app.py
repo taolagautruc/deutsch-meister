@@ -268,6 +268,18 @@ def ensure_db_initialized():
             row_q53 = cursor.fetchone()
             if not row_q53 or '2 tiếng' in (row_q53["extra_data"] or ''):
                 need_reseed_b8 = True
+            cursor.execute("SELECT question FROM exercises WHERE lesson_id = ? AND question LIKE '%Câu 58%' LIMIT 1;", (b8_id,))
+            row_q58 = cursor.fetchone()
+            if not row_q58 or 'Tình huống của Khách du lịch' in (row_q58["question"] or '') or 'câu hỏi đường phù hợp' not in (row_q58["question"] or ''):
+                need_reseed_b8 = True
+            cursor.execute("SELECT question FROM exercises WHERE lesson_id = ? AND question LIKE '%Câu 61%' LIMIT 1;", (b8_id,))
+            row_q61 = cursor.fetchone()
+            if not row_q61 or 'Nhóm Địa danh' in (row_q61["question"] or '') or 'chỗ trống' not in (row_q61["question"] or ''):
+                need_reseed_b8 = True
+            cursor.execute("SELECT question FROM exercises WHERE lesson_id = ? AND question LIKE '%Câu 60%' LIMIT 1;", (b8_id,))
+            row_q60 = cursor.fetchone()
+            if not row_q60 or 'bis zu' in (row_q60["question"] or ''):
+                need_reseed_b8 = True
         if need_reseed_b8:
             from lessons.a1.seed_a1_b8 import seed_lesson_8
             seed_lesson_8()
