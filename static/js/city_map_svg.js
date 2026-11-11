@@ -970,52 +970,77 @@
         </svg>`;
     }
 
-    // 11. map_build_1 (Câu 68: START -> geradeaus -> an dem Bahnhof vorbei -> Dom)
+    // 11. map_build_1 (Câu 68: START -> durch den Park -> an der Kirche vorbei -> bis zum Bahnhof)
     function getMapBuild1Svg() {
         return `
         <svg viewBox="0 0 460 220" width="100%" class="w-full max-w-lg mx-auto rounded-2xl shadow-sm border border-slate-300 bg-slate-900 overflow-hidden">
             <rect x="0" y="0" width="460" height="220" fill="#0f172a"/>
+
+            <!-- Con đường chạy ngang -->
             <rect x="30" y="88" width="400" height="44" fill="#1e293b"/>
             <line x1="30" y1="110" x2="430" y2="110" stroke="#334155" stroke-width="2" stroke-dasharray="6 5"/>
 
-            <circle cx="50" cy="110" r="11" fill="#ef4444" stroke="#ffffff" stroke-width="2"/>
-            <text x="50" y="114" font-size="8" font-weight="black" fill="#ffffff" text-anchor="middle">START</text>
+            <!-- Khối Park: vùng xanh, đường đi & mũi tên chạy xuyên qua giữa -->
+            <rect x="115" y="66" width="115" height="88" rx="8" fill="#064e3b" stroke="#10b981" stroke-width="2" fill-opacity="0.9"/>
+            <text x="172.5" y="85" font-size="11" font-weight="extrabold" fill="#a7f3d0" text-anchor="middle">🌳 Park</text>
 
-            <rect x="150" y="30" width="85" height="42" rx="5" fill="#1e293b" stroke="#64748b" stroke-width="1.5"/>
-            <text x="192.5" y="55" font-size="8.5" font-weight="bold" fill="#e2e8f0" text-anchor="middle">🚉 Bahnhof</text>
+            <!-- Khối Kirche: nằm sát mép đường phía trên, mũi tên đi ngang qua -->
+            <rect x="250" y="26" width="90" height="46" rx="6" fill="#1e293b" stroke="#38bdf8" stroke-width="1.5"/>
+            <text x="295" y="54" font-size="10.5" font-weight="bold" fill="#bae6fd" text-anchor="middle">⛪ Kirche</text>
 
-            <rect x="330" y="30" width="85" height="42" rx="5" fill="#3f3f46" stroke="#71717a" stroke-width="1.5"/>
-            <text x="372.5" y="55" font-size="8.5" font-weight="bold" fill="#fef08a" text-anchor="middle">⛪ Dom</text>
+            <!-- Điểm đích: Bahnhof (ZIEL) ở cuối đường bên phải -->
+            <rect x="360" y="82" width="85" height="56" rx="6" fill="#581c87" stroke="#c084fc" stroke-width="2"/>
+            <text x="402.5" y="105" font-size="10" font-weight="bold" fill="#f5d0fe" text-anchor="middle">🚉 Bahnhof</text>
+            <text x="402.5" y="122" font-size="10" font-weight="black" fill="#facc15" text-anchor="middle">(ZIEL)</text>
 
-            <path d="M 65 110 L 330 110" fill="none" stroke="#3b82f6" stroke-width="5" stroke-linecap="round"/>
-            <polygon points="330,110 318,104 318,116" fill="#2563eb"/>
+            <!-- Lộ trình mũi tên: xuất phát từ mép START, đi xuyên qua Park, đi ngang qua Kirche, kết thúc tại Bahnhof -->
+            <path d="M 68 110 L 358 110" fill="none" stroke="#38bdf8" stroke-width="5" stroke-linecap="round"/>
+            <polygon points="358,110 346,104 346,116" fill="#0284c7"/>
+
+            <!-- START: vòng tròn đỏ trên cùng, không bị che -->
+            <circle cx="50" cy="110" r="16" fill="#ef4444" stroke="#ffffff" stroke-width="2.5"/>
+            <text x="50" y="114" font-size="8.5" font-weight="black" fill="#ffffff" text-anchor="middle">START</text>
         </svg>`;
     }
 
-    // 12. map_build_2 (Câu 69: Kreuzung rechts -> bis zur Ampel -> Krankenhaus)
+    // 12. map_build_2 (Câu 69: START -> über die Brücke -> Goethestraße entlang -> Post ZIEL)
     function getMapBuild2Svg() {
         return `
         <svg viewBox="0 0 460 220" width="100%" class="w-full max-w-lg mx-auto rounded-2xl shadow-sm border border-slate-300 bg-slate-900 overflow-hidden">
             <rect x="0" y="0" width="460" height="220" fill="#0f172a"/>
-            <rect x="80" y="0" width="44" height="220" fill="#1e293b"/>
-            <rect x="124" y="90" width="300" height="44" fill="#1e293b"/>
 
-            <text x="50" y="115" font-size="8.5" font-weight="bold" fill="#94a3b8">Kreuzung</text>
+            <!-- Dòng sông (Fluss) nằm ngang -->
+            <rect x="0" y="95" width="460" height="48" fill="#0369a1"/>
+            <path d="M 0 110 Q 30 115 60 110 T 120 110 T 180 110 T 240 110 T 300 110 T 360 110 T 420 110 T 460 110" fill="none" stroke="#38bdf8" stroke-width="1.5" opacity="0.6"/>
+            <path d="M 0 128 Q 30 133 60 128 T 120 128 T 180 128 T 240 128 T 300 128 T 360 128 T 420 128 T 460 128" fill="none" stroke="#38bdf8" stroke-width="1.5" opacity="0.4"/>
+            <text x="410" y="125" font-size="9" font-style="italic" fill="#bae6fd" text-anchor="middle">Fluss</text>
 
-            <!-- Ampel -->
-            <rect x="290" y="70" width="12" height="24" rx="2" fill="#000" stroke="#f59e0b" stroke-width="1"/>
-            <circle cx="296" cy="75" r="2" fill="#ef4444"/>
-            <circle cx="296" cy="82" r="2" fill="#f59e0b"/>
-            <circle cx="296" cy="89" r="2" fill="#10b981"/>
-            <text x="296" y="63" font-size="7" font-weight="bold" fill="#fde047" text-anchor="middle">Ampel 🚦</text>
+            <!-- Con đường dọc từ START đi lên -->
+            <rect x="80" y="38" width="44" height="182" fill="#1e293b"/>
+            <line x1="102" y1="145" x2="102" y2="220" stroke="#334155" stroke-width="2" stroke-dasharray="6 5"/>
 
-            <!-- Krankenhaus -->
-            <rect x="330" y="35" width="95" height="42" rx="5" fill="#1e3a8a" stroke="#3b82f6" stroke-width="1.5"/>
-            <text x="377.5" y="60" font-size="8.5" font-weight="bold" fill="#bfdbfe" text-anchor="middle">🏥 Krankenhaus</text>
+            <!-- Khối cây cầu (Brücke) bắc ngang qua sông -->
+            <rect x="74" y="93" width="56" height="52" rx="4" fill="#334155" stroke="#94a3b8" stroke-width="2"/>
+            <line x1="80" y1="119" x2="124" y2="119" stroke="#64748b" stroke-width="2" stroke-dasharray="4 3"/>
+            <text x="102" y="86" font-size="9.5" font-weight="extrabold" fill="#f8fafc" text-anchor="middle">🌉 Brücke</text>
 
-            <!-- Đường đi: Đi từ dưới lên ngã tư rồi rẽ phải tới đèn giao thông -->
-            <path d="M 102 200 L 102 112 L 290 112" fill="none" stroke="#10b981" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
-            <polygon points="290,112 278,106 278,118" fill="#059669"/>
+            <!-- Con đường ngang Goethestraße sau khi qua cầu rẽ sang phải -->
+            <rect x="80" y="18" width="276" height="44" fill="#1e293b"/>
+            <line x1="124" y1="40" x2="355" y2="40" stroke="#475569" stroke-width="2" stroke-dasharray="6 5"/>
+            <text x="220" y="33" font-size="9.5" font-weight="bold" fill="#cbd5e1" text-anchor="middle">Goethestraße</text>
+
+            <!-- Điểm đích: Bưu điện Post (ZIEL) ở cuối đường Goethestraße -->
+            <rect x="355" y="14" width="85" height="52" rx="6" fill="#854d0e" stroke="#facc15" stroke-width="2"/>
+            <text x="397.5" y="36" font-size="10.5" font-weight="extrabold" fill="#fef9c3" text-anchor="middle">🏣 Post</text>
+            <text x="397.5" y="52" font-size="10" font-weight="black" fill="#fde047" text-anchor="middle">(ZIEL)</text>
+
+            <!-- Mũi tên lộ trình: đi từ START qua cầu (über die Brücke) rồi chạy dọc Goethestraße (entlang) đến Post -->
+            <path d="M 102 178 L 102 40 L 354 40" fill="none" stroke="#10b981" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+            <polygon points="354,40 342,34 342,46" fill="#059669"/>
+
+            <!-- START: ở dưới cùng của đường dọc, vẽ trên cùng hiển thị rõ ràng -->
+            <circle cx="102" cy="195" r="16" fill="#ef4444" stroke="#ffffff" stroke-width="2.5"/>
+            <text x="102" y="199" font-size="8.5" font-weight="black" fill="#ffffff" text-anchor="middle">START</text>
         </svg>`;
     }
 
