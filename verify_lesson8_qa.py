@@ -143,6 +143,17 @@ def verify():
         assert exp and len(exp) > 20, f"❌ Câu {idx} thiếu giải thích chi tiết!"
         assert "Ngài" not in exp and "Cậu" not in exp, f"❌ Câu {idx} Giải thích có Ngài/Cậu: {exp}"
         assert "Khu triển lãm" not in exp, f"❌ Câu {idx} Giải thích có 'Khu triển lãm': {exp}"
+
+        # Kiểm tra cụ thể Câu 62: phân biệt rõ ràng không thể nhầm lẫn giữa Cặp 2 (người bạn thân đi bộ) và Cặp 3 (hai bạn đi xe buýt)
+        if idx == 62:
+            assert any("đi bộ qua quảng trường" in p["left"] for p in pairs), "❌ Câu 62 Cặp 2 thiếu chi tiết đi bộ qua quảng trường!"
+            assert any("đi bằng xe buýt" in p["left"] for p in pairs), "❌ Câu 62 Cặp 3 thiếu chi tiết đi bằng xe buýt!"
+            print(f"  • Câu 62: Đã phân biệt rõ ràng 100% giữa người bạn thân (đi bộ qua quảng trường) và 2 bạn (đi xe buýt).")
+
+        # Kiểm tra cụ thể Câu 66: lộ trình rõ ràng trên đề bài để xác định thứ tự từng bước
+        if idx == 66:
+            assert "theo lộ trình" in q_title and "Khách sạn" in q_title, f"❌ Câu 66 thiếu lộ trình trên đề bài: {q_title}"
+            print(f"  • Câu 66: Đề bài nêu rõ lộ trình từng bước (Ga tàu ➔ Cầu & Công viên ➔ Ngã tư ➔ Khách sạn).")
     print("✅ TEST 5 PASS: Cả 10 bài nối ô không có nhãn ngữ pháp, dịch đủ 4 dòng riêng biệt và không có Ngài/Cậu/Khu triển lãm 100%!")
 
     # 6. Check 'dien_tao_cau' (Q68 -> Q77)

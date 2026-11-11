@@ -374,12 +374,12 @@
     <!-- ========================================================= -->
     <!-- JAVASCRIPT XỬ LÝ TƯƠNG TÁC, PHÁT ÂM & KẾT NỐI API PYTHON   -->
     <!-- ========================================================= -->
-    <script src="/static/js/audio_tts.js?v=20261111_v4"></script>
-    <script src="/static/js/number_trainer.js?v=20261111_v4"></script>
-    <script src="/static/js/city_map_svg.js?v=20261111_v4"></script>
-    <script src="/static/js/verbs_db.js?v=20261111_v4"></script>
-    <script src="/static/js/lexikon_db.js?v=20261111_v4"></script>
-    <script src="/static/js/arena_engine.js?v=20261111_v4"></script>
+    <script src="/static/js/audio_tts.js?v=20261111_v5"></script>
+    <script src="/static/js/number_trainer.js?v=20261111_v5"></script>
+    <script src="/static/js/city_map_svg.js?v=20261111_v5"></script>
+    <script src="/static/js/verbs_db.js?v=20261111_v5"></script>
+    <script src="/static/js/lexikon_db.js?v=20261111_v5"></script>
+    <script src="/static/js/arena_engine.js?v=20261111_v5"></script>
     <script>
         const LEVEL_META = {
             "A1": {
@@ -540,7 +540,7 @@
             }
         }
 
-        const CURRENT_SESSION_VERSION = '20261111_v4';
+        const CURRENT_SESSION_VERSION = '20261111_v5';
 
         function loadActiveLessonSession(lessonId) {
             if (!lessonId) return null;
@@ -1461,7 +1461,7 @@
 
                 const isLeftVi = hasVietnameseChars(p.left);
                 const leftSpeakHtml = isLeftVi
-                    ? `<button type="button" onclick="event.stopPropagation(); speakVietnamese('${p.left.replace(/'/g, "\\'")}')" class="p-1 rounded text-xs hover:bg-slate-200/60 cursor-pointer" title="Đọc tiếng Việt">🔊</button>`
+                    ? ''
                     : `<button type="button" onclick="event.stopPropagation(); speakGerman('${p.left.replace(/'/g, "\\'")}')" class="p-1 rounded text-xs hover:bg-slate-200/60 cursor-pointer" title="Phát âm tiếng Đức">🔊</button>`;
 
                 return `
@@ -1504,7 +1504,7 @@
                 const letter = String.fromCharCode(65 + rightPos);
                 const isRightVi = hasVietnameseChars(p.right);
                 const rightSpeakHtml = isRightVi
-                    ? `<button type="button" onclick="event.stopPropagation(); speakVietnamese('${p.right.replace(/'/g, "\\'")}')" class="p-1 rounded text-xs hover:bg-slate-200/60 cursor-pointer" title="Đọc tiếng Việt">🔊</button>`
+                    ? ''
                     : `<button type="button" onclick="event.stopPropagation(); speakGerman('${p.right.replace(/'/g, "\\'")}')" class="p-1 rounded text-xs hover:bg-slate-200/60 cursor-pointer" title="Phát âm tiếng Đức">🔊</button>`;
 
                 return `

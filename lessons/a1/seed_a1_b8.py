@@ -2324,25 +2324,25 @@ def seed_lesson_8():
                 "type": "noi_o",
                 "question": "Câu 62: Nối đối tượng giao tiếp (cột trái) với lời chỉ đường phù hợp (cột phải).",
                 "options": null,
-                "correct_answer": "Bạn chỉ đường lịch sự cho một bà cụ lớn tuổi không quen biết. = Gehen Sie bitte die erste Straße rechts und dann bis zur Ampel! | Bạn chỉ đường cho người bạn thân nhất của mình. = Geh bitte die erste Straße rechts und lauf dann über den Platz! | Bạn chỉ đường cho hai bạn cùng lớp. = Geht bitte die erste Straße rechts und fahrt dann mit dem Bus! | Bạn rủ cả nhóm, gồm cả bạn, cùng đi. = Gehen wir zuerst durch den Park und danach ins Restaurant!",
-                "explanation": "Với 'Sie': động từ đứng đầu câu, theo sau là Sie ('Gehen Sie…'). Với 'du': bỏ đuôi -st và bỏ đại từ ('Geh…', 'Lauf…'). Với 'ihr': giữ đuôi -t và bỏ đại từ ('Geht…', 'Fahrt…'). Với 'wir': động từ đứng đầu, theo sau là wir ('Gehen wir…'), dùng để rủ cùng làm.",
+                "correct_answer": "Bạn chỉ đường lịch sự cho một bà cụ lớn tuổi đi đến cột đèn giao thông. = Gehen Sie bitte die erste Straße rechts und dann bis zur Ampel! | Bạn chỉ đường cho một người bạn thân đi bộ qua quảng trường. = Geh bitte die erste Straße rechts und lauf dann über den Platz! | Bạn chỉ đường cho hai bạn cùng lớp đi bằng xe buýt. = Geht bitte die erste Straße rechts und fahrt dann mit dem Bus! | Bạn rủ cả nhóm, gồm cả bạn, cùng đi vào nhà hàng. = Gehen wir zuerst durch den Park und danach ins Restaurant!",
+                "explanation": "Với 'Sie' (bà cụ lớn tuổi): động từ đứng đầu câu, theo sau là Sie ('Gehen Sie…'). Với 'du' (1 người bạn thân): bỏ đuôi -st và bỏ đại từ ('Geh…', 'Lauf…'). Với 'ihr' (2 bạn cùng lớp): giữ đuôi -t và bỏ đại từ ('Geht…', 'Fahrt…'). Với 'wir' (cả nhóm gồm bạn): động từ đứng đầu, theo sau là wir ('Gehen wir…'), dùng để rủ cùng làm.",
                 "exp_reward": 30,
                 "extra_data": {
                         "noi_o_pairs": [
                                 {
-                                        "left": "Bạn chỉ đường lịch sự cho một bà cụ lớn tuổi không quen biết.",
+                                        "left": "Bạn chỉ đường lịch sự cho một bà cụ lớn tuổi đi đến cột đèn giao thông.",
                                         "right": "Gehen Sie bitte die erste Straße rechts und dann bis zur Ampel!"
                                 },
                                 {
-                                        "left": "Bạn chỉ đường cho người bạn thân nhất của mình.",
+                                        "left": "Bạn chỉ đường cho một người bạn thân đi bộ qua quảng trường.",
                                         "right": "Geh bitte die erste Straße rechts und lauf dann über den Platz!"
                                 },
                                 {
-                                        "left": "Bạn chỉ đường cho hai bạn cùng lớp.",
+                                        "left": "Bạn chỉ đường cho hai bạn cùng lớp đi bằng xe buýt.",
                                         "right": "Geht bitte die erste Straße rechts und fahrt dann mit dem Bus!"
                                 },
                                 {
-                                        "left": "Bạn rủ cả nhóm, gồm cả bạn, cùng đi.",
+                                        "left": "Bạn rủ cả nhóm, gồm cả bạn, cùng đi vào nhà hàng.",
                                         "right": "Gehen wir zuerst durch den Park und danach ins Restaurant!"
                                 }
                         ],
@@ -2438,10 +2438,10 @@ def seed_lesson_8():
         },
         {
                 "type": "noi_o",
-                "question": "Câu 66: Nối trình tự chỉ đường (cột trái) với mệnh đề di chuyển tương ứng (cột phải).",
+                "question": "Câu 66: Nối các bước chỉ đường theo lộ trình từ Ga tàu đến Khách sạn (Bước 1: Quảng trường Ga ➔ Bước 2: Cầu & Công viên ➔ Bước 3: Rẽ ở ngã tư ➔ Bước 4: Khách sạn):",
                 "options": null,
                 "correct_answer": "Erster Schritt (Zuerst) = gehen Sie vom Bahnhofsvorplatz geradeaus die Kaiserstraße entlang. | Zweiter Schritt (Dann) = laufen Sie über die kleine Brücke und am Stadtpark vorbei. | Dritter Schritt (Danach) = biegen Sie nach dem Stadtpark an der zweiten Kreuzung links ab. | Letzter Schritt (Zum Schluss) = sehen Sie direkt rechts nach der Ampel Ihr Hotel.",
-                "explanation": "Thứ tự được xác định bằng các mốc trong câu: bước đầu bắt đầu từ Bahnhofsvorplatz (điểm xuất phát); bước hai đi qua cầu và ngang qua Stadtpark; bước ba rẽ 'nach dem Stadtpark' (sau công viên) nên phải đến sau bước hai; bước cuối là nhìn thấy khách sạn, tức điểm đến. Sau từ nối ở đầu câu (Zuerst, Dann, Danach, Zum Schluss), động từ chia đứng ngay sau, rồi mới đến chủ ngữ: 'Zuerst gehen Sie …'.",
+                "explanation": "Thứ tự theo đúng lộ trình từ Ga tàu đến Khách sạn: Bước 1 bắt đầu từ Bahnhofsvorplatz (điểm xuất phát: quảng trường ga); Bước 2 đi qua cây cầu và ngang qua Stadtpark; Bước 3 rẽ 'nach dem Stadtpark' (sau công viên) ở ngã tư thứ hai; Bước 4 nhìn thấy khách sạn (điểm đến). Sau từ nối ở đầu câu (Zuerst, Dann, Danach, Zum Schluss), động từ chia đứng ngay sau, rồi mới đến chủ ngữ: 'Zuerst gehen Sie …'.",
                 "exp_reward": 30,
                 "extra_data": {
                         "noi_o_pairs": [
