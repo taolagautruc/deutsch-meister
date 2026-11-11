@@ -374,12 +374,12 @@
     <!-- ========================================================= -->
     <!-- JAVASCRIPT XỬ LÝ TƯƠNG TÁC, PHÁT ÂM & KẾT NỐI API PYTHON   -->
     <!-- ========================================================= -->
-    <script src="/static/js/audio_tts.js?v=20261111_v9"></script>
-    <script src="/static/js/number_trainer.js?v=20261111_v9"></script>
-    <script src="/static/js/city_map_svg.js?v=20261111_v9"></script>
-    <script src="/static/js/verbs_db.js?v=20261111_v9"></script>
-    <script src="/static/js/lexikon_db.js?v=20261111_v9"></script>
-    <script src="/static/js/arena_engine.js?v=20261111_v9"></script>
+    <script src="/static/js/audio_tts.js?v=20261111_v10"></script>
+    <script src="/static/js/number_trainer.js?v=20261111_v10"></script>
+    <script src="/static/js/city_map_svg.js?v=20261111_v10"></script>
+    <script src="/static/js/verbs_db.js?v=20261111_v10"></script>
+    <script src="/static/js/lexikon_db.js?v=20261111_v10"></script>
+    <script src="/static/js/arena_engine.js?v=20261111_v10"></script>
     <script>
         const LEVEL_META = {
             "A1": {
@@ -540,7 +540,7 @@
             }
         }
 
-        const CURRENT_SESSION_VERSION = '20261111_v9';
+        const CURRENT_SESSION_VERSION = '20261111_v10';
 
         function loadActiveLessonSession(lessonId) {
             if (!lessonId) return null;
@@ -1647,6 +1647,7 @@
             return (str || "")
                 .trim()
                 .toLowerCase()
+                .normalize("NFC")
                 .replace(/[.,!?;:\"\'„“”«»‘`’–—\-\(\)\[\]\{\}\/\\~]+/g, " ")
                 .replace(/\s+/g, " ")
                 .trim();
@@ -1866,8 +1867,8 @@
                             : 'Nhập đáp án tiếng Đức của bạn... (nhấn Enter để kiểm tra và chuyển câu)');
                     inputHtml = `
                         <div class="flex gap-2 mt-3">
-                            <input id="ex-input-${i}" value="${cleanAns.replace(/"/g, '&quot;')}" ${isDone ? 'disabled readonly' : ''} oninput="handleExerciseInputChange(${i})" onfocus="activeInputId='ex-input-${i}'" onkeydown="handleExerciseInputKeydown(event, ${i})" type="text" placeholder="${placeholderText}" class="flex-1 px-4 py-2.5 rounded-xl ${isDone ? 'bg-emerald-50/40 border-2 border-emerald-400 font-bold text-emerald-950' : 'bg-white border border-slate-200'} text-sm focus:outline-none focus:border-indigo-500" spellcheck="false" autocorrect="off" autocapitalize="off" autocomplete="off">
-                            <button id="ex-btn-${i}" ${isDone ? 'disabled' : ''} onclick="checkExerciseAnswer(${i}, document.getElementById('ex-input-${i}').value)" class="px-5 py-2.5 rounded-xl ${isDone ? 'bg-emerald-600 cursor-default' : 'bg-indigo-600 hover:bg-indigo-500 cursor-pointer'} text-white font-bold text-sm shadow-sm transition shrink-0">
+                            <input id="ex-input-${i}" value="${cleanAns.replace(/"/g, '&quot;')}" oninput="handleExerciseInputChange(${i})" onfocus="handleExerciseInputFocus(${i})" onkeydown="handleExerciseInputKeydown(event, ${i})" type="text" placeholder="${placeholderText}" class="flex-1 px-4 py-2.5 rounded-xl ${isDone ? 'bg-emerald-50/40 border-2 border-emerald-400 font-bold text-emerald-950' : 'bg-white border border-slate-200'} text-sm focus:outline-none focus:border-indigo-500" spellcheck="false" autocorrect="off" autocapitalize="off" autocomplete="off">
+                            <button id="ex-btn-${i}" onclick="checkExerciseAnswer(${i}, document.getElementById('ex-input-${i}').value)" class="px-5 py-2.5 rounded-xl ${isDone ? 'bg-emerald-600 hover:bg-emerald-700' : 'bg-indigo-600 hover:bg-indigo-500'} cursor-pointer text-white font-bold text-sm shadow-sm transition shrink-0">
                                 ${isDone ? '✓ Đã xong' : 'Kiểm tra'}
                             </button>
                         </div>
@@ -1943,20 +1944,32 @@
             }
         }
 
+        function handleExerciseInputFocus(index) {
+            activeInputId = `ex-input-${index}`;
+            const inputEl = document.getElementById(`ex-input-${index}`);
+            if (!inputEl) return;
+            const checkBtn = document.getElementById(`ex-btn-${index}`) || inputEl.nextElementSibling;
+            if (checkBtn && checkBtn.innerText.includes('Đã xong')) {
+                checkBtn.className = "px-5 py-2.5 rounded-xl bg-indigo-600 hover:bg-indigo-700 text-white font-bold text-sm shadow-sm transition cursor-pointer shrink-0";
+                checkBtn.innerText = "Kiểm tra";
+                checkBtn.disabled = false;
+            }
+        }
+
         function handleExerciseInputChange(index) {
             const inputEl = document.getElementById(`ex-input-${index}`);
             if (!inputEl) return;
             const card = document.getElementById(`ex-card-${index}`);
             const checkBtn = document.getElementById(`ex-btn-${index}`) || inputEl.nextElementSibling;
 
-            // Nếu thẻ hoặc ô input đang ở trạng thái báo đỏ (làm sai trước đó)
-            if (card && card.classList.contains('border-rose-300')) {
+            // Nếu thẻ hoặc ô input đang ở trạng thái báo đỏ hoặc xanh trước đó
+            if (card && (card.classList.contains('border-rose-300') || card.classList.contains('border-emerald-400'))) {
                 card.className = "p-5 rounded-2xl bg-white border border-slate-200 space-y-2 transition-all";
             }
-            if (inputEl.classList.contains('border-rose-400') || inputEl.classList.contains('bg-rose-50/40')) {
+            if (inputEl.classList.contains('border-rose-400') || inputEl.classList.contains('bg-rose-50/40') || inputEl.classList.contains('border-emerald-400') || inputEl.classList.contains('bg-emerald-50/40')) {
                 inputEl.className = "flex-1 px-4 py-2.5 rounded-xl bg-slate-50 border border-slate-200 focus:border-indigo-500 focus:bg-white text-sm font-semibold text-slate-800 focus:outline-none transition";
             }
-            if (checkBtn && checkBtn.innerText.includes('Thử lại')) {
+            if (checkBtn) {
                 checkBtn.className = "px-5 py-2.5 rounded-xl bg-indigo-600 hover:bg-indigo-700 text-white font-bold text-sm shadow-sm transition cursor-pointer shrink-0";
                 checkBtn.innerText = "Kiểm tra";
                 checkBtn.disabled = false;
@@ -2228,9 +2241,16 @@
                         }
                     }
                 } else {
-                    // Ưu tiên chấm theo Rubric Bài 8
-                    const l8QMatch = (ex.question || '').match(/Câu\s+(4[6-9]|5[0-7])\b/i);
-                    const l8VDMatch = (ex.question || '').match(/Câu\s+(8[7-9]|9[0-3])\b/i);
+                    // Ưu tiên chấm theo Rubric Bài 8 CHỈ KHI đang làm Bài 8
+                    const isLesson8 = Boolean(
+                        (typeof currentLesson !== 'undefined' && currentLesson && (
+                            currentLesson.id === 22 || 
+                            (currentLesson.title && /bài 8\b/i.test(currentLesson.title))
+                        )) ||
+                        (typeof currentLevelData !== 'undefined' && currentLessonIndex === 7)
+                    );
+                    const l8QMatch = isLesson8 && (ex.question || '').match(/Câu\s+(4[6-9]|5[0-7])\b/i);
+                    const l8VDMatch = isLesson8 && (ex.question || '').match(/Câu\s+(8[7-9]|9[0-3])\b/i);
                     if (l8QMatch && typeof evaluateLesson8Translation === 'function') {
                         const qNum = parseInt(l8QMatch[1], 10);
                         isCorrect = evaluateLesson8Translation(userAnswer, qNum);
@@ -2260,7 +2280,13 @@
                         isCorrect = expandedCandidates.some(cand => {
                             if (!cand) return false;
                             return (typeof checkGermanAnswerEquivalence === 'function')
-                                ? checkGermanAnswerEquivalence(userAnswer, cand, { isMultiSlot: false, question: ex.question })
+                                ? checkGermanAnswerEquivalence(userAnswer, cand, {
+                                    isMultiSlot: false,
+                                    question: ex.question,
+                                    lesson_id: currentLesson ? currentLesson.id : null,
+                                    lesson_title: currentLesson ? currentLesson.title : '',
+                                    isLesson8: isLesson8
+                                })
                                 : normalizeAnswer(userAnswer) === normalizeAnswer(cand);
                         });
                     }
@@ -2480,14 +2506,14 @@
                     const inputEl = document.getElementById(`ex-input-${index}`);
                     if (inputEl) {
                         inputEl.className = "flex-1 px-4 py-2.5 rounded-xl bg-emerald-50/40 border-2 border-emerald-400 font-bold text-emerald-950 text-sm focus:outline-none";
-                        inputEl.disabled = true;
-                        inputEl.readOnly = true;
+                        inputEl.disabled = false;
+                        inputEl.readOnly = false;
                     }
                     const checkBtn = document.getElementById(`ex-btn-${index}`) || (inputEl ? inputEl.nextElementSibling : null);
                     if (checkBtn) {
-                        checkBtn.className = "px-5 py-2.5 rounded-xl bg-emerald-600 text-white font-bold text-sm shadow-sm transition shrink-0 cursor-default";
+                        checkBtn.className = "px-5 py-2.5 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-sm shadow-sm transition shrink-0 cursor-pointer";
                         checkBtn.innerText = "✓ Đã xong";
-                        checkBtn.disabled = true;
+                        checkBtn.disabled = false;
                     }
                     if (card && isMultipleChoice) {
                         const optButtons = card.querySelectorAll('button[onclick^="selectMultipleChoice"]');

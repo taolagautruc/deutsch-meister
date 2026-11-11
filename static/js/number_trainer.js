@@ -692,6 +692,7 @@ function checkGermanAnswerEquivalence(userAns, correctAns, options = {}) {
     const baseClean = (s) => String(s)
         .trim()
         .toLowerCase()
+        .normalize("NFC")
         .replace(/[.,!?;:\"\'„“”«»‘`’–—\-\(\)\[\]\{\}\/\\~]+/g, ' ')
         .replace(/\s+/g, ' ')
         .trim();
