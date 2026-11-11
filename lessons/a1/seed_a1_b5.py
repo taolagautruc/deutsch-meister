@@ -1058,10 +1058,10 @@ def seed_lesson_5():
         27: "Mittagspause machen = nghỉ trưa / nghỉ ăn trưa",
         28: "1. acht Uhr fünfzehn / Viertel nach acht: 8 giờ 15 phút (8 giờ hơn 15)\n2. neun Uhr zehn / zehn nach neun: 9 giờ 10 phút\n3. zwei Uhr dreißig / halb drei: 2 giờ 30 phút (2 rưỡi)\n4. fünf Uhr fünfzig / zehn vor sechs: 5 giờ 50 phút (6 giờ kém 10)",
         29: "1. um 8 Uhr: vào lúc 8 giờ\n2. am Sonntag / am Morgen: vào Chủ nhật / vào buổi sáng\n3. im Juni / im Sommer: vào tháng Sáu / vào mùa hè\n4. in der Nacht: vào ban đêm",
-        30: "1. aufstehen (thức dậy) → um 7 Uhr morgens aus dem Bett (ra khỏi giường lúc 7 giờ sáng)\n2. frühstücken (ăn sáng) → Kaffee trinken und Brot essen (uống cà phê và ăn bánh mì)\n3. ausgehen (đi chơi / ra ngoài) → am Freitagabend mit Freunden feiern (tiệc tùng với bạn bè vào tối thứ Sáu)\n4. aufmachen (mở ra) → die Tür hoặc das Fenster öffnen (mở cửa ra vào hoặc cửa sổ)",
+        30: "1. aufstehen (thức dậy) → um 7 Uhr morgens aus dem Bett kommen (ra khỏi giường lúc 7 giờ sáng)\n2. frühstücken (ăn sáng) → Kaffee trinken und Brot essen (uống cà phê và ăn bánh mì)\n3. ausgehen (đi chơi / ra ngoài) → am Freitagabend mit Freunden feiern (tiệc tùng với bạn bè vào tối thứ Sáu)\n4. aufmachen (mở ra) → die Tür oder das Fenster öffnen (mở cửa ra vào hoặc cửa sổ)",
         31: "1. ich / er / sie / es hatte: tôi / anh ấy / cô ấy / nó đã có\n2. du hattest: bạn đã có\n3. wir / sie / Sie hatten: chúng tôi / họ / quý vị đã có\n4. ihr hattet: các bạn đã có",
         32: "1. der Morgen: buổi sáng sớm (06:00 – 10:00)\n2. der Vormittag: buổi sáng / trước giờ trưa (10:00 – 12:00)\n3. der Nachmittag: buổi chiều (14:00 – 18:00)\n4. die Nacht: ban đêm (22:00 – 06:00)",
-        33: "1. Wann steht Thomas am Sonntag auf? → Am Sonntag steht er um 8 Uhr auf. (Chủ nhật Thomas thức dậy lúc mấy giờ? → Vào Chủ nhật anh ấy thức dậy lúc 8 giờ.)\n2. Um wie viel Uhr frühstückt ihr? → Um 9 Uhr frühstücken wir. (Các bạn ăn sáng lúc mấy giờ? → Lúc 9 giờ chúng tôi ăn sáng.)\n3. Von wann bis wann arbeiten die Kollegen? → Von 8 bis 17 Uhr arbeiten sie. (Các đồng nghiệp làm việc từ mấy giờ đến mấy giờ? → Họ làm việc từ 8 giờ đến 17 giờ.)\n4. Wann geht das Kind ins Bett? → Um 21 Uhr geht es ins Bett. (Khi nào đứa trẻ đi ngủ? → Lúc 21 giờ nó đi ngủ.)",
+        33: "1. Wann steht Thomas am Sonntag auf? → Am Sonntag steht er um 8 Uhr auf. (Chủ nhật khi nào Thomas thức dậy? → Vào Chủ nhật anh ấy thức dậy lúc 8 giờ.)\n2. Um wie viel Uhr frühstückt ihr? → Um 9 Uhr frühstücken wir. (Các bạn ăn sáng lúc mấy giờ? → Lúc 9 giờ chúng tôi ăn sáng.)\n3. Von wann bis wann arbeiten die Kollegen? → Von 8 bis 17 Uhr arbeiten sie. (Các đồng nghiệp làm việc từ mấy giờ đến mấy giờ? → Họ làm việc từ 8 giờ đến 17 giờ.)\n4. Wann geht das Kind ins Bett? → Um 21 Uhr geht es ins Bett. (Khi nào đứa trẻ đi ngủ? → Lúc 21 giờ nó đi ngủ.)",
         34: "Vào Chủ nhật chúng tôi thức dậy vào lúc 8 giờ. (Am Sonntag stehen wir um 8 Uhr auf.)",
         35: "Anh ấy mở cánh cửa ra. (Er macht die Tür auf.)",
         36: "Hôm qua chúng tôi đã gặp một sự cố, nhưng hôm nay chúng tôi không gặp sự cố nào.",
@@ -1330,15 +1330,15 @@ def seed_lesson_5():
             lesson_id, "noi_o",
             "Câu 29 (Bài nối ô 2): Nối giới từ thời gian ở cột trái với danh từ phù hợp ở cột phải:",
             None,
-            "um = 8 Uhr | am = Sonntag / der Morgen | im = der Juni / der Sommer | in der = die Nacht",
-            "Quy tắc sử dụng giới từ thời gian: 1. 'um' đi với mốc giờ giấc cụ thể ('um 8 Uhr'). 2. 'am' (an + dem) đi với các thứ trong tuần và các buổi trong ngày ('am Sonntag', 'am Morgen' - ngoại trừ ban đêm). 3. 'im' (in + dem) đi với các tháng và các mùa trong năm ('im Juni', 'im Sommer'). 4. Riêng 'die Nacht' là danh từ giống cái nên ở Dativ bắt buộc dùng cụm cố định 'in der Nacht' (vào ban đêm).",
+            "um = 8 Uhr | am = Sonntag / Morgen | im = Juni / Sommer | in der = Nacht",
+            "Quy tắc sử dụng giới từ thời gian (sau giới từ chia ở cách 3 Dativ): 1. 'um' đi với mốc giờ cụ thể ('um 8 Uhr'). 2. Các thứ và các buổi trong ngày mang giống đực (der Sonntag, der Morgen) nên khi đi với giới từ 'an' ở Dativ (an + dem) sẽ gộp thành 'am' ('am Sonntag', 'am Morgen'). 3. Các tháng và các mùa mang giống đực (der Juni, der Sommer) nên khi đi với 'in' ở Dativ (in + dem) sẽ gộp thành 'im' ('im Juni', 'im Sommer'). 4. Riêng ban đêm ('die Nacht') là danh từ giống cái nên ở Dativ biến đổi thành 'in der Nacht' (vào ban đêm).",
             25, json.dumps({
                 "translation": "1. um 8 Uhr: vào lúc 8 giờ\n2. am Sonntag / am Morgen: vào Chủ nhật / vào buổi sáng\n3. im Juni / im Sommer: vào tháng Sáu / vào mùa hè\n4. in der Nacht: vào ban đêm",
                 "noi_o_pairs": [
                     {"left": "um", "right": "8 Uhr"},
-                    {"left": "am", "right": "Sonntag / der Morgen"},
-                    {"left": "im", "right": "der Juni / der Sommer"},
-                    {"left": "in der", "right": "die Nacht"}
+                    {"left": "am", "right": "Sonntag / Morgen"},
+                    {"left": "im", "right": "Juni / Sommer"},
+                    {"left": "in der", "right": "Nacht"}
                 ]
             }, ensure_ascii=False)
         ),
@@ -1346,12 +1346,12 @@ def seed_lesson_5():
             lesson_id, "noi_o",
             "Câu 30 (Bài nối ô 3): Nối động từ ở cột trái với cụm hoạt động tiếng Đức tương ứng ở cột phải:",
             None,
-            "aufstehen = um 7 Uhr morgens aus dem Bett | frühstücken = Kaffee trinken und Brot essen | ausgehen = am Freitagabend mit Freunden feiern | aufmachen = die Tür oder das Fenster öffnen",
-            "Mối liên hệ từ vựng và động từ tách: 1. 'aufstehen' (thức dậy, rời giường) đồng nghĩa với việc ra khỏi giường lúc 7 giờ sáng ('aus dem Bett'). 2. 'frühstücken' (ăn sáng) là hoạt động uống cà phê và ăn bánh mì ('Kaffee trinken und Brot essen'). 3. Động từ tách 'ausgehen' (đi chơi, ra ngoài) khớp với việc đi tiệc tùng tối thứ Sáu với bạn bè ('mit Freunden feiern'). 4. Động từ tách 'aufmachen' (mở ra) đồng nghĩa trực tiếp với động từ 'öffnen' (mở cửa ra vào hoặc cửa sổ).",
+            "aufstehen = um 7 Uhr morgens aus dem Bett kommen | frühstücken = Kaffee trinken und Brot essen | ausgehen = am Freitagabend mit Freunden feiern | aufmachen = die Tür oder das Fenster öffnen",
+            "Mối liên hệ từ vựng và động từ tách: 1. 'aufstehen' (thức dậy, rời giường) đồng nghĩa với việc ra khỏi giường lúc 7 giờ sáng ('aus dem Bett kommen'). 2. 'frühstücken' (ăn sáng) là hoạt động uống cà phê và ăn bánh mì ('Kaffee trinken und Brot essen'). 3. Động từ tách 'ausgehen' (đi chơi, ra ngoài) khớp với việc đi tiệc tùng tối thứ Sáu với bạn bè ('mit Freunden feiern'). 4. Động từ tách 'aufmachen' (mở ra) đồng nghĩa trực tiếp với động từ 'öffnen' (mở cửa ra vào hoặc cửa sổ).",
             25, json.dumps({
-                "translation": "1. aufstehen (thức dậy) → um 7 Uhr morgens aus dem Bett (ra khỏi giường lúc 7 giờ sáng)\n2. frühstücken (ăn sáng) → Kaffee trinken und Brot essen (uống cà phê và ăn bánh mì)\n3. ausgehen (đi chơi / ra ngoài) → am Freitagabend mit Freunden feiern (tiệc tùng với bạn bè vào tối thứ Sáu)\n4. aufmachen (mở ra) → die Tür hoặc das Fenster öffnen (mở cửa ra vào hoặc cửa sổ)",
+                "translation": "1. aufstehen (thức dậy) → um 7 Uhr morgens aus dem Bett kommen (ra khỏi giường lúc 7 giờ sáng)\n2. frühstücken (ăn sáng) → Kaffee trinken und Brot essen (uống cà phê và ăn bánh mì)\n3. ausgehen (đi chơi / ra ngoài) → am Freitagabend mit Freunden feiern (tiệc tùng với bạn bè vào tối thứ Sáu)\n4. aufmachen (mở ra) → die Tür oder das Fenster öffnen (mở cửa ra vào hoặc cửa sổ)",
                 "noi_o_pairs": [
-                    {"left": "aufstehen", "right": "um 7 Uhr morgens aus dem Bett"},
+                    {"left": "aufstehen", "right": "um 7 Uhr morgens aus dem Bett kommen"},
                     {"left": "frühstücken", "right": "Kaffee trinken und Brot essen"},
                     {"left": "ausgehen", "right": "am Freitagabend mit Freunden feiern"},
                     {"left": "aufmachen", "right": "die Tür oder das Fenster öffnen"}
@@ -1379,7 +1379,7 @@ def seed_lesson_5():
             "Câu 32 (Bài nối ô 5): Nối các buổi trong ngày ở cột trái với khung giờ tương ứng ở cột phải:",
             None,
             "der Morgen = 06:00 – 10:00 Uhr | der Vormittag = 10:00 – 12:00 Uhr | der Nachmittag = 14:00 – 18:00 Uhr | die Nacht = 22:00 – 06:00 Uhr",
-            "Quy tắc về giống và giới từ chỉ các buổi trong ngày: Hầu hết các buổi trong ngày đều mang giống đực (der Morgen, der Vormittag, der Mittag, der Nachmittag, der Abend) và đi với giới từ 'am' (am Morgen, am Vormittag, am Nachmittag...). Ngoại lệ duy nhất là 'die Nacht' mang giống cái và bắt buộc đi với giới từ 'in der' ('in der Nacht').",
+            "Trục phân chia 6 buổi trong ngày theo chuẩn 24 giờ của người Đức: 1. der Morgen (06:00 – 10:00: sáng sớm) -> 2. der Vormittag (10:00 – 12:00: buổi sáng trước giờ trưa) -> 3. der Mittag (12:00 – 14:00: buổi trưa) -> 4. der Nachmittag (14:00 – 18:00: buổi chiều) -> 5. der Abend (18:00 – 22:00: buổi tối) -> 6. die Nacht (22:00 – 06:00: ban đêm). Lưu ý ngữ pháp: 5 buổi đầu đều mang giống đực (der) và dùng giới từ 'am', duy nhất 'die Nacht' mang giống cái (die) và dùng 'in der Nacht'.",
             25, json.dumps({
                 "translation": "1. der Morgen: buổi sáng sớm (06:00 – 10:00)\n2. der Vormittag: buổi sáng / trước giờ trưa (10:00 – 12:00)\n3. der Nachmittag: buổi chiều (14:00 – 18:00)\n4. die Nacht: ban đêm (22:00 – 06:00)",
                 "noi_o_pairs": [
@@ -1395,9 +1395,9 @@ def seed_lesson_5():
             "Câu 33 (Bài nối ô 6): Nối câu hỏi lịch trình (Tagesabläufe) ở cột trái với câu trả lời tương ứng ở cột phải:",
             None,
             "Wann steht Thomas am Sonntag auf? = Am Sonntag steht er um 8 Uhr auf. | Um wie viel Uhr frühstückt ihr? = Um 9 Uhr frühstücken wir. | Von wann bis wann arbeiten die Kollegen? = Von 8 bis 17 Uhr arbeiten sie. | Wann geht das Kind ins Bett? = Um 21 Uhr geht es ins Bett.",
-            "Cách đối chiếu đại từ chủ ngữ và từ để hỏi để tìm câu trả lời đúng: 1. 'Thomas' (nam số ít) được thay thế bằng đại từ 'er' kết hợp động từ tách 'steht ... auf'; 2. Câu hỏi hỏi ngôi 'ihr' (các bạn) thì câu trả lời phải đáp bằng ngôi 'wir' (chúng tôi); 3. 'die Kollegen' (đồng nghiệp - số nhiều) được thay bằng đại từ 'sie' (họ) và câu hỏi 'Von wann bis wann' khớp với câu trả lời 'Von ... bis ...'; 4. 'das Kind' (đứa trẻ - giống trung) được thay thế tương ứng bằng đại từ 'es'.",
+            "Cách đối chiếu đại từ chủ ngữ và từ để hỏi để tìm câu trả lời đúng: 1. 'Thomas' (nam số ít) được thay thế bằng đại từ 'er' kết hợp động từ tách 'steht ... auf'; 2. Câu hỏi hỏi ngôi 'ihr' (các bạn) thì câu trả lời phải đáp bằng ngôi 'wir' (chúng tôi); 3. 'die Kollegen' (đồng nghiệp - số nhiều) được thay bằng đại từ 'sie' (họ) và câu hỏi 'Von wann bis wann' khớp với câu trả lời 'Von ... bis ...'; 4. 'das Kind' (đứa trẻ - giống trung) được thay thế tương ứng bằng đại từ 'es'. Lưu ý cấu trúc câu trả lời: Khi đưa trạng ngữ chỉ thời gian ('Am Sonntag', 'Um 9 Uhr', 'Von 8 bis 17 Uhr', 'Um 21 Uhr') lên đầu câu (vị trí số 1), động từ chia theo ngôi bắt buộc giữ vững vị trí số 2 và chủ ngữ đảo ra ngay sau động từ ('steht er', 'frühstücken wir', 'arbeiten sie', 'geht es').",
             25, json.dumps({
-                "translation": "1. Wann steht Thomas am Sonntag auf? → Am Sonntag steht er um 8 Uhr auf. (Chủ nhật Thomas thức dậy lúc mấy giờ? → Vào Chủ nhật anh ấy thức dậy lúc 8 giờ.)\n2. Um wie viel Uhr frühstückt ihr? → Um 9 Uhr frühstücken wir. (Các bạn ăn sáng lúc mấy giờ? → Lúc 9 giờ chúng tôi ăn sáng.)\n3. Von wann bis wann arbeiten die Kollegen? → Von 8 bis 17 Uhr arbeiten sie. (Các đồng nghiệp làm việc từ mấy giờ đến mấy giờ? → Họ làm việc từ 8 giờ đến 17 giờ.)\n4. Wann geht das Kind ins Bett? → Um 21 Uhr geht es ins Bett. (Khi nào đứa trẻ đi ngủ? → Lúc 21 giờ nó đi ngủ.)",
+                "translation": "1. Wann steht Thomas am Sonntag auf? → Am Sonntag steht er um 8 Uhr auf. (Chủ nhật khi nào Thomas thức dậy? → Vào Chủ nhật anh ấy thức dậy lúc 8 giờ.)\n2. Um wie viel Uhr frühstückt ihr? → Um 9 Uhr frühstücken wir. (Các bạn ăn sáng lúc mấy giờ? → Lúc 9 giờ chúng tôi ăn sáng.)\n3. Von wann bis wann arbeiten die Kollegen? → Von 8 bis 17 Uhr arbeiten sie. (Các đồng nghiệp làm việc từ mấy giờ đến mấy giờ? → Họ làm việc từ 8 giờ đến 17 giờ.)\n4. Wann geht das Kind ins Bett? → Um 21 Uhr geht es ins Bett. (Khi nào đứa trẻ đi ngủ? → Lúc 21 giờ nó đi ngủ.)",
                 "noi_o_pairs": [
                     {"left": "Wann steht Thomas am Sonntag auf?", "right": "Am Sonntag steht er um 8 Uhr auf."},
                     {"left": "Um wie viel Uhr frühstückt ihr?", "right": "Um 9 Uhr frühstücken wir."},
