@@ -776,9 +776,9 @@ Passant: Sie fährt vom Rathaus durch das Zentrum bis ___ Hafen.""",
         ),
         (
             'Câu 62: Nối đối tượng giao tiếp (cột trái) với lời chỉ đường phù hợp (cột phải).',
-            [{'left': 'Bạn chỉ đường lịch sự cho một bà cụ lớn tuổi không quen biết.', 'right': 'Gehen Sie bitte die erste Straße rechts und dann bis zur Ampel!'}, {'left': 'Bạn chỉ đường cho người bạn thân nhất của mình.', 'right': 'Geh bitte die erste Straße rechts und lauf dann über den Platz!'}, {'left': 'Bạn chỉ đường cho hai bạn cùng lớp.', 'right': 'Geht bitte die erste Straße rechts und fahrt dann mit dem Bus!'}, {'left': 'Bạn rủ cả nhóm, gồm cả bạn, cùng đi.', 'right': 'Gehen wir zuerst durch den Park und danach ins Restaurant!'}],
+            [{'left': 'Bạn chỉ đường lịch sự cho một bà cụ lớn tuổi đi đến cột đèn giao thông.', 'right': 'Gehen Sie bitte die erste Straße rechts und dann bis zur Ampel!'}, {'left': 'Bạn chỉ đường cho một người bạn thân đi bộ qua quảng trường.', 'right': 'Geh bitte die erste Straße rechts und lauf dann über den Platz!'}, {'left': 'Bạn chỉ đường cho hai bạn cùng lớp đi bằng xe buýt.', 'right': 'Geht bitte die erste Straße rechts und fahrt dann mit dem Bus!'}, {'left': 'Bạn rủ cả nhóm, gồm cả bạn, cùng đi vào nhà hàng.', 'right': 'Gehen wir zuerst durch den Park und danach ins Restaurant!'}],
             '1. Xin quý vị hãy đi con đường thứ nhất bên phải rồi đi tiếp đến đèn giao thông!\n2. Bạn hãy đi con đường thứ nhất bên phải rồi đi bộ qua quảng trường nhé!\n3. Các bạn hãy đi con đường thứ nhất bên phải rồi đi tiếp bằng xe buýt!\n4. Đầu tiên chúng ta hãy đi xuyên qua công viên rồi vào nhà hàng nhé!',
-            "Với 'Sie': động từ đứng đầu câu, theo sau là Sie ('Gehen Sie…'). Với 'du': bỏ đuôi -st và bỏ đại từ ('Geh…', 'Lauf…'). Với 'ihr': giữ đuôi -t và bỏ đại từ ('Geht…', 'Fahrt…'). Với 'wir': động từ đứng đầu, theo sau là wir ('Gehen wir…'), dùng để rủ cùng làm."
+            "Với 'Sie' (bà cụ lớn tuổi): động từ đứng đầu câu, theo sau là Sie ('Gehen Sie…'). Với 'du' (1 người bạn thân): bỏ đuôi -st và bỏ đại từ ('Geh…', 'Lauf…'). Với 'ihr' (2 bạn cùng lớp): giữ đuôi -t và bỏ đại từ ('Geht…', 'Fahrt…'). Với 'wir' (cả nhóm gồm bạn): động từ đứng đầu, theo sau là wir ('Gehen wir…'), dùng để rủ cùng làm."
         ),
         (
             'Câu 63: Nối chủ ngữ (cột trái) với phần còn lại của câu (cột phải).',
@@ -799,10 +799,10 @@ Passant: Sie fährt vom Rathaus durch das Zentrum bis ___ Hafen.""",
             'Hoạt động gắn liền với địa danh Berlin: 1. Fernsehturm cao 368m là nơi ngắm toàn cảnh thành phố (von oben sehen). 2. Museumsinsel và Alte Nationalgalerie là trung tâm nghệ thuật và bảo tàng (Kunstwerke besichtigen). 3. Friedrichstraße là phố thương mại mua sắm sầm uất (bummeln und einkaufen). 4. Brandenburger Tor và Reichstag là biểu tượng lịch sử để chụp ảnh kỷ niệm (Erinnerungsfotos machen).'
         ),
         (
-            'Câu 66: Nối trình tự chỉ đường (cột trái) với mệnh đề di chuyển tương ứng (cột phải).',
+            'Câu 66: Nối các bước chỉ đường theo lộ trình từ Ga tàu đến Khách sạn (Bước 1: Quảng trường Ga ➔ Bước 2: Cầu & Công viên ➔ Bước 3: Rẽ ở ngã tư ➔ Bước 4: Khách sạn):',
             [{'left': 'Erster Schritt (Zuerst)', 'right': 'gehen Sie vom Bahnhofsvorplatz geradeaus die Kaiserstraße entlang.'}, {'left': 'Zweiter Schritt (Dann)', 'right': 'laufen Sie über die kleine Brücke und am Stadtpark vorbei.'}, {'left': 'Dritter Schritt (Danach)', 'right': 'biegen Sie nach dem Stadtpark an der zweiten Kreuzung links ab.'}, {'left': 'Letzter Schritt (Zum Schluss)', 'right': 'sehen Sie direkt rechts nach der Ampel Ihr Hotel.'}],
             '1. Trước tiên, quý vị đi thẳng từ quảng trường trước nhà ga dọc theo phố Kaiser.\n2. Sau đó, quý vị đi bộ qua cây cầu nhỏ và đi ngang qua công viên thành phố.\n3. Tiếp theo, sau công viên, quý vị rẽ trái ở ngã tư thứ hai.\n4. Cuối cùng, ngay bên phải sau đèn giao thông, quý vị sẽ thấy khách sạn của mình.',
-            "Thứ tự được xác định bằng các mốc trong câu: bước đầu bắt đầu từ Bahnhofsvorplatz (điểm xuất phát); bước hai đi qua cầu và ngang qua Stadtpark; bước ba rẽ 'nach dem Stadtpark' (sau công viên) nên phải đến sau bước hai; bước cuối là nhìn thấy khách sạn, tức điểm đến. Sau từ nối ở đầu câu (Zuerst, Dann, Danach, Zum Schluss), động từ chia đứng ngay sau, rồi mới đến chủ ngữ: 'Zuerst gehen Sie …'."
+            "Thứ tự theo đúng lộ trình từ Ga tàu đến Khách sạn: Bước 1 bắt đầu từ Bahnhofsvorplatz (điểm xuất phát: quảng trường ga); Bước 2 đi qua cây cầu và ngang qua Stadtpark; Bước 3 rẽ 'nach dem Stadtpark' (sau công viên) ở ngã tư thứ hai; Bước 4 nhìn thấy khách sạn (điểm đến). Sau từ nối ở đầu câu (Zuerst, Dann, Danach, Zum Schluss), động từ chia đứng ngay sau, rồi mới đến chủ ngữ: 'Zuerst gehen Sie …'."
         ),
         (
             'Câu 67: Nối câu hỏi (cột trái) với câu trả lời đúng ngữ pháp (cột phải).',
