@@ -260,9 +260,204 @@ def verify():
         assert e["explanation"] is not None and len(e["explanation"]) > 10, f"❌ Câu {e['question'][:20]} thiếu giải thích chi tiết!"
     print("✅ TEST 7 PASS: Cả 14 bài dịch câu có đa đáp án linh hoạt và lời giải sư phạm đầy đủ!")
 
+    # 8. Check 'dich_cau_vd' (Q87 -> Q93): Text & Grading Rubric
+    print("\n[TEST 8] Kiểm tra chi tiết Nhóm Dịch câu Việt -> Đức (Câu 87 -> 93):")
+    q87_93 = [e for e in exercises if e["exercise_type"] == "dich_cau_vd"]
+    assert len(q87_93) == 7, f"❌ Kỳ vọng 7 câu dich_cau_vd, thực tế có {len(q87_93)}"
+
+    for idx, e in enumerate(q87_93, 87):
+        q_title = e["question"]
+        exp = e["explanation"]
+        extra = json.loads(e["extra_data"])
+        trans = extra.get("translation", "")
+
+        # Không chứa "Ngài" hoặc "Cậu"
+        assert "Ngài" not in q_title and "Cậu" not in q_title, f"❌ Câu {idx} có Ngài/Cậu trong đề bài: {q_title}"
+        assert "Ngài" not in exp and "Cậu" not in exp, f"❌ Câu {idx} có Ngài/Cậu trong giải thích: {exp}"
+
+        # Translation không có '=' và không lặp lại tiếng Việt
+        assert "=" not in trans, f"❌ Câu {idx} translation vẫn còn dấu '=': {trans}"
+        assert not re.search(r'[àáạảãâầấậẩẫăằắặẳẵèéẹẻẽêềếệểễìíịỉĩòóọỏõôồốộổỗơờớợởỡùúụủũưừứựửữỳýỵỷỹđ]', trans, re.I), f"❌ Câu {idx} translation vẫn còn tiếng Việt: {trans}"
+
+        if idx == 87:
+            assert "quý vị" in q_title, f"❌ Câu 87 đề bài chưa có 'quý vị': {q_title}"
+            assert trans == "Gehen Sie zuerst geradeaus über die Brücke, dann am Krankenhaus vorbei bis zur zweiten Ampel!"
+        elif idx == 88:
+            assert "Bạn hãy" in q_title, f"❌ Câu 88 đề bài chưa có 'Bạn hãy': {q_title}"
+            assert "'abbiegen' là động từ tách: 'bieg … ab' (cũng được 'biege … ab')." in exp
+            assert trans == "Geh durch den Park, lauf den Fluss entlang und bieg an der ersten Kreuzung links ab!"
+        elif idx == 89:
+            assert trans == "Entschuldigung, wir suchen die Museumsinsel. Wie kommen wir zu Fuß zur Museumsinsel?"
+        elif idx == 90:
+            assert trans == "Geht an der alten Kirche vorbei und über den Marktplatz, rechts seht ihr das Rathaus."
+        elif idx == 91:
+            assert "Khi 'Am Vormittag' đứng đầu câu" in exp and "'in der Morgen' là sai" in exp
+            assert trans == "Am Vormittag will mein Onkel den Reichstag besichtigen, und am Nachmittag wollen wir im Einkaufszentrum bummeln."
+        elif idx == 92:
+            assert trans == "Zuerst fahren die Touristen mit dem Bus zum Brandenburger Tor, und am Abend gehen sie in die Staatsoper."
+        elif idx == 93:
+            assert "'du' và 'Sie' đều được chấp nhận." in exp
+            assert trans == "Um zum Hafen zu kommen, musst du durch das Stadttor und an der großen Bank vorbeigehen."
+
+    # Kiểm tra thuật toán chấm ngữ pháp & hints Câu 87-93
+    TARGET_NOUNS = {'stadttor', 'brandenburger', 'museumsinsel', 'einkaufszentrum', 'krankenhaus', 'marktplatz', 'reichstag', 'kreuzung', 'staatsoper', 'touristen', 'besucher'}
+    PREFIXES = ['der', 'die', 'das', 'den', 'dem', 'des', 'am', 'im', 'zum', 'zur', 'durch', 'ueber', 'an', 'in', 'mit', 'auf', 'vor', 'nach', 'um', 'bis', 'zu']
+    KNOWN_STEMS = [
+        'grossen', 'grosser', 'grosse', 'kleinen', 'alten', 'zweiten', 'ersten', 'bruecke',
+        'krankenhaus', 'ampel', 'park', 'fluss', 'kreuzung', 'museumsinsel', 'kirche',
+        'marktplatz', 'rathaus', 'reichstag', 'einkaufszentrum', 'bus', 'brandenburger',
+        'tor', 'abend', 'staatsoper', 'hafen', 'stadttor', 'bank', 'morgen', 'vormittag',
+        'nachmittag', 'fuss', 'kommen', 'gehen', 'vorbei', 'links', 'rechts'
+    ]
+
+    def levenshtein(s1, s2):
+        if len(s1) < len(s2):
+            return levenshtein(s2, s1)
+        if len(s2) == 0:
+            return len(s1)
+        prev = range(len(s2) + 1)
+        for i, c1 in enumerate(s1):
+            curr = [i + 1]
+            for j, c2 in enumerate(s2):
+                ins = prev[j + 1] + 1
+                dels = curr[j] + 1
+                subs = prev[j] + (c1 != c2)
+                curr.append(min(ins, dels, subs))
+            prev = curr
+        return prev[-1]
+
+    def normalize_vd(text):
+        if not text:
+            return ''
+        s = text.lower()
+        s = s.replace('ä', 'ae').replace('ö', 'oe').replace('ü', 'ue').replace('ß', 'ss')
+        s = re.sub(r'[\.,!?;:\"\'„“”»«\(\)\-\–]', ' ', s)
+        s = re.sub(r'\s+', ' ', s).strip()
+        tokens = s.split(' ')
+        expanded = []
+        for tok in tokens:
+            decoupled = False
+            for p in PREFIXES:
+                if tok.startswith(p) and len(tok) > len(p):
+                    rest = tok[len(p):]
+                    if rest in KNOWN_STEMS or rest in PREFIXES or rest in TARGET_NOUNS:
+                        expanded.append(p)
+                        decoupled_second = False
+                        for p2 in PREFIXES:
+                            if rest.startswith(p2) and len(rest) > len(p2):
+                                rest2 = rest[len(p2):]
+                                if rest2 in KNOWN_STEMS or rest2 in TARGET_NOUNS:
+                                    expanded.append(p2)
+                                    expanded.append(rest2)
+                                    decoupled_second = True
+                                    break
+                        if not decoupled_second:
+                            expanded.append(rest)
+                        decoupled = True
+                        break
+            if not decoupled:
+                if tok == 'vorbeigehen':
+                    expanded.extend(['vorbei', 'gehen'])
+                elif tok == 'linksab':
+                    expanded.extend(['links', 'ab'])
+                elif tok == 'rechtsab':
+                    expanded.extend(['rechts', 'ab'])
+                else:
+                    expanded.append(tok)
+        final_tokens = []
+        for tok in expanded:
+            mapped = tok
+            if len(tok) >= 6:
+                for tn in TARGET_NOUNS:
+                    if levenshtein(tok, tn) <= 1:
+                        mapped = tn
+                        break
+            final_tokens.append(mapped)
+        return ' '.join(final_tokens)
+
+    def eval_vd(user_ans, q_num):
+        norm = normalize_vd(user_ans)
+        if q_num == 87:
+            p87 = r'^(?:zuerst\s+)?gehen\s+sie(?:\s+(?:zuerst|zunaechst|als\s+erstes))?\s+(?:geradeaus\s+ueber\s+die\s+bruecke|ueber\s+die\s+bruecke\s+geradeaus)\s+(?:(?:und\s+)?(?:dann|danach|anschliessend)\s+(?:gehen\s+sie\s+)?)?(?:am|an\s+dem)\s+krankenhaus\s+vorbei\s+bis\s+(?:zur|zu\s+der)\s+zweiten\s+ampel$'
+            if re.match(p87, norm):
+                return True, ''
+            if re.search(r'bis\s+zum\b', norm):
+                return False, "Chú ý mạo từ: 'die Ampel' là giống cái, sau 'bis zu' (+ Dativ) phải dùng 'bis zur zweiten Ampel' (hoặc 'bis zu der zweiten Ampel'), không dùng 'bis zum'."
+            return False, "Cần dịch đúng: 'Gehen Sie (zuerst) geradeaus über die Brücke, dann am Krankenhaus vorbei bis zur zweiten Ampel!'"
+        elif q_num == 88:
+            p88 = r'^(?:geh|gehe|lauf|laufe)\s+durch\s+den\s+park(?:\s+und)?(?:\s+(?:geh|gehe|lauf|laufe))?\s+(?:den\s+fluss\s+entlang|am\s+fluss\s+entlang)\s+und\s+(?:bieg|biege)\s+(?:an\s+der\s+ersten\s+kreuzung\s+links|links\s+an\s+der\s+ersten\s+kreuzung)\s+ab$'
+            if re.match(p88, norm):
+                return True, ''
+            if re.search(r'gehen\s+sie', norm) or re.search(r'\bsie\b', norm):
+                return False, "Đề bài yêu cầu dùng ngôi thân mật 'du' (Geh... / Lauf... và bieg ... ab), không dùng 'Gehen Sie'."
+            return False, "Cần dịch đúng: 'Geh durch den Park, lauf den Fluss entlang und bieg an der ersten Kreuzung links ab!'"
+        elif q_num == 89:
+            p89 = r'^(?:entschuldigung|entschuldigen\s+sie|verzeihung)\s+wir\s+suchen\s+die\s+museumsinsel\s+wie\s+(?:kommen|gehen)\s+wir(?:\s+zu\s+fuss)?\s+(?:zur|zu\s+der|auf\s+die)\s+museumsinsel(?:\s+zu\s+fuss)?$'
+            if re.match(p89, norm):
+                return True, ''
+            return False, "Cần dịch đúng: 'Entschuldigung / Entschuldigen Sie, wir suchen die Museumsinsel. Wie kommen wir (zu Fuß) zur Museumsinsel?'"
+        elif q_num == 90:
+            p90 = r'^(?:geht|lauft)\s+an\s+der\s+alten\s+kirche\s+vorbei\s+und\s+(?:(?:geht|lauft)\s+)?ueber\s+den\s+marktplatz\s+(?:rechts\s+seht\s+ihr\s+das\s+rathaus|ihr\s+seht\s+rechts\s+das\s+rathaus|auf\s+der\s+rechten\s+seite\s+seht\s+ihr\s+das\s+rathaus|rechts\s+ist\s+das\s+rathaus)$'
+            if re.match(p90, norm):
+                return True, ''
+            if re.search(r'ueber\s+dem\s+marktplatz', norm):
+                return False, "Chuyển động băng qua quảng trường dùng Akkusativ: 'über den Marktplatz' (không dùng Dativ 'über dem')."
+            return False, "Cần dịch đúng: 'Geht an der alten Kirche vorbei und über den Marktplatz, rechts seht ihr das Rathaus.'"
+        elif q_num == 91:
+            p_c1 = r'(?:(?:(?:am\s+morgen|am\s+vormittag)\s+(?:will|moechte)\s+mein\s+onkel|mein\s+onkel\s+(?:will|moechte)\s+(?:am\s+morgen|am\s+vormittag))\s+den\s+reichstag\s+besichtigen)'
+            p_c2 = r'(?:(?:(?:am\s+nachmittag)\s+(?:wollen|moechten)\s+wir|wir\s+(?:wollen|moechten)\s+am\s+nachmittag)\s+im\s+einkaufszentrum\s+bummeln)'
+            p91 = rf'^{p_c1}\s+und\s+{p_c2}$'
+            if re.match(p91, norm):
+                return True, ''
+            if re.search(r'in\s+der\s+morgen|im\s+morgen', norm):
+                return False, "Cụm chỉ buổi sáng chưa đúng: dùng 'am Morgen' hoặc 'am Vormittag'."
+            if re.search(r'(?:am\s+vormittag|am\s+morgen)\s+mein\s+onkel\s+(?:will|moechte)', norm):
+                return False, "Khi 'Am Vormittag' đứng đầu câu, động từ chia ('will') đứng ngay sau nó, rồi mới đến chủ ngữ: 'Am Vormittag will mein Onkel …'. 'Am Morgen' cũng đúng; 'in der Morgen' là sai. 'möchte / möchten' cũng được chấp nhận."
+            return False, "Cần dịch đúng: 'Am Vormittag will mein Onkel den Reichstag besichtigen, und am Nachmittag wollen wir im Einkaufszentrum bummeln.'"
+        elif q_num == 92:
+            p92 = r'^(?:zuerst\s+fahren\s+die\s+(?:touristen|besucher)|die\s+(?:touristen|besucher)\s+fahren\s+zuerst)\s+mit\s+dem\s+bus\s+(?:zum|zu\s+dem|bis\s+zum)\s+brandenburger\s+tor\s+und\s+(?:am\s+abend\s+gehen\s+sie|gehen\s+(?:sie\s+)?am\s+abend|abends\s+gehen\s+sie|sie\s+gehen\s+(?:am\s+abend|abends))\s+in\s+die\s+staatsoper$'
+            if re.match(p92, norm):
+                return True, ''
+            return False, "Cần dịch đúng: 'Zuerst fahren die Touristen mit dem Bus zum Brandenburger Tor, und am Abend gehen sie in die Staatsoper.'"
+        elif q_num == 93:
+            p93_a = r'^(?:um\s+(?:zum|zu\s+dem)\s+hafen\s+zu\s+kommen|um\s+den\s+hafen\s+zu\s+erreichen)\s+(?:musst\s+du|muessen\s+sie)\s+durch\s+das\s+stadttor(?:\s+gehen)?\s+und\s+an\s+der\s+grossen\s+bank\s+(?:vorbei\s+gehen|vorbeigehen)$'
+            p93_b = r'^(?:du\s+musst|sie\s+muessen)\s+durch\s+das\s+stadttor(?:\s+gehen)?\s+und\s+an\s+der\s+grossen\s+bank\s+(?:vorbei\s+gehen|vorbeigehen)\s+um\s+(?:zum|zu\s+dem)\s+hafen\s+zu\s+kommen$'
+            if re.match(p93_a, norm) or re.match(p93_b, norm):
+                return True, ''
+            if re.search(r'an\s+die\s+grossen\s+bank', norm) or re.search(r'an\s+die\s+grosse\s+bank', norm):
+                return False, "Giới từ chỉ vị trí ngang qua: 'an der großen Bank vorbei' (an + Dativ giống cái: 'der', tính từ mang đuôi '-en')."
+            if re.search(r'an\s+der\s+grosse\s+bank', norm):
+                return False, "Đuôi tính từ sau mạo từ xác định ở Dativ là '-en': dùng 'an der großen Bank', không dùng 'große'."
+            return False, "Cần dịch đúng: 'Um zum Hafen zu kommen, musst du durch das Stadttor und an der großen Bank vorbeigehen.' ('du' và 'Sie' đều được chấp nhận)."
+        return False, ''
+
+    test_cases = [
+        # ĐÚNG
+        (93, 'um zum hafen zu kommen musst du durch das stadttor und an dergroßen bank vorbeigehen', True, ''),
+        (93, 'Du musst durch das Stadttor und an der großen Bank vorbeigehen, um zum Hafen zu kommen.', True, ''),
+        (91, 'Am Morgen möchte mein Onkel den Reichstag besichtigen, und am Nachmittag möchten wir im Einkaufszentrum bummeln', True, ''),
+        (89, 'Entschuldigen Sie, wir suchen die Museumsinsel. Wie kommen wir zur Museumsinsel zu Fuß?', True, ''),
+        # SAI
+        (91, 'In der Morgen möchte mein Onkel den Reichstag besichtigen, und am Nachmittag möchten wir im Einkaufszentrum bummeln', False, 'am Morgen'),
+        (91, 'Am Vormittag mein Onkel will den Reichstag besichtigen, und am Nachmittag möchten wir im Einkaufszentrum bummeln', False, 'đứng ngay sau nó'),
+        (93, 'Um zum Hafen zu kommen, musst du durch das Stadttor und an die großen Bank vorbeigehen.', False, 'an der großen Bank vorbei'),
+        (93, 'Um zum Hafen zu kommen, musst du durch das Stadttor và an der große Bank vorbeigehen.', False, 'đuôi tính từ'),
+        (88, 'Gehen Sie durch den Park, laufen Sie den Fluss entlang und biegen Sie an der ersten Kreuzung links ab!', False, 'ngôi thân mật'),
+        (90, 'Geht an der alten Kirche vorbei und über dem Marktplatz, rechts seht ihr das Rathaus.', False, 'über den Marktplatz'),
+        (87, 'Gehen Sie zuerst geradeaus über die Brücke, dann am Krankenhaus vorbei bis zum zweiten Ampel!', False, 'bis zur zweiten Ampel'),
+    ]
+
+    for q_n, inp, exp_b, exp_kw in test_cases:
+        res_b, res_hint = eval_vd(inp, q_n)
+        assert res_b == exp_b, f"❌ Q{q_n} test failed for input '{inp}': expected {exp_b}, got {res_b}"
+        if not exp_b and exp_kw:
+            assert exp_kw.lower() in res_hint.lower(), f"❌ Q{q_n} hint missing '{exp_kw}': got '{res_hint}'"
+
+    print("✅ TEST 8 PASS: Cả 7 bài dịch câu Việt -> Đức (Q87 -> 93) đáp ứng 100% chuẩn văn bản, không dấu '=', và vượt qua toàn bộ test cases ngữ pháp & hints!")
+
     conn.close()
     print("\n" + "=" * 60)
-    print("🎉 TOÀN BỘ 7/7 BÀI TEST QA BÀI 8 ĐẠT TIÊU CHUẨN 100% PASS!")
+    print("🎉 TOÀN BỘ 8/8 BÀI TEST QA BÀI 8 ĐẠT TIÊU CHUẨN 100% PASS!")
     print("=" * 60)
 
 if __name__ == "__main__":

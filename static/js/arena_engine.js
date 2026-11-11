@@ -1181,7 +1181,13 @@ function handleArenaAnswer(userAnswer) {
     } else if (q.type === 'dien_khuyet' || q.type === 'nghe_dien') {
         isCorrect = evaluateFlexibleTranslation(userAnswer, q.accepted_answers || [q.correct_answer], 'de');
     } else if (q.type === 'dich_nghia_vd' || q.type === 'dich_cau_vd') {
-        isCorrect = evaluateFlexibleTranslation(userAnswer, q.accepted_answers || [q.correct_answer], 'de');
+        const l8VDMatch = (q.question || '').match(/Câu\s+(8[7-9]|9[0-3])\b/i);
+        if (l8VDMatch && typeof evaluateLesson8VDTranslation === 'function') {
+            const res = evaluateLesson8VDTranslation(userAnswer, parseInt(l8VDMatch[1], 10));
+            isCorrect = res.isCorrect;
+        } else {
+            isCorrect = evaluateFlexibleTranslation(userAnswer, q.accepted_answers || [q.correct_answer], 'de');
+        }
     } else if (q.type === 'dich_nghia_dv' || q.type === 'dich_cau_dv') {
         const l8Match = (q.question || '').match(/Câu\s+(4[6-9]|5[0-7])\b/i);
         if (l8Match && typeof evaluateLesson8Translation === 'function') {

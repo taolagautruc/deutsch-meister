@@ -374,12 +374,12 @@
     <!-- ========================================================= -->
     <!-- JAVASCRIPT XỬ LÝ TƯƠNG TÁC, PHÁT ÂM & KẾT NỐI API PYTHON   -->
     <!-- ========================================================= -->
-    <script src="/static/js/audio_tts.js?v=20261111_v7"></script>
-    <script src="/static/js/number_trainer.js?v=20261111_v7"></script>
-    <script src="/static/js/city_map_svg.js?v=20261111_v7"></script>
-    <script src="/static/js/verbs_db.js?v=20261111_v7"></script>
-    <script src="/static/js/lexikon_db.js?v=20261111_v7"></script>
-    <script src="/static/js/arena_engine.js?v=20261111_v7"></script>
+    <script src="/static/js/audio_tts.js?v=20261111_v8"></script>
+    <script src="/static/js/number_trainer.js?v=20261111_v8"></script>
+    <script src="/static/js/city_map_svg.js?v=20261111_v8"></script>
+    <script src="/static/js/verbs_db.js?v=20261111_v8"></script>
+    <script src="/static/js/lexikon_db.js?v=20261111_v8"></script>
+    <script src="/static/js/arena_engine.js?v=20261111_v8"></script>
     <script>
         const LEVEL_META = {
             "A1": {
@@ -540,7 +540,7 @@
             }
         }
 
-        const CURRENT_SESSION_VERSION = '20261111_v7';
+        const CURRENT_SESSION_VERSION = '20261111_v8';
 
         function loadActiveLessonSession(lessonId) {
             if (!lessonId) return null;
@@ -2086,10 +2086,23 @@
 
         function formatExerciseTranslation(translation, ex) {
             if (!translation || typeof translation !== 'string') return '';
-            const cleanTrans = translation.trim();
+            let cleanTrans = translation.trim();
             if (!cleanTrans) return '';
 
             const isNoiO = Boolean(ex && ex.exercise_type === 'noi_o');
+            const isDichVD = Boolean(ex && (
+                ex.exercise_type === 'dich_cau_vd' || 
+                ex.exercise_type === 'dich_nghia_vd' ||
+                (ex.question && /câu\s+(8[7-9]|9[0-3])\b/i.test(ex.question))
+            ));
+            if (isDichVD) {
+                if (cleanTrans.includes('=')) {
+                    cleanTrans = cleanTrans.split('=').pop().trim();
+                } else if (cleanTrans.includes(':') && !cleanTrans.startsWith('http')) {
+                    cleanTrans = cleanTrans.split(':').pop().trim();
+                }
+            }
+            const labelTitle = isDichVD ? '🎯 Đáp án mẫu:' : '📖 Dịch nghĩa:';
             const hasMultipleLines = cleanTrans.includes('\n') || cleanTrans.includes('|') || /(?:^|\s)1\.\s+.*?(?:\s)2\.\s+/.test(cleanTrans);
 
             if (isNoiO || hasMultipleLines) {
@@ -2111,7 +2124,7 @@
                 return `
                     <div class="mt-2.5 p-3 rounded-xl bg-indigo-50 border border-indigo-200 text-indigo-950 font-medium text-xs sm:text-sm">
                         <div class="font-bold text-indigo-700 mb-1.5 flex items-center gap-1">
-                            <span>📖 Dịch nghĩa:</span>
+                            <span>${labelTitle}</span>
                         </div>
                         <div class="space-y-1.5 pl-0.5" style="line-height: 1.6;">
                             ${linesHtml}
@@ -2122,7 +2135,7 @@
 
             return `
                 <div class="mt-2.5 p-3 rounded-xl bg-indigo-50 border border-indigo-200 text-indigo-950 font-medium leading-relaxed text-xs sm:text-sm">
-                    <span class="font-bold text-indigo-700">📖 Dịch nghĩa:</span> ${cleanTrans}
+                    <span class="font-bold text-indigo-700">${labelTitle}</span> ${cleanTrans}
                 </div>
             `;
         }
@@ -2215,11 +2228,17 @@
                         }
                     }
                 } else {
-                    // Ưu tiên chấm theo Rubric Bài 8 (Câu 46 -> Câu 57 dịch Đức -> Việt)
+                    // Ưu tiên chấm theo Rubric Bài 8
                     const l8QMatch = (ex.question || '').match(/Câu\s+(4[6-9]|5[0-7])\b/i);
+                    const l8VDMatch = (ex.question || '').match(/Câu\s+(8[7-9]|9[0-3])\b/i);
                     if (l8QMatch && typeof evaluateLesson8Translation === 'function') {
                         const qNum = parseInt(l8QMatch[1], 10);
                         isCorrect = evaluateLesson8Translation(userAnswer, qNum);
+                    } else if (l8VDMatch && typeof evaluateLesson8VDTranslation === 'function') {
+                        const qNum = parseInt(l8VDMatch[1], 10);
+                        const res = evaluateLesson8VDTranslation(userAnswer, qNum);
+                        isCorrect = res.isCorrect;
+                        ex._vdHint = res.hint;
                     } else {
                         const candidates = [ex.correct_answer];
                         if (extra && Array.isArray(extra.accepted_answers)) {
@@ -2574,12 +2593,22 @@
                 try {
                     const isDeToVi = (ex && (ex.exercise_type === 'dich_nghia_dv' || ex.exercise_type === 'dich_cau_dv' || ex.exercise_type === 'dich')) &&
                                      (ex.question && /(?:sang tiếng việt|đức\s*→\s*việt|dịch câu sau sang tiếng việt)/i.test(ex.question));
+                    const isViToDe = (ex && (ex.exercise_type === 'dich_nghia_vd' || ex.exercise_type === 'dich_cau_vd' || ex.exercise_type === 'dich')) &&
+                                     (ex.question && /(?:sang tiếng đức|việt\s*→\s*đức|câu\s+(8[7-9]|9[0-3]))/i.test(ex.question));
                     let displayAns = (isDeToVi && translation) ? translation : String(ex.correct_answer || '').trim();
                     if (!isDeToVi) {
                         displayAns = displayAns.replace(/[.]+$/, '');
                     }
                     let wrongTitle = "❌ Chưa chính xác.";
                     let ansBlockHtml = '';
+                    let hintErrorHtml = '';
+                    if (ex && ex._vdHint) {
+                        hintErrorHtml = `
+                            <div class="mt-1 p-2.5 rounded-xl bg-rose-100/90 border border-rose-300 text-rose-900 font-semibold text-xs leading-relaxed">
+                                ⚠️ ${ex._vdHint}
+                            </div>
+                        `;
+                    }
                     if (ex.exercise_type === 'noi_o' && extra.noi_o_pairs) {
                         wrongTitle = "❌ Chưa chính xác (yêu cầu nối đúng 100% cả 4 cặp).";
                         const matches = window.noiOMatches[index] || {};
@@ -2613,11 +2642,19 @@
                                 wrongTitle = "❌ Chưa chính xác (bạn cần điền đủ cả 2 từ ngăn cách bởi dấu /).";
                             }
                         }
-                        ansBlockHtml = `
-                            <div class="text-rose-900 pt-0.5">
-                                Đáp án đúng là: <span class="font-extrabold text-rose-800">${displayAns}</span>
-                            </div>
-                        `;
+                        if (isViToDe) {
+                            ansBlockHtml = `
+                                <div class="text-rose-900 pt-0.5">
+                                    <span class="font-bold text-rose-700">🎯 Đáp án mẫu:</span> <span class="font-extrabold text-rose-800">${displayAns}</span>
+                                </div>
+                            `;
+                        } else {
+                            ansBlockHtml = `
+                                <div class="text-rose-900 pt-0.5">
+                                    Đáp án đúng là: <span class="font-extrabold text-rose-800">${displayAns}</span>
+                                </div>
+                            `;
+                        }
                     }
                     feedback.innerHTML = `
                         <div class="space-y-1.5">
@@ -2625,7 +2662,8 @@
                                 <span class="text-rose-700 font-extrabold text-sm">${wrongTitle}</span>
                             </div>
                             ${ansBlockHtml}
-                            ${translationHtml}
+                            ${hintErrorHtml}
+                            ${!isViToDe ? translationHtml : ''}
                             <div class="text-rose-950 leading-relaxed pt-1">
                                 <span class="font-bold">💡 Giải thích:</span> ${ex.explanation || ''}
                             </div>
