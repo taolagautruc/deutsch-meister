@@ -2135,10 +2135,10 @@ const GERMAN_LEXIKON_DB = [
     {
         word: "Alte Nationalgalerie", article: "die", gender: "die", plural: "nur Singular",
         indefinite: "eine Alte Nationalgalerie", negation: "keine Alte Nationalgalerie",
-        meaning: "Khu triển lãm Quốc gia Cũ", category: "Danh lam Thắng cảnh tại Thủ đô Berlin (Sehenswürdigkeiten in Berlin - Bài 8)",
+        meaning: "Phòng trưng bày Quốc gia Cũ", category: "Danh lam Thắng cảnh tại Thủ đô Berlin (Sehenswürdigkeiten in Berlin - Bài 8)",
         rule: "Hậu tố -ie luôn mang giống cái (die). Đi vào trong: in die Alte Nationalgalerie.",
         example: "Danach will ich in die Alte Nationalgalerie gehen.",
-        example_vi: "Tiếp theo tôi muốn đi vào Khu triển lãm Quốc gia Cũ."
+        example_vi: "Tiếp theo tôi muốn đi vào Phòng trưng bày Quốc gia Cũ."
     },
     {
         word: "Bundeskanzleramt", article: "das", gender: "das", plural: "nur Singular",
