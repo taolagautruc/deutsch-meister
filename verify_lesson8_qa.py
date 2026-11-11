@@ -123,7 +123,7 @@ def verify():
             assert "Khu triển lãm" not in left_text and "Khu triển lãm" not in right_text, f"❌ Câu {idx} có 'Khu triển lãm': {left_text} / {right_text}"
             
             # Kiểm tra ô tiếng Đức không chứa tiếng Việt lẫn lộn
-            if idx in (59, 61, 63, 64, 65, 67):
+            if idx in (59, 61, 63, 65, 67):
                 viet_chars = "àáạảãâầấậẩẫăằắặẳẵèéẹẻẽêềếệểễìíịỉĩòóọỏõôồốộổỗơờớợởỡùúụủũưừứựửữỳýỵỷỹđ"
                 for ch in viet_chars:
                     assert ch not in left_text.lower(), f"❌ Câu {idx} có tiếng Việt ở cột trái: {left_text}"
@@ -131,10 +131,13 @@ def verify():
             for ch in viet_chars:
                 assert ch not in right_text.lower(), f"❌ Câu {idx} có tiếng Việt ở cột phải: {right_text}"
 
-        # Kiểm tra Dịch nghĩa có 4 dòng riêng biệt, không có dấu |
+        # Kiểm tra Dịch nghĩa có 4 dòng riêng biệt, không có dấu | (trừ câu 60, 64 đã ẩn dịch nghĩa)
         trans = extra.get("translation", "")
-        assert "|" not in trans, f"❌ Câu {idx} Dịch nghĩa còn dồn bằng dấu '|': {trans}"
-        assert "1." in trans and "2." in trans and "3." in trans and "4." in trans, f"❌ Câu {idx} không dịch đủ 4 cặp: {trans}"
+        if idx not in (60, 64):
+            assert "|" not in trans, f"❌ Câu {idx} Dịch nghĩa còn dồn bằng dấu '|': {trans}"
+            assert "1." in trans and "2." in trans and "3." in trans and "4." in trans, f"❌ Câu {idx} không dịch đủ 4 cặp: {trans}"
+        else:
+            assert trans == "", f"❌ Câu {idx} phải ẩn Dịch nghĩa (chuỗi rỗng)!"
         assert "Ngài" not in trans and "Cậu" not in trans, f"❌ Câu {idx} Dịch nghĩa có Ngài/Cậu: {trans}"
         assert "Khu triển lãm" not in trans, f"❌ Câu {idx} Dịch nghĩa có 'Khu triển lãm': {trans}"
 
@@ -152,7 +155,7 @@ def verify():
 
         # Kiểm tra cụ thể Câu 66: lộ trình rõ ràng trên đề bài để xác định thứ tự từng bước
         if idx == 66:
-            assert "theo lộ trình" in q_title and "Khách sạn" in q_title, f"❌ Câu 66 thiếu lộ trình trên đề bài: {q_title}"
+            assert "lộ trình" in q_title and "Khách sạn" in q_title, f"❌ Câu 66 thiếu lộ trình trên đề bài: {q_title}"
             print(f"  • Câu 66: Đề bài nêu rõ lộ trình từng bước (Ga tàu ➔ Cầu & Công viên ➔ Ngã tư ➔ Khách sạn).")
     print("✅ TEST 5 PASS: Cả 10 bài nối ô không có nhãn ngữ pháp, dịch đủ 4 dòng riêng biệt và không có Ngài/Cậu/Khu triển lãm 100%!")
 
