@@ -374,12 +374,12 @@
     <!-- ========================================================= -->
     <!-- JAVASCRIPT XỬ LÝ TƯƠNG TÁC, PHÁT ÂM & KẾT NỐI API PYTHON   -->
     <!-- ========================================================= -->
-    <script src="/static/js/audio_tts.js?v=20261111_v12"></script>
-    <script src="/static/js/number_trainer.js?v=20261111_v12"></script>
-    <script src="/static/js/city_map_svg.js?v=20261111_v12"></script>
-    <script src="/static/js/verbs_db.js?v=20261111_v12"></script>
-    <script src="/static/js/lexikon_db.js?v=20261111_v12"></script>
-    <script src="/static/js/arena_engine.js?v=20261111_v12"></script>
+    <script src="/static/js/audio_tts.js?v=20261111_v13"></script>
+    <script src="/static/js/number_trainer.js?v=20261111_v13"></script>
+    <script src="/static/js/city_map_svg.js?v=20261111_v13"></script>
+    <script src="/static/js/verbs_db.js?v=20261111_v13"></script>
+    <script src="/static/js/lexikon_db.js?v=20261111_v13"></script>
+    <script src="/static/js/arena_engine.js?v=20261111_v13"></script>
     <script>
         const LEVEL_META = {
             "A1": {
@@ -540,7 +540,7 @@
             }
         }
 
-        const CURRENT_SESSION_VERSION = '20261111_v12';
+        const CURRENT_SESSION_VERSION = '20261111_v13';
 
         function loadActiveLessonSession(lessonId) {
             if (!lessonId) return null;
@@ -2278,12 +2278,42 @@
                                     cParts = String(cand).split(/\s+/).map(p => p.trim()).filter(Boolean);
                                 }
 
-                                if (cParts.length !== uParts.length) return false;
-                                return uParts.every((u, idx) => {
-                                    return (typeof checkGermanAnswerEquivalence === 'function')
-                                        ? checkGermanAnswerEquivalence(u, cParts[idx], { isMultiSlot: false })
-                                        : normalizeAnswer(u) === normalizeAnswer(cParts[idx]);
-                                });
+                                if (cParts.length === uParts.length) {
+                                    const allMatch = uParts.every((u, idx) => {
+                                        return (typeof checkGermanAnswerEquivalence === 'function')
+                                            ? checkGermanAnswerEquivalence(u, cParts[idx], { isMultiSlot: false })
+                                            : normalizeAnswer(u) === normalizeAnswer(cParts[idx]);
+                                    });
+                                    if (allMatch) return true;
+                                }
+
+                                // 3. Hỗ trợ câu hỏi có nhiều cặp đáp án liên tiếp nối bởi dấu / (như Bài 5: macht / auf / macht / zu / schließt / ab)
+                                if (uParts.length === 2 && cParts.length > 2) {
+                                    for (let i = 0; i < cParts.length - 1; i++) {
+                                        const w1 = cParts[i];
+                                        const w2 = cParts[i + 1];
+                                        const m1 = (typeof checkGermanAnswerEquivalence === 'function')
+                                            ? checkGermanAnswerEquivalence(uParts[0], w1, { isMultiSlot: false })
+                                            : normalizeAnswer(uParts[0]) === normalizeAnswer(w1);
+                                        const m2 = (typeof checkGermanAnswerEquivalence === 'function')
+                                            ? checkGermanAnswerEquivalence(uParts[1], w2, { isMultiSlot: false })
+                                            : normalizeAnswer(uParts[1]) === normalizeAnswer(w2);
+                                        if (m1 && m2) return true;
+                                    }
+                                    for (let i = 0; i < cParts.length; i++) {
+                                        const pTokens = cParts[i].split(/\s+/).filter(Boolean);
+                                        if (pTokens.length === 2) {
+                                            const m1 = (typeof checkGermanAnswerEquivalence === 'function')
+                                                ? checkGermanAnswerEquivalence(uParts[0], pTokens[0], { isMultiSlot: false })
+                                                : normalizeAnswer(uParts[0]) === normalizeAnswer(pTokens[0]);
+                                            const m2 = (typeof checkGermanAnswerEquivalence === 'function')
+                                                ? checkGermanAnswerEquivalence(uParts[1], pTokens[1], { isMultiSlot: false })
+                                                : normalizeAnswer(uParts[1]) === normalizeAnswer(pTokens[1]);
+                                            if (m1 && m2) return true;
+                                        }
+                                    }
+                                }
+                                return false;
                             });
                         }
                     }

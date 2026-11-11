@@ -1414,7 +1414,10 @@ def seed_lesson_5():
             None,
             "stehen / auf / stehen auf / wachen / auf / wachen auf",
             "Khi 'Am Sonntag' đứng đầu câu, động từ gốc 'stehen' đứng ở vị trí số 2 (trước chủ ngữ 'wir'), còn tiền tố 'auf' đứng ở cuối câu (động từ tách 'aufstehen' / 'aufwachen').",
-            20, json.dumps({"translation": "Vào Chủ nhật chúng tôi thức dậy vào lúc 8 giờ. (Am Sonntag stehen wir um 8 Uhr auf.)"}, ensure_ascii=False)
+            20, json.dumps({
+                "accepted_answers": ["stehen / auf", "stehen auf", "wachen / auf", "wachen auf"],
+                "translation": "Vào Chủ nhật chúng tôi thức dậy vào lúc 8 giờ. (Am Sonntag stehen wir um 8 Uhr auf.)"
+            }, ensure_ascii=False)
         ),
         (
             lesson_id, "dien_tao_cau",
@@ -1422,7 +1425,10 @@ def seed_lesson_5():
             None,
             "macht / auf / macht auf / macht / zu / macht zu / schließt / ab / schliesst / ab",
             "Động từ tách 'aufmachen' (mở) hoặc 'zumachen' (đóng) chia cho ngôi 'er': động từ gốc 'macht' đứng ở vị trí số 2 và tiền tố 'auf' (hoặc 'zu') đứng ở cuối câu.",
-            20, json.dumps({"translation": "Anh ấy mở cánh cửa ra (Er macht die Tür auf) hoặc Anh ấy đóng cánh cửa lại (Er macht die Tür zu)."}, ensure_ascii=False)
+            20, json.dumps({
+                "accepted_answers": ["macht / auf", "macht auf", "macht / zu", "macht zu", "schließt / ab", "schließt ab", "schliesst / ab", "schliesst ab"],
+                "translation": "Anh ấy mở cánh cửa ra (Er macht die Tür auf) hoặc Anh ấy đóng cánh cửa lại (Er macht die Tür zu)."
+            }, ensure_ascii=False)
         ),
         (
             lesson_id, "dien_tao_cau",
