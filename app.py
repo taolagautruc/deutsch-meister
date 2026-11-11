@@ -166,9 +166,9 @@ def ensure_db_initialized():
             """, (b6_id,))
             if cursor.fetchone():
                 need_reseed_b6 = True
-            cursor.execute("SELECT extra_data FROM exercises WHERE lesson_id = ? AND question LIKE '%Câu 58%' LIMIT 1;", (b6_id,))
-            row_q58 = cursor.fetchone()
-            if row_q58 and 'dem Bahnhof / einem Bahnhof' in (row_q58["extra_data"] or ''):
+            cursor.execute("SELECT explanation FROM exercises WHERE lesson_id = ? AND question LIKE '%Câu 58%' LIMIT 1;", (b6_id,))
+            row_q58_exp = cursor.fetchone()
+            if row_q58_exp and ('Nối chính xác 100%' in (row_q58_exp["explanation"] or '') or 'die U-Bahn' not in (row_q58_exp["explanation"] or '')):
                 need_reseed_b6 = True
             cursor.execute("SELECT explanation FROM exercises WHERE lesson_id = ? AND question LIKE '%Câu 43%' LIMIT 1;", (b6_id,))
             row_q43 = cursor.fetchone()
