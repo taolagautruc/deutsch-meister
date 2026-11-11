@@ -374,12 +374,12 @@
     <!-- ========================================================= -->
     <!-- JAVASCRIPT XỬ LÝ TƯƠNG TÁC, PHÁT ÂM & KẾT NỐI API PYTHON   -->
     <!-- ========================================================= -->
-    <script src="/static/js/audio_tts.js?v=20261111_v5"></script>
-    <script src="/static/js/number_trainer.js?v=20261111_v5"></script>
-    <script src="/static/js/city_map_svg.js?v=20261111_v5"></script>
-    <script src="/static/js/verbs_db.js?v=20261111_v5"></script>
-    <script src="/static/js/lexikon_db.js?v=20261111_v5"></script>
-    <script src="/static/js/arena_engine.js?v=20261111_v5"></script>
+    <script src="/static/js/audio_tts.js?v=20261111_v6"></script>
+    <script src="/static/js/number_trainer.js?v=20261111_v6"></script>
+    <script src="/static/js/city_map_svg.js?v=20261111_v6"></script>
+    <script src="/static/js/verbs_db.js?v=20261111_v6"></script>
+    <script src="/static/js/lexikon_db.js?v=20261111_v6"></script>
+    <script src="/static/js/arena_engine.js?v=20261111_v6"></script>
     <script>
         const LEVEL_META = {
             "A1": {
@@ -540,7 +540,7 @@
             }
         }
 
-        const CURRENT_SESSION_VERSION = '20261111_v5';
+        const CURRENT_SESSION_VERSION = '20261111_v6';
 
         function loadActiveLessonSession(lessonId) {
             if (!lessonId) return null;
@@ -1865,14 +1865,7 @@
                 const displayQuestion = (typeof ensureQuestionNumber === 'function') ? ensureQuestionNumber(ex.question, ex.question, i + 1) : ex.question;
 
                 const translation = getExerciseTranslation(ex, extra);
-                let translationHtml = '';
-                if (translation) {
-                    translationHtml = `
-                        <div class="mt-2.5 p-3 rounded-xl bg-indigo-50 border border-indigo-200 text-indigo-950 font-medium leading-relaxed">
-                            <span class="font-bold text-indigo-700">📖 Dịch nghĩa:</span> ${translation}
-                        </div>
-                    `;
-                }
+                const translationHtml = formatExerciseTranslation(translation, ex);
 
                 const cardBorder = isDone
                     ? 'bg-white border-2 border-emerald-400 shadow-md ring-1 ring-emerald-300/40'
@@ -2077,6 +2070,49 @@
             return "";
         }
 
+        function formatExerciseTranslation(translation, ex) {
+            if (!translation || typeof translation !== 'string') return '';
+            const cleanTrans = translation.trim();
+            if (!cleanTrans) return '';
+
+            const isNoiO = Boolean(ex && ex.exercise_type === 'noi_o');
+            const hasMultipleLines = cleanTrans.includes('\n') || cleanTrans.includes('|') || /(?:^|\s)1\.\s+.*?(?:\s)2\.\s+/.test(cleanTrans);
+
+            if (isNoiO || hasMultipleLines) {
+                let lines = [];
+                if (cleanTrans.includes('\n')) {
+                    lines = cleanTrans.split(/\n+/).map(s => s.trim()).filter(Boolean);
+                } else if (cleanTrans.includes('|')) {
+                    lines = cleanTrans.split(/\s*\|\s*/).map(s => s.trim()).filter(Boolean);
+                } else if (/(?:^|\s)[1-9]\.\s+/.test(cleanTrans)) {
+                    lines = cleanTrans.split(/(?=(?:^|\s)[1-9]\.\s+)/).map(s => s.trim()).filter(Boolean);
+                } else {
+                    lines = [cleanTrans];
+                }
+
+                const linesHtml = lines.map(line => `
+                    <div class="py-0.5 leading-relaxed">${line}</div>
+                `).join('');
+
+                return `
+                    <div class="mt-2.5 p-3 rounded-xl bg-indigo-50 border border-indigo-200 text-indigo-950 font-medium text-xs sm:text-sm">
+                        <div class="font-bold text-indigo-700 mb-1.5 flex items-center gap-1">
+                            <span>📖 Dịch nghĩa:</span>
+                        </div>
+                        <div class="space-y-1.5 pl-0.5" style="line-height: 1.6;">
+                            ${linesHtml}
+                        </div>
+                    </div>
+                `;
+            }
+
+            return `
+                <div class="mt-2.5 p-3 rounded-xl bg-indigo-50 border border-indigo-200 text-indigo-950 font-medium leading-relaxed text-xs sm:text-sm">
+                    <span class="font-bold text-indigo-700">📖 Dịch nghĩa:</span> ${cleanTrans}
+                </div>
+            `;
+        }
+
         function insertGermanChar(ch) {
             if (!activeInputId) return;
             const input = document.getElementById(activeInputId);
@@ -2214,23 +2250,7 @@
             }
 
             const translation = getExerciseTranslation(ex, extra);
-            let translationHtml = '';
-            if (translation) {
-                let formattedTranslation = translation;
-                if (ex.exercise_type === 'noi_o' || translation.includes('\n') || translation.includes('|')) {
-                    const lines = translation.split(/\n|(?:\s*\|\s*)/).map(s => s.trim()).filter(Boolean);
-                    formattedTranslation = `
-                        <div class="mt-1 space-y-1.5" style="line-height: 1.5;">
-                            ${lines.map(line => `<div>${line}</div>`).join('')}
-                        </div>
-                    `;
-                }
-                translationHtml = `
-                    <div class="mt-2.5 p-3 rounded-xl bg-indigo-50 border border-indigo-200 text-indigo-950 font-medium leading-relaxed">
-                        <span class="font-bold text-indigo-700">📖 Dịch nghĩa:</span> ${formattedTranslation}
-                    </div>
-                `;
-            }
+            const translationHtml = formatExerciseTranslation(translation, ex);
 
             if (isCorrect) {
                 feedback.className = "text-xs p-3.5 rounded-xl mt-2 bg-emerald-50 text-emerald-800 border border-emerald-200";
