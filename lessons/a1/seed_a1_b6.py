@@ -2035,29 +2035,29 @@ def seed_lesson_6():
                 "type": "noi_o",
                 "question": "Câu 58 (Bài nối ô 1): Nối các ô ở cột trái với ô tương ứng ở cột phải (Biến đổi mạo từ sang Cách 3 Dativ):",
                 "options_json": null,
-                "correct_answer": "Đi bằng tàu điện ngầm = mit der U-Bahn | Gặp nhau ở nhà ga = am Bahnhof | Đỗ xe phía trước khách sạn = vor dem Hotel | Đi dã ngoại cùng bọn trẻ = mit den Kindern",
+                "correct_answer": "Bằng tàu điện ngầm = mit der U-Bahn | Ở nhà ga = am Bahnhof | Phía trước khách sạn = vor dem Hotel | Cùng với bọn trẻ = mit den Kindern",
                 "explanation": "Quy tắc biến đổi mạo từ xác định ở Dativ: die U-Bahn (giống cái) -> mit der U-Bahn; der Bahnhof (giống đực) -> an + dem = am Bahnhof; das Hotel (giống trung) -> vor dem Hotel; die Kinder (số nhiều) -> mit den Kindern (mạo từ die -> den và danh từ số nhiều thêm đuôi -n).",
                 "exp_reward": 25,
                 "extra_data": {
                         "noi_o_pairs": [
                                 {
-                                        "left": "Đi bằng tàu điện ngầm",
+                                        "left": "Bằng tàu điện ngầm",
                                         "right": "mit der U-Bahn"
                                 },
                                 {
-                                        "left": "Gặp nhau ở nhà ga",
+                                        "left": "Ở nhà ga",
                                         "right": "am Bahnhof"
                                 },
                                 {
-                                        "left": "Đỗ xe phía trước khách sạn",
+                                        "left": "Phía trước khách sạn",
                                         "right": "vor dem Hotel"
                                 },
                                 {
-                                        "left": "Đi dã ngoại cùng bọn trẻ",
+                                        "left": "Cùng với bọn trẻ",
                                         "right": "mit den Kindern"
                                 }
                         ],
-                        "translation": "1. mit der U-Bahn: bằng tàu điện ngầm\n2. am Bahnhof: ở nhà ga\n3. vor dem Hotel: trước khách sạn\n4. mit den Kindern: cùng bọn trẻ"
+                        "translation": ""
                 }
         },
         {
@@ -2065,25 +2065,25 @@ def seed_lesson_6():
                 "type": "noi_o",
                 "question": "Câu 59 (Bài nối ô 2): Nối các ô ở cột trái với ô tương ứng ở cột phải (Các dạng gộp giới từ + mạo từ ở Dativ):",
                 "options_json": null,
-                "correct_answer": "Đi bộ đến trường học = zur Schule | Đi tàu ra ga chính = zum Hauptbahnhof | Đang ở chỗ bác sĩ khám bệnh = beim Arzt | Đón người thân trở về từ sân bay = vom Flughafen",
+                "correct_answer": "Đến trường học = zur Schule | Đến nhà ga chính = zum Hauptbahnhof | Ở chỗ bác sĩ = beim Arzt | Từ sân bay = vom Flughafen",
                 "explanation": "Quy tắc gộp giới từ + mạo từ ở Dativ: zur Schule = zu + der Schule (die Schule - giống cái); zum Hauptbahnhof = zu + dem Hauptbahnhof (der Hauptbahnhof - giống đực); beim Arzt = bei + dem Arzt (ở chỗ bác sĩ); vom Flughafen = von + dem Flughafen (từ sân bay trở về).",
                 "exp_reward": 25,
                 "extra_data": {
                         "noi_o_pairs": [
                                 {
-                                        "left": "Đi bộ đến trường học",
+                                        "left": "Đến trường học",
                                         "right": "zur Schule"
                                 },
                                 {
-                                        "left": "Đi tàu ra ga chính",
+                                        "left": "Đến nhà ga chính",
                                         "right": "zum Hauptbahnhof"
                                 },
                                 {
-                                        "left": "Đang ở chỗ bác sĩ khám bệnh",
+                                        "left": "Ở chỗ bác sĩ",
                                         "right": "beim Arzt"
                                 },
                                 {
-                                        "left": "Đón người thân trở về từ sân bay",
+                                        "left": "Từ sân bay",
                                         "right": "vom Flughafen"
                                 }
                         ],
@@ -2095,29 +2095,29 @@ def seed_lesson_6():
                 "type": "noi_o",
                 "question": "Câu 60 (Bài nối ô 3): Nối các ô ở cột trái với ô tương ứng ở cột phải (Phương tiện giao thông & Cách diễn đạt chuẩn):",
                 "options_json": null,
-                "correct_answer": "die U-Bahn = mit der U-Bahn fahren | das Flugzeug = mit dem Flugzeug fliegen | das Fahrrad = mit dem Fahrrad fahren | der Fuß = zu Fuß gehen",
+                "correct_answer": "Đi bằng tàu điện ngầm = mit der U-Bahn fahren | Bay bằng máy bay = mit dem Flugzeug fliegen | Đi bằng xe đạp = mit dem Fahrrad fahren | Đi bộ = zu Fuß gehen",
                 "explanation": "Các phương tiện giao thông đều dùng cấu trúc 'mit + Dativ + fahren/fliegen' (die U-Bahn -> mit der U-Bahn; das Flugzeug -> mit dem Flugzeug; das Fahrrad -> mit dem Fahrrad). Riêng 'đi bộ' là trường hợp ngoại lệ bắt buộc dùng cụm cố định 'zu Fuß gehen'.",
                 "exp_reward": 25,
                 "extra_data": {
                         "noi_o_pairs": [
                                 {
-                                        "left": "die U-Bahn",
+                                        "left": "Đi bằng tàu điện ngầm",
                                         "right": "mit der U-Bahn fahren"
                                 },
                                 {
-                                        "left": "das Flugzeug",
+                                        "left": "Bay bằng máy bay",
                                         "right": "mit dem Flugzeug fliegen"
                                 },
                                 {
-                                        "left": "das Fahrrad",
+                                        "left": "Đi bằng xe đạp",
                                         "right": "mit dem Fahrrad fahren"
                                 },
                                 {
-                                        "left": "der Fuß",
+                                        "left": "Đi bộ",
                                         "right": "zu Fuß gehen"
                                 }
                         ],
-                        "translation": "1. die U-Bahn → mit der U-Bahn fahren (đi bằng tàu điện ngầm)\n2. das Flugzeug → mit dem Flugzeug fliegen (bay bằng máy bay)\n3. das Fahrrad → mit dem Fahrrad fahren (đi bằng xe đạp)\n4. der Fuß → zu Fuß gehen (đi bộ)"
+                        "translation": ""
                 }
         },
         {
@@ -2155,29 +2155,29 @@ def seed_lesson_6():
                 "type": "noi_o",
                 "question": "Câu 62 (Bài nối ô 5): Nối các ô ở cột trái với ô tương ứng ở cột phải (Số đếm sang Số thứ tự bất quy tắc & từ 20):",
                 "options_json": null,
-                "correct_answer": "1 = der erste / am ersten | 3 = der dritte / am dritten | 7 = der siebte / am siebten | 20 = der zwanzigste / am zwanzigsten",
+                "correct_answer": "eins = der erste / am ersten | drei = der dritte / am dritten | sieben = der siebte / am siebten | zwanzig = der zwanzigste / am zwanzigsten",
                 "explanation": "Quy tắc số thứ tự (Ordinalzahlen): Từ 1 đến 19 thêm đuôi '-te' (nhưng 1, 3, 7 là bất quy tắc: eins -> erste, drei -> dritte, sieben -> siebte). Từ số 20 trở đi thêm đuôi '-ste' (zwanzig -> zwanzigste). Khi đứng sau giới từ 'am' (an + dem ở Dativ), tất cả số thứ tự đều phải cộng thêm đuôi '-n' (-ten / -sten).",
                 "exp_reward": 25,
                 "extra_data": {
                         "noi_o_pairs": [
                                 {
-                                        "left": "1",
+                                        "left": "eins",
                                         "right": "der erste / am ersten"
                                 },
                                 {
-                                        "left": "3",
+                                        "left": "drei",
                                         "right": "der dritte / am dritten"
                                 },
                                 {
-                                        "left": "7",
+                                        "left": "sieben",
                                         "right": "der siebte / am siebten"
                                 },
                                 {
-                                        "left": "20",
+                                        "left": "zwanzig",
                                         "right": "der zwanzigste / am zwanzigsten"
                                 }
                         ],
-                        "translation": "1. 1: der erste / am ersten (thứ nhất / vào ngày mùng 1)\n2. 3: der dritte / am dritten (thứ ba / vào ngày mùng 3)\n3. 7: der siebte / am siebten (thứ bảy / vào ngày mùng 7)\n4. 20: der zwanzigste / am zwanzigsten (thứ hai mươi / vào ngày 20)"
+                        "translation": "1. eins (1) → der erste / am ersten (thứ nhất / vào ngày mùng 1)\n2. drei (3) → der dritte / am dritten (thứ ba / vào ngày mùng 3)\n3. sieben (7) → der siebte / am siebten (thứ bảy / vào ngày mùng 7)\n4. zwanzig (20) → der zwanzigste / am zwanzigsten (thứ hai mươi / vào ngày 20)"
                 }
         },
         {
@@ -2267,7 +2267,7 @@ def seed_lesson_6():
                                         "right": "mit eurem Bruder / mit eurer Schwester"
                                 }
                         ],
-                        "translation": "1. ich → mit meinem Bruder / mit meiner Schwester (với anh/em trai của tôi / với chị/em gái của tôi)\n2. sie → mit ihrem Bruder / mit ihrer Schwester (với anh/em trai của cô ấy / với chị/em gái của cô ấy)\n3. wir → mit unserem Bruder / mit unserer Schwester (với anh/em trai của chúng tôi / với chị/em gái của chúng tôi)\n4. ihr → mit eurem Bruder / mit eurer Schwester (với anh/em trai của các bạn / với chị/em gái của các bạn)"
+                        "translation": "1. ich → mit meinem Bruder / mit meiner Schwester (với anh/em trai của tôi / với chị/em gái của tôi)\n2. sie → mit ihrem Bruder / mit ihrer Schwester (với anh/em trai của cô ấy [hoặc của họ] / với chị/em gái của cô ấy [hoặc của họ])\n3. wir → mit unserem Bruder / mit unserer Schwester (với anh/em trai của chúng tôi / với chị/em gái của chúng tôi)\n4. ihr → mit eurem Bruder / mit eurer Schwester (với anh/em trai của các bạn / với chị/em gái của các bạn)"
                 }
         },
         {
@@ -2303,7 +2303,7 @@ def seed_lesson_6():
         {
                 "q_num": 67,
                 "type": "noi_o",
-                "question": "Câu 67 (Bài nối ô 10): Nối các ô ở cột trái với ô tương ứng ở cột phải (Động từ Bài 6 sang Nghĩa & Quy tắc biến âm):",
+                "question": "Câu 67 (Bài nối ô 10): Nối các ô ở cột trái với ô tương ứng ở cột phải (Động từ trọng tâm Bài 6 sang Nghĩa tiếng Việt):",
                 "options_json": null,
                 "correct_answer": "fahren = đi bằng xe/tàu | umsteigen = đổi tàu / chuyển tuyến xe | helfen = giúp đỡ ai đó | hängen = treo ở đâu đó",
                 "explanation": "1. fahren (đi bằng phương tiện): động từ bất quy tắc biến âm a -> ä ở ngôi du (fährst) và er/sie/es (fährt); 2. umsteigen (đổi tàu/xe): động từ tách (steigt ... um); 3. helfen (giúp đỡ): biến âm e -> i (du hilfst, er hilft) và luôn đi với tân ngữ Cách 3 Dativ (Ich helfe dir); 4. hängen (treo): chỉ vị trí tĩnh trả lời câu hỏi Wo? + Dativ.",
