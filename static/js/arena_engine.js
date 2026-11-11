@@ -929,7 +929,7 @@ function renderCurrentArenaQuestion() {
                 </div>
                 ${q.hint_vi ? `<div class="text-xs text-slate-500 font-medium italic">Gợi ý nghĩa: „${q.hint_vi}“</div>` : ''}
                 <div class="flex gap-2">
-                    <input id="arena-text-input" onkeydown="handleArenaInputKeydown(event)" type="text" placeholder="Gõ từ nghe được (nhấn Enter để gửi)..." class="flex-1 px-4 py-3 rounded-2xl bg-white border border-slate-300 text-sm font-semibold focus:outline-none focus:border-indigo-600 focus:ring-2 focus:ring-indigo-100">
+                    <input id="arena-text-input" onkeydown="handleArenaInputKeydown(event)" type="text" placeholder="Gõ từ nghe được (nhấn Enter để gửi)..." class="flex-1 px-4 py-3 rounded-2xl bg-white border border-slate-300 text-sm font-semibold focus:outline-none focus:border-indigo-600 focus:ring-2 focus:ring-indigo-100" spellcheck="false" autocorrect="off" autocapitalize="off" autocomplete="off">
                     <button onclick="submitArenaTextInput()" class="px-6 py-3 rounded-2xl bg-indigo-600 hover:bg-indigo-500 text-white font-extrabold text-sm shadow-md transition cursor-pointer">
                         Gửi
                     </button>
@@ -959,7 +959,7 @@ function renderCurrentArenaQuestion() {
                     </div>
                 ` : ''}
                 <div class="flex gap-2">
-                    <input id="arena-text-input" onkeydown="handleArenaInputKeydown(event)" type="text" placeholder="Nhập đáp án hoặc bấm thẻ từ trên (nhấn Enter để gửi)..." class="flex-1 px-4 py-3 rounded-2xl bg-white border border-slate-300 text-sm font-semibold focus:outline-none focus:border-indigo-600 focus:ring-2 focus:ring-indigo-100">
+                    <input id="arena-text-input" onkeydown="handleArenaInputKeydown(event)" type="text" placeholder="Nhập đáp án hoặc bấm thẻ từ trên (nhấn Enter để gửi)..." class="flex-1 px-4 py-3 rounded-2xl bg-white border border-slate-300 text-sm font-semibold focus:outline-none focus:border-indigo-600 focus:ring-2 focus:ring-indigo-100" spellcheck="false" autocorrect="off" autocapitalize="off" autocomplete="off">
                     <button onclick="submitArenaTextInput()" class="px-6 py-3 rounded-2xl bg-indigo-600 hover:bg-indigo-500 text-white font-extrabold text-sm shadow-md transition cursor-pointer">
                         Gửi
                     </button>
@@ -973,7 +973,7 @@ function renderCurrentArenaQuestion() {
         inputAreaHtml = `
             <div class="space-y-3 mt-4">
                 <div class="flex gap-2">
-                    <input id="arena-text-input" onkeydown="handleArenaInputKeydown(event)" type="text" placeholder="${placeholder} (nhấn Enter để gửi)" class="flex-1 px-4 py-3 rounded-2xl bg-white border border-slate-300 text-sm font-semibold focus:outline-none focus:border-indigo-600 focus:ring-2 focus:ring-indigo-100">
+                    <input id="arena-text-input" onkeydown="handleArenaInputKeydown(event)" type="text" placeholder="${placeholder} (nhấn Enter để gửi)" class="flex-1 px-4 py-3 rounded-2xl bg-white border border-slate-300 text-sm font-semibold focus:outline-none focus:border-indigo-600 focus:ring-2 focus:ring-indigo-100" spellcheck="false" autocorrect="off" autocapitalize="off" autocomplete="off">
                     <button onclick="submitArenaTextInput()" class="px-6 py-3 rounded-2xl bg-indigo-600 hover:bg-indigo-500 text-white font-extrabold text-sm shadow-md transition cursor-pointer">
                         Gửi
                     </button>
@@ -1183,7 +1183,12 @@ function handleArenaAnswer(userAnswer) {
     } else if (q.type === 'dich_nghia_vd' || q.type === 'dich_cau_vd') {
         isCorrect = evaluateFlexibleTranslation(userAnswer, q.accepted_answers || [q.correct_answer], 'de');
     } else if (q.type === 'dich_nghia_dv' || q.type === 'dich_cau_dv') {
-        isCorrect = evaluateFlexibleTranslation(userAnswer, q.accepted_answers || [q.correct_answer], 'vi');
+        const l8Match = (q.question || '').match(/Câu\s+(4[6-9]|5[0-7])\b/i);
+        if (l8Match && typeof evaluateLesson8Translation === 'function') {
+            isCorrect = evaluateLesson8Translation(userAnswer, parseInt(l8Match[1], 10));
+        } else {
+            isCorrect = evaluateFlexibleTranslation(userAnswer, q.accepted_answers || [q.correct_answer], 'vi');
+        }
     } else if (q.type === 'doc_hieu') {
         if (q.options && q.options.length > 0) {
             isCorrect = normalizeArenaText(userAnswer, 'de') === normalizeArenaText(q.correct_answer, 'de') ||

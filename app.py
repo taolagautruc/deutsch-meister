@@ -252,6 +252,22 @@ def ensure_db_initialized():
             cnt_v = cursor.fetchone()
             if not cnt_v or cnt_v["cnt"] < 50:
                 need_reseed_b8 = True
+            cursor.execute("SELECT explanation FROM exercises WHERE lesson_id = ? AND question LIKE '%Câu 51%' LIMIT 1;", (b8_id,))
+            row_q51 = cursor.fetchone()
+            if not row_q51 or 'bis zu' not in (row_q51["explanation"] or ''):
+                need_reseed_b8 = True
+            cursor.execute("SELECT correct_answer FROM exercises WHERE lesson_id = ? AND question LIKE '%Câu 52%' LIMIT 1;", (b8_id,))
+            row_q52 = cursor.fetchone()
+            if not row_q52 or 'để vào' in (row_q52["correct_answer"] or '') or 'vào khu phố mới' not in (row_q52["correct_answer"] or ''):
+                need_reseed_b8 = True
+            cursor.execute("SELECT correct_answer FROM exercises WHERE lesson_id = ? AND question LIKE '%Câu 56%' LIMIT 1;", (b8_id,))
+            row_q56 = cursor.fetchone()
+            if not row_q56 or 'Xin lỗi Ngài' in (row_q56["correct_answer"] or '') or 'Xin lỗi quý vị' not in (row_q56["correct_answer"] or ''):
+                need_reseed_b8 = True
+            cursor.execute("SELECT extra_data FROM exercises WHERE lesson_id = ? AND question LIKE '%Câu 53%' LIMIT 1;", (b8_id,))
+            row_q53 = cursor.fetchone()
+            if not row_q53 or '2 tiếng' in (row_q53["extra_data"] or ''):
+                need_reseed_b8 = True
         if need_reseed_b8:
             from lessons.a1.seed_a1_b8 import seed_lesson_8
             seed_lesson_8()

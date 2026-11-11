@@ -2013,7 +2013,7 @@ def seed_lesson_8():
                                 "nhà ga và sân bay",
                                 "các nhà ga và sân bay"
                         ],
-                        "translation": "die Bahnhöfe und die Flughäfen = các nhà ga và các sân bay"
+                        "translation": "các nhà ga và các sân bay"
                 }
         },
         {
@@ -2030,7 +2030,7 @@ def seed_lesson_8():
                                 "các cung điện cổ và các trung tâm thương mại hiện đại",
                                 "những lâu đài cổ và trung tâm thương mại hiện đại"
                         ],
-                        "translation": "die alten Schlösser und die modernen Einkaufszentren = những lâu đài cổ và những trung tâm thương mại hiện đại"
+                        "translation": "những lâu đài cổ và những trung tâm thương mại hiện đại"
                 }
         },
         {
@@ -2046,7 +2046,7 @@ def seed_lesson_8():
                                 "đi bộ ngang qua siêu thị và bưu điện",
                                 "đi ngang qua siêu thị và qua bưu điện"
                         ],
-                        "translation": "am Supermarkt und an der Post vorbeigehen = đi ngang qua siêu thị và bưu điện"
+                        "translation": "đi ngang qua siêu thị và bưu điện"
                 }
         },
         {
@@ -2054,7 +2054,7 @@ def seed_lesson_8():
                 "question": "Câu 49: Dịch sang tiếng Việt: „durch das mittelalterliche Stadttor laufen“",
                 "options": null,
                 "correct_answer": "đi bộ xuyên qua cổng thành thời trung cổ",
-                "explanation": "durch das Stadttor = xuyên qua cổng thành.",
+                "explanation": "durch das Stadttor = xuyên qua cổng thành (durch + Akkusativ); mittelalterlich = thuộc thời Trung cổ; laufen = đi bộ.",
                 "exp_reward": 25,
                 "extra_data": {
                         "accepted_answers": [
@@ -2064,7 +2064,7 @@ def seed_lesson_8():
                                 "đi xuyên qua cổng thành thời trung cổ",
                                 "chạy qua cổng thành thời trung cổ"
                         ],
-                        "translation": "durch das mittelalterliche Stadttor laufen = đi bộ xuyên qua cổng thành thời trung cổ"
+                        "translation": "đi bộ xuyên qua cổng thành thời trung cổ"
                 }
         },
         {
@@ -2072,7 +2072,7 @@ def seed_lesson_8():
                 "question": "Câu 50: Dịch sang tiếng Việt: „den malerischen Fluss entlangspazieren“",
                 "options": null,
                 "correct_answer": "đi dạo dọc theo dòng sông thơ mộng",
-                "explanation": "den Fluss entlangspazieren = đi dạo dọc theo con sông.",
+                "explanation": "den Fluss entlangspazieren = đi dạo dọc theo con sông (entlang đứng sau danh từ + Akkusativ); malerisch = đẹp như tranh, thơ mộng.",
                 "exp_reward": 25,
                 "extra_data": {
                         "accepted_answers": [
@@ -2082,7 +2082,7 @@ def seed_lesson_8():
                                 "tản bộ dọc theo dòng sông thơ mộng",
                                 "đi dạo dọc theo con sông thơ mộng"
                         ],
-                        "translation": "den malerischen Fluss entlangspazieren = đi dạo dọc theo dòng sông thơ mộng"
+                        "translation": "đi dạo dọc theo dòng sông thơ mộng"
                 }
         },
         {
@@ -2090,7 +2090,7 @@ def seed_lesson_8():
                 "question": "Câu 51: Dịch sang tiếng Việt: „bis zur dritten Ampel geradeaus fahren“",
                 "options": null,
                 "correct_answer": "lái xe đi thẳng cho đến đèn giao thông thứ ba",
-                "explanation": "bis zur dritten Ampel = cho đến đèn giao thông thứ ba.",
+                "explanation": "bis zur dritten Ampel = cho đến đèn giao thông thứ ba. 'bis zu' đi với Dativ: zu + der = zur (die Ampel giống cái); số thứ tự sau 'zur' có đuôi -en: 'dritten'.",
                 "exp_reward": 25,
                 "extra_data": {
                         "accepted_answers": [
@@ -2100,24 +2100,23 @@ def seed_lesson_8():
                                 "chạy thẳng cho đến đèn giao thông thứ ba",
                                 "đi thẳng cho đến đèn giao thông thứ ba"
                         ],
-                        "translation": "bis zur dritten Ampel geradeaus fahren = lái xe đi thẳng cho đến đèn giao thông thứ ba"
+                        "translation": "lái xe đi thẳng cho đến đèn giao thông thứ ba"
                 }
         },
         {
                 "type": "dich_nghia_dv",
                 "question": "Câu 52: Dịch sang tiếng Việt: „über die breite Brücke in die Neustadt gehen“",
                 "options": null,
-                "correct_answer": "đi qua cây cầu rộng để vào khu phố mới",
-                "explanation": "über die breite Brücke = qua cây cầu rộng; in die Neustadt = vào khu phố mới.",
+                "correct_answer": "đi qua cây cầu rộng vào khu phố mới",
+                "explanation": "über die breite Brücke = qua cây cầu rộng (über + Akkusativ); in die Neustadt = vào khu phố mới. 'in die' + Akkusativ trả lời 'Wohin?' nên chỉ hướng đi vào, không phải vị trí 'ở trong' (vị trí là 'in der Neustadt').",
                 "exp_reward": 25,
                 "extra_data": {
                         "accepted_answers": [
-                                "đi qua cây cầu rộng để vào khu phố mới",
-                                "đi bộ qua cây cầu rộng vào khu đô thị mới",
                                 "đi qua cây cầu rộng vào khu phố mới",
+                                "đi bộ qua cây cầu rộng vào khu đô thị mới",
                                 "băng qua cây cầu rộng vào khu phố mới"
                         ],
-                        "translation": "über die breite Brücke in die Neustadt gehen = đi qua cây cầu rộng để vào khu phố mới"
+                        "translation": "đi qua cây cầu rộng vào khu phố mới"
                 }
         },
         {
@@ -2134,7 +2133,7 @@ def seed_lesson_8():
                                 "đi tham quan vòng quanh thành phố 2 tiếng bằng xe buýt hai tầng",
                                 "thực hiện chuyến tham quan thành phố hai tiếng bằng xe buýt hai tầng"
                         ],
-                        "translation": "eine zweistündige Stadtrundfahrt mit dem Doppeldeckerbus machen = thực hiện chuyến tham quan vòng quanh thành phố 2 tiếng bằng xe buýt 2 tầng"
+                        "translation": "thực hiện một chuyến tham quan vòng quanh thành phố kéo dài hai tiếng bằng xe buýt hai tầng"
                 }
         },
         {
@@ -2142,7 +2141,7 @@ def seed_lesson_8():
                 "question": "Câu 54: Dịch sang tiếng Việt: „an der nächsten Kreuzung links abbiegen“",
                 "options": null,
                 "correct_answer": "rẽ trái ở ngã tư tiếp theo",
-                "explanation": "an der nächsten Kreuzung = tại ngã tư tiếp theo; links abbiegen = rẽ trái.",
+                "explanation": "an der nächsten Kreuzung = tại ngã tư tiếp theo (nächst- = gần nhất, tiếp theo; die Kreuzung giống cái, Dativ nên 'an der' + đuôi -en); links abbiegen = rẽ trái.",
                 "exp_reward": 25,
                 "extra_data": {
                         "accepted_answers": [
@@ -2151,7 +2150,7 @@ def seed_lesson_8():
                                 "rẽ trái ở ngã tư kế tiếp",
                                 "quẹo trái ở ngã tư tiếp theo"
                         ],
-                        "translation": "an der nächsten Kreuzung links abbiegen = rẽ trái ở ngã tư tiếp theo"
+                        "translation": "rẽ trái ở ngã tư tiếp theo"
                 }
         },
         {
@@ -2167,41 +2166,42 @@ def seed_lesson_8():
                                 "muốn đi xem Tháp truyền hình tại quảng trường Alexander",
                                 "muốn tham quan tháp truyền hình ở quảng trường Alexander"
                         ],
-                        "translation": "den Fernsehturm am Alexanderplatz besichtigen wollen = muốn tham quan Tháp truyền hình ở quảng trường Alexander"
+                        "translation": "muốn tham quan Tháp truyền hình ở quảng trường Alexander"
                 }
         },
         {
                 "type": "dich_nghia_dv",
                 "question": "Câu 56: Dịch sang tiếng Việt: „Entschuldigen Sie bitte, wo geht es hier zum Reichstag?“",
                 "options": null,
-                "correct_answer": "Xin lỗi Ngài, ở đây đi lối nào để tới Tòa nhà Quốc hội vậy?",
-                "explanation": "Câu hỏi đường lịch sự với 'Wo geht es hier zum ...?'.",
+                "correct_answer": "Xin lỗi quý vị, từ đây đi lối nào để tới Tòa nhà Quốc hội ạ?",
+                "explanation": "Entschuldigen Sie bitte = xin lỗi, làm ơn (trang trọng với Sie); 'Wo geht es hier zum ...?' = từ đây đi lối nào đến ...?; zum = zu + dem (der Reichstag); Reichstag = tòa nhà Quốc hội Đức.",
                 "exp_reward": 25,
                 "extra_data": {
                         "accepted_answers": [
+                                "Xin lỗi quý vị, từ đây đi lối nào để tới Tòa nhà Quốc hội ạ?",
                                 "Xin lỗi Ngài, ở đây đi lối nào để tới Tòa nhà Quốc hội vậy?",
                                 "Cho tôi xin lỗi, đường nào đi đến Tòa nhà Quốc hội thế ạ?",
                                 "Xin lỗi, đi đến Tòa nhà Quốc hội theo hướng nào?",
                                 "Xin lỗi, đi lối nào để tới Tòa nhà Quốc hội?"
                         ],
-                        "translation": "Entschuldigen Sie bitte, wo geht es hier zum Reichstag? = Xin lỗi Ngài, ở đây đi lối nào để tới Tòa nhà Quốc hội vậy?"
+                        "translation": "Xin lỗi quý vị, từ đây đi lối nào để tới Tòa nhà Quốc hội ạ?"
                 }
         },
         {
                 "type": "dich_nghia_dv",
                 "question": "Câu 57: Dịch sang tiếng Việt: „Gegenüber vom Bahnhof sehen Sie das große Hotel.“",
                 "options": null,
-                "correct_answer": "Đối diện với nhà ga Ngài sẽ nhìn thấy khách sạn lớn.",
-                "explanation": "gegenüber von + Dativ = đối diện với...",
+                "correct_answer": "Đối diện nhà ga, quý vị sẽ nhìn thấy khách sạn lớn.",
+                "explanation": "gegenüber von + Dativ = đối diện với...; vom = von dem (der Bahnhof); sehen Sie = quý vị thấy (Sie trang trọng); das große Hotel = khách sạn lớn.",
                 "exp_reward": 25,
                 "extra_data": {
                         "accepted_answers": [
+                                "Đối diện nhà ga, quý vị sẽ nhìn thấy khách sạn lớn.",
                                 "Đối diện với nhà ga Ngài sẽ nhìn thấy khách sạn lớn.",
                                 "Ở phía đối diện nhà ga bạn sẽ thấy khách sạn lớn.",
-                                "Đối diện với nhà ga bạn sẽ nhìn thấy khách sạn lớn.",
-                                "Ở phía đối diện nhà ga Ngài sẽ nhìn thấy khách sạn lớn."
+                                "Đối diện với nhà ga bạn sẽ nhìn thấy khách sạn lớn."
                         ],
-                        "translation": "Gegenüber vom Bahnhof sehen Sie das große Hotel. = Đối diện với nhà ga Ngài sẽ nhìn thấy khách sạn lớn."
+                        "translation": "Đối diện nhà ga, quý vị sẽ nhìn thấy khách sạn lớn."
                 }
         },
         {
