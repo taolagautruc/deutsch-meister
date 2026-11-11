@@ -2266,13 +2266,13 @@ def seed_lesson_8():
                 "type": "noi_o",
                 "question": "Câu 60: Nối câu chỉ đường tiếng Việt (cột trái) với câu tiếng Đức tương ứng (cột phải).",
                 "options": null,
-                "correct_answer": "Đi thẳng cho đến sân bay. = Fahren Sie geradeaus bis zum Flughafen! | Đi thẳng cho đến ngã tư. = Gehen Sie geradeaus bis zur Kreuzung! | Đi thẳng cho đến cổng thành. = Laufen Sie geradeaus bis zum Stadttor! | Đi thẳng cho đến Nhà hát Opera. = Gehen Sie geradeaus bis zur Staatsoper!",
+                "correct_answer": "Lái xe đi thẳng cho đến sân bay. = Fahren Sie geradeaus bis zum Flughafen! | Đi thẳng cho đến ngã tư. = Gehen Sie geradeaus bis zur Kreuzung! | Đi bộ thẳng cho đến cổng thành. = Laufen Sie geradeaus bis zum Stadttor! | Đi thẳng cho đến Nhà hát Opera. = Gehen Sie geradeaus bis zur Staatsoper!",
                 "explanation": "'bis' đi với zu + Dativ. der Flughafen → zu + dem = 'zum Flughafen'; die Kreuzung → zu + der = 'zur Kreuzung'; das Stadttor → 'zum Stadttor'; die Staatsoper → 'zur Staatsoper'.",
                 "exp_reward": 30,
                 "extra_data": {
                         "noi_o_pairs": [
                                 {
-                                        "left": "Đi thẳng cho đến sân bay.",
+                                        "left": "Lái xe đi thẳng cho đến sân bay.",
                                         "right": "Fahren Sie geradeaus bis zum Flughafen!"
                                 },
                                 {
@@ -2280,7 +2280,7 @@ def seed_lesson_8():
                                         "right": "Gehen Sie geradeaus bis zur Kreuzung!"
                                 },
                                 {
-                                        "left": "Đi thẳng cho đến cổng thành.",
+                                        "left": "Đi bộ thẳng cho đến cổng thành.",
                                         "right": "Laufen Sie geradeaus bis zum Stadttor!"
                                 },
                                 {
@@ -2288,7 +2288,7 @@ def seed_lesson_8():
                                         "right": "Gehen Sie geradeaus bis zur Staatsoper!"
                                 }
                         ],
-                        "translation": "1. Hãy lái xe đi thẳng cho đến sân bay!\n2. Hãy đi thẳng cho đến ngã tư!\n3. Hãy đi bộ thẳng cho đến cổng thành!\n4. Hãy đi thẳng cho đến Nhà hát Opera!"
+                        "translation": ""
                 }
         },
         {
@@ -2380,39 +2380,39 @@ def seed_lesson_8():
         },
         {
                 "type": "noi_o",
-                "question": "Câu 64: Nối danh từ địa điểm số ít (cột trái) với dạng số nhiều tương ứng (cột phải).",
+                "question": "Câu 64: Nối cụm danh từ địa điểm ở số nhiều (cột trái) với cách viết tiếng Đức chuẩn (cột phải).",
                 "options": null,
-                "correct_answer": "Bahnhof / Hafen / Markt = die Bahnhöfe / die Häfen / die Märkte | Schloss / Krankenhaus / Rathaus = die Schlösser / die Krankenhäuser / die Rathäuser | Einkaufszentrum / Museum = die Einkaufszentren / die Museen | Brücke / Kreuzung / Ampel = die Brücken / die Kreuzungen / die Ampeln",
-                "explanation": "Quy tắc chuyển số nhiều danh từ địa điểm: 1. Danh từ giống đực thêm Umlaut và đuôi -e (Bahnhöfe, Häfen, Märkte). 2. Danh từ giống trung tận cùng bằng Haus/Schloss thêm Umlaut và đuôi -er (Schlösser, Krankenhäuser, Rathäuser). 3. Danh từ có gốc ngoại lai hoặc đuôi -um đổi thành -en (Einkaufszentren, Museen). 4. Danh từ giống cái thêm đuôi -n/-en (Brücken, Kreuzungen, Ampeln).",
+                "correct_answer": "các nhà ga / các cảng biển / các khu chợ = die Bahnhöfe / die Häfen / die Märkte | các lâu đài / các bệnh viện / các tòa thị chính = die Schlösser / die Krankenhäuser / die Rathäuser | các trung tâm thương mại / các viện bảo tàng = die Einkaufszentren / die Museen | những cây cầu / những ngã tư / những cột đèn giao thông = die Brücken / die Kreuzungen / die Ampeln",
+                "explanation": "Quy tắc chuyển đổi từ số ít sang số nhiều của danh từ chỉ địa điểm: 1. Nhóm danh từ giống đực thêm Umlaut và đuôi -e: der Bahnhof -> die Bahnhöfe, der Hafen -> die Häfen, der Markt -> die Märkte. 2. Nhóm danh từ giống trung tận cùng bằng -haus/-schloss thêm Umlaut và đuôi -er: das Schloss -> die Schlösser, das Krankenhaus -> die Krankenhäuser, das Rathaus -> die Rathäuser. 3. Nhóm danh từ tận cùng bằng đuôi -um đổi -um thành -en: das Einkaufszentrum -> die Einkaufszentren, das Museum -> die Museen. 4. Nhóm danh từ giống cái thêm đuôi -n hoặc -en: die Brücke -> die Brücken, die Kreuzung -> die Kreuzungen, die Ampel -> die Ampeln.",
                 "exp_reward": 30,
                 "extra_data": {
                         "noi_o_pairs": [
                                 {
-                                        "left": "Bahnhof / Hafen / Markt",
+                                        "left": "các nhà ga / các cảng biển / các khu chợ",
                                         "right": "die Bahnhöfe / die Häfen / die Märkte"
                                 },
                                 {
-                                        "left": "Schloss / Krankenhaus / Rathaus",
+                                        "left": "các lâu đài / các bệnh viện / các tòa thị chính",
                                         "right": "die Schlösser / die Krankenhäuser / die Rathäuser"
                                 },
                                 {
-                                        "left": "Einkaufszentrum / Museum",
+                                        "left": "các trung tâm thương mại / các viện bảo tàng",
                                         "right": "die Einkaufszentren / die Museen"
                                 },
                                 {
-                                        "left": "Brücke / Kreuzung / Ampel",
+                                        "left": "những cây cầu / những ngã tư / những cột đèn giao thông",
                                         "right": "die Brücken / die Kreuzungen / die Ampeln"
                                 }
                         ],
-                        "translation": "1. Dạng số nhiều tương ứng là các nhà ga / các cảng biển / các khu chợ.\n2. Dạng số nhiều tương ứng là các lâu đài / các bệnh viện / các tòa thị chính.\n3. Dạng số nhiều tương ứng là các trung tâm thương mại / các viện bảo tàng.\n4. Dạng số nhiều tương ứng là những cây cầu / những ngã tư / những cột đèn giao thông."
+                        "translation": ""
                 }
         },
         {
                 "type": "noi_o",
-                "question": "Câu 65: Ghép phần đầu câu (cột trái) với phần còn lại (cột phải) để được câu hoàn chỉnh đúng ngữ pháp.",
+                "question": "Câu 65: Ghép địa danh tại Berlin (cột trái) với hoạt động đặc trưng phù hợp ngữ cảnh (cột phải).",
                 "options": null,
                 "correct_answer": "Auf dem Fernsehturm am Alexanderplatz = kann man ganz Berlin von oben sehen. | Auf der Museumsinsel und in der Alten Nationalgalerie = wollen die Touristen berühmte Kunstwerke besichtigen. | Auf der langen Friedrichstraße = möchten viele Besucher am Nachmittag bummeln und einkaufen. | Vor dem Brandenburger Tor und dem Reichstag = machen die Reisegruppen immer viele Erinnerungsfotos.",
-                "explanation": "Hoạt động gắn liền với địa danh Berlin: 1. Fernsehturm cao 368m là nơi ngắm toàn cảnh thành phố (von oben sehen). 2. Museumsinsel và Alte Nationalgalerie là trung tâm nghệ thuật và bảo tàng (Kunstwerke besichtigen). 3. Friedrichstraße là phố thương mại mua sắm sầm uất (bummeln und einkaufen). 4. Brandenburger Tor và Reichstag là biểu tượng lịch sử để chụp ảnh kỷ niệm (Erinnerungsfotos machen).",
+                "explanation": "Phân tích ngữ cảnh địa danh Berlin và cấu trúc ngữ pháp: 1. 'Auf dem Fernsehturm' (trên Tháp truyền hình - der Fernsehturm ở Dativ) -> ngắm toàn cảnh Berlin từ trên cao ('kann man ganz Berlin von oben sehen'). 2. 'Auf der Museumsinsel und in der Alten Nationalgalerie' (die Insel & die Galerie ở Dativ) -> trung tâm bảo tàng nghệ thuật nên du khách muốn tham quan tác phẩm nổi tiếng ('berühmte Kunstwerke besichtigen'). 3. 'Auf der langen Friedrichstraße' (die Straße ở Dativ) -> đại lộ thương mại sầm uất nên khách muốn đi dạo và mua sắm ('bummeln und einkaufen'). 4. 'Vor dem Brandenburger Tor und dem Reichstag' (das Tor & der Reichstag ở Dativ) -> biểu tượng lịch sử ngoài trời để chụp ảnh kỷ niệm ('Erinnerungsfotos machen'). Lưu ý: Khi cụm giới từ chỉ nơi chốn đứng đầu câu (vị trí số 1), động từ chia theo ngôi đứng ngay ở vị trí số 2.",
                 "exp_reward": 30,
                 "extra_data": {
                         "noi_o_pairs": [
@@ -2438,27 +2438,27 @@ def seed_lesson_8():
         },
         {
                 "type": "noi_o",
-                "question": "Câu 66: Nối các bước chỉ đường theo lộ trình từ Ga tàu đến Khách sạn (Bước 1: Quảng trường Ga ➔ Bước 2: Cầu & Công viên ➔ Bước 3: Rẽ ở ngã tư ➔ Bước 4: Khách sạn):",
+                "question": "Câu 66: Nối thứ tự các bước (cột trái) với chỉ dẫn tương ứng (cột phải) để tạo thành lộ trình hợp lý từ Quảng trường nhà ga (Bahnhofsvorplatz) đến Khách sạn (Hotel):",
                 "options": null,
-                "correct_answer": "Erster Schritt (Zuerst) = gehen Sie vom Bahnhofsvorplatz geradeaus die Kaiserstraße entlang. | Zweiter Schritt (Dann) = laufen Sie über die kleine Brücke und am Stadtpark vorbei. | Dritter Schritt (Danach) = biegen Sie nach dem Stadtpark an der zweiten Kreuzung links ab. | Letzter Schritt (Zum Schluss) = sehen Sie direkt rechts nach der Ampel Ihr Hotel.",
-                "explanation": "Thứ tự theo đúng lộ trình từ Ga tàu đến Khách sạn: Bước 1 bắt đầu từ Bahnhofsvorplatz (điểm xuất phát: quảng trường ga); Bước 2 đi qua cây cầu và ngang qua Stadtpark; Bước 3 rẽ 'nach dem Stadtpark' (sau công viên) ở ngã tư thứ hai; Bước 4 nhìn thấy khách sạn (điểm đến). Sau từ nối ở đầu câu (Zuerst, Dann, Danach, Zum Schluss), động từ chia đứng ngay sau, rồi mới đến chủ ngữ: 'Zuerst gehen Sie …'.",
+                "correct_answer": "Schritt 1: Zuerst = gehen Sie vom Bahnhofsvorplatz geradeaus die Kaiserstraße entlang. | Schritt 2: Dann = laufen Sie über die kleine Brücke und am Stadtpark vorbei. | Schritt 3: Danach = biegen Sie nach dem Stadtpark an der zweiten Kreuzung links ab. | Schritt 4: Zum Schluss = sehen Sie direkt rechts nach der Ampel Ihr Hotel.",
+                "explanation": "Cách suy luận thứ tự lộ trình dựa vào từ khóa liên kết (Domino-Logik): Bước 1 (Zuerst) phải bắt đầu từ điểm xuất phát 'vom Bahnhofsvorplatz' (từ quảng trường nhà ga) đi dọc theo phố Kaiserstraße. Bước 2 (Dann) đi qua cầu nhỏ và đi ngang qua công viên 'am Stadtpark vorbei' (giới thiệu mốc công viên). Bước 3 (Danach) nối tiếp mốc vừa đi qua bằng cụm 'nach dem Stadtpark' (sau khi qua công viên) thì rẽ trái ở ngã tư thứ hai. Bước 4 (Zum Schluss) kết thúc tại điểm đích 'sehen Sie ... Ihr Hotel' (nhìn thấy khách sạn của quý vị ngay bên phải sau đèn giao thông).",
                 "exp_reward": 30,
                 "extra_data": {
                         "noi_o_pairs": [
                                 {
-                                        "left": "Erster Schritt (Zuerst)",
+                                        "left": "Schritt 1: Zuerst",
                                         "right": "gehen Sie vom Bahnhofsvorplatz geradeaus die Kaiserstraße entlang."
                                 },
                                 {
-                                        "left": "Zweiter Schritt (Dann)",
+                                        "left": "Schritt 2: Dann",
                                         "right": "laufen Sie über die kleine Brücke und am Stadtpark vorbei."
                                 },
                                 {
-                                        "left": "Dritter Schritt (Danach)",
+                                        "left": "Schritt 3: Danach",
                                         "right": "biegen Sie nach dem Stadtpark an der zweiten Kreuzung links ab."
                                 },
                                 {
-                                        "left": "Letzter Schritt (Zum Schluss)",
+                                        "left": "Schritt 4: Zum Schluss",
                                         "right": "sehen Sie direkt rechts nach der Ampel Ihr Hotel."
                                 }
                         ],
@@ -2469,29 +2469,29 @@ def seed_lesson_8():
                 "type": "noi_o",
                 "question": "Câu 67: Nối câu hỏi (cột trái) với câu trả lời đúng ngữ pháp (cột phải).",
                 "options": null,
-                "correct_answer": "Wo wartet dein Freund auf dich? = Er steht direkt vor dem Kino / an der zweiten Ampel. | Wohin läufst du so schnell? = Ich laufe schnell in das Kino / über die Straße. | Wo fährt der Sightseeing-Bus vorbei? = Er fährt am Schloss Bellevue und an der Universität vorbei. | Wohin fährt der Sightseeing-Bus? = Er fährt durch das Stadttor auf den großen Platz.",
-                "explanation": "'Wo?' hỏi vị trí, nơi sự việc diễn ra → Dativ: 'vor dem Kino', 'an der zweiten Ampel', 'am Schloss … vorbei' (an + dem), 'an der Universität vorbei'. 'Wohin?' hỏi hướng di chuyển → Akkusativ: 'in das Kino', 'über die Straße', 'durch das Stadttor', 'auf den großen Platz'. 'an … vorbei' luôn đi với Dativ; 'durch' luôn đi với Akkusativ.",
+                "correct_answer": "Wo wartet der Reiseleiter auf die Gruppe? = Direkt vor dem Brandenburger Tor neben der Information. | Wohin geht die Reisegruppe jetzt? = In das Berliner Stadtmuseum und über die Schlossbrücke. | Wo hält der Sightseeing-Bus für eine Pause? = Auf dem großen Parkplatz hinter der Staatsoper. | Wohin fährt der Sightseeing-Bus danach? = Durch das alte Stadttor in den grünen Tiergarten.",
+                "explanation": "Quy tắc phân biệt vị trí tĩnh 'Wo?' (+ Cách 3 Dativ) và hướng di chuyển 'Wohin?' (+ Cách 4 Akkusativ): 1. Câu 1 & Câu 3 hỏi 'Wo?' (đợi ở đâu / dừng ở đâu -> không di chuyển): bắt buộc dùng giới từ đi với Dativ ('vor dem Brandenburger Tor', 'neben der Information', 'auf dem großen Parkplatz', 'hinter der Staatsoper'). 2. Câu 2 & Câu 4 hỏi 'Wohin?' (đi đâu / chạy đi đâu -> có sự di chuyển đổi vị trí): bắt buộc dùng giới từ đi với Akkusativ ('in das Stadtmuseum', 'über die Schlossbrücke', 'durch das alte Stadttor', 'in den grünen Tiergarten' - der Tiergarten đổi thành den).",
                 "exp_reward": 30,
                 "extra_data": {
                         "noi_o_pairs": [
                                 {
-                                        "left": "Wo wartet dein Freund auf dich?",
-                                        "right": "Er steht direkt vor dem Kino / an der zweiten Ampel."
+                                        "left": "Wo wartet der Reiseleiter auf die Gruppe?",
+                                        "right": "Direkt vor dem Brandenburger Tor neben der Information."
                                 },
                                 {
-                                        "left": "Wohin läufst du so schnell?",
-                                        "right": "Ich laufe schnell in das Kino / über die Straße."
+                                        "left": "Wohin geht die Reisegruppe jetzt?",
+                                        "right": "In das Berliner Stadtmuseum und über die Schlossbrücke."
                                 },
                                 {
-                                        "left": "Wo fährt der Sightseeing-Bus vorbei?",
-                                        "right": "Er fährt am Schloss Bellevue und an der Universität vorbei."
+                                        "left": "Wo hält der Sightseeing-Bus für eine Pause?",
+                                        "right": "Auf dem großen Parkplatz hinter der Staatsoper."
                                 },
                                 {
-                                        "left": "Wohin fährt der Sightseeing-Bus?",
-                                        "right": "Er fährt durch das Stadttor auf den großen Platz."
+                                        "left": "Wohin fährt der Sightseeing-Bus danach?",
+                                        "right": "Durch das alte Stadttor in den grünen Tiergarten."
                                 }
                         ],
-                        "translation": "1. Bạn của bạn đang đợi bạn ở đâu? — Anh ấy đứng ngay trước rạp chiếu phim / ở đèn giao thông thứ hai.\n2. Bạn chạy nhanh đi đâu thế? — Tôi chạy nhanh vào rạp chiếu phim / qua bên kia đường.\n3. Xe buýt tham quan chạy ngang qua những nơi nào? — Nó chạy ngang qua Cung điện Bellevue và trường Đại học.\n4. Xe buýt tham quan chạy đi đâu? — Nó chạy xuyên qua cổng thành ra quảng trường lớn."
+                        "translation": "1. 'Hướng dẫn viên du lịch đợi đoàn ở đâu?' — 'Ngay phía trước Cổng Brandenburg bên cạnh quầy thông tin.'\n2. 'Bây giờ đoàn du lịch đi đâu?' — 'Đi vào Bảo tàng thành phố Berlin và đi qua cầu Schlossbrücke.'\n3. 'Xe buýt tham quan dừng nghỉ giải lao ở đâu?' — 'Ở trên bãi đỗ xe lớn phía sau Nhà hát Opera Quốc gia.'\n4. 'Sau đó xe buýt tham quan chạy đi đâu?' — 'Chạy xuyên qua cổng thành cổ đi vào công viên Tiergarten xanh mát.'"
                 }
         },
         {
