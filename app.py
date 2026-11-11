@@ -144,8 +144,9 @@ def ensure_db_initialized():
             from lessons.a1.seed_a1_b5 import seed_lesson_5
             seed_lesson_5()
         else:
-            cursor.execute("SELECT COUNT(*) as cnt FROM vocabularies WHERE lesson_id = 19 AND german_word = 'Oktober' AND vietnamese_meaning LIKE '%kein Plural%';")
-            if cursor.fetchone()["cnt"] == 0:
+            cursor.execute("SELECT extra_data FROM exercises WHERE lesson_id = 19 AND question LIKE '%Câu 28%' LIMIT 1;")
+            b5_ex28 = cursor.fetchone()
+            if not b5_ex28 or '8 giờ 15 phút' not in (b5_ex28["extra_data"] or ''):
                 from lessons.a1.seed_a1_b5 import seed_lesson_5
                 seed_lesson_5()
 

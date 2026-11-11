@@ -374,12 +374,12 @@
     <!-- ========================================================= -->
     <!-- JAVASCRIPT XỬ LÝ TƯƠNG TÁC, PHÁT ÂM & KẾT NỐI API PYTHON   -->
     <!-- ========================================================= -->
-    <script src="/static/js/audio_tts.js?v=20261111_v6"></script>
-    <script src="/static/js/number_trainer.js?v=20261111_v6"></script>
-    <script src="/static/js/city_map_svg.js?v=20261111_v6"></script>
-    <script src="/static/js/verbs_db.js?v=20261111_v6"></script>
-    <script src="/static/js/lexikon_db.js?v=20261111_v6"></script>
-    <script src="/static/js/arena_engine.js?v=20261111_v6"></script>
+    <script src="/static/js/audio_tts.js?v=20261111_v7"></script>
+    <script src="/static/js/number_trainer.js?v=20261111_v7"></script>
+    <script src="/static/js/city_map_svg.js?v=20261111_v7"></script>
+    <script src="/static/js/verbs_db.js?v=20261111_v7"></script>
+    <script src="/static/js/lexikon_db.js?v=20261111_v7"></script>
+    <script src="/static/js/arena_engine.js?v=20261111_v7"></script>
     <script>
         const LEVEL_META = {
             "A1": {
@@ -519,7 +519,7 @@
                 const exercisesState = (currentLesson.allRenderExercises || []).map(ex => ({ ...ex }));
 
                 const sessionData = {
-                    version: '20261111_v4',
+                    version: '20261111_v7',
                     lessonId: lessonId,
                     mode: mode,
                     sessionAnswers: Array.from(sessionSet),
@@ -540,7 +540,7 @@
             }
         }
 
-        const CURRENT_SESSION_VERSION = '20261111_v6';
+        const CURRENT_SESSION_VERSION = '20261111_v7';
 
         function loadActiveLessonSession(lessonId) {
             if (!lessonId) return null;
@@ -1879,6 +1879,13 @@
                     ? `<span class="text-emerald-700 font-extrabold flex items-center gap-1">⚡ +${ex.exp_reward} EXP <span class="text-[11px] px-1.5 py-0.2 rounded bg-emerald-100 text-emerald-800 font-bold">(Đã nhận)</span></span>`
                     : `<span class="text-amber-600 font-extrabold">⚡ +${ex.exp_reward} EXP</span>`;
 
+                const expText = formatExerciseExplanation(ex ? ex.explanation : '');
+                const explanationHtml = expText ? `
+                    <div class="text-emerald-900 leading-relaxed pt-1 whitespace-pre-line">
+                        <span class="font-bold">💡 Giải thích:</span> ${expText}
+                    </div>
+                ` : '';
+
                 const feedbackHtml = isDone
                     ? `
                         <div id="ex-feedback-${i}" class="text-xs p-3.5 rounded-xl mt-2 bg-emerald-50 text-emerald-800 border border-emerald-200">
@@ -1888,9 +1895,7 @@
                                     <span class="text-emerald-800 font-bold">(+${ex.exp_reward} EXP)</span>
                                 </div>
                                 ${translationHtml}
-                                <div class="text-emerald-900 leading-relaxed pt-1">
-                                    <span class="font-bold">💡 Giải thích:</span> ${ex.explanation}
-                                </div>
+                                ${explanationHtml}
                             </div>
                         </div>
                     `
@@ -1974,18 +1979,33 @@
             return /[àáạảãâầấậẩẫăằắặẳẵèéẹẻẽêềếệểễìíịỉĩòóọỏõôồốộổỗơờớợởỡùúụủũưừứựửữỳýỵỷỹđ]/i.test(str || '');
         }
 
-        function isInvalidTranslationString(str) {
+        function isInvalidTranslationString(str, question = '') {
             if (!str || typeof str !== 'string') return true;
             const trimmed = str.trim();
             if (trimmed.length < 2) return true;
-            // Loại bỏ các câu suy luận ngữ pháp hoặc chỉ thị làm bài
-            if (/^(động từ|cụm từ|từ cần điền|đáp án|cần điền|chủ ngữ|ngôi\s+(thứ|\d|ich|du|er|sie|es|wir|ihr|man|số ít|số nhiều)|âm thanh phát|câu nghe được|điền|chọn|kết hợp|lưu ý|quy tắc)/i.test(trimmed)) {
+            if (question && typeof question === 'string') {
+                const normQ = normalizeAnswer(question);
+                const normS = normalizeAnswer(trimmed);
+                if (normQ && normS && (normQ === normS || normQ.includes(normS) || normS.includes(normQ))) {
+                    return true;
+                }
+            }
+            // Loại bỏ các câu suy luận ngữ pháp hoặc chỉ thị làm bài / lặp lại đề
+            if (/^(động từ|cụm từ|từ cần điền|đáp án|cần điền|chủ ngữ|ngôi\s+(thứ|\d|ich|du|er|sie|es|wir|ihr|man|số ít|số nhiều)|âm thanh phát|câu nghe được|điền|chọn|kết hợp|lưu ý|quy tắc|nối\s+|ghép\s+|sắp xếp\s+|hoàn thành\s+|dịch\s+câu|dịch\s+sang)/i.test(trimmed)) {
                 return true;
             }
             return false;
         }
 
+        function formatExerciseExplanation(exp) {
+            if (!exp || typeof exp !== 'string') return '';
+            const clean = exp.trim();
+            if (!clean) return '';
+            return clean;
+        }
+
         function getExerciseTranslation(ex, extra) {
+            const qText = ex ? (ex.question || '') : '';
             // Xác định xem câu hỏi có phải yêu cầu dịch sang tiếng Việt không (Đức -> Việt)
             const isDeToVi = (ex && (ex.exercise_type === 'dich_nghia_dv' || ex.exercise_type === 'dich_cau_dv' || ex.exercise_type === 'dich')) &&
                              (ex.question && /(?:sang tiếng việt|đức\s*→\s*việt|dịch câu sau sang tiếng việt)/i.test(ex.question));
@@ -1997,29 +2017,29 @@
                     if (trans.includes('=')) {
                         const parts = trans.split('=');
                         const viPart = parts[parts.length - 1].trim();
-                        if (hasVietnameseChars(viPart) && !isInvalidTranslationString(viPart)) return viPart;
+                        if (hasVietnameseChars(viPart) && !isInvalidTranslationString(viPart, qText)) return viPart;
                     }
-                    if (hasVietnameseChars(trans) && !isInvalidTranslationString(trans)) return trans;
+                    if (hasVietnameseChars(trans) && !isInvalidTranslationString(trans, qText)) return trans;
                 }
                 if (ex && ex.correct_answer) {
                     const firstOpt = ex.correct_answer.split('/')[0].trim();
-                    if (hasVietnameseChars(firstOpt) && !isInvalidTranslationString(firstOpt)) return firstOpt;
+                    if (hasVietnameseChars(firstOpt) && !isInvalidTranslationString(firstOpt, qText)) return firstOpt;
                 }
             }
 
             // 1. Kiểm tra extra.translation hoặc ex.translation
             if (extra && extra.translation && typeof extra.translation === 'string' && extra.translation.trim()) {
                 const trans = extra.translation.trim();
-                if (!isInvalidTranslationString(trans)) return trans;
+                if (!isInvalidTranslationString(trans, qText)) return trans;
             }
             if (ex && ex.translation && typeof ex.translation === 'string' && ex.translation.trim()) {
                 const trans = ex.translation.trim();
-                if (!isInvalidTranslationString(trans)) return trans;
+                if (!isInvalidTranslationString(trans, qText)) return trans;
             }
             if (ex && ex.extra_data) {
                 try {
                     const parsed = typeof ex.extra_data === 'string' ? JSON.parse(ex.extra_data) : ex.extra_data;
-                    if (parsed && parsed.translation && !isInvalidTranslationString(parsed.translation)) {
+                    if (parsed && parsed.translation && !isInvalidTranslationString(parsed.translation, qText)) {
                         return parsed.translation.trim();
                     }
                 } catch (e) {}
@@ -2029,14 +2049,14 @@
             if (ex && (ex.exercise_type === 'dich' || ex.exercise_type === 'dich_nghia_dv' || ex.exercise_type === 'dich_cau_dv') && ex.question && /(?:đức\s*→\s*việt|sang tiếng việt)/i.test(ex.question)) {
                 if (ex.correct_answer) {
                     const firstOpt = ex.correct_answer.split('/')[0].trim();
-                    if (hasVietnameseChars(firstOpt) && !isInvalidTranslationString(firstOpt)) return firstOpt;
+                    if (hasVietnameseChars(firstOpt) && !isInvalidTranslationString(firstOpt, qText)) return firstOpt;
                 }
             }
 
             // 3. Nếu là dạng dịch Việt -> Đức: câu tiếng Việt nằm trong dấu ngoặc kép của đề bài
             if (ex && (ex.exercise_type === 'dich' || ex.exercise_type === 'dich_nghia_vd' || ex.exercise_type === 'dich_cau_vd') && ex.question && /(?:việt\s*→\s*đức|sang tiếng đức)/i.test(ex.question)) {
                 const matchVi = ex.question.match(/['"„]([^'"“]+)['"”]/);
-                if (matchVi && hasVietnameseChars(matchVi[1]) && !isInvalidTranslationString(matchVi[1])) {
+                if (matchVi && hasVietnameseChars(matchVi[1]) && !isInvalidTranslationString(matchVi[1], qText)) {
                     return matchVi[1].trim();
                 }
             }
@@ -2044,7 +2064,7 @@
             // 4. Nếu trong đề bài có "nghĩa là '...' / dịch là '...'"
             if (ex && ex.question) {
                 const matchVi = ex.question.match(/(?:nghĩa là|có nghĩa là|dịch là)[:\s]+['"„]([^'"“]+)['"”]/i);
-                if (matchVi && hasVietnameseChars(matchVi[1]) && !isInvalidTranslationString(matchVi[1])) {
+                if (matchVi && hasVietnameseChars(matchVi[1]) && !isInvalidTranslationString(matchVi[1], qText)) {
                     return matchVi[1].trim();
                 }
             }
@@ -2053,7 +2073,7 @@
             // Ví dụ: 'Was möchten Sie trinken?' (Quý khách muốn uống gì ạ?)
             if (ex && ex.explanation) {
                 const matchParen = ex.explanation.match(/['"„][^'"”]+['"”]\s*\(([^()]+)\)/);
-                if (matchParen && hasVietnameseChars(matchParen[1]) && !isInvalidTranslationString(matchParen[1])) {
+                if (matchParen && hasVietnameseChars(matchParen[1]) && !isInvalidTranslationString(matchParen[1], qText)) {
                     const parenText = matchParen[1].trim();
                     if (!/^(chú ý|lưu ý|ngôi|dạng|tương đương)/i.test(parenText)) {
                         return parenText;
@@ -2062,7 +2082,7 @@
 
                 // Ví dụ: 'Tee' = trà
                 const matchEq = ex.explanation.match(/['"„][^'"”]+['"”]\s*(?:=|có nghĩa là)[:\s]*['"„]?([^.'"]*[àáạảãâầấậẩẫăằắặẳẵèéẹẻẽêềếệểễìíịỉĩòóọỏõôồốộổỗơờớợởỡùúụủũưừứựửữỳýỵỷỹđ][^.('"]*)/i);
-                if (matchEq && hasVietnameseChars(matchEq[1]) && !isInvalidTranslationString(matchEq[1])) {
+                if (matchEq && hasVietnameseChars(matchEq[1]) && !isInvalidTranslationString(matchEq[1], qText)) {
                     return matchEq[1].trim();
                 }
             }
@@ -2074,6 +2094,7 @@
             if (!translation || typeof translation !== 'string') return '';
             const cleanTrans = translation.trim();
             if (!cleanTrans) return '';
+            if (isInvalidTranslationString(cleanTrans, ex ? (ex.question || '') : '')) return '';
 
             const isNoiO = Boolean(ex && ex.exercise_type === 'noi_o');
             const hasMultipleLines = cleanTrans.includes('\n') || cleanTrans.includes('|') || /(?:^|\s)1\.\s+.*?(?:\s)2\.\s+/.test(cleanTrans);
@@ -2364,6 +2385,12 @@
                         </div>
                     `;
                 }
+                const expText = formatExerciseExplanation(ex ? ex.explanation : '');
+                const explanationHtml = expText ? `
+                    <div class="text-emerald-900 leading-relaxed pt-1 whitespace-pre-line">
+                        <span class="font-bold">💡 Giải thích:</span> ${expText}
+                    </div>
+                ` : '';
                 feedback.innerHTML = `
                     <div class="space-y-1.5">
                         <div class="flex items-center gap-2">
@@ -2374,9 +2401,7 @@
                         </div>
                         ${correctPairsHtml}
                         ${translationHtml}
-                        <div class="text-emerald-900 leading-relaxed pt-1">
-                            <span class="font-bold">💡 Giải thích:</span> ${ex.explanation}
-                        </div>
+                        ${explanationHtml}
                         ${nextDynamicHtml}
                     </div>
                 `;
@@ -2613,6 +2638,12 @@
                             </div>
                         `;
                     }
+                    const expText = formatExerciseExplanation(ex ? ex.explanation : '');
+                    const explanationHtml = expText ? `
+                        <div class="text-rose-950 leading-relaxed pt-1 whitespace-pre-line">
+                            <span class="font-bold">💡 Giải thích:</span> ${expText}
+                        </div>
+                    ` : '';
                     feedback.innerHTML = `
                         <div class="space-y-1.5">
                             <div class="flex items-center gap-2">
@@ -2620,9 +2651,7 @@
                             </div>
                             ${ansBlockHtml}
                             ${translationHtml}
-                            <div class="text-rose-950 leading-relaxed pt-1">
-                                <span class="font-bold">💡 Giải thích:</span> ${ex.explanation || ''}
-                            </div>
+                            ${explanationHtml}
                         </div>
                     `;
                 } catch (err) {
@@ -2641,6 +2670,12 @@
                             </div>
                         `;
                     }
+                    const expText = formatExerciseExplanation(ex ? ex.explanation : '');
+                    const explanationHtml = expText ? `
+                        <div class="text-rose-950 leading-relaxed pt-1 whitespace-pre-line">
+                            <span class="font-bold">💡 Giải thích:</span> ${expText}
+                        </div>
+                    ` : '';
                     feedback.innerHTML = `
                         <div class="space-y-1.5">
                             <div class="flex items-center gap-2">
@@ -2650,9 +2685,7 @@
                                 Đáp án đúng là: <span class="font-extrabold text-rose-800">${fbAns}</span>
                             </div>
                             ${translationHtml}
-                            <div class="text-rose-950 leading-relaxed pt-1">
-                                <span class="font-bold">💡 Giải thích:</span> ${ex.explanation || ''}
-                            </div>
+                            ${explanationHtml}
                         </div>
                     `;
                 }
