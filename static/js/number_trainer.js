@@ -601,18 +601,27 @@ function evaluateLesson8VDTranslation(userAns, qNum) {
 function checkGermanAnswerEquivalence(userAns, correctAns, options = {}) {
     if (!userAns || !correctAns) return false;
 
-    // Kiểm tra nhanh theo Rubric Bài 8 (Câu 46 -> 57 dạng Dịch Đức -> Việt)
+    // Kiểm tra nhanh theo Rubric Bài 8 (Câu 46 -> 57 dạng Dịch Đức -> Việt, Câu 87 -> 93 dạng Dịch Việt -> Đức)
     if (options && options.question) {
-        const l8Match = String(options.question).match(/Câu\s+(4[6-9]|5[0-7])\b/i);
-        if (l8Match) {
-            const qNum = parseInt(l8Match[1], 10);
-            return evaluateLesson8Translation(userAns, qNum);
-        }
-        const l8VDMatch = String(options.question).match(/Câu\s+(8[7-9]|9[0-3])\b/i);
-        if (l8VDMatch) {
-            const qNum = parseInt(l8VDMatch[1], 10);
-            const res = evaluateLesson8VDTranslation(userAns, qNum);
-            return res.isCorrect;
+        const isL8 = (options.lesson_id === 22) ||
+                     (options.lesson_title && /bài 8\b/i.test(options.lesson_title)) ||
+                     (options.isLesson8 === true) ||
+                     (typeof currentLesson !== 'undefined' && currentLesson && (
+                         currentLesson.id === 22 ||
+                         (currentLesson.title && /bài 8\b/i.test(currentLesson.title))
+                     ));
+        if (isL8) {
+            const l8Match = String(options.question).match(/Câu\s+(4[6-9]|5[0-7])\b/i);
+            if (l8Match) {
+                const qNum = parseInt(l8Match[1], 10);
+                return evaluateLesson8Translation(userAns, qNum);
+            }
+            const l8VDMatch = String(options.question).match(/Câu\s+(8[7-9]|9[0-3])\b/i);
+            if (l8VDMatch) {
+                const qNum = parseInt(l8VDMatch[1], 10);
+                const res = evaluateLesson8VDTranslation(userAns, qNum);
+                return res.isCorrect;
+            }
         }
     }
 

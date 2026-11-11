@@ -374,12 +374,12 @@
     <!-- ========================================================= -->
     <!-- JAVASCRIPT XỬ LÝ TƯƠNG TÁC, PHÁT ÂM & KẾT NỐI API PYTHON   -->
     <!-- ========================================================= -->
-    <script src="/static/js/audio_tts.js?v=20261111_v8"></script>
-    <script src="/static/js/number_trainer.js?v=20261111_v8"></script>
-    <script src="/static/js/city_map_svg.js?v=20261111_v8"></script>
-    <script src="/static/js/verbs_db.js?v=20261111_v8"></script>
-    <script src="/static/js/lexikon_db.js?v=20261111_v8"></script>
-    <script src="/static/js/arena_engine.js?v=20261111_v8"></script>
+    <script src="/static/js/audio_tts.js?v=20261111_v9"></script>
+    <script src="/static/js/number_trainer.js?v=20261111_v9"></script>
+    <script src="/static/js/city_map_svg.js?v=20261111_v9"></script>
+    <script src="/static/js/verbs_db.js?v=20261111_v9"></script>
+    <script src="/static/js/lexikon_db.js?v=20261111_v9"></script>
+    <script src="/static/js/arena_engine.js?v=20261111_v9"></script>
     <script>
         const LEVEL_META = {
             "A1": {
@@ -540,7 +540,7 @@
             }
         }
 
-        const CURRENT_SESSION_VERSION = '20261111_v8';
+        const CURRENT_SESSION_VERSION = '20261111_v9';
 
         function loadActiveLessonSession(lessonId) {
             if (!lessonId) return null;
@@ -2591,10 +2591,17 @@
 
                 feedback.className = "text-xs p-3.5 rounded-xl mt-2 bg-rose-50 text-rose-800 border border-rose-200";
                 try {
+                    const isLesson8 = Boolean(
+                        (ex && (ex.lesson_id === 22 || (ex.question && /bài 8\b/i.test(ex.question)))) ||
+                        (typeof currentLesson !== 'undefined' && currentLesson && (
+                            currentLesson.id === 22 ||
+                            (currentLesson.title && /bài 8\b/i.test(currentLesson.title))
+                        ))
+                    );
                     const isDeToVi = (ex && (ex.exercise_type === 'dich_nghia_dv' || ex.exercise_type === 'dich_cau_dv' || ex.exercise_type === 'dich')) &&
                                      (ex.question && /(?:sang tiếng việt|đức\s*→\s*việt|dịch câu sau sang tiếng việt)/i.test(ex.question));
                     const isViToDe = (ex && (ex.exercise_type === 'dich_nghia_vd' || ex.exercise_type === 'dich_cau_vd' || ex.exercise_type === 'dich')) &&
-                                     (ex.question && /(?:sang tiếng đức|việt\s*→\s*đức|câu\s+(8[7-9]|9[0-3]))/i.test(ex.question));
+                                     (ex.question && (/(?:sang tiếng đức|việt\s*→\s*đức)/i.test(ex.question) || (isLesson8 && /câu\s+(8[7-9]|9[0-3])\b/i.test(ex.question))));
                     let displayAns = (isDeToVi && translation) ? translation : String(ex.correct_answer || '').trim();
                     if (!isDeToVi) {
                         displayAns = displayAns.replace(/[.]+$/, '');
