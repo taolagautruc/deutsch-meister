@@ -391,6 +391,213 @@ function evaluateLesson8Translation(userAns, qNum) {
     return matchLesson8Concepts(userTokens, normalizedConcepts, 0, usedMask);
 }
 
+const L8_TARGET_NOUNS = ['stadttor', 'brandenburger', 'museumsinsel', 'einkaufszentrum', 'krankenhaus', 'marktplatz', 'reichstag', 'kreuzung', 'staatsoper', 'touristen', 'besucher'];
+const L8_PREFIXES = ['der', 'die', 'das', 'den', 'dem', 'des', 'am', 'im', 'zum', 'zur', 'durch', 'ueber', 'an', 'in', 'mit', 'auf', 'vor', 'nach', 'um', 'bis', 'zu'];
+const L8_KNOWN_STEMS = [
+    'grossen', 'grosser', 'grosse', 'kleinen', 'alten', 'zweiten', 'ersten', 'bruecke',
+    'krankenhaus', 'ampel', 'park', 'fluss', 'kreuzung', 'museumsinsel', 'kirche',
+    'marktplatz', 'rathaus', 'reichstag', 'einkaufszentrum', 'bus', 'brandenburger',
+    'tor', 'abend', 'staatsoper', 'hafen', 'stadttor', 'bank', 'morgen', 'vormittag',
+    'nachmittag', 'fuss', 'kommen', 'gehen', 'vorbei', 'links', 'rechts'
+];
+
+function l8Levenshtein(s1, s2) {
+    if (s1 === s2) return 0;
+    if (!s1.length) return s2.length;
+    if (!s2.length) return s1.length;
+    const matrix = [];
+    for (let i = 0; i <= s2.length; i++) matrix[i] = [i];
+    for (let j = 0; j <= s1.length; j++) matrix[0][j] = j;
+    for (let i = 1; i <= s2.length; i++) {
+        for (let j = 1; j <= s1.length; j++) {
+            if (s2.charAt(i - 1) === s1.charAt(j - 1)) {
+                matrix[i][j] = matrix[i - 1][j - 1];
+            } else {
+                matrix[i][j] = Math.min(
+                    matrix[i - 1][j - 1] + 1,
+                    matrix[i][j - 1] + 1,
+                    matrix[i - 1][j] + 1
+                );
+            }
+        }
+    }
+    return matrix[s2.length][s1.length];
+}
+
+function normalizeLesson8VD(text) {
+    if (!text) return '';
+    let s = String(text).toLowerCase();
+    s = s.replace(/ä/g, 'ae').replace(/ö/g, 'oe').replace(/ü/g, 'ue').replace(/ß/g, 'ss');
+    s = s.replace(/[\.,!?;:\"\'„“”»«\(\)\-\–]/g, ' ');
+    s = s.replace(/\s+/g, ' ').trim();
+
+    const rawTokens = s.split(' ').filter(Boolean);
+    const expandedTokens = [];
+    for (const tok of rawTokens) {
+        let decoupled = false;
+        for (const p of L8_PREFIXES) {
+            if (tok.startsWith(p) && tok.length > p.length) {
+                const rest = tok.slice(p.length);
+                if (L8_KNOWN_STEMS.includes(rest) || L8_PREFIXES.includes(rest) || L8_TARGET_NOUNS.includes(rest)) {
+                    expandedTokens.push(p);
+                    let decoupledSecond = false;
+                    for (const p2 of L8_PREFIXES) {
+                        if (rest.startsWith(p2) && rest.length > p2.length) {
+                            const rest2 = rest.slice(p2.length);
+                            if (L8_KNOWN_STEMS.includes(rest2) || L8_TARGET_NOUNS.includes(rest2)) {
+                                expandedTokens.push(p2);
+                                expandedTokens.push(rest2);
+                                decoupledSecond = true;
+                                break;
+                            }
+                        }
+                    }
+                    if (!decoupledSecond) {
+                        expandedTokens.push(rest);
+                    }
+                    decoupled = true;
+                    break;
+                }
+            }
+        }
+        if (!decoupled) {
+            if (tok === 'vorbeigehen') {
+                expandedTokens.push('vorbei', 'gehen');
+            } else if (tok === 'linksab') {
+                expandedTokens.push('links', 'ab');
+            } else if (tok === 'rechtsab') {
+                expandedTokens.push('rechts', 'ab');
+            } else {
+                expandedTokens.push(tok);
+            }
+        }
+    }
+
+    // 1-typo tolerance for nouns >= 6 chars
+    const finalTokens = [];
+    for (const tok of expandedTokens) {
+        let mapped = tok;
+        if (tok.length >= 6) {
+            for (const tn of L8_TARGET_NOUNS) {
+                if (l8Levenshtein(tok, tn) <= 1) {
+                    mapped = tn;
+                    break;
+                }
+            }
+        }
+        finalTokens.push(mapped);
+    }
+
+    return finalTokens.join(' ');
+}
+
+function evaluateLesson8VDTranslation(userAns, qNum) {
+    const norm = normalizeLesson8VD(userAns);
+    if (!norm) return { isCorrect: false, hint: '' };
+
+    if (qNum === 87) {
+        const p87 = /^(?:zuerst\s+)?gehen\s+sie(?:\s+(?:zuerst|zunaechst|als\s+erstes))?\s+(?:geradeaus\s+ueber\s+die\s+bruecke|ueber\s+die\s+bruecke\s+geradeaus)\s+(?:(?:und\s+)?(?:dann|danach|anschliessend)\s+(?:gehen\s+sie\s+)?)?(?:am|an\s+dem)\s+krankenhaus\s+vorbei\s+bis\s+(?:zur|zu\s+der)\s+zweiten\s+ampel$/;
+        if (p87.test(norm)) return { isCorrect: true, hint: '' };
+
+        if (/bis\s+zum\b/.test(norm)) {
+            return { isCorrect: false, hint: "Chú ý mạo từ: 'die Ampel' là giống cái, sau 'bis zu' (+ Dativ) phải dùng 'bis zur zweiten Ampel' (hoặc 'bis zu der zweiten Ampel'), không dùng 'bis zum'." };
+        }
+        if (/ueber\s+(?:dem|der|den)\b/.test(norm)) {
+            return { isCorrect: false, hint: "Chuyển động qua cầu dùng Akkusativ giống cái: 'über die Brücke'." };
+        }
+        if (/\b(?:geh|geht)\b/.test(norm) && !/gehen\s+sie/.test(norm)) {
+            return { isCorrect: false, hint: "Đề bài yêu cầu dùng ngôi trang trọng 'Sie': 'Gehen Sie ...'." };
+        }
+        return { isCorrect: false, hint: "Cần dịch đúng: 'Gehen Sie (zuerst) geradeaus über die Brücke, dann am Krankenhaus vorbei bis zur zweiten Ampel!'" };
+    }
+
+    if (qNum === 88) {
+        const p88 = /^(?:geh|gehe|lauf|laufe)\s+durch\s+den\s+park(?:\s+und)?(?:\s+(?:geh|gehe|lauf|laufe))?\s+(?:den\s+fluss\s+entlang|am\s+fluss\s+entlang)\s+und\s+(?:bieg|biege)\s+(?:an\s+der\s+ersten\s+kreuzung\s+links|links\s+an\s+der\s+ersten\s+kreuzung)\s+ab$/;
+        if (p88.test(norm)) return { isCorrect: true, hint: '' };
+
+        if (/gehen\s+sie/.test(norm) || /\bsie\b/.test(norm)) {
+            return { isCorrect: false, hint: "Đề bài yêu cầu dùng ngôi thân mật 'du' (Geh... / Lauf... và bieg ... ab), không dùng 'Gehen Sie'." };
+        }
+        if (/durch\s+(?:dem|der|das)\b/.test(norm)) {
+            return { isCorrect: false, hint: "Giới từ 'durch' luôn đi với Akkusativ: 'durch den Park' (der Park -> den Park)." };
+        }
+        if (!/\bab$/.test(norm)) {
+            return { isCorrect: false, hint: "'abbiegen' là động từ tách: bắt buộc phải có tiền tố 'ab' ở cuối mệnh đề ('bieg ... ab' hoặc 'biege ... ab')." };
+        }
+        return { isCorrect: false, hint: "Cần dịch đúng: 'Geh durch den Park, lauf den Fluss entlang und bieg an der ersten Kreuzung links ab!'" };
+    }
+
+    if (qNum === 89) {
+        const p89 = /^(?:entschuldigung|entschuldigen\s+sie|verzeihung)\s+wir\s+suchen\s+die\s+museumsinsel\s+wie\s+(?:kommen|gehen)\s+wir(?:\s+zu\s+fuss)?\s+(?:zur|zu\s+der|auf\s+die)\s+museumsinsel(?:\s+zu\s+fuss)?$/;
+        if (p89.test(norm)) return { isCorrect: true, hint: '' };
+
+        if (/wir\s+suchen\s+(?:der|den|dem)\s+museumsinsel/.test(norm)) {
+            return { isCorrect: false, hint: "'die Museumsinsel' mang giống cái, sau động từ 'suchen' ở Akkusativ vẫn là 'die Museumsinsel'." };
+        }
+        if (/\bzum\s+museumsinsel/.test(norm)) {
+            return { isCorrect: false, hint: "'die Museumsinsel' mang giống cái, sau 'zu' (+ Dativ) phải dùng 'zur Museumsinsel' (zu + der), không dùng 'zum'." };
+        }
+        return { isCorrect: false, hint: "Cần dịch đúng: 'Entschuldigung / Entschuldigen Sie, wir suchen die Museumsinsel. Wie kommen wir (zu Fuß) zur Museumsinsel?'" };
+    }
+
+    if (qNum === 90) {
+        const p90 = /^(?:geht|lauft)\s+an\s+der\s+alten\s+kirche\s+vorbei\s+und\s+(?:(?:geht|lauft)\s+)?ueber\s+den\s+marktplatz\s+(?:rechts\s+seht\s+ihr\s+das\s+rathaus|ihr\s+seht\s+rechts\s+das\s+rathaus|auf\s+der\s+rechten\s+seite\s+seht\s+ihr\s+das\s+rathaus|rechts\s+ist\s+das\s+rathaus)$/;
+        if (p90.test(norm)) return { isCorrect: true, hint: '' };
+
+        if (/ueber\s+dem\s+marktplatz/.test(norm)) {
+            return { isCorrect: false, hint: "Chuyển động băng qua quảng trường dùng Akkusativ: 'über den Marktplatz' (không dùng Dativ 'über dem')." };
+        }
+        if (/an\s+die\s+alte/.test(norm)) {
+            return { isCorrect: false, hint: "Giới từ 'an ... vorbei' đi với Dativ: 'an der alten Kirche vorbei'." };
+        }
+        if (/an\s+der\s+alte\s+kirche/.test(norm)) {
+            return { isCorrect: false, hint: "Đuôi tính từ sau mạo từ xác định ở Dativ là '-en': dùng 'an der alten Kirche', không dùng 'alte'." };
+        }
+        return { isCorrect: false, hint: "Cần dịch đúng: 'Geht an der alten Kirche vorbei und über den Marktplatz, rechts seht ihr das Rathaus.'" };
+    }
+
+    if (qNum === 91) {
+        const p_c1 = '(?:(?:(?:am\\s+morgen|am\\s+vormittag)\\s+(?:will|moechte)\\s+mein\\s+onkel|mein\\s+onkel\\s+(?:will|moechte)\\s+(?:am\\s+morgen|am\\s+vormittag))\\s+den\\s+reichstag\\s+besichtigen)';
+        const p_c2 = '(?:(?:(?:am\\s+nachmittag)\\s+(?:wollen|moechten)\\s+wir|wir\\s+(?:wollen|moechten)\\s+am\\s+nachmittag)\\s+im\\s+einkaufszentrum\\s+bummeln)';
+        const p91 = new RegExp('^' + p_c1 + '\\s+und\\s+' + p_c2 + '$');
+        if (p91.test(norm)) return { isCorrect: true, hint: '' };
+
+        if (/in\s+der\s+morgen|im\s+morgen/.test(norm)) {
+            return { isCorrect: false, hint: "Cụm chỉ buổi sáng chưa đúng: dùng 'am Morgen' hoặc 'am Vormittag'." };
+        }
+        if (/(?:am\s+vormittag|am\s+morgen)\s+mein\s+onkel\s+(?:will|moechte)/.test(norm)) {
+            return { isCorrect: false, hint: "Khi 'Am Vormittag' đứng đầu câu, động từ chia ('will') đứng ngay sau nó, rồi mới đến chủ ngữ: 'Am Vormittag will mein Onkel …'. 'Am Morgen' cũng đúng; 'in der Morgen' là sai. 'möchte / möchten' cũng được chấp nhận." };
+        }
+        return { isCorrect: false, hint: "Cần dịch đúng: 'Am Vormittag will mein Onkel den Reichstag besichtigen, und am Nachmittag wollen wir im Einkaufszentrum bummeln.'" };
+    }
+
+    if (qNum === 92) {
+        const p92 = /^(?:zuerst\s+fahren\s+die\s+(?:touristen|besucher)|die\s+(?:touristen|besucher)\s+fahren\s+zuerst)\s+mit\s+dem\s+bus\s+(?:zum|zu\s+dem|bis\s+zum)\s+brandenburger\s+tor\s+und\s+(?:am\s+abend\s+gehen\s+sie|gehen\s+(?:sie\s+)?am\s+abend|abends\s+gehen\s+sie|sie\s+gehen\s+(?:am\s+abend|abends))\s+in\s+die\s+staatsoper$/;
+        if (p92.test(norm)) return { isCorrect: true, hint: '' };
+
+        if (/in\s+der\s+staatsoper/.test(norm)) {
+            return { isCorrect: false, hint: "Đi vào nhà hát (chuyển động Wohin? + Akkusativ): dùng 'in die Staatsoper', không dùng Dativ 'in der'." };
+        }
+        return { isCorrect: false, hint: "Cần dịch đúng: 'Zuerst fahren die Touristen mit dem Bus zum Brandenburger Tor, und am Abend gehen sie in die Staatsoper.'" };
+    }
+
+    if (qNum === 93) {
+        const p93_a = /^(?:um\s+(?:zum|zu\s+dem)\s+hafen\s+zu\s+kommen|um\s+den\s+hafen\s+zu\s+erreichen)\s+(?:musst\s+du|muessen\s+sie)\s+durch\s+das\s+stadttor(?:\s+gehen)?\s+und\s+an\s+der\s+grossen\s+bank\s+(?:vorbei\s+gehen|vorbeigehen)$/;
+        const p93_b = /^(?:du\s+musst|sie\s+muessen)\s+durch\s+das\s+stadttor(?:\s+gehen)?\s+und\s+an\s+der\s+grossen\s+bank\s+(?:vorbei\s+gehen|vorbeigehen)\s+um\s+(?:zum|zu\s+dem)\s+hafen\s+zu\s+kommen$/;
+        if (p93_a.test(norm) || p93_b.test(norm)) return { isCorrect: true, hint: '' };
+
+        if (/an\s+die\s+grossen\s+bank/.test(norm) || /an\s+die\s+grosse\s+bank/.test(norm)) {
+            return { isCorrect: false, hint: "Giới từ chỉ vị trí ngang qua: 'an der großen Bank vorbei' (an + Dativ giống cái: 'der', tính từ mang đuôi '-en')." };
+        }
+        if (/an\s+der\s+grosse\s+bank/.test(norm)) {
+            return { isCorrect: false, hint: "Đuôi tính từ sau mạo từ xác định ở Dativ là '-en': dùng 'an der großen Bank', không dùng 'große'." };
+        }
+        return { isCorrect: false, hint: "Cần dịch đúng: 'Um zum Hafen zu kommen, musst du durch das Stadttor und an der großen Bank vorbeigehen.' ('du' và 'Sie' đều được chấp nhận)." };
+    }
+
+    return { isCorrect: false, hint: '' };
+}
+
 function checkGermanAnswerEquivalence(userAns, correctAns, options = {}) {
     if (!userAns || !correctAns) return false;
 
@@ -400,6 +607,12 @@ function checkGermanAnswerEquivalence(userAns, correctAns, options = {}) {
         if (l8Match) {
             const qNum = parseInt(l8Match[1], 10);
             return evaluateLesson8Translation(userAns, qNum);
+        }
+        const l8VDMatch = String(options.question).match(/Câu\s+(8[7-9]|9[0-3])\b/i);
+        if (l8VDMatch) {
+            const qNum = parseInt(l8VDMatch[1], 10);
+            const res = evaluateLesson8VDTranslation(userAns, qNum);
+            return res.isCorrect;
         }
     }
 
@@ -2285,6 +2498,7 @@ if (typeof window !== 'undefined') {
     window.getRandomInt = getRandomInt;
     window.checkGermanAnswerEquivalence = checkGermanAnswerEquivalence;
     window.evaluateLesson8Translation = evaluateLesson8Translation;
+    window.evaluateLesson8VDTranslation = evaluateLesson8VDTranslation;
     window.generateNewNumberData = generateNewNumberData;
     window.randomizeAllNumberExercises = randomizeAllNumberExercises;
 }

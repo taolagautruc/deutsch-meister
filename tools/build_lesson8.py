@@ -1104,7 +1104,7 @@ Passant: Sie fährt vom Rathaus durch das Zentrum bis ___ Hafen.""",
     # =========================================================================
     trans_sent_vd = [
         (
-            "Câu 87: Dịch câu chỉ đường sau sang tiếng Đức (dùng ngôi trang trọng Sie): 'Đầu tiên Ngài hãy đi thẳng qua cây cầu, sau đó đi ngang qua bệnh viện cho đến đèn giao thông thứ hai!'",
+            "Câu 87: Dịch câu chỉ đường sau sang tiếng Đức (dùng ngôi trang trọng Sie): 'Đầu tiên quý vị hãy đi thẳng qua cây cầu, sau đó đi ngang qua bệnh viện cho đến đèn giao thông thứ hai!'",
             "Gehen Sie zuerst geradeaus über die Brücke, dann am Krankenhaus vorbei bis zur zweiten Ampel!",
             [
                 "Gehen Sie zuerst geradeaus über die Brücke, dann am Krankenhaus vorbei bis zur zweiten Ampel!",
@@ -1115,10 +1115,10 @@ Passant: Sie fährt vom Rathaus durch das Zentrum bis ___ Hafen.""",
                 "Gehen Sie zuerst über die Brücke geradeaus und dann am Krankenhaus vorbei bis zur zweiten Ampel!"
             ],
             "Qua cầu: 'über die Brücke' (Akkusativ); đi ngang qua bệnh viện ('das Krankenhaus'): 'am Krankenhaus vorbei' (Dativ); cho đến đèn giao thông thứ hai ('die Ampel'): 'bis zur zweiten Ampel' (Dativ).",
-            "Đầu tiên Ngài hãy đi thẳng qua cây cầu, sau đó đi ngang qua bệnh viện cho đến đèn giao thông thứ hai: Gehen Sie zuerst geradeaus über die Brücke, dann am Krankenhaus vorbei bis zur zweiten Ampel!"
+            "Gehen Sie zuerst geradeaus über die Brücke, dann am Krankenhaus vorbei bis zur zweiten Ampel!"
         ),
         (
-            "Câu 88: Dịch câu chỉ đường cho bạn thân sau sang tiếng Đức (dùng ngôi du): 'Cậu hãy đi xuyên qua công viên, đi dọc theo con sông và rẽ trái ở ngã tư thứ nhất!'",
+            "Câu 88: Dịch câu chỉ đường cho bạn thân sau sang tiếng Đức (dùng ngôi du): 'Bạn hãy đi xuyên qua công viên, đi dọc theo con sông và rẽ trái ở ngã tư thứ nhất!'",
             "Geh durch den Park, lauf den Fluss entlang und bieg an der ersten Kreuzung links ab!",
             [
                 "Geh durch den Park, lauf den Fluss entlang und bieg an der ersten Kreuzung links ab!",
@@ -1128,8 +1128,8 @@ Passant: Sie fährt vom Rathaus durch das Zentrum bis ___ Hafen.""",
                 "Lauf durch den Park, den Fluss entlang und an der ersten Kreuzung links!",
                 "Lauf durch den Park, den Fluss entlang und an der ersten Kreuzung links"
             ],
-            "Ngôi du mệnh lệnh: 'Geh / Lauf'; xuyên qua công viên: 'durch den Park'; dọc theo con sông: 'den Fluss entlang'; ở ngã tư thứ nhất bên trái: 'an der ersten Kreuzung links'.",
-            "Cậu hãy đi xuyên qua công viên, đi dọc theo con sông và rẽ trái ở ngã tư thứ nhất: Geh durch den Park, lauf den Fluss entlang und bieg an der ersten Kreuzung links ab!"
+            "Ngôi du mệnh lệnh: 'Geh / Lauf'; xuyên qua công viên: 'durch den Park'; dọc theo con sông: 'den Fluss entlang'; ở ngã tư thứ nhất bên trái: 'an der ersten Kreuzung links'. 'abbiegen' là động từ tách: 'bieg … ab' (cũng được 'biege … ab').",
+            "Geh durch den Park, lauf den Fluss entlang und bieg an der ersten Kreuzung links ab!"
         ),
         (
             "Câu 89: Dịch câu hỏi đường sau sang tiếng Đức: 'Xin lỗi, chúng tôi đang tìm Đảo Bảo tàng. Làm thế nào chúng tôi đi bộ đến được Đảo Bảo tàng?'",
@@ -1143,7 +1143,7 @@ Passant: Sie fährt vom Rathaus durch das Zentrum bis ___ Hafen.""",
                 "Entschuldigen Sie, wir suchen die Museumsinsel. Wie kommen wir zur Museumsinsel"
             ],
             "'die Museumsinsel' mang giống cái (die): sau 'suchen' (Akkusativ) là 'die Museumsinsel', sau 'Wie kommen wir ...?' (zu + Dativ) là 'zur Museumsinsel'.",
-            "Xin lỗi, chúng tôi đang tìm Đảo Bảo tàng. Làm thế nào chúng tôi đi bộ đến được Đảo Bảo tàng? = Entschuldigung, wir suchen die Museumsinsel. Wie kommen wir zu Fuß zur Museumsinsel?"
+            "Entschuldigung, wir suchen die Museumsinsel. Wie kommen wir zu Fuß zur Museumsinsel?"
         ),
         (
             "Câu 90: Dịch câu sau sang tiếng Đức (dùng ngôi ihr): 'Các bạn hãy đi ngang qua nhà thờ cổ và băng qua quảng trường chợ, ở bên phải các bạn sẽ nhìn thấy tòa thị chính.'",
@@ -1157,7 +1157,7 @@ Passant: Sie fährt vom Rathaus durch das Zentrum bis ___ Hafen.""",
                 "Lauft an der alten Kirche vorbei und über den Marktplatz, rechts seht ihr das Rathaus"
             ],
             "Mệnh lệnh ngôi ihr: 'Geht / Lauft'; ngang qua nhà thờ cổ: 'an der alten Kirche vorbei'; băng qua quảng trường chợ: 'über den Marktplatz'; các bạn nhìn thấy: 'seht ihr'.",
-            "Các bạn hãy đi ngang qua nhà thờ cổ và băng qua quảng trường chợ, ở bên phải các bạn sẽ nhìn thấy tòa thị chính = Geht an der alten Kirche vorbei und über den Marktplatz, rechts seht ihr das Rathaus."
+            "Geht an der alten Kirche vorbei und über den Marktplatz, rechts seht ihr das Rathaus."
         ),
         (
             "Câu 91: Dịch câu sau sang tiếng Đức: 'Buổi sáng chú của tôi muốn tham quan Tòa nhà Quốc hội, và buổi chiều chúng tôi muốn đi dạo phố ở trung tâm thương mại.'",
@@ -1170,8 +1170,8 @@ Passant: Sie fährt vom Rathaus durch das Zentrum bis ___ Hafen.""",
                 "Vormittags möchte mein Onkel den Reichstag besichtigen, und nachmittags wollen wir im Einkaufszentrum bummeln.",
                 "Vormittags möchte mein Onkel den Reichstag besichtigen, und nachmittags wollen wir im Einkaufszentrum bummeln"
             ],
-            "'mein Onkel' (er) -> 'will ... besichtigen'; 'der Reichstag' ở Akkusativ là 'den Reichstag'; ở trong trung tâm thương mại (Wo? + Dativ) là 'im Einkaufszentrum'.",
-            "Buổi sáng chú của tôi muốn tham quan Tòa nhà Quốc hội, và buổi chiều chúng tôi muốn đi dạo phố ở trung tâm thương mại = Am Vormittag will mein Onkel den Reichstag besichtigen, und am Nachmittag wollen wir im Einkaufszentrum bummeln."
+            "'mein Onkel' (er) -> 'will ... besichtigen'; 'der Reichstag' ở Akkusativ là 'den Reichstag'; ở trong trung tâm thương mại (Wo? + Dativ) là 'im Einkaufszentrum'. Khi 'Am Vormittag' đứng đầu câu, động từ chia ('will') đứng ngay sau nó, rồi mới đến chủ ngữ: 'Am Vormittag will mein Onkel …'. 'Am Morgen' cũng đúng; 'in der Morgen' là sai. 'möchte / möchten' cũng được chấp nhận.",
+            "Am Vormittag will mein Onkel den Reichstag besichtigen, und am Nachmittag wollen wir im Einkaufszentrum bummeln."
         ),
         (
             "Câu 92: Dịch câu sau sang tiếng Đức: 'Đầu tiên các du khách đi xe buýt đến Cổng Brandenburg, và buổi tối họ đi vào trong Nhà hát Opera Quốc gia.'",
@@ -1185,7 +1185,7 @@ Passant: Sie fährt vom Rathaus durch das Zentrum bis ___ Hafen.""",
                 "Zuerst fahren die Touristen mit dem Bus zum Brandenburger Tor und gehen am Abend in die Staatsoper"
             ],
             "Đi bằng xe buýt: 'mit dem Bus'; đến Cổng Brandenburg: 'zum Brandenburger Tor' (zu + dem); đi vào trong Nhà hát Opera Quốc gia: 'in die Staatsoper' (in + Akkusativ).",
-            "Đầu tiên các du khách đi xe buýt đến Cổng Brandenburg, và buổi tối họ đi vào trong Nhà hát Opera Quốc gia = Zuerst fahren die Touristen mit dem Bus zum Brandenburger Tor, und am Abend gehen sie in die Staatsoper."
+            "Zuerst fahren die Touristen mit dem Bus zum Brandenburger Tor, und am Abend gehen sie in die Staatsoper."
         ),
         (
             "Câu 93: Dịch câu sau sang tiếng Đức: 'Để đến được cảng biển, bạn phải đi xuyên qua cổng thành và đi ngang qua ngân hàng lớn.'",
@@ -1198,8 +1198,8 @@ Passant: Sie fährt vom Rathaus durch das Zentrum bis ___ Hafen.""",
                 "Wenn du zum Hafen willst, musst du durch das Stadttor und an der großen Bank vorbeigehen.",
                 "Wenn du zum Hafen willst, musst du durch das Stadttor und an der großen Bank vorbeigehen"
             ],
-            "Đến cảng biển: 'zum Hafen'; xuyên qua cổng thành: 'durch das Stadttor'; ngang qua ngân hàng lớn: 'an der großen Bank vorbei'.",
-            "Để đến được cảng biển, bạn phải đi xuyên qua cổng thành và đi ngang qua ngân hàng lớn = Um zum Hafen zu kommen, musst du durch das Stadttor und an der großen Bank vorbeigehen."
+            "Đến cảng biển: 'zum Hafen'; xuyên qua cổng thành: 'durch das Stadttor'; ngang qua ngân hàng lớn: 'an der großen Bank vorbei'. 'du' và 'Sie' đều được chấp nhận.",
+            "Um zum Hafen zu kommen, musst du durch das Stadttor und an der großen Bank vorbeigehen."
         )
     ]
 
