@@ -96,6 +96,11 @@ def test_lesson_5_qa():
         elif etype == 'noi_o':
             assert extra.get('noi_o_pairs'), f"Bài nối ô {idx+1} thiếu noi_o_pairs!"
             assert len(extra['noi_o_pairs']) == 4, f"Bài nối ô {idx+1} phải có 4 cặp!"
+            # Kiểm tra câu 28 - 33 không được chép lại tiêu đề bài tập
+            trans_str = extra.get('translation', '')
+            assert not any(k in trans_str.lower() for k in ['nối giờ', 'nối giới từ', 'nối động từ', 'nối đại từ', 'nối các buổi', 'nối câu hỏi']), f"Câu {idx+1} bị chép lại đề bài vào dịch nghĩa: {trans_str}"
+            assert len(trans_str.split('\n')) >= 4 or len(trans_str.split('|')) >= 4 or '1.' in trans_str, f"Câu nối ô {idx+1} dịch nghĩa chưa đủ 4 cặp!"
+            assert len(exp) > 50, f"Câu {idx+1} giải thích quá ngắn, phải phân tích rõ quy tắc!"
 
     expected_type_distribution = {
         'trac_nghiem': 8,

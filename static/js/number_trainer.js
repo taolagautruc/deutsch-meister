@@ -1732,27 +1732,27 @@ function generateNewNumberData(ex, fallbackIndex = null) {
     // 16. Xử lý câu hỏi Đổi giờ Đời thường (dynamic_time_quiz - Bài 5)
     if (extra.dynamic_time_quiz) {
         const timeItems = [
-            { time: "08:15", off: "acht Uhr fünfzehn", inoff: "Viertel nach acht", wrong: ["Viertel vor acht", "halb acht", "acht nach Viertel"], exp: "Hơn 15 phút (1/4 giờ) qua mốc 8 giờ → 'Viertel nach acht'." },
-            { time: "09:30", off: "neun Uhr dreißig", inoff: "halb zehn", wrong: ["halb neun", "Viertel nach neun", "dreißig nach neun"], exp: "9h30 = còn nửa tiếng nữa đến 10 giờ → 'halb zehn'." },
-            { time: "09:05", off: "neun Uhr fünf", inoff: "fünf nach neun", wrong: ["fünf vor neun", "halb zehn", "zehn nach neun"], exp: "9 giờ hơn 5 phút → 'fünf nach neun'." },
-            { time: "07:50", off: "sieben Uhr fünfzig", inoff: "zehn vor acht", wrong: ["zehn nach sieben", "fünfzig nach sieben", "Viertel vor acht"], exp: "7h50 = 8 giờ kém 10 phút → 'zehn vor acht'." },
-            { time: "20:10", off: "zwanzig Uhr zehn", inoff: "zehn nach acht", wrong: ["zehn nach zwanzig", "zehn vor acht", "Viertel nach acht"], exp: "20h10 đổi sang hệ 12 tiếng là 8h10 tối → 'zehn nach acht'." },
-            { time: "03:15", off: "drei Uhr fünfzehn", inoff: "Viertel nach drei", wrong: ["Viertel vor drei", "halb vier", "fünfzehn vor drei"], exp: "3 giờ hơn 15 phút → 'Viertel nach drei'." },
-            { time: "05:45", off: "fünf Uhr fünfundvierzig", inoff: "Viertel vor sechs", wrong: ["Viertel nach fünf", "fünfundvierzig nach fünf", "halb sechs"], exp: "5h45 = 6 giờ kém 15 phút → 'Viertel vor sechs'." },
-            { time: "08:30", off: "acht Uhr dreißig", inoff: "halb neun", wrong: ["halb acht", "Viertel vor neun", "dreißig nach acht"], exp: "8 giờ rưỡi → 'halb neun' (nửa tiếng trước 9h)." },
-            { time: "02:30", off: "zwei Uhr dreißig", inoff: "halb drei", wrong: ["halb zwei", "Viertel nach zwei", "dreißig nach zwei"], exp: "2 giờ rưỡi → 'halb drei' (nửa tiếng trước 3h)." },
-            { time: "05:50", off: "fünf Uhr fünfzig", inoff: "zehn vor sechs", wrong: ["zehn nach fünf", "fünfzig nach fünf", "Viertel vor sechs"], exp: "5h50 = 6 giờ kém 10 phút → 'zehn vor sechs'." },
-            { time: "06:05", off: "sechs Uhr fünf", inoff: "fünf nach sechs", wrong: ["fünf vor sechs", "halb sieben", "zehn nach sechs"], exp: "6 giờ hơn 5 phút → 'fünf nach sechs'." },
-            { time: "10:30", off: "zehn Uhr dreißig", inoff: "halb elf", wrong: ["halb zehn", "Viertel nach zehn", "dreißig nach zehn"], exp: "10 giờ rưỡi = còn nửa tiếng đến 11 giờ → 'halb elf'." },
-            { time: "11:15", off: "elf Uhr fünfzehn", inoff: "Viertel nach elf", wrong: ["Viertel vor elf", "halb zwölf", "fünfzehn nach elf"], exp: "11 giờ hơn 15 phút → 'Viertel nach elf'." },
-            { time: "04:45", off: "vier Uhr fünfundvierzig", inoff: "Viertel vor fünf", wrong: ["Viertel nach vier", "halb fünf", "fünfzehn vor fünf"], exp: "4h45 = 5 giờ kém 15 phút → 'Viertel vor fünf'." },
-            { time: "01:30", off: "ein Uhr dreißig", inoff: "halb zwei", wrong: ["halb eins", "Viertel nach eins", "dreißig nach eins"], exp: "1 giờ rưỡi = còn nửa tiếng đến 2 giờ → 'halb zwei'." }
+            { time: "08:15", off: "acht Uhr fünfzehn", inoff: "Viertel nach acht", wrong: ["Viertel vor acht", "halb acht", "acht nach Viertel"], exp: "Hơn 15 phút (1/4 giờ) qua mốc 8 giờ → 'Viertel nach acht'.", vi: "8 giờ 15 phút (8 giờ hơn 15)" },
+            { time: "09:30", off: "neun Uhr dreißig", inoff: "halb zehn", wrong: ["halb neun", "Viertel nach neun", "dreißig nach neun"], exp: "9h30 = còn nửa tiếng nữa đến 10 giờ → 'halb zehn'.", vi: "9 giờ 30 phút (9 rưỡi)" },
+            { time: "09:05", off: "neun Uhr fünf", inoff: "fünf nach neun", wrong: ["fünf vor neun", "halb zehn", "zehn nach neun"], exp: "9 giờ hơn 5 phút → 'fünf nach neun'.", vi: "9 giờ 5 phút" },
+            { time: "07:50", off: "sieben Uhr fünfzig", inoff: "zehn vor acht", wrong: ["zehn nach sieben", "fünfzig nach sieben", "Viertel vor acht"], exp: "7h50 = 8 giờ kém 10 phút → 'zehn vor acht'.", vi: "7 giờ 50 phút (8 giờ kém 10)" },
+            { time: "20:10", off: "zwanzig Uhr zehn", inoff: "zehn nach acht", wrong: ["zehn nach zwanzig", "zehn vor acht", "Viertel nach acht"], exp: "20h10 đổi sang hệ 12 tiếng là 8h10 tối → 'zehn nach acht'.", vi: "20 giờ 10 phút (8 giờ 10 tối)" },
+            { time: "03:15", off: "drei Uhr fünfzehn", inoff: "Viertel nach drei", wrong: ["Viertel vor drei", "halb vier", "fünfzehn vor drei"], exp: "3 giờ hơn 15 phút → 'Viertel nach drei'.", vi: "3 giờ 15 phút (3 giờ hơn 15)" },
+            { time: "05:45", off: "fünf Uhr fünfundvierzig", inoff: "Viertel vor sechs", wrong: ["Viertel nach fünf", "fünfundvierzig nach fünf", "halb sechs"], exp: "5h45 = 6 giờ kém 15 phút → 'Viertel vor sechs'.", vi: "5 giờ 45 phút (6 giờ kém 15)" },
+            { time: "08:30", off: "acht Uhr dreißig", inoff: "halb neun", wrong: ["halb acht", "Viertel vor neun", "dreißig nach acht"], exp: "8 giờ rưỡi → 'halb neun' (nửa tiếng trước 9h).", vi: "8 giờ 30 phút (8 rưỡi)" },
+            { time: "02:30", off: "zwei Uhr dreißig", inoff: "halb drei", wrong: ["halb zwei", "Viertel nach zwei", "dreißig nach zwei"], exp: "2 giờ rưỡi → 'halb drei' (nửa tiếng trước 3h).", vi: "2 giờ 30 phút (2 rưỡi)" },
+            { time: "05:50", off: "fünf Uhr fünfzig", inoff: "zehn vor sechs", wrong: ["zehn nach fünf", "fünfzig nach fünf", "Viertel vor sechs"], exp: "5h50 = 6 giờ kém 10 phút → 'zehn vor sechs'.", vi: "5 giờ 50 phút (6 giờ kém 10)" },
+            { time: "06:05", off: "sechs Uhr fünf", inoff: "fünf nach sechs", wrong: ["fünf vor sechs", "halb sieben", "zehn nach sechs"], exp: "6 giờ hơn 5 phút → 'fünf nach sechs'.", vi: "6 giờ 5 phút" },
+            { time: "10:30", off: "zehn Uhr dreißig", inoff: "halb elf", wrong: ["halb zehn", "Viertel nach zehn", "dreißig nach zehn"], exp: "10 giờ rưỡi = còn nửa tiếng đến 11 giờ → 'halb elf'.", vi: "10 giờ 30 phút (10 rưỡi)" },
+            { time: "11:15", off: "elf Uhr fünfzehn", inoff: "Viertel nach elf", wrong: ["Viertel vor elf", "halb zwölf", "fünfzehn nach elf"], exp: "11 giờ hơn 15 phút → 'Viertel nach elf'.", vi: "11 giờ 15 phút (11 giờ hơn 15)" },
+            { time: "04:45", off: "vier Uhr fünfundvierzig", inoff: "Viertel vor fünf", wrong: ["Viertel nach vier", "halb fünf", "fünfzehn vor fünf"], exp: "4h45 = 5 giờ kém 15 phút → 'Viertel vor fünf'.", vi: "4 giờ 45 phút (5 giờ kém 15)" },
+            { time: "01:30", off: "ein Uhr dreißig", inoff: "halb zwei", wrong: ["halb eins", "Viertel nach eins", "dreißig nach eins"], exp: "1 giờ rưỡi = còn nửa tiếng đến 2 giờ → 'halb zwei'.", vi: "1 giờ 30 phút (1 rưỡi)" }
         ];
         const chosen = timeItems[Math.floor(Math.random() * timeItems.length)];
         ex.question = `[Đổi cách nói giờ (Random)]: Cách đọc giờ đời thường (Inoffiziell) nào sau đây tương ứng với ${chosen.time} (${chosen.off})?`;
         ex.correct_answer = chosen.inoff;
         ex.explanation = chosen.exp;
-        extra.translation = `Mốc giờ ${chosen.time}: ${chosen.inoff}`;
+        extra.translation = `Mốc giờ ${chosen.time} (${chosen.off}) = ${chosen.inoff}: ${chosen.vi}`;
         const opts = [chosen.inoff, ...chosen.wrong];
         const shuffled = opts.sort(() => Math.random() - 0.5);
         ex.options = shuffled;
