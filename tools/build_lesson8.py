@@ -650,84 +650,84 @@ Passant: Sie fährt vom Rathaus durch das Zentrum bis ___ Hafen.""",
             "các nhà ga và các sân bay",
             ["các nhà ga và các sân bay", "những nhà ga và những sân bay", "nhà ga và sân bay", "các nhà ga và sân bay"],
             "Dạng số nhiều của der Bahnhof (die Bahnhöfe) và der Flughafen (die Flughäfen).",
-            "die Bahnhöfe und die Flughäfen = các nhà ga và các sân bay"
+            "các nhà ga và các sân bay"
         ),
         (
             "Câu 47: Dịch sang tiếng Việt: „die alten Schlösser und die modernen Einkaufszentren“",
             "những lâu đài cổ và những trung tâm thương mại hiện đại",
             ["những lâu đài cổ và những trung tâm thương mại hiện đại", "các lâu đài cổ và các trung tâm thương mại hiện đại", "các cung điện cổ và các trung tâm thương mại hiện đại", "những lâu đài cổ và trung tâm thương mại hiện đại"],
             "die Schlösser = những lâu đài/cung điện; die Einkaufszentren = những trung tâm thương mại.",
-            "die alten Schlösser und die modernen Einkaufszentren = những lâu đài cổ và những trung tâm thương mại hiện đại"
+            "những lâu đài cổ và những trung tâm thương mại hiện đại"
         ),
         (
             "Câu 48: Dịch sang tiếng Việt: „am Supermarkt und an der Post vorbeigehen“",
             "đi ngang qua siêu thị và bưu điện",
             ["đi ngang qua siêu thị và bưu điện", "đi bộ ngang qua siêu thị và bưu điện", "đi ngang qua siêu thị và qua bưu điện"],
             "Cấu trúc an + Dativ + vorbeigehen với der Supermarkt (am) và die Post (an der).",
-            "am Supermarkt und an der Post vorbeigehen = đi ngang qua siêu thị và bưu điện"
+            "đi ngang qua siêu thị và bưu điện"
         ),
         (
             "Câu 49: Dịch sang tiếng Việt: „durch das mittelalterliche Stadttor laufen“",
             "đi bộ xuyên qua cổng thành thời trung cổ",
             ["đi bộ xuyên qua cổng thành thời trung cổ", "chạy xuyên qua cổng thành trung cổ", "đi xuyên qua cổng thành cổ", "đi xuyên qua cổng thành thời trung cổ", "chạy qua cổng thành thời trung cổ"],
-            "durch das Stadttor = xuyên qua cổng thành.",
-            "durch das mittelalterliche Stadttor laufen = đi bộ xuyên qua cổng thành thời trung cổ"
+            "durch das Stadttor = xuyên qua cổng thành (durch + Akkusativ); mittelalterlich = thuộc thời Trung cổ; laufen = đi bộ.",
+            "đi bộ xuyên qua cổng thành thời trung cổ"
         ),
         (
             "Câu 50: Dịch sang tiếng Việt: „den malerischen Fluss entlangspazieren“",
             "đi dạo dọc theo dòng sông thơ mộng",
             ["đi dạo dọc theo dòng sông thơ mộng", "tản bộ dọc theo con sông đẹp như tranh", "đi dạo dọc bờ sông thơ mộng", "tản bộ dọc theo dòng sông thơ mộng", "đi dạo dọc theo con sông thơ mộng"],
-            "den Fluss entlangspazieren = đi dạo dọc theo con sông.",
-            "den malerischen Fluss entlangspazieren = đi dạo dọc theo dòng sông thơ mộng"
+            "den Fluss entlangspazieren = đi dạo dọc theo con sông (entlang đứng sau danh từ + Akkusativ); malerisch = đẹp như tranh, thơ mộng.",
+            "đi dạo dọc theo dòng sông thơ mộng"
         ),
         (
             "Câu 51: Dịch sang tiếng Việt: „bis zur dritten Ampel geradeaus fahren“",
             "lái xe đi thẳng cho đến đèn giao thông thứ ba",
             ["lái xe đi thẳng cho đến đèn giao thông thứ ba", "chạy thẳng tới cột đèn giao thông thứ ba", "đi xe thẳng đến đèn giao thông thứ 3", "chạy thẳng cho đến đèn giao thông thứ ba", "đi thẳng cho đến đèn giao thông thứ ba"],
-            "bis zur dritten Ampel = cho đến đèn giao thông thứ ba.",
-            "bis zur dritten Ampel geradeaus fahren = lái xe đi thẳng cho đến đèn giao thông thứ ba"
+            "bis zur dritten Ampel = cho đến đèn giao thông thứ ba. 'bis zu' đi với Dativ: zu + der = zur (die Ampel giống cái); số thứ tự sau 'zur' có đuôi -en: 'dritten'.",
+            "lái xe đi thẳng cho đến đèn giao thông thứ ba"
         ),
         (
             "Câu 52: Dịch sang tiếng Việt: „über die breite Brücke in die Neustadt gehen“",
-            "đi qua cây cầu rộng để vào khu phố mới",
-            ["đi qua cây cầu rộng để vào khu phố mới", "đi bộ qua cây cầu rộng vào khu đô thị mới", "đi qua cây cầu rộng vào khu phố mới", "băng qua cây cầu rộng vào khu phố mới"],
-            "über die breite Brücke = qua cây cầu rộng; in die Neustadt = vào khu phố mới.",
-            "über die breite Brücke in die Neustadt gehen = đi qua cây cầu rộng để vào khu phố mới"
+            "đi qua cây cầu rộng vào khu phố mới",
+            ["đi qua cây cầu rộng vào khu phố mới", "đi bộ qua cây cầu rộng vào khu đô thị mới", "băng qua cây cầu rộng vào khu phố mới"],
+            "über die breite Brücke = qua cây cầu rộng (über + Akkusativ); in die Neustadt = vào khu phố mới. 'in die' + Akkusativ trả lời 'Wohin?' nên chỉ hướng đi vào, không phải vị trí 'ở trong' (vị trí là 'in der Neustadt').",
+            "đi qua cây cầu rộng vào khu phố mới"
         ),
         (
             "Câu 53: Dịch sang tiếng Việt: „eine zweistündige Stadtrundfahrt mit dem Doppeldeckerbus machen“",
             "thực hiện một chuyến tham quan vòng quanh thành phố kéo dài hai tiếng bằng xe buýt hai tầng",
             ["thực hiện một chuyến tham quan vòng quanh thành phố kéo dài hai tiếng bằng xe buýt hai tầng", "đi tham quan thành phố 2 tiếng bằng xe buýt 2 tầng", "đi tham quan vòng quanh thành phố 2 tiếng bằng xe buýt hai tầng", "thực hiện chuyến tham quan thành phố hai tiếng bằng xe buýt hai tầng"],
             "eine Stadtrundfahrt machen = thực hiện chuyến tham quan vòng quanh thành phố; der Doppeldeckerbus = xe buýt 2 tầng.",
-            "eine zweistündige Stadtrundfahrt mit dem Doppeldeckerbus machen = thực hiện chuyến tham quan vòng quanh thành phố 2 tiếng bằng xe buýt 2 tầng"
+            "thực hiện một chuyến tham quan vòng quanh thành phố kéo dài hai tiếng bằng xe buýt hai tầng"
         ),
         (
             "Câu 54: Dịch sang tiếng Việt: „an der nächsten Kreuzung links abbiegen“",
             "rẽ trái ở ngã tư tiếp theo",
             ["rẽ trái ở ngã tư tiếp theo", "quẹo trái tại giao lộ kế tiếp", "rẽ trái ở ngã tư kế tiếp", "quẹo trái ở ngã tư tiếp theo"],
-            "an der nächsten Kreuzung = tại ngã tư tiếp theo; links abbiegen = rẽ trái.",
-            "an der nächsten Kreuzung links abbiegen = rẽ trái ở ngã tư tiếp theo"
+            "an der nächsten Kreuzung = tại ngã tư tiếp theo (nächst- = gần nhất, tiếp theo; die Kreuzung giống cái, Dativ nên 'an der' + đuôi -en); links abbiegen = rẽ trái.",
+            "rẽ trái ở ngã tư tiếp theo"
         ),
         (
             "Câu 55: Dịch sang tiếng Việt: „den Fernsehturm am Alexanderplatz besichtigen wollen“",
             "muốn tham quan Tháp truyền hình ở quảng trường Alexander",
             ["muốn tham quan Tháp truyền hình ở quảng trường Alexander", "muốn đi xem Tháp truyền hình tại quảng trường Alexander", "muốn tham quan tháp truyền hình ở quảng trường Alexander"],
             "besichtigen = tham quan; wollen = muốn.",
-            "den Fernsehturm am Alexanderplatz besichtigen wollen = muốn tham quan Tháp truyền hình ở quảng trường Alexander"
+            "muốn tham quan Tháp truyền hình ở quảng trường Alexander"
         ),
         (
             "Câu 56: Dịch sang tiếng Việt: „Entschuldigen Sie bitte, wo geht es hier zum Reichstag?“",
-            "Xin lỗi Ngài, ở đây đi lối nào để tới Tòa nhà Quốc hội vậy?",
-            ["Xin lỗi Ngài, ở đây đi lối nào để tới Tòa nhà Quốc hội vậy?", "Cho tôi xin lỗi, đường nào đi đến Tòa nhà Quốc hội thế ạ?", "Xin lỗi, đi đến Tòa nhà Quốc hội theo hướng nào?", "Xin lỗi, đi lối nào để tới Tòa nhà Quốc hội?"],
-            "Câu hỏi đường lịch sự với 'Wo geht es hier zum ...?'.",
-            "Entschuldigen Sie bitte, wo geht es hier zum Reichstag? = Xin lỗi Ngài, ở đây đi lối nào để tới Tòa nhà Quốc hội vậy?"
+            "Xin lỗi quý vị, từ đây đi lối nào để tới Tòa nhà Quốc hội ạ?",
+            ["Xin lỗi quý vị, từ đây đi lối nào để tới Tòa nhà Quốc hội ạ?", "Xin lỗi Ngài, ở đây đi lối nào để tới Tòa nhà Quốc hội vậy?", "Cho tôi xin lỗi, đường nào đi đến Tòa nhà Quốc hội thế ạ?", "Xin lỗi, đi đến Tòa nhà Quốc hội theo hướng nào?", "Xin lỗi, đi lối nào để tới Tòa nhà Quốc hội?"],
+            "Entschuldigen Sie bitte = xin lỗi, làm ơn (trang trọng với Sie); 'Wo geht es hier zum ...?' = từ đây đi lối nào đến ...?; zum = zu + dem (der Reichstag); Reichstag = tòa nhà Quốc hội Đức.",
+            "Xin lỗi quý vị, từ đây đi lối nào để tới Tòa nhà Quốc hội ạ?"
         ),
         (
             "Câu 57: Dịch sang tiếng Việt: „Gegenüber vom Bahnhof sehen Sie das große Hotel.“",
-            "Đối diện với nhà ga Ngài sẽ nhìn thấy khách sạn lớn.",
-            ["Đối diện với nhà ga Ngài sẽ nhìn thấy khách sạn lớn.", "Ở phía đối diện nhà ga bạn sẽ thấy khách sạn lớn.", "Đối diện với nhà ga bạn sẽ nhìn thấy khách sạn lớn.", "Ở phía đối diện nhà ga Ngài sẽ nhìn thấy khách sạn lớn."],
-            "gegenüber von + Dativ = đối diện với...",
-            "Gegenüber vom Bahnhof sehen Sie das große Hotel. = Đối diện với nhà ga Ngài sẽ nhìn thấy khách sạn lớn."
+            "Đối diện nhà ga, quý vị sẽ nhìn thấy khách sạn lớn.",
+            ["Đối diện nhà ga, quý vị sẽ nhìn thấy khách sạn lớn.", "Đối diện với nhà ga Ngài sẽ nhìn thấy khách sạn lớn.", "Ở phía đối diện nhà ga bạn sẽ thấy khách sạn lớn.", "Đối diện với nhà ga bạn sẽ nhìn thấy khách sạn lớn."],
+            "gegenüber von + Dativ = đối diện với...; vom = von dem (der Bahnhof); sehen Sie = quý vị thấy (Sie trang trọng); das große Hotel = khách sạn lớn.",
+            "Đối diện nhà ga, quý vị sẽ nhìn thấy khách sạn lớn."
         )
     ]
 

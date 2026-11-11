@@ -99,8 +99,309 @@ function priceToGerman(euros, cents) {
  * 10. Chuẩn hóa số đếm:
  *    "5" <-> "fünf", "einhundert" <-> "hundert", v.v.
  */
+
+// =============================================================================
+// RUBRIC CHẤM ĐIỂM DỊCH ĐỨC -> VIỆT BÀI 8 (CÂU 46 -> CÂU 57)
+// =============================================================================
+
+function stripVnAccentsGlobal(str) {
+    const protectedStr = String(str || "")
+        .replace(/ä/g, '__ae__').replace(/Ä/g, '__Ae__')
+        .replace(/ö/g, '__oe__').replace(/Ö/g, '__Oe__')
+        .replace(/ü/g, '__ue__').replace(/Ü/g, '__Ue__')
+        .replace(/ß/g, '__ss__');
+    return protectedStr
+        .normalize("NFD")
+        .replace(/[\u0300-\u036f]/g, "")
+        .replace(/đ/g, "d")
+        .replace(/Đ/g, "D")
+        .replace(/__ae__/g, 'ä').replace(/__Ae__/g, 'Ä')
+        .replace(/__oe__/g, 'ö').replace(/__Oe__/g, 'Ö')
+        .replace(/__ue__/g, 'ü').replace(/__Ue__/g, 'Ü')
+        .replace(/__ss__/g, 'ß');
+}
+
+function hasVietnameseDiacritics(str) {
+    return /[àáạảãâầấậẩẫăằắặẳẵèéẹẻẽêềếệểễìíịỉĩòóọỏõôồốộổỗơờớợởỡùúụủũưừứựửữỳýỵỷỹđ]/i.test(str || '');
+}
+
+function levenshteinDistance(a, b) {
+    if (a === b) return 0;
+    const la = a.length, lb = b.length;
+    if (Math.abs(la - lb) > 1) return 999;
+    let matrix = [];
+    for (let i = 0; i <= la; i++) matrix[i] = [i];
+    for (let j = 0; j <= lb; j++) matrix[0][j] = j;
+    for (let i = 1; i <= la; i++) {
+        for (let j = 1; j <= lb; j++) {
+            const cost = a[i - 1] === b[j - 1] ? 0 : 1;
+            matrix[i][j] = Math.min(
+                matrix[i - 1][j] + 1,
+                matrix[i][j - 1] + 1,
+                matrix[i - 1][j - 1] + cost
+            );
+        }
+    }
+    return matrix[la][lb];
+}
+
+function isLesson8WordMatch(userWord, stdWord) {
+    if (userWord === stdWord) return true;
+    if (stdWord.length < 5) return false;
+    return levenshteinDistance(userWord, stdWord) <= 1;
+}
+
+const L8_NUMBER_MAP = {
+    '1': 'một', '2': 'hai', '3': 'ba', '4': 'bốn', '5': 'năm',
+    '6': 'sáu', '7': 'bảy', '8': 'tám', '9': 'chín', '10': 'mười'
+};
+
+const L8_STOPWORDS_ACCENTED = ['các', 'những', 'cái', 'chiếc', 'cây', 'con', 'việc', 'vậy', 'ạ', 'nhé', 'nhỉ', 'thì', 'là', 'một'];
+const L8_STOPWORDS_UNACCENTED = L8_STOPWORDS_ACCENTED.map(w => stripVnAccentsGlobal(w));
+
+const L8_PRONOUNS_ACCENTED = ['ngài', 'quý vị', 'bạn', 'anh', 'chị', 'ông', 'bà', 'cô', 'chú', 'quý khách'];
+const L8_PRONOUNS_UNACCENTED = L8_PRONOUNS_ACCENTED.map(w => stripVnAccentsGlobal(w));
+
+function normalizeLesson8String(str, isUnaccented) {
+    let s = String(str || "").normalize("NFC").toLowerCase();
+    s = s.replace(/[.,!?;:"'„“”‚‘\/\\\-\(\)\[\]\{\}«»`~^]+/g, ' ');
+    s = s.replace(/\b(\d+)\b/g, (match, d) => L8_NUMBER_MAP[d] || match);
+    s = s.replace(/\s+/g, ' ').trim();
+
+    if (isUnaccented) {
+        s = stripVnAccentsGlobal(s);
+    }
+
+    const pronouns = isUnaccented ? L8_PRONOUNS_UNACCENTED : L8_PRONOUNS_ACCENTED;
+    const sortedPronouns = [...pronouns].sort((a, b) => b.length - a.length);
+    for (const p of sortedPronouns) {
+        const re = new RegExp(`(^|\\s)${p}(?=\\s|$)`, 'gi');
+        s = s.replace(re, ' ');
+    }
+
+    const stopwords = isUnaccented ? L8_STOPWORDS_UNACCENTED : L8_STOPWORDS_ACCENTED;
+    const sortedStopwords = [...stopwords].sort((a, b) => b.length - a.length);
+    for (const sw of sortedStopwords) {
+        const re = new RegExp(`(^|\\s)${sw}(?=\\s|$)`, 'gi');
+        s = s.replace(re, ' ');
+    }
+
+    return s.replace(/\s+/g, ' ').trim();
+}
+
+const LESSON_8_RUBRICS = {
+    46: {
+        concepts: [
+            ["nhà ga", "ga", "trạm xe lửa"],
+            ["sân bay", "phi trường", "cảng hàng không"]
+        ],
+        standardAnswer: "các nhà ga và các sân bay"
+    },
+    47: {
+        concepts: [
+            [
+                "lâu đài cổ", "lâu đài cũ", "lâu đài xưa", "lâu đài cổ xưa", "lâu đài cổ kính",
+                "cung điện cổ", "cung điện cũ", "cung điện xưa", "cung điện cổ xưa", "cung điện cổ kính",
+                "dinh thự cổ", "dinh thự cũ", "dinh thự xưa", "dinh thự cổ xưa", "dinh thự cổ kính"
+            ],
+            [
+                "trung tâm thương mại hiện đại", "trung tâm thương mại mới", "trung tâm thương mại tân tiến",
+                "trung tâm mua sắm hiện đại", "trung tâm mua sắm mới", "trung tâm mua sắm tân tiến",
+                "khu mua sắm hiện đại", "khu mua sắm mới", "khu mua sắm tân tiến",
+                "khu thương mại hiện đại", "khu thương mại mới", "khu thương mại tân tiến"
+            ]
+        ],
+        standardAnswer: "những lâu đài cổ và những trung tâm thương mại hiện đại"
+    },
+    48: {
+        concepts: [
+            ["đi ngang qua", "đi ngang", "đi qua", "ngang qua", "đi lướt qua"],
+            ["siêu thị"],
+            ["bưu điện"]
+        ],
+        standardAnswer: "đi ngang qua siêu thị và bưu điện"
+    },
+    49: {
+        concepts: [
+            ["đi bộ", "đi", "chạy", "bước"],
+            ["xuyên qua", "băng qua", "qua", "xuyên"],
+            ["cổng thành"],
+            ["trung cổ", "trung đại"]
+        ],
+        standardAnswer: "đi bộ xuyên qua cổng thành thời trung cổ"
+    },
+    50: {
+        concepts: [
+            ["đi dạo", "dạo bước", "tản bộ", "đi bộ", "dạo"],
+            ["dọc theo", "men theo", "dọc"],
+            [
+                "sông thơ mộng", "sông đẹp như tranh vẽ", "sông đẹp như tranh", "sông nên thơ",
+                "dòng sông thơ mộng", "dòng sông đẹp như tranh vẽ", "dòng sông đẹp như tranh", "dòng sông nên thơ",
+                "con sông thơ mộng", "con sông đẹp như tranh vẽ", "con sông đẹp như tranh", "con sông nên thơ"
+            ]
+        ],
+        standardAnswer: "đi dạo dọc theo dòng sông thơ mộng"
+    },
+    51: {
+        concepts: [
+            ["thẳng"],
+            ["đèn tín hiệu giao thông", "đèn giao thông", "đèn tín hiệu", "đèn xanh đèn đỏ"],
+            ["thứ ba"]
+        ],
+        standardAnswer: "lái xe đi thẳng cho đến đèn giao thông thứ ba"
+    },
+    52: {
+        concepts: [
+            ["băng qua", "vượt qua", "đi trên", "qua", "sang"],
+            ["cầu rộng"],
+            ["đi vào", "vào", "tới", "đến", "sang"],
+            ["khu đô thị mới", "khu phố mới", "thành phố mới", "phố mới", "khu mới", "tân thành", "neustadt"]
+        ],
+        negativePatterns: [
+            /\b(?:ở\s+trong|o\s+trong)\b/i
+        ],
+        standardAnswer: "đi qua cây cầu rộng vào khu phố mới"
+    },
+    53: {
+        concepts: [
+            [
+                "tham quan vòng quanh thành phố", "đi vòng quanh thành phố", "đi tham quan thành phố",
+                "du lịch vòng quanh thành phố", "tham quan thành phố", "dạo quanh thành phố",
+                "vòng quanh thành phố", "tour thành phố", "city tour"
+            ],
+            ["hai tiếng", "hai giờ"],
+            [
+                "xe buýt hai tầng", "xe buýt tầng đôi",
+                "xe bus hai tầng", "xe bus tầng đôi"
+            ]
+        ],
+        standardAnswer: "thực hiện một chuyến tham quan vòng quanh thành phố kéo dài hai tiếng bằng xe buýt hai tầng"
+    },
+    54: {
+        concepts: [
+            ["rẽ sang trái", "rẽ về bên trái", "rẽ bên trái", "rẽ qua trái", "quẹo trái", "rẽ trái"],
+            ["ngã tư", "giao lộ"],
+            ["tiếp theo", "kế tiếp", "gần nhất", "sắp tới", "kế"]
+        ],
+        standardAnswer: "rẽ trái ở ngã tư tiếp theo"
+    },
+    55: {
+        concepts: [
+            ["mong muốn", "có ý định", "ước muốn", "muốn", "định", "dự định"],
+            ["ghé thăm", "đến thăm", "đi tham quan", "tham quan", "đi thăm", "đi xem", "thăm", "xem"],
+            ["tháp truyền hình", "tháp tivi", "fernsehturm"],
+            ["quảng trường alexander", "quảng trường alex", "alexanderplatz", "alexander platz", "alexander"]
+        ],
+        standardAnswer: "muốn tham quan Tháp truyền hình ở quảng trường Alexander"
+    },
+    56: {
+        concepts: [
+            ["cho tôi hỏi", "xin lỗi", "làm phiền", "cho hỏi", "xin hỏi", "xin phép"],
+            [
+                "đi như thế nào", "đi đường nào", "đi lối nào", "làm thế nào",
+                "hướng nào", "chỉ đường", "hỏi đường", "đi thế nào", "lối nào", "đường nào", "làm sao", "ở đâu"
+            ],
+            ["tòa nhà quốc hội", "toà nhà quốc hội", "nhà quốc hội", "quốc hội", "reichstag"]
+        ],
+        standardAnswer: "Xin lỗi quý vị, từ đây đi lối nào để tới Tòa nhà Quốc hội ạ?"
+    },
+    57: {
+        concepts: [
+            ["đối diện"],
+            ["nhà ga", "ga"],
+            ["nhìn thấy", "trông thấy", "thấy được", "thấy"],
+            ["khách sạn lớn", "khách sạn đồ sộ", "khách sạn to"]
+        ],
+        standardAnswer: "Đối diện nhà ga, quý vị sẽ nhìn thấy khách sạn lớn."
+    }
+};
+
+function matchLesson8Concepts(userTokens, concepts, conceptIndex, usedTokenMask) {
+    if (conceptIndex >= concepts.length) {
+        return true;
+    }
+    const currentConceptVariants = concepts[conceptIndex];
+    for (const variantWords of currentConceptVariants) {
+        const vLen = variantWords.length;
+        for (let i = 0; i <= userTokens.length - vLen; i++) {
+            let clash = false;
+            for (let k = 0; k < vLen; k++) {
+                if (usedTokenMask[i + k]) {
+                    clash = true;
+                    break;
+                }
+            }
+            if (clash) continue;
+
+            let matches = true;
+            for (let k = 0; k < vLen; k++) {
+                if (!isLesson8WordMatch(userTokens[i + k], variantWords[k])) {
+                    matches = false;
+                    break;
+                }
+            }
+
+            if (matches) {
+                for (let k = 0; k < vLen; k++) usedTokenMask[i + k] = true;
+                if (matchLesson8Concepts(userTokens, concepts, conceptIndex + 1, usedTokenMask)) {
+                    return true;
+                }
+                for (let k = 0; k < vLen; k++) usedTokenMask[i + k] = false;
+            }
+        }
+    }
+    return false;
+}
+
+function evaluateLesson8Translation(userAns, qNum) {
+    const rubric = LESSON_8_RUBRICS[qNum];
+    if (!rubric) return false;
+
+    const rawUser = String(userAns || "").trim();
+    if (!rawUser) return false;
+
+    const userWordsCount = rawUser.split(/\s+/).filter(Boolean).length;
+    const stdWordsCount = rubric.standardAnswer.split(/\s+/).filter(Boolean).length;
+    if (userWordsCount > 2 * stdWordsCount + 4) {
+        return false;
+    }
+
+    const isUnaccented = !hasVietnameseDiacritics(rawUser);
+
+    if (rubric.negativePatterns) {
+        const cleanForNeg = normalizeLesson8String(rawUser, isUnaccented);
+        for (const neg of rubric.negativePatterns) {
+            if (neg.test(cleanForNeg) || neg.test(rawUser.toLowerCase())) {
+                return false;
+            }
+        }
+    }
+
+    const normUserStr = normalizeLesson8String(rawUser, isUnaccented);
+    const userTokens = normUserStr.split(/\s+/).filter(Boolean);
+
+    const normalizedConcepts = rubric.concepts.map(varList => {
+        return varList.map(v => {
+            const normV = normalizeLesson8String(v, isUnaccented);
+            return normV.split(/\s+/).filter(Boolean);
+        }).filter(words => words.length > 0);
+    });
+
+    const usedMask = new Array(userTokens.length).fill(false);
+    return matchLesson8Concepts(userTokens, normalizedConcepts, 0, usedMask);
+}
+
 function checkGermanAnswerEquivalence(userAns, correctAns, options = {}) {
     if (!userAns || !correctAns) return false;
+
+    // Kiểm tra nhanh theo Rubric Bài 8 (Câu 46 -> 57 dạng Dịch Đức -> Việt)
+    if (options && options.question) {
+        const l8Match = String(options.question).match(/Câu\s+(4[6-9]|5[0-7])\b/i);
+        if (l8Match) {
+            const qNum = parseInt(l8Match[1], 10);
+            return evaluateLesson8Translation(userAns, qNum);
+        }
+    }
 
     const isMultiSlot = (typeof options === 'boolean' ? options : Boolean(options && options.isMultiSlot));
 
@@ -1983,6 +2284,7 @@ if (typeof window !== 'undefined') {
     window.priceToGerman = priceToGerman;
     window.getRandomInt = getRandomInt;
     window.checkGermanAnswerEquivalence = checkGermanAnswerEquivalence;
+    window.evaluateLesson8Translation = evaluateLesson8Translation;
     window.generateNewNumberData = generateNewNumberData;
     window.randomizeAllNumberExercises = randomizeAllNumberExercises;
 }

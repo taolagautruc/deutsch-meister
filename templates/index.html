@@ -374,12 +374,12 @@
     <!-- ========================================================= -->
     <!-- JAVASCRIPT XỬ LÝ TƯƠNG TÁC, PHÁT ÂM & KẾT NỐI API PYTHON   -->
     <!-- ========================================================= -->
-    <script src="/static/js/audio_tts.js"></script>
-    <script src="/static/js/number_trainer.js"></script>
-    <script src="/static/js/city_map_svg.js"></script>
-    <script src="/static/js/verbs_db.js"></script>
-    <script src="/static/js/lexikon_db.js"></script>
-    <script src="/static/js/arena_engine.js"></script>
+    <script src="/static/js/audio_tts.js?v=20261111_v3"></script>
+    <script src="/static/js/number_trainer.js?v=20261111_v3"></script>
+    <script src="/static/js/city_map_svg.js?v=20261111_v3"></script>
+    <script src="/static/js/verbs_db.js?v=20261111_v3"></script>
+    <script src="/static/js/lexikon_db.js?v=20261111_v3"></script>
+    <script src="/static/js/arena_engine.js?v=20261111_v3"></script>
     <script>
         const LEVEL_META = {
             "A1": {
@@ -519,6 +519,7 @@
                 const exercisesState = (currentLesson.allRenderExercises || []).map(ex => ({ ...ex }));
 
                 const sessionData = {
+                    version: '20261111_v3',
                     lessonId: lessonId,
                     mode: mode,
                     sessionAnswers: Array.from(sessionSet),
@@ -539,6 +540,8 @@
             }
         }
 
+        const CURRENT_SESSION_VERSION = '20261111_v3';
+
         function loadActiveLessonSession(lessonId) {
             if (!lessonId) return null;
             try {
@@ -549,6 +552,10 @@
                 }
                 if (!raw) return null;
                 const data = JSON.parse(raw);
+                if (data && data.version !== CURRENT_SESSION_VERSION) {
+                    clearActiveLessonSession(lessonId);
+                    return null;
+                }
                 if (data && data.lessonId === lessonId && Array.isArray(data.allRenderExercises) && data.allRenderExercises.length > 0) {
                     return data;
                 }
@@ -1229,7 +1236,16 @@
             if (!window.sessionPracticeAnswers) window.sessionPracticeAnswers = {};
 
             const lId = currentLesson.id;
-            const activeSession = loadActiveLessonSession(lId);
+            let activeSession = loadActiveLessonSession(lId);
+            if (activeSession && lId === 22) {
+                const hasOutdatedL8 = (activeSession.allRenderExercises || []).some(ex => 
+                    (ex.correct_answer && (ex.correct_answer.includes('để vào') || ex.correct_answer.includes('Xin lỗi Ngài')))
+                );
+                if (hasOutdatedL8) {
+                    clearActiveLessonSession(lId);
+                    activeSession = null;
+                }
+            }
 
             if (activeSession) {
                 // Khôi phục chính xác phiên làm bài dở dang của người dùng
@@ -1776,7 +1792,7 @@
                             : 'Nhập đáp án tiếng Đức của bạn... (nhấn Enter để kiểm tra và chuyển câu)');
                     inputHtml = `
                         <div class="flex gap-2 mt-3">
-                            <input id="ex-input-${i}" value="${cleanAns.replace(/"/g, '&quot;')}" oninput="handleExerciseInputChange(${i})" onfocus="activeInputId='ex-input-${i}'" onkeydown="handleExerciseInputKeydown(event, ${i})" type="text" placeholder="${placeholderText}" class="flex-1 px-4 py-2.5 rounded-xl ${isDone ? 'bg-emerald-50/40 border-2 border-emerald-400 font-bold text-emerald-950' : 'bg-white border border-slate-200'} text-sm focus:outline-none focus:border-indigo-500">
+                            <input id="ex-input-${i}" value="${cleanAns.replace(/"/g, '&quot;')}" oninput="handleExerciseInputChange(${i})" onfocus="activeInputId='ex-input-${i}'" onkeydown="handleExerciseInputKeydown(event, ${i})" type="text" placeholder="${placeholderText}" class="flex-1 px-4 py-2.5 rounded-xl ${isDone ? 'bg-emerald-50/40 border-2 border-emerald-400 font-bold text-emerald-950' : 'bg-white border border-slate-200'} text-sm focus:outline-none focus:border-indigo-500" spellcheck="false" autocorrect="off" autocapitalize="off" autocomplete="off">
                             <button onclick="checkExerciseAnswer(${i}, document.getElementById('ex-input-${i}').value)" class="px-5 py-2.5 rounded-xl ${isDone ? 'bg-emerald-600 hover:bg-emerald-700' : 'bg-indigo-600 hover:bg-indigo-500'} text-white font-bold text-sm shadow-sm transition cursor-pointer shrink-0">
                                 ${isDone ? '✓ Đã xong' : 'Kiểm tra'}
                             </button>
@@ -2102,29 +2118,36 @@
                         });
                     }
                 } else {
-                    const candidates = [ex.correct_answer];
-                    if (extra && Array.isArray(extra.accepted_answers)) {
-                        candidates.push(...extra.accepted_answers);
-                    }
-                    // Tách các phương án độc lập nếu ngăn cách bởi /, ||, \n, hoặc
-                    const expandedCandidates = [];
-                    candidates.forEach(cand => {
-                        if (!cand) return;
-                        expandedCandidates.push(cand);
-                        if (typeof cand === 'string' && (cand.includes('/') || cand.includes('||') || cand.includes('\n') || /\s+hoặc\s+/i.test(cand))) {
-                            cand.split(/\/|\|\||\n|\s+hoặc\s+/i).forEach(p => {
-                                const tr = p.trim();
-                                if (tr) expandedCandidates.push(tr);
-                            });
+                    // Ưu tiên chấm theo Rubric Bài 8 (Câu 46 -> Câu 57 dịch Đức -> Việt)
+                    const l8QMatch = (ex.question || '').match(/Câu\s+(4[6-9]|5[0-7])\b/i);
+                    if (l8QMatch && typeof evaluateLesson8Translation === 'function') {
+                        const qNum = parseInt(l8QMatch[1], 10);
+                        isCorrect = evaluateLesson8Translation(userAnswer, qNum);
+                    } else {
+                        const candidates = [ex.correct_answer];
+                        if (extra && Array.isArray(extra.accepted_answers)) {
+                            candidates.push(...extra.accepted_answers);
                         }
-                    });
+                        // Tách các phương án độc lập nếu ngăn cách bởi /, ||, \n, hoặc
+                        const expandedCandidates = [];
+                        candidates.forEach(cand => {
+                            if (!cand) return;
+                            expandedCandidates.push(cand);
+                            if (typeof cand === 'string' && (cand.includes('/') || cand.includes('||') || cand.includes('\n') || /\s+hoặc\s+/i.test(cand))) {
+                                cand.split(/\/|\|\||\n|\s+hoặc\s+/i).forEach(p => {
+                                    const tr = p.trim();
+                                    if (tr) expandedCandidates.push(tr);
+                                });
+                            }
+                        });
 
-                    isCorrect = expandedCandidates.some(cand => {
-                        if (!cand) return false;
-                        return (typeof checkGermanAnswerEquivalence === 'function')
-                            ? checkGermanAnswerEquivalence(userAnswer, cand, { isMultiSlot: false, question: ex.question })
-                            : normalizeAnswer(userAnswer) === normalizeAnswer(cand);
-                    });
+                        isCorrect = expandedCandidates.some(cand => {
+                            if (!cand) return false;
+                            return (typeof checkGermanAnswerEquivalence === 'function')
+                                ? checkGermanAnswerEquivalence(userAnswer, cand, { isMultiSlot: false, question: ex.question })
+                                : normalizeAnswer(userAnswer) === normalizeAnswer(cand);
+                        });
+                    }
                 }
             }
 
@@ -2233,11 +2256,14 @@
                         </div>
                     `;
                 }
+                const earnedExp = ex._hasBeenWrong ? 0 : ex.exp_reward;
                 feedback.innerHTML = `
                     <div class="space-y-1.5">
                         <div class="flex items-center gap-2">
                             <span class="text-emerald-700 font-extrabold text-sm">✅ Chính xác!</span>
-                            <span class="text-emerald-800 font-bold">(+${ex.exp_reward} EXP)</span>
+                            ${earnedExp > 0 
+                                ? `<span class="text-emerald-800 font-bold">(+${earnedExp} EXP)</span>` 
+                                : `<span class="text-slate-500 font-bold text-xs">(+0 EXP • Đã xem đáp án)</span>`}
                         </div>
                         ${translationHtml}
                         <div class="text-emerald-900 leading-relaxed pt-1">
@@ -2246,7 +2272,9 @@
                         ${nextDynamicHtml}
                     </div>
                 `;
-                await addExpToDatabase(ex.exp_reward);
+                if (earnedExp > 0) {
+                    await addExpToDatabase(earnedExp);
+                }
 
                 if (currentLesson) {
                     const lId = currentLesson.id;
@@ -2361,6 +2389,7 @@
                 }
             } else {
                 if (ex) {
+                    ex._hasBeenWrong = true;
                     ex._isUserCorrect = false;
                     ex._userAnswer = (isMultipleChoice && ex.options && ex.options[chosenIdx] !== undefined)
                         ? ex.options[chosenIdx]
@@ -2429,7 +2458,12 @@
 
                 feedback.className = "text-xs p-3.5 rounded-xl mt-2 bg-rose-50 text-rose-800 border border-rose-200";
                 try {
-                    let displayAns = String(ex.correct_answer || '').trim().replace(/[.]+$/, '');
+                    const isDeToVi = (ex && (ex.exercise_type === 'dich_nghia_dv' || ex.exercise_type === 'dich_cau_dv' || ex.exercise_type === 'dich')) &&
+                                     (ex.question && /(?:sang tiếng việt|đức\s*→\s*việt|dịch câu sau sang tiếng việt)/i.test(ex.question));
+                    let displayAns = (isDeToVi && translation) ? translation : String(ex.correct_answer || '').trim();
+                    if (!isDeToVi) {
+                        displayAns = displayAns.replace(/[.]+$/, '');
+                    }
                     let wrongTitle = "❌ Chưa chính xác.";
                     if (ex.exercise_type === 'noi_o' && extra.noi_o_pairs) {
                         wrongTitle = "❌ Chưa chính xác (yêu cầu nối đúng 100% cả 4 cặp).";
@@ -2457,13 +2491,15 @@
                     `;
                 } catch (err) {
                     console.error("Error rendering feedback:", err);
+                    const isDeToVi = (ex && (ex.exercise_type === 'dich_nghia_dv' || ex.exercise_type === 'dich_cau_dv' || ex.exercise_type === 'dich')) &&
+                                     (ex.question && /(?:sang tiếng việt|đức\s*→\s*việt|dịch câu sau sang tiếng việt)/i.test(ex.question));
                     feedback.innerHTML = `
                         <div class="space-y-1.5">
                             <div class="flex items-center gap-2">
                                 <span class="text-rose-700 font-extrabold text-sm">❌ Chưa chính xác.</span>
                             </div>
                             <div class="text-rose-900 pt-0.5">
-                                Đáp án đúng là: <span class="font-extrabold text-rose-800">${String(ex.correct_answer || '').trim()}</span>
+                                Đáp án đúng là: <span class="font-extrabold text-rose-800">${(isDeToVi && translation) ? translation : String(ex.correct_answer || '').trim()}</span>
                             </div>
                             ${translationHtml}
                             <div class="text-rose-950 leading-relaxed pt-1">
@@ -2496,6 +2532,7 @@
             const ex = currentLesson.allRenderExercises[index];
             if (!ex) return;
             ex._retrying = true;
+            delete ex._hasBeenWrong;
             delete ex._selectedOptIndex;
             delete ex._isUserCorrect;
             delete ex._userAnswer;
@@ -2739,6 +2776,41 @@
             }
         }
 
+        // Tắt toàn diện kiểm tra chính tả (gạch đỏ) và tự động sửa trên MỌI ô nhập hiện tại & sinh động
+        function disableSpellcheckGlobally() {
+            const enforceAttrs = (el) => {
+                if (!el || !el.setAttribute) return;
+                const tag = (el.tagName || '').toUpperCase();
+                if (tag === 'INPUT' || tag === 'TEXTAREA') {
+                    el.setAttribute('spellcheck', 'false');
+                    el.setAttribute('autocorrect', 'off');
+                    el.setAttribute('autocapitalize', 'off');
+                    el.setAttribute('autocomplete', 'off');
+                }
+            };
+            document.querySelectorAll('input, textarea').forEach(enforceAttrs);
+            try {
+                const observer = new MutationObserver((mutations) => {
+                    for (const m of mutations) {
+                        for (const node of m.addedNodes) {
+                            if (node.nodeType === 1) {
+                                enforceAttrs(node);
+                                if (node.querySelectorAll) {
+                                    node.querySelectorAll('input, textarea').forEach(enforceAttrs);
+                                }
+                            }
+                        }
+                    }
+                });
+                observer.observe(document.body || document.documentElement, { childList: true, subtree: true });
+            } catch (e) {}
+        }
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', disableSpellcheckGlobally);
+        } else {
+            disableSpellcheckGlobally();
+        }
+
         loadOverview();
     </script>
 
@@ -2773,12 +2845,12 @@
                 <div id="login-error-box" class="p-3 rounded-xl bg-rose-50 border border-rose-200 text-rose-700 text-xs font-semibold hidden"></div>
                 <div>
                     <label class="block text-xs font-bold text-slate-700 mb-1">Tên tài khoản hoặc Mã ID (Username hoặc User ID):</label>
-                    <input type="text" id="login-username" required placeholder="Nhập username hoặc mã số ID (VD: taolagautruc hoặc #5)..." class="w-full px-4 py-2.5 rounded-xl border border-slate-200 text-sm focus:outline-none focus:border-indigo-600">
+                    <input type="text" id="login-username" required placeholder="Nhập username hoặc mã số ID (VD: taolagautruc hoặc #5)..." class="w-full px-4 py-2.5 rounded-xl border border-slate-200 text-sm focus:outline-none focus:border-indigo-600" spellcheck="false" autocorrect="off" autocapitalize="off" autocomplete="off">
                 </div>
                 <div>
                     <label class="block text-xs font-bold text-slate-700 mb-1">Mật khẩu:</label>
                     <div class="relative">
-                        <input type="password" id="login-password" required placeholder="Nhập mật khẩu..." class="w-full px-4 py-2.5 rounded-xl border border-slate-200 text-sm focus:outline-none focus:border-indigo-600">
+                        <input type="password" id="login-password" required placeholder="Nhập mật khẩu..." class="w-full px-4 py-2.5 rounded-xl border border-slate-200 text-sm focus:outline-none focus:border-indigo-600" spellcheck="false" autocorrect="off" autocapitalize="off" autocomplete="off">
                         <button type="button" onclick="togglePasswordVisibility('login-password', this)" class="absolute right-3 top-2.5 text-sm opacity-60 hover:opacity-100 cursor-pointer">👁️</button>
                     </div>
                 </div>
@@ -2792,13 +2864,13 @@
                 <div id="reg-error-box" class="p-3 rounded-xl bg-rose-50 border border-rose-200 text-rose-700 text-xs font-semibold hidden"></div>
                 <div>
                     <label class="block text-xs font-bold text-slate-700 mb-1">Tên tài khoản mới (4 - 24 ký tự):</label>
-                    <input type="text" id="reg-username" required placeholder="VD: minh_anh99, lukas_de..." oninput="handleUsernameInputChange(this.value)" class="w-full px-4 py-2.5 rounded-xl border border-slate-200 text-sm focus:outline-none focus:border-indigo-600">
+                    <input type="text" id="reg-username" required placeholder="VD: minh_anh99, lukas_de..." oninput="handleUsernameInputChange(this.value)" class="w-full px-4 py-2.5 rounded-xl border border-slate-200 text-sm focus:outline-none focus:border-indigo-600" spellcheck="false" autocorrect="off" autocapitalize="off" autocomplete="off">
                     <div id="reg-username-feedback"></div>
                 </div>
                 <div>
                     <label class="block text-xs font-bold text-slate-700 mb-1">Mật khẩu (Tối thiểu 8 ký tự):</label>
                     <div class="relative">
-                        <input type="password" id="reg-password" required minlength="8" placeholder="Nhập mật khẩu an toàn..." class="w-full px-4 py-2.5 rounded-xl border border-slate-200 text-sm focus:outline-none focus:border-indigo-600">
+                        <input type="password" id="reg-password" required minlength="8" placeholder="Nhập mật khẩu an toàn..." class="w-full px-4 py-2.5 rounded-xl border border-slate-200 text-sm focus:outline-none focus:border-indigo-600" spellcheck="false" autocorrect="off" autocapitalize="off" autocomplete="off">
                         <button type="button" onclick="togglePasswordVisibility('reg-password', this)" class="absolute right-3 top-2.5 text-sm opacity-60 hover:opacity-100 cursor-pointer">👁️</button>
                     </div>
                 </div>
