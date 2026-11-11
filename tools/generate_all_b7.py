@@ -382,7 +382,7 @@ def build_full_seed_script():
                 {"left": "wollen", "right": "Wir haben einen festen Plan für die Zukunft."}
             ],
             "Bản chất và ngữ cảnh sử dụng của 4 động từ khuyết thiếu: 1. 'müssen' diễn tả sự bắt buộc khách quan, luật lệ hoặc quy định bắt buộc phải tuân theo (đèn đỏ thì xe cộ bắt buộc phải dừng). 2. 'können' diễn tả năng lực, khả năng chuyên môn hoặc kỹ năng cá nhân (khả năng nói được 4 ngoại ngữ). 3. 'nicht dürfen' diễn tả sự cấm đoán tuyệt đối, liên quan đến an toàn lao động hoặc biển báo cấm (cấm người ngoài vào công trường nguy hiểm). 4. 'wollen' diễn tả mong muốn, dự định hoặc kế hoạch đã định sẵn cho tương lai.",
-            "1. müssen: Đèn giao thông màu đỏ, tất cả ô tô phải dừng lại ở đây. | 2. können: Anh ấy có thể nói trôi chảy bốn thứ tiếng ngoại ngữ. | 3. nicht dürfen: Đây là công trường xây dựng, cấm vào (không được phép vào)! | 4. wollen: Chúng tôi có một kế hoạch kiên định cho tương lai (muốn / quyết tâm thực hiện)."
+            "1. müssen (phải): 'Đèn giao thông màu đỏ, tất cả ô tô dừng lại ở đây.' (Tình huống bắt buộc theo luật -> phải dừng lại).\n2. können (có thể): 'Anh ấy nói trôi chảy bốn thứ tiếng ngoại ngữ.' (Tình huống diễn tả năng lực -> có thể nói).\n3. nicht dürfen (không được phép): 'Đây là công trường xây dựng, cấm vào!' (Tình huống cấm đoán -> không được phép vào).\n4. wollen (muốn / dự định): 'Chúng tôi có một kế hoạch kiên định cho tương lai.' (Tình huống diễn tả ý định mạnh mẽ -> muốn thực hiện)."
         ),
         (
             "Câu 62: Nối Chủ ngữ (Cột Trái) với Dạng chia đúng của Modalverb wollen & dürfen (Cột Phải):",
@@ -420,13 +420,13 @@ def build_full_seed_script():
         (
             "Câu 65: Nối Câu hỏi về Địa điểm (Cột Trái) với Câu trả lời chuẩn ngữ pháp (Cột Phải):",
             [
-                {"left": "Wohin fährt der Taxifahrer den Touristen?", "right": "Direkt an den Flughafen."},
+                {"left": "Wohin fährt der Taxifahrer den Touristen?", "right": "Direkt vor den Hauptbahnhof."},
                 {"left": "Wo untersucht die Ärztin den Patienten?", "right": "Im Behandlungszimmer."},
                 {"left": "Wohin geht die Lehrerin nach der Pause?", "right": "Zurück in das Klassenzimmer."},
                 {"left": "Wo kocht der Koch das Mittagessen?", "right": "In der modernen Restaurantküche."}
             ],
-            "Phân biệt câu hỏi hướng di chuyển (Wohin? + Akkusativ) và vị trí tại chỗ (Wo? + Dativ): 1. 'Wohin fährt der Taxifahrer...?' hỏi hướng di chuyển đến sân bay, đòi hỏi giới từ an + Akkusativ: danh từ giống đực der Flughafen đổi thành 'an den Flughafen'. 2. 'Wo untersucht die Ärztin...?' hỏi vị trí khám bệnh tại chỗ, đòi hỏi giới từ in + Dativ: danh từ giống trung das Behandlungszimmer đổi in + dem thành 'im Behandlungszimmer'. 3. 'Wohin geht die Lehrerin...?' hỏi hướng đi vào phòng học, đòi hỏi giới từ in + Akkusativ: danh từ giống trung das Klassenzimmer giữ nguyên 'in das Klassenzimmer'. 4. 'Wo kocht der Koch...?' hỏi vị trí nấu ăn tại chỗ, đòi hỏi giới từ in + Dativ: danh từ giống cái die Restaurantküche đổi in + der thành 'in der modernen Restaurantküche'.",
-            "1. 'Tài xế taxi chở du khách đi đâu?' — 'Đi thẳng đến sân bay.' | 2. 'Nữ bác sĩ khám bệnh nhân ở đâu?' — 'Ở trong phòng khám bệnh.' | 3. 'Cô giáo đi đâu sau giờ giải lao?' — 'Quay trở lại trong phòng học.' | 4. 'Đầu bếp nấu bữa trưa ở đâu?' — 'Ở trong gian bếp nhà hàng hiện đại.'"
+            "Phân biệt câu hỏi hướng di chuyển (Wohin? + Akkusativ) và vị trí tại chỗ (Wo? + Dativ): 1. 'Wohin fährt der Taxifahrer...?' hỏi hướng di chuyển của xe tới đỗ phía trước nhà ga, đòi hỏi giới từ chỉ vị trí 'vor' + Cách 4 (Akkusativ): danh từ giống đực 'der Hauptbahnhof' biến đổi mạo từ thành 'vor den Hauptbahnhof'. 2. 'Wo untersucht die Ärztin...?' hỏi vị trí khám bệnh tại chỗ, đòi hỏi giới từ in + Dativ: danh từ giống trung das Behandlungszimmer đổi in + dem thành 'im Behandlungszimmer'. 3. 'Wohin geht die Lehrerin...?' hỏi hướng đi vào phòng học, đòi hỏi giới từ in + Akkusativ: danh từ giống trung das Klassenzimmer giữ nguyên 'in das Klassenzimmer'. 4. 'Wo kocht der Koch...?' hỏi vị trí nấu ăn tại chỗ, đòi hỏi giới từ in + Dativ: danh từ giống cái die Restaurantküche đổi in + der thành 'in der modernen Restaurantküche'.",
+            "1. 'Tài xế taxi chở du khách đi đâu?' — 'Thẳng tới phía trước nhà ga chính.'\n2. 'Nữ bác sĩ khám bệnh nhân ở đâu?' — 'Ở trong phòng khám bệnh.'\n3. 'Cô giáo đi đâu sau giờ giải lao?' — 'Quay trở lại trong phòng học.'\n4. 'Đầu bếp nấu bữa trưa ở đâu?' — 'Ở trong gian bếp nhà hàng hiện đại.'"
         ),
         (
             "Câu 66: Nối Hoạt động công việc (Cột Trái) với Dụng cụ cần thiết tương ứng (Cột Phải):",
