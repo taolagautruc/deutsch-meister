@@ -107,9 +107,9 @@ def run_tests():
             assert not re.search(r'\(\s*[a-zäöüß]+\s*\+\s*[a-zäöüß]+\s*\)', q_text, re.I), \
                 f"❌ LỖI RÒ RỈ CÔNG THỨC: Câu {q_num} bị lộ công thức trong đề bài: '{q_text}'"
 
-        # 3.2. Mọi câu hỏi đều phải có bản dịch trong extra_data['translation'] (trừ các câu nối ô đã có tiếng Việt hoặc không cần dịch: 59, 61, 64, 67)
+        # 3.2. Mọi câu hỏi đều phải có bản dịch trong extra_data['translation'] (trừ các câu nối ô đã có tiếng Việt hoặc không cần dịch: 58, 59, 60, 61, 64, 67)
         trans = extra.get("translation", "")
-        if q_num not in [59, 61, 64, 67]:
+        if q_num not in [58, 59, 60, 61, 64, 67]:
             assert trans and len(trans.strip()) > 3, f"❌ LỖI: Câu {q_num} thiếu extra_data['translation']!"
         assert "bài tập nối 4 cặp thẻ" not in (trans or "").lower(), f"❌ LỖI TEMPLATE: Câu {q_num} bị dính text mẫu!"
 

@@ -632,16 +632,16 @@ ARENA_DATA_BY_LESSON = {
                 {"left": "zu Fuß", "right": "đi bộ"}
             ],
             [
-                {"left": "1. (erste)", "right": "am ersten"},
-                {"left": "3. (dritte)", "right": "am dritten"},
-                {"left": "7. (siebte)", "right": "am siebten"},
-                {"left": "20. (zwanzigste)", "right": "am zwanzigsten"}
+                {"left": "eins", "right": "der erste / am ersten"},
+                {"left": "drei", "right": "der dritte / am dritten"},
+                {"left": "sieben", "right": "der siebte / am siebten"},
+                {"left": "zwanzig", "right": "der zwanzigste / am zwanzigsten"}
             ],
             [
-                {"left": "der Bahnhof", "right": "zum Bahnhof (zu + dem)"},
-                {"left": "die Schule", "right": "zur Schule (zu + der)"},
-                {"left": "der Flughafen", "right": "vom Flughafen (von + dem)"},
-                {"left": "der Arzt", "right": "beim Arzt (bei + dem)"}
+                {"left": "Đến nhà ga chính", "right": "zum Hauptbahnhof"},
+                {"left": "Đến trường học", "right": "zur Schule"},
+                {"left": "Từ sân bay", "right": "vom Flughafen"},
+                {"left": "Ở chỗ bác sĩ", "right": "beim Arzt"}
             ]
         ],
         "sentences_vd": [
