@@ -374,12 +374,12 @@
     <!-- ========================================================= -->
     <!-- JAVASCRIPT XỬ LÝ TƯƠNG TÁC, PHÁT ÂM & KẾT NỐI API PYTHON   -->
     <!-- ========================================================= -->
-    <script src="/static/js/audio_tts.js?v=20261111_v10"></script>
-    <script src="/static/js/number_trainer.js?v=20261111_v10"></script>
-    <script src="/static/js/city_map_svg.js?v=20261111_v10"></script>
-    <script src="/static/js/verbs_db.js?v=20261111_v10"></script>
-    <script src="/static/js/lexikon_db.js?v=20261111_v10"></script>
-    <script src="/static/js/arena_engine.js?v=20261111_v10"></script>
+    <script src="/static/js/audio_tts.js?v=20261111_v11"></script>
+    <script src="/static/js/number_trainer.js?v=20261111_v11"></script>
+    <script src="/static/js/city_map_svg.js?v=20261111_v11"></script>
+    <script src="/static/js/verbs_db.js?v=20261111_v11"></script>
+    <script src="/static/js/lexikon_db.js?v=20261111_v11"></script>
+    <script src="/static/js/arena_engine.js?v=20261111_v11"></script>
     <script>
         const LEVEL_META = {
             "A1": {
@@ -540,7 +540,7 @@
             }
         }
 
-        const CURRENT_SESSION_VERSION = '20261111_v10';
+        const CURRENT_SESSION_VERSION = '20261111_v11';
 
         function loadActiveLessonSession(lessonId) {
             if (!lessonId) return null;
@@ -2167,6 +2167,7 @@
             const feedback = document.getElementById(`ex-feedback-${index}`);
             const card = document.getElementById(`ex-card-${index}`);
             feedback.classList.remove('hidden');
+            if (ex) delete ex._vdHint;
 
             let extra = {};
             try {
@@ -2243,11 +2244,11 @@
                 } else {
                     // Ưu tiên chấm theo Rubric Bài 8 CHỈ KHI đang làm Bài 8
                     const isLesson8 = Boolean(
+                        (ex && (ex.lesson_id === 22 || (ex.question && /bài 8\b/i.test(ex.question)))) ||
                         (typeof currentLesson !== 'undefined' && currentLesson && (
                             currentLesson.id === 22 || 
                             (currentLesson.title && /bài 8\b/i.test(currentLesson.title))
-                        )) ||
-                        (typeof currentLevelData !== 'undefined' && currentLessonIndex === 7)
+                        ))
                     );
                     const l8QMatch = isLesson8 && (ex.question || '').match(/Câu\s+(4[6-9]|5[0-7])\b/i);
                     const l8VDMatch = isLesson8 && (ex.question || '').match(/Câu\s+(8[7-9]|9[0-3])\b/i);
