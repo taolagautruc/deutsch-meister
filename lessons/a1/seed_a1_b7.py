@@ -2082,7 +2082,10 @@ def seed_lesson_7():
                                 "nhân viên phục vụ bàn",
                                 "bồi bàn",
                                 "người phục vụ nhà hàng",
-                                "nam bồi bàn và nữ bồi bàn"
+                                "nam bồi bàn và nữ bồi bàn",
+                                "phục vụ",
+                                "người phục vụ",
+                                "nhân viên phục vụ"
                         ],
                         "translation": "nhân viên phục vụ bàn"
                 }
