@@ -374,12 +374,12 @@
     <!-- ========================================================= -->
     <!-- JAVASCRIPT XỬ LÝ TƯƠNG TÁC, PHÁT ÂM & KẾT NỐI API PYTHON   -->
     <!-- ========================================================= -->
-    <script src="/static/js/audio_tts.js?v=20261111_v11"></script>
-    <script src="/static/js/number_trainer.js?v=20261111_v11"></script>
-    <script src="/static/js/city_map_svg.js?v=20261111_v11"></script>
-    <script src="/static/js/verbs_db.js?v=20261111_v11"></script>
-    <script src="/static/js/lexikon_db.js?v=20261111_v11"></script>
-    <script src="/static/js/arena_engine.js?v=20261111_v11"></script>
+    <script src="/static/js/audio_tts.js?v=20261111_v12"></script>
+    <script src="/static/js/number_trainer.js?v=20261111_v12"></script>
+    <script src="/static/js/city_map_svg.js?v=20261111_v12"></script>
+    <script src="/static/js/verbs_db.js?v=20261111_v12"></script>
+    <script src="/static/js/lexikon_db.js?v=20261111_v12"></script>
+    <script src="/static/js/arena_engine.js?v=20261111_v12"></script>
     <script>
         const LEVEL_META = {
             "A1": {
@@ -540,7 +540,7 @@
             }
         }
 
-        const CURRENT_SESSION_VERSION = '20261111_v11';
+        const CURRENT_SESSION_VERSION = '20261111_v12';
 
         function loadActiveLessonSession(lessonId) {
             if (!lessonId) return null;
@@ -2200,26 +2200,55 @@
                 ex._isUserCorrect = isCorrect;
             } else {
                 if (isMultiSlot) {
-                    const rawUser = String(userAnswer || '').trim();
-                    const uParts = rawUser.split('/').map(p => p.trim());
+                    const isLesson8 = Boolean(
+                        (ex && (ex.lesson_id === 22 || (ex.question && /bài 8\b/i.test(ex.question)))) ||
+                        (typeof currentLesson !== 'undefined' && currentLesson && (
+                            currentLesson.id === 22 || 
+                            (currentLesson.title && /bài 8\b/i.test(currentLesson.title))
+                        ))
+                    );
 
-                    // Câu ĐÚNG chỉ khi có ĐÚNG 2 phần, thiếu một phần hoặc thừa một phần đều SAI
-                    if (uParts.length !== 2 || !uParts[0] || !uParts[1]) {
-                        isCorrect = false;
-                    } else {
-                        const u1 = normalizeGermanSlot(uParts[0]);
-                        const u2 = normalizeGermanSlot(uParts[1]);
-
-                        if (extra && Array.isArray(extra.slot1_accepted) && Array.isArray(extra.slot2_accepted)) {
-                            // Chấm theo từng ô chuẩn hóa cho Câu 68-77
+                    // Nếu là bài tập có cấu hình 2 slot chuẩn hóa của riêng Bài 8 (Câu 68-77)
+                    if (isLesson8 && extra && Array.isArray(extra.slot1_accepted) && Array.isArray(extra.slot2_accepted)) {
+                        const rawUser = String(userAnswer || '').trim();
+                        let uParts = [];
+                        if (rawUser.includes('/')) {
+                            uParts = rawUser.split('/').map(p => p.trim()).filter(Boolean);
+                        } else if (rawUser.includes(',') || rawUser.includes(';')) {
+                            uParts = rawUser.split(/[,;]/).map(p => p.trim()).filter(Boolean);
+                        } else {
+                            uParts = rawUser.split(/\s+/).map(p => p.trim()).filter(Boolean);
+                        }
+                        if (uParts.length !== 2) {
+                            isCorrect = false;
+                        } else {
+                            const u1 = normalizeGermanSlot(uParts[0]);
+                            const u2 = normalizeGermanSlot(uParts[1]);
                             const slot1Norms = extra.slot1_accepted.map(normalizeGermanSlot);
                             const slot2Norms = extra.slot2_accepted.map(normalizeGermanSlot);
                             isCorrect = slot1Norms.includes(u1) && slot2Norms.includes(u2);
+                        }
+                    } else {
+                        // Khôi phục nguyên bản 100% như cũ cho Bài 5, Bài 6 và tất cả các bài khác:
+                        const candidates = [ex.correct_answer];
+                        if (extra && Array.isArray(extra.accepted_answers)) {
+                            candidates.push(...extra.accepted_answers);
+                        }
+                        const rawUser = String(userAnswer || '').trim();
+                        let uParts = [];
+                        if (rawUser.includes('/')) {
+                            uParts = rawUser.split('/').map(p => p.trim()).filter(Boolean);
+                        } else if (rawUser.includes(',') || rawUser.includes(';')) {
+                            uParts = rawUser.split(/[,;]/).map(p => p.trim()).filter(Boolean);
                         } else {
-                            const candidates = [ex.correct_answer];
-                            if (extra && Array.isArray(extra.accepted_answers)) {
-                                candidates.push(...extra.accepted_answers);
-                            }
+                            uParts = rawUser.split(/\s+/).map(p => p.trim()).filter(Boolean);
+                        }
+
+                        // Nếu người dùng chỉ nhập 1 từ duy nhất (hoặc để trống): BẮT BUỘC KHÔNG CHẤP NHẬN vì thiếu từ ở vị trí [2]
+                        if (uParts.length < 2) {
+                            isCorrect = false;
+                        } else {
+                            // Mở rộng các phương án nếu có biến thể ngăn cách bởi ||, \n, hoặc
                             const expandedCandidates = [];
                             candidates.forEach(cand => {
                                 if (!cand) return;
@@ -2235,9 +2264,26 @@
 
                             isCorrect = expandedCandidates.some(cand => {
                                 if (!cand) return false;
-                                const cParts = String(cand).split('/').map(p => p.trim());
-                                if (cParts.length !== 2) return false;
-                                return normalizeGermanSlot(cParts[0]) === u1 && normalizeGermanSlot(cParts[1]) === u2;
+                                // 1. Kiểm tra khớp toàn chuỗi trước (nếu người dùng gõ trực tiếp tương đương)
+                                if (typeof checkGermanAnswerEquivalence === 'function' && checkGermanAnswerEquivalence(rawUser, cand, { isMultiSlot: false })) {
+                                    return true;
+                                }
+                                // 2. Tách từng slot của đáp án mẫu
+                                let cParts = [];
+                                if (String(cand).includes('/')) {
+                                    cParts = String(cand).split('/').map(p => p.trim()).filter(Boolean);
+                                } else if (String(cand).includes(',') || String(cand).includes(';')) {
+                                    cParts = String(cand).split(/[,;]/).map(p => p.trim()).filter(Boolean);
+                                } else {
+                                    cParts = String(cand).split(/\s+/).map(p => p.trim()).filter(Boolean);
+                                }
+
+                                if (cParts.length !== uParts.length) return false;
+                                return uParts.every((u, idx) => {
+                                    return (typeof checkGermanAnswerEquivalence === 'function')
+                                        ? checkGermanAnswerEquivalence(u, cParts[idx], { isMultiSlot: false })
+                                        : normalizeAnswer(u) === normalizeAnswer(cParts[idx]);
+                                });
                             });
                         }
                     }
