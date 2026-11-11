@@ -163,15 +163,91 @@ def verify():
     print("\n[TEST 6] Kiểm tra nhóm Điền tạo câu (Câu 68 -> 77):")
     dtc_list = [e for e in exercises if e["exercise_type"] == "dien_tao_cau"]
     assert len(dtc_list) == 10, "❌ Lỗi: Không đủ 10 câu điền tạo câu!"
+
+    def normalize_german_slot(s):
+        if not s:
+            return ""
+        s = s.strip().lower()
+        import re
+        s = re.sub(r'[.,!?;:…]+$', '', s).strip()
+        s = re.sub(r'\s+', ' ', s)
+        s = s.replace('ä', 'ae').replace('ö', 'oe').replace('ü', 'ue').replace('ß', 'ss')
+        return s
+
+    def evaluate_multi_slot(user_ans, slot1_list, slot2_list):
+        if not user_ans or '/' not in user_ans:
+            return False
+        parts = [p.strip() for p in user_ans.split('/')]
+        if len(parts) != 2 or not parts[0] or not parts[1]:
+            return False
+        u1 = normalize_german_slot(parts[0])
+        u2 = normalize_german_slot(parts[1])
+        s1 = [normalize_german_slot(x) for x in slot1_list]
+        s2 = [normalize_german_slot(x) for x in slot2_list]
+        return (u1 in s1) and (u2 in s2)
+
     for idx, e in enumerate(dtc_list, 68):
+        q_title = e["question"]
         corr = e["correct_answer"]
-        assert "/" in corr, f"❌ Câu {idx} đáp án không có dấu '/': {corr}"
+        exp = e["explanation"]
         extra = json.loads(e["extra_data"])
-        acc = extra.get("accepted_answers", [])
-        assert len(acc) >= 2, f"❌ Câu {idx} thiếu biến thể accepted_answers: {acc}"
-        for a in acc:
-            assert "/" in a or "," in a, f"❌ Câu {idx} accepted_answer không có dấu ngăn cách: {a}"
-    print("✅ TEST 6 PASS: Cả 10 bài điền tạo câu chuẩn cấu trúc 2 từ ngăn cách bởi dấu /!")
+        trans = extra.get("translation", "")
+        slot1 = extra.get("slot1_accepted", [])
+        slot2 = extra.get("slot2_accepted", [])
+
+        # Kiểm tra không chứa "Ngài" hoặc "Cậu"
+        assert "Ngài" not in q_title and "Cậu" not in q_title, f"❌ Câu {idx} có Ngài/Cậu trong câu hỏi: {q_title}"
+        assert "Ngài" not in trans and "Cậu" not in trans, f"❌ Câu {idx} có Ngài/Cậu trong dịch nghĩa: {trans}"
+        assert "Ngài" not in exp and "Cậu" not in exp, f"❌ Câu {idx} có Ngài/Cậu trong giải thích: {exp}"
+
+        # Kiểm tra slot1 và slot2
+        assert len(slot1) >= 1 and len(slot2) >= 1, f"❌ Câu {idx} thiếu slot1_accepted hoặc slot2_accepted!"
+        assert "/" in corr, f"❌ Câu {idx} đáp án không có dấu '/': {corr}"
+
+        # Kiểm tra chi tiết từng câu theo yêu cầu
+        if idx == 68:
+            assert "cho người bạn thân (du)" not in q_title, "❌ Câu 68 còn 'cho người bạn thân (du)'!"
+            assert "ngăn cách bởi dấu /" in q_title, "❌ Câu 68 thiếu 'ngăn cách bởi dấu /'!"
+            assert "Lauf zuerst [1] den Park und geh dann an [2] Kirche vorbei bis zum Bahnhof!" in q_title
+            assert trans == "Đầu tiên bạn hãy đi xuyên qua công viên, rồi đi ngang qua nhà thờ cho đến nhà ga nhé!"
+            assert extra.get("visual_svg") == "map_build_1"
+        elif idx == 69:
+            assert "lịch sự" not in q_title, "❌ Câu 69 còn chữ 'lịch sự'!"
+            assert "ngăn cách bởi dấu /" in q_title, "❌ Câu 69 thiếu 'ngăn cách bởi dấu /'!"
+            assert "Gehen Sie zuerst [1] die Brücke und dann die Goethestraße [2] bis zur Post!" in q_title
+            assert trans == "Trước tiên quý vị hãy đi qua cây cầu, rồi đi dọc theo phố Goethe cho đến bưu điện!"
+            assert extra.get("visual_svg") == "map_build_2"
+        elif idx == 74:
+            assert evaluate_multi_slot("in die / in der", slot1, slot2) is True, "❌ Câu 74: 'in die / in der' phải ĐÚNG!"
+            assert evaluate_multi_slot("in der", slot1, slot2) is False, "❌ Câu 74: 'in der' phải SAI!"
+            assert evaluate_multi_slot("in der / in die", slot1, slot2) is False, "❌ Câu 74: 'in der / in die' phải SAI!"
+            assert evaluate_multi_slot("in der / in der", slot1, slot2) is False, "❌ Câu 74: 'in der / in der' phải SAI!"
+        elif idx == 73:
+            assert evaluate_multi_slot("muesst / koennt", slot1, slot2) is True, "❌ Câu 73: 'muesst / koennt' phải ĐÚNG!"
+            assert evaluate_multi_slot("musst / könnt", slot1, slot2) is False, "❌ Câu 73: 'musst / könnt' phải SAI!"
+        elif idx == 77:
+            assert "erste" not in q_title and "zweite" not in q_title, "❌ Câu 77 lộ đáp án erste / zweite trên đề!"
+            assert "1. vào chỗ trống [1] và 2. vào chỗ trống [2]" in q_title
+            assert trans == "Quý vị hãy đi con đường thứ nhất bên phải, rồi sau đó rẽ trái lại ở ngã tư thứ hai!"
+            assert evaluate_multi_slot("erste / zweiten", slot1, slot2) is True, "❌ Câu 77: 'erste / zweiten' phải ĐÚNG!"
+            assert evaluate_multi_slot("erste / zweite", slot1, slot2) is False, "❌ Câu 77: 'erste / zweite' phải SAI!"
+
+    # Kiểm tra bản đồ SVG city_map_svg.js
+    with open("static/js/city_map_svg.js", "r", encoding="utf-8") as f:
+        svg_content = f.read()
+    assert "map_build_1" in svg_content
+    assert "map_build_2" in svg_content
+    assert "Park" in svg_content and "Kirche" in svg_content and "Bahnhof" in svg_content
+    assert "Brücke" in svg_content and "Goethestraße" in svg_content and "Post" in svg_content
+    # Không còn Dom trong map_build_1
+    build_1_block = svg_content[svg_content.find("map_build_1"):svg_content.find("map_build_2")]
+    assert "Dom" not in build_1_block, "❌ map_build_1 vẫn còn nhãn 'Dom'!"
+    # Bỏ Krankenhaus, Ampel, Kreuzung trong map_build_2
+    build_2_block = svg_content[svg_content.find("function getMapBuild2Svg"):svg_content.find("function renderExerciseSvg")]
+    assert "Krankenhaus" not in build_2_block, "❌ map_build_2 vẫn còn Krankenhaus!"
+    assert "Ampel" not in build_2_block, "❌ map_build_2 vẫn còn Ampel!"
+    assert "Kreuzung" not in build_2_block, "❌ map_build_2 vẫn còn Kreuzung!"
+    print("✅ TEST 6 PASS: Cả 10 bài điền tạo câu và 2 bản đồ SVG đáp ứng 100% chuẩn chấm từng ô & zero-spoiler!")
 
     # 7. Check 'dich_cau' (Q87 -> Q100)
     print("\n[TEST 7] Kiểm tra nhóm Dịch câu V->Đ và Đ->V (Câu 87 -> 100):")

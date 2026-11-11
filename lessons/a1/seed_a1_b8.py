@@ -2495,170 +2495,298 @@ def seed_lesson_8():
                 }
         },
         {
-                "type": "dien_tao_cau",
-                "question": "Câu 68: Hoàn thành lời chỉ đường cho người bạn thân (du) khớp với lộ trình trên bản đồ bằng cách điền 2 từ còn thiếu vào các chỗ trống (ngăn cách bởi dấu /): 'Lauf zuerst [1] den Park und geh dann an [2] Kirche vorbei bis zum Bahnhof!'",
-                "options": null,
-                "correct_answer": "durch / der",
-                "explanation": "Đi xuyên qua 'der Park' dùng 'durch' ('durch den Park'). Đi ngang qua 'die Kirche' dùng 'an + Dativ + vorbei' -> 'an der Kirche vorbei'.",
-                "exp_reward": 25,
-                "extra_data": {
-                        "accepted_answers": [
-                                "durch / der",
-                                "durch/der"
-                        ],
-                        "translation": "Đầu tiên cậu hãy chạy xuyên qua công viên và sau đó đi ngang qua nhà thờ cho đến nhà ga!",
-                        "visual_svg": "map_build_1"
-                }
+            "type": "dien_tao_cau",
+            "question": "Câu 68: Hoàn thành lời chỉ đường khớp với lộ trình trên bản đồ bằng cách điền 2 từ còn thiếu vào các chỗ trống (ngăn cách bởi dấu /): 'Lauf zuerst [1] den Park und geh dann an [2] Kirche vorbei bis zum Bahnhof!'",
+            "options": null,
+            "correct_answer": "durch / der",
+            "explanation": "Đi xuyên qua 'der Park' dùng 'durch' ('durch den Park'). Đi ngang qua 'die Kirche' dùng 'an + Dativ + vorbei' -> 'an der Kirche vorbei'. Các từ khác cũng đúng ngữ pháp như 'dieser', 'jener', 'einer' được chấp nhận ở ô 2.",
+            "exp_reward": 25,
+            "extra_data": {
+                "slot1_accepted": [
+                    "durch"
+                ],
+                "slot2_accepted": [
+                    "der",
+                    "dieser",
+                    "jener",
+                    "einer"
+                ],
+                "accepted_answers": [
+                    "durch / der",
+                    "durch/der",
+                    "durch / dieser",
+                    "durch/dieser",
+                    "durch / jener",
+                    "durch/jener",
+                    "durch / einer",
+                    "durch/einer"
+                ],
+                "translation": "Đầu tiên bạn hãy đi xuyên qua công viên, rồi đi ngang qua nhà thờ cho đến nhà ga nhé!",
+                "visual_svg": "map_build_1"
+            }
         },
         {
-                "type": "dien_tao_cau",
-                "question": "Câu 69: Hoàn thành lời chỉ đường lịch sự cho vị khách du lịch khớp với bản đồ bằng cách điền 2 từ còn thiếu vào các chỗ trống (ngăn cách bởi dấu /): 'Gehen Sie zuerst [1] die Brücke und dann die Goethestraße [2] bis zur Post!'",
-                "options": null,
-                "correct_answer": "über / entlang",
-                "explanation": "Đi vượt qua mặt cầu dùng 'über' ('über die Brücke'); đi dọc theo con đường đặt 'entlang' ở sau danh từ ('die Goethestraße entlang').",
-                "exp_reward": 25,
-                "extra_data": {
-                        "accepted_answers": [
-                                "über / entlang",
-                                "über/entlang",
-                                "ueber / entlang",
-                                "ueber/entlang"
-                        ],
-                        "translation": "Đầu tiên Ngài hãy đi qua cây cầu và sau đó đi dọc theo đường Goethe cho đến bưu điện!",
-                        "visual_svg": "map_build_2"
-                }
+            "type": "dien_tao_cau",
+            "question": "Câu 69: Hoàn thành lời chỉ đường cho vị khách du lịch khớp với bản đồ bằng cách điền 2 từ còn thiếu vào các chỗ trống (ngăn cách bởi dấu /): 'Gehen Sie zuerst [1] die Brücke und dann die Goethestraße [2] bis zur Post!'",
+            "options": null,
+            "correct_answer": "über / entlang",
+            "explanation": "Đi vượt qua mặt cầu dùng 'über' ('über die Brücke'); đi dọc theo con đường đặt 'entlang' ở sau danh từ ('die Goethestraße entlang').",
+            "exp_reward": 25,
+            "extra_data": {
+                "slot1_accepted": [
+                    "über",
+                    "ueber"
+                ],
+                "slot2_accepted": [
+                    "entlang"
+                ],
+                "accepted_answers": [
+                    "über / entlang",
+                    "über/entlang",
+                    "ueber / entlang",
+                    "ueber/entlang"
+                ],
+                "translation": "Trước tiên quý vị hãy đi qua cây cầu, rồi đi dọc theo phố Goethe cho đến bưu điện!",
+                "visual_svg": "map_build_2"
+            }
         },
         {
-                "type": "dien_tao_cau",
-                "question": "Câu 70: Hoàn thành câu kể về lịch trình ngày Chủ nhật của gia đình bằng cách điền 2 cụm từ vào các chỗ trống (ngăn cách bởi dấu /): 'Am Sonntagvormittag fahren wir zuerst [1] Flughafen, um Oma abzuholen, und am Nachmittag gehen wir zusammen [2] Zoo.'",
-                "options": null,
-                "correct_answer": "zum / in den",
-                "explanation": "'der Flughafen' sau 'zu + Dativ' là 'zum Flughafen'; đi vào bên trong sở thú ('der Zoo') dùng 'in den Zoo'.",
-                "exp_reward": 25,
-                "extra_data": {
-                        "accepted_answers": [
-                                "zum / in den",
-                                "zum/in den",
-                                "zum / zum",
-                                "zum/zum"
-                        ],
-                        "translation": "Sáng Chủ nhật đầu tiên chúng tôi lái xe ra sân bay để đón bà, và buổi chiều chúng tôi cùng nhau đi vào sở thú."
-                }
+            "type": "dien_tao_cau",
+            "question": "Câu 70: Hoàn thành câu kể về lịch trình ngày Chủ nhật của gia đình bằng cách điền 2 cụm từ vào các chỗ trống (ngăn cách bởi dấu /): 'Am Sonntagvormittag fahren wir zuerst [1] Flughafen, um Oma abzuholen, und am Nachmittag gehen wir zusammen [2] Zoo.'",
+            "options": null,
+            "correct_answer": "zum / in den",
+            "explanation": "'der Flughafen' sau 'zu + Dativ' là 'zum Flughafen'; đi vào bên trong sở thú ('der Zoo') dùng 'in den Zoo'. 'zum Zoo' (đi tới sở thú) và 'an den Flughafen' cũng đúng ngữ pháp và được chấp nhận.",
+            "exp_reward": 25,
+            "extra_data": {
+                "slot1_accepted": [
+                    "zum",
+                    "zu dem",
+                    "an den",
+                    "bis zum"
+                ],
+                "slot2_accepted": [
+                    "in den",
+                    "zum",
+                    "zu dem"
+                ],
+                "accepted_answers": [
+                    "zum / in den",
+                    "zum/in den",
+                    "zum / zum",
+                    "zum/zum",
+                    "zum / zu dem",
+                    "zum/zu dem",
+                    "zu dem / in den",
+                    "zu dem/in den",
+                    "zu dem / zum",
+                    "zu dem/zu dem",
+                    "zu dem / zu dem",
+                    "an den / in den",
+                    "an den/in den",
+                    "an den / zum",
+                    "an den/zum",
+                    "an den / zu dem",
+                    "an den/zu dem",
+                    "bis zum / in den",
+                    "bis zum/in den",
+                    "bis zum / zum",
+                    "bis zum/zum",
+                    "bis zum / zu dem",
+                    "bis zum/zu dem"
+                ],
+                "translation": "Sáng Chủ nhật, trước tiên chúng tôi lái xe ra sân bay để đón bà, và buổi chiều chúng tôi cùng nhau đi vào sở thú."
+            }
         },
         {
-                "type": "dien_tao_cau",
-                "question": "Câu 71: Hoàn thành lời hướng dẫn của tài xế xe buýt bằng cách điền 2 từ vào các chỗ trống (ngăn cách bởi dấu /): 'Sie müssen hier aussteigen, dann [1] großen Supermarkt vorbeigehen und geradeaus bis [2] zweiten Ampel laufen.'",
-                "options": null,
-                "correct_answer": "am / zur",
-                "explanation": "'der Supermarkt' đi với 'an + Dativ + vorbei' là 'am großen Supermarkt vorbei'; 'die Ampel' đi với 'bis zu + Dativ' là 'bis zur zweiten Ampel'.",
-                "exp_reward": 25,
-                "extra_data": {
-                        "accepted_answers": [
-                                "am / zur",
-                                "am/zur",
-                                "an dem / zur",
-                                "an dem/zur",
-                                "am / zu der",
-                                "am/zu der"
-                        ],
-                        "translation": "Ngài phải xuống xe ở đây, sau đó đi ngang qua siêu thị lớn và đi bộ thẳng cho đến đèn giao thông thứ hai."
-                }
+            "type": "dien_tao_cau",
+            "question": "Câu 71: Hoàn thành lời hướng dẫn của tài xế xe buýt bằng cách điền 2 từ vào các chỗ trống (ngăn cách bởi dấu /): 'Sie müssen hier aussteigen, dann [1] großen Supermarkt vorbeigehen und geradeaus bis [2] zweiten Ampel laufen.'",
+            "options": null,
+            "correct_answer": "am / zur",
+            "explanation": "'der Supermarkt' đi với 'an + Dativ + vorbei' là 'am großen Supermarkt vorbei'; 'die Ampel' đi với 'bis zu + Dativ' là 'bis zur zweiten Ampel'. 'an dem' (thay cho 'am') cũng đúng và được chấp nhận.",
+            "exp_reward": 25,
+            "extra_data": {
+                "slot1_accepted": [
+                    "am",
+                    "an dem",
+                    "an diesem",
+                    "an einem"
+                ],
+                "slot2_accepted": [
+                    "zur",
+                    "zu der"
+                ],
+                "accepted_answers": [
+                    "am / zur",
+                    "am/zur",
+                    "am / zu der",
+                    "am/zu der",
+                    "an dem / zur",
+                    "an dem/zur",
+                    "an dem / zu der",
+                    "an dem/zu der",
+                    "an diesem / zur",
+                    "an diesem/zur",
+                    "an diesem / zu der",
+                    "an diesem/zu der",
+                    "an một/zur",
+                    "an einem / zur",
+                    "an einem/zur",
+                    "an einem / zu der",
+                    "an einem/zu der"
+                ],
+                "translation": "Quý vị phải xuống xe ở đây, rồi đi ngang qua siêu thị lớn và đi bộ thẳng cho đến đèn giao thông thứ hai."
+            }
         },
         {
-                "type": "dien_tao_cau",
-                "question": "Câu 72: Hoàn thành câu với dạng chia đúng của động từ khuyết thiếu 'wollen' vào các chỗ trống (ngăn cách bởi dấu /): 'Mein Freund Lukas [1] heute unbedingt das Bundeskanzleramt fotografieren, aber wir [2] lieber zuerst auf der Museumsinsel spazieren gehen.'",
-                "options": null,
-                "correct_answer": "will / wollen",
-                "explanation": "Ngôi thứ 3 số ít ('Lukas' = 'er') chia là 'will'; ngôi thứ nhất số nhiều ('wir') chia là 'wollen'.",
-                "exp_reward": 25,
-                "extra_data": {
-                        "accepted_answers": [
-                                "will / wollen",
-                                "will/wollen"
-                        ],
-                        "translation": "Người bạn Lukas của tôi hôm nay nhất định muốn chụp ảnh Phủ Thủ tướng, nhưng chúng tôi lại muốn đi dạo trên Đảo Bảo tàng trước hơn."
-                }
+            "type": "dien_tao_cau",
+            "question": "Câu 72: Hoàn thành câu với dạng chia đúng của động từ khuyết thiếu 'wollen' vào các chỗ trống (ngăn cách bởi dấu /): 'Mein Freund Lukas [1] heute unbedingt das Bundeskanzleramt fotografieren, aber wir [2] lieber zuerst auf der Museumsinsel spazieren gehen.'",
+            "options": null,
+            "correct_answer": "will / wollen",
+            "explanation": "Ngôi thứ 3 số ít ('Lukas' = 'er') chia là 'will'; ngôi thứ nhất số nhiều ('wir') chia là 'wollen'.",
+            "exp_reward": 25,
+            "extra_data": {
+                "slot1_accepted": [
+                    "will"
+                ],
+                "slot2_accepted": [
+                    "wollen"
+                ],
+                "accepted_answers": [
+                    "will / wollen",
+                    "will/wollen"
+                ],
+                "translation": "Bạn Lukas của tôi hôm nay nhất định muốn chụp ảnh Phủ Thủ tướng Liên bang, nhưng chúng tôi thích đi dạo trên Đảo Bảo tàng trước hơn."
+            }
         },
         {
-                "type": "dien_tao_cau",
-                "question": "Câu 73: Hoàn thành câu hướng dẫn giao thông với dạng chia đúng của 'müssen' vào chỗ trống [1] và 'können' vào chỗ trống [2] (ngăn cách bởi dấu /): 'Vor der Baustelle [1] ihr leider rechts abbiegen, aber danach [2] ihr wieder geradeaus bis zum Hafen fahren.'",
-                "options": null,
-                "correct_answer": "müsst / könnt",
-                "explanation": "Với chủ ngữ 'ihr' (các bạn), 'müssen' chia là 'müsst' và 'können' chia là 'könnt'.",
-                "exp_reward": 25,
-                "extra_data": {
-                        "accepted_answers": [
-                                "müsst / könnt",
-                                "müsst/könnt",
-                                "muesst / koennt",
-                                "muesst/koennt"
-                        ],
-                        "translation": "Trước công trường rất tiếc các bạn phải rẽ phải, nhưng sau đó các bạn có thể lại chạy thẳng cho đến cảng biển."
-                }
+            "type": "dien_tao_cau",
+            "question": "Câu 73: Hoàn thành câu hướng dẫn giao thông với dạng chia đúng của 'müssen' vào chỗ trống [1] và 'können' vào chỗ trống [2] (ngăn cách bởi dấu /): 'Vor der Baustelle [1] ihr leider rechts abbiegen, aber danach [2] ihr wieder geradeaus bis zum Hafen fahren.'",
+            "options": null,
+            "correct_answer": "müsst / könnt",
+            "explanation": "Với chủ ngữ 'ihr' (các bạn), 'müssen' chia là 'müsst' và 'können' chia là 'könnt'.",
+            "exp_reward": 25,
+            "extra_data": {
+                "slot1_accepted": [
+                    "müsst",
+                    "muesst"
+                ],
+                "slot2_accepted": [
+                    "könnt",
+                    "koennt"
+                ],
+                "accepted_answers": [
+                    "müsst / könnt",
+                    "müsst/könnt",
+                    "muesst / koennt",
+                    "muesst/koennt"
+                ],
+                "translation": "Trước công trường, rất tiếc các bạn phải rẽ phải, nhưng sau đó các bạn lại có thể đi thẳng đến cảng."
+            }
         },
         {
-                "type": "dien_tao_cau",
-                "question": "Câu 74: Hoàn thành câu với cụm giới từ 'in' kèm mạo từ thích hợp vào các chỗ trống (ngăn cách bởi dấu /): 'Wohin gehst du? — Ich gehe jetzt [1] Staatsoper, weil meine Freundin heute Abend [2] Staatsoper Geige spielt.'",
-                "options": null,
-                "correct_answer": "in die / in der",
-                "explanation": "Ô 1 trả lời cho 'Wohin?' (di chuyển vào trong) -> in + Akkusativ = 'in die Staatsoper'. Ô 2 trả lời cho 'Wo?' (chơi đàn ở đâu - vị trí tĩnh) -> in + Dativ = 'in der Staatsoper'.",
-                "exp_reward": 25,
-                "extra_data": {
-                        "accepted_answers": [
-                                "in die / in der",
-                                "in die/in der"
-                        ],
-                        "translation": "Bạn đang đi đâu thế? — Bây giờ tôi đi vào Nhà hát Opera Quốc gia, bởi vì tối nay bạn gái tôi chơi đàn vĩ cầm ở trong Nhà hát Opera Quốc gia."
-                }
+            "type": "dien_tao_cau",
+            "question": "Câu 74: Hoàn thành câu với cụm giới từ 'in' kèm mạo từ thích hợp vào các chỗ trống (ngăn cách bởi dấu /): 'Wohin gehst du? — Ich gehe jetzt [1] Staatsoper, weil meine Freundin heute Abend [2] Staatsoper Geige spielt.'",
+            "options": null,
+            "correct_answer": "in die / in der",
+            "explanation": "Ô 1 trả lời cho 'Wohin?' (di chuyển vào trong) -> in + Akkusativ = 'in die Staatsoper'. Ô 2 trả lời cho 'Wo?' (chơi đàn ở đâu - vị trí tĩnh) -> in + Dativ = 'in der Staatsoper'.",
+            "exp_reward": 25,
+            "extra_data": {
+                "slot1_accepted": [
+                    "in die"
+                ],
+                "slot2_accepted": [
+                    "in der"
+                ],
+                "accepted_answers": [
+                    "in die / in der",
+                    "in die/in der"
+                ],
+                "translation": "Bạn đang đi đâu thế? — Bây giờ tôi đi vào Nhà hát Opera Quốc gia, bởi vì tối nay bạn gái tôi chơi đàn vĩ cầm ở trong Nhà hát Opera Quốc gia."
+            }
         },
         {
-                "type": "dien_tao_cau",
-                "question": "Câu 75: Hoàn thành câu với dạng rút gọn đúng của giới từ 'in' vào các chỗ trống (ngăn cách bởi dấu /): 'Mein kleiner Bruder muss leider [1] Krankenhaus gebracht werden, aber unser Nachbar arbeitet als Arzt [2] Krankenhaus.'",
-                "options": null,
-                "correct_answer": "ins / im",
-                "explanation": "Đưa vào bệnh viện ('Wohin?' + Akkusativ) với 'das Krankenhaus' dùng 'ins' (in das). Làm việc ở trong bệnh viện ('Wo?' + Dativ) dùng 'im' (in dem).",
-                "exp_reward": 25,
-                "extra_data": {
-                        "accepted_answers": [
-                                "ins / im",
-                                "ins/im",
-                                "in das / in dem",
-                                "in das/in dem"
-                        ],
-                        "translation": "Em trai nhỏ của tôi rất tiếc phải được đưa vào bệnh viện, nhưng người hàng xóm của chúng tôi làm bác sĩ ở trong bệnh viện đó."
-                }
+            "type": "dien_tao_cau",
+            "question": "Câu 75: Hoàn thành câu bằng cách điền giới từ 'in' kèm mạo từ thích hợp vào các chỗ trống (ngăn cách bởi dấu /): 'Mein kleiner Bruder muss leider [1] Krankenhaus gebracht werden, aber unser Nachbar arbeitet als Arzt [2] Krankenhaus.'",
+            "options": null,
+            "correct_answer": "ins / im",
+            "explanation": "Đưa vào bệnh viện ('Wohin?' + Akkusativ) với 'das Krankenhaus' dùng 'ins' (in das). Làm việc ở trong bệnh viện ('Wo?' + Dativ) dùng 'im' (in dem). Dạng không rút gọn 'in das / in dem' cũng đúng và được chấp nhận.",
+            "exp_reward": 25,
+            "extra_data": {
+                "slot1_accepted": [
+                    "ins",
+                    "in das"
+                ],
+                "slot2_accepted": [
+                    "im",
+                    "in dem"
+                ],
+                "accepted_answers": [
+                    "ins / im",
+                    "ins/im",
+                    "in das / in dem",
+                    "in das/in dem",
+                    "ins / in dem",
+                    "ins/in dem",
+                    "in das / im",
+                    "in das/im"
+                ],
+                "translation": "Thật không may, em trai tôi phải được đưa vào bệnh viện, còn người hàng xóm của chúng tôi thì làm bác sĩ ở bệnh viện."
+            }
         },
         {
-                "type": "dien_tao_cau",
-                "question": "Câu 76: Hoàn thành đoạn hội thoại hỏi đường ngắn trên phố bằng cách điền 2 từ còn thiếu vào các chỗ trống (ngăn cách bởi dấu /): 'Entschuldigung, ich suche [1] alten Marktplatz. Wie komme ich am besten [2] Marktplatz?'",
-                "options": null,
-                "correct_answer": "den / zum",
-                "explanation": "'der Marktplatz' (giống đực) đứng sau động từ 'suchen' (Akkusativ) dùng mạo từ 'den' ('den alten Marktplatz'); đứng sau 'Wie komme ich ...?' (zu + Dativ) dùng 'zum' ('zum Marktplatz').",
-                "exp_reward": 25,
-                "extra_data": {
-                        "accepted_answers": [
-                                "den / zum",
-                                "den/zum",
-                                "den / zu dem",
-                                "den/zu dem"
-                        ],
-                        "translation": "Xin lỗi, tôi đang tìm quảng trường chợ cổ. Làm thế nào tôi đi đến được quảng trường chợ một cách tốt nhất?"
-                }
+            "type": "dien_tao_cau",
+            "question": "Câu 76: Hoàn thành đoạn hội thoại hỏi đường ngắn trên phố bằng cách điền 2 từ còn thiếu vào các chỗ trống (ngăn cách bởi dấu /): 'Entschuldigung, ich suche [1] alten Marktplatz. Wie komme ich am besten [2] Marktplatz?'",
+            "options": null,
+            "correct_answer": "den / zum",
+            "explanation": "'der Marktplatz' (giống đực) đứng sau động từ 'suchen' (Akkusativ) dùng mạo từ 'den' ('den alten Marktplatz'); đứng sau 'Wie komme ich ...?' (zu + Dativ) dùng 'zum' ('zum Marktplatz').",
+            "exp_reward": 25,
+            "extra_data": {
+                "slot1_accepted": [
+                    "den",
+                    "diesen",
+                    "einen"
+                ],
+                "slot2_accepted": [
+                    "zum",
+                    "zu dem"
+                ],
+                "accepted_answers": [
+                    "den / zum",
+                    "den/zum",
+                    "den / zu dem",
+                    "den/zu dem",
+                    "diesen / zum",
+                    "diesen/zum",
+                    "diesen / zu dem",
+                    "diesen/zu dem",
+                    "einen / zum",
+                    "einen/zum",
+                    "einen / zu dem",
+                    "einen/zu dem"
+                ],
+                "translation": "Xin lỗi, tôi đang tìm quảng trường chợ cổ. Tốt nhất thì tôi đi đến quảng trường chợ bằng cách nào?"
+            }
         },
         {
-                "type": "dien_tao_cau",
-                "question": "Câu 77: Hoàn thành câu chỉ đường với dạng đúng của số thứ tự 'erste' (1.) vào chỗ trống [1] và 'zweite' (2.) vào chỗ trống [2] (ngăn cách bởi dấu /): 'Nehmen Sie bitte die [1] Straße rechts und biegen Sie dann an der [2] Kreuzung wieder links ab!'",
-                "options": null,
-                "correct_answer": "erste / zweiten",
-                "explanation": "Sau 'die' ở Akkusativ giống cái dùng 'erste' ('die erste Straße'); sau 'an der' ở Dativ giống cái bắt buộc thêm đuôi -n thành 'zweiten' ('an der zweiten Kreuzung').",
-                "exp_reward": 25,
-                "extra_data": {
-                        "accepted_answers": [
-                                "erste / zweiten",
-                                "erste/zweiten"
-                        ],
-                        "translation": "Xin Ngài hãy đi con đường thứ nhất bên phải và sau đó tại ngã tư thứ hai lại rẽ trái!"
-                }
+            "type": "dien_tao_cau",
+            "question": "Câu 77: Hoàn thành câu chỉ đường bằng cách điền dạng đúng của số thứ tự 1. vào chỗ trống [1] và 2. vào chỗ trống [2] (ngăn cách bởi dấu /): 'Nehmen Sie bitte die [1] Straße rechts und biegen Sie dann an der [2] Kreuzung wieder links ab!'",
+            "options": null,
+            "correct_answer": "erste / zweiten",
+            "explanation": "Sau 'die' ở Akkusativ giống cái dùng 'erste' ('die erste Straße'); sau 'an der' ở Dativ giống cái bắt buộc thêm đuôi -n thành 'zweiten' ('an der zweiten Kreuzung').",
+            "exp_reward": 25,
+            "extra_data": {
+                "slot1_accepted": [
+                    "erste"
+                ],
+                "slot2_accepted": [
+                    "zweiten"
+                ],
+                "accepted_answers": [
+                    "erste / zweiten",
+                    "erste/zweiten"
+                ],
+                "translation": "Quý vị hãy đi con đường thứ nhất bên phải, rồi sau đó rẽ trái lại ở ngã tư thứ hai!"
+            }
         },
         {
                 "type": "nghe_dien",

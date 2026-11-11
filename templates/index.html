@@ -1652,6 +1652,18 @@
                 .trim();
         }
 
+        function normalizeGermanSlot(str) {
+            if (!str || typeof str !== 'string') return '';
+            let s = str.trim().toLowerCase();
+            s = s.replace(/[.,!?;:…]+$/, '').trim();
+            s = s.replace(/\s+/g, ' ');
+            s = s.replace(/ä/g, 'ae')
+                 .replace(/ö/g, 'oe')
+                 .replace(/ü/g, 'ue')
+                 .replace(/ß/g, 'ss');
+            return s;
+        }
+
         function getCorrectOptionIndex(ex) {
             if (!ex || !ex.options || !Array.isArray(ex.options) || ex.options.length === 0) return -1;
             let extra = {};
@@ -1854,8 +1866,8 @@
                             : 'Nhập đáp án tiếng Đức của bạn... (nhấn Enter để kiểm tra và chuyển câu)');
                     inputHtml = `
                         <div class="flex gap-2 mt-3">
-                            <input id="ex-input-${i}" value="${cleanAns.replace(/"/g, '&quot;')}" oninput="handleExerciseInputChange(${i})" onfocus="activeInputId='ex-input-${i}'" onkeydown="handleExerciseInputKeydown(event, ${i})" type="text" placeholder="${placeholderText}" class="flex-1 px-4 py-2.5 rounded-xl ${isDone ? 'bg-emerald-50/40 border-2 border-emerald-400 font-bold text-emerald-950' : 'bg-white border border-slate-200'} text-sm focus:outline-none focus:border-indigo-500" spellcheck="false" autocorrect="off" autocapitalize="off" autocomplete="off">
-                            <button onclick="checkExerciseAnswer(${i}, document.getElementById('ex-input-${i}').value)" class="px-5 py-2.5 rounded-xl ${isDone ? 'bg-emerald-600 hover:bg-emerald-700' : 'bg-indigo-600 hover:bg-indigo-500'} text-white font-bold text-sm shadow-sm transition cursor-pointer shrink-0">
+                            <input id="ex-input-${i}" value="${cleanAns.replace(/"/g, '&quot;')}" ${isDone ? 'disabled readonly' : ''} oninput="handleExerciseInputChange(${i})" onfocus="activeInputId='ex-input-${i}'" onkeydown="handleExerciseInputKeydown(event, ${i})" type="text" placeholder="${placeholderText}" class="flex-1 px-4 py-2.5 rounded-xl ${isDone ? 'bg-emerald-50/40 border-2 border-emerald-400 font-bold text-emerald-950' : 'bg-white border border-slate-200'} text-sm focus:outline-none focus:border-indigo-500" spellcheck="false" autocorrect="off" autocapitalize="off" autocomplete="off">
+                            <button id="ex-btn-${i}" ${isDone ? 'disabled' : ''} onclick="checkExerciseAnswer(${i}, document.getElementById('ex-input-${i}').value)" class="px-5 py-2.5 rounded-xl ${isDone ? 'bg-emerald-600 cursor-default' : 'bg-indigo-600 hover:bg-indigo-500 cursor-pointer'} text-white font-bold text-sm shadow-sm transition shrink-0">
                                 ${isDone ? '✓ Đã xong' : 'Kiểm tra'}
                             </button>
                         </div>
@@ -1934,7 +1946,7 @@
             const inputEl = document.getElementById(`ex-input-${index}`);
             if (!inputEl) return;
             const card = document.getElementById(`ex-card-${index}`);
-            const checkBtn = inputEl.nextElementSibling;
+            const checkBtn = document.getElementById(`ex-btn-${index}`) || inputEl.nextElementSibling;
 
             // Nếu thẻ hoặc ô input đang ở trạng thái báo đỏ (làm sai trước đó)
             if (card && card.classList.contains('border-rose-300')) {
@@ -1946,6 +1958,7 @@
             if (checkBtn && checkBtn.innerText.includes('Thử lại')) {
                 checkBtn.className = "px-5 py-2.5 rounded-xl bg-indigo-600 hover:bg-indigo-700 text-white font-bold text-sm shadow-sm transition cursor-pointer shrink-0";
                 checkBtn.innerText = "Kiểm tra";
+                checkBtn.disabled = false;
             }
         }
 
@@ -2159,61 +2172,46 @@
                 ex._isUserCorrect = isCorrect;
             } else {
                 if (isMultiSlot) {
-                    const candidates = [ex.correct_answer];
-                    if (extra && Array.isArray(extra.accepted_answers)) {
-                        candidates.push(...extra.accepted_answers);
-                    }
                     const rawUser = String(userAnswer || '').trim();
-                    let uParts = [];
-                    if (rawUser.includes('/')) {
-                        uParts = rawUser.split('/').map(p => p.trim()).filter(Boolean);
-                    } else if (rawUser.includes(',') || rawUser.includes(';')) {
-                        uParts = rawUser.split(/[,;]/).map(p => p.trim()).filter(Boolean);
-                    } else {
-                        uParts = rawUser.split(/\s+/).map(p => p.trim()).filter(Boolean);
-                    }
+                    const uParts = rawUser.split('/').map(p => p.trim());
 
-                    // Nếu người dùng chỉ nhập 1 từ duy nhất (hoặc để trống): BẮT BUỘC KHÔNG CHẤP NHẬN vì thiếu từ ở vị trí [2]
-                    if (uParts.length < 2) {
+                    // Câu ĐÚNG chỉ khi có ĐÚNG 2 phần, thiếu một phần hoặc thừa một phần đều SAI
+                    if (uParts.length !== 2 || !uParts[0] || !uParts[1]) {
                         isCorrect = false;
                     } else {
-                        // Mở rộng các phương án nếu có biến thể ngăn cách bởi ||, \n, hoặc
-                        const expandedCandidates = [];
-                        candidates.forEach(cand => {
-                            if (!cand) return;
-                            if (typeof cand === 'string' && (cand.includes('||') || cand.includes('\n') || /\s+hoặc\s+/i.test(cand))) {
-                                cand.split(/\|\||\n|\s+hoặc\s+/i).forEach(p => {
-                                    const tr = p.trim();
-                                    if (tr) expandedCandidates.push(tr);
-                                });
-                            } else {
-                                expandedCandidates.push(cand);
-                            }
-                        });
+                        const u1 = normalizeGermanSlot(uParts[0]);
+                        const u2 = normalizeGermanSlot(uParts[1]);
 
-                        isCorrect = expandedCandidates.some(cand => {
-                            if (!cand) return false;
-                            // 1. Kiểm tra khớp toàn chuỗi trước (nếu người dùng gõ trực tiếp tương đương)
-                            if (typeof checkGermanAnswerEquivalence === 'function' && checkGermanAnswerEquivalence(rawUser, cand, { isMultiSlot: false })) {
-                                return true;
+                        if (extra && Array.isArray(extra.slot1_accepted) && Array.isArray(extra.slot2_accepted)) {
+                            // Chấm theo từng ô chuẩn hóa cho Câu 68-77
+                            const slot1Norms = extra.slot1_accepted.map(normalizeGermanSlot);
+                            const slot2Norms = extra.slot2_accepted.map(normalizeGermanSlot);
+                            isCorrect = slot1Norms.includes(u1) && slot2Norms.includes(u2);
+                        } else {
+                            const candidates = [ex.correct_answer];
+                            if (extra && Array.isArray(extra.accepted_answers)) {
+                                candidates.push(...extra.accepted_answers);
                             }
-                            // 2. Tách từng slot của đáp án mẫu
-                            let cParts = [];
-                            if (String(cand).includes('/')) {
-                                cParts = String(cand).split('/').map(p => p.trim()).filter(Boolean);
-                            } else if (String(cand).includes(',') || String(cand).includes(';')) {
-                                cParts = String(cand).split(/[,;]/).map(p => p.trim()).filter(Boolean);
-                            } else {
-                                cParts = String(cand).split(/\s+/).map(p => p.trim()).filter(Boolean);
-                            }
-
-                            if (cParts.length !== uParts.length) return false;
-                            return uParts.every((u, idx) => {
-                                return (typeof checkGermanAnswerEquivalence === 'function')
-                                    ? checkGermanAnswerEquivalence(u, cParts[idx], { isMultiSlot: false })
-                                    : normalizeAnswer(u) === normalizeAnswer(cParts[idx]);
+                            const expandedCandidates = [];
+                            candidates.forEach(cand => {
+                                if (!cand) return;
+                                if (typeof cand === 'string' && (cand.includes('||') || cand.includes('\n') || /\s+hoặc\s+/i.test(cand))) {
+                                    cand.split(/\|\||\n|\s+hoặc\s+/i).forEach(p => {
+                                        const tr = p.trim();
+                                        if (tr) expandedCandidates.push(tr);
+                                    });
+                                } else {
+                                    expandedCandidates.push(cand);
+                                }
                             });
-                        });
+
+                            isCorrect = expandedCandidates.some(cand => {
+                                if (!cand) return false;
+                                const cParts = String(cand).split('/').map(p => p.trim());
+                                if (cParts.length !== 2) return false;
+                                return normalizeGermanSlot(cParts[0]) === u1 && normalizeGermanSlot(cParts[1]) === u2;
+                            });
+                        }
                     }
                 } else {
                     // Ưu tiên chấm theo Rubric Bài 8 (Câu 46 -> Câu 57 dịch Đức -> Việt)
@@ -2462,11 +2460,14 @@
                     const inputEl = document.getElementById(`ex-input-${index}`);
                     if (inputEl) {
                         inputEl.className = "flex-1 px-4 py-2.5 rounded-xl bg-emerald-50/40 border-2 border-emerald-400 font-bold text-emerald-950 text-sm focus:outline-none";
-                        const checkBtn = inputEl.nextElementSibling;
-                        if (checkBtn) {
-                            checkBtn.className = "px-5 py-2.5 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-sm shadow-sm transition cursor-pointer shrink-0";
-                            checkBtn.innerText = "✓ Đã xong";
-                        }
+                        inputEl.disabled = true;
+                        inputEl.readOnly = true;
+                    }
+                    const checkBtn = document.getElementById(`ex-btn-${index}`) || (inputEl ? inputEl.nextElementSibling : null);
+                    if (checkBtn) {
+                        checkBtn.className = "px-5 py-2.5 rounded-xl bg-emerald-600 text-white font-bold text-sm shadow-sm transition shrink-0 cursor-default";
+                        checkBtn.innerText = "✓ Đã xong";
+                        checkBtn.disabled = true;
                     }
                     if (card && isMultipleChoice) {
                         const optButtons = card.querySelectorAll('button[onclick^="selectMultipleChoice"]');
@@ -2517,16 +2518,20 @@
                 const inputEl = document.getElementById(`ex-input-${index}`);
                 if (inputEl) {
                     inputEl.className = "flex-1 px-4 py-2.5 rounded-xl bg-rose-50/40 border-2 border-rose-400 font-bold text-rose-950 text-sm focus:outline-none";
-                    const checkBtn = inputEl.nextElementSibling;
+                    inputEl.disabled = false;
+                    inputEl.readOnly = false;
+                    const checkBtn = document.getElementById(`ex-btn-${index}`) || inputEl.nextElementSibling;
                     if (checkBtn) {
                         checkBtn.className = "px-5 py-2.5 rounded-xl bg-rose-600 hover:bg-rose-700 text-white font-bold text-sm shadow-sm transition cursor-pointer shrink-0";
                         checkBtn.innerText = "✗ Thử lại";
+                        checkBtn.disabled = false;
                     }
                     inputEl.oninput = function() {
                         inputEl.className = "flex-1 px-4 py-2.5 rounded-xl bg-slate-50 border border-slate-200 focus:border-indigo-500 focus:bg-white text-sm font-semibold text-slate-800 focus:outline-none transition";
                         if (checkBtn) {
                             checkBtn.className = "px-5 py-2.5 rounded-xl bg-indigo-600 hover:bg-indigo-700 text-white font-bold text-sm shadow-sm transition cursor-pointer shrink-0";
                             checkBtn.innerText = "Kiểm tra";
+                            checkBtn.disabled = false;
                         }
                     };
                 }

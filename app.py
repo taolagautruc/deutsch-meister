@@ -287,7 +287,7 @@ def ensure_db_initialized():
                 need_reseed_b8 = True
             cursor.execute("SELECT question FROM exercises WHERE lesson_id = ? AND question LIKE '%Câu 66%' LIMIT 1;", (b8_id,))
             row_q66 = cursor.fetchone()
-            if not row_q66 or 'theo lộ trình' not in (row_q66["question"] or ''):
+            if not row_q66 or 'lộ trình' not in (row_q66["question"] or ''):
                 need_reseed_b8 = True
         if need_reseed_b8:
             from lessons.a1.seed_a1_b8 import seed_lesson_8
