@@ -1255,7 +1255,7 @@
             const lId = currentLesson.id;
             let activeSession = loadActiveLessonSession(lId);
             if (activeSession && lId === 22) {
-                const hasOutdatedL8 = (activeSession.allRenderExercises || []).some(ex => 
+                const hasOutdatedL8 = (activeSession.version !== CURRENT_SESSION_VERSION) || (activeSession.allRenderExercises || []).some(ex => 
                     (ex.correct_answer && (ex.correct_answer.includes('để vào') || ex.correct_answer.includes('Xin lỗi Ngài'))) ||
                     (ex.question && (ex.question.includes('bạn thân') || ex.question.includes('lịch sự') || ex.question.includes('erste (1.)') || (ex.question.includes('Câu 77') && ex.question.includes('erste')) || ex.question.includes('Tình huống của Khách du lịch') || ex.question.includes('Nhóm Địa danh') || ex.question.includes('(Wo? + Nominativ)')))
                 );
@@ -2328,6 +2328,7 @@
                     );
                     const l8QMatch = isLesson8 && (ex.question || '').match(/Câu\s+(4[6-9]|5[0-7])\b/i);
                     const l8VDMatch = isLesson8 && (ex.question || '').match(/Câu\s+(8[7-9]|9[0-3])\b/i);
+                    const l8DVMatch = isLesson8 && (ex.question || '').match(/Câu\s+(9[4-9]|100)\b/i);
                     if (l8QMatch && typeof evaluateLesson8Translation === 'function') {
                         const qNum = parseInt(l8QMatch[1], 10);
                         isCorrect = evaluateLesson8Translation(userAnswer, qNum);
@@ -2336,6 +2337,8 @@
                         const res = evaluateLesson8VDTranslation(userAnswer, qNum);
                         isCorrect = res.isCorrect;
                         ex._vdHint = res.hint;
+                    } else if (l8DVMatch && typeof evaluateLesson8DVTranslation === 'function' && evaluateLesson8DVTranslation(userAnswer, parseInt(l8DVMatch[1], 10))) {
+                        isCorrect = true;
                     } else {
                         const candidates = [ex.correct_answer];
                         if (extra && Array.isArray(extra.accepted_answers)) {
