@@ -620,25 +620,141 @@ function normalizeVietnameseTranslation(str) {
     s = s.replace(/\b1\b/g, 'một');
     s = s.replace(/\b2\b/g, 'hai');
 
-    // Cho phép các đại từ trang trọng tương đương: ngài <-> bạn / ông / bà / anh / chị (khi dịch đại từ "Sie")
-    s = s.replace(/\b(ngài|ông|bà|anh|chị)\b/g, 'bạn');
+    // Tuyến xe buýt 200
+    s = s.replace(/\b(?:tuyến\s+)?xe\s+buýt\s+(?:tuyến\s+)?(?:số\s+)?200\b/g, 'xe buýt 200');
 
-    // Các cặp đồng nghĩa phổ biến trong câu dịch Đức -> Việt
-    s = s.replace(/\bbưu điện chính\b/g, 'bưu điện trung tâm');
-    s = s.replace(/\bquẹo phải\b/g, 'rẽ phải');
-    s = s.replace(/\bquẹo trái\b/g, 'rẽ trái');
-    s = s.replace(/\btại đèn giao thông\b/g, 'ở đèn giao thông');
-    s = s.replace(/\btrước tiên\b/g, 'đầu tiên');
-    s = s.replace(/\btrước hết\b/g, 'đầu tiên');
-    s = s.replace(/\b(tiếp theo|tiếp đó|rồi sau đó)\b/g, 'sau đó');
-    s = s.replace(/\b(băng qua|vượt qua)\b/g, 'đi qua');
+    // Đại từ trang trọng & nhân xưng
+    s = s.replace(/\b(ngài|ông|bà|anh|chị)\b/g, 'bạn');
+    s = s.replace(/\b(các\s+cậu|chúng\s+ta)\b/g, 'các bạn');
+
+    // Các buổi trong ngày
+    s = s.replace(/\bvào\s+buổi\s+(sáng|tối|chiều|trưa)\b/g, 'buổi $1');
+    s = s.replace(/\b(các\s+sinh\s+viên|những\s+sinh\s+viên|các\s+bạn\s+sinh\s+viên)\b/g, 'sinh viên');
+
+    // Động từ di chuyển, nhìn thấy, rẽ hướng
+    s = s.replace(/\b(nhìn\s+thấy)\b/g, 'thấy');
+    s = s.replace(/\b(tản\s+bộ)\b/g, 'đi dạo');
+    s = s.replace(/\b(đi\s+đến|đi\s+vào|đi\s+tới|tới)\b/g, 'đến');
+    s = s.replace(/\b(lại\s+thích|lại\s+muốn)\b/g, 'thích');
+    s = s.replace(/\b(quẹo\s+phải)\b/g, 'rẽ phải');
+    s = s.replace(/\b(quẹo\s+trái)\b/g, 'rẽ trái');
+    s = s.replace(/\b(băng\s+qua|vượt\s+qua)\b/g, 'đi qua');
+    s = s.replace(/\b(chạy\s+ngang\s+qua|đi\s+ngang\s+qua|chạy\s+qua)\b/g, 'đi qua');
+    s = s.replace(/\b(chạy\s+xuyên\s+qua|đi\s+bộ\s+xuyên\s+qua)\b/g, 'đi xuyên qua');
+    s = s.replace(/\b(?:lái\s+xe\s+)?(?:xuyên\s+qua|đi\s+qua|qua)\b/g, 'lái xe qua');
+    s = s.replace(/\b(dừng\s+lại|đỗ\s+lại|đỗ)\b/g, 'dừng');
+
+    // Giới từ đích đến
+    s = s.replace(/\b(cho\s+đến|đến\s+tận|tới\s+tận|tới)\b/g, 'đến');
+
+    // Vị trí trái / phải
+    s = s.replace(/\b(ở\s+phía\s+bên\s+tay\s+trái|ở\s+bên\s+tay\s+trái|bên\s+tay\s+trái|ở\s+phía\s+bên\s+trái|ở\s+bên\s+trái|phía\s+bên\s+trái)\b/g, 'bên trái');
+    s = s.replace(/\b(ở\s+phía\s+bên\s+tay\s+phải|ở\s+bên\s+tay\s+phải|bên\s+tay\s+phải|ở\s+phía\s+bên\s+phải|ở\s+bên\s+phải|phía\s+bên\s+phải)\b/g, 'bên phải');
+
+    // Địa điểm
+    s = s.replace(/\bbưu\s+điện\s+chính\b/g, 'bưu điện trung tâm');
+    s = s.replace(/\btại\s+đèn\s+giao\s+thông\b/g, 'ở đèn giao thông');
+    s = s.replace(/\btrung\s+tâm\s+mua\s+sắm\s+lớn\b/g, 'trung tâm thương mại lớn');
+    s = s.replace(/\b(?:đường\s+)?hầm\s+ngắn\b/g, 'đường hầm ngắn');
+    s = s.replace(/\b(ngay\s+bên\s+cạnh|ngay\s+cạnh|cạnh)\b/g, 'bên cạnh');
+    s = s.replace(/\bdọc\s+bờ\s+sông\b/g, 'dọc theo bờ sông');
+
+    // Rạp chiếu phim & phim
+    s = s.replace(/\b(?:ở\s+trong|trong|ở|tại)\s+rạp(?:\s+chiếu\s+phim)?\b/g, 'ở rạp chiếu phim');
+    s = s.replace(/\b(?:xem\s+)?(?:một|1)\s+bộ\s+phim\b/g, 'xem một bộ phim');
+    s = s.replace(/\bxem\s+phim\b/g, 'xem một bộ phim');
+
+    // Cụm từ liên kết & chuyển tiếp
+    s = s.replace(/\b(trước\s+tiên|trước\s+hết)\b/g, 'đầu tiên');
+    s = s.replace(/\b(tiếp\s+theo|tiếp\s+đó|rồi\s+sau\s+đó|rồi)\b/g, 'sau đó');
+
+    // Lời yêu cầu lịch sự & trợ từ
+    s = s.replace(/\b(các\s+bạn\s+cứ|các\s+bạn\s+hãy|bạn\s+cứ|bạn\s+hãy)\b/g, 'các bạn');
+    s = s.replace(/\b(các\s+bạn\s+sẽ|bạn\s+sẽ)\b/g, 'các bạn');
+    s = s.replace(/\b(?:xin\s+)?(?:các\s+bạn|các\s+cậu|bạn|ngài)\s+(?:hãy|vui\s+lòng)?\b/g, 'hãy');
+    s = s.replace(/\b(?:làm\s+ơn\s+)?hãy\b/g, 'hãy');
+    s = s.replace(/\b(làm\s+ơn|xin\s+hãy)\b/g, 'hãy');
+    s = s.replace(/\b(làm\s+thế\s+nào\s+tôi|làm\s+thế\s+nào\s+để|cách\s+để|cách)\b/g, 'làm thế nào');
+    s = s.replace(/\b(đến\s+được)\b/g, 'đến');
+    s = s.replace(/\b(được\s+không)\b/g, 'không');
+    s = s.replace(/\bvà\s+sau\s+đó\b/g, 'sau đó');
 
     return s.replace(/\s+/g, ' ').trim();
+}
+
+function evaluateLesson8DVTranslation(userAns, qNum) {
+    if (!userAns) return false;
+    const norm = normalizeVietnameseTranslation(userAns);
+    if (!norm) return false;
+
+    if (qNum === 94) {
+        const hasStation = norm.includes('nhà ga');
+        const hasDist = norm.includes('ba trăm mét') || norm.includes('300') || norm.includes('ba trăm');
+        const hasPost = norm.includes('bưu điện');
+        const hasTurn = norm.includes('rẽ phải') || norm.includes('quẹo phải');
+        const hasAmpel = norm.includes('đèn giao thông');
+        const hasSecond = norm.includes('thứ hai') || norm.includes('hai');
+        return hasStation && hasDist && hasPost && hasTurn && hasAmpel && hasSecond;
+    }
+
+    if (qNum === 95) {
+        const hasCastle = norm.includes('lâu đài') || norm.includes('cung điện');
+        const hasPark = norm.includes('công viên');
+        const hasBridge = norm.includes('cầu');
+        const hasWant = norm.includes('muốn') || norm.includes('thích');
+        const hasAction = norm.includes('đi') || norm.includes('chạy') || norm.includes('bộ');
+        return hasCastle && hasPark && hasBridge && hasWant && hasAction;
+    }
+
+    if (qNum === 96) {
+        const hasBus = norm.includes('xe buýt') || norm.includes('200');
+        const hasAlex = norm.includes('alexander') || norm.includes('alexanderplatz');
+        const hasDom = norm.includes('nhà thờ') || norm.includes('dom') || norm.includes('berlin');
+        const hasUni = norm.includes('humboldt') || norm.includes('đại học');
+        const hasZoo = norm.includes('bách thú') || norm.includes('sở thú') || norm.includes('vườn thú') || norm.includes('zoologischer');
+        return hasBus && hasAlex && hasDom && hasUni && hasZoo;
+    }
+
+    if (qNum === 97) {
+        const hasSorry = norm.includes('xin lỗi') || norm.includes('cho tôi');
+        const hasMap = norm.includes('bản đồ');
+        const hasWalk = norm.includes('đi') || norm.includes('đường') || norm.includes('bộ');
+        const hasOffice = norm.includes('thủ tướng') || norm.includes('bundeskanzleramt');
+        return hasSorry && hasMap && hasWalk && hasOffice;
+    }
+
+    if (qNum === 98) {
+        const hasRiver = norm.includes('bờ sông') || norm.includes('sông');
+        const hasTime = norm.includes('hai mươi phút') || norm.includes('20') || norm.includes('hai mươi');
+        const hasIsland = norm.includes('đảo') || norm.includes('bảo tàng') || norm.includes('museumsinsel');
+        const hasLeft = norm.includes('bên trái') || norm.includes('trái');
+        return hasRiver && hasTime && hasIsland && hasLeft;
+    }
+
+    if (qNum === 99) {
+        const hasMorning = norm.includes('sáng');
+        const hasStudents = norm.includes('sinh viên');
+        const hasGallery = norm.includes('phòng trưng bày') || norm.includes('nationalgalerie');
+        const hasEvening = norm.includes('tối');
+        const hasCinema = norm.includes('rạp') || norm.includes('phim') || norm.includes('kino');
+        return hasMorning && hasStudents && hasGallery && hasEvening && hasCinema;
+    }
+
+    if (qNum === 100) {
+        const hasMall = norm.includes('thương mại') || norm.includes('mua sắm') || norm.includes('trung tâm');
+        const hasLeft = norm.includes('rẽ trái') || norm.includes('quẹo trái') || norm.includes('trái');
+        const hasTunnel = norm.includes('hầm');
+        const hasBank = norm.includes('ngân hàng') || norm.includes('bank');
+        return hasMall && hasLeft && hasTunnel && hasBank;
+    }
+
+    return false;
 }
 
 if (typeof window !== 'undefined') {
     window.normalizeVietnameseTranslation = normalizeVietnameseTranslation;
     window.hasVietnameseChars = hasVietnameseChars;
+    window.evaluateLesson8DVTranslation = evaluateLesson8DVTranslation;
 }
 
 function checkGermanAnswerEquivalence(userAns, correctAns, options = {}) {
@@ -674,6 +790,11 @@ function checkGermanAnswerEquivalence(userAns, correctAns, options = {}) {
                 const qNum = parseInt(l8VDMatch[1], 10);
                 const res = evaluateLesson8VDTranslation(userAns, qNum);
                 return res.isCorrect;
+            }
+            const l8DVMatch = String(options.question).match(/Câu\s+(9[4-9]|100)\b/i);
+            if (l8DVMatch && typeof evaluateLesson8DVTranslation === 'function') {
+                const qNum = parseInt(l8DVMatch[1], 10);
+                if (evaluateLesson8DVTranslation(userAns, qNum)) return true;
             }
         }
     }
