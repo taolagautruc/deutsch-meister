@@ -2354,15 +2354,24 @@
                             }
                         });
 
+                        const isDeToViEx = (ex && (ex.exercise_type === 'dich_nghia_dv' || ex.exercise_type === 'dich_cau_dv' || ex.exercise_type === 'dich')) &&
+                                           (ex.question && /(?:sang tiếng việt|đức\s*→\s*việt|dịch câu sau sang tiếng việt)/i.test(ex.question));
+
                         isCorrect = expandedCandidates.some(cand => {
                             if (!cand) return false;
+                            if (isDeToViEx || (hasVietnameseChars(cand) && hasVietnameseChars(userAnswer))) {
+                                if (normalizeVietnameseTranslation(userAnswer) === normalizeVietnameseTranslation(cand)) {
+                                    return true;
+                                }
+                            }
                             return (typeof checkGermanAnswerEquivalence === 'function')
                                 ? checkGermanAnswerEquivalence(userAnswer, cand, {
                                     isMultiSlot: false,
                                     question: ex.question,
                                     lesson_id: currentLesson ? currentLesson.id : null,
                                     lesson_title: currentLesson ? currentLesson.title : '',
-                                    isLesson8: isLesson8
+                                    isLesson8: isLesson8,
+                                    isDeToVi: isDeToViEx
                                 })
                                 : normalizeAnswer(userAnswer) === normalizeAnswer(cand);
                         });

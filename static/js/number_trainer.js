@@ -598,8 +598,61 @@ function evaluateLesson8VDTranslation(userAns, qNum) {
     return { isCorrect: false, hint: '' };
 }
 
+function hasVietnameseChars(str) {
+    return /[àáạảãâầấậẩẫăằắặẳẵèéẹẻẽêềếệểễìíịỉĩòóọỏõôồốộổỗơờớợởỡùúụủũưừứựửữỳýỵỷỹđ]/i.test(str || '');
+}
+
+function normalizeVietnameseTranslation(str) {
+    if (!str || typeof str !== 'string') return '';
+    let s = str.trim().toLowerCase().normalize('NFC');
+    // Bỏ qua toàn bộ dấu câu
+    s = s.replace(/[.,!?;:\"\'„“”«»‘`’–—\-\(\)\[\]\{\}\/\\~]+/g, ' ');
+    s = s.replace(/\s+/g, ' ').trim();
+
+    // Tự động quy đổi tương đương giữa chữ số và chữ viết tiếng Việt
+    s = s.replace(/\b300\s*(?:m|mét|met)\b/g, 'ba trăm mét');
+    s = s.replace(/\bba\s+trăm\s*(?:m|mét|met)\b/g, 'ba trăm mét');
+    s = s.replace(/\b300\b/g, 'ba trăm');
+    s = s.replace(/\b20\b/g, 'hai mươi');
+    s = s.replace(/\bthứ\s*2\b/g, 'thứ hai');
+    s = s.replace(/\bthứ\s*1\b/g, 'thứ nhất');
+    s = s.replace(/\bthứ\s*một\b/g, 'thứ nhất');
+    s = s.replace(/\b1\b/g, 'một');
+    s = s.replace(/\b2\b/g, 'hai');
+
+    // Cho phép các đại từ trang trọng tương đương: ngài <-> bạn / ông / bà / anh / chị (khi dịch đại từ "Sie")
+    s = s.replace(/\b(ngài|ông|bà|anh|chị)\b/g, 'bạn');
+
+    // Các cặp đồng nghĩa phổ biến trong câu dịch Đức -> Việt
+    s = s.replace(/\bbưu điện chính\b/g, 'bưu điện trung tâm');
+    s = s.replace(/\bquẹo phải\b/g, 'rẽ phải');
+    s = s.replace(/\bquẹo trái\b/g, 'rẽ trái');
+    s = s.replace(/\btại đèn giao thông\b/g, 'ở đèn giao thông');
+    s = s.replace(/\btrước tiên\b/g, 'đầu tiên');
+    s = s.replace(/\btrước hết\b/g, 'đầu tiên');
+    s = s.replace(/\b(tiếp theo|tiếp đó|rồi sau đó)\b/g, 'sau đó');
+    s = s.replace(/\b(băng qua|vượt qua)\b/g, 'đi qua');
+
+    return s.replace(/\s+/g, ' ').trim();
+}
+
+if (typeof window !== 'undefined') {
+    window.normalizeVietnameseTranslation = normalizeVietnameseTranslation;
+    window.hasVietnameseChars = hasVietnameseChars;
+}
+
 function checkGermanAnswerEquivalence(userAns, correctAns, options = {}) {
     if (!userAns || !correctAns) return false;
+
+    // So sánh bản dịch tiếng Việt (Đức -> Việt)
+    const isViTarget = Boolean(options && (options.isDeToVi || options.isViTranslation)) ||
+                       (options && options.question && /(?:sang tiếng việt|đức\s*→\s*việt|dịch câu sau sang tiếng việt)/i.test(options.question)) ||
+                       (hasVietnameseChars(correctAns) && hasVietnameseChars(userAns));
+    if (isViTarget && hasVietnameseChars(correctAns)) {
+        if (normalizeVietnameseTranslation(userAns) === normalizeVietnameseTranslation(correctAns)) {
+            return true;
+        }
+    }
 
     // Kiểm tra nhanh theo Rubric Bài 8 (Câu 46 -> 57 dạng Dịch Đức -> Việt, Câu 87 -> 93 dạng Dịch Việt -> Đức)
     if (options && options.question) {
