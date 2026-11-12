@@ -2219,7 +2219,351 @@ const GERMAN_LEXIKON_DB = [
         rule: "Hậu tố -um đổi thành -en ở số nhiều: die Zentren. Giống trung (das). Đi tới trung tâm: ins Zentrum.",
         example: "Die Museumsinsel liegt direkt im Zentrum von Berlin.",
         example_vi: "Đảo Bảo tàng nằm ngay tại trung tâm của Berlin."
-    }
+    },
+    {
+        word: "Wald", article: "der", gender: "der", plural: "die Wälder",
+        indefinite: "ein Wald", negation: "kein Wald",
+        meaning: "rừng", category: "Thiên nhiên & Điểm đến Du lịch (Natur & Reiseziele - Bài 9)",
+        rule: "Danh từ đơn âm tiết giống đực, số nhiều biến âm a -> ä và thêm đuôi -er (die Wälder).",
+        example: "Wir machen ein Picknick im Wald.",
+        example_vi: "Chúng tôi dã ngoại trong rừng."
+    },
+    {
+        word: "Berg", article: "der", gender: "der", plural: "die Berge",
+        indefinite: "ein Berg", negation: "kein Berg",
+        meaning: "núi", category: "Thiên nhiên & Điểm đến Du lịch (Natur & Reiseziele - Bài 9)",
+        rule: "Danh từ giống đực chỉ địa hình đồi núi, số nhiều thêm -e (die Berge).",
+        example: "Im Winter liegt auf dem Berg viel Schnee.",
+        example_vi: "Vào mùa đông trên núi có nhiều tuyết."
+    },
+    {
+        word: "See", article: "der", gender: "der", plural: "die Seen",
+        indefinite: "ein See", negation: "kein See",
+        meaning: "hồ", category: "Thiên nhiên & Điểm đến Du lịch (Natur & Reiseziele - Bài 9)",
+        rule: "Phân biệt der See (hồ nước) và die See (biển). Số nhiều thêm -n (die Seen).",
+        example: "Der See ist morgens ganz ruhig.",
+        example_vi: "Buổi sáng hồ hoàn toàn yên tĩnh."
+    },
+    {
+        word: "Strand", article: "der", gender: "der", plural: "die Strände",
+        indefinite: "ein Strand", negation: "kein Strand",
+        meaning: "bãi biển", category: "Thiên nhiên & Điểm đến Du lịch (Natur & Reiseziele - Bài 9)",
+        rule: "Số nhiều biến âm a -> ä và thêm đuôi -e (die Strände).",
+        example: "Die Kinder spielen am Strand.",
+        example_vi: "Những đứa trẻ chơi ở bãi biển."
+    },
+    {
+        word: "Bummel", article: "der", gender: "der", plural: "die Bummel",
+        indefinite: "ein Bummel", negation: "kein Bummel",
+        meaning: "cuộc đi dạo (phố)", category: "Thiên nhiên & Điểm đến Du lịch (Natur & Reiseziele - Bài 9)",
+        rule: "Danh từ giống đực đuôi -el, số nhiều giữ nguyên hình thức.",
+        example: "Nach dem Essen machen wir einen Bummel durch die Stadt.",
+        example_vi: "Sau bữa ăn chúng tôi đi dạo quanh thành phố."
+    },
+    {
+        word: "Urlaub", article: "der", gender: "der", plural: "die Urlaube",
+        indefinite: "ein Urlaub", negation: "kein Urlaub",
+        meaning: "kỳ nghỉ", category: "Thiên nhiên & Điểm đến Du lịch (Natur & Reiseziele - Bài 9)",
+        rule: "Khác với die Ferien (kỳ nghỉ học sinh), der Urlaub dành cho người đi làm. Số nhiều: die Urlaube.",
+        example: "Mein Urlaub war leider zu kurz.",
+        example_vi: "Kỳ nghỉ của tôi tiếc là quá ngắn."
+    },
+    {
+        word: "Reiseführer", article: "der", gender: "der", plural: "die Reiseführer",
+        indefinite: "ein Reiseführer", negation: "kein Reiseführer",
+        meaning: "sách hướng dẫn du lịch; hướng dẫn viên", category: "Thiên nhiên & Điểm đến Du lịch (Natur & Reiseziele - Bài 9)",
+        rule: "Danh từ ghép lấy giống từ cuối der Führer. Mang cả 2 nghĩa: cuốn sách hướng dẫn và người hướng dẫn viên.",
+        example: "Der Reiseführer hat viele Tipps für Wien.",
+        example_vi: "Cuốn sách hướng dẫn có nhiều mẹo cho Wien."
+    },
+    {
+        word: "Sonnenuntergang", article: "der", gender: "der", plural: "die Sonnenuntergänge",
+        indefinite: "ein Sonnenuntergang", negation: "kein Sonnenuntergang",
+        meaning: "hoàng hôn", category: "Thiên nhiên & Điểm đến Du lịch (Natur & Reiseziele - Bài 9)",
+        rule: "Ghép từ die Sonne + der Untergang -> mang giống đực der. Số nhiều: die Sonnenuntergänge.",
+        example: "Am Meer ist der Sonnenuntergang besonders schön.",
+        example_vi: "Bên biển hoàng hôn đặc biệt đẹp."
+    },
+    {
+        word: "Ausflug", article: "der", gender: "der", plural: "die Ausflüge",
+        indefinite: "ein Ausflug", negation: "kein Ausflug",
+        meaning: "chuyến đi chơi trong ngày", category: "Thiên nhiên & Điểm đến Du lịch (Natur & Reiseziele - Bài 9)",
+        rule: "Chuyến dã ngoại ngắn ngày, số nhiều biến âm u -> ü (die Ausflüge).",
+        example: "Am Sonntag machen wir einen Ausflug.",
+        example_vi: "Chủ nhật chúng tôi đi chơi một chuyến."
+    },
+    {
+        word: "Campingplatz", article: "der", gender: "der", plural: "die Campingplätze",
+        indefinite: "ein Campingplatz", negation: "kein Campingplatz",
+        meaning: "khu cắm trại", category: "Thiên nhiên & Điểm đến Du lịch (Natur & Reiseziele - Bài 9)",
+        rule: "Ghép lấy giống theo der Platz (quảng trường/khu đất). Số nhiều: die Campingplätze.",
+        example: "Auf dem Campingplatz stehen viele Zelte.",
+        example_vi: "Trên khu cắm trại có nhiều lều."
+    },
+    {
+        word: "Altstadt", article: "die", gender: "die", plural: "die Altstädte",
+        indefinite: "eine Altstadt", negation: "keine Altstadt",
+        meaning: "phố cổ", category: "Thiên nhiên & Điểm đến Du lịch (Natur & Reiseziele - Bài 9)",
+        rule: "Ghép từ alt + die Stadt -> mang giống cái die. Số nhiều: die Altstädte.",
+        example: "Die Altstadt von Hội An ist sehr schön.",
+        example_vi: "Phố cổ Hội An rất đẹp."
+    },
+    {
+        word: "Insel", article: "die", gender: "die", plural: "die Inseln",
+        indefinite: "eine Insel", negation: "keine Insel",
+        meaning: "hòn đảo", category: "Thiên nhiên & Điểm đến Du lịch (Natur & Reiseziele - Bài 9)",
+        rule: "Danh từ giống cái kết thúc bằng -el, số nhiều thêm -n (die Inseln). Thường đi với giới từ auf der Insel.",
+        example: "Auf der Insel gibt es keine Autos.",
+        example_vi: "Trên đảo không có ô tô."
+    },
+    {
+        word: "Sonne", article: "die", gender: "die", plural: "die Sonnen",
+        indefinite: "eine Sonne", negation: "keine Sonne",
+        meaning: "mặt trời", category: "Thiên nhiên & Điểm đến Du lịch (Natur & Reiseziele - Bài 9)",
+        rule: "Danh từ kết thúc bằng -e thường mang giống cái die. Số nhiều: die Sonnen.",
+        example: "Die Sonne scheint den ganzen Tag.",
+        example_vi: "Mặt trời chiếu sáng cả ngày."
+    },
+    {
+        word: "Alpen", article: "die", gender: "die", plural: "die Alpen",
+        indefinite: "–", negation: "keine Alpen",
+        meaning: "dãy An-pơ (Alps)", category: "Thiên nhiên & Điểm đến Du lịch (Natur & Reiseziele - Bài 9)",
+        rule: "Danh từ chỉ tồn tại ở dạng số nhiều (Pluraletantum): in den Alpen.",
+        example: "Im Winter fahren viele Touristen in die Alpen.",
+        example_vi: "Vào mùa đông nhiều khách du lịch đi lên dãy Alps."
+    },
+    {
+        word: "Besichtigung", article: "die", gender: "die", plural: "die Besichtigungen",
+        indefinite: "eine Besichtigung", negation: "keine Besichtigung",
+        meaning: "sự tham quan, buổi tham quan", category: "Thiên nhiên & Điểm đến Du lịch (Natur & Reiseziele - Bài 9)",
+        rule: "Danh từ có hậu tố -ung luôn luôn mang giống cái (die), số nhiều thêm -en.",
+        example: "Die Besichtigung des Schlosses dauert eine Stunde.",
+        example_vi: "Buổi tham quan lâu đài kéo dài một giờ."
+    },
+    {
+        word: "Radtour", article: "die", gender: "die", plural: "die Radtouren",
+        indefinite: "eine Radtour", negation: "keine Radtour",
+        meaning: "chuyến đạp xe", category: "Thiên nhiên & Điểm đến Du lịch (Natur & Reiseziele - Bài 9)",
+        rule: "Ghép từ das Rad + die Tour -> mang giống cái die. Số nhiều: die Radtouren.",
+        example: "Die Radtour war sehr anstrengend.",
+        example_vi: "Chuyến đạp xe rất mệt."
+    },
+    {
+        word: "Reise", article: "die", gender: "die", plural: "die Reisen",
+        indefinite: "eine Reise", negation: "keine Reise",
+        meaning: "chuyến du lịch, chuyến đi", category: "Thiên nhiên & Điểm đến Du lịch (Natur & Reiseziele - Bài 9)",
+        rule: "Danh từ giống cái kết thúc bằng -e, số nhiều thêm -n (die Reisen).",
+        example: "Die Reise nach Wien dauert vier Stunden.",
+        example_vi: "Chuyến đi đến Wien mất bốn tiếng."
+    },
+    {
+        word: "Landschaft", article: "die", gender: "die", plural: "die Landschaften",
+        indefinite: "eine Landschaft", negation: "keine Landschaft",
+        meaning: "phong cảnh, cảnh quan", category: "Thiên nhiên & Điểm đến Du lịch (Natur & Reiseziele - Bài 9)",
+        rule: "Hậu tố -schaft luôn luôn mang giống cái (die), số nhiều thêm -en.",
+        example: "Die Landschaft in den Bergen ist wunderschön.",
+        example_vi: "Phong cảnh trên núi tuyệt đẹp."
+    },
+    {
+        word: "Küste", article: "die", gender: "die", plural: "die Küsten",
+        indefinite: "eine Küste", negation: "keine Küste",
+        meaning: "bờ biển", category: "Thiên nhiên & Điểm đến Du lịch (Natur & Reiseziele - Bài 9)",
+        rule: "Danh từ giống cái kết thúc bằng -e, số nhiều thêm -n (die Küsten).",
+        example: "Wir fahren mit dem Bus die Küste entlang.",
+        example_vi: "Chúng tôi đi xe buýt dọc theo bờ biển."
+    },
+    {
+        word: "Pause", article: "die", gender: "die", plural: "die Pausen",
+        indefinite: "eine Pause", negation: "keine Pause",
+        meaning: "giờ nghỉ, sự nghỉ ngơi", category: "Thiên nhiên & Điểm đến Du lịch (Natur & Reiseziele - Bài 9)",
+        rule: "Đi kèm cụm cố định eine Pause machen. Số nhiều: die Pausen.",
+        example: "Wir machen eine Pause am See.",
+        example_vi: "Chúng tôi nghỉ một lát bên hồ."
+    },
+    {
+        word: "Meer", article: "das", gender: "das", plural: "die Meere",
+        indefinite: "ein Meer", negation: "kein Meer",
+        meaning: "biển", category: "Thiên nhiên & Điểm đến Du lịch (Natur & Reiseziele - Bài 9)",
+        rule: "Danh từ giống trung das Meer, số nhiều thêm -e (die Meere). Thường đi với am Meer.",
+        example: "Das Meer ist heute sehr ruhig.",
+        example_vi: "Hôm nay biển rất lặng."
+    },
+    {
+        word: "Reiseland", article: "das", gender: "das", plural: "die Reiseländer",
+        indefinite: "ein Reiseland", negation: "kein Reiseland",
+        meaning: "quốc gia du lịch", category: "Thiên nhiên & Điểm đến Du lịch (Natur & Reiseziele - Bài 9)",
+        rule: "Ghép lấy giống theo từ cuối das Land. Số nhiều: die Reiseländer.",
+        example: "Vietnam ist ein beliebtes Reiseland.",
+        example_vi: "Việt Nam là một quốc gia du lịch được ưa chuộng."
+    },
+    {
+        word: "Reiseziel", article: "das", gender: "das", plural: "die Reiseziele",
+        indefinite: "ein Reiseziel", negation: "kein Reiseziel",
+        meaning: "điểm đến du lịch", category: "Thiên nhiên & Điểm đến Du lịch (Natur & Reiseziele - Bài 9)",
+        rule: "Ghép lấy giống theo từ cuối das Ziel. Số nhiều: die Reiseziele.",
+        example: "Unser Reiseziel ist die Insel Cát Bà.",
+        example_vi: "Điểm đến của chúng tôi là đảo Cát Bà."
+    },
+    {
+        word: "Wetter", article: "das", gender: "das", plural: "–",
+        indefinite: "ein Wetter", negation: "kein Wetter",
+        meaning: "thời tiết", category: "Kỳ nghỉ: Chỗ ở, Phương tiện, Hành lý & Thời tiết (Urlaub - Bài 9)",
+        rule: "Danh từ giống trung chỉ tồn tại ở số ít (Singularetantum): das Wetter.",
+        example: "Das Wetter ist heute wunderbar.",
+        example_vi: "Hôm nay thời tiết tuyệt vời."
+    },
+    {
+        word: "Essen", article: "das", gender: "das", plural: "die Essen",
+        indefinite: "ein Essen", negation: "kein Essen",
+        meaning: "đồ ăn, bữa ăn", category: "Kỳ nghỉ: Chỗ ở, Phương tiện, Hành lý & Thời tiết (Urlaub - Bài 9)",
+        rule: "Danh từ hóa từ động từ nguyên mẫu eten -> luôn mang giống trung das Essen.",
+        example: "Das Essen im Hotel war sehr gut.",
+        example_vi: "Đồ ăn ở khách sạn rất ngon."
+    },
+    {
+        word: "Dorf", article: "das", gender: "das", plural: "die Dörfer",
+        indefinite: "ein Dorf", negation: "kein Dorf",
+        meaning: "làng", category: "Kỳ nghỉ: Chỗ ở, Phương tiện, Hành lý & Thời tiết (Urlaub - Bài 9)",
+        rule: "Danh từ giống trung das Dorf, số nhiều biến âm o -> ö và thêm -er (die Dörfer).",
+        example: "Mein Opa wohnt in einem kleinen Dorf.",
+        example_vi: "Ông tôi sống trong một ngôi làng nhỏ."
+    },
+    {
+        word: "Picknick", article: "das", gender: "das", plural: "die Picknicks",
+        indefinite: "ein Picknick", negation: "kein Picknick",
+        meaning: "buổi dã ngoại ăn ngoài trời", category: "Kỳ nghỉ: Chỗ ở, Phương tiện, Hành lý & Thời tiết (Urlaub - Bài 9)",
+        rule: "Cụm Kollokation cố định: ein Picknick machen. Số nhiều: die Picknicks.",
+        example: "Das Picknick am Fluss war schön.",
+        example_vi: "Buổi dã ngoại bên sông thật đẹp."
+    },
+    {
+        word: "Kloster", article: "das", gender: "das", plural: "die Klöster",
+        indefinite: "ein Kloster", negation: "kein Kloster",
+        meaning: "tu viện", category: "Kỳ nghỉ: Chỗ ở, Phương tiện, Hành lý & Thời tiết (Urlaub - Bài 9)",
+        rule: "Danh từ giống trung das Kloster, số nhiều biến âm o -> ö (die Klöster).",
+        example: "Das Kloster ist über fünfhundert Jahre alt.",
+        example_vi: "Tu viện đã hơn năm trăm năm tuổi."
+    },
+    {
+        word: "Zelt", article: "das", gender: "das", plural: "die Zelte",
+        indefinite: "ein Zelt", negation: "kein Zelt",
+        meaning: "cái lều", category: "Kỳ nghỉ: Chỗ ở, Phương tiện, Hành lý & Thời tiết (Urlaub - Bài 9)",
+        rule: "Danh từ giống trung das Zelt, số nhiều thêm -e (die Zelte). Cụm im Zelt übernachten.",
+        example: "Unser Zelt ist sehr klein.",
+        example_vi: "Lều của chúng tôi rất nhỏ."
+    },
+    {
+        word: "Foto", article: "das", gender: "das", plural: "die Fotos",
+        indefinite: "ein Foto", negation: "kein Foto",
+        meaning: "bức ảnh", category: "Kỳ nghỉ: Chỗ ở, Phương tiện, Hành lý & Thời tiết (Urlaub - Bài 9)",
+        rule: "Từ mượn quốc tế, số nhiều thêm -s (die Fotos). Cụm Fotos machen.",
+        example: "Auf dem Foto sieht man die ganze Familie.",
+        example_vi: "Trong bức ảnh có thể thấy cả gia đình."
+    },
+    {
+        word: "Souvenir", article: "das", gender: "das", plural: "die Souvenirs",
+        indefinite: "ein Souvenir", negation: "kein Souvenir",
+        meaning: "quà lưu niệm", category: "Kỳ nghỉ: Chỗ ở, Phương tiện, Hành lý & Thời tiết (Urlaub - Bài 9)",
+        rule: "Từ mượn tiếng Pháp, mang giống trung das Souvenir, số nhiều thêm -s.",
+        example: "Ich kaufe ein Souvenir für meine Mutter.",
+        example_vi: "Tôi mua một món quà lưu niệm cho mẹ."
+    },
+    {
+        word: "Gepäck", article: "das", gender: "das", plural: "–",
+        indefinite: "ein Gepäck", negation: "kein Gepäck",
+        meaning: "hành lý", category: "Kỳ nghỉ: Chỗ ở, Phương tiện, Hành lý & Thời tiết (Urlaub - Bài 9)",
+        rule: "Danh từ giống trung chỉ tồn tại ở dạng số ít: das Gepäck.",
+        example: "Das Gepäck ist sehr schwer.",
+        example_vi: "Hành lý rất nặng."
+    },
+    {
+        word: "Frühstück", article: "das", gender: "das", plural: "die Frühstücke",
+        indefinite: "ein Frühstück", negation: "kein Frühstück",
+        meaning: "bữa sáng", category: "Kỳ nghỉ: Chỗ ở, Phương tiện, Hành lý & Thời tiết (Urlaub - Bài 9)",
+        rule: "Ghép từ früh + das Stück -> mang giống trung das Frühstück.",
+        example: "Das Frühstück gibt es von sieben bis zehn Uhr.",
+        example_vi: "Bữa sáng có từ bảy đến mười giờ."
+    },
+    {
+        word: "Koffer", article: "der", gender: "der", plural: "die Koffer",
+        indefinite: "ein Koffer", negation: "kein Koffer",
+        meaning: "vali", category: "Kỳ nghỉ: Chỗ ở, Phương tiện, Hành lý & Thời tiết (Urlaub - Bài 9)",
+        rule: "Danh từ giống đực kết thúc -er, số nhiều giữ nguyên (die Koffer). Cụm den Koffer packen.",
+        example: "Mein Koffer ist rot.",
+        example_vi: "Vali của tôi màu đỏ."
+    },
+    {
+        word: "Rucksack", article: "der", gender: "der", plural: "die Rucksäcke",
+        indefinite: "ein Rucksack", negation: "kein Rucksack",
+        meaning: "ba lô", category: "Kỳ nghỉ: Chỗ ở, Phương tiện, Hành lý & Thời tiết (Urlaub - Bài 9)",
+        rule: "Ghép từ der Rücken (lưng) + der Sack (bao tải). Số nhiều biến âm: die Rucksäcke.",
+        example: "Im Rucksack sind Wasser und Obst.",
+        example_vi: "Trong ba lô có nước và trái cây."
+    },
+    {
+        word: "Reisepass", article: "der", gender: "der", plural: "die Reisepässe",
+        indefinite: "ein Reisepass", negation: "kein Reisepass",
+        meaning: "hộ chiếu", category: "Kỳ nghỉ: Chỗ ở, Phương tiện, Hành lý & Thời tiết (Urlaub - Bài 9)",
+        rule: "Ghép từ die Reise + der Pass -> lấy giống theo der Pass. Số nhiều: die Reisepässe.",
+        example: "Ohne Reisepass kann man nicht fliegen.",
+        example_vi: "Không có hộ chiếu thì không thể bay."
+    },
+    {
+        word: "Regen", article: "der", gender: "der", plural: "–",
+        indefinite: "ein Regen", negation: "kein Regen",
+        meaning: "mưa, cơn mưa", category: "Kỳ nghỉ: Chỗ ở, Phương tiện, Hành lý & Thời tiết (Urlaub - Bài 9)",
+        rule: "Danh từ giống đực chỉ thời tiết, chỉ có số ít (der Regen).",
+        example: "Der Regen hört am Abend auf.",
+        example_vi: "Cơn mưa tạnh vào buổi tối."
+    },
+    {
+        word: "Gast", article: "der", gender: "der", plural: "die Gäste",
+        indefinite: "ein Gast", negation: "kein Gast",
+        meaning: "khách", category: "Kỳ nghỉ: Chỗ ở, Phương tiện, Hành lý & Thời tiết (Urlaub - Bài 9)",
+        rule: "Danh từ giống đực, số nhiều biến âm a -> ä và thêm đuôi -e (die Gäste).",
+        example: "Die Gäste frühstücken auf der Terrasse.",
+        example_vi: "Các vị khách ăn sáng trên sân thượng."
+    },
+    {
+        word: "Pension", article: "die", gender: "die", plural: "die Pensionen",
+        indefinite: "eine Pension", negation: "keine Pension",
+        meaning: "nhà nghỉ (nhỏ)", category: "Kỳ nghỉ: Chỗ ở, Phương tiện, Hành lý & Thời tiết (Urlaub - Bài 9)",
+        rule: "Hậu tố -ion luôn luôn mang giống cái (die), số nhiều thêm -en (die Pensionen).",
+        example: "Die Pension ist klein, aber gemütlich.",
+        example_vi: "Nhà nghỉ nhỏ nhưng ấm cúng."
+    },
+    {
+        word: "Jugendherberge", article: "die", gender: "die", plural: "die Jugendherbergen",
+        indefinite: "eine Jugendherberge", negation: "keine Jugendherberge",
+        meaning: "nhà trọ thanh niên (hostel)", category: "Kỳ nghỉ: Chỗ ở, Phương tiện, Hành lý & Thời tiết (Urlaub - Bài 9)",
+        rule: "Danh từ giống cái kết thúc bằng -e, số nhiều thêm -n (die Jugendherbergen).",
+        example: "In der Jugendherberge schlafen viele junge Leute.",
+        example_vi: "Trong nhà trọ thanh niên có nhiều người trẻ ngủ lại."
+    },
+    {
+        word: "Fahrkarte", article: "die", gender: "die", plural: "die Fahrkarten",
+        indefinite: "eine Fahrkarte", negation: "keine Fahrkarte",
+        meaning: "vé tàu / xe", category: "Kỳ nghỉ: Chỗ ở, Phương tiện, Hành lý & Thời tiết (Urlaub - Bài 9)",
+        rule: "Ghép từ fahren + die Karte -> die Fahrkarte. Số nhiều: die Fahrkarten.",
+        example: "Ich brauche eine Fahrkarte nach Hamburg.",
+        example_vi: "Tôi cần một vé đi Hamburg."
+    },
+    {
+        word: "Rechnung", article: "die", gender: "die", plural: "die Rechnungen",
+        indefinite: "eine Rechnung", negation: "keine Rechnung",
+        meaning: "hóa đơn", category: "Kỳ nghỉ: Chỗ ở, Phương tiện, Hành lý & Thời tiết (Urlaub - Bài 9)",
+        rule: "Hậu tố -ung luôn luôn mang giống cái (die), số nhiều thêm -en. Cụm die Rechnung bezahlen.",
+        example: "Die Rechnung für das Zimmer ist hoch.",
+        example_vi: "Hóa đơn tiền phòng khá cao."
+    },
+    {
+        word: "Postkarte", article: "die", gender: "die", plural: "die Postkarten",
+        indefinite: "eine Postkarte", negation: "keine Postkarte",
+        meaning: "bưu thiếp", category: "Kỳ nghỉ: Chỗ ở, Phương tiện, Hành lý & Thời tiết (Urlaub - Bài 9)",
+        rule: "Ghép từ die Post + die Karte -> die Postkarte. Cụm eine Postkarte schreiben.",
+        example: "Ich schreibe meiner Oma eine Postkarte.",
+        example_vi: "Tôi viết một tấm bưu thiếp cho bà."
+    },
 ];
 
 let currentLexikonFilter = "all";
@@ -2227,6 +2571,8 @@ let currentLexikonSearchQuery = "";
 
 const LEXIKON_FILTERS = [
     { id: "all", label: "Tất cả" },
+    { id: "Natur & Reiseziele - Bài 9", label: "🌲 Thiên nhiên & Điểm đến Du lịch (Bài 9)" },
+    { id: "Urlaub - Bài 9", label: "🏖️ Kỳ nghỉ: Chỗ ở, Hành lý & Thời tiết (Bài 9)" },
     { id: "In der Stadt", label: "🏙️ Địa điểm Thành phố & Chỉ đường (Bài 8)" },
     { id: "Sehenswürdigkeiten in Berlin", label: "🏛️ Danh lam Thắng cảnh Berlin (Bài 8)" },
     { id: "Berufe", label: "👨‍💼 Nghề nghiệp Nam & Nữ (Bài 7)" },

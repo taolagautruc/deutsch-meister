@@ -374,12 +374,13 @@
     <!-- ========================================================= -->
     <!-- JAVASCRIPT XỬ LÝ TƯƠNG TÁC, PHÁT ÂM & KẾT NỐI API PYTHON   -->
     <!-- ========================================================= -->
-    <script src="/static/js/audio_tts.js?v=20261111_v13"></script>
-    <script src="/static/js/number_trainer.js?v=20261111_v13"></script>
-    <script src="/static/js/city_map_svg.js?v=20261111_v13"></script>
-    <script src="/static/js/verbs_db.js?v=20261111_v13"></script>
-    <script src="/static/js/lexikon_db.js?v=20261111_v13"></script>
-    <script src="/static/js/arena_engine.js?v=20261111_v13"></script>
+    <script src="/static/js/audio_tts.js?v=20261112_v16"></script>
+    <script src="/static/js/number_trainer.js?v=20261112_v16"></script>
+    <script src="/static/js/city_map_svg.js?v=20261112_v16"></script>
+    <script src="/static/js/perfekt_svg.js?v=20261112_v16"></script>
+    <script src="/static/js/verbs_db.js?v=20261112_v16"></script>
+    <script src="/static/js/lexikon_db.js?v=20261112_v16"></script>
+    <script src="/static/js/arena_engine.js?v=20261112_v16"></script>
     <script>
         const LEVEL_META = {
             "A1": {
@@ -395,10 +396,12 @@
                     "Đại từ nhân xưng, Chia động từ & Gọi đồ uống (P2)",
                     "Sprache im Kurs: Động từ & Giống der/die/das (Bài 2)",
                     "Dativ, Giới từ, Phương tiện, Số thứ tự & Ngày tháng (Bài 6)",
-                    "Beruf, Modalverben, Akkusativ vs Dativ (Bài 7)"
+                    "Beruf, Modalverben, Akkusativ vs Dativ (Bài 7)",
+                    "Stadt, Chỉ đường & Bản đồ tương tác (Bài 8)",
+                    "Urlaub, Perfekt & Präteritum với 6 Sơ đồ tương tác (Bài 9)"
                 ],
-                lessonsCount: "8 Bài (Bài 1 P1, P2, Bài 2, 3, 4, 5, 6, 7)",
-                exCount: "500 Bài (Đủ 9 dạng)"
+                lessonsCount: "10 Bài (Bài 1 P1, P2, Bài 2 đến Bài 9)",
+                exCount: "750+ Bài tập chuẩn 14 dạng"
             },
             "A2": {
                 badgeBg: "bg-blue-600",
@@ -458,6 +461,11 @@
             "nghe_dien": "7. Nghe & điền từ",
             "dich_cau_vd": "8. Dịch câu (V → Đ)",
             "dich_cau_dv": "9. Dịch câu (Đ → V)",
+            "sap_xep_cau": "10. Sắp xếp câu",
+            "chon_haben_sein": "11. Chọn haben / sein",
+            "tim_loi_sai": "12. Tìm lỗi sai",
+            "viet_lai_perfekt": "13. Viết lại Perfekt",
+            "dung_sai": "14. Đúng / Sai",
             "dich": "3. Dịch Việt ⇄ Đức",
             "nghe": "4. Nghe (1.0x & 0.65x)",
             "sap_xep": "5. Sắp xếp câu",
@@ -1242,6 +1250,9 @@
             if (typeof initLesson8Visuals === 'function') {
                 initLesson8Visuals();
             }
+            if (typeof initPerfektSvgDiagrams === 'function') {
+                setTimeout(initPerfektSvgDiagrams, 50);
+            }
 
             renderLessonList();
             updateLessonProgressUI();
@@ -1745,6 +1756,68 @@
                         extraHtml += renderExerciseSvg(extra);
                     }
                 }
+                if (extra.visual && typeof renderExercisePerfektSvg === 'function') {
+                    extraHtml += `<div class="my-3 overflow-hidden rounded-2xl border border-slate-700/50 shadow-md">${renderExercisePerfektSvg(extra.visual)}</div>`;
+                }
+                if (extra.reading_text) {
+                    extraHtml += `
+                        <div class="my-3 p-4 rounded-2xl bg-indigo-50/80 border border-indigo-200 text-slate-800 text-sm leading-relaxed space-y-2">
+                            <div class="flex items-center gap-2 font-black text-indigo-900 text-xs uppercase tracking-wide">
+                                <span>📖 Đoạn văn đọc hiểu (Lesetext):</span>
+                            </div>
+                            <p class="font-medium italic text-slate-900 leading-relaxed">„${extra.reading_text}“</p>
+                            ${extra.reading_translation_vi ? `
+                                <div class="pt-2 border-t border-indigo-200/60 text-xs text-slate-600">
+                                    <span class="font-bold text-indigo-800">Dịch nghĩa:</span> ${extra.reading_translation_vi}
+                                </div>
+                            ` : ''}
+                        </div>
+                    `;
+                }
+                if (ex.exercise_type === 'sap_xep_cau' && Array.isArray(extra.tokens) && extra.tokens.length > 0) {
+                    extraHtml += `
+                        <div class="my-2.5 p-3 rounded-xl bg-slate-100 border border-slate-200">
+                            <div class="text-xs font-bold text-slate-600 mb-1.5 flex items-center justify-between">
+                                <span>🔤 Bấm vào từ để ghép câu nhanh (hoặc tự gõ vào ô):</span>
+                                <button type="button" onclick="clearTokenInput(${i})" class="text-[11px] text-rose-600 hover:underline cursor-pointer font-semibold">Xóa hết</button>
+                            </div>
+                            <div class="flex flex-wrap gap-1.5">
+                                ${extra.tokens.map(tok => `
+                                    <button type="button" onclick="appendTokenToInput(${i}, '${tok.replace(/'/g, "\\'")}')" class="px-2.5 py-1 rounded-lg bg-white hover:bg-indigo-50 border border-slate-300 hover:border-indigo-400 text-slate-800 font-bold text-xs shadow-xs transition active:scale-95 cursor-pointer">
+                                        ${tok}
+                                    </button>
+                                `).join('')}
+                            </div>
+                        </div>
+                    `;
+                }
+                if (ex.exercise_type === 'chon_haben_sein' && Array.isArray(extra.items) && extra.items.length > 0) {
+                    extraHtml += `
+                        <div class="my-2.5 p-3.5 rounded-2xl bg-amber-50/70 border border-amber-200 space-y-2">
+                            <div class="text-xs font-extrabold text-amber-900 mb-1">
+                                ⚡ Bấm chọn trợ động từ cho 4 động từ dưới đây:
+                            </div>
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-2">
+                                ${extra.items.map((item, itIdx) => `
+                                    <div class="p-2 rounded-xl bg-white border border-amber-200 flex items-center justify-between gap-2 text-xs">
+                                        <div>
+                                            <span class="font-black text-slate-900">${itIdx + 1}. ${item.verb}</span>
+                                            <span class="text-slate-500 text-[11px]">(${item.meaning_vi})</span>
+                                        </div>
+                                        <div class="flex gap-1">
+                                            <button type="button" onclick="setHabenSeinChoice(${i}, ${itIdx}, 'haben')" id="hs-btn-${i}-${itIdx}-haben" class="px-2.5 py-1 rounded-lg bg-slate-100 hover:bg-emerald-100 border border-slate-200 text-slate-700 font-bold text-xs cursor-pointer transition">
+                                                haben
+                                            </button>
+                                            <button type="button" onclick="setHabenSeinChoice(${i}, ${itIdx}, 'sein')" id="hs-btn-${i}-${itIdx}-sein" class="px-2.5 py-1 rounded-lg bg-slate-100 hover:bg-amber-100 border border-slate-200 text-slate-700 font-bold text-xs cursor-pointer transition">
+                                                sein
+                                            </button>
+                                        </div>
+                                    </div>
+                                `).join('')}
+                            </div>
+                        </div>
+                    `;
+                }
                 if (ex.exercise_type === 'nghe' || ex.exercise_type === 'nghe_dien') {
                     const textToSpeak = (extra.audio_text || ex.correct_answer).replace(/'/g, "\\'");
                     extraHtml = `
@@ -1941,6 +2014,56 @@
                 setTimeout(() => {
                     focusNextExercise(index);
                 }, 220);
+            }
+        }
+
+        function appendTokenToInput(exIdx, token) {
+            const input = document.getElementById(`ex-input-${exIdx}`);
+            if (!input) return;
+            const current = input.value.trim();
+            if (!current) {
+                input.value = token;
+            } else {
+                input.value = current + ' ' + token;
+            }
+            input.focus();
+            if (typeof handleExerciseInputChange === 'function') handleExerciseInputChange(exIdx);
+        }
+
+        function clearTokenInput(exIdx) {
+            const input = document.getElementById(`ex-input-${exIdx}`);
+            if (input) {
+                input.value = '';
+                input.focus();
+                if (typeof handleExerciseInputChange === 'function') handleExerciseInputChange(exIdx);
+            }
+        }
+
+        window._hsChoices = window._hsChoices || {};
+        function setHabenSeinChoice(exIdx, itemIdx, choice) {
+            if (!window._hsChoices[exIdx]) window._hsChoices[exIdx] = {};
+            window._hsChoices[exIdx][itemIdx] = choice;
+
+            const hBtn = document.getElementById(`hs-btn-${exIdx}-${itemIdx}-haben`);
+            const sBtn = document.getElementById(`hs-btn-${exIdx}-${itemIdx}-sein`);
+            if (hBtn && sBtn) {
+                if (choice === 'haben') {
+                    hBtn.className = "px-2.5 py-1 rounded-lg bg-emerald-600 text-white font-black text-xs cursor-pointer shadow-xs";
+                    sBtn.className = "px-2.5 py-1 rounded-lg bg-slate-100 text-slate-600 font-bold text-xs cursor-pointer";
+                } else {
+                    sBtn.className = "px-2.5 py-1 rounded-lg bg-amber-600 text-white font-black text-xs cursor-pointer shadow-xs";
+                    hBtn.className = "px-2.5 py-1 rounded-lg bg-slate-100 text-slate-600 font-bold text-xs cursor-pointer";
+                }
+            }
+
+            const parts = [];
+            for (let k = 0; k < 4; k++) {
+                parts.push(window._hsChoices[exIdx][k] || '');
+            }
+            const input = document.getElementById(`ex-input-${exIdx}`);
+            if (input) {
+                input.value = parts.filter(Boolean).join(' / ');
+                if (typeof handleExerciseInputChange === 'function') handleExerciseInputChange(exIdx);
             }
         }
 
@@ -2201,11 +2324,12 @@
             } else {
                 if (isMultiSlot) {
                     const isLesson8 = Boolean(
-                        (ex && (ex.lesson_id === 22 || (ex.question && /bài 8\b/i.test(ex.question)))) ||
-                        (typeof currentLesson !== 'undefined' && currentLesson && (
-                            currentLesson.id === 22 || 
-                            (currentLesson.title && /bài 8\b/i.test(currentLesson.title))
-                        ))
+                        (ex && ex.lesson_id)
+                            ? (ex.lesson_id === 22)
+                            : (typeof currentLesson !== 'undefined' && currentLesson && (
+                                currentLesson.id === 22 || 
+                                (currentLesson.title && /bài 8\b/i.test(currentLesson.title))
+                            ))
                     );
 
                     // Nếu là bài tập có cấu hình 2 slot chuẩn hóa của riêng Bài 8 (Câu 68-77)
@@ -2320,11 +2444,12 @@
                 } else {
                     // Ưu tiên chấm theo Rubric Bài 8 CHỈ KHI đang làm Bài 8
                     const isLesson8 = Boolean(
-                        (ex && (ex.lesson_id === 22 || (ex.question && /bài 8\b/i.test(ex.question)))) ||
-                        (typeof currentLesson !== 'undefined' && currentLesson && (
-                            currentLesson.id === 22 || 
-                            (currentLesson.title && /bài 8\b/i.test(currentLesson.title))
-                        ))
+                        (ex && ex.lesson_id)
+                            ? (ex.lesson_id === 22)
+                            : (typeof currentLesson !== 'undefined' && currentLesson && (
+                                currentLesson.id === 22 || 
+                                (currentLesson.title && /bài 8\b/i.test(currentLesson.title))
+                            ))
                     );
                     const l8QMatch = isLesson8 && (ex.question || '').match(/Câu\s+(4[6-9]|5[0-7])\b/i);
                     const l8VDMatch = isLesson8 && (ex.question || '').match(/Câu\s+(8[7-9]|9[0-3])\b/i);
@@ -2707,11 +2832,12 @@
                 feedback.className = "text-xs p-3.5 rounded-xl mt-2 bg-rose-50 text-rose-800 border border-rose-200";
                 try {
                     const isLesson8 = Boolean(
-                        (ex && (ex.lesson_id === 22 || (ex.question && /bài 8\b/i.test(ex.question)))) ||
-                        (typeof currentLesson !== 'undefined' && currentLesson && (
-                            currentLesson.id === 22 ||
-                            (currentLesson.title && /bài 8\b/i.test(currentLesson.title))
-                        ))
+                        (ex && ex.lesson_id)
+                            ? (ex.lesson_id === 22)
+                            : (typeof currentLesson !== 'undefined' && currentLesson && (
+                                currentLesson.id === 22 ||
+                                (currentLesson.title && /bài 8\b/i.test(currentLesson.title))
+                            ))
                     );
                     const isDeToVi = (ex && (ex.exercise_type === 'dich_nghia_dv' || ex.exercise_type === 'dich_cau_dv' || ex.exercise_type === 'dich')) &&
                                      (ex.question && /(?:sang tiếng việt|đức\s*→\s*việt|dịch câu sau sang tiếng việt)/i.test(ex.question));

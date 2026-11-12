@@ -772,13 +772,16 @@ function checkGermanAnswerEquivalence(userAns, correctAns, options = {}) {
 
     // Kiểm tra nhanh theo Rubric Bài 8 (Câu 46 -> 57 dạng Dịch Đức -> Việt, Câu 87 -> 93 dạng Dịch Việt -> Đức)
     if (options && options.question) {
-        const isL8 = (options.lesson_id === 22) ||
-                     (options.lesson_title && /bài 8\b/i.test(options.lesson_title)) ||
-                     (options.isLesson8 === true) ||
-                     (typeof currentLesson !== 'undefined' && currentLesson && (
-                         currentLesson.id === 22 ||
-                         (currentLesson.title && /bài 8\b/i.test(currentLesson.title))
-                     ));
+        const isL8 = (options.lesson_id)
+            ? (options.lesson_id === 22)
+            : (
+                (options.lesson_title && /bài 8\b/i.test(options.lesson_title)) ||
+                (options.isLesson8 === true) ||
+                (typeof currentLesson !== 'undefined' && currentLesson && (
+                    currentLesson.id === 22 ||
+                    (currentLesson.title && /bài 8\b/i.test(currentLesson.title))
+                ))
+            );
         if (isL8) {
             const l8Match = String(options.question).match(/Câu\s+(4[6-9]|5[0-7])\b/i);
             if (l8Match) {
