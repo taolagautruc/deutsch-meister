@@ -1227,38 +1227,59 @@ Passant: Sie fährt vom Rathaus durch das Zentrum bis ___ Hafen.""",
             [
                 "Từ nhà ga, đầu tiên Ngài hãy đi thẳng ba trăm mét, sau đó đi ngang qua bưu điện trung tâm và rẽ phải ở đèn giao thông thứ hai!",
                 "Từ nhà ga, đầu tiên Ngài hãy đi thẳng ba trăm mét, sau đó đi ngang qua bưu điện trung tâm và rẽ phải ở đèn giao thông thứ hai",
-                "Từ phía nhà ga trước tiên bạn đi thẳng 300 mét, rồi đi qua bưu điện chính và tại đèn giao thông thứ hai thì rẽ phải!",
+                "Đầu tiên Ngài hãy đi thẳng từ nhà ga 300m, sau đó đi ngang qua bưu điện trung tâm và rẽ phải ở đèn giao thông thứ 2!",
+                "Đầu tiên Ngài hãy đi thẳng từ nhà ga 300m, sau đó đi ngang qua bưu điện trung tâm và rẽ phải ở đèn giao thông thứ 2",
+                "Ngài hãy đi thẳng từ nhà ga 300m, đầu tiên đi thẳng sau đó đi ngang qua bưu điện trung tâm và rẽ phải ở đèn giao thông thứ 2!",
+                "Ngài hãy đi thẳng từ nhà ga 300m, đầu tiên đi thẳng sau đó đi ngang qua bưu điện trung tâm và rẽ phải ở đèn giao thông thứ 2",
+                "Ngài hãy đi thẳng từ nhà ga 300m sau đó đi ngang qua bưu điện trung tâm và rẽ phải ở đèn giao thông thứ 2!",
+                "Ngài hãy đi thẳng từ nhà ga 300m sau đó đi ngang qua bưu điện trung tâm và rẽ phải ở đèn giao thông thứ 2",
+                "Từ nhà ga, đầu tiên Ngài hãy đi thẳng ba trăm mét, sau đó đi ngang qua bưu điện chính và rẽ phải ở đèn giao thông thứ hai!",
+                "Từ nhà ga, đầu tiên Ngài hãy đi thẳng ba trăm mét, sau đó đi ngang qua bưu điện chính và rẽ phải ở đèn giao thông thứ hai",
+                "Đầu tiên Ngài hãy đi thẳng từ nhà ga 300m, sau đó đi ngang qua bưu điện chính và rẽ phải ở đèn giao thông thứ 2",
+                "Từ nhà ga đầu tiên bạn đi thẳng 300m, sau đó đi qua bưu điện chính và rẽ phải ở đèn giao thông thứ 2",
                 "Từ phía nhà ga trước tiên bạn đi thẳng 300 mét, rồi đi qua bưu điện chính và tại đèn giao thông thứ hai thì rẽ phải",
-                "Từ nhà ga đầu tiên bạn đi thẳng 300m, sau đó đi qua bưu điện chính và rẽ phải ở đèn giao thông thứ 2!",
-                "Từ nhà ga đầu tiên bạn đi thẳng 300m, sau đó đi qua bưu điện chính và rẽ phải ở đèn giao thông thứ 2"
+                "Từ nhà ga, trước tiên bạn hãy đi thẳng ba trăm mét, sau đó đi ngang qua bưu điện chính và quẹo phải ở đèn giao thông thứ hai",
+                "Đầu tiên bạn hãy đi thẳng từ nhà ga 300 mét, sau đó đi ngang qua bưu điện trung tâm và quẹo phải tại đèn giao thông thứ hai",
+                "Từ nhà ga, đầu tiên bạn hãy đi thẳng 300 mét, sau đó đi qua bưu điện trung tâm và rẽ phải ở đèn giao thông thứ hai",
+                "Từ nhà ga, đầu tiên bạn hãy đi thẳng ba trăm mét, sau đó đi ngang qua bưu điện chính và quẹo phải ở đèn giao thông thứ hai"
             ],
-            "'vom Bahnhof aus' = từ nhà ga; 'an der Hauptpost vorbei' = ngang qua bưu điện chính; 'an der zweiten Ampel rechts' = rẽ phải ở đèn giao thông thứ hai.",
+            "'vom Bahnhof aus' = từ nhà ga; 'an der Hauptpost vorbei' = đi ngang qua bưu điện trung tâm (bưu điện chính); 'an der zweiten Ampel rechts' = rẽ phải ở đèn giao thông thứ hai.",
             "Từ nhà ga, đầu tiên Ngài hãy đi thẳng ba trăm mét, sau đó đi ngang qua bưu điện trung tâm và rẽ phải ở đèn giao thông thứ hai!"
         ),
         (
             "Câu 95: Dịch câu sau sang tiếng Việt: „Wenn ihr zum alten Schloss wollt, müsst ihr zuerst durch den Stadtpark laufen und danach die steinerne Brücke überqueren.“",
-            "Nếu các bạn muốn đến lâu đài cổ, đầu tiên các bạn phải đi bộ xuyên qua công viên thành phố và tiếp theo băng qua cây cầu đá.",
+            "Nếu các bạn muốn đến lâu đài cổ, đầu tiên các bạn phải đi bộ xuyên qua công viên thành phố và sau đó băng qua cây cầu đá.",
             [
+                "Nếu các bạn muốn đến lâu đài cổ, đầu tiên các bạn phải đi bộ xuyên qua công viên thành phố và sau đó băng qua cây cầu đá.",
+                "Nếu các bạn muốn đến lâu đài cổ, đầu tiên các bạn phải đi bộ xuyên qua công viên thành phố và sau đó băng qua cây cầu đá",
                 "Nếu các bạn muốn đến lâu đài cổ, đầu tiên các bạn phải đi bộ xuyên qua công viên thành phố và tiếp theo băng qua cây cầu đá.",
                 "Nếu các bạn muốn đến lâu đài cổ, đầu tiên các bạn phải đi bộ xuyên qua công viên thành phố và tiếp theo băng qua cây cầu đá",
+                "Nếu các bạn muốn tới lâu đài cổ, trước tiên các bạn phải đi xuyên qua công viên thành phố rồi sau đó đi qua cây cầu đá.",
+                "Nếu các bạn muốn tới lâu đài cổ, trước tiên các bạn phải đi xuyên qua công viên thành phố rồi sau đó đi qua cây cầu đá",
+                "Nếu các bạn muốn đến lâu đài cổ, trước hết các bạn phải đi xuyên qua công viên thành phố và sau đó đi qua cây cầu đá",
+                "Nếu các bạn muốn đến lâu đài cổ, đầu tiên các bạn phải chạy xuyên qua công viên thành phố và sau đó băng qua cây cầu đá",
                 "Nếu các cậu muốn tới cung điện cổ thì trước tiên phải chạy xuyên qua công viên thành phố rồi đi qua cây cầu bằng đá.",
-                "Nếu các cậu muốn tới cung điện cổ thì trước tiên phải chạy xuyên qua công viên thành phố rồi đi qua cây cầu bằng đá",
-                "Nếu các bạn muốn đến lâu đài cổ, các bạn phải đi xuyên qua công viên thành phố và sau đó đi qua cây cầu đá.",
-                "Nếu các bạn muốn đến lâu đài cổ, các bạn phải đi xuyên qua công viên thành phố và sau đó đi qua cây cầu đá"
+                "Nếu các bạn muốn đến lâu đài cổ, các bạn phải đi xuyên qua công viên thành phố và sau đó đi qua cây cầu đá."
             ],
             "'durch den Stadtpark laufen' = đi bộ/chạy xuyên qua công viên thành phố; 'die steinerne Brücke überqueren' = băng qua cây cầu đá.",
-            "Nếu các bạn muốn đến lâu đài cổ, đầu tiên các bạn phải đi bộ xuyên qua công viên thành phố và tiếp theo băng qua cây cầu đá."
+            "Nếu các bạn muốn đến lâu đài cổ, đầu tiên các bạn phải đi bộ xuyên qua công viên thành phố và sau đó băng qua cây cầu đá."
         ),
         (
-            "Câu 96: Dịch câu sau sang tiếng Việt: „Der Bus Linie 200 fährt am Alexanderplatz, am Berliner Dom und an der Humboldt-Universität vorbei bis zum Zoologischen Garten.“",
+            "Câu 96: Dịch câu sau sang tiếng Việt: „Der Bus Linie 200 fährt am Alexanderplatz, am Berliner Dom und an der Humboldt-Universität vorbei bis zum Zoologischen Garten.“ (Gợi ý: Berliner Dom = Nhà thờ lớn Berlin; Zoologischer Garten = Vườn bách thú / Sở thú)",
             "Tuyến xe buýt số 200 chạy ngang qua Quảng trường Alexander, Nhà thờ lớn Berlin và Đại học Humboldt cho đến Vườn bách thú.",
             [
                 "Tuyến xe buýt số 200 chạy ngang qua Quảng trường Alexander, Nhà thờ lớn Berlin và Đại học Humboldt cho đến Vườn bách thú.",
                 "Tuyến xe buýt số 200 chạy ngang qua Quảng trường Alexander, Nhà thờ lớn Berlin và Đại học Humboldt cho đến Vườn bách thú",
+                "Xe buýt tuyến 200 đi ngang qua Alexanderplatz, Berliner Dom và Humboldt-Universität tới tận Zoologischer Garten.",
+                "Xe buýt tuyến 200 đi ngang qua Alexanderplatz, Berliner Dom và Humboldt-Universität tới tận Zoologischer Garten",
+                "Xe buýt số 200 chạy qua Quảng trường Alexander, Nhà thờ lớn Berlin và Đại học Humboldt đến Vườn bách thú.",
+                "Xe buýt số 200 chạy qua Quảng trường Alexander, Nhà thờ lớn Berlin và Đại học Humboldt đến Vườn bách thú",
                 "Xe buýt tuyến 200 đi ngang qua quảng trường Alexander, Nhà thờ lớn Berlin và trường Đại học Humboldt tới tận Sở thú.",
                 "Xe buýt tuyến 200 đi ngang qua quảng trường Alexander, Nhà thờ lớn Berlin và trường Đại học Humboldt tới tận Sở thú",
                 "Tuyến xe buýt 200 chạy ngang qua Quảng trường Alexander, Nhà thờ lớn Berlin và Đại học Humboldt đến tận Vườn bách thú.",
-                "Tuyến xe buýt 200 chạy ngang qua Quảng trường Alexander, Nhà thờ lớn Berlin và Đại học Humboldt đến tận Vườn bách thú"
+                "Tuyến xe buýt 200 chạy ngang qua Quảng trường Alexander, Nhà thờ lớn Berlin và Đại học Humboldt đến tận Vườn bách thú",
+                "Tuyến xe buýt 200 chạy qua Alexanderplatz, Berliner Dom và Humboldt-Universität đến Zoologischer Garten.",
+                "Tuyến xe buýt số 200 chạy qua Alexanderplatz, Berliner Dom và Humboldt-Universität cho đến Zoologischer Garten"
             ],
             "Cấu trúc 'an + Dativ + vorbeifahren' với cả danh từ giống đực ('am') và giống cái ('an der').",
             "Tuyến xe buýt số 200 chạy ngang qua Quảng trường Alexander, Nhà thờ lớn Berlin và Đại học Humboldt cho đến Vườn bách thú."
@@ -1269,10 +1290,16 @@ Passant: Sie fährt vom Rathaus durch das Zentrum bis ___ Hafen.""",
             [
                 "Xin lỗi Ngài, Ngài có thể chỉ cho tôi trên bản đồ thành phố làm thế nào tôi đi bộ đến được Phủ Thủ tướng không?",
                 "Xin lỗi Ngài, Ngài có thể chỉ cho tôi trên bản đồ thành phố làm thế nào tôi đi bộ đến được Phủ Thủ tướng không",
+                "Xin lỗi Ngài, Ngài có thể chỉ cho tôi trên bản đồ thành phố làm thế nào để đi bộ đến Phủ Thủ tướng không?",
+                "Xin lỗi Ngài, Ngài có thể chỉ cho tôi trên bản đồ thành phố làm thế nào để đi bộ đến Phủ Thủ tướng không",
+                "Xin lỗi Ngài, Ngài có thể chỉ cho tôi trên bản đồ thành phố làm thế nào tôi đi bộ đến Phủ Thủ tướng không?",
+                "Xin lỗi Ngài, Ngài có thể chỉ cho tôi trên bản đồ thành phố làm thế nào tôi đi bộ đến Phủ Thủ tướng không",
+                "Xin lỗi, Ngài có thể chỉ giúp tôi trên bản đồ thành phố cách đi bộ đến Phủ Thủ tướng được không?",
+                "Xin lỗi, Ngài có thể chỉ giúp tôi trên bản đồ thành phố cách đi bộ đến Phủ Thủ tướng được không",
+                "Xin lỗi ngài, ngài có thể chỉ cho tôi trên bản đồ thành phố, làm thế nào để đi bộ đến phủ thủ tướng không?",
+                "Xin lỗi ngài, ngài có thể chỉ cho tôi trên bản đồ thành phố, làm thế nào để đi bộ đến phủ thủ tướng không",
                 "Cho tôi xin lỗi, bạn có thể chỉ giúp tôi trên bản đồ thành phố đường đi bộ tới Phủ Thủ tướng được không?",
-                "Cho tôi xin lỗi, bạn có thể chỉ giúp tôi trên bản đồ thành phố đường đi bộ tới Phủ Thủ tướng được không",
-                "Xin lỗi, bạn có thể chỉ cho tôi trên bản đồ làm thế nào tôi đi bộ đến Phủ Thủ tướng được không?",
-                "Xin lỗi, bạn có thể chỉ cho tôi trên bản đồ làm thế nào tôi đi bộ đến Phủ Thủ tướng được không"
+                "Xin lỗi, bạn có thể chỉ cho tôi trên bản đồ làm thế nào tôi đi bộ đến Phủ Thủ tướng không?"
             ],
             "'auf dem Stadtplan zeigen' = chỉ trên bản đồ thành phố; 'zu Fuß zum Bundeskanzleramt kommen' = đi bộ đến Phủ Thủ tướng.",
             "Xin lỗi Ngài, Ngài có thể chỉ cho tôi trên bản đồ thành phố làm thế nào tôi đi bộ đến được Phủ Thủ tướng không?"
@@ -1283,24 +1310,30 @@ Passant: Sie fährt vom Rathaus durch das Zentrum bis ___ Hafen.""",
             [
                 "Các bạn cứ đi dạo dọc theo bờ sông hai mươi phút, sau đó các bạn sẽ nhìn thấy Đảo Bảo tàng nổi tiếng ở phía bên tay trái!",
                 "Các bạn cứ đi dạo dọc theo bờ sông hai mươi phút, sau đó các bạn sẽ nhìn thấy Đảo Bảo tàng nổi tiếng ở phía bên tay trái",
-                "Các cậu hãy tản bộ dọc bờ sông 20 phút rồi sẽ thấy Đảo Bảo tàng nổi tiếng ở bên trái!",
-                "Các cậu hãy tản bộ dọc bờ sông 20 phút rồi sẽ thấy Đảo Bảo tàng nổi tiếng ở bên trái",
+                "Các bạn cứ đi dạo dọc theo bờ sông 20 phút, sau đó các bạn sẽ thấy Đảo Bảo tàng nổi tiếng bên tay trái!",
+                "Các bạn cứ đi dạo dọc theo bờ sông 20 phút, sau đó các bạn sẽ thấy Đảo Bảo tàng nổi tiếng bên tay trái",
+                "Các bạn cứ đi dạo 20 phút dọc theo bờ sông, sau đó các bạn sẽ thấy Đảo Bảo tàng nổi tiếng ở bên trái!",
+                "Các bạn cứ đi dạo 20 phút dọc theo bờ sông, sau đó các bạn sẽ thấy Đảo Bảo tàng nổi tiếng ở bên trái",
                 "Các bạn cứ đi dạo 20 phút dọc bờ sông, sau đó các bạn sẽ thấy Đảo Bảo tàng nổi tiếng ở bên trái!",
-                "Các bạn cứ đi dạo 20 phút dọc bờ sông, sau đó các bạn sẽ thấy Đảo Bảo tàng nổi tiếng ở bên trái"
+                "Các cậu hãy tản bộ dọc bờ sông 20 phút rồi sẽ thấy Đảo Bảo tàng nổi tiếng ở bên trái!"
             ],
             "'das Flussufer entlang' = dọc theo bờ sông; 'auf der linken Seite' = ở phía bên tay trái.",
             "Các bạn cứ đi dạo dọc theo bờ sông hai mươi phút, sau đó các bạn sẽ nhìn thấy Đảo Bảo tàng nổi tiếng ở phía bên tay trái!"
         ),
         (
-            "Câu 99: Dịch câu sau sang tiếng Việt: „Am Vormittag wollen die Studenten in die Alte Nationalgalerie gehen, aber am Abend möchten sie lieber einen Film im Kino sehen.“",
+            "Câu 99: Dịch câu sau sang tiếng Việt: „Am Vormittag wollen die Studenten in die Alte Nationalgalerie gehen, aber am Abend möchten sie lieber einen Film im Kino sehen.“ (Gợi ý: Alte Nationalgalerie = Phòng trưng bày Quốc gia Cũ)",
             "Vào buổi sáng các sinh viên muốn đi vào Phòng trưng bày Quốc gia Cũ, nhưng vào buổi tối họ lại thích xem một bộ phim ở trong rạp chiếu phim hơn.",
             [
                 "Vào buổi sáng các sinh viên muốn đi vào Phòng trưng bày Quốc gia Cũ, nhưng vào buổi tối họ lại thích xem một bộ phim ở trong rạp chiếu phim hơn.",
                 "Vào buổi sáng các sinh viên muốn đi vào Phòng trưng bày Quốc gia Cũ, nhưng vào buổi tối họ lại thích xem một bộ phim ở trong rạp chiếu phim hơn",
-                "Buổi sáng những người sinh viên muốn vào Phòng trưng bày Quốc gia Cũ, nhưng buổi tối họ muốn xem phim trong rạp hơn.",
-                "Buổi sáng những người sinh viên muốn vào Phòng trưng bày Quốc gia Cũ, nhưng buổi tối họ muốn xem phim trong rạp hơn",
-                "Buổi sáng sinh viên muốn đi vào Phòng trưng bày Quốc gia Cũ, nhưng buổi tối họ thích xem một bộ phim trong rạp chiếu phim hơn.",
-                "Buổi sáng sinh viên muốn đi vào Phòng trưng bày Quốc gia Cũ, nhưng buổi tối họ thích xem một bộ phim trong rạp chiếu phim hơn"
+                "Vào buổi sáng các sinh viên muốn đi đến Phòng trưng bày Quốc gia Cũ, nhưng vào buổi tối họ lại thích xem 1 bộ phim trong rạp chiếu phim hơn.",
+                "Vào buổi sáng các sinh viên muốn đi đến Phòng trưng bày Quốc gia Cũ, nhưng vào buổi tối họ lại thích xem 1 bộ phim trong rạp chiếu phim hơn",
+                "Vào buổi sáng các sinh viên muốn đi đến Phòng trưng bày Quốc gia Cũ nhưng vào buổi tối họ lại thích xem 1 bộ phim trong rạp hơn.",
+                "Vào buổi sáng các sinh viên muốn đi đến Phòng trưng bày Quốc gia Cũ nhưng vào buổi tối họ lại thích xem 1 bộ phim trong rạp hơn",
+                "Vào buổi sáng các sinh viên muốn đi đến Phòng trưng bày Quốc gia Cũ nhưng vào buổi tối họ lại thích xem 1 bộ phim trong rạp.",
+                "Vào buổi sáng các sinh viên muốn đi đến Phòng trưng bày Quốc gia Cũ nhưng vào buổi tối họ lại thích xem 1 bộ phim trong rạp",
+                "Buổi sáng các sinh viên muốn tới Phòng trưng bày Quốc gia Cũ, nhưng buổi tối họ muốn xem phim ở rạp hơn",
+                "Buổi sáng những người sinh viên muốn vào Phòng trưng bày Quốc gia Cũ, nhưng buổi tối họ muốn xem phim trong rạp hơn."
             ],
             "Đối chiếu 'in die Alte Nationalgalerie gehen' (Wohin? + Akkusativ) và 'im Kino sehen' (Wo? + Dativ).",
             "Vào buổi sáng các sinh viên muốn đi vào Phòng trưng bày Quốc gia Cũ, nhưng vào buổi tối họ lại thích xem một bộ phim ở trong rạp chiếu phim hơn."
@@ -1311,10 +1344,15 @@ Passant: Sie fährt vom Rathaus durch das Zentrum bis ___ Hafen.""",
             [
                 "Xin Ngài hãy rẽ trái trước trung tâm thương mại lớn, lái xe xuyên qua đường hầm ngắn và dừng lại ngay bên cạnh ngân hàng!",
                 "Xin Ngài hãy rẽ trái trước trung tâm thương mại lớn, lái xe xuyên qua đường hầm ngắn và dừng lại ngay bên cạnh ngân hàng",
-                "Hãy quẹo trái ở phía trước trung tâm mua sắm lớn, chạy xuyên qua hầm ngắn và đỗ ngay cạnh ngân hàng!",
-                "Hãy quẹo trái ở phía trước trung tâm mua sắm lớn, chạy xuyên qua hầm ngắn và đỗ ngay cạnh ngân hàng",
+                "Ngài hãy rẽ trái trước trung tâm thương mại lớn, lái xe xuyên qua đường hầm ngắn và dừng lại ngay bên cạnh ngân hàng!",
+                "Ngài hãy rẽ trái trước trung tâm thương mại lớn, lái xe xuyên qua đường hầm ngắn và dừng lại ngay bên cạnh ngân hàng",
+                "Ngài vui lòng rẽ trái trước trung tâm thương mại lớn, lái xe đi qua đường hầm ngắn và dừng lại ngay cạnh ngân hàng!",
+                "Ngài vui lòng rẽ trái trước trung tâm thương mại lớn, lái xe đi qua đường hầm ngắn và dừng lại ngay cạnh ngân hàng",
+                "Làm ơn hãy rẽ trái trước trung tâm thương mại lớn, lái xe xuyên qua đường hầm ngắn và dừng lại ngay bên cạnh ngân hàng!",
+                "Làm ơn hãy rẽ trái trước trung tâm thương mại lớn, lái xe xuyên qua đường hầm ngắn và dừng lại ngay bên cạnh ngân hàng",
                 "Xin bạn hãy rẽ trái trước trung tâm thương mại lớn, lái xe qua đường hầm ngắn và dừng ngay bên cạnh ngân hàng!",
-                "Xin bạn hãy rẽ trái trước trung tâm thương mại lớn, lái xe qua đường hầm ngắn và dừng ngay bên cạnh ngân hàng"
+                "Bạn hãy rẽ trái trước trung tâm thương mại lớn, lái xe xuyên qua đường hầm ngắn và dừng lại ngay bên cạnh ngân hàng",
+                "Hãy quẹo trái ở phía trước trung tâm mua sắm lớn, chạy xuyên qua hầm ngắn và đỗ ngay cạnh ngân hàng!"
             ],
             "'vor dem großen Einkaufszentrum' = trước trung tâm thương mại lớn; 'durch den kurzen Tunnel' = xuyên qua đường hầm ngắn; 'neben der Bank' = bên cạnh ngân hàng.",
             "Xin Ngài hãy rẽ trái trước trung tâm thương mại lớn, lái xe xuyên qua đường hầm ngắn và dừng lại ngay bên cạnh ngân hàng!"
