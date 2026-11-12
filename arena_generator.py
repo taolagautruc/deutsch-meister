@@ -39,7 +39,8 @@ LESSON_ORDER_MAP = {
     19: ("A1", 6, "Bài 5: Thời gian, Động từ tách, Haben in Präteritum"),
     20: ("A1", 7, "Bài 6: Dativ, Giới từ, Phương tiện, Số thứ tự, Ngày tháng năm"),
     21: ("A1", 8, "Bài 7: Beruf, Modalverben, Akkusativ vs Dativ"),
-    22: ("A1", 9, "Bài 8: Stadt, Wegbeschreibung, Modalverben wollen")
+    22: ("A1", 9, "Bài 8: Stadt, Wegbeschreibung, Modalverben wollen"),
+    23: ("A1", 10, "Bài 9: Du lịch - Perfekt & Präteritum")
 }
 
 def get_user_allowed_lessons(user_id):
@@ -844,6 +845,81 @@ ARENA_DATA_BY_LESSON = {
                 "word_bank_hints": ["zum", "in den", "zur", "im", "ins"],
                 "accepted_answers": ["zum / in den", "zum/in den"],
                 "explanation": "zum Brandenburger Tor (đến chụp ảnh ngoài cổng); in den Berliner Dom (bước vào trong nghe nhạc)."
+            }
+        ]
+    },
+    10: {
+        "name": "Bài 9: Du lịch - Perfekt & Präteritum",
+        "vocab_pairs": [
+            ("der Wald", "rừng"),
+            ("der Berg", "núi"),
+            ("der Strand", "bãi biển"),
+            ("die Insel", "hòn đảo"),
+            ("das Meer", "biển"),
+            ("das Schloss", "lâu đài"),
+            ("das Reiseziel", "điểm đến du lịch"),
+            ("die Radtour", "chuyến đạp xe"),
+            ("der Urlaub", "kỳ nghỉ"),
+            ("wandern", "đi bộ đường dài"),
+            ("besichtigen", "tham quan"),
+            ("übernachten", "ngủ lại / qua đêm"),
+            ("einkaufen", "mua sắm"),
+            ("fotografieren", "chụp ảnh"),
+            ("fliegen", "bay"),
+            ("schwimmen", "bơi")
+        ],
+        "noi_o_sets": [
+            [
+                {"left": "machen", "right": "gemacht (hat gemacht)"},
+                {"left": "fahren", "right": "gefahren (ist gefahren)"},
+                {"left": "fotografieren", "right": "fotografiert (hat fotografiert)"},
+                {"left": "bleiben", "right": "geblieben (ist geblieben)"}
+            ],
+            [
+                {"left": "ich (sein)", "right": "war (Präteritum)"},
+                {"left": "wir (sein)", "right": "waren (Präteritum)"},
+                {"left": "du (haben)", "right": "hattest (Präteritum)"},
+                {"left": "ihr (haben)", "right": "hattet (Präteritum)"}
+            ]
+        ],
+        "sentences_vd": [
+            ("Mùa hè năm ngoái tôi đã đi du lịch đến Berlin.", ["Letzten Sommer bin ich nach Berlin gereist.", "Ich bin letzten Sommer nach Berlin gereist."]),
+            ("Chúng tôi đã cắm trại bên hồ.", ["Wir haben am See gezeltet.", "Wir haben am See gezeltet"]),
+            ("Hôm qua bạn đã ở đâu vậy?", ["Wo warst du gestern?", "Wo warst du gestern"])
+        ],
+        "sentences_dv": [
+            ("Wir sind mit dem Zug nach Wien gefahren.", ["Chúng tôi đã đi tàu hỏa đến Wien", "Chúng tôi đã đi bằng tàu hỏa tới Wien"]),
+            ("Die Familie hat in einer Pension übernachtet.", ["Gia đình đã ngủ lại trong một nhà nghỉ", "Gia đình đã ở qua đêm trong một nhà nghỉ"]),
+            ("Das Wetter war gestern sehr schön.", ["Hôm qua thời tiết đã rất đẹp", "Thời tiết hôm qua rất đẹp"])
+        ],
+        "nghe_dien_items": [
+            {
+                "audio_text": "Meine Eltern sind letzte Woche nach Italien geflogen.",
+                "display_sentence": "Meine Eltern sind letzte Woche nach Italien ___.",
+                "hint_vi": "Bố mẹ tôi đã bay đến Ý vào tuần trước.",
+                "accepted_answers": ["geflogen"]
+            },
+            {
+                "audio_text": "Im Sommer haben wir zwei Nächte am See gezeltet.",
+                "display_sentence": "Im Sommer haben wir zwei Nächte am See ___.",
+                "hint_vi": "Vào mùa hè chúng tôi đã cắm trại hai đêm bên hồ.",
+                "accepted_answers": ["gezeltet"]
+            }
+        ],
+        "dien_tao_cau_items": [
+            {
+                "question": "Điền vào 2 chỗ trống để hoàn thành câu Perfekt:",
+                "display_frame": "Wir [1] mit dem Zug nach Hamburg [2].",
+                "word_bank_hints": ["sind", "gefahren", "haben", "gemacht", "ist"],
+                "accepted_answers": ["sind / gefahren", "sind/gefahren"],
+                "explanation": "fahren là chuyển động đổi vị trí nên dùng sein: wir sind ... gefahren."
+            },
+            {
+                "question": "Điền vào 2 chỗ trống để hoàn thành câu Präteritum:",
+                "display_frame": "Das Wetter [1] gestern sehr gut, und wir [2] am Strand.",
+                "word_bank_hints": ["war", "waren", "hatte", "hatten", "wart"],
+                "accepted_answers": ["war / waren", "war/waren"],
+                "explanation": "das Wetter = es -> war; wir -> waren am Strand."
             }
         ]
     }

@@ -961,8 +961,162 @@ const GERMAN_VERBS_DB = [
         forms: { ich: "wende", du: "wendest", er_sie_es: "wendet", wir: "wenden", ihr: "wendet", sie_Sie: "wenden" },
         note: "Gốc kết thúc bằng -d nên các ngôi du, er/sie/es, ihr chèn thêm nguyên âm đệm -e- (du wendest, er wendet).",
         example: "Sie fahren in die falsche Richtung, bitte wenden Sie an der nächsten Kreuzung!"
-    }
+    },
 
+    {
+        infinitiv: "übernachten",
+        meaning: "qua đêm, ngủ lại",
+        group: "Tiền tố không tách • Du lịch & Perfekt (Bài 9)",
+        stem: "übernacht-",
+        ending: "-en",
+        forms: {"ich": "übernachte", "du": "übernachtest", "er_sie_es": "übernachtet", "wir": "übernachten", "ihr": "übernachtet", "sie_Sie": "übernachten"},
+        perfekt: "hat übernachtet",
+        note: "Tiền tố không tách über- + gốc đuôi -t nên chèn thêm nguyên âm đệm -e- (er übernachtet). Perfekt: hat übernachtet.",
+        example: "Die Familie hat in einer kleinen Pension übernachtet."
+    },
+    {
+        infinitiv: "fotografieren",
+        meaning: "chụp ảnh",
+        group: "Đuôi -ieren • Du lịch & Perfekt (Bài 9)",
+        stem: "fotografier-",
+        ending: "-en",
+        forms: {"ich": "fotografiere", "du": "fotografierst", "er_sie_es": "fotografiert", "wir": "fotografieren", "ihr": "fotografiert", "sie_Sie": "fotografieren"},
+        perfekt: "hat fotografiert",
+        note: "Động từ có hậu tố ngoại lai -ieren thì Partizip II KHÔNG có tiền tố ge- (hat fotografiert).",
+        example: "Er hat den Sonnenuntergang am Meer fotografiert."
+    },
+    {
+        infinitiv: "erreichen",
+        meaning: "đến được, đạt tới",
+        group: "Tiền tố không tách • Du lịch & Perfekt (Bài 9)",
+        stem: "erreich-",
+        ending: "-en",
+        forms: {"ich": "erreiche", "du": "erreichst", "er_sie_es": "erreicht", "wir": "erreichen", "ihr": "erreicht", "sie_Sie": "erreichen"},
+        perfekt: "hat erreicht",
+        note: "Tiền tố không tách er- -> Partizip II không có ge- (hat erreicht).",
+        example: "Wir haben das Reiseziel am Abend erreicht."
+    },
+    {
+        infinitiv: "wandern",
+        meaning: "đi bộ đường dài",
+        group: "Quy tắc di chuyển • Du lịch & Perfekt (Bài 9)",
+        stem: "wander-",
+        ending: "-n",
+        forms: {"ich": "wandere", "du": "wanderst", "er_sie_es": "wandert", "wir": "wandern", "ihr": "wandert", "sie_Sie": "wandern"},
+        perfekt: "ist gewandert",
+        note: "Động từ chỉ chuyển động di chuyển đổi vị trí nên thì Perfekt bắt buộc dùng trợ động từ sein (ist gewandert).",
+        example: "Mein Vater ist früher oft in den Bergen gewandert."
+    },
+    {
+        infinitiv: "zelten",
+        meaning: "cắm trại, dựng lều",
+        group: "Gốc -t, -d • Du lịch & Perfekt (Bài 9)",
+        stem: "zelt-",
+        ending: "-en",
+        forms: {"ich": "zelte", "du": "zeltest", "er_sie_es": "zeltet", "wir": "zelten", "ihr": "zeltet", "sie_Sie": "zelten"},
+        perfekt: "hat gezeltet",
+        note: "Gốc kết thúc bằng -t nên các ngôi du, er/sie/es, ihr chèn thêm -e- (er zeltet). Perfekt: hat gezeltet.",
+        example: "Die Kinder haben im Garten gezeltet."
+    },
+    {
+        infinitiv: "probieren",
+        meaning: "thử (món ăn)",
+        group: "Đuôi -ieren • Du lịch & Perfekt (Bài 9)",
+        stem: "probier-",
+        ending: "-en",
+        forms: {"ich": "probiere", "du": "probierst", "er_sie_es": "probiert", "wir": "probieren", "ihr": "probiert", "sie_Sie": "probieren"},
+        perfekt: "hat probiert",
+        note: "Động từ đuôi -ieren không có ge- ở Partizip II (hat probiert).",
+        example: "Hast du schon die Nudelsuppe probiert?"
+    },
+    {
+        infinitiv: "passieren",
+        meaning: "xảy ra",
+        group: "Đuôi -ieren • Du lịch & Perfekt (Bài 9)",
+        stem: "passier-",
+        ending: "-en",
+        forms: {"ich": "passiere", "du": "passierst", "er_sie_es": "passiert", "wir": "passieren", "ihr": "passiert", "sie_Sie": "passieren"},
+        perfekt: "ist passiert",
+        note: "Động từ chỉ sự việc/trạng thái xảy ra biến chuyển, luôn dùng trợ động từ sein và chủ yếu đi với ngôi es (es ist passiert).",
+        example: "Im Urlaub ist etwas Lustiges passiert."
+    },
+    {
+        infinitiv: "anschauen",
+        meaning: "ngắm, xem",
+        group: "Động từ tách • Du lịch & Perfekt (Bài 9)",
+        stem: "schau- (an)",
+        ending: "-en",
+        forms: {"ich": "schaue ... an", "du": "schaust ... an", "er_sie_es": "schaut ... an", "wir": "schauen ... an", "ihr": "schaut ... an", "sie_Sie": "schauen ... an"},
+        perfekt: "hat angeschaut",
+        note: "Động từ tách tiền tố an- đứng cuối mệnh đề chính ở Präsens. Perfekt: ge chèn vào giữa (hat angeschaut).",
+        example: "Die Touristen haben die Altstadt angeschaut."
+    },
+    {
+        infinitiv: "planen",
+        meaning: "lên kế hoạch",
+        group: "Quy tắc • Du lịch & Perfekt (Bài 9)",
+        stem: "plan-",
+        ending: "-en",
+        forms: {"ich": "plane", "du": "planst", "er_sie_es": "plant", "wir": "planen", "ihr": "plant", "sie_Sie": "planen"},
+        perfekt: "hat geplant",
+        note: "Động từ quy tắc chuẩn: ge + plan + t = geplant. Đi với tân ngữ Akkusativ nên dùng haben (hat geplant).",
+        example: "Mein Onkel hat die Reise im Januar geplant."
+    },
+    {
+        infinitiv: "regnen",
+        meaning: "mưa",
+        group: "Gốc -t, -d • Du lịch & Perfekt (Bài 9)",
+        stem: "regn-",
+        ending: "-en",
+        forms: {"ich": "regne", "du": "regnest", "er_sie_es": "regnet", "wir": "regnen", "ihr": "regnet", "sie_Sie": "regnen"},
+        perfekt: "hat geregnet",
+        note: "Hiện tượng thời tiết, chủ ngữ giả 'es'. Gốc regn- thêm -et ở Partizip II (es hat geregnet).",
+        example: "In den Alpen hat es drei Tage geregnet."
+    },
+    {
+        infinitiv: "bleiben",
+        meaning: "ở lại",
+        group: "Bất quy tắc • Du lịch & Perfekt (Bài 9)",
+        stem: "bleib-",
+        ending: "-en",
+        forms: {"ich": "bleibe", "du": "bleibst", "er_sie_es": "bleibt", "wir": "bleiben", "ihr": "bleibt", "sie_Sie": "bleiben"},
+        perfekt: "ist geblieben",
+        note: "Thuộc nhóm 3 động từ đặc biệt (sein, bleiben, werden) luôn chia với trợ động từ sein ở thì Perfekt (ist geblieben).",
+        example: "Meine Freunde sind nur einen Tag in der Stadt geblieben."
+    },
+    {
+        infinitiv: "schwimmen",
+        meaning: "bơi",
+        group: "Bất quy tắc • Du lịch & Perfekt (Bài 9)",
+        stem: "schwimm-",
+        ending: "-en",
+        forms: {"ich": "schwimme", "du": "schwimmst", "er_sie_es": "schwimmt", "wir": "schwimmen", "ihr": "schwimmt", "sie_Sie": "schwimmen"},
+        perfekt: "ist geschwommen",
+        note: "Động từ di chuyển trong nước, thì Perfekt dùng trợ động từ sein (ist geschwommen).",
+        example: "Die Kinder sind zur Insel geschwommen."
+    },
+    {
+        infinitiv: "treffen",
+        meaning: "gặp",
+        group: "Biến âm • Du lịch & Perfekt (Bài 9)",
+        stem: "treff-",
+        ending: "-en",
+        forms: {"ich": "treffe", "du": "triffst", "er_sie_es": "trifft", "wir": "treffen", "ihr": "trefft", "sie_Sie": "treffen"},
+        perfekt: "hat getroffen",
+        note: "Biến âm e -> i ở ngôi du và er/sie/es (triffst, trifft). Partizip II đổi nguyên âm thành -o- (hat getroffen).",
+        example: "Am Strand habe ich eine Freundin getroffen."
+    },
+    {
+        infinitiv: "buchen",
+        meaning: "đặt (phòng, vé)",
+        group: "Quy tắc • Du lịch & Perfekt (Bài 9)",
+        stem: "buch-",
+        ending: "-en",
+        forms: {"ich": "buche", "du": "buchst", "er_sie_es": "bucht", "wir": "buchen", "ihr": "bucht", "sie_Sie": "buchen"},
+        perfekt: "hat gebucht",
+        note: "Động từ quy tắc: ge + buch + t = gebucht. Đi với tân ngữ buchen ein Hotel / ein Zimmer nên dùng haben (hat gebucht).",
+        example: "Wir haben zwei Zimmer für drei Nächte gebucht."
+    },
 ];
 
 let currentVerbFilterGroup = "all";
