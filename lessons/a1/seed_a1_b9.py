@@ -38,7 +38,7 @@ def seed_lesson_9():
     cursor.execute("DELETE FROM vocabularies WHERE lesson_id = ?;", (lesson_id,))
     cursor.execute("DELETE FROM exercises WHERE lesson_id = ?;", (lesson_id,))
 
-    lesson_title = 'Bài 9: Du lịch - Perfekt & Präteritum (Quá khứ văn nói)'
+    lesson_title = 'Bài 9: Du lịch - Perfekt Präteritum (Quá khứ văn nói)'
 
     grammar_html = """
     <div class="space-y-8 text-slate-700 leading-relaxed">
@@ -54,7 +54,7 @@ def seed_lesson_9():
                     </span>
                 </div>
                 <h3 class="text-xl sm:text-2xl font-black text-white tracking-tight">
-                    Bài 9: Du lịch - Perfekt & Präteritum (Quá khứ văn nói)
+                    Bài 9: Du lịch - Perfekt Präteritum (Quá khứ văn nói)
                 </h3>
                 <p class="text-slate-300 text-xs sm:text-sm leading-relaxed max-w-4xl">
                     <b>Mục tiêu bài học:</b> Chinh phục chủ đề <b>Thiên nhiên & Kỳ nghỉ du lịch (Natur & Urlaub)</b>; làm chủ trọn vẹn <b>Thì Quá Khứ Hoàn Thành Perfekt</b> (haben/sein + Partizip II) với cấu trúc khung câu Satzklammer; phân biệt và sử dụng chuẩn xác <b>6 nhóm quy tắc tạo Partizip II</b>; phương pháp chọn trợ động từ <b>haben hay sein</b> không sai sót; và kết hợp tự nhiên thì <b>Präteritum của sein (war/waren) & haben (hatte/hatten)</b> trong giao tiếp hằng ngày.
@@ -99,8 +99,8 @@ def seed_lesson_9():
                     <ul class="space-y-1.5 text-slate-700">
                         <li>• <b class="text-rose-950 font-bold">die Altstadt</b> <i>(Pl: die Altstädte)</i>: phố cổ</li>
                         <li>• <b class="text-rose-950 font-bold">die Insel</b> <i>(Pl: die Inseln)</i>: hòn đảo</li>
-                        <li>• <b class="text-rose-950 font-bold">die Sonne</b> <i>(Pl: die Sonnen)</i>: mặt trời</li>
-                        <li>• <b class="text-rose-950 font-bold">die Alpen</b> <i>(nur Plural)</i>: dãy Alps</li>
+                        <li>• <b class="text-rose-950 font-bold">die Sonne</b> <i>(Plural: nur Singular - thường chỉ dùng số ít)</i>: mặt trời</li>
+                        <li>• <b class="text-rose-950 font-bold">die Alpen</b> <i>(nur Plural - Danh từ số nhiều, ở Dativ đổi thành: in den Alpen)</i></li>
                         <li>• <b class="text-rose-950 font-bold">die Besichtigung</b> <i>(Pl: die Besichtigungen)</i>: sự tham quan</li>
                         <li>• <b class="text-rose-950 font-bold">die Radtour</b> <i>(Pl: die Radtouren)</i>: chuyến đạp xe</li>
                         <li>• <b class="text-rose-950 font-bold">die Reise</b> <i>(Pl: die Reisen)</i>: chuyến du lịch</li>
@@ -121,6 +121,7 @@ def seed_lesson_9():
                         <li>• <b class="text-emerald-950 font-bold">das Wetter</b> <i>(nur Singular)</i>: thời tiết</li>
                         <li>• <b class="text-emerald-950 font-bold">das Essen</b> <i>(Pl: die Essen)</i>: đồ ăn, bữa ăn</li>
                         <li>• <b class="text-emerald-950 font-bold">das Hotel</b> <i>(Pl: die Hotels)</i>: khách sạn</li>
+                        <li>• <b class="text-emerald-950 font-bold">das Frühstück</b> <i>(Plural: nur Singular - thường chỉ dùng số ít)</i>: bữa sáng</li>
                     </ul>
                 </div>
             </div>
@@ -196,6 +197,14 @@ def seed_lesson_9():
                     <b class="text-indigo-900">die Rechnung bezahlen</b>
                     <div class="text-slate-500 text-[11px] mt-0.5">thanh toán hóa đơn</div>
                 </div>
+                <div class="p-3 rounded-xl bg-slate-50 border border-slate-200">
+                    <b class="text-indigo-900">eine Reise / Ferien planen</b>
+                    <div class="text-slate-500 text-[11px] mt-0.5">lên kế hoạch cho chuyến đi / kỳ nghỉ</div>
+                </div>
+                <div class="p-3 rounded-xl bg-slate-50 border border-slate-200">
+                    <b class="text-indigo-900">einen Reiseführer kaufen</b>
+                    <div class="text-slate-500 text-[11px] mt-0.5">mua một cuốn sách hướng dẫn du lịch</div>
+                </div>
             </div>
         </div>
 
@@ -255,6 +264,35 @@ def seed_lesson_9():
                     <div>• Ở nhà / Nhà bạn bè: <b>zu Hause</b>, <b>bei</b> Freunden</div>
                 </div>
             </div>
+
+            <!-- Mẫu câu hỏi thăm & đánh giá kỳ nghỉ thường gặp -->
+            <div class="p-4 rounded-2xl bg-indigo-50/70 border border-indigo-200 text-xs space-y-2">
+                <div class="font-extrabold text-indigo-950 text-sm flex items-center gap-2">
+                    <span>🌟 Mẫu câu hỏi thăm & đánh giá kỳ nghỉ thường gặp:</span>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-3 text-slate-700">
+                    <div class="p-2.5 rounded-xl bg-white border border-indigo-100 space-y-1">
+                        <div class="font-bold text-indigo-900">• Hỏi nơi chốn đã ở:</div>
+                        <div class="font-semibold text-slate-800">„Wo warst du / waren Sie im Urlaub?“</div>
+                        <div class="text-slate-600">→ „Ich war am Meer / in den Bergen / in Berlin / auf der Insel Phú Quốc.“</div>
+                    </div>
+                    <div class="p-2.5 rounded-xl bg-white border border-indigo-100 space-y-1">
+                        <div class="font-bold text-indigo-900">• Đánh giá kỳ nghỉ chung:</div>
+                        <div class="font-semibold text-slate-800">„Wie war der Urlaub / wie war es?“</div>
+                        <div class="text-slate-600">→ „Es war super / toll / wunderschön / langweilig.“</div>
+                    </div>
+                    <div class="p-2.5 rounded-xl bg-white border border-indigo-100 space-y-1">
+                        <div class="font-bold text-indigo-900">• Hỏi thăm thời tiết:</div>
+                        <div class="font-semibold text-slate-800">„Wie war das Wetter?“</div>
+                        <div class="text-slate-600">→ „Das Wetter war herrlich / gut / schlecht.“</div>
+                    </div>
+                    <div class="p-2.5 rounded-xl bg-white border border-indigo-100 space-y-1">
+                        <div class="font-bold text-indigo-900">• Hỏi thăm đồ ăn & khách sạn:</div>
+                        <div class="font-semibold text-slate-800">„Wie war das Essen / das Hotel?“</div>
+                        <div class="text-slate-600">→ „Das Essen war sehr lecker. Das Hotel war sauber und gemütlich.“</div>
+                    </div>
+                </div>
+            </div>
         </div>
 
         <!-- HỌC PHẦN 4: THÌ PERFEKT (TRỌNG TÂM CỐT LÕI) -->
@@ -284,8 +322,8 @@ def seed_lesson_9():
             <!-- Container Sơ đồ V3 (Cây quyết định haben / sein) -->
             <div id="svg-v3-container"></div>
 
-            <!-- Container Sơ đồ V5 (Trục thời gian Perfekt vs Präteritum) -->
-            <div id="svg-v5-container"></div>
+            <!-- Container Sơ đồ V4 (Trục thời gian Perfekt vs Präteritum) -->
+            <div id="svg-v4-container"></div>
         </div>
 
         <!-- HỌC PHẦN 5: ĐỌC HIỂU & PHÂN TÍCH VĂN BẢN DU LỊCH -->
@@ -295,8 +333,8 @@ def seed_lesson_9():
                 <h4 class="text-lg font-bold text-slate-900">Đọc Hiểu & Phân Tích Văn Bản: "Ab in den Urlaub"</h4>
             </div>
 
-            <!-- Container Sơ đồ V4 (Bản đồ sông Donau) -->
-            <div id="svg-v4-container"></div>
+            <!-- Container Sơ đồ V5 (Bản đồ sông Donau) -->
+            <div id="svg-v5-container"></div>
 
             <!-- Thư của Linh gửi từ Hội An -->
             <div class="p-5 rounded-2xl bg-slate-50 border border-slate-200 space-y-3 text-xs">
@@ -324,6 +362,93 @@ def seed_lesson_9():
 
             <!-- Container Sơ đồ V6 (Máy tính Partizip II) -->
             <div id="svg-v6-container"></div>
+
+            <!-- BẢNG TỔNG HỢP ĐỘNG TỪ BẤT QUY TẮC & TRỌNG TÂM Ở THÌ PERFEKT -->
+            <div class="p-5 rounded-2xl bg-slate-900 text-white border border-slate-700 space-y-4">
+                <div class="flex items-center justify-between pb-3 border-b border-slate-800">
+                    <div class="flex items-center gap-2">
+                        <span class="px-2.5 py-0.5 rounded-full text-xs font-black bg-purple-500/20 text-purple-400 border border-purple-500/30">CHEAT SHEET</span>
+                        <h5 class="text-sm font-extrabold text-white">Bảng Tổng Hợp Động Từ Bất Quy Tắc & Trọng Tâm Ở Thì Perfekt</h5>
+                    </div>
+                    <span class="text-[11px] text-slate-400">Bấm 🔊 để nghe phát âm từng động từ</span>
+                </div>
+
+                <!-- BẢNG A: 13 ĐỘNG TỪ ĐI VỚI SEIN -->
+                <div class="space-y-2">
+                    <div class="flex items-center gap-2 text-xs font-bold text-amber-300">
+                        <span>🟠 BẢNG A: 13 Động từ chuyển động / đổi trạng thái đi kèm SEIN (ist + Partizip II)</span>
+                    </div>
+                    <div class="overflow-x-auto">
+                        <table class="w-full text-left text-xs border-collapse">
+                            <thead>
+                                <tr class="border-b border-slate-700 text-slate-400">
+                                    <th class="p-2">STT</th>
+                                    <th class="p-2">Nguyên mẫu (Infinitiv)</th>
+                                    <th class="p-2">Perfekt với sein</th>
+                                    <th class="p-2">Ý nghĩa tiếng Việt</th>
+                                    <th class="p-2">Phát âm</th>
+                                </tr>
+                            </thead>
+                            <tbody class="divide-y divide-slate-800 text-slate-200">
+                                <tr><td class="p-2 font-mono text-slate-400">1</td><td class="p-2 font-bold text-white">fahren</td><td class="p-2 text-amber-300 font-mono font-bold">ist gefahren</td><td class="p-2 text-slate-300">lái xe, đi xe</td><td class="p-2"><button onclick="speakGerman('fahren, ist gefahren', 1.0)" class="px-2 py-0.5 rounded bg-amber-500/20 hover:bg-amber-500/40 text-amber-200 text-[10px] font-bold">🔊</button></td></tr>
+                                <tr><td class="p-2 font-mono text-slate-400">2</td><td class="p-2 font-bold text-white">fliegen</td><td class="p-2 text-amber-300 font-mono font-bold">ist geflogen</td><td class="p-2 text-slate-300">bay</td><td class="p-2"><button onclick="speakGerman('fliegen, ist geflogen', 1.0)" class="px-2 py-0.5 rounded bg-amber-500/20 hover:bg-amber-500/40 text-amber-200 text-[10px] font-bold">🔊</button></td></tr>
+                                <tr><td class="p-2 font-mono text-slate-400">3</td><td class="p-2 font-bold text-white">gehen</td><td class="p-2 text-amber-300 font-mono font-bold">ist gegangen</td><td class="p-2 text-slate-300">đi bộ</td><td class="p-2"><button onclick="speakGerman('gehen, ist gegangen', 1.0)" class="px-2 py-0.5 rounded bg-amber-500/20 hover:bg-amber-500/40 text-amber-200 text-[10px] font-bold">🔊</button></td></tr>
+                                <tr><td class="p-2 font-mono text-slate-400">4</td><td class="p-2 font-bold text-white">kommen</td><td class="p-2 text-amber-300 font-mono font-bold">ist gekommen</td><td class="p-2 text-slate-300">đến</td><td class="p-2"><button onclick="speakGerman('kommen, ist gekommen', 1.0)" class="px-2 py-0.5 rounded bg-amber-500/20 hover:bg-amber-500/40 text-amber-200 text-[10px] font-bold">🔊</button></td></tr>
+                                <tr><td class="p-2 font-mono text-slate-400">5</td><td class="p-2 font-bold text-white">schwimmen</td><td class="p-2 text-amber-300 font-mono font-bold">ist geschwommen</td><td class="p-2 text-slate-300">bơi</td><td class="p-2"><button onclick="speakGerman('schwimmen, ist geschwommen', 1.0)" class="px-2 py-0.5 rounded bg-amber-500/20 hover:bg-amber-500/40 text-amber-200 text-[10px] font-bold">🔊</button></td></tr>
+                                <tr><td class="p-2 font-mono text-slate-400">6</td><td class="p-2 font-bold text-white">reisen</td><td class="p-2 text-amber-300 font-mono font-bold">ist gereist</td><td class="p-2 text-slate-300">đi du lịch</td><td class="p-2"><button onclick="speakGerman('reisen, ist gereist', 1.0)" class="px-2 py-0.5 rounded bg-amber-500/20 hover:bg-amber-500/40 text-amber-200 text-[10px] font-bold">🔊</button></td></tr>
+                                <tr><td class="p-2 font-mono text-slate-400">7</td><td class="p-2 font-bold text-white">wandern</td><td class="p-2 text-amber-300 font-mono font-bold">ist gewandert</td><td class="p-2 text-slate-300">đi bộ đường dài</td><td class="p-2"><button onclick="speakGerman('wandern, ist gewandert', 1.0)" class="px-2 py-0.5 rounded bg-amber-500/20 hover:bg-amber-500/40 text-amber-200 text-[10px] font-bold">🔊</button></td></tr>
+                                <tr><td class="p-2 font-mono text-slate-400">8</td><td class="p-2 font-bold text-white">laufen</td><td class="p-2 text-amber-300 font-mono font-bold">ist gelaufen</td><td class="p-2 text-slate-300">chạy bộ</td><td class="p-2"><button onclick="speakGerman('laufen, ist gelaufen', 1.0)" class="px-2 py-0.5 rounded bg-amber-500/20 hover:bg-amber-500/40 text-amber-200 text-[10px] font-bold">🔊</button></td></tr>
+                                <tr><td class="p-2 font-mono text-slate-400">9</td><td class="p-2 font-bold text-white">aufstehen</td><td class="p-2 text-amber-300 font-mono font-bold">ist aufgestanden</td><td class="p-2 text-slate-300">thức dậy</td><td class="p-2"><button onclick="speakGerman('aufstehen, ist aufgestanden', 1.0)" class="px-2 py-0.5 rounded bg-amber-500/20 hover:bg-amber-500/40 text-amber-200 text-[10px] font-bold">🔊</button></td></tr>
+                                <tr><td class="p-2 font-mono text-slate-400">10</td><td class="p-2 font-bold text-white">einschlafen</td><td class="p-2 text-amber-300 font-mono font-bold">ist eingeschlafen</td><td class="p-2 text-slate-300">ngủ thiếp đi</td><td class="p-2"><button onclick="speakGerman('einschlafen, ist eingeschlafen', 1.0)" class="px-2 py-0.5 rounded bg-amber-500/20 hover:bg-amber-500/40 text-amber-200 text-[10px] font-bold">🔊</button></td></tr>
+                                <tr><td class="p-2 font-mono text-slate-400">11</td><td class="p-2 font-bold text-white">bleiben</td><td class="p-2 text-amber-300 font-mono font-bold">ist geblieben</td><td class="p-2 text-slate-300">ở lại</td><td class="p-2"><button onclick="speakGerman('bleiben, ist geblieben', 1.0)" class="px-2 py-0.5 rounded bg-amber-500/20 hover:bg-amber-500/40 text-amber-200 text-[10px] font-bold">🔊</button></td></tr>
+                                <tr><td class="p-2 font-mono text-slate-400">12</td><td class="p-2 font-bold text-white">sein</td><td class="p-2 text-amber-300 font-mono font-bold">ist gewesen</td><td class="p-2 text-slate-300">thì, là, ở</td><td class="p-2"><button onclick="speakGerman('sein, ist gewesen', 1.0)" class="px-2 py-0.5 rounded bg-amber-500/20 hover:bg-amber-500/40 text-amber-200 text-[10px] font-bold">🔊</button></td></tr>
+                                <tr><td class="p-2 font-mono text-slate-400">13</td><td class="p-2 font-bold text-white">werden</td><td class="p-2 text-amber-300 font-mono font-bold">ist geworden</td><td class="p-2 text-slate-300">trở thành, trở nên</td><td class="p-2"><button onclick="speakGerman('werden, ist geworden', 1.0)" class="px-2 py-0.5 rounded bg-amber-500/20 hover:bg-amber-500/40 text-amber-200 text-[10px] font-bold">🔊</button></td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <!-- BẢNG B: 19 ĐỘNG TỪ BẤT QUY TẮC ĐI VỚI HABEN -->
+                <div class="space-y-2 pt-3 border-t border-slate-800">
+                    <div class="flex items-center gap-2 text-xs font-bold text-emerald-300">
+                        <span>🟢 BẢNG B: 19 Động từ bất quy tắc cốt lõi đi kèm HABEN (hat + Partizip II)</span>
+                    </div>
+                    <div class="overflow-x-auto">
+                        <table class="w-full text-left text-xs border-collapse">
+                            <thead>
+                                <tr class="border-b border-slate-700 text-slate-400">
+                                    <th class="p-2">STT</th>
+                                    <th class="p-2">Nguyên mẫu (Infinitiv)</th>
+                                    <th class="p-2">Perfekt với haben</th>
+                                    <th class="p-2">Ý nghĩa tiếng Việt</th>
+                                    <th class="p-2">Phát âm</th>
+                                </tr>
+                            </thead>
+                            <tbody class="divide-y divide-slate-800 text-slate-200">
+                                <tr><td class="p-2 font-mono text-slate-400">1</td><td class="p-2 font-bold text-white">essen</td><td class="p-2 text-emerald-300 font-mono font-bold">hat gegessen</td><td class="p-2 text-slate-300">ăn</td><td class="p-2"><button onclick="speakGerman('essen, hat gegessen', 1.0)" class="px-2 py-0.5 rounded bg-emerald-500/20 hover:bg-emerald-500/40 text-emerald-200 text-[10px] font-bold">🔊</button></td></tr>
+                                <tr><td class="p-2 font-mono text-slate-400">2</td><td class="p-2 font-bold text-white">trinken</td><td class="p-2 text-emerald-300 font-mono font-bold">hat getrunken</td><td class="p-2 text-slate-300">uống</td><td class="p-2"><button onclick="speakGerman('trinken, hat getrunken', 1.0)" class="px-2 py-0.5 rounded bg-emerald-500/20 hover:bg-emerald-500/40 text-emerald-200 text-[10px] font-bold">🔊</button></td></tr>
+                                <tr><td class="p-2 font-mono text-slate-400">3</td><td class="p-2 font-bold text-white">schlafen</td><td class="p-2 text-emerald-300 font-mono font-bold">hat geschlafen</td><td class="p-2 text-slate-300">ngủ</td><td class="p-2"><button onclick="speakGerman('schlafen, hat geschlafen', 1.0)" class="px-2 py-0.5 rounded bg-emerald-500/20 hover:bg-emerald-500/40 text-emerald-200 text-[10px] font-bold">🔊</button></td></tr>
+                                <tr><td class="p-2 font-mono text-slate-400">4</td><td class="p-2 font-bold text-white">sehen</td><td class="p-2 text-emerald-300 font-mono font-bold">hat gesehen</td><td class="p-2 text-slate-300">nhìn, thấy</td><td class="p-2"><button onclick="speakGerman('sehen, hat gesehen', 1.0)" class="px-2 py-0.5 rounded bg-emerald-500/20 hover:bg-emerald-500/40 text-emerald-200 text-[10px] font-bold">🔊</button></td></tr>
+                                <tr><td class="p-2 font-mono text-slate-400">5</td><td class="p-2 font-bold text-white">lesen</td><td class="p-2 text-emerald-300 font-mono font-bold">hat gelesen</td><td class="p-2 text-slate-300">đọc</td><td class="p-2"><button onclick="speakGerman('lesen, hat gelesen', 1.0)" class="px-2 py-0.5 rounded bg-emerald-500/20 hover:bg-emerald-500/40 text-emerald-200 text-[10px] font-bold">🔊</button></td></tr>
+                                <tr><td class="p-2 font-mono text-slate-400">6</td><td class="p-2 font-bold text-white">treffen</td><td class="p-2 text-emerald-300 font-mono font-bold">hat getroffen</td><td class="p-2 text-slate-300">gặp gỡ</td><td class="p-2"><button onclick="speakGerman('treffen, hat getroffen', 1.0)" class="px-2 py-0.5 rounded bg-emerald-500/20 hover:bg-emerald-500/40 text-emerald-200 text-[10px] font-bold">🔊</button></td></tr>
+                                <tr><td class="p-2 font-mono text-slate-400">7</td><td class="p-2 font-bold text-white">nehmen</td><td class="p-2 text-emerald-300 font-mono font-bold">hat genommen</td><td class="p-2 text-slate-300">lấy, đón xe</td><td class="p-2"><button onclick="speakGerman('nehmen, hat genommen', 1.0)" class="px-2 py-0.5 rounded bg-emerald-500/20 hover:bg-emerald-500/40 text-emerald-200 text-[10px] font-bold">🔊</button></td></tr>
+                                <tr><td class="p-2 font-mono text-slate-400">8</td><td class="p-2 font-bold text-white">schreiben</td><td class="p-2 text-emerald-300 font-mono font-bold">hat geschrieben</td><td class="p-2 text-slate-300">viết</td><td class="p-2"><button onclick="speakGerman('schreiben, hat geschrieben', 1.0)" class="px-2 py-0.5 rounded bg-emerald-500/20 hover:bg-emerald-500/40 text-emerald-200 text-[10px] font-bold">🔊</button></td></tr>
+                                <tr><td class="p-2 font-mono text-slate-400">9</td><td class="p-2 font-bold text-white">finden</td><td class="p-2 text-emerald-300 font-mono font-bold">hat gefunden</td><td class="p-2 text-slate-300">tìm thấy</td><td class="p-2"><button onclick="speakGerman('finden, hat gefunden', 1.0)" class="px-2 py-0.5 rounded bg-emerald-500/20 hover:bg-emerald-500/40 text-emerald-200 text-[10px] font-bold">🔊</button></td></tr>
+                                <tr><td class="p-2 font-mono text-slate-400">10</td><td class="p-2 font-bold text-white">sprechen</td><td class="p-2 text-emerald-300 font-mono font-bold">hat gesprochen</td><td class="p-2 text-slate-300">nói chuyện</td><td class="p-2"><button onclick="speakGerman('sprechen, hat gesprochen', 1.0)" class="px-2 py-0.5 rounded bg-emerald-500/20 hover:bg-emerald-500/40 text-emerald-200 text-[10px] font-bold">🔊</button></td></tr>
+                                <tr><td class="p-2 font-mono text-slate-400">11</td><td class="p-2 font-bold text-white">anrufen</td><td class="p-2 text-emerald-300 font-mono font-bold">hat angerufen</td><td class="p-2 text-slate-300">gọi điện thoại</td><td class="p-2"><button onclick="speakGerman('anrufen, hat angerufen', 1.0)" class="px-2 py-0.5 rounded bg-emerald-500/20 hover:bg-emerald-500/40 text-emerald-200 text-[10px] font-bold">🔊</button></td></tr>
+                                <tr><td class="p-2 font-mono text-slate-400">12</td><td class="p-2 font-bold text-white">fernsehen</td><td class="p-2 text-emerald-300 font-mono font-bold">hat ferngesehen</td><td class="p-2 text-slate-300">xem tivi</td><td class="p-2"><button onclick="speakGerman('fernsehen, hat ferngesehen', 1.0)" class="px-2 py-0.5 rounded bg-emerald-500/20 hover:bg-emerald-500/40 text-emerald-200 text-[10px] font-bold">🔊</button></td></tr>
+                                <tr><td class="p-2 font-mono text-slate-400">13</td><td class="p-2 font-bold text-white">mitbringen</td><td class="p-2 text-emerald-300 font-mono font-bold">hat mitgebracht</td><td class="p-2 text-slate-300">mang theo</td><td class="p-2"><button onclick="speakGerman('mitbringen, hat mitgebracht', 1.0)" class="px-2 py-0.5 rounded bg-emerald-500/20 hover:bg-emerald-500/40 text-emerald-200 text-[10px] font-bold">🔊</button></td></tr>
+                                <tr><td class="p-2 font-mono text-slate-400">14</td><td class="p-2 font-bold text-white">einladen</td><td class="p-2 text-emerald-300 font-mono font-bold">hat eingeladen</td><td class="p-2 text-slate-300">mời</td><td class="p-2"><button onclick="speakGerman('einladen, hat eingeladen', 1.0)" class="px-2 py-0.5 rounded bg-emerald-500/20 hover:bg-emerald-500/40 text-emerald-200 text-[10px] font-bold">🔊</button></td></tr>
+                                <tr><td class="p-2 font-mono text-slate-400">15</td><td class="p-2 font-bold text-white">verstehen</td><td class="p-2 text-emerald-300 font-mono font-bold">hat verstanden</td><td class="p-2 text-slate-300">hiểu</td><td class="p-2"><button onclick="speakGerman('verstehen, hat verstanden', 1.0)" class="px-2 py-0.5 rounded bg-emerald-500/20 hover:bg-emerald-500/40 text-emerald-200 text-[10px] font-bold">🔊</button></td></tr>
+                                <tr><td class="p-2 font-mono text-slate-400">16</td><td class="p-2 font-bold text-white">bekommen</td><td class="p-2 text-emerald-300 font-mono font-bold">hat bekommen</td><td class="p-2 text-slate-300">nhận được</td><td class="p-2"><button onclick="speakGerman('bekommen, hat bekommen', 1.0)" class="px-2 py-0.5 rounded bg-emerald-500/20 hover:bg-emerald-500/40 text-emerald-200 text-[10px] font-bold">🔊</button></td></tr>
+                                <tr><td class="p-2 font-mono text-slate-400">17</td><td class="p-2 font-bold text-white">beginnen</td><td class="p-2 text-emerald-300 font-mono font-bold">hat begonnen</td><td class="p-2 text-slate-300">bắt đầu</td><td class="p-2"><button onclick="speakGerman('beginnen, hat begonnen', 1.0)" class="px-2 py-0.5 rounded bg-emerald-500/20 hover:bg-emerald-500/40 text-emerald-200 text-[10px] font-bold">🔊</button></td></tr>
+                                <tr><td class="p-2 font-mono text-slate-400">18</td><td class="p-2 font-bold text-white">vergessen</td><td class="p-2 text-emerald-300 font-mono font-bold">hat vergessen</td><td class="p-2 text-slate-300">quên</td><td class="p-2"><button onclick="speakGerman('vergessen, hat vergessen', 1.0)" class="px-2 py-0.5 rounded bg-emerald-500/20 hover:bg-emerald-500/40 text-emerald-200 text-[10px] font-bold">🔊</button></td></tr>
+                                <tr><td class="p-2 font-mono text-slate-400">19</td><td class="p-2 font-bold text-white">verlieren</td><td class="p-2 text-emerald-300 font-mono font-bold">hat verloren</td><td class="p-2 text-slate-300">làm mất</td><td class="p-2"><button onclick="speakGerman('verlieren, hat verloren', 1.0)" class="px-2 py-0.5 rounded bg-emerald-500/20 hover:bg-emerald-500/40 text-emerald-200 text-[10px] font-bold">🔊</button></td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
     """
@@ -340,8 +465,8 @@ def seed_lesson_9():
                 "meaning": "rừng",
                 "category": "Thiên nhiên & Điểm đến Du lịch (Natur & Reiseziele - Bài 9)",
                 "notes": "Danh từ đơn âm tiết giống đực, số nhiều biến âm a -> ä và thêm đuôi -er (die Wälder).",
-                "example": "Wir machen ein Picknick im Wald.",
-                "example_vi": "Chúng tôi dã ngoại trong rừng."
+                "example": "Wir haben gestern eine Wanderung im Wald gemacht.",
+                "example_vi": "Hôm qua chúng tôi đã đi bộ đường dài trong rừng."
         },
         {
                 "word": "Berg",
@@ -351,11 +476,11 @@ def seed_lesson_9():
                 "indefinite": "ein Berg",
                 "negation": "kein Berg",
                 "akkusativ": "den Berg",
-                "meaning": "núi",
+                "meaning": "núi, ngọn núi",
                 "category": "Thiên nhiên & Điểm đến Du lịch (Natur & Reiseziele - Bài 9)",
-                "notes": "Danh từ giống đực chỉ địa hình đồi núi, số nhiều thêm -e (die Berge).",
-                "example": "Im Winter liegt auf dem Berg viel Schnee.",
-                "example_vi": "Vào mùa đông trên núi có nhiều tuyết."
+                "notes": "Danh từ giống đực, số nhiều thêm -e (die Berge). Thành ngữ: in den Bergen sein (ở trên vùng núi).",
+                "example": "Im Urlaub sind wir auf einen hohen Berg gestiegen.",
+                "example_vi": "Trong kỳ nghỉ chúng tôi đã leo lên một ngọn núi cao."
         },
         {
                 "word": "Fluss",
@@ -365,11 +490,11 @@ def seed_lesson_9():
                 "indefinite": "ein Fluss",
                 "negation": "kein Fluss",
                 "akkusativ": "den Fluss",
-                "meaning": "sông",
+                "meaning": "con sông",
                 "category": "Thiên nhiên & Điểm đến Du lịch (Natur & Reiseziele - Bài 9)",
                 "notes": "Số nhiều biến âm u -> ü và thêm đuôi -e (die Flüsse).",
-                "example": "Die Familie macht am Fluss ein Picknick.",
-                "example_vi": "Gia đình dã ngoại bên bờ sông."
+                "example": "Wir sind mit dem Schiff auf dem Fluss gefahren.",
+                "example_vi": "Chúng tôi đã đi tàu thủy trên sông."
         },
         {
                 "word": "See",
@@ -379,11 +504,11 @@ def seed_lesson_9():
                 "indefinite": "ein See",
                 "negation": "kein See",
                 "akkusativ": "den See",
-                "meaning": "hồ",
+                "meaning": "hồ nước",
                 "category": "Thiên nhiên & Điểm đến Du lịch (Natur & Reiseziele - Bài 9)",
-                "notes": "Phân biệt der See (hồ nước) và die See (biển). Số nhiều thêm -n (die Seen).",
-                "example": "Der See ist morgens ganz ruhig.",
-                "example_vi": "Buổi sáng hồ hoàn toàn yên tĩnh."
+                "notes": "Phân biệt: der See (hồ nước, số nhiều die Seen) vs die See (biển cả = das Meer).",
+                "example": "Am Wochenende haben die Kinder im See gebadet.",
+                "example_vi": "Vào cuối tuần những đứa trẻ đã tắm trong hồ."
         },
         {
                 "word": "Strand",
@@ -395,9 +520,9 @@ def seed_lesson_9():
                 "akkusativ": "den Strand",
                 "meaning": "bãi biển",
                 "category": "Thiên nhiên & Điểm đến Du lịch (Natur & Reiseziele - Bài 9)",
-                "notes": "Số nhiều biến âm a -> ä và thêm đuôi -e (die Strände).",
-                "example": "Die Kinder spielen am Strand.",
-                "example_vi": "Những đứa trẻ chơi ở bãi biển."
+                "notes": "Số nhiều biến âm a -> ä và thêm đuôi -e (die Strände). Giới từ: am Strand (ở bãi biển), an den Strand (ra bãi biển).",
+                "example": "Wir haben den ganzen Tag am Strand gelegen und entspannt.",
+                "example_vi": "Chúng tôi đã nằm cả ngày ở bãi biển và thư giãn."
         },
         {
                 "word": "Bummel",
@@ -407,11 +532,11 @@ def seed_lesson_9():
                 "indefinite": "ein Bummel",
                 "negation": "kein Bummel",
                 "akkusativ": "den Bummel",
-                "meaning": "cuộc đi dạo (phố)",
+                "meaning": "cuộc đi dạo phố",
                 "category": "Thiên nhiên & Điểm đến Du lịch (Natur & Reiseziele - Bài 9)",
-                "notes": "Danh từ giống đực đuôi -el, số nhiều giữ nguyên hình thức.",
-                "example": "Nach dem Essen machen wir einen Bummel durch die Stadt.",
-                "example_vi": "Sau bữa ăn chúng tôi đi dạo quanh thành phố."
+                "notes": "Đuôi -el giống đực, số nhiều giữ nguyên hình thức (die Bummel). Cụm cố định: einen Stadtbummel machen.",
+                "example": "Gestern Abend haben wir einen gemütlichen Bummel durch die Altstadt gemacht.",
+                "example_vi": "Tối hôm qua chúng tôi đã có một cuộc đi dạo thư thái qua khu phố cổ."
         },
         {
                 "word": "Urlaub",
@@ -421,11 +546,11 @@ def seed_lesson_9():
                 "indefinite": "ein Urlaub",
                 "negation": "kein Urlaub",
                 "akkusativ": "den Urlaub",
-                "meaning": "kỳ nghỉ",
+                "meaning": "kỳ nghỉ, chuyến nghỉ phép",
                 "category": "Thiên nhiên & Điểm đến Du lịch (Natur & Reiseziele - Bài 9)",
-                "notes": "Khác với die Ferien (kỳ nghỉ học sinh), der Urlaub dành cho người đi làm. Số nhiều: die Urlaube.",
-                "example": "Mein Urlaub war leider zu kurz.",
-                "example_vi": "Kỳ nghỉ của tôi tiếc là quá ngắn."
+                "notes": "Danh từ giống đực (der Urlaub). Cụm kinh điển: im Urlaub sein (đang trong kỳ nghỉ), Urlaub machen (đi nghỉ mát).",
+                "example": "Wo hast du deinen Sommerurlaub verbracht?",
+                "example_vi": "Bạn đã trải qua kỳ nghỉ hè ở đâu?"
         },
         {
                 "word": "Reiseführer",
@@ -435,11 +560,11 @@ def seed_lesson_9():
                 "indefinite": "ein Reiseführer",
                 "negation": "kein Reiseführer",
                 "akkusativ": "den Reiseführer",
-                "meaning": "sách hướng dẫn du lịch; hướng dẫn viên",
+                "meaning": "sách hướng dẫn du lịch / hướng dẫn viên",
                 "category": "Thiên nhiên & Điểm đến Du lịch (Natur & Reiseziele - Bài 9)",
-                "notes": "Danh từ ghép lấy giống từ cuối der Führer. Mang cả 2 nghĩa: cuốn sách hướng dẫn và người hướng dẫn viên.",
-                "example": "Der Reiseführer hat viele Tipps für Wien.",
-                "example_vi": "Cuốn sách hướng dẫn có nhiều mẹo cho Wien."
+                "notes": "Đuôi chỉ người hoặc đồ vật -er mang giống đực (der), số nhiều không đổi (die Reiseführer).",
+                "example": "Vor der Reise habe ich einen guten Reiseführer gekauft.",
+                "example_vi": "Trước chuyến đi tôi đã mua một cuốn sách hướng dẫn du lịch hay."
         },
         {
                 "word": "Sonnenuntergang",
@@ -449,11 +574,11 @@ def seed_lesson_9():
                 "indefinite": "ein Sonnenuntergang",
                 "negation": "kein Sonnenuntergang",
                 "akkusativ": "den Sonnenuntergang",
-                "meaning": "hoàng hôn",
+                "meaning": "hoàng hôn, cảnh mặt trời lặn",
                 "category": "Thiên nhiên & Điểm đến Du lịch (Natur & Reiseziele - Bài 9)",
-                "notes": "Ghép từ die Sonne + der Untergang -> mang giống đực der. Số nhiều: die Sonnenuntergänge.",
-                "example": "Am Meer ist der Sonnenuntergang besonders schön.",
-                "example_vi": "Bên biển hoàng hôn đặc biệt đẹp."
+                "notes": "Ghép từ die Sonne + der Untergang -> mạo từ theo từ cuối: der Sonnenuntergang.",
+                "example": "Lukas hat gestern den schönen Sonnenuntergang am Meer fotografiert.",
+                "example_vi": "Hôm qua Lukas đã chụp ảnh hoàng hôn tuyệt đẹp bên bờ biển."
         },
         {
                 "word": "Ausflug",
@@ -463,11 +588,11 @@ def seed_lesson_9():
                 "indefinite": "ein Ausflug",
                 "negation": "kein Ausflug",
                 "akkusativ": "den Ausflug",
-                "meaning": "chuyến đi chơi trong ngày",
+                "meaning": "chuyến đi chơi trong ngày, dã ngoại",
                 "category": "Thiên nhiên & Điểm đến Du lịch (Natur & Reiseziele - Bài 9)",
-                "notes": "Chuyến dã ngoại ngắn ngày, số nhiều biến âm u -> ü (die Ausflüge).",
-                "example": "Am Sonntag machen wir einen Ausflug.",
-                "example_vi": "Chủ nhật chúng tôi đi chơi một chuyến."
+                "notes": "Danh từ giống đực, số nhiều biến âm u -> ü (die Ausflüge). Cụm: einen Ausflug machen.",
+                "example": "Am Sonntag haben wir einen tollen Ausflug nach Potsdam gemacht.",
+                "example_vi": "Vào Chủ nhật chúng tôi đã có một chuyến đi chơi tuyệt vời đến Potsdam."
         },
         {
                 "word": "Campingplatz",
@@ -479,401 +604,9 @@ def seed_lesson_9():
                 "akkusativ": "den Campingplatz",
                 "meaning": "khu cắm trại",
                 "category": "Thiên nhiên & Điểm đến Du lịch (Natur & Reiseziele - Bài 9)",
-                "notes": "Ghép lấy giống theo der Platz (quảng trường/khu đất). Số nhiều: die Campingplätze.",
-                "example": "Auf dem Campingplatz stehen viele Zelte.",
-                "example_vi": "Trên khu cắm trại có nhiều lều."
-        },
-        {
-                "word": "Altstadt",
-                "article": "die",
-                "gender": "die",
-                "plural": "die Altstädte",
-                "indefinite": "eine Altstadt",
-                "negation": "keine Altstadt",
-                "akkusativ": "die Altstadt",
-                "meaning": "phố cổ",
-                "category": "Thiên nhiên & Điểm đến Du lịch (Natur & Reiseziele - Bài 9)",
-                "notes": "Ghép từ alt + die Stadt -> mang giống cái die. Số nhiều: die Altstädte.",
-                "example": "Die Altstadt von Hội An ist sehr schön.",
-                "example_vi": "Phố cổ Hội An rất đẹp."
-        },
-        {
-                "word": "Insel",
-                "article": "die",
-                "gender": "die",
-                "plural": "die Inseln",
-                "indefinite": "eine Insel",
-                "negation": "keine Insel",
-                "akkusativ": "die Insel",
-                "meaning": "hòn đảo",
-                "category": "Thiên nhiên & Điểm đến Du lịch (Natur & Reiseziele - Bài 9)",
-                "notes": "Danh từ giống cái kết thúc bằng -el, số nhiều thêm -n (die Inseln). Thường đi với giới từ auf der Insel.",
-                "example": "Auf der Insel gibt es keine Autos.",
-                "example_vi": "Trên đảo không có ô tô."
-        },
-        {
-                "word": "Sonne",
-                "article": "die",
-                "gender": "die",
-                "plural": "die Sonnen",
-                "indefinite": "eine Sonne",
-                "negation": "keine Sonne",
-                "akkusativ": "die Sonne",
-                "meaning": "mặt trời",
-                "category": "Thiên nhiên & Điểm đến Du lịch (Natur & Reiseziele - Bài 9)",
-                "notes": "Danh từ kết thúc bằng -e thường mang giống cái die. Số nhiều: die Sonnen.",
-                "example": "Die Sonne scheint den ganzen Tag.",
-                "example_vi": "Mặt trời chiếu sáng cả ngày."
-        },
-        {
-                "word": "Alpen",
-                "article": "die",
-                "gender": "die",
-                "plural": "die Alpen",
-                "indefinite": "–",
-                "negation": "keine Alpen",
-                "akkusativ": "die Alpen",
-                "meaning": "dãy An-pơ (Alps)",
-                "category": "Thiên nhiên & Điểm đến Du lịch (Natur & Reiseziele - Bài 9)",
-                "notes": "Danh từ chỉ tồn tại ở dạng số nhiều (Pluraletantum): in den Alpen.",
-                "example": "Im Winter fahren viele Touristen in die Alpen.",
-                "example_vi": "Vào mùa đông nhiều khách du lịch đi lên dãy Alps."
-        },
-        {
-                "word": "Besichtigung",
-                "article": "die",
-                "gender": "die",
-                "plural": "die Besichtigungen",
-                "indefinite": "eine Besichtigung",
-                "negation": "keine Besichtigung",
-                "akkusativ": "die Besichtigung",
-                "meaning": "sự tham quan, buổi tham quan",
-                "category": "Thiên nhiên & Điểm đến Du lịch (Natur & Reiseziele - Bài 9)",
-                "notes": "Danh từ có hậu tố -ung luôn luôn mang giống cái (die), số nhiều thêm -en.",
-                "example": "Die Besichtigung des Schlosses dauert eine Stunde.",
-                "example_vi": "Buổi tham quan lâu đài kéo dài một giờ."
-        },
-        {
-                "word": "Radtour",
-                "article": "die",
-                "gender": "die",
-                "plural": "die Radtouren",
-                "indefinite": "eine Radtour",
-                "negation": "keine Radtour",
-                "akkusativ": "die Radtour",
-                "meaning": "chuyến đạp xe",
-                "category": "Thiên nhiên & Điểm đến Du lịch (Natur & Reiseziele - Bài 9)",
-                "notes": "Ghép từ das Rad + die Tour -> mang giống cái die. Số nhiều: die Radtouren.",
-                "example": "Die Radtour war sehr anstrengend.",
-                "example_vi": "Chuyến đạp xe rất mệt."
-        },
-        {
-                "word": "Reise",
-                "article": "die",
-                "gender": "die",
-                "plural": "die Reisen",
-                "indefinite": "eine Reise",
-                "negation": "keine Reise",
-                "akkusativ": "die Reise",
-                "meaning": "chuyến du lịch, chuyến đi",
-                "category": "Thiên nhiên & Điểm đến Du lịch (Natur & Reiseziele - Bài 9)",
-                "notes": "Danh từ giống cái kết thúc bằng -e, số nhiều thêm -n (die Reisen).",
-                "example": "Die Reise nach Wien dauert vier Stunden.",
-                "example_vi": "Chuyến đi đến Wien mất bốn tiếng."
-        },
-        {
-                "word": "Landschaft",
-                "article": "die",
-                "gender": "die",
-                "plural": "die Landschaften",
-                "indefinite": "eine Landschaft",
-                "negation": "keine Landschaft",
-                "akkusativ": "die Landschaft",
-                "meaning": "phong cảnh, cảnh quan",
-                "category": "Thiên nhiên & Điểm đến Du lịch (Natur & Reiseziele - Bài 9)",
-                "notes": "Hậu tố -schaft luôn luôn mang giống cái (die), số nhiều thêm -en.",
-                "example": "Die Landschaft in den Bergen ist wunderschön.",
-                "example_vi": "Phong cảnh trên núi tuyệt đẹp."
-        },
-        {
-                "word": "Küste",
-                "article": "die",
-                "gender": "die",
-                "plural": "die Küsten",
-                "indefinite": "eine Küste",
-                "negation": "keine Küste",
-                "akkusativ": "die Küste",
-                "meaning": "bờ biển",
-                "category": "Thiên nhiên & Điểm đến Du lịch (Natur & Reiseziele - Bài 9)",
-                "notes": "Danh từ giống cái kết thúc bằng -e, số nhiều thêm -n (die Küsten).",
-                "example": "Wir fahren mit dem Bus die Küste entlang.",
-                "example_vi": "Chúng tôi đi xe buýt dọc theo bờ biển."
-        },
-        {
-                "word": "Pause",
-                "article": "die",
-                "gender": "die",
-                "plural": "die Pausen",
-                "indefinite": "eine Pause",
-                "negation": "keine Pause",
-                "akkusativ": "die Pause",
-                "meaning": "giờ nghỉ, sự nghỉ ngơi",
-                "category": "Thiên nhiên & Điểm đến Du lịch (Natur & Reiseziele - Bài 9)",
-                "notes": "Đi kèm cụm cố định eine Pause machen. Số nhiều: die Pausen.",
-                "example": "Wir machen eine Pause am See.",
-                "example_vi": "Chúng tôi nghỉ một lát bên hồ."
-        },
-        {
-                "word": "Meer",
-                "article": "das",
-                "gender": "das",
-                "plural": "die Meere",
-                "indefinite": "ein Meer",
-                "negation": "kein Meer",
-                "akkusativ": "das Meer",
-                "meaning": "biển",
-                "category": "Thiên nhiên & Điểm đến Du lịch (Natur & Reiseziele - Bài 9)",
-                "notes": "Danh từ giống trung das Meer, số nhiều thêm -e (die Meere). Thường đi với am Meer.",
-                "example": "Das Meer ist heute sehr ruhig.",
-                "example_vi": "Hôm nay biển rất lặng."
-        },
-        {
-                "word": "Schloss",
-                "article": "das",
-                "gender": "das",
-                "plural": "die Schlösser",
-                "indefinite": "ein Schloss",
-                "negation": "kein Schloss",
-                "akkusativ": "das Schloss",
-                "meaning": "lâu đài, cung điện",
-                "category": "Thiên nhiên & Điểm đến Du lịch (Natur & Reiseziele - Bài 9)",
-                "notes": "Danh từ giống trung das Schloss, số nhiều biến âm o -> ö và thêm -er (die Schlösser).",
-                "example": "Das Schloss steht auf einem Berg.",
-                "example_vi": "Lâu đài nằm trên một ngọn núi."
-        },
-        {
-                "word": "Reiseland",
-                "article": "das",
-                "gender": "das",
-                "plural": "die Reiseländer",
-                "indefinite": "ein Reiseland",
-                "negation": "kein Reiseland",
-                "akkusativ": "das Reiseland",
-                "meaning": "quốc gia du lịch",
-                "category": "Thiên nhiên & Điểm đến Du lịch (Natur & Reiseziele - Bài 9)",
-                "notes": "Ghép lấy giống theo từ cuối das Land. Số nhiều: die Reiseländer.",
-                "example": "Vietnam ist ein beliebtes Reiseland.",
-                "example_vi": "Việt Nam là một quốc gia du lịch được ưa chuộng."
-        },
-        {
-                "word": "Reiseziel",
-                "article": "das",
-                "gender": "das",
-                "plural": "die Reiseziele",
-                "indefinite": "ein Reiseziel",
-                "negation": "kein Reiseziel",
-                "akkusativ": "das Reiseziel",
-                "meaning": "điểm đến du lịch",
-                "category": "Thiên nhiên & Điểm đến Du lịch (Natur & Reiseziele - Bài 9)",
-                "notes": "Ghép lấy giống theo từ cuối das Ziel. Số nhiều: die Reiseziele.",
-                "example": "Unser Reiseziel ist die Insel Cát Bà.",
-                "example_vi": "Điểm đến của chúng tôi là đảo Cát Bà."
-        },
-        {
-                "word": "Wetter",
-                "article": "das",
-                "gender": "das",
-                "plural": "nur Singular",
-                "indefinite": "ein Wetter",
-                "negation": "kein Wetter",
-                "akkusativ": "das Wetter",
-                "meaning": "thời tiết",
-                "category": "Kỳ nghỉ: Chỗ ở, Phương tiện, Hành lý & Thời tiết (Urlaub - Bài 9)",
-                "notes": "Danh từ giống trung chỉ tồn tại ở số ít (Singularetantum): das Wetter.",
-                "example": "Das Wetter ist heute wunderbar.",
-                "example_vi": "Hôm nay thời tiết tuyệt vời."
-        },
-        {
-                "word": "Essen",
-                "article": "das",
-                "gender": "das",
-                "plural": "die Essen",
-                "indefinite": "ein Essen",
-                "negation": "kein Essen",
-                "akkusativ": "das Essen",
-                "meaning": "đồ ăn, bữa ăn",
-                "category": "Kỳ nghỉ: Chỗ ở, Phương tiện, Hành lý & Thời tiết (Urlaub - Bài 9)",
-                "notes": "Danh từ hóa từ động từ nguyên mẫu eten -> luôn mang giống trung das Essen.",
-                "example": "Das Essen im Hotel war sehr gut.",
-                "example_vi": "Đồ ăn ở khách sạn rất ngon."
-        },
-        {
-                "word": "Hotel",
-                "article": "das",
-                "gender": "das",
-                "plural": "die Hotels",
-                "indefinite": "ein Hotel",
-                "negation": "kein Hotel",
-                "akkusativ": "das Hotel",
-                "meaning": "khách sạn",
-                "category": "Kỳ nghỉ: Chỗ ở, Phương tiện, Hành lý & Thời tiết (Urlaub - Bài 9)",
-                "notes": "Từ mượn gốc quốc tế, mang giống trung das Hotel, số nhiều thêm -s (die Hotels).",
-                "example": "Unser Hotel liegt direkt am Strand.",
-                "example_vi": "Khách sạn của chúng tôi nằm ngay cạnh bãi biển."
-        },
-        {
-                "word": "Dorf",
-                "article": "das",
-                "gender": "das",
-                "plural": "die Dörfer",
-                "indefinite": "ein Dorf",
-                "negation": "kein Dorf",
-                "akkusativ": "das Dorf",
-                "meaning": "làng",
-                "category": "Kỳ nghỉ: Chỗ ở, Phương tiện, Hành lý & Thời tiết (Urlaub - Bài 9)",
-                "notes": "Danh từ giống trung das Dorf, số nhiều biến âm o -> ö và thêm -er (die Dörfer).",
-                "example": "Mein Opa wohnt in einem kleinen Dorf.",
-                "example_vi": "Ông tôi sống trong một ngôi làng nhỏ."
-        },
-        {
-                "word": "Picknick",
-                "article": "das",
-                "gender": "das",
-                "plural": "die Picknicks",
-                "indefinite": "ein Picknick",
-                "negation": "kein Picknick",
-                "akkusativ": "das Picknick",
-                "meaning": "buổi dã ngoại ăn ngoài trời",
-                "category": "Kỳ nghỉ: Chỗ ở, Phương tiện, Hành lý & Thời tiết (Urlaub - Bài 9)",
-                "notes": "Cụm Kollokation cố định: ein Picknick machen. Số nhiều: die Picknicks.",
-                "example": "Das Picknick am Fluss war schön.",
-                "example_vi": "Buổi dã ngoại bên sông thật đẹp."
-        },
-        {
-                "word": "Kloster",
-                "article": "das",
-                "gender": "das",
-                "plural": "die Klöster",
-                "indefinite": "ein Kloster",
-                "negation": "kein Kloster",
-                "akkusativ": "das Kloster",
-                "meaning": "tu viện",
-                "category": "Kỳ nghỉ: Chỗ ở, Phương tiện, Hành lý & Thời tiết (Urlaub - Bài 9)",
-                "notes": "Danh từ giống trung das Kloster, số nhiều biến âm o -> ö (die Klöster).",
-                "example": "Das Kloster ist über fünfhundert Jahre alt.",
-                "example_vi": "Tu viện đã hơn năm trăm năm tuổi."
-        },
-        {
-                "word": "Zelt",
-                "article": "das",
-                "gender": "das",
-                "plural": "die Zelte",
-                "indefinite": "ein Zelt",
-                "negation": "kein Zelt",
-                "akkusativ": "das Zelt",
-                "meaning": "cái lều",
-                "category": "Kỳ nghỉ: Chỗ ở, Phương tiện, Hành lý & Thời tiết (Urlaub - Bài 9)",
-                "notes": "Danh từ giống trung das Zelt, số nhiều thêm -e (die Zelte). Cụm im Zelt übernachten.",
-                "example": "Unser Zelt ist sehr klein.",
-                "example_vi": "Lều của chúng tôi rất nhỏ."
-        },
-        {
-                "word": "Foto",
-                "article": "das",
-                "gender": "das",
-                "plural": "die Fotos",
-                "indefinite": "ein Foto",
-                "negation": "kein Foto",
-                "akkusativ": "das Foto",
-                "meaning": "bức ảnh",
-                "category": "Kỳ nghỉ: Chỗ ở, Phương tiện, Hành lý & Thời tiết (Urlaub - Bài 9)",
-                "notes": "Từ mượn quốc tế, số nhiều thêm -s (die Fotos). Cụm Fotos machen.",
-                "example": "Auf dem Foto sieht man die ganze Familie.",
-                "example_vi": "Trong bức ảnh có thể thấy cả gia đình."
-        },
-        {
-                "word": "Flugzeug",
-                "article": "das",
-                "gender": "das",
-                "plural": "die Flugzeuge",
-                "indefinite": "ein Flugzeug",
-                "negation": "kein Flugzeug",
-                "akkusativ": "das Flugzeug",
-                "meaning": "máy bay",
-                "category": "Kỳ nghỉ: Chỗ ở, Phương tiện, Hành lý & Thời tiết (Urlaub - Bài 9)",
-                "notes": "Ghép từ fliegen + das Zeug (đồ dùng, công cụ) -> das Flugzeug. Số nhiều thêm -e.",
-                "example": "Das Flugzeug landet um zehn Uhr.",
-                "example_vi": "Máy bay hạ cánh lúc mười giờ."
-        },
-        {
-                "word": "Schiff",
-                "article": "das",
-                "gender": "das",
-                "plural": "die Schiffe",
-                "indefinite": "ein Schiff",
-                "negation": "kein Schiff",
-                "akkusativ": "das Schiff",
-                "meaning": "tàu thủy",
-                "category": "Kỳ nghỉ: Chỗ ở, Phương tiện, Hành lý & Thời tiết (Urlaub - Bài 9)",
-                "notes": "Danh từ giống trung das Schiff, số nhiều thêm -e (die Schiffe). Cụm mit dem Schiff fahren.",
-                "example": "Das Schiff fährt zur Insel.",
-                "example_vi": "Tàu thủy chạy ra đảo."
-        },
-        {
-                "word": "Zimmer",
-                "article": "das",
-                "gender": "das",
-                "plural": "die Zimmer",
-                "indefinite": "ein Zimmer",
-                "negation": "kein Zimmer",
-                "akkusativ": "das Zimmer",
-                "meaning": "căn phòng",
-                "category": "Kỳ nghỉ: Chỗ ở, Phương tiện, Hành lý & Thời tiết (Urlaub - Bài 9)",
-                "notes": "Đuôi -er giống trung, số nhiều giữ nguyên hình thức (die Zimmer). Cụm ein Zimmer buchen.",
-                "example": "Das Zimmer hat einen Balkon.",
-                "example_vi": "Căn phòng có một ban công."
-        },
-        {
-                "word": "Souvenir",
-                "article": "das",
-                "gender": "das",
-                "plural": "die Souvenirs",
-                "indefinite": "ein Souvenir",
-                "negation": "kein Souvenir",
-                "akkusativ": "das Souvenir",
-                "meaning": "quà lưu niệm",
-                "category": "Kỳ nghỉ: Chỗ ở, Phương tiện, Hành lý & Thời tiết (Urlaub - Bài 9)",
-                "notes": "Từ mượn tiếng Pháp, mang giống trung das Souvenir, số nhiều thêm -s.",
-                "example": "Ich kaufe ein Souvenir für meine Mutter.",
-                "example_vi": "Tôi mua một món quà lưu niệm cho mẹ."
-        },
-        {
-                "word": "Gepäck",
-                "article": "das",
-                "gender": "das",
-                "plural": "nur Singular",
-                "indefinite": "ein Gepäck",
-                "negation": "kein Gepäck",
-                "akkusativ": "das Gepäck",
-                "meaning": "hành lý",
-                "category": "Kỳ nghỉ: Chỗ ở, Phương tiện, Hành lý & Thời tiết (Urlaub - Bài 9)",
-                "notes": "Danh từ giống trung chỉ tồn tại ở dạng số ít: das Gepäck.",
-                "example": "Das Gepäck ist sehr schwer.",
-                "example_vi": "Hành lý rất nặng."
-        },
-        {
-                "word": "Frühstück",
-                "article": "das",
-                "gender": "das",
-                "plural": "die Frühstücke",
-                "indefinite": "ein Frühstück",
-                "negation": "kein Frühstück",
-                "akkusativ": "das Frühstück",
-                "meaning": "bữa sáng",
-                "category": "Kỳ nghỉ: Chỗ ở, Phương tiện, Hành lý & Thời tiết (Urlaub - Bài 9)",
-                "notes": "Ghép từ früh + das Stück -> mang giống trung das Frühstück.",
-                "example": "Das Frühstück gibt es von sieben bis zehn Uhr.",
-                "example_vi": "Bữa sáng có từ bảy đến mười giờ."
+                "notes": "Ghép từ Camping + der Platz -> số nhiều biến âm: die Campingplätze. Cụm: auf dem Campingplatz.",
+                "example": "Sie haben zwei Wochen auf einem Campingplatz an der Ostsee gezeltet.",
+                "example_vi": "Họ đã cắm trại hai tuần trên một khu cắm trại bên bờ biển Baltic."
         },
         {
                 "word": "Koffer",
@@ -886,8 +619,8 @@ def seed_lesson_9():
                 "meaning": "vali",
                 "category": "Kỳ nghỉ: Chỗ ở, Phương tiện, Hành lý & Thời tiết (Urlaub - Bài 9)",
                 "notes": "Danh từ giống đực kết thúc -er, số nhiều giữ nguyên (die Koffer). Cụm den Koffer packen.",
-                "example": "Mein Koffer ist rot.",
-                "example_vi": "Vali của tôi màu đỏ."
+                "example": "Gestern Abend habe ich meinen Koffer für die Reise gepackt.",
+                "example_vi": "Tối qua tôi đã đóng gói xong vali cho chuyến đi."
         },
         {
                 "word": "Rucksack",
@@ -900,8 +633,8 @@ def seed_lesson_9():
                 "meaning": "ba lô",
                 "category": "Kỳ nghỉ: Chỗ ở, Phương tiện, Hành lý & Thời tiết (Urlaub - Bài 9)",
                 "notes": "Ghép từ der Rücken (lưng) + der Sack (bao tải). Số nhiều biến âm: die Rucksäcke.",
-                "example": "Im Rucksack sind Wasser und Obst.",
-                "example_vi": "Trong ba lô có nước và trái cây."
+                "example": "Mein Bruder hat Proviant und Wasser in den Rucksack gepackt.",
+                "example_vi": "Anh trai tôi đã xếp đồ ăn dự trữ và nước vào ba lô."
         },
         {
                 "word": "Zug",
@@ -914,8 +647,8 @@ def seed_lesson_9():
                 "meaning": "tàu hỏa",
                 "category": "Kỳ nghỉ: Chỗ ở, Phương tiện, Hành lý & Thời tiết (Urlaub - Bài 9)",
                 "notes": "Số nhiều biến âm u -> ü (die Züge). Cụm mit dem Zug fahren.",
-                "example": "Der Zug nach München fährt um acht Uhr.",
-                "example_vi": "Chuyến tàu đi München chạy lúc tám giờ."
+                "example": "Wir sind gestern mit dem schnellen ICE-Zug nach München gefahren.",
+                "example_vi": "Hôm qua chúng tôi đã đi chuyến tàu nhanh ICE đến München."
         },
         {
                 "word": "Reisepass",
@@ -928,8 +661,8 @@ def seed_lesson_9():
                 "meaning": "hộ chiếu",
                 "category": "Kỳ nghỉ: Chỗ ở, Phương tiện, Hành lý & Thời tiết (Urlaub - Bài 9)",
                 "notes": "Ghép từ die Reise + der Pass -> lấy giống theo der Pass. Số nhiều: die Reisepässe.",
-                "example": "Ohne Reisepass kann man nicht fliegen.",
-                "example_vi": "Không có hộ chiếu thì không thể bay."
+                "example": "Ich habe meinen Reisepass rechtzeitig vor dem Flug verlängert.",
+                "example_vi": "Tôi đã gia hạn hộ chiếu kịp thời trước chuyến bay."
         },
         {
                 "word": "Regen",
@@ -942,8 +675,8 @@ def seed_lesson_9():
                 "meaning": "mưa, cơn mưa",
                 "category": "Kỳ nghỉ: Chỗ ở, Phương tiện, Hành lý & Thời tiết (Urlaub - Bài 9)",
                 "notes": "Danh từ giống đực chỉ thời tiết, chỉ có số ít (der Regen).",
-                "example": "Der Regen hört am Abend auf.",
-                "example_vi": "Cơn mưa tạnh vào buổi tối."
+                "example": "In den Bergen hat es leider zwei Tage geregnet.",
+                "example_vi": "Trên núi đáng tiếc là trời đã mưa hai ngày."
         },
         {
                 "word": "Gast",
@@ -953,11 +686,151 @@ def seed_lesson_9():
                 "indefinite": "ein Gast",
                 "negation": "kein Gast",
                 "akkusativ": "den Gast",
-                "meaning": "khách",
+                "meaning": "vị khách",
                 "category": "Kỳ nghỉ: Chỗ ở, Phương tiện, Hành lý & Thời tiết (Urlaub - Bài 9)",
                 "notes": "Danh từ giống đực, số nhiều biến âm a -> ä và thêm đuôi -e (die Gäste).",
-                "example": "Die Gäste frühstücken auf der Terrasse.",
-                "example_vi": "Các vị khách ăn sáng trên sân thượng."
+                "example": "Gestern sind viele neue Gäste im Hotel angekommen.",
+                "example_vi": "Hôm qua nhiều vị khách mới đã đến khách sạn."
+        },
+        {
+                "word": "Altstadt",
+                "article": "die",
+                "gender": "die",
+                "plural": "die Altstädte",
+                "indefinite": "eine Altstadt",
+                "negation": "keine Altstadt",
+                "akkusativ": "die Altstadt",
+                "meaning": "khu phố cổ",
+                "category": "Thiên nhiên & Điểm đến Du lịch (Natur & Reiseziele - Bài 9)",
+                "notes": "Ghép từ alt + die Stadt -> số nhiều biến âm: die Altstädte.",
+                "example": "Wir haben die historische Altstadt von Hội An besichtigt.",
+                "example_vi": "Chúng tôi đã tham quan khu phố cổ lịch sử của Hội An."
+        },
+        {
+                "word": "Insel",
+                "article": "die",
+                "gender": "die",
+                "plural": "die Inseln",
+                "indefinite": "eine Insel",
+                "negation": "keine Insel",
+                "akkusativ": "die Insel",
+                "meaning": "hòn đảo",
+                "category": "Thiên nhiên & Điểm đến Du lịch (Natur & Reiseziele - Bài 9)",
+                "notes": "Đuôi -el giống cái, số nhiều thêm -n (die Inseln). Giới từ đi kèm: auf der Insel (trên hòn đảo).",
+                "example": "Letzten Sommer sind wir zur Insel Phú Quốc geflogen.",
+                "example_vi": "Mùa hè năm ngoái chúng tôi đã bay đến đảo Phú Quốc."
+        },
+        {
+                "word": "Sonne",
+                "article": "die",
+                "gender": "die",
+                "plural": "nur Singular (thường chỉ dùng số ít)",
+                "indefinite": "eine Sonne",
+                "negation": "keine Sonne",
+                "akkusativ": "die Sonne",
+                "meaning": "mặt trời, ánh nắng",
+                "category": "Thiên nhiên & Điểm đến Du lịch (Natur & Reiseziele - Bài 9)",
+                "notes": "Danh từ giống cái kết thúc bằng -e: die Sonne. Trong giao tiếp thường chỉ dùng dạng số ít.",
+                "example": "Gestern hat die Sonne den ganzen Tag geschienen.",
+                "example_vi": "Hôm qua mặt trời đã chiếu sáng suốt cả ngày."
+        },
+        {
+                "word": "Alpen",
+                "article": "die",
+                "gender": "die",
+                "plural": "nur Plural (ở Dativ đổi thành: in den Alpen)",
+                "indefinite": "Alpen",
+                "negation": "keine Alpen",
+                "akkusativ": "die Alpen",
+                "meaning": "dãy Alps (nur Plural - Danh từ số nhiều, ở Dativ đổi thành: in den Alpen)",
+                "category": "Thiên nhiên & Điểm đến Du lịch (Natur & Reiseziele - Bài 9)",
+                "notes": "Danh từ CHỈ CÓ SỐ NHIỀU (Pluralwort). Ở Cách 3 (Dativ) bắt buộc đổi thành: in den Alpen.",
+                "example": "Familie Weber ist im Winter zum Skifahren in den Alpen gewesen.",
+                "example_vi": "Gia đình Weber đã đi trượt tuyết ở dãy Alps vào mùa đông."
+        },
+        {
+                "word": "Besichtigung",
+                "article": "die",
+                "gender": "die",
+                "plural": "die Besichtigungen",
+                "indefinite": "eine Besichtigung",
+                "negation": "keine Besichtigung",
+                "akkusativ": "die Besichtigung",
+                "meaning": "sự tham quan",
+                "category": "Thiên nhiên & Điểm đến Du lịch (Natur & Reiseziele - Bài 9)",
+                "notes": "Mọi danh từ có hậu tố -ung luôn luôn mang giống cái (die), số nhiều thêm -en (die Besichtigungen).",
+                "example": "Gestern hat die Besichtigung des Schlosses zwei Stunden gedauert.",
+                "example_vi": "Hôm qua chuyến tham quan lâu đài đã kéo dài hai tiếng."
+        },
+        {
+                "word": "Radtour",
+                "article": "die",
+                "gender": "die",
+                "plural": "die Radtouren",
+                "indefinite": "eine Radtour",
+                "negation": "keine Radtour",
+                "akkusativ": "die Radtour",
+                "meaning": "chuyến đạp xe",
+                "category": "Thiên nhiên & Điểm đến Du lịch (Natur & Reiseziele - Bài 9)",
+                "notes": "Ghép từ das Rad + die Tour -> mang giống cái die Radtour. Cụm: eine Radtour machen.",
+                "example": "Sie haben eine wunderschöne Radtour an der Donau gemacht.",
+                "example_vi": "Họ đã thực hiện một chuyến đạp xe tuyệt đẹp dọc sông Donau."
+        },
+        {
+                "word": "Reise",
+                "article": "die",
+                "gender": "die",
+                "plural": "die Reisen",
+                "indefinite": "eine Reise",
+                "negation": "keine Reise",
+                "akkusativ": "die Reise",
+                "meaning": "chuyến du lịch, chuyến đi",
+                "category": "Thiên nhiên & Điểm đến Du lịch (Natur & Reiseziele - Bài 9)",
+                "notes": "Danh từ giống cái kết thúc bằng -e, số nhiều thêm -n (die Reisen). Cụm: eine Reise planen / machen.",
+                "example": "Meine Eltern haben eine lange Reise durch Europa geplant.",
+                "example_vi": "Bố mẹ tôi đã lên kế hoạch cho một chuyến du lịch dài xuyên châu Âu."
+        },
+        {
+                "word": "Landschaft",
+                "article": "die",
+                "gender": "die",
+                "plural": "die Landschaften",
+                "indefinite": "eine Landschaft",
+                "negation": "keine Landschaft",
+                "akkusativ": "die Landschaft",
+                "meaning": "phong cảnh, cảnh quan",
+                "category": "Thiên nhiên & Điểm đến Du lịch (Natur & Reiseziele - Bài 9)",
+                "notes": "Hậu tố -schaft luôn luôn là giống cái die, số nhiều thêm -en (die Landschaften).",
+                "example": "Vom Berggipfel aus haben wir die herrliche Landschaft bewundert.",
+                "example_vi": "Từ đỉnh núi chúng tôi đã chiêm ngưỡng phong cảnh tuyệt mỹ."
+        },
+        {
+                "word": "Küste",
+                "article": "die",
+                "gender": "die",
+                "plural": "die Küsten",
+                "indefinite": "eine Küste",
+                "negation": "keine Küste",
+                "akkusativ": "die Küste",
+                "meaning": "bờ biển",
+                "category": "Thiên nhiên & Điểm đến Du lịch (Natur & Reiseziele - Bài 9)",
+                "notes": "Danh từ giống cái, số nhiều thêm -n (die Küsten). Giới từ: an der Küste (ở bờ biển).",
+                "example": "Wir sind mit dem Fahrrad entlang der Küste gefahren.",
+                "example_vi": "Chúng tôi đã đi xe đạp dọc theo bờ biển."
+        },
+        {
+                "word": "Pause",
+                "article": "die",
+                "gender": "die",
+                "plural": "die Pausen",
+                "indefinite": "eine Pause",
+                "negation": "keine Pause",
+                "akkusativ": "die Pause",
+                "meaning": "giờ nghỉ giải lao",
+                "category": "Thiên nhiên & Điểm đến Du lịch (Natur & Reiseziele - Bài 9)",
+                "notes": "Danh từ giống cái kết thúc -e, số nhiều thêm -n (die Pausen). Cụm: eine Pause machen.",
+                "example": "Nach drei Stunden Fahrt haben wir eine kurze Pause gemacht.",
+                "example_vi": "Sau ba tiếng lái xe chúng tôi đã nghỉ giải lao một lát."
         },
         {
                 "word": "Pension",
@@ -967,11 +840,11 @@ def seed_lesson_9():
                 "indefinite": "eine Pension",
                 "negation": "keine Pension",
                 "akkusativ": "die Pension",
-                "meaning": "nhà nghỉ (nhỏ)",
+                "meaning": "nhà nghỉ nhỏ",
                 "category": "Kỳ nghỉ: Chỗ ở, Phương tiện, Hành lý & Thời tiết (Urlaub - Bài 9)",
                 "notes": "Hậu tố -ion luôn luôn mang giống cái (die), số nhiều thêm -en (die Pensionen).",
-                "example": "Die Pension ist klein, aber gemütlich.",
-                "example_vi": "Nhà nghỉ nhỏ nhưng ấm cúng."
+                "example": "In Linz haben die Urlauber in einer gemütlichen Pension übernachtet.",
+                "example_vi": "Ở Linz những người đi du lịch đã ngủ lại trong một nhà nghỉ nhỏ ấm cúng."
         },
         {
                 "word": "Jugendherberge",
@@ -984,8 +857,8 @@ def seed_lesson_9():
                 "meaning": "nhà trọ thanh niên (hostel)",
                 "category": "Kỳ nghỉ: Chỗ ở, Phương tiện, Hành lý & Thời tiết (Urlaub - Bài 9)",
                 "notes": "Danh từ giống cái kết thúc bằng -e, số nhiều thêm -n (die Jugendherbergen).",
-                "example": "In der Jugendherberge schlafen viele junge Leute.",
-                "example_vi": "Trong nhà trọ thanh niên có nhiều người trẻ ngủ lại."
+                "example": "Die Studenten haben preiswert in der Jugendherberge übernachtet.",
+                "example_vi": "Các sinh viên đã ngủ lại giá rẻ trong nhà trọ thanh niên."
         },
         {
                 "word": "Fahrkarte",
@@ -998,8 +871,8 @@ def seed_lesson_9():
                 "meaning": "vé tàu / xe",
                 "category": "Kỳ nghỉ: Chỗ ở, Phương tiện, Hành lý & Thời tiết (Urlaub - Bài 9)",
                 "notes": "Ghép từ fahren + die Karte -> die Fahrkarte. Số nhiều: die Fahrkarten.",
-                "example": "Ich brauche eine Fahrkarte nach Hamburg.",
-                "example_vi": "Tôi cần một vé đi Hamburg."
+                "example": "Anna hat die Fahrkarten online auf dem Smartphone gebucht.",
+                "example_vi": "Anna đã đặt vé tàu xe trực tuyến trên điện thoại thông minh."
         },
         {
                 "word": "Rechnung",
@@ -1012,8 +885,8 @@ def seed_lesson_9():
                 "meaning": "hóa đơn",
                 "category": "Kỳ nghỉ: Chỗ ở, Phương tiện, Hành lý & Thời tiết (Urlaub - Bài 9)",
                 "notes": "Hậu tố -ung luôn luôn mang giống cái (die), số nhiều thêm -en. Cụm die Rechnung bezahlen.",
-                "example": "Die Rechnung für das Zimmer ist hoch.",
-                "example_vi": "Hóa đơn tiền phòng khá cao."
+                "example": "Am Abreisetag hat der Vater die Rechnung im Hotel bezahlt.",
+                "example_vi": "Vào ngày rời đi người bố đã thanh toán hóa đơn ở khách sạn."
         },
         {
                 "word": "Postkarte",
@@ -1026,10 +899,262 @@ def seed_lesson_9():
                 "meaning": "bưu thiếp",
                 "category": "Kỳ nghỉ: Chỗ ở, Phương tiện, Hành lý & Thời tiết (Urlaub - Bài 9)",
                 "notes": "Ghép từ die Post + die Karte -> die Postkarte. Cụm eine Postkarte schreiben.",
-                "example": "Ich schreibe meiner Oma eine Postkarte.",
-                "example_vi": "Tôi viết một tấm bưu thiếp cho bà."
+                "example": "Aus dem Urlaub habe ich eine Postkarte an meine Großeltern geschickt.",
+                "example_vi": "Từ kỳ nghỉ tôi đã gửi một tấm bưu thiếp cho ông bà tôi."
+        },
+        {
+                "word": "Meer",
+                "article": "das",
+                "gender": "das",
+                "plural": "die Meere",
+                "indefinite": "ein Meer",
+                "negation": "kein Meer",
+                "akkusativ": "das Meer",
+                "meaning": "biển, biển cả",
+                "category": "Thiên nhiên & Điểm đến Du lịch (Natur & Reiseziele - Bài 9)",
+                "notes": "Danh từ giống trung (das Meer). Giới từ: am Meer sein (ở biển), ans Meer fahren (ra biển).",
+                "example": "Am Strand sind wir jeden Vormittag im Meer geschwommen.",
+                "example_vi": "Ở bãi biển chúng tôi đã bơi dưới biển vào mỗi buổi sáng."
+        },
+        {
+                "word": "Schloss",
+                "article": "das",
+                "gender": "das",
+                "plural": "die Schlösser",
+                "indefinite": "ein Schloss",
+                "negation": "kein Schloss",
+                "akkusativ": "das Schloss",
+                "meaning": "lâu đài, cung điện",
+                "category": "Thiên nhiên & Điểm đến Du lịch (Natur & Reiseziele - Bài 9)",
+                "notes": "Số nhiều biến âm o -> ö và thêm đuôi -er: die Schlösser. Cụm: ein Schloss besichtigen.",
+                "example": "In Deutschland haben die Touristen das berühmte Schloss Neuschwanstein besichtigt.",
+                "example_vi": "Ở Đức các du khách đã tham quan lâu đài Neuschwanstein nổi tiếng."
+        },
+        {
+                "word": "Reiseland",
+                "article": "das",
+                "gender": "das",
+                "plural": "die Reiseländer",
+                "indefinite": "ein Reiseland",
+                "negation": "kein Reiseland",
+                "akkusativ": "das Reiseland",
+                "meaning": "quốc gia du lịch",
+                "category": "Thiên nhiên & Điểm đến Du lịch (Natur & Reiseziele - Bài 9)",
+                "notes": "Ghép từ die Reise + das Land -> lấy mạo từ theo das Land. Số nhiều: die Reiseländer.",
+                "example": "Vietnam ist in den letzten Jahren ein sehr beliebtes Reiseland geworden.",
+                "example_vi": "Việt Nam đã trở thành một quốc gia du lịch rất được yêu thích trong những năm gần đây."
+        },
+        {
+                "word": "Reiseziel",
+                "article": "das",
+                "gender": "das",
+                "plural": "die Reiseziele",
+                "indefinite": "ein Reiseziel",
+                "negation": "kein Reiseziel",
+                "akkusativ": "das Reiseziel",
+                "meaning": "điểm đến du lịch",
+                "category": "Thiên nhiên & Điểm đến Du lịch (Natur & Reiseziele - Bài 9)",
+                "notes": "Ghép từ die Reise + das Ziel -> mạo từ theo das Ziel, số nhiều thêm -e: die Reiseziele.",
+                "example": "Nach einer langen Fahrt haben wir unser Reiseziel endlich erreicht.",
+                "example_vi": "Sau chuyến đi dài cuối cùng chúng tôi đã đến được điểm đến du lịch."
+        },
+        {
+                "word": "Wetter",
+                "article": "das",
+                "gender": "das",
+                "plural": "nur Singular",
+                "indefinite": "ein Wetter",
+                "negation": "kein Wetter",
+                "akkusativ": "das Wetter",
+                "meaning": "thời tiết",
+                "category": "Thiên nhiên & Điểm đến Du lịch (Natur & Reiseziele - Bài 9)",
+                "notes": "Danh từ giống trung chỉ hiện tượng tự nhiên, chỉ có số ít (das Wetter). Cụm: Wie war das Wetter?",
+                "example": "Das Wetter im Urlaub war herrlich und sonnig.",
+                "example_vi": "Thời tiết trong kỳ nghỉ đã rất tuyệt vời và có nắng."
+        },
+        {
+                "word": "Essen",
+                "article": "das",
+                "gender": "das",
+                "plural": "nur Singular (thường chỉ dùng số ít)",
+                "indefinite": "ein Essen",
+                "negation": "kein Essen",
+                "akkusativ": "das Essen",
+                "meaning": "đồ ăn, bữa ăn",
+                "category": "Thiên nhiên & Điểm đến Du lịch (Natur & Reiseziele - Bài 9)",
+                "notes": "Động từ danh từ hóa từ essen -> luôn mang giống trung das Essen. Thường dùng ở số ít.",
+                "example": "Im Restaurant haben wir leckere regionale Spezialitäten gegessen.",
+                "example_vi": "Trong nhà hàng chúng tôi đã thưởng thức những món đặc sản địa phương ngon miệng."
+        },
+        {
+                "word": "Hotel",
+                "article": "das",
+                "gender": "das",
+                "plural": "die Hotels",
+                "indefinite": "ein Hotel",
+                "negation": "kein Hotel",
+                "akkusativ": "das Hotel",
+                "meaning": "khách sạn",
+                "category": "Thiên nhiên & Điểm đến Du lịch (Natur & Reiseziele - Bài 9)",
+                "notes": "Từ mượn quốc tế mang giống trung (das Hotel), số nhiều thêm -s: die Hotels.",
+                "example": "Wir haben fünf Tage in einem sauberen Hotel am Strand übernachtet.",
+                "example_vi": "Chúng tôi đã ở qua đêm năm ngày trong một khách sạn sạch sẽ bên bãi biển."
+        },
+        {
+                "word": "Dorf",
+                "article": "das",
+                "gender": "das",
+                "plural": "die Dörfer",
+                "indefinite": "ein Dorf",
+                "negation": "kein Dorf",
+                "akkusativ": "das Dorf",
+                "meaning": "ngôi làng",
+                "category": "Thiên nhiên & Điểm đến Du lịch (Natur & Reiseziele - Bài 9)",
+                "notes": "Danh từ đơn âm tiết giống trung, số nhiều biến âm o -> ö và thêm -er (die Dörfer).",
+                "example": "Gestern sind wir durch ein malerisches kleines Dorf gewandert.",
+                "example_vi": "Hôm qua chúng tôi đã đi bộ đường dài qua một ngôi làng nhỏ đẹp như tranh vẽ."
+        },
+        {
+                "word": "Picknick",
+                "article": "das",
+                "gender": "das",
+                "plural": "die Picknicks",
+                "indefinite": "ein Picknick",
+                "negation": "kein Picknick",
+                "akkusativ": "das Picknick",
+                "meaning": "chuyến dã ngoại ngoài trời",
+                "category": "Thiên nhiên & Điểm đến Du lịch (Natur & Reiseziele - Bài 9)",
+                "notes": "Từ mượn tiếng Anh mang giống trung das Picknick, số nhiều thêm -s. Cụm: ein Picknick machen.",
+                "example": "Am Ufer des Sees haben wir ein fröhliches Picknick gemacht.",
+                "example_vi": "Bên bờ hồ chúng tôi đã có một chuyến dã ngoại vui vẻ."
+        },
+        {
+                "word": "Kloster",
+                "article": "das",
+                "gender": "das",
+                "plural": "die Klöster",
+                "indefinite": "ein Kloster",
+                "negation": "kein Kloster",
+                "akkusativ": "das Kloster",
+                "meaning": "tu viện",
+                "category": "Thiên nhiên & Điểm đến Du lịch (Natur & Reiseziele - Bài 9)",
+                "notes": "Danh từ giống trung, số nhiều biến âm o -> ö (die Klöster). Cụm: ein altes Kloster besichtigen.",
+                "example": "In Linz hat die Reisegruppe ein sehr altes Kloster besucht.",
+                "example_vi": "Ở Linz đoàn du lịch đã đến thăm một tu viện rất cổ kính."
+        },
+        {
+                "word": "Zelt",
+                "article": "das",
+                "gender": "das",
+                "plural": "die Zelte",
+                "indefinite": "ein Zelt",
+                "negation": "kein Zelt",
+                "akkusativ": "das Zelt",
+                "meaning": "lều cắm trại",
+                "category": "Thiên nhiên & Điểm đến Du lịch (Natur & Reiseziele - Bài 9)",
+                "notes": "Danh từ giống trung, số nhiều thêm -e: die Zelte. Động từ liên quan: zelten (cắm trại).",
+                "example": "Am Seeufer haben wir unser Zelt direkt unter den Bäumen aufgebaut.",
+                "example_vi": "Bên bờ hồ chúng tôi đã dựng lều ngay dưới những tán cây."
+        },
+        {
+                "word": "Foto",
+                "article": "das",
+                "gender": "das",
+                "plural": "die Fotos",
+                "indefinite": "ein Foto",
+                "negation": "kein Foto",
+                "akkusativ": "das Foto",
+                "meaning": "bức ảnh",
+                "category": "Thiên nhiên & Điểm đến Du lịch (Natur & Reiseziele - Bài 9)",
+                "notes": "Từ viết tắt của die Fotografie nhưng mang giống trung das Foto, số nhiều thêm -s. Cụm: Fotos machen.",
+                "example": "Im Urlaub hat mein Freund viele schöne Fotos von der Natur gemacht.",
+                "example_vi": "Trong kỳ nghỉ bạn tôi đã chụp nhiều bức ảnh đẹp về thiên nhiên."
+        },
+        {
+                "word": "Flugzeug",
+                "article": "das",
+                "gender": "das",
+                "plural": "die Flugzeuge",
+                "indefinite": "ein Flugzeug",
+                "negation": "kein Flugzeug",
+                "akkusativ": "das Flugzeug",
+                "meaning": "máy bay",
+                "category": "Kỳ nghỉ: Chỗ ở, Phương tiện, Hành lý & Thời tiết (Urlaub - Bài 9)",
+                "notes": "Hậu tố -zeug luôn mang giống trung das, số nhiều thêm -e (die Flugzeuge). Cụm: mit dem Flugzeug fliegen.",
+                "example": "Wir sind gestern pünktlich mit dem Flugzeug in Frankfurt gelandet.",
+                "example_vi": "Hôm qua chúng tôi đã hạ cánh đúng giờ bằng máy bay ở Frankfurt."
+        },
+        {
+                "word": "Schiff",
+                "article": "das",
+                "gender": "das",
+                "plural": "die Schiffe",
+                "indefinite": "ein Schiff",
+                "negation": "kein Schiff",
+                "akkusativ": "das Schiff",
+                "meaning": "tàu thủy",
+                "category": "Kỳ nghỉ: Chỗ ở, Phương tiện, Hành lý & Thời tiết (Urlaub - Bài 9)",
+                "notes": "Danh từ đơn âm tiết giống trung, số nhiều thêm -e: die Schiffe. Cụm: mit dem Schiff fahren.",
+                "example": "Auf der Donau sind wir mit einem großen Schiff gefahren.",
+                "example_vi": "Trên sông Donau chúng tôi đã đi trên một con tàu lớn."
+        },
+        {
+                "word": "Zimmer",
+                "article": "das",
+                "gender": "das",
+                "plural": "die Zimmer",
+                "indefinite": "ein Zimmer",
+                "negation": "kein Zimmer",
+                "akkusativ": "das Zimmer",
+                "meaning": "căn phòng",
+                "category": "Kỳ nghỉ: Chỗ ở, Phương tiện, Hành lý & Thời tiết (Urlaub - Bài 9)",
+                "notes": "Đuôi -er giống trung, số nhiều giữ nguyên hình thức (die Zimmer). Cụm ein Zimmer buchen.",
+                "example": "Für das Wochenende haben wir ein Doppelzimmer mit Meerblick gebucht.",
+                "example_vi": "Cho dịp cuối tuần chúng tôi đã đặt một phòng đôi nhìn ra biển."
+        },
+        {
+                "word": "Souvenir",
+                "article": "das",
+                "gender": "das",
+                "plural": "die Souvenirs",
+                "indefinite": "ein Souvenir",
+                "negation": "kein Souvenir",
+                "akkusativ": "das Souvenir",
+                "meaning": "quà lưu niệm",
+                "category": "Kỳ nghỉ: Chỗ ở, Phương tiện, Hành lý & Thời tiết (Urlaub - Bài 9)",
+                "notes": "Từ mượn tiếng Pháp, mang giống trung das Souvenir, số nhiều thêm -s.",
+                "example": "In der Altstadt hat Linh viele hübsche Souvenirs für ihre Freunde gekauft.",
+                "example_vi": "Ở phố cổ Linh đã mua nhiều món quà lưu niệm xinh xắn cho bạn bè."
+        },
+        {
+                "word": "Gepäck",
+                "article": "das",
+                "gender": "das",
+                "plural": "nur Singular",
+                "indefinite": "ein Gepäck",
+                "negation": "kein Gepäck",
+                "akkusativ": "das Gepäck",
+                "meaning": "hành lý",
+                "category": "Kỳ nghỉ: Chỗ ở, Phương tiện, Hành lý & Thời tiết (Urlaub - Bài 9)",
+                "notes": "Danh từ giống trung chỉ tồn tại ở dạng số ít: das Gepäck.",
+                "example": "Am Flughafen haben wir unser schweres Gepäck abgeholt.",
+                "example_vi": "Tại sân bay chúng tôi đã nhận hành lý nặng của mình."
+        },
+        {
+                "word": "Frühstück",
+                "article": "das",
+                "gender": "das",
+                "plural": "nur Singular (thường chỉ dùng số ít)",
+                "indefinite": "ein Frühstück",
+                "negation": "kein Frühstück",
+                "akkusativ": "das Frühstück",
+                "meaning": "bữa sáng",
+                "category": "Kỳ nghỉ: Chỗ ở, Phương tiện, Hành lý & Thời tiết (Urlaub - Bài 9)",
+                "notes": "Ghép từ früh + das Stück -> mang giống trung das Frühstück. Thường dùng dạng số ít.",
+                "example": "Im Hotel haben wir jeden Morgen ein reichhaltiges Frühstück gegessen.",
+                "example_vi": "Tại khách sạn mỗi buổi sáng chúng tôi đều đã ăn một bữa sáng thịnh soạn."
         }
-]
+    ]
 
     vocabularies = []
     for v in vocab_raw:

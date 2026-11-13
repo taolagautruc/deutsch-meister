@@ -40,7 +40,7 @@ LESSON_ORDER_MAP = {
     20: ("A1", 7, "Bài 6: Dativ, Giới từ, Phương tiện, Số thứ tự, Ngày tháng năm"),
     21: ("A1", 8, "Bài 7: Beruf, Modalverben, Akkusativ vs Dativ"),
     22: ("A1", 9, "Bài 8: Stadt, Wegbeschreibung, Modalverben wollen"),
-    23: ("A1", 10, "Bài 9: Du lịch - Perfekt & Präteritum")
+    23: ("A1", 10, "Bài 9: Du lịch - Perfekt Präteritum")
 }
 
 def get_user_allowed_lessons(user_id):
@@ -849,7 +849,7 @@ ARENA_DATA_BY_LESSON = {
         ]
     },
     10: {
-        "name": "Bài 9: Du lịch - Perfekt & Präteritum",
+        "name": "Bài 9: Du lịch - Perfekt Präteritum",
         "vocab_pairs": [
             ("der Wald", "rừng"),
             ("der Berg", "núi"),

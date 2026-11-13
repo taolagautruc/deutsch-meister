@@ -374,13 +374,13 @@
     <!-- ========================================================= -->
     <!-- JAVASCRIPT XỬ LÝ TƯƠNG TÁC, PHÁT ÂM & KẾT NỐI API PYTHON   -->
     <!-- ========================================================= -->
-    <script src="/static/js/audio_tts.js?v=20261112_v16"></script>
-    <script src="/static/js/number_trainer.js?v=20261112_v16"></script>
-    <script src="/static/js/city_map_svg.js?v=20261112_v16"></script>
-    <script src="/static/js/perfekt_svg.js?v=20261112_v16"></script>
-    <script src="/static/js/verbs_db.js?v=20261112_v16"></script>
-    <script src="/static/js/lexikon_db.js?v=20261112_v16"></script>
-    <script src="/static/js/arena_engine.js?v=20261112_v16"></script>
+    <script src="/static/js/audio_tts.js?v=20261113_v17"></script>
+    <script src="/static/js/number_trainer.js?v=20261113_v17"></script>
+    <script src="/static/js/city_map_svg.js?v=20261113_v17"></script>
+    <script src="/static/js/perfekt_svg.js?v=20261113_v17"></script>
+    <script src="/static/js/verbs_db.js?v=20261113_v17"></script>
+    <script src="/static/js/lexikon_db.js?v=20261113_v17"></script>
+    <script src="/static/js/arena_engine.js?v=20261113_v17"></script>
     <script>
         const LEVEL_META = {
             "A1": {
@@ -398,7 +398,7 @@
                     "Dativ, Giới từ, Phương tiện, Số thứ tự & Ngày tháng (Bài 6)",
                     "Beruf, Modalverben, Akkusativ vs Dativ (Bài 7)",
                     "Stadt, Chỉ đường & Bản đồ tương tác (Bài 8)",
-                    "Urlaub, Perfekt & Präteritum với 6 Sơ đồ tương tác (Bài 9)"
+                    "Urlaub, Perfekt Präteritum với 6 Sơ đồ tương tác (Bài 9)"
                 ],
                 lessonsCount: "10 Bài (Bài 1 P1, P2, Bài 2 đến Bài 9)",
                 exCount: "750+ Bài tập chuẩn 14 dạng"
@@ -548,7 +548,7 @@
             }
         }
 
-        const CURRENT_SESSION_VERSION = '20261111_v13';
+        const CURRENT_SESSION_VERSION = '20261113_v17';
 
         function loadActiveLessonSession(lessonId) {
             if (!lessonId) return null;
@@ -1142,7 +1142,7 @@
             const list = currentLesson.vocabularies.filter(v => {
                 if (currentVocabFilter === 'all') return true;
                 if (currentVocabFilter === 'der') return v.article === 'der';
-                if (currentVocabFilter === 'die') return v.article === 'die';
+                if (currentVocabFilter === 'die') return v.article === 'die' || v.article === 'die (Plural)' || (v.german_word && v.german_word.includes('Alpen'));
                 if (currentVocabFilter === 'das') return v.article === 'das';
                 if (currentVocabFilter === 'verb') return v.article === 'Verb' || v.article === 'Modalverb' || v.article === 'Động từ';
                 if (currentVocabFilter === 'adj') return v.article === 'Adj.' || v.article === 'Adjektiv' || v.article === 'Tính từ';
@@ -1201,7 +1201,7 @@
                     <div class="p-4 rounded-2xl border ${cardStyle} flex flex-col justify-between space-y-3">
                         <div>
                             <div class="flex items-center justify-between">
-                                <span class="px-2.5 py-0.5 rounded-lg text-xs font-extrabold ${badgeStyle}">${v.article || 'Từ'}</span>
+                                <span class="px-2.5 py-0.5 rounded-lg text-xs font-extrabold ${badgeStyle}">${(v.article === 'die' && (v.german_word || '').includes('Alpen')) ? 'Plural (Số nhiều)' : (v.article || 'Từ')}</span>
                                 <button onclick="speakGerman('${safeSpeak}')" class="text-xs font-bold px-2.5 py-1 rounded-lg bg-white hover:bg-indigo-50 text-indigo-600 border border-slate-200 shadow-sm shrink-0 whitespace-nowrap cursor-pointer">
                                     🔊 Phát âm
                                 </button>
@@ -2496,7 +2496,7 @@
                                 ? checkGermanAnswerEquivalence(userAnswer, cand, {
                                     isMultiSlot: false,
                                     question: ex.question,
-                                    lesson_id: currentLesson ? currentLesson.id : null,
+                                    lesson_id: (ex && ex.lesson_id) ? ex.lesson_id : (currentLesson ? currentLesson.id : null),
                                     lesson_title: currentLesson ? currentLesson.title : '',
                                     isLesson8: isLesson8,
                                     isDeToVi: isDeToViEx

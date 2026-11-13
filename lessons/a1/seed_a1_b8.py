@@ -3169,6 +3169,10 @@ def seed_lesson_8():
                 "exp_reward": 25,
                 "extra_data": {
                         "accepted_answers": [
+                                "các bạn cứ đi dạo dọc theo bờ sông 20 phút, sau đó các bạn sẽ thấy đảo bảo tàng nổi tiếng ở bên trái",
+                                "các bạn cứ đi dạo dọc theo bờ sông 20 phút, sau đó các bạn sẽ thấy đảo bảo tàng nổi tiếng ở bên trái!",
+                                "Các bạn cứ đi dạo dọc theo bờ sông 20 phút, sau đó các bạn sẽ thấy Đảo Bảo tàng nổi tiếng ở bên trái.",
+                                "Các bạn cứ đi dạo dọc theo bờ sông 20 phút, sau đó các bạn sẽ thấy Đảo Bảo tàng nổi tiếng ở bên trái!",
                                 "Các bạn cứ đi dạo dọc theo bờ sông hai mươi phút, sau đó các bạn sẽ nhìn thấy Đảo Bảo tàng nổi tiếng ở phía bên tay trái!",
                                 "Các bạn cứ đi dạo dọc theo bờ sông hai mươi phút, sau đó các bạn sẽ nhìn thấy Đảo Bảo tàng nổi tiếng ở phía bên tay trái",
                                 "Các bạn cứ đi dạo dọc theo bờ sông 20 phút, sau đó các bạn sẽ thấy Đảo Bảo tàng nổi tiếng bên tay trái!",
@@ -3190,6 +3194,10 @@ def seed_lesson_8():
                 "exp_reward": 25,
                 "extra_data": {
                         "accepted_answers": [
+                                "vào buổi sáng các sinh viên muốn đi đến phòng trưng bày quốc gia cũ, nhưng vào buổi tối họ lại thích xem 1 bộ phim ở rạp chiếu phim hơn",
+                                "vào buổi sáng các sinh viên muốn đi đến phòng trưng bày quốc gia cũ, nhưng vào buổi tối họ lại thích xem 1 bộ phim ở rạp chiếu phim hơn.",
+                                "Vào buổi sáng các sinh viên muốn đi đến Phòng trưng bày Quốc gia Cũ, nhưng vào buổi tối họ lại thích xem 1 bộ phim ở rạp chiếu phim hơn.",
+                                "Vào buổi sáng các sinh viên muốn đi đến Phòng trưng bày Quốc gia Cũ, nhưng vào buổi tối họ lại thích xem 1 bộ phim ở rạp chiếu phim hơn",
                                 "Vào buổi sáng các sinh viên muốn đi vào Phòng trưng bày Quốc gia Cũ, nhưng vào buổi tối họ lại thích xem một bộ phim ở trong rạp chiếu phim hơn.",
                                 "Vào buổi sáng các sinh viên muốn đi vào Phòng trưng bày Quốc gia Cũ, nhưng vào buổi tối họ lại thích xem một bộ phim ở trong rạp chiếu phim hơn",
                                 "Vào buổi sáng các sinh viên muốn đi đến Phòng trưng bày Quốc gia Cũ, nhưng vào buổi tối họ lại thích xem 1 bộ phim trong rạp chiếu phim hơn.",
