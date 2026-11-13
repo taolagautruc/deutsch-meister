@@ -100,7 +100,7 @@ def seed_lesson_9():
                         <li>• <b class="text-rose-950 font-bold">die Altstadt</b> <i>(Pl: die Altstädte)</i>: phố cổ</li>
                         <li>• <b class="text-rose-950 font-bold">die Insel</b> <i>(Pl: die Inseln)</i>: hòn đảo</li>
                         <li>• <b class="text-rose-950 font-bold">die Sonne</b> <i>(Plural: nur Singular - thường chỉ dùng số ít)</i>: mặt trời</li>
-                        <li>• <b class="text-rose-950 font-bold">die Alpen</b> <i>(nur Plural - Danh từ số nhiều, ở Dativ đổi thành: in den Alpen)</i></li>
+                        <li>• <b class="text-rose-950 font-bold">die Alpen</b> <i>(nur Plural - Danh từ số nhiều, ở Dativ đổi thành: in den Alpen)</i>: dãy núi Alps</li>
                         <li>• <b class="text-rose-950 font-bold">die Besichtigung</b> <i>(Pl: die Besichtigungen)</i>: sự tham quan</li>
                         <li>• <b class="text-rose-950 font-bold">die Radtour</b> <i>(Pl: die Radtouren)</i>: chuyến đạp xe</li>
                         <li>• <b class="text-rose-950 font-bold">die Reise</b> <i>(Pl: die Reisen)</i>: chuyến du lịch</li>
@@ -345,7 +345,7 @@ def seed_lesson_9():
                     </button>
                 </div>
                 <div class="text-slate-700 leading-relaxed font-sans text-xs bg-white p-3.5 rounded-xl border border-slate-200">
-                    „Hallo Anna, ich <b>bin</b> jetzt wieder zu Hause. Der Urlaub in Hội An <b>war</b> wunderbar! Wir <b>waren</b> eine Woche dort. Wir <b>sind</b> mit dem Flugzeug nach Đà Nẵng <b>geflogen</b> und dann mit dem Taxi nach Hội An <b>gefahren</b>. Das Hotel <b>war</b> klein, aber sehr sauber. Jeden Tag <b>haben</b> wir die Altstadt <b>angeschaut</b> và viele Fotos <b>gemacht</b>. Wir <b>haben</b> viel <b>gegessen</b>, und das Essen <b>war</b> sehr lecker. Am Strand <b>sind</b> wir im Meer <b>geschwommen</b>. Nur das Wetter <b>war</b> nicht immer gut: Zwei Tage <b>hat</b> es <b>geregnet</b>. Am Sonntag <b>sind</b> wir wieder nach Hause <b>geflogen</b>. Ich <b>habe</b> viele Souvenirs <b>gekauft</b>. Bis bald! Deine Linh“
+                    „Hallo Anna, ich <b>bin</b> jetzt wieder zu Hause. Der Urlaub in Hội An <b>war</b> wunderbar! Wir <b>waren</b> eine Woche dort. Wir <b>sind</b> mit dem Flugzeug nach Đà Nẵng <b>geflogen</b> und dann mit dem Taxi nach Hội An <b>gefahren</b>. Das Hotel <b>war</b> klein, aber sehr sauber. Jeden Tag <b>haben</b> wir die Altstadt <b>angeschaut</b> und viele Fotos <b>gemacht</b>. Wir <b>haben</b> viel <b>gegessen</b>, und das Essen <b>war</b> sehr lecker. Am Strand <b>sind</b> wir im Meer <b>geschwommen</b>. Nur das Wetter <b>war</b> nicht immer gut: Zwei Tage <b>hat</b> es <b>geregnet</b>. Am Sonntag <b>sind</b> wir wieder nach Hause <b>geflogen</b>. Ich <b>habe</b> viele Souvenirs <b>gekauft</b>. Bis bald! Deine Linh“
                 </div>
                 <div class="text-slate-500 italic text-[11px]">
                     👉 Bản dịch: „Chào Anna, bây giờ mình đã về nhà rồi. Kỳ nghỉ ở Hội An thật tuyệt vời! Chúng mình đã ở đó một tuần. Chúng mình đã bay đến Đà Nẵng rồi đi taxi tới Hội An. Khách sạn nhỏ nhưng rất sạch. Ngày nào chúng mình cũng ngắm phố cổ và chụp nhiều ảnh. Chúng mình đã ăn rất nhiều và đồ ăn rất ngon. Ở bãi biển chúng mình đã bơi dưới biển. Chỉ có thời tiết không phải lúc nào cũng tốt: trời đã mưa hai ngày. Vào Chủ nhật chúng mình đã bay về nhà. Mình đã mua nhiều quà lưu niệm. Hẹn gặp lại! Linh của bạn“
@@ -521,7 +521,7 @@ def seed_lesson_9():
                 "meaning": "bãi biển",
                 "category": "Thiên nhiên & Điểm đến Du lịch (Natur & Reiseziele - Bài 9)",
                 "notes": "Số nhiều biến âm a -> ä và thêm đuôi -e (die Strände). Giới từ: am Strand (ở bãi biển), an den Strand (ra bãi biển).",
-                "example": "Wir haben den ganzen Tag am Strand gelegen und entspannt.",
+                "example": "Wir haben den ganzen Tag am Strand gelegen und uns entspannt.",
                 "example_vi": "Chúng tôi đã nằm cả ngày ở bãi biển và thư giãn."
         },
         {
@@ -675,8 +675,8 @@ def seed_lesson_9():
                 "meaning": "mưa, cơn mưa",
                 "category": "Kỳ nghỉ: Chỗ ở, Phương tiện, Hành lý & Thời tiết (Urlaub - Bài 9)",
                 "notes": "Danh từ giống đực chỉ thời tiết, chỉ có số ít (der Regen).",
-                "example": "In den Bergen hat es leider zwei Tage geregnet.",
-                "example_vi": "Trên núi đáng tiếc là trời đã mưa hai ngày."
+                "example": "Wegen des starken Regens sind wir den ganzen Tag im Hotel geblieben.",
+                "example_vi": "Vì cơn mưa lớn nên chúng tôi đã ở lại khách sạn cả ngày."
         },
         {
                 "word": "Gast",
@@ -717,7 +717,7 @@ def seed_lesson_9():
                 "meaning": "hòn đảo",
                 "category": "Thiên nhiên & Điểm đến Du lịch (Natur & Reiseziele - Bài 9)",
                 "notes": "Đuôi -el giống cái, số nhiều thêm -n (die Inseln). Giới từ đi kèm: auf der Insel (trên hòn đảo).",
-                "example": "Letzten Sommer sind wir zur Insel Phú Quốc geflogen.",
+                "example": "Letzten Sommer sind wir auf die Insel Phú Quốc geflogen.",
                 "example_vi": "Mùa hè năm ngoái chúng tôi đã bay đến đảo Phú Quốc."
         },
         {
@@ -742,7 +742,7 @@ def seed_lesson_9():
                 "indefinite": "Alpen",
                 "negation": "keine Alpen",
                 "akkusativ": "die Alpen",
-                "meaning": "dãy Alps (nur Plural - Danh từ số nhiều, ở Dativ đổi thành: in den Alpen)",
+                "meaning": "dãy núi Alps",
                 "category": "Thiên nhiên & Điểm đến Du lịch (Natur & Reiseziele - Bài 9)",
                 "notes": "Danh từ CHỈ CÓ SỐ NHIỀU (Pluralwort). Ở Cách 3 (Dativ) bắt buộc đổi thành: in den Alpen.",
                 "example": "Familie Weber ist im Winter zum Skifahren in den Alpen gewesen.",
@@ -983,8 +983,8 @@ def seed_lesson_9():
                 "meaning": "đồ ăn, bữa ăn",
                 "category": "Thiên nhiên & Điểm đến Du lịch (Natur & Reiseziele - Bài 9)",
                 "notes": "Động từ danh từ hóa từ essen -> luôn mang giống trung das Essen. Thường dùng ở số ít.",
-                "example": "Im Restaurant haben wir leckere regionale Spezialitäten gegessen.",
-                "example_vi": "Trong nhà hàng chúng tôi đã thưởng thức những món đặc sản địa phương ngon miệng."
+                "example": "Im Hotel war das Essen sehr lecker, und wir haben viel gegessen.",
+                "example_vi": "Ở khách sạn đồ ăn rất ngon và chúng tôi đã ăn rất nhiều."
         },
         {
                 "word": "Hotel",
