@@ -671,7 +671,7 @@ function normalizeVietnameseTranslation(str) {
     // Lời yêu cầu lịch sự & trợ từ
     s = s.replace(/\b(các\s+bạn\s+cứ|các\s+bạn\s+hãy|bạn\s+cứ|bạn\s+hãy)\b/g, 'các bạn');
     s = s.replace(/\b(các\s+bạn\s+sẽ|bạn\s+sẽ)\b/g, 'các bạn');
-    s = s.replace(/\b(?:xin\s+)?(?:các\s+bạn|các\s+cậu|bạn|ngài)\s+(?:hãy|vui\s+lòng)?\b/g, 'hãy');
+    s = s.replace(/\b(?:xin\s+)?(?:các\s+bạn|các\s+cậu|bạn|ngài)\s+(?:hãy|vui\s+lòng)\b/g, 'các bạn');
     s = s.replace(/\b(?:làm\s+ơn\s+)?hãy\b/g, 'hãy');
     s = s.replace(/\b(làm\s+ơn|xin\s+hãy)\b/g, 'hãy');
     s = s.replace(/\b(làm\s+thế\s+nào\s+tôi|làm\s+thế\s+nào\s+để|cách\s+để|cách)\b/g, 'làm thế nào');
@@ -688,27 +688,27 @@ function evaluateLesson8DVTranslation(userAns, qNum) {
     if (!norm) return false;
 
     if (qNum === 94) {
-        const hasStation = norm.includes('nhà ga');
+        const hasStation = norm.includes('nhà ga') || norm.includes('ga');
         const hasDist = norm.includes('ba trăm mét') || norm.includes('300') || norm.includes('ba trăm');
         const hasPost = norm.includes('bưu điện');
-        const hasTurn = norm.includes('rẽ phải') || norm.includes('quẹo phải');
-        const hasAmpel = norm.includes('đèn giao thông');
-        const hasSecond = norm.includes('thứ hai') || norm.includes('hai');
+        const hasTurn = norm.includes('rẽ phải') || norm.includes('quẹo phải') || norm.includes('phải');
+        const hasAmpel = norm.includes('đèn giao thông') || norm.includes('đèn tín hiệu');
+        const hasSecond = norm.includes('thứ hai') || norm.includes('hai') || norm.includes('thứ 2');
         return hasStation && hasDist && hasPost && hasTurn && hasAmpel && hasSecond;
     }
 
     if (qNum === 95) {
-        const hasCastle = norm.includes('lâu đài') || norm.includes('cung điện');
-        const hasPark = norm.includes('công viên');
+        const hasCastle = norm.includes('lâu đài') || norm.includes('cung điện') || norm.includes('schloss') || norm.includes('bellevue');
+        const hasPark = norm.includes('công viên') || norm.includes('tiergarten');
         const hasBridge = norm.includes('cầu');
-        const hasWant = norm.includes('muốn') || norm.includes('thích');
-        const hasAction = norm.includes('đi') || norm.includes('chạy') || norm.includes('bộ');
+        const hasWant = norm.includes('muốn') || norm.includes('thích') || norm.includes('chạy') || norm.includes('đi') || norm.includes('bộ');
+        const hasAction = norm.includes('đi') || norm.includes('chạy') || norm.includes('bộ') || norm.includes('qua');
         return hasCastle && hasPark && hasBridge && hasWant && hasAction;
     }
 
     if (qNum === 96) {
-        const hasBus = norm.includes('xe buýt') || norm.includes('200');
-        const hasAlex = norm.includes('alexander') || norm.includes('alexanderplatz');
+        const hasBus = norm.includes('xe buýt') || norm.includes('200') || norm.includes('xe bus');
+        const hasAlex = norm.includes('alexander') || norm.includes('alexanderplatz') || norm.includes('alex');
         const hasDom = norm.includes('nhà thờ') || norm.includes('dom') || norm.includes('berlin');
         const hasUni = norm.includes('humboldt') || norm.includes('đại học');
         const hasZoo = norm.includes('bách thú') || norm.includes('sở thú') || norm.includes('vườn thú') || norm.includes('zoologischer');
@@ -716,34 +716,34 @@ function evaluateLesson8DVTranslation(userAns, qNum) {
     }
 
     if (qNum === 97) {
-        const hasSorry = norm.includes('xin lỗi') || norm.includes('cho tôi');
-        const hasMap = norm.includes('bản đồ');
-        const hasWalk = norm.includes('đi') || norm.includes('đường') || norm.includes('bộ');
+        const hasSorry = norm.includes('xin lỗi') || norm.includes('cho tôi') || norm.includes('làm ơn');
+        const hasMap = norm.includes('bản đồ') || norm.includes('stadtplan');
+        const hasWalk = norm.includes('đi') || norm.includes('đường') || norm.includes('bộ') || norm.includes('đến');
         const hasOffice = norm.includes('thủ tướng') || norm.includes('bundeskanzleramt');
         return hasSorry && hasMap && hasWalk && hasOffice;
     }
 
     if (qNum === 98) {
-        const hasRiver = norm.includes('bờ sông') || norm.includes('sông');
-        const hasTime = norm.includes('hai mươi phút') || norm.includes('20') || norm.includes('hai mươi');
+        const hasRiver = norm.includes('bờ sông') || norm.includes('sông') || norm.includes('ven sông');
+        const hasTime = norm.includes('hai mươi phút') || norm.includes('20') || norm.includes('hai mươi') || norm.includes('20p') || norm.includes('20 ph');
         const hasIsland = norm.includes('đảo') || norm.includes('bảo tàng') || norm.includes('museumsinsel');
-        const hasLeft = norm.includes('bên trái') || norm.includes('trái');
+        const hasLeft = norm.includes('bên trái') || norm.includes('trái') || norm.includes('tay trái');
         return hasRiver && hasTime && hasIsland && hasLeft;
     }
 
     if (qNum === 99) {
         const hasMorning = norm.includes('sáng');
-        const hasStudents = norm.includes('sinh viên');
-        const hasGallery = norm.includes('phòng trưng bày') || norm.includes('nationalgalerie');
+        const hasStudents = norm.includes('sinh viên') || norm.includes('học sinh') || norm.includes('họ') || norm.includes('studenten');
+        const hasGallery = norm.includes('phòng trưng bày') || norm.includes('triển lãm') || norm.includes('nationalgalerie');
         const hasEvening = norm.includes('tối');
         const hasCinema = norm.includes('rạp') || norm.includes('phim') || norm.includes('kino');
         return hasMorning && hasStudents && hasGallery && hasEvening && hasCinema;
     }
 
     if (qNum === 100) {
-        const hasMall = norm.includes('thương mại') || norm.includes('mua sắm') || norm.includes('trung tâm');
-        const hasLeft = norm.includes('rẽ trái') || norm.includes('quẹo trái') || norm.includes('trái');
-        const hasTunnel = norm.includes('hầm');
+        const hasMall = norm.includes('thương mại') || norm.includes('mua sắm') || norm.includes('trung tâm') || norm.includes('einkaufszentrum');
+        const hasLeft = norm.includes('rẽ trái') || norm.includes('quẹo trái') || norm.includes('trái') || norm.includes('sang trái');
+        const hasTunnel = norm.includes('hầm') || norm.includes('đường hầm') || norm.includes('tunnel');
         const hasBank = norm.includes('ngân hàng') || norm.includes('bank');
         return hasMall && hasLeft && hasTunnel && hasBank;
     }
@@ -772,16 +772,11 @@ function checkGermanAnswerEquivalence(userAns, correctAns, options = {}) {
 
     // Kiểm tra nhanh theo Rubric Bài 8 (Câu 46 -> 57 dạng Dịch Đức -> Việt, Câu 87 -> 93 dạng Dịch Việt -> Đức)
     if (options && options.question) {
-        const isL8 = (options.lesson_id)
-            ? (options.lesson_id === 22)
-            : (
-                (options.lesson_title && /bài 8\b/i.test(options.lesson_title)) ||
-                (options.isLesson8 === true) ||
-                (typeof currentLesson !== 'undefined' && currentLesson && (
-                    currentLesson.id === 22 ||
-                    (currentLesson.title && /bài 8\b/i.test(currentLesson.title))
-                ))
-            );
+        const isL8 = Boolean(
+            (options && (String(options.lesson_id) === '22' || options.isLesson8 === true || (options.lesson_title && /bài 8\b/i.test(options.lesson_title)))) ||
+            (options && options.question && /Museumsinsel|Alte Nationalgalerie|Flussufer|Bundeskanzleramt|Friedrichstraße|Potsdamer Platz|Brandenburger Tor/i.test(options.question)) ||
+            (typeof currentLesson !== 'undefined' && currentLesson && (String(currentLesson.id) === '22' || /bài 8\b/i.test(currentLesson.title || '')))
+        );
         if (isL8) {
             const l8Match = String(options.question).match(/Câu\s+(4[6-9]|5[0-7])\b/i);
             if (l8Match) {

@@ -374,13 +374,13 @@
     <!-- ========================================================= -->
     <!-- JAVASCRIPT XỬ LÝ TƯƠNG TÁC, PHÁT ÂM & KẾT NỐI API PYTHON   -->
     <!-- ========================================================= -->
-    <script src="/static/js/audio_tts.js?v=20261113_v17"></script>
-    <script src="/static/js/number_trainer.js?v=20261113_v17"></script>
-    <script src="/static/js/city_map_svg.js?v=20261113_v17"></script>
-    <script src="/static/js/perfekt_svg.js?v=20261113_v17"></script>
-    <script src="/static/js/verbs_db.js?v=20261113_v17"></script>
-    <script src="/static/js/lexikon_db.js?v=20261113_v17"></script>
-    <script src="/static/js/arena_engine.js?v=20261113_v17"></script>
+    <script src="/static/js/audio_tts.js?v=20261113_v19"></script>
+    <script src="/static/js/number_trainer.js?v=20261113_v19"></script>
+    <script src="/static/js/city_map_svg.js?v=20261113_v19"></script>
+    <script src="/static/js/perfekt_svg.js?v=20261113_v19"></script>
+    <script src="/static/js/verbs_db.js?v=20261113_v19"></script>
+    <script src="/static/js/lexikon_db.js?v=20261113_v19"></script>
+    <script src="/static/js/arena_engine.js?v=20261113_v19"></script>
     <script>
         const LEVEL_META = {
             "A1": {
@@ -548,7 +548,7 @@
             }
         }
 
-        const CURRENT_SESSION_VERSION = '20261113_v17';
+        const CURRENT_SESSION_VERSION = '20261113_v19';
 
         function loadActiveLessonSession(lessonId) {
             if (!lessonId) return null;
@@ -2444,12 +2444,12 @@
                 } else {
                     // Ưu tiên chấm theo Rubric Bài 8 CHỈ KHI đang làm Bài 8
                     const isLesson8 = Boolean(
-                        (ex && ex.lesson_id)
-                            ? (ex.lesson_id === 22)
-                            : (typeof currentLesson !== 'undefined' && currentLesson && (
-                                currentLesson.id === 22 || 
-                                (currentLesson.title && /bài 8\b/i.test(currentLesson.title))
-                            ))
+                        (ex && (String(ex.lesson_id) === '22')) ||
+                        (ex && ex.question && /Museumsinsel|Alte Nationalgalerie|Flussufer|Bundeskanzleramt|Friedrichstraße|Potsdamer Platz|Brandenburger Tor/i.test(ex.question)) ||
+                        (typeof currentLesson !== 'undefined' && currentLesson && (
+                            String(currentLesson.id) === '22' || 
+                            (currentLesson.title && /bài 8\b/i.test(currentLesson.title))
+                        ))
                     );
                     const l8QMatch = isLesson8 && (ex.question || '').match(/Câu\s+(4[6-9]|5[0-7])\b/i);
                     const l8VDMatch = isLesson8 && (ex.question || '').match(/Câu\s+(8[7-9]|9[0-3])\b/i);
@@ -2487,6 +2487,9 @@
 
                         isCorrect = expandedCandidates.some(cand => {
                             if (!cand) return false;
+                            if (normalizeAnswer(userAnswer) === normalizeAnswer(cand)) {
+                                return true;
+                            }
                             if (isDeToViEx || (hasVietnameseChars(cand) && hasVietnameseChars(userAnswer))) {
                                 if (normalizeVietnameseTranslation(userAnswer) === normalizeVietnameseTranslation(cand)) {
                                     return true;
@@ -2846,6 +2849,14 @@
                     let displayAns = (isDeToVi && translation) ? translation : String(ex.correct_answer || '').trim();
                     if (!isDeToVi) {
                         displayAns = displayAns.replace(/[.]+$/, '');
+                    }
+                    if (ex && (ex.exercise_type === 'dien_tao_cau' || ex.exercise_type === 'dien_tu')) {
+                        if ((displayAns.match(/\//g) || []).length > 1) {
+                            const parts = displayAns.split('/').map(p => p.trim()).filter(Boolean);
+                            if (parts.length >= 2) {
+                                displayAns = `${parts[0]} / ${parts[1]} (hoặc các cách diễn đạt tương đương)`;
+                            }
+                        }
                     }
                     let wrongTitle = "❌ Chưa chính xác.";
                     let ansBlockHtml = '';
