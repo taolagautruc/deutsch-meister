@@ -319,6 +319,14 @@ def ensure_db_initialized():
             cnt = cursor.fetchone()["c"]
             if cnt < 100:
                 need_seed_b9 = True
+            cursor.execute("SELECT grammar_content FROM lessons WHERE id = ?;", (b9_id,))
+            g_row = cursor.fetchone()
+            if g_row and "và viele Fotos" in (g_row["grammar_content"] or ''):
+                need_seed_b9 = True
+            cursor.execute("SELECT example_sentence FROM vocabularies WHERE lesson_id = ? AND german_word LIKE '%Regen%' LIMIT 1;", (b9_id,))
+            reg_row = cursor.fetchone()
+            if not reg_row or "Wegen des starken Regens" not in (reg_row["example_sentence"] or ''):
+                need_seed_b9 = True
         if need_seed_b9:
             from lessons.a1.seed_a1_b9 import seed_lesson_9
             seed_lesson_9()

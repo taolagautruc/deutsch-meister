@@ -35,7 +35,7 @@
         { verb: "bleiben", type: "Bất quy tắc (dùng sein)", aux: "ist", auxFull: "sein (chia ngôi thứ 3 số ít: ist)", p2: "geblieben", ex: "Meine Freunde sind nur einen Tag in der Stadt geblieben.", tr: "Các bạn tôi chỉ ở lại thành phố một ngày.", group: 6, step: "Thuộc nhóm đặc biệt sein/bleiben/werden -> dùng sein -> geblieben" },
         { verb: "fliegen", type: "Bất quy tắc chuyển động (sein)", aux: "ist", auxFull: "sein (chia ngôi thứ 3 số ít: ist)", p2: "geflogen", ex: "Sie sind von Frankfurt nach Hanoi geflogen.", tr: "Họ đã bay từ Frankfurt đến Hà Nội.", group: 6, step: "Chuyển động đổi vị trí bằng đường hàng không -> dùng sein -> geflogen" },
         { verb: "schwimmen", type: "Bất quy tắc chuyển động (sein)", aux: "ist", auxFull: "sein (chia ngôi thứ 3 số ít: ist)", p2: "geschwommen", ex: "Die Kinder sind zur Insel geschwommen.", tr: "Những đứa trẻ đã bơi tới hòn đảo.", group: 6, step: "Bơi lội di chuyển vị trí -> dùng sein -> geschwommen" },
-        { verb: "treffen", type: "Bất quy tắc e -> i", aux: "hat", auxFull: "haben (chia ngôi thứ 3 số ít: hat)", p2: "getroffen", ex: "Am Strand habe ich eine Freundin getroffen.", tr: "Ở bãi biển tôi đã gặp một người bạn gái.", group: 6, step: "Bất quy tắc -> đổi nguyên âm e -> o -> hat getroffen" },
+        { verb: "treffen", type: "Bất quy tắc e -> o", aux: "hat", auxFull: "haben (chia ngôi thứ 3 số ít: hat)", p2: "getroffen", ex: "Am Strand habe ich eine Freundin getroffen.", tr: "Ở bãi biển tôi đã gặp một người bạn gái.", group: 6, step: "Bất quy tắc -> đổi nguyên âm e -> o -> hat getroffen" },
         { verb: "schlafen", type: "Bất quy tắc (trạng thái tại chỗ)", aux: "hat", auxFull: "haben (chia ngôi thứ 3 số ít: hat)", p2: "geschlafen", ex: "Wir haben im Zug gut geschlafen.", tr: "Chúng tôi đã ngủ ngon trên tàu.", group: 6, step: "Trạng thái kéo dài tại chỗ -> dùng haben -> hat geschlafen" },
         { verb: "anrufen", type: "Động từ tách an- + bất quy tắc", aux: "hat", auxFull: "haben (chia ngôi thứ 3 số ít: hat)", p2: "angerufen", ex: "Meine Mutter hat mich aus dem Urlaub angerufen.", tr: "Mẹ tôi đã gọi điện cho tôi từ kỳ nghỉ.", group: 5, step: "Tiền tố tách an- + bất quy tắc rufen -> an + ge + rufen" },
         { verb: "reisen", type: "Quy tắc di chuyển (sein)", aux: "ist", auxFull: "sein (chia ngôi thứ 3 số ít: ist)", p2: "gereist", ex: "Sie sind mit dem Zug durch Europa gereist.", tr: "Họ đã đi du lịch khắp châu Âu bằng tàu hỏa.", group: 1, step: "Đi du lịch/di chuyển -> dùng sein -> ist gereist" },
@@ -93,14 +93,14 @@
             pos2: "du",
             pos2Label: "VỊ TRÍ 2 (TRONG KHUNG)",
             pos2Sub: "Chủ ngữ (S)",
-            mid: "viele Fotos im Urlaub",
+            mid: "im Urlaub viele Fotos",
             midLabel: "MITTELFELD (Ở GIỮA)",
             midSub: "Tân ngữ & Nơi chốn",
             end: "gemacht?",
             endLabel: "CUỐI CÂU (NGOẶC ĐÓNG)",
             endSub: "ge + mach + t?",
             explanation: "💡 Trong câu hỏi Yes/No (Ja/Nein-Frage), trợ động từ 'Hast' đảo lên vị trí 1 mở đầu khung kẹp, chủ ngữ 'du' và thông tin ở giữa và đóng khung bằng 'gemacht?' ở cuối câu.",
-            fullDe: "Hast du viele Fotos im Urlaub gemacht?",
+            fullDe: "Hast du im Urlaub viele Fotos gemacht?",
             fullVi: "Bạn đã chụp nhiều ảnh trong kỳ nghỉ chứ?"
         },
         {
@@ -117,7 +117,7 @@
             midSub: "Trạng ngữ chỉ nơi chốn",
             end: "eingekauft.",
             endLabel: "CUỐI CÂU (NGOẶC ĐÓNG)",
-            endSub: "Tiền tố (ein) + ge + gốc (kauft)",
+            endSub: "Tiền tố (ein) + ge + gốc (kauf) + t",
             explanation: "💡 Khác với thì hiện tại ('Wir kaufen ... ein'), ở thì Perfekt tiền tố tách 'ein-' không đứng rời nữa mà gắn liền vào Partizip II với '-ge-' chèn ở giữa ('eingekauft').",
             fullDe: "Wir haben auf dem Markt eingekauft.",
             fullVi: "Chúng tôi đã mua sắm ở chợ."
@@ -241,7 +241,7 @@
             <div class="flex items-center justify-between pb-3 border-b border-slate-800">
                 <div class="flex items-center gap-2">
                     <span class="px-2.5 py-0.5 rounded-full text-xs font-black bg-emerald-500/20 text-emerald-400 border border-emerald-500/30">V2</span>
-                    <span class="font-extrabold text-sm text-slate-200">Sơ đồ 5 nhánh hình thành Partizip II (Kèm Âm thanh Mẫu)</span>
+                    <span class="font-extrabold text-sm text-slate-200">Sơ đồ 6 nhóm hình thành Partizip II (Kèm Âm thanh Mẫu)</span>
                 </div>
                 <span class="text-xs text-slate-400">Chẩn đoán nhanh mọi động từ</span>
             </div>
@@ -313,12 +313,12 @@
                 <div class="p-3 rounded-xl bg-slate-800 border border-rose-500/40 shadow-xs">
                     <div class="flex items-center justify-between mb-1">
                         <span class="px-2 py-0.5 rounded-md text-[10px] font-black bg-rose-500/20 text-rose-400 border border-rose-500/30">NHÓM 6</span>
-                        <button onclick="speakGerman('fliegen, geflogen; gehen, gegangen; trinken, getrunken.', 1.0)" class="text-xs text-rose-300 hover:text-white px-2 py-0.5 rounded bg-rose-600/30 font-bold">🔊 Nghe</button>
+                        <button onclick="speakGerman('fliegen, geflogen; gehen, gegangen; trinken, getrunken; mitbringen, mitgebracht.', 1.0)" class="text-xs text-rose-300 hover:text-white px-2 py-0.5 rounded bg-rose-600/30 font-bold">🔊 Nghe</button>
                     </div>
                     <div class="text-xs font-bold text-slate-200">Bất quy tắc & Hỗn hợp</div>
-                    <div class="font-mono text-sm text-rose-400 font-extrabold mt-1">ge + gốc đổi + en / t</div>
+                    <div class="font-mono text-sm text-rose-400 font-extrabold mt-1">ge + gốc (đổi/giữ) + en / t</div>
                     <div class="text-[11px] text-slate-300 mt-1">Ví dụ: fliegen → <b class="text-white">geflogen</b></div>
-                    <div class="text-[10px] text-slate-400 mt-0.5">gehen → gegangen, trinken → getrunken</div>
+                    <div class="text-[10px] text-slate-400 mt-0.5">gehen → gegangen, trinken → getrunken, mitbringen → mitgebracht</div>
                 </div>
             </div>
         </div>`;
@@ -478,7 +478,7 @@
             icon: "🚴",
             title: "Khởi hành chuyến đạp xe",
             de: "Familie Müller hat eine Radtour von Passau nach Linz gemacht. Sie sind mit dem Rad gefahren.",
-            vi: "Gia đình Müller đã bắt đầu chuyến đi xe đạp từ Passau đến Linz. Họ đã đạp xe đi."
+            vi: "Gia đình Müller đã thực hiện chuyến đi xe đạp từ Passau đến Linz. Họ đã đạp xe đi."
         },
         {
             id: "linz",
