@@ -146,7 +146,9 @@ def ensure_db_initialized():
         else:
             cursor.execute("SELECT extra_data FROM exercises WHERE lesson_id = 19 AND question LIKE '%Câu 28%' LIMIT 1;")
             b5_ex28 = cursor.fetchone()
-            if not b5_ex28 or '8 giờ 15 phút' not in (b5_ex28["extra_data"] or ''):
+            cursor.execute("SELECT correct_answer, explanation FROM exercises WHERE lesson_id = 19 AND question LIKE '%Câu 35%' LIMIT 1;")
+            b5_ex35 = cursor.fetchone()
+            if not b5_ex28 or '8 giờ 15 phút' not in (b5_ex28["extra_data"] or '') or not b5_ex35 or b5_ex35["correct_answer"] != 'macht / auf' or 'abschließen' not in (b5_ex35["explanation"] or ''):
                 from lessons.a1.seed_a1_b5 import seed_lesson_5
                 seed_lesson_5()
 
@@ -296,6 +298,10 @@ def ensure_db_initialized():
             cursor.execute("SELECT question FROM exercises WHERE lesson_id = ? AND question LIKE '%Câu 77%' LIMIT 1;", (b8_id,))
             row_q77 = cursor.fetchone()
             if not row_q77 or 'erste (' in (row_q77["question"] or '') or "'erste'" in (row_q77["question"] or ''):
+                need_reseed_b8 = True
+            cursor.execute("SELECT extra_data FROM exercises WHERE lesson_id = ? AND question LIKE '%Câu 98%' LIMIT 1;", (b8_id,))
+            row_q98 = cursor.fetchone()
+            if not row_q98 or 'hai mươi phút' not in (row_q98["extra_data"] or ''):
                 need_reseed_b8 = True
         if need_reseed_b8:
             from lessons.a1.seed_a1_b8 import seed_lesson_8

@@ -1424,10 +1424,10 @@ def seed_lesson_5():
             "Câu 35: Điền 2 từ còn thiếu vào chỗ trống (cách nhau bởi dấu '/') để hoàn thành câu: 'Er ___ die Tür ___.'",
             None,
             "macht / auf",
-            "Động từ tách 'aufmachen' (mở) hoặc 'zumachen' (đóng) chia cho ngôi 'er': động từ gốc 'macht' đứng ở vị trí số 2 và tiền tố 'auf' (hoặc 'zu') đứng ở cuối câu.",
+            "Động từ tách 'aufmachen' (mở), 'zumachen' (đóng) hoặc 'abschließen' (khóa) chia cho ngôi 'er': động từ gốc 'macht' (hoặc 'schließt') đứng ở vị trí số 2 và tiền tố 'auf' (hoặc 'zu' / 'ab') đứng ở cuối câu.",
             20, json.dumps({
-                "accepted_answers": ["macht / auf", "macht/auf", "macht auf", "macht / zu", "macht/zu", "macht zu", "schließt / ab", "schließt/ab", "schließt ab", "schliesst / ab", "schliesst/ab", "schliesst ab", "aufmachen", "zumachen", "abschließen"],
-                "translation": "Anh ấy mở cánh cửa ra (Er macht die Tür auf) hoặc Anh ấy đóng cánh cửa lại (Er macht die Tür zu)."
+                "accepted_answers": ["macht / auf", "macht/auf", "macht auf", "macht / zu", "macht/zu", "macht zu", "schließt / ab", "schließt/ab", "schließt ab", "schliesst / ab", "schliesst/ab", "schliesst ab", "aufmachen", "zumachen", "abschließen", "abschliessen"],
+                "translation": "Anh ấy mở cánh cửa ra (Er macht die Tür auf) / Anh ấy đóng cánh cửa lại (Er macht die Tür zu) / Anh ấy khóa cửa lại (Er schließt die Tür ab)."
             }, ensure_ascii=False)
         ),
         (
