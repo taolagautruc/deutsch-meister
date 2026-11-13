@@ -62,7 +62,7 @@ print("\n🔍 TEST 2: Bài 9 Metadata & 5 Learning Modules Check...")
 cur.execute("SELECT id, title, grammar_content FROM lessons WHERE id = 23;")
 b9_row = cur.fetchone()
 assert b9_row is not None, "Lỗi: Không tìm thấy Bài 9 (ID 23) trong CSDL"
-assert "Bài 9: Du lịch - Perfekt & Präteritum" in b9_row["title"], f"Tiêu đề không đúng: {b9_row['title']}"
+assert "Bài 9: Du lịch - Perfekt Präteritum" in b9_row["title"], f"Tiêu đề không đúng: {b9_row['title']}"
 
 grammar = b9_row["grammar_content"] or ""
 required_modules = [

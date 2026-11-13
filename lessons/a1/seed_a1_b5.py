@@ -1412,10 +1412,10 @@ def seed_lesson_5():
             lesson_id, "dien_tao_cau",
             "Câu 34: Điền 2 từ còn thiếu vào chỗ trống (cách nhau bởi dấu gạch chéo '/') để hoàn thành câu: 'Am Sonntag ___ wir um 8 Uhr ___.'",
             None,
-            "stehen / auf / stehen auf / wachen / auf / wachen auf",
+            "stehen / auf",
             "Khi 'Am Sonntag' đứng đầu câu, động từ gốc 'stehen' đứng ở vị trí số 2 (trước chủ ngữ 'wir'), còn tiền tố 'auf' đứng ở cuối câu (động từ tách 'aufstehen' / 'aufwachen').",
             20, json.dumps({
-                "accepted_answers": ["stehen / auf", "stehen auf", "wachen / auf", "wachen auf"],
+                "accepted_answers": ["stehen / auf", "stehen/auf", "stehen auf", "wachen / auf", "wachen/auf", "wachen auf", "aufstehen", "aufwachen"],
                 "translation": "Vào Chủ nhật chúng tôi thức dậy vào lúc 8 giờ. (Am Sonntag stehen wir um 8 Uhr auf.)"
             }, ensure_ascii=False)
         ),
@@ -1423,10 +1423,10 @@ def seed_lesson_5():
             lesson_id, "dien_tao_cau",
             "Câu 35: Điền 2 từ còn thiếu vào chỗ trống (cách nhau bởi dấu '/') để hoàn thành câu: 'Er ___ die Tür ___.'",
             None,
-            "macht / auf / macht auf / macht / zu / macht zu / schließt / ab / schliesst / ab",
+            "macht / auf",
             "Động từ tách 'aufmachen' (mở) hoặc 'zumachen' (đóng) chia cho ngôi 'er': động từ gốc 'macht' đứng ở vị trí số 2 và tiền tố 'auf' (hoặc 'zu') đứng ở cuối câu.",
             20, json.dumps({
-                "accepted_answers": ["macht / auf", "macht auf", "macht / zu", "macht zu", "schließt / ab", "schließt ab", "schliesst / ab", "schliesst ab"],
+                "accepted_answers": ["macht / auf", "macht/auf", "macht auf", "macht / zu", "macht/zu", "macht zu", "schließt / ab", "schließt/ab", "schließt ab", "schliesst / ab", "schliesst/ab", "schliesst ab", "aufmachen", "zumachen", "abschließen"],
                 "translation": "Anh ấy mở cánh cửa ra (Er macht die Tür auf) hoặc Anh ấy đóng cánh cửa lại (Er macht die Tür zu)."
             }, ensure_ascii=False)
         ),

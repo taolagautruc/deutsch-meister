@@ -2342,8 +2342,10 @@ def seed_lesson_6():
                         "accepted_answers": [
                                 "fährt / der",
                                 "fährt/der",
+                                "fährt der",
                                 "faehrt / der",
-                                "faehrt/der"
+                                "faehrt/der",
+                                "faehrt der"
                         ],
                         "translation": "„Mỗi buổi sáng anh trai tôi đi làm bằng tàu điện ngầm."
                 }
@@ -2359,7 +2361,8 @@ def seed_lesson_6():
                 "extra_data": {
                         "accepted_answers": [
                                 "im / dem",
-                                "im/dem"
+                                "im/dem",
+                                "im dem"
                         ],
                         "translation": "„Văn phòng của chúng tôi nằm ở tầng hai bên cạnh thang máy."
                 }
@@ -2375,7 +2378,8 @@ def seed_lesson_6():
                 "extra_data": {
                         "accepted_answers": [
                                 "der / dem",
-                                "der/dem"
+                                "der/dem",
+                                "der dem"
                         ],
                         "translation": "„Quán cà phê nằm giữa ngân hàng và rạp chiếu phim."
                 }
@@ -2392,15 +2396,22 @@ def seed_lesson_6():
                         "accepted_answers": [
                                 "erste / zweiten",
                                 "erste/zweiten",
+                                "erste zweiten",
                                 "Erste / Zweiten",
+                                "Erste Zweiten",
                                 "erste / zweite",
                                 "erste/zweite",
+                                "erste zweite",
                                 "1. / 2.",
                                 "1./2.",
+                                "1. 2.",
                                 "1 / 2",
                                 "1/2",
+                                "1 2",
                                 "erste / 2.",
-                                "1. / zweiten"
+                                "erste 2.",
+                                "1. / zweiten",
+                                "1. zweiten"
                         ],
                         "translation": "„Hôm nay là ngày mùng 1 tháng Năm, và ngày mai vào ngày mùng 2 tháng Năm chúng tôi bay sang Ý."
                 }
@@ -2511,7 +2522,8 @@ def seed_lesson_6():
                 "extra_data": {
                         "accepted_answers": [
                                 "der / dem",
-                                "der/dem"
+                                "der/dem",
+                                "der dem"
                         ],
                         "translation": "„Bức tranh đẹp treo trên tường phía trên ghế sofa."
                 }
