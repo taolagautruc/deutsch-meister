@@ -1189,1840 +1189,1862 @@ def seed_lesson_9():
     """, vocabularies)
 
     exercises_raw = [
-        {
-            "type": "trac_nghiem",
-            "question": "Câu 1: Quan sát sơ đồ V1 (khung câu Perfekt) bên trên. Chọn câu có vị trí động từ ĐÚNG:",
-            "options": [
-                "A. Wir haben gestern ein Schloss besichtigt.",
-                "B. Wir haben gestern besichtigt ein Schloss.",
-                "C. Wir gestern haben ein Schloss besichtigt.",
-                "D. Wir besichtigt haben gestern ein Schloss."
-            ],
-            "correct_answer": "A. Wir haben gestern ein Schloss besichtigt.",
-            "explanation": "Trợ động từ **`haben`** đứng ở **vị trí thứ 2**, còn **`Partizip II` (`besichtigt`) phải đứng cuối câu** → **`Wir haben gestern ein Schloss besichtigt.`**",
-            "exp_reward": 10,
-            "extra_data": {
-                "translation": "Hôm qua chúng tôi đã tham quan một lâu đài.",
-                "visual": "V1"
-            }
-        },
-        {
-            "type": "trac_nghiem",
-            "question": "Câu 2: Chọn Partizip II đúng cho động từ `fotografieren`: *„Die Touristen haben den Dom ___.“*",
-            "options": [
-                "A. gefotografiert",
-                "B. fotografiert",
-                "C. fotografieren",
-                "D. gefotografieret"
-            ],
-            "correct_answer": "B. fotografiert",
-            "explanation": "Động từ đuôi **`-ieren`** **không có `ge-`**: gốc `fotografier` + `t` = **`fotografiert`**.",
-            "exp_reward": 10,
-            "extra_data": {
-                "translation": "Các du khách đã chụp ảnh nhà thờ lớn."
-            }
-        },
-        {
-            "type": "trac_nghiem",
-            "question": "Câu 3: `einkaufen` là động từ tách. Chọn Partizip II đúng: *„Wir haben auf dem Markt frisches Obst ___.“*",
-            "options": [
-                "A. geeinkauft",
-                "B. eingekauft",
-                "C. einkauft",
-                "D. gekauft ein"
-            ],
-            "correct_answer": "B. eingekauft",
-            "explanation": "Tiền tố tách `ein-` → **`ein` + `ge` + `kauf` + `t` = `eingekauft`** (`ge` chèn vào giữa tiền tố và gốc).",
-            "exp_reward": 10,
-            "extra_data": {
-                "translation": "Chúng tôi đã mua sắm trái cây tươi ở chợ."
-            }
-        },
-        {
-            "type": "trac_nghiem",
-            "question": "Câu 4: Chọn trợ động từ đúng: *„Gestern ___ wir um sieben Uhr nach Wien gefahren.“*",
-            "options": [
-                "A. haben",
-                "B. sind",
-                "C. ist",
-                "D. hat"
-            ],
-            "correct_answer": "B. sind",
-            "explanation": "`fahren` là chuyển động đổi vị trí → dùng **`sein`**; chủ ngữ `wir` → **`sind`**.",
-            "exp_reward": 10,
-            "extra_data": {
-                "translation": "Hôm qua lúc bảy giờ chúng tôi đã đi đến Wien."
-            }
-        },
-        {
-            "type": "trac_nghiem",
-            "question": "Câu 5: Chọn câu SAI ngữ pháp:",
-            "options": [
-                "A. Ich bin im Urlaub nach Hạ Long geflogen.",
-                "B. Meine Eltern sind drei Tage in Đà Lạt geblieben.",
-                "C. Der Schnee ist in der Sonne geschmolzen.",
-                "D. Wir sind gestern ein Picknick gemacht."
-            ],
-            "correct_answer": "D. Wir sind gestern ein Picknick gemacht.",
-            "explanation": "`machen` có tân ngữ `ein Picknick` → phải dùng **`haben`**: **`Wir haben gestern ein Picknick gemacht.`** Ba câu A, B, C đều đúng (`fliegen`, `bleiben`, `schmelzen` đều dùng `sein`).",
-            "exp_reward": 10,
-            "extra_data": {
-                "translation": "Hôm qua chúng tôi đã dã ngoại."
-            }
-        },
-        {
-            "type": "trac_nghiem",
-            "question": "Câu 6: Cặp Infinitiv – Partizip II nào ĐÚNG 100%?",
-            "options": [
-                "A. essen – geesst / trinken – getrinkt",
-                "B. sehen – gesehen / schlafen – geschlafen",
-                "C. nehmen – genehmt / finden – gefindet",
-                "D. schreiben – geschreibt / singen – gesingt"
-            ],
-            "correct_answer": "B. sehen – gesehen / schlafen – geschlafen",
-            "explanation": "**`sehen → gesehen`**, **`schlafen → geschlafen`** là bất quy tắc đúng; các dạng còn lại phải là `gegessen`, `getrunken`, `genommen`, `gefunden`, `geschrieben`, `gesungen`.",
-            "exp_reward": 10,
-            "extra_data": {
-                "translation": "nhìn – đã nhìn / ngủ – đã ngủ."
-            }
-        },
-        {
-            "type": "trac_nghiem",
-            "question": "Câu 7: Chọn cặp dạng chia `sein` ở Präteritum: *„Wie war das Wetter in Đà Lạt? — Es ___ sehr kalt, aber wir ___ glücklich.“*",
-            "options": [
-                "A. war / waren",
-                "B. waren / war",
-                "C. warst / wart",
-                "D. wart / warst"
-            ],
-            "correct_answer": "A. war / waren",
-            "explanation": "`es` → **`war`**; `wir` → **`waren`**.",
-            "exp_reward": 10,
-            "extra_data": {
-                "translation": "Thời tiết ở Đà Lạt thế nào? — Trời rất lạnh, nhưng chúng tôi đã rất hạnh phúc."
-            }
-        },
-        {
-            "type": "trac_nghiem",
-            "question": "Câu 8: Chọn cặp đúng: *„Wo ___ ihr letztes Wochenende? — Wir ___ am See.“*",
-            "options": [
-                "A. wart / waren",
-                "B. warst / waren",
-                "C. wart / war",
-                "D. seid / sind"
-            ],
-            "correct_answer": "A. wart / waren",
-            "explanation": "Präteritum của `sein`: `ihr` → **`wart`**, `wir` → **`waren`**. `seid / sind` là Präsens (hiện tại), không phải quá khứ.",
-            "exp_reward": 10,
-            "extra_data": {
-                "translation": "Cuối tuần trước các bạn đã ở đâu? — Chúng tôi đã ở bên hồ."
-            }
-        },
-        {
-            "type": "trac_nghiem",
-            "question": "Câu 9: Chọn dãy Partizip II đúng của `besuchen – übernachten – erreichen`:",
-            "options": [
-                "A. gebesucht – geübernachtet – geerreicht",
-                "B. besucht – übernachtet – erreicht",
-                "C. besuchet – übernachtt – erreichet",
-                "D. besucht – geübernachtet – erreicht"
-            ],
-            "correct_answer": "B. besucht – übernachtet – erreicht",
-            "explanation": "Tiền tố **`be-`, `über-`, `er-` không tách → không có `ge-`**. Riêng `übernachten` có gốc kết thúc `-t` nên thêm `-et`: **`übernachtet`**.",
-            "exp_reward": 10,
-            "extra_data": {
-                "translation": "đã thăm – đã ngủ lại – đã đến được."
-            }
-        },
-        {
-            "type": "trac_nghiem",
-            "question": "Câu 10: Quan sát lưu đồ V2. Vì sao Partizip II của `arbeiten` là `gearbeitet` (có `-et`) mà không phải `gearbeit`?",
-            "options": [
-                "A. Vì arbeiten là động từ bất quy tắc.",
-                "B. Vì gốc \"arbeit\" kết thúc bằng -t nên phải thêm -e- để dễ phát âm.",
-                "C. Vì arbeiten là động từ tách.",
-                "D. Vì arbeiten dùng trợ động từ sein."
-            ],
-            "correct_answer": "B. Vì gốc \"arbeit\" kết thúc bằng -t nên phải thêm -e- để dễ phát âm.",
-            "explanation": "Gốc động từ kết thúc bằng **`-t` hoặc `-d`** thì dùng công thức **`ge` + gốc + `et`** → **`gearbeitet`** (tương tự `gewartet`, `gebadet`).",
-            "exp_reward": 10,
-            "extra_data": {
-                "translation": "Đã làm việc.",
-                "visual": "V2"
-            }
-        },
-        {
-            "type": "trac_nghiem",
-            "question": "Câu 11: Dòng nào ghi ĐÚNG cả mạo từ lẫn số nhiều?",
-            "options": [
-                "A. der Strand – die Strände / die Insel – die Inseln / das Meer – die Meere",
-                "B. der Strand – die Strands / der Insel – die Insel / das Meer – die Meeren",
-                "C. der Berg – die Berge / der See – die Seen / die Fluss – die Flüsse",
-                "D. der Urlaub – die Urlauber / das Hotel – die Hotelse / das Schloss – die Schlosse"
-            ],
-            "correct_answer": "A. der Strand – die Strände / die Insel – die Inseln / das Meer – die Meere",
-            "explanation": "`der Strand → die Strände` (thêm Umlaut), `die Insel → die Inseln`, `das Meer → die Meere`. Ở C sai vì `der Fluss` là giống đực; ở D sai số nhiều (`die Urlaube`, `die Hotels`, `die Schlösser`).",
-            "exp_reward": 10,
-            "extra_data": {
-                "translation": "bãi biển – các bãi biển / hòn đảo – các hòn đảo / biển – các biển."
-            }
-        },
-        {
-            "type": "trac_nghiem",
-            "question": "Câu 12: Khi nói chuyện hằng ngày, câu nào vừa đúng ngữ pháp vừa tự nhiên nhất để kể *\"Hôm qua tôi đã đi mua sắm\"*?",
-            "options": [
-                "A. Gestern kaufte ich ein.",
-                "B. Gestern habe ich eingekauft.",
-                "C. Gestern bin ich eingekauft.",
-                "D. Gestern habe ich einkauft."
-            ],
-            "correct_answer": "B. Gestern habe ich eingekauft.",
-            "explanation": "Văn nói dùng **Perfekt**: `einkaufen` (có hoạt động, không đổi vị trí) → **`haben`** + **`eingekauft`**. A đúng ngữ pháp nhưng là Präteritum mang văn viết; C sai trợ động từ; D sai Partizip II.\n\n---\n\n#### NHÓM 2: ĐIỀN KHUYẾT (`dien_khuyet` — 14 Câu: Câu 13 → Câu 26)",
-            "exp_reward": 10,
-            "extra_data": {
-                "translation": "Hôm qua tôi đã đi mua sắm."
-            }
-        },
-        {
-            "type": "dien_khuyet",
-            "question": "Câu 13: Điền trợ động từ: *„Meine Oma ___ im Sommer auf der Insel Phú Quốc Urlaub gemacht.“*",
-            "options": null,
-            "correct_answer": "hat",
-            "explanation": "`Urlaub machen` có tân ngữ → **`haben`**; `meine Oma` = `sie` → **`hat`**.",
-            "exp_reward": 15,
-            "extra_data": {
-                "accepted_answers": [
-                    "hat"
-                ],
-                "translation": "Bà tôi đã đi nghỉ trên đảo Phú Quốc vào mùa hè."
-            }
-        },
-        {
-            "type": "dien_khuyet",
-            "question": "Câu 14: Điền trợ động từ: *„Mein Bruder ___ gestern Abend um zehn Uhr eingeschlafen.“*",
-            "options": null,
-            "correct_answer": "ist",
-            "explanation": "`einschlafen` là **đổi trạng thái** → **`sein`**; `mein Bruder` = `er` → **`ist`**.",
-            "exp_reward": 15,
-            "extra_data": {
-                "accepted_answers": [
-                    "ist"
-                ],
-                "translation": "Anh trai tôi đã ngủ thiếp đi lúc mười giờ tối qua."
-            }
-        },
-        {
-            "type": "dien_khuyet",
-            "question": "Câu 15: Điền Partizip II của `suchen`: *„Habt ihr am Strand den Reiseführer ___?“*",
-            "options": null,
-            "correct_answer": "gesucht",
-            "explanation": "`suchen` có quy tắc: `ge` + `such` + `t` = **`gesucht`**.",
-            "exp_reward": 15,
-            "extra_data": {
-                "accepted_answers": [
-                    "gesucht"
-                ],
-                "translation": "Các bạn đã tìm cuốn sách hướng dẫn du lịch ở bãi biển phải không?"
-            }
-        },
-        {
-            "type": "dien_khuyet",
-            "question": "Câu 16: Điền Partizip II của `ankommen`: *„Der Zug ist pünktlich in München ___.“*",
-            "options": null,
-            "correct_answer": "angekommen",
-            "explanation": "Tiền tố tách `an-` + bất quy tắc `kommen → gekommen` → **`an` + `ge` + `kommen` = `angekommen`** (dùng `sein`).",
-            "exp_reward": 15,
-            "extra_data": {
-                "accepted_answers": [
-                    "angekommen"
-                ],
-                "translation": "Chuyến tàu đã đến München đúng giờ."
-            }
-        },
-        {
-            "type": "dien_khuyet",
-            "question": "Câu 17: Điền Partizip II của `übernachten`: *„Wir haben im Zelt ___.“*",
-            "options": null,
-            "correct_answer": "übernachtet",
-            "explanation": "Tiền tố `über-` không tách → không `ge-`; gốc `übernacht` đuôi `-t` → thêm `-et`: **`übernachtet`**.",
-            "exp_reward": 15,
-            "extra_data": {
-                "accepted_answers": [
-                    "übernachtet",
-                    "uebernachtet"
-                ],
-                "translation": "Chúng tôi đã ngủ lại trong lều."
-            }
-        },
-        {
-            "type": "dien_khuyet",
-            "question": "Câu 18: Điền Partizip II của `bezahlen`: *„Hast du schon die Rechnung ___?“*",
-            "options": null,
-            "correct_answer": "bezahlt",
-            "explanation": "Tiền tố `be-` không tách → không `ge-`: **`bezahlt`**.",
-            "exp_reward": 15,
-            "extra_data": {
-                "accepted_answers": [
-                    "bezahlt"
-                ],
-                "translation": "Bạn đã trả hóa đơn chưa?"
-            }
-        },
-        {
-            "type": "dien_khuyet",
-            "question": "Câu 19: Điền Partizip II của `baden`: *„Die Kinder haben den ganzen Tag im Meer ___.“*",
-            "options": null,
-            "correct_answer": "gebadet",
-            "explanation": "Gốc `bad` kết thúc `-d` → **`ge` + `bad` + `et` = `gebadet`**.",
-            "exp_reward": 15,
-            "extra_data": {
-                "accepted_answers": [
-                    "gebadet"
-                ],
-                "translation": "Bọn trẻ đã tắm biển cả ngày."
-            }
-        },
-        {
-            "type": "dien_khuyet",
-            "question": "Câu 20: Điền Partizip II của `regnen`: *„Gestern hat es den ganzen Tag ___.“*",
-            "options": null,
-            "correct_answer": "geregnet",
-            "explanation": "Gốc `regn` khó phát âm nếu chỉ thêm `-t` → **`geregnet`** (động từ thời tiết dùng `haben`).",
-            "exp_reward": 15,
-            "extra_data": {
-                "accepted_answers": [
-                    "geregnet"
-                ],
-                "translation": "Hôm qua trời đã mưa cả ngày."
-            }
-        },
-        {
-            "type": "dien_khuyet",
-            "question": "Câu 21: Điền Partizip II của `essen`: *„Ich habe am Abend Reis mit Fisch ___.“*",
-            "options": null,
-            "correct_answer": "gegessen",
-            "explanation": "`essen` bất quy tắc: **`gegessen`**.",
-            "exp_reward": 15,
-            "extra_data": {
-                "accepted_answers": [
-                    "gegessen"
-                ],
-                "translation": "Buổi tối tôi đã ăn cơm với cá."
-            }
-        },
-        {
-            "type": "dien_khuyet",
-            "question": "Câu 22: Điền Partizip II của `studieren`: *„Die Studentin hat ein Jahr in Wien ___.“*",
-            "options": null,
-            "correct_answer": "studiert",
-            "explanation": "Đuôi `-ieren` → không `ge-`: **`studiert`**.",
-            "exp_reward": 15,
-            "extra_data": {
-                "accepted_answers": [
-                    "studiert"
-                ],
-                "translation": "Nữ sinh viên đã học đại học một năm ở Wien."
-            }
-        },
-        {
-            "type": "dien_khuyet",
-            "question": "Câu 23: Điền dạng Präteritum của `sein`: *„Letzten Sommer ___ ich mit meiner Familie in Đà Nẵng.“*",
-            "options": null,
-            "correct_answer": "war",
-            "explanation": "`ich` + Präteritum của `sein` = **`war`**.",
-            "exp_reward": 15,
-            "extra_data": {
-                "accepted_answers": [
-                    "war"
-                ],
-                "translation": "Mùa hè năm ngoái tôi đã ở Đà Nẵng cùng gia đình."
-            }
-        },
-        {
-            "type": "dien_khuyet",
-            "question": "Câu 24: Điền dạng Präteritum của `sein`: *„Wo ___ du gestern Nachmittag, Linh? Ich habe dich nicht gesehen.“*",
-            "options": null,
-            "correct_answer": "warst",
-            "explanation": "`du` + Präteritum của `sein` = **`warst`**.",
-            "exp_reward": 15,
-            "extra_data": {
-                "accepted_answers": [
-                    "warst"
-                ],
-                "translation": "Chiều qua bạn đã ở đâu vậy, Linh? Mình đã không nhìn thấy bạn."
-            }
-        },
-        {
-            "type": "dien_khuyet",
-            "question": "Câu 25: Điền dạng Präteritum của `haben`: *„Die Kinder ___ gestern viel Spaß am Strand.“*",
-            "options": null,
-            "correct_answer": "hatten",
-            "explanation": "`die Kinder` = `sie` (số nhiều) + Präteritum của `haben` = **`hatten`**.",
-            "exp_reward": 15,
-            "extra_data": {
-                "accepted_answers": [
-                    "hatten"
-                ],
-                "translation": "Hôm qua bọn trẻ đã rất vui ở bãi biển."
-            }
-        },
-        {
-            "type": "dien_khuyet",
-            "question": "Câu 26: Điền Partizip II của `wandern`: *„Ihr seid am Wochenende in den Bergen ___.“*",
-            "options": null,
-            "correct_answer": "gewandert",
-            "explanation": "`wandern` có quy tắc: `ge` + `wander` + `t` = **`gewandert`** (dùng `sein` vì là di chuyển: `ihr seid`).\n\n---\n\n#### NHÓM 3: DỊCH TỪ / CỤM TỪ VIỆT → ĐỨC (`dich_nghia_vd` — 8 Câu: Câu 27 → Câu 34)",
-            "exp_reward": 15,
-            "extra_data": {
-                "accepted_answers": [
-                    "gewandert"
-                ],
-                "translation": "Cuối tuần các bạn đã đi bộ đường dài trên núi."
-            }
-        },
-        {
-            "type": "dich_nghia_vd",
-            "question": "Câu 27: Dịch sang tiếng Đức (kèm mạo từ số ít): *\"cuộc hành trình bằng xe đạp\"*",
-            "options": null,
-            "correct_answer": "die Radtour",
-            "explanation": "Cuộc hành trình bằng xe đạp là danh từ giống cái **`die Radtour`** (số nhiều: `die Radtouren`).",
-            "exp_reward": 15,
-            "extra_data": {
-                "accepted_answers": [
-                    "die Radtour",
-                    "Radtour"
-                ],
-                "translation": "cuộc hành trình bằng xe đạp"
-            }
-        },
-        {
-            "type": "dich_nghia_vd",
-            "question": "Câu 28: Dịch sang tiếng Đức (kèm mạo từ số ít): *\"phố cổ\"*",
-            "options": null,
-            "correct_answer": "die Altstadt",
-            "explanation": "Phố cổ là **`die Altstadt`** (số nhiều: `die Altstädte`).",
-            "exp_reward": 15,
-            "extra_data": {
-                "accepted_answers": [
-                    "die Altstadt",
-                    "Altstadt"
-                ],
-                "translation": "phố cổ"
-            }
-        },
-        {
-            "type": "dich_nghia_vd",
-            "question": "Câu 29: Dịch sang tiếng Đức (kèm mạo từ số ít): *\"sách hướng dẫn du lịch\"*",
-            "options": null,
-            "correct_answer": "der Reiseführer",
-            "explanation": "Sách hướng dẫn du lịch là **`der Reiseführer`** (số nhiều: `die Reiseführer`).",
-            "exp_reward": 15,
-            "extra_data": {
-                "accepted_answers": [
-                    "der Reiseführer",
-                    "Reiseführer",
-                    "der Reisefuehrer"
-                ],
-                "translation": "sách hướng dẫn du lịch"
-            }
-        },
-        {
-            "type": "dich_nghia_vd",
-            "question": "Câu 30: Dịch sang tiếng Đức (kèm mạo từ số ít): *\"điểm đến du lịch\"*",
-            "options": null,
-            "correct_answer": "das Reiseziel",
-            "explanation": "`die Reise` + `das Ziel` → giống của từ cuối: **`das Reiseziel`** (số nhiều: `die Reiseziele`).",
-            "exp_reward": 15,
-            "extra_data": {
-                "accepted_answers": [
-                    "das Reiseziel",
-                    "Reiseziel"
-                ],
-                "translation": "điểm đến du lịch"
-            }
-        },
-        {
-            "type": "dich_nghia_vd",
-            "question": "Câu 31: Dịch sang tiếng Đức bằng Perfekt: *\"Anh ấy đã đến nơi.\"* *(động từ `ankommen`)*",
-            "options": null,
-            "correct_answer": "er ist angekommen",
-            "explanation": "`ankommen` là chuyển động → `sein`; `er` → `ist`; Partizip II **`angekommen`** → **`er ist angekommen`**.",
-            "exp_reward": 15,
-            "extra_data": {
-                "accepted_answers": [
-                    "er ist angekommen",
-                    "Er ist angekommen."
-                ],
-                "translation": "Anh ấy đã đến nơi."
-            }
-        },
-        {
-            "type": "dich_nghia_vd",
-            "question": "Câu 32: Dịch sang tiếng Đức bằng Perfekt: *\"Chúng tôi đã cắm trại.\"* *(động từ `zelten`)*",
-            "options": null,
-            "correct_answer": "wir haben gezeltet",
-            "explanation": "`zelten` dùng `haben`; `wir` → `haben`; gốc `zelt` đuôi `-t` → **`gezeltet`** → **`wir haben gezeltet`**.",
-            "exp_reward": 15,
-            "extra_data": {
-                "accepted_answers": [
-                    "wir haben gezeltet",
-                    "Wir haben gezeltet."
-                ],
-                "translation": "Chúng tôi đã cắm trại."
-            }
-        },
-        {
-            "type": "dich_nghia_vd",
-            "question": "Câu 33: Dịch sang tiếng Đức (dạng số nhiều): *\"những kỳ nghỉ\"* *(số nhiều của `der Urlaub`)*",
-            "options": null,
-            "correct_answer": "die Urlaube",
-            "explanation": "Số nhiều của `der Urlaub` là **`die Urlaube`**.",
-            "exp_reward": 15,
-            "extra_data": {
-                "accepted_answers": [
-                    "die Urlaube",
-                    "Urlaube"
-                ],
-                "translation": "những kỳ nghỉ"
-            }
-        },
-        {
-            "type": "dich_nghia_vd",
-            "question": "Câu 34: Dịch sang tiếng Đức bằng Perfekt: *\"Tôi đã thử món ăn.\"* *(`das Essen probieren`)*",
-            "options": null,
-            "correct_answer": "ich habe das Essen probiert",
-            "explanation": "`probieren` đuôi `-ieren` → không `ge-`: **`probiert`**; `ich` → `habe` → **`ich habe das Essen probiert`**.\n\n---\n\n#### NHÓM 4: DỊCH TỪ / CỤM TỪ ĐỨC → VIỆT (`dich_nghia_dv` — 8 Câu: Câu 35 → Câu 42)",
-            "exp_reward": 15,
-            "extra_data": {
-                "accepted_answers": [
-                    "ich habe das Essen probiert",
-                    "Ich habe das Essen probiert."
-                ],
-                "translation": "Tôi đã thử món ăn."
-            }
-        },
-        {
-            "type": "dich_nghia_dv",
-            "question": "Câu 35: Dịch sang tiếng Việt: *„das Reiseland“*",
-            "options": null,
-            "correct_answer": "đất nước du lịch",
-            "explanation": "`die Reise` (chuyến du lịch) + `das Land` (đất nước) = **`das Reiseland`**.",
-            "exp_reward": 15,
-            "extra_data": {
-                "accepted_answers": [
-                    "đất nước du lịch",
-                    "quốc gia du lịch",
-                    "nước du lịch"
-                ],
-                "translation": "đất nước du lịch"
-            }
-        },
-        {
-            "type": "dich_nghia_dv",
-            "question": "Câu 36: Dịch sang tiếng Việt: *„der Bummel“*",
-            "options": null,
-            "correct_answer": "cuộc đi dạo",
-            "explanation": "`der Bummel` là cuộc đi dạo phố, tản bộ ngắm cảnh (số nhiều: `die Bummel`).",
-            "exp_reward": 15,
-            "extra_data": {
-                "accepted_answers": [
-                    "cuộc đi dạo",
-                    "cuộc đi dạo phố",
-                    "sự đi dạo",
-                    "đi dạo"
-                ],
-                "translation": "cuộc đi dạo"
-            }
-        },
-        {
-            "type": "dich_nghia_dv",
-            "question": "Câu 37: Dịch sang tiếng Việt: *„die Besichtigung“*",
-            "options": null,
-            "correct_answer": "sự tham quan",
-            "explanation": "`die Besichtigung` xuất phát từ động từ `besichtigen` (tham quan); đuôi `-ung` luôn là `die`.",
-            "exp_reward": 15,
-            "extra_data": {
-                "accepted_answers": [
-                    "sự tham quan",
-                    "buổi tham quan",
-                    "chuyến tham quan",
-                    "tham quan"
-                ],
-                "translation": "sự tham quan"
-            }
-        },
-        {
-            "type": "dich_nghia_dv",
-            "question": "Câu 38: Dịch sang tiếng Việt: *„Es war langweilig.“*",
-            "options": null,
-            "correct_answer": "Nó chán.",
-            "explanation": "`es war` là Präteritum của `sein` (*\"nó đã là\"*), `langweilig` = chán, nhàm chán.",
-            "exp_reward": 15,
-            "extra_data": {
-                "accepted_answers": [
-                    "Nó chán.",
-                    "Nó đã chán.",
-                    "Nó nhàm chán.",
-                    "Thật nhàm chán.",
-                    "Nó rất chán."
-                ],
-                "translation": "Nó chán."
-            }
-        },
-        {
-            "type": "dich_nghia_dv",
-            "question": "Câu 39: Dịch sang tiếng Việt: *„Ich habe Fotos gemacht.“*",
-            "options": null,
-            "correct_answer": "Tôi đã chụp ảnh.",
-            "explanation": "`Fotos machen` = chụp ảnh; Perfekt `ich habe … gemacht` = *\"tôi đã …\"*.",
-            "exp_reward": 15,
-            "extra_data": {
-                "accepted_answers": [
-                    "Tôi đã chụp ảnh.",
-                    "Tôi đã chụp những bức ảnh.",
-                    "Tôi đã chụp nhiều ảnh."
-                ],
-                "translation": "Tôi đã chụp ảnh."
-            }
-        },
-        {
-            "type": "dich_nghia_dv",
-            "question": "Câu 40: Dịch sang tiếng Việt: *„Wir sind in den Alpen gewandert.“*",
-            "options": null,
-            "correct_answer": "Chúng tôi đã đi bộ đường dài trên dãy Alps.",
-            "explanation": "`wandern` = đi bộ đường dài (dùng `sein`); `in den Alpen` = ở / trong dãy Alps.",
-            "exp_reward": 15,
-            "extra_data": {
-                "accepted_answers": [
-                    "Chúng tôi đã đi bộ đường dài trên dãy Alps.",
-                    "Chúng tôi đã đi bộ đường dài ở dãy Alps.",
-                    "Chúng tôi đã đi bộ đường dài trong dãy Alps."
-                ],
-                "translation": "Chúng tôi đã đi bộ đường dài trên dãy Alps."
-            }
-        },
-        {
-            "type": "dich_nghia_dv",
-            "question": "Câu 41: Dịch sang tiếng Việt: *„Das Wetter war prima.“*",
-            "options": null,
-            "correct_answer": "Thời tiết thật tuyệt.",
-            "explanation": "`das Wetter` (thời tiết) + `war` (Präteritum của `sein`) + `prima` (rất tốt, tuyệt).",
-            "exp_reward": 15,
-            "extra_data": {
-                "accepted_answers": [
-                    "Thời tiết thật tuyệt.",
-                    "Thời tiết đã rất tốt.",
-                    "Thời tiết rất tuyệt.",
-                    "Thời tiết rất tốt."
-                ],
-                "translation": "Thời tiết thật tuyệt."
-            }
-        },
-        {
-            "type": "dich_nghia_dv",
-            "question": "Câu 42: Dịch sang tiếng Việt: *„Was ist passiert?“*",
-            "options": null,
-            "correct_answer": "Chuyện gì đã xảy ra?",
-            "explanation": "`passieren` (xảy ra) dùng `sein` → `es ist passiert`; câu hỏi `Was ist passiert?`.\n\n---\n\n#### NHÓM 5: NỐI Ô TỪ TRÁI QUA PHẢI (`noi_o` — 8 Bài: Câu 43 → Câu 50, mỗi bài 4 cặp độc nhất)",
-            "exp_reward": 15,
-            "extra_data": {
-                "accepted_answers": [
-                    "Chuyện gì đã xảy ra?",
-                    "Có chuyện gì xảy ra vậy?",
-                    "Chuyện gì xảy ra vậy?",
-                    "Điều gì đã xảy ra?"
-                ],
-                "translation": "Chuyện gì đã xảy ra?"
-            }
-        },
-        {
-            "type": "noi_o",
-            "question": "Câu 43: Nối các cặp tương ứng sau (43. **Câu 43 (Bài nối 1 — Infinitiv ↔ Partizip II, động từ có quy tắc)**:)",
-            "options": null,
-            "correct_answer": "machen = gemacht || arbeiten = gearbeitet || studieren = studiert || bezahlen = bezahlt",
-            "explanation": "`machen` (nhóm 1: `ge-t`), `arbeiten` (nhóm 2: `ge-et`), `studieren` (nhóm 3: `-ieren`, không `ge-`), `bezahlen` (nhóm 4: `be-`, không `ge-`).",
-            "exp_reward": 20,
-            "extra_data": {
-                "noi_o_pairs": [
-                    {
-                        "left": "machen",
-                        "right": "gemacht"
-                    },
-                    {
-                        "left": "arbeiten",
-                        "right": "gearbeitet"
-                    },
-                    {
-                        "left": "studieren",
-                        "right": "studiert"
-                    },
-                    {
-                        "left": "bezahlen",
-                        "right": "bezahlt"
+            {
+                    "type": "trac_nghiem",
+                    "question": "Câu 1: Chọn câu đúng ngữ pháp ở thì Perfekt:",
+                    "options": [
+                            "Wir haben gestern ein Schloss besichtigt.",
+                            "Wir haben gestern besichtigt ein Schloss.",
+                            "Wir gestern haben ein Schloss besichtigt.",
+                            "Wir besichtigt haben gestern ein Schloss."
+                    ],
+                    "correct_answer": "Wir haben gestern ein Schloss besichtigt.",
+                    "explanation": "Trong câu trần thuật ở thì Perfekt, trợ động từ 'haben' đứng ở vị trí thứ 2, còn Partizip II ('besichtigt') bắt buộc đứng ở cuối câu: „Wir haben gestern ein Schloss besichtigt.“",
+                    "exp_reward": 10,
+                    "extra_data": {
+                            "translation": "Hôm qua chúng tôi đã tham quan một lâu đài."
                     }
-                ],
-                "translation": "Nối các cặp hoàn chỉnh"
-            }
-        },
-        {
-            "type": "noi_o",
-            "question": "Câu 44: Nối các cặp tương ứng sau (44. **Câu 44 (Bài nối 2 — Infinitiv ↔ Partizip II, bất quy tắc dùng `haben`)**:)",
-            "options": null,
-            "correct_answer": "essen = gegessen || trinken = getrunken || schreiben = geschrieben || sehen = gesehen",
-            "explanation": "Bốn động từ bất quy tắc có dạng `ge- … -en` (`trinken` đổi `i → u`, `schreiben` đổi `ei → ie`).",
-            "exp_reward": 20,
-            "extra_data": {
-                "noi_o_pairs": [
-                    {
-                        "left": "essen",
-                        "right": "gegessen"
-                    },
-                    {
-                        "left": "trinken",
-                        "right": "getrunken"
-                    },
-                    {
-                        "left": "schreiben",
-                        "right": "geschrieben"
-                    },
-                    {
-                        "left": "sehen",
-                        "right": "gesehen"
+            },
+            {
+                    "type": "trac_nghiem",
+                    "question": "Câu 2: Chọn dạng Partizip II đúng của động từ 'fotografieren': „Die Touristen haben den Dom ___.“",
+                    "options": [
+                            "fotografiert",
+                            "gefotografiert",
+                            "fotografieren",
+                            "gefotografieret"
+                    ],
+                    "correct_answer": "fotografiert",
+                    "explanation": "Động từ kết thúc bằng đuôi '-ieren' khi chuyển sang Partizip II không thêm tiền tố 'ge-', chỉ lấy gốc động từ 'fotografier-' + '-t' -> fotografiert.",
+                    "exp_reward": 10,
+                    "extra_data": {
+                            "translation": "Các du khách đã chụp ảnh nhà thờ lớn."
                     }
-                ],
-                "translation": "Nối các cặp hoàn chỉnh"
-            }
-        },
-        {
-            "type": "noi_o",
-            "question": "Câu 45: Nối các cặp tương ứng sau (45. **Câu 45 (Bài nối 3 — Infinitiv ↔ Perfekt dùng `sein`)**:)",
-            "options": null,
-            "correct_answer": "fahren = ist gefahren || fliegen = ist geflogen || bleiben = ist geblieben || laufen = ist gelaufen",
-            "explanation": "Cả bốn động từ đều chỉ chuyển động đổi vị trí hoặc `bleiben` nên dùng **`sein`**.",
-            "exp_reward": 20,
-            "extra_data": {
-                "noi_o_pairs": [
-                    {
-                        "left": "fahren",
-                        "right": "ist gefahren"
-                    },
-                    {
-                        "left": "fliegen",
-                        "right": "ist geflogen"
-                    },
-                    {
-                        "left": "bleiben",
-                        "right": "ist geblieben"
-                    },
-                    {
-                        "left": "laufen",
-                        "right": "ist gelaufen"
+            },
+            {
+                    "type": "trac_nghiem",
+                    "question": "Câu 3: Chọn dạng Partizip II đúng của động từ 'einkaufen': „Wir haben auf dem Markt frisches Obst ___.“",
+                    "options": [
+                            "eingekauft",
+                            "geeinkauft",
+                            "einkauft",
+                            "gekauft ein"
+                    ],
+                    "correct_answer": "eingekauft",
+                    "explanation": "'einkaufen' là động từ tách (tiền tố 'ein-'), nên khi tạo Partizip II ta chèn '-ge-' vào giữa tiền tố và gốc động từ: ein + ge + kauf + t -> eingekauft.",
+                    "exp_reward": 10,
+                    "extra_data": {
+                            "translation": "Chúng tôi đã mua sắm trái cây tươi ở chợ."
                     }
-                ],
-                "translation": "Nối các cặp hoàn chỉnh"
-            }
-        },
-        {
-            "type": "noi_o",
-            "question": "Câu 46: Nối các cặp tương ứng sau (46. **Câu 46 (Bài nối 4 — Động từ tách ↔ Partizip II)**:)",
-            "options": null,
-            "correct_answer": "einkaufen = eingekauft || anschauen = angeschaut || aufstehen = aufgestanden || mitnehmen = mitgenommen",
-            "explanation": "Động từ tách chèn `ge` giữa tiền tố và gốc: `ein` + `ge` + `kauft`, `an` + `ge` + `schaut`, `auf` + `ge` + `standen`, `mit` + `ge` + `nommen`.",
-            "exp_reward": 20,
-            "extra_data": {
-                "noi_o_pairs": [
-                    {
-                        "left": "einkaufen",
-                        "right": "eingekauft"
-                    },
-                    {
-                        "left": "anschauen",
-                        "right": "angeschaut"
-                    },
-                    {
-                        "left": "aufstehen",
-                        "right": "aufgestanden"
-                    },
-                    {
-                        "left": "mitnehmen",
-                        "right": "mitgenommen"
+            },
+            {
+                    "type": "trac_nghiem",
+                    "question": "Câu 4: Chọn trợ động từ đúng: „Gestern ___ wir um sieben Uhr nach Wien gefahren.“",
+                    "options": [
+                            "sind",
+                            "haben",
+                            "ist",
+                            "hat"
+                    ],
+                    "correct_answer": "sind",
+                    "explanation": "Động từ 'fahren' chỉ sự di chuyển thay đổi vị trí nên đi với trợ động từ 'sein'. Chia theo chủ ngữ ngôi thứ nhất số nhiều 'wir' là 'sind'.",
+                    "exp_reward": 10,
+                    "extra_data": {
+                            "translation": "Hôm qua lúc bảy giờ chúng tôi đã đi đến Wien."
                     }
-                ],
-                "translation": "Nối các cặp hoàn chỉnh"
-            }
-        },
-        {
-            "type": "noi_o",
-            "question": "Câu 47: Nối các cặp tương ứng sau (47. **Câu 47 (Bài nối 5 — Quy tắc ↔ Ví dụ)**:)",
-            "options": null,
-            "correct_answer": "ge + gốc + t = spielen → gespielt || ge + gốc + et (gốc đuôi -t) = warten → gewartet || đuôi -ieren, không ge- = reservieren → reserviert || tiền tố không tách, không ge- = erleben → erlebt",
-            "explanation": "Bốn quy tắc đầu của Partizip II (nhóm 1, 2, 3, 4).",
-            "exp_reward": 20,
-            "extra_data": {
-                "noi_o_pairs": [
-                    {
-                        "left": "ge + gốc + t",
-                        "right": "spielen → gespielt"
-                    },
-                    {
-                        "left": "ge + gốc + et (gốc đuôi -t)",
-                        "right": "warten → gewartet"
-                    },
-                    {
-                        "left": "đuôi -ieren, không ge-",
-                        "right": "reservieren → reserviert"
-                    },
-                    {
-                        "left": "tiền tố không tách, không ge-",
-                        "right": "erleben → erlebt"
+            },
+            {
+                    "type": "trac_nghiem",
+                    "question": "Câu 5: Chọn câu SAI ngữ pháp:",
+                    "options": [
+                            "Wir sind gestern ein Picknick gemacht.",
+                            "Ich bin im Urlaub nach Hạ Long geflogen.",
+                            "Meine Eltern sind drei Tage in Đà Lạt geblieben.",
+                            "Der Schnee ist in der Sonne geschmolzen."
+                    ],
+                    "correct_answer": "Wir sind gestern ein Picknick gemacht.",
+                    "explanation": "Cụm 'ein Picknick machen' có tân ngữ Akkusativ và không chỉ sự di chuyển nên bắt buộc dùng trợ động từ 'haben' (Câu đúng: „Wir haben gestern ein Picknick gemacht.“). Các động từ 'fliegen' (di chuyển), 'bleiben' (động từ cố định với sein) và 'schmelzen' (thay đổi trạng thái) đều dùng trợ động từ 'sein'.",
+                    "exp_reward": 10,
+                    "extra_data": {
+                            "translation": "(Câu sai sau khi sửa đúng): Hôm qua chúng tôi đã đi dã ngoại."
                     }
-                ],
-                "translation": "Nối các cặp hoàn chỉnh"
-            }
-        },
-        {
-            "type": "noi_o",
-            "question": "Câu 48: Nối các cặp tương ứng sau (48. **Câu 48 (Bài nối 6 — Câu hỏi về kỳ nghỉ ↔ Câu trả lời phù hợp)**:)",
-            "options": null,
-            "correct_answer": "Wo warst du im Urlaub? = Ich war auf der Insel Phú Quốc. || Wie war das Hotel? = Es war sauber und gemütlich. || Was hast du gemacht? = Ich habe viele Fotos gemacht. || Wie bist du gefahren? = Ich bin mit dem Zug gefahren.",
-            "explanation": "Câu hỏi `Wo`, `Wie war`, `Was`, `Wie` phải được đáp bằng câu cùng loại thông tin (nơi chốn, tính chất, hành động, phương tiện).",
-            "exp_reward": 20,
-            "extra_data": {
-                "noi_o_pairs": [
-                    {
-                        "left": "Wo warst du im Urlaub?",
-                        "right": "Ich war auf der Insel Phú Quốc."
-                    },
-                    {
-                        "left": "Wie war das Hotel?",
-                        "right": "Es war sauber und gemütlich."
-                    },
-                    {
-                        "left": "Was hast du gemacht?",
-                        "right": "Ich habe viele Fotos gemacht."
-                    },
-                    {
-                        "left": "Wie bist du gefahren?",
-                        "right": "Ich bin mit dem Zug gefahren."
+            },
+            {
+                    "type": "trac_nghiem",
+                    "question": "Câu 6: Cặp động từ nguyên mẫu (Infinitiv) – phân từ hai (Partizip II) nào sau đây ĐÚNG?",
+                    "options": [
+                            "sehen – gesehen / schlafen – geschlafen",
+                            "essen – geesst / trinken – getrinkt",
+                            "nehmen – genehmt / finden – gefindet",
+                            "schreiben – geschreibt / singen – gesingt"
+                    ],
+                    "correct_answer": "sehen – gesehen / schlafen – geschlafen",
+                    "explanation": "'sehen -> gesehen' và 'schlafen -> geschlafen' là hai động từ bất quy tắc chia đúng. Các động từ còn lại phải chia là: essen -> gegessen, trinken -> getrunken, nehmen -> genommen, finden -> gefunden, schreiben -> geschrieben, singen -> gesungen.",
+                    "exp_reward": 10,
+                    "extra_data": {
+                            "translation": "sehen (nhìn/xem) – gesehen / schlafen (ngủ) – geschlafen."
                     }
-                ],
-                "translation": "Nối các cặp hoàn chỉnh"
-            }
-        },
-        {
-            "type": "noi_o",
-            "question": "Câu 49: Nối các cặp tương ứng sau (49. **Câu 49 (Bài nối 7 — Danh từ ↔ Động từ đi cặp, `Kollokation`)**:)",
-            "options": null,
-            "correct_answer": "ein Hotel = buchen || den Koffer = packen || ein Schloss = besichtigen || ein Picknick = machen",
-            "explanation": "`ein Hotel buchen` (đặt khách sạn), `den Koffer packen` (đóng vali), `ein Schloss besichtigen` (tham quan lâu đài), `ein Picknick machen` (đi dã ngoại).",
-            "exp_reward": 20,
-            "extra_data": {
-                "noi_o_pairs": [
-                    {
-                        "left": "ein Hotel",
-                        "right": "buchen"
-                    },
-                    {
-                        "left": "den Koffer",
-                        "right": "packen"
-                    },
-                    {
-                        "left": "ein Schloss",
-                        "right": "besichtigen"
-                    },
-                    {
-                        "left": "ein Picknick",
-                        "right": "machen"
+            },
+            {
+                    "type": "trac_nghiem",
+                    "question": "Câu 7: Chọn cặp từ đúng để hoàn thành câu: „Letzte Woche in Đà Lạt ___ das Wetter sehr kalt, aber wir ___ sehr glücklich.“",
+                    "options": [
+                            "war / waren",
+                            "waren / war",
+                            "warst / wart",
+                            "wart / warst"
+                    ],
+                    "correct_answer": "war / waren",
+                    "explanation": "Câu kể về sự việc trong quá khứ ('letzte Woche') với động từ 'sein' nên chia ở thì Präteritum: chủ ngữ số ít 'das Wetter' (ngôi es) chia là 'war', chủ ngữ số nhiều 'wir' chia là 'waren'.",
+                    "exp_reward": 10,
+                    "extra_data": {
+                            "translation": "Tuần trước ở Đà Lạt thời tiết rất lạnh, nhưng chúng tôi đã rất hạnh phúc."
                     }
-                ],
-                "translation": "Nối các cặp hoàn chỉnh"
-            }
-        },
-        {
-            "type": "noi_o",
-            "question": "Câu 50: Nối các cặp tương ứng sau (50. **Câu 50 (Bài nối 8 — Ngôi ↔ Dạng Präteritum)**:)",
-            "options": null,
-            "correct_answer": "ich (sein) = war || du (sein) = warst || ihr (haben) = hattet || wir (haben) = hatten",
-            "explanation": "`ich war`, `du warst`, `ihr hattet`, `wir hatten`.\n\n---\n\n#### NHÓM 6: ĐIỀN VÀO 2 CHỖ TRỐNG TẠO CÂU (`dien_tao_cau` — 8 Câu: Câu 51 → Câu 58)",
-            "exp_reward": 20,
-            "extra_data": {
-                "noi_o_pairs": [
-                    {
-                        "left": "ich (sein)",
-                        "right": "war"
-                    },
-                    {
-                        "left": "du (sein)",
-                        "right": "warst"
-                    },
-                    {
-                        "left": "ihr (haben)",
-                        "right": "hattet"
-                    },
-                    {
-                        "left": "wir (haben)",
-                        "right": "hatten"
+            },
+            {
+                    "type": "trac_nghiem",
+                    "question": "Câu 8: Chọn cặp từ đúng: „Wo ___ ihr letztes Wochenende? — Wir ___ am See.“",
+                    "options": [
+                            "wart / waren",
+                            "warst / waren",
+                            "wart / war",
+                            "seid / sind"
+                    ],
+                    "correct_answer": "wart / waren",
+                    "explanation": "Trạng ngữ 'letztes Wochenende' (cuối tuần trước) chỉ quá khứ nên động từ 'sein' được chia ở thì Präteritum: ngôi 'ihr' chia là 'wart', ngôi 'wir' chia là 'waren' (cặp 'seid / sind' là thì hiện tại Präsens).",
+                    "exp_reward": 10,
+                    "extra_data": {
+                            "translation": "Cuối tuần trước các bạn đã ở đâu? — Chúng tôi đã ở bên hồ."
                     }
-                ],
-                "translation": "Nối các cặp hoàn chỉnh"
-            }
-        },
-        {
-            "type": "dien_tao_cau",
-            "question": "Câu 51: Điền 2 từ để hoàn thành câu: *„Hôm qua tôi đã tham quan viện bảo tàng và chụp ảnh.“*: 'Gestern [1] ich das Museum [2] und Fotos gemacht.'",
-            "options": null,
-            "correct_answer": "habe / besichtigt",
-            "explanation": "`ich` → `habe`; `besichtigen` (tiền tố `be-`) → **`besichtigt`**.",
-            "exp_reward": 20,
-            "extra_data": {
-                "display_frame": "Gestern [1] ich das Museum [2] und Fotos gemacht.",
-                "slot1_accepted": [
-                    "habe"
-                ],
-                "slot2_accepted": [
-                    "besichtigt"
-                ],
-                "accepted_answers": [
-                    "habe / besichtigt",
-                    "habe besichtigt",
-                    "habe, besichtigt"
-                ],
-                "translation": "Điền 2 từ để hoàn thành câu: *„Hôm qua tôi đã tham quan viện bảo tàng và chụp ảnh."
-            }
-        },
-        {
-            "type": "dien_tao_cau",
-            "question": "Câu 52: Điền 2 từ để hoàn thành câu: *„Chúng tôi đã đi bằng tàu hỏa đến Hamburg.“*: 'Wir [1] mit dem Zug nach Hamburg [2].'",
-            "options": null,
-            "correct_answer": "sind / gefahren",
-            "explanation": "`fahren` chuyển động → `sein`; `wir` → **`sind`**; Partizip II **`gefahren`**.",
-            "exp_reward": 20,
-            "extra_data": {
-                "display_frame": "Wir [1] mit dem Zug nach Hamburg [2].",
-                "slot1_accepted": [
-                    "sind"
-                ],
-                "slot2_accepted": [
-                    "gefahren"
-                ],
-                "accepted_answers": [
-                    "sind / gefahren",
-                    "sind gefahren",
-                    "sind, gefahren"
-                ],
-                "translation": "Điền 2 từ để hoàn thành câu: *„Chúng tôi đã đi bằng tàu hỏa đến Hamburg."
-            }
-        },
-        {
-            "type": "dien_tao_cau",
-            "question": "Câu 53: Điền 2 từ để hoàn thành câu: *„Linh đã ở lại Hội An hai tuần.“*: 'Linh [1] zwei Wochen in Hội An [2].'",
-            "options": null,
-            "correct_answer": "ist / geblieben",
-            "explanation": "`bleiben` luôn dùng `sein`; `Linh` = `sie` → **`ist`**; Partizip II **`geblieben`**.",
-            "exp_reward": 20,
-            "extra_data": {
-                "display_frame": "Linh [1] zwei Wochen in Hội An [2].",
-                "slot1_accepted": [
-                    "ist"
-                ],
-                "slot2_accepted": [
-                    "geblieben"
-                ],
-                "accepted_answers": [
-                    "ist / geblieben",
-                    "ist geblieben",
-                    "ist, geblieben"
-                ],
-                "translation": "Điền 2 từ để hoàn thành câu: *„Linh đã ở lại Hội An hai tuần."
-            }
-        },
-        {
-            "type": "dien_tao_cau",
-            "question": "Câu 54: Điền 2 từ để hoàn thành câu hỏi: *„Các bạn đã ngủ ngon chứ?“*: '[1] ihr gut [2]?'",
-            "options": null,
-            "correct_answer": "habt / geschlafen",
-            "explanation": "Câu hỏi Ja/Nein bắt đầu bằng trợ động từ; `ihr` → **`habt`**; `schlafen` → **`geschlafen`**.",
-            "exp_reward": 20,
-            "extra_data": {
-                "display_frame": "[1] ihr gut [2]?",
-                "slot1_accepted": [
-                    "habt"
-                ],
-                "slot2_accepted": [
-                    "geschlafen"
-                ],
-                "accepted_answers": [
-                    "habt / geschlafen",
-                    "habt geschlafen",
-                    "habt, geschlafen"
-                ],
-                "translation": "Điền 2 từ để hoàn thành câu hỏi: *„Các bạn đã ngủ ngon chứ?"
-            }
-        },
-        {
-            "type": "dien_tao_cau",
-            "question": "Câu 55: Điền 2 Partizip II để hoàn thành câu: *„Tôi đã đặt phòng và đã trả tiền.“*: 'Ich habe das Zimmer [1] und [2].'",
-            "options": null,
-            "correct_answer": "gebucht / bezahlt",
-            "explanation": "`buchen` → **`gebucht`**; `bezahlen` (tiền tố `be-`) → **`bezahlt`**.",
-            "exp_reward": 20,
-            "extra_data": {
-                "display_frame": "Ich habe das Zimmer [1] und [2].",
-                "slot1_accepted": [
-                    "gebucht"
-                ],
-                "slot2_accepted": [
-                    "bezahlt"
-                ],
-                "accepted_answers": [
-                    "gebucht / bezahlt",
-                    "gebucht bezahlt",
-                    "gebucht, bezahlt"
-                ],
-                "translation": "Điền 2 Partizip II để hoàn thành câu: *„Tôi đã đặt phòng và đã trả tiền."
-            }
-        },
-        {
-            "type": "dien_tao_cau",
-            "question": "Câu 56: Điền 2 dạng Präteritum của `sein` để hoàn thành câu: *„Hôm qua thời tiết rất tốt, và chúng tôi đã ở bãi biển.“*: 'Das Wetter [1] gestern sehr gut, und wir [2] am Strand.'",
-            "options": null,
-            "correct_answer": "war / waren",
-            "explanation": "`das Wetter` = `es` → **`war`**; `wir` → **`waren`**.",
-            "exp_reward": 20,
-            "extra_data": {
-                "display_frame": "Das Wetter [1] gestern sehr gut, und wir [2] am Strand.",
-                "slot1_accepted": [
-                    "war"
-                ],
-                "slot2_accepted": [
-                    "waren"
-                ],
-                "accepted_answers": [
-                    "war / waren",
-                    "war waren",
-                    "war, waren"
-                ],
-                "translation": "Điền 2 dạng Präteritum của `sein` để hoàn thành câu: *„Hôm qua thời tiết rất tốt, và chúng tôi đã ở bãi biển."
-            }
-        },
-        {
-            "type": "dien_tao_cau",
-            "question": "Câu 57: Điền 2 từ để hoàn thành câu: *„Anna đã đóng vali của mình rồi sau đó đã đi đến nhà ga.“*: 'Anna [1] ihren Koffer [2] und ist dann zum Bahnhof gegangen.'",
-            "options": null,
-            "correct_answer": "hat / gepackt",
-            "explanation": "`packen` có tân ngữ `den Koffer` → `haben`; `Anna` = `sie` → **`hat`**; Partizip II **`gepackt`**.",
-            "exp_reward": 20,
-            "extra_data": {
-                "display_frame": "Anna [1] ihren Koffer [2] und ist dann zum Bahnhof gegangen.",
-                "slot1_accepted": [
-                    "hat"
-                ],
-                "slot2_accepted": [
-                    "gepackt"
-                ],
-                "accepted_answers": [
-                    "hat / gepackt",
-                    "hat gepackt",
-                    "hat, gepackt"
-                ],
-                "translation": "Điền 2 từ để hoàn thành câu: *„Anna đã đóng vali của mình rồi sau đó đã đi đến nhà ga."
-            }
-        },
-        {
-            "type": "dien_tao_cau",
-            "question": "Câu 58: Điền 2 từ để hoàn thành câu: *„Họ đã gặp những người bạn mới và đã nói chuyện nhiều.“*: 'Sie [1] neue Freunde [2] und viel gesprochen.'",
-            "options": null,
-            "correct_answer": "haben / getroffen",
-            "explanation": "`sie` (họ, số nhiều) → **`haben`**; `treffen` bất quy tắc → **`getroffen`**.\n\n---\n\n#### NHÓM 7: NGHE GIỌNG BẢN XỨ `de-DE` VÀ ĐIỀN TỪ (`nghe_dien` — 8 Câu: Câu 59 → Câu 66)",
-            "exp_reward": 20,
-            "extra_data": {
-                "display_frame": "Sie [1] neue Freunde [2] und viel gesprochen.",
-                "slot1_accepted": [
-                    "haben"
-                ],
-                "slot2_accepted": [
-                    "getroffen"
-                ],
-                "accepted_answers": [
-                    "haben / getroffen",
-                    "haben getroffen",
-                    "haben, getroffen"
-                ],
-                "translation": "Điền 2 từ để hoàn thành câu: *„Họ đã gặp những người bạn mới và đã nói chuyện nhiều."
-            }
-        },
-        {
-            "type": "nghe_dien",
-            "question": "Câu 59: Nghe phát âm tiếng Đức và điền từ còn thiếu vào chỗ trống: 'Meine Eltern sind letzte Woche nach Italien ___.'",
-            "options": null,
-            "correct_answer": "geflogen",
-            "explanation": "`fliegen → ist geflogen`.",
-            "exp_reward": 20,
-            "extra_data": {
-                "audio_text": "Meine Eltern sind letzte Woche nach Italien geflogen.",
-                "display_sentence": "Meine Eltern sind letzte Woche nach Italien ___.",
-                "hint_vi": "Bố mẹ tôi đã bay đến Ý vào tuần trước.",
-                "accepted_answers": [
-                    "geflogen"
-                ],
-                "translation": "Bố mẹ tôi đã bay đến Ý vào tuần trước."
-            }
-        },
-        {
-            "type": "nghe_dien",
-            "question": "Câu 60: Nghe phát âm tiếng Đức và điền từ còn thiếu vào chỗ trống: 'Im Sommer haben wir zwei Nächte am See ___.'",
-            "options": null,
-            "correct_answer": "gezeltet",
-            "explanation": "Gốc `zelt` kết thúc `-t` → **`gezeltet`**.",
-            "exp_reward": 20,
-            "extra_data": {
-                "audio_text": "Im Sommer haben wir zwei Nächte am See gezeltet.",
-                "display_sentence": "Im Sommer haben wir zwei Nächte am See ___.",
-                "hint_vi": "Vào mùa hè chúng tôi đã cắm trại hai đêm bên hồ.",
-                "accepted_answers": [
-                    "gezeltet"
-                ],
-                "translation": "Vào mùa hè chúng tôi đã cắm trại hai đêm bên hồ."
-            }
-        },
-        {
-            "type": "nghe_dien",
-            "question": "Câu 61: Nghe phát âm tiếng Đức và điền từ còn thiếu vào chỗ trống: 'Ich habe das Hotel im Internet ___.'",
-            "options": null,
-            "correct_answer": "gebucht",
-            "explanation": "`buchen → gebucht`.",
-            "exp_reward": 20,
-            "extra_data": {
-                "audio_text": "Ich habe das Hotel im Internet gebucht.",
-                "display_sentence": "Ich habe das Hotel im Internet ___.",
-                "hint_vi": "Tôi đã đặt khách sạn trên mạng.",
-                "accepted_answers": [
-                    "gebucht"
-                ],
-                "translation": "Tôi đã đặt khách sạn trên mạng."
-            }
-        },
-        {
-            "type": "nghe_dien",
-            "question": "Câu 62: Nghe phát âm tiếng Đức và điền từ còn thiếu vào chỗ trống: 'Der Bus ist um neun Uhr ___.'",
-            "options": null,
-            "correct_answer": "abgefahren",
-            "explanation": "`abfahren` (tách) → `ab` + `ge` + `fahren` = **`abgefahren`**, dùng `sein`.",
-            "exp_reward": 20,
-            "extra_data": {
-                "audio_text": "Der Bus ist um neun Uhr abgefahren.",
-                "display_sentence": "Der Bus ist um neun Uhr ___.",
-                "hint_vi": "Chiếc xe buýt đã khởi hành lúc chín giờ.",
-                "accepted_answers": [
-                    "abgefahren"
-                ],
-                "translation": "Chiếc xe buýt đã khởi hành lúc chín giờ."
-            }
-        },
-        {
-            "type": "nghe_dien",
-            "question": "Câu 63: Nghe phát âm tiếng Đức và điền từ còn thiếu vào chỗ trống: 'Wo ___ ihr im Sommer? Wir waren in den Alpen.'",
-            "options": null,
-            "correct_answer": "wart",
-            "explanation": "`ihr` + Präteritum của `sein` = **`wart`**.",
-            "exp_reward": 20,
-            "extra_data": {
-                "audio_text": "Wo wart ihr im Sommer? Wir waren in den Alpen.",
-                "display_sentence": "Wo ___ ihr im Sommer? Wir waren in den Alpen.",
-                "hint_vi": "Vào mùa hè các bạn đã ở đâu? Chúng tôi đã ở dãy Alps.",
-                "accepted_answers": [
-                    "wart"
-                ],
-                "translation": "Vào mùa hè các bạn đã ở đâu? Chúng tôi đã ở dãy Alps."
-            }
-        },
-        {
-            "type": "nghe_dien",
-            "question": "Câu 64: Nghe phát âm tiếng Đức và điền từ còn thiếu vào chỗ trống: 'Am Abend haben wir die Nudelsuppe ___.'",
-            "options": null,
-            "correct_answer": "probiert",
-            "explanation": "Đuôi `-ieren` → không `ge-`: **`probiert`**.",
-            "exp_reward": 20,
-            "extra_data": {
-                "audio_text": "Am Abend haben wir die Nudelsuppe probiert.",
-                "display_sentence": "Am Abend haben wir die Nudelsuppe ___.",
-                "hint_vi": "Buổi tối chúng tôi đã thử món súp mì.",
-                "accepted_answers": [
-                    "probiert"
-                ],
-                "translation": "Buổi tối chúng tôi đã thử món súp mì."
-            }
-        },
-        {
-            "type": "nghe_dien",
-            "question": "Câu 65: Nghe phát âm tiếng Đức và điền từ còn thiếu vào chỗ trống: 'Was ist denn ___? Mein Koffer ist nicht angekommen!'",
-            "options": null,
-            "correct_answer": "passiert",
-            "explanation": "`passieren` đuôi `-ieren` → **`passiert`** (dùng `sein`: `ist passiert`).",
-            "exp_reward": 20,
-            "extra_data": {
-                "audio_text": "Was ist denn passiert? Mein Koffer ist nicht angekommen!",
-                "display_sentence": "Was ist denn ___? Mein Koffer ist nicht angekommen!",
-                "hint_vi": "Chuyện gì đã xảy ra vậy? Vali của tôi đã không đến nơi!",
-                "accepted_answers": [
-                    "passiert"
-                ],
-                "translation": "Chuyện gì đã xảy ra vậy? Vali của tôi đã không đến nơi!"
-            }
-        },
-        {
-            "type": "nghe_dien",
-            "question": "Câu 66: Nghe phát âm tiếng Đức và điền từ còn thiếu vào chỗ trống: 'Nach dem Frühstück haben wir den Reiseführer ___.'",
-            "options": null,
-            "correct_answer": "gelesen",
-            "explanation": "`lesen` bất quy tắc: **`gelesen`**.\n\n---\n\n#### NHÓM 8: DỊCH CÂU HOÀN CHỈNH VIỆT → ĐỨC (`dich_cau_vd` — 6 Câu: Câu 67 → Câu 72, chấm đa đáp án)",
-            "exp_reward": 20,
-            "extra_data": {
-                "audio_text": "Nach dem Frühstück haben wir den Reiseführer gelesen.",
-                "display_sentence": "Nach dem Frühstück haben wir den Reiseführer ___.",
-                "hint_vi": "Sau bữa sáng chúng tôi đã đọc cuốn sách hướng dẫn du lịch.",
-                "accepted_answers": [
-                    "gelesen"
-                ],
-                "translation": "Sau bữa sáng chúng tôi đã đọc cuốn sách hướng dẫn du lịch."
-            }
-        },
-        {
-            "type": "dich_cau_vd",
-            "question": "Câu 67: Dịch câu sau sang tiếng Đức: *\"Mùa hè năm ngoái tôi đã đi du lịch đến Berlin.\"*",
-            "options": null,
-            "correct_answer": "Letzten Sommer bin ich nach Berlin gereist.",
-            "explanation": "`reisen` / `fahren` đều là di chuyển → **`ich bin … gereist / gefahren`**; trạng từ thời gian ở đầu câu thì đảo `bin ich`.",
-            "exp_reward": 25,
-            "extra_data": {
-                "accepted_answers": [
-                    "Letzten Sommer bin ich nach Berlin gereist."
-                ],
-                "translation": "Mùa hè năm ngoái tôi đã đi du lịch đến Berlin."
-            }
-        },
-        {
-            "type": "dich_cau_vd",
-            "question": "Câu 68: Dịch câu sau sang tiếng Đức: *\"Gia đình tôi đã ở qua đêm trong một khách sạn nhỏ và đã ăn nhiều cá.\"*",
-            "options": null,
-            "correct_answer": "Meine Familie hat in einem kleinen Hotel übernachtet und viel Fisch gegessen.",
-            "explanation": "`übernachten → übernachtet`, `essen → gegessen`; cả hai dùng `haben` nên `hat` chỉ cần xuất hiện một lần.",
-            "exp_reward": 25,
-            "extra_data": {
-                "accepted_answers": [
-                    "Meine Familie hat in einem kleinen Hotel übernachtet und viel Fisch gegessen."
-                ],
-                "translation": "Gia đình tôi đã ở qua đêm trong một khách sạn nhỏ và đã ăn nhiều cá."
-            }
-        },
-        {
-            "type": "dich_cau_vd",
-            "question": "Câu 69: Dịch câu hỏi sau sang tiếng Đức: *\"Bạn đã làm gì vào cuối tuần, Tom?\"*",
-            "options": null,
-            "correct_answer": "Was hast du am Wochenende gemacht, Tom?",
-            "explanation": "W-Frage: `Was` + `hast` (vị trí 2) + `du` + … + `gemacht` (cuối câu).",
-            "exp_reward": 25,
-            "extra_data": {
-                "accepted_answers": [
-                    "Was hast du am Wochenende gemacht, Tom?"
-                ],
-                "translation": "Bạn đã làm gì vào cuối tuần, Tom?"
-            }
-        },
-        {
-            "type": "dich_cau_vd",
-            "question": "Câu 70: Dịch câu sau sang tiếng Đức: *\"Hôm qua trời đã mưa cả ngày, nhưng buổi tối thì tuyệt.\"*",
-            "options": null,
-            "correct_answer": "Gestern hat es den ganzen Tag geregnet, aber der Abend war toll.",
-            "explanation": "`regnen → hat geregnet` (ngôi `es`); `der Abend war toll` dùng Präteritum của `sein`.",
-            "exp_reward": 25,
-            "extra_data": {
-                "accepted_answers": [
-                    "Gestern hat es den ganzen Tag geregnet, aber der Abend war toll."
-                ],
-                "translation": "Hôm qua trời đã mưa cả ngày, nhưng buổi tối thì tuyệt."
-            }
-        },
-        {
-            "type": "dich_cau_vd",
-            "question": "Câu 71: Dịch câu sau sang tiếng Đức: *\"Chúng tôi đã không ở lại bãi biển lâu.\"*",
-            "options": null,
-            "correct_answer": "Wir sind nicht lange am Strand geblieben.",
-            "explanation": "`bleiben → sind … geblieben`; `nicht` đứng trước `lange`.",
-            "exp_reward": 25,
-            "extra_data": {
-                "accepted_answers": [
-                    "Wir sind nicht lange am Strand geblieben."
-                ],
-                "translation": "Chúng tôi đã không ở lại bãi biển lâu."
-            }
-        },
-        {
-            "type": "dich_cau_vd",
-            "question": "Câu 72: Dịch câu sau sang tiếng Đức: *\"Tối qua em gái tôi đã gọi điện cho tôi.\"*",
-            "options": null,
-            "correct_answer": "Meine Schwester hat mich gestern Abend angerufen.",
-            "explanation": "`anrufen` (tách, bất quy tắc) → `hat … angerufen`; `mich` (tôi, Akkusativ).\n\n---\n\n#### NHÓM 9: DỊCH CÂU HOÀN CHỈNH ĐỨC → VIỆT (`dich_cau_dv` — 6 Câu: Câu 73 → Câu 78, chấm đa đáp án)",
-            "exp_reward": 25,
-            "extra_data": {
-                "accepted_answers": [
-                    "Meine Schwester hat mich gestern Abend angerufen."
-                ],
-                "translation": "Tối qua em gái tôi đã gọi điện cho tôi."
-            }
-        },
-        {
-            "type": "dich_cau_dv",
-            "question": "Câu 73: Dịch câu sau sang tiếng Việt: *„Letzten Winter sind wir nach Österreich gefahren. Dort hat es viel geschneit.“*",
-            "options": null,
-            "correct_answer": "Mùa đông năm ngoái chúng tôi đã đi Áo. Ở đó tuyết đã rơi nhiều.",
-            "explanation": "`sind … gefahren` (chuyển động); `es hat geschneit` = tuyết đã rơi.",
-            "exp_reward": 25,
-            "extra_data": {
-                "accepted_answers": [
-                    "Mùa đông năm ngoái chúng tôi đã đi Áo. Ở đó tuyết đã rơi nhiều."
-                ],
-                "translation": "Mùa đông năm ngoái chúng tôi đã đi Áo. Ở đó tuyết đã rơi nhiều."
-            }
-        },
-        {
-            "type": "dich_cau_dv",
-            "question": "Câu 74: Dịch câu sau sang tiếng Việt: *„Ich habe mein Handy im Hotel vergessen, und jetzt muss ich zurückfahren.“*",
-            "options": null,
-            "correct_answer": "Tôi đã quên điện thoại trong khách sạn và bây giờ tôi phải quay lại.",
-            "explanation": "`vergessen → hat vergessen`; `muss … zurückfahren` = phải quay lại.",
-            "exp_reward": 25,
-            "extra_data": {
-                "accepted_answers": [
-                    "Tôi đã quên điện thoại trong khách sạn và bây giờ tôi phải quay lại."
-                ],
-                "translation": "Tôi đã quên điện thoại trong khách sạn và bây giờ tôi phải quay lại."
-            }
-        },
-        {
-            "type": "dich_cau_dv",
-            "question": "Câu 75: Dịch câu sau sang tiếng Việt: *„Wo wart ihr denn gestern? Wir haben euch angerufen, aber ihr habt nicht geantwortet.“*",
-            "options": null,
-            "correct_answer": "Hôm qua các bạn đã ở đâu vậy? Chúng tôi đã gọi cho các bạn nhưng các bạn đã không trả lời.",
-            "explanation": "`wart` (Präteritum `sein`, `ihr`); `angerufen`; `geantwortet` (gốc `-t` → `-et`), ở đây phủ định `nicht geantwortet`.",
-            "exp_reward": 25,
-            "extra_data": {
-                "accepted_answers": [
-                    "Hôm qua các bạn đã ở đâu vậy? Chúng tôi đã gọi cho các bạn nhưng các bạn đã không trả lời."
-                ],
-                "translation": "Hôm qua các bạn đã ở đâu vậy? Chúng tôi đã gọi cho các bạn nhưng các bạn đã không trả lời."
-            }
-        },
-        {
-            "type": "dich_cau_dv",
-            "question": "Câu 76: Dịch câu sau sang tiếng Việt: *„Die Reise war lang, aber schön. Wir sind mit dem Schiff gefahren und haben viele Inseln gesehen.“*",
-            "options": null,
-            "correct_answer": "Chuyến đi dài nhưng đẹp. Chúng tôi đã đi bằng tàu thủy và đã nhìn thấy nhiều hòn đảo.",
-            "explanation": "`war` (Präteritum `sein`); `sind … gefahren`; `haben … gesehen`.",
-            "exp_reward": 25,
-            "extra_data": {
-                "accepted_answers": [
-                    "Chuyến đi dài nhưng đẹp. Chúng tôi đã đi bằng tàu thủy và đã nhìn thấy nhiều hòn đảo."
-                ],
-                "translation": "Chuyến đi dài nhưng đẹp. Chúng tôi đã đi bằng tàu thủy và đã nhìn thấy nhiều hòn đảo."
-            }
-        },
-        {
-            "type": "dich_cau_dv",
-            "question": "Câu 77: Dịch câu sau sang tiếng Việt: *„Mein Opa hat früher in einem Dorf in den Bergen gewohnt.“*",
-            "options": null,
-            "correct_answer": "Ông tôi ngày trước đã sống trong một ngôi làng trên núi.",
-            "explanation": "`früher` = ngày trước; `wohnen → hat gewohnt` (trạng thái tại chỗ → `haben`).",
-            "exp_reward": 25,
-            "extra_data": {
-                "accepted_answers": [
-                    "Ông tôi ngày trước đã sống trong một ngôi làng trên núi."
-                ],
-                "translation": "Ông tôi ngày trước đã sống trong một ngôi làng trên núi."
-            }
-        },
-        {
-            "type": "dich_cau_dv",
-            "question": "Câu 78: Dịch đoạn hội thoại sau sang tiếng Việt: *„Hast du schon den Koffer gepackt? — Nein, noch nicht. Ich habe zuerst die Fahrkarten gekauft.“*",
-            "options": null,
-            "correct_answer": "Bạn đã đóng vali chưa? — Chưa, chưa đâu. Trước tiên tôi đã mua vé.",
-            "explanation": "`schon` = đã … rồi; `noch nicht` = chưa; `gepackt`, `gekauft` là Partizip II có quy tắc.\n\n---\n\n#### NHÓM 10: 🆕 SẮP XẾP TỪ THÀNH CÂU (`sap_xep_cau` — 6 Câu: Câu 79 → Câu 84)",
-            "exp_reward": 25,
-            "extra_data": {
-                "accepted_answers": [
-                    "Bạn đã đóng vali chưa? — Chưa, chưa đâu. Trước tiên tôi đã mua vé."
-                ],
-                "translation": "Bạn đã đóng vali chưa? — Chưa, chưa đâu. Trước tiên tôi đã mua vé."
-            }
-        },
-        {
-            "type": "sap_xep_cau",
-            "question": "Câu 79: Sắp xếp các từ sau thành câu Perfekt hoàn chỉnh: []",
-            "options": null,
-            "correct_answer": "Gestern habe ich Postkarten geschrieben.",
-            "explanation": "Có thể mở đầu bằng `Gestern` (khi đó `habe` ở vị trí 2, `ich` đứng sau) hoặc bằng `Ich`; `geschrieben` luôn ở cuối.",
-            "exp_reward": 20,
-            "extra_data": {
-                "tokens": [],
-                "accepted_answers": [
-                    "Gestern habe ich Postkarten geschrieben.",
-                    "Ich habe gestern Postkarten geschrieben."
-                ],
-                "translation": "Hôm qua tôi đã viết bưu thiếp.",
-                "visual": "V1"
-            }
-        },
-        {
-            "type": "sap_xep_cau",
-            "question": "Câu 80: Sắp xếp các từ sau thành câu Perfekt hoàn chỉnh: []",
-            "options": null,
-            "correct_answer": "Wir sind am Wochenende nach Köln gefahren.",
-            "explanation": "`sind` ở vị trí 2, `gefahren` ở cuối câu; `am Wochenende` có thể đứng đầu câu (đảo ngữ).",
-            "exp_reward": 20,
-            "extra_data": {
-                "tokens": [],
-                "accepted_answers": [
-                    "Wir sind am Wochenende nach Köln gefahren.",
-                    "Am Wochenende sind wir nach Köln gefahren."
-                ],
-                "translation": "Cuối tuần chúng tôi đã đi Köln.",
-                "visual": "V1"
-            }
-        },
-        {
-            "type": "sap_xep_cau",
-            "question": "Câu 81: Sắp xếp các từ sau thành câu Perfekt hoàn chỉnh: []",
-            "options": null,
-            "correct_answer": "Die Kinder haben im Meer gespielt.",
-            "explanation": "`haben` ở vị trí 2; `gespielt` cuối câu.",
-            "exp_reward": 20,
-            "extra_data": {
-                "tokens": [],
-                "accepted_answers": [
-                    "Die Kinder haben im Meer gespielt.",
-                    "Im Meer haben die Kinder gespielt."
-                ],
-                "translation": "Bọn trẻ đã chơi dưới biển.",
-                "visual": "V1"
-            }
-        },
-        {
-            "type": "sap_xep_cau",
-            "question": "Câu 82: Sắp xếp các từ sau thành câu Perfekt hoàn chỉnh: []",
-            "options": null,
-            "correct_answer": "Wir sind nicht ins Museum gegangen.",
-            "explanation": "`nicht` đứng trước bổ ngữ chỉ hướng `ins Museum`; `gegangen` ở cuối câu.",
-            "exp_reward": 20,
-            "extra_data": {
-                "tokens": [],
-                "accepted_answers": [
-                    "Wir sind nicht ins Museum gegangen."
-                ],
-                "translation": "Chúng tôi đã không đi vào viện bảo tàng.",
-                "visual": "V1"
-            }
-        },
-        {
-            "type": "sap_xep_cau",
-            "question": "Câu 83: Sắp xếp các từ sau thành câu Perfekt hoàn chỉnh: []",
-            "options": null,
-            "correct_answer": "Hast du im Urlaub viele Fotos gemacht?",
-            "explanation": "Câu hỏi Ja/Nein bắt đầu bằng trợ động từ `Hast`, tiếp theo là `du`; `gemacht` cuối câu.",
-            "exp_reward": 20,
-            "extra_data": {
-                "tokens": [],
-                "accepted_answers": [
-                    "Hast du im Urlaub viele Fotos gemacht?",
-                    "Hast du viele Fotos im Urlaub gemacht?"
-                ],
-                "translation": "Bạn đã chụp nhiều ảnh trong kỳ nghỉ chứ?",
-                "visual": "V1"
-            }
-        },
-        {
-            "type": "sap_xep_cau",
-            "question": "Câu 84: Sắp xếp các từ sau thành câu Perfekt hoàn chỉnh: []",
-            "options": null,
-            "correct_answer": "Die Gäste sind um zehn Uhr angekommen.",
-            "explanation": "`ankommen` dùng `sein`; Partizip II **`angekommen`** nằm cuối câu.\n\n---\n\n#### NHÓM 11: 🆕 PHÂN LOẠI `HABEN` / `SEIN` (`chon_haben_sein` — 4 Câu: Câu 85 → Câu 88, kèm sơ đồ `visual: V3`)\nMỗi câu: xếp **4 động từ** vào đúng trợ động từ. Đúng khi cả 4 đều đúng.",
-            "exp_reward": 20,
-            "extra_data": {
-                "tokens": [],
-                "accepted_answers": [
-                    "Die Gäste sind um zehn Uhr angekommen.",
-                    "Um zehn Uhr sind die Gäste angekommen."
-                ],
-                "translation": "Các vị khách đã đến nơi lúc mười giờ.",
-                "visual": "V1"
-            }
-        },
-        {
-            "type": "chon_haben_sein",
-            "question": "Câu 85: Xếp 4 động từ sau vào trợ động từ haben hoặc sein tương ứng (ngăn cách bởi dấu /): fahren (đi xe), machen (làm), bleiben (ở lại), essen (ăn)",
-            "options": null,
-            "correct_answer": "sein / haben / sein / haben",
-            "explanation": "`fahren` chuyển động; `bleiben` là một trong ba động từ `sein/bleiben/werden`; `machen` và `essen` có tân ngữ nên dùng `haben`.",
-            "exp_reward": 20,
-            "extra_data": {
-                "items": [
-                    {
-                        "verb": "fahren",
-                        "meaning_vi": "đi xe",
-                        "aux": "sein",
-                        "partizip": "ist gefahren"
-                    },
-                    {
-                        "verb": "machen",
-                        "meaning_vi": "làm",
-                        "aux": "haben",
-                        "partizip": "hat gemacht"
-                    },
-                    {
-                        "verb": "bleiben",
-                        "meaning_vi": "ở lại",
-                        "aux": "sein",
-                        "partizip": "ist geblieben"
-                    },
-                    {
-                        "verb": "essen",
-                        "meaning_vi": "ăn",
-                        "aux": "haben",
-                        "partizip": "hat gegessen"
+            },
+            {
+                    "type": "trac_nghiem",
+                    "question": "Câu 9: Chọn dãy Partizip II đúng tương ứng với 'besuchen – übernachten – erreichen':",
+                    "options": [
+                            "besucht – übernachtet – erreicht",
+                            "gebesucht – geübernachtet – geerreicht",
+                            "besuchet – übernachtt – erreichet",
+                            "besucht – geübernachtet – erreicht"
+                    ],
+                    "correct_answer": "besucht – übernachtet – erreicht",
+                    "explanation": "Cả 3 động từ đều bắt đầu bằng tiền tố không tách ('be-', 'über-', 'er-') nên không thêm 'ge-' ở Partizip II. Riêng 'übernachten' có gốc 'übernacht-' kết thúc bằng '-t' nên phải thêm '-et' thành 'übernachtet' (besucht – übernachtet – erreicht).",
+                    "exp_reward": 10,
+                    "extra_data": {
+                            "translation": "đã thăm – đã ngủ lại – đã đến được."
                     }
-                ],
-                "visual": "V3",
-                "accepted_answers": [
-                    "sein / haben / sein / haben",
-                    "sein haben sein haben",
-                    "sein, haben, sein, haben"
-                ],
-                "translation": "Đáp án chuẩn: sein / haben / sein / haben"
-            }
-        },
-        {
-            "type": "chon_haben_sein",
-            "question": "Câu 86: Xếp 4 động từ sau vào trợ động từ haben hoặc sein tương ứng (ngăn cách bởi dấu /): einschlafen (ngủ thiếp đi), schlafen (ngủ), fliegen (bay), fotografieren (chụp ảnh)",
-            "options": null,
-            "correct_answer": "sein / haben / sein / haben",
-            "explanation": "`einschlafen` đổi trạng thái; `schlafen` là trạng thái kéo dài; `fliegen` chuyển động; `fotografieren` có tân ngữ.",
-            "exp_reward": 20,
-            "extra_data": {
-                "items": [
-                    {
-                        "verb": "einschlafen",
-                        "meaning_vi": "ngủ thiếp đi",
-                        "aux": "sein",
-                        "partizip": "ist eingeschlafen"
-                    },
-                    {
-                        "verb": "schlafen",
-                        "meaning_vi": "ngủ",
-                        "aux": "haben",
-                        "partizip": "hat geschlafen"
-                    },
-                    {
-                        "verb": "fliegen",
-                        "meaning_vi": "bay",
-                        "aux": "sein",
-                        "partizip": "ist geflogen"
-                    },
-                    {
-                        "verb": "fotografieren",
-                        "meaning_vi": "chụp ảnh",
-                        "aux": "haben",
-                        "partizip": "hat fotografiert"
+            },
+            {
+                    "type": "trac_nghiem",
+                    "question": "Câu 10: Vì sao dạng Partizip II của động từ 'arbeiten' là 'gearbeitet' mà không phải là 'gearbeit'?",
+                    "options": [
+                            "Vì gốc \"arbeit\" kết thúc bằng -t nên phải thêm -e- để dễ phát âm.",
+                            "Vì arbeiten là động từ bất quy tắc.",
+                            "Vì arbeiten là động từ tách.",
+                            "Vì arbeiten dùng trợ động từ sein."
+                    ],
+                    "correct_answer": "Vì gốc \"arbeit\" kết thúc bằng -t nên phải thêm -e- để dễ phát âm.",
+                    "explanation": "Các động từ có quy tắc mà gốc kết thúc bằng '-t' hoặc '-d' (như 'arbeit-', 'wart-', 'bad-') phải thêm âm đệm '-e-' trước đuôi '-t' để có thể phát âm rõ âm cuối: ge + arbeit + et -> gearbeitet.",
+                    "exp_reward": 10,
+                    "extra_data": {
+                            "translation": "arbeiten (làm việc) -> gearbeitet."
                     }
-                ],
-                "visual": "V3",
-                "accepted_answers": [
-                    "sein / haben / sein / haben",
-                    "sein haben sein haben",
-                    "sein, haben, sein, haben"
-                ],
-                "translation": "Đáp án chuẩn: sein / haben / sein / haben"
-            }
-        },
-        {
-            "type": "chon_haben_sein",
-            "question": "Câu 87: Xếp 4 động từ sau vào trợ động từ haben hoặc sein tương ứng (ngăn cách bởi dấu /): übernachten (qua đêm), wandern (đi bộ đường dài), aufwachen (thức dậy), besichtigen (tham quan)",
-            "options": null,
-            "correct_answer": "haben / sein / sein / haben",
-            "explanation": "`wandern` chuyển động; `aufwachen` đổi trạng thái; `übernachten` (tại chỗ) và `besichtigen` (có tân ngữ) dùng `haben`.",
-            "exp_reward": 20,
-            "extra_data": {
-                "items": [
-                    {
-                        "verb": "übernachten",
-                        "meaning_vi": "qua đêm",
-                        "aux": "haben",
-                        "partizip": "hat übernachtet"
-                    },
-                    {
-                        "verb": "wandern",
-                        "meaning_vi": "đi bộ đường dài",
-                        "aux": "sein",
-                        "partizip": "ist gewandert"
-                    },
-                    {
-                        "verb": "aufwachen",
-                        "meaning_vi": "thức dậy",
-                        "aux": "sein",
-                        "partizip": "ist aufgewacht"
-                    },
-                    {
-                        "verb": "besichtigen",
-                        "meaning_vi": "tham quan",
-                        "aux": "haben",
-                        "partizip": "hat besichtigt"
+            },
+            {
+                    "type": "trac_nghiem",
+                    "question": "Câu 11: Dòng nào ghi ĐÚNG cả mạo từ số ít lẫn dạng số nhiều?",
+                    "options": [
+                            "der Strand – die Strände / die Insel – die Inseln / das Meer – die Meere",
+                            "der Strand – die Strands / der Insel – die Insel / das Meer – die Meeren",
+                            "der Berg – die Berge / der See – die Seen / die Fluss – die Flüsse",
+                            "der Urlaub – die Urlauber / das Hotel – die Hotelse / das Schloss – die Schlosse"
+                    ],
+                    "correct_answer": "der Strand – die Strände / die Insel – die Inseln / das Meer – die Meere",
+                    "explanation": "Dạng đúng là: der Strand – die Strände (thêm Umlaut + -e), die Insel – die Inseln (thêm -n), das Meer – die Meere (thêm -e). Các phương án khác sai vì: 'der Fluss' là giống đực (không phải 'die Fluss'); số nhiều của 'der Urlaub' là 'die Urlaube' (còn 'die Urlauber' nghĩa là những người đi du lịch), 'das Hotel' -> 'die Hotels', 'das Schloss' -> 'die Schlösser'.",
+                    "exp_reward": 10,
+                    "extra_data": {
+                            "translation": "bãi biển – các bãi biển / hòn đảo – các hòn đảo / biển – các biển."
                     }
-                ],
-                "visual": "V3",
-                "accepted_answers": [
-                    "haben / sein / sein / haben",
-                    "haben sein sein haben",
-                    "haben, sein, sein, haben"
-                ],
-                "translation": "Đáp án chuẩn: haben / sein / sein / haben"
-            }
-        },
-        {
-            "type": "chon_haben_sein",
-            "question": "Câu 88: Xếp 4 động từ sau vào trợ động từ haben hoặc sein tương ứng (ngăn cách bởi dấu /): passieren (xảy ra), bezahlen (trả tiền), kommen (đến), regnen (mưa)",
-            "options": null,
-            "correct_answer": "sein / haben / sein / haben",
-            "explanation": "`passieren` và `kommen` dùng `sein`; `bezahlen` có tân ngữ; `regnen` là động từ thời tiết dùng `haben`.\n\n---\n\n#### NHÓM 12: 🆕 TÌM LỖI VÀ SỬA CÂU (`tim_loi_sai` — 4 Câu: Câu 89 → Câu 92)\nMỗi câu có **đúng 1 lỗi**. Người học gõ lại **cả câu đúng**.",
-            "exp_reward": 20,
-            "extra_data": {
-                "items": [
-                    {
-                        "verb": "passieren",
-                        "meaning_vi": "xảy ra",
-                        "aux": "sein",
-                        "partizip": "ist passiert"
-                    },
-                    {
-                        "verb": "bezahlen",
-                        "meaning_vi": "trả tiền",
-                        "aux": "haben",
-                        "partizip": "hat bezahlt"
-                    },
-                    {
-                        "verb": "kommen",
-                        "meaning_vi": "đến",
-                        "aux": "sein",
-                        "partizip": "ist gekommen"
-                    },
-                    {
-                        "verb": "regnen",
-                        "meaning_vi": "mưa",
-                        "aux": "haben",
-                        "partizip": "hat geregnet"
+            },
+            {
+                    "type": "trac_nghiem",
+                    "question": "Câu 12: Trong giao tiếp hằng ngày, câu nào diễn đạt đúng ngữ pháp và tự nhiên nhất ý: „Hôm qua tôi đã đi mua sắm.“?",
+                    "options": [
+                            "Gestern habe ich eingekauft.",
+                            "Gestern kaufte ich ein.",
+                            "Gestern bin ich eingekauft.",
+                            "Gestern habe ich einkauft."
+                    ],
+                    "correct_answer": "Gestern habe ich eingekauft.",
+                    "explanation": "Trong giao tiếp hằng ngày (văn nói), người Đức dùng thì Perfekt. Động từ tách 'einkaufen' chỉ hoạt động mua sắm (không chỉ sự di chuyển từ nơi này sang nơi khác) nên đi với trợ động từ 'haben' và Partizip II 'eingekauft' -> „Gestern habe ich eingekauft.“ (Câu „Gestern kaufte ich ein.“ dùng thì Präteritum mang sắc thái văn viết).",
+                    "exp_reward": 10,
+                    "extra_data": {
+                            "translation": "Hôm qua tôi đã đi mua sắm."
                     }
-                ],
-                "visual": "V3",
-                "accepted_answers": [
-                    "sein / haben / sein / haben",
-                    "sein haben sein haben",
-                    "sein, haben, sein, haben"
-                ],
-                "translation": "Đáp án chuẩn: sein / haben / sein / haben"
+            },
+            {
+                    "type": "dien_khuyet",
+                    "question": "Câu 13: Điền trợ động từ: „Meine Oma ___ im Sommer auf der Insel Phú Quốc Urlaub gemacht.“",
+                    "options": null,
+                    "correct_answer": "hat",
+                    "explanation": "'Urlaub machen' có tân ngữ → 'haben'; 'meine Oma' = 'sie' → 'hat'.",
+                    "exp_reward": 15,
+                    "extra_data": {
+                            "accepted_answers": [
+                                    "hat"
+                            ],
+                            "translation": "Bà tôi đã đi nghỉ trên đảo Phú Quốc vào mùa hè."
+                    }
+            },
+            {
+                    "type": "dien_khuyet",
+                    "question": "Câu 14: Điền trợ động từ: „Mein Bruder ___ gestern Abend um zehn Uhr eingeschlafen.“",
+                    "options": null,
+                    "correct_answer": "ist",
+                    "explanation": "'einschlafen' là đổi trạng thái → 'sein'; 'mein Bruder' = 'er' → 'ist'.",
+                    "exp_reward": 15,
+                    "extra_data": {
+                            "accepted_answers": [
+                                    "ist"
+                            ],
+                            "translation": "Anh trai tôi đã ngủ thiếp đi lúc mười giờ tối qua."
+                    }
+            },
+            {
+                    "type": "dien_khuyet",
+                    "question": "Câu 15: Điền Partizip II của 'suchen': „Habt ihr am Strand den Reiseführer ___?“",
+                    "options": null,
+                    "correct_answer": "gesucht",
+                    "explanation": "'suchen' có quy tắc: 'ge' + 'such' + 't' = 'gesucht'.",
+                    "exp_reward": 15,
+                    "extra_data": {
+                            "accepted_answers": [
+                                    "gesucht"
+                            ],
+                            "translation": "Các bạn đã tìm cuốn sách hướng dẫn du lịch ở bãi biển phải không?"
+                    }
+            },
+            {
+                    "type": "dien_khuyet",
+                    "question": "Câu 16: Điền Partizip II của 'ankommen': „Der Zug ist pünktlich in München ___.“",
+                    "options": null,
+                    "correct_answer": "angekommen",
+                    "explanation": "Tiền tố tách 'an-' + bất quy tắc 'kommen → gekommen' → 'an' + 'ge' + 'kommen' = 'angekommen' (dùng 'sein').",
+                    "exp_reward": 15,
+                    "extra_data": {
+                            "accepted_answers": [
+                                    "angekommen"
+                            ],
+                            "translation": "Chuyến tàu đã đến München đúng giờ."
+                    }
+            },
+            {
+                    "type": "dien_khuyet",
+                    "question": "Câu 17: Điền Partizip II của 'übernachten': „Wir haben im Zelt ___.“",
+                    "options": null,
+                    "correct_answer": "übernachtet",
+                    "explanation": "Tiền tố 'über-' không tách → không 'ge-'; gốc 'übernacht' đuôi '-t' → thêm '-et': 'übernachtet'.",
+                    "exp_reward": 15,
+                    "extra_data": {
+                            "accepted_answers": [
+                                    "übernachtet",
+                                    "uebernachtet"
+                            ],
+                            "translation": "Chúng tôi đã ngủ lại trong lều."
+                    }
+            },
+            {
+                    "type": "dien_khuyet",
+                    "question": "Câu 18: Điền Partizip II của 'bezahlen': „Hast du schon die Rechnung ___?“",
+                    "options": null,
+                    "correct_answer": "bezahlt",
+                    "explanation": "Tiền tố 'be-' không tách → không 'ge-': 'bezahlt'.",
+                    "exp_reward": 15,
+                    "extra_data": {
+                            "accepted_answers": [
+                                    "bezahlt"
+                            ],
+                            "translation": "Bạn đã trả hóa đơn chưa?"
+                    }
+            },
+            {
+                    "type": "dien_khuyet",
+                    "question": "Câu 19: Điền Partizip II của 'baden': „Die Kinder haben den ganzen Tag im Meer ___.“",
+                    "options": null,
+                    "correct_answer": "gebadet",
+                    "explanation": "Gốc 'bad' kết thúc '-d' → 'ge' + 'bad' + 'et' = 'gebadet'.",
+                    "exp_reward": 15,
+                    "extra_data": {
+                            "accepted_answers": [
+                                    "gebadet"
+                            ],
+                            "translation": "Bọn trẻ đã tắm biển cả ngày."
+                    }
+            },
+            {
+                    "type": "dien_khuyet",
+                    "question": "Câu 20: Điền Partizip II của 'regnen': „Gestern hat es den ganzen Tag ___.“",
+                    "options": null,
+                    "correct_answer": "geregnet",
+                    "explanation": "Gốc 'regn' khó phát âm nếu chỉ thêm '-t' → 'geregnet' (động từ thời tiết dùng 'haben').",
+                    "exp_reward": 15,
+                    "extra_data": {
+                            "accepted_answers": [
+                                    "geregnet"
+                            ],
+                            "translation": "Hôm qua trời đã mưa cả ngày."
+                    }
+            },
+            {
+                    "type": "dien_khuyet",
+                    "question": "Câu 21: Điền Partizip II của 'essen': „Ich habe am Abend Reis mit Fisch ___.“",
+                    "options": null,
+                    "correct_answer": "gegessen",
+                    "explanation": "'essen' bất quy tắc: 'gegessen'.",
+                    "exp_reward": 15,
+                    "extra_data": {
+                            "accepted_answers": [
+                                    "gegessen"
+                            ],
+                            "translation": "Buổi tối tôi đã ăn cơm với cá."
+                    }
+            },
+            {
+                    "type": "dien_khuyet",
+                    "question": "Câu 22: Điền Partizip II của 'studieren': „Die Studentin hat ein Jahr in Wien ___.“",
+                    "options": null,
+                    "correct_answer": "studiert",
+                    "explanation": "Đuôi '-ieren' → không 'ge-': 'studiert'.",
+                    "exp_reward": 15,
+                    "extra_data": {
+                            "accepted_answers": [
+                                    "studiert"
+                            ],
+                            "translation": "Nữ sinh viên đã học đại học một năm ở Wien."
+                    }
+            },
+            {
+                    "type": "dien_khuyet",
+                    "question": "Câu 23: Điền dạng Präteritum của 'sein': „Letzten Sommer ___ ich mit meiner Familie in Đà Nẵng.“",
+                    "options": null,
+                    "correct_answer": "war",
+                    "explanation": "'ich' + Präteritum của 'sein' = 'war'.",
+                    "exp_reward": 15,
+                    "extra_data": {
+                            "accepted_answers": [
+                                    "war"
+                            ],
+                            "translation": "Mùa hè năm ngoái tôi đã ở Đà Nẵng cùng gia đình."
+                    }
+            },
+            {
+                    "type": "dien_khuyet",
+                    "question": "Câu 24: Điền dạng Präteritum của 'sein': „Wo ___ du gestern Nachmittag, Linh? Ich habe dich nicht gesehen.“",
+                    "options": null,
+                    "correct_answer": "warst",
+                    "explanation": "'du' + Präteritum của 'sein' = 'warst'.",
+                    "exp_reward": 15,
+                    "extra_data": {
+                            "accepted_answers": [
+                                    "warst"
+                            ],
+                            "translation": "Chiều qua bạn đã ở đâu vậy, Linh? Mình đã không nhìn thấy bạn."
+                    }
+            },
+            {
+                    "type": "dien_khuyet",
+                    "question": "Câu 25: Điền dạng Präteritum của 'haben': „Die Kinder ___ gestern viel Spaß am Strand.“",
+                    "options": null,
+                    "correct_answer": "hatten",
+                    "explanation": "'die Kinder' = 'sie' (số nhiều) + Präteritum của 'haben' = 'hatten'.",
+                    "exp_reward": 15,
+                    "extra_data": {
+                            "accepted_answers": [
+                                    "hatten"
+                            ],
+                            "translation": "Hôm qua bọn trẻ đã rất vui ở bãi biển."
+                    }
+            },
+            {
+                    "type": "dien_khuyet",
+                    "question": "Câu 26: Điền Partizip II của 'wandern': „Ihr seid am Wochenende in den Bergen ___.“",
+                    "options": null,
+                    "correct_answer": "gewandert",
+                    "explanation": "'wandern' có quy tắc: 'ge' + 'wander' + 't' = 'gewandert' (dùng 'sein' vì là di chuyển: 'ihr seid').",
+                    "exp_reward": 15,
+                    "extra_data": {
+                            "accepted_answers": [
+                                    "gewandert"
+                            ],
+                            "translation": "Cuối tuần các bạn đã đi bộ đường dài trên núi."
+                    }
+            },
+            {
+                    "type": "dich_nghia_vd",
+                    "question": "Câu 27: Dịch sang tiếng Đức (kèm mạo từ số ít): \"cuộc hành trình bằng xe đạp\"",
+                    "options": null,
+                    "correct_answer": "die Radtour",
+                    "explanation": "Cuộc hành trình bằng xe đạp là danh từ giống cái 'die Radtour' (số nhiều: 'die Radtouren').",
+                    "exp_reward": 15,
+                    "extra_data": {
+                            "accepted_answers": [
+                                    "die Radtour",
+                                    "Radtour"
+                            ],
+                            "translation": "cuộc hành trình bằng xe đạp"
+                    }
+            },
+            {
+                    "type": "dich_nghia_vd",
+                    "question": "Câu 28: Dịch sang tiếng Đức (kèm mạo từ số ít): \"phố cổ\"",
+                    "options": null,
+                    "correct_answer": "die Altstadt",
+                    "explanation": "Phố cổ là 'die Altstadt' (số nhiều: 'die Altstädte').",
+                    "exp_reward": 15,
+                    "extra_data": {
+                            "accepted_answers": [
+                                    "die Altstadt",
+                                    "Altstadt"
+                            ],
+                            "translation": "phố cổ"
+                    }
+            },
+            {
+                    "type": "dich_nghia_vd",
+                    "question": "Câu 29: Dịch sang tiếng Đức (kèm mạo từ số ít): \"sách hướng dẫn du lịch\"",
+                    "options": null,
+                    "correct_answer": "der Reiseführer",
+                    "explanation": "Sách hướng dẫn du lịch là 'der Reiseführer' (số nhiều: 'die Reiseführer').",
+                    "exp_reward": 15,
+                    "extra_data": {
+                            "accepted_answers": [
+                                    "der Reiseführer",
+                                    "Reiseführer",
+                                    "der Reisefuehrer"
+                            ],
+                            "translation": "sách hướng dẫn du lịch"
+                    }
+            },
+            {
+                    "type": "dich_nghia_vd",
+                    "question": "Câu 30: Dịch sang tiếng Đức (kèm mạo từ số ít): \"điểm đến du lịch\"",
+                    "options": null,
+                    "correct_answer": "das Reiseziel",
+                    "explanation": "'die Reise' + 'das Ziel' → giống của từ cuối: 'das Reiseziel' (số nhiều: 'die Reiseziele').",
+                    "exp_reward": 15,
+                    "extra_data": {
+                            "accepted_answers": [
+                                    "das Reiseziel",
+                                    "Reiseziel"
+                            ],
+                            "translation": "điểm đến du lịch"
+                    }
+            },
+            {
+                    "type": "dich_nghia_vd",
+                    "question": "Câu 31: Dịch sang tiếng Đức bằng Perfekt: \"Anh ấy đã đến nơi.\" (động từ 'ankommen')",
+                    "options": null,
+                    "correct_answer": "er ist angekommen",
+                    "explanation": "'ankommen' là chuyển động → 'sein'; 'er' → 'ist'; Partizip II 'angekommen' → 'er ist angekommen'.",
+                    "exp_reward": 15,
+                    "extra_data": {
+                            "accepted_answers": [
+                                    "er ist angekommen",
+                                    "Er ist angekommen."
+                            ],
+                            "translation": "Anh ấy đã đến nơi."
+                    }
+            },
+            {
+                    "type": "dich_nghia_vd",
+                    "question": "Câu 32: Dịch sang tiếng Đức bằng Perfekt: \"Chúng tôi đã cắm trại.\" (động từ 'zelten')",
+                    "options": null,
+                    "correct_answer": "wir haben gezeltet",
+                    "explanation": "'zelten' dùng 'haben'; 'wir' → 'haben'; gốc 'zelt' đuôi '-t' → 'gezeltet' → 'wir haben gezeltet'.",
+                    "exp_reward": 15,
+                    "extra_data": {
+                            "accepted_answers": [
+                                    "wir haben gezeltet",
+                                    "Wir haben gezeltet."
+                            ],
+                            "translation": "Chúng tôi đã cắm trại."
+                    }
+            },
+            {
+                    "type": "dich_nghia_vd",
+                    "question": "Câu 33: Dịch sang tiếng Đức (dạng số nhiều): \"những kỳ nghỉ\" (số nhiều của 'der Urlaub')",
+                    "options": null,
+                    "correct_answer": "die Urlaube",
+                    "explanation": "Số nhiều của 'der Urlaub' là 'die Urlaube'.",
+                    "exp_reward": 15,
+                    "extra_data": {
+                            "accepted_answers": [
+                                    "die Urlaube",
+                                    "Urlaube"
+                            ],
+                            "translation": "những kỳ nghỉ"
+                    }
+            },
+            {
+                    "type": "dich_nghia_vd",
+                    "question": "Câu 34: Dịch sang tiếng Đức bằng Perfekt: \"Tôi đã thử món ăn.\" ('das Essen probieren')",
+                    "options": null,
+                    "correct_answer": "ich habe das Essen probiert",
+                    "explanation": "'probieren' đuôi '-ieren' → không 'ge-': 'probiert'; 'ich' → 'habe' → 'ich habe das Essen probiert'.",
+                    "exp_reward": 15,
+                    "extra_data": {
+                            "accepted_answers": [
+                                    "ich habe das Essen probiert",
+                                    "Ich habe das Essen probiert."
+                            ],
+                            "translation": "Tôi đã thử món ăn."
+                    }
+            },
+            {
+                    "type": "dich_nghia_dv",
+                    "question": "Câu 35: Dịch sang tiếng Việt: „das Reiseland“",
+                    "options": null,
+                    "correct_answer": "đất nước du lịch",
+                    "explanation": "'die Reise' (chuyến du lịch) + 'das Land' (đất nước) = 'das Reiseland'.",
+                    "exp_reward": 15,
+                    "extra_data": {
+                            "accepted_answers": [
+                                    "đất nước du lịch",
+                                    "quốc gia du lịch",
+                                    "nước du lịch"
+                            ],
+                            "translation": "đất nước du lịch"
+                    }
+            },
+            {
+                    "type": "dich_nghia_dv",
+                    "question": "Câu 36: Dịch sang tiếng Việt: „der Bummel“",
+                    "options": null,
+                    "correct_answer": "cuộc đi dạo",
+                    "explanation": "'der Bummel' là cuộc đi dạo phố, tản bộ ngắm cảnh (số nhiều: 'die Bummel').",
+                    "exp_reward": 15,
+                    "extra_data": {
+                            "accepted_answers": [
+                                    "cuộc đi dạo",
+                                    "cuộc đi dạo phố",
+                                    "sự đi dạo",
+                                    "đi dạo"
+                            ],
+                            "translation": "cuộc đi dạo"
+                    }
+            },
+            {
+                    "type": "dich_nghia_dv",
+                    "question": "Câu 37: Dịch sang tiếng Việt: „die Besichtigung“",
+                    "options": null,
+                    "correct_answer": "sự tham quan",
+                    "explanation": "'die Besichtigung' xuất phát từ động từ 'besichtigen' (tham quan); đuôi '-ung' luôn là 'die'.",
+                    "exp_reward": 15,
+                    "extra_data": {
+                            "accepted_answers": [
+                                    "sự tham quan",
+                                    "buổi tham quan",
+                                    "chuyến tham quan",
+                                    "tham quan"
+                            ],
+                            "translation": "sự tham quan"
+                    }
+            },
+            {
+                    "type": "dich_nghia_dv",
+                    "question": "Câu 38: Dịch sang tiếng Việt: „Es war langweilig.“",
+                    "options": null,
+                    "correct_answer": "Nó chán.",
+                    "explanation": "'es war' là Präteritum của 'sein' (\"nó đã là\"), 'langweilig' = chán, nhàm chán.",
+                    "exp_reward": 15,
+                    "extra_data": {
+                            "accepted_answers": [
+                                    "Nó chán.",
+                                    "Nó đã chán.",
+                                    "Nó nhàm chán.",
+                                    "Thật nhàm chán.",
+                                    "Nó rất chán."
+                            ],
+                            "translation": "Nó chán."
+                    }
+            },
+            {
+                    "type": "dich_nghia_dv",
+                    "question": "Câu 39: Dịch sang tiếng Việt: „Ich habe Fotos gemacht.“",
+                    "options": null,
+                    "correct_answer": "Tôi đã chụp ảnh.",
+                    "explanation": "'Fotos machen' = chụp ảnh; Perfekt 'ich habe … gemacht' = \"tôi đã …\".",
+                    "exp_reward": 15,
+                    "extra_data": {
+                            "accepted_answers": [
+                                    "Tôi đã chụp ảnh.",
+                                    "Tôi đã chụp những bức ảnh.",
+                                    "Tôi đã chụp nhiều ảnh."
+                            ],
+                            "translation": "Tôi đã chụp ảnh."
+                    }
+            },
+            {
+                    "type": "dich_nghia_dv",
+                    "question": "Câu 40: Dịch sang tiếng Việt: „Wir sind in den Alpen gewandert.“",
+                    "options": null,
+                    "correct_answer": "Chúng tôi đã đi bộ đường dài trên dãy Alps.",
+                    "explanation": "'wandern' = đi bộ đường dài (dùng 'sein'); 'in den Alpen' = ở / trong dãy Alps.",
+                    "exp_reward": 15,
+                    "extra_data": {
+                            "accepted_answers": [
+                                    "Chúng tôi đã đi bộ đường dài trên dãy Alps.",
+                                    "Chúng tôi đã đi bộ đường dài ở dãy Alps.",
+                                    "Chúng tôi đã đi bộ đường dài trong dãy Alps."
+                            ],
+                            "translation": "Chúng tôi đã đi bộ đường dài trên dãy Alps."
+                    }
+            },
+            {
+                    "type": "dich_nghia_dv",
+                    "question": "Câu 41: Dịch sang tiếng Việt: „Das Wetter war prima.“",
+                    "options": null,
+                    "correct_answer": "Thời tiết thật tuyệt.",
+                    "explanation": "'das Wetter' (thời tiết) + 'war' (Präteritum của 'sein') + 'prima' (rất tốt, tuyệt).",
+                    "exp_reward": 15,
+                    "extra_data": {
+                            "accepted_answers": [
+                                    "Thời tiết thật tuyệt.",
+                                    "Thời tiết đã rất tốt.",
+                                    "Thời tiết rất tuyệt.",
+                                    "Thời tiết rất tốt."
+                            ],
+                            "translation": "Thời tiết thật tuyệt."
+                    }
+            },
+            {
+                    "type": "dich_nghia_dv",
+                    "question": "Câu 42: Dịch sang tiếng Việt: „Was ist passiert?“",
+                    "options": null,
+                    "correct_answer": "Chuyện gì đã xảy ra?",
+                    "explanation": "'passieren' (xảy ra) dùng 'sein' → 'es ist passiert'; câu hỏi 'Was ist passiert?'.",
+                    "exp_reward": 15,
+                    "extra_data": {
+                            "accepted_answers": [
+                                    "Chuyện gì đã xảy ra?",
+                                    "Có chuyện gì xảy ra vậy?",
+                                    "Chuyện gì xảy ra vậy?",
+                                    "Điều gì đã xảy ra?"
+                            ],
+                            "translation": "Chuyện gì đã xảy ra?"
+                    }
+            },
+            {
+                    "type": "noi_o",
+                    "question": "Câu 43: Nối các cặp tương ứng sau (Infinitiv – Partizip II, động từ có quy tắc):",
+                    "options": null,
+                    "correct_answer": "machen = gemacht || arbeiten = gearbeitet || studieren = studiert || bezahlen = bezahlt",
+                    "explanation": "'machen' (nhóm 1: 'ge-t'), 'arbeiten' (nhóm 2: 'ge-et'), 'studieren' (nhóm 3: '-ieren', không 'ge-'), 'bezahlen' (nhóm 4: 'be-', không 'ge-').",
+                    "exp_reward": 20,
+                    "extra_data": {
+                            "noi_o_pairs": [
+                                    {
+                                            "left": "machen",
+                                            "right": "gemacht"
+                                    },
+                                    {
+                                            "left": "arbeiten",
+                                            "right": "gearbeitet"
+                                    },
+                                    {
+                                            "left": "studieren",
+                                            "right": "studiert"
+                                    },
+                                    {
+                                            "left": "bezahlen",
+                                            "right": "bezahlt"
+                                    }
+                            ],
+                            "translation": "Nối các cặp hoàn chỉnh"
+                    }
+            },
+            {
+                    "type": "noi_o",
+                    "question": "Câu 44: Nối các cặp tương ứng sau (Infinitiv – Partizip II, bất quy tắc dùng haben):",
+                    "options": null,
+                    "correct_answer": "essen = gegessen || trinken = getrunken || schreiben = geschrieben || sehen = gesehen",
+                    "explanation": "Bốn động từ bất quy tắc có dạng 'ge- … -en' ('trinken' đổi 'i → u', 'schreiben' đổi 'ei → ie').",
+                    "exp_reward": 20,
+                    "extra_data": {
+                            "noi_o_pairs": [
+                                    {
+                                            "left": "essen",
+                                            "right": "gegessen"
+                                    },
+                                    {
+                                            "left": "trinken",
+                                            "right": "getrunken"
+                                    },
+                                    {
+                                            "left": "schreiben",
+                                            "right": "geschrieben"
+                                    },
+                                    {
+                                            "left": "sehen",
+                                            "right": "gesehen"
+                                    }
+                            ],
+                            "translation": "Nối các cặp hoàn chỉnh"
+                    }
+            },
+            {
+                    "type": "noi_o",
+                    "question": "Câu 45: Nối các cặp tương ứng sau (Infinitiv – Perfekt dùng sein):",
+                    "options": null,
+                    "correct_answer": "fahren = ist gefahren || fliegen = ist geflogen || bleiben = ist geblieben || laufen = ist gelaufen",
+                    "explanation": "Cả bốn động từ đều chỉ chuyển động đổi vị trí hoặc 'bleiben' nên dùng 'sein'.",
+                    "exp_reward": 20,
+                    "extra_data": {
+                            "noi_o_pairs": [
+                                    {
+                                            "left": "fahren",
+                                            "right": "ist gefahren"
+                                    },
+                                    {
+                                            "left": "fliegen",
+                                            "right": "ist geflogen"
+                                    },
+                                    {
+                                            "left": "bleiben",
+                                            "right": "ist geblieben"
+                                    },
+                                    {
+                                            "left": "laufen",
+                                            "right": "ist gelaufen"
+                                    }
+                            ],
+                            "translation": "Nối các cặp hoàn chỉnh"
+                    }
+            },
+            {
+                    "type": "noi_o",
+                    "question": "Câu 46: Nối các cặp tương ứng sau (Động từ tách – Partizip II):",
+                    "options": null,
+                    "correct_answer": "einkaufen = eingekauft || anschauen = angeschaut || aufstehen = aufgestanden || mitnehmen = mitgenommen",
+                    "explanation": "Động từ tách chèn 'ge' giữa tiền tố và gốc: 'ein' + 'ge' + 'kauft', 'an' + 'ge' + 'schaut', 'auf' + 'ge' + 'standen', 'mit' + 'ge' + 'nommen'.",
+                    "exp_reward": 20,
+                    "extra_data": {
+                            "noi_o_pairs": [
+                                    {
+                                            "left": "einkaufen",
+                                            "right": "eingekauft"
+                                    },
+                                    {
+                                            "left": "anschauen",
+                                            "right": "angeschaut"
+                                    },
+                                    {
+                                            "left": "aufstehen",
+                                            "right": "aufgestanden"
+                                    },
+                                    {
+                                            "left": "mitnehmen",
+                                            "right": "mitgenommen"
+                                    }
+                            ],
+                            "translation": "Nối các cặp hoàn chỉnh"
+                    }
+            },
+            {
+                    "type": "noi_o",
+                    "question": "Câu 47: Nối các cặp tương ứng sau (Quy tắc – Ví dụ):",
+                    "options": null,
+                    "correct_answer": "ge + gốc + t = spielen → gespielt || ge + gốc + et (gốc đuôi -t) = warten → gewartet || đuôi -ieren, không ge- = reservieren → reserviert || tiền tố không tách, không ge- = erleben → erlebt",
+                    "explanation": "Bốn quy tắc đầu của Partizip II (nhóm 1, 2, 3, 4).",
+                    "exp_reward": 20,
+                    "extra_data": {
+                            "noi_o_pairs": [
+                                    {
+                                            "left": "ge + gốc + t",
+                                            "right": "spielen → gespielt"
+                                    },
+                                    {
+                                            "left": "ge + gốc + et (gốc đuôi -t)",
+                                            "right": "warten → gewartet"
+                                    },
+                                    {
+                                            "left": "đuôi -ieren, không ge-",
+                                            "right": "reservieren → reserviert"
+                                    },
+                                    {
+                                            "left": "tiền tố không tách, không ge-",
+                                            "right": "erleben → erlebt"
+                                    }
+                            ],
+                            "translation": "Nối các cặp hoàn chỉnh"
+                    }
+            },
+            {
+                    "type": "noi_o",
+                    "question": "Câu 48: Nối các cặp tương ứng sau (Câu hỏi về kỳ nghỉ – Câu trả lời phù hợp):",
+                    "options": null,
+                    "correct_answer": "Wo warst du im Urlaub? = Ich war auf der Insel Phú Quốc. || Wie war das Hotel? = Es war sauber und gemütlich. || Was hast du gemacht? = Ich habe viele Fotos gemacht. || Wie bist du gefahren? = Ich bin mit dem Zug gefahren.",
+                    "explanation": "Câu hỏi 'Wo', 'Wie war', 'Was', 'Wie' phải được đáp bằng câu cùng loại thông tin (nơi chốn, tính chất, hành động, phương tiện).",
+                    "exp_reward": 20,
+                    "extra_data": {
+                            "noi_o_pairs": [
+                                    {
+                                            "left": "Wo warst du im Urlaub?",
+                                            "right": "Ich war auf der Insel Phú Quốc."
+                                    },
+                                    {
+                                            "left": "Wie war das Hotel?",
+                                            "right": "Es war sauber und gemütlich."
+                                    },
+                                    {
+                                            "left": "Was hast du gemacht?",
+                                            "right": "Ich habe viele Fotos gemacht."
+                                    },
+                                    {
+                                            "left": "Wie bist du gefahren?",
+                                            "right": "Ich bin mit dem Zug gefahren."
+                                    }
+                            ],
+                            "translation": "Nối các cặp hoàn chỉnh"
+                    }
+            },
+            {
+                    "type": "noi_o",
+                    "question": "Câu 49: Nối các cặp tương ứng sau (Danh từ – Động từ đi cặp, Kollokation):",
+                    "options": null,
+                    "correct_answer": "ein Hotel = buchen || den Koffer = packen || ein Schloss = besichtigen || ein Picknick = machen",
+                    "explanation": "'ein Hotel buchen' (đặt khách sạn), 'den Koffer packen' (đóng vali), 'ein Schloss besichtigen' (tham quan lâu đài), 'ein Picknick machen' (đi dã ngoại).",
+                    "exp_reward": 20,
+                    "extra_data": {
+                            "noi_o_pairs": [
+                                    {
+                                            "left": "ein Hotel",
+                                            "right": "buchen"
+                                    },
+                                    {
+                                            "left": "den Koffer",
+                                            "right": "packen"
+                                    },
+                                    {
+                                            "left": "ein Schloss",
+                                            "right": "besichtigen"
+                                    },
+                                    {
+                                            "left": "ein Picknick",
+                                            "right": "machen"
+                                    }
+                            ],
+                            "translation": "Nối các cặp hoàn chỉnh"
+                    }
+            },
+            {
+                    "type": "noi_o",
+                    "question": "Câu 50: Nối các cặp tương ứng sau (Ngôi – Dạng Präteritum):",
+                    "options": null,
+                    "correct_answer": "ich (sein) = war || du (sein) = warst || ihr (haben) = hattet || wir (haben) = hatten",
+                    "explanation": "'ich war', 'du warst', 'ihr hattet', 'wir hatten'.",
+                    "exp_reward": 20,
+                    "extra_data": {
+                            "noi_o_pairs": [
+                                    {
+                                            "left": "ich (sein)",
+                                            "right": "war"
+                                    },
+                                    {
+                                            "left": "du (sein)",
+                                            "right": "warst"
+                                    },
+                                    {
+                                            "left": "ihr (haben)",
+                                            "right": "hattet"
+                                    },
+                                    {
+                                            "left": "wir (haben)",
+                                            "right": "hatten"
+                                    }
+                            ],
+                            "translation": "Nối các cặp hoàn chỉnh"
+                    }
+            },
+            {
+                    "type": "dien_tao_cau",
+                    "question": "Câu 51: Điền 2 từ để hoàn thành câu: „Hôm qua tôi đã tham quan viện bảo tàng và chụp ảnh.“: 'Gestern [1] ich das Museum [2] und Fotos gemacht.'",
+                    "options": null,
+                    "correct_answer": "habe / besichtigt",
+                    "explanation": "'ich' → 'habe'; 'besichtigen' (tiền tố 'be-') → 'besichtigt'.",
+                    "exp_reward": 20,
+                    "extra_data": {
+                            "display_frame": "Gestern [1] ich das Museum [2] und Fotos gemacht.",
+                            "slot1_accepted": [
+                                    "habe"
+                            ],
+                            "slot2_accepted": [
+                                    "besichtigt"
+                            ],
+                            "accepted_answers": [
+                                    "habe / besichtigt",
+                                    "habe besichtigt",
+                                    "habe, besichtigt"
+                            ],
+                            "translation": "Điền 2 từ để hoàn thành câu: „Hôm qua tôi đã tham quan viện bảo tàng và chụp ảnh."
+                    }
+            },
+            {
+                    "type": "dien_tao_cau",
+                    "question": "Câu 52: Điền 2 từ để hoàn thành câu: „Chúng tôi đã đi bằng tàu hỏa đến Hamburg.“: 'Wir [1] mit dem Zug nach Hamburg [2].'",
+                    "options": null,
+                    "correct_answer": "sind / gefahren",
+                    "explanation": "'fahren' chuyển động → 'sein'; 'wir' → 'sind'; Partizip II 'gefahren'.",
+                    "exp_reward": 20,
+                    "extra_data": {
+                            "display_frame": "Wir [1] mit dem Zug nach Hamburg [2].",
+                            "slot1_accepted": [
+                                    "sind"
+                            ],
+                            "slot2_accepted": [
+                                    "gefahren"
+                            ],
+                            "accepted_answers": [
+                                    "sind / gefahren",
+                                    "sind gefahren",
+                                    "sind, gefahren"
+                            ],
+                            "translation": "Điền 2 từ để hoàn thành câu: „Chúng tôi đã đi bằng tàu hỏa đến Hamburg."
+                    }
+            },
+            {
+                    "type": "dien_tao_cau",
+                    "question": "Câu 53: Điền 2 từ để hoàn thành câu: „Linh đã ở lại Hội An hai tuần.“: 'Linh [1] zwei Wochen in Hội An [2].'",
+                    "options": null,
+                    "correct_answer": "ist / geblieben",
+                    "explanation": "'bleiben' luôn dùng 'sein'; 'Linh' = 'sie' → 'ist'; Partizip II 'geblieben'.",
+                    "exp_reward": 20,
+                    "extra_data": {
+                            "display_frame": "Linh [1] zwei Wochen in Hội An [2].",
+                            "slot1_accepted": [
+                                    "ist"
+                            ],
+                            "slot2_accepted": [
+                                    "geblieben"
+                            ],
+                            "accepted_answers": [
+                                    "ist / geblieben",
+                                    "ist geblieben",
+                                    "ist, geblieben"
+                            ],
+                            "translation": "Điền 2 từ để hoàn thành câu: „Linh đã ở lại Hội An hai tuần."
+                    }
+            },
+            {
+                    "type": "dien_tao_cau",
+                    "question": "Câu 54: Điền 2 từ để hoàn thành câu hỏi: „Các bạn đã ngủ ngon chứ?“: '[1] ihr gut [2]?'",
+                    "options": null,
+                    "correct_answer": "habt / geschlafen",
+                    "explanation": "Câu hỏi Ja/Nein bắt đầu bằng trợ động từ; 'ihr' → 'habt'; 'schlafen' → 'geschlafen'.",
+                    "exp_reward": 20,
+                    "extra_data": {
+                            "display_frame": "[1] ihr gut [2]?",
+                            "slot1_accepted": [
+                                    "habt"
+                            ],
+                            "slot2_accepted": [
+                                    "geschlafen"
+                            ],
+                            "accepted_answers": [
+                                    "habt / geschlafen",
+                                    "habt geschlafen",
+                                    "habt, geschlafen"
+                            ],
+                            "translation": "Điền 2 từ để hoàn thành câu hỏi: „Các bạn đã ngủ ngon chứ?"
+                    }
+            },
+            {
+                    "type": "dien_tao_cau",
+                    "question": "Câu 55: Điền 2 Partizip II để hoàn thành câu: „Tôi đã đặt phòng và đã trả tiền.“: 'Ich habe das Zimmer [1] und [2].'",
+                    "options": null,
+                    "correct_answer": "gebucht / bezahlt",
+                    "explanation": "'buchen' → 'gebucht'; 'bezahlen' (tiền tố 'be-') → 'bezahlt'.",
+                    "exp_reward": 20,
+                    "extra_data": {
+                            "display_frame": "Ich habe das Zimmer [1] und [2].",
+                            "slot1_accepted": [
+                                    "gebucht"
+                            ],
+                            "slot2_accepted": [
+                                    "bezahlt"
+                            ],
+                            "accepted_answers": [
+                                    "gebucht / bezahlt",
+                                    "gebucht bezahlt",
+                                    "gebucht, bezahlt"
+                            ],
+                            "translation": "Điền 2 Partizip II để hoàn thành câu: „Tôi đã đặt phòng và đã trả tiền."
+                    }
+            },
+            {
+                    "type": "dien_tao_cau",
+                    "question": "Câu 56: Điền 2 dạng Präteritum của 'sein' để hoàn thành câu: „Hôm qua thời tiết rất tốt, và chúng tôi đã ở bãi biển.“: 'Das Wetter [1] gestern sehr gut, und wir [2] am Strand.'",
+                    "options": null,
+                    "correct_answer": "war / waren",
+                    "explanation": "'das Wetter' = 'es' → 'war'; 'wir' → 'waren'.",
+                    "exp_reward": 20,
+                    "extra_data": {
+                            "display_frame": "Das Wetter [1] gestern sehr gut, und wir [2] am Strand.",
+                            "slot1_accepted": [
+                                    "war"
+                            ],
+                            "slot2_accepted": [
+                                    "waren"
+                            ],
+                            "accepted_answers": [
+                                    "war / waren",
+                                    "war waren",
+                                    "war, waren"
+                            ],
+                            "translation": "Điền 2 dạng Präteritum của 'sein' để hoàn thành câu: „Hôm qua thời tiết rất tốt, và chúng tôi đã ở bãi biển."
+                    }
+            },
+            {
+                    "type": "dien_tao_cau",
+                    "question": "Câu 57: Điền 2 từ để hoàn thành câu: „Anna đã đóng vali của mình rồi sau đó đã đi đến nhà ga.“: 'Anna [1] ihren Koffer [2] und ist dann zum Bahnhof gegangen.'",
+                    "options": null,
+                    "correct_answer": "hat / gepackt",
+                    "explanation": "'packen' có tân ngữ 'den Koffer' → 'haben'; 'Anna' = 'sie' → 'hat'; Partizip II 'gepackt'.",
+                    "exp_reward": 20,
+                    "extra_data": {
+                            "display_frame": "Anna [1] ihren Koffer [2] und ist dann zum Bahnhof gegangen.",
+                            "slot1_accepted": [
+                                    "hat"
+                            ],
+                            "slot2_accepted": [
+                                    "gepackt"
+                            ],
+                            "accepted_answers": [
+                                    "hat / gepackt",
+                                    "hat gepackt",
+                                    "hat, gepackt"
+                            ],
+                            "translation": "Điền 2 từ để hoàn thành câu: „Anna đã đóng vali của mình rồi sau đó đã đi đến nhà ga."
+                    }
+            },
+            {
+                    "type": "dien_tao_cau",
+                    "question": "Câu 58: Điền 2 từ để hoàn thành câu: „Họ đã gặp những người bạn mới và đã nói chuyện nhiều.“: 'Sie [1] neue Freunde [2] und viel gesprochen.'",
+                    "options": null,
+                    "correct_answer": "haben / getroffen",
+                    "explanation": "'sie' (họ, số nhiều) → 'haben'; 'treffen' bất quy tắc → 'getroffen'.",
+                    "exp_reward": 20,
+                    "extra_data": {
+                            "display_frame": "Sie [1] neue Freunde [2] und viel gesprochen.",
+                            "slot1_accepted": [
+                                    "haben"
+                            ],
+                            "slot2_accepted": [
+                                    "getroffen"
+                            ],
+                            "accepted_answers": [
+                                    "haben / getroffen",
+                                    "haben getroffen",
+                                    "haben, getroffen"
+                            ],
+                            "translation": "Điền 2 từ để hoàn thành câu: „Họ đã gặp những người bạn mới và đã nói chuyện nhiều."
+                    }
+            },
+            {
+                    "type": "nghe_dien",
+                    "question": "Câu 59: Nghe phát âm tiếng Đức và điền từ còn thiếu vào chỗ trống: 'Meine Eltern sind letzte Woche nach Italien ___.'",
+                    "options": null,
+                    "correct_answer": "geflogen",
+                    "explanation": "'fliegen → ist geflogen'.",
+                    "exp_reward": 20,
+                    "extra_data": {
+                            "audio_text": "Meine Eltern sind letzte Woche nach Italien geflogen.",
+                            "display_sentence": "Meine Eltern sind letzte Woche nach Italien ___.",
+                            "hint_vi": "Bố mẹ tôi đã bay đến Ý vào tuần trước.",
+                            "accepted_answers": [
+                                    "geflogen"
+                            ],
+                            "translation": "Bố mẹ tôi đã bay đến Ý vào tuần trước."
+                    }
+            },
+            {
+                    "type": "nghe_dien",
+                    "question": "Câu 60: Nghe phát âm tiếng Đức và điền từ còn thiếu vào chỗ trống: 'Im Sommer haben wir zwei Nächte am See ___.'",
+                    "options": null,
+                    "correct_answer": "gezeltet",
+                    "explanation": "Gốc 'zelt' kết thúc '-t' → 'gezeltet'.",
+                    "exp_reward": 20,
+                    "extra_data": {
+                            "audio_text": "Im Sommer haben wir zwei Nächte am See gezeltet.",
+                            "display_sentence": "Im Sommer haben wir zwei Nächte am See ___.",
+                            "hint_vi": "Vào mùa hè chúng tôi đã cắm trại hai đêm bên hồ.",
+                            "accepted_answers": [
+                                    "gezeltet"
+                            ],
+                            "translation": "Vào mùa hè chúng tôi đã cắm trại hai đêm bên hồ."
+                    }
+            },
+            {
+                    "type": "nghe_dien",
+                    "question": "Câu 61: Nghe phát âm tiếng Đức và điền từ còn thiếu vào chỗ trống: 'Ich habe das Hotel im Internet ___.'",
+                    "options": null,
+                    "correct_answer": "gebucht",
+                    "explanation": "'buchen → gebucht'.",
+                    "exp_reward": 20,
+                    "extra_data": {
+                            "audio_text": "Ich habe das Hotel im Internet gebucht.",
+                            "display_sentence": "Ich habe das Hotel im Internet ___.",
+                            "hint_vi": "Tôi đã đặt khách sạn trên mạng.",
+                            "accepted_answers": [
+                                    "gebucht"
+                            ],
+                            "translation": "Tôi đã đặt khách sạn trên mạng."
+                    }
+            },
+            {
+                    "type": "nghe_dien",
+                    "question": "Câu 62: Nghe phát âm tiếng Đức và điền từ còn thiếu vào chỗ trống: 'Der Bus ist um neun Uhr ___.'",
+                    "options": null,
+                    "correct_answer": "abgefahren",
+                    "explanation": "'abfahren' (tách) → 'ab' + 'ge' + 'fahren' = 'abgefahren', dùng 'sein'.",
+                    "exp_reward": 20,
+                    "extra_data": {
+                            "audio_text": "Der Bus ist um neun Uhr abgefahren.",
+                            "display_sentence": "Der Bus ist um neun Uhr ___.",
+                            "hint_vi": "Chiếc xe buýt đã khởi hành lúc chín giờ.",
+                            "accepted_answers": [
+                                    "abgefahren"
+                            ],
+                            "translation": "Chiếc xe buýt đã khởi hành lúc chín giờ."
+                    }
+            },
+            {
+                    "type": "nghe_dien",
+                    "question": "Câu 63: Nghe phát âm tiếng Đức và điền từ còn thiếu vào chỗ trống: 'Wo ___ ihr im Sommer? Wir waren in den Alpen.'",
+                    "options": null,
+                    "correct_answer": "wart",
+                    "explanation": "'ihr' + Präteritum của 'sein' = 'wart'.",
+                    "exp_reward": 20,
+                    "extra_data": {
+                            "audio_text": "Wo wart ihr im Sommer? Wir waren in den Alpen.",
+                            "display_sentence": "Wo ___ ihr im Sommer? Wir waren in den Alpen.",
+                            "hint_vi": "Vào mùa hè các bạn đã ở đâu? Chúng tôi đã ở dãy Alps.",
+                            "accepted_answers": [
+                                    "wart"
+                            ],
+                            "translation": "Vào mùa hè các bạn đã ở đâu? Chúng tôi đã ở dãy Alps."
+                    }
+            },
+            {
+                    "type": "nghe_dien",
+                    "question": "Câu 64: Nghe phát âm tiếng Đức và điền từ còn thiếu vào chỗ trống: 'Am Abend haben wir die Nudelsuppe ___.'",
+                    "options": null,
+                    "correct_answer": "probiert",
+                    "explanation": "Đuôi '-ieren' → không 'ge-': 'probiert'.",
+                    "exp_reward": 20,
+                    "extra_data": {
+                            "audio_text": "Am Abend haben wir die Nudelsuppe probiert.",
+                            "display_sentence": "Am Abend haben wir die Nudelsuppe ___.",
+                            "hint_vi": "Buổi tối chúng tôi đã thử món súp mì.",
+                            "accepted_answers": [
+                                    "probiert"
+                            ],
+                            "translation": "Buổi tối chúng tôi đã thử món súp mì."
+                    }
+            },
+            {
+                    "type": "nghe_dien",
+                    "question": "Câu 65: Nghe phát âm tiếng Đức và điền từ còn thiếu vào chỗ trống: 'Was ist denn ___? Mein Koffer ist nicht angekommen!'",
+                    "options": null,
+                    "correct_answer": "passiert",
+                    "explanation": "'passieren' đuôi '-ieren' → 'passiert' (dùng 'sein': 'ist passiert').",
+                    "exp_reward": 20,
+                    "extra_data": {
+                            "audio_text": "Was ist denn passiert? Mein Koffer ist nicht angekommen!",
+                            "display_sentence": "Was ist denn ___? Mein Koffer ist nicht angekommen!",
+                            "hint_vi": "Chuyện gì đã xảy ra vậy? Vali của tôi đã không đến nơi!",
+                            "accepted_answers": [
+                                    "passiert"
+                            ],
+                            "translation": "Chuyện gì đã xảy ra vậy? Vali của tôi đã không đến nơi!"
+                    }
+            },
+            {
+                    "type": "nghe_dien",
+                    "question": "Câu 66: Nghe phát âm tiếng Đức và điền từ còn thiếu vào chỗ trống: 'Nach dem Frühstück haben wir den Reiseführer ___.'",
+                    "options": null,
+                    "correct_answer": "gelesen",
+                    "explanation": "'lesen' bất quy tắc: 'gelesen'.",
+                    "exp_reward": 20,
+                    "extra_data": {
+                            "audio_text": "Nach dem Frühstück haben wir den Reiseführer gelesen.",
+                            "display_sentence": "Nach dem Frühstück haben wir den Reiseführer ___.",
+                            "hint_vi": "Sau bữa sáng chúng tôi đã đọc cuốn sách hướng dẫn du lịch.",
+                            "accepted_answers": [
+                                    "gelesen"
+                            ],
+                            "translation": "Sau bữa sáng chúng tôi đã đọc cuốn sách hướng dẫn du lịch."
+                    }
+            },
+            {
+                    "type": "dich_cau_vd",
+                    "question": "Câu 67: Dịch câu sau sang tiếng Đức: \"Mùa hè năm ngoái tôi đã đi du lịch đến Berlin.\"",
+                    "options": null,
+                    "correct_answer": "Letzten Sommer bin ich nach Berlin gereist.",
+                    "explanation": "'reisen' / 'fahren' đều là di chuyển → 'ich bin … gereist / gefahren'; trạng từ thời gian ở đầu câu thì đảo 'bin ich'.",
+                    "exp_reward": 25,
+                    "extra_data": {
+                            "accepted_answers": [
+                                    "Letzten Sommer bin ich nach Berlin gereist."
+                            ],
+                            "translation": "Mùa hè năm ngoái tôi đã đi du lịch đến Berlin."
+                    }
+            },
+            {
+                    "type": "dich_cau_vd",
+                    "question": "Câu 68: Dịch câu sau sang tiếng Đức: \"Gia đình tôi đã ở qua đêm trong một khách sạn nhỏ và đã ăn nhiều cá.\"",
+                    "options": null,
+                    "correct_answer": "Meine Familie hat in einem kleinen Hotel übernachtet und viel Fisch gegessen.",
+                    "explanation": "'übernachten → übernachtet', 'essen → gegessen'; cả hai dùng 'haben' nên 'hat' chỉ cần xuất hiện một lần.",
+                    "exp_reward": 25,
+                    "extra_data": {
+                            "accepted_answers": [
+                                    "Meine Familie hat in einem kleinen Hotel übernachtet und viel Fisch gegessen."
+                            ],
+                            "translation": "Gia đình tôi đã ở qua đêm trong một khách sạn nhỏ và đã ăn nhiều cá."
+                    }
+            },
+            {
+                    "type": "dich_cau_vd",
+                    "question": "Câu 69: Dịch câu hỏi sau sang tiếng Đức: \"Bạn đã làm gì vào cuối tuần, Tom?\"",
+                    "options": null,
+                    "correct_answer": "Was hast du am Wochenende gemacht, Tom?",
+                    "explanation": "W-Frage: 'Was' + 'hast' (vị trí 2) + 'du' + … + 'gemacht' (cuối câu).",
+                    "exp_reward": 25,
+                    "extra_data": {
+                            "accepted_answers": [
+                                    "Was hast du am Wochenende gemacht, Tom?"
+                            ],
+                            "translation": "Bạn đã làm gì vào cuối tuần, Tom?"
+                    }
+            },
+            {
+                    "type": "dich_cau_vd",
+                    "question": "Câu 70: Dịch câu sau sang tiếng Đức: \"Hôm qua trời đã mưa cả ngày, nhưng buổi tối thì tuyệt.\"",
+                    "options": null,
+                    "correct_answer": "Gestern hat es den ganzen Tag geregnet, aber der Abend war toll.",
+                    "explanation": "'regnen → hat geregnet' (ngôi 'es'); 'der Abend war toll' dùng Präteritum của 'sein'.",
+                    "exp_reward": 25,
+                    "extra_data": {
+                            "accepted_answers": [
+                                    "Gestern hat es den ganzen Tag geregnet, aber der Abend war toll."
+                            ],
+                            "translation": "Hôm qua trời đã mưa cả ngày, nhưng buổi tối thì tuyệt."
+                    }
+            },
+            {
+                    "type": "dich_cau_vd",
+                    "question": "Câu 71: Dịch câu sau sang tiếng Đức: \"Chúng tôi đã không ở lại bãi biển lâu.\"",
+                    "options": null,
+                    "correct_answer": "Wir sind nicht lange am Strand geblieben.",
+                    "explanation": "'bleiben → sind … geblieben'; 'nicht' đứng trước 'lange'.",
+                    "exp_reward": 25,
+                    "extra_data": {
+                            "accepted_answers": [
+                                    "Wir sind nicht lange am Strand geblieben."
+                            ],
+                            "translation": "Chúng tôi đã không ở lại bãi biển lâu."
+                    }
+            },
+            {
+                    "type": "dich_cau_vd",
+                    "question": "Câu 72: Dịch câu sau sang tiếng Đức: \"Tối qua em gái tôi đã gọi điện cho tôi.\"",
+                    "options": null,
+                    "correct_answer": "Meine Schwester hat mich gestern Abend angerufen.",
+                    "explanation": "'anrufen' (tách, bất quy tắc) → 'hat … angerufen'; 'mich' (tôi, Akkusativ).",
+                    "exp_reward": 25,
+                    "extra_data": {
+                            "accepted_answers": [
+                                    "Meine Schwester hat mich gestern Abend angerufen."
+                            ],
+                            "translation": "Tối qua em gái tôi đã gọi điện cho tôi."
+                    }
+            },
+            {
+                    "type": "dich_cau_dv",
+                    "question": "Câu 73: Dịch câu sau sang tiếng Việt: „Letzten Winter sind wir nach Österreich gefahren. Dort hat es viel geschneit.“",
+                    "options": null,
+                    "correct_answer": "Mùa đông năm ngoái chúng tôi đã đi Áo. Ở đó tuyết đã rơi nhiều.",
+                    "explanation": "'sind … gefahren' (chuyển động); 'es hat geschneit' = tuyết đã rơi.",
+                    "exp_reward": 25,
+                    "extra_data": {
+                            "accepted_answers": [
+                                    "Mùa đông năm ngoái chúng tôi đã đi Áo. Ở đó tuyết đã rơi nhiều."
+                            ],
+                            "translation": "Mùa đông năm ngoái chúng tôi đã đi Áo. Ở đó tuyết đã rơi nhiều."
+                    }
+            },
+            {
+                    "type": "dich_cau_dv",
+                    "question": "Câu 74: Dịch câu sau sang tiếng Việt: „Ich habe mein Handy im Hotel vergessen, und jetzt muss ich zurückfahren.“",
+                    "options": null,
+                    "correct_answer": "Tôi đã quên điện thoại trong khách sạn và bây giờ tôi phải quay lại.",
+                    "explanation": "'vergessen → hat vergessen'; 'muss … zurückfahren' = phải quay lại.",
+                    "exp_reward": 25,
+                    "extra_data": {
+                            "accepted_answers": [
+                                    "Tôi đã quên điện thoại trong khách sạn và bây giờ tôi phải quay lại."
+                            ],
+                            "translation": "Tôi đã quên điện thoại trong khách sạn và bây giờ tôi phải quay lại."
+                    }
+            },
+            {
+                    "type": "dich_cau_dv",
+                    "question": "Câu 75: Dịch câu sau sang tiếng Việt: „Wo wart ihr denn gestern? Wir haben euch angerufen, aber ihr habt nicht geantwortet.“",
+                    "options": null,
+                    "correct_answer": "Hôm qua các bạn đã ở đâu vậy? Chúng tôi đã gọi cho các bạn nhưng các bạn đã không trả lời.",
+                    "explanation": "'wart' (Präteritum 'sein', 'ihr'); 'angerufen'; 'geantwortet' (gốc '-t' → '-et'), ở đây phủ định 'nicht geantwortet'.",
+                    "exp_reward": 25,
+                    "extra_data": {
+                            "accepted_answers": [
+                                    "Hôm qua các bạn đã ở đâu vậy? Chúng tôi đã gọi cho các bạn nhưng các bạn đã không trả lời."
+                            ],
+                            "translation": "Hôm qua các bạn đã ở đâu vậy? Chúng tôi đã gọi cho các bạn nhưng các bạn đã không trả lời."
+                    }
+            },
+            {
+                    "type": "dich_cau_dv",
+                    "question": "Câu 76: Dịch câu sau sang tiếng Việt: „Die Reise war lang, aber schön. Wir sind mit dem Schiff gefahren und haben viele Inseln gesehen.“",
+                    "options": null,
+                    "correct_answer": "Chuyến đi dài nhưng đẹp. Chúng tôi đã đi bằng tàu thủy và đã nhìn thấy nhiều hòn đảo.",
+                    "explanation": "'war' (Präteritum 'sein'); 'sind … gefahren'; 'haben … gesehen'.",
+                    "exp_reward": 25,
+                    "extra_data": {
+                            "accepted_answers": [
+                                    "Chuyến đi dài nhưng đẹp. Chúng tôi đã đi bằng tàu thủy và đã nhìn thấy nhiều hòn đảo."
+                            ],
+                            "translation": "Chuyến đi dài nhưng đẹp. Chúng tôi đã đi bằng tàu thủy và đã nhìn thấy nhiều hòn đảo."
+                    }
+            },
+            {
+                    "type": "dich_cau_dv",
+                    "question": "Câu 77: Dịch câu sau sang tiếng Việt: „Mein Opa hat früher in einem Dorf in den Bergen gewohnt.“",
+                    "options": null,
+                    "correct_answer": "Ông tôi ngày trước đã sống trong một ngôi làng trên núi.",
+                    "explanation": "'früher' = ngày trước; 'wohnen → hat gewohnt' (trạng thái tại chỗ → 'haben').",
+                    "exp_reward": 25,
+                    "extra_data": {
+                            "accepted_answers": [
+                                    "Ông tôi ngày trước đã sống trong một ngôi làng trên núi."
+                            ],
+                            "translation": "Ông tôi ngày trước đã sống trong một ngôi làng trên núi."
+                    }
+            },
+            {
+                    "type": "dich_cau_dv",
+                    "question": "Câu 78: Dịch đoạn hội thoại sau sang tiếng Việt: „Hast du schon den Koffer gepackt? — Nein, noch nicht. Ich habe zuerst die Fahrkarten gekauft.“",
+                    "options": null,
+                    "correct_answer": "Bạn đã đóng vali chưa? — Chưa, chưa đâu. Trước tiên tôi đã mua vé.",
+                    "explanation": "'schon' = đã … rồi; 'noch nicht' = chưa; 'gepackt', 'gekauft' là Partizip II có quy tắc.",
+                    "exp_reward": 25,
+                    "extra_data": {
+                            "accepted_answers": [
+                                    "Bạn đã đóng vali chưa? — Chưa, chưa đâu. Trước tiên tôi đã mua vé."
+                            ],
+                            "translation": "Bạn đã đóng vali chưa? — Chưa, chưa đâu. Trước tiên tôi đã mua vé."
+                    }
+            },
+            {
+                    "type": "sap_xep_cau",
+                    "question": "Câu 79: Sắp xếp các từ sau thành câu Perfekt hoàn chỉnh: [geschrieben, ich, Gestern, Postkarten, habe]",
+                    "options": null,
+                    "correct_answer": "Gestern habe ich Postkarten geschrieben.",
+                    "explanation": "Có thể mở đầu bằng 'Gestern' (khi đó 'habe' ở vị trí 2, 'ich' đứng sau) hoặc bằng 'Ich'; 'geschrieben' luôn ở cuối.",
+                    "exp_reward": 20,
+                    "extra_data": {
+                            "tokens": [
+                                    "geschrieben",
+                                    "ich",
+                                    "Gestern",
+                                    "Postkarten",
+                                    "habe"
+                            ],
+                            "accepted_answers": [
+                                    "Gestern habe ich Postkarten geschrieben.",
+                                    "Ich habe gestern Postkarten geschrieben."
+                            ],
+                            "translation": "Hôm qua tôi đã viết bưu thiếp."
+                    }
+            },
+            {
+                    "type": "sap_xep_cau",
+                    "question": "Câu 80: Sắp xếp các từ sau thành câu Perfekt hoàn chỉnh: [gefahren, nach Köln, Wir, am Wochenende, sind]",
+                    "options": null,
+                    "correct_answer": "Wir sind am Wochenende nach Köln gefahren.",
+                    "explanation": "'sind' ở vị trí 2, 'gefahren' ở cuối câu; 'am Wochenende' có thể đứng đầu câu (đảo ngữ).",
+                    "exp_reward": 20,
+                    "extra_data": {
+                            "tokens": [
+                                    "gefahren",
+                                    "nach Köln",
+                                    "Wir",
+                                    "am Wochenende",
+                                    "sind"
+                            ],
+                            "accepted_answers": [
+                                    "Wir sind am Wochenende nach Köln gefahren.",
+                                    "Am Wochenende sind wir nach Köln gefahren."
+                            ],
+                            "translation": "Cuối tuần chúng tôi đã đi Köln."
+                    }
+            },
+            {
+                    "type": "sap_xep_cau",
+                    "question": "Câu 81: Sắp xếp các từ sau thành câu Perfekt hoàn chỉnh: [gespielt, Die Kinder, im Meer, haben]",
+                    "options": null,
+                    "correct_answer": "Die Kinder haben im Meer gespielt.",
+                    "explanation": "'haben' ở vị trí 2; 'gespielt' cuối câu.",
+                    "exp_reward": 20,
+                    "extra_data": {
+                            "tokens": [
+                                    "gespielt",
+                                    "Die Kinder",
+                                    "im Meer",
+                                    "haben"
+                            ],
+                            "accepted_answers": [
+                                    "Die Kinder haben im Meer gespielt.",
+                                    "Im Meer haben die Kinder gespielt."
+                            ],
+                            "translation": "Bọn trẻ đã chơi dưới biển."
+                    }
+            },
+            {
+                    "type": "sap_xep_cau",
+                    "question": "Câu 82: Sắp xếp các từ sau thành câu Perfekt hoàn chỉnh: [gegangen, nicht, Wir, ins Museum, sind]",
+                    "options": null,
+                    "correct_answer": "Wir sind nicht ins Museum gegangen.",
+                    "explanation": "'nicht' đứng trước bổ ngữ chỉ hướng 'ins Museum'; 'gegangen' ở cuối câu.",
+                    "exp_reward": 20,
+                    "extra_data": {
+                            "tokens": [
+                                    "gegangen",
+                                    "nicht",
+                                    "Wir",
+                                    "ins Museum",
+                                    "sind"
+                            ],
+                            "accepted_answers": [
+                                    "Wir sind nicht ins Museum gegangen."
+                            ],
+                            "translation": "Chúng tôi đã không đi vào viện bảo tàng."
+                    }
+            },
+            {
+                    "type": "sap_xep_cau",
+                    "question": "Câu 83: Sắp xếp các từ sau thành câu Perfekt hoàn chỉnh: [gemacht, du, Hast, viele Fotos, im Urlaub]",
+                    "options": null,
+                    "correct_answer": "Hast du im Urlaub viele Fotos gemacht?",
+                    "explanation": "Câu hỏi Ja/Nein bắt đầu bằng trợ động từ 'Hast', tiếp theo là 'du'; 'gemacht' cuối câu.",
+                    "exp_reward": 20,
+                    "extra_data": {
+                            "tokens": [
+                                    "gemacht",
+                                    "du",
+                                    "Hast",
+                                    "viele Fotos",
+                                    "im Urlaub"
+                            ],
+                            "accepted_answers": [
+                                    "Hast du im Urlaub viele Fotos gemacht?",
+                                    "Hast du viele Fotos im Urlaub gemacht?"
+                            ],
+                            "translation": "Bạn đã chụp nhiều ảnh trong kỳ nghỉ chứ?"
+                    }
+            },
+            {
+                    "type": "sap_xep_cau",
+                    "question": "Câu 84: Sắp xếp các từ sau thành câu Perfekt hoàn chỉnh: [angekommen, Die Gäste, um zehn Uhr, sind]",
+                    "options": null,
+                    "correct_answer": "Die Gäste sind um zehn Uhr angekommen.",
+                    "explanation": "'ankommen' dùng 'sein'; Partizip II 'angekommen' nằm cuối câu.",
+                    "exp_reward": 20,
+                    "extra_data": {
+                            "tokens": [
+                                    "angekommen",
+                                    "Die Gäste",
+                                    "um zehn Uhr",
+                                    "sind"
+                            ],
+                            "accepted_answers": [
+                                    "Die Gäste sind um zehn Uhr angekommen.",
+                                    "Um zehn Uhr sind die Gäste angekommen."
+                            ],
+                            "translation": "Các vị khách đã đến nơi lúc mười giờ."
+                    }
+            },
+            {
+                    "type": "chon_haben_sein",
+                    "question": "Câu 85: Xếp 4 động từ sau vào trợ động từ haben hoặc sein tương ứng (ngăn cách bởi dấu /): fahren (đi xe), machen (làm), bleiben (ở lại), essen (ăn)",
+                    "options": null,
+                    "correct_answer": "sein / haben / sein / haben",
+                    "explanation": "'fahren' chuyển động; 'bleiben' là một trong ba động từ 'sein/bleiben/werden'; 'machen' và 'essen' có tân ngữ nên dùng 'haben'.",
+                    "exp_reward": 20,
+                    "extra_data": {
+                            "items": [
+                                    {
+                                            "verb": "fahren",
+                                            "meaning_vi": "đi xe",
+                                            "aux": "sein",
+                                            "partizip": "ist gefahren"
+                                    },
+                                    {
+                                            "verb": "machen",
+                                            "meaning_vi": "làm",
+                                            "aux": "haben",
+                                            "partizip": "hat gemacht"
+                                    },
+                                    {
+                                            "verb": "bleiben",
+                                            "meaning_vi": "ở lại",
+                                            "aux": "sein",
+                                            "partizip": "ist geblieben"
+                                    },
+                                    {
+                                            "verb": "essen",
+                                            "meaning_vi": "ăn",
+                                            "aux": "haben",
+                                            "partizip": "hat gegessen"
+                                    }
+                            ],
+                            "accepted_answers": [
+                                    "sein / haben / sein / haben",
+                                    "sein haben sein haben",
+                                    "sein, haben, sein, haben"
+                            ],
+                            "translation": "Đáp án chuẩn: sein / haben / sein / haben"
+                    }
+            },
+            {
+                    "type": "chon_haben_sein",
+                    "question": "Câu 86: Xếp 4 động từ sau vào trợ động từ haben hoặc sein tương ứng (ngăn cách bởi dấu /): einschlafen (ngủ thiếp đi), schlafen (ngủ), fliegen (bay), fotografieren (chụp ảnh)",
+                    "options": null,
+                    "correct_answer": "sein / haben / sein / haben",
+                    "explanation": "'einschlafen' đổi trạng thái; 'schlafen' là trạng thái kéo dài; 'fliegen' chuyển động; 'fotografieren' có tân ngữ.",
+                    "exp_reward": 20,
+                    "extra_data": {
+                            "items": [
+                                    {
+                                            "verb": "einschlafen",
+                                            "meaning_vi": "ngủ thiếp đi",
+                                            "aux": "sein",
+                                            "partizip": "ist eingeschlafen"
+                                    },
+                                    {
+                                            "verb": "schlafen",
+                                            "meaning_vi": "ngủ",
+                                            "aux": "haben",
+                                            "partizip": "hat geschlafen"
+                                    },
+                                    {
+                                            "verb": "fliegen",
+                                            "meaning_vi": "bay",
+                                            "aux": "sein",
+                                            "partizip": "ist geflogen"
+                                    },
+                                    {
+                                            "verb": "fotografieren",
+                                            "meaning_vi": "chụp ảnh",
+                                            "aux": "haben",
+                                            "partizip": "hat fotografiert"
+                                    }
+                            ],
+                            "accepted_answers": [
+                                    "sein / haben / sein / haben",
+                                    "sein haben sein haben",
+                                    "sein, haben, sein, haben"
+                            ],
+                            "translation": "Đáp án chuẩn: sein / haben / sein / haben"
+                    }
+            },
+            {
+                    "type": "chon_haben_sein",
+                    "question": "Câu 87: Xếp 4 động từ sau vào trợ động từ haben hoặc sein tương ứng (ngăn cách bởi dấu /): übernachten (qua đêm), wandern (đi bộ đường dài), aufwachen (thức dậy), besichtigen (tham quan)",
+                    "options": null,
+                    "correct_answer": "haben / sein / sein / haben",
+                    "explanation": "'wandern' chuyển động; 'aufwachen' đổi trạng thái; 'übernachten' (tại chỗ) và 'besichtigen' (có tân ngữ) dùng 'haben'.",
+                    "exp_reward": 20,
+                    "extra_data": {
+                            "items": [
+                                    {
+                                            "verb": "übernachten",
+                                            "meaning_vi": "qua đêm",
+                                            "aux": "haben",
+                                            "partizip": "hat übernachtet"
+                                    },
+                                    {
+                                            "verb": "wandern",
+                                            "meaning_vi": "đi bộ đường dài",
+                                            "aux": "sein",
+                                            "partizip": "ist gewandert"
+                                    },
+                                    {
+                                            "verb": "aufwachen",
+                                            "meaning_vi": "thức dậy",
+                                            "aux": "sein",
+                                            "partizip": "ist aufgewacht"
+                                    },
+                                    {
+                                            "verb": "besichtigen",
+                                            "meaning_vi": "tham quan",
+                                            "aux": "haben",
+                                            "partizip": "hat besichtigt"
+                                    }
+                            ],
+                            "accepted_answers": [
+                                    "haben / sein / sein / haben",
+                                    "haben sein sein haben",
+                                    "haben, sein, sein, haben"
+                            ],
+                            "translation": "Đáp án chuẩn: haben / sein / sein / haben"
+                    }
+            },
+            {
+                    "type": "chon_haben_sein",
+                    "question": "Câu 88: Xếp 4 động từ sau vào trợ động từ haben hoặc sein tương ứng (ngăn cách bởi dấu /): passieren (xảy ra), bezahlen (trả tiền), kommen (đến), regnen (mưa)",
+                    "options": null,
+                    "correct_answer": "sein / haben / sein / haben",
+                    "explanation": "'passieren' và 'kommen' dùng 'sein'; 'bezahlen' có tân ngữ; 'regnen' là động từ thời tiết dùng 'haben'.",
+                    "exp_reward": 20,
+                    "extra_data": {
+                            "items": [
+                                    {
+                                            "verb": "passieren",
+                                            "meaning_vi": "xảy ra",
+                                            "aux": "sein",
+                                            "partizip": "ist passiert"
+                                    },
+                                    {
+                                            "verb": "bezahlen",
+                                            "meaning_vi": "trả tiền",
+                                            "aux": "haben",
+                                            "partizip": "hat bezahlt"
+                                    },
+                                    {
+                                            "verb": "kommen",
+                                            "meaning_vi": "đến",
+                                            "aux": "sein",
+                                            "partizip": "ist gekommen"
+                                    },
+                                    {
+                                            "verb": "regnen",
+                                            "meaning_vi": "mưa",
+                                            "aux": "haben",
+                                            "partizip": "hat geregnet"
+                                    }
+                            ],
+                            "accepted_answers": [
+                                    "sein / haben / sein / haben",
+                                    "sein haben sein haben",
+                                    "sein, haben, sein, haben"
+                            ],
+                            "translation": "Đáp án chuẩn: sein / haben / sein / haben"
+                    }
+            },
+            {
+                    "type": "tim_loi_sai",
+                    "question": "Câu 89: Tìm đúng 1 lỗi sai và gõ lại cả câu đúng: „Wir haben gestern nach Berlin gefahren.“",
+                    "options": null,
+                    "correct_answer": "Wir sind gestern nach Berlin gefahren.",
+                    "explanation": "Lỗi trợ động từ: 'fahren' là chuyển động đổi vị trí nên phải dùng 'sind', không phải 'haben'.",
+                    "exp_reward": 25,
+                    "extra_data": {
+                            "wrong_sentence": "Wir haben gestern nach Berlin gefahren.",
+                            "accepted_answers": [
+                                    "Wir sind gestern nach Berlin gefahren.",
+                                    "Gestern sind wir nach Berlin gefahren."
+                            ],
+                            "translation": "Hôm qua chúng tôi đã đi Berlin."
+                    }
+            },
+            {
+                    "type": "tim_loi_sai",
+                    "question": "Câu 90: Tìm đúng 1 lỗi sai và gõ lại cả câu đúng: „Ich habe im Urlaub viele Fotos gemachen.“",
+                    "options": null,
+                    "correct_answer": "Ich habe im Urlaub viele Fotos gemacht.",
+                    "explanation": "Lỗi Partizip II: động từ có quy tắc là 'ge' + gốc + 't' = 'gemacht', không phải 'gemachen'.",
+                    "exp_reward": 25,
+                    "extra_data": {
+                            "wrong_sentence": "Ich habe im Urlaub viele Fotos gemachen.",
+                            "accepted_answers": [
+                                    "Ich habe im Urlaub viele Fotos gemacht."
+                            ],
+                            "translation": "Tôi đã chụp nhiều ảnh trong kỳ nghỉ."
+                    }
+            },
+            {
+                    "type": "tim_loi_sai",
+                    "question": "Câu 91: Tìm đúng 1 lỗi sai và gõ lại cả câu đúng: „Sie hat ein Picknick gemacht am Fluss.“",
+                    "options": null,
+                    "correct_answer": "Sie hat am Fluss ein Picknick gemacht.",
+                    "explanation": "Lỗi vị trí động từ: 'gemacht' (Partizip II) phải đứng cuối câu, sau cả cụm 'am Fluss'.",
+                    "exp_reward": 25,
+                    "extra_data": {
+                            "wrong_sentence": "Sie hat ein Picknick gemacht am Fluss.",
+                            "accepted_answers": [
+                                    "Sie hat am Fluss ein Picknick gemacht.",
+                                    "Sie hat ein Picknick am Fluss gemacht."
+                            ],
+                            "translation": "Cô ấy đã dã ngoại bên sông."
+                    }
+            },
+            {
+                    "type": "tim_loi_sai",
+                    "question": "Câu 92: Tìm đúng 1 lỗi sai và gõ lại cả câu đúng: „Wir haben die Rechnung gebezahlt.“",
+                    "options": null,
+                    "correct_answer": "Wir haben die Rechnung bezahlt.",
+                    "explanation": "Lỗi Partizip II: 'bezahlen' có tiền tố 'be-' không tách nên không có 'ge-' → 'bezahlt'.",
+                    "exp_reward": 25,
+                    "extra_data": {
+                            "wrong_sentence": "Wir haben die Rechnung gebezahlt.",
+                            "accepted_answers": [
+                                    "Wir haben die Rechnung bezahlt."
+                            ],
+                            "translation": "Chúng tôi đã trả hóa đơn."
+                    }
+            },
+            {
+                    "type": "viet_lai_perfekt",
+                    "question": "Câu 93: Viết lại câu sau sang thì Perfekt: „Ich besuche meine Tante in Bremen.“",
+                    "options": null,
+                    "correct_answer": "Ich habe meine Tante in Bremen besucht.",
+                    "explanation": "'besuchen' → 'haben' + 'besucht' (tiền tố 'be-', không 'ge-'), Partizip II đứng cuối câu.",
+                    "exp_reward": 25,
+                    "extra_data": {
+                            "source_sentence": "Ich besuche meine Tante in Bremen.",
+                            "accepted_answers": [
+                                    "Ich habe meine Tante in Bremen besucht."
+                            ],
+                            "translation": "Tôi đã thăm dì của tôi ở Bremen."
+                    }
+            },
+            {
+                    "type": "viet_lai_perfekt",
+                    "question": "Câu 94: Viết lại câu sau sang thì Perfekt: „Maria fährt mit dem Rad zum See.“",
+                    "options": null,
+                    "correct_answer": "Maria ist mit dem Rad zum See gefahren.",
+                    "explanation": "'fahren' chuyển động → 'ist' + 'gefahren'.",
+                    "exp_reward": 25,
+                    "extra_data": {
+                            "source_sentence": "Maria fährt mit dem Rad zum See.",
+                            "accepted_answers": [
+                                    "Maria ist mit dem Rad zum See gefahren."
+                            ],
+                            "translation": "Maria đã đạp xe đến hồ."
+                    }
+            },
+            {
+                    "type": "viet_lai_perfekt",
+                    "question": "Câu 95: Viết lại câu sau sang thì Perfekt: „Die Gäste steigen in Köln aus.“",
+                    "options": null,
+                    "correct_answer": "Die Gäste sind in Köln ausgestiegen.",
+                    "explanation": "'aussteigen' (tách, chuyển động) → 'sind' + 'aus' + 'ge' + 'stiegen' = 'ausgestiegen'.",
+                    "exp_reward": 25,
+                    "extra_data": {
+                            "source_sentence": "Die Gäste steigen in Köln aus.",
+                            "accepted_answers": [
+                                    "Die Gäste sind in Köln ausgestiegen."
+                            ],
+                            "translation": "Các vị khách đã xuống xe ở Köln."
+                    }
+            },
+            {
+                    "type": "viet_lai_perfekt",
+                    "question": "Câu 96: Viết lại câu sau sang thì Perfekt: „Ihr reserviert den Tisch und telefoniert mit dem Hotel.“",
+                    "options": null,
+                    "correct_answer": "Ihr habt den Tisch reserviert und mit dem Hotel telefoniert.",
+                    "explanation": "Hai động từ đuôi '-ieren' → không 'ge-': 'reserviert', 'telefoniert'; 'ihr' → 'habt'.",
+                    "exp_reward": 25,
+                    "extra_data": {
+                            "source_sentence": "Ihr reserviert den Tisch und telefoniert mit dem Hotel.",
+                            "accepted_answers": [
+                                    "Ihr habt den Tisch reserviert und mit dem Hotel telefoniert.",
+                                    "Ihr habt den Tisch reserviert und habt mit dem Hotel telefoniert."
+                            ],
+                            "translation": "Các bạn đã đặt bàn và đã gọi điện cho khách sạn."
+                    }
+            },
+            {
+                    "type": "dung_sai",
+                    "question": "Câu 97: Đọc đoạn văn và xác định mệnh đề sau là Richtig (Đúng) hay Falsch (Sai): „Familie Weber ist mit dem Auto nach Wien gefahren.“",
+                    "options": [
+                            "Richtig",
+                            "Falsch"
+                    ],
+                    "correct_answer": "Falsch",
+                    "explanation": "Trong đoạn văn: „Familie Weber hat … eine Radtour an der Donau gemacht.“ — họ đi bằng xe đạp ('Radtour'), không đi ô tô.",
+                    "exp_reward": 15,
+                    "extra_data": {
+                            "reading_text": "Familie Weber hat im August eine Radtour an der Donau gemacht. Sie sind von Passau nach Wien gefahren. Das Wetter war meistens sonnig, aber in Linz hat es zwei Tage geregnet. Sie haben dort in einer Pension übernachtet und ein Museum besucht. In Wien haben sie das Rathaus fotografiert. Am Ende sind sie mit dem Zug nach Hause gefahren.",
+                            "reading_translation_vi": "Gia đình Weber đã đi một chuyến đạp xe dọc sông Donau vào tháng Tám. Họ đã đi từ Passau đến Wien. Thời tiết phần lớn là nắng, nhưng ở Linz trời đã mưa hai ngày. Họ đã ngủ lại ở đó trong một nhà nghỉ và thăm một bảo tàng. Ở Wien họ đã chụp ảnh tòa thị chính. Cuối cùng họ đã đi tàu hỏa về nhà.",
+                            "statement": "Familie Weber ist mit dem Auto nach Wien gefahren.",
+                            "statement_vi": "Gia đình Weber đã đi Wien bằng ô tô.",
+                            "translation": "Gia đình Weber đã đi Wien bằng ô tô."
+                    }
+            },
+            {
+                    "type": "dung_sai",
+                    "question": "Câu 98: Đọc đoạn văn và xác định mệnh đề sau là Richtig (Đúng) hay Falsch (Sai): „In Linz hat es geregnet.“",
+                    "options": [
+                            "Richtig",
+                            "Falsch"
+                    ],
+                    "correct_answer": "Richtig",
+                    "explanation": "Đoạn văn viết „… aber in Linz hat es zwei Tage geregnet.“",
+                    "exp_reward": 15,
+                    "extra_data": {
+                            "reading_text": "Familie Weber hat im August eine Radtour an der Donau gemacht. Sie sind von Passau nach Wien gefahren. Das Wetter war meistens sonnig, aber in Linz hat es zwei Tage geregnet. Sie haben dort in einer Pension übernachtet und ein Museum besucht. In Wien haben sie das Rathaus fotografiert. Am Ende sind sie mit dem Zug nach Hause gefahren.",
+                            "reading_translation_vi": "Gia đình Weber đã đi một chuyến đạp xe dọc sông Donau vào tháng Tám. Họ đã đi từ Passau đến Wien. Thời tiết phần lớn là nắng, nhưng ở Linz trời đã mưa hai ngày. Họ đã ngủ lại ở đó trong một nhà nghỉ và thăm một bảo tàng. Ở Wien họ đã chụp ảnh tòa thị chính. Cuối cùng họ đã đi tàu hỏa về nhà.",
+                            "statement": "In Linz hat es geregnet.",
+                            "statement_vi": "Ở Linz trời đã mưa.",
+                            "translation": "Ở Linz trời đã mưa."
+                    }
+            },
+            {
+                    "type": "dung_sai",
+                    "question": "Câu 99: Đọc đoạn văn và xác định mệnh đề sau là Richtig (Đúng) hay Falsch (Sai): „Sie waren zwei Wochen in Barcelona.“",
+                    "options": [
+                            "Richtig",
+                            "Falsch"
+                    ],
+                    "correct_answer": "Falsch",
+                    "explanation": "Đoạn văn viết „Wir waren eine Woche in Barcelona.“ — chỉ một tuần.",
+                    "exp_reward": 15,
+                    "extra_data": {
+                            "reading_text": "Lukas und Sophie waren letzten Sommer auf der Insel Rügen an der Ostsee. Sie haben zwei Wochen auf einem Campingplatz gezeltet. Sie sind jeden Tag im Meer geschwommen und haben am Strand Volleyball gespielt. Lukas hat viele Fotos vom Sonnenuntergang gemacht. Das Essen im Restaurant war sehr lecker, aber die Rechnung war teuer. Trotzdem hatten sie viel Spaß.",
+                            "reading_translation_vi": "Lukas và Sophie đã ở trên đảo Rügen bên biển Baltic vào mùa hè năm ngoái. Họ đã cắm trại hai tuần trên một khu cắm trại. Họ đã bơi ở biển mỗi ngày và đã chơi bóng chuyền ở bãi biển. Lukas đã chụp nhiều ảnh hoàng hôn. Đồ ăn ở nhà hàng rất ngon, nhưng hóa đơn thì đắt. Dù vậy họ đã có rất nhiều niềm vui.",
+                            "statement": "Sie waren zwei Wochen in Barcelona.",
+                            "statement_vi": "Họ đã ở Barcelona hai tuần.",
+                            "translation": "Họ đã ở Barcelona hai tuần."
+                    }
+            },
+            {
+                    "type": "dung_sai",
+                    "question": "Câu 100: Đọc đoạn văn và xác định mệnh đề sau là Richtig (Đúng) hay Falsch (Sai): „Sie haben viel gegessen und getanzt.“",
+                    "options": [
+                            "Richtig",
+                            "Falsch"
+                    ],
+                    "correct_answer": "Richtig",
+                    "explanation": "Đoạn văn viết „Wir haben viel gegessen, getanzt und am Strand gelegen.“\n\n---",
+                    "exp_reward": 15,
+                    "extra_data": {
+                            "reading_text": "Lukas und Sophie waren letzten Sommer auf der Insel Rügen an der Ostsee. Sie haben zwei Wochen auf einem Campingplatz gezeltet. Sie sind jeden Tag im Meer geschwommen und haben am Strand Volleyball gespielt. Lukas hat viele Fotos vom Sonnenuntergang gemacht. Das Essen im Restaurant war sehr lecker, aber die Rechnung war teuer. Trotzdem hatten sie viel Spaß.",
+                            "reading_translation_vi": "Lukas và Sophie đã ở trên đảo Rügen bên biển Baltic vào mùa hè năm ngoái. Họ đã cắm trại hai tuần trên một khu cắm trại. Họ đã bơi ở biển mỗi ngày và đã chơi bóng chuyền ở bãi biển. Lukas đã chụp nhiều ảnh hoàng hôn. Đồ ăn ở nhà hàng rất ngon, nhưng hóa đơn thì đắt. Dù vậy họ đã có rất nhiều niềm vui.",
+                            "statement": "Sie haben viel gegessen und getanzt.",
+                            "statement_vi": "Họ đã ăn nhiều và đã nhảy.",
+                            "translation": "Họ đã ăn nhiều và đã nhảy."
+                    }
             }
-        },
-        {
-            "type": "tim_loi_sai",
-            "question": "Câu 89: Tìm đúng 1 lỗi sai và gõ lại cả câu đúng: '„“'",
-            "options": null,
-            "correct_answer": "Wir sind gestern nach Berlin gefahren.",
-            "explanation": "Lỗi **trợ động từ**: `fahren` là chuyển động đổi vị trí nên phải dùng **`sind`**, không phải `haben`.",
-            "exp_reward": 25,
-            "extra_data": {
-                "wrong_sentence": "„“",
-                "accepted_answers": [
-                    "Wir sind gestern nach Berlin gefahren.",
-                    "Gestern sind wir nach Berlin gefahren."
-                ],
-                "translation": "Hôm qua chúng tôi đã đi Berlin."
-            }
-        },
-        {
-            "type": "tim_loi_sai",
-            "question": "Câu 90: Tìm đúng 1 lỗi sai và gõ lại cả câu đúng: '„“'",
-            "options": null,
-            "correct_answer": "Ich habe im Urlaub viele Fotos gemacht.",
-            "explanation": "Lỗi **Partizip II**: động từ có quy tắc là `ge` + gốc + `t` = **`gemacht`**, không phải `gemachen`.",
-            "exp_reward": 25,
-            "extra_data": {
-                "wrong_sentence": "„“",
-                "accepted_answers": [
-                    "Ich habe im Urlaub viele Fotos gemacht."
-                ],
-                "translation": "Tôi đã chụp nhiều ảnh trong kỳ nghỉ."
-            }
-        },
-        {
-            "type": "tim_loi_sai",
-            "question": "Câu 91: Tìm đúng 1 lỗi sai và gõ lại cả câu đúng: '„“'",
-            "options": null,
-            "correct_answer": "Sie hat am Fluss ein Picknick gemacht.",
-            "explanation": "Lỗi **vị trí động từ**: `gemacht` (Partizip II) phải đứng **cuối câu**, sau cả cụm `am Fluss`.",
-            "exp_reward": 25,
-            "extra_data": {
-                "wrong_sentence": "„“",
-                "accepted_answers": [
-                    "Sie hat am Fluss ein Picknick gemacht.",
-                    "Sie hat ein Picknick am Fluss gemacht."
-                ],
-                "translation": "Cô ấy đã dã ngoại bên sông."
-            }
-        },
-        {
-            "type": "tim_loi_sai",
-            "question": "Câu 92: Tìm đúng 1 lỗi sai và gõ lại cả câu đúng: '„“'",
-            "options": null,
-            "correct_answer": "Wir haben die Rechnung bezahlt.",
-            "explanation": "Lỗi **Partizip II**: `bezahlen` có tiền tố `be-` không tách nên **không có `ge-`** → **`bezahlt`**.\n\n---\n\n#### NHÓM 13: 🆕 VIẾT LẠI CÂU TỪ PRÄSENS SANG PERFEKT (`viet_lai_perfekt` — 4 Câu: Câu 93 → Câu 96)",
-            "exp_reward": 25,
-            "extra_data": {
-                "wrong_sentence": "„“",
-                "accepted_answers": [
-                    "Wir haben die Rechnung bezahlt."
-                ],
-                "translation": "Chúng tôi đã trả hóa đơn."
-            }
-        },
-        {
-            "type": "viet_lai_perfekt",
-            "question": "Câu 93: Viết lại câu sau sang thì Perfekt: '„“'",
-            "options": null,
-            "correct_answer": "Ich habe meine Tante in Bremen besucht.",
-            "explanation": "`besuchen` → `haben` + **`besucht`** (tiền tố `be-`, không `ge-`), Partizip II đứng cuối câu.",
-            "exp_reward": 25,
-            "extra_data": {
-                "source_sentence": "„“",
-                "accepted_answers": [
-                    "Ich habe meine Tante in Bremen besucht."
-                ],
-                "translation": "Tôi đã thăm dì của tôi ở Bremen."
-            }
-        },
-        {
-            "type": "viet_lai_perfekt",
-            "question": "Câu 94: Viết lại câu sau sang thì Perfekt: '„“'",
-            "options": null,
-            "correct_answer": "Maria ist mit dem Rad zum See gefahren.",
-            "explanation": "`fahren` chuyển động → `ist` + **`gefahren`**.",
-            "exp_reward": 25,
-            "extra_data": {
-                "source_sentence": "„“",
-                "accepted_answers": [
-                    "Maria ist mit dem Rad zum See gefahren."
-                ],
-                "translation": "Maria đã đạp xe đến hồ."
-            }
-        },
-        {
-            "type": "viet_lai_perfekt",
-            "question": "Câu 95: Viết lại câu sau sang thì Perfekt: '„“'",
-            "options": null,
-            "correct_answer": "Die Gäste sind in Köln ausgestiegen.",
-            "explanation": "`aussteigen` (tách, chuyển động) → `sind` + `aus` + `ge` + `stiegen` = **`ausgestiegen`**.",
-            "exp_reward": 25,
-            "extra_data": {
-                "source_sentence": "„“",
-                "accepted_answers": [
-                    "Die Gäste sind in Köln ausgestiegen."
-                ],
-                "translation": "Các vị khách đã xuống xe ở Köln."
-            }
-        },
-        {
-            "type": "viet_lai_perfekt",
-            "question": "Câu 96: Viết lại câu sau sang thì Perfekt: '„“'",
-            "options": null,
-            "correct_answer": "Ihr habt den Tisch reserviert und mit dem Hotel telefoniert.",
-            "explanation": "Hai động từ đuôi `-ieren` → không `ge-`: **`reserviert`**, **`telefoniert`**; `ihr` → `habt`.\n\n---\n\n#### NHÓM 14: 🆕 ĐỌC HIỂU ĐÚNG / SAI — RICHTIG / FALSCH (`dung_sai` — 4 Câu: Câu 97 → Câu 100)",
-            "exp_reward": 25,
-            "extra_data": {
-                "source_sentence": "„“",
-                "accepted_answers": [
-                    "Ihr habt den Tisch reserviert und mit dem Hotel telefoniert.",
-                    "Ihr habt den Tisch reserviert und habt mit dem Hotel telefoniert."
-                ],
-                "translation": "Các bạn đã đặt bàn và đã gọi điện cho khách sạn."
-            }
-        },
-        {
-            "type": "dung_sai",
-            "question": "Câu 97: Đọc đoạn văn và xác định mệnh đề sau là Richtig (Đúng) hay Falsch (Sai): ''",
-            "options": [
-                "Richtig",
-                "Falsch"
-            ],
-            "correct_answer": "Falsch",
-            "explanation": "Trong đoạn văn: *„Familie Weber hat … eine Radtour an der Donau gemacht.“* — họ đi **bằng xe đạp** (`Radtour`), không đi ô tô.",
-            "exp_reward": 15,
-            "extra_data": {
-                "reading_text": "Familie Weber hat im August eine Radtour an der Donau gemacht. Sie sind von Passau nach Wien gefahren. Das Wetter war meistens sonnig, aber in Linz hat es zwei Tage geregnet. Sie haben dort in einer Pension übernachtet und ein Museum besucht. In Wien haben sie das Rathaus fotografiert. Am Ende sind sie mit dem Zug nach Hause gefahren.",
-                "reading_translation_vi": "Gia đình Weber đã đi một chuyến đạp xe dọc sông Donau vào tháng Tám. Họ đã đi từ Passau đến Wien. Thời tiết phần lớn là nắng, nhưng ở Linz trời đã mưa hai ngày. Họ đã ngủ lại ở đó trong một nhà nghỉ và thăm một bảo tàng. Ở Wien họ đã chụp ảnh tòa thị chính. Cuối cùng họ đã đi tàu hỏa về nhà.",
-                "statement": "",
-                "statement_vi": "Gia đình Weber đã đi Wien bằng ô tô.",
-                "translation": "Gia đình Weber đã đi Wien bằng ô tô."
-            }
-        },
-        {
-            "type": "dung_sai",
-            "question": "Câu 98: Đọc đoạn văn và xác định mệnh đề sau là Richtig (Đúng) hay Falsch (Sai): ''",
-            "options": [
-                "Richtig",
-                "Falsch"
-            ],
-            "correct_answer": "Richtig",
-            "explanation": "Đoạn văn viết *„… aber in Linz hat es zwei Tage geregnet.“*",
-            "exp_reward": 15,
-            "extra_data": {
-                "reading_text": "Familie Weber hat im August eine Radtour an der Donau gemacht. Sie sind von Passau nach Wien gefahren. Das Wetter war meistens sonnig, aber in Linz hat es zwei Tage geregnet. Sie haben dort in einer Pension übernachtet und ein Museum besucht. In Wien haben sie das Rathaus fotografiert. Am Ende sind sie mit dem Zug nach Hause gefahren.",
-                "reading_translation_vi": "Gia đình Weber đã đi một chuyến đạp xe dọc sông Donau vào tháng Tám. Họ đã đi từ Passau đến Wien. Thời tiết phần lớn là nắng, nhưng ở Linz trời đã mưa hai ngày. Họ đã ngủ lại ở đó trong một nhà nghỉ và thăm một bảo tàng. Ở Wien họ đã chụp ảnh tòa thị chính. Cuối cùng họ đã đi tàu hỏa về nhà.",
-                "statement": "",
-                "statement_vi": "Ở Linz trời đã mưa.",
-                "translation": "Ở Linz trời đã mưa."
-            }
-        },
-        {
-            "type": "dung_sai",
-            "question": "Câu 99: Đọc đoạn văn và xác định mệnh đề sau là Richtig (Đúng) hay Falsch (Sai): ''",
-            "options": [
-                "Richtig",
-                "Falsch"
-            ],
-            "correct_answer": "Falsch",
-            "explanation": "Đoạn văn viết *„Wir waren eine Woche in Barcelona.“* — chỉ **một tuần**.",
-            "exp_reward": 15,
-            "extra_data": {
-                "reading_text": "Lukas und Sophie waren letzten Sommer auf der Insel Rügen an der Ostsee. Sie haben zwei Wochen auf einem Campingplatz gezeltet. Sie sind jeden Tag im Meer geschwommen und haben am Strand Volleyball gespielt. Lukas hat viele Fotos vom Sonnenuntergang gemacht. Das Essen im Restaurant war sehr lecker, aber die Rechnung war teuer. Trotzdem hatten sie viel Spaß.",
-                "reading_translation_vi": "Lukas và Sophie đã ở trên đảo Rügen bên biển Baltic vào mùa hè năm ngoái. Họ đã cắm trại hai tuần trên một khu cắm trại. Họ đã bơi ở biển mỗi ngày và đã chơi bóng chuyền ở bãi biển. Lukas đã chụp nhiều ảnh hoàng hôn. Đồ ăn ở nhà hàng rất ngon, nhưng hóa đơn thì đắt. Dù vậy họ đã có rất nhiều niềm vui.",
-                "statement": "",
-                "statement_vi": "Họ đã ở Barcelona hai tuần.",
-                "translation": "Họ đã ở Barcelona hai tuần."
-            }
-        },
-        {
-            "type": "dung_sai",
-            "question": "Câu 100: Đọc đoạn văn và xác định mệnh đề sau là Richtig (Đúng) hay Falsch (Sai): ''",
-            "options": [
-                "Richtig",
-                "Falsch"
-            ],
-            "correct_answer": "Richtig",
-            "explanation": "Đoạn văn viết *„Wir haben viel gegessen, getanzt und am Strand gelegen.“*\n\n---",
-            "exp_reward": 15,
-            "extra_data": {
-                "reading_text": "Lukas und Sophie waren letzten Sommer auf der Insel Rügen an der Ostsee. Sie haben zwei Wochen auf einem Campingplatz gezeltet. Sie sind jeden Tag im Meer geschwommen und haben am Strand Volleyball gespielt. Lukas hat viele Fotos vom Sonnenuntergang gemacht. Das Essen im Restaurant war sehr lecker, aber die Rechnung war teuer. Trotzdem hatten sie viel Spaß.",
-                "reading_translation_vi": "Lukas và Sophie đã ở trên đảo Rügen bên biển Baltic vào mùa hè năm ngoái. Họ đã cắm trại hai tuần trên một khu cắm trại. Họ đã bơi ở biển mỗi ngày và đã chơi bóng chuyền ở bãi biển. Lukas đã chụp nhiều ảnh hoàng hôn. Đồ ăn ở nhà hàng rất ngon, nhưng hóa đơn thì đắt. Dù vậy họ đã có rất nhiều niềm vui.",
-                "statement": "",
-                "statement_vi": "Họ đã ăn nhiều và đã nhảy.",
-                "translation": "Họ đã ăn nhiều và đã nhảy."
-            }
-        }
     ]
 
     exercises_data = []
