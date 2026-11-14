@@ -1590,7 +1590,7 @@ def seed_lesson_9():
                                     "die Radtour",
                                     "Radtour"
                             ],
-                            "translation": "cuộc hành trình bằng xe đạp"
+                            "translation": "die Radtour"
                     }
             },
             {
@@ -1605,7 +1605,7 @@ def seed_lesson_9():
                                     "die Altstadt",
                                     "Altstadt"
                             ],
-                            "translation": "phố cổ"
+                            "translation": "die Altstadt"
                     }
             },
             {
@@ -1621,7 +1621,7 @@ def seed_lesson_9():
                                     "Reiseführer",
                                     "der Reisefuehrer"
                             ],
-                            "translation": "sách hướng dẫn du lịch"
+                            "translation": "der Reiseführer"
                     }
             },
             {
@@ -1636,7 +1636,7 @@ def seed_lesson_9():
                                     "das Reiseziel",
                                     "Reiseziel"
                             ],
-                            "translation": "điểm đến du lịch"
+                            "translation": "das Reiseziel"
                     }
             },
             {
@@ -1651,7 +1651,7 @@ def seed_lesson_9():
                                     "er ist angekommen",
                                     "Er ist angekommen."
                             ],
-                            "translation": "Anh ấy đã đến nơi."
+                            "translation": "er ist angekommen"
                     }
             },
             {
@@ -1666,7 +1666,7 @@ def seed_lesson_9():
                                     "wir haben gezeltet",
                                     "Wir haben gezeltet."
                             ],
-                            "translation": "Chúng tôi đã cắm trại."
+                            "translation": "wir haben gezeltet"
                     }
             },
             {
@@ -1681,7 +1681,7 @@ def seed_lesson_9():
                                     "die Urlaube",
                                     "Urlaube"
                             ],
-                            "translation": "những kỳ nghỉ"
+                            "translation": "die Urlaube"
                     }
             },
             {
@@ -1696,7 +1696,7 @@ def seed_lesson_9():
                                     "ich habe das Essen probiert",
                                     "Ich habe das Essen probiert."
                             ],
-                            "translation": "Tôi đã thử món ăn."
+                            "translation": "ich habe das Essen probiert"
                     }
             },
             {
@@ -2671,9 +2671,13 @@ def seed_lesson_9():
                                     "Ich bin letzten Sommer nach Berlin gereist.",
                                     "Ich bin letzten Sommer nach Berlin gereist",
                                     "Ich bin letzten Sommer nach Berlin gefahren.",
-                                    "Ich bin letzten Sommer nach Berlin gefahren"
+                                    "Ich bin letzten Sommer nach Berlin gefahren",
+                                    "Im letzten Sommer bin ich nach Berlin gereist.",
+                                    "Im letzten Sommer bin ich nach Berlin gereist",
+                                    "Im letzten Sommer bin ich nach Berlin gefahren.",
+                                    "Im letzten Sommer bin ich nach Berlin gefahren"
                             ],
-                            "translation": "Mùa hè năm ngoái tôi đã đi du lịch đến Berlin."
+                            "translation": "Letzten Sommer bin ich nach Berlin gereist."
                     }
             },
             {
@@ -2681,16 +2685,26 @@ def seed_lesson_9():
                     "question": "Câu 68: Dịch câu sau sang tiếng Đức: \"Gia đình tôi đã ở qua đêm trong một khách sạn nhỏ và đã ăn nhiều cá.\"",
                     "options": null,
                     "correct_answer": "Meine Familie hat in einem kleinen Hotel übernachtet und viel Fisch gegessen.",
-                    "explanation": "'übernachten → übernachtet', 'essen → gegessen'; cả hai dùng 'haben' nên 'hat' chỉ cần xuất hiện một lần.",
+                    "explanation": "'übernachten → übernachtet', 'essen → gegessen'; cả hai dùng 'haben' nên 'hat' chỉ cần xuất hiện một lần (hoặc có thể lặp lại).",
                     "exp_reward": 25,
                     "extra_data": {
                             "accepted_answers": [
                                     "Meine Familie hat in einem kleinen Hotel übernachtet und viel Fisch gegessen.",
                                     "Meine Familie hat in einem kleinen Hotel übernachtet und viel Fisch gegessen",
                                     "Meine Familie hat in einem kleinen Hotel übernachtet und hat viel Fisch gegessen.",
-                                    "Meine Familie hat in einem kleinen Hotel übernachtet, und viel Fisch gegessen."
+                                    "Meine Familie hat in einem kleinen Hotel übernachtet und hat viel Fisch gegessen",
+                                    "Meine Familie hat in einem kleinen Hotel übernachtet, und viel Fisch gegessen.",
+                                    "Meine Familie hat in einem kleinen Hotel übernachtet, und viel Fisch gegessen",
+                                    "Meine Familie hat in einem kleinen Hotel übernachtet, und hat viel Fisch gegessen.",
+                                    "Meine Familie hat in einem kleinen Hotel übernachtet, und hat viel Fisch gegessen",
+                                    "Meine Familie hat viel Fisch gegessen und in einem kleinen Hotel übernachtet.",
+                                    "Meine Familie hat viel Fisch gegessen und in einem kleinen Hotel übernachtet",
+                                    "Meine Familie hat viel Fisch gegessen und hat in einem kleinen Hotel übernachtet.",
+                                    "Meine Familie hat viel Fisch gegessen und hat in einem kleinen Hotel übernachtet",
+                                    "Meine Familie hat viel Fisch gegessen, und in einem kleinen Hotel übernachtet.",
+                                    "Meine Familie hat viel Fisch gegessen, und in einem kleinen Hotel übernachtet"
                             ],
-                            "translation": "Gia đình tôi đã ở qua đêm trong một khách sạn nhỏ và đã ăn nhiều cá."
+                            "translation": "Meine Familie hat in einem kleinen Hotel übernachtet und viel Fisch gegessen."
                     }
             },
             {
@@ -2698,7 +2712,7 @@ def seed_lesson_9():
                     "question": "Câu 69: Dịch câu hỏi sau sang tiếng Đức: \"Bạn đã làm gì vào cuối tuần, Tom?\"",
                     "options": null,
                     "correct_answer": "Was hast du am Wochenende gemacht, Tom?",
-                    "explanation": "W-Frage: 'Was' + 'hast' (vị trí 2) + 'du' + … + 'gemacht' (cuối câu).",
+                    "explanation": "W-Frage: 'Was' + 'hast' (vị trí 2) + 'du' + … + 'gemacht' (cuối câu); tên gọi 'Tom' có thể đứng ở đầu hoặc cuối câu.",
                     "exp_reward": 25,
                     "extra_data": {
                             "accepted_answers": [
@@ -2707,28 +2721,66 @@ def seed_lesson_9():
                                     "Was hast du am Wochenende gemacht Tom?",
                                     "Was hast du am Wochenende gemacht Tom",
                                     "Tom, was hast du am Wochenende gemacht?",
-                                    "Tom, was hast du am Wochenende gemacht"
+                                    "Tom, was hast du am Wochenende gemacht",
+                                    "Tom was hast du am Wochenende gemacht?",
+                                    "Tom was hast du am Wochenende gemacht",
+                                    "Was hast du, Tom, am Wochenende gemacht?",
+                                    "Was hast du am Wochenende, Tom, gemacht?"
                             ],
-                            "translation": "Bạn đã làm gì vào cuối tuần, Tom?"
+                            "translation": "Was hast du am Wochenende gemacht, Tom?"
                     }
             },
             {
                     "type": "dich_cau_vd",
-                    "question": "Câu 70: Dịch câu sau sang tiếng Đức: \"Hôm qua trời đã mưa cả ngày, nhưng buổi tối thì tuyệt.\"",
+                    "question": "Câu 70: Dịch câu sau sang tiếng Đức: \"Hôm qua trời mưa cả ngày, nhưng buổi tối rất tuyệt.\"",
                     "options": null,
                     "correct_answer": "Gestern hat es den ganzen Tag geregnet, aber der Abend war toll.",
-                    "explanation": "'regnen → hat geregnet' (ngôi 'es'); 'der Abend war toll' dùng Präteritum của 'sein'.",
+                    "explanation": "'regnen → hat geregnet' (ngôi 'es'); 'der Abend war toll' dùng Präteritum của 'sein'; các tính từ đồng nghĩa: toll, prima, super, wunderschön, schön.",
                     "exp_reward": 25,
                     "extra_data": {
                             "accepted_answers": [
                                     "Gestern hat es den ganzen Tag geregnet, aber der Abend war toll.",
                                     "Gestern hat es den ganzen Tag geregnet, aber der Abend war toll",
+                                    "Gestern hat es den ganzen Tag geregnet aber der Abend war toll.",
+                                    "Gestern hat es den ganzen Tag geregnet aber der Abend war toll",
                                     "Gestern hat es den ganzen Tag geregnet, aber der Abend war prima.",
                                     "Gestern hat es den ganzen Tag geregnet, aber der Abend war prima",
+                                    "Gestern hat es den ganzen Tag geregnet aber der Abend war prima.",
+                                    "Gestern hat es den ganzen Tag geregnet aber der Abend war prima",
+                                    "Gestern hat es den ganzen Tag geregnet, aber der Abend war super.",
+                                    "Gestern hat es den ganzen Tag geregnet, aber der Abend war super",
+                                    "Gestern hat es den ganzen Tag geregnet aber der Abend war super.",
+                                    "Gestern hat es den ganzen Tag geregnet aber der Abend war super",
+                                    "Gestern hat es den ganzen Tag geregnet, aber der Abend war wunderschön.",
+                                    "Gestern hat es den ganzen Tag geregnet, aber der Abend war wunderschön",
+                                    "Gestern hat es den ganzen Tag geregnet aber der Abend war wunderschön.",
+                                    "Gestern hat es den ganzen Tag geregnet aber der Abend war wunderschön",
                                     "Gestern hat es den ganzen Tag geregnet, aber der Abend war schön.",
-                                    "Gestern hat es den ganzen Tag geregnet, aber der Abend war super."
+                                    "Gestern hat es den ganzen Tag geregnet, aber der Abend war schön",
+                                    "Gestern hat es den ganzen Tag geregnet aber der Abend war schön.",
+                                    "Gestern hat es den ganzen Tag geregnet aber der Abend war schön",
+                                    "Es hat gestern den ganzen Tag geregnet, aber der Abend war toll.",
+                                    "Es hat gestern den ganzen Tag geregnet, aber der Abend war toll",
+                                    "Es hat gestern den ganzen Tag geregnet aber der Abend war toll.",
+                                    "Es hat gestern den ganzen Tag geregnet aber der Abend war toll",
+                                    "Es hat gestern den ganzen Tag geregnet, aber der Abend war prima.",
+                                    "Es hat gestern den ganzen Tag geregnet, aber der Abend war prima",
+                                    "Es hat gestern den ganzen Tag geregnet aber der Abend war prima.",
+                                    "Es hat gestern den ganzen Tag geregnet aber der Abend war prima",
+                                    "Es hat gestern den ganzen Tag geregnet, aber der Abend war super.",
+                                    "Es hat gestern den ganzen Tag geregnet, aber der Abend war super",
+                                    "Es hat gestern den ganzen Tag geregnet aber der Abend war super.",
+                                    "Es hat gestern den ganzen Tag geregnet aber der Abend war super",
+                                    "Es hat gestern den ganzen Tag geregnet, aber der Abend war wunderschön.",
+                                    "Es hat gestern den ganzen Tag geregnet, aber der Abend war wunderschön",
+                                    "Es hat gestern den ganzen Tag geregnet aber der Abend war wunderschön.",
+                                    "Es hat gestern den ganzen Tag geregnet aber der Abend war wunderschön",
+                                    "Es hat gestern den ganzen Tag geregnet, aber der Abend war schön.",
+                                    "Es hat gestern den ganzen Tag geregnet, aber der Abend war schön",
+                                    "Es hat gestern den ganzen Tag geregnet aber der Abend war schön.",
+                                    "Es hat gestern den ganzen Tag geregnet aber der Abend war schön"
                             ],
-                            "translation": "Hôm qua trời đã mưa cả ngày, nhưng buổi tối thì tuyệt."
+                            "translation": "Gestern hat es den ganzen Tag geregnet, aber der Abend war toll."
                     }
             },
             {
@@ -2736,24 +2788,26 @@ def seed_lesson_9():
                     "question": "Câu 71: Dịch câu sau sang tiếng Đức: \"Chúng tôi đã không ở lại bãi biển lâu.\"",
                     "options": null,
                     "correct_answer": "Wir sind nicht lange am Strand geblieben.",
-                    "explanation": "'bleiben → sind … geblieben'; 'nicht' đứng trước 'lange'.",
+                    "explanation": "'bleiben → sind … geblieben'; 'nicht lange' có thể đứng trước hoặc sau 'am Strand'.",
                     "exp_reward": 25,
                     "extra_data": {
                             "accepted_answers": [
                                     "Wir sind nicht lange am Strand geblieben.",
                                     "Wir sind nicht lange am Strand geblieben",
+                                    "Wir sind am Strand nicht lange geblieben.",
+                                    "Wir sind am Strand nicht lange geblieben",
                                     "Am Strand sind wir nicht lange geblieben.",
                                     "Am Strand sind wir nicht lange geblieben"
                             ],
-                            "translation": "Chúng tôi đã không ở lại bãi biển lâu."
+                            "translation": "Wir sind nicht lange am Strand geblieben."
                     }
             },
             {
                     "type": "dich_cau_vd",
-                    "question": "Câu 72: Dịch câu sau sang tiếng Đức: \"Tối qua em gái tôi đã gọi điện cho tôi.\"",
+                    "question": "Câu 72: Dịch câu sau sang tiếng Đức: \"Em gái tôi đã gọi điện thoại cho tôi tối hôm qua.\"",
                     "options": null,
                     "correct_answer": "Meine Schwester hat mich gestern Abend angerufen.",
-                    "explanation": "'anrufen' (tách, bất quy tắc) → 'hat … angerufen'; 'mich' (tôi, Akkusativ).",
+                    "explanation": "'anrufen' (tách, bất quy tắc) → 'hat … angerufen'; 'mich' (tôi, Akkusativ); có thể đảo trạng từ thời gian 'Gestern Abend' lên đầu câu.",
                     "exp_reward": 25,
                     "extra_data": {
                             "accepted_answers": [
@@ -2761,9 +2815,14 @@ def seed_lesson_9():
                                     "Meine Schwester hat mich gestern Abend angerufen",
                                     "Gestern Abend hat mich meine Schwester angerufen.",
                                     "Gestern Abend hat mich meine Schwester angerufen",
-                                    "Gestern Abend hat meine Schwester mich angerufen."
+                                    "Gestern Abend hat meine Schwester mich angerufen.",
+                                    "Gestern Abend hat meine Schwester mich angerufen",
+                                    "Meine Schwester hat mich gestern abend angerufen.",
+                                    "Meine Schwester hat mich gestern abend angerufen",
+                                    "Gestern abend hat mich meine Schwester angerufen.",
+                                    "Gestern abend hat mich meine Schwester angerufen"
                             ],
-                            "translation": "Tối qua em gái tôi đã gọi điện cho tôi."
+                            "translation": "Meine Schwester hat mich gestern Abend angerufen."
                     }
             },
             {
