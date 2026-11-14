@@ -338,11 +338,19 @@ def seed_lesson_9():
 
             <!-- Thư của Linh gửi từ Hội An -->
             <div class="p-5 rounded-2xl bg-slate-50 border border-slate-200 space-y-3 text-xs">
-                <div class="flex items-center justify-between pb-2 border-b border-slate-200">
+                <div class="flex items-center justify-between flex-wrap gap-2 pb-2 border-b border-slate-200">
                     <span class="font-bold text-slate-800 text-sm">✉️ E-Mail von Linh aus Hội An (Thư bạn Linh gửi từ Hội An)</span>
-                    <button onclick="speakGerman('Hallo Anna, ich bin jetzt wieder zu Hause. Der Urlaub in Hội An war wunderbar!', 1.0)" class="px-2.5 py-1 rounded-lg bg-indigo-50 hover:bg-indigo-100 text-indigo-700 border border-indigo-200 font-bold transition">
-                        🔊 Nghe đoạn mở đầu
-                    </button>
+                    <div class="flex items-center gap-1.5 flex-wrap">
+                        <button onclick="speakGerman('Hallo Anna, ich bin jetzt wieder zu Hause. Der Urlaub in Hội An war wunderbar! Wir waren eine Woche dort. Wir sind mit dem Flugzeug nach Đà Nẵng geflogen und dann mit dem Taxi nach Hội An gefahren. Das Hotel war klein, aber sehr sauber. Jeden Tag haben wir die Altstadt angeschaut und viele Fotos gemacht. Wir haben viel gegessen, und das Essen war sehr lecker. Am Strand sind wir im Meer geschwommen. Nur das Wetter war nicht immer gut: Zwei Tage hat es geregnet. Am Sonntag sind wir wieder nach Hause geflogen. Ich habe viele Souvenirs gekauft. Bis bald! Deine Linh.', 1.0)" class="px-2.5 py-1 rounded-lg bg-indigo-50 hover:bg-indigo-100 text-indigo-700 border border-indigo-200 font-bold transition flex items-center gap-1 cursor-pointer">
+                            🔊 Nghe toàn bộ thư (1.0x)
+                        </button>
+                        <button onclick="speakGerman('Hallo Anna, ich bin jetzt wieder zu Hause. Der Urlaub in Hội An war wunderbar! Wir waren eine Woche dort. Wir sind mit dem Flugzeug nach Đà Nẵng geflogen und dann mit dem Taxi nach Hội An gefahren. Das Hotel war klein, aber sehr sauber. Jeden Tag haben wir die Altstadt angeschaut und viele Fotos gemacht. Wir haben viel gegessen, und das Essen war sehr lecker. Am Strand sind wir im Meer geschwommen. Nur das Wetter war nicht immer gut: Zwei Tage hat es geregnet. Am Sonntag sind wir wieder nach Hause geflogen. Ich habe viele Souvenirs gekauft. Bis bald! Deine Linh.', 0.75)" class="px-2.5 py-1 rounded-lg bg-amber-50 hover:bg-amber-100 text-amber-800 border border-amber-200 font-bold transition flex items-center gap-1 cursor-pointer">
+                            🐢 Nghe chậm (0.75x)
+                        </button>
+                        <button onclick="stopSpeaking()" class="px-2 py-1 rounded-lg bg-slate-100 hover:bg-slate-200 text-slate-600 border border-slate-300 font-bold transition flex items-center gap-1 cursor-pointer" title="Dừng phát âm">
+                            ⏹ Dừng
+                        </button>
+                    </div>
                 </div>
                 <div class="text-slate-700 leading-relaxed font-sans text-xs bg-white p-3.5 rounded-xl border border-slate-200">
                     „Hallo Anna, ich <b>bin</b> jetzt wieder zu Hause. Der Urlaub in Hội An <b>war</b> wunderbar! Wir <b>waren</b> eine Woche dort. Wir <b>sind</b> mit dem Flugzeug nach Đà Nẵng <b>geflogen</b> und dann mit dem Taxi nach Hội An <b>gefahren</b>. Das Hotel <b>war</b> klein, aber sehr sauber. Jeden Tag <b>haben</b> wir die Altstadt <b>angeschaut</b> und viele Fotos <b>gemacht</b>. Wir <b>haben</b> viel <b>gegessen</b>, und das Essen <b>war</b> sehr lecker. Am Strand <b>sind</b> wir im Meer <b>geschwommen</b>. Nur das Wetter <b>war</b> nicht immer gut: Zwei Tage <b>hat</b> es <b>geregnet</b>. Am Sonntag <b>sind</b> wir wieder nach Hause <b>geflogen</b>. Ich <b>habe</b> viele Souvenirs <b>gekauft</b>. Bis bald! Deine Linh“

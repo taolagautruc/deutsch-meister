@@ -244,6 +244,24 @@ function speakGerman(rawText, rate = 0.9) {
         try {
             window.speechSynthesis.cancel(); // Dừng câu trước đó nếu đang đọc
 
+            // Nếu là đoạn văn dài (nhiều câu), tách thành từng câu và xếp hàng đợi (queue)
+            // Giúp trình duyệt đọc trọn vẹn từ đầu đến cuối không bao giờ bị ngắt giữa chừng
+            const sentences = textToSpeak.match(/[^.!?:]+[.!?:]+|\S+/g) || [textToSpeak];
+            if (sentences.length > 1 && textToSpeak.length > 120) {
+                const voice = bestGermanVoice || getBestGermanVoice();
+                sentences.forEach(s => {
+                    const st = s.trim();
+                    if (!st) return;
+                    const u = new SpeechSynthesisUtterance(st);
+                    u.lang = 'de-DE';
+                    u.rate = rate || 0.9;
+                    u.pitch = 1.0;
+                    if (voice) u.voice = voice;
+                    window.speechSynthesis.speak(u);
+                });
+                return;
+            }
+
             const utterance = new SpeechSynthesisUtterance(textToSpeak);
             utterance.lang = 'de-DE';
             utterance.rate = rate || 0.9;
@@ -308,9 +326,19 @@ function playFallbackAudio(text) {
     }
 }
 
+/**
+ * Dừng mọi âm thanh đang phát (hủy hàng đợi speech)
+ */
+function stopSpeaking() {
+    if (typeof window !== 'undefined' && 'speechSynthesis' in window) {
+        window.speechSynthesis.cancel();
+    }
+}
+
 if (typeof window !== 'undefined') {
     window.speakGerman = speakGerman;
     window.speakVietnamese = speakVietnamese;
+    window.stopSpeaking = stopSpeaking;
     window.getBestGermanVoice = getBestGermanVoice;
     window.playFallbackAudio = playFallbackAudio;
     window.GERMAN_PRONUNCIATION_MAP = GERMAN_PRONUNCIATION_MAP;
