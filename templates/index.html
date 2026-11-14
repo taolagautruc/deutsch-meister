@@ -374,13 +374,13 @@
     <!-- ========================================================= -->
     <!-- JAVASCRIPT XỬ LÝ TƯƠNG TÁC, PHÁT ÂM & KẾT NỐI API PYTHON   -->
     <!-- ========================================================= -->
-    <script src="/static/js/audio_tts.js?v=20261114_v6"></script>
-    <script src="/static/js/number_trainer.js?v=20261114_v6"></script>
-    <script src="/static/js/city_map_svg.js?v=20261114_v6"></script>
-    <script src="/static/js/perfekt_svg.js?v=20261114_v6"></script>
-    <script src="/static/js/verbs_db.js?v=20261114_v6"></script>
-    <script src="/static/js/lexikon_db.js?v=20261114_v6"></script>
-    <script src="/static/js/arena_engine.js?v=20261114_v6"></script>
+    <script src="/static/js/audio_tts.js?v=20261114_v7"></script>
+    <script src="/static/js/number_trainer.js?v=20261114_v7"></script>
+    <script src="/static/js/city_map_svg.js?v=20261114_v7"></script>
+    <script src="/static/js/perfekt_svg.js?v=20261114_v7"></script>
+    <script src="/static/js/verbs_db.js?v=20261114_v7"></script>
+    <script src="/static/js/lexikon_db.js?v=20261114_v7"></script>
+    <script src="/static/js/arena_engine.js?v=20261114_v7"></script>
     <script>
         const LEVEL_META = {
             "A1": {
@@ -548,13 +548,13 @@
             }
         }
 
-        const CURRENT_SESSION_VERSION = '20261114_v6';
+        const CURRENT_SESSION_VERSION = '20261114_v7';
 
-        // Tự động xóa phiên làm bài cũ bị lỗi cấu hình đáp án cứng nhắc, nối ô hoặc điền tạo câu của Bài 9
+        // Tự động xóa phiên làm bài cũ bị lỗi cấu hình đáp án cứng nhắc, nối ô, điền tạo câu hoặc dịch câu Bài 9
         try {
             ['dm_active_practice_session_guest_23', 'dm_active_practice_session_1_23'].forEach(k => {
                 const r = localStorage.getItem(k);
-                if (r && (!r.includes('cuộc tham quan') || !r.includes('quốc gia du lịch') || r.includes('Nối các cặp hoàn chỉnh') || !r.includes('Wir haben im Urlaub viele schöne Fotos') || r.includes('tiền tố') || !r.includes('Hôm qua tôi đã tham quan viện bảo tàng') || !r.includes('Letzten Sommer bin ich nach Berlin gereist') || !r.includes('"version":"20261114_v6"'))) {
+                if (r && (!r.includes('cuộc tham quan') || !r.includes('quốc gia du lịch') || r.includes('Nối các cặp hoàn chỉnh') || !r.includes('Wir haben im Urlaub viele schöne Fotos') || r.includes('tiền tố') || !r.includes('Hôm qua tôi đã tham quan viện bảo tàng') || !r.includes('Letzten Sommer bin ich nach Berlin gereist') || !r.includes('"version":"20261114_v7"'))) {
                     localStorage.removeItem(k);
                 }
             });
@@ -2498,7 +2498,7 @@
                     // Ưu tiên chấm theo Rubric Bài 9 khi làm Bài 9
                     const isLesson9 = Boolean(
                         (ex && (String(ex.lesson_id) === '23')) ||
-                        (ex && ex.question && /Reiseland|Bummel|Besichtigung|langweilig|Fotos gemacht|Alpen gewandert|Wetter war prima|passiert|Österreich gefahren|Hotel vergessen/i.test(ex.question)) ||
+                        (ex && ex.question && /Reiseland|Bummel|Besichtigung|langweilig|Fotos gemacht|Alpen gewandert|Wetter war prima|passiert|Österreich gefahren|Hotel vergessen|Wo wart ihr|angerufen|nicht geantwortet|Die Reise war lang|Schiff|viele Inseln|Mein Opa|Bergen gewohnt|Koffer gepackt|Fahrkarten/i.test(ex.question)) ||
                         (typeof currentLesson !== 'undefined' && currentLesson && (
                             String(currentLesson.id) === '23' || 
                             (currentLesson.title && /bài 9\b/i.test(currentLesson.title))
