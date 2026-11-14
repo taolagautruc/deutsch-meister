@@ -157,7 +157,9 @@ for ex in all_exercises:
     # 3. Extra data valid JSON and has translation
     assert extra_str, f"Lỗi Q{eid}: extra_data rỗng!"
     extra = json.loads(extra_str)
-    assert extra.get("translation"), f"Lỗi Q{eid}: translation trong extra_data rỗng!"
+    # Các câu nối ô có Cột Trái là nghĩa tiếng Việt (Câu 45, Câu 50) để translation rỗng theo yêu cầu sư phạm
+    if not (ex["exercise_type"] == "noi_o" and ("Câu 45:" in q_text or "Câu 50:" in q_text)):
+        assert extra.get("translation"), f"Lỗi Q{eid}: translation trong extra_data rỗng!"
 
     # 4. Zero YouTube links
     full_dump = f"{q_text} {ans} {exp} {extra_str}"

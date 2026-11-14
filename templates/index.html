@@ -374,13 +374,13 @@
     <!-- ========================================================= -->
     <!-- JAVASCRIPT XỬ LÝ TƯƠNG TÁC, PHÁT ÂM & KẾT NỐI API PYTHON   -->
     <!-- ========================================================= -->
-    <script src="/static/js/audio_tts.js?v=20261114_v1"></script>
-    <script src="/static/js/number_trainer.js?v=20261114_v1"></script>
-    <script src="/static/js/city_map_svg.js?v=20261114_v1"></script>
-    <script src="/static/js/perfekt_svg.js?v=20261114_v1"></script>
-    <script src="/static/js/verbs_db.js?v=20261114_v1"></script>
-    <script src="/static/js/lexikon_db.js?v=20261114_v1"></script>
-    <script src="/static/js/arena_engine.js?v=20261114_v1"></script>
+    <script src="/static/js/audio_tts.js?v=20261114_v3"></script>
+    <script src="/static/js/number_trainer.js?v=20261114_v3"></script>
+    <script src="/static/js/city_map_svg.js?v=20261114_v3"></script>
+    <script src="/static/js/perfekt_svg.js?v=20261114_v3"></script>
+    <script src="/static/js/verbs_db.js?v=20261114_v3"></script>
+    <script src="/static/js/lexikon_db.js?v=20261114_v3"></script>
+    <script src="/static/js/arena_engine.js?v=20261114_v3"></script>
     <script>
         const LEVEL_META = {
             "A1": {
@@ -548,7 +548,17 @@
             }
         }
 
-        const CURRENT_SESSION_VERSION = '20261114_v1';
+        const CURRENT_SESSION_VERSION = '20261114_v3';
+
+        // Tự động xóa phiên làm bài cũ bị lỗi cấu hình đáp án cứng nhắc hoặc nối ô của Bài 9
+        try {
+            ['dm_active_practice_session_guest_23', 'dm_active_practice_session_1_23'].forEach(k => {
+                const r = localStorage.getItem(k);
+                if (r && (!r.includes('cuộc tham quan') || !r.includes('quốc gia du lịch') || r.includes('Nối các cặp hoàn chỉnh') || !r.includes('Wir haben im Urlaub viele schöne Fotos'))) {
+                    localStorage.removeItem(k);
+                }
+            });
+        } catch(e) {}
 
         function loadActiveLessonSession(lessonId) {
             if (!lessonId) return null;
@@ -1275,6 +1285,16 @@
                     activeSession = null;
                 }
             }
+            if (activeSession && (lId === 23 || (currentLesson && currentLesson.title && /bài 9\b/i.test(currentLesson.title)))) {
+                const hasOutdatedL9 = (activeSession.version !== CURRENT_SESSION_VERSION) || (activeSession.allRenderExercises || []).some(ex => 
+                    (ex.question && (ex.question.includes('Câu 37') || ex.question.includes('Câu 40') || ex.question.includes('Câu 43') || ex.question.includes('Câu 45') || ex.question.includes('Câu 50'))) &&
+                    (!ex.extra_data || JSON.stringify(ex.extra_data).includes('Nối các cặp hoàn chỉnh') || !JSON.stringify(ex.extra_data).includes('cuộc tham quan') || !JSON.stringify(ex.extra_data).includes('Wir haben im Urlaub viele schöne Fotos'))
+                );
+                if (hasOutdatedL9) {
+                    clearActiveLessonSession(lId);
+                    activeSession = null;
+                }
+            }
 
             if (activeSession) {
                 // Khôi phục chính xác phiên làm bài dở dang của người dùng
@@ -1294,6 +1314,11 @@
                         }
                         // Luôn lấy đề bài, đáp án đúng, giải thích, dữ liệu bổ sung mới nhất từ database
                         const merged = { ...freshEx };
+                        merged.question = freshEx.question;
+                        merged.correct_answer = freshEx.correct_answer;
+                        merged.explanation = freshEx.explanation;
+                        merged.extra_data = freshEx.extra_data;
+
                         // Bảo toàn các trạng thái tương tác của người dùng
                         if (savedEx.options && Array.isArray(savedEx.options)) {
                             const freshNorm = (freshEx.options || []).map(o => normalizeAnswer(o)).sort().join('||');
@@ -1303,7 +1328,7 @@
                             }
                         }
                         if (savedEx._selectedOptIndex !== undefined) merged._selectedOptIndex = savedEx._selectedOptIndex;
-                        if (savedEx._isUserCorrect !== undefined) merged._isUserCorrect = savedEx._isUserCorrect;
+                        if (savedEx._isUserCorrect === true) merged._isUserCorrect = true;
                         if (savedEx._userAnswer !== undefined) merged._userAnswer = savedEx._userAnswer;
                         if (savedEx._retrying !== undefined) merged._retrying = savedEx._retrying;
                         return merged;
@@ -2128,8 +2153,8 @@
             if (!str || typeof str !== 'string') return true;
             const trimmed = str.trim();
             if (trimmed.length < 2) return true;
-            // Loại bỏ các câu suy luận ngữ pháp hoặc chỉ thị làm bài
-            if (/^(động từ|cụm từ|từ cần điền|đáp án|cần điền|chủ ngữ|ngôi\s+(thứ|\d|ich|du|er|sie|es|wir|ihr|man|số ít|số nhiều)|âm thanh phát|câu nghe được|điền|chọn|kết hợp|lưu ý|quy tắc)/i.test(trimmed)) {
+            // Loại bỏ các câu suy luận ngữ pháp hoặc chỉ thị làm bài / nội dung rác nối ô
+            if (/^(động từ|cụm từ|từ cần điền|đáp án|cần điền|chủ ngữ|ngôi\s+(thứ|\d|ich|du|er|sie|es|wir|ihr|man|số ít|số nhiều)|âm thanh phát|câu nghe được|điền|chọn|kết hợp|lưu ý|quy tắc|nối\s+các\s+cặp)/i.test(trimmed) || /^nối\s+các\s+cặp/i.test(trimmed)) {
                 return true;
             }
             return false;
@@ -2626,22 +2651,7 @@
                     `;
                 }
                 const earnedExp = ex._hasBeenWrong ? 0 : ex.exp_reward;
-                let correctPairsHtml = '';
-                if (ex.exercise_type === 'noi_o' && extra.noi_o_pairs) {
-                    correctPairsHtml = `
-                        <div class="mt-2 text-xs sm:text-sm">
-                            <span class="font-bold text-emerald-900 block mb-1">Các cặp nối chính xác:</span>
-                            <div class="space-y-1.5" style="line-height: 1.5;">
-                                ${extra.noi_o_pairs.map((p, pIdx) => `
-                                    <div class="p-2.5 rounded-xl border border-emerald-300 bg-emerald-50 text-emerald-950 flex items-center justify-between flex-wrap gap-2 text-xs sm:text-sm">
-                                        <span><b>${pIdx + 1}.</b> ${p.left} <span class="font-bold mx-1 text-emerald-700">⇌</span> <b>${p.right}</b></span>
-                                        <span class="text-[11px] px-2 py-0.5 rounded-md bg-emerald-200 text-emerald-800 font-extrabold shrink-0 border border-emerald-300">✓ Đúng</span>
-                                    </div>
-                                `).join('')}
-                            </div>
-                        </div>
-                    `;
-                }
+                const correctPairsHtml = '';
                 feedback.innerHTML = `
                     <div class="space-y-1.5">
                         <div class="flex items-center gap-2">
