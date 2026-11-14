@@ -3197,7 +3197,7 @@ def seed_lesson_9():
             },
             {
                     "type": "sap_xep_cau",
-                    "question": "Câu 79: Sắp xếp các từ sau thành câu Perfekt hoàn chỉnh: [geschrieben, ich, Gestern, Postkarten, habe]",
+                    "question": "Câu 79: Sắp xếp các từ sau thành câu Perfekt hoàn chỉnh: [geschrieben, ich, gestern, Postkarten, habe]",
                     "options": null,
                     "correct_answer": "Gestern habe ich Postkarten geschrieben.",
                     "explanation": "Có thể mở đầu bằng 'Gestern' (khi đó 'habe' ở vị trí 2, 'ich' đứng sau) hoặc bằng 'Ich'; 'geschrieben' luôn ở cuối.",
@@ -3206,7 +3206,7 @@ def seed_lesson_9():
                             "tokens": [
                                     "geschrieben",
                                     "ich",
-                                    "Gestern",
+                                    "gestern",
                                     "Postkarten",
                                     "habe"
                             ],
@@ -3219,7 +3219,7 @@ def seed_lesson_9():
             },
             {
                     "type": "sap_xep_cau",
-                    "question": "Câu 80: Sắp xếp các từ sau thành câu Perfekt hoàn chỉnh: [gefahren, nach Köln, Wir, am Wochenende, sind]",
+                    "question": "Câu 80: Sắp xếp các từ sau thành câu Perfekt hoàn chỉnh: [gefahren, nach Köln, wir, am Wochenende, sind]",
                     "options": null,
                     "correct_answer": "Wir sind am Wochenende nach Köln gefahren.",
                     "explanation": "'sind' ở vị trí 2, 'gefahren' ở cuối câu; 'am Wochenende' có thể đứng đầu câu (đảo ngữ).",
@@ -3228,7 +3228,7 @@ def seed_lesson_9():
                             "tokens": [
                                     "gefahren",
                                     "nach Köln",
-                                    "Wir",
+                                    "wir",
                                     "am Wochenende",
                                     "sind"
                             ],
@@ -3241,7 +3241,7 @@ def seed_lesson_9():
             },
             {
                     "type": "sap_xep_cau",
-                    "question": "Câu 81: Sắp xếp các từ sau thành câu Perfekt hoàn chỉnh: [gespielt, Die Kinder, im Meer, haben]",
+                    "question": "Câu 81: Sắp xếp các từ sau thành câu Perfekt hoàn chỉnh: [gespielt, die Kinder, im Meer, haben]",
                     "options": null,
                     "correct_answer": "Die Kinder haben im Meer gespielt.",
                     "explanation": "'haben' ở vị trí 2; 'gespielt' cuối câu.",
@@ -3249,7 +3249,7 @@ def seed_lesson_9():
                     "extra_data": {
                             "tokens": [
                                     "gespielt",
-                                    "Die Kinder",
+                                    "die Kinder",
                                     "im Meer",
                                     "haben"
                             ],
@@ -3262,7 +3262,7 @@ def seed_lesson_9():
             },
             {
                     "type": "sap_xep_cau",
-                    "question": "Câu 82: Sắp xếp các từ sau thành câu Perfekt hoàn chỉnh: [gegangen, nicht, Wir, ins Museum, sind]",
+                    "question": "Câu 82: Sắp xếp các từ sau thành câu Perfekt hoàn chỉnh: [gegangen, nicht, wir, ins Museum, sind]",
                     "options": null,
                     "correct_answer": "Wir sind nicht ins Museum gegangen.",
                     "explanation": "'nicht' đứng trước bổ ngữ chỉ hướng 'ins Museum'; 'gegangen' ở cuối câu.",
@@ -3271,7 +3271,7 @@ def seed_lesson_9():
                             "tokens": [
                                     "gegangen",
                                     "nicht",
-                                    "Wir",
+                                    "wir",
                                     "ins Museum",
                                     "sind"
                             ],
@@ -3283,7 +3283,7 @@ def seed_lesson_9():
             },
             {
                     "type": "sap_xep_cau",
-                    "question": "Câu 83: Sắp xếp các từ sau thành câu Perfekt hoàn chỉnh: [gemacht, du, Hast, viele Fotos, im Urlaub]",
+                    "question": "Câu 83: Sắp xếp các từ sau thành câu Perfekt hoàn chỉnh: [gemacht, du, hast, viele Fotos, im Urlaub]",
                     "options": null,
                     "correct_answer": "Hast du im Urlaub viele Fotos gemacht?",
                     "explanation": "Câu hỏi Ja/Nein bắt đầu bằng trợ động từ 'Hast', tiếp theo là 'du'; 'gemacht' cuối câu.",
@@ -3292,7 +3292,7 @@ def seed_lesson_9():
                             "tokens": [
                                     "gemacht",
                                     "du",
-                                    "Hast",
+                                    "hast",
                                     "viele Fotos",
                                     "im Urlaub"
                             ],
@@ -3305,7 +3305,7 @@ def seed_lesson_9():
             },
             {
                     "type": "sap_xep_cau",
-                    "question": "Câu 84: Sắp xếp các từ sau thành câu Perfekt hoàn chỉnh: [angekommen, Die Gäste, um zehn Uhr, sind]",
+                    "question": "Câu 84: Sắp xếp các từ sau thành câu Perfekt hoàn chỉnh: [angekommen, die Gäste, um zehn Uhr, sind]",
                     "options": null,
                     "correct_answer": "Die Gäste sind um zehn Uhr angekommen.",
                     "explanation": "'ankommen' dùng 'sein'; Partizip II 'angekommen' nằm cuối câu.",
@@ -3313,7 +3313,7 @@ def seed_lesson_9():
                     "extra_data": {
                             "tokens": [
                                     "angekommen",
-                                    "Die Gäste",
+                                    "die Gäste",
                                     "um zehn Uhr",
                                     "sind"
                             ],
@@ -3326,7 +3326,7 @@ def seed_lesson_9():
             },
             {
                     "type": "chon_haben_sein",
-                    "question": "Câu 85: Xếp 4 động từ sau vào trợ động từ haben hoặc sein tương ứng (ngăn cách bởi dấu /): fahren (đi xe), machen (làm), bleiben (ở lại), essen (ăn)",
+                    "question": "Câu 85: Xếp 4 động từ sau vào trợ động từ haben hoặc sein tương ứng (ngăn cách bởi dấu /): fahren, machen, bleiben, essen",
                     "options": null,
                     "correct_answer": "sein / haben / sein / haben",
                     "explanation": "'fahren' chuyển động; 'bleiben' là một trong ba động từ 'sein/bleiben/werden'; 'machen' và 'essen' có tân ngữ nên dùng 'haben'.",
@@ -3335,25 +3335,21 @@ def seed_lesson_9():
                             "items": [
                                     {
                                             "verb": "fahren",
-                                            "meaning_vi": "đi xe",
                                             "aux": "sein",
                                             "partizip": "ist gefahren"
                                     },
                                     {
                                             "verb": "machen",
-                                            "meaning_vi": "làm",
                                             "aux": "haben",
                                             "partizip": "hat gemacht"
                                     },
                                     {
                                             "verb": "bleiben",
-                                            "meaning_vi": "ở lại",
                                             "aux": "sein",
                                             "partizip": "ist geblieben"
                                     },
                                     {
                                             "verb": "essen",
-                                            "meaning_vi": "ăn",
                                             "aux": "haben",
                                             "partizip": "hat gegessen"
                                     }
@@ -3363,12 +3359,12 @@ def seed_lesson_9():
                                     "sein haben sein haben",
                                     "sein, haben, sein, haben"
                             ],
-                            "translation": "Đáp án chuẩn: sein / haben / sein / haben"
+                            "translation": "1. fahren (đi xe) -> ist gefahren | 2. machen (làm) -> hat gemacht | 3. bleiben (ở lại) -> ist geblieben | 4. essen (ăn) -> hat gegessen"
                     }
             },
             {
                     "type": "chon_haben_sein",
-                    "question": "Câu 86: Xếp 4 động từ sau vào trợ động từ haben hoặc sein tương ứng (ngăn cách bởi dấu /): einschlafen (ngủ thiếp đi), schlafen (ngủ), fliegen (bay), fotografieren (chụp ảnh)",
+                    "question": "Câu 86: Xếp 4 động từ sau vào trợ động từ haben hoặc sein tương ứng (ngăn cách bởi dấu /): einschlafen, schlafen, fliegen, fotografieren",
                     "options": null,
                     "correct_answer": "sein / haben / sein / haben",
                     "explanation": "'einschlafen' đổi trạng thái; 'schlafen' là trạng thái kéo dài; 'fliegen' chuyển động; 'fotografieren' có tân ngữ.",
@@ -3377,25 +3373,21 @@ def seed_lesson_9():
                             "items": [
                                     {
                                             "verb": "einschlafen",
-                                            "meaning_vi": "ngủ thiếp đi",
                                             "aux": "sein",
                                             "partizip": "ist eingeschlafen"
                                     },
                                     {
                                             "verb": "schlafen",
-                                            "meaning_vi": "ngủ",
                                             "aux": "haben",
                                             "partizip": "hat geschlafen"
                                     },
                                     {
                                             "verb": "fliegen",
-                                            "meaning_vi": "bay",
                                             "aux": "sein",
                                             "partizip": "ist geflogen"
                                     },
                                     {
                                             "verb": "fotografieren",
-                                            "meaning_vi": "chụp ảnh",
                                             "aux": "haben",
                                             "partizip": "hat fotografiert"
                                     }
@@ -3405,12 +3397,12 @@ def seed_lesson_9():
                                     "sein haben sein haben",
                                     "sein, haben, sein, haben"
                             ],
-                            "translation": "Đáp án chuẩn: sein / haben / sein / haben"
+                            "translation": "1. einschlafen (ngủ thiếp đi) -> ist eingeschlafen | 2. schlafen (ngủ) -> hat geschlafen | 3. fliegen (bay) -> ist geflogen | 4. fotografieren (chụp ảnh) -> hat fotografiert"
                     }
             },
             {
                     "type": "chon_haben_sein",
-                    "question": "Câu 87: Xếp 4 động từ sau vào trợ động từ haben hoặc sein tương ứng (ngăn cách bởi dấu /): übernachten (qua đêm), wandern (đi bộ đường dài), aufwachen (thức dậy), besichtigen (tham quan)",
+                    "question": "Câu 87: Xếp 4 động từ sau vào trợ động từ haben hoặc sein tương ứng (ngăn cách bởi dấu /): übernachten, wandern, aufwachen, besichtigen",
                     "options": null,
                     "correct_answer": "haben / sein / sein / haben",
                     "explanation": "'wandern' chuyển động; 'aufwachen' đổi trạng thái; 'übernachten' (tại chỗ) và 'besichtigen' (có tân ngữ) dùng 'haben'.",
@@ -3419,25 +3411,21 @@ def seed_lesson_9():
                             "items": [
                                     {
                                             "verb": "übernachten",
-                                            "meaning_vi": "qua đêm",
                                             "aux": "haben",
                                             "partizip": "hat übernachtet"
                                     },
                                     {
                                             "verb": "wandern",
-                                            "meaning_vi": "đi bộ đường dài",
                                             "aux": "sein",
                                             "partizip": "ist gewandert"
                                     },
                                     {
                                             "verb": "aufwachen",
-                                            "meaning_vi": "thức dậy",
                                             "aux": "sein",
                                             "partizip": "ist aufgewacht"
                                     },
                                     {
                                             "verb": "besichtigen",
-                                            "meaning_vi": "tham quan",
                                             "aux": "haben",
                                             "partizip": "hat besichtigt"
                                     }
@@ -3447,12 +3435,12 @@ def seed_lesson_9():
                                     "haben sein sein haben",
                                     "haben, sein, sein, haben"
                             ],
-                            "translation": "Đáp án chuẩn: haben / sein / sein / haben"
+                            "translation": "1. übernachten (ngủ qua đêm) -> hat übernachtet | 2. wandern (đi bộ đường dài / leo núi) -> ist gewandert | 3. aufwachen (thức dậy) -> ist aufgewacht | 4. besichtigen (tham quan) -> hat besichtigt"
                     }
             },
             {
                     "type": "chon_haben_sein",
-                    "question": "Câu 88: Xếp 4 động từ sau vào trợ động từ haben hoặc sein tương ứng (ngăn cách bởi dấu /): passieren (xảy ra), bezahlen (trả tiền), kommen (đến), regnen (mưa)",
+                    "question": "Câu 88: Xếp 4 động từ sau vào trợ động từ haben hoặc sein tương ứng (ngăn cách bởi dấu /): passieren, bezahlen, kommen, regnen",
                     "options": null,
                     "correct_answer": "sein / haben / sein / haben",
                     "explanation": "'passieren' và 'kommen' dùng 'sein'; 'bezahlen' có tân ngữ; 'regnen' là động từ thời tiết dùng 'haben'.",
@@ -3461,25 +3449,21 @@ def seed_lesson_9():
                             "items": [
                                     {
                                             "verb": "passieren",
-                                            "meaning_vi": "xảy ra",
                                             "aux": "sein",
                                             "partizip": "ist passiert"
                                     },
                                     {
                                             "verb": "bezahlen",
-                                            "meaning_vi": "trả tiền",
                                             "aux": "haben",
                                             "partizip": "hat bezahlt"
                                     },
                                     {
                                             "verb": "kommen",
-                                            "meaning_vi": "đến",
                                             "aux": "sein",
                                             "partizip": "ist gekommen"
                                     },
                                     {
                                             "verb": "regnen",
-                                            "meaning_vi": "mưa",
                                             "aux": "haben",
                                             "partizip": "hat geregnet"
                                     }
@@ -3489,7 +3473,7 @@ def seed_lesson_9():
                                     "sein haben sein haben",
                                     "sein, haben, sein, haben"
                             ],
-                            "translation": "Đáp án chuẩn: sein / haben / sein / haben"
+                            "translation": "1. passieren (xảy ra) -> ist passiert | 2. bezahlen (trả tiền / thanh toán) -> hat bezahlt | 3. kommen (đến) -> ist gekommen | 4. regnen (mưa) -> hat geregnet"
                     }
             },
             {
@@ -3505,7 +3489,7 @@ def seed_lesson_9():
                                     "Wir sind gestern nach Berlin gefahren.",
                                     "Gestern sind wir nach Berlin gefahren."
                             ],
-                            "translation": "Hôm qua chúng tôi đã đi Berlin."
+                            "translation": "Hôm qua chúng tôi đã đi (bằng tàu/xe) đến Berlin."
                     }
             },
             {
@@ -3520,23 +3504,23 @@ def seed_lesson_9():
                             "accepted_answers": [
                                     "Ich habe im Urlaub viele Fotos gemacht."
                             ],
-                            "translation": "Tôi đã chụp nhiều ảnh trong kỳ nghỉ."
+                            "translation": "Tôi đã chụp nhiều bức ảnh trong kỳ nghỉ."
                     }
             },
             {
                     "type": "tim_loi_sai",
                     "question": "Câu 91: Tìm đúng 1 lỗi sai và gõ lại cả câu đúng: „Sie hat ein Picknick gemacht am Fluss.“",
                     "options": null,
-                    "correct_answer": "Sie hat am Fluss ein Picknick gemacht.",
+                    "correct_answer": "Sie hat ein Picknick am Fluss gemacht. / Sie hat am Fluss ein Picknick gemacht.",
                     "explanation": "Lỗi vị trí động từ: 'gemacht' (Partizip II) phải đứng cuối câu, sau cả cụm 'am Fluss'.",
                     "exp_reward": 25,
                     "extra_data": {
                             "wrong_sentence": "Sie hat ein Picknick gemacht am Fluss.",
                             "accepted_answers": [
-                                    "Sie hat am Fluss ein Picknick gemacht.",
-                                    "Sie hat ein Picknick am Fluss gemacht."
+                                    "Sie hat ein Picknick am Fluss gemacht.",
+                                    "Sie hat am Fluss ein Picknick gemacht."
                             ],
-                            "translation": "Cô ấy đã dã ngoại bên sông."
+                            "translation": "Cô ấy đã tổ chức một buổi dã ngoại bên bờ sông."
                     }
             },
             {
@@ -3551,7 +3535,7 @@ def seed_lesson_9():
                             "accepted_answers": [
                                     "Wir haben die Rechnung bezahlt."
                             ],
-                            "translation": "Chúng tôi đã trả hóa đơn."
+                            "translation": "Chúng tôi đã thanh toán hóa đơn."
                     }
             },
             {
