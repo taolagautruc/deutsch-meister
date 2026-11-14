@@ -921,7 +921,7 @@ function evaluateLesson9VDTranslation(userAns, qNum) {
 
     // Câu 67: Mùa hè năm ngoái tôi đã đi du lịch đến Berlin.
     if (qNum === 67) {
-        const hasTime = s.includes('letzten sommer');
+        const hasTime = s.includes('letzten sommer') || s.includes('im letzten sommer');
         const hasVerb = (s.includes('bin ich') || s.includes('ich bin')) && (s.includes('gereist') || s.includes('gefahren'));
         const hasDest = s.includes('nach berlin');
         return hasTime && hasVerb && hasDest;
@@ -943,26 +943,30 @@ function evaluateLesson9VDTranslation(userAns, qNum) {
         return hasWas && hasWk && hasGemacht;
     }
 
-    // Câu 70: Hôm qua trời đã mưa cả ngày, nhưng buổi tối thì tuyệt.
+    // Câu 70: Hôm qua trời mưa cả ngày, nhưng buổi tối rất tuyệt.
     if (qNum === 70) {
-        const hasRegen = s.includes('gestern') && s.includes('den ganzen tag') && s.includes('geregnet');
-        const hasAbend = s.includes('der abend war') && (s.includes('toll') || s.includes('prima') || s.includes('schön') || s.includes('schoen') || s.includes('super'));
+        const hasRegen = (s.includes('gestern') || s.includes('es hat gestern')) && s.includes('den ganzen tag') && s.includes('geregnet');
+        const hasAbend = s.includes('der abend war') && (
+            s.includes('toll') || s.includes('prima') || s.includes('super') ||
+            s.includes('wunderschön') || s.includes('wunderschoen') || s.includes('wunderschon') ||
+            s.includes('schön') || s.includes('schoen') || s.includes('schon')
+        );
         return hasRegen && hasAbend;
     }
 
     // Câu 71: Chúng tôi đã không ở lại bãi biển lâu.
     if (qNum === 71) {
-        const hasWir = s.includes('wir sind');
+        const hasWir = (s.includes('wir sind') || s.includes('sind wir')) && s.includes('geblieben');
         const hasStrand = s.includes('am strand');
-        const hasStay = s.includes('nicht lange') && s.includes('geblieben');
+        const hasStay = s.includes('nicht lange');
         return hasWir && hasStrand && hasStay;
     }
 
-    // Câu 72: Tối qua em gái tôi đã gọi điện cho tôi.
+    // Câu 72: Em gái tôi đã gọi điện thoại cho tôi tối hôm qua.
     if (qNum === 72) {
         const hasSister = s.includes('meine schwester');
         const hasCall = s.includes('angerufen');
-        const hasTime = s.includes('gestern abend');
+        const hasTime = s.includes('gestern abend') || s.includes('gesternabend');
         const hasMich = s.includes('mich');
         return hasSister && hasCall && hasTime && hasMich;
     }
