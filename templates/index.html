@@ -374,13 +374,13 @@
     <!-- ========================================================= -->
     <!-- JAVASCRIPT XỬ LÝ TƯƠNG TÁC, PHÁT ÂM & KẾT NỐI API PYTHON   -->
     <!-- ========================================================= -->
-    <script src="/static/js/audio_tts.js?v=20261114_v7"></script>
-    <script src="/static/js/number_trainer.js?v=20261114_v7"></script>
-    <script src="/static/js/city_map_svg.js?v=20261114_v7"></script>
-    <script src="/static/js/perfekt_svg.js?v=20261114_v7"></script>
-    <script src="/static/js/verbs_db.js?v=20261114_v7"></script>
-    <script src="/static/js/lexikon_db.js?v=20261114_v7"></script>
-    <script src="/static/js/arena_engine.js?v=20261114_v7"></script>
+    <script src="/static/js/audio_tts.js?v=20261114_v8"></script>
+    <script src="/static/js/number_trainer.js?v=20261114_v8"></script>
+    <script src="/static/js/city_map_svg.js?v=20261114_v8"></script>
+    <script src="/static/js/perfekt_svg.js?v=20261114_v8"></script>
+    <script src="/static/js/verbs_db.js?v=20261114_v8"></script>
+    <script src="/static/js/lexikon_db.js?v=20261114_v8"></script>
+    <script src="/static/js/arena_engine.js?v=20261114_v8"></script>
     <script>
         const LEVEL_META = {
             "A1": {
@@ -548,13 +548,13 @@
             }
         }
 
-        const CURRENT_SESSION_VERSION = '20261114_v7';
+        const CURRENT_SESSION_VERSION = '20261114_v8';
 
-        // Tự động xóa phiên làm bài cũ bị lỗi cấu hình đáp án cứng nhắc, nối ô, điền tạo câu hoặc dịch câu Bài 9
+        // Tự động xóa phiên làm bài cũ bị lỗi cấu hình đáp án cứng nhắc, nối ô hoặc điền tạo câu của Bài 9
         try {
             ['dm_active_practice_session_guest_23', 'dm_active_practice_session_1_23'].forEach(k => {
                 const r = localStorage.getItem(k);
-                if (r && (!r.includes('cuộc tham quan') || !r.includes('quốc gia du lịch') || r.includes('Nối các cặp hoàn chỉnh') || !r.includes('Wir haben im Urlaub viele schöne Fotos') || r.includes('tiền tố') || !r.includes('Hôm qua tôi đã tham quan viện bảo tàng') || !r.includes('Letzten Sommer bin ich nach Berlin gereist') || !r.includes('"version":"20261114_v7"'))) {
+                if (r && (!r.includes('cuộc tham quan') || !r.includes('quốc gia du lịch') || r.includes('Nối các cặp hoàn chỉnh') || !r.includes('Wir haben im Urlaub viele schöne Fotos') || r.includes('tiền tố') || !r.includes('Hôm qua tôi đã tham quan viện bảo tàng') || !r.includes('Letzten Sommer bin ich nach Berlin gereist') || !r.includes('"version":"20261114_v8"'))) {
                     localStorage.removeItem(k);
                 }
             });
@@ -1827,7 +1827,6 @@
                                     <div class="p-2 rounded-xl bg-white border border-amber-200 flex items-center justify-between gap-2 text-xs">
                                         <div>
                                             <span class="font-black text-slate-900">${itIdx + 1}. ${item.verb}</span>
-                                            <span class="text-slate-500 text-[11px]">(${item.meaning_vi})</span>
                                         </div>
                                         <div class="flex gap-1">
                                             <button type="button" onclick="setHabenSeinChoice(${i}, ${itIdx}, 'haben')" id="hs-btn-${i}-${itIdx}-haben" class="px-2.5 py-1 rounded-lg bg-slate-100 hover:bg-emerald-100 border border-slate-200 text-slate-700 font-bold text-xs cursor-pointer transition">
@@ -2270,12 +2269,18 @@
 
         function formatExerciseTranslation(translation, ex) {
             const isNoiO = Boolean(ex && ex.exercise_type === 'noi_o');
+            const isLesson8 = Boolean(
+                (ex && ex.lesson_id === 22) ||
+                (typeof currentLesson !== 'undefined' && currentLesson && (
+                    currentLesson.id === 22 || /bài 8\b/i.test(currentLesson.title || '')
+                ))
+            );
             const isDichVD = Boolean(ex && (
                 ex.exercise_type === 'dich_cau_vd' || 
                 ex.exercise_type === 'dich_nghia_vd' ||
                 (ex.question && /(?:sang tiếng đức|việt\s*→\s*đức)/i.test(ex.question)) ||
-                (ex.question && /câu\s+(8[7-9]|9[0-3])\b/i.test(ex.question))
-            ));
+                (isLesson8 && ex.question && /câu\s+(8[7-9]|9[0-3])\b/i.test(ex.question))
+            ) && ex.exercise_type !== 'chon_haben_sein' && ex.exercise_type !== 'tim_loi_sai');
 
             if (isDichVD) {
                 const sampleAns = (ex && ex.correct_answer) ? String(ex.correct_answer).trim() : (translation ? translation.trim() : '');
