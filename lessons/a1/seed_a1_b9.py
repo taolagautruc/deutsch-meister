@@ -2355,7 +2355,7 @@ def seed_lesson_9():
                                     "habe besichtigt",
                                     "habe, besichtigt"
                             ],
-                            "translation": "Điền 2 từ để hoàn thành câu: „Hôm qua tôi đã tham quan viện bảo tàng và chụp ảnh."
+                            "translation": "Hôm qua tôi đã tham quan viện bảo tàng và chụp ảnh."
                     }
             },
             {
@@ -2378,7 +2378,7 @@ def seed_lesson_9():
                                     "sind gefahren",
                                     "sind, gefahren"
                             ],
-                            "translation": "Điền 2 từ để hoàn thành câu: „Chúng tôi đã đi bằng tàu hỏa đến Hamburg."
+                            "translation": "Chúng tôi đã đi bằng tàu hỏa đến Hamburg."
                     }
             },
             {
@@ -2401,7 +2401,7 @@ def seed_lesson_9():
                                     "ist geblieben",
                                     "ist, geblieben"
                             ],
-                            "translation": "Điền 2 từ để hoàn thành câu: „Linh đã ở lại Hội An hai tuần."
+                            "translation": "Linh đã ở lại Hội An hai tuần."
                     }
             },
             {
@@ -2424,7 +2424,7 @@ def seed_lesson_9():
                                     "habt geschlafen",
                                     "habt, geschlafen"
                             ],
-                            "translation": "Điền 2 từ để hoàn thành câu hỏi: „Các bạn đã ngủ ngon chứ?"
+                            "translation": "Các bạn đã ngủ ngon chứ?"
                     }
             },
             {
@@ -2447,7 +2447,7 @@ def seed_lesson_9():
                                     "gebucht bezahlt",
                                     "gebucht, bezahlt"
                             ],
-                            "translation": "Điền 2 Partizip II để hoàn thành câu: „Tôi đã đặt phòng và đã trả tiền."
+                            "translation": "Tôi đã đặt phòng và đã trả tiền."
                     }
             },
             {
@@ -2470,7 +2470,7 @@ def seed_lesson_9():
                                     "war waren",
                                     "war, waren"
                             ],
-                            "translation": "Điền 2 dạng Präteritum của 'sein' để hoàn thành câu: „Hôm qua thời tiết rất tốt, và chúng tôi đã ở bãi biển."
+                            "translation": "Hôm qua thời tiết rất tốt, và chúng tôi đã ở bãi biển."
                     }
             },
             {
@@ -2493,7 +2493,7 @@ def seed_lesson_9():
                                     "hat gepackt",
                                     "hat, gepackt"
                             ],
-                            "translation": "Điền 2 từ để hoàn thành câu: „Anna đã đóng vali của mình rồi sau đó đã đi đến nhà ga."
+                            "translation": "Anna đã đóng vali của mình rồi sau đó đã đi đến nhà ga."
                     }
             },
             {
@@ -2516,7 +2516,7 @@ def seed_lesson_9():
                                     "haben getroffen",
                                     "haben, getroffen"
                             ],
-                            "translation": "Điền 2 từ để hoàn thành câu: „Họ đã gặp những người bạn mới và đã nói chuyện nhiều."
+                            "translation": "Họ đã gặp những người bạn mới và đã nói chuyện nhiều."
                     }
             },
             {

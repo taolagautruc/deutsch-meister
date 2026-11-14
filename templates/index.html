@@ -374,13 +374,13 @@
     <!-- ========================================================= -->
     <!-- JAVASCRIPT XỬ LÝ TƯƠNG TÁC, PHÁT ÂM & KẾT NỐI API PYTHON   -->
     <!-- ========================================================= -->
-    <script src="/static/js/audio_tts.js?v=20261114_v4"></script>
-    <script src="/static/js/number_trainer.js?v=20261114_v4"></script>
-    <script src="/static/js/city_map_svg.js?v=20261114_v4"></script>
-    <script src="/static/js/perfekt_svg.js?v=20261114_v4"></script>
-    <script src="/static/js/verbs_db.js?v=20261114_v4"></script>
-    <script src="/static/js/lexikon_db.js?v=20261114_v4"></script>
-    <script src="/static/js/arena_engine.js?v=20261114_v4"></script>
+    <script src="/static/js/audio_tts.js?v=20261114_v5"></script>
+    <script src="/static/js/number_trainer.js?v=20261114_v5"></script>
+    <script src="/static/js/city_map_svg.js?v=20261114_v5"></script>
+    <script src="/static/js/perfekt_svg.js?v=20261114_v5"></script>
+    <script src="/static/js/verbs_db.js?v=20261114_v5"></script>
+    <script src="/static/js/lexikon_db.js?v=20261114_v5"></script>
+    <script src="/static/js/arena_engine.js?v=20261114_v5"></script>
     <script>
         const LEVEL_META = {
             "A1": {
@@ -548,13 +548,13 @@
             }
         }
 
-        const CURRENT_SESSION_VERSION = '20261114_v4';
+        const CURRENT_SESSION_VERSION = '20261114_v5';
 
-        // Tự động xóa phiên làm bài cũ bị lỗi cấu hình đáp án cứng nhắc hoặc nối ô của Bài 9
+        // Tự động xóa phiên làm bài cũ bị lỗi cấu hình đáp án cứng nhắc, nối ô hoặc điền tạo câu của Bài 9
         try {
             ['dm_active_practice_session_guest_23', 'dm_active_practice_session_1_23'].forEach(k => {
                 const r = localStorage.getItem(k);
-                if (r && (!r.includes('cuộc tham quan') || !r.includes('quốc gia du lịch') || r.includes('Nối các cặp hoàn chỉnh') || !r.includes('Wir haben im Urlaub viele schöne Fotos'))) {
+                if (r && (!r.includes('cuộc tham quan') || !r.includes('quốc gia du lịch') || r.includes('Nối các cặp hoàn chỉnh') || !r.includes('Wir haben im Urlaub viele schöne Fotos') || r.includes('tiền tố') || !r.includes('Hôm qua tôi đã tham quan viện bảo tàng'))) {
                     localStorage.removeItem(k);
                 }
             });
@@ -1287,8 +1287,8 @@
             }
             if (activeSession && (lId === 23 || (currentLesson && currentLesson.title && /bài 9\b/i.test(currentLesson.title)))) {
                 const hasOutdatedL9 = (activeSession.version !== CURRENT_SESSION_VERSION) || (activeSession.allRenderExercises || []).some(ex => 
-                    (ex.question && (ex.question.includes('Câu 37') || ex.question.includes('Câu 40') || ex.question.includes('Câu 43') || ex.question.includes('Câu 45') || ex.question.includes('Câu 50'))) &&
-                    (!ex.extra_data || JSON.stringify(ex.extra_data).includes('Nối các cặp hoàn chỉnh') || !JSON.stringify(ex.extra_data).includes('cuộc tham quan') || !JSON.stringify(ex.extra_data).includes('Wir haben im Urlaub viele schöne Fotos'))
+                    (ex.question && (ex.question.includes('Câu 37') || ex.question.includes('Câu 40') || ex.question.includes('Câu 43') || ex.question.includes('Câu 45') || ex.question.includes('Câu 50') || ex.question.includes('Câu 51') || ex.question.includes('Câu 55') || ex.question.includes('Câu 58'))) &&
+                    (!ex.extra_data || JSON.stringify(ex.extra_data).includes('Nối các cặp hoàn chỉnh') || !JSON.stringify(ex.extra_data).includes('cuộc tham quan') || !JSON.stringify(ex.extra_data).includes('Wir haben im Urlaub viele schöne Fotos') || JSON.stringify(ex.extra_data).includes('tiền tố') || !JSON.stringify(ex.extra_data).includes('Hôm qua tôi đã tham quan viện bảo tàng'))
                 );
                 if (hasOutdatedL9) {
                     clearActiveLessonSession(lId);
@@ -2240,7 +2240,7 @@
                 const matchParen = ex.explanation.match(/['"„][^'"”]+['"”]\s*\(([^()]+)\)/);
                 if (matchParen && hasVietnameseChars(matchParen[1]) && !isInvalidTranslationString(matchParen[1])) {
                     const parenText = matchParen[1].trim();
-                    if (!/^(chú ý|lưu ý|ngôi|dạng|tương đương)/i.test(parenText)) {
+                    if (!/^(chú ý|lưu ý|ngôi|dạng|tương đương|tiền tố|hậu tố|gốc|họ|chúng tôi|bạn|tôi|nó|số ít|số nhiều)/i.test(parenText) && !/số\s+(ít|nhiều)/i.test(parenText)) {
                         return parenText;
                     }
                 }

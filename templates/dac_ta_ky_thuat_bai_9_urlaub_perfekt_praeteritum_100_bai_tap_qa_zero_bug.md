@@ -938,34 +938,42 @@ Toàn bộ **100 câu hỏi** dưới đây là **câu mới sáng tác**, chỉ
 51. **Câu 51**: Điền 2 từ để hoàn thành câu: *„Hôm qua tôi đã tham quan viện bảo tàng và chụp ảnh.“*
     * Khung câu hiển thị: `Gestern [1] ich das Museum [2] und Fotos gemacht.`
     * Đáp án từng ô: Ô 1 = `["habe"]`, Ô 2 = `["besichtigt"]`.
+    * Dịch nghĩa: Hôm qua tôi đã tham quan viện bảo tàng và chụp ảnh.
     * Giải thích: `ich` → `habe`; `besichtigen` (tiền tố `be-`) → **`besichtigt`**.
 52. **Câu 52**: Điền 2 từ để hoàn thành câu: *„Chúng tôi đã đi bằng tàu hỏa đến Hamburg.“*
     * Khung câu hiển thị: `Wir [1] mit dem Zug nach Hamburg [2].`
     * Đáp án từng ô: Ô 1 = `["sind"]`, Ô 2 = `["gefahren"]`.
+    * Dịch nghĩa: Chúng tôi đã đi bằng tàu hỏa đến Hamburg.
     * Giải thích: `fahren` chuyển động → `sein`; `wir` → **`sind`**; Partizip II **`gefahren`**.
 53. **Câu 53**: Điền 2 từ để hoàn thành câu: *„Linh đã ở lại Hội An hai tuần.“*
     * Khung câu hiển thị: `Linh [1] zwei Wochen in Hội An [2].`
     * Đáp án từng ô: Ô 1 = `["ist"]`, Ô 2 = `["geblieben"]`.
+    * Dịch nghĩa: Linh đã ở lại Hội An hai tuần.
     * Giải thích: `bleiben` luôn dùng `sein`; `Linh` = `sie` → **`ist`**; Partizip II **`geblieben`**.
 54. **Câu 54**: Điền 2 từ để hoàn thành câu hỏi: *„Các bạn đã ngủ ngon chứ?“*
     * Khung câu hiển thị: `[1] ihr gut [2]?`
     * Đáp án từng ô: Ô 1 = `["habt"]`, Ô 2 = `["geschlafen"]`.
+    * Dịch nghĩa: Các bạn đã ngủ ngon chứ?
     * Giải thích: Câu hỏi Ja/Nein bắt đầu bằng trợ động từ; `ihr` → **`habt`**; `schlafen` → **`geschlafen`**.
 55. **Câu 55**: Điền 2 Partizip II để hoàn thành câu: *„Tôi đã đặt phòng và đã trả tiền.“*
     * Khung câu hiển thị: `Ich habe das Zimmer [1] und [2].`
     * Đáp án từng ô: Ô 1 = `["gebucht"]`, Ô 2 = `["bezahlt"]`.
+    * Dịch nghĩa: Tôi đã đặt phòng và đã trả tiền.
     * Giải thích: `buchen` → **`gebucht`**; `bezahlen` (tiền tố `be-`) → **`bezahlt`**.
 56. **Câu 56**: Điền 2 dạng Präteritum của `sein` để hoàn thành câu: *„Hôm qua thời tiết rất tốt, và chúng tôi đã ở bãi biển.“*
     * Khung câu hiển thị: `Das Wetter [1] gestern sehr gut, und wir [2] am Strand.`
     * Đáp án từng ô: Ô 1 = `["war"]`, Ô 2 = `["waren"]`.
+    * Dịch nghĩa: Hôm qua thời tiết rất tốt, và chúng tôi đã ở bãi biển.
     * Giải thích: `das Wetter` = `es` → **`war`**; `wir` → **`waren`**.
 57. **Câu 57**: Điền 2 từ để hoàn thành câu: *„Anna đã đóng vali của mình rồi sau đó đã đi đến nhà ga.“*
     * Khung câu hiển thị: `Anna [1] ihren Koffer [2] und ist dann zum Bahnhof gegangen.`
     * Đáp án từng ô: Ô 1 = `["hat"]`, Ô 2 = `["gepackt"]`.
+    * Dịch nghĩa: Anna đã đóng vali của mình rồi sau đó đã đi đến nhà ga.
     * Giải thích: `packen` có tân ngữ `den Koffer` → `haben`; `Anna` = `sie` → **`hat`**; Partizip II **`gepackt`**.
 58. **Câu 58**: Điền 2 từ để hoàn thành câu: *„Họ đã gặp những người bạn mới và đã nói chuyện nhiều.“*
     * Khung câu hiển thị: `Sie [1] neue Freunde [2] und viel gesprochen.` *(Sie = họ)*
     * Đáp án từng ô: Ô 1 = `["haben"]`, Ô 2 = `["getroffen"]`.
+    * Dịch nghĩa: Họ đã gặp những người bạn mới và đã nói chuyện nhiều.
     * Giải thích: `sie` (họ, số nhiều) → **`haben`**; `treffen` bất quy tắc → **`getroffen`**.
 
 ---
