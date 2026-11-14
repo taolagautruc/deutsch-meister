@@ -1219,28 +1219,28 @@ Mỗi câu có **đúng 1 lỗi**. Người học gõ lại **cả câu đúng**
 #### NHÓM 14: 🆕 ĐỌC HIỂU ĐÚNG / SAI — RICHTIG / FALSCH (`dung_sai` — 4 Câu: Câu 97 → Câu 100)
 **Đoạn văn A** *(dùng cho Câu 97 và 98, kèm `visual: route_donau` tô sáng Passau → Linz → Wien)*:
 > *„Familie Weber hat im August eine Radtour an der Donau gemacht. Sie sind von Passau nach Wien gefahren. Das Wetter war meistens sonnig, aber in Linz hat es zwei Tage geregnet. Sie haben dort in einer Pension übernachtet und ein Museum besucht. In Wien haben sie das Rathaus fotografiert. Am Ende sind sie mit dem Zug nach Hause gefahren.“*
-> **Dịch**: *„Gia đình Weber đã đi một chuyến đạp xe dọc sông Donau vào tháng Tám. Họ đã đi từ Passau đến Wien. Thời tiết phần lớn là nắng, nhưng ở Linz trời đã mưa hai ngày. Họ đã ngủ lại ở đó trong một nhà nghỉ và thăm một bảo tàng. Ở Wien họ đã chụp ảnh tòa thị chính. Cuối cùng họ đã đi tàu hỏa về nhà.“*
+> **Dịch**: *„Gia đình Weber đã thực hiện một chuyến đạp xe dọc sông Donau vào tháng Tám. Họ đã đi từ Passau đến Wien. Thời tiết phần lớn là nắng, nhưng ở Linz trời đã mưa hai ngày. Họ đã ngủ lại ở đó trong một nhà nghỉ nhỏ và thăm một bảo tàng. Ở Wien họ đã chụp ảnh tòa thị chính. Cuối cùng họ đã đi tàu hỏa về nhà.“*
 
 97. **Câu 97**: Mệnh đề: *„Familie Weber ist mit dem Auto nach Wien gefahren.“*
     * Đáp án: **Falsch (Sai)**
-    * Dịch nghĩa mệnh đề: *„Gia đình Weber đã đi Wien bằng ô tô.“*
-    * Giải thích: Trong đoạn văn: *„Familie Weber hat … eine Radtour an der Donau gemacht.“* — họ đi **bằng xe đạp** (`Radtour`), không đi ô tô.
+    * Dịch nghĩa: *Gia đình Weber đã thực hiện một chuyến đạp xe dọc sông Donau vào tháng Tám. Họ đã đi từ Passau đến Wien. Thời tiết phần lớn là nắng, nhưng ở Linz trời đã mưa hai ngày. Họ đã ngủ lại ở đó trong một nhà nghỉ nhỏ và thăm một bảo tàng. Ở Wien họ đã chụp ảnh tòa thị chính. Cuối cùng họ đã đi tàu hỏa về nhà.*
+    * Giải thích: Mệnh đề câu hỏi: „Familie Weber ist mit dem Auto nach Wien gefahren.“ (Gia đình Weber đã đi đến Wien bằng ô tô) -> SAI (Falsch). Vì gia đình Weber đi du lịch dọc sông Donau bằng xe đạp chứ không đi bằng ô tô. Dẫn chứng trong đoạn văn: „Familie Weber hat im August eine Radtour an der Donau gemacht. Sie sind von Passau nach Wien gefahren.“ (Gia đình Weber đã thực hiện một chuyến đạp xe dọc sông Donau vào tháng Tám. Họ đã đi từ Passau đến Wien).
 98. **Câu 98**: Mệnh đề: *„In Linz hat es geregnet.“*
     * Đáp án: **Richtig (Đúng)**
-    * Dịch nghĩa mệnh đề: *„Ở Linz trời đã mưa.“*
-    * Giải thích: Đoạn văn viết *„… aber in Linz hat es zwei Tage geregnet.“*
+    * Dịch nghĩa: *Gia đình Weber đã thực hiện một chuyến đạp xe dọc sông Donau vào tháng Tám. Họ đã đi từ Passau đến Wien. Thời tiết phần lớn là nắng, nhưng ở Linz trời đã mưa hai ngày. Họ đã ngủ lại ở đó trong một nhà nghỉ nhỏ và thăm một bảo tàng. Ở Wien họ đã chụp ảnh tòa thị chính. Cuối cùng họ đã đi tàu hỏa về nhà.*
+    * Giải thích: Mệnh đề câu hỏi: „In Linz hat es geregnet.“ (Ở Linz trời đã mưa) -> ĐÚNG (Richtig). Vì mặc dù thời tiết phần lớn có nắng nhưng khi đến Linz thì trời đã mưa 2 ngày. Dẫn chứng trong đoạn văn: „Das Wetter war meistens sonnig, aber in Linz hat es zwei Tage geregnet.“ (Thời tiết phần lớn là nắng, nhưng ở Linz trời đã mưa hai ngày).
 
 **Đoạn văn B** *(dùng cho Câu 99 và 100)*:
-> *„Hallo Tom, ich bin wieder zu Hause. Der Urlaub in Spanien war super! Wir waren eine Woche in Barcelona. Das Hotel war klein, aber sehr sauber. Wir haben viel gegessen, getanzt und am Strand gelegen. Nur das Essen war manchmal zu scharf.“*
-> **Dịch**: *„Chào Tom, mình đã về nhà rồi. Kỳ nghỉ ở Tây Ban Nha thật tuyệt! Chúng mình đã ở Barcelona một tuần. Khách sạn nhỏ nhưng rất sạch. Chúng mình đã ăn nhiều, đã nhảy và đã nằm ở bãi biển. Chỉ có đồ ăn đôi khi quá cay.“*
+> *„Lukas und Sophie waren letzten Sommer auf der Insel Rügen an der Ostsee. Sie haben zwei Wochen auf einem Campingplatz gezeltet. Sie sind jeden Tag im Meer geschwommen und haben am Strand Volleyball gespielt. Lukas hat viele Fotos vom Sonnenuntergang gemacht. Das Essen im Restaurant war sehr lecker, aber die Rechnung war teuer. Trotzdem hatten sie viel Spaß.“*
+> **Dịch**: *„Mùa hè năm ngoái Lukas và Sophie đã ở trên đảo Rügen bên bờ biển Baltic. Họ đã cắm trại hai tuần trên một khu cắm trại. Mỗi ngày họ đều bơi ở biển và chơi bóng chuyền ở bãi biển. Lukas đã chụp nhiều ảnh hoàng hôn. Đồ ăn ở nhà hàng rất ngon, nhưng hóa đơn thì đắt. Dù vậy họ đã có rất nhiều niềm vui.“*
 
-99. **Câu 99**: Mệnh đề: *„Sie waren zwei Wochen in Barcelona.“*
+99. **Câu 99**: Mệnh đề: *„Lukas und Sophie haben zwei Wochen in einem Hotel auf der Insel Rügen übernachtet.“*
     * Đáp án: **Falsch (Sai)**
-    * Dịch nghĩa mệnh đề: *„Họ đã ở Barcelona hai tuần.“*
-    * Giải thích: Đoạn văn viết *„Wir waren eine Woche in Barcelona.“* — chỉ **một tuần**.
-100. **Câu 100**: Mệnh đề: *„Sie haben viel gegessen und getanzt.“*
+    * Dịch nghĩa: *Mùa hè năm ngoái Lukas và Sophie đã ở trên đảo Rügen bên bờ biển Baltic. Họ đã cắm trại hai tuần trên một khu cắm trại. Mỗi ngày họ đều bơi ở biển và chơi bóng chuyền ở bãi biển. Lukas đã chụp nhiều ảnh hoàng hôn. Đồ ăn ở nhà hàng rất ngon, nhưng hóa đơn thì đắt. Dù vậy họ đã có rất nhiều niềm vui.*
+    * Giải thích: Mệnh đề câu hỏi: „Lukas und Sophie haben zwei Wochen in einem Hotel auf der Insel Rügen übernachtet.“ (Lukas và Sophie đã ngủ qua đêm hai tuần trong một khách sạn trên đảo Rügen) -> SAI (Falsch). Vì họ đã ngủ lều tại một khu cắm trại suốt 2 tuần chứ không ở trong khách sạn. Dẫn chứng trong đoạn văn: „Sie haben zwei Wochen auf einem Campingplatz gezeltet.“ (Họ đã cắm trại hai tuần trên một khu cắm trại).
+100. **Câu 100**: Mệnh đề: *„Sie haben am Strand Volleyball gespielt und das Essen im Restaurant war sehr gut.“*
      * Đáp án: **Richtig (Đúng)**
-     * Dịch nghĩa mệnh đề: *„Họ đã ăn nhiều và đã nhảy.“*
-     * Giải thích: Đoạn văn viết *„Wir haben viel gegessen, getanzt und am Strand gelegen.“*
+     * Dịch nghĩa: *Mùa hè năm ngoái Lukas và Sophie đã ở trên đảo Rügen bên bờ biển Baltic. Họ đã cắm trại hai tuần trên một khu cắm trại. Mỗi ngày họ đều bơi ở biển và chơi bóng chuyền ở bãi biển. Lukas đã chụp nhiều ảnh hoàng hôn. Đồ ăn ở nhà hàng rất ngon, nhưng hóa đơn thì đắt. Dù vậy họ đã có rất nhiều niềm vui.*
+     * Giải thích: Mệnh đề câu hỏi: „Sie haben am Strand Volleyball gespielt und das Essen im Restaurant war sehr gut.“ (Họ đã chơi bóng chuyền ở bãi biển và đồ ăn trong nhà hàng rất ngon) -> ĐÚNG (Richtig). Vì cả hai thông tin hoạt động trên bãi biển và chất lượng đồ ăn đều khớp với bài đọc ('sehr lecker' đồng nghĩa với 'sehr gut'). Dẫn chứng trong đoạn văn: „Sie sind jeden Tag im Meer geschwommen und haben am Strand Volleyball gespielt... Das Essen im Restaurant war sehr lecker, aber die Rechnung war teuer.“ (Mỗi ngày họ đều bơi ở biển và chơi bóng chuyền ở bãi biển... Đồ ăn ở nhà hàng rất ngon, nhưng hóa đơn thì đắt).
 
 ---
