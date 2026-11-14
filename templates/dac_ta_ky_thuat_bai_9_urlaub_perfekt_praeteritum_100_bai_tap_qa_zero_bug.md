@@ -980,53 +980,61 @@ Toàn bộ **100 câu hỏi** dưới đây là **câu mới sáng tác**, chỉ
 
 #### NHÓM 7: NGHE GIỌNG BẢN XỨ `de-DE` VÀ ĐIỀN TỪ (`nghe_dien` — 8 Câu: Câu 59 → Câu 66)
 59. **Câu 59**:
+    * Tiêu đề: *Câu 59: Nghe phát âm câu tiếng Đức và điền từ còn thiếu vào chỗ trống:*
     * `audio_text`: *"Meine Eltern sind letzte Woche nach Italien geflogen."*
     * `display_sentence`: *"Meine Eltern sind letzte Woche nach Italien ___."*
     * `hint_vi`: *"Bố mẹ tôi đã bay đến Ý vào tuần trước."*
     * `accepted_answers`: `["geflogen"]`
-    * Giải thích: `fliegen → ist geflogen`.
+    * Giải thích: Động từ 'fliegen' (bay) chỉ sự di chuyển thay đổi vị trí nên đi với trợ động từ 'sein' (sind) và thuộc nhóm bất quy tắc (đổi nguyên âm 'ie' -> 'o', thêm đuôi '-en'): fliegen -> ist/sind geflogen.
 60. **Câu 60**:
+    * Tiêu đề: *Câu 60: Nghe phát âm câu tiếng Đức và điền từ còn thiếu vào chỗ trống:*
     * `audio_text`: *"Im Sommer haben wir zwei Nächte am See gezeltet."*
     * `display_sentence`: *"Im Sommer haben wir zwei Nächte am See ___."*
     * `hint_vi`: *"Vào mùa hè chúng tôi đã cắm trại hai đêm bên hồ."*
     * `accepted_answers`: `["gezeltet"]`
-    * Giải thích: Gốc `zelt` kết thúc `-t` → **`gezeltet`**.
+    * Giải thích: Động từ 'zelten' (cắm trại) chỉ hoạt động tại chỗ nên đi với 'haben' và có gốc 'zelt-' kết thúc bằng phụ âm '-t', khi tạo Partizip II phải đệm thêm '-e-' trước '-t': ge + zelt + et = gezeltet.
 61. **Câu 61**:
+    * Tiêu đề: *Câu 61: Nghe phát âm câu tiếng Đức và điền từ còn thiếu vào chỗ trống:*
     * `audio_text`: *"Ich habe das Hotel im Internet gebucht."*
     * `display_sentence`: *"Ich habe das Hotel im Internet ___."*
     * `hint_vi`: *"Tôi đã đặt khách sạn trên mạng."*
     * `accepted_answers`: `["gebucht"]`
-    * Giải thích: `buchen → gebucht`.
+    * Giải thích: Động từ 'buchen' (đặt chỗ) có tân ngữ trực tiếp (das Hotel) nên đi với 'haben' và chia theo quy tắc chuẩn (Nhóm 1: ge- + gốc + -t): ge + buch + t = gebucht.
 62. **Câu 62**:
+    * Tiêu đề: *Câu 62: Nghe phát âm câu tiếng Đức và điền từ còn thiếu vào chỗ trống:*
     * `audio_text`: *"Der Bus ist um neun Uhr abgefahren."*
     * `display_sentence`: *"Der Bus ist um neun Uhr ___."*
     * `hint_vi`: *"Chiếc xe buýt đã khởi hành lúc chín giờ."*
     * `accepted_answers`: `["abgefahren"]`
-    * Giải thích: `abfahren` (tách) → `ab` + `ge` + `fahren` = **`abgefahren`**, dùng `sein`.
+    * Giải thích: Động từ tách 'abfahren' (khởi hành) chỉ sự di chuyển nên đi với 'sein' (ist); khi tạo Partizip II, '-ge-' chèn vào giữa tiền tố 'ab-' và gốc bất quy tắc 'fahren': ab + ge + fahren = abgefahren.
 63. **Câu 63**:
+    * Tiêu đề: *Câu 63: Nghe phát âm câu tiếng Đức và điền từ còn thiếu vào chỗ trống:*
     * `audio_text`: *"Wo wart ihr im Sommer? Wir waren in den Alpen."*
     * `display_sentence`: *"Wo ___ ihr im Sommer? Wir waren in den Alpen."*
     * `hint_vi`: *"Vào mùa hè các bạn đã ở đâu? Chúng tôi đã ở dãy Alps."*
     * `accepted_answers`: `["wart"]`
-    * Giải thích: `ihr` + Präteritum của `sein` = **`wart`**.
+    * Giải thích: Khi hỏi và kể về địa điểm trong quá khứ với động từ 'sein', người Đức ưu tiên dùng thì Präteritum (gốc 'war-'): chủ ngữ ngôi thứ hai số nhiều 'ihr' (các bạn) nhận đuôi '-t' -> 'Wo wart ihr?'.
 64. **Câu 64**:
+    * Tiêu đề: *Câu 64: Nghe phát âm câu tiếng Đức và điền từ còn thiếu vào chỗ trống:*
     * `audio_text`: *"Am Abend haben wir die Nudelsuppe probiert."*
     * `display_sentence`: *"Am Abend haben wir die Nudelsuppe ___."*
     * `hint_vi`: *"Buổi tối chúng tôi đã thử món súp mì."*
     * `accepted_answers`: `["probiert"]`
-    * Giải thích: Đuôi `-ieren` → không `ge-`: **`probiert`**.
+    * Giải thích: Động từ 'probieren' (nếm thử) tận cùng bằng đuôi ngoại lai '-ieren' (Nhóm 3) nên khi tạo Partizip II tuyệt đối KHÔNG thêm tiền tố 'ge-', chỉ đổi đuôi thành '-iert': probieren -> probiert.
 65. **Câu 65**:
+    * Tiêu đề: *Câu 65: Nghe phát âm câu tiếng Đức và điền từ còn thiếu vào chỗ trống:*
     * `audio_text`: *"Was ist denn passiert? Mein Koffer ist nicht angekommen!"*
     * `display_sentence`: *"Was ist denn ___? Mein Koffer ist nicht angekommen!"*
     * `hint_vi`: *"Chuyện gì đã xảy ra vậy? Vali của tôi đã không đến nơi!"*
     * `accepted_answers`: `["passiert"]`
-    * Giải thích: `passieren` đuôi `-ieren` → **`passiert`** (dùng `sein`: `ist passiert`).
+    * Giải thích: Động từ 'passieren' (xảy ra) vừa tận cùng bằng đuôi '-ieren' (không có 'ge-' -> 'passiert'), vừa thuộc nhóm động từ đặc biệt bắt buộc đi với trợ động từ 'sein' ('Was ist passiert?').
 66. **Câu 66**:
+    * Tiêu đề: *Câu 66: Nghe phát âm câu tiếng Đức và điền từ còn thiếu vào chỗ trống:*
     * `audio_text`: *"Nach dem Frühstück haben wir den Reiseführer gelesen."*
     * `display_sentence`: *"Nach dem Frühstück haben wir den Reiseführer ___."*
     * `hint_vi`: *"Sau bữa sáng chúng tôi đã đọc cuốn sách hướng dẫn du lịch."*
     * `accepted_answers`: `["gelesen"]`
-    * Giải thích: `lesen` bất quy tắc: **`gelesen`**.
+    * Giải thích: Động từ 'lesen' (đọc) có tân ngữ trực tiếp (den Reiseführer - Cách 4 Akkusativ) nên đi với 'haben' và thuộc nhóm bất quy tắc giữ nguyên nguyên âm gốc 'e' + đuôi '-en': lesen -> hat gelesen.
 
 ---
 
