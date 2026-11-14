@@ -374,13 +374,13 @@
     <!-- ========================================================= -->
     <!-- JAVASCRIPT XỬ LÝ TƯƠNG TÁC, PHÁT ÂM & KẾT NỐI API PYTHON   -->
     <!-- ========================================================= -->
-    <script src="/static/js/audio_tts.js?v=20261114_v9"></script>
-    <script src="/static/js/number_trainer.js?v=20261114_v9"></script>
-    <script src="/static/js/city_map_svg.js?v=20261114_v9"></script>
-    <script src="/static/js/perfekt_svg.js?v=20261114_v9"></script>
-    <script src="/static/js/verbs_db.js?v=20261114_v9"></script>
-    <script src="/static/js/lexikon_db.js?v=20261114_v9"></script>
-    <script src="/static/js/arena_engine.js?v=20261114_v9"></script>
+    <script src="/static/js/audio_tts.js?v=20261114_v10"></script>
+    <script src="/static/js/number_trainer.js?v=20261114_v10"></script>
+    <script src="/static/js/city_map_svg.js?v=20261114_v10"></script>
+    <script src="/static/js/perfekt_svg.js?v=20261114_v10"></script>
+    <script src="/static/js/verbs_db.js?v=20261114_v10"></script>
+    <script src="/static/js/lexikon_db.js?v=20261114_v10"></script>
+    <script src="/static/js/arena_engine.js?v=20261114_v10"></script>
     <script>
         const LEVEL_META = {
             "A1": {
@@ -548,13 +548,13 @@
             }
         }
 
-        const CURRENT_SESSION_VERSION = '20261114_v9';
+        const CURRENT_SESSION_VERSION = '20261114_v10';
 
-        // Tự động xóa phiên làm bài cũ bị lỗi cấu hình đáp án cứng nhắc, nối ô hoặc điền tạo câu của Bài 9
+        // Tự động xóa phiên làm bài cũ bị lỗi cấu hình đáp án cứng nhắc, nối ô, điền tạo câu hoặc đọc hiểu của Bài 9
         try {
             ['dm_active_practice_session_guest_23', 'dm_active_practice_session_1_23'].forEach(k => {
                 const r = localStorage.getItem(k);
-                if (r && (!r.includes('cuộc tham quan') || !r.includes('quốc gia du lịch') || r.includes('Nối các cặp hoàn chỉnh') || !r.includes('Wir haben im Urlaub viele schöne Fotos') || r.includes('tiền tố') || !r.includes('Hôm qua tôi đã tham quan viện bảo tàng') || !r.includes('Letzten Sommer bin ich nach Berlin gereist') || !r.includes('"version":"20261114_v9"'))) {
+                if (r && (!r.includes('cuộc tham quan') || !r.includes('quốc gia du lịch') || r.includes('Nối các cặp hoàn chỉnh') || !r.includes('Wir haben im Urlaub viele schöne Fotos') || r.includes('tiền tố') || !r.includes('Hôm qua tôi đã tham quan viện bảo tàng') || !r.includes('Letzten Sommer bin ich nach Berlin gereist') || r.includes('Barcelona') || !r.includes('"version":"20261114_v10"'))) {
                     localStorage.removeItem(k);
                 }
             });
@@ -1791,11 +1791,6 @@
                                 <span>📖 Đoạn văn đọc hiểu (Lesetext):</span>
                             </div>
                             <p class="font-medium italic text-slate-900 leading-relaxed">„${extra.reading_text}“</p>
-                            ${extra.reading_translation_vi ? `
-                                <div class="pt-2 border-t border-indigo-200/60 text-xs text-slate-600">
-                                    <span class="font-bold text-indigo-800">Dịch nghĩa:</span> ${extra.reading_translation_vi}
-                                </div>
-                            ` : ''}
                         </div>
                     `;
                 }
@@ -2169,6 +2164,17 @@
                     return trans;
                 }
                 return "";
+            }
+
+            // Đối với dạng bài đọc hiểu (dung_sai hoặc có reading_text):
+            // Hiển thị bản dịch tiếng Việt của toàn bộ đoạn văn đọc hiểu trong khung kết quả (sau khi làm bài)
+            if (ex && (ex.exercise_type === 'dung_sai' || (extra && extra.reading_text))) {
+                if (extra && extra.reading_translation_vi && typeof extra.reading_translation_vi === 'string' && extra.reading_translation_vi.trim()) {
+                    return extra.reading_translation_vi.trim();
+                }
+                if (extra && extra.translation && typeof extra.translation === 'string' && extra.translation.trim()) {
+                    return extra.translation.trim();
+                }
             }
 
             // Đối với dạng bài Dịch Việt -> Đức (V -> Đ):
@@ -3065,7 +3071,9 @@
                 generateNewCityMapData(ex, index + 1);
             }
             if (ex && ex.options && Array.isArray(ex.options) && ex.options.length > 1) {
-                ex.options = shuffleArray(ex.options);
+                if (ex.exercise_type !== 'dung_sai') {
+                    ex.options = shuffleArray(ex.options);
+                }
             }
             if (currentLesson && window.sessionPracticeAnswers && window.sessionPracticeAnswers[currentLesson.id]) {
                 window.sessionPracticeAnswers[currentLesson.id].delete(index);
