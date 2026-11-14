@@ -374,13 +374,13 @@
     <!-- ========================================================= -->
     <!-- JAVASCRIPT XỬ LÝ TƯƠNG TÁC, PHÁT ÂM & KẾT NỐI API PYTHON   -->
     <!-- ========================================================= -->
-    <script src="/static/js/audio_tts.js?v=20261114_v3"></script>
-    <script src="/static/js/number_trainer.js?v=20261114_v3"></script>
-    <script src="/static/js/city_map_svg.js?v=20261114_v3"></script>
-    <script src="/static/js/perfekt_svg.js?v=20261114_v3"></script>
-    <script src="/static/js/verbs_db.js?v=20261114_v3"></script>
-    <script src="/static/js/lexikon_db.js?v=20261114_v3"></script>
-    <script src="/static/js/arena_engine.js?v=20261114_v3"></script>
+    <script src="/static/js/audio_tts.js?v=20261114_v4"></script>
+    <script src="/static/js/number_trainer.js?v=20261114_v4"></script>
+    <script src="/static/js/city_map_svg.js?v=20261114_v4"></script>
+    <script src="/static/js/perfekt_svg.js?v=20261114_v4"></script>
+    <script src="/static/js/verbs_db.js?v=20261114_v4"></script>
+    <script src="/static/js/lexikon_db.js?v=20261114_v4"></script>
+    <script src="/static/js/arena_engine.js?v=20261114_v4"></script>
     <script>
         const LEVEL_META = {
             "A1": {
@@ -548,7 +548,7 @@
             }
         }
 
-        const CURRENT_SESSION_VERSION = '20261114_v3';
+        const CURRENT_SESSION_VERSION = '20261114_v4';
 
         // Tự động xóa phiên làm bài cũ bị lỗi cấu hình đáp án cứng nhắc hoặc nối ô của Bài 9
         try {
@@ -2154,13 +2154,23 @@
             const trimmed = str.trim();
             if (trimmed.length < 2) return true;
             // Loại bỏ các câu suy luận ngữ pháp hoặc chỉ thị làm bài / nội dung rác nối ô
-            if (/^(động từ|cụm từ|từ cần điền|đáp án|cần điền|chủ ngữ|ngôi\s+(thứ|\d|ich|du|er|sie|es|wir|ihr|man|số ít|số nhiều)|âm thanh phát|câu nghe được|điền|chọn|kết hợp|lưu ý|quy tắc|nối\s+các\s+cặp)/i.test(trimmed) || /^nối\s+các\s+cặp/i.test(trimmed)) {
+            if (/^(động từ|cụm từ|từ cần điền|đáp án|cần điền|chủ ngữ|gốc|ngôi\s+(thứ|\d|ich|du|er|sie|es|wir|ihr|man|số ít|số nhiều)|âm thanh phát|câu nghe được|điền|chọn|kết hợp|lưu ý|quy tắc|nối\s+các\s+cặp)/i.test(trimmed) || /^nối\s+các\s+cặp/i.test(trimmed)) {
                 return true;
             }
             return false;
         }
 
         function getExerciseTranslation(ex, extra) {
+            // Đối với dạng bài nối ô (noi_o):
+            // CHỈ lấy bản dịch khi extra.translation có nội dung hợp lệ; nếu translation là rỗng ("") thì tuyệt đối ẩn khung dịch nghĩa (trả về "")!
+            if (ex && ex.exercise_type === 'noi_o') {
+                if (extra && typeof extra.translation === 'string') {
+                    const trans = extra.translation.trim();
+                    if (!trans || isInvalidTranslationString(trans)) return "";
+                    return trans;
+                }
+                return "";
+            }
             // Xác định xem câu hỏi có phải yêu cầu dịch sang tiếng Việt không (Đức -> Việt)
             const isDeToVi = (ex && (ex.exercise_type === 'dich_nghia_dv' || ex.exercise_type === 'dich_cau_dv' || ex.exercise_type === 'dich')) &&
                              (ex.question && /(?:sang tiếng việt|đức\s*→\s*việt|dịch câu sau sang tiếng việt)/i.test(ex.question));
