@@ -333,7 +333,11 @@ def ensure_db_initialized():
                 need_seed_b9 = True
             cursor.execute("SELECT extra_data FROM exercises WHERE lesson_id = ? AND question LIKE '%Câu 43%' LIMIT 1;", (b9_id,))
             ex_b9_m = cursor.fetchone()
-            if not ex_b9_m or "Wir haben im Urlaub viele schöne Fotos" not in (ex_b9_m["extra_data"] or ''):
+            if not ex_b9_m or "Wir haben im Urlaub nhiều schöne Fotos" not in (ex_b9_m["extra_data"] or '') and "Wir haben im Urlaub viele schöne Fotos" not in (ex_b9_m["extra_data"] or ''):
+                need_seed_b9 = True
+            cursor.execute("SELECT extra_data FROM exercises WHERE lesson_id = ? AND question LIKE '%Câu 51%' LIMIT 1;", (b9_id,))
+            ex_b9_c51 = cursor.fetchone()
+            if not ex_b9_c51 or "Hôm qua tôi đã tham quan viện bảo tàng" not in (ex_b9_c51["extra_data"] or ''):
                 need_seed_b9 = True
         if need_seed_b9:
             from lessons.a1.seed_a1_b9 import seed_lesson_9
