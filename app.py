@@ -331,6 +331,10 @@ def ensure_db_initialized():
             ex_b9_row = cursor.fetchone()
             if not ex_b9_row or "quốc gia du lịch" not in (ex_b9_row["extra_data"] or ''):
                 need_seed_b9 = True
+            cursor.execute("SELECT extra_data FROM exercises WHERE lesson_id = ? AND question LIKE '%Câu 43%' LIMIT 1;", (b9_id,))
+            ex_b9_m = cursor.fetchone()
+            if not ex_b9_m or "Wir haben im Urlaub viele schöne Fotos" not in (ex_b9_m["extra_data"] or ''):
+                need_seed_b9 = True
         if need_seed_b9:
             from lessons.a1.seed_a1_b9 import seed_lesson_9
             seed_lesson_9()

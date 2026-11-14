@@ -851,54 +851,86 @@ Toàn bộ **100 câu hỏi** dưới đây là **câu mới sáng tác**, chỉ
 ---
 
 #### NHÓM 5: NỐI Ô TỪ TRÁI QUA PHẢI (`noi_o` — 8 Bài: Câu 43 → Câu 50, mỗi bài 4 cặp độc nhất)
-43. **Câu 43 (Bài nối 1 — Infinitiv ↔ Partizip II, động từ có quy tắc)**:
-    * `machen` ↔ `gemacht`
-    * `arbeiten` ↔ `gearbeitet`
-    * `studieren` ↔ `studiert`
-    * `bezahlen` ↔ `bezahlt`
-    * Giải thích: `machen` (nhóm 1: `ge-t`), `arbeiten` (nhóm 2: `ge-et`), `studieren` (nhóm 3: `-ieren`, không `ge-`), `bezahlen` (nhóm 4: `be-`, không `ge-`).
-44. **Câu 44 (Bài nối 2 — Infinitiv ↔ Partizip II, bất quy tắc dùng `haben`)**:
-    * `essen` ↔ `gegessen`
-    * `trinken` ↔ `getrunken`
-    * `schreiben` ↔ `geschrieben`
-    * `sehen` ↔ `gesehen`
-    * Giải thích: Bốn động từ bất quy tắc có dạng `ge- … -en` (`trinken` đổi `i → u`, `schreiben` đổi `ei → ie`).
-45. **Câu 45 (Bài nối 3 — Infinitiv ↔ Perfekt dùng `sein`)**:
-    * `fahren` ↔ `ist gefahren`
-    * `fliegen` ↔ `ist geflogen`
-    * `bleiben` ↔ `ist geblieben`
-    * `laufen` ↔ `ist gelaufen`
-    * Giải thích: Cả bốn động từ đều chỉ chuyển động đổi vị trí hoặc `bleiben` nên dùng **`sein`**.
-46. **Câu 46 (Bài nối 4 — Động từ tách ↔ Partizip II)**:
-    * `einkaufen` ↔ `eingekauft`
-    * `anschauen` ↔ `angeschaut`
-    * `aufstehen` ↔ `aufgestanden`
-    * `mitnehmen` ↔ `mitgenommen`
-    * Giải thích: Động từ tách chèn `ge` giữa tiền tố và gốc: `ein` + `ge` + `kauft`, `an` + `ge` + `schaut`, `auf` + `ge` + `standen`, `mit` + `ge` + `nommen`.
-47. **Câu 47 (Bài nối 5 — Quy tắc ↔ Ví dụ)**:
-    * `ge + gốc + t` ↔ `spielen → gespielt`
-    * `ge + gốc + et (gốc đuôi -t)` ↔ `warten → gewartet`
-    * `đuôi -ieren, không ge-` ↔ `reservieren → reserviert`
-    * `tiền tố không tách, không ge-` ↔ `erleben → erlebt`
-    * Giải thích: Bốn quy tắc đầu của Partizip II (nhóm 1, 2, 3, 4).
+43. **Câu 43 (Bài nối 1 — Câu tiếng Đức còn khuyết ↔ Partizip II có quy tắc)**:
+    * `Wir haben im Urlaub viele schöne Fotos ...` ↔ `gemacht.`
+    * `Mein Vater hat gestern bis 20 Uhr im Büro ...` ↔ `gearbeitet.`
+    * `Meine Schwester hat vier Jahre in Berlin Medizin ...` ↔ `studiert.`
+    * `Der Gast hat die Rechnung an der Rezeption ...` ↔ `bezahlt.`
+    * Dịch nghĩa:
+      1. Wir haben im Urlaub viele schöne Fotos gemacht: Chúng tôi đã chụp nhiều bức ảnh đẹp trong kỳ nghỉ.
+      2. Mein Vater hat gestern bis 20 Uhr im Büro gearbeitet: Hôm qua bố tôi đã làm việc ở văn phòng đến 20 giờ.
+      3. Meine Schwester hat vier Jahre in Berlin Medizin studiert: Chị gái tôi đã học ngành Y 4 năm ở Berlin.
+      4. Der Gast hat die Rechnung an der Rezeption bezahlt: Vị khách đã thanh toán hóa đơn tại quầy lễ tân.
+    * Giải thích: 4 quy tắc tạo Partizip II của động từ có quy tắc: 1. Nhóm 1 (chuẩn 'ge- + gốc + -t'): machen -> gemacht. 2. Nhóm 2 (gốc kết thúc bằng -t/-d thêm '-et'): arbeiten -> gearbeitet. 3. Nhóm 3 (động từ đuôi '-ieren' KHÔNG thêm 'ge-'): studieren -> studiert. 4. Nhóm 4 (tiền tố không tách 'be-' KHÔNG thêm 'ge-'): bezahlen -> bezahlt.
+44. **Câu 44 (Bài nối 2 — Câu tiếng Đức còn khuyết ↔ Partizip II bất quy tắc đi với 'haben')**:
+    * `Am Abend haben wir im Restaurant Fisch und Salat ...` ↔ `gegessen.`
+    * `Zum Frühstück habe ich eine Tasse heißen Kaffee ...` ↔ `getrunken.`
+    * `Im Urlaub habe ich meiner Oma eine Postkarte ...` ↔ `geschrieben.`
+    * `Auf der Reise haben wir viele alte Schlösser ...` ↔ `gesehen.`
+    * Dịch nghĩa:
+      1. Am Abend haben wir im Restaurant Fisch und Salat gegessen: Buổi tối chúng tôi đã ăn cá và salad trong nhà hàng.
+      2. Zum Frühstück habe ich eine Tasse heißen Kaffee getrunken: Vào bữa sáng tôi đã uống một tách cà phê nóng.
+      3. Im Urlaub habe ich meiner Oma eine Postkarte geschrieben: Trong kỳ nghỉ tôi đã viết một tấm bưu thiếp cho bà.
+      4. Auf der Reise haben wir viele alte Schlösser gesehen: Trong chuyến đi chúng tôi đã nhìn thấy nhiều lâu đài cổ.
+    * Giải thích: Động từ bất quy tắc (Irreguläre Verben) đi với trợ động từ 'haben' nhận tiền tố 'ge-' và đuôi '-en' (thường kèm biến đổi nguyên âm gốc): 1. essen -> gegessen (thêm -g- ở giữa ge- và essen). 2. trinken -> getrunken (đổi nguyên âm i -> u). 3. schreiben -> geschrieben (đổi nguyên âm ei -> ie). 4. sehen -> gesehen (giữ nguyên âm gốc e).
+45. **Câu 45 (Bài nối 3 — Nghĩa tiếng Việt ↔ Perfekt dùng 'sein')**:
+    * `đã đi (bằng tàu / xe)` ↔ `ist gefahren`
+    * `đã bay (bằng máy bay)` ↔ `ist geflogen`
+    * `đã ở lại / lưu lại` ↔ `ist geblieben`
+    * `đã đi bộ / chạy bộ` ↔ `ist gelaufen`
+    * Dịch nghĩa: *(Ẩn vì Cột Trái đã là nghĩa tiếng Việt)*
+    * Giải thích: Quy tắc chọn trợ động từ 'sein' (bin/bist/ist/sind/seid) ở thì Perfekt: 1. Nhóm động từ chỉ sự di chuyển thay đổi vị trí từ A sang B: fahren -> ist gefahren, fliegen -> ist geflogen (đổi ie -> o), laufen -> ist gelaufen. 2. Nhóm 3 động từ đặc biệt dù không di chuyển nhưng BẮT BUỘC đi với 'sein': bleiben -> ist geblieben (đổi ei -> ie), sein -> ist gewesen, werden -> ist geworden.
+46. **Câu 46 (Bài nối 4 — Câu tiếng Đức còn khuyết ↔ Partizip II của động từ tách)**:
+    * `Auf dem Markt haben wir frisches Obst und Gemüse ...` ↔ `eingekauft.`
+    * `In der Altstadt haben die Touristen alte Kirchen ...` ↔ `angeschaut.`
+    * `Am Sonntag bin ich erst um neun Uhr morgens ...` ↔ `aufgestanden.`
+    * `Für die Wanderung habe ich meinen großen Rucksack ...` ↔ `mitgenommen.`
+    * Dịch nghĩa:
+      1. Auf dem Markt haben wir frisches Obst und Gemüse eingekauft: Ở chợ chúng tôi đã mua sắm trái cây và rau củ tươi.
+      2. In der Altstadt haben die Touristen alte Kirchen angeschaut: Ở phố cổ các du khách đã ngắm nhìn những nhà thờ cổ.
+      3. Am Sonntag bin ich erst um neun Uhr morgens aufgestanden: Vào Chủ nhật mãi đến 9 giờ sáng tôi mới thức dậy.
+      4. Für die Wanderung habe ich meinen großen Rucksack mitgenommen: Cho chuyến đi bộ leo núi tôi đã mang theo chiếc ba lô lớn của mình.
+    * Giải thích: Với động từ tách (Trennbare Verben), '-ge-' được chèn vào GIỮA tiền tố tách và gốc động từ: 1. einkaufen (có quy tắc) -> ein + ge + kauft = eingekauft. 2. anschauen (có quy tắc) -> an + ge + schaut = angeschaut. 3. aufstehen (bất quy tắc, đi với sein) -> auf + ge + standen = aufgestanden. 4. mitnehmen (bất quy tắc) -> mit + ge + nommen = mitgenommen.
+47. **Câu 47 (Bài nối 5 — Nhóm quy tắc tạo Partizip II ↔ Cặp động từ minh họa)**:
+    * `Động từ có quy tắc chuẩn (ge- + gốc + -t)` ↔ `gespielt / gekauft / gemacht`
+    * `Động từ có gốc kết thúc bằng phụ âm -t / -d (thêm -et)` ↔ `gewartet / gearbeitet / gezeltet`
+    * `Động từ tận cùng bằng đuôi ngoại lai (không có ge-)` ↔ `reserviert / fotografiert / probiert`
+    * `Động từ có tiền tố không tách be- / er- / über- (không có ge-)` ↔ `erlebt / besichtigt / übernachtet`
+    * Dịch nghĩa:
+      1. gespielt (đã chơi) / gekauft (đã mua) / gemacht (đã làm)
+      2. gewartet (đã đợi) / gearbeitet (đã làm việc) / gezeltet (đã cắm trại)
+      3. reserviert (đã đặt chỗ) / fotografiert (đã chụp ảnh) / probiert (đã nếm thử)
+      4. erlebt (đã trải nghiệm) / besichtigt (đã tham quan) / übernachtet (đã ngủ qua đêm)
+    * Giải thích: Cách nhận diện nhanh cấu tạo Partizip II: 1. 'gespielt, gekauft, gemacht' có tiền tố 'ge-' và đuôi '-t' chuẩn. 2. 'gewartet, gearbeitet, gezeltet' có gốc tận cùng bằng -t (wart-, arbeit-, zelt-) nên phải đệm thêm '-e-' trước '-t' ('-et') để phát âm được. 3. 'reserviert, fotografiert, probiert' thuộc nhóm động từ đuôi '-ieren' nên lược bỏ 'ge-', chỉ giữ đuôi '-iert'. 4. 'erlebt, besichtigt, übernachtet' bắt đầu bằng tiền tố không tách (er-, be-, über-) nên tuyệt đối không thêm 'ge-'.
 48. **Câu 48 (Bài nối 6 — Câu hỏi về kỳ nghỉ ↔ Câu trả lời phù hợp)**:
     * `Wo warst du im Urlaub?` ↔ `Ich war auf der Insel Phú Quốc.`
     * `Wie war das Hotel?` ↔ `Es war sauber und gemütlich.`
     * `Was hast du gemacht?` ↔ `Ich habe viele Fotos gemacht.`
-    * `Wie bist du gefahren?` ↔ `Ich bin mit dem Zug gefahren.`
-    * Giải thích: Câu hỏi `Wo`, `Wie war`, `Was`, `Wie` phải được đáp bằng câu cùng loại thông tin (nơi chốn, tính chất, hành động, phương tiện).
+    * `Womit bist du nach Berlin gereist?` ↔ `Ich bin mit dem Zug gefahren.`
+    * Dịch nghĩa:
+      1. 'Bạn đã ở đâu trong kỳ nghỉ?' — 'Tôi đã ở trên đảo Phú Quốc.'
+      2. 'Khách sạn thế nào?' — 'Nó sạch sẽ và ấm cúng.'
+      3. 'Bạn đã làm gì?' — 'Tôi đã chụp nhiều bức ảnh.'
+      4. 'Bạn đã đi du lịch đến Berlin bằng phương tiện gì?' — 'Tôi đã đi bằng tàu hỏa.'
+    * Giải thích: Cách đối chiếu từ để hỏi và thì quá khứ trong hội thoại về kỳ nghỉ: 1. 'Wo warst du...?' (hỏi địa điểm ở quá khứ với war) -> đáp bằng 'Ich war auf der Insel...' (auf + Dativ cho hòn đảo). 2. 'Wie war das Hotel?' (hỏi đánh giá khách sạn - giống trung 'das Hotel') -> thay bằng đại từ 'Es war...' + tính từ. 3. 'Was hast du gemacht?' (hỏi hoạt động chung với haben) -> đáp bằng hành động ở Perfekt 'Ich habe ... gemacht'. 4. 'Womit bist du ... gereist?' (hỏi phương tiện di chuyển với sein) -> đáp bằng 'Ich bin mit dem Zug gefahren'.
 49. **Câu 49 (Bài nối 7 — Danh từ ↔ Động từ đi cặp, `Kollokation`)**:
-    * `ein Hotel` ↔ `buchen`
+    * `ein Hotelzimmer` ↔ `buchen`
     * `den Koffer` ↔ `packen`
     * `ein Schloss` ↔ `besichtigen`
     * `ein Picknick` ↔ `machen`
-    * Giải thích: `ein Hotel buchen` (đặt khách sạn), `den Koffer packen` (đóng vali), `ein Schloss besichtigen` (tham quan lâu đài), `ein Picknick machen` (đi dã ngoại).
-50. **Câu 50 (Bài nối 8 — Ngôi ↔ Dạng Präteritum)**:
-    * `ich (sein)` ↔ `war`
-    * `du (sein)` ↔ `warst`
-    * `ihr (haben)` ↔ `hattet`
-    * `wir (haben)` ↔ `hatten`
-    * Giải thích: `ich war`, `du warst`, `ihr hattet`, `wir hatten`.
+    * Dịch nghĩa:
+      1. ein Hotelzimmer buchen: đặt một phòng khách sạn
+      2. den Koffer packen: đóng gói hành lý / xếp vali
+      3. ein Schloss besichtigen: tham quan một lâu đài
+      4. ein Picknick machen: tổ chức một buổi dã ngoại
+    * Giải thích: Các cụm động từ - danh từ cố định (Kollokationen) chủ đề du lịch (danh từ đóng vai trò tân ngữ trực tiếp ở Cách 4 Akkusativ): 1. 'buchen' (đặt chỗ) đi với phòng/vé/chuyến đi ('ein Hotelzimmer buchen'). 2. 'packen' (đóng gói) đi với hành lý/vali ('den Koffer packen' - der Koffer đổi thành den Koffer). 3. 'besichtigen' (tham quan) đi với công trình/thành phố/lâu đài ('ein Schloss besichtigen'). 4. 'machen' (thực hiện) đi với các hoạt động kỳ nghỉ ('ein Picknick / eine Radtour / Urlaub machen').
+50. **Câu 50 (Bài nối 8 — Nghĩa tiếng Việt ↔ Dạng chia Präteritum)**:
+    * `tôi đã ở / đã là` ↔ `ich war`
+    * `bạn đã ở / đã là` ↔ `du warst`
+    * `các bạn đã có` ↔ `ihr hattet`
+    * `chúng tôi đã có` ↔ `wir hatten`
+    * Dịch nghĩa: *(Ẩn vì Cột Trái đã là nghĩa tiếng Việt)*
+    * Giải thích: Quy tắc chia động từ 'sein' (gốc war-) và 'haben' (gốc hatt-) ở thì quá khứ đơn (Präteritum): 1. Ngôi 'ich' và 'er/sie/es' luôn chia giống hệt nhau và không có đuôi: 'ich war', 'ich hatte'. 2. Ngôi 'du' nhận đuôi '-st' / '-est': 'du warst', 'du hattest'. 3. Ngôi 'ihr' nhận đuôi '-t' / '-et': 'ihr wart', 'ihr hattet'. 4. Ngôi 'wir' và 'sie/Sie' nhận đuôi '-en': 'wir waren', 'wir hatten'.
 
 ---
 

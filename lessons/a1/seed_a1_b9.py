@@ -2105,155 +2105,155 @@ def seed_lesson_9():
             },
             {
                     "type": "noi_o",
-                    "question": "Câu 43: Nối các cặp tương ứng sau (Infinitiv – Partizip II, động từ có quy tắc):",
+                    "question": "Câu 43: Nối câu tiếng Đức còn khuyết (Cột Trái) với dạng Partizip II có quy tắc phù hợp (Cột Phải):",
                     "options": null,
-                    "correct_answer": "machen = gemacht || arbeiten = gearbeitet || studieren = studiert || bezahlen = bezahlt",
-                    "explanation": "'machen' (nhóm 1: 'ge-t'), 'arbeiten' (nhóm 2: 'ge-et'), 'studieren' (nhóm 3: '-ieren', không 'ge-'), 'bezahlen' (nhóm 4: 'be-', không 'ge-').",
+                    "correct_answer": "Wir haben im Urlaub viele schöne Fotos ... = gemacht. || Mein Vater hat gestern bis 20 Uhr im Büro ... = gearbeitet. || Meine Schwester hat vier Jahre in Berlin Medizin ... = studiert. || Der Gast hat die Rechnung an der Rezeption ... = bezahlt.",
+                    "explanation": "4 quy tắc tạo Partizip II của động từ có quy tắc: 1. Nhóm 1 (chuẩn 'ge- + gốc + -t'): machen -> gemacht. 2. Nhóm 2 (gốc kết thúc bằng -t/-d thêm '-et'): arbeiten -> gearbeitet. 3. Nhóm 3 (động từ đuôi '-ieren' KHÔNG thêm 'ge-'): studieren -> studiert. 4. Nhóm 4 (tiền tố không tách 'be-' KHÔNG thêm 'ge-'): bezahlen -> bezahlt.",
                     "exp_reward": 20,
                     "extra_data": {
                             "noi_o_pairs": [
                                     {
-                                            "left": "machen",
-                                            "right": "gemacht"
+                                            "left": "Wir haben im Urlaub viele schöne Fotos ...",
+                                            "right": "gemacht."
                                     },
                                     {
-                                            "left": "arbeiten",
-                                            "right": "gearbeitet"
+                                            "left": "Mein Vater hat gestern bis 20 Uhr im Büro ...",
+                                            "right": "gearbeitet."
                                     },
                                     {
-                                            "left": "studieren",
-                                            "right": "studiert"
+                                            "left": "Meine Schwester hat vier Jahre in Berlin Medizin ...",
+                                            "right": "studiert."
                                     },
                                     {
-                                            "left": "bezahlen",
-                                            "right": "bezahlt"
+                                            "left": "Der Gast hat die Rechnung an der Rezeption ...",
+                                            "right": "bezahlt."
                                     }
                             ],
-                            "translation": "Nối các cặp hoàn chỉnh"
+                            "translation": "1. Wir haben im Urlaub viele schöne Fotos gemacht: Chúng tôi đã chụp nhiều bức ảnh đẹp trong kỳ nghỉ.\n2. Mein Vater hat gestern bis 20 Uhr im Büro gearbeitet: Hôm qua bố tôi đã làm việc ở văn phòng đến 20 giờ.\n3. Meine Schwester hat vier Jahre in Berlin Medizin studiert: Chị gái tôi đã học ngành Y 4 năm ở Berlin.\n4. Der Gast hat die Rechnung an der Rezeption bezahlt: Vị khách đã thanh toán hóa đơn tại quầy lễ tân."
                     }
             },
             {
                     "type": "noi_o",
-                    "question": "Câu 44: Nối các cặp tương ứng sau (Infinitiv – Partizip II, bất quy tắc dùng haben):",
+                    "question": "Câu 44: Nối câu tiếng Đức còn khuyết (Cột Trái) với dạng Partizip II bất quy tắc phù hợp (Cột Phải):",
                     "options": null,
-                    "correct_answer": "essen = gegessen || trinken = getrunken || schreiben = geschrieben || sehen = gesehen",
-                    "explanation": "Bốn động từ bất quy tắc có dạng 'ge- … -en' ('trinken' đổi 'i → u', 'schreiben' đổi 'ei → ie').",
+                    "correct_answer": "Am Abend haben wir im Restaurant Fisch und Salat ... = gegessen. || Zum Frühstück habe ich eine Tasse heißen Kaffee ... = getrunken. || Im Urlaub habe ich meiner Oma eine Postkarte ... = geschrieben. || Auf der Reise haben wir viele alte Schlösser ... = gesehen.",
+                    "explanation": "Động từ bất quy tắc (Irreguläre Verben) đi với trợ động từ 'haben' nhận tiền tố 'ge-' và đuôi '-en' (thường kèm biến đổi nguyên âm gốc): 1. essen -> gegessen (thêm -g- ở giữa ge- và essen). 2. trinken -> getrunken (đổi nguyên âm i -> u). 3. schreiben -> geschrieben (đổi nguyên âm ei -> ie). 4. sehen -> gesehen (giữ nguyên âm gốc e).",
                     "exp_reward": 20,
                     "extra_data": {
                             "noi_o_pairs": [
                                     {
-                                            "left": "essen",
-                                            "right": "gegessen"
+                                            "left": "Am Abend haben wir im Restaurant Fisch und Salat ...",
+                                            "right": "gegessen."
                                     },
                                     {
-                                            "left": "trinken",
-                                            "right": "getrunken"
+                                            "left": "Zum Frühstück habe ich eine Tasse heißen Kaffee ...",
+                                            "right": "getrunken."
                                     },
                                     {
-                                            "left": "schreiben",
-                                            "right": "geschrieben"
+                                            "left": "Im Urlaub habe ich meiner Oma eine Postkarte ...",
+                                            "right": "geschrieben."
                                     },
                                     {
-                                            "left": "sehen",
-                                            "right": "gesehen"
+                                            "left": "Auf der Reise haben wir viele alte Schlösser ...",
+                                            "right": "gesehen."
                                     }
                             ],
-                            "translation": "Nối các cặp hoàn chỉnh"
+                            "translation": "1. Am Abend haben wir im Restaurant Fisch und Salat gegessen: Buổi tối chúng tôi đã ăn cá và salad trong nhà hàng.\n2. Zum Frühstück habe ich eine Tasse heißen Kaffee getrunken: Vào bữa sáng tôi đã uống một tách cà phê nóng.\n3. Im Urlaub habe ich meiner Oma eine Postkarte geschrieben: Trong kỳ nghỉ tôi đã viết một tấm bưu thiếp cho bà.\n4. Auf der Reise haben wir viele alte Schlösser gesehen: Trong chuyến đi chúng tôi đã nhìn thấy nhiều lâu đài cổ."
                     }
             },
             {
                     "type": "noi_o",
-                    "question": "Câu 45: Nối các cặp tương ứng sau (Infinitiv – Perfekt dùng sein):",
+                    "question": "Câu 45: Nối nghĩa tiếng Việt (Cột Trái) với cụm động từ ở thì Perfekt dùng 'sein' tương ứng (Cột Phải):",
                     "options": null,
-                    "correct_answer": "fahren = ist gefahren || fliegen = ist geflogen || bleiben = ist geblieben || laufen = ist gelaufen",
-                    "explanation": "Cả bốn động từ đều chỉ chuyển động đổi vị trí hoặc 'bleiben' nên dùng 'sein'.",
+                    "correct_answer": "đã đi (bằng tàu / xe) = ist gefahren || đã bay (bằng máy bay) = ist geflogen || đã ở lại / lưu lại = ist geblieben || đã đi bộ / chạy bộ = ist gelaufen",
+                    "explanation": "Quy tắc chọn trợ động từ 'sein' (bin/bist/ist/sind/seid) ở thì Perfekt: 1. Nhóm động từ chỉ sự di chuyển thay đổi vị trí từ A sang B: fahren -> ist gefahren, fliegen -> ist geflogen (đổi ie -> o), laufen -> ist gelaufen. 2. Nhóm 3 động từ đặc biệt dù không di chuyển nhưng BẮT BUỘC đi với 'sein': bleiben -> ist geblieben (đổi ei -> ie), sein -> ist gewesen, werden -> ist geworden.",
                     "exp_reward": 20,
                     "extra_data": {
                             "noi_o_pairs": [
                                     {
-                                            "left": "fahren",
+                                            "left": "đã đi (bằng tàu / xe)",
                                             "right": "ist gefahren"
                                     },
                                     {
-                                            "left": "fliegen",
+                                            "left": "đã bay (bằng máy bay)",
                                             "right": "ist geflogen"
                                     },
                                     {
-                                            "left": "bleiben",
+                                            "left": "đã ở lại / lưu lại",
                                             "right": "ist geblieben"
                                     },
                                     {
-                                            "left": "laufen",
+                                            "left": "đã đi bộ / chạy bộ",
                                             "right": "ist gelaufen"
                                     }
                             ],
-                            "translation": "Nối các cặp hoàn chỉnh"
+                            "translation": ""
                     }
             },
             {
                     "type": "noi_o",
-                    "question": "Câu 46: Nối các cặp tương ứng sau (Động từ tách – Partizip II):",
+                    "question": "Câu 46: Nối câu tiếng Đức còn khuyết (Cột Trái) với dạng Partizip II của động từ tách tương ứng (Cột Phải):",
                     "options": null,
-                    "correct_answer": "einkaufen = eingekauft || anschauen = angeschaut || aufstehen = aufgestanden || mitnehmen = mitgenommen",
-                    "explanation": "Động từ tách chèn 'ge' giữa tiền tố và gốc: 'ein' + 'ge' + 'kauft', 'an' + 'ge' + 'schaut', 'auf' + 'ge' + 'standen', 'mit' + 'ge' + 'nommen'.",
+                    "correct_answer": "Auf dem Markt haben wir frisches Obst und Gemüse ... = eingekauft. || In der Altstadt haben die Touristen alte Kirchen ... = angeschaut. || Am Sonntag bin ich erst um neun Uhr morgens ... = aufgestanden. || Für die Wanderung habe ich meinen großen Rucksack ... = mitgenommen.",
+                    "explanation": "Với động từ tách (Trennbare Verben), '-ge-' được chèn vào GIỮA tiền tố tách và gốc động từ: 1. einkaufen (có quy tắc) -> ein + ge + kauft = eingekauft. 2. anschauen (có quy tắc) -> an + ge + schaut = angeschaut. 3. aufstehen (bất quy tắc, đi với sein) -> auf + ge + standen = aufgestanden. 4. mitnehmen (bất quy tắc) -> mit + ge + nommen = mitgenommen.",
                     "exp_reward": 20,
                     "extra_data": {
                             "noi_o_pairs": [
                                     {
-                                            "left": "einkaufen",
-                                            "right": "eingekauft"
+                                            "left": "Auf dem Markt haben wir frisches Obst und Gemüse ...",
+                                            "right": "eingekauft."
                                     },
                                     {
-                                            "left": "anschauen",
-                                            "right": "angeschaut"
+                                            "left": "In der Altstadt haben die Touristen alte Kirchen ...",
+                                            "right": "angeschaut."
                                     },
                                     {
-                                            "left": "aufstehen",
-                                            "right": "aufgestanden"
+                                            "left": "Am Sonntag bin ich erst um neun Uhr morgens ...",
+                                            "right": "aufgestanden."
                                     },
                                     {
-                                            "left": "mitnehmen",
-                                            "right": "mitgenommen"
+                                            "left": "Für die Wanderung habe ich meinen großen Rucksack ...",
+                                            "right": "mitgenommen."
                                     }
                             ],
-                            "translation": "Nối các cặp hoàn chỉnh"
+                            "translation": "1. Auf dem Markt haben wir frisches Obst und Gemüse eingekauft: Ở chợ chúng tôi đã mua sắm trái cây và rau củ tươi.\n2. In der Altstadt haben die Touristen alte Kirchen angeschaut: Ở phố cổ các du khách đã ngắm nhìn những nhà thờ cổ.\n3. Am Sonntag bin ich erst um neun Uhr morgens aufgestanden: Vào Chủ nhật mãi đến 9 giờ sáng tôi mới thức dậy.\n4. Für die Wanderung habe ich meinen großen Rucksack mitgenommen: Cho chuyến đi bộ leo núi tôi đã mang theo chiếc ba lô lớn của mình."
                     }
             },
             {
                     "type": "noi_o",
-                    "question": "Câu 47: Nối các cặp tương ứng sau (Quy tắc – Ví dụ):",
+                    "question": "Câu 47: Nối nhóm quy tắc tạo Partizip II (Cột Trái) với cặp động từ minh họa đúng quy tắc đó (Cột Phải):",
                     "options": null,
-                    "correct_answer": "ge + gốc + t = spielen → gespielt || ge + gốc + et (gốc đuôi -t) = warten → gewartet || đuôi -ieren, không ge- = reservieren → reserviert || tiền tố không tách, không ge- = erleben → erlebt",
-                    "explanation": "Bốn quy tắc đầu của Partizip II (nhóm 1, 2, 3, 4).",
+                    "correct_answer": "Động từ có quy tắc chuẩn (ge- + gốc + -t) = gespielt / gekauft / gemacht || Động từ có gốc kết thúc bằng phụ âm -t / -d (thêm -et) = gewartet / gearbeitet / gezeltet || Động từ tận cùng bằng đuôi ngoại lai (không có ge-) = reserviert / fotografiert / probiert || Động từ có tiền tố không tách be- / er- / über- (không có ge-) = erlebt / besichtigt / übernachtet",
+                    "explanation": "Cách nhận diện nhanh cấu tạo Partizip II: 1. 'gespielt, gekauft, gemacht' có tiền tố 'ge-' và đuôi '-t' chuẩn. 2. 'gewartet, gearbeitet, gezeltet' có gốc tận cùng bằng -t (wart-, arbeit-, zelt-) nên phải đệm thêm '-e-' trước '-t' ('-et') để phát âm được. 3. 'reserviert, fotografiert, probiert' thuộc nhóm động từ đuôi '-ieren' nên lược bỏ 'ge-', chỉ giữ đuôi '-iert'. 4. 'erlebt, besichtigt, übernachtet' bắt đầu bằng tiền tố không tách (er-, be-, über-) nên tuyệt đối không thêm 'ge-'.",
                     "exp_reward": 20,
                     "extra_data": {
                             "noi_o_pairs": [
                                     {
-                                            "left": "ge + gốc + t",
-                                            "right": "spielen → gespielt"
+                                            "left": "Động từ có quy tắc chuẩn (ge- + gốc + -t)",
+                                            "right": "gespielt / gekauft / gemacht"
                                     },
                                     {
-                                            "left": "ge + gốc + et (gốc đuôi -t)",
-                                            "right": "warten → gewartet"
+                                            "left": "Động từ có gốc kết thúc bằng phụ âm -t / -d (thêm -et)",
+                                            "right": "gewartet / gearbeitet / gezeltet"
                                     },
                                     {
-                                            "left": "đuôi -ieren, không ge-",
-                                            "right": "reservieren → reserviert"
+                                            "left": "Động từ tận cùng bằng đuôi ngoại lai (không có ge-)",
+                                            "right": "reserviert / fotografiert / probiert"
                                     },
                                     {
-                                            "left": "tiền tố không tách, không ge-",
-                                            "right": "erleben → erlebt"
+                                            "left": "Động từ có tiền tố không tách be- / er- / über- (không có ge-)",
+                                            "right": "erlebt / besichtigt / übernachtet"
                                     }
                             ],
-                            "translation": "Nối các cặp hoàn chỉnh"
+                            "translation": "1. gespielt (đã chơi) / gekauft (đã mua) / gemacht (đã làm)\n2. gewartet (đã đợi) / gearbeitet (đã làm việc) / gezeltet (đã cắm trại)\n3. reserviert (đã đặt chỗ) / fotografiert (đã chụp ảnh) / probiert (đã nếm thử)\n4. erlebt (đã trải nghiệm) / besichtigt (đã tham quan) / übernachtet (đã ngủ qua đêm)"
                     }
             },
             {
                     "type": "noi_o",
                     "question": "Câu 48: Nối các cặp tương ứng sau (Câu hỏi về kỳ nghỉ – Câu trả lời phù hợp):",
                     "options": null,
-                    "correct_answer": "Wo warst du im Urlaub? = Ich war auf der Insel Phú Quốc. || Wie war das Hotel? = Es war sauber und gemütlich. || Was hast du gemacht? = Ich habe viele Fotos gemacht. || Wie bist du gefahren? = Ich bin mit dem Zug gefahren.",
-                    "explanation": "Câu hỏi 'Wo', 'Wie war', 'Was', 'Wie' phải được đáp bằng câu cùng loại thông tin (nơi chốn, tính chất, hành động, phương tiện).",
+                    "correct_answer": "Wo warst du im Urlaub? = Ich war auf der Insel Phú Quốc. || Wie war das Hotel? = Es war sauber und gemütlich. || Was hast du gemacht? = Ich habe viele Fotos gemacht. || Womit bist du nach Berlin gereist? = Ich bin mit dem Zug gefahren.",
+                    "explanation": "Cách đối chiếu từ để hỏi và thì quá khứ trong hội thoại về kỳ nghỉ: 1. 'Wo warst du...?' (hỏi địa điểm ở quá khứ với war) -> đáp bằng 'Ich war auf der Insel...' (auf + Dativ cho hòn đảo). 2. 'Wie war das Hotel?' (hỏi đánh giá khách sạn - giống trung 'das Hotel') -> thay bằng đại từ 'Es war...' + tính từ. 3. 'Was hast du gemacht?' (hỏi hoạt động chung với haben) -> đáp bằng hành động ở Perfekt 'Ich habe ... gemacht'. 4. 'Womit bist du ... gereist?' (hỏi phương tiện di chuyển với sein) -> đáp bằng 'Ich bin mit dem Zug gefahren'.",
                     "exp_reward": 20,
                     "extra_data": {
                             "noi_o_pairs": [
@@ -2270,24 +2270,24 @@ def seed_lesson_9():
                                             "right": "Ich habe viele Fotos gemacht."
                                     },
                                     {
-                                            "left": "Wie bist du gefahren?",
+                                            "left": "Womit bist du nach Berlin gereist?",
                                             "right": "Ich bin mit dem Zug gefahren."
                                     }
                             ],
-                            "translation": "Nối các cặp hoàn chỉnh"
+                            "translation": "1. 'Bạn đã ở đâu trong kỳ nghỉ?' — 'Tôi đã ở trên đảo Phú Quốc.'\n2. 'Khách sạn thế nào?' — 'Nó sạch sẽ và ấm cúng.'\n3. 'Bạn đã làm gì?' — 'Tôi đã chụp nhiều bức ảnh.'\n4. 'Bạn đã đi du lịch đến Berlin bằng phương tiện gì?' — 'Tôi đã đi bằng tàu hỏa.'"
                     }
             },
             {
                     "type": "noi_o",
                     "question": "Câu 49: Nối các cặp tương ứng sau (Danh từ – Động từ đi cặp, Kollokation):",
                     "options": null,
-                    "correct_answer": "ein Hotel = buchen || den Koffer = packen || ein Schloss = besichtigen || ein Picknick = machen",
-                    "explanation": "'ein Hotel buchen' (đặt khách sạn), 'den Koffer packen' (đóng vali), 'ein Schloss besichtigen' (tham quan lâu đài), 'ein Picknick machen' (đi dã ngoại).",
+                    "correct_answer": "ein Hotelzimmer = buchen || den Koffer = packen || ein Schloss = besichtigen || ein Picknick = machen",
+                    "explanation": "Các cụm động từ - danh từ cố định (Kollokationen) chủ đề du lịch (danh từ đóng vai trò tân ngữ trực tiếp ở Cách 4 Akkusativ): 1. 'buchen' (đặt chỗ) đi với phòng/vé/chuyến đi ('ein Hotelzimmer buchen'). 2. 'packen' (đóng gói) đi với hành lý/vali ('den Koffer packen' - der Koffer đổi thành den Koffer). 3. 'besichtigen' (tham quan) đi với công trình/thành phố/lâu đài ('ein Schloss besichtigen'). 4. 'machen' (thực hiện) đi với các hoạt động kỳ nghỉ ('ein Picknick / eine Radtour / Urlaub machen').",
                     "exp_reward": 20,
                     "extra_data": {
                             "noi_o_pairs": [
                                     {
-                                            "left": "ein Hotel",
+                                            "left": "ein Hotelzimmer",
                                             "right": "buchen"
                                     },
                                     {
@@ -2303,36 +2303,36 @@ def seed_lesson_9():
                                             "right": "machen"
                                     }
                             ],
-                            "translation": "Nối các cặp hoàn chỉnh"
+                            "translation": "1. ein Hotelzimmer buchen: đặt một phòng khách sạn\n2. den Koffer packen: đóng gói hành lý / xếp vali\n3. ein Schloss besichtigen: tham quan một lâu đài\n4. ein Picknick machen: tổ chức một buổi dã ngoại"
                     }
             },
             {
                     "type": "noi_o",
-                    "question": "Câu 50: Nối các cặp tương ứng sau (Ngôi – Dạng Präteritum):",
+                    "question": "Câu 50: Nối nghĩa tiếng Việt (Cột Trái) với dạng chia Präteritum của 'sein' và 'haben' tương ứng (Cột Phải):",
                     "options": null,
-                    "correct_answer": "ich (sein) = war || du (sein) = warst || ihr (haben) = hattet || wir (haben) = hatten",
-                    "explanation": "'ich war', 'du warst', 'ihr hattet', 'wir hatten'.",
+                    "correct_answer": "tôi đã ở / đã là = ich war || bạn đã ở / đã là = du warst || các bạn đã có = ihr hattet || chúng tôi đã có = wir hatten",
+                    "explanation": "Quy tắc chia động từ 'sein' (gốc war-) và 'haben' (gốc hatt-) ở thì quá khứ đơn (Präteritum): 1. Ngôi 'ich' và 'er/sie/es' luôn chia giống hệt nhau và không có đuôi: 'ich war', 'ich hatte'. 2. Ngôi 'du' nhận đuôi '-st' / '-est': 'du warst', 'du hattest'. 3. Ngôi 'ihr' nhận đuôi '-t' / '-et': 'ihr wart', 'ihr hattet'. 4. Ngôi 'wir' và 'sie/Sie' nhận đuôi '-en': 'wir waren', 'wir hatten'.",
                     "exp_reward": 20,
                     "extra_data": {
                             "noi_o_pairs": [
                                     {
-                                            "left": "ich (sein)",
-                                            "right": "war"
+                                            "left": "tôi đã ở / đã là",
+                                            "right": "ich war"
                                     },
                                     {
-                                            "left": "du (sein)",
-                                            "right": "warst"
+                                            "left": "bạn đã ở / đã là",
+                                            "right": "du warst"
                                     },
                                     {
-                                            "left": "ihr (haben)",
-                                            "right": "hattet"
+                                            "left": "các bạn đã có",
+                                            "right": "ihr hattet"
                                     },
                                     {
-                                            "left": "wir (haben)",
-                                            "right": "hatten"
+                                            "left": "chúng tôi đã có",
+                                            "right": "wir hatten"
                                     }
                             ],
-                            "translation": "Nối các cặp hoàn chỉnh"
+                            "translation": ""
                     }
             },
             {
