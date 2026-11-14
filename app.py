@@ -327,6 +327,10 @@ def ensure_db_initialized():
             reg_row = cursor.fetchone()
             if not reg_row or "Wegen des starken Regens" not in (reg_row["example_sentence"] or ''):
                 need_seed_b9 = True
+            cursor.execute("SELECT extra_data FROM exercises WHERE lesson_id = ? AND question LIKE '%Câu 35%' LIMIT 1;", (b9_id,))
+            ex_b9_row = cursor.fetchone()
+            if not ex_b9_row or "quốc gia du lịch" not in (ex_b9_row["extra_data"] or ''):
+                need_seed_b9 = True
         if need_seed_b9:
             from lessons.a1.seed_a1_b9 import seed_lesson_9
             seed_lesson_9()
@@ -336,6 +340,15 @@ def ensure_db_initialized():
         print("ensure_db_initialized:", e)
 
 ensure_db_initialized()
+
+@app.after_request
+def add_cache_headers(response):
+    """Vô hiệu hóa bộ nhớ đệm HTTP cho trang chủ và API để học viên luôn nhận dữ liệu và mã nguồn mới nhất"""
+    if request.path == "/" or request.path.startswith("/api/"):
+        response.headers["Cache-Control"] = "no-cache, no-store, must-revalidate, max-age=0"
+        response.headers["Pragma"] = "no-cache"
+        response.headers["Expires"] = "0"
+    return response
 
 @app.route("/")
 def index():

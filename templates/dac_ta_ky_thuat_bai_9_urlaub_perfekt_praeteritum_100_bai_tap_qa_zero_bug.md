@@ -727,62 +727,62 @@ Toàn bộ **100 câu hỏi** dưới đây là **câu mới sáng tác**, chỉ
 ---
 
 #### NHÓM 2: ĐIỀN KHUYẾT (`dien_khuyet` — 14 Câu: Câu 13 → Câu 26)
-13. **Câu 13**: Điền trợ động từ: *„Meine Oma ___ im Sommer auf der Insel Phú Quốc Urlaub gemacht.“*
+13. **Câu 13**: Điền trợ động từ thích hợp: *„Meine Oma ___ im Sommer auf der Insel Phú Quốc Urlaub gemacht.“*
     * Đáp án chấp nhận: `["hat"]`
     * Dịch nghĩa câu: *„Bà tôi đã đi nghỉ trên đảo Phú Quốc vào mùa hè.“*
-    * Giải thích: `Urlaub machen` có tân ngữ → **`haben`**; `meine Oma` = `sie` → **`hat`**.
-14. **Câu 14**: Điền trợ động từ: *„Mein Bruder ___ gestern Abend um zehn Uhr eingeschlafen.“*
+    * Giải thích: Cụm 'Urlaub machen' chỉ hoạt động và có tân ngữ nên đi với trợ động từ 'haben'. Chủ ngữ 'Meine Oma' thuộc ngôi thứ 3 số ít (sie) nên chia là 'hat'.
+14. **Câu 14**: Điền trợ động từ thích hợp: *„Mein Bruder ___ gestern Abend um zehn Uhr eingeschlafen.“*
     * Đáp án chấp nhận: `["ist"]`
     * Dịch nghĩa câu: *„Anh trai tôi đã ngủ thiếp đi lúc mười giờ tối qua.“*
-    * Giải thích: `einschlafen` là **đổi trạng thái** → **`sein`**; `mein Bruder` = `er` → **`ist`**.
-15. **Câu 15**: Điền Partizip II của `suchen`: *„Habt ihr am Strand den Reiseführer ___?“*
+    * Giải thích: Động từ tách 'einschlafen' (ngủ thiếp đi) diễn tả sự thay đổi trạng thái nên đi với trợ động từ 'sein'. Chủ ngữ 'Mein Bruder' thuộc ngôi thứ 3 số ít (er) nên chia là 'ist'.
+15. **Câu 15**: Chia dạng đúng của động từ 'suchen': *„Habt ihr am Strand den Reiseführer ___?“*
     * Đáp án chấp nhận: `["gesucht"]`
-    * Dịch nghĩa câu: *„Các bạn đã tìm cuốn sách hướng dẫn du lịch ở bãi biển phải không?“*
-    * Giải thích: `suchen` có quy tắc: `ge` + `such` + `t` = **`gesucht`**.
-16. **Câu 16**: Điền Partizip II của `ankommen`: *„Der Zug ist pünktlich in München ___.“*
+    * Dịch nghĩa câu: *„Các bạn đã tìm người hướng dẫn viên du lịch (hoặc: cuốn sách hướng dẫn du lịch) ở bãi biển phải không?“*
+    * Giải thích: Câu có trợ động từ 'Habt' ở đầu câu nên cuối câu cần điền Partizip II. 'suchen' là động từ có quy tắc: ge + such + t -> gesucht.
+16. **Câu 16**: Chia dạng đúng của động từ 'ankommen': *„Der Zug ist pünktlich in München ___.“*
     * Đáp án chấp nhận: `["angekommen"]`
     * Dịch nghĩa câu: *„Chuyến tàu đã đến München đúng giờ.“*
-    * Giải thích: Tiền tố tách `an-` + bất quy tắc `kommen → gekommen` → **`an` + `ge` + `kommen` = `angekommen`** (dùng `sein`).
-17. **Câu 17**: Điền Partizip II của `übernachten`: *„Wir haben im Zelt ___.“*
+    * Giải thích: 'ankommen' là động từ tách (tiền tố 'an-') kết hợp với động từ bất quy tắc 'kommen' (Partizip II là 'gekommen'). Khi ghép lại, '-ge-' nằm giữa tiền tố và gốc động từ: an + ge + kommen -> angekommen.
+17. **Câu 17**: Chia dạng đúng của động từ 'übernachten': *„Wir haben im Zelt ___.“*
     * Đáp án chấp nhận: `["übernachtet", "uebernachtet"]`
     * Dịch nghĩa câu: *„Chúng tôi đã ngủ lại trong lều.“*
-    * Giải thích: Tiền tố `über-` không tách → không `ge-`; gốc `übernacht` đuôi `-t` → thêm `-et`: **`übernachtet`**.
-18. **Câu 18**: Điền Partizip II của `bezahlen`: *„Hast du schon die Rechnung ___?“*
+    * Giải thích: Động từ 'übernachten' có tiền tố không tách 'über-' nên không thêm 'ge-' ở Partizip II. Vì gốc động từ 'übernacht-' kết thúc bằng âm '-t' nên phải thêm đuôi '-et' -> übernachtet.
+18. **Câu 18**: Chia dạng đúng của động từ 'bezahlen': *„Hast du schon die Rechnung ___?“*
     * Đáp án chấp nhận: `["bezahlt"]`
     * Dịch nghĩa câu: *„Bạn đã trả hóa đơn chưa?“*
-    * Giải thích: Tiền tố `be-` không tách → không `ge-`: **`bezahlt`**.
-19. **Câu 19**: Điền Partizip II của `baden`: *„Die Kinder haben den ganzen Tag im Meer ___.“*
+    * Giải thích: Động từ 'bezahlen' là động từ có quy tắc mang tiền tố không tách 'be-', nên khi chuyển sang Partizip II không thêm 'ge-', chỉ lấy gốc 'bezahl-' + '-t' -> bezahlt.
+19. **Câu 19**: Chia dạng đúng của động từ 'baden': *„Die Kinder haben den ganzen Tag im Meer ___.“*
     * Đáp án chấp nhận: `["gebadet"]`
     * Dịch nghĩa câu: *„Bọn trẻ đã tắm biển cả ngày.“*
-    * Giải thích: Gốc `bad` kết thúc `-d` → **`ge` + `bad` + `et` = `gebadet`**.
-20. **Câu 20**: Điền Partizip II của `regnen`: *„Gestern hat es den ganzen Tag ___.“*
+    * Giải thích: 'baden' là động từ có quy tắc nhưng gốc 'bad-' kết thúc bằng phụ âm '-d', do đó phải thêm âm đệm '-e-' trước đuôi '-t' để dễ phát âm: ge + bad + et -> gebadet.
+20. **Câu 20**: Chia dạng đúng của động từ 'regnen': *„Gestern hat es den ganzen Tag ___.“*
     * Đáp án chấp nhận: `["geregnet"]`
     * Dịch nghĩa câu: *„Hôm qua trời đã mưa cả ngày.“*
-    * Giải thích: Gốc `regn` khó phát âm nếu chỉ thêm `-t` → **`geregnet`** (động từ thời tiết dùng `haben`).
-21. **Câu 21**: Điền Partizip II của `essen`: *„Ich habe am Abend Reis mit Fisch ___.“*
+    * Giải thích: 'regnen' là động từ có quy tắc có gốc 'regn-' kết thúc bằng cụm phụ âm '-gn', nên khi tạo Partizip II phải thêm âm đệm '-e-' trước đuôi '-t': ge + regn + et -> geregnet.
+21. **Câu 21**: Chia dạng đúng của động từ 'essen': *„Ich habe am Abend Reis mit Fisch ___.“*
     * Đáp án chấp nhận: `["gegessen"]`
     * Dịch nghĩa câu: *„Buổi tối tôi đã ăn cơm với cá.“*
-    * Giải thích: `essen` bất quy tắc: **`gegessen`**.
-22. **Câu 22**: Điền Partizip II của `studieren`: *„Die Studentin hat ein Jahr in Wien ___.“*
+    * Giải thích: 'essen' là động từ bất quy tắc đặc biệt: khi chuyển sang Partizip II cần chèn thêm phụ âm '-g-' vào giữa tiền tố 'ge-' và gốc 'essen' -> gegessen.
+22. **Câu 22**: Chia dạng đúng của động từ 'studieren': *„Die Studentin hat ein Jahr in Wien ___.“*
     * Đáp án chấp nhận: `["studiert"]`
     * Dịch nghĩa câu: *„Nữ sinh viên đã học đại học một năm ở Wien.“*
-    * Giải thích: Đuôi `-ieren` → không `ge-`: **`studiert`**.
-23. **Câu 23**: Điền dạng Präteritum của `sein`: *„Letzten Sommer ___ ich mit meiner Familie in Đà Nẵng.“*
+    * Giải thích: Các động từ có đuôi '-ieren' khi chuyển sang Partizip II không thêm tiền tố 'ge-', chỉ lấy gốc động từ 'studier-' cộng đuôi '-t' -> studiert.
+23. **Câu 23**: Điền động từ thích hợp ở thì quá khứ: *„Letzten Sommer ___ ich mit meiner Familie in Đà Nẵng.“*
     * Đáp án chấp nhận: `["war"]`
     * Dịch nghĩa câu: *„Mùa hè năm ngoái tôi đã ở Đà Nẵng cùng gia đình.“*
-    * Giải thích: `ich` + Präteritum của `sein` = **`war`**.
-24. **Câu 24**: Điền dạng Präteritum của `sein`: *„Wo ___ du gestern Nachmittag, Linh? Ich habe dich nicht gesehen.“*
+    * Giải thích: Trạng ngữ 'Letzten Sommer' (mùa hè năm ngoái) chỉ quá khứ và cụm 'in Đà Nẵng' chỉ nơi chốn nên ta dùng động từ 'sein' ở thì Präteritum. Đi với chủ ngữ ngôi thứ nhất số ít 'ich' chia là 'war'.
+24. **Câu 24**: Điền động từ thích hợp ở thì quá khứ: *„Wo ___ du gestern Nachmittag, Linh? Ich habe dich nicht gesehen.“*
     * Đáp án chấp nhận: `["warst"]`
     * Dịch nghĩa câu: *„Chiều qua bạn đã ở đâu vậy, Linh? Mình đã không nhìn thấy bạn.“*
-    * Giải thích: `du` + Präteritum của `sein` = **`warst`**.
-25. **Câu 25**: Điền dạng Präteritum của `haben`: *„Die Kinder ___ gestern viel Spaß am Strand.“*
+    * Giải thích: Câu hỏi về địa điểm ('Wo') vào thời điểm 'gestern Nachmittag' (chiều hôm qua) nên dùng động từ 'sein' ở thì Präteritum. Chia theo chủ ngữ ngôi thứ hai số ít 'du' là 'warst'.
+25. **Câu 25**: Điền động từ thích hợp ở thì quá khứ: *„Die Kinder ___ gestern viel Spaß am Strand.“*
     * Đáp án chấp nhận: `["hatten"]`
     * Dịch nghĩa câu: *„Hôm qua bọn trẻ đã rất vui ở bãi biển.“*
-    * Giải thích: `die Kinder` = `sie` (số nhiều) + Präteritum của `haben` = **`hatten`**.
-26. **Câu 26**: Điền Partizip II của `wandern`: *„Ihr seid am Wochenende in den Bergen ___.“*
+    * Giải thích: Cụm 'viel Spaß haben' (có nhiều niềm vui / rất vui) diễn ra vào 'gestern' (hôm qua) nên dùng động từ 'haben' ở thì Präteritum. Chủ ngữ 'Die Kinder' là ngôi thứ 3 số nhiều (sie) nên chia là 'hatten'.
+26. **Câu 26**: Chia dạng đúng của động từ 'wandern': *„Ihr seid am Wochenende in den Bergen ___.“*
     * Đáp án chấp nhận: `["gewandert"]`
     * Dịch nghĩa câu: *„Cuối tuần các bạn đã đi bộ đường dài trên núi.“*
-    * Giải thích: `wandern` có quy tắc: `ge` + `wander` + `t` = **`gewandert`** (dùng `sein` vì là di chuyển: `ihr seid`).
+    * Giải thích: Câu đã có trợ động từ 'seid' ở vị trí thứ 2 nên cuối câu cần điền Partizip II. 'wandern' là động từ có quy tắc: ge + wander + t -> gewandert.
 
 ---
 
@@ -814,30 +814,38 @@ Toàn bộ **100 câu hỏi** dưới đây là **câu mới sáng tác**, chỉ
 
 ---
 
-#### NHÓM 4: DỊCH TỪ / CỤM TỪ ĐỨC → VIỆT (`dich_nghia_dv` — 8 Câu: Câu 35 → Câu 42)
+#### NHÓM 4: DỊCH TỪ & CÂU NGẮN ĐỨC → VIỆT (`dich_nghia_dv` — 8 Câu: Câu 35 → Câu 42)
 35. **Câu 35**: Dịch sang tiếng Việt: ***„das Reiseland“***
-    * Đáp án chấp nhận: `["đất nước du lịch", "quốc gia du lịch", "nước du lịch"]`
+    * Đáp án chấp nhận: `["đất nước du lịch", "quốc gia du lịch", "nước du lịch", "xứ sở du lịch", "một đất nước du lịch", "một quốc gia du lịch", "một nước du lịch", "một xứ sở du lịch", "cái đất nước du lịch"]`
+    * Dịch nghĩa câu: *„đất nước du lịch / quốc gia du lịch“*
     * Giải thích: `die Reise` (chuyến du lịch) + `das Land` (đất nước) = **`das Reiseland`**.
 36. **Câu 36**: Dịch sang tiếng Việt: ***„der Bummel“***
-    * Đáp án chấp nhận: `["cuộc đi dạo", "cuộc đi dạo phố", "sự đi dạo", "đi dạo"]`
+    * Đáp án chấp nhận: `["cuộc đi dạo", "chuyến đi dạo", "buổi đi dạo", "cuộc dạo phố", "buổi dạo phố", "chuyến dạo phố", "đi dạo", "đi dạo phố", "dạo phố", "sự đi dạo", "cuộc tản bộ", "chuyến tản bộ", "buổi tản bộ", "đi tản bộ", "tản bộ"]`
+    * Dịch nghĩa câu: *„cuộc đi dạo (phố) / buổi dạo phố / đi dạo“*
     * Giải thích: `der Bummel` là cuộc đi dạo phố, tản bộ ngắm cảnh (số nhiều: `die Bummel`).
 37. **Câu 37**: Dịch sang tiếng Việt: ***„die Besichtigung“***
-    * Đáp án chấp nhận: `["sự tham quan", "buổi tham quan", "chuyến tham quan", "tham quan"]`
+    * Đáp án chấp nhận: `["sự tham quan", "cuộc tham quan", "buổi tham quan", "chuyến tham quan", "việc tham quan", "tham quan", "chuyến đi tham quan", "buổi đi tham quan", "cuộc đi tham quan"]`
+    * Dịch nghĩa câu: *„sự tham quan / cuộc tham quan / buổi tham quan“*
     * Giải thích: `die Besichtigung` xuất phát từ động từ `besichtigen` (tham quan); đuôi `-ung` luôn là `die`.
 38. **Câu 38**: Dịch sang tiếng Việt: ***„Es war langweilig.“***
-    * Đáp án chấp nhận: `["Nó chán.", "Nó đã chán.", "Nó nhàm chán.", "Thật nhàm chán.", "Nó rất chán."]`
+    * Đáp án chấp nhận: `["Nó chán.", "nó chán", "Nó rất chán.", "nó rất chán", "Nó đã chán.", "nó đã chán", "Nó nhàm chán.", "nó nhàm chán", "Nó đã rất nhàm chán.", "nó đã rất nhàm chán", "Nó thật nhàm chán.", "nó thật nhàm chán", "Thật nhàm chán.", "thật nhàm chán", "Rất nhàm chán.", "rất nhàm chán", "Rất chán.", "rất chán", "Chán lắm.", "chán lắm", "Kỳ nghỉ thật nhàm chán.", "kỳ nghỉ thật nhàm chán", "kỳ nghỉ rất chán", "Chuyến đi thật nhàm chán.", "chuyến đi thật nhàm chán", "Chuyến đi rất chán.", "chuyến đi rất chán", "Chuyến đi đã rất chán.", "chuyến đi đã rất chán", "Kỳ nghỉ đã rất chán.", "kỳ nghỉ đã rất chán", "Mọi thứ thật nhàm chán.", "mọi thứ thật nhàm chán", "Mọi thứ rất chán.", "mọi thứ rất chán", "Điều đó thật nhàm chán.", "điều đó thật nhàm chán", "Nó tẻ nhạt.", "nó tẻ nhạt", "Thật tẻ nhạt.", "thật tẻ nhạt", "Rất tẻ nhạt.", "rất tẻ nhạt", "Buồn tẻ.", "buồn tẻ", "Thật buồn tẻ.", "thật buồn tẻ", "Nó buồn tẻ.", "nó buồn tẻ", "Nó đã rất chán.", "nó đã rất chán", "Nó khá chán.", "nó khá chán", "Thật là chán.", "thật là chán", "Thật là nhàm chán.", "thật là nhàm chán", "Nó đã tẻ nhạt.", "nó đã tẻ nhạt", "Kỳ nghỉ tẻ nhạt.", "kỳ nghỉ tẻ nhạt", "Chuyến đi tẻ nhạt.", "chuyến đi tẻ nhạt"]`
+    * Dịch nghĩa câu: *„Nó (đã) rất nhàm chán. / Nó chán.“*
     * Giải thích: `es war` là Präteritum của `sein` (*"nó đã là"*), `langweilig` = chán, nhàm chán.
 39. **Câu 39**: Dịch sang tiếng Việt: ***„Ich habe Fotos gemacht.“***
-    * Đáp án chấp nhận: `["Tôi đã chụp ảnh.", "Tôi đã chụp những bức ảnh.", "Tôi đã chụp nhiều ảnh."]`
+    * Đáp án chấp nhận: `["Tôi đã chụp ảnh.", "tôi đã chụp ảnh", "Tôi đã chụp hình.", "tôi đã chụp hình", "Tôi chụp ảnh.", "tôi chụp ảnh", "Tôi chụp hình.", "tôi chụp hình", "Mình đã chụp ảnh.", "mình đã chụp ảnh", "Mình đã chụp hình.", "mình đã chụp hình", "Mình chụp ảnh.", "mình chụp ảnh", "Mình chụp hình.", "mình chụp hình", "Tớ đã chụp ảnh.", "tớ đã chụp ảnh", "Tớ đã chụp hình.", "tớ đã chụp hình", "Tớ chụp ảnh.", "tớ chụp ảnh", "Tớ chụp hình.", "tớ chụp hình", "Tôi đã chụp những bức ảnh.", "tôi đã chụp những bức ảnh", "Tôi đã chụp các bức ảnh.", "tôi đã chụp các bức ảnh", "Tôi đã chụp nhiều ảnh.", "tôi đã chụp nhiều ảnh", "Tôi đã chụp nhiều hình.", "tôi đã chụp nhiều hình", "Tôi đã chụp mấy tấm hình.", "tôi đã chụp mấy tấm hình", "Tôi đã chụp mấy bức ảnh.", "tôi đã chụp mấy bức ảnh", "Tôi đã chụp những tấm ảnh.", "tôi đã chụp những tấm hình", "Mình đã chụp nhiều ảnh.", "mình đã chụp nhiều ảnh", "Mình đã chụp nhiều hình.", "mình đã chụp nhiều hình", "Tôi có chụp ảnh.", "tôi có chụp ảnh", "Tôi vừa chụp ảnh.", "tôi vừa chụp ảnh", "Mình có chụp ảnh.", "mình có chụp ảnh", "Tôi đã chụp được nhiều ảnh.", "tôi đã chụp được nhiều ảnh", "Tôi đã chụp được nhiều bức ảnh.", "tôi đã chụp được nhiều bức ảnh"]`
+    * Dịch nghĩa câu: *„Tôi đã chụp ảnh. / Tôi đã chụp hình.“*
     * Giải thích: `Fotos machen` = chụp ảnh; Perfekt `ich habe … gemacht` = *"tôi đã …"*.
 40. **Câu 40**: Dịch sang tiếng Việt: ***„Wir sind in den Alpen gewandert.“***
-    * Đáp án chấp nhận: `["Chúng tôi đã đi bộ đường dài trên dãy Alps.", "Chúng tôi đã đi bộ đường dài ở dãy Alps.", "Chúng tôi đã đi bộ đường dài trong dãy Alps."]`
+    * Đáp án chấp nhận: `["Chúng tôi đã đi bộ đường dài trên dãy Alps.", "chúng tôi đã đi bộ đường dài trên dãy alps", "Chúng tôi đã đi bộ đường dài ở dãy Alps.", "chúng tôi đã đi bộ đường dài ở dãy alps", "Chúng tôi đã đi bộ đường dài trong dãy Alps.", "chúng tôi đã đi bộ đường dài trong dãy alps", "Chúng tôi đã đi bộ trên dãy Alps.", "chúng tôi đã đi bộ trên dãy alps", "Chúng tôi đã đi bộ ở dãy Alps.", "chúng tôi đã đi bộ ở dãy alps", "Chúng tôi đã đi bộ trong dãy Alps.", "chúng tôi đã đi bộ trong dãy alps", "Chúng tôi đã đi bộ trong dãy Alpen.", "chúng tôi đã đi bộ trong dãy alpen", "Chúng tôi đã đi bộ trên dãy Alpen.", "chúng tôi đã đi bộ trên dãy alpen", "Chúng tôi đã đi bộ ở dãy Alpen.", "chúng tôi đã đi bộ ở dãy alpen", "Chúng tôi đã đi bộ đường dài trên dãy Alpen.", "chúng tôi đã đi bộ đường dài trên dãy alpen", "Chúng tôi đã đi bộ leo núi ở dãy an-pơ.", "chúng tôi đã đi bộ leo núi ở dãy an-pơ", "Chúng tôi đã đi bộ leo núi ở dãy an pơ.", "chúng tôi đã đi bộ leo núi ở dãy an pơ", "Chúng tôi đã đi bộ leo núi trên dãy Alps.", "chúng tôi đã đi bộ leo núi trên dãy alps", "Chúng tôi đã đi bộ leo núi ở dãy Alps.", "chúng tôi đã đi bộ leo núi ở dãy alps", "Chúng tôi đã đi bộ leo núi trong dãy Alps.", "chúng tôi đã đi bộ leo núi trong dãy alps", "Chúng tôi đã leo núi trên dãy Alps.", "chúng tôi đã leo núi trên dãy alps", "Chúng tôi đã leo núi ở dãy Alps.", "chúng tôi đã leo núi ở dãy alps", "Chúng tôi đã đi dạo bộ trên dãy Alps.", "chúng tôi đã đi dạo bộ trên dãy alps", "Chúng tôi đã đi dạo bộ ở dãy Alps.", "chúng tôi đã đi dạo bộ ở dãy alps", "Chúng tôi đã đi phượt bộ trên dãy Alps.", "chúng tôi đã đi phượt bộ trên dãy alps", "Chúng tôi đã đi phượt bộ ở dãy Alps.", "chúng tôi đã đi phượt bộ ở dãy alps", "Chúng tôi đã đi bộ trên núi Alps.", "chúng tôi đã đi bộ trên núi alps", "Chúng tôi đã đi bộ ở núi Alps.", "chúng tôi đã đi bộ ở núi alps", "Chúng tôi đã đi bộ trên núi Alpen.", "chúng tôi đã đi bộ trên núi alpen", "Chúng tôi đã đi bộ ở núi Alpen.", "chúng tôi đã đi bộ ở núi alpen", "Chúng tôi đã đi bộ ở Alps.", "chúng tôi đã đi bộ ở alps", "Chúng tôi đã đi bộ trên Alps.", "chúng tôi đã đi bộ trên alps", "Chúng tôi đã đi bộ đường dài ở Alps.", "chúng tôi đã đi bộ đường dài ở alps", "Chúng tôi đã đi bộ đường dài trên Alps.", "chúng tôi đã đi bộ đường dài trên alps", "Chúng tôi đi bộ trên dãy Alps.", "chúng tôi đi bộ trên dãy alps", "Chúng tôi đi bộ ở dãy Alps.", "chúng tôi đi bộ ở dãy alps", "Chúng tôi đi bộ đường dài trên dãy Alps.", "chúng tôi đi bộ đường dài trên dãy alps", "Chúng tôi đi bộ đường dài ở dãy Alps.", "chúng tôi đi bộ đường dài ở dãy alps", "Chúng mình đã đi bộ trên dãy Alps.", "chúng mình đã đi bộ trên dãy alps", "Chúng mình đã đi bộ ở dãy Alps.", "chúng mình đã đi bộ ở dãy alps", "Chúng mình đã đi bộ đường dài trên dãy Alps.", "chúng mình đã đi bộ đường dài trên dãy alps", "Tụi mình đã đi bộ trên dãy Alps.", "tụi mình đã đi bộ trên dãy alps", "Bọn mình đã đi bộ trên dãy Alps.", "bọn mình đã đi bộ trên dãy alps", "Chúng ta đã đi bộ trên dãy Alps.", "chúng ta đã đi bộ trên dãy alps"]`
+    * Dịch nghĩa câu: *„Chúng tôi đã đi bộ (đường dài / leo núi) trên dãy Alps.“*
     * Giải thích: `wandern` = đi bộ đường dài (dùng `sein`); `in den Alpen` = ở / trong dãy Alps.
 41. **Câu 41**: Dịch sang tiếng Việt: ***„Das Wetter war prima.“***
-    * Đáp án chấp nhận: `["Thời tiết thật tuyệt.", "Thời tiết đã rất tốt.", "Thời tiết rất tuyệt.", "Thời tiết rất tốt."]`
+    * Đáp án chấp nhận: `["thời tiết thật tuyệt", "thời tiết thật tuyệt.", "thời tiết rất tuyệt", "thời tiết rất tuyệt.", "thời tiết tuyệt vời", "thời tiết tuyệt vời.", "thời tiết rất tuyệt vời", "thời tiết rất tuyệt vời.", "thời tiết đã rất tuyệt", "thời tiết đã rất tuyệt.", "thời tiết rất tốt", "thời tiết rất tốt.", "thời tiết đã rất tốt", "thời tiết đã rất tốt.", "thời tiết rất đẹp", "thời tiết rất đẹp.", "thời tiết thật đẹp", "thời tiết thật đẹp.", "thời tiết quá tuyệt", "thời tiết quá tuyệt.", "thời tiết cực đẹp", "thời tiết cực đẹp.", "thời tiết đã thật tuyệt", "thời tiết thật là tuyệt", "thời tiết đã rất đẹp", "thời tiết cực kỳ đẹp", "thời tiết quá đẹp", "thời tiết đã tuyệt vời", "thời tiết tốt lắm", "thời tiết đẹp lắm", "thời tiết tuyệt lắm"]`
+    * Dịch nghĩa câu: *„Thời tiết (đã) rất tuyệt vời / rất tốt / rất đẹp.“*
     * Giải thích: `das Wetter` (thời tiết) + `war` (Präteritum của `sein`) + `prima` (rất tốt, tuyệt).
 42. **Câu 42**: Dịch sang tiếng Việt: ***„Was ist passiert?“***
-    * Đáp án chấp nhận: `["Chuyện gì đã xảy ra?", "Có chuyện gì xảy ra vậy?", "Chuyện gì xảy ra vậy?", "Điều gì đã xảy ra?"]`
+    * Đáp án chấp nhận: `["chuyện gì đã xảy ra", "chuyện gì đã xảy ra?", "chuyện gì đã xảy ra vậy", "chuyện gì đã xảy ra vậy?", "chuyện gì đã xảy ra thế", "chuyện gì đã xảy ra thế?", "chuyện gì xảy ra vậy", "chuyện gì xảy ra vậy?", "chuyện gì xảy ra thế", "chuyện gì xảy ra thế?", "điều gì đã xảy ra", "điều gì đã xảy ra?", "điều gì đã xảy ra vậy", "điều gì đã xảy ra vậy?", "điều gì xảy ra vậy", "điều gì xảy ra vậy?", "có chuyện gì đã xảy ra", "có chuyện gì đã xảy ra?", "có chuyện gì xảy ra vậy", "có chuyện gì xảy ra vậy?", "có chuyện gì thế", "có chuyện gì thế?", "có chuyện gì vậy", "có chuyện gì vậy?", "việc gì đã xảy ra", "việc gì đã xảy ra?", "việc gì xảy ra vậy", "việc gì xảy ra vậy?", "cái gì đã xảy ra", "cái gì đã xảy ra?", "cái gì đã xảy ra vậy", "cái gì đã xảy ra vậy?", "chuyện gì thế", "chuyện gì thế?"]`
+    * Dịch nghĩa câu: *„Chuyện gì đã xảy ra (vậy)? / Điều gì đã xảy ra?“*
     * Giải thích: `passieren` (xảy ra) dùng `sein` → `es ist passiert`; câu hỏi `Was ist passiert?`.
 
 ---

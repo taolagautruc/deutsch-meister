@@ -1383,10 +1383,10 @@ def seed_lesson_9():
             },
             {
                     "type": "dien_khuyet",
-                    "question": "Câu 13: Điền trợ động từ: „Meine Oma ___ im Sommer auf der Insel Phú Quốc Urlaub gemacht.“",
+                    "question": "Câu 13: Điền trợ động từ thích hợp: „Meine Oma ___ im Sommer auf der Insel Phú Quốc Urlaub gemacht.“",
                     "options": null,
                     "correct_answer": "hat",
-                    "explanation": "'Urlaub machen' có tân ngữ → 'haben'; 'meine Oma' = 'sie' → 'hat'.",
+                    "explanation": "Cụm 'Urlaub machen' chỉ hoạt động và có tân ngữ nên đi với trợ động từ 'haben'. Chủ ngữ 'Meine Oma' thuộc ngôi thứ 3 số ít (sie) nên chia là 'hat'.",
                     "exp_reward": 15,
                     "extra_data": {
                             "accepted_answers": [
@@ -1397,10 +1397,10 @@ def seed_lesson_9():
             },
             {
                     "type": "dien_khuyet",
-                    "question": "Câu 14: Điền trợ động từ: „Mein Bruder ___ gestern Abend um zehn Uhr eingeschlafen.“",
+                    "question": "Câu 14: Điền trợ động từ thích hợp: „Mein Bruder ___ gestern Abend um zehn Uhr eingeschlafen.“",
                     "options": null,
                     "correct_answer": "ist",
-                    "explanation": "'einschlafen' là đổi trạng thái → 'sein'; 'mein Bruder' = 'er' → 'ist'.",
+                    "explanation": "Động từ tách 'einschlafen' (ngủ thiếp đi) diễn tả sự thay đổi trạng thái nên đi với trợ động từ 'sein'. Chủ ngữ 'Mein Bruder' thuộc ngôi thứ 3 số ít (er) nên chia là 'ist'.",
                     "exp_reward": 15,
                     "extra_data": {
                             "accepted_answers": [
@@ -1411,24 +1411,24 @@ def seed_lesson_9():
             },
             {
                     "type": "dien_khuyet",
-                    "question": "Câu 15: Điền Partizip II của 'suchen': „Habt ihr am Strand den Reiseführer ___?“",
+                    "question": "Câu 15: Chia dạng đúng của động từ 'suchen': „Habt ihr am Strand den Reiseführer ___?“",
                     "options": null,
                     "correct_answer": "gesucht",
-                    "explanation": "'suchen' có quy tắc: 'ge' + 'such' + 't' = 'gesucht'.",
+                    "explanation": "Câu có trợ động từ 'Habt' ở đầu câu nên cuối câu cần điền Partizip II. 'suchen' là động từ có quy tắc: ge + such + t -> gesucht.",
                     "exp_reward": 15,
                     "extra_data": {
                             "accepted_answers": [
                                     "gesucht"
                             ],
-                            "translation": "Các bạn đã tìm cuốn sách hướng dẫn du lịch ở bãi biển phải không?"
+                            "translation": "Các bạn đã tìm người hướng dẫn viên du lịch (hoặc: cuốn sách hướng dẫn du lịch) ở bãi biển phải không?"
                     }
             },
             {
                     "type": "dien_khuyet",
-                    "question": "Câu 16: Điền Partizip II của 'ankommen': „Der Zug ist pünktlich in München ___.“",
+                    "question": "Câu 16: Chia dạng đúng của động từ 'ankommen': „Der Zug ist pünktlich in München ___.“",
                     "options": null,
                     "correct_answer": "angekommen",
-                    "explanation": "Tiền tố tách 'an-' + bất quy tắc 'kommen → gekommen' → 'an' + 'ge' + 'kommen' = 'angekommen' (dùng 'sein').",
+                    "explanation": "'ankommen' là động từ tách (tiền tố 'an-') kết hợp với động từ bất quy tắc 'kommen' (Partizip II là 'gekommen'). Khi ghép lại, '-ge-' nằm giữa tiền tố và gốc động từ: an + ge + kommen -> angekommen.",
                     "exp_reward": 15,
                     "extra_data": {
                             "accepted_answers": [
@@ -1439,10 +1439,10 @@ def seed_lesson_9():
             },
             {
                     "type": "dien_khuyet",
-                    "question": "Câu 17: Điền Partizip II của 'übernachten': „Wir haben im Zelt ___.“",
+                    "question": "Câu 17: Chia dạng đúng của động từ 'übernachten': „Wir haben im Zelt ___.“",
                     "options": null,
                     "correct_answer": "übernachtet",
-                    "explanation": "Tiền tố 'über-' không tách → không 'ge-'; gốc 'übernacht' đuôi '-t' → thêm '-et': 'übernachtet'.",
+                    "explanation": "Động từ 'übernachten' có tiền tố không tách 'über-' nên không thêm 'ge-' ở Partizip II. Vì gốc động từ 'übernacht-' kết thúc bằng âm '-t' nên phải thêm đuôi '-et' -> übernachtet.",
                     "exp_reward": 15,
                     "extra_data": {
                             "accepted_answers": [
@@ -1454,10 +1454,10 @@ def seed_lesson_9():
             },
             {
                     "type": "dien_khuyet",
-                    "question": "Câu 18: Điền Partizip II của 'bezahlen': „Hast du schon die Rechnung ___?“",
+                    "question": "Câu 18: Chia dạng đúng của động từ 'bezahlen': „Hast du schon die Rechnung ___?“",
                     "options": null,
                     "correct_answer": "bezahlt",
-                    "explanation": "Tiền tố 'be-' không tách → không 'ge-': 'bezahlt'.",
+                    "explanation": "Động từ 'bezahlen' là động từ có quy tắc mang tiền tố không tách 'be-', nên khi chuyển sang Partizip II không thêm 'ge-', chỉ lấy gốc 'bezahl-' + '-t' -> bezahlt.",
                     "exp_reward": 15,
                     "extra_data": {
                             "accepted_answers": [
@@ -1468,10 +1468,10 @@ def seed_lesson_9():
             },
             {
                     "type": "dien_khuyet",
-                    "question": "Câu 19: Điền Partizip II của 'baden': „Die Kinder haben den ganzen Tag im Meer ___.“",
+                    "question": "Câu 19: Chia dạng đúng của động từ 'baden': „Die Kinder haben den ganzen Tag im Meer ___.“",
                     "options": null,
                     "correct_answer": "gebadet",
-                    "explanation": "Gốc 'bad' kết thúc '-d' → 'ge' + 'bad' + 'et' = 'gebadet'.",
+                    "explanation": "'baden' là động từ có quy tắc nhưng gốc 'bad-' kết thúc bằng phụ âm '-d', do đó phải thêm âm đệm '-e-' trước đuôi '-t' để dễ phát âm: ge + bad + et -> gebadet.",
                     "exp_reward": 15,
                     "extra_data": {
                             "accepted_answers": [
@@ -1482,10 +1482,10 @@ def seed_lesson_9():
             },
             {
                     "type": "dien_khuyet",
-                    "question": "Câu 20: Điền Partizip II của 'regnen': „Gestern hat es den ganzen Tag ___.“",
+                    "question": "Câu 20: Chia dạng đúng của động từ 'regnen': „Gestern hat es den ganzen Tag ___.“",
                     "options": null,
                     "correct_answer": "geregnet",
-                    "explanation": "Gốc 'regn' khó phát âm nếu chỉ thêm '-t' → 'geregnet' (động từ thời tiết dùng 'haben').",
+                    "explanation": "'regnen' là động từ có quy tắc có gốc 'regn-' kết thúc bằng cụm phụ âm '-gn', nên khi tạo Partizip II phải thêm âm đệm '-e-' trước đuôi '-t': ge + regn + et -> geregnet.",
                     "exp_reward": 15,
                     "extra_data": {
                             "accepted_answers": [
@@ -1496,10 +1496,10 @@ def seed_lesson_9():
             },
             {
                     "type": "dien_khuyet",
-                    "question": "Câu 21: Điền Partizip II của 'essen': „Ich habe am Abend Reis mit Fisch ___.“",
+                    "question": "Câu 21: Chia dạng đúng của động từ 'essen': „Ich habe am Abend Reis mit Fisch ___.“",
                     "options": null,
                     "correct_answer": "gegessen",
-                    "explanation": "'essen' bất quy tắc: 'gegessen'.",
+                    "explanation": "'essen' là động từ bất quy tắc đặc biệt: khi chuyển sang Partizip II cần chèn thêm phụ âm '-g-' vào giữa tiền tố 'ge-' và gốc 'essen' -> gegessen.",
                     "exp_reward": 15,
                     "extra_data": {
                             "accepted_answers": [
@@ -1510,10 +1510,10 @@ def seed_lesson_9():
             },
             {
                     "type": "dien_khuyet",
-                    "question": "Câu 22: Điền Partizip II của 'studieren': „Die Studentin hat ein Jahr in Wien ___.“",
+                    "question": "Câu 22: Chia dạng đúng của động từ 'studieren': „Die Studentin hat ein Jahr in Wien ___.“",
                     "options": null,
                     "correct_answer": "studiert",
-                    "explanation": "Đuôi '-ieren' → không 'ge-': 'studiert'.",
+                    "explanation": "Các động từ có đuôi '-ieren' khi chuyển sang Partizip II không thêm tiền tố 'ge-', chỉ lấy gốc động từ 'studier-' cộng đuôi '-t' -> studiert.",
                     "exp_reward": 15,
                     "extra_data": {
                             "accepted_answers": [
@@ -1524,10 +1524,10 @@ def seed_lesson_9():
             },
             {
                     "type": "dien_khuyet",
-                    "question": "Câu 23: Điền dạng Präteritum của 'sein': „Letzten Sommer ___ ich mit meiner Familie in Đà Nẵng.“",
+                    "question": "Câu 23: Điền động từ thích hợp ở thì quá khứ: „Letzten Sommer ___ ich mit meiner Familie in Đà Nẵng.“",
                     "options": null,
                     "correct_answer": "war",
-                    "explanation": "'ich' + Präteritum của 'sein' = 'war'.",
+                    "explanation": "Trạng ngữ 'Letzten Sommer' (mùa hè năm ngoái) chỉ quá khứ và cụm 'in Đà Nẵng' chỉ nơi chốn nên ta dùng động từ 'sein' ở thì Präteritum. Đi với chủ ngữ ngôi thứ nhất số ít 'ich' chia là 'war'.",
                     "exp_reward": 15,
                     "extra_data": {
                             "accepted_answers": [
@@ -1538,10 +1538,10 @@ def seed_lesson_9():
             },
             {
                     "type": "dien_khuyet",
-                    "question": "Câu 24: Điền dạng Präteritum của 'sein': „Wo ___ du gestern Nachmittag, Linh? Ich habe dich nicht gesehen.“",
+                    "question": "Câu 24: Điền động từ thích hợp ở thì quá khứ: „Wo ___ du gestern Nachmittag, Linh? Ich habe dich nicht gesehen.“",
                     "options": null,
                     "correct_answer": "warst",
-                    "explanation": "'du' + Präteritum của 'sein' = 'warst'.",
+                    "explanation": "Câu hỏi về địa điểm ('Wo') vào thời điểm 'gestern Nachmittag' (chiều hôm qua) nên dùng động từ 'sein' ở thì Präteritum. Chia theo chủ ngữ ngôi thứ hai số ít 'du' là 'warst'.",
                     "exp_reward": 15,
                     "extra_data": {
                             "accepted_answers": [
@@ -1552,10 +1552,10 @@ def seed_lesson_9():
             },
             {
                     "type": "dien_khuyet",
-                    "question": "Câu 25: Điền dạng Präteritum của 'haben': „Die Kinder ___ gestern viel Spaß am Strand.“",
+                    "question": "Câu 25: Điền động từ thích hợp ở thì quá khứ: „Die Kinder ___ gestern viel Spaß am Strand.“",
                     "options": null,
                     "correct_answer": "hatten",
-                    "explanation": "'die Kinder' = 'sie' (số nhiều) + Präteritum của 'haben' = 'hatten'.",
+                    "explanation": "Cụm 'viel Spaß haben' (có nhiều niềm vui / rất vui) diễn ra vào 'gestern' (hôm qua) nên dùng động từ 'haben' ở thì Präteritum. Chủ ngữ 'Die Kinder' là ngôi thứ 3 số nhiều (sie) nên chia là 'hatten'.",
                     "exp_reward": 15,
                     "extra_data": {
                             "accepted_answers": [
@@ -1566,10 +1566,10 @@ def seed_lesson_9():
             },
             {
                     "type": "dien_khuyet",
-                    "question": "Câu 26: Điền Partizip II của 'wandern': „Ihr seid am Wochenende in den Bergen ___.“",
+                    "question": "Câu 26: Chia dạng đúng của động từ 'wandern': „Ihr seid am Wochenende in den Bergen ___.“",
                     "options": null,
                     "correct_answer": "gewandert",
-                    "explanation": "'wandern' có quy tắc: 'ge' + 'wander' + 't' = 'gewandert' (dùng 'sein' vì là di chuyển: 'ihr seid').",
+                    "explanation": "Câu đã có trợ động từ 'seid' ở vị trí thứ 2 nên cuối câu cần điền Partizip II. 'wandern' là động từ có quy tắc: ge + wander + t -> gewandert.",
                     "exp_reward": 15,
                     "extra_data": {
                             "accepted_answers": [
@@ -1710,9 +1710,15 @@ def seed_lesson_9():
                             "accepted_answers": [
                                     "đất nước du lịch",
                                     "quốc gia du lịch",
-                                    "nước du lịch"
+                                    "nước du lịch",
+                                    "xứ sở du lịch",
+                                    "một đất nước du lịch",
+                                    "một quốc gia du lịch",
+                                    "một nước du lịch",
+                                    "một xứ sở du lịch",
+                                    "cái đất nước du lịch"
                             ],
-                            "translation": "đất nước du lịch"
+                            "translation": "đất nước du lịch / quốc gia du lịch"
                     }
             },
             {
@@ -1725,11 +1731,22 @@ def seed_lesson_9():
                     "extra_data": {
                             "accepted_answers": [
                                     "cuộc đi dạo",
-                                    "cuộc đi dạo phố",
+                                    "chuyến đi dạo",
+                                    "buổi đi dạo",
+                                    "cuộc dạo phố",
+                                    "buổi dạo phố",
+                                    "chuyến dạo phố",
+                                    "đi dạo",
+                                    "đi dạo phố",
+                                    "dạo phố",
                                     "sự đi dạo",
-                                    "đi dạo"
+                                    "cuộc tản bộ",
+                                    "chuyến tản bộ",
+                                    "buổi tản bộ",
+                                    "đi tản bộ",
+                                    "tản bộ"
                             ],
-                            "translation": "cuộc đi dạo"
+                            "translation": "cuộc đi dạo (phố) / buổi dạo phố / đi dạo"
                     }
             },
             {
@@ -1742,11 +1759,16 @@ def seed_lesson_9():
                     "extra_data": {
                             "accepted_answers": [
                                     "sự tham quan",
+                                    "cuộc tham quan",
                                     "buổi tham quan",
                                     "chuyến tham quan",
-                                    "tham quan"
+                                    "việc tham quan",
+                                    "tham quan",
+                                    "chuyến đi tham quan",
+                                    "buổi đi tham quan",
+                                    "cuộc đi tham quan"
                             ],
-                            "translation": "sự tham quan"
+                            "translation": "sự tham quan / cuộc tham quan / buổi tham quan"
                     }
             },
             {
@@ -1759,12 +1781,70 @@ def seed_lesson_9():
                     "extra_data": {
                             "accepted_answers": [
                                     "Nó chán.",
+                                    "nó chán",
+                                    "Nó rất chán.",
+                                    "nó rất chán",
                                     "Nó đã chán.",
+                                    "nó đã chán",
                                     "Nó nhàm chán.",
+                                    "nó nhàm chán",
+                                    "Nó đã rất nhàm chán.",
+                                    "nó đã rất nhàm chán",
+                                    "Nó thật nhàm chán.",
+                                    "nó thật nhàm chán",
                                     "Thật nhàm chán.",
-                                    "Nó rất chán."
+                                    "thật nhàm chán",
+                                    "Rất nhàm chán.",
+                                    "rất nhàm chán",
+                                    "Rất chán.",
+                                    "rất chán",
+                                    "Chán lắm.",
+                                    "chán lắm",
+                                    "Kỳ nghỉ thật nhàm chán.",
+                                    "kỳ nghỉ thật nhàm chán",
+                                    "kỳ nghỉ rất chán",
+                                    "Chuyến đi thật nhàm chán.",
+                                    "chuyến đi thật nhàm chán",
+                                    "Chuyến đi rất chán.",
+                                    "chuyến đi rất chán",
+                                    "Chuyến đi đã rất chán.",
+                                    "chuyến đi đã rất chán",
+                                    "Kỳ nghỉ đã rất chán.",
+                                    "kỳ nghỉ đã rất chán",
+                                    "Mọi thứ thật nhàm chán.",
+                                    "mọi thứ thật nhàm chán",
+                                    "Mọi thứ rất chán.",
+                                    "mọi thứ rất chán",
+                                    "Điều đó thật nhàm chán.",
+                                    "điều đó thật nhàm chán",
+                                    "Nó tẻ nhạt.",
+                                    "nó tẻ nhạt",
+                                    "Thật tẻ nhạt.",
+                                    "thật tẻ nhạt",
+                                    "Rất tẻ nhạt.",
+                                    "rất tẻ nhạt",
+                                    "Buồn tẻ.",
+                                    "buồn tẻ",
+                                    "Thật buồn tẻ.",
+                                    "thật buồn tẻ",
+                                    "Nó buồn tẻ.",
+                                    "nó buồn tẻ",
+                                    "Nó đã rất chán.",
+                                    "nó đã rất chán",
+                                    "Nó khá chán.",
+                                    "nó khá chán",
+                                    "Thật là chán.",
+                                    "thật là chán",
+                                    "Thật là nhàm chán.",
+                                    "thật là nhàm chán",
+                                    "Nó đã tẻ nhạt.",
+                                    "nó đã tẻ nhạt",
+                                    "Kỳ nghỉ tẻ nhạt.",
+                                    "kỳ nghỉ tẻ nhạt",
+                                    "Chuyến đi tẻ nhạt.",
+                                    "chuyến đi tẻ nhạt"
                             ],
-                            "translation": "Nó chán."
+                            "translation": "Nó (đã) rất nhàm chán. / Nó chán."
                     }
             },
             {
@@ -1777,10 +1857,59 @@ def seed_lesson_9():
                     "extra_data": {
                             "accepted_answers": [
                                     "Tôi đã chụp ảnh.",
+                                    "tôi đã chụp ảnh",
+                                    "Tôi đã chụp hình.",
+                                    "tôi đã chụp hình",
+                                    "Tôi chụp ảnh.",
+                                    "tôi chụp ảnh",
+                                    "Tôi chụp hình.",
+                                    "tôi chụp hình",
+                                    "Mình đã chụp ảnh.",
+                                    "mình đã chụp ảnh",
+                                    "Mình đã chụp hình.",
+                                    "mình đã chụp hình",
+                                    "Mình chụp ảnh.",
+                                    "mình chụp ảnh",
+                                    "Mình chụp hình.",
+                                    "mình chụp hình",
+                                    "Tớ đã chụp ảnh.",
+                                    "tớ đã chụp ảnh",
+                                    "Tớ đã chụp hình.",
+                                    "tớ đã chụp hình",
+                                    "Tớ chụp ảnh.",
+                                    "tớ chụp ảnh",
+                                    "Tớ chụp hình.",
+                                    "tớ chụp hình",
                                     "Tôi đã chụp những bức ảnh.",
-                                    "Tôi đã chụp nhiều ảnh."
+                                    "tôi đã chụp những bức ảnh",
+                                    "Tôi đã chụp các bức ảnh.",
+                                    "tôi đã chụp các bức ảnh",
+                                    "Tôi đã chụp nhiều ảnh.",
+                                    "tôi đã chụp nhiều ảnh",
+                                    "Tôi đã chụp nhiều hình.",
+                                    "tôi đã chụp nhiều hình",
+                                    "Tôi đã chụp mấy tấm hình.",
+                                    "tôi đã chụp mấy tấm hình",
+                                    "Tôi đã chụp mấy bức ảnh.",
+                                    "tôi đã chụp mấy bức ảnh",
+                                    "Tôi đã chụp những tấm ảnh.",
+                                    "tôi đã chụp những tấm hình",
+                                    "Mình đã chụp nhiều ảnh.",
+                                    "mình đã chụp nhiều ảnh",
+                                    "Mình đã chụp nhiều hình.",
+                                    "mình đã chụp nhiều hình",
+                                    "Tôi có chụp ảnh.",
+                                    "tôi có chụp ảnh",
+                                    "Tôi vừa chụp ảnh.",
+                                    "tôi vừa chụp ảnh",
+                                    "Mình có chụp ảnh.",
+                                    "mình có chụp ảnh",
+                                    "Tôi đã chụp được nhiều ảnh.",
+                                    "tôi đã chụp được nhiều ảnh",
+                                    "Tôi đã chụp được nhiều bức ảnh.",
+                                    "tôi đã chụp được nhiều bức ảnh"
                             ],
-                            "translation": "Tôi đã chụp ảnh."
+                            "translation": "Tôi đã chụp ảnh. / Tôi đã chụp hình."
                     }
             },
             {
@@ -1793,10 +1922,85 @@ def seed_lesson_9():
                     "extra_data": {
                             "accepted_answers": [
                                     "Chúng tôi đã đi bộ đường dài trên dãy Alps.",
+                                    "chúng tôi đã đi bộ đường dài trên dãy alps",
                                     "Chúng tôi đã đi bộ đường dài ở dãy Alps.",
-                                    "Chúng tôi đã đi bộ đường dài trong dãy Alps."
+                                    "chúng tôi đã đi bộ đường dài ở dãy alps",
+                                    "Chúng tôi đã đi bộ đường dài trong dãy Alps.",
+                                    "chúng tôi đã đi bộ đường dài trong dãy alps",
+                                    "Chúng tôi đã đi bộ trên dãy Alps.",
+                                    "chúng tôi đã đi bộ trên dãy alps",
+                                    "Chúng tôi đã đi bộ ở dãy Alps.",
+                                    "chúng tôi đã đi bộ ở dãy alps",
+                                    "Chúng tôi đã đi bộ trong dãy Alps.",
+                                    "chúng tôi đã đi bộ trong dãy alps",
+                                    "Chúng tôi đã đi bộ trong dãy Alpen.",
+                                    "chúng tôi đã đi bộ trong dãy alpen",
+                                    "Chúng tôi đã đi bộ trên dãy Alpen.",
+                                    "chúng tôi đã đi bộ trên dãy alpen",
+                                    "Chúng tôi đã đi bộ ở dãy Alpen.",
+                                    "chúng tôi đã đi bộ ở dãy alpen",
+                                    "Chúng tôi đã đi bộ đường dài trên dãy Alpen.",
+                                    "chúng tôi đã đi bộ đường dài trên dãy alpen",
+                                    "Chúng tôi đã đi bộ leo núi ở dãy an-pơ.",
+                                    "chúng tôi đã đi bộ leo núi ở dãy an-pơ",
+                                    "Chúng tôi đã đi bộ leo núi ở dãy an pơ.",
+                                    "chúng tôi đã đi bộ leo núi ở dãy an pơ",
+                                    "Chúng tôi đã đi bộ leo núi trên dãy Alps.",
+                                    "chúng tôi đã đi bộ leo núi trên dãy alps",
+                                    "Chúng tôi đã đi bộ leo núi ở dãy Alps.",
+                                    "chúng tôi đã đi bộ leo núi ở dãy alps",
+                                    "Chúng tôi đã đi bộ leo núi trong dãy Alps.",
+                                    "chúng tôi đã đi bộ leo núi trong dãy alps",
+                                    "Chúng tôi đã leo núi trên dãy Alps.",
+                                    "chúng tôi đã leo núi trên dãy alps",
+                                    "Chúng tôi đã leo núi ở dãy Alps.",
+                                    "chúng tôi đã leo núi ở dãy alps",
+                                    "Chúng tôi đã đi dạo bộ trên dãy Alps.",
+                                    "chúng tôi đã đi dạo bộ trên dãy alps",
+                                    "Chúng tôi đã đi dạo bộ ở dãy Alps.",
+                                    "chúng tôi đã đi dạo bộ ở dãy alps",
+                                    "Chúng tôi đã đi phượt bộ trên dãy Alps.",
+                                    "chúng tôi đã đi phượt bộ trên dãy alps",
+                                    "Chúng tôi đã đi phượt bộ ở dãy Alps.",
+                                    "chúng tôi đã đi phượt bộ ở dãy alps",
+                                    "Chúng tôi đã đi bộ trên núi Alps.",
+                                    "chúng tôi đã đi bộ trên núi alps",
+                                    "Chúng tôi đã đi bộ ở núi Alps.",
+                                    "chúng tôi đã đi bộ ở núi alps",
+                                    "Chúng tôi đã đi bộ trên núi Alpen.",
+                                    "chúng tôi đã đi bộ trên núi alpen",
+                                    "Chúng tôi đã đi bộ ở núi Alpen.",
+                                    "chúng tôi đã đi bộ ở núi alpen",
+                                    "Chúng tôi đã đi bộ ở Alps.",
+                                    "chúng tôi đã đi bộ ở alps",
+                                    "Chúng tôi đã đi bộ trên Alps.",
+                                    "chúng tôi đã đi bộ trên alps",
+                                    "Chúng tôi đã đi bộ đường dài ở Alps.",
+                                    "chúng tôi đã đi bộ đường dài ở alps",
+                                    "Chúng tôi đã đi bộ đường dài trên Alps.",
+                                    "chúng tôi đã đi bộ đường dài trên alps",
+                                    "Chúng tôi đi bộ trên dãy Alps.",
+                                    "chúng tôi đi bộ trên dãy alps",
+                                    "Chúng tôi đi bộ ở dãy Alps.",
+                                    "chúng tôi đi bộ ở dãy alps",
+                                    "Chúng tôi đi bộ đường dài trên dãy Alps.",
+                                    "chúng tôi đi bộ đường dài trên dãy alps",
+                                    "Chúng tôi đi bộ đường dài ở dãy Alps.",
+                                    "chúng tôi đi bộ đường dài ở dãy alps",
+                                    "Chúng mình đã đi bộ trên dãy Alps.",
+                                    "chúng mình đã đi bộ trên dãy alps",
+                                    "Chúng mình đã đi bộ ở dãy Alps.",
+                                    "chúng mình đã đi bộ ở dãy alps",
+                                    "Chúng mình đã đi bộ đường dài trên dãy Alps.",
+                                    "chúng mình đã đi bộ đường dài trên dãy alps",
+                                    "Tụi mình đã đi bộ trên dãy Alps.",
+                                    "tụi mình đã đi bộ trên dãy alps",
+                                    "Bọn mình đã đi bộ trên dãy Alps.",
+                                    "bọn mình đã đi bộ trên dãy alps",
+                                    "Chúng ta đã đi bộ trên dãy Alps.",
+                                    "chúng ta đã đi bộ trên dãy alps"
                             ],
-                            "translation": "Chúng tôi đã đi bộ đường dài trên dãy Alps."
+                            "translation": "Chúng tôi đã đi bộ (đường dài / leo núi) trên dãy Alps."
                     }
             },
             {
@@ -1809,11 +2013,47 @@ def seed_lesson_9():
                     "extra_data": {
                             "accepted_answers": [
                                     "Thời tiết thật tuyệt.",
-                                    "Thời tiết đã rất tốt.",
+                                    "thời tiết thật tuyệt",
                                     "Thời tiết rất tuyệt.",
-                                    "Thời tiết rất tốt."
+                                    "thời tiết rất tuyệt",
+                                    "Thời tiết tuyệt vời.",
+                                    "thời tiết tuyệt vời",
+                                    "Thời tiết rất tuyệt vời.",
+                                    "thời tiết rất tuyệt vời",
+                                    "Thời tiết đã rất tuyệt.",
+                                    "thời tiết đã rất tuyệt",
+                                    "Thời tiết rất tốt.",
+                                    "thời tiết rất tốt",
+                                    "Thời tiết đã rất tốt.",
+                                    "thời tiết đã rất tốt",
+                                    "Thời tiết rất đẹp.",
+                                    "thời tiết rất đẹp",
+                                    "Thời tiết thật đẹp.",
+                                    "thời tiết thật đẹp",
+                                    "Thời tiết quá tuyệt.",
+                                    "thời tiết quá tuyệt",
+                                    "Thời tiết cực đẹp.",
+                                    "thời tiết cực đẹp",
+                                    "Thời tiết đã thật tuyệt.",
+                                    "thời tiết đã thật tuyệt",
+                                    "Thời tiết thật là tuyệt.",
+                                    "thời tiết thật là tuyệt",
+                                    "Thời tiết đã rất đẹp.",
+                                    "thời tiết đã rất đẹp",
+                                    "Thời tiết cực kỳ đẹp.",
+                                    "thời tiết cực kỳ đẹp",
+                                    "Thời tiết quá đẹp.",
+                                    "thời tiết quá đẹp",
+                                    "Thời tiết đã tuyệt vời.",
+                                    "thời tiết đã tuyệt vời",
+                                    "Thời tiết tốt lắm.",
+                                    "thời tiết tốt lắm",
+                                    "Thời tiết đẹp lắm.",
+                                    "thời tiết đẹp lắm",
+                                    "Thời tiết tuyệt lắm.",
+                                    "thời tiết tuyệt lắm"
                             ],
-                            "translation": "Thời tiết thật tuyệt."
+                            "translation": "Thời tiết (đã) rất tuyệt vời / rất tốt / rất đẹp."
                     }
             },
             {
@@ -1826,11 +2066,41 @@ def seed_lesson_9():
                     "extra_data": {
                             "accepted_answers": [
                                     "Chuyện gì đã xảy ra?",
-                                    "Có chuyện gì xảy ra vậy?",
+                                    "chuyện gì đã xảy ra",
+                                    "Chuyện gì đã xảy ra vậy?",
+                                    "chuyện gì đã xảy ra vậy",
+                                    "Chuyện gì đã xảy ra thế?",
+                                    "chuyện gì đã xảy ra thế",
                                     "Chuyện gì xảy ra vậy?",
-                                    "Điều gì đã xảy ra?"
+                                    "chuyện gì xảy ra vậy",
+                                    "Chuyện gì xảy ra thế?",
+                                    "chuyện gì xảy ra thế",
+                                    "Điều gì đã xảy ra?",
+                                    "điều gì đã xảy ra",
+                                    "Điều gì đã xảy ra vậy?",
+                                    "điều gì đã xảy ra vậy",
+                                    "Điều gì xảy ra vậy?",
+                                    "điều gì xảy ra vậy",
+                                    "Có chuyện gì đã xảy ra?",
+                                    "có chuyện gì đã xảy ra",
+                                    "Có chuyện gì xảy ra vậy?",
+                                    "có chuyện gì xảy ra vậy",
+                                    "Có chuyện gì thế?",
+                                    "có chuyện gì thế",
+                                    "Có chuyện gì vậy?",
+                                    "có chuyện gì vậy",
+                                    "Việc gì đã xảy ra?",
+                                    "việc gì đã xảy ra",
+                                    "Việc gì xảy ra vậy?",
+                                    "việc gì xảy ra vậy",
+                                    "Cái gì đã xảy ra?",
+                                    "cái gì đã xảy ra",
+                                    "Cái gì đã xảy ra vậy?",
+                                    "cái gì đã xảy ra vậy",
+                                    "Chuyện gì thế?",
+                                    "chuyện gì thế"
                             ],
-                            "translation": "Chuyện gì đã xảy ra?"
+                            "translation": "Chuyện gì đã xảy ra (vậy)? / Điều gì đã xảy ra?"
                     }
             },
             {
@@ -2394,7 +2664,14 @@ def seed_lesson_9():
                     "exp_reward": 25,
                     "extra_data": {
                             "accepted_answers": [
-                                    "Letzten Sommer bin ich nach Berlin gereist."
+                                    "Letzten Sommer bin ich nach Berlin gereist.",
+                                    "Letzten Sommer bin ich nach Berlin gereist",
+                                    "Letzten Sommer bin ich nach Berlin gefahren.",
+                                    "Letzten Sommer bin ich nach Berlin gefahren",
+                                    "Ich bin letzten Sommer nach Berlin gereist.",
+                                    "Ich bin letzten Sommer nach Berlin gereist",
+                                    "Ich bin letzten Sommer nach Berlin gefahren.",
+                                    "Ich bin letzten Sommer nach Berlin gefahren"
                             ],
                             "translation": "Mùa hè năm ngoái tôi đã đi du lịch đến Berlin."
                     }
@@ -2408,7 +2685,10 @@ def seed_lesson_9():
                     "exp_reward": 25,
                     "extra_data": {
                             "accepted_answers": [
-                                    "Meine Familie hat in einem kleinen Hotel übernachtet und viel Fisch gegessen."
+                                    "Meine Familie hat in einem kleinen Hotel übernachtet und viel Fisch gegessen.",
+                                    "Meine Familie hat in einem kleinen Hotel übernachtet und viel Fisch gegessen",
+                                    "Meine Familie hat in einem kleinen Hotel übernachtet und hat viel Fisch gegessen.",
+                                    "Meine Familie hat in einem kleinen Hotel übernachtet, und viel Fisch gegessen."
                             ],
                             "translation": "Gia đình tôi đã ở qua đêm trong một khách sạn nhỏ và đã ăn nhiều cá."
                     }
@@ -2422,7 +2702,12 @@ def seed_lesson_9():
                     "exp_reward": 25,
                     "extra_data": {
                             "accepted_answers": [
-                                    "Was hast du am Wochenende gemacht, Tom?"
+                                    "Was hast du am Wochenende gemacht, Tom?",
+                                    "Was hast du am Wochenende gemacht, Tom",
+                                    "Was hast du am Wochenende gemacht Tom?",
+                                    "Was hast du am Wochenende gemacht Tom",
+                                    "Tom, was hast du am Wochenende gemacht?",
+                                    "Tom, was hast du am Wochenende gemacht"
                             ],
                             "translation": "Bạn đã làm gì vào cuối tuần, Tom?"
                     }
@@ -2436,7 +2721,12 @@ def seed_lesson_9():
                     "exp_reward": 25,
                     "extra_data": {
                             "accepted_answers": [
-                                    "Gestern hat es den ganzen Tag geregnet, aber der Abend war toll."
+                                    "Gestern hat es den ganzen Tag geregnet, aber der Abend war toll.",
+                                    "Gestern hat es den ganzen Tag geregnet, aber der Abend war toll",
+                                    "Gestern hat es den ganzen Tag geregnet, aber der Abend war prima.",
+                                    "Gestern hat es den ganzen Tag geregnet, aber der Abend war prima",
+                                    "Gestern hat es den ganzen Tag geregnet, aber der Abend war schön.",
+                                    "Gestern hat es den ganzen Tag geregnet, aber der Abend war super."
                             ],
                             "translation": "Hôm qua trời đã mưa cả ngày, nhưng buổi tối thì tuyệt."
                     }
@@ -2450,7 +2740,10 @@ def seed_lesson_9():
                     "exp_reward": 25,
                     "extra_data": {
                             "accepted_answers": [
-                                    "Wir sind nicht lange am Strand geblieben."
+                                    "Wir sind nicht lange am Strand geblieben.",
+                                    "Wir sind nicht lange am Strand geblieben",
+                                    "Am Strand sind wir nicht lange geblieben.",
+                                    "Am Strand sind wir nicht lange geblieben"
                             ],
                             "translation": "Chúng tôi đã không ở lại bãi biển lâu."
                     }
@@ -2464,7 +2757,11 @@ def seed_lesson_9():
                     "exp_reward": 25,
                     "extra_data": {
                             "accepted_answers": [
-                                    "Meine Schwester hat mich gestern Abend angerufen."
+                                    "Meine Schwester hat mich gestern Abend angerufen.",
+                                    "Meine Schwester hat mich gestern Abend angerufen",
+                                    "Gestern Abend hat mich meine Schwester angerufen.",
+                                    "Gestern Abend hat mich meine Schwester angerufen",
+                                    "Gestern Abend hat meine Schwester mich angerufen."
                             ],
                             "translation": "Tối qua em gái tôi đã gọi điện cho tôi."
                     }
@@ -2478,7 +2775,18 @@ def seed_lesson_9():
                     "exp_reward": 25,
                     "extra_data": {
                             "accepted_answers": [
-                                    "Mùa đông năm ngoái chúng tôi đã đi Áo. Ở đó tuyết đã rơi nhiều."
+                                    "Mùa đông năm ngoái chúng tôi đã đi Áo. Ở đó tuyết đã rơi nhiều.",
+                                    "Mùa đông năm ngoái chúng tôi đã đi Áo. Ở đó tuyết rơi nhiều.",
+                                    "Mùa đông năm ngoái chúng tôi đã đi Áo. Ở đó tuyết rơi rất nhiều.",
+                                    "Mùa đông năm ngoái chúng tôi đã đi đến Áo. Ở đó tuyết đã rơi nhiều.",
+                                    "Mùa đông năm ngoái chúng tôi đã đi đến Áo. Ở đó tuyết rơi nhiều.",
+                                    "Mùa đông năm ngoái chúng tôi đã đi sang Áo. Ở đó tuyết đã rơi nhiều.",
+                                    "Mùa đông năm ngoái chúng mình đã đi Áo. Ở đó tuyết đã rơi nhiều.",
+                                    "Mùa đông trước chúng tôi đã đi Áo. Ở đó tuyết đã rơi nhiều.",
+                                    "Mùa đông vừa qua chúng tôi đã đi Áo. Ở đó tuyết đã rơi nhiều.",
+                                    "Mùa đông năm ngoái chúng tôi đã đi Áo. Tại đó tuyết đã rơi nhiều.",
+                                    "Mùa đông năm ngoái chúng tôi đã đi Áo Ở đó tuyết đã rơi nhiều",
+                                    "Mùa đông năm ngoái chúng tôi đã đi Áo Ở đó tuyết rơi nhiều"
                             ],
                             "translation": "Mùa đông năm ngoái chúng tôi đã đi Áo. Ở đó tuyết đã rơi nhiều."
                     }
@@ -2492,7 +2800,22 @@ def seed_lesson_9():
                     "exp_reward": 25,
                     "extra_data": {
                             "accepted_answers": [
-                                    "Tôi đã quên điện thoại trong khách sạn và bây giờ tôi phải quay lại."
+                                    "Tôi đã quên điện thoại trong khách sạn và bây giờ tôi phải quay lại.",
+                                    "Tôi đã quên điện thoại ở khách sạn và bây giờ tôi phải quay lại.",
+                                    "Tôi đã để quên điện thoại trong khách sạn và bây giờ tôi phải quay lại.",
+                                    "Tôi đã để quên điện thoại ở khách sạn và bây giờ tôi phải quay lại.",
+                                    "Tôi đã quên điện thoại trong khách sạn, và bây giờ tôi phải quay lại.",
+                                    "Tôi đã quên điện thoại ở khách sạn, và bây giờ tôi phải quay lại.",
+                                    "Tôi đã để quên điện thoại trong khách sạn, và bây giờ tôi phải quay lại.",
+                                    "Tôi đã để quên điện thoại ở khách sạn, và bây giờ tôi phải quay lại.",
+                                    "Tôi quên điện thoại ở khách sạn và bây giờ tôi phải quay lại.",
+                                    "Tôi bỏ quên điện thoại ở khách sạn và bây giờ tôi phải quay lại.",
+                                    "Mình đã để quên điện thoại ở khách sạn và bây giờ mình phải quay lại.",
+                                    "Tôi đã để quên điện thoại di động ở khách sạn và bây giờ tôi phải quay lại.",
+                                    "Tôi đã quên điện thoại trong khách sạn và giờ tôi phải quay lại.",
+                                    "Tôi đã quên điện thoại ở khách sạn và giờ tôi phải quay lại.",
+                                    "Tôi đã quên điện thoại trong khách sạn và bây giờ tôi phải quay về.",
+                                    "Tôi đã quên điện thoại ở khách sạn và bây giờ tôi phải quay về."
                             ],
                             "translation": "Tôi đã quên điện thoại trong khách sạn và bây giờ tôi phải quay lại."
                     }
@@ -2506,7 +2829,17 @@ def seed_lesson_9():
                     "exp_reward": 25,
                     "extra_data": {
                             "accepted_answers": [
-                                    "Hôm qua các bạn đã ở đâu vậy? Chúng tôi đã gọi cho các bạn nhưng các bạn đã không trả lời."
+                                    "Hôm qua các bạn đã ở đâu vậy? Chúng tôi đã gọi cho các bạn nhưng các bạn đã không trả lời.",
+                                    "Hôm qua các bạn đã ở đâu vậy? Chúng tôi đã gọi cho các bạn nhưng các bạn không trả lời.",
+                                    "Hôm qua các bạn đã ở đâu thế? Chúng tôi đã gọi cho các bạn nhưng các bạn đã không trả lời.",
+                                    "Hôm qua các bạn ở đâu vậy? Chúng tôi đã gọi cho các bạn nhưng các bạn không trả lời.",
+                                    "Hôm qua các bạn ở đâu thế? Chúng tôi đã gọi cho các bạn nhưng các bạn không trả lời.",
+                                    "Hôm qua các cậu đã ở đâu vậy? Chúng tôi đã gọi cho các cậu nhưng các cậu không trả lời.",
+                                    "Hôm qua các cậu ở đâu vậy? Chúng mình đã gọi cho các cậu nhưng các cậu không trả lời.",
+                                    "Hôm qua các bạn đã ở đâu vậy? Chúng tôi đã gọi điện cho các bạn nhưng các bạn không trả lời.",
+                                    "Hôm qua các bạn đã ở đâu? Chúng tôi đã gọi cho các bạn nhưng các bạn không trả lời.",
+                                    "Hôm qua các bạn đã ở đâu thế? Chúng tôi đã gọi điện cho các bạn nhưng các bạn không nghe máy.",
+                                    "Hôm qua các bạn ở đâu vậy? Chúng mình đã gọi cho các bạn nhưng các bạn không trả lời."
                             ],
                             "translation": "Hôm qua các bạn đã ở đâu vậy? Chúng tôi đã gọi cho các bạn nhưng các bạn đã không trả lời."
                     }
@@ -2520,7 +2853,18 @@ def seed_lesson_9():
                     "exp_reward": 25,
                     "extra_data": {
                             "accepted_answers": [
-                                    "Chuyến đi dài nhưng đẹp. Chúng tôi đã đi bằng tàu thủy và đã nhìn thấy nhiều hòn đảo."
+                                    "Chuyến đi dài nhưng đẹp. Chúng tôi đã đi bằng tàu thủy và đã nhìn thấy nhiều hòn đảo.",
+                                    "Chuyến đi dài nhưng đẹp. Chúng tôi đã đi bằng tàu thủy và nhìn thấy nhiều hòn đảo.",
+                                    "Chuyến đi dài nhưng đẹp. Chúng tôi đã đi bằng tàu thủy và thấy nhiều hòn đảo.",
+                                    "Chuyến đi dài nhưng đẹp. Chúng tôi đã đi tàu thủy và đã nhìn thấy nhiều hòn đảo.",
+                                    "Chuyến đi đã dài nhưng đẹp. Chúng tôi đã đi bằng tàu thủy và đã nhìn thấy nhiều hòn đảo.",
+                                    "Chuyến đi rất dài nhưng đẹp. Chúng tôi đã đi bằng tàu thủy và đã nhìn thấy nhiều hòn đảo.",
+                                    "Chuyến đi dài nhưng đẹp. Chúng tôi đã đi bằng tàu và đã nhìn thấy nhiều hòn đảo.",
+                                    "Chuyến đi dài nhưng đẹp. Chúng tôi đã đi bằng thuyền và đã nhìn thấy nhiều hòn đảo.",
+                                    "Chuyến đi dài nhưng đẹp. Chúng tôi đã đi tàu và thấy nhiều hòn đảo.",
+                                    "Chuyến du lịch dài nhưng đẹp. Chúng tôi đã đi bằng tàu thủy và đã nhìn thấy nhiều hòn đảo.",
+                                    "Chuyến đi dài nhưng đẹp. Chúng mình đã đi bằng tàu thủy và đã nhìn thấy nhiều hòn đảo.",
+                                    "Chuyến đi dài nhưng đẹp. Chúng tôi đã đi bằng tàu thủy và đã thấy nhiều hòn đảo."
                             ],
                             "translation": "Chuyến đi dài nhưng đẹp. Chúng tôi đã đi bằng tàu thủy và đã nhìn thấy nhiều hòn đảo."
                     }
@@ -2534,7 +2878,20 @@ def seed_lesson_9():
                     "exp_reward": 25,
                     "extra_data": {
                             "accepted_answers": [
-                                    "Ông tôi ngày trước đã sống trong một ngôi làng trên núi."
+                                    "Ông tôi ngày trước đã sống trong một ngôi làng trên núi.",
+                                    "Ông tôi trước đây đã sống trong một ngôi làng trên núi.",
+                                    "Ông tôi trước kia đã sống trong một ngôi làng trên núi.",
+                                    "Ông tôi ngày trước từng sống trong một ngôi làng trên núi.",
+                                    "Ông tôi trước đây từng sống trong một ngôi làng trên núi.",
+                                    "Ông tôi ngày trước sống trong một ngôi làng trên núi.",
+                                    "Ông tôi trước đây sống trong một ngôi làng trên núi.",
+                                    "Ông tôi ngày trước đã sống ở một ngôi làng trên núi.",
+                                    "Ông tôi trước đây đã sống ở một ngôi làng trên núi.",
+                                    "Ông tôi ngày trước đã ở trong một ngôi làng trên núi.",
+                                    "Ông của tôi ngày trước đã sống trong một ngôi làng trên núi.",
+                                    "Ông nội tôi ngày trước đã sống trong một ngôi làng trên núi.",
+                                    "Ông ngoại tôi ngày trước đã sống trong một ngôi làng trên núi.",
+                                    "Hồi trước ông tôi đã sống trong một ngôi làng trên núi."
                             ],
                             "translation": "Ông tôi ngày trước đã sống trong một ngôi làng trên núi."
                     }
@@ -2548,7 +2905,19 @@ def seed_lesson_9():
                     "exp_reward": 25,
                     "extra_data": {
                             "accepted_answers": [
-                                    "Bạn đã đóng vali chưa? — Chưa, chưa đâu. Trước tiên tôi đã mua vé."
+                                    "Bạn đã đóng vali chưa? — Chưa, chưa đâu. Trước tiên tôi đã mua vé.",
+                                    "Bạn đã đóng vali chưa? — Chưa, chưa đâu. Đầu tiên tôi đã mua vé.",
+                                    "Bạn đã xếp vali chưa? — Chưa, chưa đâu. Trước tiên tôi đã mua vé.",
+                                    "Bạn đã chuẩn bị vali chưa? — Chưa, chưa đâu. Trước tiên tôi đã mua vé.",
+                                    "Bạn đã soạn vali chưa? — Chưa, chưa đâu. Trước tiên tôi đã mua vé.",
+                                    "Cậu đã đóng vali chưa? — Chưa, chưa đâu. Trước tiên tớ đã mua vé.",
+                                    "Bạn đã đóng vali chưa? — Không, chưa đâu. Trước tiên tôi đã mua vé.",
+                                    "Bạn đã đóng vali chưa? — Vẫn chưa. Trước tiên tôi đã mua vé.",
+                                    "Bạn đã đóng vali chưa? — Chưa. Trước tiên tôi đã mua vé.",
+                                    "Bạn đã đóng vali chưa? Chưa, chưa đâu. Trước tiên tôi đã mua vé.",
+                                    "Bạn đã đóng vali chưa? Chưa, chưa đâu. Đầu tiên tôi đã mua vé.",
+                                    "Bạn đã đóng vali chưa? - Chưa, chưa đâu. Trước tiên tôi đã mua vé.",
+                                    "Bạn đã đóng vali chưa? — Chưa, chưa đâu. Trước hết tôi đã mua vé."
                             ],
                             "translation": "Bạn đã đóng vali chưa? — Chưa, chưa đâu. Trước tiên tôi đã mua vé."
                     }
