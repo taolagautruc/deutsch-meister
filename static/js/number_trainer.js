@@ -623,9 +623,49 @@ function normalizeVietnameseTranslation(str) {
     // Tuyến xe buýt 200
     s = s.replace(/\b(?:tuyến\s+)?xe\s+buýt\s+(?:tuyến\s+)?(?:số\s+)?200\b/g, 'xe buýt 200');
 
-    // Đại từ trang trọng & nhân xưng
+    // Đại từ trang trọng & nhân xưng linh hoạt (Bài 8, Bài 9 & toàn hệ thống)
     s = s.replace(/\b(ngài|ông|bà|anh|chị)\b/g, 'bạn');
-    s = s.replace(/\b(các\s+cậu|chúng\s+ta)\b/g, 'các bạn');
+    s = s.replace(/\b(chúng\s+mình|tụi\s+mình|bọn\s+mình|chúng\s+ta)\b/g, 'chúng tôi');
+    s = s.replace(/\b(mình|tớ)\b/g, 'tôi');
+    s = s.replace(/\b(các\s+cậu)\b/g, 'các bạn');
+    s = s.replace(/\b(cậu)\b/g, 'bạn');
+
+    // Từ loại danh từ trừu tượng
+    s = s.replace(/\b(sự|cuộc|buổi|chuyến|việc)\s+tham\s+quan\b/g, 'tham quan');
+    s = s.replace(/\b(sự|chuyến|buổi)\s+đi\s+dạo\b/g, 'cuộc đi dạo');
+    s = s.replace(/\b(chuyến|buổi)\s+dạo\s+phố\b/g, 'cuộc dạo phố');
+    s = s.replace(/\b(chuyến|buổi)\s+tản\s+bộ\b/g, 'cuộc tản bộ');
+
+    // Từ chỉ loại (một / cái)
+    s = s.replace(/\b(?:một|cái)\s+(đất\s+nước|quốc\s+gia|nước|xứ\s+sở)\b/g, '$1');
+
+    // Từ vựng chủ đề Bài 9 & Du lịch
+    s = s.replace(/\b(quốc\s+gia|nước|xứ\s+sở)\s+du\s+lịch\b/g, 'đất nước du lịch');
+    s = s.replace(/\bchụp\s+hình\b/g, 'chụp ảnh');
+    s = s.replace(/\b(?:những|các|nhiều|mấy)\s+(?:bức|tấm)?\s*(?:ảnh|hình)\b/g, 'ảnh');
+    s = s.replace(/\b(?:bức|tấm)\s+(?:ảnh|hình)\b/g, 'ảnh');
+
+    // Đi bộ & Leo núi dãy Alps
+    s = s.replace(/\b(đi\s+bộ\s+đường\s+dài|đi\s+bộ\s+leo\s+núi|leo\s+núi|đi\s+dạo\s+bộ|đi\s+phượt\s+bộ)\b/g, 'đi bộ');
+    s = s.replace(/\b(dãy\s+alpen|dãy\s+an-pơ|dãy\s+an\s+pơ|núi\s+alps|núi\s+alpen|alpen|an-pơ|an\s+pơ)\b/g, 'dãy alps');
+    s = s.replace(/\b(?:trên|ở|trong|tại)\s+(?:dãy\s+alps|alps)\b/g, 'ở dãy alps');
+
+    // Mức độ & cảm xúc / thời tiết
+    s = s.replace(/\b(nhàm\s+chán|tẻ\s+nhạt|buồn\s+tẻ)\b/g, 'chán');
+    s = s.replace(/\b(tuyệt\s+vời|rất\s+tuyệt|tuyệt|rất\s+tốt|rất\s+đẹp|thật\s+đẹp|quá\s+tuyệt|cực\s+đẹp|cực\s+kỳ\s+đẹp|tốt\s+lắm|đẹp\s+lắm|tuyệt\s+lắm)\b/g, 'tuyệt vời');
+    s = s.replace(/\b(điều\s+gì|việc\s+gì|cái\s+gì)\b/g, 'chuyện gì');
+    s = s.replace(/\b(đóng|xếp|soạn|gói|chuẩn\s+bị)\s+vali\b/g, 'đóng vali');
+    s = s.replace(/\b(ông\s+nội|ông\s+ngoại|ông\s+của\s+tôi)\b/g, 'ông tôi');
+    s = s.replace(/\b(trước\s+đây|trước\s+kia|hồi\s+trước)\b/g, 'ngày trước');
+    s = s.replace(/\b(từng\s+sống|đã\s+ở|đã\s+từng\s+sống)\b/g, 'đã sống');
+    s = s.replace(/\b(để\s+quên|bỏ\s+quên)\b/g, 'quên');
+    s = s.replace(/\bđiện\s+thoại\s+di\s+động\b/g, 'điện thoại');
+    s = s.replace(/\bquay\s+về\b/g, 'quay lại');
+    s = s.replace(/\bgọi\s+điện\b/g, 'gọi');
+    s = s.replace(/\b(tàu\s+thuỷ|thuyền)\b/g, 'tàu thủy');
+    s = s.replace(/\b(?:những|các|rất\s+nhiều)\s+hòn\s+đảo\b/g, 'nhiều hòn đảo');
+    s = s.replace(/\b(?:những|các|rất\s+nhiều)\s+đảo\b/g, 'nhiều hòn đảo');
+    s = s.replace(/\bnhiều\s+đảo\b/g, 'nhiều hòn đảo');
 
     // Các buổi trong ngày
     s = s.replace(/\bvào\s+buổi\s+(sáng|tối|chiều|trưa)\b/g, 'buổi $1');
@@ -751,10 +791,191 @@ function evaluateLesson8DVTranslation(userAns, qNum) {
     return false;
 }
 
+function evaluateLesson9DVTranslation(userAns, qNum) {
+    if (!userAns) return false;
+    const norm = normalizeVietnameseTranslation(userAns);
+    if (!norm) return false;
+
+    // Câu 35: das Reiseland -> đất nước du lịch / quốc gia du lịch
+    if (qNum === 35) {
+        return norm.includes('du lịch') && (norm.includes('đất nước') || norm.includes('quốc gia') || norm.includes('nước') || norm.includes('xứ sở'));
+    }
+
+    // Câu 36: der Bummel -> cuộc đi dạo / dạo phố / tản bộ
+    if (qNum === 36) {
+        return norm.includes('đi dạo') || norm.includes('dạo phố') || norm.includes('tản bộ') || norm.includes('dạo');
+    }
+
+    // Câu 37: die Besichtigung -> sự tham quan / cuộc tham quan
+    if (qNum === 37) {
+        return norm.includes('tham quan');
+    }
+
+    // Câu 38: Es war langweilig. -> Nó chán / nhàm chán / tẻ nhạt / buồn tẻ
+    if (qNum === 38) {
+        return norm.includes('chán') || norm.includes('tẻ nhạt') || norm.includes('buồn tẻ');
+    }
+
+    // Câu 39: Ich habe Fotos gemacht. -> Tôi (đã) chụp ảnh / chụp hình
+    if (qNum === 39) {
+        const hasSubj = norm.includes('tôi') || norm.includes('mình') || norm.includes('tớ') || !norm.includes('bạn');
+        const hasPhoto = norm.includes('chụp') && (norm.includes('ảnh') || norm.includes('hình'));
+        return hasPhoto && hasSubj;
+    }
+
+    // Câu 40: Wir sind in den Alpen gewandert. -> Chúng tôi đã đi bộ trên dãy Alps
+    if (qNum === 40) {
+        const hasAction = norm.includes('đi bộ') || norm.includes('leo núi') || norm.includes('tản bộ') || norm.includes('phượt') || norm.includes('dạo');
+        const hasAlps = norm.includes('alps') || norm.includes('alpen') || norm.includes('an-pơ') || norm.includes('an pơ');
+        return hasAction && hasAlps;
+    }
+
+    // Câu 41: Das Wetter war prima. -> Thời tiết (đã) rất tuyệt / rất tốt / rất đẹp
+    if (qNum === 41) {
+        const hasWeather = norm.includes('thời tiết');
+        const hasGood = norm.includes('tuyệt') || norm.includes('tốt') || norm.includes('đẹp');
+        return hasWeather && hasGood;
+    }
+
+    // Câu 42: Was ist passiert? -> Chuyện gì đã xảy ra (vậy)? / Điều gì đã xảy ra?
+    if (qNum === 42) {
+        const hasWhat = norm.includes('chuyện gì') || norm.includes('điều gì') || norm.includes('việc gì') || norm.includes('cái gì') || norm.includes('có chuyện');
+        const hasHappen = norm.includes('xảy ra') || norm.includes('thế') || norm.includes('vậy');
+        return (hasWhat && norm.includes('xảy ra')) || (norm.includes('chuyện gì') && (norm.includes('thế') || norm.includes('vậy')));
+    }
+
+    // Câu 73: Letzten Winter sind wir nach Österreich gefahren. Dort hat es viel geschneit.
+    if (qNum === 73) {
+        const hasWinter = norm.includes('mùa đông');
+        const hasAustria = norm.includes('áo') || norm.includes('österreich');
+        const hasSnow = norm.includes('tuyết');
+        return hasWinter && hasAustria && hasSnow;
+    }
+
+    // Câu 74: Ich habe mein Handy im Hotel vergessen, und jetzt muss ich zurückfahren.
+    if (qNum === 74) {
+        const hasForget = norm.includes('quên') || norm.includes('để quên') || norm.includes('bỏ quên');
+        const hasPhone = norm.includes('điện thoại');
+        const hasHotel = norm.includes('khách sạn') || norm.includes('hotel');
+        const hasReturn = norm.includes('quay lại') || norm.includes('quay về');
+        return hasForget && hasPhone && hasHotel && hasReturn;
+    }
+
+    // Câu 75: Wo wart ihr denn gestern? Wir haben euch angerufen, aber ihr habt nicht geantwortet.
+    if (qNum === 75) {
+        const hasWhere = norm.includes('ở đâu');
+        const hasCall = norm.includes('gọi');
+        const hasNoAnswer = norm.includes('không trả lời') || norm.includes('không nghe') || norm.includes('chưa trả lời');
+        return hasWhere && hasCall && hasNoAnswer;
+    }
+
+    // Câu 76: Die Reise war lang, aber schön. Wir sind mit dem Schiff gefahren und haben viele Inseln gesehen.
+    if (qNum === 76) {
+        const hasTrip = norm.includes('chuyến đi') || norm.includes('chuyến du lịch') || norm.includes('kỳ nghỉ');
+        const hasLong = norm.includes('dài');
+        const hasShip = norm.includes('tàu') || norm.includes('thuyền');
+        const hasIsland = norm.includes('đảo');
+        return (hasTrip || hasLong) && hasShip && hasIsland;
+    }
+
+    // Câu 77: Mein Opa hat früher in einem Dorf in den Bergen gewohnt.
+    if (qNum === 77) {
+        const hasGrandpa = norm.includes('ông');
+        const hasPast = norm.includes('ngày trước') || norm.includes('trước đây') || norm.includes('trước kia') || norm.includes('hồi trước') || norm.includes('sống') || norm.includes('ở');
+        const hasVillage = norm.includes('làng') || norm.includes('thôn');
+        const hasMountain = norm.includes('núi');
+        return hasGrandpa && hasPast && hasVillage && hasMountain;
+    }
+
+    // Câu 78: Hast du schon den Koffer gepackt? — Nein, noch nicht. Ich habe zuerst die Fahrkarten gekauft.
+    if (qNum === 78) {
+        const hasVali = norm.includes('vali');
+        const hasTicket = norm.includes('vé');
+        return hasVali && hasTicket;
+    }
+
+    return false;
+}
+
+function evaluateLesson9VDTranslation(userAns, qNum) {
+    if (!userAns) return false;
+    let s = userAns.trim().toLowerCase().normalize('NFC').replace(/[.,!?;:\"\'„“”«»‘`’–—\-\(\)]+/g, ' ').replace(/\s+/g, ' ').trim();
+    if (!s) return false;
+
+    // Câu 27: die Radtour
+    if (qNum === 27) return s === 'die radtour' || s === 'radtour';
+    // Câu 28: die Altstadt
+    if (qNum === 28) return s === 'die altstadt' || s === 'altstadt';
+    // Câu 29: der Reiseführer
+    if (qNum === 29) return s === 'der reiseführer' || s === 'reiseführer' || s === 'der reisefuehrer' || s === 'reisefuehrer';
+    // Câu 30: das Reiseziel
+    if (qNum === 30) return s === 'das reiseziel' || s === 'reiseziel';
+    // Câu 31: er ist angekommen
+    if (qNum === 31) return s === 'er ist angekommen';
+    // Câu 32: wir haben gezeltet
+    if (qNum === 32) return s === 'wir haben gezeltet';
+    // Câu 33: die Urlaube
+    if (qNum === 33) return s === 'die urlaube' || s === 'urlaube';
+    // Câu 34: ich habe das Essen probiert
+    if (qNum === 34) return s === 'ich habe das essen probiert';
+
+    // Câu 67: Mùa hè năm ngoái tôi đã đi du lịch đến Berlin.
+    if (qNum === 67) {
+        const hasTime = s.includes('letzten sommer');
+        const hasVerb = (s.includes('bin ich') || s.includes('ich bin')) && (s.includes('gereist') || s.includes('gefahren'));
+        const hasDest = s.includes('nach berlin');
+        return hasTime && hasVerb && hasDest;
+    }
+
+    // Câu 68: Gia đình tôi đã ở qua đêm trong một khách sạn nhỏ và đã ăn nhiều cá.
+    if (qNum === 68) {
+        const hasFam = s.includes('meine familie');
+        const hasHotel = s.includes('hotel') && (s.includes('übernachtet') || s.includes('uebernachtet'));
+        const hasFish = s.includes('fisch') && s.includes('gegessen');
+        return hasFam && hasHotel && hasFish;
+    }
+
+    // Câu 69: Bạn đã làm gì vào cuối tuần, Tom?
+    if (qNum === 69) {
+        const hasWas = s.includes('was hast du');
+        const hasWk = s.includes('am wochenende');
+        const hasGemacht = s.includes('gemacht');
+        return hasWas && hasWk && hasGemacht;
+    }
+
+    // Câu 70: Hôm qua trời đã mưa cả ngày, nhưng buổi tối thì tuyệt.
+    if (qNum === 70) {
+        const hasRegen = s.includes('gestern') && s.includes('den ganzen tag') && s.includes('geregnet');
+        const hasAbend = s.includes('der abend war') && (s.includes('toll') || s.includes('prima') || s.includes('schön') || s.includes('schoen') || s.includes('super'));
+        return hasRegen && hasAbend;
+    }
+
+    // Câu 71: Chúng tôi đã không ở lại bãi biển lâu.
+    if (qNum === 71) {
+        const hasWir = s.includes('wir sind');
+        const hasStrand = s.includes('am strand');
+        const hasStay = s.includes('nicht lange') && s.includes('geblieben');
+        return hasWir && hasStrand && hasStay;
+    }
+
+    // Câu 72: Tối qua em gái tôi đã gọi điện cho tôi.
+    if (qNum === 72) {
+        const hasSister = s.includes('meine schwester');
+        const hasCall = s.includes('angerufen');
+        const hasTime = s.includes('gestern abend');
+        const hasMich = s.includes('mich');
+        return hasSister && hasCall && hasTime && hasMich;
+    }
+
+    return false;
+}
+
 if (typeof window !== 'undefined') {
     window.normalizeVietnameseTranslation = normalizeVietnameseTranslation;
     window.hasVietnameseChars = hasVietnameseChars;
     window.evaluateLesson8DVTranslation = evaluateLesson8DVTranslation;
+    window.evaluateLesson9DVTranslation = evaluateLesson9DVTranslation;
+    window.evaluateLesson9VDTranslation = evaluateLesson9VDTranslation;
 }
 
 function checkGermanAnswerEquivalence(userAns, correctAns, options = {}) {
@@ -767,6 +988,27 @@ function checkGermanAnswerEquivalence(userAns, correctAns, options = {}) {
     if (isViTarget && hasVietnameseChars(correctAns)) {
         if (normalizeVietnameseTranslation(userAns) === normalizeVietnameseTranslation(correctAns)) {
             return true;
+        }
+    }
+
+    // Kiểm tra nhanh theo Rubric Bài 9 (Câu 35 -> 42, 73 -> 78 Dịch Đức -> Việt; Câu 27 -> 34, 67 -> 72 Dịch Việt -> Đức)
+    if (options && options.question) {
+        const isL9 = Boolean(
+            (options && (String(options.lesson_id) === '23' || options.isLesson9 === true || (options.lesson_title && /bài 9\b/i.test(options.lesson_title)))) ||
+            (options && options.question && /Reiseland|Bummel|Besichtigung|langweilig|Fotos gemacht|Alpen gewandert|Wetter war prima|passiert|Österreich gefahren|Hotel vergessen|anrufen|angerufen|nicht geantwortet/i.test(options.question)) ||
+            (typeof currentLesson !== 'undefined' && currentLesson && (String(currentLesson.id) === '23' || /bài 9\b/i.test(currentLesson.title || '')))
+        );
+        if (isL9) {
+            const l9DVMatch = String(options.question).match(/Câu\s+(3[5-9]|4[0-2]|7[3-8])\b/i);
+            if (l9DVMatch && typeof evaluateLesson9DVTranslation === 'function') {
+                const qNum = parseInt(l9DVMatch[1], 10);
+                if (evaluateLesson9DVTranslation(userAns, qNum)) return true;
+            }
+            const l9VDMatch = String(options.question).match(/Câu\s+(2[7-9]|3[0-4]|6[7-9]|7[0-2])\b/i);
+            if (l9VDMatch && typeof evaluateLesson9VDTranslation === 'function') {
+                const qNum = parseInt(l9VDMatch[1], 10);
+                if (evaluateLesson9VDTranslation(userAns, qNum)) return true;
+            }
         }
     }
 

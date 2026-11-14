@@ -374,13 +374,13 @@
     <!-- ========================================================= -->
     <!-- JAVASCRIPT XỬ LÝ TƯƠNG TÁC, PHÁT ÂM & KẾT NỐI API PYTHON   -->
     <!-- ========================================================= -->
-    <script src="/static/js/audio_tts.js?v=20261113_v21"></script>
-    <script src="/static/js/number_trainer.js?v=20261113_v21"></script>
-    <script src="/static/js/city_map_svg.js?v=20261113_v21"></script>
-    <script src="/static/js/perfekt_svg.js?v=20261113_v21"></script>
-    <script src="/static/js/verbs_db.js?v=20261113_v21"></script>
-    <script src="/static/js/lexikon_db.js?v=20261113_v21"></script>
-    <script src="/static/js/arena_engine.js?v=20261113_v21"></script>
+    <script src="/static/js/audio_tts.js?v=20261114_v1"></script>
+    <script src="/static/js/number_trainer.js?v=20261114_v1"></script>
+    <script src="/static/js/city_map_svg.js?v=20261114_v1"></script>
+    <script src="/static/js/perfekt_svg.js?v=20261114_v1"></script>
+    <script src="/static/js/verbs_db.js?v=20261114_v1"></script>
+    <script src="/static/js/lexikon_db.js?v=20261114_v1"></script>
+    <script src="/static/js/arena_engine.js?v=20261114_v1"></script>
     <script>
         const LEVEL_META = {
             "A1": {
@@ -455,7 +455,7 @@
             "trac_nghiem": "1. Trắc nghiệm",
             "dien_khuyet": "2. Điền khuyết",
             "dich_nghia_vd": "3. Dịch từ (V → Đ)",
-            "dich_nghia_dv": "4. Dịch từ (Đ → V)",
+            "dich_nghia_dv": "4. Dịch từ & câu ngắn (Đ → V)",
             "noi_o": "5. Nối ô tương ứng",
             "dien_tao_cau": "6. Điền tạo câu",
             "nghe_dien": "7. Nghe & điền từ",
@@ -548,7 +548,7 @@
             }
         }
 
-        const CURRENT_SESSION_VERSION = '20261113_v21';
+        const CURRENT_SESSION_VERSION = '20261114_v1';
 
         function loadActiveLessonSession(lessonId) {
             if (!lessonId) return null;
@@ -2442,6 +2442,18 @@
                         }
                     }
                 } else {
+                    // Ưu tiên chấm theo Rubric Bài 9 khi làm Bài 9
+                    const isLesson9 = Boolean(
+                        (ex && (String(ex.lesson_id) === '23')) ||
+                        (ex && ex.question && /Reiseland|Bummel|Besichtigung|langweilig|Fotos gemacht|Alpen gewandert|Wetter war prima|passiert|Österreich gefahren|Hotel vergessen/i.test(ex.question)) ||
+                        (typeof currentLesson !== 'undefined' && currentLesson && (
+                            String(currentLesson.id) === '23' || 
+                            (currentLesson.title && /bài 9\b/i.test(currentLesson.title))
+                        ))
+                    );
+                    const l9DVMatch = isLesson9 && (ex.question || '').match(/Câu\s+(3[5-9]|4[0-2]|7[3-8])\b/i);
+                    const l9VDMatch = isLesson9 && (ex.question || '').match(/Câu\s+(2[7-9]|3[0-4]|6[7-9]|7[0-2])\b/i);
+
                     // Ưu tiên chấm theo Rubric Bài 8 CHỈ KHI đang làm Bài 8
                     const isLesson8 = Boolean(
                         (ex && (String(ex.lesson_id) === '22')) ||
@@ -2454,7 +2466,11 @@
                     const l8QMatch = isLesson8 && (ex.question || '').match(/Câu\s+(4[6-9]|5[0-7])\b/i);
                     const l8VDMatch = isLesson8 && (ex.question || '').match(/Câu\s+(8[7-9]|9[0-3])\b/i);
                     const l8DVMatch = isLesson8 && (ex.question || '').match(/Câu\s+(9[4-9]|100)\b/i);
-                    if (l8QMatch && typeof evaluateLesson8Translation === 'function') {
+                    if (l9DVMatch && typeof evaluateLesson9DVTranslation === 'function' && evaluateLesson9DVTranslation(userAnswer, parseInt(l9DVMatch[1], 10))) {
+                        isCorrect = true;
+                    } else if (l9VDMatch && typeof evaluateLesson9VDTranslation === 'function' && evaluateLesson9VDTranslation(userAnswer, parseInt(l9VDMatch[1], 10))) {
+                        isCorrect = true;
+                    } else if (l8QMatch && typeof evaluateLesson8Translation === 'function') {
                         const qNum = parseInt(l8QMatch[1], 10);
                         isCorrect = evaluateLesson8Translation(userAnswer, qNum);
                     } else if (l8VDMatch && typeof evaluateLesson8VDTranslation === 'function') {
@@ -2502,6 +2518,7 @@
                                     lesson_id: (ex && ex.lesson_id) ? ex.lesson_id : (currentLesson ? currentLesson.id : null),
                                     lesson_title: currentLesson ? currentLesson.title : '',
                                     isLesson8: isLesson8,
+                                    isLesson9: isLesson9,
                                     isDeToVi: isDeToViEx
                                 })
                                 : normalizeAnswer(userAnswer) === normalizeAnswer(cand);
