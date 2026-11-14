@@ -1016,6 +1016,8 @@ if (typeof window !== 'undefined') {
 
 function checkGermanAnswerEquivalence(userAns, correctAns, options = {}) {
     if (!userAns || !correctAns) return false;
+    userAns = String(userAns).replace(/\s+/g, ' ').trim();
+    correctAns = String(correctAns).replace(/\s+/g, ' ').trim();
 
     // So sánh bản dịch tiếng Việt (Đức -> Việt)
     const isViTarget = Boolean(options && (options.isDeToVi || options.isViTranslation)) ||
