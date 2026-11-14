@@ -373,10 +373,10 @@ def seed_lesson_9():
                     <span class="text-[11px] text-slate-400">Bấm 🔊 để nghe phát âm từng động từ</span>
                 </div>
 
-                <!-- BẢNG A: 13 ĐỘNG TỪ ĐI VỚI SEIN -->
+                <!-- BẢNG A: 14 ĐỘNG TỪ ĐI VỚI SEIN -->
                 <div class="space-y-2">
                     <div class="flex items-center gap-2 text-xs font-bold text-amber-300">
-                        <span>🟠 BẢNG A: 13 Động từ chuyển động / đổi trạng thái đi kèm SEIN (ist + Partizip II)</span>
+                        <span>🟠 BẢNG A: 14 Động từ chuyển động / đổi trạng thái đi kèm SEIN (ist + Partizip II)</span>
                     </div>
                     <div class="overflow-x-auto">
                         <table class="w-full text-left text-xs border-collapse">
@@ -403,6 +403,7 @@ def seed_lesson_9():
                                 <tr><td class="p-2 font-mono text-slate-400">11</td><td class="p-2 font-bold text-white">bleiben</td><td class="p-2 text-amber-300 font-mono font-bold">ist geblieben</td><td class="p-2 text-slate-300">ở lại</td><td class="p-2"><button onclick="speakGerman('bleiben, ist geblieben', 1.0)" class="px-2 py-0.5 rounded bg-amber-500/20 hover:bg-amber-500/40 text-amber-200 text-[10px] font-bold">🔊</button></td></tr>
                                 <tr><td class="p-2 font-mono text-slate-400">12</td><td class="p-2 font-bold text-white">sein</td><td class="p-2 text-amber-300 font-mono font-bold">ist gewesen</td><td class="p-2 text-slate-300">thì, là, ở</td><td class="p-2"><button onclick="speakGerman('sein, ist gewesen', 1.0)" class="px-2 py-0.5 rounded bg-amber-500/20 hover:bg-amber-500/40 text-amber-200 text-[10px] font-bold">🔊</button></td></tr>
                                 <tr><td class="p-2 font-mono text-slate-400">13</td><td class="p-2 font-bold text-white">werden</td><td class="p-2 text-amber-300 font-mono font-bold">ist geworden</td><td class="p-2 text-slate-300">trở thành, trở nên</td><td class="p-2"><button onclick="speakGerman('werden, ist geworden', 1.0)" class="px-2 py-0.5 rounded bg-amber-500/20 hover:bg-amber-500/40 text-amber-200 text-[10px] font-bold">🔊</button></td></tr>
+                                <tr><td class="p-2 font-mono text-slate-400">14</td><td class="p-2 font-bold text-white">aussteigen / umsteigen</td><td class="p-2 text-amber-300 font-mono font-bold">ist ausgestiegen / ist umgestiegen</td><td class="p-2 text-slate-300">xuống xe / đổi tuyến</td><td class="p-2"><button onclick="speakGerman('aussteigen, ist ausgestiegen, umsteigen, ist umgestiegen', 1.0)" class="px-2 py-0.5 rounded bg-amber-500/20 hover:bg-amber-500/40 text-amber-200 text-[10px] font-bold">🔊</button></td></tr>
                             </tbody>
                         </table>
                     </div>
@@ -3558,7 +3559,7 @@ def seed_lesson_9():
                     "question": "Câu 94: Viết lại câu sau sang thì Perfekt: „Maria fährt mit dem Rad zum See.“",
                     "options": null,
                     "correct_answer": "Maria ist mit dem Rad zum See gefahren.",
-                    "explanation": "'fahren' chuyển động → 'ist' + 'gefahren'.",
+                    "explanation": "'fährt' là dạng chia ngôi thứ 3 số ít ở hiện tại của 'fahren' (chuyển động -> dùng 'sein' -> 'ist'). Khi tạo Partizip II, phải đưa về nguyên âm gốc 'a' (bỏ Umlaut ä) -> 'ist ... gefahren'.",
                     "exp_reward": 25,
                     "extra_data": {
                             "source_sentence": "Maria fährt mit dem Rad zum See.",
@@ -3573,7 +3574,7 @@ def seed_lesson_9():
                     "question": "Câu 95: Viết lại câu sau sang thì Perfekt: „Die Gäste steigen in Köln aus.“",
                     "options": null,
                     "correct_answer": "Die Gäste sind in Köln ausgestiegen.",
-                    "explanation": "'aussteigen' (tách, chuyển động) → 'sind' + 'aus' + 'ge' + 'stiegen' = 'ausgestiegen'.",
+                    "explanation": "'aussteigen' (xuống tàu/xe) là động từ tách chỉ sự di chuyển (dùng 'sein' -> 'sind') và có gốc 'steigen' bất quy tắc (đổi nguyên âm 'ei' -> 'ie' và nhận đuôi '-en'): 'aus' + 'ge' + 'stiegen' = 'ausgestiegen'.",
                     "exp_reward": 25,
                     "extra_data": {
                             "source_sentence": "Die Gäste steigen in Köln aus.",
