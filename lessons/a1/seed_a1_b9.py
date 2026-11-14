@@ -2522,10 +2522,10 @@ def seed_lesson_9():
             },
             {
                     "type": "nghe_dien",
-                    "question": "Câu 59: Nghe phát âm tiếng Đức và điền từ còn thiếu vào chỗ trống: 'Meine Eltern sind letzte Woche nach Italien ___.'",
+                    "question": "Câu 59: Nghe phát âm câu tiếng Đức và điền từ còn thiếu vào chỗ trống:",
                     "options": null,
                     "correct_answer": "geflogen",
-                    "explanation": "'fliegen → ist geflogen'.",
+                    "explanation": "Động từ 'fliegen' (bay) chỉ sự di chuyển thay đổi vị trí nên đi với trợ động từ 'sein' (sind) và thuộc nhóm bất quy tắc (đổi nguyên âm 'ie' -> 'o', thêm đuôi '-en'): fliegen -> ist/sind geflogen.",
                     "exp_reward": 20,
                     "extra_data": {
                             "audio_text": "Meine Eltern sind letzte Woche nach Italien geflogen.",
@@ -2539,10 +2539,10 @@ def seed_lesson_9():
             },
             {
                     "type": "nghe_dien",
-                    "question": "Câu 60: Nghe phát âm tiếng Đức và điền từ còn thiếu vào chỗ trống: 'Im Sommer haben wir zwei Nächte am See ___.'",
+                    "question": "Câu 60: Nghe phát âm câu tiếng Đức và điền từ còn thiếu vào chỗ trống:",
                     "options": null,
                     "correct_answer": "gezeltet",
-                    "explanation": "Gốc 'zelt' kết thúc '-t' → 'gezeltet'.",
+                    "explanation": "Động từ 'zelten' (cắm trại) chỉ hoạt động tại chỗ nên đi với 'haben' và có gốc 'zelt-' kết thúc bằng phụ âm '-t', khi tạo Partizip II phải đệm thêm '-e-' trước '-t': ge + zelt + et = gezeltet.",
                     "exp_reward": 20,
                     "extra_data": {
                             "audio_text": "Im Sommer haben wir zwei Nächte am See gezeltet.",
@@ -2556,10 +2556,10 @@ def seed_lesson_9():
             },
             {
                     "type": "nghe_dien",
-                    "question": "Câu 61: Nghe phát âm tiếng Đức và điền từ còn thiếu vào chỗ trống: 'Ich habe das Hotel im Internet ___.'",
+                    "question": "Câu 61: Nghe phát âm câu tiếng Đức và điền từ còn thiếu vào chỗ trống:",
                     "options": null,
                     "correct_answer": "gebucht",
-                    "explanation": "'buchen → gebucht'.",
+                    "explanation": "Động từ 'buchen' (đặt chỗ) có tân ngữ trực tiếp (das Hotel) nên đi với 'haben' và chia theo quy tắc chuẩn (Nhóm 1: ge- + gốc + -t): ge + buch + t = gebucht.",
                     "exp_reward": 20,
                     "extra_data": {
                             "audio_text": "Ich habe das Hotel im Internet gebucht.",
@@ -2573,10 +2573,10 @@ def seed_lesson_9():
             },
             {
                     "type": "nghe_dien",
-                    "question": "Câu 62: Nghe phát âm tiếng Đức và điền từ còn thiếu vào chỗ trống: 'Der Bus ist um neun Uhr ___.'",
+                    "question": "Câu 62: Nghe phát âm câu tiếng Đức và điền từ còn thiếu vào chỗ trống:",
                     "options": null,
                     "correct_answer": "abgefahren",
-                    "explanation": "'abfahren' (tách) → 'ab' + 'ge' + 'fahren' = 'abgefahren', dùng 'sein'.",
+                    "explanation": "Động từ tách 'abfahren' (khởi hành) chỉ sự di chuyển nên đi với 'sein' (ist); khi tạo Partizip II, '-ge-' chèn vào giữa tiền tố 'ab-' và gốc bất quy tắc 'fahren': ab + ge + fahren = abgefahren.",
                     "exp_reward": 20,
                     "extra_data": {
                             "audio_text": "Der Bus ist um neun Uhr abgefahren.",
@@ -2590,10 +2590,10 @@ def seed_lesson_9():
             },
             {
                     "type": "nghe_dien",
-                    "question": "Câu 63: Nghe phát âm tiếng Đức và điền từ còn thiếu vào chỗ trống: 'Wo ___ ihr im Sommer? Wir waren in den Alpen.'",
+                    "question": "Câu 63: Nghe phát âm câu tiếng Đức và điền từ còn thiếu vào chỗ trống:",
                     "options": null,
                     "correct_answer": "wart",
-                    "explanation": "'ihr' + Präteritum của 'sein' = 'wart'.",
+                    "explanation": "Khi hỏi và kể về địa điểm trong quá khứ với động từ 'sein', người Đức ưu tiên dùng thì Präteritum (gốc 'war-'): chủ ngữ ngôi thứ hai số nhiều 'ihr' (các bạn) nhận đuôi '-t' -> 'Wo wart ihr?'.",
                     "exp_reward": 20,
                     "extra_data": {
                             "audio_text": "Wo wart ihr im Sommer? Wir waren in den Alpen.",
@@ -2607,10 +2607,10 @@ def seed_lesson_9():
             },
             {
                     "type": "nghe_dien",
-                    "question": "Câu 64: Nghe phát âm tiếng Đức và điền từ còn thiếu vào chỗ trống: 'Am Abend haben wir die Nudelsuppe ___.'",
+                    "question": "Câu 64: Nghe phát âm câu tiếng Đức và điền từ còn thiếu vào chỗ trống:",
                     "options": null,
                     "correct_answer": "probiert",
-                    "explanation": "Đuôi '-ieren' → không 'ge-': 'probiert'.",
+                    "explanation": "Động từ 'probieren' (nếm thử) tận cùng bằng đuôi ngoại lai '-ieren' (Nhóm 3) nên khi tạo Partizip II tuyệt đối KHÔNG thêm tiền tố 'ge-', chỉ đổi đuôi thành '-iert': probieren -> probiert.",
                     "exp_reward": 20,
                     "extra_data": {
                             "audio_text": "Am Abend haben wir die Nudelsuppe probiert.",
@@ -2624,10 +2624,10 @@ def seed_lesson_9():
             },
             {
                     "type": "nghe_dien",
-                    "question": "Câu 65: Nghe phát âm tiếng Đức và điền từ còn thiếu vào chỗ trống: 'Was ist denn ___? Mein Koffer ist nicht angekommen!'",
+                    "question": "Câu 65: Nghe phát âm câu tiếng Đức và điền từ còn thiếu vào chỗ trống:",
                     "options": null,
                     "correct_answer": "passiert",
-                    "explanation": "'passieren' đuôi '-ieren' → 'passiert' (dùng 'sein': 'ist passiert').",
+                    "explanation": "Động từ 'passieren' (xảy ra) vừa tận cùng bằng đuôi '-ieren' (không có 'ge-' -> 'passiert'), vừa thuộc nhóm động từ đặc biệt bắt buộc đi với trợ động từ 'sein' ('Was ist passiert?').",
                     "exp_reward": 20,
                     "extra_data": {
                             "audio_text": "Was ist denn passiert? Mein Koffer ist nicht angekommen!",
@@ -2641,10 +2641,10 @@ def seed_lesson_9():
             },
             {
                     "type": "nghe_dien",
-                    "question": "Câu 66: Nghe phát âm tiếng Đức và điền từ còn thiếu vào chỗ trống: 'Nach dem Frühstück haben wir den Reiseführer ___.'",
+                    "question": "Câu 66: Nghe phát âm câu tiếng Đức và điền từ còn thiếu vào chỗ trống:",
                     "options": null,
                     "correct_answer": "gelesen",
-                    "explanation": "'lesen' bất quy tắc: 'gelesen'.",
+                    "explanation": "Động từ 'lesen' (đọc) có tân ngữ trực tiếp (den Reiseführer - Cách 4 Akkusativ) nên đi với 'haben' và thuộc nhóm bất quy tắc giữ nguyên nguyên âm gốc 'e' + đuôi '-en': lesen -> hat gelesen.",
                     "exp_reward": 20,
                     "extra_data": {
                             "audio_text": "Nach dem Frühstück haben wir den Reiseführer gelesen.",

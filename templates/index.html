@@ -374,13 +374,13 @@
     <!-- ========================================================= -->
     <!-- JAVASCRIPT XỬ LÝ TƯƠNG TÁC, PHÁT ÂM & KẾT NỐI API PYTHON   -->
     <!-- ========================================================= -->
-    <script src="/static/js/audio_tts.js?v=20261114_v10"></script>
-    <script src="/static/js/number_trainer.js?v=20261114_v10"></script>
-    <script src="/static/js/city_map_svg.js?v=20261114_v10"></script>
-    <script src="/static/js/perfekt_svg.js?v=20261114_v10"></script>
-    <script src="/static/js/verbs_db.js?v=20261114_v10"></script>
-    <script src="/static/js/lexikon_db.js?v=20261114_v10"></script>
-    <script src="/static/js/arena_engine.js?v=20261114_v10"></script>
+    <script src="/static/js/audio_tts.js?v=20261114_v11"></script>
+    <script src="/static/js/number_trainer.js?v=20261114_v11"></script>
+    <script src="/static/js/city_map_svg.js?v=20261114_v11"></script>
+    <script src="/static/js/perfekt_svg.js?v=20261114_v11"></script>
+    <script src="/static/js/verbs_db.js?v=20261114_v11"></script>
+    <script src="/static/js/lexikon_db.js?v=20261114_v11"></script>
+    <script src="/static/js/arena_engine.js?v=20261114_v11"></script>
     <script>
         const LEVEL_META = {
             "A1": {
@@ -548,13 +548,13 @@
             }
         }
 
-        const CURRENT_SESSION_VERSION = '20261114_v10';
+        const CURRENT_SESSION_VERSION = '20261114_v11';
 
         // Tự động xóa phiên làm bài cũ bị lỗi cấu hình đáp án cứng nhắc, nối ô, điền tạo câu hoặc đọc hiểu của Bài 9
         try {
             ['dm_active_practice_session_guest_23', 'dm_active_practice_session_1_23'].forEach(k => {
                 const r = localStorage.getItem(k);
-                if (r && (!r.includes('cuộc tham quan') || !r.includes('quốc gia du lịch') || r.includes('Nối các cặp hoàn chỉnh') || !r.includes('Wir haben im Urlaub viele schöne Fotos') || r.includes('tiền tố') || !r.includes('Hôm qua tôi đã tham quan viện bảo tàng') || !r.includes('Letzten Sommer bin ich nach Berlin gereist') || r.includes('Barcelona') || !r.includes('"version":"20261114_v10"'))) {
+                if (r && (!r.includes('cuộc tham quan') || !r.includes('quốc gia du lịch') || r.includes('Nối các cặp hoàn chỉnh') || !r.includes('Wir haben im Urlaub viele schöne Fotos') || r.includes('tiền tố') || !r.includes('Hôm qua tôi đã tham quan viện bảo tàng') || !r.includes('Letzten Sommer bin ich nach Berlin gereist') || r.includes('Barcelona') || !r.includes('"version":"20261114_v11"'))) {
                     localStorage.removeItem(k);
                 }
             });
@@ -1838,13 +1838,22 @@
                     `;
                 }
                 if (ex.exercise_type === 'nghe' || ex.exercise_type === 'nghe_dien') {
-                    const textToSpeak = (extra.audio_text || ex.correct_answer).replace(/'/g, "\\'");
+                    let textToSpeak = extra.audio_text || '';
+                    if (!textToSpeak && extra.display_sentence && ex.correct_answer) {
+                        textToSpeak = extra.display_sentence.replace(/_{2,}/g, ex.correct_answer);
+                    } else if (textToSpeak && textToSpeak.includes('__') && ex.correct_answer) {
+                        textToSpeak = textToSpeak.replace(/_{2,}/g, ex.correct_answer);
+                    }
+                    if (!textToSpeak) {
+                        textToSpeak = ex.correct_answer || '';
+                    }
+                    const cleanSpeak = textToSpeak.replace(/'/g, "\\'");
                     extraHtml = `
                         <div class="flex flex-wrap gap-2 mt-2">
-                            <button onclick="speakGerman('${textToSpeak}', 1.0)" class="px-3.5 py-1.5 rounded-xl bg-blue-50 hover:bg-blue-100 text-blue-700 border border-blue-200 text-xs font-bold cursor-pointer">
+                            <button onclick="speakGerman('${cleanSpeak}', 1.0)" class="px-3.5 py-1.5 rounded-xl bg-blue-50 hover:bg-blue-100 text-blue-700 border border-blue-200 text-xs font-bold cursor-pointer">
                                 🔊 Nghe chuẩn (1.0x)
                             </button>
-                            <button onclick="speakGerman('${textToSpeak}', 0.65)" class="px-3.5 py-1.5 rounded-xl bg-amber-50 hover:bg-amber-100 text-amber-700 border border-amber-200 text-xs font-bold cursor-pointer">
+                            <button onclick="speakGerman('${cleanSpeak}', 0.65)" class="px-3.5 py-1.5 rounded-xl bg-amber-50 hover:bg-amber-100 text-amber-700 border border-amber-200 text-xs font-bold cursor-pointer">
                                 🐢 Nghe chậm (0.65x)
                             </button>
                         </div>
@@ -1854,11 +1863,6 @@
                             <div class="mt-2.5 p-3 rounded-xl bg-indigo-50/70 border border-indigo-200 text-indigo-950 font-semibold text-sm">
                                 📝 ${extra.display_sentence}
                             </div>
-                        `;
-                    }
-                    if (extra.hint_vi) {
-                        extraHtml += `
-                            <div class="text-xs text-slate-500 italic mt-1">Gợi ý nghĩa: ${extra.hint_vi}</div>
                         `;
                     }
                 }
@@ -1967,7 +1971,11 @@
                     `;
                 }
 
-                const displayQuestion = (typeof ensureQuestionNumber === 'function') ? ensureQuestionNumber(ex.question, ex.question, i + 1) : ex.question;
+                let displayQuestion = (typeof ensureQuestionNumber === 'function') ? ensureQuestionNumber(ex.question, ex.question, i + 1) : ex.question;
+                if ((ex.exercise_type === 'nghe' || ex.exercise_type === 'nghe_dien') && extra && extra.display_sentence) {
+                    displayQuestion = displayQuestion.replace(/[:\s]+['"„][^'"“”]+['"“”]?\s*$/, ':');
+                    if (!displayQuestion.endsWith(':')) displayQuestion += ':';
+                }
 
                 const translation = getExerciseTranslation(ex, extra);
                 const translationHtml = formatExerciseTranslation(translation, ex);
@@ -2174,6 +2182,17 @@
                 }
                 if (extra && extra.translation && typeof extra.translation === 'string' && extra.translation.trim()) {
                     return extra.translation.trim();
+                }
+            }
+
+            // Đối với dạng bài nghe điền (nghe_dien / nghe):
+            // Hiển thị bản dịch tiếng Việt của câu trong khung kết quả (sau khi bấm kiểm tra)
+            if (ex && (ex.exercise_type === 'nghe_dien' || ex.exercise_type === 'nghe')) {
+                if (extra && extra.translation && typeof extra.translation === 'string' && extra.translation.trim()) {
+                    return extra.translation.trim();
+                }
+                if (extra && extra.hint_vi && typeof extra.hint_vi === 'string' && extra.hint_vi.trim()) {
+                    return extra.hint_vi.trim();
                 }
             }
 
