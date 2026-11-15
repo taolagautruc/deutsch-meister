@@ -1121,70 +1121,70 @@ def seed_lesson_10():
         },
         {
                 "type": "dien_khuyet",
-                "question": "Câu 11: Điền dạng 'welch-' đúng (Nominativ): „___ Salat ist gesund?“ (der Salat)",
+                "question": "Câu 11: Điền dạng đúng của từ hỏi 'welch-' để hoàn thành câu: „___ Salat ist gesund?“",
                 "options": null,
-                "correct_answer": "welcher",
-                "explanation": "'der Salat' là chủ ngữ của 'ist' -> Nominativ giống đực -> 'welcher'.",
+                "correct_answer": "Welcher",
+                "explanation": "Danh từ 'der Salat' (giống đực) đứng trước động từ 'ist' nên đóng vai trò làm chủ ngữ (Nominativ). Với giống đực ở Nominativ, từ hỏi 'welch-' nhận đuôi '-er' -> „Welcher Salat ist gesund?“.",
                 "exp_reward": 10,
                 "extra_data": {
                         "translation": "Món salad nào tốt cho sức khỏe?",
                         "accepted_answers": [
-                                "welcher",
-                                "Welcher"
+                                "Welcher",
+                                "welcher"
                         ]
                 }
         },
         {
                 "type": "dien_khuyet",
-                "question": "Câu 12: Điền dạng 'welch-' đúng (Akkusativ): „___ Schinken möchtest du?“ (der Schinken)",
+                "question": "Câu 12: Điền dạng đúng của từ hỏi 'welch-' để hoàn thành câu: „___ Schinken möchtest du?“",
                 "options": null,
-                "correct_answer": "welchen",
-                "explanation": "'der Schinken' là tân ngữ của 'möchten' -> Akkusativ giống đực -> 'welchen'.",
+                "correct_answer": "Welchen",
+                "explanation": "Trong câu này 'du' là chủ ngữ, còn 'der Schinken' (giống đực) là tân ngữ trực tiếp của động từ 'möchtest' nên ở Cách 4 (Akkusativ: der -> den). Từ hỏi 'welch-' phải nhận đuôi '-en' -> „Welchen Schinken möchtest du?“.",
                 "exp_reward": 10,
                 "extra_data": {
                         "translation": "Bạn muốn loại giăm bông nào?",
                         "accepted_answers": [
-                                "welchen",
-                                "Welchen"
+                                "Welchen",
+                                "welchen"
                         ]
                 }
         },
         {
                 "type": "dien_khuyet",
-                "question": "Câu 13: Điền dạng 'welch-' đúng (Akkusativ): „___ Brot möchtest du?“ (das Brot)",
+                "question": "Câu 13: Điền dạng đúng của từ hỏi 'welch-' để hoàn thành câu: „___ Brot möchtest du?“",
                 "options": null,
-                "correct_answer": "welches",
-                "explanation": "'das Brot' là giống trung, Akkusativ không đổi đuôi -> 'welches'.",
+                "correct_answer": "Welches",
+                "explanation": "'das Brot' là danh từ giống trung, đóng vai trò tân ngữ (Akkusativ) của động từ 'möchtest'. Với giống trung (das), từ hỏi 'welch-' luôn giữ đuôi '-es' ở cả Nominativ và Akkusativ -> „Welches Brot möchtest du?“.",
                 "exp_reward": 10,
                 "extra_data": {
                         "translation": "Bạn muốn loại bánh mì nào?",
                         "accepted_answers": [
-                                "welches",
-                                "Welches"
+                                "Welches",
+                                "welches"
                         ]
                 }
         },
         {
                 "type": "dien_khuyet",
-                "question": "Câu 14: Điền dạng 'welch-' đúng: „___ Kartoffeln brauchen wir?“",
+                "question": "Câu 14: Điền dạng đúng của từ hỏi 'welch-' để hoàn thành câu: „___ Kartoffeln brauchen wir?“",
                 "options": null,
-                "correct_answer": "welche",
-                "explanation": "'die Kartoffeln' là danh từ số nhiều (Akkusativ) -> 'welche'.",
+                "correct_answer": "Welche",
+                "explanation": "'wir' là chủ ngữ, còn 'die Kartoffeln' là danh từ số nhiều ở Cách 4 (Akkusativ). Với danh từ số nhiều, từ hỏi 'welch-' luôn nhận đuôi '-e' ở cả Nominativ và Akkusativ -> „Welche Kartoffeln brauchen wir?“.",
                 "exp_reward": 10,
                 "extra_data": {
                         "translation": "Chúng ta cần những củ khoai tây nào?",
                         "accepted_answers": [
-                                "welche",
-                                "Welche"
+                                "Welche",
+                                "welche"
                         ]
                 }
         },
         {
                 "type": "dien_khuyet",
-                "question": "Câu 15: Điền dạng so sánh hơn của 'teuer': „Ein Kilo Fleisch ist ___ als ein Kilo Kartoffeln.“",
+                "question": "Câu 15: Điền dạng đúng của tính từ 'teuer' để hoàn thành câu: „Ein Kilo Fleisch ist ___ als ein Kilo Kartoffeln.“",
                 "options": null,
                 "correct_answer": "teurer",
-                "explanation": "'teuer' ở Komparativ bỏ âm 'e' trước đuôi '-er' -> 'teurer'.",
+                "explanation": "Trong câu có liên từ 'als' (hơn) dùng để so sánh giữa hai đối tượng nên cần dùng bậc so sánh hơn (Komparativ). Tính từ 'teuer' có đuôi '-er', khi thêm đuôi '-er' của Komparativ phải lược bỏ chữ '-e-' ở gốc -> 'teurer'.",
                 "exp_reward": 10,
                 "extra_data": {
                         "translation": "Một ký thịt đắt hơn một ký khoai tây.",
@@ -1195,10 +1195,10 @@ def seed_lesson_10():
         },
         {
                 "type": "dien_khuyet",
-                "question": "Câu 16: Điền 'viel / viele / mehr' phù hợp (so sánh hơn): „Mein Bruder isst ___ Reis als ich.“",
+                "question": "Câu 16: Chọn và điền từ thích hợp ('viel', 'viele' hoặc 'mehr') vào chỗ trống: „Mein Bruder isst ___ Reis als ich.“",
                 "options": null,
                 "correct_answer": "mehr",
-                "explanation": "Có 'als ich' (đối tượng so sánh) -> dạng Komparativ của 'viel' là 'mehr'.",
+                "explanation": "Trong câu có cấu trúc so sánh hơn với 'als' ('... als ich') nên phải dùng dạng so sánh hơn của 'viel' là 'mehr' (dùng được cho cả danh từ đếm được lẫn không đếm được như 'Reis').",
                 "exp_reward": 10,
                 "extra_data": {
                         "translation": "Anh trai tôi ăn cơm nhiều hơn tôi.",
@@ -1209,10 +1209,10 @@ def seed_lesson_10():
         },
         {
                 "type": "dien_khuyet",
-                "question": "Câu 17: Điền cụm so sánh nhất của 'gern': „Von allen Früchten esse ich ___ Erdbeeren.“",
+                "question": "Câu 17: Điền dạng đúng của từ 'gern' để hoàn thành câu: „Von allen Früchten esse ich ___ Erdbeeren.“",
                 "options": null,
                 "correct_answer": "am liebsten",
-                "explanation": "Superlativ của 'gern' là 'am liebsten'.",
+                "explanation": "Cụm từ „Von allen Früchten“ (Trong tất cả các loại trái cây) cho thấy đây là phép so sánh nhất (Superlativ) giữa dâu tây với toàn bộ các loại quả khác. Dạng bất quy tắc của 'gern' ở Superlativ là 'am liebsten' (gern -> lieber -> am liebsten).",
                 "exp_reward": 10,
                 "extra_data": {
                         "translation": "Trong tất cả các loại trái cây, tôi thích ăn dâu tây nhất.",
@@ -1224,10 +1224,10 @@ def seed_lesson_10():
         },
         {
                 "type": "dien_khuyet",
-                "question": "Câu 18: Điền dạng so sánh hơn của 'gesund': „Der Salat ist gesund, aber Möhren sind noch ___.“",
+                "question": "Câu 18: Điền dạng đúng của tính từ 'gesund' để hoàn thành câu: „Der Salat ist gesund, aber Möhren sind noch ___.“",
                 "options": null,
                 "correct_answer": "gesünder",
-                "explanation": "'gesund' biến âm Umlaut 'u -> ü' khi tạo Komparativ -> 'gesünder'.",
+                "explanation": "Vế sau dùng 'aber ... sind noch ...' (nhưng ... còn ... hơn nữa) để so sánh mức độ tốt cho sức khỏe của cà rốt cao hơn salad -> dùng bậc so sánh hơn (Komparativ). Tính từ 'gesund' biến âm Umlaut 'u -> ü' khi thêm '-er' -> 'gesünder'.",
                 "exp_reward": 10,
                 "extra_data": {
                         "translation": "Salad tốt cho sức khỏe, nhưng cà rốt còn tốt hơn nữa.",
@@ -1239,10 +1239,10 @@ def seed_lesson_10():
         },
         {
                 "type": "dien_khuyet",
-                "question": "Câu 19: Chia động từ 'essen' ở ngôi 'du': „Du ___ gern Fisch.“",
+                "question": "Câu 19: Chia dạng đúng của động từ 'essen' để hoàn thành câu: „Du ___ gern Fisch.“",
                 "options": null,
                 "correct_answer": "isst",
-                "explanation": "'essen' là động từ bất quy tắc đổi nguyên âm 'e -> i' ở ngôi 'du' -> 'isst'.",
+                "explanation": "Chủ ngữ là ngôi thứ hai số ít 'du'. Động từ 'essen' (ăn) là động từ bất quy tắc đổi nguyên âm gốc 'e -> i' ở ngôi 'du' và 'er/sie/es' -> 'du isst'.",
                 "exp_reward": 10,
                 "extra_data": {
                         "translation": "Bạn thích ăn cá.",
@@ -1253,10 +1253,10 @@ def seed_lesson_10():
         },
         {
                 "type": "dien_khuyet",
-                "question": "Câu 20: Chia động từ 'kosten': „Was ___ ein Kilo Birnen?“",
+                "question": "Câu 20: Chia dạng đúng của động từ 'kosten' để hoàn thành câu: „Was ___ ein Kilo Birnen?“",
                 "options": null,
                 "correct_answer": "kostet",
-                "explanation": "Chủ ngữ 'ein Kilo Birnen' là danh từ số ít ('ein Kilo') -> 'kostet'.",
+                "explanation": "Danh từ trung tâm của chủ ngữ 'ein Kilo Birnen' là đơn vị đo số ít 'ein Kilo' (một ký - không chia theo từ 'Birnen' phía sau) -> chia động từ 'kosten' ở ngôi thứ ba số ít: 'kostet'.",
                 "exp_reward": 10,
                 "extra_data": {
                         "translation": "Một ký lê giá bao nhiêu?",
@@ -1267,10 +1267,10 @@ def seed_lesson_10():
         },
         {
                 "type": "dien_khuyet",
-                "question": "Câu 21: Chia động từ 'kosten': „Wie viel ___ drei Dosen Cola?“",
+                "question": "Câu 21: Chia dạng đúng của động từ 'kosten' để hoàn thành câu: „Wie viel ___ drei Dosen Cola?“",
                 "options": null,
                 "correct_answer": "kosten",
-                "explanation": "'drei Dosen' là danh từ số nhiều -> 'kosten'.",
+                "explanation": "Khác với đơn vị đo lường ('Kilo', 'Liter') luôn giữ số ít, đơn vị đóng gói 'die Dose' (cái lon) có dạng số nhiều là 'die Dosen'. Chủ ngữ 'drei Dosen Cola' là số nhiều nên động từ 'kosten' chia ở dạng nguyên mẫu số nhiều -> 'kosten'.",
                 "exp_reward": 10,
                 "extra_data": {
                         "translation": "Ba lon cô-ca giá bao nhiêu?",
@@ -1281,10 +1281,10 @@ def seed_lesson_10():
         },
         {
                 "type": "dien_khuyet",
-                "question": "Câu 22: Chia động từ 'kochen' ở ngôi 'ihr': „Ihr ___ heute Abend Nudeln.“",
+                "question": "Câu 22: Chia dạng đúng của động từ 'kochen' để hoàn thành câu: „Ihr ___ heute Abend Nudeln.“",
                 "options": null,
                 "correct_answer": "kocht",
-                "explanation": "'kochen' là động từ có quy tắc: gốc 'koch-' + đuôi '-t' ở ngôi 'ihr' -> 'kocht'.",
+                "explanation": "Chủ ngữ là ngôi thứ hai số nhiều 'ihr' (các bạn). Động từ có quy tắc 'kochen' lấy gốc 'koch-' cộng đuôi '-t' -> 'ihr kocht'.",
                 "exp_reward": 10,
                 "extra_data": {
                         "translation": "Tối nay các bạn nấu mì.",
