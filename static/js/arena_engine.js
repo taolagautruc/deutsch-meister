@@ -89,11 +89,9 @@ function evaluateFlexibleTranslation(userAns, acceptedList, lang = 'de') {
             }
         }
     } else if (lang === 'de') {
-        // Lược bỏ mạo từ der/die/das/ein/eine khi người học dịch từ vựng
-        const stripArt = (s) => normalizeArenaText(s, 'de').replace(/^(der|die|das|den|dem|ein|eine|einen|einem|kein|keine|keinen)\s+/, '');
-        const uStripped = stripArt(userAns);
+        const uNorm = normalizeArenaText(userAns, 'de');
         for (const acc of acceptedList) {
-            if (uStripped === stripArt(acc)) return true;
+            if (uNorm === normalizeArenaText(acc, 'de')) return true;
         }
 
         // Tận dụng thêm engine checkGermanAnswerEquivalence nếu có sẵn
