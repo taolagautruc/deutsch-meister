@@ -601,55 +601,7 @@
     // RENDER SƠ ĐỒ MINI CHO BÀI TẬP (V1 & V4)
     // =========================================================================
     function renderExerciseEssenSvg(code) {
-        if (code === 'V1') {
-            return `
-                <div class="p-3 bg-slate-900 text-white rounded-xl text-xs space-y-2 border border-slate-700">
-                    <div class="font-bold text-sky-400 text-[11px] flex items-center justify-between">
-                        <span>📊 Bảng Tra Cứu Nhanh Đuôi Welch- (V1):</span>
-                        <span class="text-amber-400 font-semibold">Chỉ giống đực đổi giữa Nom & Akk</span>
-                    </div>
-                    <div class="grid grid-cols-3 gap-1.5 text-center font-mono text-[11px]">
-                        <div class="p-1.5 bg-slate-800 rounded text-slate-300 font-bold">Giống</div>
-                        <div class="p-1.5 bg-sky-950 text-sky-300 rounded font-bold">Nominativ</div>
-                        <div class="p-1.5 bg-rose-950 text-rose-300 rounded font-bold">Akkusativ</div>
-
-                        <div class="p-1 bg-slate-800 rounded font-sans">🔵 der (m)</div>
-                        <div class="p-1 bg-sky-900/60 rounded text-sky-200 font-bold">welcher</div>
-                        <div class="p-1 bg-rose-900/60 rounded text-rose-200 font-bold">welchen</div>
-
-                        <div class="p-1 bg-slate-800 rounded font-sans">🔴 die (f)</div>
-                        <div class="p-1 bg-slate-800/80 rounded text-slate-300">welche</div>
-                        <div class="p-1 bg-slate-800/80 rounded text-slate-300">welche</div>
-
-                        <div class="p-1 bg-slate-800 rounded font-sans">🟢 das (n)</div>
-                        <div class="p-1 bg-slate-800/80 rounded text-slate-300">welches</div>
-                        <div class="p-1 bg-slate-800/80 rounded text-slate-300">welches</div>
-
-                        <div class="p-1 bg-slate-800 rounded font-sans">🟣 die (PL)</div>
-                        <div class="p-1 bg-slate-800/80 rounded text-slate-300">welche</div>
-                        <div class="p-1 bg-slate-800/80 rounded text-slate-300">welche</div>
-                    </div>
-                </div>
-            `;
-        }
-        if (code === 'V4') {
-            return `
-                <div class="p-3 bg-slate-900 text-white rounded-xl text-xs space-y-1.5 border border-slate-700">
-                    <div class="font-bold text-amber-400 text-[11px]">
-                        📐 Khung Câu Đảo Ngữ Vị Trí 1-2-3 (V4):
-                    </div>
-                    <div class="flex items-center gap-1.5 text-center font-bold text-[11px] overflow-x-auto py-1">
-                        <div class="p-1.5 px-2 bg-blue-900 text-blue-200 rounded-lg shrink-0">① Am liebsten</div>
-                        <span class="text-slate-500">→</span>
-                        <div class="p-1.5 px-2 bg-rose-900 text-yellow-300 rounded-lg shrink-0 border border-yellow-400/40">② ĐỘNG TỪ (esse)</div>
-                        <span class="text-slate-500">→</span>
-                        <div class="p-1.5 px-2 bg-emerald-900 text-emerald-200 rounded-lg shrink-0">③ CHỦ NGỮ (ich)</div>
-                        <span class="text-slate-500">→</span>
-                        <div class="p-1.5 px-2 bg-slate-800 text-slate-300 rounded-lg shrink-0">Nudeln.</div>
-                    </div>
-                </div>
-            `;
-        }
+        // Tuyệt đối không hiển thị sơ đồ hoặc bảng tra cứu nhanh trong phần bài tập để tránh lộ đáp án
         return '';
     }
 
