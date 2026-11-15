@@ -40,7 +40,8 @@ LESSON_ORDER_MAP = {
     20: ("A1", 7, "Bài 6: Dativ, Giới từ, Phương tiện, Số thứ tự, Ngày tháng năm"),
     21: ("A1", 8, "Bài 7: Beruf, Modalverben, Akkusativ vs Dativ"),
     22: ("A1", 9, "Bài 8: Stadt, Wegbeschreibung, Modalverben wollen"),
-    23: ("A1", 10, "Bài 9: Du lịch - Perfekt Präteritum")
+    23: ("A1", 10, "Bài 9: Du lịch - Perfekt Präteritum"),
+    24: ("A1", 11, "Bài 10: Thực phẩm - So sánh hơn / So sánh nhất - Fragewort: Welch-")
 }
 
 def get_user_allowed_lessons(user_id):
@@ -920,6 +921,101 @@ ARENA_DATA_BY_LESSON = {
                 "word_bank_hints": ["war", "waren", "hatte", "hatten", "wart"],
                 "accepted_answers": ["war / waren", "war/waren"],
                 "explanation": "das Wetter = es -> war; wir -> waren am Strand."
+            }
+        ]
+    },
+    11: {
+        "name": "Bài 10: Thực phẩm - So sánh hơn / So sánh nhất - Fragewort: Welch-",
+        "vocab_pairs": [
+            ("der Käse", "phô mai"),
+            ("der Kuchen", "bánh ngọt"),
+            ("der Apfel", "quả táo"),
+            ("der Fisch", "cá"),
+            ("der Salat", "xà lách, món salad"),
+            ("der Schinken", "thịt xông khói"),
+            ("der Reis", "gạo, cơm"),
+            ("die Butter", "bơ"),
+            ("die Kartoffel", "khoai tây"),
+            ("die Tomate", "cà chua"),
+            ("die Möhre", "cà rốt"),
+            ("die Erdbeere", "dâu tây"),
+            ("die Banane", "quả chuối"),
+            ("die Orange", "quả cam"),
+            ("die Wurst", "xúc xích"),
+            ("das Brot", "bánh mì"),
+            ("das Hähnchen", "thịt gà"),
+            ("das Ei", "quả trứng"),
+            ("das Fleisch", "thịt"),
+            ("das Obst", "hoa quả, trái cây"),
+            ("das Gemüse", "rau củ"),
+            ("das Müsli", "ngũ cốc ăn sáng"),
+            ("das Schnitzel", "thịt tẩm bột chiên")
+        ],
+        "noi_o_sets": [
+            [
+                {"left": "billig", "right": "billiger (so sánh hơn)"},
+                {"left": "teuer", "right": "teurer (bỏ âm e)"},
+                {"left": "gern", "right": "lieber (bất quy tắc)"},
+                {"left": "gut", "right": "besser (bất quy tắc)"}
+            ],
+            [
+                {"left": "viel", "right": "am meisten (so sánh nhất)"},
+                {"left": "gern", "right": "am liebsten (so sánh nhất)"},
+                {"left": "gut", "right": "am besten (so sánh nhất)"},
+                {"left": "gesund", "right": "am gesündesten (thêm Umlaut)"}
+            ]
+        ],
+        "sentences_vd": [
+            ("Quả cam rẻ hơn quả dứa.", ["Die Orange ist billiger als die Ananas.", "Die Orange ist billiger als die Ananas"]),
+            ("Tôi thích ăn cá hơn thịt.", ["Ich esse lieber Fisch als Fleisch.", "Ich esse lieber Fisch als Fleisch"]),
+            ("Hai lít sữa giá bao nhiêu?", ["Wie viel kosten zwei Liter Milch?", "Was kosten zwei Liter Milch?"])
+        ],
+        "sentences_dv": [
+            ("In Vietnam essen die Menschen mehr Reis als Brot.", ["Ở Việt Nam mọi người ăn gạo nhiều hơn bánh mì", "Ở Việt Nam người ta ăn cơm nhiều hơn bánh mì"]),
+            ("Am meisten kaufe ich Obst und Gemüse auf dem Markt.", ["Tôi mua nhiều nhất là hoa quả và rau củ ở chợ", "Tôi mua hoa quả và rau củ ở chợ nhiều nhất"]),
+            ("Das macht zusammen vier Euro fünfzig.", ["Tổng cộng là bốn euro năm mươi", "Tất cả là bốn euro năm mươi"])
+        ],
+        "nghe_dien_items": [
+            {
+                "audio_text": "Welches Obst kaufst du am liebsten?",
+                "display_sentence": "___ Obst kaufst du am liebsten?",
+                "hint_vi": "Bạn thích mua loại hoa quả nào nhất?",
+                "accepted_answers": ["welches", "Welches"]
+            },
+            {
+                "audio_text": "Meine Schwester isst mehr Gemüse als ich.",
+                "display_sentence": "Meine Schwester isst ___ Gemüse als ich.",
+                "hint_vi": "Chị tôi ăn rau củ nhiều hơn tôi.",
+                "accepted_answers": ["mehr"]
+            },
+            {
+                "audio_text": "Ein Kilo Birnen kostet zwei Euro neunzig.",
+                "display_sentence": "Ein Kilo Birnen kostet ___ Euro neunzig.",
+                "hint_vi": "Một ký lê giá hai euro chín mươi.",
+                "accepted_answers": ["zwei", "2"]
+            }
+        ],
+        "dien_tao_cau_items": [
+            {
+                "question": "Điền vào 2 chỗ trống để hoàn thành câu hỏi và đáp:",
+                "display_frame": "[1] Salat möchten Sie? — [2] Salat, bitte.",
+                "word_bank_hints": ["Welchen", "Den", "Welcher", "Der", "Welche"],
+                "accepted_answers": ["Welchen / Den", "welchen / den", "Welchen/Den", "welchen/den"],
+                "explanation": "der Salat là tân ngữ Akkusativ -> Welchen ... Den Salat, bitte."
+            },
+            {
+                "question": "Điền vào 2 chỗ trống để so sánh giá cả:",
+                "display_frame": "Die Möhren sind heute [1] [2] die Tomaten.",
+                "word_bank_hints": ["billiger", "als", "teurer", "wie", "mehr"],
+                "accepted_answers": ["billiger / als", "billiger/als"],
+                "explanation": "billig -> billiger, nối bằng als: billiger als."
+            },
+            {
+                "question": "Điền vào 2 chỗ trống để so sánh số lượng:",
+                "display_frame": "Ich esse [1] Reis [2] Nudeln.",
+                "word_bank_hints": ["mehr", "als", "viel", "wie", "lieber"],
+                "accepted_answers": ["mehr / als", "mehr/als"],
+                "explanation": "So sánh số lượng với danh từ: mehr ... als."
             }
         ]
     }

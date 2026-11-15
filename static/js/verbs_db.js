@@ -1117,6 +1117,116 @@ const GERMAN_VERBS_DB = [
         note: "Động từ quy tắc: ge + buch + t = gebucht. Đi với tân ngữ buchen ein Hotel / ein Zimmer nên dùng haben (hat gebucht).",
         example: "Wir haben zwei Zimmer für drei Nächte gebucht."
     },
+    // --- ĐỘNG TỪ BÀI 10: ESSEN UND TRINKEN (ẨM THỰC, SO SÁNH & MUA SẮM) ---
+    {
+        infinitiv: "mögen",
+        meaning: "thích (thích một thứ cụ thể)",
+        group: "Bất quy tắc & Khuyết thiếu (Unregelmäßig & Modalverben)",
+        stem: "mög-",
+        ending: "-en",
+        forms: { ich: "mag", du: "magst", er_sie_es: "mag", wir: "mögen", ihr: "mögt", sie_Sie: "mögen" },
+        note: "Động từ khuyết thiếu, đổi ö -> a ở số ít (mag, magst). Thường đi với danh từ chỉ món ăn, sở thích (Magst du Fisch?). Perfekt sẽ học ở A2.",
+        example: "Magst du Fisch? – Ja, ich mag Fisch sehr."
+    },
+    {
+        infinitiv: "wünschen",
+        meaning: "mong muốn, cần (Was wünschen Sie, bitte?)",
+        group: "Quy tắc • Ẩm thực & Mua sắm (Bài 10)",
+        stem: "wünsch-",
+        ending: "-en",
+        forms: { ich: "wünsche", du: "wünschst", er_sie_es: "wünscht", wir: "wünschen", ihr: "wünscht", sie_Sie: "wünschen" },
+        perfekt: "hat gewünscht",
+        note: "Gốc kết thúc bằng -sch nên ngôi du vẫn thêm -st đầy đủ: du wünschst.",
+        example: "Was wünschen Sie, bitte? – Ein Kilo Äpfel, bitte."
+    },
+    {
+        infinitiv: "kochen",
+        meaning: "nấu ăn",
+        group: "Quy tắc • Ẩm thực & Mua sắm (Bài 10)",
+        stem: "koch-",
+        ending: "-en",
+        forms: { ich: "koche", du: "kochst", er_sie_es: "kocht", wir: "kochen", ihr: "kocht", sie_Sie: "kochen" },
+        perfekt: "hat gekocht",
+        note: "Động từ quy tắc: ge + koch + t = gekocht. Dùng trợ động từ haben.",
+        example: "Mein Vater kocht gern Fisch mit Reis."
+    },
+    {
+        infinitiv: "backen",
+        meaning: "nướng bánh",
+        group: "Biến âm • Ẩm thực & Mua sắm (Bài 10)",
+        stem: "back-",
+        ending: "-en",
+        forms: { ich: "backe", du: "bäckst", er_sie_es: "bäckt", wir: "backen", ihr: "backt", sie_Sie: "backen" },
+        perfekt: "hat gebacken",
+        note: "Biến âm a -> ä ở ngôi du và er/sie/es (bäckst, bäckt). Partizip II dạng ge-en: hat gebacken.",
+        example: "Am Sonntag backe ich einen leckeren Kuchen."
+    },
+    {
+        infinitiv: "braten",
+        meaning: "chiên, rán",
+        group: "Biến âm • Ẩm thực & Mua sắm (Bài 10)",
+        stem: "brat-",
+        ending: "-en",
+        forms: { ich: "brate", du: "brätst", er_sie_es: "brät", wir: "braten", ihr: "bratet", sie_Sie: "braten" },
+        perfekt: "hat gebraten",
+        note: "Biến âm a -> ä ở ngôi du và er/sie/es (brätst, brät). Partizip II: hat gebraten.",
+        example: "Er brät Fisch mit Zwiebeln in der Pfanne."
+    },
+    {
+        infinitiv: "schmecken",
+        meaning: "có vị, ngon (Das schmeckt gut)",
+        group: "Quy tắc • Ẩm thực & Mua sắm (Bài 10)",
+        stem: "schmeck-",
+        ending: "-en",
+        forms: { ich: "schmecke", du: "schmeckst", er_sie_es: "schmeckt", wir: "schmecken", ihr: "schmeckt", sie_Sie: "schmecken" },
+        perfekt: "hat geschmeckt",
+        note: "Thường dùng với ngôi es hoặc danh từ món ăn làm chủ ngữ: Die Suppe schmeckt sehr gut.",
+        example: "Die Suppe schmeckt sehr gut."
+    },
+    {
+        infinitiv: "bestellen",
+        meaning: "gọi món, đặt hàng",
+        group: "Quy tắc • Ẩm thực & Mua sắm (Bài 10)",
+        stem: "bestell-",
+        ending: "-en",
+        forms: { ich: "bestelle", du: "bestellst", er_sie_es: "bestellt", wir: "bestellen", ihr: "bestellt", sie_Sie: "bestellen" },
+        perfekt: "hat bestellt",
+        note: "Tiền tố không tách be- nên Partizip II không có ge-: hat bestellt.",
+        example: "Ich bestelle einen Salat und ein Mineralwasser."
+    },
+    {
+        infinitiv: "bezahlen",
+        meaning: "trả tiền, thanh toán",
+        group: "Quy tắc • Ẩm thực & Mua sắm (Bài 10)",
+        stem: "bezahl-",
+        ending: "-en",
+        forms: { ich: "bezahle", du: "bezahlst", er_sie_es: "bezahlt", wir: "bezahlen", ihr: "bezahlt", sie_Sie: "bezahlen" },
+        perfekt: "hat bezahlt",
+        note: "Tiền tố không tách be- nên Partizip II không có ge-: hat bezahlt.",
+        example: "Wir bezahlen zusammen an der Kasse."
+    },
+    {
+        infinitiv: "vergleichen",
+        meaning: "so sánh (Preise vergleichen)",
+        group: "Bất quy tắc • Ẩm thực & Mua sắm (Bài 10)",
+        stem: "vergleich-",
+        ending: "-en",
+        forms: { ich: "vergleiche", du: "vergleichst", er_sie_es: "vergleicht", wir: "vergleichen", ihr: "vergleicht", sie_Sie: "vergleichen" },
+        perfekt: "hat verglichen",
+        note: "Präsens chia theo quy tắc. Partizip II đổi nguyên âm ei -> i và có tiền tố ver-: hat verglichen.",
+        example: "Auf dem Markt vergleichen wir die Preise."
+    },
+    {
+        infinitiv: "empfehlen",
+        meaning: "giới thiệu, gợi ý món",
+        group: "Biến âm • Ẩm thực & Mua sắm (Bài 10)",
+        stem: "empfehl-",
+        ending: "-en",
+        forms: { ich: "empfehle", du: "empfiehlst", er_sie_es: "empfiehlt", wir: "empfehlen", ihr: "empfehlt", sie_Sie: "empfehlen" },
+        perfekt: "hat empfohlen",
+        note: "Biến âm e -> ie ở ngôi du và er/sie/es (empfiehlst, empfiehlt). Partizip II: hat empfohlen.",
+        example: "Der Kellner hat uns den frischen Fisch empfohlen."
+    },
 ];
 
 let currentVerbFilterGroup = "all";
@@ -1233,6 +1343,7 @@ function speakAllPraeteritumForms(verbInfinitiv) {
 
 const VERB_GROUPS = [
     { id: "all", label: "Tất cả" },
+    { id: "Ẩm thực & Mua sắm", label: "🥦 Ẩm thực, So sánh & Mua sắm (Bài 10)" },
     { id: "Thành phố & Chỉ đường", label: "🏙️ Thành phố & Chỉ đường (Bài 8)" },
     { id: "Động từ khuyết thiếu", label: "⭐ Động từ khuyết thiếu & Nghề nghiệp (Bài 7)" },
     { id: "Di chuyển & Định hướng", label: "🚆 Di chuyển, Định hướng & Dativ (Bài 6)" },
