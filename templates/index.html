@@ -1317,6 +1317,7 @@
             if (activeSession && (lId === 24 || (currentLesson && currentLesson.title && /bài 10\b/i.test(currentLesson.title)))) {
                 const hasOutdatedL10 = (activeSession.version !== CURRENT_SESSION_VERSION) || (activeSession.allRenderExercises || []).some(ex => 
                     (ex.extra_data && JSON.stringify(ex.extra_data).includes('"visual"')) ||
+                    (ex.explanation && ex.explanation.includes('Phương án A')) ||
                     (ex.question && (ex.question.includes('V1') || ex.question.includes('V4') || ex.question.includes('Quan sát') || ex.question.includes('(der Apfel, tân ngữ)')))
                 );
                 if (hasOutdatedL10) {
@@ -1394,9 +1395,7 @@
                     if (existingCorr.length === 0) {
                         currentLesson.allRenderExercises.forEach(ex => {
                             if (ex.options && Array.isArray(ex.options) && ex.options.length > 1) {
-                                if (lId !== 23 && lId !== 24 && !/bài (9|10)\b/i.test((currentLesson && currentLesson.title) || '')) {
-                                    ex.options = shuffleArray(ex.options);
-                                }
+                                ex.options = shuffleArray(ex.options);
                             }
                         });
                         if (typeof randomizeAllNumberExercises === 'function') {
@@ -3337,9 +3336,7 @@
             }
             if (ex && ex.options && Array.isArray(ex.options) && ex.options.length > 1) {
                 if (ex.exercise_type !== 'dung_sai') {
-                    if (currentLesson && currentLesson.id !== 23 && currentLesson.id !== 24 && !/bài (9|10)\b/i.test(currentLesson.title || '')) {
-                        ex.options = shuffleArray(ex.options);
-                    }
+                    ex.options = shuffleArray(ex.options);
                 }
             }
             if (currentLesson && window.sessionPracticeAnswers && window.sessionPracticeAnswers[currentLesson.id]) {
@@ -3526,9 +3523,7 @@
                     delete ex._isUserCorrect;
                     delete ex._userAnswer;
                     if (ex && ex.options && Array.isArray(ex.options) && ex.options.length > 1) {
-                        if (lId !== 23 && lId !== 24 && !/bài (9|10)\b/i.test((currentLesson && currentLesson.title) || '')) {
-                            ex.options = shuffleArray(ex.options);
-                        }
+                        ex.options = shuffleArray(ex.options);
                     }
                 });
                 saveActiveLessonSession(lId);

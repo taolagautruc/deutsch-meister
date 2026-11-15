@@ -1097,7 +1097,7 @@ def seed_lesson_10():
                         "Ich bin zwei Kilo Äpfel."
                 ],
                 "correct_answer": "Ich hätte gern zwei Kilo Äpfel.",
-                "explanation": "Câu hỏi „Was darf es sein?“ là mẫu câu lịch sự rất phổ biến của người bán hàng tại Đức. Để trả lời lịch sự, khách hàng dùng cấu trúc „Ich hätte gern / Ich möchte + [Món hàng ở Akkusativ]“ -> „Ich hätte gern zwei Kilo Äpfel.“ (đơn vị đo 'Kilo' giữ nguyên số ít sau số đếm 'zwei', danh từ đếm được 'Äpfel' ở số nhiều). Phương án A lặp lại máy móc câu hỏi, C sai cấu trúc câu, D dùng 'Ich bin' (Tôi là 2 ký táo) sai nghĩa.",
+                "explanation": "Câu hỏi „Was darf es sein?“ là mẫu câu lịch sự rất phổ biến của người bán hàng tại Đức. Để trả lời lịch sự, khách hàng dùng cấu trúc „Ich hätte gern / Ich möchte + [Món hàng ở Akkusativ]“ -> „Ich hätte gern zwei Kilo Äpfel.“ (đơn vị đo 'Kilo' giữ nguyên số ít sau số đếm 'zwei', danh từ đếm được 'Äpfel' ở số nhiều). Các lựa chọn còn lại đều sai: „Was darf es sein?“ hoặc „Es darf Äpfel sein.“ là lặp lại máy móc câu hỏi của người bán; „Ja, bitte, Äpfel haben.“ sai cấu trúc câu; „Ich bin zwei Kilo Äpfel.“ (Tôi là 2 ký táo) sai hoàn toàn về nghĩa.",
                 "exp_reward": 10,
                 "extra_data": {
                         "translation": "Người bán: „Quý khách muốn mua gì ạ?“ — Khách hàng: „Cho tôi lấy hai ký táo.“"
@@ -1113,7 +1113,7 @@ def seed_lesson_10():
                         "die Apfel – die Äpfel / der Birne – die Birnen / das Ei – die Eier"
                 ],
                 "correct_answer": "der Apfel – die Äpfel / die Birne – die Birnen / das Ei – die Eier",
-                "explanation": "Phương án C chính xác ở cả 3 từ: 'der Apfel -> die Äpfel' (giống đực, số nhiều chỉ thêm Umlaut ä), 'die Birne -> die Birnen' (giống cái tận cùng bằng -e, số nhiều thêm -n), 'das Ei -> die Eier' (giống trung, số nhiều thêm -er). Phương án A sai cả 3 số nhiều (đúng phải là die Käse, die Würste, die Fische); phương án B sai cả 3 số nhiều; phương án D sai giống của Apfel (der) và Birne (die).",
+                "explanation": "Dòng đúng duy nhất là „der Apfel – die Äpfel / die Birne – die Birnen / das Ei – die Eier“ vì chính xác cả giống lẫn quy tắc số nhiều ở cả 3 từ: 'der Apfel -> die Äpfel' (giống đực, số nhiều thêm Umlaut ä), 'die Birne -> die Birnen' (giống cái tận cùng bằng -e, số nhiều thêm -n), 'das Ei -> die Eier' (giống trung, số nhiều thêm -er). Các dòng còn lại đều sai đuôi số nhiều (như *die Käsen, *die Wursten, *die Fischs, *die Apfels, *die Eis) hoặc sai giống của danh từ (*die Apfel, *der Birne).",
                 "exp_reward": 10,
                 "extra_data": {
                         "translation": "quả táo – những quả táo / quả lê – những quả lê / quả trứng – những quả trứng."
