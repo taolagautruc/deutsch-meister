@@ -1569,11 +1569,7 @@ function checkGermanAnswerEquivalence(userAns, correctAns, options = {}) {
     };
     if (normalizeVnPronouns(u0) === normalizeVnPronouns(c0)) return true;
 
-    // 15. Câu đọc hiểu điền ngắn: bỏ mạo từ ở đầu câu
-    const stripArticle = (s) => s.replace(/^(einen|ein|eine|der|die|das)\s+/i, '');
-    if (stripArticle(uLoc) === stripArticle(cLoc)) return true;
-
-    // 16. So sánh cặp số cách nhau dấu phẩy (ví dụ: "83, 92" <-> "83 và 92" <-> "dreiundachtzig, zweiundneunzig")
+    // 15. So sánh cặp số cách nhau dấu phẩy (ví dụ: "83, 92" <-> "83 và 92" <-> "dreiundachtzig, zweiundneunzig")
     if (c0.includes(',') || c0.includes(' und ') || c0.includes(' và ')) {
         const splitPairs = (str) => str.split(/,|\bund\b|\bvà\b|\bva\b/).map(p => baseClean(p).replace(/\s+/g, '')).filter(Boolean);
         const uParts = splitPairs(userAns);
