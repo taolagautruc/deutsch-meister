@@ -961,32 +961,31 @@ def seed_lesson_10():
     exercises_raw = [
         {
                 "type": "trac_nghiem",
-                "question": "Câu 1: Quan sát bảng đuôi welch- (V1). Chọn dạng đúng: „___ Apfel kaufst du?“ (der Apfel, tân ngữ)",
+                "question": "Câu 1: Chọn từ hỏi đúng để hoàn thành câu: „___ Apfel kaufst du?“",
                 "options": [
                         "Welcher",
-                        "Welchen",
                         "Welche",
+                        "Welchen",
                         "Welches"
                 ],
                 "correct_answer": "Welchen",
-                "explanation": "'der Apfel' là giống đực, làm tân ngữ của 'kaufen' -> Akkusativ -> 'den' -> „Welchen Apfel kaufst du?“",
+                "explanation": "Trong câu này, 'du' là chủ ngữ (Nominativ), còn 'Apfel' là tân ngữ trực tiếp của động từ 'kaufst' nên ở Cách 4 (Akkusativ). Vì 'der Apfel' là danh từ giống đực (der -> den ở Akkusativ), từ hỏi 'welch-' phải nhận đuôi '-en' -> „Welchen Apfel kaufst du?“.",
                 "exp_reward": 10,
                 "extra_data": {
-                        "visual": "V1",
                         "translation": "Bạn mua quả táo nào?"
                 }
         },
         {
                 "type": "trac_nghiem",
-                "question": "Câu 2: Chọn dạng đúng: „___ Bananen sind schon reif?“",
+                "question": "Câu 2: Chọn từ hỏi đúng để hoàn thành câu: „___ Bananen sind schon reif?“",
                 "options": [
                         "Welcher",
-                        "Welchen",
                         "Welche",
+                        "Welchen",
                         "Welches"
                 ],
                 "correct_answer": "Welche",
-                "explanation": "'die Bananen' là số nhiều, làm chủ ngữ -> „Welche Bananen sind schon reif?“ (số nhiều luôn dùng 'welche').",
+                "explanation": "'Bananen' là danh từ số nhiều (die Bananen), đóng vai trò làm chủ ngữ (Nominativ) của động từ 'sind'. Với danh từ số nhiều ở cả Nominativ và Akkusativ, từ hỏi 'welch-' luôn nhận đuôi '-e' -> „Welche Bananen sind schon reif?“.",
                 "exp_reward": 10,
                 "extra_data": {
                         "translation": "Những quả chuối nào đã chín rồi?"
@@ -994,15 +993,15 @@ def seed_lesson_10():
         },
         {
                 "type": "trac_nghiem",
-                "question": "Câu 3: Chọn dạng đúng: „___ Obst ist frisch?“",
+                "question": "Câu 3: Chọn từ hỏi đúng để hoàn thành câu: „___ Obst ist frisch?“",
                 "options": [
                         "Welcher",
-                        "Welchen",
                         "Welche",
+                        "Welchen",
                         "Welches"
                 ],
                 "correct_answer": "Welches",
-                "explanation": "'das Obst' là giống trung -> „Welches Obst ist frisch?“ (giống trung luôn dùng 'welches').",
+                "explanation": "'Obst' (hoa quả/trái cây) là danh từ giống trung (das Obst), làm chủ ngữ trong câu. Với danh từ giống trung (das) ở cả Nominativ và Akkusativ, từ hỏi 'welch-' luôn nhận đuôi '-es' -> „Welches Obst ist frisch?“.",
                 "exp_reward": 10,
                 "extra_data": {
                         "translation": "Loại hoa quả nào tươi?"
@@ -1010,15 +1009,15 @@ def seed_lesson_10():
         },
         {
                 "type": "trac_nghiem",
-                "question": "Câu 4: Chọn dạng so sánh hơn đúng của 'billig': „Der Apfel ist ___ als die Birne.“",
+                "question": "Câu 4: Chọn dạng đúng của tính từ 'billig' để hoàn thành câu: „Der Apfel ist ___ als die Birne.“",
                 "options": [
-                        "billigere",
                         "billiger",
+                        "billigere",
                         "billigster",
                         "am billigsten"
                 ],
                 "correct_answer": "billiger",
-                "explanation": "Komparativ của tính từ ngắn = tính từ + '-er' -> 'billiger', đi với 'als' ở phía sau.",
+                "explanation": "Trong câu có liên từ 'als' (hơn) dùng để so sánh giữa hai đối tượng ('der Apfel' và 'die Birne'), nên cần dùng bậc so sánh hơn (Komparativ). Trong tiếng Đức, mọi tính từ có quy tắc đều tạo Komparativ bằng cách thêm đuôi '-er' vào gốc tính từ (billig + -er -> billiger) và giữ nguyên không chia đuôi khi đứng sau động từ 'sein' (ist).",
                 "exp_reward": 10,
                 "extra_data": {
                         "translation": "Quả táo rẻ hơn quả lê."
@@ -1026,7 +1025,7 @@ def seed_lesson_10():
         },
         {
                 "type": "trac_nghiem",
-                "question": "Câu 5: Chọn dạng so sánh nhất đúng của 'teuer': „Der Fisch ist ___.“",
+                "question": "Câu 5: Chọn dạng đúng để hoàn thành câu: „Der Fisch ist ___.“",
                 "options": [
                         "am teuerten",
                         "am teuersten",
@@ -1034,15 +1033,15 @@ def seed_lesson_10():
                         "am teuerrsten"
                 ],
                 "correct_answer": "am teuersten",
-                "explanation": "'teuer' -> 'teurer' -> 'am teuersten'. Chỉ có dạng Komparativ bỏ 'e' ('teurer'); dạng Superlativ giữ nguyên gốc 'teuer' + '-sten' -> 'am teuersten'.",
+                "explanation": "Cả 4 phương án đều ở bậc so sánh nhất (Superlativ) của tính từ 'teuer' (đắt). Lưu ý quy tắc chính tả: tính từ 'teuer' chỉ lược bỏ chữ '-e-' ở bậc so sánh hơn ('teurer'), còn ở bậc so sánh nhất vẫn giữ nguyên gốc 'teuer' + '-sten' -> 'am teuersten' (các cách viết 'am teurersten', 'am teuerrsten', 'am teuerten' đều sai chính tả).",
                 "exp_reward": 10,
                 "extra_data": {
-                        "translation": "Con cá đắt nhất."
+                        "translation": "Món cá có giá đắt nhất."
                 }
         },
         {
                 "type": "trac_nghiem",
-                "question": "Câu 6: Chọn từ đúng: „Auf dem Markt kaufe ich ___ Äpfel.“",
+                "question": "Câu 6: Chọn từ chỉ số lượng đúng để hoàn thành câu: „Auf dem Markt kaufe ich ___ Äpfel.“",
                 "options": [
                         "viel",
                         "viele",
@@ -1050,7 +1049,7 @@ def seed_lesson_10():
                         "viels"
                 ],
                 "correct_answer": "viele",
-                "explanation": "'Äpfel' là danh từ số nhiều đếm được -> dùng 'viele' (còn 'viel' chỉ đi với danh từ không đếm được như 'Obst').",
+                "explanation": "'Äpfel' (những quả táo) là danh từ đếm được ở dạng số nhiều nên bắt buộc đi với 'viele' (có đuôi '-e'). Từ 'viel' (không đuôi) chỉ đi với danh từ không đếm được số ít (như 'viel Obst', 'viel Wasser'), còn 'viels' không tồn tại.",
                 "exp_reward": 10,
                 "extra_data": {
                         "translation": "Ở chợ tôi mua nhiều quả táo."
@@ -1058,15 +1057,15 @@ def seed_lesson_10():
         },
         {
                 "type": "trac_nghiem",
-                "question": "Câu 7: Chọn từ đúng nghĩa \"thích hơn\": „Ich esse Reis ___ als Brot.“",
+                "question": "Câu 7: Chọn từ đúng để hoàn thành câu: „Ich esse Reis ___ als Brot.“",
                 "options": [
                         "gern",
-                        "lieber",
                         "am liebsten",
-                        "besser"
+                        "besser",
+                        "lieber"
                 ],
                 "correct_answer": "lieber",
-                "explanation": "Komparativ của 'gern' là 'lieber'; cấu trúc 'lieber … als' biểu thị thích thứ gì hơn thứ gì.",
+                "explanation": "Trong câu có từ 'als' (hơn) nên bắt buộc dùng bậc so sánh hơn (Komparativ) -> loại 'gern' (nguyên mức) và 'am liebsten' (so sánh nhất). Khi nói thích ăn/uống món gì hơn món gì ('essen/trinken + ... + als'), tiếng Đức dùng dạng so sánh hơn của 'gern' là 'lieber' (không dùng 'besser' vì 'besser' chỉ chất lượng hoặc kỹ năng làm việc gì giỏi hơn).",
                 "exp_reward": 10,
                 "extra_data": {
                         "translation": "Tôi thích ăn cơm hơn bánh mì."
@@ -1074,51 +1073,50 @@ def seed_lesson_10():
         },
         {
                 "type": "trac_nghiem",
-                "question": "Câu 8: Quan sát khung câu V4. Chọn câu đúng vị trí động từ:",
+                "question": "Câu 8: Chọn câu đúng ngữ pháp tiếng Đức:",
                 "options": [
                         "Am liebsten ich esse Schokolade.",
-                        "Am liebsten esse ich Schokolade.",
                         "Am liebsten Schokolade esse ich.",
-                        "Ich am liebsten esse Schokolade."
+                        "Ich am liebsten esse Schokolade.",
+                        "Am liebsten esse ich Schokolade."
                 ],
                 "correct_answer": "Am liebsten esse ich Schokolade.",
-                "explanation": "Cụm 'Am liebsten' ở vị trí ①, động từ 'esse' bắt buộc phải ở vị trí ②, rồi mới đến chủ ngữ 'ich' ở vị trí ③ -> „Am liebsten esse ich Schokolade.“",
+                "explanation": "Theo quy tắc vị trí động từ trong câu trần thuật tiếng Đức (Verbzweitstellung - V2), khi đưa cụm trạng từ so sánh nhất 'Am liebsten' lên đầu câu (Vị trí 1) để nhấn mạnh, động từ chia 'esse' bắt buộc phải đứng ngay ở Vị trí 2, sau đó mới đến chủ ngữ 'ich' ở Vị trí 3 -> „Am liebsten esse ich Schokolade.“.",
                 "exp_reward": 10,
                 "extra_data": {
-                        "visual": "V4",
-                        "translation": "Tôi thích ăn sô cô la nhất."
+                        "translation": "Tôi thích ăn sô-cô-la nhất."
                 }
         },
         {
                 "type": "trac_nghiem",
-                "question": "Câu 9: Người bán hỏi: „Was darf es sein?“ Câu trả lời tự nhiên và đúng ngữ pháp nhất là:",
+                "question": "Câu 9: Người bán hỏi: „Was darf es sein?“ — Câu trả lời tự nhiên và đúng ngữ pháp nhất của khách hàng là:",
                 "options": [
+                        "Was darf es sein?",
                         "Ich hätte gern zwei Kilo Äpfel.",
-                        "Ich bin zwei Kilo Äpfel.",
                         "Ja, bitte, Äpfel haben.",
-                        "Es darf Äpfel sein."
+                        "Ich bin zwei Kilo Äpfel."
                 ],
                 "correct_answer": "Ich hätte gern zwei Kilo Äpfel.",
-                "explanation": "Khi mua hàng trong tiếng Đức dùng cụm lịch sự 'Ich hätte gern / Ich möchte / Ich nehme + Akkusativ' -> „Ich hätte gern zwei Kilo Äpfel.“ (sau 'Kilo' giữ nguyên số ít).",
+                "explanation": "Câu hỏi „Was darf es sein?“ là mẫu câu lịch sự rất phổ biến của người bán hàng tại Đức. Để trả lời lịch sự, khách hàng dùng cấu trúc „Ich hätte gern / Ich möchte + [Món hàng ở Akkusativ]“ -> „Ich hätte gern zwei Kilo Äpfel.“ (đơn vị đo 'Kilo' giữ nguyên số ít sau số đếm 'zwei', danh từ đếm được 'Äpfel' ở số nhiều). Phương án A lặp lại máy móc câu hỏi, C sai cấu trúc câu, D dùng 'Ich bin' (Tôi là 2 ký táo) sai nghĩa.",
                 "exp_reward": 10,
                 "extra_data": {
-                        "translation": "Tôi muốn lấy hai ký táo."
+                        "translation": "Người bán: „Quý khách muốn mua gì ạ?“ — Khách hàng: „Cho tôi lấy hai ký táo.“"
                 }
         },
         {
                 "type": "trac_nghiem",
-                "question": "Câu 10: Dòng nào ghi ĐÚNG cả mạo từ lẫn số nhiều?",
+                "question": "Câu 10: Dòng nào dưới đây ghi ĐÚNG cả mạo từ (giống) lẫn dạng số nhiều của cả 3 danh từ?",
                 "options": [
-                        "der Apfel – die Äpfel / die Birne – die Birnen / das Ei – die Eier",
+                        "der Käse – die Käsen / die Wurst – die Wursten / der Fisch – die Fischs",
                         "der Apfel – die Apfels / die Birne – die Birne / das Ei – die Eis",
-                        "die Apfel – die Äpfel / der Birne – die Birnen / das Ei – die Eier",
-                        "der Käse – die Käsen / die Wurst – die Wursten / der Fisch – die Fischs"
+                        "der Apfel – die Äpfel / die Birne – die Birnen / das Ei – die Eier",
+                        "die Apfel – die Äpfel / der Birne – die Birnen / das Ei – die Eier"
                 ],
                 "correct_answer": "der Apfel – die Äpfel / die Birne – die Birnen / das Ei – die Eier",
-                "explanation": "'der Apfel -> die Äpfel' (thêm Umlaut), 'die Birne -> die Birnen', 'das Ei -> die Eier'. Các dòng còn lại đều sai giống hoặc sai đuôi số nhiều. -> Đáp án: \"der Apfel – die Äpfel / die Birne – die Birnen / das Ei – die Eier\"",
+                "explanation": "Phương án C chính xác ở cả 3 từ: 'der Apfel -> die Äpfel' (giống đực, số nhiều chỉ thêm Umlaut ä), 'die Birne -> die Birnen' (giống cái tận cùng bằng -e, số nhiều thêm -n), 'das Ei -> die Eier' (giống trung, số nhiều thêm -er). Phương án A sai cả 3 số nhiều (đúng phải là die Käse, die Würste, die Fische); phương án B sai cả 3 số nhiều; phương án D sai giống của Apfel (der) và Birne (die).",
                 "exp_reward": 10,
                 "extra_data": {
-                        "translation": "quả táo – các quả táo / quả lê – các quả lê / quả trứng – các quả trứng."
+                        "translation": "quả táo – những quả táo / quả lê – những quả lê / quả trứng – những quả trứng."
                 }
         },
         {
