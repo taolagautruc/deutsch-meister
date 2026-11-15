@@ -51,31 +51,31 @@
     ];
 
     const ADJECTIVES_25 = [
-        { pos: "billig", comp: "billiger", sup: "am billigsten", tr: "rẻ" },
-        { pos: "teuer", comp: "teurer", sup: "am teuersten", tr: "đắt (bỏ -e- ở Komparativ)" },
-        { pos: "lecker", comp: "leckerer", sup: "am leckersten", tr: "ngon" },
-        { pos: "frisch", comp: "frischer", sup: "am frischesten", tr: "tươi (đuôi -sch -> -esten)" },
-        { pos: "süß", comp: "süßer", sup: "am süßesten", tr: "ngọt (đuôi -ß -> -esten)" },
-        { pos: "sauer", comp: "saurer", sup: "am sauersten", tr: "chua (bỏ -e-)" },
-        { pos: "scharf", comp: "schärfer", sup: "am schärfsten", tr: "cay (thêm Umlaut a -> ä)" },
-        { pos: "gesund", comp: "gesünder", sup: "am gesündesten", tr: "tốt cho sức khỏe (Umlaut u -> ü)" },
-        { pos: "groß", comp: "größer", sup: "am größten", tr: "to, lớn (Umlaut o -> ö)" },
-        { pos: "klein", comp: "kleiner", sup: "am kleinsten", tr: "nhỏ" },
-        { pos: "alt", comp: "älter", sup: "am ältesten", tr: "cũ, già (Umlaut a -> ä)" },
-        { pos: "jung", comp: "jünger", sup: "am jüngsten", tr: "trẻ (Umlaut u -> ü)" },
-        { pos: "kalt", comp: "kälter", sup: "am kältesten", tr: "lạnh (Umlaut a -> ä)" },
-        { pos: "warm", comp: "wärmer", sup: "am wärmsten", tr: "ấm (Umlaut a -> ä)" },
-        { pos: "heiß", comp: "heißer", sup: "am heißesten", tr: "nóng (đuôi -ß -> -esten)" },
-        { pos: "hoch", comp: "höher", sup: "am höchsten", tr: "cao (bất quy tắc)" },
-        { pos: "nah", comp: "näher", sup: "am nächsten", tr: "gần (bất quy tắc)" },
-        { pos: "schwer", comp: "schwerer", sup: "am schwersten", tr: "nặng; khó" },
-        { pos: "leicht", comp: "leichter", sup: "am leichtesten", tr: "nhẹ; dễ" },
-        { pos: "lang", comp: "länger", sup: "am längsten", tr: "dài (Umlaut a -> ä)" },
-        { pos: "kurz", comp: "kürzer", sup: "am kürzesten", tr: "ngắn (Umlaut u -> ü)" },
-        { pos: "gut", comp: "besser", sup: "am besten", tr: "tốt, ngon (bất quy tắc)" },
-        { pos: "viel", comp: "mehr", sup: "am meisten", tr: "nhiều (bất quy tắc)" },
-        { pos: "gern", comp: "lieber", sup: "am liebsten", tr: "thích (bất quy tắc)" },
-        { pos: "wenig", comp: "weniger", sup: "am wenigsten", tr: "ít" }
+        { pos: "billig", comp: "billiger", sup: "am billigsten", rulePos: "Nghĩa: rẻ", ruleComp: "Gốc tính từ + -er (không biến âm)", ruleSup: "am + gốc + -sten (am billigsten)" },
+        { pos: "teuer", comp: "teurer", sup: "am teuersten", rulePos: "Nghĩa: đắt • Lưu ý: bỏ -e- ở Komparativ", ruleComp: "Lược -e- ở gốc + -er (teurer)", ruleSup: "am + gốc + -sten (am teuersten)" },
+        { pos: "lecker", comp: "leckerer", sup: "am leckersten", rulePos: "Nghĩa: ngon", ruleComp: "Gốc tính từ + -er (không biến âm)", ruleSup: "am + gốc + -sten (am leckersten)" },
+        { pos: "frisch", comp: "frischer", sup: "am frischesten", rulePos: "Nghĩa: tươi", ruleComp: "Gốc tính từ + -er (không biến âm)", ruleSup: "Đuôi -sch -> thêm -esten (am frischesten)" },
+        { pos: "süß", comp: "süßer", sup: "am süßesten", rulePos: "Nghĩa: ngọt", ruleComp: "Gốc tính từ + -er (không biến âm)", ruleSup: "Đuôi -ß -> thêm -esten (am süßesten)" },
+        { pos: "sauer", comp: "saurer", sup: "am sauersten", rulePos: "Nghĩa: chua • Lưu ý: bỏ -e- ở Komparativ", ruleComp: "Lược -e- ở gốc + -er (saurer)", ruleSup: "am + gốc + -sten (am sauersten)" },
+        { pos: "scharf", comp: "schärfer", sup: "am schärfsten", rulePos: "Nghĩa: cay", ruleComp: "Thêm Umlaut a -> ä + -er", ruleSup: "Thêm Umlaut a -> ä + -sten (am schärfsten)" },
+        { pos: "gesund", comp: "gesünder", sup: "am gesündesten", rulePos: "Nghĩa: tốt cho sức khỏe", ruleComp: "Thêm Umlaut u -> ü + -er", ruleSup: "Thêm Umlaut u -> ü + -esten (am gesündesten)" },
+        { pos: "groß", comp: "größer", sup: "am größten", rulePos: "Nghĩa: to, lớn", ruleComp: "Đổi o -> ö + -er (größer)", ruleSup: "Ngoại lệ đuôi -ß chỉ thêm -ten (am größten)" },
+        { pos: "klein", comp: "kleiner", sup: "am kleinsten", rulePos: "Nghĩa: nhỏ", ruleComp: "Gốc tính từ + -er (không biến âm)", ruleSup: "am + gốc + -sten (am kleinsten)" },
+        { pos: "alt", comp: "älter", sup: "am ältesten", rulePos: "Nghĩa: cũ, già", ruleComp: "Thêm Umlaut a -> ä + -er", ruleSup: "Thêm Umlaut a -> ä + -esten (am ältesten)" },
+        { pos: "jung", comp: "jünger", sup: "am jüngsten", rulePos: "Nghĩa: trẻ", ruleComp: "Thêm Umlaut u -> ü + -er", ruleSup: "Thêm Umlaut u -> ü + -sten (am jüngsten)" },
+        { pos: "kalt", comp: "kälter", sup: "am kältesten", rulePos: "Nghĩa: lạnh", ruleComp: "Thêm Umlaut a -> ä + -er", ruleSup: "Thêm Umlaut a -> ä + -esten (am kältesten)" },
+        { pos: "warm", comp: "wärmer", sup: "am wärmsten", rulePos: "Nghĩa: ấm", ruleComp: "Thêm Umlaut a -> ä + -er", ruleSup: "Thêm Umlaut a -> ä + -sten (am wärmsten)" },
+        { pos: "heiß", comp: "heißer", sup: "am heißesten", rulePos: "Nghĩa: nóng", ruleComp: "Gốc tính từ + -er (không biến âm)", ruleSup: "Đuôi -ß -> thêm -esten (am heißesten)" },
+        { pos: "hoch", comp: "höher", sup: "am höchsten", rulePos: "Nghĩa: cao", ruleComp: "Đổi o -> ö và lược chữ 'c' (höher)", ruleSup: "Đổi o -> ö + -sten (am höchsten)" },
+        { pos: "nah", comp: "näher", sup: "am nächsten", rulePos: "Nghĩa: gần", ruleComp: "Đổi a -> ä + -er (näher)", ruleSup: "Đổi a -> ä và thêm -ch- (am nächsten)" },
+        { pos: "schwer", comp: "schwerer", sup: "am schwersten", rulePos: "Nghĩa: nặng; khó", ruleComp: "Gốc tính từ + -er (không biến âm)", ruleSup: "am + gốc + -sten (am schwersten)" },
+        { pos: "leicht", comp: "leichter", sup: "am leichtesten", rulePos: "Nghĩa: nhẹ; dễ", ruleComp: "Gốc tính từ + -er (không biến âm)", ruleSup: "Đuôi -t -> thêm -esten (am leichtesten)" },
+        { pos: "lang", comp: "länger", sup: "am längsten", rulePos: "Nghĩa: dài", ruleComp: "Thêm Umlaut a -> ä + -er", ruleSup: "Thêm Umlaut a -> ä + -sten (am längsten)" },
+        { pos: "kurz", comp: "kürzer", sup: "am kürzesten", rulePos: "Nghĩa: ngắn", ruleComp: "Thêm Umlaut u -> ü + -er", ruleSup: "Thêm Umlaut u -> ü + -esten (am kürzesten)" },
+        { pos: "gut", comp: "besser", sup: "am besten", rulePos: "Nghĩa: tốt, ngon", ruleComp: "Bất quy tắc hoàn toàn (không dùng *guter)", ruleSup: "Bất quy tắc hoàn toàn (am besten)" },
+        { pos: "viel", comp: "mehr", sup: "am meisten", rulePos: "Nghĩa: nhiều", ruleComp: "Bất quy tắc hoàn toàn (không đổi đuôi)", ruleSup: "Bất quy tắc hoàn toàn (am meisten)" },
+        { pos: "gern", comp: "lieber", sup: "am liebsten", rulePos: "Nghĩa: thích", ruleComp: "Bất quy tắc hoàn toàn (thích ... hơn)", ruleSup: "Bất quy tắc hoàn toàn (thích ... nhất)" },
+        { pos: "wenig", comp: "weniger", sup: "am wenigsten", rulePos: "Nghĩa: ít", ruleComp: "Gốc tính từ + -er (không biến âm)", ruleSup: "am + gốc + -sten (am wenigsten)" }
     ];
 
     let currentSelectedNounIdx = 0;
@@ -134,10 +134,10 @@
                             <text x="100" y="89" fill="${noun.gender === 'm' ? '#60a5fa' : '#cbd5e1'}" font-size="13" font-weight="bold" text-anchor="middle">🔵 Maskulinum (der)</text>
 
                             <rect x="200" y="60" width="270" height="48" rx="8" fill="${noun.gender === 'm' ? '#1d4ed8' : '#1e293b'}" stroke="${noun.gender === 'm' ? '#60a5fa' : '#334155'}" stroke-width="${noun.gender === 'm' ? '2' : '1'}" />
-                            <text x="335" y="89" fill="#ffffff" font-size="15" font-weight="900" text-anchor="middle">Welch<tspan fill="#facc15">er</tspan> (der)</text>
+                            <text x="335" y="89" fill="#ffffff" font-size="15" font-weight="900" text-anchor="middle">Welch<tspan fill="#fde047" font-weight="900">er</tspan> <tspan fill="#94a3b8" font-size="12" font-weight="bold">(der)</tspan></text>
 
                             <rect x="480" y="60" width="270" height="48" rx="8" fill="${noun.gender === 'm' ? '#b91c1c' : '#1e293b'}" stroke="${noun.gender === 'm' ? '#f87171' : '#334155'}" stroke-width="${noun.gender === 'm' ? '2' : '1'}" />
-                            <text x="615" y="89" fill="#ffffff" font-size="15" font-weight="900" text-anchor="middle">Welch<tspan fill="#4ade80">en</tspan> (den)</text>
+                            <text x="615" y="89" fill="#ffffff" font-size="15" font-weight="900" text-anchor="middle">Welch<tspan fill="#4ade80" font-weight="900">en</tspan> <tspan fill="#94a3b8" font-size="12" font-weight="bold">(den)</tspan></text>
                         </g>
 
                         <!-- Row 2: Femininum (die) -->
@@ -146,10 +146,10 @@
                             <text x="100" y="143" fill="${noun.gender === 'f' ? '#f472b6' : '#cbd5e1'}" font-size="13" font-weight="bold" text-anchor="middle">🔴 Femininum (die)</text>
 
                             <rect x="200" y="114" width="270" height="48" rx="8" fill="${noun.gender === 'f' ? '#9d174d' : '#1e293b'}" stroke="${noun.gender === 'f' ? '#f472b6' : '#334155'}" stroke-width="${noun.gender === 'f' ? '2' : '1'}" />
-                            <text x="335" y="143" fill="#ffffff" font-size="14" font-weight="bold" text-anchor="middle">Welch<tspan fill="#f472b6">e</tspan> (die)</text>
+                            <text x="335" y="143" fill="#ffffff" font-size="15" font-weight="900" text-anchor="middle">Welch<tspan fill="#f472b6" font-weight="900">e</tspan> <tspan fill="#94a3b8" font-size="12" font-weight="bold">(die)</tspan></text>
 
                             <rect x="480" y="114" width="270" height="48" rx="8" fill="${noun.gender === 'f' ? '#9d174d' : '#1e293b'}" stroke="${noun.gender === 'f' ? '#f472b6' : '#334155'}" stroke-width="${noun.gender === 'f' ? '2' : '1'}" />
-                            <text x="615" y="143" fill="#ffffff" font-size="14" font-weight="bold" text-anchor="middle">Welch<tspan fill="#f472b6">e</tspan> (die)</text>
+                            <text x="615" y="143" fill="#ffffff" font-size="15" font-weight="900" text-anchor="middle">Welch<tspan fill="#f472b6" font-weight="900">e</tspan> <tspan fill="#94a3b8" font-size="12" font-weight="bold">(die)</tspan></text>
                         </g>
 
                         <!-- Row 3: Neutrum (das) -->
@@ -158,10 +158,10 @@
                             <text x="100" y="197" fill="${noun.gender === 'n' ? '#34d399' : '#cbd5e1'}" font-size="13" font-weight="bold" text-anchor="middle">🟢 Neutrum (das)</text>
 
                             <rect x="200" y="168" width="270" height="48" rx="8" fill="${noun.gender === 'n' ? '#047857' : '#1e293b'}" stroke="${noun.gender === 'n' ? '#34d399' : '#334155'}" stroke-width="${noun.gender === 'n' ? '2' : '1'}" />
-                            <text x="335" y="197" fill="#ffffff" font-size="14" font-weight="bold" text-anchor="middle">Welch<tspan fill="#34d399">es</tspan> (das)</text>
+                            <text x="335" y="197" fill="#ffffff" font-size="15" font-weight="900" text-anchor="middle">Welch<tspan fill="#34d399" font-weight="900">es</tspan> <tspan fill="#94a3b8" font-size="12" font-weight="bold">(das)</tspan></text>
 
                             <rect x="480" y="168" width="270" height="48" rx="8" fill="${noun.gender === 'n' ? '#047857' : '#1e293b'}" stroke="${noun.gender === 'n' ? '#34d399' : '#334155'}" stroke-width="${noun.gender === 'n' ? '2' : '1'}" />
-                            <text x="615" y="197" fill="#ffffff" font-size="14" font-weight="bold" text-anchor="middle">Welch<tspan fill="#34d399">es</tspan> (das)</text>
+                            <text x="615" y="197" fill="#ffffff" font-size="15" font-weight="900" text-anchor="middle">Welch<tspan fill="#34d399" font-weight="900">es</tspan> <tspan fill="#94a3b8" font-size="12" font-weight="bold">(das)</tspan></text>
                         </g>
 
                         <!-- Row 4: Plural (die) -->
@@ -170,10 +170,10 @@
                             <text x="100" y="249" fill="${noun.gender === 'pl' ? '#c4b5fd' : '#cbd5e1'}" font-size="13" font-weight="bold" text-anchor="middle">🟣 Plural (die)</text>
 
                             <rect x="200" y="222" width="270" height="44" rx="8" fill="${noun.gender === 'pl' ? '#6d28d9' : '#1e293b'}" stroke="${noun.gender === 'pl' ? '#c4b5fd' : '#334155'}" stroke-width="${noun.gender === 'pl' ? '2' : '1'}" />
-                            <text x="335" y="249" fill="#ffffff" font-size="14" font-weight="bold" text-anchor="middle">Welch<tspan fill="#c4b5fd">e</tspan> (die)</text>
+                            <text x="335" y="249" fill="#ffffff" font-size="15" font-weight="900" text-anchor="middle">Welch<tspan fill="#c084fc" font-weight="900">e</tspan> <tspan fill="#94a3b8" font-size="12" font-weight="bold">(die)</tspan></text>
 
                             <rect x="480" y="222" width="270" height="44" rx="8" fill="${noun.gender === 'pl' ? '#6d28d9' : '#1e293b'}" stroke="${noun.gender === 'pl' ? '#c4b5fd' : '#334155'}" stroke-width="${noun.gender === 'pl' ? '2' : '1'}" />
-                            <text x="615" y="249" fill="#ffffff" font-size="14" font-weight="bold" text-anchor="middle">Welch<tspan fill="#c4b5fd">e</tspan> (die)</text>
+                            <text x="615" y="249" fill="#ffffff" font-size="15" font-weight="900" text-anchor="middle">Welch<tspan fill="#c084fc" font-weight="900">e</tspan> <tspan fill="#94a3b8" font-size="12" font-weight="bold">(die)</tspan></text>
                         </g>
                     </svg>
                 </div>
@@ -259,20 +259,20 @@
                         <text x="647" y="142" fill="#93c5fd" font-size="11" font-weight="bold" text-anchor="middle">Bước 2: Chủ ngữ hay Tân ngữ?</text>
 
                         <!-- 2 nhánh của der -->
-                        <path d="M 600 156 L 560 210" stroke="#38bdf8" stroke-width="2" fill="none" />
-                        <path d="M 695 156 L 720 210" stroke="#f43f5e" stroke-width="2" fill="none" />
+                        <path d="M 605 156 L 532 210" stroke="#38bdf8" stroke-width="2" fill="none" />
+                        <path d="M 685 156 L 677 210" stroke="#f43f5e" stroke-width="2" fill="none" />
 
                         <!-- Nominativ -->
-                        <rect x="470" y="210" width="180" height="65" rx="10" fill="#1e293b" stroke="#38bdf8" stroke-width="2" />
-                        <text x="560" y="232" fill="#38bdf8" font-size="12" font-weight="bold" text-anchor="middle">Chủ ngữ (Nominativ)</text>
-                        <text x="560" y="252" fill="#ffffff" font-size="15" font-weight="black" text-anchor="middle">Welcher</text>
-                        <text x="560" y="268" fill="#94a3b8" font-size="10" text-anchor="middle">(Welcher Fisch ist frisch?)</text>
+                        <rect x="465" y="210" width="135" height="65" rx="10" fill="#1e293b" stroke="#38bdf8" stroke-width="2" />
+                        <text x="532" y="231" fill="#38bdf8" font-size="11" font-weight="bold" text-anchor="middle">Chủ ngữ (Nominativ)</text>
+                        <text x="532" y="250" fill="#ffffff" font-size="14" font-weight="black" text-anchor="middle">Welcher</text>
+                        <text x="532" y="266" fill="#94a3b8" font-size="9.5" text-anchor="middle">(Welcher Fisch ist frisch?)</text>
 
                         <!-- Akkusativ -->
-                        <rect x="660" y="210" width="190" height="65" rx="10" fill="#1e293b" stroke="#f43f5e" stroke-width="2" />
-                        <text x="755" y="232" fill="#f43f5e" font-size="12" font-weight="bold" text-anchor="middle">Tân ngữ (Akkusativ)</text>
-                        <text x="755" y="252" fill="#ffffff" font-size="15" font-weight="black" text-anchor="middle">Welchen</text>
-                        <text x="755" y="268" fill="#94a3b8" font-size="10" text-anchor="middle">(Welchen Fisch nimmst du?)</text>
+                        <rect x="610" y="210" width="135" height="65" rx="10" fill="#1e293b" stroke="#f43f5e" stroke-width="2" />
+                        <text x="677" y="231" fill="#f43f5e" font-size="11" font-weight="bold" text-anchor="middle">Tân ngữ (Akkusativ)</text>
+                        <text x="677" y="250" fill="#ffffff" font-size="14" font-weight="black" text-anchor="middle">Welchen</text>
+                        <text x="677" y="266" fill="#94a3b8" font-size="9.5" text-anchor="middle">(Welchen Fisch nimmst du?)</text>
                     </svg>
                 </div>
             </div>
@@ -310,7 +310,7 @@
                             <rect x="20" y="130" width="220" height="80" rx="12" fill="#1e293b" stroke="#475569" stroke-width="2" />
                             <text x="130" y="156" fill="#94a3b8" font-size="12" font-weight="bold" text-anchor="middle">BẬC 1: POSITIV</text>
                             <text x="130" y="186" fill="#ffffff" font-size="18" font-weight="black" text-anchor="middle">${adj.pos}</text>
-                            <text x="130" y="202" fill="#cbd5e1" font-size="11" text-anchor="middle">Nguyên mức (${adj.tr})</text>
+                            <text x="130" y="202" fill="#cbd5e1" font-size="10" text-anchor="middle">${adj.rulePos}</text>
                         </g>
 
                         <!-- Mũi tên lên bậc 2 -->
@@ -322,7 +322,7 @@
                             <text x="380" y="105" fill="#93c5fd" font-size="12" font-weight="bold" text-anchor="middle">BẬC 2: KOMPARATIV</text>
                             <text x="380" y="140" fill="#facc15" font-size="20" font-weight="900" text-anchor="middle">${adj.comp}</text>
                             <text x="380" y="165" fill="#ffffff" font-size="12" font-weight="bold" text-anchor="middle">hơn … (+ als)</text>
-                            <text x="380" y="195" fill="#bfdbfe" font-size="11" text-anchor="middle">${adj.pos} + -er (hoặc biến âm)</text>
+                            <text x="380" y="195" fill="#bfdbfe" font-size="10" text-anchor="middle">${adj.ruleComp}</text>
                         </g>
 
                         <!-- Mũi tên lên bậc 3 -->
@@ -334,7 +334,7 @@
                             <text x="630" y="45" fill="#fbcfe8" font-size="12" font-weight="bold" text-anchor="middle">BẬC 3: SUPERLATIV</text>
                             <text x="630" y="85" fill="#ffffff" font-size="22" font-weight="black" text-anchor="middle">${adj.sup}</text>
                             <text x="630" y="115" fill="#facc15" font-size="13" font-weight="bold" text-anchor="middle">… NHẤT</text>
-                            <text x="630" y="145" fill="#fed7aa" font-size="11" text-anchor="middle">am + … + -sten / -esten</text>
+                            <text x="630" y="145" fill="#fed7aa" font-size="10" text-anchor="middle">${adj.ruleSup}</text>
                         </g>
                     </svg>
                 </div>
@@ -460,12 +460,12 @@
     // V5: QUẦY CHỢ TƯƠNG TÁC (MARKET STAND)
     // =========================================================================
     const MARKET_ITEMS = [
-        { name: "Tomaten", icon: "🍅", priceStr: "2,50 € / kg", cents: 250, unit: "Kilo", question: "Wie viel kosten die Tomaten?", answer: "Das Kilo kostet zwei Euro fünfzig." },
-        { name: "Möhren", icon: "🥕", priceStr: "1,20 € / kg", cents: 120, unit: "Kilo", question: "Wie viel kosten die Möhren?", answer: "Das Kilo kostet ein Euro zwanzig." },
-        { name: "Ananas", icon: "🍍", priceStr: "2,30 € / Stk", cents: 230, unit: "Stück", question: "Was kostet die Ananas?", answer: "Die Ananas kostet zwei Euro dreißig." },
-        { name: "Käse", icon: "🧀", priceStr: "2,99 € / 100g", cents: 299, unit: "100 Gramm", question: "Was kostet der Käse?", answer: "Hundert Gramm kosten zwei Euro neunundneunzig." },
-        { name: "Brot", icon: "🥖", priceStr: "2,80 € / Stk", cents: 280, unit: "Stück", question: "Was kostet das Brot?", answer: "Das Brot kostet zwei Euro achtzig." },
-        { name: "Milch", icon: "🥛", priceStr: "1,10 € / L", cents: 110, unit: "Liter", question: "Wie viel kostet die Milch?", answer: "Ein Liter Milch kostet ein Euro zehn." }
+        { name: "Tomaten", icon: "🍅", priceStr: "2,50 € / kg", cents: 250, unit: "Kilo", question: "Wie viel kosten die Tomaten?", questionVi: "Cà chua giá bao nhiêu?", answer: "Das Kilo kostet zwei Euro fünfzig.", answerVi: "Một ký có giá 2 Euro 50 Cent." },
+        { name: "Möhren", icon: "🥕", priceStr: "1,20 € / kg", cents: 120, unit: "Kilo", question: "Wie viel kosten die Möhren?", questionVi: "Cà rốt giá bao nhiêu?", answer: "Das Kilo kostet ein Euro zwanzig.", answerVi: "Một ký có giá 1 Euro 20 Cent." },
+        { name: "Ananas", icon: "🍍", priceStr: "2,30 € / Stk", cents: 230, unit: "Stück", question: "Was kostet die Ananas?", questionVi: "Quả dứa giá bao nhiêu?", answer: "Die Ananas kostet zwei Euro dreißig.", answerVi: "Quả dứa có giá 2 Euro 30 Cent." },
+        { name: "Käse", icon: "🧀", priceStr: "2,99 € / 100g", cents: 299, unit: "100 Gramm", question: "Was kostet der Käse?", questionVi: "Phô mai giá bao nhiêu?", answer: "Hundert Gramm kosten zwei Euro neunundneunzig.", answerVi: "Một trăm gam có giá 2 Euro 99 Cent." },
+        { name: "Brot", icon: "🥖", priceStr: "2,80 € / Stk", cents: 280, unit: "Stück", question: "Was kostet das Brot?", questionVi: "Ổ bánh mì giá bao nhiêu?", answer: "Das Brot kostet zwei Euro achtzig.", answerVi: "Ổ bánh mì có giá 2 Euro 80 Cent." },
+        { name: "Milch", icon: "🥛", priceStr: "1,10 € / L", cents: 110, unit: "Liter", question: "Wie viel kostet die Milch?", questionVi: "Sữa giá bao nhiêu?", answer: "Ein Liter Milch kostet ein Euro zehn.", answerVi: "Một lít sữa có giá 1 Euro 10 Cent." }
     ];
 
     let currentMarketItemIdx = 0;
@@ -481,9 +481,9 @@
                 <div class="flex items-center justify-between flex-wrap gap-2 border-b border-slate-800 pb-3">
                     <div class="flex items-center gap-2">
                         <span class="w-7 h-7 rounded-lg bg-teal-500/20 text-teal-400 font-bold flex items-center justify-center text-xs">V5</span>
-                        <span class="font-black text-sm text-white">Sơ đồ V5: Quầy Chợ Tương Tác — Bấm Món Để Hỏi & Trả Lời Giá</span>
+                        <span class="font-black text-sm text-white">Sơ đồ V5: Quầy ChỢ Tương Tác — Bấm Món Để Hỏi & Trả Lời Giá</span>
                     </div>
-                    <span class="text-xs text-slate-400">Giá chuẩn theo PRICE_TABLE</span>
+                    <span class="text-xs text-slate-400">Bấm vào từng mặt hàng để nghe mẫu câu hỏi và báo giá theo đơn vị tương ứng</span>
                 </div>
 
                 <!-- Lưới 6 mặt hàng trên kệ chợ -->
@@ -511,7 +511,8 @@
                         <div class="p-3 rounded-xl bg-slate-900 border border-slate-700 flex items-center justify-between gap-3">
                             <div>
                                 <span class="text-sky-400 font-bold text-[11px] block">Khách hàng hỏi:</span>
-                                <span class="text-white font-bold text-sm">„${it.question}“</span>
+                                <span class="text-white font-bold text-sm block">„${it.question}“</span>
+                                <span class="text-slate-400 text-[11px] block italic mt-0.5">${it.questionVi}</span>
                             </div>
                             <button onclick="speakGerman('${it.question.replace(/'/g, "\\'")}', 1.0)" class="px-2.5 py-1.5 rounded-lg bg-sky-500/20 text-sky-300 hover:bg-sky-500/30 font-bold transition cursor-pointer shrink-0">
                                 🔊 Khách
@@ -522,7 +523,8 @@
                         <div class="p-3 rounded-xl bg-slate-900 border border-slate-700 flex items-center justify-between gap-3">
                             <div>
                                 <span class="text-emerald-400 font-bold text-[11px] block">Người bán đáp:</span>
-                                <span class="text-white font-bold text-sm">„${it.answer}“</span>
+                                <span class="text-white font-bold text-sm block">„${it.answer}“</span>
+                                <span class="text-slate-400 text-[11px] block italic mt-0.5">${it.answerVi}</span>
                             </div>
                             <button onclick="speakGerman('${it.answer.replace(/'/g, "\\'")}', 1.0)" class="px-2.5 py-1.5 rounded-lg bg-emerald-500/20 text-emerald-300 hover:bg-emerald-500/30 font-bold transition cursor-pointer shrink-0">
                                 🔊 Người bán

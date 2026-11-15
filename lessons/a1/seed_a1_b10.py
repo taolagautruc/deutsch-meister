@@ -97,7 +97,9 @@ def seed_lesson_10():
                         <li>• <b class="text-blue-950">der Reis</b> <i>(nur Sg.)</i>: gạo, cơm <span class="text-[10px] text-emerald-700 font-bold">(chuẩn từ điển: der)</span></li>
                         <li>• <b class="text-blue-950">der Saft</b> <i>(die Säfte)</i>: nước ép</li>
                         <li>• <b class="text-blue-950">der Kaffee</b> <i>(die Kaffees)</i>: cà phê</li>
+                        <li>• <b class="text-blue-950">der Tee</b> <i>(die Tees)</i>: trà</li>
                         <li>• <b class="text-blue-950">der Joghurt</b> <i>(die Joghurts)</i>: sữa chua</li>
+                        <li>• <b class="text-blue-950">der Becher</b> <i>(die Becher)</i>: hộp/cốc (sữa chua)</li>
                     </ul>
                 </div>
 
@@ -109,19 +111,24 @@ def seed_lesson_10():
                     </div>
                     <ul class="space-y-1.5 text-slate-800">
                         <li>• <b class="text-rose-950">die Butter</b> <i>(nur Sg.)</i>: bơ</li>
+                        <li>• <b class="text-rose-950">die Milch</b> <i>(nur Sg.)</i>: sữa</li>
                         <li>• <b class="text-rose-950">die Kartoffel</b> <i>(die Kartoffeln)</i>: khoai tây</li>
                         <li>• <b class="text-rose-950">die Tomate</b> <i>(die Tomaten)</i>: cà chua</li>
                         <li>• <b class="text-rose-950">die Möhre</b> <i>(die Möhren)</i>: cà rốt (= die Karotte)</li>
                         <li>• <b class="text-rose-950">die Erdbeere</b> <i>(die Erdbeeren)</i>: dâu tây</li>
                         <li>• <b class="text-rose-950">die Banane</b> <i>(die Bananen)</i>: quả chuối</li>
                         <li>• <b class="text-rose-950">die Orange</b> <i>(die Orangen)</i>: quả cam</li>
+                        <li>• <b class="text-rose-950">die Zitrone</b> <i>(die Zitronen)</i>: quả chanh</li>
                         <li>• <b class="text-rose-950">die Wurst</b> <i>(die Würste)</i>: xúc xích</li>
+                        <li>• <b class="text-rose-950">die Salami</b> <i>(die Salamis)</i>: xúc xích lên men</li>
                         <li>• <b class="text-rose-950">die Birne</b> <i>(die Birnen)</i>: quả lê</li>
                         <li>• <b class="text-rose-950">die Nudel</b> <i>(die Nudeln)</i>: sợi mì</li>
                         <li>• <b class="text-rose-950">die Paprika</b> <i>(die Paprikas)</i>: ớt chuông</li>
                         <li>• <b class="text-rose-950">die Ananas</b> <i>(die Ananas)</i>: quả dứa</li>
                         <li>• <b class="text-rose-950">die Zwiebel</b> <i>(die Zwiebeln)</i>: hành tây</li>
-                        <li>• <b class="text-rose-950">die Salami</b> <i>(die Salamis)</i>: xúc xích lên men</li>
+                        <li>• <b class="text-rose-950">die Suppe</b> <i>(die Suppen)</i>: món súp / canh</li>
+                        <li>• <b class="text-rose-950">die Marmelade</b> <i>(die Marmeladen)</i>: mứt</li>
+                        <li>• <b class="text-rose-950">die Schokolade</b> <i>(die Schokoladen)</i>: sô-cô-la</li>
                     </ul>
                 </div>
 
@@ -133,6 +140,7 @@ def seed_lesson_10():
                     </div>
                     <ul class="space-y-1.5 text-slate-800">
                         <li>• <b class="text-emerald-950">das Brot</b> <i>(die Brote)</i>: bánh mì</li>
+                        <li>• <b class="text-emerald-950">das Brötchen</b> <i>(die Brötchen)</i>: bánh mì nhỏ <span class="text-[10px] text-emerald-700 font-bold">(đuôi -chen luôn das)</span></li>
                         <li>• <b class="text-emerald-950">das Hähnchen</b> <i>(die Hähnchen)</i>: thịt gà <span class="text-[10px] text-emerald-700 font-bold">(đuôi -chen luôn das)</span></li>
                         <li>• <b class="text-emerald-950">das Ei</b> <i>(die Eier)</i>: quả trứng</li>
                         <li>• <b class="text-emerald-950">das Fleisch</b> <i>(nur Sg.)</i>: thịt</li>
@@ -179,7 +187,7 @@ def seed_lesson_10():
                 </div>
                 <div class="p-3 rounded-xl bg-slate-50 border border-slate-200">
                     <span class="font-bold text-slate-900">süß</span>: ngọt
-                    <p class="text-slate-500 italic mt-0.5">„Die Erdbeeren sind süß.“</p>
+                    <p class="text-slate-500 italic mt-0.5 whitespace-nowrap">„Die Erdbeeren sind süß.“</p>
                 </div>
                 <div class="p-3 rounded-xl bg-slate-50 border border-slate-200">
                     <span class="font-bold text-slate-900">salzig</span>: mặn
@@ -206,7 +214,7 @@ def seed_lesson_10():
                     <div>• <b>das Frühstück</b> (bữa sáng) → <b>zum Frühstück</b>: <i>„Zum Frühstück esse ich Müsli mit Milch.“</i></div>
                     <div>• <b>das Mittagessen</b> (bữa trưa) → <b>zum Mittagessen</b>: <i>„Zum Mittagessen gibt es Reis mit Fisch.“</i></div>
                     <div>• <b>das Abendessen</b> (bữa tối) → <b>zum Abendessen</b>: <i>„Zum Abendessen koche ich Nudeln.“</i></div>
-                    <div>• Hỏi: <i>„Was isst du zum Frühstück?“</i> (Bạn ăn gì vào bữa sáng?) · <i>„Mein Lieblingsessen ist Schnitzel mit Kartoffeln.“</i> (Món yêu thích của tôi là thịt tẩm bột chiên khoai tây.)</div>
+                    <div>• Hỏi: <i>„Was isst du zum Frühstück?“</i> (Bạn ăn gì vào bữa sáng?) · <i>„Mein Lieblingsessen ist Schnitzel mit Kartoffeln.“</i> (Món ăn yêu thích của tôi là thịt tẩm bột chiên dùng kèm khoai tây.)</div>
                 </div>
             </div>
         </div>
@@ -239,7 +247,7 @@ def seed_lesson_10():
                     <div class="p-2 bg-white rounded-lg border border-amber-200">• Welche Dose Cola ist billig? (die Dose)</div>
                     <div class="p-2 bg-white rounded-lg border border-amber-200">• Welche Flasche Wasser nimmst du? (die Flasche)</div>
                     <div class="p-2 bg-white rounded-lg border border-amber-200">• Welches Stück Kuchen möchten Sie? (das Stück)</div>
-                    <div class="p-2 bg-white rounded-lg border border-amber-200">• Welchen Liter Milch kaufst du? (der Liter, Akk)</div>
+                    <div class="p-2 bg-white rounded-lg border border-amber-200">• Welchen Becher Joghurt nimmst du? (der Becher, Akk)</div>
                 </div>
             </div>
         </div>
@@ -287,9 +295,9 @@ def seed_lesson_10():
                 </table>
             </div>
 
-            <div class="p-3.5 rounded-2xl bg-slate-50 border border-slate-200 text-xs">
-                <span class="font-bold text-slate-800">📐 Công thức:</span> &nbsp;
-                <code class="px-2 py-1 rounded bg-slate-200 text-slate-900 font-bold">Chủ ngữ + Động từ + mehr + [Danh từ A] + als + [Danh từ B]</code>
+            <div class="p-3.5 rounded-2xl bg-slate-50 border border-slate-200 text-xs flex items-center gap-2 flex-wrap">
+                <span class="px-2.5 py-1 rounded-lg bg-indigo-100 text-indigo-800 font-extrabold text-xs uppercase tracking-wide">Công thức:</span>
+                <code class="px-2.5 py-1 rounded-lg bg-slate-200/80 text-slate-900 font-bold text-xs">Chủ ngữ + Động từ + mehr + [Danh từ A] + als + [Danh từ B]</code>
             </div>
         </div>
 
@@ -374,8 +382,8 @@ def seed_lesson_10():
                     <span class="font-bold text-emerald-900">⚖️ Đơn vị đo (giữ nguyên số ít sau số đếm):</span>
                     <ul class="space-y-0.5 text-slate-700">
                         <li>• <b>das Kilo</b>: <i>zwei Kilo Äpfel</i> (hai ký táo)</li>
-                        <li>• <b>das Pfund</b> (= 500g): <i>ein Pfund Erdbeeren</i> (nửa ký dâu)</li>
-                        <li>• <b>das Gramm</b>: <i>hundert Gramm Käse</i> (100g phô mai)</li>
+                        <li>• <b>das Pfund</b> (= 500g): <i>zwei Pfund Erdbeeren</i> (hai Pfund = một ký dâu tây)</li>
+                        <li>• <b>das Gramm</b>: <i>zweihundert Gramm Käse</i> (200g phô mai)</li>
                         <li>• <b>der Liter</b>: <i>zwei Liter Milch</i> (hai lít sữa)</li>
                         <li>• <b>das Stück</b>: <i>drei Stück Kuchen</i> (ba miếng bánh)</li>
                     </ul>
@@ -435,13 +443,13 @@ def seed_lesson_10():
                         <tr>
                             <td class="p-2 font-bold text-slate-900 border border-slate-200">backen</td>
                             <td class="p-2 border border-slate-200">nướng bánh</td>
-                            <td class="p-2 font-bold text-rose-700 border border-slate-200">du bäckst / er bäckt (a → ä)</td>
+                            <td class="p-2 font-bold text-rose-700 border border-slate-200">du bäckst (backst) / er bäckt (backt)</td>
                             <td class="p-2 border border-slate-200">hat gebacken</td>
                         </tr>
                         <tr>
                             <td class="p-2 font-bold text-slate-900 border border-slate-200">kaufen / einkaufen</td>
                             <td class="p-2 border border-slate-200">mua / đi mua sắm</td>
-                            <td class="p-2 border border-slate-200">du kaufst (ein)</td>
+                            <td class="p-2 border border-slate-200">du kaufst (ein) / er kauft (ein)</td>
                             <td class="p-2 border border-slate-200">hat gekauft / hat eingekauft</td>
                         </tr>
                         <tr>
@@ -454,10 +462,31 @@ def seed_lesson_10():
                             <td class="p-2 font-bold text-slate-900 border border-slate-200">bestellen</td>
                             <td class="p-2 border border-slate-200">gọi món</td>
                             <td class="p-2 border border-slate-200">du bestellst / er bestellt</td>
-                            <td class="p-2 border border-slate-200">hat bestellt (không ge-)</td>
+                            <td class="p-2 border border-slate-200">hat bestellt (tiền tố 'be-' không thêm ge-)</td>
                         </tr>
                     </tbody>
                 </table>
+            </div>
+
+            <!-- Khung so sánh 3 cách nói sở thích & gọi món -->
+            <div class="mt-4 p-4 rounded-2xl bg-orange-50/80 border border-orange-200 text-xs space-y-2 text-slate-800">
+                <div class="font-extrabold text-orange-950 flex items-center gap-1.5">
+                    <span>🍽️ Phân biệt 3 cách nói sở thích & gọi món trong ẩm thực:</span>
+                </div>
+                <div class="space-y-2 leading-relaxed">
+                    <div class="p-2.5 rounded-xl bg-white border border-orange-100">
+                        <b class="text-orange-950">1. mögen (thích + Danh từ):</b> <code class="px-1.5 py-0.5 rounded bg-orange-100 text-orange-900 font-bold">ich mag, du magst, er/sie/es mag, wir mögen, ihr mögt, sie/Sie mögen</code>.<br>
+                        <span class="text-slate-600 mt-1 block">👉 <b>Ví dụ:</b> <i>„Ich mag Käse, aber ich mag keinen Fisch.“</i> (Tôi thích phô mai nhưng không thích cá.)</span>
+                    </div>
+                    <div class="p-2.5 rounded-xl bg-white border border-orange-100">
+                        <b class="text-orange-950">2. Động từ thường + gern (thích làm gì):</b> dùng khi diễn tả hành động ăn/uống/nấu.<br>
+                        <span class="text-slate-600 mt-1 block">👉 <b>Ví dụ:</b> <i>„Ich esse gern Pizza und trinke gern Apfelsaft.“</i> (Tôi thích ăn pizza và thích uống nước táo.)</span>
+                    </div>
+                    <div class="p-2.5 rounded-xl bg-white border border-orange-100">
+                        <b class="text-orange-950">3. möchten (muốn / xin gọi món lịch sự):</b> <code class="px-1.5 py-0.5 rounded bg-orange-100 text-orange-900 font-bold">ich möchte, du möchtest, er/sie/es möchte, wir möchten, ihr möchtet, sie/Sie möchten</code>.<br>
+                        <span class="text-slate-600 mt-1 block">👉 <b>Ví dụ:</b> <i>„Ich möchte bitte ein Kilo Tomaten.“</i> / <i>„Was möchten Sie trinken?“</i></span>
+                    </div>
+                </div>
             </div>
         </div>
 
@@ -493,9 +522,32 @@ def seed_lesson_10():
             <div class="p-4 rounded-2xl bg-slate-50 border border-slate-200 space-y-3 text-xs">
                 <div class="flex items-center justify-between flex-wrap gap-2 pb-2 border-b border-slate-200">
                     <span class="font-bold text-slate-900 text-sm">🛒 Đoạn 2: Hội thoại mua hàng ở chợ (Frau Nguyen)</span>
-                    <button onclick="speakGerman('Guten Morgen, was darf es sein? Welche Tomaten sind heute frisch? Die Tomaten hier. Das Kilo kostet zwei Euro fünfzig. Dann nehme ich zwei Kilo Tomaten. Gern. Sonst noch etwas? Ja, ein Kilo Möhren. Wie viel kosten die Möhren? Ein Kilo Möhren kostet ein Euro zwanzig. Gut. Und was kostet die Ananas? Die Ananas kostet zwei Euro dreißig. Die Ananas nehme ich auch. Das ist alles. Das macht zusammen acht Euro fünfzig. Hier sind zehn Euro. Und ein Euro fünfzig zurück. Danke schön!', 1.0)" class="px-2.5 py-1 rounded-lg bg-indigo-50 hover:bg-indigo-100 text-indigo-700 border border-indigo-200 font-bold transition">
-                        🔊 Nghe hội thoại
+                    <button onclick="speakGerman('Guten Tag! Was möchten Sie bitte? Guten Tag! Ich möchte gern zwei Kilo Tomaten und ein Kilo Möhren. Was kostet das Kilo Möhren? Ein Kilo Möhren kostet einen Euro zwanzig. Sonst noch etwas? Ja, welche Ananas ist süß? Diese Ananas hier ist sehr frisch und süß. Das Stück kostet zwei Euro dreißig. Gut, dann nehme ich die Ananas. Das ist alles. Wie viel macht das zusammen? Zwei Kilo Tomaten zu je zwei Euro fünfzig, ein Kilo Möhren für ein Euro zwanzig und eine Ananas für zwei Euro dreißig. Das macht zusammen acht Euro fünfzig. Hier sind zehn Euro. Vielen Dank! Sie bekommen einen Euro fünfzig zurück.', 1.0)" class="px-2.5 py-1 rounded-lg bg-indigo-50 hover:bg-indigo-100 text-indigo-700 border border-indigo-200 font-bold transition cursor-pointer">
+                        🔊 Nghe hội thoại (1.0x)
                     </button>
+                </div>
+                <div class="text-slate-800 leading-relaxed bg-white p-3.5 rounded-xl border border-slate-200 space-y-1">
+                    <p><b>— Verkäufer:</b> Guten Tag! Was möchten Sie bitte?</p>
+                    <p><b>— Frau Nguyen:</b> Guten Tag! Ich möchte gern zwei Kilo Tomaten und ein Kilo Möhren. Was kostet das Kilo Möhren?</p>
+                    <p><b>— Verkäufer:</b> Ein Kilo Möhren kostet einen Euro zwanzig. Sonst noch etwas?</p>
+                    <p><b>— Frau Nguyen:</b> Ja, welche Ananas ist süß?</p>
+                    <p><b>— Verkäufer:</b> Diese Ananas hier ist sehr frisch und süß. Das Stück kostet zwei Euro dreißig.</p>
+                    <p><b>— Frau Nguyen:</b> Gut, dann nehme ich die Ananas. Das ist alles. Wie viel macht das zusammen?</p>
+                    <p><b>— Verkäufer:</b> Zwei Kilo Tomaten zu je 2,50 €, ein Kilo Möhren für 1,20 € und eine Ananas für 2,30 €. Das macht zusammen acht Euro fünfzig (8,50 €).</p>
+                    <p><b>— Frau Nguyen:</b> Hier sind zehn Euro.</p>
+                    <p><b>— Verkäufer:</b> Vielen Dank! Sie bekommen einen Euro fünfzig (1,50 €) zurück.</p>
+                </div>
+                <div class="text-slate-600 italic space-y-1 bg-slate-100/70 p-3 rounded-xl border border-slate-200">
+                    <p class="font-bold not-italic text-slate-800">👉 Bản dịch tiếng Việt:</p>
+                    <p>— Người bán: Xin chào! Quý khách muốn mua gì ạ?</p>
+                    <p>— Bà Nguyen: Xin chào! Tôi muốn mua 2 ký cà chua và 1 ký cà rốt. Một ký cà rốt giá bao nhiêu?</p>
+                    <p>— Người bán: Một ký cà rốt có giá 1 Euro 20. Quý khách cần gì thêm nữa không?</p>
+                    <p>— Bà Nguyen: Vâng, quả dứa nào ngọt vậy?</p>
+                    <p>— Người bán: Quả dứa ở đây rất tươi và ngọt. Mỗi quả có giá 2 Euro 30.</p>
+                    <p>— Bà Nguyen: Tốt, vậy tôi lấy quả dứa này. Thế là đủ rồi. Tất cả hết bao nhiêu tiền?</p>
+                    <p>— Người bán: 2 ký cà chua mỗi ký 2,50 €, 1 ký cà rốt 1,20 € và 1 quả dứa 2,30 €. Tổng cộng hết 8 Euro 50 (8,50 €).</p>
+                    <p>— Bà Nguyen: Gửi anh 10 Euro.</p>
+                    <p>— Người bán: Cảm ơn quý khách rất nhiều! Quý khách nhận lại 1 Euro 50 (1,50 €) tiền thừa.</p>
                 </div>
                 <div class="overflow-x-auto">
                     <table class="w-full border-collapse border border-slate-200 text-center text-xs">
@@ -738,7 +790,7 @@ def seed_lesson_10():
         [
                 "der",
                 "Liter",
-                "lít (Pl: die Liter)",
+                "lít (Pl: die Liter (Sau số đếm giữ nguyên: zwei Liter))",
                 "Ich kaufe zwei Liter Milch. (Tôi mua hai lít sữa.)"
         ],
         [
@@ -858,7 +910,7 @@ def seed_lesson_10():
         [
                 "das",
                 "Kilo",
-                "ký (kg) (Pl: die Kilos)",
+                "ký (kg) (Pl: die Kilos (Sau số đếm giữ nguyên: zwei Kilo))",
                 "Ein Kilo Äpfel kostet zwei Euro vierzig. (Một ký táo giá hai euro bốn mươi.)"
         ],
         [
