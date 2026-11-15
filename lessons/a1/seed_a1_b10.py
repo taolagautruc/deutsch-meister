@@ -1595,7 +1595,7 @@ def seed_lesson_10():
         },
         {
                 "type": "noi_o",
-                "question": "Câu 39: Nối từ tiếng Đức với nghĩa tiếng Việt tương ứng (chủ đề Trái cây):",
+                "question": "Câu 39: Nối từ tiếng Đức với nghĩa tiếng Việt tương ứng:",
                 "options": null,
                 "correct_answer": "die Birne - quả lê | die Erdbeere - dâu tây | die Orange - quả cam | die Ananas - quả dứa",
                 "explanation": "Cả 4 loại trái cây đều là danh từ giống cái ('die'): 'die Birne' = quả lê; 'die Erdbeere' = dâu tây; 'die Orange' = quả cam; 'die Ananas' = quả dứa.",
@@ -1653,10 +1653,10 @@ def seed_lesson_10():
         },
         {
                 "type": "noi_o",
-                "question": "Câu 41: Nối câu hỏi 'Welch-' với câu trả lời phù hợp về Giống & Cách:",
+                "question": "Câu 41: Nối câu hỏi với câu trả lời tương ứng:",
                 "options": null,
                 "correct_answer": "Welche Orangen sind frisch? - Die Orangen aus Spanien. | Welches Brot schmeckt gut? - Das Brot vom Bäcker. | Welchen Joghurt kaufst du? - Den Joghurt mit Erdbeeren. | Welcher Fisch ist heute billig? - Der Fisch aus dem Fluss.",
-                "explanation": "Câu trả lời dùng mạo từ xác định tương ứng: 'welche -> die', 'welches -> das', 'welchen -> den', 'welcher -> der'.",
+                "explanation": "Câu trả lời rút gọn dùng mạo từ xác định tương ứng với Giống và Cách của từ hỏi: 'welche Orangen' (số nhiều) -> 'Die Orangen'; 'welches Brot' (giống trung) -> 'Das Brot'; 'welchen Joghurt' (giống đực, tân ngữ Akkusativ) -> 'Den Joghurt'; 'welcher Fisch' (giống đực, chủ ngữ Nominativ) -> 'Der Fisch'.",
                 "exp_reward": 15,
                 "extra_data": {
                         "translation": "Những quả cam nào tươi? – Những quả cam từ Tây Ban Nha. | Loại bánh mì nào ngon? – Bánh mì của tiệm bánh. | Bạn mua loại sữa chua nào? – Sữa chua vị dâu tây. | Con cá nào hôm nay rẻ? – Con cá từ sông.",
@@ -1682,7 +1682,7 @@ def seed_lesson_10():
         },
         {
                 "type": "noi_o",
-                "question": "Câu 42: Nối động từ nguyên mẫu với dạng chia ngôi 'er' ở thì hiện tại (Präsens):",
+                "question": "Câu 42: Nối động từ nguyên mẫu với dạng chia tương ứng:",
                 "options": null,
                 "correct_answer": "essen - isst | nehmen - nimmt | geben - gibt | empfehlen - empfiehlt",
                 "explanation": "Bốn động từ bất quy tắc nhóm đổi nguyên âm 'e -> i / ie' ở ngôi thứ 3 số ít: 'essen -> isst', 'nehmen -> nimmt', 'geben -> gibt', 'empfehlen -> empfiehlt'.",
@@ -1800,19 +1800,19 @@ def seed_lesson_10():
                 "type": "noi_o",
                 "question": "Câu 46: Nối đơn vị đo / đóng gói với thực phẩm đi kèm phù hợp:",
                 "options": null,
-                "correct_answer": "eine Dose - Cola | eine Flasche - Wasser | ein Liter - Milch | ein Kilo - Kartoffeln",
-                "explanation": "Các cụm mua sắm thông dụng: 'eine Dose Cola' (một lon cô-ca), 'eine Flasche Wasser' (một chai nước), 'ein Liter Milch' (một lít sữa), 'ein Kilo Kartoffeln' (một ký khoai tây).",
+                "correct_answer": "eine Dose - Cola | ein Stück - Kuchen | ein Liter - Milch | ein Kilo - Kartoffeln",
+                "explanation": "Các cụm đơn vị đo lường & đóng gói thông dụng trong mua sắm: 'eine Dose Cola' (một lon cô-ca), 'ein Stück Kuchen' (một miếng bánh ngọt), 'ein Liter Milch' (một lít sữa), 'ein Kilo Kartoffeln' (một ký khoai tây).",
                 "exp_reward": 15,
                 "extra_data": {
-                        "translation": "một lon – cô-ca | một chai – nước | một lít – sữa | một ký – khoai tây",
+                        "translation": "một lon – cô-ca | một miếng – bánh ngọt | một lít – sữa | một ký – khoai tây",
                         "noi_o_pairs": [
                                 {
                                         "left": "eine Dose",
                                         "right": "Cola"
                                 },
                                 {
-                                        "left": "eine Flasche",
-                                        "right": "Wasser"
+                                        "left": "ein Stück",
+                                        "right": "Kuchen"
                                 },
                                 {
                                         "left": "ein Liter",
