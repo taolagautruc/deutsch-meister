@@ -2564,6 +2564,394 @@ const GERMAN_LEXIKON_DB = [
         example: "Ich schreibe meiner Oma eine Postkarte.",
         example_vi: "Tôi viết một tấm bưu thiếp cho bà."
     },
+    // --- DANH TỪ BÀI 10: ESSEN UND TRINKEN (ẨM THỰC, SO SÁNH & MUA SẮM) ---
+    // --- CHỦ ĐỀ A: LEBENSMITTEL (RAU CỦ, TRÁI CÂY, THỊT & CÁ) ---
+    {
+        word: "Käse", article: "der", gender: "der", plural: "die Käse",
+        indefinite: "ein Käse", negation: "kein Käse",
+        meaning: "phô mai", category: "Lebensmittel - Bài 10",
+        rule: "Ngoại lệ đuôi -e nhưng mang giống đực (der). Số nhiều die Käse.",
+        example: "Der Käse aus der Schweiz schmeckt sehr gut.",
+        example_vi: "Phô mai từ Thụy Sĩ rất ngon."
+    },
+    {
+        word: "Kuchen", article: "der", gender: "der", plural: "die Kuchen",
+        indefinite: "ein Kuchen", negation: "kein Kuchen",
+        meaning: "bánh ngọt", category: "Lebensmittel - Bài 10",
+        rule: "Danh từ kết thúc bằng -en giữ nguyên ở số nhiều: die Kuchen.",
+        example: "Meine Oma backt am Sonntag einen Kuchen.",
+        example_vi: "Bà tôi nướng bánh ngọt vào Chủ nhật."
+    },
+    {
+        word: "Apfel", article: "der", gender: "der", plural: "die Äpfel",
+        indefinite: "ein Apfel", negation: "kein Apfel",
+        meaning: "quả táo", category: "Lebensmittel - Bài 10",
+        rule: "Số nhiều biến âm a -> ä (die Äpfel).",
+        example: "Ein Apfel am Tag ist gesund.",
+        example_vi: "Mỗi ngày một quả táo thì tốt cho sức khỏe."
+    },
+    {
+        word: "Fisch", article: "der", gender: "der", plural: "die Fische",
+        indefinite: "ein Fisch", negation: "kein Fisch",
+        meaning: "cá", category: "Lebensmittel - Bài 10",
+        rule: "Danh từ giống đực đơn âm tiết, số nhiều thêm -e (die Fische).",
+        example: "Am Freitag gibt es Fisch mit Reis.",
+        example_vi: "Thứ Sáu có cá với cơm."
+    },
+    {
+        word: "Salat", article: "der", gender: "der", plural: "die Salate",
+        indefinite: "ein Salat", negation: "kein Salat",
+        meaning: "xà lách; món salad", category: "Lebensmittel - Bài 10",
+        rule: "Danh từ giống đực, số nhiều thêm -e (die Salate).",
+        example: "Zum Mittagessen esse ich einen Salat.",
+        example_vi: "Vào bữa trưa tôi ăn một món salad."
+    },
+    {
+        word: "Schinken", article: "der", gender: "der", plural: "die Schinken",
+        indefinite: "ein Schinken", negation: "kein Schinken",
+        meaning: "thịt xông khói, giăm bông", category: "Lebensmittel - Bài 10",
+        rule: "Danh từ đuôi -en giữ nguyên ở số nhiều: die Schinken.",
+        example: "Das Brötchen mit Schinken ist lecker.",
+        example_vi: "Chiếc bánh mì kẹp giăm bông rất ngon."
+    },
+    {
+        word: "Pfeffer", article: "der", gender: "der", plural: "nur Singular",
+        indefinite: "Pfeffer", negation: "kein Pfeffer",
+        meaning: "tiêu", category: "Lebensmittel - Bài 10",
+        rule: "Danh từ không đếm được chỉ gia vị, chỉ dùng ở số ít.",
+        example: "Bitte geben Sie mir Salz und Pfeffer.",
+        example_vi: "Làm ơn đưa cho tôi muối và tiêu."
+    },
+    {
+        word: "Salami", article: "die", gender: "die", plural: "die Salamis",
+        indefinite: "eine Salami", negation: "keine Salami",
+        meaning: "xúc xích lên men (salami)", category: "Lebensmittel - Bài 10",
+        rule: "Từ mượn gốc Ý mang giống cái (die), số nhiều thêm -s: die Salamis (bảng giảng ghi r. Salami).",
+        example: "Ich esse gern ein Brötchen mit Salami.",
+        example_vi: "Tôi thích ăn bánh mì kẹp salami."
+    },
+    {
+        word: "Butter", article: "die", gender: "die", plural: "nur Singular",
+        indefinite: "Butter", negation: "keine Butter",
+        meaning: "bơ", category: "Lebensmittel - Bài 10",
+        rule: "Danh từ không đếm được mang giống cái (die), chỉ dùng ở số ít.",
+        example: "Zum Frühstück esse ich Brot mit Butter.",
+        example_vi: "Vào bữa sáng tôi ăn bánh mì với bơ."
+    },
+    {
+        word: "Kartoffel", article: "die", gender: "die", plural: "die Kartoffeln",
+        indefinite: "eine Kartoffel", negation: "keine Kartoffel",
+        meaning: "khoai tây", category: "Lebensmittel - Bài 10",
+        rule: "Danh từ giống cái kết thúc bằng -el, số nhiều thêm -n: die Kartoffeln.",
+        example: "Die Kartoffel ist sehr billig.",
+        example_vi: "Khoai tây rất rẻ."
+    },
+    {
+        word: "Tomate", article: "die", gender: "die", plural: "die Tomaten",
+        indefinite: "eine Tomate", negation: "keine Tomate",
+        meaning: "cà chua", category: "Lebensmittel - Bài 10",
+        rule: "Rau củ quả đuôi -e mang giống cái (die), số nhiều thêm -n: die Tomaten.",
+        example: "Die Tomate ist rot und frisch.",
+        example_vi: "Quả cà chua đỏ và tươi."
+    },
+    {
+        word: "Möhre", article: "die", gender: "die", plural: "die Möhren",
+        indefinite: "eine Möhre", negation: "keine Möhre",
+        meaning: "cà rốt", category: "Lebensmittel - Bài 10",
+        rule: "Rau củ đuôi -e mang giống cái (die), số nhiều thêm -n: die Möhren (= die Karotte).",
+        example: "Ich schneide eine Möhre für die Suppe.",
+        example_vi: "Tôi thái một củ cà rốt cho món súp."
+    },
+    {
+        word: "Erdbeere", article: "die", gender: "die", plural: "die Erdbeeren",
+        indefinite: "eine Erdbeere", negation: "keine Erdbeere",
+        meaning: "dâu tây", category: "Lebensmittel - Bài 10",
+        rule: "Tên các loại quả mọng (-beere) luôn mang giống cái (die), số nhiều thêm -n: die Erdbeeren.",
+        example: "Die Erdbeere ist süß und rot.",
+        example_vi: "Quả dâu tây ngọt và đỏ."
+    },
+    {
+        word: "Banane", article: "die", gender: "die", plural: "die Bananen",
+        indefinite: "eine Banane", negation: "keine Banane",
+        meaning: "quả chuối", category: "Lebensmittel - Bài 10",
+        rule: "Hoa quả đuôi -e mang giống cái (die), số nhiều thêm -n: die Bananen.",
+        example: "Die Banane ist gelb.",
+        example_vi: "Quả chuối màu vàng."
+    },
+    {
+        word: "Orange", article: "die", gender: "die", plural: "die Orangen",
+        indefinite: "eine Orange", negation: "keine Orange",
+        meaning: "quả cam", category: "Lebensmittel - Bài 10",
+        rule: "Hoa quả đuôi -e mang giống cái (die), số nhiều thêm -n: die Orangen.",
+        example: "Eine Orange hat viel Vitamin C.",
+        example_vi: "Một quả cam có nhiều vitamin C."
+    },
+    {
+        word: "Wurst", article: "die", gender: "die", plural: "die Würste",
+        indefinite: "eine Wurst", negation: "keine Wurst",
+        meaning: "xúc xích", category: "Lebensmittel - Bài 10",
+        rule: "Danh từ giống cái, số nhiều biến âm u -> ü và thêm -e: die Würste.",
+        example: "In Deutschland isst man gern Wurst.",
+        example_vi: "Ở Đức người ta thích ăn xúc xích."
+    },
+    {
+        word: "Birne", article: "die", gender: "die", plural: "die Birnen",
+        indefinite: "eine Birne", negation: "keine Birne",
+        meaning: "quả lê", category: "Lebensmittel - Bài 10",
+        rule: "Hoa quả đuôi -e mang giống cái (die), số nhiều thêm -n: die Birnen.",
+        example: "Die Birne schmeckt süß.",
+        example_vi: "Quả lê có vị ngọt."
+    },
+    {
+        word: "Nudel", article: "die", gender: "die", plural: "die Nudeln",
+        indefinite: "eine Nudel", negation: "keine Nudel",
+        meaning: "sợi mì, mì", category: "Lebensmittel - Bài 10",
+        rule: "Danh từ giống cái đuôi -el, số nhiều thêm -n: die Nudeln.",
+        example: "Zum Abendessen koche ich Nudeln.",
+        example_vi: "Bữa tối tôi nấu mì."
+    },
+    {
+        word: "Paprika", article: "die", gender: "die", plural: "die Paprikas",
+        indefinite: "eine Paprika", negation: "keine Paprika",
+        meaning: "ớt chuông", category: "Lebensmittel - Bài 10",
+        rule: "Danh từ chỉ rau củ mượn từ nước ngoài mang giống cái (die), số nhiều thêm -s: die Paprikas.",
+        example: "Die Paprika ist heute billig.",
+        example_vi: "Ớt chuông hôm nay rẻ."
+    },
+    {
+        word: "Ananas", article: "die", gender: "die", plural: "die Ananas",
+        indefinite: "eine Ananas", negation: "keine Ananas",
+        meaning: "quả dứa", category: "Lebensmittel - Bài 10",
+        rule: "Hoa quả mang giống cái (die), số nhiều giữ nguyên hoặc thêm -se: die Ananas.",
+        example: "Die Ananas aus Vietnam ist sehr süß.",
+        example_vi: "Dứa từ Việt Nam rất ngọt."
+    },
+    {
+        word: "Zwiebel", article: "die", gender: "die", plural: "die Zwiebeln",
+        indefinite: "eine Zwiebel", negation: "keine Zwiebel",
+        meaning: "hành tây", category: "Lebensmittel - Bài 10",
+        rule: "Rau củ đuôi -el mang giống cái (die), số nhiều thêm -n: die Zwiebeln.",
+        example: "Ich brauche eine Zwiebel für den Salat.",
+        example_vi: "Tôi cần một củ hành tây cho món salad."
+    },
+    {
+        word: "Brot", article: "das", gender: "das", plural: "die Brote",
+        indefinite: "ein Brot", negation: "kein Brot",
+        meaning: "bánh mì", category: "Lebensmittel - Bài 10",
+        rule: "Danh từ giống trung (das), số nhiều thêm -e: die Brote.",
+        example: "Das Brot ist noch warm.",
+        example_vi: "Bánh mì vẫn còn ấm."
+    },
+    {
+        word: "Hähnchen", article: "das", gender: "das", plural: "die Hähnchen",
+        indefinite: "ein Hähnchen", negation: "kein Hähnchen",
+        meaning: "thịt gà", category: "Lebensmittel - Bài 10",
+        rule: "Hậu tố giảm nhẹ -chen luôn luôn mang giống trung (das), số nhiều giữ nguyên.",
+        example: "Wir essen heute Hähnchen mit Reis.",
+        example_vi: "Hôm nay chúng tôi ăn thịt gà với cơm."
+    },
+    {
+        word: "Ei", article: "das", gender: "das", plural: "die Eier",
+        indefinite: "ein Ei", negation: "kein Ei",
+        meaning: "quả trứng", category: "Lebensmittel - Bài 10",
+        rule: "Danh từ giống trung (das), số nhiều thêm -er: die Eier.",
+        example: "Zum Frühstück esse ich ein Ei.",
+        example_vi: "Vào bữa sáng tôi ăn một quả trứng."
+    },
+    {
+        word: "Fleisch", article: "das", gender: "das", plural: "nur Singular",
+        indefinite: "Fleisch", negation: "kein Fleisch",
+        meaning: "thịt", category: "Lebensmittel - Bài 10",
+        rule: "Danh từ không đếm được chỉ thực phẩm, mang giống trung (das), chỉ dùng ở số ít.",
+        example: "Mein Bruder isst kein Fleisch.",
+        example_vi: "Anh trai tôi không ăn thịt."
+    },
+
+    // --- CHỦ ĐỀ B: EINKAUFEN (ĐỒ UỐNG, ĐƠN VỊ, CỬA HÀNG & MÓN ĂN) ---
+    {
+        word: "Reis", article: "der", gender: "der", plural: "nur Singular",
+        indefinite: "Reis", negation: "kein Reis",
+        meaning: "gạo, cơm", category: "Einkaufen - Bài 10",
+        rule: "Chuẩn từ điển Đức: der Reis (giống đực, chỉ số ít, không dùng mạo từ bất định).",
+        example: "In Vietnam isst man jeden Tag Reis.",
+        example_vi: "Ở Việt Nam người ta ăn cơm mỗi ngày."
+    },
+    {
+        word: "Preis", article: "der", gender: "der", plural: "die Preise",
+        indefinite: "ein Preis", negation: "kein Preis",
+        meaning: "giá cả", category: "Einkaufen - Bài 10",
+        rule: "Danh từ giống đực (der), số nhiều thêm -e: die Preise.",
+        example: "Der Preis für den Käse ist hoch.",
+        example_vi: "Giá của loại phô mai này cao."
+    },
+    {
+        word: "Liter", article: "der", gender: "der", plural: "die Liter",
+        indefinite: "ein Liter", negation: "kein Liter",
+        meaning: "lít", category: "Einkaufen - Bài 10",
+        rule: "Đơn vị đo lường giống đực (der), giữ nguyên số ít sau số đếm: zwei Liter Milch.",
+        example: "Ich kaufe zwei Liter Milch.",
+        example_vi: "Tôi mua hai lít sữa."
+    },
+    {
+        word: "Saft", article: "der", gender: "der", plural: "die Säfte",
+        indefinite: "ein Saft", negation: "kein Saft",
+        meaning: "nước ép", category: "Einkaufen - Bài 10",
+        rule: "Danh từ giống đực (der), số nhiều biến âm a -> ä và thêm -e: die Säfte.",
+        example: "Zum Frühstück trinke ich ein Glas Saft.",
+        example_vi: "Vào bữa sáng tôi uống một ly nước ép."
+    },
+    {
+        word: "Kaffee", article: "der", gender: "der", plural: "die Kaffees",
+        indefinite: "ein Kaffee", negation: "kein Kaffee",
+        meaning: "cà phê", category: "Einkaufen - Bài 10",
+        rule: "Đồ uống giống đực (der), số nhiều die Kaffees (chỉ các ly cà phê).",
+        example: "Morgens trinke ich einen Kaffee.",
+        example_vi: "Buổi sáng tôi uống một ly cà phê."
+    },
+    {
+        word: "Joghurt", article: "der", gender: "der", plural: "die Joghurts",
+        indefinite: "ein Joghurt", negation: "kein Joghurt",
+        meaning: "sữa chua", category: "Einkaufen - Bài 10",
+        rule: "Chuẩn giao tiếp tiếng Đức dùng der Joghurt, số nhiều thêm -s: die Joghurts.",
+        example: "Der Joghurt mit Erdbeeren schmeckt gut.",
+        example_vi: "Sữa chua vị dâu tây rất ngon."
+    },
+    {
+        word: "Marmelade", article: "die", gender: "die", plural: "die Marmeladen",
+        indefinite: "eine Marmelade", negation: "keine Marmelade",
+        meaning: "mứt", category: "Einkaufen - Bài 10",
+        rule: "Danh từ đuôi -e mang giống cái (die), số nhiều thêm -n: die Marmeladen.",
+        example: "Ich esse gern Brot mit Marmelade.",
+        example_vi: "Tôi thích ăn bánh mì với mứt."
+    },
+    {
+        word: "Schokolade", article: "die", gender: "die", plural: "die Schokoladen",
+        indefinite: "eine Schokolade", negation: "keine Schokolade",
+        meaning: "sô cô la", category: "Einkaufen - Bài 10",
+        rule: "Danh từ đuôi -e mang giống cái (die), số nhiều thêm -n: die Schokoladen.",
+        example: "Die Schokolade ist sehr süß.",
+        example_vi: "Sô cô la rất ngọt."
+    },
+    {
+        word: "Milch", article: "die", gender: "die", plural: "nur Singular",
+        indefinite: "Milch", negation: "keine Milch",
+        meaning: "sữa", category: "Einkaufen - Bài 10",
+        rule: "Danh từ không đếm được mang giống cái (die), chỉ dùng ở số ít.",
+        example: "Das Baby trinkt Milch.",
+        example_vi: "Em bé uống sữa."
+    },
+    {
+        word: "Cola", article: "die", gender: "die", plural: "die Colas",
+        indefinite: "eine Cola", negation: "keine Cola",
+        meaning: "nước cô-ca", category: "Einkaufen - Bài 10",
+        rule: "Đồ uống ngọt mượn tiếng Anh mang giống cái (die), số nhiều thêm -s: die Colas.",
+        example: "Die Cola ist schön kalt.",
+        example_vi: "Cô-ca rất lạnh."
+    },
+    {
+        word: "Dose", article: "die", gender: "die", plural: "die Dosen",
+        indefinite: "eine Dose", negation: "keine Dose",
+        meaning: "lon, hộp", category: "Einkaufen - Bài 10",
+        rule: "Đơn vị đóng gói giống cái (die), số nhiều thêm -n: die Dosen (drei Dosen Tomaten).",
+        example: "Ich kaufe drei Dosen Tomaten.",
+        example_vi: "Tôi mua ba hộp cà chua."
+    },
+    {
+        word: "Flasche", article: "die", gender: "die", plural: "die Flaschen",
+        indefinite: "eine Flasche", negation: "keine Flasche",
+        meaning: "cái chai", category: "Einkaufen - Bài 10",
+        rule: "Đơn vị đóng gói giống cái (die), số nhiều thêm -n: die Flaschen (zwei Flaschen Wasser).",
+        example: "Die Flasche Wasser kostet einen Euro.",
+        example_vi: "Chai nước giá một euro."
+    },
+    {
+        word: "Tüte", article: "die", gender: "die", plural: "die Tüten",
+        indefinite: "eine Tüte", negation: "keine Tüte",
+        meaning: "cái túi", category: "Einkaufen - Bài 10",
+        rule: "Danh từ giống cái (die), số nhiều thêm -n: die Tüten.",
+        example: "Ich brauche eine Tüte für das Obst.",
+        example_vi: "Tôi cần một cái túi cho trái cây."
+    },
+    {
+        word: "Bäckerei", article: "die", gender: "die", plural: "die Bäckereien",
+        indefinite: "eine Bäckerei", negation: "keine Bäckerei",
+        meaning: "tiệm bánh mì", category: "Einkaufen - Bài 10",
+        rule: "Hậu tố -ei luôn mang giống cái (die), số nhiều thêm -en: die Bäckereien.",
+        example: "In der Bäckerei kaufe ich Brot und Kuchen.",
+        example_vi: "Ở tiệm bánh tôi mua bánh mì và bánh ngọt."
+    },
+    {
+        word: "Obst", article: "das", gender: "das", plural: "nur Singular",
+        indefinite: "Obst", negation: "kein Obst",
+        meaning: "hoa quả, trái cây", category: "Einkaufen - Bài 10",
+        rule: "Danh từ tập hợp chỉ hoa quả mang giống trung (das), chỉ dùng số ít.",
+        example: "Auf dem Markt kaufe ich frisches Obst.",
+        example_vi: "Ở chợ tôi mua trái cây tươi."
+    },
+    {
+        word: "Gemüse", article: "das", gender: "das", plural: "nur Singular",
+        indefinite: "Gemüse", negation: "kein Gemüse",
+        meaning: "rau củ", category: "Einkaufen - Bài 10",
+        rule: "Tiền tố Ge- chỉ tập hợp, mang giống trung (das) dù đuôi -e; chỉ dùng ở số ít.",
+        example: "Das Gemüse ist heute billig.",
+        example_vi: "Rau củ hôm nay rẻ."
+    },
+    {
+        word: "Eis", article: "das", gender: "das", plural: "nur Singular",
+        indefinite: "ein Eis", negation: "kein Eis",
+        meaning: "kem; đá", category: "Einkaufen - Bài 10",
+        rule: "Danh từ giống trung (das), chỉ dùng ở số ít: ein Eis essen (ăn một cây kem).",
+        example: "Im Sommer esse ich gern Eis.",
+        example_vi: "Mùa hè tôi thích ăn kem."
+    },
+    {
+        word: "Salz", article: "das", gender: "das", plural: "nur Singular",
+        indefinite: "Salz", negation: "kein Salz",
+        meaning: "muối", category: "Einkaufen - Bài 10",
+        rule: "Danh từ không đếm được chỉ khoáng chất mang giống trung (das), chỉ dùng ở số ít.",
+        example: "Die Suppe braucht noch Salz.",
+        example_vi: "Món súp còn cần thêm muối."
+    },
+    {
+        word: "Müsli", article: "das", gender: "das", plural: "die Müslis",
+        indefinite: "ein Müsli", negation: "kein Müsli",
+        meaning: "ngũ cốc ăn sáng", category: "Einkaufen - Bài 10",
+        rule: "Hậu tố -li (tiếng Đức Thụy Sĩ) luôn mang giống trung (das), số nhiều thêm -s: die Müslis.",
+        example: "Zum Frühstück esse ich Müsli mit Milch.",
+        example_vi: "Vào bữa sáng tôi ăn ngũ cốc với sữa."
+    },
+    {
+        word: "Schnitzel", article: "das", gender: "das", plural: "die Schnitzel",
+        indefinite: "ein Schnitzel", negation: "kein Schnitzel",
+        meaning: "thịt tẩm bột chiên", category: "Einkaufen - Bài 10",
+        rule: "Hậu tố -el chỉ vật mang giống trung (das), số nhiều giữ nguyên: die Schnitzel.",
+        example: "Das Schnitzel mit Kartoffeln ist mein Lieblingsessen.",
+        example_vi: "Món thịt tẩm bột chiên với khoai tây là món ăn yêu thích của tôi."
+    },
+    {
+        word: "Kilo", article: "das", gender: "das", plural: "die Kilos",
+        indefinite: "ein Kilo", negation: "kein Kilo",
+        meaning: "ký (kg)", category: "Einkaufen - Bài 10",
+        rule: "Đơn vị đo lường mang giống trung (das), giữ nguyên số ít sau số đếm: zwei Kilo Äpfel.",
+        example: "Ein Kilo Äpfel kostet zwei Euro vierzig.",
+        example_vi: "Một ký táo giá hai euro bốn mươi."
+    },
+    {
+        word: "Bier", article: "das", gender: "das", plural: "die Biere",
+        indefinite: "ein Bier", negation: "kein Bier",
+        meaning: "bia", category: "Einkaufen - Bài 10",
+        rule: "Đồ uống có cồn dạng bia mang giống trung (das), số nhiều die Biere.",
+        example: "Mein Vater trinkt abends ein Bier.",
+        example_vi: "Bố tôi uống một ly bia vào buổi tối."
+    },
+    {
+        word: "Wasser", article: "das", gender: "das", plural: "nur Singular",
+        indefinite: "Wasser", negation: "kein Wasser",
+        meaning: "nước", category: "Einkaufen - Bài 10",
+        rule: "Danh từ chỉ chất lỏng mang giống trung (das), không đếm được.",
+        example: "Ich trinke viel Wasser.",
+        example_vi: "Tôi uống nhiều nước."
+    },
 ];
 
 let currentLexikonFilter = "all";
