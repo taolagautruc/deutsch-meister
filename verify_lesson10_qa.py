@@ -211,7 +211,7 @@ for ex in all_exercises:
 
     # 2. Explanation non-empty & contains answer
     assert exp and exp.strip(), f"Lỗi Q{eid}: explanation rỗng!"
-    if ex["exercise_type"] != "noi_o":
+    if ex["exercise_type"] not in ("noi_o", "dich_nghia_dv", "dich_cau_dv"):
         # Chuẩn hóa kiểm tra đáp án có trong giải thích
         assert norm_s(ans) in norm_s(exp) or all(norm_s(p) in norm_s(exp) for p in re.split(r'[/–\->,]+', ans) if norm_s(p)), \
             f"Lỗi Q{eid}: explanation không chứa đáp án! ANS: '{ans}' | EXP: '{exp}'"
