@@ -1492,15 +1492,23 @@ def seed_lesson_10():
                 "question": "Câu 35: Dịch sang tiếng Việt: „Das macht zusammen vier Euro.“",
                 "options": null,
                 "correct_answer": "Tổng cộng là bốn euro.",
-                "explanation": "'Das macht zusammen …' = 'tổng cộng là …'; 'vier Euro' = bốn euro. -> Đáp án: \"Tổng cộng là bốn euro.\"",
+                "explanation": "'Das macht zusammen ...' = 'tổng cộng là ... / tất cả hết ...' (mẫu câu chốt tổng hóa đơn khi tính tiền); 'vier Euro' = bốn euro (4 euro).",
                 "exp_reward": 10,
                 "extra_data": {
                         "translation": "Tổng cộng là bốn euro.",
                         "accepted_answers": [
                                 "Tổng cộng là bốn euro.",
+                                "Tổng cộng là 4 euro.",
+                                "Tổng cộng bốn euro.",
+                                "Tổng cộng 4 euro.",
+                                "Tất cả hết bốn euro.",
+                                "Tất cả hết 4 euro.",
                                 "Tất cả là bốn euro.",
+                                "Tất cả là 4 euro.",
                                 "Cộng lại là bốn euro.",
-                                "Tổng cộng bốn euro."
+                                "Cộng lại là 4 euro.",
+                                "Tất cả hết 4€.",
+                                "Tổng cộng là 4€."
                         ]
                 }
         },
@@ -1509,16 +1517,35 @@ def seed_lesson_10():
                 "question": "Câu 36: Dịch sang tiếng Việt: „Haben Sie Schokolade?“",
                 "options": null,
                 "correct_answer": "Ngài có sô cô la không?",
-                "explanation": "'Haben Sie …?' là câu hỏi lịch sự khi hỏi mua hàng xem tiệm có mặt hàng nào không; 'Sie' = ngài / bạn. -> Đáp án: \"Ngài có sô cô la không?\"",
+                "explanation": "'Haben Sie ...?' là mẫu câu hỏi lịch sự khi đi mua hàng để hỏi xem tiệm/người bán có mặt hàng nào đó hay không; 'Sie' = ngài / anh / chị; 'Schokolade' = sô cô la (socola).",
                 "exp_reward": 10,
                 "extra_data": {
                         "translation": "Ngài có sô cô la không?",
                         "accepted_answers": [
                                 "Ngài có sô cô la không?",
+                                "Ngài có socola không?",
+                                "Ngài có sô-cô-la không?",
+                                "Anh có socola không?",
+                                "Chị có socola không?",
+                                "Bạn có socola không?",
+                                "Quý khách có socola không?",
+                                "Anh có sô cô la không?",
+                                "Chị có sô cô la không?",
                                 "Bạn có sô cô la không?",
-                                "Bà có sô cô la không?",
+                                "Quý khách có sô cô la không?",
+                                "Quý khách có sô-cô-la không?",
+                                "Cửa hàng có socola không?",
+                                "Tiệm có socola không?",
+                                "Ở đây có socola không?",
+                                "Cửa hàng có sô cô la không?",
+                                "Tiệm có sô cô la không?",
+                                "Ở đây có sô cô la không?",
                                 "Ông có sô cô la không?",
-                                "Anh chị có sô cô la không?"
+                                "Bà có sô cô la không?",
+                                "Ông có socola không?",
+                                "Bà có socola không?",
+                                "Anh chị có sô cô la không?",
+                                "Anh chị có socola không?"
                         ]
                 }
         },
@@ -1527,14 +1554,19 @@ def seed_lesson_10():
                 "question": "Câu 37: Dịch sang tiếng Việt: „Ich hätte gern einen Liter Milch.“",
                 "options": null,
                 "correct_answer": "Tôi muốn lấy một lít sữa.",
-                "explanation": "'Ich hätte gern …' = 'tôi muốn lấy …' (lịch sự khi mua sắm); 'einen Liter Milch' là tân ngữ Akkusativ. -> Đáp án: \"Tôi muốn lấy một lít sữa.\"",
+                "explanation": "'Ich hätte gern ...' = 'tôi muốn lấy ... / cho tôi ...' (mẫu câu lịch sự khi đi mua sắm); 'einen Liter Milch' = một lít sữa (1 lít sữa).",
                 "exp_reward": 10,
                 "extra_data": {
                         "translation": "Tôi muốn lấy một lít sữa.",
                         "accepted_answers": [
                                 "Tôi muốn lấy một lít sữa.",
+                                "Tôi muốn lấy 1 lít sữa.",
                                 "Tôi muốn một lít sữa.",
-                                "Cho tôi một lít sữa."
+                                "Tôi muốn 1 lít sữa.",
+                                "Cho tôi một lít sữa.",
+                                "Cho tôi 1 lít sữa.",
+                                "Tôi cần một lít sữa.",
+                                "Tôi cần 1 lít sữa."
                         ]
                 }
         },
@@ -1543,15 +1575,21 @@ def seed_lesson_10():
                 "question": "Câu 38: Dịch sang tiếng Việt: „Wie viel kosten die Birnen?“",
                 "options": null,
                 "correct_answer": "Những quả lê giá bao nhiêu?",
-                "explanation": "'Wie viel kosten …?' dùng cho chủ ngữ số nhiều ('die Birnen') = '… giá bao nhiêu?'. -> Đáp án: \"Những quả lê giá bao nhiêu?\"",
+                "explanation": "'Wie viel kosten ...?' dùng cho chủ ngữ số nhiều ('die Birnen') = '... giá bao nhiêu? / bao nhiêu tiền?'.",
                 "exp_reward": 10,
                 "extra_data": {
                         "translation": "Những quả lê giá bao nhiêu?",
                         "accepted_answers": [
                                 "Những quả lê giá bao nhiêu?",
+                                "Các quả lê giá bao nhiêu?",
+                                "Mấy quả lê giá bao nhiêu?",
+                                "các quả lê giá bao nhiêu",
+                                "mấy quả lê giá bao nhiêu",
                                 "Lê giá bao nhiêu?",
                                 "Những quả lê bao nhiêu tiền?",
-                                "Mấy quả lê này giá bao nhiêu?"
+                                "Các quả lê bao nhiêu tiền?",
+                                "Mấy quả lê này giá bao nhiêu?",
+                                "Những quả lê này giá bao nhiêu?"
                         ]
                 }
         },
@@ -2150,13 +2188,17 @@ def seed_lesson_10():
                 "question": "Câu 69: Dịch câu sau sang tiếng Việt: „Welche Äpfel sind süß? — Die Äpfel von meiner Oma.“",
                 "options": null,
                 "correct_answer": "Những quả táo nào ngọt? — Những quả táo của bà tôi.",
-                "explanation": "'Welche Äpfel' là câu hỏi số nhiều; trả lời bằng 'Die Äpfel von …'. -> Đáp án: \"Những quả táo nào ngọt? — Những quả táo của bà tôi.\"",
+                "explanation": "'Welche Äpfel ...?' là câu hỏi số nhiều ('những quả táo nào ...?'); trả lời bằng cấu trúc sở hữu 'Die Äpfel von meiner Oma' (những quả táo của bà tôi).",
                 "exp_reward": 15,
                 "extra_data": {
                         "translation": "Những quả táo nào ngọt? — Những quả táo của bà tôi.",
                         "accepted_answers": [
                                 "Những quả táo nào ngọt? — Những quả táo của bà tôi.",
-                                "Những quả táo nào ngọt vậy? — Những quả táo của bà tôi."
+                                "Những quả táo nào ngọt? - Những quả táo của bà tôi.",
+                                "Những quả táo nào ngọt vậy? — Những quả táo của bà tôi.",
+                                "Những quả táo nào ngọt vậy? - Những quả táo của bà tôi.",
+                                "Quả táo nào ngọt? — Táo của bà tôi.",
+                                "Quả táo nào ngọt? - Táo của bà tôi."
                         ]
                 }
         },
@@ -2165,14 +2207,17 @@ def seed_lesson_10():
                 "question": "Câu 70: Dịch câu sau sang tiếng Việt: „In Vietnam essen die Menschen mehr Reis als Brot.“",
                 "options": null,
                 "correct_answer": "Ở Việt Nam mọi người ăn gạo nhiều hơn bánh mì.",
-                "explanation": "Cấu trúc 'mehr … als' (nhiều hơn so với). -> Đáp án: \"Ở Việt Nam mọi người ăn gạo nhiều hơn bánh mì.\"",
+                "explanation": "Cấu trúc so sánh hơn với 'mehr ... als' (nhiều hơn so với); 'die Menschen' = mọi người / người dân; 'Reis' = cơm / gạo.",
                 "exp_reward": 15,
                 "extra_data": {
                         "translation": "Ở Việt Nam mọi người ăn gạo nhiều hơn bánh mì.",
                         "accepted_answers": [
                                 "Ở Việt Nam mọi người ăn gạo nhiều hơn bánh mì.",
+                                "Ở Việt Nam mọi người ăn cơm nhiều hơn bánh mì.",
                                 "Ở Việt Nam người ta ăn cơm nhiều hơn bánh mì.",
-                                "Ở Việt Nam người dân ăn cơm nhiều hơn bánh mì."
+                                "Ở Việt Nam người ta ăn gạo nhiều hơn bánh mì.",
+                                "Ở Việt Nam người dân ăn cơm nhiều hơn bánh mì.",
+                                "Ở Việt Nam người dân ăn gạo nhiều hơn bánh mì."
                         ]
                 }
         },
@@ -2181,13 +2226,17 @@ def seed_lesson_10():
                 "question": "Câu 71: Dịch câu sau sang tiếng Việt: „Am meisten kaufe ich Obst und Gemüse auf dem Markt.“",
                 "options": null,
                 "correct_answer": "Tôi mua nhiều nhất là hoa quả và rau củ ở chợ.",
-                "explanation": "'Am meisten' (nhiều nhất) đứng đầu câu tạo đảo ngữ, động từ 'kaufe' ở vị trí ②. -> Đáp án: \"Tôi mua nhiều nhất là hoa quả và rau củ ở chợ.\"",
+                "explanation": "'Am meisten' (nhiều nhất) đứng đầu câu tạo đảo ngữ, động từ 'kaufe' ở vị trí thứ hai; 'Obst und Gemüse' = hoa quả và rau củ (trái cây và rau củ).",
                 "exp_reward": 15,
                 "extra_data": {
                         "translation": "Tôi mua nhiều nhất là hoa quả và rau củ ở chợ.",
                         "accepted_answers": [
                                 "Tôi mua nhiều nhất là hoa quả và rau củ ở chợ.",
-                                "Tôi mua hoa quả và rau củ ở chợ nhiều nhất."
+                                "Tôi mua hoa quả và rau củ ở chợ nhiều nhất.",
+                                "Tôi mua nhiều nhất là trái cây và rau củ ở chợ.",
+                                "Tôi mua trái cây và rau củ ở chợ nhiều nhất.",
+                                "Tôi hay mua hoa quả và rau củ ở chợ nhất.",
+                                "Tôi hay mua trái cây và rau củ ở chợ nhất."
                         ]
                 }
         },
@@ -2196,14 +2245,25 @@ def seed_lesson_10():
                 "question": "Câu 72: Dịch câu sau sang tiếng Việt: „Meine Schwester trinkt lieber Saft als Cola, aber am liebsten trinkt sie Wasser.“",
                 "options": null,
                 "correct_answer": "Chị tôi thích uống nước ép hơn cô-ca, nhưng thích uống nước lọc nhất.",
-                "explanation": "'lieber … als' (thích hơn); 'am liebsten' (thích nhất). -> Đáp án: \"Chị tôi thích uống nước ép hơn cô-ca, nhưng thích uống nước lọc nhất.\"",
+                "explanation": "Cấu trúc so sánh hơn 'lieber ... als' (thích ... hơn) và so sánh nhất 'am liebsten' (thích nhất); 'Saft' = nước ép; 'Cola' = cô-ca (coca); 'Wasser' = nước / nước lọc.",
                 "exp_reward": 15,
                 "extra_data": {
                         "translation": "Chị tôi thích uống nước ép hơn cô-ca, nhưng thích uống nước lọc nhất.",
                         "accepted_answers": [
                                 "Chị tôi thích uống nước ép hơn cô-ca, nhưng thích uống nước lọc nhất.",
+                                "Chị tôi thích uống nước ép hơn coca, nhưng thích uống nước lọc nhất.",
+                                "Chị tôi thích uống nước ép hơn cola, nhưng thích uống nước lọc nhất.",
+                                "Chị gái tôi thích uống nước ép hơn cô-ca, nhưng thích uống nước lọc nhất.",
+                                "Chị gái tôi thích uống nước ép hơn coca, nhưng thích uống nước lọc nhất.",
+                                "Chị gái tôi thích uống nước ép hơn cola, nhưng thích uống nước lọc nhất.",
+                                "Em gái tôi thích uống nước ép hơn cô-ca, nhưng thích uống nước lọc nhất.",
+                                "Em gái tôi thích uống nước ép hơn coca, nhưng thích uống nước lọc nhất.",
+                                "Em gái tôi thích uống nước ép hơn cola, nhưng thích uống nước lọc nhất.",
+                                "Chị tôi thích uống nước ép hơn cô-ca, nhưng thích uống nước nhất.",
+                                "Chị tôi thích uống nước ép hơn coca, nhưng thích uống nước nhất.",
+                                "Chị tôi thích uống nước ép hơn cola, nhưng thích uống nước nhất.",
                                 "Chị tôi thích nước ép hơn cola, nhưng thích nhất là uống nước.",
-                                "Chị gái tôi thích uống nước ép hơn cô-ca, nhưng thích uống nước nhất."
+                                "Chị tôi thích nước ép hơn coca, nhưng thích nhất là uống nước."
                         ]
                 }
         },
@@ -2212,13 +2272,22 @@ def seed_lesson_10():
                 "question": "Câu 73: Dịch đoạn hội thoại sau sang tiếng Việt: „Guten Tag, ich hätte gern ein Pfund Erdbeeren. — Gern. Sonst noch etwas? — Nein, danke. Was macht das?“",
                 "options": null,
                 "correct_answer": "Xin chào, tôi muốn lấy nửa ký dâu tây. — Vâng. Ngài cần gì nữa không? — Không, cảm ơn. Tổng cộng bao nhiêu?",
-                "explanation": "'ein Pfund' = nửa ký (500 g); 'Was macht das?' = 'tất cả là bao nhiêu?'. -> Đáp án: \"Xin chào, tôi muốn lấy nửa ký dâu tây. — Vâng. Ngài cần gì nữa không? — Không, cảm ơn. Tổng cộng bao nhiêu?\"",
+                "explanation": "'ein Pfund' = nửa ký (500g); 'Was macht das?' = 'tổng cộng bao nhiêu? / tất cả hết bao nhiêu?'; 'Sonst noch etwas?' = 'còn gì nữa không?'.",
                 "exp_reward": 15,
                 "extra_data": {
                         "translation": "Xin chào, tôi muốn lấy nửa ký dâu tây. — Vâng. Ngài cần gì nữa không? — Không, cảm ơn. Tổng cộng bao nhiêu?",
                         "accepted_answers": [
                                 "Xin chào, tôi muốn lấy nửa ký dâu tây. — Vâng. Ngài cần gì nữa không? — Không, cảm ơn. Tổng cộng bao nhiêu?",
-                                "Chào bạn, tôi muốn lấy nửa ký dâu tây. — Vâng. Bạn cần gì nữa không? — Không, cảm ơn. Hết bao nhiêu vậy?"
+                                "Xin chào, tôi muốn lấy nửa ký dâu tây. - Vâng. Ngài cần gì nữa không? - Không, cảm ơn. Tổng cộng bao nhiêu?",
+                                "Xin chào, tôi muốn lấy nửa cân dâu tây. — Vâng. Ngài cần gì nữa không? — Không, cảm ơn. Tổng cộng bao nhiêu?",
+                                "Xin chào, tôi muốn lấy nửa cân dâu tây. - Vâng. Ngài cần gì nữa không? - Không, cảm ơn. Tổng cộng bao nhiêu?",
+                                "Xin chào, tôi muốn lấy 500g dâu tây. — Vâng. Ngài cần gì nữa không? — Không, cảm ơn. Tổng cộng bao nhiêu?",
+                                "Xin chào, tôi muốn lấy 500g dâu tây. - Vâng. Ngài cần gì nữa không? - Không, cảm ơn. Tổng cộng bao nhiêu?",
+                                "Xin chào, tôi muốn lấy 500 gram dâu tây. — Vâng. Ngài cần gì nữa không? — Không, cảm ơn. Tổng cộng bao nhiêu?",
+                                "Chào bạn, tôi muốn lấy nửa ký dâu tây. — Vâng. Bạn cần gì nữa không? — Không, cảm ơn. Hết bao nhiêu vậy?",
+                                "Chào bạn, tôi muốn lấy nửa ký dâu tây. - Vâng. Bạn cần gì nữa không? - Không, cảm ơn. Hết bao nhiêu vậy?",
+                                "Chào bạn, tôi muốn lấy nửa cân dâu tây. — Vâng. Bạn cần gì nữa không? — Không, cảm ơn. Hết bao nhiêu vậy?",
+                                "Chào bạn, tôi muốn lấy 500g dâu tây. — Vâng. Bạn cần gì nữa không? — Không, cảm ơn. Hết bao nhiêu vậy?"
                         ]
                 }
         },
@@ -2227,13 +2296,25 @@ def seed_lesson_10():
                 "question": "Câu 74: Dịch câu sau sang tiếng Việt: „Gestern hat Herr Bauer im Supermarkt zwei Kilo Kartoffeln und eine Flasche Milch gekauft.“",
                 "options": null,
                 "correct_answer": "Hôm qua ông Bauer đã mua hai ký khoai tây và một chai sữa ở siêu thị.",
-                "explanation": "Thì Perfekt 'hat … gekauft'; 'Kilo' giữ nguyên số ít sau số đếm, 'Flasche' là danh từ giống cái. -> Đáp án: \"Hôm qua ông Bauer đã mua hai ký khoai tây và một chai sữa ở siêu thị.\"",
+                "explanation": "Thì Perfekt 'hat ... gekauft'; đơn vị đo 'Kilo' giữ nguyên số ít sau số đếm 'zwei' (hai ký / 2 ký); 'eine Flasche Milch' = một chai sữa (1 chai sữa).",
                 "exp_reward": 15,
                 "extra_data": {
                         "translation": "Hôm qua ông Bauer đã mua hai ký khoai tây và một chai sữa ở siêu thị.",
                         "accepted_answers": [
                                 "Hôm qua ông Bauer đã mua hai ký khoai tây và một chai sữa ở siêu thị.",
-                                "Hôm qua ở siêu thị ông Bauer đã mua hai ký khoai tây và một chai sữa."
+                                "Hôm qua ông Bauer đã mua 2 ký khoai tây và 1 chai sữa ở siêu thị.",
+                                "Hôm qua ông Bauer đã mua 2 ký khoai tây và một chai sữa ở siêu thị.",
+                                "Hôm qua ông Bauer đã mua hai ký khoai tây và 1 chai sữa ở siêu thị.",
+                                "Hôm qua ông Bauer đã mua hai cân khoai tây và một chai sữa ở siêu thị.",
+                                "Hôm qua ông Bauer đã mua 2 cân khoai tây và 1 chai sữa ở siêu thị.",
+                                "Hôm qua ông Bauer đã mua 2 cân khoai tây và một chai sữa ở siêu thị.",
+                                "Hôm qua ông Bauer đã mua hai cân khoai tây và 1 chai sữa ở siêu thị.",
+                                "Hôm qua ông Bauer đã mua 2kg khoai tây và 1 chai sữa ở siêu thị.",
+                                "Hôm qua ông Bauer đã mua 2 kg khoai tây và 1 chai sữa ở siêu thị.",
+                                "Hôm qua ông Bauer đã mua 2kg khoai tây và một chai sữa ở siêu thị.",
+                                "Hôm qua ở siêu thị ông Bauer đã mua hai ký khoai tây và một chai sữa.",
+                                "Hôm qua ở siêu thị ông Bauer đã mua 2 ký khoai tây và 1 chai sữa.",
+                                "Hôm qua ở siêu thị ông Bauer đã mua 2 cân khoai tây và 1 chai sữa."
                         ]
                 }
         },

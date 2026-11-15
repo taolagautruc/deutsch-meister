@@ -1317,7 +1317,7 @@
             if (activeSession && (lId === 24 || (currentLesson && currentLesson.title && /bài 10\b/i.test(currentLesson.title)))) {
                 const hasOutdatedL10 = (activeSession.version !== CURRENT_SESSION_VERSION) || (activeSession.allRenderExercises || []).some(ex => 
                     (ex.extra_data && JSON.stringify(ex.extra_data).includes('"visual"')) ||
-                    (ex.explanation && ex.explanation.includes('Phương án A')) ||
+                    (ex.explanation && (ex.explanation.includes('Phương án A') || ex.explanation.includes('Đáp án: "Tổng cộng') || ex.explanation.includes('Đáp án: "Ngài có sô'))) ||
                     (ex.question && (ex.question.includes('V1') || ex.question.includes('V4') || ex.question.includes('Quan sát') || ex.question.includes('(der Apfel, tân ngữ)') || ex.question.includes('(der Salat)') || ex.question.includes('(der Schinken)') || ex.question.includes('(das Brot)') || ex.question.includes('ở ngôi \'du\'')))
                 );
                 if (hasOutdatedL10) {
