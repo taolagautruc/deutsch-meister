@@ -614,20 +614,36 @@ function normalizeVietnameseTranslation(str) {
     s = s.replace(/ùơ/g, 'uờ').replace(/úơ/g, 'uớ').replace(/ủơ/g, 'uở').replace(/ũơ/g, 'uỡ').replace(/ụơ/g, 'uợ');
     s = s.replace(/thọai/g, 'thoại');
 
-    // Bỏ qua toàn bộ dấu câu
+    // Tách đơn vị đo viết liền với số (ví dụ: 2kg -> 2 kg, 500g -> 500 g)
+    s = s.replace(/(\d+)\s*(kg|g|gam)\b/gi, '$1 $2');
+
+    // Bỏ qua toàn bộ dấu câu và dấu gạch ngang phân cách hội thoại (-, –, —)
     s = s.replace(/[.,!?;:\"\'„“”«»‘`’–—\-\(\)\[\]\{\}\/\\~]+/g, ' ');
     s = s.replace(/\s+/g, ' ').trim();
+
+    // Quy đổi chính tả đơn vị đo lường (Bài 10 & toàn hệ thống)
+    s = s.replace(/\b(nửa\s+cân|500\s*g(?:am)?)\b/g, 'nửa ký');
+    s = s.replace(/\b(kí|ki\s*lô\s*gam|ki-lô-gam|kilogam|kg|cân)\b/g, 'ký');
 
     // Tự động quy đổi tương đương giữa chữ số và chữ viết tiếng Việt
     s = s.replace(/\b300\s*(?:m|mét|met)\b/g, 'ba trăm mét');
     s = s.replace(/\bba\s+trăm\s*(?:m|mét|met)\b/g, 'ba trăm mét');
     s = s.replace(/\b300\b/g, 'ba trăm');
     s = s.replace(/\b20\b/g, 'hai mươi');
+    s = s.replace(/\b10\b/g, 'mười');
     s = s.replace(/\bthứ\s*2\b/g, 'thứ hai');
     s = s.replace(/\bthứ\s*1\b/g, 'thứ nhất');
     s = s.replace(/\bthứ\s*một\b/g, 'thứ nhất');
     s = s.replace(/\b1\b/g, 'một');
     s = s.replace(/\b2\b/g, 'hai');
+    s = s.replace(/\b3\b/g, 'ba');
+    s = s.replace(/\b4\b/g, 'bốn');
+    s = s.replace(/\b5\b/g, 'năm');
+
+    // Quy đổi chính tả từ vay mượn
+    s = s.replace(/\b(cô\s*ca|cô-ca|coca)\b/g, 'coca');
+    s = s.replace(/\b(sô\s*cô\s*la|sô-cô-la|socola)\b/g, 'socola');
+    s = s.replace(/\b(xà\s*lách|sa\s*lát|salad)\b/g, 'salad');
 
     // Tuyến xe buýt 200
     s = s.replace(/\b(?:tuyến\s+)?xe\s+buýt\s+(?:tuyến\s+)?(?:số\s+)?200\b/g, 'xe buýt 200');
