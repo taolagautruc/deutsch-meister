@@ -386,9 +386,9 @@ def ensure_db_initialized():
             ex_b10_c84 = cursor.fetchone()
             if not ex_b10_c84 or 'Đáp án: "Welchen Käse möchten Sie kaufen?"' not in (ex_b10_c84["explanation"] or ''):
                 need_seed_b10 = True
-            cursor.execute("SELECT extra_data FROM exercises WHERE lesson_id = ? AND question LIKE '%Câu 95%';", (b10_id,))
+            cursor.execute("SELECT extra_data, explanation FROM exercises WHERE lesson_id = ? AND question LIKE '%Câu 95%';", (b10_id,))
             ex_b10_c95 = cursor.fetchone()
-            if not ex_b10_c95 or "nửa ký dâu tây" not in (ex_b10_c95["extra_data"] or ''):
+            if not ex_b10_c95 or "nửa ký dâu tây" not in (ex_b10_c95["extra_data"] or '') or (ex_b10_c95["explanation"] or '').strip() != "":
                 need_seed_b10 = True
             cursor.execute("SELECT question FROM exercises WHERE lesson_id = ? AND question LIKE '%Câu 98%';", (b10_id,))
             ex_b10_c98 = cursor.fetchone()

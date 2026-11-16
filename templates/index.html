@@ -553,7 +553,7 @@
             }
         }
 
-        const CURRENT_SESSION_VERSION = '20261116_v9';
+        const CURRENT_SESSION_VERSION = '20261117_v1';
 
         // Tự động xóa phiên làm bài cũ bị lưu đáp án sai hoặc mã nguồn cũ cho toàn bộ các bài học
         try {
@@ -574,7 +574,7 @@
                 const k = localStorage.key(i);
                 if (k && k.includes('active_practice_session') && k.includes('24')) {
                     const r = localStorage.getItem(k);
-                    if (!r || !r.includes('"version":"' + CURRENT_SESSION_VERSION + '"') || r.includes('translation_vi') || r.includes('Hội thoại mua sắm') || r.includes('dạng ví dụ:')) {
+                    if (!r || !r.includes('"version":"' + CURRENT_SESSION_VERSION + '"') || r.includes('translation_vi') || r.includes('Hội thoại mua sắm') || r.includes('dạng ví dụ:') || r.includes('Trình tự')) {
                         localStorage.removeItem(k);
                     }
                 }
@@ -1345,6 +1345,7 @@
                     (ex.extra_data && JSON.stringify(ex.extra_data).includes('eine Flasche')) ||
                     (ex.exercise_type === 'hoi_thoai_sap_xep' && ex.extra_data && JSON.stringify(ex.extra_data).includes('translation_vi')) ||
                     (ex.exercise_type === 'hoi_thoai_sap_xep' && ex.extra_data && JSON.stringify(ex.extra_data).includes('Hội thoại mua sắm')) ||
+                    (ex.exercise_type === 'hoi_thoai_sap_xep' && ex.explanation && ex.explanation.length > 0) ||
                     (ex.exercise_type === 'nghe_gia_tien' && ex.question && ex.question.includes('dạng ví dụ:'))
                 );
                 if (hasOutdatedL10) {
@@ -2178,6 +2179,18 @@
                             `;
                         }).join('')}
                     </div>`;
+                } else if (ex.exercise_type === 'hoi_thoai_sap_xep') {
+                    const cleanAns = isDone 
+                        ? (ex._userAnswer || String(ex.correct_answer || '').trim()) 
+                        : (ex._userAnswer || '');
+                    inputHtml = `
+                        <div class="flex justify-end gap-2 mt-3">
+                            <input id="ex-input-${i}" type="hidden" value="${cleanAns.replace(/"/g, '&quot;')}">
+                            <button id="ex-btn-${i}" onclick="checkExerciseAnswer(${i}, document.getElementById('ex-input-${i}').value)" class="px-6 py-2.5 rounded-xl ${isDone ? 'bg-emerald-600 hover:bg-emerald-700' : 'bg-indigo-600 hover:bg-indigo-500'} cursor-pointer text-white font-bold text-sm shadow-sm transition shrink-0">
+                                ${isDone ? '✓ Đã xong' : 'Kiểm tra'}
+                            </button>
+                        </div>
+                    `;
                 } else {
                     const isMultiSlot = (ex.exercise_type === 'dien_tao_cau') || 
                                         (Boolean(ex.question) && (ex.question.includes('[1]') || ex.question.includes('ngăn cách bởi dấu /') || ex.question.includes('cách nhau bởi dấu /') || ex.question.includes('ngăn cách bởi dấu phẩy') || ex.question.includes('cách nhau bởi dấu phẩy') || /điền\s+[2-9]\s+từ/i.test(ex.question)));
@@ -2391,15 +2404,30 @@
                 input.value = list.join(', ');
                 if (typeof handleExerciseInputChange === 'function') handleExerciseInputChange(exIdx);
             }
-            const displayArea = document.getElementById(`dialogue-selected-${exIdx}`);
-            if (displayArea) {
-                displayArea.innerText = list.length > 0 ? "Thứ tự đã chọn: " + list.join(' ➔ ') : "Chưa chọn lượt lời nào. Bấm vào các câu bên dưới theo thứ tự xuất hiện:";
-            }
             const ex = currentLesson && currentLesson.allRenderExercises ? currentLesson.allRenderExercises[exIdx] : null;
             let extra = {};
             try { 
                 extra = (typeof ex.extra_data === 'string') ? JSON.parse(ex.extra_data) : (ex.extra_data || {}); 
             } catch(e){}
+
+            const displayArea = document.getElementById(`dialogue-selected-${exIdx}`);
+            if (displayArea) {
+                if (list.length > 0) {
+                    displayArea.innerHTML = `
+                        <div class="space-y-1 w-full py-0.5">
+                            <div class="font-bold text-indigo-700 text-xs mb-1">📋 Trình tự hội thoại bạn đang chọn (${list.length}/${(extra.lines || []).length}):</div>
+                            <div class="space-y-1">
+                                ${list.map((lid, idx) => {
+                                    const l = (extra.lines || []).find(x => x.id === lid);
+                                    return `<div class="text-xs text-indigo-950 font-semibold">• <b>${l ? l.speaker : ''}:</b> „${l ? l.text : ''}“</div>`;
+                                }).join('')}
+                            </div>
+                        </div>
+                    `;
+                } else {
+                    displayArea.innerText = "Chưa chọn lượt lời nào. Bấm vào các câu bên dưới theo thứ tự xuất hiện:";
+                }
+            }
             (extra.lines || []).forEach(l => {
                 const btn = document.getElementById(`dlg-line-btn-${exIdx}-${l.id}`);
                 if (btn) {
@@ -3124,6 +3152,22 @@
                 }
                 const earnedExp = ex._hasBeenWrong ? 0 : ex.exp_reward;
                 const correctPairsHtml = '';
+                let dialogueGermanHtml = '';
+                if (ex.exercise_type === 'hoi_thoai_sap_xep' && Array.isArray(extra.lines)) {
+                    const sortedLines = [...extra.lines].sort((a, b) => (Number(a.id) || 0) - (Number(b.id) || 0));
+                    dialogueGermanHtml = `
+                        <div class="mt-2.5 p-3 rounded-xl bg-emerald-100/70 border border-emerald-300 text-emerald-950 font-medium text-xs sm:text-sm">
+                            <div class="font-bold text-emerald-800 mb-1.5 flex items-center gap-1">
+                                <span>🎯 Trình tự hội thoại đúng (tiếng Đức):</span>
+                            </div>
+                            <div class="space-y-1 pl-0.5" style="line-height: 1.6;">
+                                ${sortedLines.map(l => `
+                                    <div class="py-0.5 leading-relaxed"><b>${l.speaker}:</b> „${l.text}“</div>
+                                `).join('')}
+                            </div>
+                        </div>
+                    `;
+                }
                 feedback.innerHTML = `
                     <div class="space-y-1.5">
                         <div class="flex items-center gap-2">
@@ -3133,10 +3177,12 @@
                                 : `<span class="text-slate-500 font-bold text-xs">(+0 EXP • Đã xem đáp án)</span>`}
                         </div>
                         ${correctPairsHtml}
+                        ${dialogueGermanHtml}
                         ${translationHtml}
+                        ${(ex.explanation && ex.explanation.trim()) ? `
                         <div class="text-emerald-900 leading-relaxed pt-1">
                             <span class="font-bold">💡 Giải thích:</span> ${ex.explanation}
-                        </div>
+                        </div>` : ''}
                         ${nextDynamicHtml}
                     </div>
                 `;
@@ -3402,7 +3448,21 @@
                                 wrongTitle = "❌ Chưa chính xác (bạn cần điền đủ cả 2 từ ngăn cách bởi dấu /).";
                             }
                         }
-                        if (isViToDe) {
+                        if (ex.exercise_type === 'hoi_thoai_sap_xep' && Array.isArray(extra.lines)) {
+                            const sortedLines = [...extra.lines].sort((a, b) => (Number(a.id) || 0) - (Number(b.id) || 0));
+                            ansBlockHtml = `
+                                <div class="mt-2.5 p-3 rounded-xl bg-rose-100/70 border border-rose-300 text-rose-950 font-medium text-xs sm:text-sm">
+                                    <div class="font-bold text-rose-800 mb-1.5 flex items-center gap-1">
+                                        <span>🎯 Trình tự hội thoại đúng (tiếng Đức):</span>
+                                    </div>
+                                    <div class="space-y-1.5 pl-0.5" style="line-height: 1.6;">
+                                        ${sortedLines.map(l => `
+                                            <div class="py-0.5 leading-relaxed"><b>${l.speaker}:</b> „${l.text}“</div>
+                                        `).join('')}
+                                    </div>
+                                </div>
+                            `;
+                        } else if (isViToDe) {
                             ansBlockHtml = `
                                 <div class="text-rose-900 pt-0.5">
                                     <span class="font-bold text-rose-700">🎯 Đáp án mẫu:</span> <span class="font-extrabold text-rose-800">${displayAns}</span>
@@ -3424,9 +3484,10 @@
                             ${ansBlockHtml}
                             ${hintErrorHtml}
                             ${!isViToDe ? translationHtml : ''}
+                            ${(ex.explanation && ex.explanation.trim()) ? `
                             <div class="text-rose-950 leading-relaxed pt-1">
-                                <span class="font-bold">💡 Giải thích:</span> ${ex.explanation || ''}
-                            </div>
+                                <span class="font-bold">💡 Giải thích:</span> ${ex.explanation}
+                            </div>` : ''}
                         </div>
                     `;
                 } catch (err) {
