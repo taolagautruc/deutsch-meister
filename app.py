@@ -359,6 +359,10 @@ def ensure_db_initialized():
             cnt10_v = cursor.fetchone()["c"]
             if cnt10_v < 50:
                 need_seed_b10 = True
+            cursor.execute("SELECT explanation FROM exercises WHERE lesson_id = ? AND question LIKE '%Câu 55%';", (b10_id,))
+            ex_b10_c55 = cursor.fetchone()
+            if not ex_b10_c55 or "hoa quả/trái cây" not in (ex_b10_c55["explanation"] or ''):
+                need_seed_b10 = True
         if need_seed_b10:
             from lessons.a1.seed_a1_b10 import seed_lesson_10
             seed_lesson_10()

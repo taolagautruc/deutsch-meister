@@ -553,13 +553,19 @@
             }
         }
 
-        const CURRENT_SESSION_VERSION = '20261115_v1';
+        const CURRENT_SESSION_VERSION = '20261116_v1';
 
-        // Tự động xóa phiên làm bài cũ bị lỗi cấu hình đáp án cứng nhắc, nối ô, điền tạo câu hoặc đọc hiểu của Bài 9
+        // Tự động xóa phiên làm bài cũ bị lỗi cấu hình đáp án cứng nhắc, nối ô, điền tạo câu hoặc đọc hiểu của Bài 9 và Bài 10
         try {
             ['dm_active_practice_session_guest_23', 'dm_active_practice_session_1_23'].forEach(k => {
                 const r = localStorage.getItem(k);
-                if (r && (!r.includes('cuộc tham quan') || !r.includes('quốc gia du lịch') || r.includes('Nối các cặp hoàn chỉnh') || !r.includes('Wir haben im Urlaub viele schöne Fotos') || r.includes('tiền tố') || !r.includes('Hôm qua tôi đã tham quan viện bảo tàng') || !r.includes('Letzten Sommer bin ich nach Berlin gereist') || r.includes('Barcelona') || !r.includes('"version":"20261114_v12"'))) {
+                if (r && (!r.includes('cuộc tham quan') || !r.includes('quốc gia du lịch') || r.includes('Nối các cặp hoàn chỉnh') || !r.includes('Wir haben im Urlaub nhiều schöne Fotos') || r.includes('tiền tố') || !r.includes('Hôm qua tôi đã tham quan viện bảo tàng') || !r.includes('Letzten Sommer bin ich nach Berlin gereist') || r.includes('Barcelona') || !r.includes('"version":"20261114_v12"'))) {
+                    localStorage.removeItem(k);
+                }
+            });
+            ['dm_active_practice_session_guest_24', 'dm_active_practice_session_1_24'].forEach(k => {
+                const r = localStorage.getItem(k);
+                if (r && (!r.includes('hoa quả/trái cây') || !r.includes('Số Euro + \'Euro\'') || !r.includes('món ngũ cốc ăn sáng') || !r.includes('Ich hätte gern +') || !r.includes('"version":"20261116_v1"'))) {
                     localStorage.removeItem(k);
                 }
             });
