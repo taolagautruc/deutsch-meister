@@ -37,6 +37,8 @@ app.config['SESSION_COOKIE_HTTPONLY'] = True
 app.config['SESSION_COOKIE_SAMESITE'] = 'Lax'
 app.config['PERMANENT_SESSION_LIFETIME'] = timedelta(days=365)
 app.config['SEND_FILE_MAX_AGE_DEFAULT'] = 0
+app.config['TEMPLATES_AUTO_RELOAD'] = True
+app.jinja_env.auto_reload = True
 app.json.ensure_ascii = False
 
 def ensure_db_initialized():
@@ -309,7 +311,7 @@ def ensure_db_initialized():
             seed_lesson_8()
 
         # Tự động khởi tạo Bài 9 nếu chưa có hoặc chưa đủ 100 câu
-        cursor.execute("SELECT id FROM lessons WHERE level_id = ? AND title LIKE 'Bài 9%';", (a1_id,))
+        cursor.execute("SELECT id FROM lessons WHERE title LIKE 'Bài 9%' LIMIT 1;")
         b9_row = cursor.fetchone()
         need_seed_b9 = False
         if not b9_row:
@@ -345,7 +347,7 @@ def ensure_db_initialized():
             seed_lesson_9()
 
         # Tự động khởi tạo Bài 10 nếu chưa có hoặc chưa đủ 100 câu
-        cursor.execute("SELECT id FROM lessons WHERE level_id = ? AND title LIKE 'Bài 10%';", (a1_id,))
+        cursor.execute("SELECT id FROM lessons WHERE title LIKE 'Bài 10%' LIMIT 1;")
         b10_row = cursor.fetchone()
         need_seed_b10 = False
         if not b10_row:
@@ -376,6 +378,22 @@ def ensure_db_initialized():
             ex_b10_c76 = cursor.fetchone()
             if not ex_b10_c76 or "Lieber esse ich Nudeln als Reis" not in (ex_b10_c76["extra_data"] or ''):
                 need_seed_b10 = True
+            cursor.execute("SELECT extra_data FROM exercises WHERE lesson_id = ? AND question LIKE '%Câu 87%';", (b10_id,))
+            ex_b10_c87 = cursor.fetchone()
+            if not ex_b10_c87 or "Ich trinke am liebsten Milch." not in (ex_b10_c87["extra_data"] or ''):
+                need_seed_b10 = True
+            cursor.execute("SELECT explanation FROM exercises WHERE lesson_id = ? AND question LIKE '%Câu 84%';", (b10_id,))
+            ex_b10_c84 = cursor.fetchone()
+            if not ex_b10_c84 or 'Đáp án: "Welchen Käse möchten Sie kaufen?"' not in (ex_b10_c84["explanation"] or ''):
+                need_seed_b10 = True
+            cursor.execute("SELECT extra_data FROM exercises WHERE lesson_id = ? AND question LIKE '%Câu 95%';", (b10_id,))
+            ex_b10_c95 = cursor.fetchone()
+            if not ex_b10_c95 or "nửa ký dâu tây" not in (ex_b10_c95["extra_data"] or ''):
+                need_seed_b10 = True
+            cursor.execute("SELECT question FROM exercises WHERE lesson_id = ? AND question LIKE '%Câu 98%';", (b10_id,))
+            ex_b10_c98 = cursor.fetchone()
+            if not ex_b10_c98 or "dạng ví dụ:" in (ex_b10_c98["question"] or ''):
+                need_seed_b10 = True
         if need_seed_b10:
             from lessons.a1.seed_a1_b10 import seed_lesson_10
             seed_lesson_10()
@@ -388,11 +406,10 @@ ensure_db_initialized()
 
 @app.after_request
 def add_cache_headers(response):
-    """Vô hiệu hóa bộ nhớ đệm HTTP cho trang chủ, API và static assets để học viên luôn nhận dữ liệu và mã nguồn mới nhất"""
-    if request.path == "/" or request.path.startswith("/api/") or request.path.startswith("/static/"):
-        response.headers["Cache-Control"] = "no-cache, no-store, must-revalidate, max-age=0"
-        response.headers["Pragma"] = "no-cache"
-        response.headers["Expires"] = "0"
+    """Vô hiệu hóa bộ nhớ đệm HTTP cho mọi trang và API để học viên luôn nhận dữ liệu và mã nguồn mới nhất"""
+    response.headers["Cache-Control"] = "no-cache, no-store, must-revalidate, max-age=0"
+    response.headers["Pragma"] = "no-cache"
+    response.headers["Expires"] = "0"
     return response
 
 @app.route("/")

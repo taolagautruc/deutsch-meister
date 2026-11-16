@@ -1235,12 +1235,12 @@ Mỗi câu có **đúng 1 lỗi**. Người học gõ lại **cả câu đúng**
     * `wrong_sentence`: *„Welcher Käse möchten Sie kaufen?“*
     * `accepted_answers`: `["Welchen Käse möchten Sie kaufen?"]`
     * Dịch nghĩa câu đúng: *„Ngài muốn mua loại phô mai nào?“*
-    * Giải thích: Lỗi **cách của `welch-`**: `Käse` là tân ngữ của `möchten … kaufen` → Akkusativ → **`Welchen`**, không phải `Welcher`.
+    * Giải thích: Lỗi cách của từ hỏi 'welch-': danh từ 'der Käse' (giống đực) đóng vai trò tân ngữ trực tiếp (Akkusativ) của động từ 'kaufen' nên từ hỏi biến đổi thành 'Welchen', không phải 'Welcher'. -> Đáp án: "Welchen Käse möchten Sie kaufen?"
 85. **Câu 85** *(lỗi `als / wie`)*
     * `wrong_sentence`: *„Ich esse mehr Kartoffeln wie Reis.“*
     * `accepted_answers`: `["Ich esse mehr Kartoffeln als Reis."]`
     * Dịch nghĩa câu đúng: *„Tôi ăn khoai tây nhiều hơn cơm.“*
-    * Giải thích: So sánh hơn dùng **`als`**, không dùng `wie`.
+    * Giải thích: Lỗi dùng từ nối trong phép so sánh hơn: trong tiếng Đức chuẩn, so sánh hơn (Komparativ) bắt buộc dùng liên từ 'als', không dùng 'wie' ('wie' chỉ dùng cho so sánh ngang bằng 'so ... wie'). -> Đáp án: "Ich esse mehr Kartoffeln als Reis."
 86. **Câu 86** *(lỗi Komparativ bất quy tắc)*
     * `wrong_sentence`: *„Der Fisch ist gutter als das Fleisch.“*
     * `accepted_answers`: `["Der Fisch ist besser als das Fleisch."]`
@@ -1248,9 +1248,9 @@ Mỗi câu có **đúng 1 lỗi**. Người học gõ lại **cả câu đúng**
     * Giải thích: Komparativ của `gut` là **`besser`** (bất quy tắc), không phải `gutter`.
 87. **Câu 87** *(lỗi vị trí động từ)*
     * `wrong_sentence`: *„Am liebsten ich trinke Milch.“*
-    * `accepted_answers`: `["Am liebsten trinke ich Milch."]`
+    * `accepted_answers`: `["Am liebsten trinke ich Milch.", "Ich trinke am liebsten Milch."]`
     * Dịch nghĩa câu đúng: *„Tôi thích uống sữa nhất.“*
-    * Giải thích: Khi `Am liebsten` đứng đầu câu, **động từ `trinke` phải ở vị trí ②** rồi mới đến chủ ngữ `ich`.
+    * Giải thích: Lỗi vị trí động từ (Verbzweitstellung - V2): khi đưa cụm so sánh nhất 'Am liebsten' lên đầu câu (Vị trí 1), động từ chia 'trinke' bắt buộc phải đứng ở Vị trí 2 rồi mới đến chủ ngữ 'ich'. -> Đáp án: "Am liebsten trinke ich Milch." (hoặc "Ich trinke am liebsten Milch.").
 
 ---
 
@@ -1308,57 +1308,60 @@ Mỗi câu có **đúng 1 lỗi**. Người học gõ lại **cả câu đúng**
 ---
 
 #### NHÓM 15: 🆕 SẮP XẾP HỘI THOẠI MUA SẮM (`hoi_thoai_sap_xep` — 3 Câu: Câu 95 → Câu 97)
-Mỗi ô là **một lượt lời** (kèm nhãn người nói). Người học bấm theo đúng thứ tự.
+Mỗi ô là **một lượt lời** (kèm vai nói và câu tiếng Đức, không hiển thị tiếng Việt trước khi làm). Danh sách lượt lời được xáo trộn ngẫu nhiên khi render giao diện. Sau khi nộp bài, toàn bộ bản dịch tiếng Việt của hội thoại hiển thị trong khung **`📖 Dịch nghĩa:`**.
 95. **Câu 95** *(tình huống: quầy trái cây)*
-    * `lines` (thứ tự đúng — web phải xáo trộn khi hiển thị):
-      1. **Verkäufer**: *„Guten Tag! Bitte schön?“* — Xin chào! Ngài cần gì ạ?
-      2. **Kundin**: *„Ich möchte ein Pfund Erdbeeren und zwei Bananen, bitte.“* — Tôi muốn nửa ký dâu tây và hai quả chuối.
-      3. **Verkäufer**: *„Gern. Sonst noch etwas?“* — Vâng. Ngài cần gì nữa không ạ?
-      4. **Kundin**: *„Nein, danke. Was macht das?“* — Không, cảm ơn. Tổng cộng bao nhiêu?
-      5. **Verkäufer**: *„Das macht zusammen vier Euro fünfzig.“* — Tổng cộng là bốn euro năm mươi.
-      6. **Kundin**: *„Hier sind fünf Euro. Stimmt so!“* — Đây là năm euro. Không cần thối!
+    * `lines` (thứ tự đúng 1 -> 6, web xáo trộn khi hiển thị):
+      1. **Verkäufer**: *„Guten Tag! Bitte schön?“*
+      2. **Kundin**: *„Ich möchte ein Pfund Erdbeeren und zwei Bananen, bitte.“*
+      3. **Verkäufer**: *„Gern. Sonst noch etwas?“*
+      4. **Kundin**: *„Nein, danke. Was macht das?“*
+      5. **Verkäufer**: *„Das macht zusammen vier Euro fünfzig.“*
+      6. **Kundin**: *„Hier sind fünf Euro. Stimmt so!“*
     * `correct_order`: `[1, 2, 3, 4, 5, 6]`
+    * `translation` (hiển thị trong khung `📖 Dịch nghĩa:`): `Người bán: Xin chào! Ngài cần gì ạ? — Khách nữ: Tôi muốn mua nửa ký dâu tây và hai quả chuối, làm ơn. — Người bán: Vâng. Ngài cần gì thêm nữa không ạ? — Khách nữ: Không, cảm ơn. Tổng cộng hết bao nhiêu? — Người bán: Tổng cộng là bốn euro năm mươi (4,50 €). — Khách nữ: Đây là năm euro. Không cần thối lại đâu!`
     * Giải thích: Hội thoại đi theo trình tự **chào hỏi → gọi món → hỏi thêm → hỏi giá → báo giá → thanh toán**. *(Kiểm tra số: 1 Pfund Erdbeeren = 3,90 € + 2 × 0,30 € = 4,50 € = `vier Euro fünfzig`.)*
 96. **Câu 96** *(tình huống: siêu thị)*
-    * `lines` (thứ tự đúng):
-      1. **Kunde**: *„Entschuldigung, wo finde ich den Joghurt?“* — Xin lỗi, tôi tìm sữa chua ở đâu ạ?
-      2. **Verkäufer**: *„Der Joghurt steht dort hinten.“* — Sữa chua ở phía sau kia.
-      3. **Kunde**: *„Danke. Und wie viel kostet die Milch?“* — Cảm ơn. Còn sữa giá bao nhiêu?
-      4. **Verkäufer**: *„Ein Liter Milch kostet ein Euro zehn.“* — Một lít sữa giá một euro mười.
-      5. **Kunde**: *„Gut, dann nehme ich zwei Liter.“* — Tốt, vậy tôi lấy hai lít.
-      6. **Verkäufer**: *„Das macht zwei Euro zwanzig.“* — Tổng cộng là hai euro hai mươi.
+    * `lines` (thứ tự đúng 1 -> 6, web xáo trộn khi hiển thị):
+      1. **Kunde**: *„Entschuldigung, wo finde ich den Joghurt?“*
+      2. **Verkäufer**: *„Der Joghurt steht dort hinten.“*
+      3. **Kunde**: *„Danke. Und wie viel kostet die Milch?“*
+      4. **Verkäufer**: *„Ein Liter Milch kostet ein Euro zehn.“*
+      5. **Kunde**: *„Gut, dann nehme ich zwei Liter.“*
+      6. **Verkäufer**: *„Das macht zwei Euro zwanzig.“*
     * `correct_order`: `[1, 2, 3, 4, 5, 6]`
+    * `translation` (hiển thị trong khung `📖 Dịch nghĩa:`): `Khách nam: Xin lỗi, tôi tìm sữa chua ở đâu ạ? — Người bán: Sữa chua ở phía sau kia. — Khách nam: Cảm ơn. Còn sữa giá bao nhiêu? — Người bán: Một lít sữa giá một euro mười (1,10 €). — Khách nam: Tốt, vậy tôi lấy hai lít. — Người bán: Tổng cộng là hai euro hai mươi (2,20 €).`
     * Giải thích: Hỏi vị trí → trả lời → hỏi giá → báo giá → quyết định mua → tính tiền. *(2 × 1,10 € = 2,20 € = `zwei Euro zwanzig`.)*
 97. **Câu 97** *(tình huống: nhà hàng)*
-    * `lines` (thứ tự đúng):
-      1. **Kellner**: *„Guten Tag, haben Sie schon bestellt?“* — Xin chào, ngài đã gọi món chưa ạ?
-      2. **Gast**: *„Nein, noch nicht. Was empfehlen Sie?“* — Chưa. Ngài gợi ý món gì?
-      3. **Kellner**: *„Ich empfehle den Fisch mit Reis.“* — Tôi gợi ý món cá với cơm.
-      4. **Gast**: *„Gut, dann nehme ich den Fisch und eine Flasche Wasser.“* — Tốt, vậy tôi lấy món cá và một chai nước.
-      5. **Kellner**: *„Gern, das kommt gleich.“* — Vâng, có ngay ạ.
+    * `lines` (thứ tự đúng 1 -> 5, web xáo trộn khi hiển thị):
+      1. **Kellner**: *„Guten Tag, haben Sie schon bestellt?“*
+      2. **Gast**: *„Nein, noch nicht. Was empfehlen Sie?“*
+      3. **Kellner**: *„Ich empfehle den Fisch mit Reis.“*
+      4. **Gast**: *„Gut, dann nehme ich den Fisch und eine Flasche Wasser.“*
+      5. **Kellner**: *„Gern, das kommt gleich.“*
     * `correct_order`: `[1, 2, 3, 4, 5]`
+    * `translation` (hiển thị trong khung `📖 Dịch nghĩa:`): `Phục vụ: Xin chào, ngài đã gọi món chưa ạ? — Khách: Chưa. Ngài gợi ý món gì? — Phục vụ: Tôi gợi ý món cá ăn với cơm. — Khách: Tốt, vậy tôi lấy món cá và một chai nước. — Phục vụ: Vâng, có ngay ạ.`
     * Giải thích: Hỏi đã gọi món chưa → xin gợi ý → gợi ý → chọn món → xác nhận.
 
 ---
 
 #### NHÓM 16: 🆕 NGHE GIÁ TIỀN VÀ NHẬP SỐ (`nghe_gia_tien` — 3 Câu: Câu 98 → Câu 100)
-Người học nghe câu (giá **đã được đọc thành chữ**) và gõ giá bằng số (ví dụ `4,85`).
-98. **Câu 98**
+Người học nghe câu (giá **đã được đọc thành chữ**) và gõ giá bằng số. Đề bài thống nhất: `Nghe phát âm câu tiếng Đức và nhập số tiền bằng chữ số:` (không chứa ví dụ số để tránh lộ đáp án).
+98. **Câu 98**: *Câu 98: Nghe phát âm câu tiếng Đức và nhập số tiền bằng chữ số:*
     * `audio_text`: *"Das macht zusammen vier Euro fünfundachtzig."*
     * `price_cents`: `485`
-    * `accepted_answers`: `["4,85", "4.85", "4,85 €", "4,85€", "4,85 Euro"]`
+    * `accepted_answers`: `["4,85", "4.85", "4,85 €", "4.85 €", "4,85€", "4.85€", "4,85 Euro", "4.85 Euro"]`
     * Dịch nghĩa câu: *„Tổng cộng là bốn euro tám mươi lăm.“*
     * Giải thích: **`vier Euro fünfundachtzig` = 4,85 €**.
-99. **Câu 99**
+99. **Câu 99**: *Câu 99: Nghe phát âm câu tiếng Đức và nhập số tiền bằng chữ số:*
     * `audio_text`: *"Zwei Kilo Birnen kosten fünf Euro achtzig."*
     * `price_cents`: `580`
-    * `accepted_answers`: `["5,80", "5.80", "5,80 €", "5,80€", "5,80 Euro"]`
+    * `accepted_answers`: `["5,80", "5.80", "5,8", "5.8", "5,80 €", "5.80 €", "5,80€", "5.80€", "5,80 Euro", "5.80 Euro"]`
     * Dịch nghĩa câu: *„Hai ký lê giá năm euro tám mươi.“*
     * Giải thích: **`fünf Euro achtzig` = 5,80 €** *(đúng với 2 × 2,90 €)*.
-100. **Câu 100**
+100. **Câu 100**: *Câu 100: Nghe phát âm câu tiếng Đức và nhập số tiền bằng chữ số:*
      * `audio_text`: *"Die Dose Cola kostet ein Euro neunundzwanzig."*
      * `price_cents`: `129`
-     * `accepted_answers`: `["1,29", "1.29", "1,29 €", "1,29€", "1,29 Euro"]`
+     * `accepted_answers`: `["1,29", "1.29", "1,29 €", "1.29 €", "1,29€", "1.29€", "1,29 Euro", "1.29 Euro"]`
      * Dịch nghĩa câu: *„Lon cô-ca giá một euro hai mươi chín.“*
      * Giải thích: **`ein Euro neunundzwanzig` = 1,29 €**.
 
