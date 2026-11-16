@@ -45,6 +45,17 @@ function cleanVietnameseStopwords(str) {
 
     // Quy đổi từ đồng nghĩa tiếng Việt về token chuẩn
     const synonyms = [
+        [/\b(nửa\s+cân|500\s*g(?:am)?)\b/g, 'nửa ký'],
+        [/\b(kí|ki\s*lô\s*gam|ki-lô-gam|kilogam|kg|cân)\b/g, 'ký'],
+        [/\b1\b/g, 'một'],
+        [/\b2\b/g, 'hai'],
+        [/\b3\b/g, 'ba'],
+        [/\b4\b/g, 'bốn'],
+        [/\b5\b/g, 'năm'],
+        [/\b10\b/g, 'mười'],
+        [/\b(cô\s*ca|cô-ca|coca)\b/g, 'coca'],
+        [/\b(sô\s*cô\s*la|sô-cô-la|socola)\b/g, 'socola'],
+        [/\b(xà\s*lách|sa\s*lát|salad)\b/g, 'salad'],
         [/\b(phòng bếp|căn bếp|nhà bếp)\b/g, 'bếp'],
         [/\b(kệ sách|giá sách|tủ sách)\b/g, 'tủ sách'],
         [/\b(viết bi|cây bút bi|bút bi)\b/g, 'bút bi'],

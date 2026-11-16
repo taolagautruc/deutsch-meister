@@ -374,14 +374,14 @@
     <!-- ========================================================= -->
     <!-- JAVASCRIPT XỬ LÝ TƯƠNG TÁC, PHÁT ÂM & KẾT NỐI API PYTHON   -->
     <!-- ========================================================= -->
-    <script src="/static/js/audio_tts.js?v=20261115_v1"></script>
-    <script src="/static/js/number_trainer.js?v=20261115_v2"></script>
-    <script src="/static/js/city_map_svg.js?v=20261115_v1"></script>
-    <script src="/static/js/perfekt_svg.js?v=20261115_v1"></script>
-    <script src="/static/js/essen_svg.js?v=20261115_v1"></script>
-    <script src="/static/js/verbs_db.js?v=20261115_v1"></script>
-    <script src="/static/js/lexikon_db.js?v=20261115_v1"></script>
-    <script src="/static/js/arena_engine.js?v=20261115_v2"></script>
+    <script src="/static/js/audio_tts.js?v=20261116_v3"></script>
+    <script src="/static/js/number_trainer.js?v=20261116_v3"></script>
+    <script src="/static/js/city_map_svg.js?v=20261116_v3"></script>
+    <script src="/static/js/perfekt_svg.js?v=20261116_v3"></script>
+    <script src="/static/js/essen_svg.js?v=20261116_v3"></script>
+    <script src="/static/js/verbs_db.js?v=20261116_v3"></script>
+    <script src="/static/js/lexikon_db.js?v=20261116_v3"></script>
+    <script src="/static/js/arena_engine.js?v=20261116_v3"></script>
     <script>
         const LEVEL_META = {
             "A1": {
@@ -553,22 +553,19 @@
             }
         }
 
-        const CURRENT_SESSION_VERSION = '20261116_v1';
+        const CURRENT_SESSION_VERSION = '20261116_v3';
 
-        // Tự động xóa phiên làm bài cũ bị lỗi cấu hình đáp án cứng nhắc, nối ô, điền tạo câu hoặc đọc hiểu của Bài 9 và Bài 10
+        // Tự động xóa phiên làm bài cũ bị lưu đáp án sai hoặc mã nguồn cũ cho toàn bộ các bài học
         try {
-            ['dm_active_practice_session_guest_23', 'dm_active_practice_session_1_23'].forEach(k => {
-                const r = localStorage.getItem(k);
-                if (r && (!r.includes('cuộc tham quan') || !r.includes('quốc gia du lịch') || r.includes('Nối các cặp hoàn chỉnh') || !r.includes('Wir haben im Urlaub nhiều schöne Fotos') || r.includes('tiền tố') || !r.includes('Hôm qua tôi đã tham quan viện bảo tàng') || !r.includes('Letzten Sommer bin ich nach Berlin gereist') || r.includes('Barcelona') || !r.includes('"version":"20261114_v12"'))) {
-                    localStorage.removeItem(k);
+            for (let i = 0; i < localStorage.length; i++) {
+                const k = localStorage.key(i);
+                if (k && k.startsWith('dm_active_practice_session_')) {
+                    const r = localStorage.getItem(k);
+                    if (r && !r.includes('"version":"' + CURRENT_SESSION_VERSION + '"')) {
+                        localStorage.removeItem(k);
+                    }
                 }
-            });
-            ['dm_active_practice_session_guest_24', 'dm_active_practice_session_1_24'].forEach(k => {
-                const r = localStorage.getItem(k);
-                if (r && (!r.includes('hoa quả/trái cây') || !r.includes('Số Euro + \'Euro\'') || !r.includes('món ngũ cốc ăn sáng') || !r.includes('Ich hätte gern +') || !r.includes('"version":"20261116_v1"'))) {
-                    localStorage.removeItem(k);
-                }
-            });
+            }
         } catch(e) {}
 
         function loadActiveLessonSession(lessonId) {
@@ -1300,6 +1297,10 @@
 
             const lId = currentLesson.id;
             let activeSession = loadActiveLessonSession(lId);
+            if (activeSession && activeSession.version !== CURRENT_SESSION_VERSION) {
+                clearActiveLessonSession(lId);
+                activeSession = null;
+            }
             if (activeSession && lId === 22) {
                 const hasOutdatedL8 = (activeSession.version !== CURRENT_SESSION_VERSION) || (activeSession.allRenderExercises || []).some(ex => 
                     (ex.correct_answer && (ex.correct_answer.includes('để vào') || ex.correct_answer.includes('Xin lỗi Ngài'))) ||
@@ -1323,7 +1324,8 @@
             if (activeSession && (lId === 24 || (currentLesson && currentLesson.title && /bài 10\b/i.test(currentLesson.title)))) {
                 const hasOutdatedL10 = (activeSession.version !== CURRENT_SESSION_VERSION) || (activeSession.allRenderExercises || []).some(ex => 
                     (ex.extra_data && JSON.stringify(ex.extra_data).includes('"visual"')) ||
-                    (ex.explanation && (ex.explanation.includes('Phương án A') || ex.explanation.includes('Đáp án: "Tổng cộng') || ex.explanation.includes('Đáp án: "Ngài có sô') || ex.explanation.includes('từ hỏi là \'Welches\''))) ||
+                    (ex.correct_answer && ex.correct_answer.includes('ăn gạo nhiều hơn')) ||
+                    (ex.explanation && (ex.explanation.includes('Phương án A') || ex.explanation.includes('Đáp án: "Tổng cộng') || ex.explanation.includes('Đáp án: "Ngài có sô') || ex.explanation.includes('từ hỏi là \'Welches\'') || ex.explanation.includes('ăn gạo nhiều hơn'))) ||
                     (ex.question && (ex.question.includes('V1') || ex.question.includes('V4') || ex.question.includes('Quan sát') || ex.question.includes('(der Apfel, tân ngữ)') || ex.question.includes('(der Salat)') || ex.question.includes('(der Schinken)') || ex.question.includes('(das Brot)') || ex.question.includes('ở ngôi \'du\'') || ex.question.includes('Trái cây') || ex.question.includes('phù hợp về Giống') || ex.question.includes('ngôi \'er\'') || ex.question.includes('Bạn muốn xà lách nào') || ex.question.includes('ăn gạo nhiều hơn') || ex.question.includes('chú ý chữ hoa') || ex.question.includes('dạng của \'kosten\'') || ex.question.includes('Partizip II (ôn Bài 9)'))) ||
                     (ex.extra_data && JSON.stringify(ex.extra_data).includes('eine Flasche'))
                 );
@@ -1724,6 +1726,50 @@
                 .replace(/[.,!?;:\"\'„“”«»‘`’–—\-\(\)\[\]\{\}\/\\~]+/g, " ")
                 .replace(/\s+/g, " ")
                 .trim();
+        }
+
+        function normalizeVietnameseTranslation(str) {
+            if (!str || typeof str !== 'string') return '';
+            let s = str.trim().toLowerCase().normalize('NFC');
+
+            // Tách đơn vị đo viết liền với số (ví dụ: 2kg -> 2 kg, 500g -> 500 g)
+            s = s.replace(/(\d+)\s*(kg|g|gam)\b/gi, '$1 $2');
+
+            // Bỏ qua toàn bộ dấu câu và dấu gạch ngang phân cách hội thoại (-, –, —)
+            s = s.replace(/[.,!?;:\"\'„“”«»‘`’–—\-\(\)\[\]\{\}\/\\~]+/g, ' ');
+            s = s.replace(/\s+/g, ' ').trim();
+
+            // Quy đổi chính tả đơn vị đo lường (Bài 10 & toàn hệ thống)
+            s = s.replace(/\b(nửa\s+cân|500\s*g(?:am)?)\b/g, 'nửa ký');
+            s = s.replace(/\b(kí|ki\s*lô\s*gam|ki-lô-gam|kilogam|kg|cân)\b/g, 'ký');
+
+            // Tự động quy đổi tương đương giữa chữ số và chữ viết tiếng Việt
+            s = s.replace(/\b300\s*(?:m|mét|met)\b/g, 'ba trăm mét');
+            s = s.replace(/\bba\s+trăm\s*(?:m|mét|met)\b/g, 'ba trăm mét');
+            s = s.replace(/\b300\b/g, 'ba trăm');
+            s = s.replace(/\b20\b/g, 'hai mươi');
+            s = s.replace(/\b10\b/g, 'mười');
+            s = s.replace(/\bthứ\s*2\b/g, 'thứ hai');
+            s = s.replace(/\bthứ\s*1\b/g, 'thứ nhất');
+            s = s.replace(/\bthứ\s*một\b/g, 'thứ nhất');
+            s = s.replace(/\b1\b/g, 'một');
+            s = s.replace(/\b2\b/g, 'hai');
+            s = s.replace(/\b3\b/g, 'ba');
+            s = s.replace(/\b4\b/g, 'bốn');
+            s = s.replace(/\b5\b/g, 'năm');
+
+            // Quy đổi chính tả từ vay mượn
+            s = s.replace(/\b(cô\s*ca|cô-ca|coca)\b/g, 'coca');
+            s = s.replace(/\b(sô\s*cô\s*la|sô-cô-la|socola)\b/g, 'socola');
+            s = s.replace(/\b(xà\s*lách|sa\s*lát|salad)\b/g, 'salad');
+
+            // Đại từ & từ đồng nghĩa phổ biến
+            s = s.replace(/\b(chúng\s+mình|tụi\s+mình|bọn\s+mình|chúng\s+ta)\b/g, 'chúng tôi');
+            s = s.replace(/\b(mình|tớ)\b/g, 'tôi');
+            s = s.replace(/\b(các\s+cậu)\b/g, 'các bạn');
+            s = s.replace(/\b(cậu)\b/g, 'bạn');
+
+            return s.replace(/\s+/g, ' ').trim();
         }
 
         function normalizeGermanSlot(str) {

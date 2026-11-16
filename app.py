@@ -36,6 +36,7 @@ app.secret_key = os.environ.get("SECRET_KEY", "deutsch-meister-arena-2026-super-
 app.config['SESSION_COOKIE_HTTPONLY'] = True
 app.config['SESSION_COOKIE_SAMESITE'] = 'Lax'
 app.config['PERMANENT_SESSION_LIFETIME'] = timedelta(days=365)
+app.config['SEND_FILE_MAX_AGE_DEFAULT'] = 0
 app.json.ensure_ascii = False
 
 def ensure_db_initialized():
@@ -363,6 +364,10 @@ def ensure_db_initialized():
             ex_b10_c55 = cursor.fetchone()
             if not ex_b10_c55 or "hoa quả/trái cây" not in (ex_b10_c55["explanation"] or ''):
                 need_seed_b10 = True
+            cursor.execute("SELECT correct_answer FROM exercises WHERE lesson_id = ? AND question LIKE '%Câu 70%';", (b10_id,))
+            ex_b10_c70 = cursor.fetchone()
+            if not ex_b10_c70 or "ăn cơm nhiều hơn" not in (ex_b10_c70["correct_answer"] or ''):
+                need_seed_b10 = True
         if need_seed_b10:
             from lessons.a1.seed_a1_b10 import seed_lesson_10
             seed_lesson_10()
@@ -375,8 +380,8 @@ ensure_db_initialized()
 
 @app.after_request
 def add_cache_headers(response):
-    """Vô hiệu hóa bộ nhớ đệm HTTP cho trang chủ và API để học viên luôn nhận dữ liệu và mã nguồn mới nhất"""
-    if request.path == "/" or request.path.startswith("/api/"):
+    """Vô hiệu hóa bộ nhớ đệm HTTP cho trang chủ, API và static assets để học viên luôn nhận dữ liệu và mã nguồn mới nhất"""
+    if request.path == "/" or request.path.startswith("/api/") or request.path.startswith("/static/"):
         response.headers["Cache-Control"] = "no-cache, no-store, must-revalidate, max-age=0"
         response.headers["Pragma"] = "no-cache"
         response.headers["Expires"] = "0"
