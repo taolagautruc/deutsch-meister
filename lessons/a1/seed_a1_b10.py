@@ -1996,8 +1996,8 @@ def seed_lesson_10():
                 "type": "nghe_dien",
                 "question": "Câu 55: Nghe phát âm câu tiếng Đức và điền từ còn thiếu vào chỗ trống:",
                 "options": null,
-                "correct_answer": "welches",
-                "explanation": "'das Obst' là danh từ giống trung -> từ hỏi là 'Welches'.",
+                "correct_answer": "Welches",
+                "explanation": "'das Obst' (hoa quả/trái cây) là danh từ giống trung, đóng vai trò tân ngữ trực tiếp (Akkusativ) của động từ 'kaufst'. Với giống trung (das), từ hỏi 'welch-' luôn nhận đuôi '-es' -> „Welches Obst kaufst du am liebsten?“.",
                 "exp_reward": 10,
                 "extra_data": {
                         "audio_text": "Welches Obst kaufst du am liebsten?",
@@ -2005,8 +2005,8 @@ def seed_lesson_10():
                         "hint_vi": "Bạn thích mua loại hoa quả nào nhất?",
                         "translation": "Bạn thích mua loại hoa quả nào nhất?",
                         "accepted_answers": [
-                                "welches",
-                                "Welches"
+                                "Welches",
+                                "welches"
                         ]
                 }
         },
@@ -2015,13 +2015,13 @@ def seed_lesson_10():
                 "question": "Câu 56: Nghe phát âm câu tiếng Đức và điền từ còn thiếu vào chỗ trống:",
                 "options": null,
                 "correct_answer": "zwei",
-                "explanation": "Giá tiền 2,90 € phát âm là 'zwei Euro neunzig'.",
+                "explanation": "Mức giá 2,90 € trong tiếng Đức được đọc là 'zwei Euro neunzig' (Số Euro + 'Euro' + Số Cent, không đọc dấu phẩy Komma).",
                 "exp_reward": 10,
                 "extra_data": {
                         "audio_text": "Ein Kilo Birnen kostet zwei Euro neunzig.",
                         "display_sentence": "Ein Kilo Birnen kostet ___ Euro neunzig.",
-                        "hint_vi": "Một ký lê giá hai euro chín mươi.",
-                        "translation": "Một ký lê giá hai euro chín mươi.",
+                        "hint_vi": "Một ký lê giá hai euro chín mươi (2,90 €).",
+                        "translation": "Một ký lê giá hai euro chín mươi (2,90 €).",
                         "accepted_answers": [
                                 "zwei",
                                 "2"
@@ -2033,15 +2033,16 @@ def seed_lesson_10():
                 "question": "Câu 57: Nghe phát âm câu tiếng Đức và điền từ còn thiếu vào chỗ trống:",
                 "options": null,
                 "correct_answer": "mehr",
-                "explanation": "Có đối tượng so sánh 'als ich' -> Komparativ của 'viel' là 'mehr'.",
+                "explanation": "Trong câu có cấu trúc so sánh hơn với 'als ich' (hơn tôi), kết hợp với danh từ 'Gemüse' -> dùng dạng so sánh hơn (Komparativ) bất quy tắc của 'viel' là 'mehr'.",
                 "exp_reward": 10,
                 "extra_data": {
                         "audio_text": "Meine Schwester isst mehr Gemüse als ich.",
                         "display_sentence": "Meine Schwester isst ___ Gemüse als ich.",
-                        "hint_vi": "Chị tôi ăn rau củ nhiều hơn tôi.",
-                        "translation": "Chị tôi ăn rau củ nhiều hơn tôi.",
+                        "hint_vi": "Chị/em gái tôi ăn rau củ nhiều hơn tôi.",
+                        "translation": "Chị/em gái tôi ăn rau củ nhiều hơn tôi.",
                         "accepted_answers": [
-                                "mehr"
+                                "mehr",
+                                "Mehr"
                         ]
                 }
         },
@@ -2050,7 +2051,7 @@ def seed_lesson_10():
                 "question": "Câu 58: Nghe phát âm câu tiếng Đức và điền từ còn thiếu vào chỗ trống:",
                 "options": null,
                 "correct_answer": "besser",
-                "explanation": "Komparativ của 'gut' là 'besser'.",
+                "explanation": "Trong câu có liên từ 'als' (hơn) dùng để so sánh chất lượng bánh mì ở hai nơi -> dùng dạng so sánh hơn (Komparativ) bất quy tắc của 'gut' là 'besser'.",
                 "exp_reward": 10,
                 "extra_data": {
                         "audio_text": "Das Brot beim Bäcker ist besser als im Supermarkt.",
@@ -2058,7 +2059,8 @@ def seed_lesson_10():
                         "hint_vi": "Bánh mì ở tiệm bánh ngon hơn ở siêu thị.",
                         "translation": "Bánh mì ở tiệm bánh ngon hơn ở siêu thị.",
                         "accepted_answers": [
-                                "besser"
+                                "besser",
+                                "Besser"
                         ]
                 }
         },
@@ -2067,7 +2069,7 @@ def seed_lesson_10():
                 "question": "Câu 59: Nghe phát âm câu tiếng Đức và điền từ còn thiếu vào chỗ trống:",
                 "options": null,
                 "correct_answer": "Müsli",
-                "explanation": "'das Müsli' là món ngũ cốc ăn sáng.",
+                "explanation": "'das Müsli' là món ngũ cốc ăn sáng. Khi nói chung về thực phẩm ăn trong bữa ('esse ich Müsli mit Milch'), danh từ chỉ thức ăn không cần dùng mạo từ.",
                 "exp_reward": 10,
                 "extra_data": {
                         "audio_text": "Zum Frühstück esse ich Müsli mit Milch.",
@@ -2075,10 +2077,10 @@ def seed_lesson_10():
                         "hint_vi": "Vào bữa sáng tôi ăn ngũ cốc với sữa.",
                         "translation": "Vào bữa sáng tôi ăn ngũ cốc với sữa.",
                         "accepted_answers": [
-                                "müsli",
                                 "Müsli",
-                                "muesli",
-                                "Muesli"
+                                "müsli",
+                                "Muesli",
+                                "muesli"
                         ]
                 }
         },
@@ -2087,16 +2089,18 @@ def seed_lesson_10():
                 "question": "Câu 60: Nghe phát âm câu tiếng Đức và điền từ còn thiếu vào chỗ trống:",
                 "options": null,
                 "correct_answer": "hätte",
-                "explanation": "Cụm câu mua hàng lịch sự cố định 'Ich hätte gern …'.",
+                "explanation": "Để gọi món hoặc hỏi mua hàng một cách lịch sự trong tiếng Đức, ta dùng cấu trúc cố định „Ich hätte gern + [Món hàng ở Akkusativ]“ (Tôi muốn lấy/xin mua...).",
                 "exp_reward": 10,
                 "extra_data": {
                         "audio_text": "Was darf es sein? Ich hätte gern zwei Kilo Äpfel.",
                         "display_sentence": "Was darf es sein? Ich ___ gern zwei Kilo Äpfel.",
-                        "hint_vi": "Ngài cần gì ạ? Tôi muốn lấy hai ký táo.",
-                        "translation": "Ngài cần gì ạ? Tôi muốn lấy hai ký táo.",
+                        "hint_vi": "Quý khách muốn mua gì ạ? — Cho tôi lấy hai ký táo.",
+                        "translation": "Quý khách muốn mua gì ạ? — Cho tôi lấy hai ký táo.",
                         "accepted_answers": [
                                 "hätte",
-                                "haette"
+                                "haette",
+                                "Hätte",
+                                "Haette"
                         ]
                 }
         },
@@ -2105,13 +2109,13 @@ def seed_lesson_10():
                 "question": "Câu 61: Nghe phát âm câu tiếng Đức và điền từ còn thiếu vào chỗ trống:",
                 "options": null,
                 "correct_answer": "achtzig",
-                "explanation": "9,80 € đọc là 'neun Euro achtzig'.",
+                "explanation": "Khi đọc giá tiền lẻ bằng tiếng Đức, phần xu (80 Cent) được đọc ngay sau từ 'Euro' là 'achtzig' -> 9,80 € đọc là 'neun Euro achtzig'.",
                 "exp_reward": 10,
                 "extra_data": {
                         "audio_text": "Das macht zusammen neun Euro achtzig.",
                         "display_sentence": "Das macht zusammen neun Euro ___.",
-                        "hint_vi": "Tổng cộng là chín euro tám mươi.",
-                        "translation": "Tổng cộng là chín euro tám mươi.",
+                        "hint_vi": "Tổng cộng là chín euro tám mươi (9,80 €).",
+                        "translation": "Tổng cộng là chín euro tám mươi (9,80 €).",
                         "accepted_answers": [
                                 "achtzig",
                                 "80"
@@ -2123,7 +2127,7 @@ def seed_lesson_10():
                 "question": "Câu 62: Nghe phát âm câu tiếng Đức và điền từ còn thiếu vào chỗ trống:",
                 "options": null,
                 "correct_answer": "gekocht",
-                "explanation": "Partizip II của 'kochen' là 'gekocht', dùng với trợ động từ 'haben'.",
+                "explanation": "Trạng từ 'Gestern' (hôm qua) và trợ động từ 'haben' ở Vị trí 2 cho biết câu ở thì quá khứ hoàn thành (Perfekt). Vị trí cuối câu điền Partizip II của động từ có quy tắc 'kochen' (nấu) là 'gekocht' (ge- + koch + -t).",
                 "exp_reward": 10,
                 "extra_data": {
                         "audio_text": "Gestern haben wir Nudeln gekocht.",
@@ -2131,7 +2135,8 @@ def seed_lesson_10():
                         "hint_vi": "Hôm qua chúng tôi đã nấu mì.",
                         "translation": "Hôm qua chúng tôi đã nấu mì.",
                         "accepted_answers": [
-                                "gekocht"
+                                "gekocht",
+                                "Gekocht"
                         ]
                 }
         },
