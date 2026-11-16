@@ -602,6 +602,13 @@ function hasVietnameseChars(str) {
     return /[àáạảãâầấậẩẫăằắặẳẵèéẹẻẽêềếệểễìíịỉĩòóọỏõôồốộổỗơờớợởỡùúụủũưừứựửữỳýỵỷỹđ]/i.test(str || '');
 }
 
+function replaceVnWord(text, pattern, replacement) {
+    return (' ' + text + ' ')
+        .replace(new RegExp('(^|\\s)(?:' + pattern + ')(?=\\s|$)', 'gi'), ' ' + replacement + ' ')
+        .replace(/\s+/g, ' ')
+        .trim();
+}
+
 function normalizeVietnameseTranslation(str) {
     if (!str || typeof str !== 'string') return '';
     let s = str.trim().toLowerCase().normalize('NFC');
@@ -622,28 +629,37 @@ function normalizeVietnameseTranslation(str) {
     s = s.replace(/\s+/g, ' ').trim();
 
     // Quy đổi chính tả đơn vị đo lường (Bài 10 & toàn hệ thống)
-    s = s.replace(/\b(nửa\s+cân|500\s*g(?:am)?)\b/g, 'nửa ký');
-    s = s.replace(/\b(kí|ki\s*lô\s*gam|ki-lô-gam|kilogam|kg|cân)\b/g, 'ký');
+    s = replaceVnWord(s, 'nửa\\s+cân|500\\s*g(?:am|ram)?|1\\/2\\s*(?:cân|kg|kí|ký)', 'nửa ký');
+    s = replaceVnWord(s, 'kí|ki\\s*lô\\s*gam|ki-lô-gam|ki\\s*lo\\s*gam|ki-lo-gam|kilôgam|kilogam|kg|cân', 'ký');
 
     // Tự động quy đổi tương đương giữa chữ số và chữ viết tiếng Việt
-    s = s.replace(/\b300\s*(?:m|mét|met)\b/g, 'ba trăm mét');
-    s = s.replace(/\bba\s+trăm\s*(?:m|mét|met)\b/g, 'ba trăm mét');
-    s = s.replace(/\b300\b/g, 'ba trăm');
-    s = s.replace(/\b20\b/g, 'hai mươi');
-    s = s.replace(/\b10\b/g, 'mười');
-    s = s.replace(/\bthứ\s*2\b/g, 'thứ hai');
-    s = s.replace(/\bthứ\s*1\b/g, 'thứ nhất');
-    s = s.replace(/\bthứ\s*một\b/g, 'thứ nhất');
-    s = s.replace(/\b1\b/g, 'một');
-    s = s.replace(/\b2\b/g, 'hai');
-    s = s.replace(/\b3\b/g, 'ba');
-    s = s.replace(/\b4\b/g, 'bốn');
-    s = s.replace(/\b5\b/g, 'năm');
+    s = replaceVnWord(s, '300\\s*(?:m|mét|met)', 'ba trăm mét');
+    s = replaceVnWord(s, 'ba\\s+trăm\\s*(?:m|mét|met)', 'ba trăm mét');
+    s = replaceVnWord(s, '300', 'ba trăm');
+    s = replaceVnWord(s, '20', 'hai mươi');
+    s = replaceVnWord(s, '10', 'mười');
+    s = replaceVnWord(s, 'thứ\\s*2', 'thứ hai');
+    s = replaceVnWord(s, 'thứ\\s*1|thứ\\s*một', 'thứ nhất');
+    s = replaceVnWord(s, '1', 'một');
+    s = replaceVnWord(s, '2', 'hai');
+    s = replaceVnWord(s, '3', 'ba');
+    s = replaceVnWord(s, '4', 'bốn');
+    s = replaceVnWord(s, '5', 'năm');
 
     // Quy đổi chính tả từ vay mượn
-    s = s.replace(/\b(cô\s*ca|cô-ca|coca)\b/g, 'coca');
-    s = s.replace(/\b(sô\s*cô\s*la|sô-cô-la|socola)\b/g, 'socola');
-    s = s.replace(/\b(xà\s*lách|sa\s*lát|salad)\b/g, 'salad');
+    s = replaceVnWord(s, 'cô\\s*ca|co\\s*ca|cô-ca|co-ca|coca', 'coca');
+    s = replaceVnWord(s, 'sô\\s*cô\\s*la|so\\s*co\\s*la|sô-cô-la|so-co-la|socola', 'socola');
+    s = replaceVnWord(s, 'xà\\s*lách|xa\\s*lách|sa\\s*lát|sa\\s*lat|salad', 'salad');
+
+    // Nước / Nước lọc
+    s = replaceVnWord(s, 'nước\\s+lọc', 'nước');
+
+    // Chuẩn hóa cụm hội thoại mua sắm (Câu 73 Bài 10)
+    s = replaceVnWord(s, 'chào\\s+buổi\\s+trưa|chào\\s+ngày\\s+mới|chào\\s+bạn', 'xin chào');
+    s = replaceVnWord(s, 'tôi\\s+muốn\\s+mua|cho\\s+tôi\\s+lấy|cho\\s+tôi', 'tôi muốn lấy');
+    s = replaceVnWord(s, 'được\\s+chứ', 'vâng');
+    s = replaceVnWord(s, 'ngài\\s+cần\\s+gì\\s+nữa\\s+không|quý\\s+khách\\s+cần\\s+gì\\s+nữa\\s+không|quý\\s+khách\\s+cần\\s+gì\\s+thêm\\s+nữa\\s+không|bạn\\s+cần\\s+gì\\s+nữa\\s+không|còn\\s+cần\\s+gì\\s+nữa\\s+không|còn\\s+gì\\s+nữa\\s+không', 'quý khách cần gì thêm nữa không');
+    s = replaceVnWord(s, 'tổng\\s+cộng\\s+hết\\s+bao\\s+nhiêu|tổng\\s+cộng\\s+bao\\s+nhiêu|tất\\s+cả\\s+hết\\s+bao\\s+nhiêu|tất\\s+cả\\s+bao\\s+nhiêu\\s+tiền|tất\\s+cả\\s+bao\\s+nhiêu|hết\\s+bao\\s+nhiêu\\s+tiền|hết\\s+bao\\s+nhiêu\\s+vậy|hết\\s+bao\\s+nhiêu', 'tổng cộng hết bao nhiêu');
 
     // Tuyến xe buýt 200
     s = s.replace(/\b(?:tuyến\s+)?xe\s+buýt\s+(?:tuyến\s+)?(?:số\s+)?200\b/g, 'xe buýt 200');
