@@ -2448,7 +2448,7 @@ def seed_lesson_10():
                 "question": "Câu 75: Sắp xếp các từ xáo trộn thành câu hoàn chỉnh:",
                 "options": null,
                 "correct_answer": "Welchen Fisch nimmst du?",
-                "explanation": "Cụm từ hỏi 'Welchen Fisch' ở vị trí ①, động từ 'nimmst' ở vị trí ②, chủ ngữ 'du' ở vị trí ③. -> Đáp án: \"Welchen Fisch nimmst du?\"",
+                "explanation": "'der Fisch' (giống đực) là tân ngữ trực tiếp (Akkusativ) của động từ 'nehmen' nên từ hỏi biến đổi thành 'Welchen Fisch' đứng ở Vị trí 1, động từ chia 'nimmst' đứng ở Vị trí 2 và chủ ngữ 'du' ở Vị trí 3.",
                 "exp_reward": 15,
                 "extra_data": {
                         "tokens": [
@@ -2459,7 +2459,8 @@ def seed_lesson_10():
                         ],
                         "translation": "Bạn lấy con cá nào?",
                         "accepted_answers": [
-                                "Welchen Fisch nimmst du?"
+                                "Welchen Fisch nimmst du?",
+                                "Welchen Fisch nimmst du"
                         ]
                 }
         },
@@ -2468,7 +2469,7 @@ def seed_lesson_10():
                 "question": "Câu 76: Sắp xếp các từ xáo trộn thành câu hoàn chỉnh:",
                 "options": null,
                 "correct_answer": "Ich esse lieber Reis als Nudeln.",
-                "explanation": "Cấu trúc so sánh sở thích: 'Ich esse lieber Reis als Nudeln.' (hoặc đảo ngữ 'Lieber esse ich Reis als Nudeln.').",
+                "explanation": "Cấu trúc so sánh sở thích dùng 'lieber ... als ...' (Komparativ của 'gern'), động từ chia 'esse' luôn giữ ở Vị trí 2: „Ich esse lieber Reis als Nudeln.“ (hoặc „Ich esse Nudeln lieber als Reis.“).",
                 "exp_reward": 15,
                 "extra_data": {
                         "tokens": [
@@ -2479,11 +2480,24 @@ def seed_lesson_10():
                                 "als",
                                 "Nudeln"
                         ],
-                        "translation": "Tôi thích ăn cơm hơn mì.",
+                        "translation": "Tôi thích ăn cơm hơn mì (hoặc: Tôi thích ăn mì hơn cơm).",
                         "accepted_answers": [
                                 "Ich esse lieber Reis als Nudeln.",
+                                "Ich esse lieber Reis als Nudeln",
                                 "Ich esse Reis lieber als Nudeln.",
-                                "Lieber esse ich Reis als Nudeln."
+                                "Ich esse Reis lieber als Nudeln",
+                                "Ich esse lieber Nudeln als Reis.",
+                                "Ich esse lieber Nudeln als Reis",
+                                "Ich esse Nudeln lieber als Reis.",
+                                "Ich esse Nudeln lieber als Reis",
+                                "Lieber esse ich Reis als Nudeln.",
+                                "Lieber esse ich Reis als Nudeln",
+                                "Lieber esse ich Nudeln als Reis.",
+                                "Lieber esse ich Nudeln als Reis",
+                                "Reis esse ich lieber als Nudeln.",
+                                "Reis esse ich lieber als Nudeln",
+                                "Nudeln esse ich lieber als Reis.",
+                                "Nudeln esse ich lieber als Reis"
                         ]
                 }
         },
@@ -2492,7 +2506,7 @@ def seed_lesson_10():
                 "question": "Câu 77: Sắp xếp các từ xáo trộn thành câu hoàn chỉnh:",
                 "options": null,
                 "correct_answer": "Am meisten kauft meine Mutter Obst.",
-                "explanation": "Nếu 'Am meisten' đứng đầu câu thì động từ 'kauft' ở vị trí ②, chủ ngữ 'meine Mutter' ở vị trí ③. -> Đáp án: \"Am meisten kauft meine Mutter Obst.\"",
+                "explanation": "Cụm trạng từ so sánh nhất 'Am meisten' (nhiều nhất) đứng đầu câu ở Vị trí 1 để nhấn mạnh nên động từ chia 'kauft' bắt buộc đứng ngay ở Vị trí 2, sau đó mới đến chủ ngữ 'meine Mutter' ở Vị trí 3.",
                 "exp_reward": 15,
                 "extra_data": {
                         "tokens": [
@@ -2504,7 +2518,11 @@ def seed_lesson_10():
                         "translation": "Mẹ tôi mua hoa quả nhiều nhất.",
                         "accepted_answers": [
                                 "Am meisten kauft meine Mutter Obst.",
-                                "Meine Mutter kauft am meisten Obst."
+                                "Am meisten kauft meine Mutter Obst",
+                                "Meine Mutter kauft am meisten Obst.",
+                                "Meine Mutter kauft am meisten Obst",
+                                "Meine Mutter kauft Obst am meisten.",
+                                "Meine Mutter kauft Obst am meisten"
                         ]
                 }
         },
@@ -2513,7 +2531,7 @@ def seed_lesson_10():
                 "question": "Câu 78: Sắp xếp các từ xáo trộn thành câu hoàn chỉnh:",
                 "options": null,
                 "correct_answer": "Wie viel kostet der Käse?",
-                "explanation": "'Wie viel' ở vị trí ①, 'kostet' ở vị trí ② (chủ ngữ số ít 'der Käse'). -> Đáp án: \"Wie viel kostet der Käse?\"",
+                "explanation": "Cụm từ để hỏi 'Wie viel' đứng ở Vị trí 1, động từ 'kostet' đứng ở Vị trí 2 và chia ở ngôi thứ 3 số ít theo chủ ngữ 'der Käse'.",
                 "exp_reward": 15,
                 "extra_data": {
                         "tokens": [
@@ -2523,7 +2541,10 @@ def seed_lesson_10():
                         ],
                         "translation": "Phô mai giá bao nhiêu?",
                         "accepted_answers": [
-                                "Wie viel kostet der Käse?"
+                                "Wie viel kostet der Käse?",
+                                "Wie viel kostet der Käse",
+                                "Wieviel kostet der Käse?",
+                                "Wieviel kostet der Käse"
                         ]
                 }
         },
@@ -2532,7 +2553,7 @@ def seed_lesson_10():
                 "question": "Câu 79: Sắp xếp các từ xáo trộn thành câu hoàn chỉnh:",
                 "options": null,
                 "correct_answer": "Die Birnen sind billiger als die Erdbeeren.",
-                "explanation": "Cấu trúc so sánh hơn: 'Die Birnen sind billiger als die Erdbeeren.'",
+                "explanation": "Cấu trúc so sánh hơn với động từ 'sein': Chủ ngữ + 'sind' (Vị trí 2) + tính từ so sánh hơn 'billiger' + 'als' + đối tượng so sánh. Cả hai chiều „Die Birnen sind billiger als die Erdbeeren.“ và „Die Erdbeeren sind billiger als die Birnen.“ đều đúng ngữ pháp.",
                 "exp_reward": 15,
                 "extra_data": {
                         "tokens": [
@@ -2542,9 +2563,12 @@ def seed_lesson_10():
                                 "sind",
                                 "die Erdbeeren"
                         ],
-                        "translation": "Những quả lê rẻ hơn những quả dâu tây.",
+                        "translation": "Những quả lê rẻ hơn những quả dâu tây (hoặc ngược lại).",
                         "accepted_answers": [
-                                "Die Birnen sind billiger als die Erdbeeren."
+                                "Die Birnen sind billiger als die Erdbeeren.",
+                                "Die Birnen sind billiger als die Erdbeeren",
+                                "Die Erdbeeren sind billiger als die Birnen.",
+                                "Die Erdbeeren sind billiger als die Birnen"
                         ]
                 }
         },
