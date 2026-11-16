@@ -980,18 +980,18 @@ ARENA_DATA_BY_LESSON = {
                 "audio_text": "Welches Obst kaufst du am liebsten?",
                 "display_sentence": "___ Obst kaufst du am liebsten?",
                 "hint_vi": "Bạn thích mua loại hoa quả nào nhất?",
-                "accepted_answers": ["welches", "Welches"]
+                "accepted_answers": ["Welches", "welches"]
             },
             {
                 "audio_text": "Meine Schwester isst mehr Gemüse als ich.",
                 "display_sentence": "Meine Schwester isst ___ Gemüse als ich.",
-                "hint_vi": "Chị tôi ăn rau củ nhiều hơn tôi.",
-                "accepted_answers": ["mehr"]
+                "hint_vi": "Chị/em gái tôi ăn rau củ nhiều hơn tôi.",
+                "accepted_answers": ["mehr", "Mehr"]
             },
             {
                 "audio_text": "Ein Kilo Birnen kostet zwei Euro neunzig.",
                 "display_sentence": "Ein Kilo Birnen kostet ___ Euro neunzig.",
-                "hint_vi": "Một ký lê giá hai euro chín mươi.",
+                "hint_vi": "Một ký lê giá hai euro chín mươi (2,90 €).",
                 "accepted_answers": ["zwei", "2"]
             }
         ],
