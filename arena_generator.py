@@ -971,7 +971,7 @@ ARENA_DATA_BY_LESSON = {
             ("Hai lít sữa giá bao nhiêu?", ["Wie viel kosten zwei Liter Milch?", "Was kosten zwei Liter Milch?"])
         ],
         "sentences_dv": [
-            ("In Vietnam essen die Menschen mehr Reis als Brot.", ["Ở Việt Nam mọi người ăn gạo nhiều hơn bánh mì", "Ở Việt Nam người ta ăn cơm nhiều hơn bánh mì"]),
+            ("In Vietnam essen die Menschen mehr Reis als Brot.", ["Ở Việt Nam mọi người ăn cơm nhiều hơn bánh mì", "Ở Việt Nam người ta ăn cơm nhiều hơn bánh mì", "Ở Việt Nam mọi người ăn gạo nhiều hơn bánh mì"]),
             ("Am meisten kaufe ich Obst und Gemüse auf dem Markt.", ["Tôi mua nhiều nhất là hoa quả và rau củ ở chợ", "Tôi mua hoa quả và rau củ ở chợ nhiều nhất"]),
             ("Das macht zusammen vier Euro fünfzig.", ["Tổng cộng là bốn euro năm mươi", "Tất cả là bốn euro năm mươi"])
         ],
@@ -999,22 +999,22 @@ ARENA_DATA_BY_LESSON = {
             {
                 "question": "Điền vào 2 chỗ trống để hoàn thành câu hỏi và đáp:",
                 "display_frame": "[1] Salat möchten Sie? — [2] Salat, bitte.",
-                "word_bank_hints": ["Welchen", "Den", "Welcher", "Der", "Welche"],
-                "accepted_answers": ["Welchen / Den", "welchen / den", "Welchen/Den", "welchen/den"],
-                "explanation": "der Salat là tân ngữ Akkusativ -> Welchen ... Den Salat, bitte."
+                "word_bank_hints": ["Welchen", "Den", "Welcher", "Der", "Welche", "Diesen"],
+                "accepted_answers": ["Welchen / Den", "welchen / den", "Welchen/Den", "welchen/den", "welchen den", "Welchen Den", "welchen / diesen", "Welchen / Diesen", "welchen diesen", "Welchen Diesen"],
+                "explanation": "Danh từ 'der Salat' là tân ngữ Akkusativ -> 'Welchen Salat möchten Sie? — Den Salat, bitte.'"
             },
             {
                 "question": "Điền vào 2 chỗ trống để so sánh giá cả:",
                 "display_frame": "Die Möhren sind heute [1] [2] die Tomaten.",
-                "word_bank_hints": ["billiger", "als", "teurer", "wie", "mehr"],
-                "accepted_answers": ["billiger / als", "billiger/als"],
+                "word_bank_hints": ["billiger", "als", "teurer", "wie", "mehr", "günstiger"],
+                "accepted_answers": ["billiger / als", "billiger/als", "billiger als", "günstiger / als", "günstiger als"],
                 "explanation": "billig -> billiger, nối bằng als: billiger als."
             },
             {
                 "question": "Điền vào 2 chỗ trống để so sánh số lượng:",
                 "display_frame": "Ich esse [1] Reis [2] Nudeln.",
                 "word_bank_hints": ["mehr", "als", "viel", "wie", "lieber"],
-                "accepted_answers": ["mehr / als", "mehr/als"],
+                "accepted_answers": ["mehr / als", "mehr/als", "mehr als"],
                 "explanation": "So sánh số lượng với danh từ: mehr ... als."
             }
         ]

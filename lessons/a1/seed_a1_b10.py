@@ -1827,17 +1827,26 @@ def seed_lesson_10():
         },
         {
                 "type": "dien_tao_cau",
-                "question": "Câu 47: Điền 2 từ để hoàn thành hội thoại: „Bạn muốn xà lách nào? — Xin cho xà lách này.“ (ngăn cách bởi dấu /): [1] Salat möchten Sie? — [2] Salat, bitte.",
+                "question": "Câu 47: Điền 2 từ để hoàn thành hội thoại: „Quý khách muốn món xà lách nào? — Cho tôi phần xà lách đó nhé.“ (ngăn cách bởi dấu /): [1] Salat möchten Sie? — [2] Salat, bitte.",
                 "options": null,
-                "correct_answer": "welchen / den",
-                "explanation": "'der Salat' là tân ngữ -> Akkusativ -> câu hỏi 'Welchen', câu trả lời 'Den'. Đáp án: 'welchen / den'.",
+                "correct_answer": "Welchen / Den",
+                "explanation": "Danh từ 'der Salat' (giống đực) đóng vai trò là tân ngữ trực tiếp (Akkusativ) của động từ 'möchten' (và động từ lược bỏ ở câu trả lời). Do đó, ở Cách 4 (Akkusativ), từ hỏi 'welch-' nhận đuôi '-en' ('Welchen Salat...?') và mạo từ xác định trong câu trả lời cũng đổi từ 'der' sang 'den' ('Den Salat, bitte.' - hoặc dùng đại từ chỉ định 'Diesen Salat, bitte.').",
                 "exp_reward": 10,
                 "extra_data": {
-                        "translation": "Bạn muốn xà lách nào? — Xin cho xà lách này.",
+                        "translation": "Quý khách muốn món xà lách nào? — Cho tôi phần xà lách đó nhé.",
                         "accepted_answers": [
-                                "welchen / den",
                                 "Welchen / Den",
-                                "welchen/den"
+                                "welchen / den",
+                                "Welchen/Den",
+                                "welchen/den",
+                                "Welchen Den",
+                                "welchen den",
+                                "Welchen / Diesen",
+                                "welchen / diesen",
+                                "Welchen/Diesen",
+                                "welchen/diesen",
+                                "Welchen Diesen",
+                                "welchen diesen"
                         ]
                 }
         },
@@ -1846,28 +1855,39 @@ def seed_lesson_10():
                 "question": "Câu 48: Điền 2 từ để hoàn thành câu: „Hôm nay cà rốt rẻ hơn cà chua.“ (ngăn cách bởi dấu /): Die Möhren sind heute [1] [2] die Tomaten.",
                 "options": null,
                 "correct_answer": "billiger / als",
-                "explanation": "Komparativ của 'billig' là 'billiger', nối với đối tượng so sánh bằng 'als'. Đáp án: 'billiger / als'.",
+                "explanation": "Để diễn tả phép so sánh hơn (Komparativ) của tính từ 'billig' (rẻ), ta thêm đuôi '-er' vào gốc tính từ -> 'billiger' và dùng liên từ 'als' (hơn) đứng trước đối tượng so sánh 'die Tomaten'.",
                 "exp_reward": 10,
                 "extra_data": {
                         "translation": "Hôm nay cà rốt rẻ hơn cà chua.",
                         "accepted_answers": [
                                 "billiger / als",
-                                "billiger/als"
+                                "billiger/als",
+                                "billiger als",
+                                "Billiger / als",
+                                "Billiger als",
+                                "günstiger / als",
+                                "günstiger/als",
+                                "günstiger als",
+                                "Günstiger / als",
+                                "Günstiger als"
                         ]
                 }
         },
         {
                 "type": "dien_tao_cau",
-                "question": "Câu 49: Điền 2 từ để hoàn thành câu: „Tôi ăn gạo nhiều hơn mì.“ (ngăn cách bởi dấu /): Ich esse [1] Reis [2] Nudeln.",
+                "question": "Câu 49: Điền 2 từ để hoàn thành câu: „Tôi ăn cơm nhiều hơn mì.“ (ngăn cách bởi dấu /): Ich esse [1] Reis [2] Nudeln.",
                 "options": null,
                 "correct_answer": "mehr / als",
-                "explanation": "Cấu trúc so sánh số lượng 'mehr … als'. Đáp án: 'mehr / als'.",
+                "explanation": "Khi so sánh số lượng nhiều hơn giữa hai danh từ ('Reis' và 'Nudeln'), tiếng Đức dùng dạng so sánh hơn bất quy tắc của 'viel' là 'mehr' kết hợp với liên từ 'als' -> cấu trúc 'mehr ... als ...'.",
                 "exp_reward": 10,
                 "extra_data": {
-                        "translation": "Tôi ăn gạo nhiều hơn mì.",
+                        "translation": "Tôi ăn cơm nhiều hơn mì.",
                         "accepted_answers": [
                                 "mehr / als",
-                                "mehr/als"
+                                "mehr/als",
+                                "mehr als",
+                                "Mehr / als",
+                                "Mehr als"
                         ]
                 }
         },
@@ -1876,37 +1896,48 @@ def seed_lesson_10():
                 "question": "Câu 50: Điền 2 từ để hoàn thành câu: „Tôi thích ăn kem hơn bánh ngọt.“ (ngăn cách bởi dấu /): Ich esse [1] Eis [2] Kuchen.",
                 "options": null,
                 "correct_answer": "lieber / als",
-                "explanation": "Cấu trúc 'lieber … als' (so sánh sở thích, Komparativ của 'gern'). Đáp án: 'lieber / als'.",
+                "explanation": "Để diễn tả sở thích ăn/uống món gì hơn món gì ('thích ... hơn'), ta dùng dạng so sánh hơn (Komparativ) của trạng từ 'gern' là 'lieber' đi kèm liên từ 'als' -> 'Ich esse lieber Eis als Kuchen.'",
                 "exp_reward": 10,
                 "extra_data": {
                         "translation": "Tôi thích ăn kem hơn bánh ngọt.",
                         "accepted_answers": [
                                 "lieber / als",
-                                "lieber/als"
+                                "lieber/als",
+                                "lieber als",
+                                "Lieber / als",
+                                "Lieber als"
                         ]
                 }
         },
         {
                 "type": "dien_tao_cau",
-                "question": "Câu 51: Điền 2 từ để hoàn thành câu: „Anna nấu ăn ngon hơn anh trai của cô ấy.“ (ngăn cách bởi dấu /): Anna kocht [1] [2] ihr Bruder.",
+                "question": "Câu 51: Điền 2 từ để hoàn thành câu: „Anna nấu ăn giỏi (ngon) hơn anh trai của cô ấy.“ (ngăn cách bởi dấu /): Anna kocht [1] [2] ihr Bruder.",
                 "options": null,
                 "correct_answer": "besser / als",
-                "explanation": "Komparativ của 'gut' là 'besser'; so sánh hơn dùng 'als'. Đáp án: 'besser / als'.",
+                "explanation": "Khi nói về chất lượng hoặc kỹ năng làm việc gì tốt/giỏi hơn ('gut kochen'), ta dùng dạng so sánh hơn bất quy tắc của 'gut' là 'besser' kết hợp với liên từ 'als' -> 'besser als'.",
                 "exp_reward": 10,
                 "extra_data": {
-                        "translation": "Anna nấu ăn ngon hơn anh trai của cô ấy.",
+                        "translation": "Anna nấu ăn giỏi (ngon) hơn anh trai của cô ấy.",
                         "accepted_answers": [
                                 "besser / als",
-                                "besser/als"
+                                "besser/als",
+                                "besser als",
+                                "Besser / als",
+                                "Besser als",
+                                "leckerer / als",
+                                "leckerer/als",
+                                "leckerer als",
+                                "Leckerer / als",
+                                "Leckerer als"
                         ]
                 }
         },
         {
                 "type": "dien_tao_cau",
-                "question": "Câu 52: Điền 2 từ để hoàn thành câu (chú ý chữ hoa đầu câu): „Tôi thích ăn cá nhất.“ (ngăn cách bởi dấu /): [1] [2] esse ich Fisch.",
+                "question": "Câu 52: Điền 2 từ để hoàn thành câu: „Tôi thích ăn cá nhất.“ (ngăn cách bởi dấu /): [1] [2] esse ich Fisch.",
                 "options": null,
                 "correct_answer": "Am / liebsten",
-                "explanation": "Superlativ của 'gern' là 'am liebsten', đứng đầu câu viết hoa 'Am liebsten esse ich Fisch.' Đáp án: 'Am / liebsten' (hoặc 'am / liebsten').",
+                "explanation": "Dạng so sánh nhất (Superlativ) của 'gern' để chỉ sở thích cao nhất là 'am liebsten'. Khi đưa cụm 'Am liebsten' lên đầu câu (Vị trí 1), động từ chia 'esse' đứng ở Vị trí 2 và chủ ngữ 'ich' đảo ra Vị trí 3 -> „Am liebsten esse ich Fisch.“",
                 "exp_reward": 10,
                 "extra_data": {
                         "translation": "Tôi thích ăn cá nhất.",
@@ -1914,37 +1945,50 @@ def seed_lesson_10():
                                 "Am / liebsten",
                                 "am / liebsten",
                                 "am/liebsten",
-                                "Am/liebsten"
+                                "Am/liebsten",
+                                "Am liebsten",
+                                "am liebsten"
                         ]
                 }
         },
         {
                 "type": "dien_tao_cau",
-                "question": "Câu 53: Điền 2 dạng của 'kosten' (ngăn cách bởi dấu /): „Một ký táo giá 2,40 euro. Hai ký giá 4,80 euro.“: Ein Kilo Äpfel [1] 2,40 €. Zwei Kilo [2] 4,80 €.",
+                "question": "Câu 53: Điền 2 từ để hoàn thành câu: „Một ký táo giá 2,40 euro. Hai ký giá 4,80 euro.“ (ngăn cách bởi dấu /): Ein Kilo Äpfel [1] 2,40 €. Zwei Kilo [2] 4,80 €.",
                 "options": null,
                 "correct_answer": "kostet / kosten",
-                "explanation": "'ein Kilo Äpfel' là số ít -> 'kostet'; 'zwei Kilo' là số nhiều -> 'kosten'. Đáp án: 'kostet / kosten'.",
+                "explanation": "Động từ chỉ giá cả là 'kosten' (có giá). Ở câu đầu, chủ ngữ 'Ein Kilo Äpfel' có trung tâm là đơn vị đo số ít ('ein Kilo') nên động từ chia ngôi thứ 3 số ít là 'kostet'. Ở câu sau, dù danh từ đơn vị đo 'Kilo' giữ nguyên không thêm đuôi số nhiều sau số đếm 'zwei', nhưng cụm 'Zwei Kilo' mang nghĩa số nhiều (2 ký) nên động từ chia ở ngôi thứ 3 số nhiều là 'kosten'.",
                 "exp_reward": 10,
                 "extra_data": {
                         "translation": "Một ký táo giá 2,40 euro. Hai ký giá 4,80 euro.",
                         "accepted_answers": [
                                 "kostet / kosten",
-                                "kostet/kosten"
+                                "kostet/kosten",
+                                "kostet kosten",
+                                "Kostet / kosten",
+                                "Kostet kosten"
                         ]
                 }
         },
         {
                 "type": "dien_tao_cau",
-                "question": "Câu 54: Điền 2 Partizip II (ôn Bài 9, ngăn cách bởi dấu /): „Hôm qua tôi đã mua rau củ ở chợ và đã thử hoa quả.“: Gestern habe ich auf dem Markt Gemüse [1] und Obst [2].",
+                "question": "Câu 54: Điền 2 từ để hoàn thành câu: „Hôm qua tôi đã mua rau củ ở chợ và đã nếm thử hoa quả.“ (ngăn cách bởi dấu /): Gestern habe ich auf dem Markt Gemüse [1] und Obst [2].",
                 "options": null,
                 "correct_answer": "gekauft / probiert",
-                "explanation": "'kaufen -> gekauft' (ge-t); 'probieren -> probiert' (đuôi -ieren, không ge-). Đáp án: 'gekauft / probiert'.",
+                "explanation": "Trạng từ 'Gestern' (hôm qua) và trợ động từ 'habe' ở Vị trí 2 cho biết câu dùng thì quá khứ hoàn thành (Perfekt), nên vị trí [1] và [2] ở cuối câu cần điền dạng Partizip II: 'kaufen' (mua) là động từ có quy tắc -> 'gekauft' (ge- + kauf + -t); 'probieren' (nếm thử) có đuôi '-ieren' nên không thêm tiền tố 'ge-' -> 'probiert'.",
                 "exp_reward": 10,
                 "extra_data": {
-                        "translation": "Hôm qua tôi đã mua rau củ ở chợ và đã thử hoa quả.",
+                        "translation": "Hôm qua tôi đã mua rau củ ở chợ và đã nếm thử hoa quả.",
                         "accepted_answers": [
                                 "gekauft / probiert",
-                                "gekauft/probiert"
+                                "gekauft/probiert",
+                                "gekauft probiert",
+                                "Gekauft / probiert",
+                                "Gekauft probiert",
+                                "eingekauft / probiert",
+                                "eingekauft/probiert",
+                                "eingekauft probiert",
+                                "Eingekauft / probiert",
+                                "Eingekauft probiert"
                         ]
                 }
         },
