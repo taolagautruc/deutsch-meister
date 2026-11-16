@@ -2271,9 +2271,7 @@ def seed_lesson_10():
                                 "Ở Việt Nam người ta ăn nhiều cơm hơn bánh mì.",
                                 "Tại Việt Nam mọi người ăn nhiều cơm hơn bánh mì.",
                                 "Tại Việt Nam người ta ăn nhiều cơm hơn bánh mì.",
-                                "Ở Việt Nam người dân ăn nhiều cơm hơn bánh mì.",
-                                "Ở Việt Nam mọi người ăn gạo nhiều hơn bánh mì.",
-                                "Ở Việt Nam người ta ăn gạo nhiều hơn bánh mì."
+                                "Ở Việt Nam người dân ăn nhiều cơm hơn bánh mì."
                         ]
                 }
         },
@@ -2330,6 +2328,11 @@ def seed_lesson_10():
                                 "Em gái tôi thích uống nước ép hơn cô-ca, nhưng em ấy thích uống nước nhất.",
                                 "Em gái tôi thích uống nước ép hơn coca, nhưng thích uống nước lọc nhất.",
                                 "Em gái tôi thích uống nước ép hơn coca, nhưng thích uống nước nhất.",
+                                "Em tôi thích uống nước ép hơn cô-ca, nhưng thích uống nước lọc nhất.",
+                                "Em tôi thích uống nước ép hơn cô-ca, nhưng em ấy thích uống nước lọc nhất.",
+                                "Em tôi thích uống nước ép hơn cô-ca, nhưng thích uống nước nhất.",
+                                "Em tôi thích uống nước ép hơn coca, nhưng thích uống nước lọc nhất.",
+                                "Em tôi thích uống nước ép hơn coca, nhưng thích uống nước nhất.",
                                 "Chị tôi thích nước ép hơn cô-ca, nhưng thích nhất là uống nước.",
                                 "Chị tôi thích nước ép hơn coca, nhưng thích nhất là uống nước."
                         ]
