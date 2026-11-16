@@ -368,6 +368,10 @@ def ensure_db_initialized():
             ex_b10_c70 = cursor.fetchone()
             if not ex_b10_c70 or "ăn cơm nhiều hơn" not in (ex_b10_c70["correct_answer"] or ''):
                 need_seed_b10 = True
+            cursor.execute("SELECT extra_data FROM exercises WHERE lesson_id = ? AND question LIKE '%Câu 73%';", (b10_id,))
+            ex_b10_c73 = cursor.fetchone()
+            if not ex_b10_c73 or "Chào buổi trưa tôi muốn lấy" not in (ex_b10_c73["extra_data"] or ''):
+                need_seed_b10 = True
         if need_seed_b10:
             from lessons.a1.seed_a1_b10 import seed_lesson_10
             seed_lesson_10()
