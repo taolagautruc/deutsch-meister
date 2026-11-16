@@ -2448,7 +2448,7 @@ def seed_lesson_10():
                 "question": "Câu 75: Sắp xếp các từ xáo trộn thành câu hoàn chỉnh:",
                 "options": null,
                 "correct_answer": "Welchen Fisch nimmst du?",
-                "explanation": "'der Fisch' (giống đực) là tân ngữ trực tiếp (Akkusativ) của động từ 'nehmen' nên từ hỏi biến đổi thành 'Welchen Fisch' đứng ở Vị trí 1, động từ chia 'nimmst' đứng ở Vị trí 2 và chủ ngữ 'du' ở Vị trí 3.",
+                "explanation": "'der Fisch' (giống đực) là tân ngữ trực tiếp (Akkusativ) của động từ 'nehmen' nên từ hỏi biến đổi thành 'Welchen Fisch' đứng ở Vị trí 1, động từ chia 'nimmst' đứng ở Vị trí 2 và chủ ngữ 'du' ở Vị trí 3. -> Đáp án: \"Welchen Fisch nimmst du?\"",
                 "exp_reward": 15,
                 "extra_data": {
                         "tokens": [
@@ -2506,7 +2506,7 @@ def seed_lesson_10():
                 "question": "Câu 77: Sắp xếp các từ xáo trộn thành câu hoàn chỉnh:",
                 "options": null,
                 "correct_answer": "Am meisten kauft meine Mutter Obst.",
-                "explanation": "Cụm trạng từ so sánh nhất 'Am meisten' (nhiều nhất) đứng đầu câu ở Vị trí 1 để nhấn mạnh nên động từ chia 'kauft' bắt buộc đứng ngay ở Vị trí 2, sau đó mới đến chủ ngữ 'meine Mutter' ở Vị trí 3.",
+                "explanation": "Cụm trạng từ so sánh nhất 'Am meisten' (nhiều nhất) đứng đầu câu ở Vị trí 1 để nhấn mạnh nên động từ chia 'kauft' bắt buộc đứng ngay ở Vị trí 2, sau đó mới đến chủ ngữ 'meine Mutter' ở Vị trí 3. -> Đáp án: \"Am meisten kauft meine Mutter Obst.\"",
                 "exp_reward": 15,
                 "extra_data": {
                         "tokens": [
@@ -2531,7 +2531,7 @@ def seed_lesson_10():
                 "question": "Câu 78: Sắp xếp các từ xáo trộn thành câu hoàn chỉnh:",
                 "options": null,
                 "correct_answer": "Wie viel kostet der Käse?",
-                "explanation": "Cụm từ để hỏi 'Wie viel' đứng ở Vị trí 1, động từ 'kostet' đứng ở Vị trí 2 và chia ở ngôi thứ 3 số ít theo chủ ngữ 'der Käse'.",
+                "explanation": "Cụm từ để hỏi 'Wie viel' đứng ở Vị trí 1, động từ 'kostet' đứng ở Vị trí 2 và chia ở ngôi thứ 3 số ít theo chủ ngữ 'der Käse'. -> Đáp án: \"Wie viel kostet der Käse?\"",
                 "exp_reward": 15,
                 "extra_data": {
                         "tokens": [
@@ -2741,7 +2741,7 @@ def seed_lesson_10():
                 "question": "Câu 84: Tìm lỗi sai trong câu sau và gõ lại cả câu đúng: „Welcher Käse möchten Sie kaufen?“",
                 "options": null,
                 "correct_answer": "Welchen Käse möchten Sie kaufen?",
-                "explanation": "Lỗi cách của từ hỏi 'welch-': 'Käse' là tân ngữ của 'möchten … kaufen' -> Akkusativ -> 'Welchen', không phải 'Welcher'. -> Đáp án: \"Welchen Käse möchten Sie kaufen?\"",
+                "explanation": "Lỗi cách của từ hỏi 'welch-': danh từ 'der Käse' (giống đực) đóng vai trò tân ngữ trực tiếp (Akkusativ) của động từ 'kaufen' nên từ hỏi biến đổi thành 'Welchen', không phải 'Welcher'. -> Đáp án: \"Welchen Käse möchten Sie kaufen?\"",
                 "exp_reward": 15,
                 "extra_data": {
                         "wrong_sentence": "Welcher Käse möchten Sie kaufen?",
@@ -2756,7 +2756,7 @@ def seed_lesson_10():
                 "question": "Câu 85: Tìm lỗi sai trong câu sau và gõ lại cả câu đúng: „Ich esse mehr Kartoffeln wie Reis.“",
                 "options": null,
                 "correct_answer": "Ich esse mehr Kartoffeln als Reis.",
-                "explanation": "Lỗi dùng từ trong so sánh hơn: so sánh hơn dùng 'als', không dùng 'wie' -> 'mehr Kartoffeln als Reis'. -> Đáp án: \"Ich esse mehr Kartoffeln als Reis.\"",
+                "explanation": "Lỗi dùng từ nối trong phép so sánh hơn: trong tiếng Đức chuẩn, so sánh hơn (Komparativ) bắt buộc dùng liên từ 'als', không dùng 'wie' ('wie' chỉ dùng cho so sánh ngang bằng 'so ... wie'). -> Đáp án: \"Ich esse mehr Kartoffeln als Reis.\"",
                 "exp_reward": 15,
                 "extra_data": {
                         "wrong_sentence": "Ich esse mehr Kartoffeln wie Reis.",
@@ -2786,13 +2786,14 @@ def seed_lesson_10():
                 "question": "Câu 87: Tìm lỗi sai trong câu sau và gõ lại cả câu đúng: „Am liebsten ich trinke Milch.“",
                 "options": null,
                 "correct_answer": "Am liebsten trinke ich Milch.",
-                "explanation": "Lỗi vị trí động từ: khi cụm so sánh nhất 'Am liebsten' đứng đầu câu (vị trí ①), động từ chia 'trinke' bắt buộc phải ở vị trí ② rồi mới đến chủ ngữ 'ich'. -> Đáp án: \"Am liebsten trinke ich Milch.\"",
+                "explanation": "Lỗi vị trí động từ (Verbzweitstellung - V2): khi đưa cụm so sánh nhất 'Am liebsten' lên đầu câu (Vị trí 1), động từ chia 'trinke' bắt buộc phải đứng ở Vị trí 2 rồi mới đến chủ ngữ 'ich'. -> Đáp án: \"Am liebsten trinke ich Milch.\" (hoặc \"Ich trinke am liebsten Milch.\").",
                 "exp_reward": 15,
                 "extra_data": {
                         "wrong_sentence": "Am liebsten ich trinke Milch.",
                         "translation": "Tôi thích uống sữa nhất.",
                         "accepted_answers": [
-                                "Am liebsten trinke ich Milch."
+                                "Am liebsten trinke ich Milch.",
+                                "Ich trinke am liebsten Milch."
                         ]
                 }
         },
@@ -2923,7 +2924,7 @@ def seed_lesson_10():
                 "explanation": "Trình tự mua sắm chuẩn: Chào hỏi -> Gọi món -> Hỏi thêm -> Hỏi giá -> Báo tổng tiền -> Thanh toán đưa tiền. -> Đáp án: \"1, 2, 3, 4, 5, 6\"",
                 "exp_reward": 15,
                 "extra_data": {
-                        "translation": "Hội thoại mua sắm hoàn chỉnh tại quầy trái cây",
+                        "translation": "Người bán: Xin chào! Ngài cần gì ạ? — Khách nữ: Tôi muốn mua nửa ký dâu tây và hai quả chuối, làm ơn. — Người bán: Vâng. Ngài cần gì thêm nữa không ạ? — Khách nữ: Không, cảm ơn. Tổng cộng hết bao nhiêu? — Người bán: Tổng cộng là bốn euro năm mươi (4,50 €). — Khách nữ: Đây là năm euro. Không cần thối lại đâu!",
                         "correct_order": [
                                 1,
                                 2,
@@ -2936,38 +2937,32 @@ def seed_lesson_10():
                                 {
                                         "id": 1,
                                         "speaker": "Verkäufer",
-                                        "text": "Guten Tag! Bitte schön?",
-                                        "translation_vi": "Xin chào! Ngài cần gì ạ?"
+                                        "text": "Guten Tag! Bitte schön?"
                                 },
                                 {
                                         "id": 2,
                                         "speaker": "Kundin",
-                                        "text": "Ich möchte ein Pfund Erdbeeren und zwei Bananen, bitte.",
-                                        "translation_vi": "Tôi muốn nửa ký dâu tây và hai quả chuối, làm ơn."
+                                        "text": "Ich möchte ein Pfund Erdbeeren und zwei Bananen, bitte."
                                 },
                                 {
                                         "id": 3,
                                         "speaker": "Verkäufer",
-                                        "text": "Gern. Sonst noch etwas?",
-                                        "translation_vi": "Vâng. Ngài cần gì nữa không ạ?"
+                                        "text": "Gern. Sonst noch etwas?"
                                 },
                                 {
                                         "id": 4,
                                         "speaker": "Kundin",
-                                        "text": "Nein, danke. Was macht das?",
-                                        "translation_vi": "Không, cảm ơn. Tổng cộng bao nhiêu?"
+                                        "text": "Nein, danke. Was macht das?"
                                 },
                                 {
                                         "id": 5,
                                         "speaker": "Verkäufer",
-                                        "text": "Das macht zusammen vier Euro fünfzig.",
-                                        "translation_vi": "Tổng cộng là bốn euro năm mươi."
+                                        "text": "Das macht zusammen vier Euro fünfzig."
                                 },
                                 {
                                         "id": 6,
                                         "speaker": "Kundin",
-                                        "text": "Hier sind fünf Euro. Stimmt so!",
-                                        "translation_vi": "Đây là năm euro. Không cần thối!"
+                                        "text": "Hier sind fünf Euro. Stimmt so!"
                                 }
                         ]
                 }
@@ -2980,7 +2975,7 @@ def seed_lesson_10():
                 "explanation": "Trình tự chuẩn: Hỏi vị trí -> Chỉ vị trí -> Hỏi giá -> Báo giá -> Quyết định số lượng -> Báo tổng tiền. -> Đáp án: \"1, 2, 3, 4, 5, 6\"",
                 "exp_reward": 15,
                 "extra_data": {
-                        "translation": "Hội thoại hỏi mua hàng tại siêu thị",
+                        "translation": "Khách nam: Xin lỗi, tôi tìm sữa chua ở đâu ạ? — Người bán: Sữa chua ở phía sau kia. — Khách nam: Cảm ơn. Còn sữa giá bao nhiêu? — Người bán: Một lít sữa giá một euro mười (1,10 €). — Khách nam: Tốt, vậy tôi lấy hai lít. — Người bán: Tổng cộng là hai euro hai mươi (2,20 €).",
                         "correct_order": [
                                 1,
                                 2,
@@ -2993,38 +2988,32 @@ def seed_lesson_10():
                                 {
                                         "id": 1,
                                         "speaker": "Kunde",
-                                        "text": "Entschuldigung, wo finde ich den Joghurt?",
-                                        "translation_vi": "Xin lỗi, tôi tìm sữa chua ở đâu ạ?"
+                                        "text": "Entschuldigung, wo finde ich den Joghurt?"
                                 },
                                 {
                                         "id": 2,
                                         "speaker": "Verkäufer",
-                                        "text": "Der Joghurt steht dort hinten.",
-                                        "translation_vi": "Sữa chua ở phía sau kia."
+                                        "text": "Der Joghurt steht dort hinten."
                                 },
                                 {
                                         "id": 3,
                                         "speaker": "Kunde",
-                                        "text": "Danke. Und wie viel kostet die Milch?",
-                                        "translation_vi": "Cảm ơn. Còn sữa giá bao nhiêu?"
+                                        "text": "Danke. Und wie viel kostet die Milch?"
                                 },
                                 {
                                         "id": 4,
                                         "speaker": "Verkäufer",
-                                        "text": "Ein Liter Milch kostet ein Euro zehn.",
-                                        "translation_vi": "Một lít sữa giá một euro mười."
+                                        "text": "Ein Liter Milch kostet ein Euro zehn."
                                 },
                                 {
                                         "id": 5,
                                         "speaker": "Kunde",
-                                        "text": "Gut, dann nehme ich zwei Liter.",
-                                        "translation_vi": "Tốt, vậy tôi lấy hai lít."
+                                        "text": "Gut, dann nehme ich zwei Liter."
                                 },
                                 {
                                         "id": 6,
                                         "speaker": "Verkäufer",
-                                        "text": "Das macht zwei Euro zwanzig.",
-                                        "translation_vi": "Tổng cộng là hai euro hai mươi."
+                                        "text": "Das macht zwei Euro zwanzig."
                                 }
                         ]
                 }
@@ -3037,7 +3026,7 @@ def seed_lesson_10():
                 "explanation": "Trình tự nhà hàng: Hỏi đã gọi món chưa -> Xin gợi ý -> Người phục vụ gợi ý món -> Chọn món -> Xác nhận. -> Đáp án: \"1, 2, 3, 4, 5\"",
                 "exp_reward": 15,
                 "extra_data": {
-                        "translation": "Hội thoại gọi món tại nhà hàng",
+                        "translation": "Phục vụ: Xin chào, ngài đã gọi món chưa ạ? — Khách: Chưa. Ngài gợi ý món gì? — Phục vụ: Tôi gợi ý món cá ăn với cơm. — Khách: Tốt, vậy tôi lấy món cá và một chai nước. — Phục vụ: Vâng, có ngay ạ.",
                         "correct_order": [
                                 1,
                                 2,
@@ -3049,39 +3038,34 @@ def seed_lesson_10():
                                 {
                                         "id": 1,
                                         "speaker": "Kellner",
-                                        "text": "Guten Tag, haben Sie schon bestellt?",
-                                        "translation_vi": "Xin chào, ngài đã gọi món chưa ạ?"
+                                        "text": "Guten Tag, haben Sie schon bestellt?"
                                 },
                                 {
                                         "id": 2,
                                         "speaker": "Gast",
-                                        "text": "Nein, noch nicht. Was empfehlen Sie?",
-                                        "translation_vi": "Chưa. Ngài gợi ý món gì?"
+                                        "text": "Nein, noch nicht. Was empfehlen Sie?"
                                 },
                                 {
                                         "id": 3,
                                         "speaker": "Kellner",
-                                        "text": "Ich empfehle den Fisch mit Reis.",
-                                        "translation_vi": "Tôi gợi ý món cá với cơm."
+                                        "text": "Ich empfehle den Fisch mit Reis."
                                 },
                                 {
                                         "id": 4,
                                         "speaker": "Gast",
-                                        "text": "Gut, dann nehme ich den Fisch und eine Flasche Wasser.",
-                                        "translation_vi": "Tốt, vậy tôi lấy món cá và một chai nước."
+                                        "text": "Gut, dann nehme ich den Fisch und eine Flasche Wasser."
                                 },
                                 {
                                         "id": 5,
                                         "speaker": "Kellner",
-                                        "text": "Gern, das kommt gleich.",
-                                        "translation_vi": "Vâng, có ngay ạ."
+                                        "text": "Gern, das kommt gleich."
                                 }
                         ]
                 }
         },
         {
                 "type": "nghe_gia_tien",
-                "question": "Câu 98: Nghe phát âm câu tiếng Đức và nhập số tiền (dạng ví dụ: 4,85 hoặc 4.85):",
+                "question": "Câu 98: Nghe phát âm câu tiếng Đức và nhập số tiền bằng chữ số:",
                 "options": null,
                 "correct_answer": "4,85",
                 "explanation": "Giá tiền 'vier Euro fünfundachtzig' tương ứng với 4,85 € (485 Cent).",
@@ -3094,14 +3078,17 @@ def seed_lesson_10():
                                 "4,85",
                                 "4.85",
                                 "4,85 €",
+                                "4.85 €",
                                 "4,85€",
-                                "4,85 Euro"
+                                "4.85€",
+                                "4,85 Euro",
+                                "4.85 Euro"
                         ]
                 }
         },
         {
                 "type": "nghe_gia_tien",
-                "question": "Câu 99: Nghe phát âm câu tiếng Đức và nhập số tiền (dạng ví dụ: 5,80 hoặc 5.80):",
+                "question": "Câu 99: Nghe phát âm câu tiếng Đức và nhập số tiền bằng chữ số:",
                 "options": null,
                 "correct_answer": "5,80",
                 "explanation": "Giá tiền 'fünf Euro achtzig' tương ứng với 5,80 € (580 Cent, 2 ký lê x 2,90 €).",
@@ -3113,15 +3100,20 @@ def seed_lesson_10():
                         "accepted_answers": [
                                 "5,80",
                                 "5.80",
+                                "5,8",
+                                "5.8",
                                 "5,80 €",
+                                "5.80 €",
                                 "5,80€",
-                                "5,80 Euro"
+                                "5.80€",
+                                "5,80 Euro",
+                                "5.80 Euro"
                         ]
                 }
         },
         {
                 "type": "nghe_gia_tien",
-                "question": "Câu 100: Nghe phát âm câu tiếng Đức và nhập số tiền (dạng ví dụ: 1,29 hoặc 1.29):",
+                "question": "Câu 100: Nghe phát âm câu tiếng Đức và nhập số tiền bằng chữ số:",
                 "options": null,
                 "correct_answer": "1,29",
                 "explanation": "Giá tiền 'ein Euro neunundzwanzig' tương ứng với 1,29 € (129 Cent).",
@@ -3134,8 +3126,11 @@ def seed_lesson_10():
                                 "1,29",
                                 "1.29",
                                 "1,29 €",
+                                "1.29 €",
                                 "1,29€",
-                                "1,29 Euro"
+                                "1.29€",
+                                "1,29 Euro",
+                                "1.29 Euro"
                         ]
                 }
         }

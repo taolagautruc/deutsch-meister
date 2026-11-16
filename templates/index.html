@@ -532,7 +532,7 @@
                 const exercisesState = (currentLesson.allRenderExercises || []).map(ex => ({ ...ex }));
 
                 const sessionData = {
-                    version: '20261111_v4',
+                    version: CURRENT_SESSION_VERSION,
                     lessonId: lessonId,
                     mode: mode,
                     sessionAnswers: Array.from(sessionSet),
@@ -553,15 +553,28 @@
             }
         }
 
-        const CURRENT_SESSION_VERSION = '20261116_v4';
+        const CURRENT_SESSION_VERSION = '20261116_v9';
 
         // Tự động xóa phiên làm bài cũ bị lưu đáp án sai hoặc mã nguồn cũ cho toàn bộ các bài học
         try {
+            const keysToRemove = [];
             for (let i = 0; i < localStorage.length; i++) {
                 const k = localStorage.key(i);
                 if (k && k.startsWith('dm_active_practice_session_')) {
                     const r = localStorage.getItem(k);
                     if (r && !r.includes('"version":"' + CURRENT_SESSION_VERSION + '"')) {
+                        keysToRemove.push(k);
+                    }
+                }
+            }
+            keysToRemove.forEach(k => localStorage.removeItem(k));
+
+            // Đảm bảo xóa triệt để phiên cũ của Bài 10 (lesson_id = 24)
+            for (let i = localStorage.length - 1; i >= 0; i--) {
+                const k = localStorage.key(i);
+                if (k && k.includes('active_practice_session') && k.includes('24')) {
+                    const r = localStorage.getItem(k);
+                    if (!r || !r.includes('"version":"' + CURRENT_SESSION_VERSION + '"') || r.includes('translation_vi') || r.includes('Hội thoại mua sắm') || r.includes('dạng ví dụ:')) {
                         localStorage.removeItem(k);
                     }
                 }
@@ -878,7 +891,7 @@
         }
 
         async function loadOverview() {
-            const res = await fetch('/api/overview');
+            const res = await fetch(`/api/overview?_t=${Date.now()}`, { cache: 'no-store' });
             const data = await res.json();
             updateExpUI(data.user.total_exp);
 
@@ -932,7 +945,7 @@
         }
 
         async function openLevel(code) {
-            const res = await fetch(`/api/levels/${code}`);
+            const res = await fetch(`/api/levels/${code}?_t=${Date.now()}`, { cache: 'no-store' });
             currentLevelData = await res.json();
             const m = LEVEL_META[code] || LEVEL_META["A1"];
 
@@ -1294,6 +1307,8 @@
 
             if (!window.lessonPracticeMode) window.lessonPracticeMode = {};
             if (!window.sessionPracticeAnswers) window.sessionPracticeAnswers = {};
+            window.dialogueShuffledLines = {};
+            window._dialogueOrders = {};
 
             const lId = currentLesson.id;
             let activeSession = loadActiveLessonSession(lId);
@@ -1325,9 +1340,12 @@
                 const hasOutdatedL10 = (activeSession.version !== CURRENT_SESSION_VERSION) || (activeSession.allRenderExercises || []).some(ex => 
                     (ex.extra_data && JSON.stringify(ex.extra_data).includes('"visual"')) ||
                     (ex.correct_answer && ex.correct_answer.includes('ăn gạo nhiều hơn')) ||
-                    (ex.explanation && (ex.explanation.includes('Phương án A') || ex.explanation.includes('Đáp án: "Tổng cộng') || ex.explanation.includes('Đáp án: "Ngài có sô') || ex.explanation.includes('từ hỏi là \'Welches\'') || ex.explanation.includes('ăn gạo nhiều hơn'))) ||
+                    (ex.explanation && (ex.explanation.includes('Phương án A') || ex.explanation.includes('Đáp án: "Tổng cộng') || ex.explanation.includes('Đáp án: "Ngài có sô') || ex.explanation.includes('từ hỏi là \'Welches\'') || ex.explanation.includes('ăn gạo nhiều hơn') || ex.explanation.includes("'Käse' là tân ngữ") || ex.explanation.includes("mehr Kartoffeln als Reis'. -> Đáp án") || ex.explanation.includes("vị trí ①") || ex.explanation.includes("Đáp án đúng: „"))) ||
                     (ex.question && (ex.question.includes('V1') || ex.question.includes('V4') || ex.question.includes('Quan sát') || ex.question.includes('(der Apfel, tân ngữ)') || ex.question.includes('(der Salat)') || ex.question.includes('(der Schinken)') || ex.question.includes('(das Brot)') || ex.question.includes('ở ngôi \'du\'') || ex.question.includes('Trái cây') || ex.question.includes('phù hợp về Giống') || ex.question.includes('ngôi \'er\'') || ex.question.includes('Bạn muốn xà lách nào') || ex.question.includes('ăn gạo nhiều hơn') || ex.question.includes('chú ý chữ hoa') || ex.question.includes('dạng của \'kosten\'') || ex.question.includes('Partizip II (ôn Bài 9)'))) ||
-                    (ex.extra_data && JSON.stringify(ex.extra_data).includes('eine Flasche'))
+                    (ex.extra_data && JSON.stringify(ex.extra_data).includes('eine Flasche')) ||
+                    (ex.exercise_type === 'hoi_thoai_sap_xep' && ex.extra_data && JSON.stringify(ex.extra_data).includes('translation_vi')) ||
+                    (ex.exercise_type === 'hoi_thoai_sap_xep' && ex.extra_data && JSON.stringify(ex.extra_data).includes('Hội thoại mua sắm')) ||
+                    (ex.exercise_type === 'nghe_gia_tien' && ex.question && ex.question.includes('dạng ví dụ:'))
                 );
                 if (hasOutdatedL10) {
                     clearActiveLessonSession(lId);
@@ -1885,7 +1903,11 @@
                 }
 
                 let extra = {};
-                try { extra = ex.extra_data ? JSON.parse(ex.extra_data) : {}; } catch (e) {}
+                try {
+                    extra = typeof ex.extra_data === 'string' ? JSON.parse(ex.extra_data) : (ex.extra_data || {});
+                } catch (e) {
+                    extra = ex.extra_data || {};
+                }
 
                 let extraHtml = '';
                 if (extra.visual_svg || extra.map_scenario) {
@@ -1970,6 +1992,9 @@
                     `;
                 }
                 if (ex.exercise_type === 'hoi_thoai_sap_xep' && Array.isArray(extra.lines)) {
+                    const shuffledLines = (typeof getDialogueShuffledLines === 'function')
+                        ? getDialogueShuffledLines(i, extra.lines)
+                        : extra.lines;
                     extraHtml += `
                         <div class="my-3 p-4 rounded-2xl bg-indigo-50/80 border border-indigo-200 space-y-3">
                             <div class="flex items-center justify-between flex-wrap gap-2">
@@ -1987,12 +2012,11 @@
                                 Chưa chọn lượt lời nào. Bấm vào các câu bên dưới theo thứ tự:
                             </div>
                             <div class="space-y-1.5">
-                                ${extra.lines.map((line) => `
+                                ${shuffledLines.map((line) => `
                                     <button type="button" onclick="appendDialogueLine(${i}, ${line.id})" id="dlg-line-btn-${i}-${line.id}" class="w-full text-left p-2.5 rounded-xl border border-slate-200 bg-white hover:bg-slate-50 text-slate-800 font-bold text-xs flex items-center justify-between gap-2 cursor-pointer shadow-xs transition">
                                         <div>
                                             <span class="text-indigo-700 font-black mr-1">${line.speaker}:</span>
                                             <span>„${line.text}“</span>
-                                            <span class="text-slate-500 block text-[11px] font-normal italic mt-0.5">${line.translation_vi || ''}</span>
                                         </div>
                                         <span class="dlg-badge text-indigo-600 font-black text-xs shrink-0"></span>
                                     </button>
@@ -2163,7 +2187,7 @@
                         ? (ex._userAnswer || (isMultiSlot ? String(ex.correct_answer || '').trim() : String(ex.correct_answer || '').split('/')[0].trim())) 
                         : (ex._userAnswer || '');
                     const placeholderText = (ex && ex.exercise_type === 'nghe_gia_tien')
-                        ? 'Nhập số tiền bằng số (ví dụ: 4,85 hoặc 4.85)...'
+                        ? 'Nhập số tiền (dùng dấu phẩy hoặc dấu chấm)...'
                         : (isMultiSlot 
                             ? 'Điền 2 từ ngăn cách bởi dấu / (ví dụ: từ 1 / từ 2)...' 
                             : (isDeToVi 
@@ -2236,6 +2260,9 @@
             }).join('');
 
             exContainer.innerHTML = filterBarHtml + exercisesHtml;
+            if (typeof restoreDialogueWidgetsUI === 'function') {
+                restoreDialogueWidgetsUI();
+            }
         }
 
         function handleExerciseInputKeydown(event, index) {
@@ -2296,6 +2323,55 @@
         }
 
         window._dialogueOrders = window._dialogueOrders || {};
+        window.dialogueShuffledLines = window.dialogueShuffledLines || {};
+
+        function getDialogueShuffledLines(exIdx, lines) {
+            if (!lines || !Array.isArray(lines)) return [];
+            if (window.dialogueShuffledLines[exIdx] && window.dialogueShuffledLines[exIdx].length === lines.length) {
+                return window.dialogueShuffledLines[exIdx];
+            }
+            let shuffled = [...lines];
+            if (shuffled.length > 1) {
+                let attempts = 0;
+                let isSame = true;
+                while (isSame && attempts < 20) {
+                    attempts++;
+                    for (let j = shuffled.length - 1; j > 0; j--) {
+                        const k = Math.floor(Math.random() * (j + 1));
+                        const temp = shuffled[j];
+                        shuffled[j] = shuffled[k];
+                        shuffled[k] = temp;
+                    }
+                    isSame = shuffled.every((item, idx) => item.id === lines[idx].id);
+                }
+                if (isSame) {
+                    shuffled = [...shuffled.slice(1), shuffled[0]];
+                }
+            }
+            window.dialogueShuffledLines[exIdx] = shuffled;
+            return shuffled;
+        }
+
+        function restoreDialogueWidgetsUI() {
+            if (!currentLesson || !Array.isArray(currentLesson.allRenderExercises)) return;
+            currentLesson.allRenderExercises.forEach((ex, idx) => {
+                if (ex && ex.exercise_type === 'hoi_thoai_sap_xep') {
+                    if (!window._dialogueOrders[idx] || window._dialogueOrders[idx].length === 0) {
+                        const savedAns = ex._userAnswer || (ex._isUserCorrect ? ex.correct_answer : '');
+                        if (savedAns) {
+                            const nums = String(savedAns).match(/\d+/g);
+                            if (nums && nums.length > 0) {
+                                window._dialogueOrders[idx] = nums.map(n => parseInt(n, 10));
+                            }
+                        }
+                    }
+                    if (window._dialogueOrders[idx] && window._dialogueOrders[idx].length > 0) {
+                        updateDialogueWidgetUI(idx);
+                    }
+                }
+            });
+        }
+
         function appendDialogueLine(exIdx, lineId) {
             if (!window._dialogueOrders[exIdx]) window._dialogueOrders[exIdx] = [];
             if (window._dialogueOrders[exIdx].includes(lineId)) return;
@@ -2321,7 +2397,9 @@
             }
             const ex = currentLesson && currentLesson.allRenderExercises ? currentLesson.allRenderExercises[exIdx] : null;
             let extra = {};
-            try { extra = JSON.parse(ex.extra_data); } catch(e){}
+            try { 
+                extra = (typeof ex.extra_data === 'string') ? JSON.parse(ex.extra_data) : (ex.extra_data || {}); 
+            } catch(e){}
             (extra.lines || []).forEach(l => {
                 const btn = document.getElementById(`dlg-line-btn-${exIdx}-${l.id}`);
                 if (btn) {
@@ -2343,8 +2421,11 @@
             const ex = currentLesson && currentLesson.allRenderExercises ? currentLesson.allRenderExercises[exIdx] : null;
             if (!ex) return;
             let extra = {};
-            try { extra = JSON.parse(ex.extra_data); } catch(e){}
-            const fullText = (extra.lines || []).map(l => l.text).join(' ');
+            try { 
+                extra = (typeof ex.extra_data === 'string') ? JSON.parse(ex.extra_data) : (ex.extra_data || {}); 
+            } catch(e){}
+            const sortedLines = [...(extra.lines || [])].sort((a, b) => (Number(a.id) || 0) - (Number(b.id) || 0));
+            const fullText = sortedLines.map(l => l.text).join(' ');
             if (fullText && typeof speakGerman === 'function') {
                 speakGerman(fullText, 0.95);
             }
@@ -2632,12 +2713,15 @@
             if (!cleanTrans) return '';
 
             const labelTitle = '📖 Dịch nghĩa:';
-            const hasMultipleLines = cleanTrans.includes('\n') || cleanTrans.includes('|') || /(?:^|\s)1\.\s+.*?(?:\s)2\.\s+/.test(cleanTrans);
+            const isHoiThoaiSapXep = Boolean(ex && ex.exercise_type === 'hoi_thoai_sap_xep');
+            const hasMultipleLines = cleanTrans.includes('\n') || cleanTrans.includes('|') || cleanTrans.includes(' — ') || /(?:^|\s)1\.\s+.*?(?:\s)2\.\s+/.test(cleanTrans);
 
-            if (isNoiO || hasMultipleLines) {
+            if (isNoiO || isHoiThoaiSapXep || hasMultipleLines) {
                 let lines = [];
                 if (cleanTrans.includes('\n')) {
                     lines = cleanTrans.split(/\n+/).map(s => s.trim()).filter(Boolean);
+                } else if (cleanTrans.includes(' — ')) {
+                    lines = cleanTrans.split(/\s*—\s*/).map(s => s.trim()).filter(Boolean);
                 } else if (cleanTrans.includes('|')) {
                     lines = cleanTrans.split(/\s*\|\s*/).map(s => s.trim()).filter(Boolean);
                 } else if (/(?:^|\s)[1-9]\.\s+/.test(cleanTrans)) {
@@ -3420,6 +3504,12 @@
                 if (ex.exercise_type !== 'dung_sai') {
                     ex.options = shuffleArray(ex.options);
                 }
+            }
+            if (window._dialogueOrders) {
+                delete window._dialogueOrders[index];
+            }
+            if (window.dialogueShuffledLines) {
+                delete window.dialogueShuffledLines[index];
             }
             if (currentLesson && window.sessionPracticeAnswers && window.sessionPracticeAnswers[currentLesson.id]) {
                 window.sessionPracticeAnswers[currentLesson.id].delete(index);
