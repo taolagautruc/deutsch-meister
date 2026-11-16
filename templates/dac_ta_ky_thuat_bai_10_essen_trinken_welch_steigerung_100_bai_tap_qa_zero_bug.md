@@ -1319,7 +1319,7 @@ Mỗi ô là **một lượt lời** (kèm vai nói và câu tiếng Đức, kh�
       6. **Kundin**: *„Hier sind fünf Euro. Stimmt so!“*
     * `correct_order`: `[1, 2, 3, 4, 5, 6]`
     * `translation` (hiển thị trong khung `📖 Dịch nghĩa:`): `Người bán: Xin chào! Ngài cần gì ạ? — Khách nữ: Tôi muốn mua nửa ký dâu tây và hai quả chuối, làm ơn. — Người bán: Vâng. Ngài cần gì thêm nữa không ạ? — Khách nữ: Không, cảm ơn. Tổng cộng hết bao nhiêu? — Người bán: Tổng cộng là bốn euro năm mươi (4,50 €). — Khách nữ: Đây là năm euro. Không cần thối lại đâu!`
-    * Giải thích: Hội thoại đi theo trình tự **chào hỏi → gọi món → hỏi thêm → hỏi giá → báo giá → thanh toán**. *(Kiểm tra số: 1 Pfund Erdbeeren = 3,90 € + 2 × 0,30 € = 4,50 € = `vier Euro fünfzig`.)*
+    * Giải thích: Bỏ trống (`""`). Hiển thị đáp án bằng chữ (hội thoại tiếng Đức hoàn chỉnh), không đánh số hay ký hiệu chữ cái.
 96. **Câu 96** *(tình huống: siêu thị)*
     * `lines` (thứ tự đúng 1 -> 6, web xáo trộn khi hiển thị):
       1. **Kunde**: *„Entschuldigung, wo finde ich den Joghurt?“*
@@ -1330,7 +1330,7 @@ Mỗi ô là **một lượt lời** (kèm vai nói và câu tiếng Đức, kh�
       6. **Verkäufer**: *„Das macht zwei Euro zwanzig.“*
     * `correct_order`: `[1, 2, 3, 4, 5, 6]`
     * `translation` (hiển thị trong khung `📖 Dịch nghĩa:`): `Khách nam: Xin lỗi, tôi tìm sữa chua ở đâu ạ? — Người bán: Sữa chua ở phía sau kia. — Khách nam: Cảm ơn. Còn sữa giá bao nhiêu? — Người bán: Một lít sữa giá một euro mười (1,10 €). — Khách nam: Tốt, vậy tôi lấy hai lít. — Người bán: Tổng cộng là hai euro hai mươi (2,20 €).`
-    * Giải thích: Hỏi vị trí → trả lời → hỏi giá → báo giá → quyết định mua → tính tiền. *(2 × 1,10 € = 2,20 € = `zwei Euro zwanzig`.)*
+    * Giải thích: Bỏ trống (`""`). Hiển thị đáp án bằng chữ (hội thoại tiếng Đức hoàn chỉnh), không đánh số hay ký hiệu chữ cái.
 97. **Câu 97** *(tình huống: nhà hàng)*
     * `lines` (thứ tự đúng 1 -> 5, web xáo trộn khi hiển thị):
       1. **Kellner**: *„Guten Tag, haben Sie schon bestellt?“*
@@ -1340,7 +1340,7 @@ Mỗi ô là **một lượt lời** (kèm vai nói và câu tiếng Đức, kh�
       5. **Kellner**: *„Gern, das kommt gleich.“*
     * `correct_order`: `[1, 2, 3, 4, 5]`
     * `translation` (hiển thị trong khung `📖 Dịch nghĩa:`): `Phục vụ: Xin chào, ngài đã gọi món chưa ạ? — Khách: Chưa. Ngài gợi ý món gì? — Phục vụ: Tôi gợi ý món cá ăn với cơm. — Khách: Tốt, vậy tôi lấy món cá và một chai nước. — Phục vụ: Vâng, có ngay ạ.`
-    * Giải thích: Hỏi đã gọi món chưa → xin gợi ý → gợi ý → chọn món → xác nhận.
+    * Giải thích: Bỏ trống (`""`). Hiển thị đáp án bằng chữ (hội thoại tiếng Đức hoàn chỉnh), không đánh số hay ký hiệu chữ cái.
 
 ---
 

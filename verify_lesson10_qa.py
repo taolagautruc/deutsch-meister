@@ -209,12 +209,13 @@ for ex in all_exercises:
     # 1. Answer non-empty
     assert ans and ans.strip(), f"Lỗi Q{eid}: correct_answer rỗng!"
 
-    # 2. Explanation non-empty & contains answer
-    assert exp and exp.strip(), f"Lỗi Q{eid}: explanation rỗng!"
-    if ex["exercise_type"] not in ("noi_o", "dich_nghia_dv", "dich_cau_dv"):
-        # Chuẩn hóa kiểm tra đáp án có trong giải thích
-        assert norm_s(ans) in norm_s(exp) or all(norm_s(p) in norm_s(exp) for p in re.split(r'[/–\->,]+', ans) if norm_s(p)), \
-            f"Lỗi Q{eid}: explanation không chứa đáp án! ANS: '{ans}' | EXP: '{exp}'"
+    # 2. Explanation non-empty & contains answer (ngoại trừ hoi_thoai_sap_xep theo yêu cầu sư phạm để trống)
+    if ex["exercise_type"] != "hoi_thoai_sap_xep":
+        assert exp and exp.strip(), f"Lỗi Q{eid}: explanation rỗng!"
+        if ex["exercise_type"] not in ("noi_o", "dich_nghia_dv", "dich_cau_dv"):
+            # Chuẩn hóa kiểm tra đáp án có trong giải thích
+            assert norm_s(ans) in norm_s(exp) or all(norm_s(p) in norm_s(exp) for p in re.split(r'[/–\->,]+', ans) if norm_s(p)), \
+                f"Lỗi Q{eid}: explanation không chứa đáp án! ANS: '{ans}' | EXP: '{exp}'"
 
     # 3. Extra data valid JSON and has translation
     assert extra_str, f"Lỗi Q{eid}: extra_data rỗng!"

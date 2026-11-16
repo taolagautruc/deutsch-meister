@@ -2921,7 +2921,7 @@ def seed_lesson_10():
                 "question": "Câu 95: Sắp xếp các lượt lời sau thành hội thoại mua sắm hợp lý tại quầy hoa quả (chọn theo thứ tự từ 1 đến 6):",
                 "options": null,
                 "correct_answer": "1, 2, 3, 4, 5, 6",
-                "explanation": "Trình tự mua sắm chuẩn: Chào hỏi -> Gọi món -> Hỏi thêm -> Hỏi giá -> Báo tổng tiền -> Thanh toán đưa tiền. -> Đáp án: \"1, 2, 3, 4, 5, 6\"",
+                "explanation": "",
                 "exp_reward": 15,
                 "extra_data": {
                         "translation": "Người bán: Xin chào! Ngài cần gì ạ? — Khách nữ: Tôi muốn mua nửa ký dâu tây và hai quả chuối, làm ơn. — Người bán: Vâng. Ngài cần gì thêm nữa không ạ? — Khách nữ: Không, cảm ơn. Tổng cộng hết bao nhiêu? — Người bán: Tổng cộng là bốn euro năm mươi (4,50 €). — Khách nữ: Đây là năm euro. Không cần thối lại đâu!",
@@ -2972,7 +2972,7 @@ def seed_lesson_10():
                 "question": "Câu 96: Sắp xếp các lượt lời sau thành hội thoại hợp lý tại siêu thị (chọn theo thứ tự từ 1 đến 6):",
                 "options": null,
                 "correct_answer": "1, 2, 3, 4, 5, 6",
-                "explanation": "Trình tự chuẩn: Hỏi vị trí -> Chỉ vị trí -> Hỏi giá -> Báo giá -> Quyết định số lượng -> Báo tổng tiền. -> Đáp án: \"1, 2, 3, 4, 5, 6\"",
+                "explanation": "",
                 "exp_reward": 15,
                 "extra_data": {
                         "translation": "Khách nam: Xin lỗi, tôi tìm sữa chua ở đâu ạ? — Người bán: Sữa chua ở phía sau kia. — Khách nam: Cảm ơn. Còn sữa giá bao nhiêu? — Người bán: Một lít sữa giá một euro mười (1,10 €). — Khách nam: Tốt, vậy tôi lấy hai lít. — Người bán: Tổng cộng là hai euro hai mươi (2,20 €).",
@@ -3023,7 +3023,7 @@ def seed_lesson_10():
                 "question": "Câu 97: Sắp xếp các lượt lời sau thành hội thoại gọi món tại nhà hàng (chọn theo thứ tự từ 1 đến 5):",
                 "options": null,
                 "correct_answer": "1, 2, 3, 4, 5",
-                "explanation": "Trình tự nhà hàng: Hỏi đã gọi món chưa -> Xin gợi ý -> Người phục vụ gợi ý món -> Chọn món -> Xác nhận. -> Đáp án: \"1, 2, 3, 4, 5\"",
+                "explanation": "",
                 "exp_reward": 15,
                 "extra_data": {
                         "translation": "Phục vụ: Xin chào, ngài đã gọi món chưa ạ? — Khách: Chưa. Ngài gợi ý món gì? — Phục vụ: Tôi gợi ý món cá ăn với cơm. — Khách: Tốt, vậy tôi lấy món cá và một chai nước. — Phục vụ: Vâng, có ngay ạ.",
