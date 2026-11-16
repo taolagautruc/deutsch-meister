@@ -654,22 +654,36 @@ function normalizeVietnameseTranslation(str) {
     // Nước / Nước lọc
     s = replaceVnWord(s, 'nước\\s+lọc', 'nước');
 
+    // Hoa quả / Trái cây
+    s = replaceVnWord(s, 'trái\\s+cây', 'hoa quả');
+
+    // Người / Mọi người / Người ta / Người dân
+    s = replaceVnWord(s, 'người\\s+ta|người\\s+dân', 'mọi người');
+    s = replaceVnWord(s, 'tại\\s+việt\\s+nam', 'ở việt nam');
+
+    // Đại từ & từ đồng nghĩa phổ biến
+    s = replaceVnWord(s, 'chị\\s+gái\\s+tôi|em\\s+gái\\s+tôi|chị\\s+tôi|em\\s+tôi', 'chị gái tôi');
+    s = replaceVnWord(s, 'nhưng\\s+(?:cô\\s+ấy|chị\\s+ấy|em\\s+ấy|nó)\\s+thích', 'nhưng thích');
+
     // Chuẩn hóa cụm hội thoại mua sắm (Câu 73 Bài 10)
-    s = replaceVnWord(s, 'chào\\s+buổi\\s+trưa|chào\\s+ngày\\s+mới|chào\\s+bạn', 'xin chào');
-    s = replaceVnWord(s, 'tôi\\s+muốn\\s+mua|cho\\s+tôi\\s+lấy|cho\\s+tôi', 'tôi muốn lấy');
-    s = replaceVnWord(s, 'được\\s+chứ', 'vâng');
-    s = replaceVnWord(s, 'ngài\\s+cần\\s+gì\\s+nữa\\s+không|quý\\s+khách\\s+cần\\s+gì\\s+nữa\\s+không|quý\\s+khách\\s+cần\\s+gì\\s+thêm\\s+nữa\\s+không|bạn\\s+cần\\s+gì\\s+nữa\\s+không|còn\\s+cần\\s+gì\\s+nữa\\s+không|còn\\s+gì\\s+nữa\\s+không', 'quý khách cần gì thêm nữa không');
-    s = replaceVnWord(s, 'tổng\\s+cộng\\s+hết\\s+bao\\s+nhiêu|tổng\\s+cộng\\s+bao\\s+nhiêu|tất\\s+cả\\s+hết\\s+bao\\s+nhiêu|tất\\s+cả\\s+bao\\s+nhiêu\\s+tiền|tất\\s+cả\\s+bao\\s+nhiêu|hết\\s+bao\\s+nhiêu\\s+tiền|hết\\s+bao\\s+nhiêu\\s+vậy|hết\\s+bao\\s+nhiêu', 'tổng cộng hết bao nhiêu');
+    s = replaceVnWord(s, 'chào\\s+buổi\\s+trưa|chào\\s+ngày\\s+mới|chào\\s+buổi\\s+sáng|chào\\s+bạn|xin\\s+chào', 'xin chào');
+    s = replaceVnWord(s, 'tôi\\s+muốn\\s+mua|cho\\s+tôi\\s+lấy|cho\\s+tôi\\s+mua|cho\\s+tôi|tôi\\s+lấy|bán\\s+cho\\s+tôi|lấy\\s+cho\\s+tôi', 'tôi muốn lấy');
+    s = replaceVnWord(s, 'dạ\\s+vâng|dạ\\s+được|được\\s+chứ|được\\s+ạ|được|dạ|vâng', 'vâng');
+    s = replaceVnWord(s, 'quý\\s+khách\\s+(?:có\\s+)?(?:còn\\s+)?cần\\s+gì\\s*(?:thêm\\s*)?(?:nữa\\s*)?không|ngài\\s+(?:có\\s+)?(?:còn\\s+)?cần\\s+gì\\s*(?:thêm\\s*)?(?:nữa\\s*)?không|bạn\\s+(?:có\\s+)?(?:còn\\s+)?cần\\s+gì\\s*(?:thêm\\s*)?(?:nữa\\s*)?không|(?:có\\s+)?còn\\s+cần\\s+gì\\s*(?:thêm\\s*)?(?:nữa\\s*)?không|(?:có\\s+)?còn\\s+gì\\s*(?:thêm\\s*)?(?:nữa\\s*)?không|(?:có\\s+)?cần\\s+gì\\s*(?:thêm\\s*)?(?:nữa\\s*)?không', 'quý khách cần gì thêm nữa không');
+    s = replaceVnWord(s, 'không\\s+cảm\\s+ơn|không\\s+cám\\s+ơn|dạ\\s+không\\s+cảm\\s+ơn|không\\s+cần\\s+đâu\\s+cảm\\s+ơn|không\\s+ạ\\s+cảm\\s+ơn|không\\s+cần\\s+đâu', 'không cảm ơn');
+    s = replaceVnWord(s, 'tổng\\s+cộng\\s+hết\\s+bao\\s+nhiêu|tổng\\s+cộng\\s+bao\\s+nhiêu\\s+tiền|tổng\\s+cộng\\s+bao\\s+nhiêu|tổng\\s+hết\\s+bao\\s+nhiêu|tổng\\s+bao\\s+nhiêu|tất\\s+cả\\s+hết\\s+bao\\s+nhiêu\\s+tiền|tất\\s+cả\\s+hết\\s+bao\\s+nhiêu|tất\\s+cả\\s+bao\\s+nhiêu\\s+tiền|tất\\s+cả\\s+bao\\s+nhiêu|hết\\s+bao\\s+nhiêu\\s+tiền|hết\\s+bao\\s+nhiêu\\s+vậy|hết\\s+bao\\s+nhiêu', 'tổng cộng hết bao nhiêu');
+
+    // Đã mua / mua
+    s = replaceVnWord(s, 'đã\\s+mua', 'mua');
 
     // Tuyến xe buýt 200
     s = s.replace(/\b(?:tuyến\s+)?xe\s+buýt\s+(?:tuyến\s+)?(?:số\s+)?200\b/g, 'xe buýt 200');
 
-    // Đại từ trang trọng & nhân xưng linh hoạt (Bài 8, Bài 9 & toàn hệ thống)
-    s = s.replace(/\b(ngài|ông|bà|anh|chị)\b/g, 'bạn');
-    s = s.replace(/\b(chúng\s+mình|tụi\s+mình|bọn\s+mình|chúng\s+ta)\b/g, 'chúng tôi');
-    s = s.replace(/\b(mình|tớ)\b/g, 'tôi');
-    s = s.replace(/\b(các\s+cậu)\b/g, 'các bạn');
-    s = s.replace(/\b(cậu)\b/g, 'bạn');
+    // Đại từ nhân xưng linh hoạt (Bài 8, Bài 9 & toàn hệ thống)
+    s = replaceVnWord(s, 'chúng\\s+mình|tụi\\s+mình|bọn\\s+mình|chúng\\s+ta', 'chúng tôi');
+    s = replaceVnWord(s, 'mình|tớ', 'tôi');
+    s = replaceVnWord(s, 'các\\s+cậu', 'các bạn');
+    s = replaceVnWord(s, 'cậu', 'bạn');
 
     // Từ loại danh từ trừu tượng
     s = s.replace(/\b(sự|cuộc|buổi|chuyến|việc)\s+tham\s+quan\b/g, 'tham quan');
