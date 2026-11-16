@@ -2041,8 +2041,7 @@ def seed_lesson_10():
                         "hint_vi": "Chị/em gái tôi ăn rau củ nhiều hơn tôi.",
                         "translation": "Chị/em gái tôi ăn rau củ nhiều hơn tôi.",
                         "accepted_answers": [
-                                "mehr",
-                                "Mehr"
+                                "mehr"
                         ]
                 }
         },
@@ -2059,8 +2058,7 @@ def seed_lesson_10():
                         "hint_vi": "Bánh mì ở tiệm bánh ngon hơn ở siêu thị.",
                         "translation": "Bánh mì ở tiệm bánh ngon hơn ở siêu thị.",
                         "accepted_answers": [
-                                "besser",
-                                "Besser"
+                                "besser"
                         ]
                 }
         },
@@ -2098,9 +2096,7 @@ def seed_lesson_10():
                         "translation": "Quý khách muốn mua gì ạ? — Cho tôi lấy hai ký táo.",
                         "accepted_answers": [
                                 "hätte",
-                                "haette",
-                                "Hätte",
-                                "Haette"
+                                "haette"
                         ]
                 }
         },
@@ -2135,8 +2131,7 @@ def seed_lesson_10():
                         "hint_vi": "Hôm qua chúng tôi đã nấu mì.",
                         "translation": "Hôm qua chúng tôi đã nấu mì.",
                         "accepted_answers": [
-                                "gekocht",
-                                "Gekocht"
+                                "gekocht"
                         ]
                 }
         },

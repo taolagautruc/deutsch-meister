@@ -986,7 +986,7 @@ ARENA_DATA_BY_LESSON = {
                 "audio_text": "Meine Schwester isst mehr Gemüse als ich.",
                 "display_sentence": "Meine Schwester isst ___ Gemüse als ich.",
                 "hint_vi": "Chị/em gái tôi ăn rau củ nhiều hơn tôi.",
-                "accepted_answers": ["mehr", "Mehr"]
+                "accepted_answers": ["mehr"]
             },
             {
                 "audio_text": "Ein Kilo Birnen kostet zwei Euro neunzig.",
