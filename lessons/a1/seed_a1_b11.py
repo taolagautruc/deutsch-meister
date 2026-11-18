@@ -49,22 +49,16 @@ def seed_lesson_11():
                     <span class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-indigo-500/20 border border-indigo-400/30 text-indigo-300 text-xs font-bold">
                         🇩🇪 DeutschMeister A1 • Kleidung & Wetter • Akkusativ • dies- (Bài 11)
                     </span>
-                    <span class="text-xs font-semibold text-slate-400 bg-slate-800/80 px-2.5 py-1 rounded-lg border border-slate-700">
-                        100 Bài tập Zero-Bug QA • 6 Sơ đồ SVG Tương tác
+                    <span class="text-xs text-amber-400 font-semibold flex items-center gap-1.5">
+                        ⏱️ Thời lượng ước tính: 120 phút • ⚡ 1800+ EXP • 🎯 100 Bài tập
                     </span>
                 </div>
-                <h1 class="text-2xl sm:text-3xl font-black tracking-tight text-white">
-                    Kleidung und Wetter: Trang phục, Màu sắc ở Akkusativ, dies- & Thời tiết
-                </h1>
-                <p class="text-slate-300 text-xs sm:text-sm max-w-3xl leading-relaxed">
-                    Học trọn bộ từ vựng trang phục (<code>der Mantel, die Jacke, das Kleid, die Schuhe...</code>) và 17 màu sắc; ghép tính từ chỉ màu vào trang phục ở Cách 4 Akkusativ theo công thức thần chú <b>„en – e – es – e“</b>; làm chủ đại từ chỉ định <b>dies- (dieser / diesen / diese / dieses)</b>; phân biệt rành mạch Akkusativ và Dativ với các động từ thời trang (<code>tragen, anziehen, gefallen, passen, stehen, gehören</code>); tự tin mô tả thời tiết (<code>Es regnet, Es ist sonnig / windig, Wie ist das Wetter bei dir?</code>) và giao tiếp mua sắm quần áo tại cửa hàng Đức.
+                <h3 class="text-xl sm:text-2xl font-black text-white tracking-tight">
+                    Bài 11: Kleidung - Die Farbe in Akkusativ - dies- (Đại từ chỉ định) - Wetter
+                </h3>
+                <p class="text-slate-300 text-xs sm:text-sm leading-relaxed max-w-4xl">
+                    <b>Mục tiêu bài học:</b> Chinh phục trọn bộ từ vựng trang phục (<code>der Mantel, die Jacke, das Kleid, die Schuhe...</code>) và 17 màu sắc; ghép tính từ chỉ màu vào trang phục ở Cách 4 <b>Akkusativ</b> theo công thức thần chú <b>„en – e – es – e“</b>; làm chủ đại từ chỉ định <b>dies- (dieser / diesen / diese / dieses)</b>; phân biệt rành mạch Akkusativ và Dativ với các động từ thời trang (<code>tragen, anziehen, gefallen, passen, stehen, gehören</code>); tự tin mô tả thời tiết (<code>Es regnet, Es ist sonnig / windig, Wie ist das Wetter bei dir?</code>) và giao tiếp mua sắm quần áo tại cửa hàng Đức.
                 </p>
-                <div class="pt-2 flex flex-wrap gap-2 text-xs">
-                    <span class="px-2.5 py-1 rounded-md bg-indigo-500/10 border border-indigo-400/20 text-indigo-200">👗 50 Từ vựng trang phục & thời tiết</span>
-                    <span class="px-2.5 py-1 rounded-md bg-emerald-500/10 border border-emerald-400/20 text-emerald-200">🎨 Farbe + Akkusativ (-en / -e / -es / -e)</span>
-                    <span class="px-2.5 py-1 rounded-md bg-blue-500/10 border border-blue-400/20 text-blue-200">👉 dies- (dieser / diesen / diese / dieses)</span>
-                    <span class="px-2.5 py-1 rounded-md bg-amber-500/10 border border-amber-400/20 text-amber-200">🌦️ Wetter & Phân biệt Akkusativ vs Dativ</span>
-                </div>
             </div>
         </div>
 

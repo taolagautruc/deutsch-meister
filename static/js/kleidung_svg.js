@@ -664,6 +664,9 @@
     // KHỞI TẠO TẤT CẢ SƠ ĐỒ
     // =========================================================================
     function initKleidungSvgDiagrams() {
+        if (typeof currentLesson !== 'undefined' && currentLesson && currentLesson.id !== 25) {
+            return;
+        }
         renderDiesTableSvg();
         renderFarbeAkkusativSvg();
         renderAkkDativFlowchartSvg();
