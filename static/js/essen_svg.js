@@ -609,6 +609,9 @@
     // KHỞI TẠO TẤT CẢ SƠ ĐỒ
     // =========================================================================
     function initEssenSvgDiagrams() {
+        if (typeof currentLesson !== 'undefined' && currentLesson && currentLesson.id !== 24) {
+            return;
+        }
         renderWelchTableSvg();
         renderWelchFlowchartSvg();
         renderSteigerungStaircaseSvg();

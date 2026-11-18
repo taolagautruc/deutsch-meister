@@ -49,22 +49,16 @@ def seed_lesson_10():
                     <span class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/20 border border-emerald-400/30 text-emerald-300 text-xs font-bold">
                         🇩🇪 DeutschMeister A1 • Essen & Trinken • Welch- • Steigerung (Bài 10)
                     </span>
-                    <span class="text-xs font-semibold text-slate-400 bg-slate-800/80 px-2.5 py-1 rounded-lg border border-slate-700">
-                        100 Bài tập Zero-Bug QA • 6 Sơ đồ SVG Tương tác
+                    <span class="text-xs text-amber-400 font-semibold flex items-center gap-1.5">
+                        ⏱️ Thời lượng ước tính: 120 phút • ⚡ 1800+ EXP • 🎯 100 Bài tập
                     </span>
                 </div>
-                <h1 class="text-2xl sm:text-3xl font-black tracking-tight text-white">
-                    Essen und Trinken: So sánh hơn / nhất, Từ hỏi Welch- & Mua sắm
-                </h1>
-                <p class="text-slate-300 text-xs sm:text-sm max-w-3xl leading-relaxed">
-                    Khám phá toàn bộ từ vựng ẩm thực Đức - Việt (3 giống <code>der / die / das</code>), làm chủ từ hỏi <b>Welch-</b> biến đổi theo Giống và Cách, nắm vững 3 bậc so sánh (<code>Positiv → Komparativ → Superlativ</code>), cấu trúc <code>mehr … als</code>, và tự tin giao tiếp mua sắm: gọi món, hỏi giá, đơn vị đo lường và đọc giá tiền Euro bằng tiếng Đức.
+                <h3 class="text-xl sm:text-2xl font-black text-white tracking-tight">
+                    Bài 10: Thực phẩm - So sánh hơn / So sánh nhất - Fragewort: Welch-
+                </h3>
+                <p class="text-slate-300 text-xs sm:text-sm leading-relaxed max-w-4xl">
+                    <b>Mục tiêu bài học:</b> Khám phá toàn bộ từ vựng ẩm thực Đức - Việt (3 giống <code>der / die / das</code>); làm chủ từ hỏi <b>Welch-</b> biến đổi theo Giống và Cách; nắm vững 3 bậc so sánh (<code>Positiv → Komparativ → Superlativ</code>), cấu trúc <code>mehr … als</code>; và tự tin giao tiếp mua sắm: gọi món, hỏi giá, đơn vị đo lường và đọc giá tiền Euro bằng tiếng Đức.
                 </p>
-                <div class="pt-2 flex flex-wrap gap-2 text-xs">
-                    <span class="px-2.5 py-1 rounded-md bg-emerald-500/10 border border-emerald-400/20 text-emerald-200">🧀 50 Từ vựng thực phẩm</span>
-                    <span class="px-2.5 py-1 rounded-md bg-blue-500/10 border border-blue-400/20 text-blue-200">❓ Welch- (Welcher / Welchen / Welche / Welches)</span>
-                    <span class="px-2.5 py-1 rounded-md bg-amber-500/10 border border-amber-400/20 text-amber-200">📈 Steigerung (viel - mehr - am meisten; gern - lieber - am liebsten)</span>
-                    <span class="px-2.5 py-1 rounded-md bg-purple-500/10 border border-purple-400/20 text-purple-200">🛒 Đi mua sắm & Đọc giá tiền Euro</span>
-                </div>
             </div>
         </div>
 

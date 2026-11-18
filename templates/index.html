@@ -1307,16 +1307,16 @@
             currentLessonIndex = index;
             currentLesson = currentLevelData.lessons[index];
             document.getElementById('current-lesson-grammar').innerHTML = currentLesson.grammar_content;
-            if (typeof initLesson8Visuals === 'function') {
+            if (currentLesson && currentLesson.id === 22 && typeof initLesson8Visuals === 'function') {
                 initLesson8Visuals();
             }
-            if (typeof initPerfektSvgDiagrams === 'function') {
+            if (currentLesson && currentLesson.id === 23 && typeof initPerfektSvgDiagrams === 'function') {
                 setTimeout(initPerfektSvgDiagrams, 50);
             }
-            if (typeof initEssenSvgDiagrams === 'function') {
+            if (currentLesson && currentLesson.id === 24 && typeof initEssenSvgDiagrams === 'function') {
                 setTimeout(initEssenSvgDiagrams, 50);
             }
-            if (typeof initKleidungSvgDiagrams === 'function') {
+            if (currentLesson && currentLesson.id === 25 && typeof initKleidungSvgDiagrams === 'function') {
                 setTimeout(initKleidungSvgDiagrams, 50);
             }
 
