@@ -36,14 +36,14 @@
 
     // Danh từ trang phục cho V1
     const V1_NOUNS = [
-        { label: "der Rock (chân váy)", gender: "m", art: "der", nomDies: "dieser", akkDies: "diesen", nomWelch: "welcher", akkWelch: "welchen", exNom: "Welcher Rock ist schön? — Dieser hier.", exAkk: "Welchen Rock nimmst du? — Diesen hier.", trNom: "Chiếc chân váy nào đẹp? — Chiếc này đây.", trAkk: "Bạn lấy chiếc chân váy nào? — Chiếc này đây." },
-        { label: "der Hut (chiếc mũ)", gender: "m", art: "der", nomDies: "dieser", akkDies: "diesen", nomWelch: "welcher", akkWelch: "welchen", exNom: "Welcher Hut passt mir? — Dieser hier.", exAkk: "Welchen Hut möchten Sie? — Diesen hier.", trNom: "Chiếc mũ nào vừa với tôi? — Chiếc này đây.", trAkk: "Ngài muốn chiếc mũ nào? — Chiếc này đây." },
-        { label: "die Hose (chiếc quần)", gender: "f", art: "die", nomDies: "diese", akkDies: "diese", nomWelch: "welche", akkWelch: "welche", exNom: "Welche Hose ist bequem? — Diese hier.", exAkk: "Welche Hose kaufst du? — Diese hier.", trNom: "Chiếc quần nào thoải mái? — Chiếc này đây.", trAkk: "Bạn mua chiếc quần nào? — Chiếc này đây." },
-        { label: "die Jacke (áo khoác)", gender: "f", art: "die", nomDies: "diese", akkDies: "diese", nomWelch: "welche", akkWelch: "welche", exNom: "Welche Jacke ist warm? — Diese hier.", exAkk: "Welche Jacke möchten Sie? — Diese hier.", trNom: "Chiếc áo khoác nào ấm? — Chiếc này đây.", trAkk: "Ngài muốn chiếc áo khoác nào? — Chiếc này đây." },
-        { label: "das Kleid (chiếc đầm)", gender: "n", art: "das", nomDies: "dieses", akkDies: "dieses", nomWelch: "welches", akkWelch: "welches", exNom: "Welches Kleid ist elegant? — Dieses hier.", exAkk: "Welches Kleid probierst du an? — Dieses hier.", trNom: "Chiếc đầm nào thanh lịch? — Chiếc này đây.", trAkk: "Bạn thử chiếc đầm nào? — Chiếc này đây." },
-        { label: "das Hemd (áo sơ mi nam)", gender: "n", art: "das", nomDies: "dieses", akkDies: "dieses", nomWelch: "welches", akkWelch: "welches", exNom: "Welches Hemd ist neu? — Dieses hier.", exAkk: "Welches Hemd suchst du? — Dieses hier.", trNom: "Chiếc áo sơ mi nào mới? — Chiếc này đây.", trAkk: "Bạn tìm chiếc áo sơ mi nào? — Chiếc này đây." },
+        { label: "der Rock (chân váy)", gender: "m", art: "der", nomDies: "dieser", akkDies: "diesen", nomWelch: "welcher", akkWelch: "welchen", exNom: "Welcher Rock gefällt dir? — Dieser hier.", exAkk: "Welchen Rock nimmst du? — Diesen hier.", trNom: "Chiếc chân váy nào làm bạn thích? — Chiếc này đây.", trAkk: "Bạn lấy chiếc chân váy nào? — Chiếc này đây." },
+        { label: "der Hut (chiếc mũ)", gender: "m", art: "der", nomDies: "dieser", akkDies: "diesen", nomWelch: "welcher", akkWelch: "welchen", exNom: "Welcher Hut passt mir? — Dieser hier.", exAkk: "Welchen Hut möchten Sie kaufen? — Diesen hier.", trNom: "Chiếc mũ nào vừa với tôi? — Chiếc này đây.", trAkk: "Ngài muốn mua chiếc mũ nào? — Chiếc này đây." },
+        { label: "die Hose (chiếc quần)", gender: "f", art: "die", nomDies: "diese", akkDies: "diese", nomWelch: "welche", akkWelch: "welche", exNom: "Welche Hose passt dir? — Diese hier.", exAkk: "Welche Hose kaufst du? — Diese hier.", trNom: "Chiếc quần nào vừa với bạn? — Chiếc này đây.", trAkk: "Bạn mua chiếc quần nào? — Chiếc này đây." },
+        { label: "die Jacke (áo khoác)", gender: "f", art: "die", nomDies: "diese", akkDies: "diese", nomWelch: "welche", akkWelch: "welche", exNom: "Welche Jacke gefällt Ihnen? — Diese hier.", exAkk: "Welche Jacke tragen Sie gern? — Diese hier.", trNom: "Chiếc áo khoác nào làm Ngài thích? — Chiếc này đây.", trAkk: "Ngài thích mặc chiếc áo khoác nào? — Chiếc này đây." },
+        { label: "das Kleid (chiếc đầm)", gender: "n", art: "das", nomDies: "dieses", akkDies: "dieses", nomWelch: "welches", akkWelch: "welches", exNom: "Welches Kleid gefällt dir? — Dieses hier.", exAkk: "Welches Kleid kaufst du? — Dieses hier.", trNom: "Chiếc đầm nào làm bạn thích? — Chiếc này đây.", trAkk: "Bạn mua chiếc đầm nào? — Chiếc này đây." },
+        { label: "das Hemd (áo sơ mi nam)", gender: "n", art: "das", nomDies: "dieses", akkDies: "dieses", nomWelch: "welches", akkWelch: "welches", exNom: "Welches Hemd passt ihm? — Dieses hier.", exAkk: "Welches Hemd nimmst du? — Dieses hier.", trNom: "Chiếc áo sơ mi nào vừa với anh ấy? — Chiếc này đây.", trAkk: "Bạn lấy chiếc áo sơ mi nào? — Chiếc này đây." },
         { label: "die Schuhe (đôi giày, PL)", gender: "pl", art: "die", nomDies: "diese", akkDies: "diese", nomWelch: "welche", akkWelch: "welche", exNom: "Welche Schuhe passen dir? — Diese hier.", exAkk: "Welche Schuhe nehmen Sie? — Diese hier.", trNom: "Đôi giày nào vừa với bạn? — Đôi này đây.", trAkk: "Ngài lấy đôi giày nào? — Đôi này đây." },
-        { label: "die Stiefel (đôi bốt, PL)", gender: "pl", art: "die", nomDies: "diese", akkDies: "diese", nomWelch: "welche", akkWelch: "welche", exNom: "Welche Stiefel sind Größe 39? — Diese hier.", exAkk: "Welche Stiefel kaufst du? — Diese hier.", trNom: "Những đôi bốt nào cỡ 39? — Những đôi này đây.", trAkk: "Bạn mua đôi bốt nào? — Đôi này đây." }
+        { label: "die Stiefel (đôi bốt, PL)", gender: "pl", art: "die", nomDies: "diese", akkDies: "diese", nomWelch: "welche", akkWelch: "welche", exNom: "Welche Stiefel gefallen dir? — Diese hier.", exAkk: "Welche Stiefel kaufst du? — Diese hier.", trNom: "Đôi bốt nào làm bạn thích? — Đôi này đây.", trAkk: "Bạn mua đôi bốt nào? — Đôi này đây." }
     ];
 
     let currentV1NounIndex = 0;
@@ -138,7 +138,7 @@
                 </div>
 
                 <div class="p-3 rounded-xl bg-slate-800/60 border border-slate-700/60 text-[11px] text-slate-300 flex items-center justify-between gap-2">
-                    <span>💡 <b>Quy tắc vàng:</b> Chỉ giống <b>Đực (der)</b> mới biến đổi ở Akkusativ (<code>-en</code>: <b>welchen / diesen</b>). Giống cái, giống trung và số nhiều giữ nguyên mạo từ ban đầu!</span>
+                    <span>💡 <b>Quy tắc vàng:</b> Chỉ giống <b>Đực (der)</b> mới biến đổi ở Akkusativ (<code>-en</code>: <b>welchen / diesen</b>). Giống cái (<code>-e</code>), giống trung (<code>-es</code>) và số nhiều (<code>-e</code>) giữ nguyên hình thái như ở Nominativ!</span>
                 </div>
 
                 <!-- Khung câu ví dụ & phát âm -->
@@ -265,7 +265,7 @@
                     <div class="p-3 rounded-2xl bg-purple-950/50 border border-purple-500/40 space-y-1 ${it.g === 'pl' ? 'ring-2 ring-purple-400 scale-105' : ''} transition">
                         <div class="font-bold text-purple-300">Số Nhiều (Plural)</div>
                         <div class="text-2xl font-black text-purple-400 font-mono">-e</div>
-                        <div class="text-[11px] text-slate-300">braun<b class="text-amber-300">e</b> Schuhe (k mạo từ)</div>
+                        <div class="text-[11px] text-slate-300">PL -e khi không có mạo từ (rote Schuhe); nếu đi sau die / diese / welche / keine / meine thì dùng đuôi -en (diese roten Schuhe)</div>
                     </div>
                 </div>
 
@@ -367,8 +367,15 @@
                             <li>• <b>Động từ cảm nhận/sở hữu:</b> <code>gefallen, passen, stehen, gehören, helfen</code>.</li>
                             <li>• <b>Món đồ là chủ ngữ:</b> <i>Der Mantel passt <b>mir</b></i> (Chiếc áo vừa với tôi).</li>
                             <li>• <b>Đại từ Dativ:</b> <code>mir, dir, ihm, ihr, uns, euch, ihnen, Ihnen</code>.</li>
-                            <li>• <b>Quy tắc vàng:</b> Câu Dativ <b>tuyệt đối KHÔNG chứa từ chỉ màu sắc</b>.</li>
+                            <li>• <b>Quy tắc vàng:</b> Với nhóm động từ Dativ (<code>gefallen, passen, stehen, gehören</code>), món đồ trang phục đóng vai trò làm <b>Chủ ngữ (Nominativ)</b>, còn người mặc/thích luôn chia ở <b>Cách 3 (Dativ: mir, dir, ihm, ihr...)</b>.</li>
                         </ul>
+                        <div class="p-2.5 rounded-xl bg-purple-900/40 border border-purple-500/30 text-[11px] text-purple-200 space-y-1">
+                            <div class="font-bold text-white">🔍 Phân biệt 4 động từ thời trang đi với Dativ:</div>
+                            <div>• <b>passen (+ Dativ)</b>: vừa vặn (về kích cỡ / size) — <i>„Die Hose passt mir.“</i></div>
+                            <div>• <b>stehen (+ Dativ)</b>: hợp (về màu sắc, kiểu dáng) — <i>„Das Kleid steht dir gut.“</i></div>
+                            <div>• <b>gefallen (+ Dativ)</b>: thích / ưng mắt (về thẩm mỹ) — <i>„Der Rock gefällt ihr.“</i></div>
+                            <div>• <b>gehören (+ Dativ)</b>: thuộc về ai (sở hữu) — <i>„Der Hut gehört ihm.“</i></div>
+                        </div>
                         <div class="p-3 rounded-xl bg-slate-900/90 border border-purple-500/30 space-y-1">
                             <div class="text-[11px] text-purple-400 font-bold">Ví dụ chuẩn (Bấm để nghe):</div>
                             <div class="flex items-center justify-between gap-2">
@@ -393,24 +400,24 @@
     // SƠ ĐỒ V4: TỦ QUẦN ÁO TƯƠNG TÁC (KLEIDERSCHRANK)
     // =========================================================================
     const V4_ITEMS = [
-        { icon: "🧥", word: "der Mantel", pl: "die Mäntel", g: "m", artAkk: "einen", vi: "áo măng tô" },
-        { icon: "👔", word: "das Hemd", pl: "die Hemden", g: "n", artAkk: "ein", vi: "áo sơ mi nam" },
-        { icon: "👗", word: "das Kleid", pl: "die Kleider", g: "n", artAkk: "ein", vi: "đầm, váy liền" },
-        { icon: "👖", word: "die Hose", pl: "die Hosen", g: "f", artAkk: "eine", vi: "quần" },
-        { icon: "👚", word: "die Bluse", pl: "die Blusen", g: "f", artAkk: "eine", vi: "áo sơ mi nữ" },
-        { icon: "🥾", word: "die Stiefel", pl: "die Stiefel", g: "pl", artAkk: "", vi: "đôi bốt" },
-        { icon: "👞", word: "die Schuhe", pl: "die Schuhe", g: "pl", artAkk: "", vi: "đôi giày" },
-        { icon: "🧣", word: "der Schal", pl: "die Schals", g: "m", artAkk: "einen", vi: "khăn quàng" },
-        { icon: "🧤", word: "die Handschuhe", pl: "die Handschuhe", g: "pl", artAkk: "", vi: "găng tay" },
-        { icon: "🎩", word: "der Hut", pl: "die Hüte", g: "m", artAkk: "einen", vi: "mũ có vành" },
-        { icon: "🧢", word: "die Mütze", pl: "die Mützen", g: "f", artAkk: "eine", vi: "mũ len / lưỡi trai" },
-        { icon: "👔", word: "die Krawatte", pl: "die Krawatten", g: "f", artAkk: "eine", vi: "cà vạt" },
-        { icon: "🧦", word: "die Socken", pl: "die Socken", g: "pl", artAkk: "", vi: "tất" },
-        { icon: "👕", word: "das T-Shirt", pl: "die T-Shirts", g: "n", artAkk: "ein", vi: "áo phông" },
-        { icon: "🥋", word: "der Anzug", pl: "die Anzüge", g: "m", artAkk: "einen", vi: "bộ com lê" },
-        { icon: "🧶", word: "der Pullover", pl: "die Pullover", g: "m", artAkk: "einen", vi: "áo len" },
-        { icon: "🧥", word: "die Jacke", pl: "die Jacken", g: "f", artAkk: "eine", vi: "áo khoác" },
-        { icon: "🩳", word: "die Jeans", pl: "die Jeans", g: "f", artAkk: "eine", vi: "quần bò" }
+        { icon: "🧥", word: "der Mantel", pl: "PL: die Mäntel", vi: "áo măng tô", sentenceDe: "Ich trage einen Mantel.", sentenceVi: "Tôi mặc một chiếc áo măng tô." },
+        { icon: "👔", word: "das Hemd", pl: "PL: die Hemden", vi: "áo sơ mi nam", sentenceDe: "Ich trage ein Hemd.", sentenceVi: "Tôi mặc một chiếc áo sơ mi nam." },
+        { icon: "👗", word: "das Kleid", pl: "PL: die Kleider", vi: "váy đầm", sentenceDe: "Ich trage ein Kleid.", sentenceVi: "Tôi mặc một chiếc váy đầm." },
+        { icon: "👖", word: "die Hose", pl: "PL: die Hosen", vi: "quần dài", sentenceDe: "Ich trage eine Hose.", sentenceVi: "Tôi mặc một chiếc quần dài." },
+        { icon: "👚", word: "die Bluse", pl: "PL: die Blusen", vi: "áo sơ mi nữ", sentenceDe: "Ich trage eine Bluse.", sentenceVi: "Tôi mặc một chiếc áo sơ mi nữ." },
+        { icon: "🥾", word: "der Stiefel", pl: "PL: die Stiefel", vi: "bốt, ủng (đôi bốt)", sentenceDe: "Ich trage Stiefel.", sentenceVi: "Tôi đi bốt." },
+        { icon: "👞", word: "der Schuh", pl: "PL: die Schuhe", vi: "giày (đôi giày)", sentenceDe: "Ich trage Schuhe.", sentenceVi: "Tôi đi giày." },
+        { icon: "🧣", word: "der Schal", pl: "PL: die Schals", vi: "khăn quàng", sentenceDe: "Ich trage einen Schal.", sentenceVi: "Tôi quàng một chiếc khăn." },
+        { icon: "🧤", word: "der Handschuh", pl: "PL: die Handschuhe", vi: "găng tay (đôi găng tay)", sentenceDe: "Ich trage Handschuhe.", sentenceVi: "Tôi đeo găng tay." },
+        { icon: "🎩", word: "der Hut", pl: "PL: die Hüte", vi: "mũ rộng vành", sentenceDe: "Ich trage einen Hut.", sentenceVi: "Tôi đội một chiếc mũ rộng vành." },
+        { icon: "🧢", word: "die Mütze", pl: "PL: die Mützen", vi: "mũ len (mũ lưỡi trai)", sentenceDe: "Ich trage eine Mütze.", sentenceVi: "Tôi đội một chiếc mũ len (mũ lưỡi trai)." },
+        { icon: "👔", word: "die Krawatte", pl: "PL: die Krawatten", vi: "cà vạt", sentenceDe: "Ich trage eine Krawatte.", sentenceVi: "Tôi đeo một chiếc cà vạt." },
+        { icon: "🧦", word: "die Socke", pl: "PL: die Socken", vi: "tất, vớ (đôi tất)", sentenceDe: "Ich trage Socken.", sentenceVi: "Tôi đi tất." },
+        { icon: "👕", word: "das T-Shirt", pl: "PL: die T-Shirts", vi: "áo phông", sentenceDe: "Ich trage ein T-Shirt.", sentenceVi: "Tôi mặc một chiếc áo phông." },
+        { icon: "🤵", word: "der Anzug", pl: "PL: die Anzüge", vi: "bộ com lê", sentenceDe: "Ich trage einen Anzug.", sentenceVi: "Tôi mặc một bộ com lê." },
+        { icon: "🧥", word: "der Pullover", pl: "PL: die Pullover", vi: "áo len", sentenceDe: "Ich trage einen Pullover.", sentenceVi: "Tôi mặc một chiếc áo len." },
+        { icon: "🧥", word: "die Jacke", pl: "PL: die Jacken", vi: "áo khoác", sentenceDe: "Ich trage eine Jacke.", sentenceVi: "Tôi mặc một chiếc áo khoác." },
+        { icon: "👖", word: "die Jeans", pl: "PL: die Jeans", vi: "quần bò (jeans)", sentenceDe: "Ich trage eine Jeans.", sentenceVi: "Tôi mặc quần bò (jeans)." }
     ];
 
     let currentV4Index = 0;
@@ -420,8 +427,9 @@
         if (!container) return;
 
         const it = V4_ITEMS[currentV4Index];
-        const sentenceDe = it.artAkk ? `Ich trage ${it.artAkk} ${it.word.split(' ')[1]}.` : `Ich trage ${it.word.split(' ')[1]}.`;
-        const sentenceVi = `Tôi mặc một chiếc ${it.vi}.`;
+        const sentenceDe = it.sentenceDe;
+        const sentenceVi = it.sentenceVi;
+        const jeansExtra = it.word === 'die Jeans' ? ' (hoặc <i>„Ich trage Jeans.“</i>)' : '';
 
         container.innerHTML = `
             <div class="p-5 sm:p-7 rounded-3xl bg-slate-900 text-white shadow-xl border border-slate-800 space-y-5">
@@ -450,7 +458,7 @@
                         <div>
                             <div class="text-base font-black text-white">${it.word} <span class="text-xs text-slate-400 font-normal">(${it.pl})</span></div>
                             <div class="text-xs text-indigo-400 font-bold">Nghĩa: ${it.vi}</div>
-                            <div class="text-xs text-slate-300 mt-1">Câu mẫu: <b>„${sentenceDe}“</b> — <i>${sentenceVi}</i></div>
+                            <div class="text-xs text-slate-300 mt-1">Câu mẫu: <b>„${sentenceDe}“</b>${jeansExtra} — <i>${sentenceVi}</i></div>
                         </div>
                     </div>
                     <button onclick="speakGerman('${sentenceDe.replace(/'/g, "\\'")}', 0.9)" class="px-4 py-2 rounded-xl bg-blue-600 hover:bg-blue-500 text-white font-bold text-xs transition shadow-md flex items-center gap-1.5 cursor-pointer shrink-0">
@@ -473,10 +481,10 @@
         { city: "Berlin", country: "Đức", icon: "☁️", desc: "bewölkt", temp: 8, tempWord: "acht Grad", de: "In Berlin ist es bewölkt. Es sind acht Grad.", vi: "Ở Berlin trời nhiều mây, nhiệt độ tám độ." },
         { city: "Hamburg", country: "Đức", icon: "🌧️", desc: "regnet und windig", temp: 7, tempWord: "sieben Grad", de: "In Hamburg regnet es und es ist windig. Es sind sieben Grad.", vi: "Ở Hamburg trời mưa và có gió, nhiệt độ bảy độ." },
         { city: "München", country: "Đức", icon: "☀️", desc: "sonnig", temp: 12, tempWord: "zwölf Grad", de: "In München scheint die Sonne. Es sind zwölf Grad.", vi: "Ở München trời nắng, nhiệt độ mười hai độ." },
-        { city: "Wien", country: "Áo", icon: "🌫️", desc: "neblig", temp: 4, tempWord: "vier Grad", de: "In Wien ist es neblig. Es sind vier Grad.", vi: "Ở Wien có sương mù, nhiệt độ bốn độ." },
-        { city: "Hà Nội", country: "Việt Nam", icon: "🌫️", desc: "neblig und kalt", temp: 16, tempWord: "sechzehn Grad", de: "In Hà Nội ist es neblig. Es sind sechzehn Grad.", vi: "Ở Hà Nội có sương mù, nhiệt độ mười sáu độ." },
+        { city: "Wien", country: "Áo", icon: "🌥️", desc: "neblig", temp: 4, tempWord: "vier Grad", de: "In Wien ist es neblig. Es sind vier Grad.", vi: "Ở Wien có sương mù, nhiệt độ bốn độ." },
+        { city: "Hà Nội", country: "Việt Nam", icon: "🌥️", desc: "neblig und kalt", temp: 16, tempWord: "sechzehn Grad", de: "In Hà Nội ist es neblig. Es sind sechzehn Grad.", vi: "Ở Hà Nội có sương mù, nhiệt độ mười sáu độ." },
         { city: "Hải Phòng", country: "Việt Nam", icon: "🌬️", desc: "windig", temp: 20, tempWord: "zwanzig Grad", de: "In Hải Phòng ist es windig. Es sind zwanzig Grad.", vi: "Ở Hải Phòng trời có gió, nhiệt độ hai mươi độ." },
-        { city: "Đà Lạt", country: "Việt Nam", icon: "🌫️", desc: "kühl und neblig", temp: 15, tempWord: "fünfzehn Grad", de: "In Đà Lạt ist es kühl und oft neblig. Es sind fünfzehn Grad.", vi: "Ở Đà Lạt trời mát và hay có sương mù, nhiệt độ mười lăm độ." },
+        { city: "Đà Lạt", country: "Việt Nam", icon: "🌥️", desc: "kühl und neblig", temp: 15, tempWord: "fünfzehn Grad", de: "In Đà Lạt ist es kühl und oft neblig. Es sind fünfzehn Grad.", vi: "Ở Đà Lạt trời mát và hay có sương mù, nhiệt độ mười lăm độ." },
         { city: "Sài Gòn", country: "Việt Nam", icon: "🥵", desc: "heiß", temp: 34, tempWord: "vierunddreißig Grad", de: "In Sài Gòn ist es sehr heiß. Es sind vierunddreißig Grad.", vi: "Ở Sài Gòn trời rất nóng, nhiệt độ ba mươi tư độ." }
     ];
 
@@ -555,7 +563,8 @@
                 { spk: "Verkäuferin", de: "Welche Größe haben Sie?", vi: "Ngài mặc cỡ nào?" },
                 { spk: "Kunde", de: "Ich trage Größe achtundvierzig.", vi: "Tôi mặc cỡ bốn mươi tám." },
                 { spk: "Verkäuferin", de: "Diesen hier haben wir in achtundvierzig. Wollen Sie ihn anprobieren?", vi: "Chiếc này đây chúng tôi có cỡ bốn mươi tám. Ngài có muốn thử không?" },
-                { spk: "Kunde", de: "Ja, gern. Wo ist die Umkleidekabine?", vi: "Vâng, rất sẵn lòng. Phòng thử đồ ở đâu?" }
+                { spk: "Kunde", de: "Ja, gern. Wo ist die Umkleidekabine?", vi: "Vâng, rất sẵn lòng. Phòng thử đồ ở đâu?" },
+                { spk: "Verkäuferin", de: "Die Umkleidekabine ist dort hinten links.", vi: "Phòng thử đồ ở phía sau bên trái đằng kia ạ." }
             ]
         },
         {

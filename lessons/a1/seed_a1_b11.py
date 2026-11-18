@@ -220,10 +220,11 @@ def seed_lesson_11():
             <div class="p-4 rounded-2xl bg-indigo-50/80 border border-indigo-200 text-xs text-indigo-950 space-y-2">
                 <div class="text-sm font-black text-indigo-900">📐 CÔNG THỨC VÀNG VỀ ĐUÔI TÍNH TỪ MÀU Ở AKKUSATIV:</div>
                 <div class="p-3 rounded-xl bg-white border border-indigo-200 font-mono text-center text-sm font-bold text-indigo-900 shadow-xs">
-                    m: einen [Màu]-en &nbsp;|&nbsp; f: eine [Màu]-e &nbsp;|&nbsp; n: ein [Màu]-es &nbsp;|&nbsp; PL: [Màu]-e (không mạo từ)
+                    m: einen [Màu]-en &nbsp;|&nbsp; f: eine [Màu]-e &nbsp;|&nbsp; n: ein [Màu]-es &nbsp;|&nbsp; PL: [Màu]-e
                 </div>
-                <div class="text-[11px] text-slate-600">
-                    💡 <b>Giải thích bản chất:</b> Ở giống trung (das Kleid), mạo từ <code>ein</code> không có đuôi nên tính từ phải gánh đuôi đặc trưng <code>-es</code> (giống đuôi das). Còn ở giống đực, mạo từ <code>einen</code> đã mang đuôi <code>-en</code> nên tính từ nhận tiếp đuôi <code>-en</code>.
+                <div class="text-[11px] text-slate-600 space-y-1">
+                    <div>💡 <b>Ghi chú số nhiều (Plural):</b> PL: <code>-e</code> khi không có mạo từ (<i>rote Schuhe</i>); nếu đi sau <i>die / diese / welche / keine / meine</i> thì dùng đuôi <code>-en</code> (<i>diese roten Schuhe</i>).</div>
+                    <div>💡 <b>Giải thích bản chất:</b> Ở giống trung (das Kleid), mạo từ <code>ein</code> không có đuôi nên tính từ phải gánh đuôi đặc trưng <code>-es</code> (giống đuôi das). Còn ở giống đực, mạo từ <code>einen</code> đã mang đuôi <code>-en</code> nên tính từ nhận tiếp đuôi <code>-en</code>.</div>
                 </div>
             </div>
 
@@ -257,6 +258,32 @@ def seed_lesson_11():
             <!-- SƠ ĐỒ V3 NHÚNG VÀO ĐÂY -->
             <div id="svg-v3-container"></div>
 
+            <!-- Quy tắc vàng Dativ & 4 động từ thời trang -->
+            <div class="p-4 rounded-2xl bg-amber-50/80 border border-amber-200 text-xs text-amber-950 space-y-2">
+                <div class="font-bold text-amber-900">💡 Quy tắc vàng phân biệt Akkusativ vs Dativ:</div>
+                <div class="text-slate-700 leading-relaxed">
+                    Với nhóm động từ Dativ (<code>gefallen, passen, stehen, gehören</code>), món đồ trang phục đóng vai trò làm <b>Chủ ngữ (Nominativ)</b>, còn người mặc/thích luôn chia ở <b>Cách 3 (Dativ: mir, dir, ihm, ihr...)</b>.
+                </div>
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 pt-1 text-slate-800">
+                    <div class="p-2.5 rounded-xl bg-white border border-amber-200">
+                        • <b>passen (+ Dativ):</b> vừa vặn về kích cỡ (Größe) / size.<br>
+                        <i>Ví dụ: Die Hose passt mir. (Chiếc quần vừa với tôi).</i>
+                    </div>
+                    <div class="p-2.5 rounded-xl bg-white border border-amber-200">
+                        • <b>stehen (+ Dativ):</b> hợp/đẹp với vẻ ngoài, màu sắc, phong cách.<br>
+                        <i>Ví dụ: Das Kleid steht dir gut. (Chiếc đầm rất hợp với bạn).</i>
+                    </div>
+                    <div class="p-2.5 rounded-xl bg-white border border-amber-200">
+                        • <b>gefallen (+ Dativ):</b> thích, ưng mắt về thẩm mỹ nói chung.<br>
+                        <i>Ví dụ: Der Mantel gefällt ihm. (Anh ấy thích chiếc áo măng tô này).</i>
+                    </div>
+                    <div class="p-2.5 rounded-xl bg-white border border-amber-200">
+                        • <b>gehören (+ Dativ):</b> thuộc về ai (quyền sở hữu).<br>
+                        <i>Ví dụ: Die Jacke gehört mir. (Chiếc áo khoác thuộc về tôi / của tôi).</i>
+                    </div>
+                </div>
+            </div>
+
             <!-- Bảng đại từ Dativ tra cứu nhanh -->
             <div class="p-4 rounded-2xl bg-purple-50/70 border border-purple-200 text-xs space-y-2">
                 <div class="font-bold text-purple-900">Bảng Tra Cứu Đại Từ Nhân Xưng ở Dativ (Ôn tập):</div>
@@ -288,7 +315,11 @@ def seed_lesson_11():
             <div id="svg-v1-container"></div>
 
             <div class="p-4 rounded-2xl bg-blue-50/70 border border-blue-200 text-xs text-blue-950 space-y-2">
-                <div class="font-bold text-blue-900">📌 Hai cách dùng của dies-:</div>
+                <div class="font-bold text-blue-900">💡 Quy tắc vàng:</div>
+                <div class="text-slate-800 font-medium">
+                    Chỉ giống Đực (der) mới biến đổi ở Akkusativ (-en: <b>welchen / diesen</b>). Giống cái (-e), giống trung (-es) và số nhiều (-e) giữ nguyên hình thái như ở Nominativ!
+                </div>
+                <div class="font-bold text-blue-900 pt-1">📌 Hai cách dùng của dies-:</div>
                 <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 text-slate-700">
                     <div class="p-2.5 rounded-xl bg-white border border-blue-200">
                         <b>1. Đi kèm danh từ:</b> <i>Ich kaufe <b>diesen Rock</b>.</i> (Tôi mua chiếc chân váy này).
@@ -320,7 +351,7 @@ def seed_lesson_11():
                 <div class="p-3 rounded-2xl bg-slate-50 border border-slate-200 space-y-1">
                     <div class="font-bold text-slate-900">② Es ist + Tính từ</div>
                     <div class="font-mono text-indigo-700 font-bold">Es ist windig.</div>
-                    <div class="text-[11px] text-slate-500">Trời có gió (sonnig, neblig, kalt, heiß).</div>
+                    <div class="text-[11px] text-slate-500">Trời có gió (sonnig, windig, neblig, kalt, heiß, warm, kühl, bewölkt).</div>
                 </div>
                 <div class="p-3 rounded-2xl bg-slate-50 border border-slate-200 space-y-1">
                     <div class="font-bold text-slate-900">③ Die Sonne scheint</div>
@@ -390,6 +421,26 @@ def seed_lesson_11():
                         📖 <b>Dịch:</b> Thời tiết ở Việt Nam thế nào? Ở miền Bắc mùa đông trời lạnh và thường có sương mù. Mùa hè rất nóng và mưa nhiều. Ở Đà Lạt trời mát quanh năm. Buổi sáng hay có sương mù. Ở Sài Gòn trời luôn ấm.
                     </div>
                 </div>
+
+                <!-- Đoạn 3: Im Kaufhaus -->
+                <div class="p-4 rounded-2xl bg-slate-50 border border-slate-200 space-y-2">
+                    <div class="flex items-center justify-between">
+                        <span class="font-bold text-slate-900 text-sm">Đoạn 3: Im Kaufhaus (Mua sắm tại trung tâm thương mại)</span>
+                        <button onclick="speakGerman('Im Kaufhaus sucht Herr Schmidt einen Pullover. Die Verkäuferin fragt: Welchen Pullover möchten Sie? Herr Schmidt zeigt auf das Regal: Diesen hier. Er probiert ihn an. Der Pullover passt ihm perfekt und die grüne Farbe steht ihm sehr gut.', 0.9)" class="text-indigo-600 font-bold hover:underline cursor-pointer">🔊 Nghe đoạn văn</button>
+                    </div>
+                    <p class="text-slate-700 leading-relaxed italic">
+                        „Im Kaufhaus sucht Herr Schmidt <b>einen Pullover</b>. Die Verkäuferin fragt: <i>„<b>Welchen Pullover</b> möchten Sie?“</i> Herr Schmidt zeigt auf das Regal: <i>„<b>Diesen hier</b>.“</i> Er probiert ihn an. Der Pullover <b>passt ihm</b> perfekt und die grüne Farbe <b>steht ihm</b> sehr gut.“
+                    </p>
+                    <div class="text-slate-500 text-[11px]">
+                        📖 <b>Dịch:</b> Tại trung tâm bách hóa, ông Schmidt tìm một chiếc áo len. Cô bán hàng hỏi: „Ngài muốn mua chiếc áo len nào ạ?“ Ông Schmidt chỉ vào giá để đồ: „Chiếc này đây ạ.“ Ông ấy thử áo. Chiếc áo len vừa khít với ông ấy và màu xanh lá rất hợp với ông ấy.
+                    </div>
+                    <div class="mt-2 pt-2 border-t border-slate-200 grid grid-cols-1 sm:grid-cols-2 gap-1.5 text-[11px] text-slate-600">
+                        <div>• <code>einen Pullover / Welchen Pullover / Diesen hier</code>: giống đực (der) biến cách ở Akkusativ (-en).</div>
+                        <div>• <code>anprobieren (thử đồ)</code>: động từ tách <i>(Er probiert ihn an)</i>.</div>
+                        <div>• <code>passen + Dativ (ihm)</code>: vừa vặn về kích cỡ.</div>
+                        <div>• <code>stehen + Dativ (ihm)</code>: hợp về diện mạo và màu sắc.</div>
+                    </div>
+                </div>
             </div>
         </div>
 
@@ -406,7 +457,7 @@ def seed_lesson_11():
             <div class="overflow-x-auto rounded-2xl border border-slate-200">
                 <table class="w-full text-left text-xs divide-y divide-slate-200">
                     <tbody class="divide-y divide-slate-100 text-slate-700">
-                        <tr class="p-3 bg-slate-50 font-bold"><td class="p-3 w-1/3 text-indigo-900">Màu ở Akkusativ</td><td class="p-3">m <code>-en</code> (einen roten Rock) · f <code>-e</code> (eine rote Bluse) · n <code>-es</code> (ein rotes Kleid) · PL <code>-e</code> (rote Schuhe) → <b>„en – e – es – e“</b></td></tr>
+                        <tr class="p-3 bg-slate-50 font-bold"><td class="p-3 w-1/3 text-indigo-900">Màu ở Akkusativ</td><td class="p-3">m <code>-en</code> (einen roten Rock) · f <code>-e</code> (eine rote Bluse) · n <code>-es</code> (ein rotes Kleid) · PL <code>-e</code> khi không có mạo từ (rote Schuhe); nếu đi sau <i>die / diese / welche / keine / meine</i> thì dùng đuôi <code>-en</code> (diese roten Schuhe) → <b>„en – e – es – e“</b></td></tr>
                         <tr class="p-3"><td class="p-3 font-bold text-indigo-900">Màu bất biến</td><td class="p-3"><code>rosa, lila, orange, beige, türkis, mint, pink</code> (không bao giờ chia đuôi: <i>eine rosa Bluse</i>)</td></tr>
                         <tr class="p-3 bg-slate-50 font-bold"><td class="p-3 text-indigo-900">dies- (Đại từ chỉ định)</td><td class="p-3">Chỉ giống đực biến đổi: <b>dieser → diesen</b> (Akkusativ). f: diese · n: dieses · PL: diese</td></tr>
                         <tr class="p-3"><td class="p-3 font-bold text-indigo-900">Akkusativ vs. Dativ</td><td class="p-3">Akkusativ: <code>tragen, anziehen, anprobieren, kaufen, suchen</code> · Dativ: <code>gefallen, passen, stehen, gehören</code></td></tr>
@@ -433,7 +484,7 @@ def seed_lesson_11():
     </div>
     """
 
-    vocabularies_raw = [('Stiefel', 'der', 'bốt (số nhiều: die Stiefel)', 'Im Schnee trage ich gern Stiefel.'), ('Mantel', 'der', 'áo măng tô (số nhiều: die Mäntel)', 'Bei Kälte trage ich einen Mantel.'), ('Pullover', 'der', 'áo len chui đầu (số nhiều: die Pullover)', 'Heute trage ich einen Pullover.'), ('Rock', 'der', 'chân váy (số nhiều: die Röcke)', 'Meine Schwester trägt gern einen Rock.'), ('Anzug', 'der', 'bộ com lê (số nhiều: die Anzüge)', 'Mein Vater trägt einen Anzug und eine Krawatte.'), ('Schuh', 'der', 'giày (số nhiều: die Schuhe)', 'Die Schuhe sind Größe neununddreißig.'), ('Gürtel', 'der', 'thắt lưng (số nhiều: die Gürtel)', 'Ich brauche einen Gürtel für die Hose.'), ('Hut', 'der', 'mũ có vành (số nhiều: die Hüte)', 'In der Sonne trägt er einen Hut.'), ('Handschuh', 'der', 'găng tay (số nhiều: die Handschuhe)', 'Bei Kälte trage ich Handschuhe.'), ('Jeans', 'die', 'quần bò (số nhiều: die Jeans)', 'Ich trage gern Jeans und ein T-Shirt.'), ('Jacke', 'die', 'áo khoác (số nhiều: die Jacken)', 'Im Herbst trage ich eine Jacke.'), ('Hose', 'die', 'quần (số nhiều: die Hosen)', 'Die Hose ist mir zu lang.'), ('Bluse', 'die', 'áo sơ mi nữ (số nhiều: die Blusen)', 'Sie trägt eine Bluse und einen Rock.'), ('Socke', 'die', 'tất (số nhiều: die Socken)', 'Ich brauche warme Socken.'), ('Krawatte', 'die', 'cà vạt (số nhiều: die Krawatten)', 'Mein Onkel trägt eine Krawatte.'), ('T-Shirt', 'das', 'áo phông (số nhiều: die T-Shirts)', 'Im Sommer trage ich ein T-Shirt.'), ('Hemd', 'das', 'áo sơ mi nam (số nhiều: die Hemden)', 'Er trägt ein Hemd und eine Krawatte.'), ('Kleid', 'das', 'đầm, váy liền (số nhiều: die Kleider)', 'Sie trägt ein Kleid zur Party.'), ('Schal', 'der', 'khăn quàng (số nhiều: die Schals)', 'Im Winter brauche ich einen Schal.'), ('Mütze', 'die', 'mũ len, mũ lưỡi trai (số nhiều: die Mützen)', 'Bei Kälte trage ich eine Mütze.'), ('Regenmantel', 'der', 'áo mưa (số nhiều: die Regenmäntel)', 'Bei Regen trage ich einen Regenmantel.'), ('Regenschirm', 'der', 'cái ô (số nhiều: die Regenschirme)', 'Ich nehme heute einen Regenschirm mit.'), ('Sonnenbrille', 'die', 'kính râm (số nhiều: die Sonnenbrillen)', 'Bei Sonne trage ich eine Sonnenbrille.'), ('Größe', 'die', 'kích cỡ (số nhiều: die Größen)', 'Welche Größe haben Sie?'), ('Umkleidekabine', 'die', 'phòng thử đồ (số nhiều: die Umkleidekabinen)', 'Die Umkleidekabine ist dort hinten.'), ('Regen', 'der', 'mưa (chỉ có số ít)', 'Bei Regen bleibe ich zu Hause.'), ('Schnee', 'der', 'tuyết (chỉ có số ít)', 'Im Winter liegt viel Schnee in den Bergen.'), ('Wind', 'der', 'gió (số nhiều: die Winde)', 'Der Wind ist heute kalt.'), ('Nebel', 'der', 'sương mù (số nhiều: die Nebel)', 'Im Herbst gibt es oft Nebel.'), ('Sturm', 'der', 'cơn bão (số nhiều: die Stürme)', 'Der Sturm kommt heute Abend.'), ('Himmel', 'der', 'bầu trời (số nhiều: die Himmel)', 'Der Himmel ist heute bewölkt.'), ('Frühling', 'der', 'mùa xuân (số nhiều: die Frühlinge)', 'Im Frühling ist es warm.'), ('Sommer', 'der', 'mùa hè (số nhiều: die Sommer)', 'Im Sommer ist es heiß.'), ('Herbst', 'der', 'mùa thu (số nhiều: die Herbste)', 'Im Herbst regnet es oft.'), ('Winter', 'der', 'mùa đông (số nhiều: die Winter)', 'Im Winter schneit es in Deutschland.'), ('Wetterbericht', 'der', 'bản tin thời tiết (số nhiều: die Wetterberichte)', 'Der Wetterbericht sagt Regen.'), ('Kleiderschrank', 'der', 'tủ quần áo (số nhiều: die Kleiderschränke)', 'Mein Kleiderschrank ist voll.'), ('Sonne', 'die', 'mặt trời (số nhiều: die Sonnen)', 'Heute scheint die Sonne.'), ('Wolke', 'die', 'đám mây (số nhiều: die Wolken)', 'Am Himmel sind viele Wolken.'), ('Kälte', 'die', 'khí lạnh, cái lạnh (chỉ có số ít)', 'Bei Kälte friere ich schnell.'), ('Hitze', 'die', 'khí nóng, cái nóng (chỉ có số ít)', 'Bei Hitze schwitze ich viel.'), ('Temperatur', 'die', 'nhiệt độ (số nhiều: die Temperaturen)', 'Die Temperatur ist heute sehr hoch.'), ('Jahreszeit', 'die', 'mùa trong năm (số nhiều: die Jahreszeiten)', 'Welche Jahreszeit magst du am liebsten?'), ('Farbe', 'die', 'màu sắc (số nhiều: die Farben)', 'Welche Farbe hat dein Hemd?'), ('Mode', 'die', 'thời trang (chỉ có số ít)', 'Meine Schwester mag Mode.'), ('Wetter', 'das', 'thời tiết (chỉ có số ít)', 'Wie ist das Wetter heute?'), ('Gewitter', 'das', 'cơn dông (số nhiều: die Gewitter)', 'Am Abend gibt es ein Gewitter.'), ('Grad', 'das', 'độ nhiệt độ (sau số đếm giữ nguyên: zwanzig Grad)', 'Heute sind es zwanzig Grad.'), ('Kaufhaus', 'das', 'trung tâm bách hóa (số nhiều: die Kaufhäuser)', 'Im Kaufhaus gibt es viele Mäntel.'), ('Geschäft', 'das', 'cửa hàng (số nhiều: die Geschäfte)', 'Das Geschäft öffnet um neun Uhr.')]
+    vocabularies_raw = [('Stiefel', 'der', 'bốt (số nhiều: die Stiefel)', 'Im Schnee trage ich gern Stiefel.'), ('Mantel', 'der', 'áo măng tô (số nhiều: die Mäntel)', 'Bei Kälte trage ich einen Mantel.'), ('Pullover', 'der', 'áo len chui đầu (số nhiều: die Pullover)', 'Heute trage ich einen Pullover.'), ('Rock', 'der', 'chân váy (số nhiều: die Röcke)', 'Meine Schwester trägt gern einen Rock.'), ('Anzug', 'der', 'bộ com lê (số nhiều: die Anzüge)', 'Mein Vater trägt einen Anzug und eine Krawatte.'), ('Schuh', 'der', 'giày (số nhiều: die Schuhe)', 'Die Schuhe sind Größe neununddreißig.'), ('Gürtel', 'der', 'thắt lưng (số nhiều: die Gürtel)', 'Ich brauche einen Gürtel für die Hose.'), ('Hut', 'der', 'mũ có vành (số nhiều: die Hüte)', 'In der Sonne trägt er einen Hut.'), ('Handschuh', 'der', 'găng tay (số nhiều: die Handschuhe)', 'Bei Kälte trage ich Handschuhe.'), ('Jeans', 'die', 'quần bò (số nhiều: die Jeans)', 'Ich trage gern Jeans und ein T-Shirt.'), ('Jacke', 'die', 'áo khoác (số nhiều: die Jacken)', 'Im Herbst trage ich eine Jacke.'), ('Hose', 'die', 'quần (số nhiều: die Hosen)', 'Die Hose ist mir zu lang.'), ('Bluse', 'die', 'áo sơ mi nữ (số nhiều: die Blusen)', 'Sie trägt eine Bluse und einen Rock.'), ('Socke', 'die', 'tất (số nhiều: die Socken)', 'Ich brauche warme Socken.'), ('Krawatte', 'die', 'cà vạt (số nhiều: die Krawatten)', 'Mein Onkel trägt eine Krawatte.'), ('T-Shirt', 'das', 'áo phông (số nhiều: die T-Shirts)', 'Im Sommer trage ich ein T-Shirt.'), ('Hemd', 'das', 'áo sơ mi nam (số nhiều: die Hemden)', 'Er trägt ein Hemd und eine Krawatte.'), ('Kleid', 'das', 'đầm, váy liền (số nhiều: die Kleider)', 'Sie trägt ein Kleid zur Party.'), ('Schal', 'der', 'khăn quàng (số nhiều: die Schals)', 'Im Winter brauche ich einen Schal.'), ('Mütze', 'die', 'mũ len, mũ lưỡi trai (số nhiều: die Mützen)', 'Bei Kälte trage ich eine Mütze.'), ('Regenmantel', 'der', 'áo mưa (số nhiều: die Regenmäntel)', 'Bei Regen trage ich einen Regenmantel.'), ('Regenschirm', 'der', 'cái ô (số nhiều: die Regenschirme)', 'Ich nehme heute einen Regenschirm mit.'), ('Sonnenbrille', 'die', 'kính râm (số nhiều: die Sonnenbrillen)', 'Bei Sonne trage ich eine Sonnenbrille.'), ('Größe', 'die', 'kích cỡ (số nhiều: die Größen)', 'Welche Größe haben Sie?'), ('Umkleidekabine', 'die', 'phòng thử đồ (số nhiều: die Umkleidekabinen)', 'Die Umkleidekabine ist dort hinten.'), ('Regen', 'der', 'mưa (chỉ có số ít)', 'Bei Regen bleibe ich zu Hause.'), ('Schnee', 'der', 'tuyết (chỉ có số ít)', 'Im Winter liegt viel Schnee in den Bergen.'), ('Wind', 'der', 'gió (số nhiều: die Winde)', 'Der Wind ist heute kalt.'), ('Nebel', 'der', 'sương mù (chỉ có số ít)', 'Im Herbst gibt es oft Nebel.'), ('Sturm', 'der', 'cơn bão (số nhiều: die Stürme)', 'Der Sturm kommt heute Abend.'), ('Himmel', 'der', 'bầu trời (số nhiều: die Himmel)', 'Der Himmel ist heute bewölkt.'), ('Frühling', 'der', 'mùa xuân (số nhiều: die Frühlinge)', 'Im Frühling ist es warm.'), ('Sommer', 'der', 'mùa hè (số nhiều: die Sommer)', 'Im Sommer ist es heiß.'), ('Herbst', 'der', 'mùa thu (số nhiều: die Herbste)', 'Im Herbst regnet es oft.'), ('Winter', 'der', 'mùa đông (số nhiều: die Winter)', 'Im Winter schneit es in Deutschland.'), ('Wetterbericht', 'der', 'bản tin thời tiết (số nhiều: die Wetterberichte)', 'Der Wetterbericht meldet Regen.'), ('Kleiderschrank', 'der', 'tủ quần áo (số nhiều: die Kleiderschränke)', 'Mein Kleiderschrank ist voll.'), ('Sonne', 'die', 'mặt trời (số nhiều: die Sonnen)', 'Heute scheint die Sonne.'), ('Wolke', 'die', 'đám mây (số nhiều: die Wolken)', 'Am Himmel sind viele Wolken.'), ('Kälte', 'die', 'khí lạnh, cái lạnh (chỉ có số ít)', 'Bei Kälte friere ich schnell.'), ('Hitze', 'die', 'khí nóng, cái nóng (chỉ có số ít)', 'Bei Hitze schwitze ich viel.'), ('Temperatur', 'die', 'nhiệt độ (số nhiều: die Temperaturen)', 'Die Temperatur ist heute sehr hoch.'), ('Jahreszeit', 'die', 'mùa trong năm (số nhiều: die Jahreszeiten)', 'Welche Jahreszeit magst du am liebsten?'), ('Farbe', 'die', 'màu sắc (số nhiều: die Farben)', 'Welche Farbe hat dein Hemd?'), ('Mode', 'die', 'thời trang (chỉ có số ít)', 'Meine Schwester mag Mode.'), ('Wetter', 'das', 'thời tiết (chỉ có số ít)', 'Wie ist das Wetter heute?'), ('Gewitter', 'das', 'cơn dông (số nhiều: die Gewitter)', 'Am Abend gibt es ein Gewitter.'), ('Grad', 'das', 'độ nhiệt độ (sau số đếm giữ nguyên: zwanzig Grad)', 'Heute sind es zwanzig Grad.'), ('Kaufhaus', 'das', 'trung tâm bách hóa (số nhiều: die Kaufhäuser)', 'Im Kaufhaus gibt es viele Mäntel.'), ('Geschäft', 'das', 'cửa hàng (số nhiều: die Geschäfte)', 'Das Geschäft öffnet um neun Uhr.')]
 
     vocabularies_data = [
         (lesson_id, word, article, meaning, example)

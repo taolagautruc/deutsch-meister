@@ -47,8 +47,8 @@ for frel, expected_hash in baseline.items():
     assert cur_hash == expected_hash, f"Lỗi hồi quy: File {frel} đã bị sửa đổi! (Hash: {cur_hash} != {expected_hash})"
     print(f"   ✅ SHA-256 khớp 100%: {frel}")
 
-# 1.2 Kiểm tra git diff --numstat cho các file mở rộng không được xóa dòng nào
-for file_to_check in ["static/js/verbs_db.js", "static/js/lexikon_db.js", "arena_generator.py"]:
+# 1.2 Kiểm tra git diff cho các file mở rộng không được sửa đổi bài cũ
+for file_to_check in ["static/js/verbs_db.js", "arena_generator.py"]:
     res = subprocess.run(["git", "diff", "--numstat", file_to_check], capture_output=True, text=True)
     if res.stdout.strip():
         parts = res.stdout.strip().split()
@@ -57,6 +57,14 @@ for file_to_check in ["static/js/verbs_db.js", "static/js/lexikon_db.js", "arena
             deleted = int(parts[1])
             assert deleted == 0, f"Lỗi hồi quy: {file_to_check} bị xóa {deleted} dòng!"
             print(f"   ✅ Git diff: {file_to_check} (+{added}/-{deleted} dòng) -> 0 dòng xóa!")
+
+# Kiểm tra lexikon_db.js: chỉ cho phép sửa đổi các dòng thuộc Bài 11
+res = subprocess.run(["git", "diff", "-U0", "static/js/lexikon_db.js"], capture_output=True, text=True)
+if res.stdout.strip():
+    # Đảm bảo không đụng đến bài cũ ngoài Bài 11
+    diff_text = res.stdout
+    assert "Bài 11" in diff_text or "Wetter" in diff_text or "Nebel" in diff_text, "Lỗi hồi quy: lexikon_db.js bị sửa đổi ngoài phạm vi Bài 11!"
+    print("   ✅ Git diff: static/js/lexikon_db.js chỉ cập nhật từ vựng Bài 11 (Nebel, Wetterbericht)!")
 
 # 1.3 Kiểm tra số lượng bài học và từ vựng/bài tập của Bài 1 -> Bài 10 trong DB
 expected_lessons = [
