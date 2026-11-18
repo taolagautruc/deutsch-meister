@@ -3176,10 +3176,10 @@ const GERMAN_LEXIKON_DB = [
         example_vi: "Hôm nay gió lạnh."
     },
     {
-        word: "Nebel", article: "der", gender: "der", plural: "die Nebel",
+        word: "Nebel", article: "der", gender: "der", plural: "nur Singular",
         indefinite: "ein Nebel", negation: "kein Nebel",
-        meaning: "sương mù", category: "Wetter & Einkaufen - Bài 11",
-        rule: "Đuôi -el giữ nguyên số nhiều: die Nebel; tính từ tương ứng: neblig.",
+        meaning: "sương mù (chỉ có số ít)", category: "Wetter & Einkaufen - Bài 11",
+        rule: "Hiện tượng thời tiết der Nebel (chỉ có số ít - nur Singular); tính từ tương ứng: neblig.",
         example: "Im Herbst gibt es oft Nebel.",
         example_vi: "Vào mùa thu thường có sương mù."
     },
@@ -3236,7 +3236,7 @@ const GERMAN_LEXIKON_DB = [
         indefinite: "ein Wetterbericht", negation: "kein Wetterbericht",
         meaning: "bản tin thời tiết", category: "Wetter & Einkaufen - Bài 11",
         rule: "Danh từ ghép das Wetter + der Bericht = der Wetterbericht, số nhiều -e.",
-        example: "Der Wetterbericht sagt Regen.",
+        example: "Der Wetterbericht meldet Regen.",
         example_vi: "Bản tin thời tiết báo có mưa."
     },
     {
