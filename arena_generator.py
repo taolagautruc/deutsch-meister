@@ -43,6 +43,7 @@ LESSON_ORDER_MAP = {
     23: ("A1", 10, "Bài 9: Du lịch - Perfekt Präteritum"),
     24: ("A1", 11, "Bài 10: Thực phẩm - So sánh hơn / So sánh nhất - Fragewort: Welch-")
 }
+LESSON_ORDER_MAP[25] = ("A1", 12, "Bài 11: Kleidung - Die Farbe in Akkusativ - dies- (Đại từ chỉ định) - Wetter")
 
 def get_user_allowed_lessons(user_id):
     """
@@ -1019,6 +1020,104 @@ ARENA_DATA_BY_LESSON = {
             }
         ]
     }
+}
+
+ARENA_DATA_BY_LESSON[12] = {
+    "name": "Bài 11: Kleidung - Die Farbe in Akkusativ - dies- (Đại từ chỉ định) - Wetter",
+    "vocab_pairs": [
+        ("der Mantel", "áo khoác măng tô"),
+        ("der Pullover", "áo len"),
+        ("der Rock", "chân váy"),
+        ("der Anzug", "bộ com lê"),
+        ("der Hut", "mũ, nón"),
+        ("der Gürtel", "thắt lưng"),
+        ("der Schal", "khăn quàng"),
+        ("der Stiefel", "đôi bốt"),
+        ("die Jacke", "áo khoác ngắn"),
+        ("die Hose", "quần dài"),
+        ("die Bluse", "áo sơ mi nữ"),
+        ("die Mütze", "mũ len"),
+        ("das Kleid", "váy liền, đầm"),
+        ("das Hemd", "áo sơ mi nam"),
+        ("das T-Shirt", "áo phông"),
+        ("das Wetter", "thời tiết"),
+        ("der Regen", "cơn mưa"),
+        ("der Schnee", "tuyết"),
+        ("der Wind", "cơn gió"),
+        ("die Sonne", "mặt trời"),
+        ("die Wolke", "đám mây"),
+        ("der Frühling", "mùa xuân"),
+        ("der Sommer", "mùa hè"),
+        ("der Herbst", "mùa thu"),
+        ("der Winter", "mùa đông")
+    ],
+    "noi_o_sets": [
+        [
+            {"left": "der Mantel (m)", "right": "einen roten Mantel (Akkusativ)"},
+            {"left": "die Jacke (f)", "right": "eine grüne Jacke (Akkusativ)"},
+            {"left": "das Hemd (n)", "right": "ein weißes Hemd (Akkusativ)"},
+            {"left": "die Schuhe (pl)", "right": "braune Schuhe (Akkusativ)"}
+        ],
+        [
+            {"left": "Es regnet.", "right": "Trời đang mưa."},
+            {"left": "Es schneit.", "right": "Tuyết đang rơi."},
+            {"left": "Es ist sonnig.", "right": "Trời có nắng rực rỡ."},
+            {"left": "Es ist windig.", "right": "Trời nhiều gió lộng."}
+        ]
+    ],
+    "sentences_vd": [
+        ("Anh ấy mặc một chiếc áo khoác màu đen.", ["Er trägt einen schwarzen Mantel.", "Er trägt einen schwarzen Mantel"]),
+        ("Chiếc áo len này thuộc về ai?", ["Wem gehört dieser Pullover?", "Wem gehört dieser Pullover"]),
+        ("Hôm nay trời nhiều mây và có gió.", ["Heute ist es bewölkt und windig.", "Heute ist es bewölkt und windig"])
+    ],
+    "sentences_dv": [
+        ("Ich kaufe heute ein blaues T-Shirt.", ["Hôm nay tôi mua một chiếc áo phông màu xanh", "Hôm nay tôi mua một chiếc áo phông màu xanh da trời", "Hôm nay tôi mua một cái áo phông màu xanh"]),
+        ("Wie ist das Wetter heute in Berlin?", ["Thời tiết hôm nay ở Berlin thế nào?", "Thời tiết hôm nay ở Berlin ra sao?", "Hôm nay thời tiết ở Berlin thế nào?"]),
+        ("Diese Schuhe sind mir zu klein.", ["Đôi giày này quá chật đối với tôi", "Những chiếc giày này quá nhỏ đối với tôi", "Đôi giày này quá nhỏ đối với tôi"])
+    ],
+    "nghe_dien_items": [
+        {
+            "audio_text": "Er kauft einen roten Pullover.",
+            "display_sentence": "Er kauft einen ___ Pullover.",
+            "hint_vi": "Anh ấy mua một chiếc áo len màu đỏ.",
+            "accepted_answers": ["roten"]
+        },
+        {
+            "audio_text": "Im Winter ist es sehr kalt in Berlin.",
+            "display_sentence": "Im Winter ist es sehr ___ in Berlin.",
+            "hint_vi": "Vào mùa đông ở Berlin rất lạnh.",
+            "accepted_answers": ["kalt"]
+        },
+        {
+            "audio_text": "Gefällt dir diese Jacke?",
+            "display_sentence": "Gefällt dir ___ Jacke?",
+            "hint_vi": "Bạn có thích chiếc áo khoác này không?",
+            "accepted_answers": ["diese"]
+        }
+    ],
+    "dien_tao_cau_items": [
+        {
+            "question": "Điền vào 2 chỗ trống để hoàn thành câu mua sắm ở Akkusativ:",
+            "display_frame": "Ich möchte [1] [2] Rock kaufen.",
+            "word_bank_hints": ["einen", "schwarzen", "ein", "schwarzer", "eine", "schwarze"],
+            "accepted_answers": ["einen / schwarzen", "einen/schwarzen", "einen schwarzen"],
+            "explanation": "Danh từ 'der Rock' giống đực ở Akkusativ -> 'einen schwarzen Rock'."
+        },
+        {
+            "question": "Điền vào 2 chỗ trống để hoàn thành câu thời tiết:",
+            "display_frame": "Im Herbst [1] es oft und der [2] ist stark.",
+            "word_bank_hints": ["regnet", "Wind", "schneit", "Regen", "sonnig"],
+            "accepted_answers": ["regnet / Wind", "regnet/Wind", "regnet Wind"],
+            "explanation": "regnet (mưa) và der Wind (cơn gió)."
+        },
+        {
+            "question": "Điền vào 2 chỗ trống với đại từ chỉ định dies-:",
+            "display_frame": "Welchen Pullover nimmst du? — Ich nehme [1] [2] hier.",
+            "word_bank_hints": ["diesen", "Pullover", "dieser", "Pullover", "dieses"],
+            "accepted_answers": ["diesen / Pullover", "diesen/Pullover", "diesen Pullover"],
+            "explanation": "der Pullover ở Akkusativ -> diesen Pullover."
+        }
+    ]
 }
 
 
