@@ -1226,7 +1226,165 @@ const GERMAN_VERBS_DB = [
         perfekt: "hat empfohlen",
         note: "Biến âm e -> ie ở ngôi du và er/sie/es (empfiehlst, empfiehlt). Partizip II: hat empfohlen.",
         example: "Der Kellner hat uns den frischen Fisch empfohlen."
+    },,
+    // =========================================================================
+    // ĐỘNG TỪ BÀI 11: TRANG PHỤC, MÀU SẮC, DIES- & THỜI TIẾT
+    // =========================================================================
+    {
+        infinitiv: "tragen",
+        meaning: "mặc, mang, đeo (+ Akk)",
+        group: "Biến âm • Trang phục & Thời tiết (Bài 11)",
+        stem: "trag-",
+        ending: "-en",
+        forms: { ich: "trage", du: "trägst", er_sie_es: "trägt", wir: "tragen", ihr: "tragt", sie_Sie: "tragen" },
+        perfekt: "hat getragen",
+        note: "Bất quy tắc biến âm a -> ä ở ngôi du và er/sie/es (trägst, trägt). Riêng ihr tragt không đổi âm. Đi với Akkusativ (+ Akk).",
+        example: "Meine Schwester trägt gern Röcke."
     },
+    {
+        infinitiv: "anziehen",
+        meaning: "mặc vào (+ Akk)",
+        group: "Động từ tách • Trang phục (Bài 11)",
+        stem: "zieh-",
+        ending: "-en",
+        forms: { ich: "ziehe an", du: "ziehst an", er_sie_es: "zieht an", wir: "ziehen an", ihr: "zieht an", sie_Sie: "ziehen an" },
+        perfekt: "hat angezogen",
+        note: "Động từ tách tiền tố an-. Đi với Akkusativ (+ Akk). Perfekt: hat angezogen.",
+        example: "Zuerst ziehe ich die Hose an."
+    },
+    {
+        infinitiv: "ausziehen",
+        meaning: "cởi ra (+ Akk)",
+        group: "Động từ tách • Trang phục (Bài 11)",
+        stem: "zieh-",
+        ending: "-en",
+        forms: { ich: "ziehe aus", du: "ziehst aus", er_sie_es: "zieht aus", wir: "ziehen aus", ihr: "zieht aus", sie_Sie: "ziehen aus" },
+        perfekt: "hat ausgezogen",
+        note: "Động từ tách tiền tố aus-. Đi với Akkusativ (+ Akk). Perfekt: hat ausgezogen.",
+        example: "Am Abend ziehe ich die Schuhe aus."
+    },
+    {
+        infinitiv: "anprobieren",
+        meaning: "thử quần áo (+ Akk)",
+        group: "Động từ tách • Mua sắm (Bài 11)",
+        stem: "probier-",
+        ending: "-en",
+        forms: { ich: "probiere an", du: "probierst an", er_sie_es: "probiert an", wir: "probieren an", ihr: "probiert an", sie_Sie: "probieren an" },
+        perfekt: "hat anprobiert",
+        note: "Động từ tách an- kết hợp hậu tố -ieren (Partizip II: hat anprobiert). Đi với Akkusativ (+ Akk).",
+        example: "Ich probiere die Hose an."
+    },
+    {
+        infinitiv: "passen",
+        meaning: "vừa với (+ Dativ)",
+        group: "Gốc -s, -ß, -z • Trang phục (Bài 11)",
+        stem: "pass-",
+        ending: "-en",
+        forms: { ich: "passe", du: "passt", er_sie_es: "passt", wir: "passen", ihr: "passt", sie_Sie: "passen" },
+        perfekt: "hat gepasst",
+        note: "Đi với Dativ (+ Dativ). Món đồ là chủ ngữ (Nom), người cảm nhận ở Dativ. Ngôi du: du passt.",
+        example: "Die Schuhe passen mir sehr gut."
+    },
+    {
+        infinitiv: "gehören",
+        meaning: "thuộc về, của (+ Dativ)",
+        group: "Quy tắc • Sở hữu (Bài 11)",
+        stem: "gehör-",
+        ending: "-en",
+        forms: { ich: "gehöre", du: "gehörst", er_sie_es: "gehört", wir: "gehören", ihr: "gehört", sie_Sie: "gehören" },
+        perfekt: "hat gehört",
+        note: "Tiền tố không tách ge- (Partizip II: hat gehört). Đi với Dativ (+ Dativ).",
+        example: "Der Schal gehört meiner Mutter."
+    },
+    {
+        infinitiv: "schenken",
+        meaning: "tặng (+ Dat + Akk)",
+        group: "Quy tắc • Quà tặng (Bài 11)",
+        stem: "schenk-",
+        ending: "-en",
+        forms: { ich: "schenke", du: "schenkst", er_sie_es: "schenkt", wir: "schenken", ihr: "schenkt", sie_Sie: "schenken" },
+        perfekt: "hat geschenkt",
+        note: "Đi với cả 2 tân ngữ (+ Dativ người nhận + Akkusativ món quà): schenken + Dat + Akk.",
+        example: "Ich schenke meinem Vater eine Krawatte."
+    },
+    {
+        infinitiv: "mitnehmen",
+        meaning: "mang theo (+ Akk)",
+        group: "Động từ tách • Thời tiết (Bài 11)",
+        stem: "nehm-",
+        ending: "-en",
+        forms: { ich: "nehme mit", du: "nimmst mit", er_sie_es: "nimmt mit", wir: "nehmen mit", ihr: "nehmt mit", sie_Sie: "nehmen mit" },
+        perfekt: "hat mitgenommen",
+        note: "Động từ tách mit- và đổi âm e -> i (du nimmst mit, er nimmt mit). Đi với Akkusativ (+ Akk).",
+        example: "Bei Regen nehme ich einen Regenschirm mit."
+    },
+    {
+        infinitiv: "aussehen",
+        meaning: "trông có vẻ, nhìn bề ngoài",
+        group: "Động từ tách • Nhận xét (Bài 11)",
+        stem: "seh-",
+        ending: "-en",
+        forms: { ich: "sehe aus", du: "siehst aus", er_sie_es: "sieht aus", wir: "sehen aus", ihr: "seht aus", sie_Sie: "sehen aus" },
+        perfekt: "hat ausgesehen",
+        note: "Động từ tách aus- và biến âm e -> ie (du siehst aus, er sieht aus).",
+        example: "Du siehst in dem Anzug gut aus."
+    },
+    {
+        infinitiv: "schneien",
+        meaning: "tuyết rơi (thời tiết)",
+        group: "Thời tiết (Bài 11)",
+        stem: "schnei-",
+        ending: "-en",
+        forms: { ich: "—", du: "—", er_sie_es: "es schneit", wir: "—", ihr: "—", sie_Sie: "—" },
+        perfekt: "hat geschneit",
+        note: "Động từ thời tiết vô nhân xưng, chỉ dùng với chủ ngữ es (es schneit). Perfekt: hat geschneit.",
+        example: "Im Januar schneit es in den Alpen."
+    },
+    {
+        infinitiv: "scheinen",
+        meaning: "chiếu sáng (mặt trời)",
+        group: "Thời tiết (Bài 11)",
+        stem: "schein-",
+        ending: "-en",
+        forms: { ich: "scheine", du: "scheinst", er_sie_es: "scheint", wir: "scheinen", ihr: "scheint", sie_Sie: "scheinen" },
+        perfekt: "hat geschienen",
+        note: "Partizip II bất quy tắc: hat geschienen. Thường gặp: Die Sonne scheint.",
+        example: "Heute scheint die Sonne."
+    },
+    {
+        infinitiv: "gewittern",
+        meaning: "có dông bão (thời tiết)",
+        group: "Thời tiết (Bài 11)",
+        stem: "gewitter-",
+        ending: "-n",
+        forms: { ich: "—", du: "—", er_sie_es: "es gewittert", wir: "—", ihr: "—", sie_Sie: "—" },
+        perfekt: "hat gewittert",
+        note: "Động từ thời tiết vô nhân xưng với chủ ngữ es: es gewittert. Perfekt: hat gewittert.",
+        example: "Heute Nacht gewittert es."
+    },
+    {
+        infinitiv: "frieren",
+        meaning: "thấy lạnh, cảm thấy rét",
+        group: "Bất quy tắc • Thời tiết (Bài 11)",
+        stem: "frier-",
+        ending: "-en",
+        forms: { ich: "friere", du: "frierst", er_sie_es: "friert", wir: "frieren", ihr: "friert", sie_Sie: "frieren" },
+        perfekt: "hat gefroren",
+        note: "Partizip II bất quy tắc đổi ie -> o: hat gefroren. Nghĩa: bị lạnh, rét cóng.",
+        example: "Ich friere ohne Handschuhe."
+    },
+    {
+        infinitiv: "schwitzen",
+        meaning: "đổ mồ hôi",
+        group: "Gốc -s, -ß, -z • Thời tiết (Bài 11)",
+        stem: "schwitz-",
+        ending: "-en",
+        forms: { ich: "schwitze", du: "schwitzt", er_sie_es: "schwitzt", wir: "schwitzen", ihr: "schwitzt", sie_Sie: "schwitzen" },
+        perfekt: "hat geschwitzt",
+        note: "Gốc -z nên ngôi du không thêm -s- mà chỉ thêm -t (du schwitzt).",
+        example: "Bei Hitze schwitze ich viel."
+    }
+
 ];
 
 let currentVerbFilterGroup = "all";
@@ -1343,6 +1501,7 @@ function speakAllPraeteritumForms(verbInfinitiv) {
 
 const VERB_GROUPS = [
     { id: "all", label: "Tất cả" },
+    { id: "Trang phục & Thời tiết", label: "👗 Trang phục & Thời tiết (Bài 11)" },
     { id: "Ẩm thực & Mua sắm", label: "🥦 Ẩm thực, So sánh & Mua sắm (Bài 10)" },
     { id: "Thành phố & Chỉ đường", label: "🏙️ Thành phố & Chỉ đường (Bài 8)" },
     { id: "Động từ khuyết thiếu", label: "⭐ Động từ khuyết thiếu & Nghề nghiệp (Bài 7)" },

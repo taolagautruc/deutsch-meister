@@ -379,6 +379,7 @@
     <script src="/static/js/city_map_svg.js?v=20261116_v4"></script>
     <script src="/static/js/perfekt_svg.js?v=20261116_v4"></script>
     <script src="/static/js/essen_svg.js?v=20261116_v4"></script>
+    <script src="/static/js/kleidung_svg.js?v=20261118_v1"></script>
     <script src="/static/js/verbs_db.js?v=20261116_v4"></script>
     <script src="/static/js/lexikon_db.js?v=20261116_v4"></script>
     <script src="/static/js/arena_engine.js?v=20261116_v4"></script>
@@ -476,6 +477,34 @@
             "sap_xep": "5. Sắp xếp câu",
             "doc": "6. Đọc hiểu",
             "viet": "7. Viết câu & số"
+        };
+
+        const B11_ORDER = [
+            "trac_nghiem", "dien_khuyet", "dien_duoi_tinh_tu", "dich_nghia_vd", "dich_nghia_dv",
+            "noi_o", "dien_tao_cau", "nghe_dien", "dich_cau_vd", "dich_cau_dv",
+            "sap_xep_cau", "phan_loai_giong", "phan_loai_cach", "tim_loi_sai", "viet_lai_dies",
+            "dung_sai", "hoi_thoai_sap_xep", "bieu_tuong_thoi_tiet"
+        ];
+        const B11_TYPE_LABELS = {
+            "all": "Tất cả",
+            "trac_nghiem": "1. Trắc nghiệm",
+            "dien_khuyet": "2. Điền khuyết",
+            "dien_duoi_tinh_tu": "3. Điền đuôi tính từ màu",
+            "dich_nghia_vd": "4. Dịch từ (V → Đ)",
+            "dich_nghia_dv": "5. Dịch từ & câu ngắn (Đ → V)",
+            "noi_o": "6. Nối ô tương ứng",
+            "dien_tao_cau": "7. Điền tạo câu",
+            "nghe_dien": "8. Nghe & điền từ",
+            "dich_cau_vd": "9. Dịch câu (V → Đ)",
+            "dich_cau_dv": "10. Dịch câu (Đ → V)",
+            "sap_xep_cau": "11. Sắp xếp câu",
+            "phan_loai_giong": "12. Phân loại der / die / das",
+            "phan_loai_cach": "13. Phân loại Akkusativ / Dativ",
+            "tim_loi_sai": "14. Tìm lỗi sai",
+            "viet_lai_dies": "15. Viết lại với dies-",
+            "dung_sai": "16. Đúng / Sai",
+            "hoi_thoai_sap_xep": "17. Sắp xếp hội thoại",
+            "bieu_tuong_thoi_tiet": "18. Nhìn biểu tượng thời tiết"
         };
 
         let currentLevelData = null;
@@ -1287,12 +1316,15 @@
             if (typeof initEssenSvgDiagrams === 'function') {
                 setTimeout(initEssenSvgDiagrams, 50);
             }
+            if (typeof initKleidungSvgDiagrams === 'function') {
+                setTimeout(initKleidungSvgDiagrams, 50);
+            }
 
             // Cập nhật nhãn số dạng bài tập động
             const subtabEx = document.getElementById('subtab-exercises');
             if (subtabEx && currentLesson && currentLesson.exercises) {
                 const numTypes = new Set(currentLesson.exercises.map(e => e.exercise_type)).size;
-                if (currentLesson.id === 23 || currentLesson.id === 24 || numTypes > 7) {
+                if (currentLesson.id === 23 || currentLesson.id === 24 || currentLesson.id === 25 || numTypes > 7) {
                     subtabEx.innerText = `✍️ Phần 2: Bài tập (Đủ ${numTypes} Dạng)`;
                 } else {
                     subtabEx.innerText = "✍️ Phần 2: Bài tập (Đủ 7 Dạng)";
@@ -1874,15 +1906,19 @@
 
             const correctExercisesSet = new Set(Array.isArray(currentProgress.correct_exercises) ? currentProgress.correct_exercises : []);
 
+            const isLesson11 = Boolean(currentLesson && currentLesson.id === 25);
+            const chipKeys = isLesson11 ? ['all', ...B11_ORDER] : Object.keys(TYPE_LABELS);
+            const getLabel = (k) => isLesson11 ? (B11_TYPE_LABELS[k] || TYPE_LABELS[k] || k) : (TYPE_LABELS[k] || k);
+
             const filterBarHtml = `
                 <div class="flex flex-wrap gap-2 pb-3 border-b border-slate-100">
-                    ${Object.keys(TYPE_LABELS).map(k => {
+                    ${chipKeys.map(k => {
                         const count = k === 'all' ? list.length : list.filter(x => x.exercise_type === k).length;
                         if (k !== 'all' && count === 0) return '';
                         const active = currentFilterType === k;
                         return `
                             <button onclick="filterExercises('${k}')" class="px-3.5 py-2 rounded-xl text-xs font-extrabold transition ${active ? 'bg-indigo-600 text-white shadow-sm' : 'bg-slate-100 hover:bg-slate-200 text-slate-700'}">
-                                ${TYPE_LABELS[k]} (${count})
+                                ${getLabel(k)} (${count})
                             </button>
                         `;
                     }).join('')}
@@ -2068,6 +2104,74 @@
                         </div>
                     `;
                 }
+                if (ex.exercise_type === 'dien_duoi_tinh_tu') {
+                    extraHtml += `
+                        <div class="my-2.5 p-3 rounded-2xl bg-indigo-50/70 border border-indigo-200 space-y-1.5">
+                            <div class="flex items-center justify-between text-xs font-bold text-indigo-800">
+                                <span>🎨 Bảng thần chú đuôi màu ở Akkusativ:</span>
+                                <span class="px-2 py-0.5 rounded bg-indigo-200 text-indigo-900 font-mono">en (m) • e (f) • es (n) • e (pl)</span>
+                            </div>
+                            <div class="text-sm font-black text-indigo-950">„${extra.display_sentence || ''}“</div>
+                        </div>
+                    `;
+                }
+                if (ex.exercise_type === 'viet_lai_dies' && extra.source_sentence) {
+                    extraHtml += `
+                        <div class="my-2.5 p-3.5 rounded-2xl bg-indigo-50/70 border border-indigo-200 space-y-1.5">
+                            <div class="text-xs font-bold text-indigo-700 uppercase tracking-wide">Câu gốc:</div>
+                            <div class="text-sm font-black text-indigo-950">„${extra.source_sentence}“</div>
+                            <div class="text-xs font-semibold text-slate-600">👉 Yêu cầu: ${extra.instruction_vi || ''}</div>
+                        </div>
+                    `;
+                }
+                if (ex.exercise_type === 'bieu_tuong_thoi_tiet' && extra.weather_icon) {
+                    extraHtml += `
+                        <div class="my-3 p-4 rounded-2xl bg-sky-50 border border-sky-200 flex items-center justify-center gap-4">
+                            <span class="text-5xl select-none" role="img" aria-label="${extra.icon_alt_vi || 'Biểu tượng thời tiết'}">${extra.weather_icon}</span>
+                            <div class="text-xs font-bold text-sky-900">
+                                <span>Biểu tượng: <b class="text-sky-950">${extra.icon_alt_vi || ''}</b></span>
+                            </div>
+                        </div>
+                    `;
+                }
+                if (ex.exercise_type === 'phan_loai_cach' && Array.isArray(extra.items) && extra.items.length > 0) {
+                    if (!window._caseChoices) window._caseChoices = {};
+                    if (!window._caseChoices[i]) window._caseChoices[i] = {};
+                    extraHtml += `
+                        <div class="my-3 p-4 rounded-2xl bg-indigo-50/80 border border-indigo-200 space-y-3">
+                            <div class="text-xs font-extrabold text-indigo-900 flex items-center justify-between">
+                                <span>🏷️ Xác định cụm in đậm trong 4 câu dưới đây là Akkusativ hay Dativ:</span>
+                            </div>
+                            <div class="space-y-2">
+                                ${extra.items.map((item, itIdx) => {
+                                    let sentHtml = item.sentence;
+                                    if (item.target_phrase && sentHtml.includes(item.target_phrase)) {
+                                        sentHtml = sentHtml.replace(item.target_phrase, `<b class="text-indigo-600 underline font-black">${item.target_phrase}</b>`);
+                                    }
+                                    const userCh = window._caseChoices[i][itIdx];
+                                    const isAkk = userCh === 'Akkusativ';
+                                    const isDat = userCh === 'Dativ';
+                                    return `
+                                        <div class="p-2.5 rounded-xl bg-white border border-indigo-200 flex flex-col sm:flex-row sm:items-center justify-between gap-2 text-xs">
+                                            <div class="space-y-0.5">
+                                                <div class="font-bold text-slate-900 text-sm">${itIdx + 1}. ${sentHtml}</div>
+                                                <div class="text-slate-500 italic text-[11px]">${item.translation_vi || ''}</div>
+                                            </div>
+                                            <div class="flex gap-1.5 shrink-0">
+                                                <button type="button" onclick="setCaseChoice(${i}, ${itIdx}, 'Akkusativ')" id="case-btn-${i}-${itIdx}-akk" class="px-3 py-1.5 rounded-lg ${isAkk ? 'bg-indigo-600 text-white font-black shadow-xs' : 'bg-slate-100 text-slate-700 font-bold'} hover:bg-indigo-500 hover:text-white text-xs cursor-pointer transition">
+                                                    Akkusativ
+                                                </button>
+                                                <button type="button" onclick="setCaseChoice(${i}, ${itIdx}, 'Dativ')" id="case-btn-${i}-${itIdx}-dat" class="px-3 py-1.5 rounded-lg ${isDat ? 'bg-purple-600 text-white font-black shadow-xs' : 'bg-slate-100 text-slate-700 font-bold'} hover:bg-purple-500 hover:text-white text-xs cursor-pointer transition">
+                                                    Dativ
+                                                </button>
+                                            </div>
+                                        </div>
+                                    `;
+                                }).join('')}
+                            </div>
+                        </div>
+                    `;
+                }
                 if (ex.exercise_type === 'nghe' || ex.exercise_type === 'nghe_dien') {
                     let textToSpeak = extra.audio_text || '';
                     if (!textToSpeak && extra.display_sentence && ex.correct_answer) {
@@ -2179,7 +2283,7 @@
                             `;
                         }).join('')}
                     </div>`;
-                } else if (ex.exercise_type === 'hoi_thoai_sap_xep') {
+                } else if (ex.exercise_type === 'hoi_thoai_sap_xep' || ex.exercise_type === 'phan_loai_cach') {
                     const cleanAns = isDone 
                         ? (ex._userAnswer || String(ex.correct_answer || '').trim()) 
                         : (ex._userAnswer || '');
@@ -2201,11 +2305,15 @@
                         : (ex._userAnswer || '');
                     const placeholderText = (ex && ex.exercise_type === 'nghe_gia_tien')
                         ? 'Nhập số tiền (dùng dấu phẩy hoặc dấu chấm)...'
-                        : (isMultiSlot 
-                            ? 'Điền 2 từ ngăn cách bởi dấu / (ví dụ: từ 1 / từ 2)...' 
-                            : (isDeToVi 
-                                ? 'Nhập bản dịch tiếng Việt của bạn... (nhấn Enter để kiểm tra và chuyển câu)' 
-                                : 'Nhập đáp án tiếng Đức của bạn... (nhấn Enter để kiểm tra và chuyển câu)'));
+                        : (ex && ex.exercise_type === 'dien_duoi_tinh_tu')
+                            ? 'Nhập đuôi tính từ (-en, -e, -es)...'
+                            : (ex && ex.exercise_type === 'viet_lai_dies')
+                                ? 'Nhập câu viết lại với dies-... (nhấn Enter để kiểm tra và chuyển câu)'
+                                : (isMultiSlot 
+                                    ? 'Điền 2 từ ngăn cách bởi dấu / (ví dụ: từ 1 / từ 2)...' 
+                                    : (isDeToVi 
+                                        ? 'Nhập bản dịch tiếng Việt của bạn... (nhấn Enter để kiểm tra và chuyển câu)' 
+                                        : 'Nhập đáp án tiếng Đức của bạn... (nhấn Enter để kiểm tra và chuyển câu)'));
                     inputHtml = `
                         <div class="flex gap-2 mt-3">
                             <input id="ex-input-${i}" value="${cleanAns.replace(/"/g, '&quot;')}" oninput="handleExerciseInputChange(${i})" onfocus="handleExerciseInputFocus(${i})" onkeydown="handleExerciseInputKeydown(event, ${i})" type="text" placeholder="${placeholderText}" class="flex-1 px-4 py-2.5 rounded-xl ${isDone ? 'bg-emerald-50/40 border-2 border-emerald-400 font-bold text-emerald-950' : 'bg-white border border-slate-200'} text-sm focus:outline-none focus:border-indigo-500" spellcheck="false" autocorrect="off" autocapitalize="off" autocomplete="off">
@@ -2255,11 +2363,13 @@
                     `
                     : `<div id="ex-feedback-${i}" class="hidden text-xs p-3.5 rounded-xl mt-2"></div>`;
 
+                const typeBadgeLabel = isLesson11 ? (B11_TYPE_LABELS[ex.exercise_type] || TYPE_LABELS[ex.exercise_type] || ex.exercise_type) : (TYPE_LABELS[ex.exercise_type] || ex.exercise_type);
+
                 return `
                     <div id="ex-card-${i}" class="p-5 rounded-2xl ${cardBorder} space-y-2 transition-all">
                         <div class="flex items-center justify-between text-xs">
                             <div class="flex items-center gap-2">
-                                <span class="px-2.5 py-1 rounded-lg bg-indigo-100 text-indigo-700 font-extrabold uppercase">${TYPE_LABELS[ex.exercise_type] || ex.exercise_type}</span>
+                                <span class="px-2.5 py-1 rounded-lg bg-indigo-100 text-indigo-700 font-extrabold uppercase">${typeBadgeLabel}</span>
                                 ${statusBadge}
                             </div>
                             ${expBadge}
@@ -2509,6 +2619,34 @@
             const input = document.getElementById(`ex-input-${exIdx}`);
             if (input) {
                 input.value = parts.filter(Boolean).join(' / ');
+                if (typeof handleExerciseInputChange === 'function') handleExerciseInputChange(exIdx);
+            }
+        }
+
+        window._caseChoices = window._caseChoices || {};
+        function setCaseChoice(exIdx, itemIdx, choice) {
+            if (!window._caseChoices[exIdx]) window._caseChoices[exIdx] = {};
+            window._caseChoices[exIdx][itemIdx] = choice;
+
+            const akkBtn = document.getElementById(`case-btn-${exIdx}-${itemIdx}-akk`);
+            const datBtn = document.getElementById(`case-btn-${exIdx}-${itemIdx}-dat`);
+            if (akkBtn && datBtn) {
+                if (choice === 'Akkusativ') {
+                    akkBtn.className = "px-3 py-1.5 rounded-lg bg-indigo-600 text-white font-black text-xs cursor-pointer shadow-xs transition";
+                    datBtn.className = "px-3 py-1.5 rounded-lg bg-slate-100 text-slate-700 font-bold hover:bg-purple-500 hover:text-white text-xs cursor-pointer transition";
+                } else {
+                    datBtn.className = "px-3 py-1.5 rounded-lg bg-purple-600 text-white font-black text-xs cursor-pointer shadow-xs transition";
+                    akkBtn.className = "px-3 py-1.5 rounded-lg bg-slate-100 text-slate-700 font-bold hover:bg-indigo-500 hover:text-white text-xs cursor-pointer transition";
+                }
+            }
+
+            const parts = [];
+            for (let k = 0; k < 4; k++) {
+                parts.push(window._caseChoices[exIdx][k] || '');
+            }
+            const input = document.getElementById(`ex-input-${exIdx}`);
+            if (input) {
+                input.value = parts.join(', ');
                 if (typeof handleExerciseInputChange === 'function') handleExerciseInputChange(exIdx);
             }
         }
@@ -2839,6 +2977,16 @@
                 if (uParts.length === 4 && cParts.length === 4) {
                     isCorrect = uParts.every((u, idx) => u === cParts[idx]);
                 }
+            } else if (ex.exercise_type === 'phan_loai_cach') {
+                const uParts = String(userAnswer || '').toLowerCase().replace(/akkusativ/g, 'akk').split(/[\s/,]+/).filter(Boolean);
+                const cParts = String(ex.correct_answer || '').toLowerCase().replace(/akkusativ/g, 'akk').split(/[\s/,]+/).filter(Boolean);
+                if (uParts.length === 4 && cParts.length === 4) {
+                    isCorrect = uParts.every((u, idx) => u === cParts[idx]);
+                }
+            } else if (ex.exercise_type === 'dien_duoi_tinh_tu') {
+                const normUser = String(userAnswer || '').trim().toLowerCase().replace(/^-+/, '');
+                const accepted = (extra.accepted_answers || [ex.correct_answer]).map(a => String(a).trim().toLowerCase().replace(/^-+/, ''));
+                isCorrect = accepted.includes(normUser);
             } else if (isMultipleChoice) {
                 if (chosenIdx === null || chosenIdx === undefined) {
                     chosenIdx = ex.options.findIndex(opt => normalizeAnswer(opt) === normalizeAnswer(userAnswer));
@@ -3404,6 +3552,9 @@
                                 displayAns = `${parts[0]} / ${parts[1]} (hoặc các cách diễn đạt tương đương)`;
                             }
                         }
+                    }
+                    if (ex && ex.exercise_type === 'dien_duoi_tinh_tu' && extra && extra.full_sentence) {
+                        displayAns = `${extra.full_sentence} (đuôi tính từ: -${ex.correct_answer})`;
                     }
                     let wrongTitle = "❌ Chưa chính xác.";
                     let ansBlockHtml = '';

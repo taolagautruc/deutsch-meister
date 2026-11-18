@@ -2951,7 +2951,390 @@ const GERMAN_LEXIKON_DB = [
         rule: "Danh từ chỉ chất lỏng mang giống trung (das), không đếm được.",
         example: "Ich trinke viel Wasser.",
         example_vi: "Tôi uống nhiều nước."
+    },,
+    // =========================================================================
+    // TỪ VỰNG BÀI 11: TRANG PHỤC & PHỤ KIỆN (KLEIDUNG)
+    // =========================================================================
+    {
+        word: "Stiefel", article: "der", gender: "der", plural: "die Stiefel",
+        indefinite: "ein Stiefel", negation: "kein Stiefel",
+        meaning: "bốt, ủng", category: "Kleidung - Bài 11",
+        rule: "Danh từ giống đực đuôi -el giữ nguyên số nhiều: die Stiefel.",
+        example: "Im Schnee trage ich gern Stiefel.",
+        example_vi: "Trong tuyết tôi thích đi bốt."
     },
+    {
+        word: "Mantel", article: "der", gender: "der", plural: "die Mäntel",
+        indefinite: "ein Mantel", negation: "kein Mantel",
+        meaning: "áo măng tô", category: "Kleidung - Bài 11",
+        rule: "Đổi nguyên âm thêm Umlaut ở số nhiều: die Mäntel.",
+        example: "Bei Kälte trage ich einen Mantel.",
+        example_vi: "Khi trời lạnh tôi mặc áo măng tô."
+    },
+    {
+        word: "Pullover", article: "der", gender: "der", plural: "die Pullover",
+        indefinite: "ein Pullover", negation: "kein Pullover",
+        meaning: "áo len chui đầu", category: "Kleidung - Bài 11",
+        rule: "Danh từ mượn đuôi -er giữ nguyên số nhiều: die Pullover.",
+        example: "Heute trage ich einen Pullover.",
+        example_vi: "Hôm nay tôi mặc một chiếc áo len."
+    },
+    {
+        word: "Rock", article: "der", gender: "der", plural: "die Röcke",
+        indefinite: "ein Rock", negation: "kein Rock",
+        meaning: "chân váy", category: "Kleidung - Bài 11",
+        rule: "Giống đực một âm tiết thêm Umlaut và đuôi -e: die Röcke.",
+        example: "Meine Schwester trägt gern einen Rock.",
+        example_vi: "Chị tôi thích mặc chân váy."
+    },
+    {
+        word: "Anzug", article: "der", gender: "der", plural: "die Anzüge",
+        indefinite: "ein Anzug", negation: "kein Anzug",
+        meaning: "bộ com lê", category: "Kleidung - Bài 11",
+        rule: "Gốc zug thêm Umlaut: die Anzüge.",
+        example: "Mein Vater trägt einen Anzug und eine Krawatte.",
+        example_vi: "Bố tôi mặc bộ com lê và thắt cà vạt."
+    },
+    {
+        word: "Schuh", article: "der", gender: "der", plural: "die Schuhe",
+        indefinite: "ein Schuh", negation: "kein Schuh",
+        meaning: "giày", category: "Kleidung - Bài 11",
+        rule: "Số nhiều thêm -e: die Schuhe (thường đi theo đôi).",
+        example: "Die Schuhe sind Größe neununddreißig.",
+        example_vi: "Đôi giày này cỡ ba mươi chín."
+    },
+    {
+        word: "Gürtel", article: "der", gender: "der", plural: "die Gürtel",
+        indefinite: "ein Gürtel", negation: "kein Gürtel",
+        meaning: "thắt lưng", category: "Kleidung - Bài 11",
+        rule: "Đuôi -el giữ nguyên số nhiều: die Gürtel.",
+        example: "Ich brauche einen Gürtel für die Hose.",
+        example_vi: "Tôi cần một chiếc thắt lưng cho cái quần."
+    },
+    {
+        word: "Hut", article: "der", gender: "der", plural: "die Hüte",
+        indefinite: "ein Hut", negation: "kein Hut",
+        meaning: "mũ (có vành)", category: "Kleidung - Bài 11",
+        rule: "Thêm Umlaut u -> ü và đuôi -e: die Hüte.",
+        example: "In der Sonne trägt er einen Hut.",
+        example_vi: "Dưới nắng anh ấy đội một chiếc mũ."
+    },
+    {
+        word: "Handschuh", article: "der", gender: "der", plural: "die Handschuhe",
+        indefinite: "ein Handschuh", negation: "kein Handschuh",
+        meaning: "găng tay", category: "Kleidung - Bài 11",
+        rule: "Danh từ ghép Hand + Schuh, số nhiều: die Handschuhe.",
+        example: "Bei Kälte trage ich Handschuhe.",
+        example_vi: "Khi trời lạnh tôi đeo găng tay."
+    },
+    {
+        word: "Jeans", article: "die", gender: "die", plural: "die Jeans",
+        indefinite: "eine Jeans", negation: "keine Jeans",
+        meaning: "quần bò", category: "Kleidung - Bài 11",
+        rule: "Hình thức số nhiều từ tiếng Anh, có thể dùng số ít: eine Jeans.",
+        example: "Ich trage gern Jeans und ein T-Shirt.",
+        example_vi: "Tôi thích mặc quần bò và áo phông."
+    },
+    {
+        word: "Jacke", article: "die", gender: "die", plural: "die Jacken",
+        indefinite: "eine Jacke", negation: "keine Jacke",
+        meaning: "áo khoác", category: "Kleidung - Bài 11",
+        rule: "Đuôi -e là giống cái (die), số nhiều thêm -n: die Jacken.",
+        example: "Im Herbst trage ich eine Jacke.",
+        example_vi: "Vào mùa thu tôi mặc áo khoác."
+    },
+    {
+        word: "Hose", article: "die", gender: "die", plural: "die Hosen",
+        indefinite: "eine Hose", negation: "keine Hose",
+        meaning: "quần", category: "Kleidung - Bài 11",
+        rule: "Đuôi -e là giống cái (die), số nhiều thêm -n: die Hosen.",
+        example: "Die Hose ist mir zu lang.",
+        example_vi: "Chiếc quần này dài quá đối với tôi."
+    },
+    {
+        word: "Bluse", article: "die", gender: "die", plural: "die Blusen",
+        indefinite: "eine Bluse", negation: "keine Bluse",
+        meaning: "áo sơ mi nữ", category: "Kleidung - Bài 11",
+        rule: "Đuôi -e là giống cái (die), số nhiều thêm -n: die Blusen.",
+        example: "Sie trägt eine Bluse und einen Rock.",
+        example_vi: "Cô ấy mặc áo sơ mi nữ và chân váy."
+    },
+    {
+        word: "Socke", article: "die", gender: "die", plural: "die Socken",
+        indefinite: "eine Socke", negation: "keine Socke",
+        meaning: "tất", category: "Kleidung - Bài 11",
+        rule: "Đuôi -e là giống cái (die), số nhiều thêm -n: die Socken.",
+        example: "Ich brauche warme Socken.",
+        example_vi: "Tôi cần những đôi tất ấm."
+    },
+    {
+        word: "Krawatte", article: "die", gender: "die", plural: "die Krawatten",
+        indefinite: "eine Krawatte", negation: "keine Krawatte",
+        meaning: "cà vạt", category: "Kleidung - Bài 11",
+        rule: "Đuôi -e là giống cái (die), số nhiều thêm -n: die Krawatten.",
+        example: "Mein Onkel trägt eine Krawatte.",
+        example_vi: "Chú tôi thắt cà vạt."
+    },
+    {
+        word: "T-Shirt", article: "das", gender: "das", plural: "die T-Shirts",
+        indefinite: "ein T-Shirt", negation: "kein T-Shirt",
+        meaning: "áo phông", category: "Kleidung - Bài 11",
+        rule: "Từ mượn tiếng Anh mang giống trung (das), số nhiều thêm -s: die T-Shirts.",
+        example: "Im Sommer trage ich ein T-Shirt.",
+        example_vi: "Mùa hè tôi mặc áo phông."
+    },
+    {
+        word: "Hemd", article: "das", gender: "das", plural: "die Hemden",
+        indefinite: "ein Hemd", negation: "kein Hemd",
+        meaning: "áo sơ mi nam", category: "Kleidung - Bài 11",
+        rule: "Giống trung (das), số nhiều thêm -en: die Hemden.",
+        example: "Er trägt ein Hemd und eine Krawatte.",
+        example_vi: "Anh ấy mặc áo sơ mi và thắt cà vạt."
+    },
+    {
+        word: "Kleid", article: "das", gender: "das", plural: "die Kleider",
+        indefinite: "ein Kleid", negation: "kein Kleid",
+        meaning: "đầm, váy liền", category: "Kleidung - Bài 11",
+        rule: "Giống trung (das), số nhiều thêm -er: die Kleider.",
+        example: "Sie trägt ein Kleid zur Party.",
+        example_vi: "Cô ấy mặc một chiếc đầm đi dự tiệc."
+    },
+    {
+        word: "Schal", article: "der", gender: "der", plural: "die Schals",
+        indefinite: "ein Schal", negation: "kein Schal",
+        meaning: "khăn quàng", category: "Kleidung - Bài 11",
+        rule: "Giống đực, số nhiều thêm -s: die Schals.",
+        example: "Im Winter brauche ich einen Schal.",
+        example_vi: "Mùa đông tôi cần một chiếc khăn quàng."
+    },
+    {
+        word: "Mütze", article: "die", gender: "die", plural: "die Mützen",
+        indefinite: "eine Mütze", negation: "keine Mütze",
+        meaning: "mũ len, mũ lưỡi trai", category: "Kleidung - Bài 11",
+        rule: "Đuôi -e là giống cái (die), số nhiều thêm -n: die Mützen.",
+        example: "Bei Kälte trage ich eine Mütze.",
+        example_vi: "Khi trời lạnh tôi đội mũ len."
+    },
+    {
+        word: "Regenmantel", article: "der", gender: "der", plural: "die Regenmäntel",
+        indefinite: "ein Regenmantel", negation: "kein Regenmantel",
+        meaning: "áo mưa", category: "Kleidung - Bài 11",
+        rule: "Danh từ ghép der Regen + der Mantel, số nhiều: die Regenmäntel.",
+        example: "Bei Regen trage ich einen Regenmantel.",
+        example_vi: "Khi trời mưa tôi mặc áo mưa."
+    },
+    {
+        word: "Regenschirm", article: "der", gender: "der", plural: "die Regenschirme",
+        indefinite: "ein Regenschirm", negation: "kein Regenschirm",
+        meaning: "cái ô", category: "Kleidung - Bài 11",
+        rule: "Danh từ ghép der Regen + der Schirm, số nhiều: die Regenschirme.",
+        example: "Ich nehme heute einen Regenschirm mit.",
+        example_vi: "Hôm nay tôi mang theo một chiếc ô."
+    },
+    {
+        word: "Sonnenbrille", article: "die", gender: "die", plural: "die Sonnenbrillen",
+        indefinite: "eine Sonnenbrille", negation: "keine Sonnenbrille",
+        meaning: "kính râm", category: "Kleidung - Bài 11",
+        rule: "Danh từ ghép die Sonne + die Brille, số nhiều: die Sonnenbrillen.",
+        example: "Bei Sonne trage ich eine Sonnenbrille.",
+        example_vi: "Khi trời nắng tôi đeo kính râm."
+    },
+    {
+        word: "Größe", article: "die", gender: "die", plural: "die Größen",
+        indefinite: "eine Größe", negation: "keine Größe",
+        meaning: "cỡ, kích cỡ", category: "Kleidung - Bài 11",
+        rule: "Đuôi -e là giống cái (die), số nhiều thêm -n: die Größen.",
+        example: "Welche Größe haben Sie?",
+        example_vi: "Ngài mặc cỡ nào ạ?"
+    },
+    {
+        word: "Umkleidekabine", article: "die", gender: "die", plural: "die Umkleidekabinen",
+        indefinite: "eine Umkleidekabine", negation: "keine Umkleidekabine",
+        meaning: "phòng thử đồ", category: "Kleidung - Bài 11",
+        rule: "Đuôi -e là giống cái (die), số nhiều thêm -n: die Umkleidekabinen.",
+        example: "Die Umkleidekabine ist dort hinten.",
+        example_vi: "Phòng thử đồ ở phía sau kia."
+    },
+
+    // =========================================================================
+    // TỪ VỰNG BÀI 11: THỜI TIẾT, MÙA & MUA SẮM (WETTER & EINKAUFEN)
+    // =========================================================================
+    {
+        word: "Schnee", article: "der", gender: "der", plural: "nur Singular",
+        indefinite: "Schnee", negation: "kein Schnee",
+        meaning: "tuyết", category: "Wetter & Einkaufen - Bài 11",
+        rule: "Danh từ chỉ hiện tượng tự nhiên mang giống đực (der), chỉ có số ít.",
+        example: "Im Winter liegt viel Schnee in den Bergen.",
+        example_vi: "Vào mùa đông có nhiều tuyết trên núi."
+    },
+    {
+        word: "Wind", article: "der", gender: "der", plural: "die Winde",
+        indefinite: "ein Wind", negation: "kein Wind",
+        meaning: "gió", category: "Wetter & Einkaufen - Bài 11",
+        rule: "Hiện tượng thời tiết giống đực: der Wind, số nhiều die Winde.",
+        example: "Der Wind ist heute kalt.",
+        example_vi: "Hôm nay gió lạnh."
+    },
+    {
+        word: "Nebel", article: "der", gender: "der", plural: "die Nebel",
+        indefinite: "ein Nebel", negation: "kein Nebel",
+        meaning: "sương mù", category: "Wetter & Einkaufen - Bài 11",
+        rule: "Đuôi -el giữ nguyên số nhiều: die Nebel; tính từ tương ứng: neblig.",
+        example: "Im Herbst gibt es oft Nebel.",
+        example_vi: "Vào mùa thu thường có sương mù."
+    },
+    {
+        word: "Sturm", article: "der", gender: "der", plural: "die Stürme",
+        indefinite: "ein Sturm", negation: "kein Sturm",
+        meaning: "cơn bão", category: "Wetter & Einkaufen - Bài 11",
+        rule: "Giống đực, số nhiều đổi u -> ü thêm -e: die Stürme.",
+        example: "Der Sturm kommt heute Abend.",
+        example_vi: "Tối nay bão đến."
+    },
+    {
+        word: "Himmel", article: "der", gender: "der", plural: "die Himmel",
+        indefinite: "ein Himmel", negation: "kein Himmel",
+        meaning: "bầu trời", category: "Wetter & Einkaufen - Bài 11",
+        rule: "Đuôi -el giữ nguyên số nhiều: die Himmel; am Himmel = trên bầu trời.",
+        example: "Der Himmel ist heute bewölkt.",
+        example_vi: "Hôm nay bầu trời nhiều mây."
+    },
+    {
+        word: "Frühling", article: "der", gender: "der", plural: "die Frühlinge",
+        indefinite: "ein Frühling", negation: "kein Frühling",
+        meaning: "mùa xuân", category: "Wetter & Einkaufen - Bài 11",
+        rule: "Đuôi -ling luôn luôn mang giống đực (der): der Frühling, số nhiều -e.",
+        example: "Im Frühling ist es warm.",
+        example_vi: "Vào mùa xuân trời ấm."
+    },
+    {
+        word: "Sommer", article: "der", gender: "der", plural: "die Sommer",
+        indefinite: "ein Sommer", negation: "kein Sommer",
+        meaning: "mùa hè", category: "Wetter & Einkaufen - Bài 11",
+        rule: "Bốn mùa trong năm đều mang giống đực (der): im Sommer = in dem Sommer.",
+        example: "Im Sommer ist es heiß.",
+        example_vi: "Vào mùa hè trời nóng."
+    },
+    {
+        word: "Herbst", article: "der", gender: "der", plural: "die Herbste",
+        indefinite: "ein Herbst", negation: "kein Herbst",
+        meaning: "mùa thu", category: "Wetter & Einkaufen - Bài 11",
+        rule: "Bốn mùa trong năm đều mang giống đực (der): der Herbst, số nhiều die Herbste.",
+        example: "Im Herbst regnet es oft.",
+        example_vi: "Vào mùa thu trời hay mưa."
+    },
+    {
+        word: "Winter", article: "der", gender: "der", plural: "die Winter",
+        indefinite: "ein Winter", negation: "kein Winter",
+        meaning: "mùa đông", category: "Wetter & Einkaufen - Bài 11",
+        rule: "Bốn mùa trong năm đều mang giống đực (der): der Winter, số nhiều die Winter.",
+        example: "Im Winter schneit es in Deutschland.",
+        example_vi: "Vào mùa đông ở Đức có tuyết rơi."
+    },
+    {
+        word: "Wetterbericht", article: "der", gender: "der", plural: "die Wetterberichte",
+        indefinite: "ein Wetterbericht", negation: "kein Wetterbericht",
+        meaning: "bản tin thời tiết", category: "Wetter & Einkaufen - Bài 11",
+        rule: "Danh từ ghép das Wetter + der Bericht = der Wetterbericht, số nhiều -e.",
+        example: "Der Wetterbericht sagt Regen.",
+        example_vi: "Bản tin thời tiết báo có mưa."
+    },
+    {
+        word: "Kleiderschrank", article: "der", gender: "der", plural: "die Kleiderschränke",
+        indefinite: "ein Kleiderschrank", negation: "kein Kleiderschrank",
+        meaning: "tủ quần áo", category: "Wetter & Einkaufen - Bài 11",
+        rule: "Danh từ ghép die Kleider + der Schrank = der Kleiderschrank, số nhiều -ä-e.",
+        example: "Mein Kleiderschrank ist voll.",
+        example_vi: "Tủ quần áo của tôi đầy ắp."
+    },
+    {
+        word: "Wolke", article: "die", gender: "die", plural: "die Wolken",
+        indefinite: "eine Wolke", negation: "keine Wolke",
+        meaning: "đám mây", category: "Wetter & Einkaufen - Bài 11",
+        rule: "Đuôi -e là giống cái (die), số nhiều thêm -n: die Wolken; tính từ: bewölkt/wolkig.",
+        example: "Am Himmel sind viele Wolken.",
+        example_vi: "Trên bầu trời có nhiều mây."
+    },
+    {
+        word: "Kälte", article: "die", gender: "die", plural: "nur Singular",
+        indefinite: "Kälte", negation: "keine Kälte",
+        meaning: "cái lạnh, khí lạnh", category: "Wetter & Einkaufen - Bài 11",
+        rule: "Danh từ từ tính từ kalt (thêm Umlaut + -e) mang giống cái (die), chỉ có số ít.",
+        example: "Bei Kälte friere ich schnell.",
+        example_vi: "Khi trời lạnh tôi dễ bị rét."
+    },
+    {
+        word: "Hitze", article: "die", gender: "die", plural: "nur Singular",
+        indefinite: "Hitze", negation: "keine Hitze",
+        meaning: "cái nóng, khí nóng", category: "Wetter & Einkaufen - Bài 11",
+        rule: "Danh từ từ tính từ heiß mang giống cái (die), chỉ có số ít: die Hitze.",
+        example: "Bei Hitze schwitze ich viel.",
+        example_vi: "Khi trời nóng tôi đổ nhiều mồ hôi."
+    },
+    {
+        word: "Temperatur", article: "die", gender: "die", plural: "die Temperaturen",
+        indefinite: "eine Temperatur", negation: "keine Temperatur",
+        meaning: "nhiệt độ", category: "Wetter & Einkaufen - Bài 11",
+        rule: "Đuôi -ur luôn mang giống cái (die): die Temperatur, số nhiều thêm -en.",
+        example: "Die Temperatur ist heute sehr hoch.",
+        example_vi: "Hôm nay nhiệt độ rất cao."
+    },
+    {
+        word: "Jahreszeit", article: "die", gender: "die", plural: "die Jahreszeiten",
+        indefinite: "eine Jahreszeit", negation: "keine Jahreszeit",
+        meaning: "mùa (trong năm)", category: "Wetter & Einkaufen - Bài 11",
+        rule: "Gốc die Zeit mang giống cái (die), số nhiều thêm -en: die Jahreszeiten.",
+        example: "Welche Jahreszeit magst du am liebsten?",
+        example_vi: "Bạn thích mùa nào nhất?"
+    },
+    {
+        word: "Farbe", article: "die", gender: "die", plural: "die Farben",
+        indefinite: "eine Farbe", negation: "keine Farbe",
+        meaning: "màu sắc", category: "Wetter & Einkaufen - Bài 11",
+        rule: "Đuôi -e là giống cái (die), số nhiều thêm -n: die Farben.",
+        example: "Welche Farbe hat dein Hemd?",
+        example_vi: "Chiếc áo sơ mi của bạn màu gì?"
+    },
+    {
+        word: "Mode", article: "die", gender: "die", plural: "nur Singular",
+        indefinite: "Mode", negation: "keine Mode",
+        meaning: "thời trang", category: "Wetter & Einkaufen - Bài 11",
+        rule: "Đuôi -e mượn từ tiếng Pháp mang giống cái (die), chỉ có số ít.",
+        example: "Meine Schwester mag Mode.",
+        example_vi: "Chị tôi thích thời trang."
+    },
+    {
+        word: "Gewitter", article: "das", gender: "das", plural: "die Gewitter",
+        indefinite: "ein Gewitter", negation: "kein Gewitter",
+        meaning: "cơn dông", category: "Wetter & Einkaufen - Bài 11",
+        rule: "Tiền tố Ge- chỉ tập hợp/hiện tượng thường mang giống trung: das Gewitter, số nhiều giữ nguyên.",
+        example: "Am Abend gibt es ein Gewitter.",
+        example_vi: "Buổi tối có một cơn dông."
+    },
+    {
+        word: "Grad", article: "das", gender: "das", plural: "die Grad",
+        indefinite: "ein Grad", negation: "kein Grad",
+        meaning: "độ (nhiệt độ)", category: "Wetter & Einkaufen - Bài 11",
+        rule: "Giống trung (das), sau số đếm không đổi hình thức: zwanzig Grad.",
+        example: "Heute sind es zwanzig Grad.",
+        example_vi: "Hôm nay là hai mươi độ."
+    },
+    {
+        word: "Kaufhaus", article: "das", gender: "das", plural: "die Kaufhäuser",
+        indefinite: "ein Kaufhaus", negation: "kein Kaufhaus",
+        meaning: "trung tâm bách hóa", category: "Wetter & Einkaufen - Bài 11",
+        rule: "Danh từ ghép kaufen + das Haus = das Kaufhaus, số nhiều -äu-er.",
+        example: "Im Kaufhaus gibt es viele Mäntel.",
+        example_vi: "Ở trung tâm bách hóa có nhiều áo măng tô."
+    },
+    {
+        word: "Geschäft", article: "das", gender: "das", plural: "die Geschäfte",
+        indefinite: "ein Geschäft", negation: "kein Geschäft",
+        meaning: "cửa hàng", category: "Wetter & Einkaufen - Bài 11",
+        rule: "Tiền tố Ge- mang giống trung (das), số nhiều thêm -e: die Geschäfte.",
+        example: "Das Geschäft öffnet um neun Uhr.",
+        example_vi: "Cửa hàng mở cửa lúc chín giờ."
+    }
 ];
 
 let currentLexikonFilter = "all";
@@ -2959,6 +3342,8 @@ let currentLexikonSearchQuery = "";
 
 const LEXIKON_FILTERS = [
     { id: "all", label: "Tất cả" },
+    { id: "Kleidung - Bài 11", label: "👗 Trang phục & Phụ kiện (Bài 11)" },
+    { id: "Wetter & Einkaufen - Bài 11", label: "🌦️ Thời tiết, Mùa & Mua sắm (Bài 11)" },
     { id: "Natur & Reiseziele - Bài 9", label: "🌲 Thiên nhiên & Điểm đến Du lịch (Bài 9)" },
     { id: "Urlaub - Bài 9", label: "🏖️ Kỳ nghỉ: Chỗ ở, Hành lý & Thời tiết (Bài 9)" },
     { id: "In der Stadt", label: "🏙️ Địa điểm Thành phố & Chỉ đường (Bài 8)" },
