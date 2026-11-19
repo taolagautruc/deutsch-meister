@@ -688,7 +688,7 @@ def seed_lesson_11():
         },
         {
                 "type": "dien_khuyet",
-                "question": "Câu 11: Điền đại từ Dativ: „Der Hut steht ___ gut.“ (ngôi: ich)",
+                "question": "Câu 11: Điền vào chỗ trống: „Der Hut steht ___ gut.“ (ngôi: ich)",
                 "options": null,
                 "correct_answer": "mir",
                 "explanation": "Động từ stehen (hợp với ai) đi với Dativ; đại từ Dativ của ich là mir -> „Der Hut steht mir gut.“ -> Đáp án: \"mir\"",
@@ -702,7 +702,7 @@ def seed_lesson_11():
         },
         {
                 "type": "dien_khuyet",
-                "question": "Câu 12: Điền đại từ Dativ: „Die Stiefel passen ___ nicht.“ (ngôi: sie - họ)",
+                "question": "Câu 12: Điền vào chỗ trống: „Die Stiefel passen ___ nicht.“ (ngôi: sie - họ)",
                 "options": null,
                 "correct_answer": "ihnen",
                 "explanation": "Động từ passen đi với Dativ; đại từ Dativ của sie (họ) là ihnen -> „Die Stiefel passen ihnen nicht.“ -> Đáp án: \"ihnen\"",
@@ -716,7 +716,7 @@ def seed_lesson_11():
         },
         {
                 "type": "dien_khuyet",
-                "question": "Câu 13: Điền đại từ Dativ: „Der Pullover gefällt ___ sehr.“ (ngôi: er)",
+                "question": "Câu 13: Điền vào chỗ trống: „Der Pullover gefällt ___ sehr.“ (ngôi: er)",
                 "options": null,
                 "correct_answer": "ihm",
                 "explanation": "Động từ gefallen đi với Dativ; đại từ Dativ của er là ihm -> „Der Pullover gefällt ihm sehr.“ -> Đáp án: \"ihm\"",
@@ -730,7 +730,7 @@ def seed_lesson_11():
         },
         {
                 "type": "dien_khuyet",
-                "question": "Câu 14: Điền dạng dies- đúng: „Ich möchte ___ Jacke hier.“",
+                "question": "Câu 14: Điền đại từ chỉ định thích hợp (dạng của dies-): „Ich möchte ___ Jacke hier.“",
                 "options": null,
                 "correct_answer": "diese",
                 "explanation": "die Jacke là danh từ giống cái; ở Akkusativ vẫn giữ nguyên đuôi diese -> „Ich möchte diese Jacke hier.“ -> Đáp án: \"diese\"",
@@ -744,7 +744,7 @@ def seed_lesson_11():
         },
         {
                 "type": "dien_khuyet",
-                "question": "Câu 15: Điền dạng dies- đúng: „___ Kleid ist sehr schön.“",
+                "question": "Câu 15: Điền đại từ chỉ định thích hợp (dạng của dies-): „___ Kleid ist sehr schön.“",
                 "options": null,
                 "correct_answer": "Dieses",
                 "explanation": "das Kleid là danh từ giống trung làm chủ ngữ (Nominativ) -> Dieses Kleid ist sehr schön. -> Đáp án: \"Dieses\"",
@@ -759,7 +759,7 @@ def seed_lesson_11():
         },
         {
                 "type": "dien_khuyet",
-                "question": "Câu 16: Chia động từ schneien: „Im Winter ___ es in Deutschland oft.“",
+                "question": "Câu 16: Điền vào chỗ trống (động từ schneien): „Im Winter ___ es in Deutschland oft.“",
                 "options": null,
                 "correct_answer": "schneit",
                 "explanation": "Động từ thời tiết schneien chia ở ngôi es là schneit -> „Im Winter schneit es in Deutschland oft.“ -> Đáp án: \"schneit\"",
@@ -773,7 +773,7 @@ def seed_lesson_11():
         },
         {
                 "type": "dien_khuyet",
-                "question": "Câu 17: Điền từ tương ứng với „die Hitze“ vào chỗ trống: „Im Sommer ist es in Sài Gòn oft sehr ___.“",
+                "question": "Câu 17: Điền tính từ thời tiết thích hợp: „Im Sommer ist es in Sài Gòn oft sehr ___.“",
                 "options": null,
                 "correct_answer": "heiß",
                 "explanation": "Sau cụm 'ist es' dùng tính từ: die Hitze -> heiß -> „Im Sommer ist es in Sài Gòn oft sehr heiß.“ -> Đáp án: \"heiß\"",
