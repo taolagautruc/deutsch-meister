@@ -488,7 +488,7 @@ def seed_lesson_11():
     exercises_raw = [
         {
                 "type": "trac_nghiem",
-                "question": "Câu 1: Quan sát bảng dies- / welch- (V1). Chọn dạng đúng: „Wir nehmen ___ Hut hier.“ (der Hut, tân ngữ)",
+                "question": "Câu 1: Chọn dạng đúng: „Wir nehmen ___ Hut hier.“",
                 "options": [
                         "dieser",
                         "diesen",
@@ -496,10 +496,9 @@ def seed_lesson_11():
                         "dieses"
                 ],
                 "correct_answer": "diesen",
-                "explanation": "der Hut là danh từ giống đực, đóng vai trò tân ngữ trực tiếp (Akkusativ) của động từ 'nehmen' nên mạo từ den đổi thành diesen -> „Wir nehmen diesen Hut hier.“ -> Đáp án: \"diesen\"",
+                "explanation": "der Hut là danh từ giống đực, đóng vai trò tân ngữ trực tiếp (Akkusativ) của động từ 'nehmen' nên đại từ chỉ định dies- nhận đuôi -en thành diesen → „Wir nehmen diesen Hut hier.“ → Đáp án: \"diesen\"",
                 "exp_reward": 10,
                 "extra_data": {
-                        "visual": "V1",
                         "translation": "Chúng tôi lấy chiếc mũ này đây.",
                         "accepted_answers": [
                                 "diesen",
@@ -589,7 +588,7 @@ def seed_lesson_11():
         },
         {
                 "type": "trac_nghiem",
-                "question": "Câu 6: Chọn đại từ đúng: „Die Jacke passt ___ gut.“ (người nói với du)",
+                "question": "Câu 6: Chọn đại từ đúng: „Die Jacke passt ___ gut.“ (ngôi: du)",
                 "options": [
                         "dich",
                         "dir",
@@ -629,7 +628,7 @@ def seed_lesson_11():
         },
         {
                 "type": "trac_nghiem",
-                "question": "Câu 8: Chọn dạng đúng: „Ich kaufe gern ___ Schuhe.“ (số nhiều, không có mạo từ)",
+                "question": "Câu 8: Chọn dạng đúng: „Ich kaufe gern ___ Schuhe.“",
                 "options": [
                         "braune",
                         "braunen",
@@ -689,7 +688,7 @@ def seed_lesson_11():
         },
         {
                 "type": "dien_khuyet",
-                "question": "Câu 11: Điền đại từ Dativ: „Der Hut steht ___ gut.“ (ich)",
+                "question": "Câu 11: Điền đại từ Dativ: „Der Hut steht ___ gut.“ (ngôi: ich)",
                 "options": null,
                 "correct_answer": "mir",
                 "explanation": "Động từ stehen (hợp với ai) đi với Dativ; đại từ Dativ của ich là mir -> „Der Hut steht mir gut.“ -> Đáp án: \"mir\"",
@@ -703,7 +702,7 @@ def seed_lesson_11():
         },
         {
                 "type": "dien_khuyet",
-                "question": "Câu 12: Điền đại từ Dativ: „Die Stiefel passen ___ nicht.“ (sie, số nhiều — họ)",
+                "question": "Câu 12: Điền đại từ Dativ: „Die Stiefel passen ___ nicht.“ (ngôi: sie - họ)",
                 "options": null,
                 "correct_answer": "ihnen",
                 "explanation": "Động từ passen đi với Dativ; đại từ Dativ của sie (họ) là ihnen -> „Die Stiefel passen ihnen nicht.“ -> Đáp án: \"ihnen\"",
@@ -717,7 +716,7 @@ def seed_lesson_11():
         },
         {
                 "type": "dien_khuyet",
-                "question": "Câu 13: Điền đại từ Dativ: „Der Pullover gefällt ___ sehr.“ (er)",
+                "question": "Câu 13: Điền đại từ Dativ: „Der Pullover gefällt ___ sehr.“ (ngôi: er)",
                 "options": null,
                 "correct_answer": "ihm",
                 "explanation": "Động từ gefallen đi với Dativ; đại từ Dativ của er là ihm -> „Der Pullover gefällt ihm sehr.“ -> Đáp án: \"ihm\"",
@@ -731,7 +730,7 @@ def seed_lesson_11():
         },
         {
                 "type": "dien_khuyet",
-                "question": "Câu 14: Điền dạng dies- đúng (Akkusativ): „Ich möchte ___ Jacke hier.“ (die Jacke)",
+                "question": "Câu 14: Điền dạng dies- đúng: „Ich möchte ___ Jacke hier.“",
                 "options": null,
                 "correct_answer": "diese",
                 "explanation": "die Jacke là danh từ giống cái; ở Akkusativ vẫn giữ nguyên đuôi diese -> „Ich möchte diese Jacke hier.“ -> Đáp án: \"diese\"",
@@ -745,7 +744,7 @@ def seed_lesson_11():
         },
         {
                 "type": "dien_khuyet",
-                "question": "Câu 15: Điền dạng dies- đúng (Nominativ): „___ Kleid ist sehr schön.“ (das Kleid)",
+                "question": "Câu 15: Điền dạng dies- đúng: „___ Kleid ist sehr schön.“",
                 "options": null,
                 "correct_answer": "Dieses",
                 "explanation": "das Kleid là danh từ giống trung làm chủ ngữ (Nominativ) -> Dieses Kleid ist sehr schön. -> Đáp án: \"Dieses\"",
@@ -774,7 +773,7 @@ def seed_lesson_11():
         },
         {
                 "type": "dien_khuyet",
-                "question": "Câu 17: Điền tính từ của die Hitze: „Im Sommer ist es in Sài Gòn oft rất nóng: sehr ___.“",
+                "question": "Câu 17: Điền từ tương ứng với „die Hitze“ vào chỗ trống: „Im Sommer ist es in Sài Gòn oft sehr ___.“",
                 "options": null,
                 "correct_answer": "heiß",
                 "explanation": "Sau cụm 'ist es' dùng tính từ: die Hitze -> heiß -> „Im Sommer ist es in Sài Gòn oft sehr heiß.“ -> Đáp án: \"heiß\"",
@@ -789,7 +788,7 @@ def seed_lesson_11():
         },
         {
                 "type": "dien_khuyet",
-                "question": "Câu 18: Chia động từ tragen ở ngôi du: „Du ___ heute eine Hose und einen Pullover.“",
+                "question": "Câu 18: Chia động từ tragen: „Du ___ heute eine Hose und einen Pullover.“",
                 "options": null,
                 "correct_answer": "trägst",
                 "explanation": "tragen là động từ biến âm a -> ä ở ngôi du: du trägst -> „Du trägst heute eine Hose und einen Pullover.“ -> Đáp án: \"trägst\"",
@@ -804,7 +803,7 @@ def seed_lesson_11():
         },
         {
                 "type": "dien_khuyet",
-                "question": "Câu 19: Chia động từ tragen ở ngôi ihr: „Ihr ___ im Sommer gern T-Shirts.“",
+                "question": "Câu 19: Chia động từ tragen: „Ihr ___ im Sommer gern T-Shirts.“",
                 "options": null,
                 "correct_answer": "tragt",
                 "explanation": "Ngôi ihr không đổi nguyên âm: ihr tragt (không có Umlaut) -> „Ihr tragt im Sommer gern T-Shirts.“ -> Đáp án: \"tragt\"",
@@ -818,7 +817,7 @@ def seed_lesson_11():
         },
         {
                 "type": "dien_khuyet",
-                "question": "Câu 20: Điền tiền tố tách: „Anna zieht heute einen Mantel ___.“ (anziehen)",
+                "question": "Câu 20: Điền tiền tố tách thích hợp (nghĩa: mặc vào): „Anna zieht heute einen Mantel ___.“",
                 "options": null,
                 "correct_answer": "an",
                 "explanation": "anziehen là động từ tách, tiền tố an- đứng ở vị trí cuối câu đơn -> „Anna zieht heute einen Mantel an.“ -> Đáp án: \"an\"",
@@ -832,7 +831,7 @@ def seed_lesson_11():
         },
         {
                 "type": "dien_duoi_tinh_tu",
-                "question": "Câu 21: Điền đuôi tính từ màu thích hợp vào chỗ trống: „Er kauft einen blau__ Anzug.“ (der Anzug, m)",
+                "question": "Câu 21: Điền đuôi tính từ màu thích hợp vào chỗ trống: „Er kauft einen blau__ Anzug.“",
                 "options": null,
                 "correct_answer": "en",
                 "explanation": "der Anzug là giống đực ở Akkusativ sau mạo từ einen; tính từ nhận đuôi -en -> einen blauen Anzug. -> Đáp án: \"en\"",
@@ -851,7 +850,7 @@ def seed_lesson_11():
         },
         {
                 "type": "dien_duoi_tinh_tu",
-                "question": "Câu 22: Điền đuôi tính từ màu thích hợp vào chỗ trống: „Sie trägt ein gelb__ Kleid.“ (das Kleid, n)",
+                "question": "Câu 22: Điền đuôi tính từ màu thích hợp vào chỗ trống: „Sie trägt ein gelb__ Kleid.“",
                 "options": null,
                 "correct_answer": "es",
                 "explanation": "das Kleid là giống trung ở Akkusativ; sau mạo từ ein tính từ nhận đuôi -es -> ein gelbes Kleid. -> Đáp án: \"es\"",
@@ -870,7 +869,7 @@ def seed_lesson_11():
         },
         {
                 "type": "dien_duoi_tinh_tu",
-                "question": "Câu 23: Điền đuôi tính từ màu thích hợp vào chỗ trống: „Wir suchen eine grau__ Hose.“ (die Hose, f)",
+                "question": "Câu 23: Điền đuôi tính từ màu thích hợp vào chỗ trống: „Wir suchen eine grau__ Hose.“",
                 "options": null,
                 "correct_answer": "e",
                 "explanation": "die Hose là giống cái ở Akkusativ; sau mạo từ eine tính từ nhận đuôi -e -> eine graue Hose. -> Đáp án: \"e\"",
@@ -889,7 +888,7 @@ def seed_lesson_11():
         },
         {
                 "type": "dien_duoi_tinh_tu",
-                "question": "Câu 24: Điền đuôi tính từ màu thích hợp vào chỗ trống: „Die Kinder brauchen dunkelblau__ Schuhe.“ (die Schuhe, số nhiều không mạo từ)",
+                "question": "Câu 24: Điền đuôi tính từ màu thích hợp vào chỗ trống: „Die Kinder brauchen dunkelblau__ Schuhe.“",
                 "options": null,
                 "correct_answer": "e",
                 "explanation": "Danh từ số nhiều không mạo từ ở Akkusativ nhận đuôi -e -> dunkelblaue Schuhe. -> Đáp án: \"e\"",
@@ -908,7 +907,7 @@ def seed_lesson_11():
         },
         {
                 "type": "dien_duoi_tinh_tu",
-                "question": "Câu 25: Điền đuôi tính từ màu thích hợp vào chỗ trống: „Ich nehme einen schwarz__ Gürtel.“ (der Gürtel, m)",
+                "question": "Câu 25: Điền đuôi tính từ màu thích hợp vào chỗ trống: „Ich nehme einen schwarz__ Gürtel.“",
                 "options": null,
                 "correct_answer": "en",
                 "explanation": "der Gürtel là giống đực ở Akkusativ sau einen; tính từ nhận đuôi -en -> einen schwarzen Gürtel. -> Đáp án: \"en\"",
@@ -927,7 +926,7 @@ def seed_lesson_11():
         },
         {
                 "type": "dien_duoi_tinh_tu",
-                "question": "Câu 26: Điền đuôi tính từ màu thích hợp vào chỗ trống: „Sie probiert ein braun__ T-Shirt an.“ (das T-Shirt, n)",
+                "question": "Câu 26: Điền đuôi tính từ màu thích hợp vào chỗ trống: „Sie probiert ein braun__ T-Shirt an.“",
                 "options": null,
                 "correct_answer": "es",
                 "explanation": "das T-Shirt là giống trung ở Akkusativ sau ein; tính từ nhận đuôi -es -> ein braunes T-Shirt. -> Đáp án: \"es\"",
