@@ -831,7 +831,7 @@ def seed_lesson_11():
         },
         {
                 "type": "dien_duoi_tinh_tu",
-                "question": "Câu 21: Điền đuôi tính từ màu thích hợp vào chỗ trống: „Er kauft einen blau__ Anzug.“",
+                "question": "Câu 21: Điền đuôi tính từ vào chỗ trống: „Er kauft einen blau__ Anzug.“",
                 "options": null,
                 "correct_answer": "en",
                 "explanation": "der Anzug là giống đực ở Akkusativ sau mạo từ einen; tính từ nhận đuôi -en -> einen blauen Anzug. -> Đáp án: \"en\"",
@@ -844,13 +844,14 @@ def seed_lesson_11():
                         "full_sentence": "Er kauft einen blauen Anzug.",
                         "translation": "Anh ấy mua một bộ com lê xanh.",
                         "accepted_answers": [
-                                "en"
+                                "en",
+                                "-en"
                         ]
                 }
         },
         {
                 "type": "dien_duoi_tinh_tu",
-                "question": "Câu 22: Điền đuôi tính từ màu thích hợp vào chỗ trống: „Sie trägt ein gelb__ Kleid.“",
+                "question": "Câu 22: Điền đuôi tính từ vào chỗ trống: „Sie trägt ein gelb__ Kleid.“",
                 "options": null,
                 "correct_answer": "es",
                 "explanation": "das Kleid là giống trung ở Akkusativ; sau mạo từ ein tính từ nhận đuôi -es -> ein gelbes Kleid. -> Đáp án: \"es\"",
@@ -863,13 +864,14 @@ def seed_lesson_11():
                         "full_sentence": "Sie trägt ein gelbes Kleid.",
                         "translation": "Cô ấy mặc một chiếc đầm vàng.",
                         "accepted_answers": [
-                                "es"
+                                "es",
+                                "-es"
                         ]
                 }
         },
         {
                 "type": "dien_duoi_tinh_tu",
-                "question": "Câu 23: Điền đuôi tính từ màu thích hợp vào chỗ trống: „Wir suchen eine grau__ Hose.“",
+                "question": "Câu 23: Điền đuôi tính từ vào chỗ trống: „Wir suchen eine grau__ Hose.“",
                 "options": null,
                 "correct_answer": "e",
                 "explanation": "die Hose là giống cái ở Akkusativ; sau mạo từ eine tính từ nhận đuôi -e -> eine graue Hose. -> Đáp án: \"e\"",
@@ -882,13 +884,14 @@ def seed_lesson_11():
                         "full_sentence": "Wir suchen eine graue Hose.",
                         "translation": "Chúng tôi tìm một chiếc quần xám.",
                         "accepted_answers": [
-                                "e"
+                                "e",
+                                "-e"
                         ]
                 }
         },
         {
                 "type": "dien_duoi_tinh_tu",
-                "question": "Câu 24: Điền đuôi tính từ màu thích hợp vào chỗ trống: „Die Kinder brauchen dunkelblau__ Schuhe.“",
+                "question": "Câu 24: Điền đuôi tính từ vào chỗ trống: „Die Kinder brauchen dunkelblau__ Schuhe.“",
                 "options": null,
                 "correct_answer": "e",
                 "explanation": "Danh từ số nhiều không mạo từ ở Akkusativ nhận đuôi -e -> dunkelblaue Schuhe. -> Đáp án: \"e\"",
@@ -901,13 +904,14 @@ def seed_lesson_11():
                         "full_sentence": "Die Kinder brauchen dunkelblaue Schuhe.",
                         "translation": "Bọn trẻ cần đôi giày xanh đậm.",
                         "accepted_answers": [
-                                "e"
+                                "e",
+                                "-e"
                         ]
                 }
         },
         {
                 "type": "dien_duoi_tinh_tu",
-                "question": "Câu 25: Điền đuôi tính từ màu thích hợp vào chỗ trống: „Ich nehme einen schwarz__ Gürtel.“",
+                "question": "Câu 25: Điền đuôi tính từ vào chỗ trống: „Ich nehme einen schwarz__ Gürtel.“",
                 "options": null,
                 "correct_answer": "en",
                 "explanation": "der Gürtel là giống đực ở Akkusativ sau einen; tính từ nhận đuôi -en -> einen schwarzen Gürtel. -> Đáp án: \"en\"",
@@ -920,13 +924,14 @@ def seed_lesson_11():
                         "full_sentence": "Ich nehme einen schwarzen Gürtel.",
                         "translation": "Tôi lấy một chiếc thắt lưng đen.",
                         "accepted_answers": [
-                                "en"
+                                "en",
+                                "-en"
                         ]
                 }
         },
         {
                 "type": "dien_duoi_tinh_tu",
-                "question": "Câu 26: Điền đuôi tính từ màu thích hợp vào chỗ trống: „Sie probiert ein braun__ T-Shirt an.“",
+                "question": "Câu 26: Điền đuôi tính từ vào chỗ trống: „Sie probiert ein braun__ T-Shirt an.“",
                 "options": null,
                 "correct_answer": "es",
                 "explanation": "das T-Shirt là giống trung ở Akkusativ sau ein; tính từ nhận đuôi -es -> ein braunes T-Shirt. -> Đáp án: \"es\"",
@@ -939,7 +944,8 @@ def seed_lesson_11():
                         "full_sentence": "Sie probiert ein braunes T-Shirt an.",
                         "translation": "Cô ấy thử một chiếc áo phông nâu.",
                         "accepted_answers": [
-                                "es"
+                                "es",
+                                "-es"
                         ]
                 }
         },
