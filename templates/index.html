@@ -2104,17 +2104,6 @@
                         </div>
                     `;
                 }
-                if (ex.exercise_type === 'dien_duoi_tinh_tu') {
-                    extraHtml += `
-                        <div class="my-2.5 p-3 rounded-2xl bg-indigo-50/70 border border-indigo-200 space-y-1.5">
-                            <div class="flex items-center justify-between text-xs font-bold text-indigo-800">
-                                <span>🎨 Bảng thần chú đuôi màu ở Akkusativ:</span>
-                                <span class="px-2 py-0.5 rounded bg-indigo-200 text-indigo-900 font-mono">en (m) • e (f) • es (n) • e (pl)</span>
-                            </div>
-                            <div class="text-sm font-black text-indigo-950">„${extra.display_sentence || ''}“</div>
-                        </div>
-                    `;
-                }
                 if (ex.exercise_type === 'viet_lai_dies' && extra.source_sentence) {
                     extraHtml += `
                         <div class="my-2.5 p-3.5 rounded-2xl bg-indigo-50/70 border border-indigo-200 space-y-1.5">
@@ -2306,7 +2295,7 @@
                     const placeholderText = (ex && ex.exercise_type === 'nghe_gia_tien')
                         ? 'Nhập số tiền (dùng dấu phẩy hoặc dấu chấm)...'
                         : (ex && ex.exercise_type === 'dien_duoi_tinh_tu')
-                            ? 'Nhập đuôi tính từ (-en, -e, -es)...'
+                            ? 'Nhập đuôi tính từ...'
                             : (ex && ex.exercise_type === 'viet_lai_dies')
                                 ? 'Nhập câu viết lại với dies-... (nhấn Enter để kiểm tra và chuyển câu)'
                                 : (isMultiSlot 
