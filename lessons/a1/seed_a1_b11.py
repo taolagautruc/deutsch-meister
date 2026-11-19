@@ -1383,13 +1383,13 @@ def seed_lesson_11():
         },
         {
                 "type": "dien_tao_cau",
-                "question": "Câu 47: Điền 2 từ để hoàn thành câu: \"Hôm nay tôi mặc một chiếc đầm đỏ.\"",
+                "question": "Câu 47: Điền từ và đuôi tính từ vào chỗ trống: „Heute ___ ich ein rot___ Kleid.“ (Hôm nay tôi mặc một chiếc đầm đỏ.)",
                 "options": null,
                 "correct_answer": "trage / es",
                 "explanation": "Động từ tragen đi với ngôi ich là trage; das Kleid là giống trung nên tính từ nhận đuôi -es -> ein rotes Kleid -> Đáp án: \"trage / es\"",
                 "exp_reward": 15,
                 "extra_data": {
-                        "display_frame": "Heute [1] ich ein rot[2] Kleid.",
+                        "display_frame": "Heute ___ ich ein rot___ Kleid.",
                         "word_bank_hints": [
                                 "trage",
                                 "es",
@@ -1399,20 +1399,23 @@ def seed_lesson_11():
                         ],
                         "accepted_answers": [
                                 "trage / es",
-                                "trage/es"
+                                "trage/es",
+                                "trage / -es",
+                                "trage/-es",
+                                "trage es"
                         ],
                         "translation": "Hôm nay tôi mặc một chiếc đầm đỏ."
                 }
         },
         {
                 "type": "dien_tao_cau",
-                "question": "Câu 48: Điền 2 từ để hoàn thành câu: \"Bạn mặc một chiếc áo măng tô xanh lá.\"",
+                "question": "Câu 48: Điền từ và đuôi tính từ vào chỗ trống: „Du ___ einen grün___ Mantel.“ (Bạn mặc một chiếc áo măng tô xanh lá.)",
                 "options": null,
                 "correct_answer": "trägst / en",
                 "explanation": "tragen đi với ngôi du là trägst; der Mantel là giống đực ở Akkusativ nên tính từ nhận đuôi -en -> einen grünen Mantel -> Đáp án: \"trägst / en\"",
                 "exp_reward": 15,
                 "extra_data": {
-                        "display_frame": "Du [1] einen grün[2] Mantel.",
+                        "display_frame": "Du ___ einen grün___ Mantel.",
                         "word_bank_hints": [
                                 "trägst",
                                 "en",
@@ -1423,21 +1426,25 @@ def seed_lesson_11():
                         "accepted_answers": [
                                 "trägst / en",
                                 "trägst/en",
+                                "trägst / -en",
+                                "trägst/-en",
                                 "traegst / en",
-                                "traegst/en"
+                                "traegst/en",
+                                "trägst en",
+                                "traegst en"
                         ],
                         "translation": "Bạn mặc một chiếc áo măng tô xanh lá."
                 }
         },
         {
                 "type": "dien_tao_cau",
-                "question": "Câu 49: Điền 2 từ để hoàn thành câu: \"Chiếc quần này đây dài quá, nhưng chiếc quần kia thì vừa.\"",
+                "question": "Câu 49: Điền 2 đại từ vào chỗ trống: „___ Hose hier ist zu lang, aber ___ Hose da passt.“ (Chiếc quần này đây dài quá, nhưng chiếc quần kia thì vừa.)",
                 "options": null,
                 "correct_answer": "diese / diese",
                 "explanation": "die Hose là danh từ giống cái nên đại từ chỉ định ở cả hai vị trí đều là diese -> Diese Hose hier ist zu lang, aber diese Hose da passt. -> Đáp án: \"diese / diese\"",
                 "exp_reward": 15,
                 "extra_data": {
-                        "display_frame": "[1] Hose hier ist zu lang, aber [2] Hose da passt.",
+                        "display_frame": "___ Hose hier ist zu lang, aber ___ Hose da passt.",
                         "word_bank_hints": [
                                 "diese",
                                 "dieser",
@@ -1448,20 +1455,22 @@ def seed_lesson_11():
                                 "diese / diese",
                                 "diese/diese",
                                 "Diese / diese",
-                                "Diese/diese"
+                                "Diese/diese",
+                                "diese diese",
+                                "Diese diese"
                         ],
                         "translation": "Chiếc quần này đây dài quá, nhưng chiếc quần kia thì vừa."
                 }
         },
         {
                 "type": "dien_tao_cau",
-                "question": "Câu 50: Điền 2 từ để hoàn thành câu: \"Chiếc áo len hợp với tôi, và đôi giày cũng hợp với tôi.\"",
+                "question": "Câu 50: Điền 2 từ vào chỗ trống: „Der Pullover ___ mir gut, und die Schuhe ___ mir auch.“ (Chiếc áo len hợp với tôi, và đôi giày cũng hợp với tôi.)",
                 "options": null,
                 "correct_answer": "steht / stehen",
                 "explanation": "der Pullover là danh từ số ít nên chia steht; die Schuhe là danh từ số nhiều nên chia stehen -> Der Pullover steht mir gut, und die Schuhe stehen mir auch. -> Đáp án: \"steht / stehen\"",
                 "exp_reward": 15,
                 "extra_data": {
-                        "display_frame": "Der Pullover [1] mir gut, und die Schuhe [2] mir auch.",
+                        "display_frame": "Der Pullover ___ mir gut, und die Schuhe ___ mir auch.",
                         "word_bank_hints": [
                                 "steht",
                                 "stehen",
@@ -1470,20 +1479,21 @@ def seed_lesson_11():
                         ],
                         "accepted_answers": [
                                 "steht / stehen",
-                                "steht/stehen"
+                                "steht/stehen",
+                                "steht stehen"
                         ],
                         "translation": "Chiếc áo len hợp với tôi, và đôi giày cũng hợp với tôi."
                 }
         },
         {
                 "type": "dien_tao_cau",
-                "question": "Câu 51: Điền 2 từ để hoàn thành câu: \"Hôm nay ở Hamburg trời mưa và lạnh.\"",
+                "question": "Câu 51: Điền 2 từ vào chỗ trống: „Heute ___ es in Hamburg, und es ist ___.“ (Hôm nay ở Hamburg trời mưa và lạnh.)",
                 "options": null,
                 "correct_answer": "regnet / kalt",
                 "explanation": "Động từ thời tiết regnet (ngôi es); sau ist dùng tính từ kalt -> Heute regnet es in Hamburg, und es ist kalt. -> Đáp án: \"regnet / kalt\"",
                 "exp_reward": 15,
                 "extra_data": {
-                        "display_frame": "Heute [1] es in Hamburg, und es ist [2].",
+                        "display_frame": "Heute ___ es in Hamburg, und es ist ___.",
                         "word_bank_hints": [
                                 "regnet",
                                 "kalt",
@@ -1493,20 +1503,21 @@ def seed_lesson_11():
                         ],
                         "accepted_answers": [
                                 "regnet / kalt",
-                                "regnet/kalt"
+                                "regnet/kalt",
+                                "regnet kalt"
                         ],
                         "translation": "Hôm nay ở Hamburg trời mưa và lạnh."
                 }
         },
         {
                 "type": "dien_tao_cau",
-                "question": "Câu 52: Điền 2 từ để hoàn thành câu: \"Hôm qua trời có tuyết và tôi đã mặc áo măng tô.\"",
+                "question": "Câu 52: Điền 2 từ vào chỗ trống: „Gestern hat es ___ und ich habe einen Mantel ___.“ (Hôm qua trời có tuyết và tôi đã mặc áo măng tô.)",
                 "options": null,
                 "correct_answer": "geschneit / angezogen",
                 "explanation": "schneien ở thì Perfekt là hat geschneit; anziehen ở thì Perfekt là habe angezogen -> Gestern hat es geschneit und ich habe einen Mantel angezogen. -> Đáp án: \"geschneit / angezogen\"",
                 "exp_reward": 15,
                 "extra_data": {
-                        "display_frame": "Gestern hat es [1] und ich habe einen Mantel [2].",
+                        "display_frame": "Gestern hat es ___ und ich habe einen Mantel ___.",
                         "word_bank_hints": [
                                 "geschneit",
                                 "angezogen",
@@ -1516,7 +1527,8 @@ def seed_lesson_11():
                         ],
                         "accepted_answers": [
                                 "geschneit / angezogen",
-                                "geschneit/angezogen"
+                                "geschneit/angezogen",
+                                "geschneit angezogen"
                         ],
                         "translation": "Hôm qua trời có tuyết và tôi đã mặc áo măng tô."
                 }
