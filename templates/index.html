@@ -2335,6 +2335,15 @@
                     ? `<span class="text-emerald-700 font-extrabold flex items-center gap-1">⚡ +${ex.exp_reward} EXP <span class="text-[11px] px-1.5 py-0.2 rounded bg-emerald-100 text-emerald-800 font-bold">(Đã nhận)</span></span>`
                     : `<span class="text-amber-600 font-extrabold">⚡ +${ex.exp_reward} EXP</span>`;
 
+                const capWarningStaticHtml = (ex && ex._capWarning) ? `
+                    <div class="mt-2 p-3 rounded-xl bg-amber-50 border border-amber-300 text-amber-900 text-xs leading-relaxed flex items-start gap-2 shadow-xs">
+                        <span class="text-base leading-none">⚠️</span>
+                        <div>
+                            <span class="font-extrabold text-amber-950">Tuy nhiên cần chú ý:</span> Danh từ tiếng Đức bắt buộc phải viết hoa chữ cái đầu (VD: die Jacke, der Schnee).
+                        </div>
+                    </div>
+                ` : '';
+
                 const feedbackHtml = isDone
                     ? `
                         <div id="ex-feedback-${i}" class="text-xs p-3.5 rounded-xl mt-2 bg-emerald-50 text-emerald-800 border border-emerald-200">
@@ -2343,6 +2352,7 @@
                                     <span class="text-emerald-700 font-extrabold text-sm">✅ Đã hoàn thành chính xác!</span>
                                     <span class="text-emerald-800 font-bold">(+${ex.exp_reward} EXP)</span>
                                 </div>
+                                ${capWarningStaticHtml}
                                 ${translationHtml}
                                 <div class="text-emerald-900 leading-relaxed pt-1">
                                     <span class="font-bold">💡 Giải thích:</span> ${ex.explanation}
@@ -3125,10 +3135,20 @@
                             (currentLesson.title && /bài 8\b/i.test(currentLesson.title))
                         ))
                     );
+                    const isLesson11 = Boolean(
+                        (ex && (String(ex.lesson_id) === '25')) ||
+                        (typeof currentLesson !== 'undefined' && currentLesson && (
+                            String(currentLesson.id) === '25' || 
+                            (currentLesson.title && /bài 11\b/i.test(currentLesson.title))
+                        ))
+                    );
                     const l8QMatch = isLesson8 && (ex.question || '').match(/Câu\s+(4[6-9]|5[0-7])\b/i);
                     const l8VDMatch = isLesson8 && (ex.question || '').match(/Câu\s+(8[7-9]|9[0-3])\b/i);
                     const l8DVMatch = isLesson8 && (ex.question || '').match(/Câu\s+(9[4-9]|100)\b/i);
-                    if (l9DVMatch && typeof evaluateLesson9DVTranslation === 'function' && evaluateLesson9DVTranslation(userAnswer, parseInt(l9DVMatch[1], 10))) {
+                    const l11DVMatch = isLesson11 && (ex.question || '').match(/Câu\s+(38|6[4-8])\b/i);
+                    if (l11DVMatch && typeof evaluateLesson11DVTranslation === 'function' && evaluateLesson11DVTranslation(userAnswer, parseInt(l11DVMatch[1], 10))) {
+                        isCorrect = true;
+                    } else if (l9DVMatch && typeof evaluateLesson9DVTranslation === 'function' && evaluateLesson9DVTranslation(userAnswer, parseInt(l9DVMatch[1], 10))) {
                         isCorrect = true;
                     } else if (l9VDMatch && typeof evaluateLesson9VDTranslation === 'function' && evaluateLesson9VDTranslation(userAnswer, parseInt(l9VDMatch[1], 10))) {
                         isCorrect = true;
@@ -3305,6 +3325,39 @@
                         </div>
                     `;
                 }
+
+                let capitalizationWarningHtml = '';
+                const isLesson11Ex = Boolean(
+                    (ex && (String(ex.lesson_id) === '25')) ||
+                    (typeof currentLesson !== 'undefined' && currentLesson && (
+                        String(currentLesson.id) === '25' || 
+                        (currentLesson.title && /bài 11\b/i.test(currentLesson.title))
+                    ))
+                );
+                const isD4L11 = isLesson11Ex && (
+                    ex.exercise_type === 'dich_nghia_vd' || 
+                    (ex.question && /Câu\s+(2[7-9]|3[0-2])\b/i.test(ex.question))
+                );
+                if (isD4L11 && typeof userAnswer === 'string') {
+                    const correctWords = String(ex.correct_answer || '').split(/\s+/).filter(Boolean);
+                    const userWords = String(userAnswer || '').trim().split(/\s+/).filter(Boolean);
+                    const capWord = correctWords.find(w => /^[A-ZÄÖÜ]/.test(w));
+                    if (capWord) {
+                        const uMatch = userWords.find(w => normalizeAnswer(w) === normalizeAnswer(capWord));
+                        if (uMatch && !/^[A-ZÄÖÜ]/.test(uMatch)) {
+                            ex._capWarning = true;
+                            capitalizationWarningHtml = `
+                                <div class="mt-2 p-3 rounded-xl bg-amber-50 border border-amber-300 text-amber-900 text-xs leading-relaxed flex items-start gap-2 shadow-xs">
+                                    <span class="text-base leading-none">⚠️</span>
+                                    <div>
+                                        <span class="font-extrabold text-amber-950">Tuy nhiên cần chú ý:</span> Danh từ tiếng Đức bắt buộc phải viết hoa chữ cái đầu (VD: die Jacke, der Schnee).
+                                    </div>
+                                </div>
+                            `;
+                        }
+                    }
+                }
+
                 feedback.innerHTML = `
                     <div class="space-y-1.5">
                         <div class="flex items-center gap-2">
@@ -3313,6 +3366,7 @@
                                 ? `<span class="text-emerald-800 font-bold">(+${earnedExp} EXP)</span>` 
                                 : `<span class="text-slate-500 font-bold text-xs">(+0 EXP • Đã xem đáp án)</span>`}
                         </div>
+                        ${capitalizationWarningHtml}
                         ${correctPairsHtml}
                         ${dialogueGermanHtml}
                         ${translationHtml}
