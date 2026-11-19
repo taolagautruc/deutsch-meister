@@ -1052,12 +1052,70 @@ function evaluateLesson9VDTranslation(userAns, qNum) {
     return false;
 }
 
+function evaluateLesson11DVTranslation(userAns, qNum) {
+    if (!userAns) return false;
+    const norm = normalizeVietnameseTranslation(userAns);
+    if (!norm) return false;
+
+    // Câu 38: „Die Hose ist mir zu lang.“ -> [cái / chiếc] quần [này] [quá dài / dài quá] [với / đối với] tôi
+    if (qNum === 38) {
+        const hasPants = /quần/i.test(norm);
+        const hasLong = /(?:dài\s+quá|quá\s+dài|hơi\s+dài|rất\s+dài)/i.test(norm);
+        if (hasPants && hasLong) return true;
+    }
+
+    // Câu 64: „Welche Größe haben Sie? — Ich trage Größe vierzig.“ -> [Ngài / Ông / Bà / Bạn] [mặc / có] [cỡ / kích cỡ / size / đồ cỡ] [nào / bao nhiêu] [? / - / ] [Tôi / Mình] mặc [cỡ / size] [bốn mươi / 40]
+    if (qNum === 64) {
+        const hasSizeQ = /(?:cỡ|kích\s*cỡ|size)\s*(?:nào|bao\s+nhiêu|mấy)/i.test(norm) ||
+                         /(?:mặc|có)\s*(?:cỡ|kích\s*cỡ|size|đồ\s+cỡ)/i.test(norm);
+        const hasAns40 = /(?:cỡ|size|số)?\s*(?:40|bốn\s+mươi)/i.test(norm);
+        if (hasSizeQ && hasAns40) return true;
+    }
+
+    // Câu 65: „Dieser Mantel ist mir zu groß, aber dieser hier passt mir gut.“ -> [Chiếc / Cái] áo măng tô này [rộng quá / quá rộng] [với / đối với] tôi, nhưng [chiếc / cái] [này / này đây] [thì / lại] vừa [với / đối với] tôi
+    if (qNum === 65) {
+        const hasCoat = /(?:măng\s*tô|áo\s+khoác|áo\s+choàng|chiếc\s+áo|cái\s+áo)/i.test(norm);
+        const hasBig = /(?:rộng\s+quá|quá\s+rộng|to\s+quá|quá\s+to)/i.test(norm);
+        const hasFit = /(?:nhưng|song|mà).*(?:vừa|hợp)/i.test(norm) || (hasBig && /(?:này\s+đây|chiếc\s+này|cái\s+này).*(?:vừa|hợp)/i.test(norm));
+        if (hasCoat && hasBig && hasFit) return true;
+    }
+
+    // Câu 66: „Im Winter trägt mein Vater immer einen Mantel, einen Hut und Handschuhe.“ -> [Vào] mùa đông [bố / ba / cha] tôi luôn [mặc / mặc... đội... đeo...] (có thể có hoặc không có số từ: 1/một/một cái/một chiếc) [áo măng tô / áo khoác dài], [mũ / nón] và [găng tay / đôi găng tay]
+    if (qNum === 66) {
+        const hasWinter = /(?:mùa\s+đông)/i.test(norm);
+        const hasFather = /(?:bố|ba|cha)/i.test(norm);
+        const hasCoat = /(?:măng\s*tô|áo\s+khoác|áo\s+choàng)/i.test(norm);
+        const hasHat = /(?:mũ|nón)/i.test(norm);
+        const hasGloves = /(?:găng\s+tay|bao\s+tay)/i.test(norm);
+        if (hasWinter && hasFather && hasCoat && hasHat && hasGloves) return true;
+    }
+
+    // Câu 67: „Heute ist es in Hamburg windig und bewölkt, aber morgen scheint die Sonne.“ -> Đảo vị trí nơi chốn Hôm nay [ở Hamburg trời có gió... / trời có gió... ở Hamburg] và cụm [ngày mai trời sẽ nắng / mặt trời chiếu sáng].
+    if (qNum === 67) {
+        const hasHamburg = /hamburg/i.test(norm);
+        const hasWind = /(?:gió|có\s+gió)/i.test(norm);
+        const hasCloud = /(?:mây|nhiều\s+mây|âm\s+u)/i.test(norm);
+        const hasTomorrowSun = /(?:ngày\s+mai|mai).*(?:nắng|mặt\s+trời|chiếu\s+sáng|tỏa\s+nắng)/i.test(norm);
+        if (hasHamburg && hasWind && hasCloud && hasTomorrowSun) return true;
+    }
+
+    // Câu 68: „Welche Jacke gefällt dir besser? — Diese hier gefällt mir besser.“ -> Bạn thích [cái / chiếc] áo khoác nào hơn [? / - / ] Tôi thích [cái / chiếc] [này / này đây / áo khoác này] hơn.
+    if (qNum === 68) {
+        const hasCoatOrLike = (/(?:áo\s+khoác|chiếc\s+áo|cái\s+áo)/i.test(norm) || /(?:nào\s+hơn|hơn)/i.test(norm)) && /(?:thích|hợp|ưng|vừa\s+ý)/i.test(norm);
+        const hasPick = /(?:này|này\s+đây|áo\s+này).*(?:hơn|thích|ưng)/i.test(norm) || /(?:thích|ưng).*(?:này|này\s+đây|áo\s+này)/i.test(norm);
+        if (hasCoatOrLike && hasPick) return true;
+    }
+
+    return false;
+}
+
 if (typeof window !== 'undefined') {
     window.normalizeVietnameseTranslation = normalizeVietnameseTranslation;
     window.hasVietnameseChars = hasVietnameseChars;
     window.evaluateLesson8DVTranslation = evaluateLesson8DVTranslation;
     window.evaluateLesson9DVTranslation = evaluateLesson9DVTranslation;
     window.evaluateLesson9VDTranslation = evaluateLesson9VDTranslation;
+    window.evaluateLesson11DVTranslation = evaluateLesson11DVTranslation;
 }
 
 function checkGermanAnswerEquivalence(userAns, correctAns, options = {}) {
@@ -1119,6 +1177,21 @@ function checkGermanAnswerEquivalence(userAns, correctAns, options = {}) {
             if (l8DVMatch && typeof evaluateLesson8DVTranslation === 'function') {
                 const qNum = parseInt(l8DVMatch[1], 10);
                 if (evaluateLesson8DVTranslation(userAns, qNum)) return true;
+            }
+        }
+    }
+
+    // Kiểm tra nhanh theo Rubric Bài 11 (Câu 38, Câu 64 -> 68 Dịch Đức -> Việt)
+    if (options && options.question) {
+        const isL11 = Boolean(
+            (options && (String(options.lesson_id) === '25' || options.isLesson11 === true || (options.lesson_title && /bài 11\b/i.test(options.lesson_title)))) ||
+            (typeof currentLesson !== 'undefined' && currentLesson && (String(currentLesson.id) === '25' || /bài 11\b/i.test(currentLesson.title || '')))
+        );
+        if (isL11) {
+            const l11Match = String(options.question).match(/Câu\s+(38|6[4-8])\b/i);
+            if (l11Match && typeof evaluateLesson11DVTranslation === 'function') {
+                const qNum = parseInt(l11Match[1], 10);
+                if (evaluateLesson11DVTranslation(userAns, qNum)) return true;
             }
         }
     }
@@ -3003,6 +3076,7 @@ if (typeof window !== 'undefined') {
     window.checkGermanAnswerEquivalence = checkGermanAnswerEquivalence;
     window.evaluateLesson8Translation = evaluateLesson8Translation;
     window.evaluateLesson8VDTranslation = evaluateLesson8VDTranslation;
+    window.evaluateLesson11DVTranslation = evaluateLesson11DVTranslation;
     window.generateNewNumberData = generateNewNumberData;
     window.randomizeAllNumberExercises = randomizeAllNumberExercises;
 }
