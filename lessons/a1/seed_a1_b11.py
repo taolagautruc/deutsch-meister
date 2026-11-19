@@ -2017,26 +2017,35 @@ def seed_lesson_11():
                 "extra_data": {
                         "items": [
                                 {
+                                        "noun": "Mantel",
                                         "word": "Mantel",
                                         "article": "der",
+                                        "meaning_vi": "áo măng tô",
                                         "meaning": "áo măng tô"
                                 },
                                 {
+                                        "noun": "Hose",
                                         "word": "Hose",
                                         "article": "die",
+                                        "meaning_vi": "quần",
                                         "meaning": "quần"
                                 },
                                 {
+                                        "noun": "Kleid",
                                         "word": "Kleid",
                                         "article": "das",
+                                        "meaning_vi": "đầm",
                                         "meaning": "đầm"
                                 },
                                 {
+                                        "noun": "Gürtel",
                                         "word": "Gürtel",
                                         "article": "der",
+                                        "meaning_vi": "thắt lưng",
                                         "meaning": "thắt lưng"
                                 }
                         ],
+                        "instruction_vi": "Bấm chọn mạo từ (der / die / das) cho 4 danh từ trang phục dưới đây:",
                         "translation": "Phân loại giống: der Mantel (áo măng tô), die Hose (quần), das Kleid (đầm), der Gürtel (thắt lưng)."
                 }
         },
@@ -2050,26 +2059,35 @@ def seed_lesson_11():
                 "extra_data": {
                         "items": [
                                 {
+                                        "noun": "Bluse",
                                         "word": "Bluse",
                                         "article": "die",
+                                        "meaning_vi": "áo sơ mi nữ",
                                         "meaning": "áo sơ mi nữ"
                                 },
                                 {
+                                        "noun": "Hemd",
                                         "word": "Hemd",
                                         "article": "das",
+                                        "meaning_vi": "áo sơ mi nam",
                                         "meaning": "áo sơ mi nam"
                                 },
                                 {
+                                        "noun": "Schuh",
                                         "word": "Schuh",
                                         "article": "der",
+                                        "meaning_vi": "giày",
                                         "meaning": "giày"
                                 },
                                 {
+                                        "noun": "Krawatte",
                                         "word": "Krawatte",
                                         "article": "die",
+                                        "meaning_vi": "cà vạt",
                                         "meaning": "cà vạt"
                                 }
                         ],
+                        "instruction_vi": "Bấm chọn mạo từ (der / die / das) cho 4 danh từ trang phục dưới đây:",
                         "translation": "Phân loại giống: die Bluse (áo sơ mi nữ), das Hemd (áo sơ mi nam), der Schuh (giày), die Krawatte (cà vạt)."
                 }
         },
@@ -2083,26 +2101,35 @@ def seed_lesson_11():
                 "extra_data": {
                         "items": [
                                 {
+                                        "noun": "Regen",
                                         "word": "Regen",
                                         "article": "der",
+                                        "meaning_vi": "mưa",
                                         "meaning": "mưa"
                                 },
                                 {
+                                        "noun": "Sonne",
                                         "word": "Sonne",
                                         "article": "die",
+                                        "meaning_vi": "mặt trời",
                                         "meaning": "mặt trời"
                                 },
                                 {
+                                        "noun": "Wetter",
                                         "word": "Wetter",
                                         "article": "das",
+                                        "meaning_vi": "thời tiết",
                                         "meaning": "thời tiết"
                                 },
                                 {
+                                        "noun": "Nebel",
                                         "word": "Nebel",
                                         "article": "der",
+                                        "meaning_vi": "sương mù",
                                         "meaning": "sương mù"
                                 }
                         ],
+                        "instruction_vi": "Bấm chọn mạo từ (der / die / das) cho 4 danh từ thời tiết dưới đây:",
                         "translation": "Phân loại giống: der Regen (mưa), die Sonne (mặt trời), das Wetter (thời tiết), der Nebel (sương mù)."
                 }
         },
