@@ -2394,7 +2394,7 @@
                                 </div>
                                 ${capWarningStaticHtml}
                                 ${translationHtml}
-                                <div class="text-emerald-900 leading-relaxed pt-1">
+                                <div class="text-emerald-900 leading-relaxed pt-1 whitespace-pre-line">
                                     <span class="font-bold">💡 Giải thích:</span> ${ex.explanation}
                                 </div>
                             </div>
@@ -2908,6 +2908,9 @@
         }
 
         function formatExerciseTranslation(translation, ex) {
+            if (ex && ex.exercise_type === 'phan_loai_cach') {
+                return '';
+            }
             const isNoiO = Boolean(ex && ex.exercise_type === 'noi_o');
             const isLesson8 = Boolean(
                 (ex && ex.lesson_id === 22) ||
@@ -3435,7 +3438,7 @@
                         ${dialogueGermanHtml}
                         ${translationHtml}
                         ${(ex.explanation && ex.explanation.trim()) ? `
-                        <div class="text-emerald-900 leading-relaxed pt-1">
+                        <div class="text-emerald-900 leading-relaxed pt-1 whitespace-pre-line">
                             <span class="font-bold">💡 Giải thích:</span> ${ex.explanation}
                         </div>` : ''}
                         ${nextDynamicHtml}
@@ -3747,7 +3750,7 @@
                             ${hintErrorHtml}
                             ${!isViToDe ? translationHtml : ''}
                             ${(ex.explanation && ex.explanation.trim()) ? `
-                            <div class="text-rose-950 leading-relaxed pt-1">
+                            <div class="text-rose-950 leading-relaxed pt-1 whitespace-pre-line">
                                 <span class="font-bold">💡 Giải thích:</span> ${ex.explanation}
                             </div>` : ''}
                         </div>
@@ -3783,7 +3786,7 @@
                                 <span class="font-bold text-rose-700">${ansLabel}</span> <span class="font-extrabold text-rose-800">${fbAns}</span>
                             </div>
                             ${!isViToDe ? translationHtml : ''}
-                            <div class="text-rose-950 leading-relaxed pt-1">
+                            <div class="text-rose-950 leading-relaxed pt-1 whitespace-pre-line">
                                 <span class="font-bold">💡 Giải thích:</span> ${ex.explanation || ''}
                             </div>
                         </div>

@@ -2138,7 +2138,7 @@ def seed_lesson_11():
                 "question": "Câu 77: Xác định cụm in đậm trong mỗi câu sau thuộc Akkusativ hay Dativ:",
                 "options": null,
                 "correct_answer": "Akkusativ, Dativ, Akkusativ, Dativ",
-                "explanation": "Tân ngữ trực tiếp của tragen / suchen là Akkusativ; người sau passen / gefallen là Dativ. -> Đáp án: \"Akkusativ, Dativ, Akkusativ, Dativ\"",
+                "explanation": "Tân ngữ trực tiếp của tragen / suchen là Akkusativ; người sau passen / gefallen là Dativ.\n=> Đáp án chi tiết: Hàng 1 (Akkusativ), Hàng 2 (Dativ), Hàng 3 (Akkusativ), Hàng 4 (Dativ).",
                 "exp_reward": 15,
                 "extra_data": {
                         "items": [
@@ -2171,7 +2171,7 @@ def seed_lesson_11():
                                         "translation_vi": "Chiếc áo khoác làm anh ấy thích."
                                 }
                         ],
-                        "translation": "Hàng 1: Akkusativ | Hàng 2: Dativ | Hàng 3: Akkusativ | Hàng 4: Dativ."
+                        "translation": "1. Tôi mặc một chiếc áo măng tô. | 2. Chiếc mũ vừa với bạn. | 3. Cô ấy tìm một chiếc quần. | 4. Chiếc áo khoác làm anh ấy thích."
                 }
         },
         {
@@ -2179,7 +2179,7 @@ def seed_lesson_11():
                 "question": "Câu 78: Xác định cụm in đậm trong mỗi câu sau thuộc Akkusativ hay Dativ:",
                 "options": null,
                 "correct_answer": "Akkusativ, Dativ, Akkusativ, Dativ",
-                "explanation": "kaufen / anziehen đi với Akkusativ; stehen / gehören đi với Dativ. -> Đáp án: \"Akkusativ, Dativ, Akkusativ, Dativ\"",
+                "explanation": "kaufen / anziehen đi với tân ngữ trực tiếp Akkusativ; stehen / gehören đi với tân ngữ Dativ.\n=> Đáp án chi tiết: Hàng 1 (Akkusativ), Hàng 2 (Dativ), Hàng 3 (Akkusativ), Hàng 4 (Dativ).",
                 "exp_reward": 15,
                 "extra_data": {
                         "items": [
@@ -2212,7 +2212,7 @@ def seed_lesson_11():
                                         "translation_vi": "Chiếc đầm này là của chị tôi."
                                 }
                         ],
-                        "translation": "Hàng 1: Akkusativ | Hàng 2: Dativ | Hàng 3: Akkusativ | Hàng 4: Dativ."
+                        "translation": "1. Chúng tôi mua chiếc áo len này. | 2. Đôi bốt rất hợp với tôi. | 3. Anh ấy mặc một bộ com lê vào. | 4. Chiếc đầm này là của chị tôi."
                 }
         },
         {
@@ -2220,7 +2220,7 @@ def seed_lesson_11():
                 "question": "Câu 79: Xác định cụm in đậm trong mỗi câu sau thuộc Akkusativ hay Dativ:",
                 "options": null,
                 "correct_answer": "Akkusativ, Akkusativ, Dativ, Dativ",
-                "explanation": "Hai hàng chứa màu sắc thuộc cụm tân ngữ Akkusativ (tragen, nehmen); hai hàng Dativ (passen, gehören) không chứa màu sắc. -> Đáp án: \"Akkusativ, Akkusativ, Dativ, Dativ\"",
+                "explanation": "Hai hàng chứa màu sắc thuộc cụm tân ngữ Akkusativ (tragen, nehmen); hai hàng Dativ (passen, gehören) không chứa màu sắc.\n=> Đáp án chi tiết: Hàng 1 (Akkusativ), Hàng 2 (Akkusativ), Hàng 3 (Dativ), Hàng 4 (Dativ).",
                 "exp_reward": 15,
                 "extra_data": {
                         "items": [
@@ -2253,7 +2253,7 @@ def seed_lesson_11():
                                         "translation_vi": "Chiếc khăn quàng là của cô ấy."
                                 }
                         ],
-                        "translation": "Hàng 1: Akkusativ | Hàng 2: Akkusativ | Hàng 3: Dativ | Hàng 4: Dativ."
+                        "translation": "1. Tôi mặc một chiếc chân váy đen. | 2. Bạn lấy một chiếc áo sơ mi xanh. | 3. Chiếc thắt lưng không vừa với chúng tôi. | 4. Chiếc khăn quàng là của cô ấy."
                 }
         },
         {
@@ -2261,7 +2261,7 @@ def seed_lesson_11():
                 "question": "Câu 80: Xác định cụm in đậm trong mỗi câu sau thuộc Akkusativ hay Dativ:",
                 "options": null,
                 "correct_answer": "Dativ, Akkusativ, Dativ, Akkusativ",
-                "explanation": "Với động từ schenken: người nhận là Dativ (meinem Bruder), món quà là Akkusativ (einen Gürtel). gefallen đi với Dativ (euch), anprobieren đi với Akkusativ (eine Jacke). -> Đáp án: \"Dativ, Akkusativ, Dativ, Akkusativ\"",
+                "explanation": "Với động từ schenken: người nhận là Dativ (meinem Bruder), món quà là Akkusativ (einen Gürtel). gefallen đi với Dativ (euch), anprobieren đi với Akkusativ (eine Jacke).\n=> Đáp án chi tiết: Hàng 1 (Dativ), Hàng 2 (Akkusativ), Hàng 3 (Dativ), Hàng 4 (Akkusativ).",
                 "exp_reward": 15,
                 "extra_data": {
                         "items": [
@@ -2294,7 +2294,7 @@ def seed_lesson_11():
                                         "translation_vi": "Cô ấy thử một chiếc áo khoác."
                                 }
                         ],
-                        "translation": "Hàng 1: Dativ | Hàng 2: Akkusativ | Hàng 3: Dativ | Hàng 4: Akkusativ."
+                        "translation": "1. Tôi tặng anh trai tôi một chiếc thắt lưng. | 2. Tôi tặng anh trai tôi một chiếc thắt lưng. | 3. Các bạn thấy chiếc mũ này thế nào? | 4. Cô ấy thử một chiếc áo khoác."
                 }
         },
         {
