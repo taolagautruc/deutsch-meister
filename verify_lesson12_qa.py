@@ -152,8 +152,8 @@ def run_tests():
     # Check 6 SVG containers in grammar_html
     html = lesson_row["grammar_content"]
     for i in range(1, 7):
-        if f'id="svg-v{i}-container"' not in html:
-            report["errors"].append(f"Thiếu container #svg-v{i}-container trong Lý thuyết!")
+        if f'id="b12-svg-v{i}-container"' not in html:
+            report["errors"].append(f"Thiếu container #b12-svg-v{i}-container trong Lý thuyết!")
 
     cursor.execute("SELECT count(*) as cnt FROM vocabularies WHERE lesson_id = 26;")
     v_cnt = cursor.fetchone()["cnt"]
