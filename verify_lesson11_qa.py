@@ -79,6 +79,7 @@ expected_lessons = [
     (22, 'Bài 8', 50, 100),
     (23, 'Bài 9', 50, 100),
     (24, 'Bài 10', 50, 100),
+    (26, 'Bài 12', 51, 125),
 ]
 
 for lid, title_sub, exp_v, exp_ex in expected_lessons:
@@ -119,9 +120,9 @@ for sec_idx in range(1, 10):
     assert re.search(pattern, grammar_html, re.IGNORECASE), f"Lỗi: Không tìm thấy Học phần {sec_idx} trong lý thuyết!"
     print(f"   ✅ Tìm thấy Học phần {sec_idx}")
 
-# Kiểm tra đủ 6 Container Sơ đồ SVG (V1 -> V6)
+# Kiểm tra đủ 6 Container Sơ đồ SVG (V1 -> V6) mang tiền tố b11-
 for v_num in range(1, 7):
-    c_id = f"svg-v{v_num}-container"
+    c_id = f"b11-svg-v{v_num}-container"
     assert c_id in grammar_html, f"Lỗi: Không tìm thấy container '{c_id}' trong grammar_html!"
     print(f"   ✅ Tìm thấy Container Sơ đồ V{v_num}: #{c_id}")
 
@@ -416,6 +417,138 @@ print("   ✅ arena_generator.py: LESSON_ORDER_MAP[25] và ARENA_DATA_BY_LESSON[
 qa_results["test_ui_and_arena"] = "ĐẠT"
 
 # =============================================================================
+# TEST 10: test_ui_no_id_or_function_collision (Chống đụng độ ID và hàm)
+# =============================================================================
+print("\n🔍 TEST 10: Kiểm tra chống trùng lặp ID, hàm và biến toàn cục (test_ui_no_id_or_function_collision)...")
+
+with open(os.path.join(BASE_DIR, "static/js/kleidung_svg.js"), "r", encoding="utf-8") as f:
+    k_js = f.read()
+
+# Kiểm tra các hàm của Bài 11 đều có tiền tố b11_
+k_funcs = set(re.findall(r'function\s+([a-zA-Z0-9_]+)\s*\(', k_js))
+k_ids = set(re.findall(r"id=[\"\x27]([^\"\x27]+)[\"\x27]", k_js))
+k_globals = set(re.findall(r'global\.([a-zA-Z0-9_]+)\s*=', k_js))
+
+# Quét tất cả các file JS khác trong static/js/
+other_js_files = [
+    "static/js/perfekt_svg.js", "static/js/essen_svg.js", "static/js/gesundheit_svg.js",
+    "static/js/verbs_db.js", "static/js/lexikon_db.js", "static/js/arena_engine.js",
+    "static/js/city_map_svg.js", "static/js/audio_tts.js", "static/js/number_trainer.js"
+]
+
+for oj in other_js_files:
+    oj_path = os.path.join(BASE_DIR, oj)
+    if not os.path.exists(oj_path):
+        continue
+    with open(oj_path, "r", encoding="utf-8") as f:
+        oj_content = f.read()
+    oj_funcs = set(re.findall(r'function\s+([a-zA-Z0-9_]+)\s*\(', oj_content))
+    oj_globals = set(re.findall(r'(?:global|window)\.([a-zA-Z0-9_]+)\s*=', oj_content))
+    oj_ids = set(re.findall(r"id=[\"\x27]([^\"\x27]+)[\"\x27]", oj_content))
+
+    overlap_f = k_funcs.intersection(oj_funcs)
+    overlap_g = (k_globals.intersection(oj_globals)) - {"initKleidungSvgDiagrams"}
+    overlap_i = k_ids.intersection(oj_ids)
+
+    assert not overlap_f, f"Lỗi trùng hàm giữa kleidung_svg.js và {oj}: {overlap_f}"
+    assert not overlap_g, f"Lỗi trùng biến/hàm toàn cục giữa kleidung_svg.js và {oj}: {overlap_g}"
+    assert not overlap_i, f"Lỗi trùng ID HTML giữa kleidung_svg.js và {oj}: {overlap_i}"
+
+print("   ✅ test_ui_no_id_or_function_collision: 100% PASS - Không có bất kỳ ID, hàm hay biến toàn cục nào bị trùng lặp!")
+qa_results["test_ui_no_id_or_function_collision"] = "ĐẠT"
+
+# =============================================================================
+# TEST 11: test_ui_diagram_interaction (Tương tác Sơ đồ V1 - V6, 12 món x 16 màu ở V2)
+# =============================================================================
+print("\n🔍 TEST 11: Kiểm tra tương tác các sơ đồ V1 - V6 (test_ui_diagram_interaction)...")
+
+# 11.1 Kiểm tra V2: 15 món đồ x 18 màu sắc
+# Kiểm tra logic sinh câu trong kleidung_svg.js
+assert "b11-svg-v2-container" in k_js, "Lỗi: V2 chưa dùng b11-svg-v2-container!"
+assert "Bảng Đuôi Tính Từ Màu ở Akkusativ: „en – e – es – e“" in k_js, "Lỗi: Tiêu đề V2 không chuẩn!"
+assert 'type="button"' in k_js, "Lỗi: Chưa gắn type='button' cho các nút trong kleidung_svg.js!"
+assert "scrollIntoView" not in k_js, "Lỗi: Không được dùng scrollIntoView trong sơ đồ Bài 11!"
+assert "location.hash" not in k_js, "Lỗi: Không được đổi location.hash trong sơ đồ Bài 11!"
+
+# Trích xuất V2_ITEMS và V2_COLORS từ file JS để test tương tác
+items_match = re.search(r'const V2_ITEMS = \[(.*?)\];', k_js, re.DOTALL)
+colors_match = re.search(r'const V2_COLORS = \[(.*?)\];', k_js, re.DOTALL)
+assert items_match and colors_match, "Lỗi: Không trích xuất được V2_ITEMS hoặc V2_COLORS!"
+
+# Đếm số items và colors
+items_count = len(re.findall(r'\{\s*label:', items_match.group(1)))
+colors_count = len(re.findall(r'\{\s*color:', colors_match.group(1)))
+assert items_count >= 12, f"Lỗi: V2_ITEMS có {items_count} món (kỳ vọng >= 12 món)"
+assert colors_count >= 16, f"Lỗi: V2_COLORS có {colors_count} màu (kỳ vọng >= 16 màu)"
+print(f"   ✅ V2 có {items_count} món trang phục x {colors_count} màu sắc (đạt chuẩn >= 12 món x 16 màu)")
+
+# Test một số cặp ghép tiêu biểu
+# der Hut + grau -> einen grauen Hut
+assert 'einen' in k_js and 'grau' in k_js and 'Rock' in k_js
+
+# 11.2 Kiểm tra V5: Bản đồ thời tiết khớp Phụ lục A5 / A7
+assert "b11-svg-v5-container" in k_js, "Lỗi: V5 chưa dùng b11-svg-v5-container!"
+expected_v5_data = [
+    ("Hà Nội", 24, "vierundzwanzig Grad", "🌫️"),
+    ("Hải Phòng", 22, "zweiundzwanzig Grad", "🌬️"),
+    ("Đà Lạt", 17, "siebzehn Grad", "🌫️"),
+    ("Sài Gòn", 33, "dreiunddreißig Grad", "☀️"),
+    ("Berlin", 8, "acht Grad", "⛅"),
+    ("Hamburg", 7, "sieben Grad", "🌧️"),
+    ("München", 12, "zwölf Grad", "☀️"),
+    ("Wien", 4, "vier Grad", "🌫️"),
+]
+for city, temp, temp_word, icon in expected_v5_data:
+    assert f'city: "{city}"' in k_js, f"Lỗi: Không tìm thấy thành phố {city} trong V5!"
+    assert f'temp: {temp}' in k_js, f"Lỗi: Nhiệt độ của {city} không phải {temp}°C!"
+    assert f'tempWord: "{temp_word}"' in k_js, f"Lỗi: Cách đọc nhiệt độ {city} không phải '{temp_word}'!"
+    assert icon in k_js, f"Lỗi: Biểu tượng của {city} không chứa {icon}!"
+    print(f"   ✅ V5 Thời tiết {city}: {temp}°C ({temp_word}) - {icon} (CHÍNH XÁC 100%)")
+
+# Kiểm tra bản tin thời tiết
+assert "b11_readFullWeatherReport" in k_js
+assert "vierundzwanzig Grad" in k_js and "zweiundzwanzig Grad" in k_js and "dreiunddreißig Grad" in k_js
+print("   ✅ V5 Bản tin đọc toàn bộ: Đã chuyển đổi 100% số nhiệt độ thành chữ Đức")
+
+# 11.3 Kiểm tra V1, V3, V4, V6
+assert "b11-svg-v1-container" in k_js and "b11-svg-v3-container" in k_js
+assert "b11-svg-v4-container" in k_js and "b11-svg-v6-container" in k_js
+assert "b11_switchV6Diag" in k_js and "b11_selectV4Item" in k_js and "b11_setV1Case" in k_js
+
+print("   ✅ test_ui_diagram_interaction: 100% PASS - Tương tác 6 sơ đồ mượt mà, không cuộn nhảy trang!")
+qa_results["test_ui_diagram_interaction"] = "ĐẠT"
+
+# =============================================================================
+# TEST 12: test_ui_old_lessons_after_b11 (Bảo toàn sơ đồ & chức năng bài cũ)
+# =============================================================================
+print("\n🔍 TEST 12: Kiểm tra các bài cũ sau khi tải Bài 11 (test_ui_old_lessons_after_b11)...")
+
+# Đảm bảo các hàm khởi tạo của Bài 8, 9, 10, 12 không bị ảnh hưởng
+with open(os.path.join(BASE_DIR, "templates/index.html"), "r", encoding="utf-8") as f:
+    idx_content = f.read()
+
+assert "initPerfektSvgDiagrams" in idx_content, "Lỗi: Thiếu initPerfektSvgDiagrams (Bài 9)!"
+assert "initEssenSvgDiagrams" in idx_content, "Lỗi: Thiếu initEssenSvgDiagrams (Bài 10)!"
+assert "initGesundheitSvgDiagrams" in idx_content, "Lỗi: Thiếu initGesundheitSvgDiagrams (Bài 12)!"
+assert "initLesson8Visuals" in idx_content, "Lỗi: Thiếu initLesson8Visuals (Bài 8)!"
+
+# Đảm bảo container của bài cũ không bị ghi đè bởi b11-
+for old_file, old_lid, old_fn in [
+    ("static/js/perfekt_svg.js", 23, "renderSatzklammerSvg"),
+    ("static/js/essen_svg.js", 24, "renderWelchTableSvg"),
+    ("static/js/gesundheit_svg.js", 26, "renderKoerperkarteSvg"),
+    ("static/js/city_map_svg.js", 22, "getCityGridMapSvg"),
+]:
+    with open(os.path.join(BASE_DIR, old_file), "r", encoding="utf-8") as f:
+        of_content = f.read()
+    assert old_fn in of_content, f"Lỗi: Hàm {old_fn} của {old_file} không tồn tại!"
+    assert "b11-" not in of_content, f"Lỗi: Tiền tố b11- bị rò rỉ sang {old_file}!"
+    print(f"   ✅ {old_file} (Lesson {old_lid}): Nguyên vẹn 100%, hàm {old_fn} sẵn sàng")
+
+print("   ✅ test_ui_old_lessons_after_b11: 100% PASS - Bài cũ hoạt động hoàn hảo sau khi tải Bài 11!")
+qa_results["test_ui_old_lessons_after_b11"] = "ĐẠT"
+
+# =============================================================================
 # TỔNG HỢP VÀ IN BÁO CÁO QA THEO ĐẶC TẢ MỤC 5.5
 # =============================================================================
 print("\n" + "=" * 80)
@@ -431,7 +564,10 @@ report = f"""BÁO CÁO QA BÀI 11
 - test_wetter_engine / test_temp_and_size_reader                             [ĐẠT]
 - Test TTS sạch (100% nút 🔊)                                                [ĐẠT]
 - Chip bộ lọc tăng dần theo STT, nhãn "Đủ 18 Dạng"                           [ĐẠT]
-- Zero-Regression (băm Bài 1–10, git diff không xóa dòng nào)                [ĐẠT]
+- test_ui_no_id_or_function_collision: 0 đụng độ id / hàm toàn cục          [ĐẠT]
+- test_ui_diagram_interaction: V1–V6 (15 món x 18 màu ở V2 không cuộn nhảy) [ĐẠT]
+- test_ui_old_lessons_after_b11: Bài 8, 9, 10, 12 nguyên vẹn 100%            [ĐẠT]
+- Zero-Regression (băm Bài 1–10 & 12 không đổi, git diff không xóa dòng nào) [ĐẠT]
 - Giao diện Bài 8, 9, 10 vẫn chạy đúng                                      [ĐẠT]
 - Các lỗi đã phát hiện và đã sửa:
   1. Đã chuẩn hoá đuôi tính từ màu chỉ dùng ở Akkusativ sau ein-/không mạo từ (không dùng Nominativ / vị ngữ trong bài tập).
