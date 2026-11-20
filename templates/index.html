@@ -380,6 +380,7 @@
     <script src="/static/js/perfekt_svg.js?v=20261116_v4"></script>
     <script src="/static/js/essen_svg.js?v=20261116_v4"></script>
     <script src="/static/js/kleidung_svg.js?v=20261118_v1"></script>
+    <script src="/static/js/gesundheit_svg.js?v=20261120_v1"></script>
     <script src="/static/js/verbs_db.js?v=20261116_v4"></script>
     <script src="/static/js/lexikon_db.js?v=20261116_v4"></script>
     <script src="/static/js/arena_engine.js?v=20261116_v4"></script>
@@ -505,6 +506,34 @@
             "dung_sai": "16. Đúng / Sai",
             "hoi_thoai_sap_xep": "17. Sắp xếp hội thoại",
             "bieu_tuong_thoi_tiet": "18. Nhìn biểu tượng thời tiết"
+        };
+
+        const B12_ORDER = [
+            "trac_nghiem", "dien_khuyet", "chia_imperativ", "dien_dai_tu_akk", "phan_loai_cach",
+            "phan_loai_giong", "noi_o_tu_vung", "dien_tao_cau", "nghe_dien", "dich_cau_vd",
+            "dich_cau_dv", "sap_xep_cau", "tim_loi_sai", "dich_nghia_vd", "dich_nghia_dv",
+            "dung_sai", "hoi_thoai_sap_xep", "bieu_tuong_benh"
+        ];
+        const B12_TYPE_LABELS = {
+            "all": "Tất cả",
+            "trac_nghiem": "1. Trắc nghiệm",
+            "dien_khuyet": "2. Điền khuyết",
+            "chia_imperativ": "3. Biến đổi Imperativ",
+            "dien_dai_tu_akk": "4. Điền đại từ Akkusativ",
+            "phan_loai_cach": "5. Phân loại Akkusativ / Dativ",
+            "phan_loai_giong": "6. Phân loại der / die / das",
+            "noi_o_tu_vung": "7. Nối ô Từ vựng",
+            "dien_tao_cau": "8. Điền 2-3 chỗ trống",
+            "nghe_dien": "9. Nghe & điền từ",
+            "dich_cau_vd": "10. Dịch Việt → Đức",
+            "dich_cau_dv": "11. Dịch Đức → Việt",
+            "sap_xep_cau": "12. Sắp xếp câu",
+            "tim_loi_sai": "13. Tìm lỗi và sửa câu",
+            "dich_nghia_vd": "14. Dịch từ: Việt → Đức",
+            "dich_nghia_dv": "15. Dịch từ: Đức → Việt",
+            "dung_sai": "16. Đọc hiểu Đúng / Sai",
+            "hoi_thoai_sap_xep": "17. Sắp xếp hội thoại",
+            "bieu_tuong_benh": "18. Nhìn Emoji đoán bệnh"
         };
 
         let currentLevelData = null;
@@ -1319,6 +1348,9 @@
             if (currentLesson && currentLesson.id === 25 && typeof initKleidungSvgDiagrams === 'function') {
                 setTimeout(initKleidungSvgDiagrams, 50);
             }
+            if (currentLesson && currentLesson.id === 26 && typeof initGesundheitSvgDiagrams === 'function') {
+                setTimeout(initGesundheitSvgDiagrams, 50);
+            }
 
             // Cập nhật nhãn số dạng bài tập động
             const subtabEx = document.getElementById('subtab-exercises');
@@ -1907,8 +1939,9 @@
             const correctExercisesSet = new Set(Array.isArray(currentProgress.correct_exercises) ? currentProgress.correct_exercises : []);
 
             const isLesson11 = Boolean(currentLesson && currentLesson.id === 25);
-            const chipKeys = isLesson11 ? ['all', ...B11_ORDER] : Object.keys(TYPE_LABELS);
-            const getLabel = (k) => isLesson11 ? (B11_TYPE_LABELS[k] || TYPE_LABELS[k] || k) : (TYPE_LABELS[k] || k);
+            const isLesson12 = Boolean(currentLesson && currentLesson.id === 26);
+            const chipKeys = isLesson12 ? ['all', ...B12_ORDER] : (isLesson11 ? ['all', ...B11_ORDER] : Object.keys(TYPE_LABELS));
+            const getLabel = (k) => isLesson12 ? (B12_TYPE_LABELS[k] || TYPE_LABELS[k] || k) : (isLesson11 ? (B11_TYPE_LABELS[k] || TYPE_LABELS[k] || k) : (TYPE_LABELS[k] || k));
 
             const filterBarHtml = `
                 <div class="flex flex-wrap gap-2 pb-3 border-b border-slate-100">
@@ -2150,12 +2183,25 @@
                         </div>
                     `;
                 }
-                if (ex.exercise_type === 'bieu_tuong_thoi_tiet' && extra.weather_icon) {
+                if (ex.exercise_type === 'chia_imperativ' && extra.source_sentence) {
                     extraHtml += `
-                        <div class="my-3 p-4 rounded-2xl bg-sky-50 border border-sky-200 flex items-center justify-center gap-4">
-                            <span class="text-5xl select-none" role="img" aria-label="${extra.icon_alt_vi || 'Biểu tượng thời tiết'}">${extra.weather_icon}</span>
-                            <div class="text-xs font-bold text-sky-900">
-                                <span>Biểu tượng: <b class="text-sky-950">${extra.icon_alt_vi || ''}</b></span>
+                        <div class="my-2.5 p-3.5 rounded-2xl bg-amber-50/70 border border-amber-200 space-y-1.5">
+                            <div class="text-xs font-bold text-amber-700 uppercase tracking-wide">Câu trần thuật gốc:</div>
+                            <div class="text-sm font-black text-amber-950">„${extra.source_sentence}“</div>
+                            <div class="text-xs font-semibold text-slate-600">👉 Chuyển sang câu Mệnh lệnh (Imperativ):</div>
+                        </div>
+                    `;
+                }
+                if ((ex.exercise_type === 'bieu_tuong_thoi_tiet' || ex.exercise_type === 'bieu_tuong_benh') && (extra.weather_icon || extra.emoji_icon)) {
+                    const icon = extra.weather_icon || extra.emoji_icon;
+                    const alt = extra.icon_alt_vi || (ex.exercise_type === 'bieu_tuong_benh' ? 'Biểu tượng bệnh' : 'Biểu tượng thời tiết');
+                    const bgClass = ex.exercise_type === 'bieu_tuong_benh' ? 'bg-rose-50 border-rose-200 text-rose-900' : 'bg-sky-50 border-sky-200 text-sky-900';
+                    const textClass = ex.exercise_type === 'bieu_tuong_benh' ? 'text-rose-950' : 'text-sky-950';
+                    extraHtml += `
+                        <div class="my-3 p-4 rounded-2xl ${bgClass} border flex items-center justify-center gap-4">
+                            <span class="text-5xl select-none" role="img" aria-label="${alt}">${icon}</span>
+                            <div class="text-xs font-bold">
+                                <span>Biểu tượng: <b class="${textClass}">${alt}</b></span>
                             </div>
                         </div>
                     `;
@@ -2235,7 +2281,7 @@
                 }
 
                 let inputHtml = '';
-                if (ex.exercise_type === 'noi_o' && extra.noi_o_pairs && extra.noi_o_pairs.length > 0) {
+                if ((ex.exercise_type === 'noi_o' || ex.exercise_type === 'noi_o_tu_vung') && extra.noi_o_pairs && extra.noi_o_pairs.length > 0) {
                     inputHtml = `<div id="noi-o-widget-${i}">` + generateNoiOWidgetHtml(i, ex, extra) + `</div>`;
                 } else if (ex.options && ex.options.length > 0) {
                     const correctOptIdx = getCorrectOptionIndex(ex);
@@ -2336,13 +2382,17 @@
                         ? 'Nhập số tiền (dùng dấu phẩy hoặc dấu chấm)...'
                         : (ex && ex.exercise_type === 'dien_duoi_tinh_tu')
                             ? 'Nhập đuôi tính từ...'
-                            : (ex && ex.exercise_type === 'viet_lai_dies')
-                                ? 'Nhập câu viết lại với dies-... (nhấn Enter để kiểm tra và chuyển câu)'
-                                : (isMultiSlot 
-                                    ? 'Điền 2 từ ngăn cách bởi dấu / (ví dụ: từ 1 / từ 2)...' 
-                                    : (isDeToVi 
-                                        ? 'Nhập bản dịch tiếng Việt của bạn... (nhấn Enter để kiểm tra và chuyển câu)' 
-                                        : 'Nhập đáp án tiếng Đức của bạn... (nhấn Enter để kiểm tra và chuyển câu)'));
+                            : (ex && ex.exercise_type === 'chia_imperativ')
+                                ? 'Nhập câu mệnh lệnh... (nhấn Enter để kiểm tra và chuyển câu)'
+                                : (ex && ex.exercise_type === 'dien_dai_tu_akk')
+                                    ? 'Nhập đại từ Akkusativ...'
+                                    : (ex && ex.exercise_type === 'viet_lai_dies')
+                                        ? 'Nhập câu viết lại với dies-... (nhấn Enter để kiểm tra và chuyển câu)'
+                                        : (isMultiSlot 
+                                            ? 'Điền 2 từ ngăn cách bởi dấu / (ví dụ: từ 1 / từ 2)...' 
+                                            : (isDeToVi 
+                                                ? 'Nhập bản dịch tiếng Việt của bạn... (nhấn Enter để kiểm tra và chuyển câu)' 
+                                                : 'Nhập đáp án tiếng Đức của bạn... (nhấn Enter để kiểm tra và chuyển câu)'));
                     inputHtml = `
                         <div class="flex gap-2 mt-3">
                             <input id="ex-input-${i}" value="${cleanAns.replace(/"/g, '&quot;')}" oninput="handleExerciseInputChange(${i})" onfocus="handleExerciseInputFocus(${i})" onkeydown="handleExerciseInputKeydown(event, ${i})" type="text" placeholder="${placeholderText}" class="flex-1 px-4 py-2.5 rounded-xl ${isDone ? 'bg-emerald-50/40 border-2 border-emerald-400 font-bold text-emerald-950' : 'bg-white border border-slate-200'} text-sm focus:outline-none focus:border-indigo-500" spellcheck="false" autocorrect="off" autocapitalize="off" autocomplete="off">
@@ -2780,7 +2830,7 @@
         function getExerciseTranslation(ex, extra) {
             // Đối với dạng bài nối ô (noi_o):
             // CHỈ lấy bản dịch khi extra.translation có nội dung hợp lệ; nếu translation là rỗng ("") thì tuyệt đối ẩn khung dịch nghĩa (trả về "")!
-            if (ex && ex.exercise_type === 'noi_o') {
+            if (ex && (ex.exercise_type === 'noi_o' || ex.exercise_type === 'noi_o_tu_vung')) {
                 if (extra && typeof extra.translation === 'string') {
                     const trans = extra.translation.trim();
                     if (!trans || isInvalidTranslationString(trans)) return "";
@@ -2911,7 +2961,7 @@
             if (ex && ex.exercise_type === 'phan_loai_cach') {
                 return '';
             }
-            const isNoiO = Boolean(ex && ex.exercise_type === 'noi_o');
+            const isNoiO = Boolean(ex && (ex.exercise_type === 'noi_o' || ex.exercise_type === 'noi_o_tu_vung'));
             const isLesson8 = Boolean(
                 (ex && ex.lesson_id === 22) ||
                 (typeof currentLesson !== 'undefined' && currentLesson && (
@@ -3019,8 +3069,8 @@
                                 ));
 
             let isCorrect = false;
-            if (ex.exercise_type === 'noi_o') {
-                isCorrect = (userAnswer === "ALL_CORRECT_MATCH");
+            if (ex.exercise_type === 'noi_o' || ex.exercise_type === 'noi_o_tu_vung') {
+                isCorrect = (userAnswer === "ALL_CORRECT_MATCH" || userAnswer === "Nối đúng 4/4 cặp");
             } else if (ex.exercise_type === 'nghe_gia_tien' && extra.price_cents) {
                 const userCents = parsePriceInput(userAnswer);
                 if (userCents === extra.price_cents) {
@@ -3680,7 +3730,7 @@
                             </div>
                         `;
                     }
-                    if (ex.exercise_type === 'noi_o' && extra.noi_o_pairs) {
+                    if ((ex.exercise_type === 'noi_o' || ex.exercise_type === 'noi_o_tu_vung') && extra.noi_o_pairs) {
                         wrongTitle = "❌ Chưa chính xác (yêu cầu nối đúng 100% cả 4 cặp).";
                         const matches = window.noiOMatches[index] || {};
                         const shuffled = (typeof getNoiOShuffledRight === 'function') ? getNoiOShuffledRight(index, extra.noi_o_pairs) : [];
@@ -3765,7 +3815,7 @@
                     if (isDeToVi && translation) {
                         fbAns = translation;
                     }
-                    if (ex && ex.exercise_type === 'noi_o' && extra && extra.noi_o_pairs) {
+                    if (ex && (ex.exercise_type === 'noi_o' || ex.exercise_type === 'noi_o_tu_vung') && extra && extra.noi_o_pairs) {
                         fbAns = `
                             <div class="mt-1 space-y-1.5" style="line-height: 1.5;">
                                 ${extra.noi_o_pairs.map((p, idx) => `

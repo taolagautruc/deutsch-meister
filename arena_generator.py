@@ -1742,3 +1742,100 @@ def build_arena_questions_for_user(user_id, count=70):
     random.shuffle(questions)
     return questions[:count]
 
+
+# -----------------------------------------------------------------------------
+# BÀI 12: Körper - Gesundheit - dürfen - Pronomen im Akkusativ - Imperativ
+# -----------------------------------------------------------------------------
+LESSON_ORDER_MAP[26] = ("A1", 13, "Bài 12: Körper - Gesundheit - dürfen - Pronomen im Akkusativ - Imperativ")
+
+ARENA_DATA_BY_LESSON[13] = {
+    "name": "Bài 12: Körper - Gesundheit - dürfen - Pronomen im Akkusativ - Imperativ",
+    "vocab_pairs": [
+        ("der Kopf", "cái đầu"),
+        ("der Hals", "cổ, họng"),
+        ("der Rücken", "cái lưng"),
+        ("der Bauch", "cái bụng"),
+        ("der Arm", "cánh tay"),
+        ("der Finger", "ngón tay"),
+        ("der Fuß", "bàn chân"),
+        ("der Zahn", "cái răng"),
+        ("die Hand", "bàn tay"),
+        ("die Nase", "cái mũi"),
+        ("die Schulter", "cái vai"),
+        ("die Brust", "lồng ngực"),
+        ("das Auge", "đôi mắt"),
+        ("das Ohr", "cái tai"),
+        ("das Bein", "cẳng chân"),
+        ("das Herz", "trái tim"),
+        ("das Knie", "đầu gối"),
+        ("das Medikament", "thuốc men"),
+        ("das Rezept", "đơn thuốc"),
+        ("das Fieber", "cơn sốt"),
+        ("der Schmerz", "cơn đau"),
+        ("der Husten", "bệnh ho"),
+        ("der Schnupfen", "bệnh sổ mũi"),
+        ("die Tablette", "thuốc viên"),
+        ("die Apotheke", "hiệu thuốc")
+    ],
+    "noi_o_sets": [
+        [
+            {"left": "Mein Kopf tut mir weh.", "right": "Tôi bị đau đầu."},
+            {"left": "Ich habe hohes Fieber.", "right": "Tôi bị sốt cao."},
+            {"left": "Nehmen Sie diese Tablette!", "right": "Hãy uống viên thuốc này!"},
+            {"left": "Hier darf man nicht rauchen.", "right": "Ở đây cấm hút thuốc."}
+        ],
+        [
+            {"left": "Trink viel Wasser!", "right": "Hãy uống nhiều nước! (ngôi du)"},
+            {"left": "Trinkt viel Wasser!", "right": "Các bạn hãy uống nhiều nước! (ngôi ihr)"},
+            {"left": "Trinken Sie viel Wasser!", "right": "Xin Ngài hãy uống nhiều nước! (ngôi Sie)"},
+            {"left": "Bleib im Bett!", "right": "Hãy nằm nghỉ trên giường! (ngôi du)"}
+        ]
+    ],
+    "sentences_vd": [
+        ("Xin ngài hãy uống nhiều nước!", ["Trinken Sie bitte viel Wasser!", "Trinken Sie viel Wasser!", "Bitte trinken Sie viel Wasser!"]),
+        ("Ở đây người ta không được phép đỗ xe.", ["Hier darf man nicht parken.", "Man darf hier không parken.", "Man darf hier nicht parken."]),
+        ("Tôi yêu bạn.", ["Ich liebe dich.", "Ich liebe dich"]),
+        ("Hãy uống viên thuốc này!", ["Nimm diese Tablette!", "Nimm diese Tablette", "Nehmen Sie diese Tablette!"])
+    ],
+    "sentences_dv": [
+        ("Mein Bauch tut mir sehr weh.", ["Bụng tôi rất đau", "Bụng tôi đau lắm", "Tôi bị đau bụng rất nhiều"]),
+        ("Was fehlt Ihnen denn?", ["Ngài bị làm sao vậy?", "Ngài có vấn đề gì vậy?", "Ngài bị bệnh gì thế?"]),
+        ("Hier darf man nicht rauchen.", ["Ở đây cấm hút thuốc", "Ở đây người ta không được phép hút thuốc", "Không được hút thuốc ở đây"])
+    ],
+    "nghe_dien_items": [
+        {
+            "audio_text": "Geh jeden Tag spazieren!",
+            "display_sentence": "___ jeden Tag spazieren!",
+            "hint_vi": "Hãy đi dạo mỗi ngày!",
+            "accepted_answers": ["Geh"]
+        },
+        {
+            "audio_text": "Der Arzt verschreibt mir ein Medikament.",
+            "display_sentence": "Der Arzt verschreibt mir ein ___.",
+            "hint_vi": "Bác sĩ kê cho tôi một loại thuốc.",
+            "accepted_answers": ["Medikament"]
+        },
+        {
+            "audio_text": "Hier darf man nicht parken.",
+            "display_sentence": "Hier ___ man nicht parken.",
+            "hint_vi": "Ở đây người ta không được phép đỗ xe.",
+            "accepted_answers": ["darf"]
+        }
+    ],
+    "dien_tao_cau_items": [
+        {
+            "question": "Điền vào 2 chỗ trống để hoàn thành câu cấm đoán với dürfen:",
+            "display_frame": "Hier [1] man nicht [2].",
+            "word_bank_hints": ["darf", "rauchen", "dürfen", "raucht"],
+            "accepted_answers": ["darf / rauchen", "darf/rauchen", "darf rauchen"],
+            "explanation": "man chia dürfen thành darf, động từ nguyên mẫu rauchen ở cuối câu."
+        },
+        {
+            "question": "Điền vào 2 chỗ trống để hoàn thành câu mệnh lệnh và triệu chứng đau:",
+            "display_frame": "Mein Kopf tut [1] weh. [2] Sie mir bitte!",
+            "word_bank_hints": ["mir", "Helfen", "mich", "Hilf"],
+            "accepted_answers": ["mir / Helfen", "mir/Helfen", "mir Helfen"],
+            "explanation": "wehtun + mir; mệnh lệnh ngôi Sie: Helfen Sie."
+        }
+    ]
+}

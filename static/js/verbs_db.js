@@ -1824,3 +1824,176 @@ if (typeof window !== 'undefined') {
     window.speakAllForms = speakAllForms;
     window.speakAllPraeteritumForms = speakAllPraeteritumForms;
 }
+
+// =============================================================================
+// BỔ SUNG 15 ĐỘNG TỪ BÀI 12 (KÖRPER, GESUNDHEIT & IMPERATIV)
+// =============================================================================
+if (typeof GERMAN_VERBS_DB !== 'undefined') {
+    GERMAN_VERBS_DB.push(
+        {
+            infinitiv: "wehtun",
+            meaning: "làm đau, đau (+ Dativ)",
+            group: "Động từ tách (Trennbare Verben)",
+            stem: "tu- weh",
+            ending: "-n",
+            forms: { ich: "tue weh", du: "tust weh", er_sie_es: "tut weh", wir: "tun weh", ihr: "tut weh", sie_Sie: "tun weh" },
+            imperativ: { du: "tu weh", ihr: "tut weh", Sie: "tun Sie weh" },
+            note: "Động từ tách weh- đi kèm tân ngữ Dativ chỉ người đau: Mein Rücken tut mir weh.",
+            example: "Mein Rücken tut mir sehr weh."
+        },
+        {
+            infinitiv: "fehlen",
+            meaning: "thiếu, có vấn đề (+ Dativ)",
+            group: "Quy tắc (Regelmäßig)",
+            stem: "fehl-",
+            ending: "-en",
+            forms: { ich: "fehle", du: "fehlst", er_sie_es: "fehlt", wir: "fehlen", ihr: "fehlt", sie_Sie: "fehlen" },
+            imperativ: { du: "fehle", ihr: "fehlt", Sie: "fehlen Sie" },
+            note: "Hỏi thăm bệnh nhân tại phòng mạch: Was fehlt Ihnen denn? (Ngài bị làm sao vậy?)",
+            example: "Was fehlt Ihnen denn?"
+        },
+        {
+            infinitiv: "husten",
+            meaning: "ho",
+            group: "Gốc -t, -d (mieten, arbeiten)",
+            stem: "hust-",
+            ending: "-en",
+            forms: { ich: "huste", du: "hustest", er_sie_es: "hustet", wir: "husten", ihr: "hustet", sie_Sie: "husten" },
+            imperativ: { du: "huste", ihr: "hustet", Sie: "husten Sie" },
+            note: "Gốc kết thúc bằng -t nên ngôi du, er/sie/es và ihr thêm -e-.",
+            example: "Der Patient hustet stark."
+        },
+        {
+            infinitiv: "rauchen",
+            meaning: "hút thuốc",
+            group: "Quy tắc (Regelmäßig)",
+            stem: "rauch-",
+            ending: "-en",
+            forms: { ich: "rauche", du: "rauchst", er_sie_es: "raucht", wir: "rauchen", ihr: "raucht", sie_Sie: "rauchen" },
+            imperativ: { du: "rauch", ihr: "raucht", Sie: "rauchen Sie" },
+            note: "Thường đi với modalverb dürfen ở dạng cấm đoán: Hier darf man nicht rauchen.",
+            example: "Er raucht jeden Tag fünf Zigaretten."
+        },
+        {
+            infinitiv: "ausruhen",
+            meaning: "nghỉ ngơi (sich ausruhen)",
+            group: "Động từ tách (Trennbare Verben)",
+            stem: "ruh- aus",
+            ending: "-en",
+            forms: { ich: "ruhe mich aus", du: "ruhst dich aus", er_sie_es: "ruht sich aus", wir: "ruhen uns aus", ihr: "ruht euch aus", sie_Sie: "ruhen sich aus" },
+            imperativ: { du: "ruh dich aus", ihr: "ruht euch aus", Sie: "ruhen Sie sich aus" },
+            note: "Động từ phản thân và tách: sich ausruhen. Imperativ ngôi du: Ruh dich aus!",
+            example: "Sie müssen sich viel ausruhen."
+        },
+        {
+            infinitiv: "einreiben",
+            meaning: "thoa, xoa bóp (thuốc)",
+            group: "Động từ tách (Trennbare Verben)",
+            stem: "reib- ein",
+            ending: "-en",
+            forms: { ich: "reibe ein", du: "reibst ein", er_sie_es: "reibt ein", wir: "reiben ein", ihr: "reibt ein", sie_Sie: "reiben ein" },
+            imperativ: { du: "reib ein", ihr: "reibt ein", Sie: "reiben Sie ein" },
+            note: "Tiền tố ein- tách đứng cuối câu.",
+            example: "Reiben Sie den Fuß mit Salbe ein."
+        },
+        {
+            infinitiv: "zunehmen",
+            meaning: "tăng cân",
+            group: "Biến âm gốc (nehmen, lesen)",
+            stem: "nehm- zu",
+            ending: "-en",
+            forms: { ich: "nehme zu", du: "nimmst zu", er_sie_es: "nimmt zu", wir: "nehmen zu", ihr: "nehmt zu", sie_Sie: "nehmen zu" },
+            imperativ: { du: "nimm zu", ihr: "nehmt zu", Sie: "nehmen Sie zu" },
+            note: "Biến âm e->i ở ngôi du/er/sie/es và giữ biến âm ở Imperativ du: Nimm zu!",
+            example: "Er hat im Urlaub viel zugenommen."
+        },
+        {
+            infinitiv: "abnehmen",
+            meaning: "giảm cân",
+            group: "Biến âm gốc (nehmen, lesen)",
+            stem: "nehm- ab",
+            ending: "-en",
+            forms: { ich: "nehme ab", du: "nimmst ab", er_sie_es: "nimmt ab", wir: "nehmen ab", ihr: "nehmt ab", sie_Sie: "nehmen ab" },
+            imperativ: { du: "nimm ab", ihr: "nehmt ab", Sie: "nehmen Sie ab" },
+            note: "Biến âm e->i và tiền tố ab- tách đứng cuối câu. Imperativ ngôi du: Nimm ab!",
+            example: "Sie möchte fünf Kilo abnehmen."
+        },
+        {
+            infinitiv: "verschreiben",
+            meaning: "kê đơn thuốc (+ Dat + Akk)",
+            group: "Quy tắc (Regelmäßig)",
+            stem: "verschreib-",
+            ending: "-en",
+            forms: { ich: "verschreibe", du: "verschreibst", er_sie_es: "verschreibt", wir: "verschreiben", ihr: "verschreibt", sie_Sie: "verschreiben" },
+            imperativ: { du: "verschreib", ihr: "verschreibt", Sie: "verschreiben Sie" },
+            note: "Đi kèm cả Dativ (người nhận) và Akkusativ (thuốc): Der Arzt verschreibt mir ein Medikament.",
+            example: "Der Arzt verschreibt mir ein Medikament."
+        },
+        {
+            infinitiv: "krankschreiben",
+            meaning: "viết giấy nghỉ ốm (+ Akk)",
+            group: "Động từ tách (Trennbare Verben)",
+            stem: "schreib- krank",
+            ending: "-en",
+            forms: { ich: "schreibe krank", du: "schreibst krank", er_sie_es: "schreibt krank", wir: "schreiben krank", ihr: "schreibt krank", sie_Sie: "schreiben krank" },
+            imperativ: { du: "schreib krank", ihr: "schreibt krank", Sie: "schreiben Sie krank" },
+            note: "Tiền tố krank- tách ra cuối câu: Die Ärztin schreibt mich für drei Tage krank.",
+            example: "Die Ärztin schreibt mich für drei Tage krank."
+        },
+        {
+            infinitiv: "klopfen",
+            meaning: "đập, gõ (tim đập)",
+            group: "Quy tắc (Regelmäßig)",
+            stem: "klopf-",
+            ending: "-en",
+            forms: { ich: "klopfe", du: "klopfst", er_sie_es: "klopft", wir: "klopfen", ihr: "klopft", sie_Sie: "klopfen" },
+            imperativ: { du: "klopf", ihr: "klopft", Sie: "klopfen Sie" },
+            note: "Mein Herz klopft laut (Tim tôi đập thình thịch).",
+            example: "Mein Herz klopft sehr laut."
+        },
+        {
+            infinitiv: "atmen",
+            meaning: "hít thở",
+            group: "Gốc -t, -d (mieten, arbeiten)",
+            stem: "atm-",
+            ending: "-en",
+            forms: { ich: "atme", du: "atmest", er_sie_es: "atmet", wir: "atmen", ihr: "atmet", sie_Sie: "atmen" },
+            imperativ: { du: "atme", ihr: "atmet", Sie: "atmen Sie" },
+            note: "Gốc kết thúc bằng -m sau phụ âm t nên thêm -e-: du atmest, er atmet. Imperativ du: Atme!",
+            example: "Atmen Sie bitte tief ein und aus!"
+        },
+        {
+            infinitiv: "lieben",
+            meaning: "yêu (+ Akkusativ)",
+            group: "Quy tắc (Regelmäßig)",
+            stem: "lieb-",
+            ending: "-en",
+            forms: { ich: "liebe", du: "liebst", er_sie_es: "liebt", wir: "lieben", ihr: "liebt", sie_Sie: "lieben" },
+            imperativ: { du: "liebe", ihr: "liebt", Sie: "lieben Sie" },
+            note: "Luôn đòi hỏi tân ngữ Akkusativ trực tiếp: Ich liebe dich / ihn / sie.",
+            example: "Ich liebe dich."
+        },
+        {
+            infinitiv: "ansehen",
+            meaning: "nhìn, ngắm (+ Akkusativ)",
+            group: "Biến âm gốc (nehmen, lesen)",
+            stem: "seh- an",
+            ending: "-en",
+            forms: { ich: "sehe an", du: "siehst an", er_sie_es: "sieht an", wir: "sehen an", ihr: "seht an", sie_Sie: "sehen an" },
+            imperativ: { du: "sieh an", ihr: "seht an", Sie: "sehen Sie an" },
+            note: "Biến âm e->ie ở ngôi du, er/sie/es và Imperativ ngôi du: Sieh an!",
+            example: "Sieh mich bitte an!"
+        },
+        {
+            infinitiv: "baden",
+            meaning: "tắm",
+            group: "Gốc -t, -d (mieten, arbeiten)",
+            stem: "bad-",
+            ending: "-en",
+            forms: { ich: "bade", du: "badest", er_sie_es: "badet", wir: "baden", ihr: "badet", sie_Sie: "baden" },
+            imperativ: { du: "bade", ihr: "badet", Sie: "baden Sie" },
+            note: "Gốc kết thúc bằng -d nên thêm -e- ở các ngôi du, er/sie/es, ihr. Imperativ du: Bade!",
+            example: "Ich bade jeden Abend warm."
+        }
+    );
+}
