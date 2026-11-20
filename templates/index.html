@@ -1345,8 +1345,9 @@
             if (currentLesson && currentLesson.id === 24 && typeof initEssenSvgDiagrams === 'function') {
                 setTimeout(initEssenSvgDiagrams, 50);
             }
-            if (currentLesson && currentLesson.id === 25 && typeof initKleidungSvgDiagrams === 'function') {
-                setTimeout(initKleidungSvgDiagrams, 50);
+            if (currentLesson && currentLesson.id === 25) {
+                const fn = window.b11_initKleidungSvgDiagrams || window.initKleidungSvgDiagrams;
+                if (typeof fn === 'function') setTimeout(fn, 50);
             }
             if (currentLesson && currentLesson.id === 26 && typeof initGesundheitSvgDiagrams === 'function') {
                 setTimeout(initGesundheitSvgDiagrams, 50);

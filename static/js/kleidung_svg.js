@@ -21,17 +21,17 @@
                   "elf", "zwölf", "dreizehn", "vierzehn", "fünfzehn", "sechzehn", "siebzehn", "achtzehn", "neunzehn"];
     const TENS = { 20: "zwanzig", 30: "dreißig", 40: "vierzig", 50: "fünfzig", 60: "sechzig", 70: "siebzig", 80: "achtzig", 90: "neunzig" };
 
-    function numWords(n) {
+    function b11_b11_numWords(n) {
         if (n < 20) return ONES[n];
         const t = Math.floor(n / 10) * 10;
         const u = n % 10;
         return u === 0 ? TENS[t] : (ONES[u] + "und" + TENS[t]);
     }
 
-    function tempToGerman(t) {
+    function b11_b11_tempToGerman(t) {
         if (t === 0) return "null Grad";
-        if (t < 0) return "minus " + numWords(-t) + " Grad";
-        return numWords(t) + " Grad";
+        if (t < 0) return "minus " + b11_numWords(-t) + " Grad";
+        return b11_numWords(t) + " Grad";
     }
 
     // Danh từ trang phục cho V1
@@ -46,18 +46,18 @@
         { label: "die Stiefel (đôi bốt, PL)", gender: "pl", art: "die", nomDies: "diese", akkDies: "diese", nomWelch: "welche", akkWelch: "welche", exNom: "Welche Stiefel gefallen dir? — Diese hier.", exAkk: "Welche Stiefel kaufst du? — Diese hier.", trNom: "Đôi bốt nào làm bạn thích? — Đôi này đây.", trAkk: "Bạn mua đôi bốt nào? — Đôi này đây." }
     ];
 
-    let currentV1NounIndex = 0;
-    let currentV1Case = "akk"; // "nom" hoặc "akk"
+    let b11_b11_currentV1NounIndex = 0;
+    let b11_currentV1Case = "akk"; // "nom" hoặc "akk"
 
     // =========================================================================
     // SƠ ĐỒ V1: BẢNG DIES- / WELCH- TƯƠNG TÁC
     // =========================================================================
-    function renderDiesTableSvg() {
-        const container = document.getElementById('svg-v1-container');
+    function b11_b11_renderDiesTableSvg() {
+        const container = document.getElementById('b11-svg-v1-container');
         if (!container) return;
 
-        const noun = V1_NOUNS[currentV1NounIndex];
-        const isNom = currentV1Case === "nom";
+        const noun = V1_NOUNS[b11_currentV1NounIndex];
+        const isNom = b11_currentV1Case === "nom";
         const sentence = isNom ? noun.exNom : noun.exAkk;
         const translation = isNom ? noun.trNom : noun.trAkk;
         const audioSentence = sentence.replace("39", "neununddreißig");
@@ -78,10 +78,10 @@
                     </div>
                     <div class="flex items-center gap-2 text-xs">
                         <span class="text-slate-400">Chọn vai trò:</span>
-                        <button onclick="setV1Case('nom')" class="px-3 py-1.5 rounded-lg font-bold transition cursor-pointer ${isNom ? 'bg-amber-500 text-slate-950 shadow' : 'bg-slate-800 text-slate-300 hover:bg-slate-700'}">
+                        <button type="button" onclick="b11_setV1Case('nom')" class="px-3 py-1.5 rounded-lg font-bold transition cursor-pointer ${isNom ? 'bg-amber-500 text-slate-950 shadow' : 'bg-slate-800 text-slate-300 hover:bg-slate-700'}">
                             Nominativ (Chủ ngữ)
                         </button>
-                        <button onclick="setV1Case('akk')" class="px-3 py-1.5 rounded-lg font-bold transition cursor-pointer ${!isNom ? 'bg-emerald-500 text-slate-950 shadow' : 'bg-slate-800 text-slate-300 hover:bg-slate-700'}">
+                        <button type="button" onclick="b11_setV1Case('akk')" class="px-3 py-1.5 rounded-lg font-bold transition cursor-pointer ${!isNom ? 'bg-emerald-500 text-slate-950 shadow' : 'bg-slate-800 text-slate-300 hover:bg-slate-700'}">
                             Akkusativ (Tân ngữ)
                         </button>
                     </div>
@@ -90,16 +90,16 @@
                 <div class="flex flex-wrap items-center justify-between gap-3 text-xs">
                     <div class="flex items-center gap-2">
                         <span class="text-slate-400 font-bold">Chọn danh từ:</span>
-                        <select onchange="selectV1Noun(this.value)" class="bg-slate-800 border border-slate-700 rounded-xl px-3 py-1.5 text-white font-bold focus:outline-none focus:border-indigo-400 cursor-pointer">
+                        <select onchange="b11_selectV1Noun(this.value)" class="bg-slate-800 border border-slate-700 rounded-xl px-3 py-1.5 text-white font-bold focus:outline-none focus:border-indigo-400 cursor-pointer">
                             ${V1_NOUNS.map((item, idx) => `
-                                <option value="${idx}" ${idx === currentV1NounIndex ? 'selected' : ''}>${item.label}</option>
+                                <option value="${idx}" ${idx === b11_currentV1NounIndex ? 'selected' : ''}>${item.label}</option>
                             `).join('')}
                         </select>
                     </div>
                     <div class="flex items-center gap-1.5">
-                        <button onclick="prevV1Noun()" class="px-2.5 py-1 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-300 text-xs font-bold transition">◀</button>
-                        <span class="text-xs text-slate-400 font-mono">${currentV1NounIndex + 1} / ${V1_NOUNS.length}</span>
-                        <button onclick="nextV1Noun()" class="px-2.5 py-1 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-300 text-xs font-bold transition">▶</button>
+                        <button type="button" onclick="b11_prevV1Noun()" class="px-2.5 py-1 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-300 text-xs font-bold transition">◀</button>
+                        <span class="text-xs text-slate-400 font-mono">${b11_currentV1NounIndex + 1} / ${V1_NOUNS.length}</span>
+                        <button type="button" onclick="b11_nextV1Noun()" class="px-2.5 py-1 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-300 text-xs font-bold transition">▶</button>
                     </div>
                 </div>
 
@@ -148,7 +148,7 @@
                         <div class="text-sm sm:text-base font-black text-white">👉 „${sentence}“</div>
                         <div class="text-xs text-slate-400">📖 Dịch: ${translation}</div>
                     </div>
-                    <button onclick="speakGerman('${audioSentence.replace(/'/g, "\\'")}', 0.9)" class="px-4 py-2 rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white font-bold text-xs transition shadow-md flex items-center gap-1.5 cursor-pointer shrink-0">
+                    <button type="button" onclick="speakGerman('${audioSentence.replace(/'/g, "\\'")}', 0.9)" class="px-4 py-2 rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white font-bold text-xs transition shadow-md flex items-center gap-1.5 cursor-pointer shrink-0">
                         🔊 Nghe câu mẫu
                     </button>
                 </div>
@@ -156,21 +156,21 @@
         `;
     }
 
-    function selectV1Noun(idx) {
-        currentV1NounIndex = parseInt(idx, 10) || 0;
-        renderDiesTableSvg();
+    function b11_b11_selectV1Noun(idx) {
+        b11_currentV1NounIndex = parseInt(idx, 10) || 0;
+        b11_renderDiesTableSvg();
     }
-    function prevV1Noun() {
-        currentV1NounIndex = (currentV1NounIndex - 1 + V1_NOUNS.length) % V1_NOUNS.length;
-        renderDiesTableSvg();
+    function b11_b11_prevV1Noun() {
+        b11_currentV1NounIndex = (b11_currentV1NounIndex - 1 + V1_NOUNS.length) % V1_NOUNS.length;
+        b11_renderDiesTableSvg();
     }
-    function nextV1Noun() {
-        currentV1NounIndex = (currentV1NounIndex + 1) % V1_NOUNS.length;
-        renderDiesTableSvg();
+    function b11_b11_nextV1Noun() {
+        b11_currentV1NounIndex = (b11_currentV1NounIndex + 1) % V1_NOUNS.length;
+        b11_renderDiesTableSvg();
     }
-    function setV1Case(c) {
-        currentV1Case = c;
-        renderDiesTableSvg();
+    function b11_b11_setV1Case(c) {
+        b11_currentV1Case = c;
+        b11_renderDiesTableSvg();
     }
 
     // =========================================================================
@@ -206,21 +206,24 @@
         { color: "bunt", nameVi: "sặc sỡ", isInvariant: false },
         { color: "dunkelblau", nameVi: "xanh đậm", isInvariant: false },
         { color: "hellblau", nameVi: "xanh nhạt", isInvariant: false },
+        { color: "dunkelgrün", nameVi: "xanh lá đậm", isInvariant: false },
+        { color: "hellgrün", nameVi: "xanh lá nhạt", isInvariant: false },
+        { color: "violett", nameVi: "tím", isInvariant: false },
         { color: "rosa", nameVi: "hồng nhạt (bất biến)", isInvariant: true },
         { color: "lila", nameVi: "tím hồng (bất biến)", isInvariant: true },
         { color: "beige", nameVi: "be (bất biến)", isInvariant: true },
         { color: "orange", nameVi: "cam (bất biến)", isInvariant: true }
     ];
 
-    let currentV2ItemIndex = 0;
-    let currentV2ColorIndex = 0;
+    let b11_b11_currentV2ItemIndex = 0;
+    let b11_b11_currentV2ColorIndex = 0;
 
-    function renderFarbeAkkusativSvg() {
-        const container = document.getElementById('svg-v2-container');
+    function b11_b11_renderFarbeAkkusativSvg() {
+        const container = document.getElementById('b11-svg-v2-container');
         if (!container) return;
 
-        const it = V2_ITEMS[currentV2ItemIndex];
-        const cl = V2_COLORS[currentV2ColorIndex];
+        const it = V2_ITEMS[b11_currentV2ItemIndex];
+        const cl = V2_COLORS[b11_currentV2ColorIndex];
 
         let phraseDe = "";
         let colorWord = "";
@@ -273,17 +276,17 @@
                 <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs">
                     <div class="p-3.5 rounded-2xl bg-slate-800/80 border border-slate-700 space-y-1.5">
                         <label class="text-slate-400 font-bold">1. Chọn món đồ trang phục:</label>
-                        <select onchange="selectV2Item(this.value)" class="w-full bg-slate-900 border border-slate-700 rounded-xl px-3 py-2 text-white font-bold focus:outline-none focus:border-emerald-400 cursor-pointer">
+                        <select onchange="b11_selectV2Item(this.value)" class="w-full bg-slate-900 border border-slate-700 rounded-xl px-3 py-2 text-white font-bold focus:outline-none focus:border-emerald-400 cursor-pointer">
                             ${V2_ITEMS.map((item, idx) => `
-                                <option value="${idx}" ${idx === currentV2ItemIndex ? 'selected' : ''}>${item.label}</option>
+                                <option value="${idx}" ${idx === b11_currentV2ItemIndex ? 'selected' : ''}>${item.label}</option>
                             `).join('')}
                         </select>
                     </div>
                     <div class="p-3.5 rounded-2xl bg-slate-800/80 border border-slate-700 space-y-1.5">
                         <label class="text-slate-400 font-bold">2. Chọn màu sắc:</label>
-                        <select onchange="selectV2Color(this.value)" class="w-full bg-slate-900 border border-slate-700 rounded-xl px-3 py-2 text-white font-bold focus:outline-none focus:border-emerald-400 cursor-pointer">
+                        <select onchange="b11_selectV2Color(this.value)" class="w-full bg-slate-900 border border-slate-700 rounded-xl px-3 py-2 text-white font-bold focus:outline-none focus:border-emerald-400 cursor-pointer">
                             ${V2_COLORS.map((item, idx) => `
-                                <option value="${idx}" ${idx === currentV2ColorIndex ? 'selected' : ''}>${item.color} (${item.nameVi})</option>
+                                <option value="${idx}" ${idx === b11_currentV2ColorIndex ? 'selected' : ''}>${item.color} (${item.nameVi})</option>
                             `).join('')}
                         </select>
                     </div>
@@ -299,7 +302,7 @@
                         </div>
                         <div class="text-xs text-slate-300">Câu đầy đủ: <i>„${sentenceDe}“</i> — ${sentenceVi}</div>
                     </div>
-                    <button onclick="speakGerman('${sentenceDe.replace(/'/g, "\\'")}', 0.9)" class="px-4 py-2 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-xs transition shadow-md flex items-center gap-1.5 cursor-pointer shrink-0">
+                    <button type="button" onclick="speakGerman('${sentenceDe.replace(/'/g, "\\'")}', 0.9)" class="px-4 py-2 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-xs transition shadow-md flex items-center gap-1.5 cursor-pointer shrink-0">
                         🔊 Nghe câu này
                     </button>
                 </div>
@@ -307,20 +310,20 @@
         `;
     }
 
-    function selectV2Item(idx) {
-        currentV2ItemIndex = parseInt(idx, 10) || 0;
-        renderFarbeAkkusativSvg();
+    function b11_b11_selectV2Item(idx) {
+        b11_currentV2ItemIndex = parseInt(idx, 10) || 0;
+        b11_renderFarbeAkkusativSvg();
     }
-    function selectV2Color(idx) {
-        currentV2ColorIndex = parseInt(idx, 10) || 0;
-        renderFarbeAkkusativSvg();
+    function b11_b11_selectV2Color(idx) {
+        b11_currentV2ColorIndex = parseInt(idx, 10) || 0;
+        b11_renderFarbeAkkusativSvg();
     }
 
     // =========================================================================
     // SƠ ĐỒ V3: LƯU ĐỒ PHÂN BIỆT AKKUSATIV / DATIV
     // =========================================================================
-    function renderAkkDativFlowchartSvg() {
-        const container = document.getElementById('svg-v3-container');
+    function b11_b11_renderAkkDativFlowchartSvg() {
+        const container = document.getElementById('b11-svg-v3-container');
         if (!container) return;
 
         container.innerHTML = `
@@ -351,7 +354,7 @@
                             <div class="text-[11px] text-emerald-400 font-bold">Ví dụ chuẩn (Bấm để nghe):</div>
                             <div class="flex items-center justify-between gap-2">
                                 <span class="font-mono text-white">„Ich trage einen blauen Anzug.“</span>
-                                <button onclick="speakGerman('Ich trage einen blauen Anzug.', 0.9)" class="text-emerald-400 hover:text-emerald-300 font-bold cursor-pointer">🔊</button>
+                                <button type="button" onclick="speakGerman('Ich trage einen blauen Anzug.', 0.9)" class="text-emerald-400 hover:text-emerald-300 font-bold cursor-pointer">🔊</button>
                             </div>
                             <div class="text-[11px] text-slate-400">Dịch: Tôi mặc một bộ com lê xanh.</div>
                         </div>
@@ -380,7 +383,7 @@
                             <div class="text-[11px] text-purple-400 font-bold">Ví dụ chuẩn (Bấm để nghe):</div>
                             <div class="flex items-center justify-between gap-2">
                                 <span class="font-mono text-white">„Der Pullover gefällt mir sehr gut.“</span>
-                                <button onclick="speakGerman('Der Pullover gefällt mir sehr gut.', 0.9)" class="text-purple-400 hover:text-purple-300 font-bold cursor-pointer">🔊</button>
+                                <button type="button" onclick="speakGerman('Der Pullover gefällt mir sehr gut.', 0.9)" class="text-purple-400 hover:text-purple-300 font-bold cursor-pointer">🔊</button>
                             </div>
                             <div class="text-[11px] text-slate-400">Dịch: Chiếc áo len làm tôi rất thích.</div>
                         </div>
@@ -420,13 +423,13 @@
         { icon: "👖", word: "die Jeans", pl: "PL: die Jeans", vi: "quần bò (jeans)", sentenceDe: "Ich trage eine Jeans.", sentenceVi: "Tôi mặc quần bò (jeans)." }
     ];
 
-    let currentV4Index = 0;
+    let b11_b11_currentV4Index = 0;
 
-    function renderKleiderschrankSvg() {
-        const container = document.getElementById('svg-v4-container');
+    function b11_b11_renderKleiderschrankSvg() {
+        const container = document.getElementById('b11-svg-v4-container');
         if (!container) return;
 
-        const it = V4_ITEMS[currentV4Index];
+        const it = V4_ITEMS[b11_currentV4Index];
         const sentenceDe = it.sentenceDe;
         const sentenceVi = it.sentenceVi;
         const jeansExtra = it.word === 'die Jeans' ? ' (hoặc <i>„Ich trage Jeans.“</i>)' : '';
@@ -444,7 +447,7 @@
                 <!-- Lưới 18 món đồ trong tủ -->
                 <div class="grid grid-cols-3 sm:grid-cols-6 gap-2 text-xs">
                     ${V4_ITEMS.map((item, idx) => `
-                        <button onclick="selectV4Item(${idx})" class="p-2.5 rounded-2xl flex flex-col items-center justify-center gap-1 transition cursor-pointer ${idx === currentV4Index ? 'bg-indigo-600 text-white shadow-lg ring-2 ring-indigo-400 scale-105' : 'bg-slate-800/80 hover:bg-slate-700/80 text-slate-300'}">
+                        <button type="button" onclick="b11_selectV4Item(${idx})" class="p-2.5 rounded-2xl flex flex-col items-center justify-center gap-1 transition cursor-pointer ${idx === b11_currentV4Index ? 'bg-indigo-600 text-white shadow-lg ring-2 ring-indigo-400 scale-105' : 'bg-slate-800/80 hover:bg-slate-700/80 text-slate-300'}">
                             <span class="text-2xl">${item.icon}</span>
                             <span class="font-bold text-[11px] text-center truncate w-full">${item.word}</span>
                         </button>
@@ -461,7 +464,7 @@
                             <div class="text-xs text-slate-300 mt-1">Câu mẫu: <b>„${sentenceDe}“</b>${jeansExtra} — <i>${sentenceVi}</i></div>
                         </div>
                     </div>
-                    <button onclick="speakGerman('${sentenceDe.replace(/'/g, "\\'")}', 0.9)" class="px-4 py-2 rounded-xl bg-blue-600 hover:bg-blue-500 text-white font-bold text-xs transition shadow-md flex items-center gap-1.5 cursor-pointer shrink-0">
+                    <button type="button" onclick="speakGerman('${sentenceDe.replace(/'/g, "\\'")}', 0.9)" class="px-4 py-2 rounded-xl bg-blue-600 hover:bg-blue-500 text-white font-bold text-xs transition shadow-md flex items-center gap-1.5 cursor-pointer shrink-0">
                         🔊 Nghe phát âm
                     </button>
                 </div>
@@ -469,32 +472,32 @@
         `;
     }
 
-    function selectV4Item(idx) {
-        currentV4Index = parseInt(idx, 10) || 0;
-        renderKleiderschrankSvg();
+    function b11_b11_selectV4Item(idx) {
+        b11_currentV4Index = parseInt(idx, 10) || 0;
+        b11_renderKleiderschrankSvg();
     }
 
     // =========================================================================
     // SƠ ĐỒ V5: BẢN ĐỒ THỜI TIẾT VIỆT NAM - ĐỨC (WETTERKARTE)
     // =========================================================================
     const CITIES_WEATHER = [
-        { city: "Berlin", country: "Đức", icon: "☁️", desc: "bewölkt", temp: 8, tempWord: "acht Grad", de: "In Berlin ist es bewölkt. Es sind acht Grad.", vi: "Ở Berlin trời nhiều mây, nhiệt độ tám độ." },
+        { city: "Berlin", country: "Đức", icon: "⛅", desc: "bewölkt", temp: 8, tempWord: "acht Grad", de: "In Berlin ist es bewölkt. Es sind acht Grad.", vi: "Ở Berlin trời nhiều mây, nhiệt độ tám độ." },
         { city: "Hamburg", country: "Đức", icon: "🌧️", desc: "regnet und windig", temp: 7, tempWord: "sieben Grad", de: "In Hamburg regnet es und es ist windig. Es sind sieben Grad.", vi: "Ở Hamburg trời mưa và có gió, nhiệt độ bảy độ." },
-        { city: "München", country: "Đức", icon: "☀️", desc: "sonnig", temp: 12, tempWord: "zwölf Grad", de: "In München scheint die Sonne. Es sind zwölf Grad.", vi: "Ở München trời nắng, nhiệt độ mười hai độ." },
-        { city: "Wien", country: "Áo", icon: "🌥️", desc: "neblig", temp: 4, tempWord: "vier Grad", de: "In Wien ist es neblig. Es sind vier Grad.", vi: "Ở Wien có sương mù, nhiệt độ bốn độ." },
-        { city: "Hà Nội", country: "Việt Nam", icon: "🌥️", desc: "neblig und kalt", temp: 16, tempWord: "sechzehn Grad", de: "In Hà Nội ist es neblig. Es sind sechzehn Grad.", vi: "Ở Hà Nội có sương mù, nhiệt độ mười sáu độ." },
-        { city: "Hải Phòng", country: "Việt Nam", icon: "🌬️", desc: "windig", temp: 20, tempWord: "zwanzig Grad", de: "In Hải Phòng ist es windig. Es sind zwanzig Grad.", vi: "Ở Hải Phòng trời có gió, nhiệt độ hai mươi độ." },
-        { city: "Đà Lạt", country: "Việt Nam", icon: "🌥️", desc: "kühl und neblig", temp: 15, tempWord: "fünfzehn Grad", de: "In Đà Lạt ist es kühl und oft neblig. Es sind fünfzehn Grad.", vi: "Ở Đà Lạt trời mát và hay có sương mù, nhiệt độ mười lăm độ." },
-        { city: "Sài Gòn", country: "Việt Nam", icon: "🥵", desc: "heiß", temp: 34, tempWord: "vierunddreißig Grad", de: "In Sài Gòn ist es sehr heiß. Es sind vierunddreißig Grad.", vi: "Ở Sài Gòn trời rất nóng, nhiệt độ ba mươi tư độ." }
+        { city: "München", country: "Đức", icon: "☀️", desc: "sonnig", temp: 12, tempWord: "zwölf Grad", de: "In München scheint die Sonne. Es sind zwölf Grad.", vi: "Ở München trời có nắng, nhiệt độ mười hai độ." },
+        { city: "Wien", country: "Áo", icon: "🌫️", desc: "neblig", temp: 4, tempWord: "vier Grad", de: "In Wien ist es neblig. Es sind vier Grad.", vi: "Ở Wien trời có sương mù, nhiệt độ bốn độ." },
+        { city: "Hà Nội", country: "Việt Nam", icon: "🌫️", desc: "neblig", temp: 24, tempWord: "vierundzwanzig Grad", de: "In Hà Nội ist es neblig. Es sind vierundzwanzig Grad.", vi: "Ở Hà Nội trời có sương mù, nhiệt độ hai mươi tư độ." },
+        { city: "Hải Phòng", country: "Việt Nam", icon: "🌬️", desc: "windig", temp: 22, tempWord: "zweiundzwanzig Grad", de: "In Hải Phòng ist es windig. Es sind zweiundzwanzig Grad.", vi: "Ở Hải Phòng trời có gió, nhiệt độ hai mươi hai độ." },
+        { city: "Đà Lạt", country: "Việt Nam", icon: "🌫️", desc: "kühl und neblig", temp: 17, tempWord: "siebzehn Grad", de: "In Đà Lạt ist es kühl und oft neblig. Es sind siebzehn Grad.", vi: "Ở Đà Lạt trời mát và hay có sương mù, nhiệt độ mười bảy độ." },
+        { city: "Sài Gòn", country: "Việt Nam", icon: "☀️", desc: "sonnig und heiß", temp: 33, tempWord: "dreiunddreißig Grad", de: "In Sài Gòn ist es sonnig und heiß. Es sind dreiunddreißig Grad.", vi: "Ở Sài Gòn trời có nắng và nóng, nhiệt độ ba mươi ba độ." }
     ];
 
-    let currentCityIndex = 0;
+    let b11_b11_currentCityIndex = 0;
 
-    function renderWetterMapSvg() {
-        const container = document.getElementById('svg-v5-container');
+    function b11_b11_renderWetterMapSvg() {
+        const container = document.getElementById('b11-svg-v5-container');
         if (!container) return;
 
-        const c = CITIES_WEATHER[currentCityIndex];
+        const c = CITIES_WEATHER[b11_currentCityIndex];
 
         container.innerHTML = `
             <div class="p-5 sm:p-7 rounded-3xl bg-slate-900 text-white shadow-xl border border-slate-800 space-y-5">
@@ -503,7 +506,7 @@
                         <span class="px-2.5 py-1 rounded-lg bg-amber-500/20 text-amber-400 font-black text-xs">Sơ đồ V5</span>
                         <h3 class="text-base sm:text-lg font-black text-white">Bản Đồ Thời Tiết Việt Nam - Đức & Áo (Wetterkarte)</h3>
                     </div>
-                    <button onclick="readFullWeatherReport()" class="px-3.5 py-1.5 rounded-xl bg-amber-500 hover:bg-amber-400 text-slate-950 font-black text-xs transition shadow flex items-center gap-1.5 cursor-pointer">
+                    <button type="button" onclick="b11_readFullWeatherReport()" class="px-3.5 py-1.5 rounded-xl bg-amber-500 hover:bg-amber-400 text-slate-950 font-black text-xs transition shadow flex items-center gap-1.5 cursor-pointer">
                         📻 Đọc toàn bộ Bản tin thời tiết
                     </button>
                 </div>
@@ -511,7 +514,7 @@
                 <!-- Danh sách các thành phố -->
                 <div class="grid grid-cols-2 sm:grid-cols-4 gap-2.5 text-xs">
                     ${CITIES_WEATHER.map((city, idx) => `
-                        <button onclick="selectCity(${idx})" class="p-3 rounded-2xl flex items-center justify-between gap-2 transition cursor-pointer ${idx === currentCityIndex ? 'bg-amber-500/20 border-2 border-amber-400 text-white' : 'bg-slate-800/80 hover:bg-slate-700/80 border border-slate-700 text-slate-300'}">
+                        <button type="button" onclick="b11_selectCity(${idx})" class="p-3 rounded-2xl flex items-center justify-between gap-2 transition cursor-pointer ${idx === b11_currentCityIndex ? 'bg-amber-500/20 border-2 border-amber-400 text-white' : 'bg-slate-800/80 hover:bg-slate-700/80 border border-slate-700 text-slate-300'}">
                             <div class="text-left">
                                 <div class="font-black text-sm">${city.city}</div>
                                 <div class="text-[10px] text-slate-400">${city.country}</div>
@@ -531,7 +534,7 @@
                         <div class="text-sm sm:text-base font-black text-white">👉 „${c.de}“</div>
                         <div class="text-xs text-slate-400">📖 Dịch: ${c.vi} (Nhiệt độ đọc: <i>${c.tempWord}</i>)</div>
                     </div>
-                    <button onclick="speakGerman('${c.de.replace(/'/g, "\\'")}', 0.9)" class="px-4 py-2 rounded-xl bg-amber-500 hover:bg-amber-400 text-slate-950 font-black text-xs transition shadow-md flex items-center gap-1.5 cursor-pointer shrink-0">
+                    <button type="button" onclick="speakGerman('${c.de.replace(/'/g, "\\'")}', 0.9)" class="px-4 py-2 rounded-xl bg-amber-500 hover:bg-amber-400 text-slate-950 font-black text-xs transition shadow-md flex items-center gap-1.5 cursor-pointer shrink-0">
                         🔊 Nghe phát âm
                     </button>
                 </div>
@@ -539,13 +542,13 @@
         `;
     }
 
-    function selectCity(idx) {
-        currentCityIndex = parseInt(idx, 10) || 0;
-        renderWetterMapSvg();
+    function b11_b11_selectCity(idx) {
+        b11_currentCityIndex = parseInt(idx, 10) || 0;
+        b11_renderWetterMapSvg();
     }
 
-    function readFullWeatherReport() {
-        const fullReport = "Guten Morgen! Hier ist der Wetterbericht für heute. In Berlin ist es bewölkt, es sind acht Grad. In Hamburg regnet es, es ist windig, und es sind nur sieben Grad. In München scheint die Sonne, es sind zwölf Grad. In Wien ist es neblig, es sind vier Grad. In Vietnam: In Hà Nội ist es neblig, es sind sechzehn Grad. In Hải Phòng ist es windig, zwanzig Grad. In Sài Gòn ist es sehr heiß, vierunddreißig Grad.";
+    function b11_b11_readFullWeatherReport() {
+        const fullReport = "Guten Morgen! Hier ist der Wetterbericht für heute. In Berlin ist es bewölkt, es sind acht Grad. In Hamburg regnet es und es ist windig, es sind sieben Grad. In München scheint die Sonne, es sind zwölf Grad. In Wien ist es neblig, es sind vier Grad. In Vietnam: In Hà Nội ist es neblig, es sind vierundzwanzig Grad. In Hải Phòng ist es windig, zweiundzwanzig Grad. In Đà Lạt ist es kühl und neblig, siebzehn Grad. In Sài Gòn ist es sonnig und heiß, dreiunddreißig Grad.";
         if (typeof speakGerman === 'function') {
             speakGerman(fullReport, 0.9);
         }
@@ -580,15 +583,15 @@
         }
     ];
 
-    let currentV6DiagIndex = 0;
-    let currentV6LineIndex = 0;
+    let b11_b11_currentV6DiagIndex = 0;
+    let b11_b11_currentV6LineIndex = 0;
 
-    function renderFittingRoomSvg() {
-        const container = document.getElementById('svg-v6-container');
+    function b11_b11_renderFittingRoomSvg() {
+        const container = document.getElementById('b11-svg-v6-container');
         if (!container) return;
 
-        const diag = DIALOGUES_V6[currentV6DiagIndex];
-        const line = diag.lines[currentV6LineIndex];
+        const diag = DIALOGUES_V6[b11_currentV6DiagIndex];
+        const line = diag.lines[b11_currentV6LineIndex];
 
         container.innerHTML = `
             <div class="p-5 sm:p-7 rounded-3xl bg-slate-900 text-white shadow-xl border border-slate-800 space-y-5">
@@ -598,10 +601,10 @@
                         <h3 class="text-base sm:text-lg font-black text-white">Hội Thoại Mua Quần Áo & Phòng Thử Đồ (Umkleidekabine)</h3>
                     </div>
                     <div class="flex items-center gap-2 text-xs">
-                        <button onclick="switchV6Diag(0)" class="px-3 py-1.5 rounded-lg font-bold transition cursor-pointer ${currentV6DiagIndex === 0 ? 'bg-pink-600 text-white' : 'bg-slate-800 text-slate-300'}">
+                        <button type="button" onclick="b11_switchV6Diag(0)" class="px-3 py-1.5 rounded-lg font-bold transition cursor-pointer ${b11_currentV6DiagIndex === 0 ? 'bg-pink-600 text-white' : 'bg-slate-800 text-slate-300'}">
                             Hội thoại 1: Áo len
                         </button>
-                        <button onclick="switchV6Diag(1)" class="px-3 py-1.5 rounded-lg font-bold transition cursor-pointer ${currentV6DiagIndex === 1 ? 'bg-pink-600 text-white' : 'bg-slate-800 text-slate-300'}">
+                        <button type="button" onclick="b11_switchV6Diag(1)" class="px-3 py-1.5 rounded-lg font-bold transition cursor-pointer ${b11_currentV6DiagIndex === 1 ? 'bg-pink-600 text-white' : 'bg-slate-800 text-slate-300'}">
                             Hội thoại 2: Đổi quần
                         </button>
                     </div>
@@ -611,7 +614,7 @@
                 <div class="p-4 rounded-2xl bg-slate-950 border border-slate-800 space-y-3">
                     <div class="flex items-center justify-between text-xs text-slate-400 border-b border-slate-800/80 pb-2">
                         <span class="font-bold text-pink-300">${diag.title}</span>
-                        <span class="font-mono">Lượt ${currentV6LineIndex + 1} / ${diag.lines.length}</span>
+                        <span class="font-mono">Lượt ${b11_currentV6LineIndex + 1} / ${diag.lines.length}</span>
                     </div>
 
                     <div class="p-4 rounded-xl ${line.spk.includes('Verk') ? 'bg-indigo-950/40 border border-indigo-500/30' : 'bg-emerald-950/40 border border-emerald-500/30'} space-y-2">
@@ -619,7 +622,7 @@
                             <span class="px-2.5 py-0.5 rounded-md text-[11px] font-black uppercase ${line.spk.includes('Verk') ? 'bg-indigo-500/30 text-indigo-300' : 'bg-emerald-500/30 text-emerald-300'}">
                                 ${line.spk}
                             </span>
-                            <button onclick="speakGerman('${line.de.replace(/'/g, "\\'")}', 0.9)" class="text-white hover:text-pink-300 font-bold text-xs flex items-center gap-1 cursor-pointer">
+                            <button type="button" onclick="speakGerman('${line.de.replace(/'/g, "\\'")}', 0.9)" class="text-white hover:text-pink-300 font-bold text-xs flex items-center gap-1 cursor-pointer">
                                 🔊 Nghe lượt này
                             </button>
                         </div>
@@ -629,10 +632,10 @@
 
                     <!-- Nút bấm chuyển lượt -->
                     <div class="flex items-center justify-between pt-2">
-                        <button onclick="prevV6Line()" ${currentV6LineIndex === 0 ? 'disabled class=\"opacity-40 cursor-not-allowed\"' : 'class=\"cursor-pointer hover:bg-slate-700\"'} class="px-3 py-1.5 rounded-xl bg-slate-800 text-xs font-bold text-slate-200 transition">
+                        <button type="button" onclick="b11_prevV6Line()" ${b11_currentV6LineIndex === 0 ? 'disabled class=\"opacity-40 cursor-not-allowed\"' : 'class=\"cursor-pointer hover:bg-slate-700\"'} class="px-3 py-1.5 rounded-xl bg-slate-800 text-xs font-bold text-slate-200 transition">
                             ◀ Lượt trước
                         </button>
-                        <button onclick="nextV6Line()" ${currentV6LineIndex === diag.lines.length - 1 ? 'disabled class=\"opacity-40 cursor-not-allowed\"' : 'class=\"cursor-pointer hover:bg-slate-700\"'} class="px-3 py-1.5 rounded-xl bg-slate-800 text-xs font-bold text-slate-200 transition">
+                        <button type="button" onclick="b11_nextV6Line()" ${b11_currentV6LineIndex === diag.lines.length - 1 ? 'disabled class=\"opacity-40 cursor-not-allowed\"' : 'class=\"cursor-pointer hover:bg-slate-700\"'} class="px-3 py-1.5 rounded-xl bg-slate-800 text-xs font-bold text-slate-200 transition">
                             Lượt tiếp ▶
                         </button>
                     </div>
@@ -641,59 +644,60 @@
         `;
     }
 
-    function switchV6Diag(idx) {
-        currentV6DiagIndex = idx;
-        currentV6LineIndex = 0;
-        renderFittingRoomSvg();
+    function b11_b11_switchV6Diag(idx) {
+        b11_currentV6DiagIndex = idx;
+        b11_currentV6LineIndex = 0;
+        b11_renderFittingRoomSvg();
     }
-    function prevV6Line() {
-        if (currentV6LineIndex > 0) {
-            currentV6LineIndex--;
-            renderFittingRoomSvg();
+    function b11_b11_prevV6Line() {
+        if (b11_currentV6LineIndex > 0) {
+            b11_currentV6LineIndex--;
+            b11_renderFittingRoomSvg();
         }
     }
-    function nextV6Line() {
-        const diag = DIALOGUES_V6[currentV6DiagIndex];
-        if (currentV6LineIndex < diag.lines.length - 1) {
-            currentV6LineIndex++;
-            renderFittingRoomSvg();
+    function b11_b11_nextV6Line() {
+        const diag = DIALOGUES_V6[b11_currentV6DiagIndex];
+        if (b11_currentV6LineIndex < diag.lines.length - 1) {
+            b11_currentV6LineIndex++;
+            b11_renderFittingRoomSvg();
         }
     }
 
     // =========================================================================
     // KHỞI TẠO TẤT CẢ SƠ ĐỒ
     // =========================================================================
-    function initKleidungSvgDiagrams() {
+    function b11_initKleidungSvgDiagrams() {
         if (typeof currentLesson !== 'undefined' && currentLesson && currentLesson.id !== 25) {
             return;
         }
-        renderDiesTableSvg();
-        renderFarbeAkkusativSvg();
-        renderAkkDativFlowchartSvg();
-        renderKleiderschrankSvg();
-        renderWetterMapSvg();
-        renderFittingRoomSvg();
+        b11_renderDiesTableSvg();
+        b11_renderFarbeAkkusativSvg();
+        b11_renderAkkDativFlowchartSvg();
+        b11_renderKleiderschrankSvg();
+        b11_renderWetterMapSvg();
+        b11_renderFittingRoomSvg();
     }
 
-    // Export ra Window
-    global.renderDiesTableSvg = renderDiesTableSvg;
-    global.renderFarbeAkkusativSvg = renderFarbeAkkusativSvg;
-    global.renderAkkDativFlowchartSvg = renderAkkDativFlowchartSvg;
-    global.renderKleiderschrankSvg = renderKleiderschrankSvg;
-    global.renderWetterMapSvg = renderWetterMapSvg;
-    global.renderFittingRoomSvg = renderFittingRoomSvg;
-    global.initKleidungSvgDiagrams = initKleidungSvgDiagrams;
-    global.selectV1Noun = selectV1Noun;
-    global.prevV1Noun = prevV1Noun;
-    global.nextV1Noun = nextV1Noun;
-    global.setV1Case = setV1Case;
-    global.selectV2Item = selectV2Item;
-    global.selectV2Color = selectV2Color;
-    global.selectV4Item = selectV4Item;
-    global.selectCity = selectCity;
-    global.readFullWeatherReport = readFullWeatherReport;
-    global.switchV6Diag = switchV6Diag;
-    global.prevV6Line = prevV6Line;
-    global.nextV6Line = nextV6Line;
+    // Export ra Window (Toàn bộ hàm Bài 11 mang tiền tố b11_ để chống đụng độ)
+    global.b11_renderDiesTableSvg = b11_renderDiesTableSvg;
+    global.b11_renderFarbeAkkusativSvg = b11_renderFarbeAkkusativSvg;
+    global.b11_renderAkkDativFlowchartSvg = b11_renderAkkDativFlowchartSvg;
+    global.b11_renderKleiderschrankSvg = b11_renderKleiderschrankSvg;
+    global.b11_renderWetterMapSvg = b11_renderWetterMapSvg;
+    global.b11_renderFittingRoomSvg = b11_renderFittingRoomSvg;
+    global.b11_initKleidungSvgDiagrams = b11_initKleidungSvgDiagrams;
+    global.initKleidungSvgDiagrams = b11_initKleidungSvgDiagrams; // Alias cho index.html
+    global.b11_selectV1Noun = b11_selectV1Noun;
+    global.b11_prevV1Noun = b11_prevV1Noun;
+    global.b11_nextV1Noun = b11_nextV1Noun;
+    global.b11_setV1Case = b11_setV1Case;
+    global.b11_selectV2Item = b11_selectV2Item;
+    global.b11_selectV2Color = b11_selectV2Color;
+    global.b11_selectV4Item = b11_selectV4Item;
+    global.b11_selectCity = b11_selectCity;
+    global.b11_readFullWeatherReport = b11_readFullWeatherReport;
+    global.b11_switchV6Diag = b11_switchV6Diag;
+    global.b11_prevV6Line = b11_prevV6Line;
+    global.b11_nextV6Line = b11_nextV6Line;
 
 })(typeof window !== 'undefined' ? window : this);
