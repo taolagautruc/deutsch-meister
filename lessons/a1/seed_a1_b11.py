@@ -142,7 +142,7 @@ def seed_lesson_11():
             </div>
 
             <!-- SƠ ĐỒ V4 NHÚNG VÀO ĐÂY -->
-            <div id="b11-svg-v4-container"></div>
+            <div id="svg-v4-container"></div>
         </div>
 
         <!-- HỌC PHẦN 2: 17 MÀU SẮC (DIE FARBE) -->
@@ -223,7 +223,7 @@ def seed_lesson_11():
             </div>
 
             <!-- SƠ ĐỒ V2 NHÚNG VÀO ĐÂY -->
-            <div id="b11-svg-v2-container"></div>
+            <div id="svg-v2-container"></div>
 
             <!-- Bảng phân tích câu Familie Müller -->
             <div class="p-4 rounded-2xl bg-slate-50 border border-slate-200 space-y-2 text-xs">
@@ -250,7 +250,7 @@ def seed_lesson_11():
             </div>
 
             <!-- SƠ ĐỒ V3 NHÚNG VÀO ĐÂY -->
-            <div id="b11-svg-v3-container"></div>
+            <div id="svg-v3-container"></div>
 
             <!-- Quy tắc vàng Dativ & 4 động từ thời trang -->
             <div class="p-4 rounded-2xl bg-amber-50/80 border border-amber-200 text-xs text-amber-950 space-y-2">
@@ -306,7 +306,7 @@ def seed_lesson_11():
             </div>
 
             <!-- SƠ ĐỒ V1 NHÚNG VÀO ĐÂY -->
-            <div id="b11-svg-v1-container"></div>
+            <div id="svg-v1-container"></div>
 
             <div class="p-4 rounded-2xl bg-blue-50/70 border border-blue-200 text-xs text-blue-950 space-y-2">
                 <div class="font-bold text-blue-900">💡 Quy tắc vàng:</div>
@@ -360,7 +360,7 @@ def seed_lesson_11():
             </div>
 
             <!-- SƠ ĐỒ V5 NHÚNG VÀO ĐÂY -->
-            <div id="b11-svg-v5-container"></div>
+            <div id="svg-v5-container"></div>
         </div>
 
         <!-- HỌC PHẦN 7: MUA QUẦN ÁO — HỘI THOẠI Ở CỬA HÀNG -->
@@ -374,7 +374,7 @@ def seed_lesson_11():
             </div>
 
             <!-- SƠ ĐỒ V6 NHÚNG VÀO ĐÂY -->
-            <div id="b11-svg-v6-container"></div>
+            <div id="svg-v6-container"></div>
         </div>
 
         <!-- HỌC PHẦN 8: ĐỌC HIỂU & PHÂN TÍCH VĂN BẢN -->

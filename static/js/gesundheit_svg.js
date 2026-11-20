@@ -38,8 +38,8 @@
 
     let currentV1Index = 0;
 
-    function renderKoerperkarteSvg(containerId) {
-        const c = document.getElementById(containerId || "svg-v1-container");
+    function b12_renderKoerperkarteSvg(containerId) {
+        const c = document.getElementById(containerId || "b12-svg-v1-container");
         if (!c) return;
         const current = V1_BODY_PARTS[currentV1Index] || V1_BODY_PARTS[0];
 
@@ -94,7 +94,7 @@
                                 const active = idx === currentV1Index;
                                 const pinColor = p.art === 'der' ? '#38bdf8' : (p.art === 'die' ? '#f43f5e' : '#34d399');
                                 return `
-                                    <g class="cursor-pointer" onclick="selectV1BodyPart(${idx})">
+                                    <g class="cursor-pointer" onclick="b12_selectV1BodyPart(${idx})">
                                         ${active ? `<circle cx="${p.x}" cy="${p.y}" r="11" fill="${pinColor}" opacity="0.3" filter="url(#glow)"><animate attributeName="r" values="8;13;8" dur="1.8s" repeatCount="indefinite"/></circle>` : ''}
                                         <circle cx="${p.x}" cy="${p.y}" r="${active ? 7 : 5}" fill="${active ? pinColor : '#94a3b8'}" stroke="#ffffff" stroke-width="${active ? 2 : 1}" />
                                     </g>
@@ -118,7 +118,7 @@
                                     <div class="text-2xl font-black text-white tracking-tight">${current.name}</div>
                                     <div class="text-sm font-semibold text-amber-300">Nghĩa: ${current.vi}</div>
                                 </div>
-                                <button onclick="speakGerman('${current.name}', 0.9)" class="p-3 rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white font-bold transition shadow-md cursor-pointer flex items-center gap-1.5" title="Phát âm từ vựng">
+                                <button type="button" onclick="speakGerman('${current.name}', 0.9)" class="p-3 rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white font-bold transition shadow-md cursor-pointer flex items-center gap-1.5" title="Phát âm từ vựng">
                                     🔊 <span class="text-xs">Đọc từ</span>
                                 </button>
                             </div>
@@ -128,7 +128,7 @@
                                 <div class="text-sm sm:text-base font-bold text-emerald-300 font-sans">„${current.ex}“</div>
                                 <div class="text-xs text-slate-300">📖 Dịch: ${current.tr}</div>
                                 <div class="pt-1 flex justify-end">
-                                    <button onclick="speakGerman('${current.ex.replace(/'/g, "\\'")}', 0.9)" class="px-3 py-1 rounded-lg bg-emerald-600 hover:bg-emerald-500 text-white text-xs font-bold transition shadow-xs cursor-pointer flex items-center gap-1">
+                                    <button type="button" onclick="speakGerman('${current.ex.replace(/'/g, "\\'")}', 0.9)" class="px-3 py-1 rounded-lg bg-emerald-600 hover:bg-emerald-500 text-white text-xs font-bold transition shadow-xs cursor-pointer flex items-center gap-1">
                                         🔊 Nghe câu mẫu
                                     </button>
                                 </div>
@@ -140,7 +140,7 @@
                             <div class="text-[11px] font-bold text-slate-400">Chọn nhanh bộ phận khác:</div>
                             <div class="flex flex-wrap gap-1.5 max-h-[140px] overflow-y-auto pr-1">
                                 ${V1_BODY_PARTS.map((p, idx) => `
-                                    <button onclick="selectV1BodyPart(${idx})" class="px-2.5 py-1 rounded-lg text-xs font-bold transition cursor-pointer ${idx === currentV1Index ? 'bg-indigo-600 text-white shadow-sm' : 'bg-slate-800 hover:bg-slate-700 text-slate-300 border border-slate-700'}">
+                                    <button type="button" onclick="b12_selectV1BodyPart(${idx})" class="px-2.5 py-1 rounded-lg text-xs font-bold transition cursor-pointer ${idx === currentV1Index ? 'bg-indigo-600 text-white shadow-sm' : 'bg-slate-800 hover:bg-slate-700 text-slate-300 border border-slate-700'}">
                                         ${p.name.split(' ')[1]} (${p.vi})
                                     </button>
                                 `).join('')}
@@ -152,9 +152,9 @@
         `;
     }
 
-    function selectV1BodyPart(idx) {
+    function b12_selectV1BodyPart(idx) {
         currentV1Index = idx;
-        renderKoerperkarteSvg();
+        b12_renderKoerperkarteSvg();
     }
 
     // =========================================================================
@@ -172,8 +172,8 @@
 
     let currentV2Index = 0;
 
-    function renderAkkDativFlowchartSvg(containerId) {
-        const c = document.getElementById(containerId || "svg-v2-container");
+    function b12_renderAkkDativFlowchartSvg(containerId) {
+        const c = document.getElementById(containerId || "b12-svg-v2-container");
         if (!c) return;
         const cur = V2_TEST_ITEMS[currentV2Index] || V2_TEST_ITEMS[0];
         const isAkk = cur.caseType === "akk";
@@ -254,7 +254,7 @@
                             <div class="text-xs text-slate-300">📖 Dịch: ${cur.tr}</div>
                             <div class="text-[11px] text-indigo-300 pt-1">💡 <i>${cur.reason}</i></div>
                         </div>
-                        <button onclick="speakGerman('${cur.sentence.replace(/'/g, "\\'")}', 0.9)" class="px-4 py-2 rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white font-bold text-xs transition shadow-md flex items-center gap-1.5 cursor-pointer shrink-0">
+                        <button type="button" onclick="speakGerman('${cur.sentence.replace(/'/g, "\\'")}', 0.9)" class="px-4 py-2 rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white font-bold text-xs transition shadow-md flex items-center gap-1.5 cursor-pointer shrink-0">
                             🔊 Nghe câu mẫu
                         </button>
                     </div>
@@ -262,7 +262,7 @@
                     <!-- Nút bấm chuyển trường hợp -->
                     <div class="flex flex-wrap gap-1.5 pt-1">
                         ${V2_TEST_ITEMS.map((item, idx) => `
-                            <button onclick="selectV2Item(${idx})" class="px-3 py-1.5 rounded-lg text-xs font-bold transition cursor-pointer ${idx === currentV2Index ? 'bg-indigo-600 text-white shadow-sm' : 'bg-slate-700/80 hover:bg-slate-700 text-slate-300 border border-slate-600'}">
+                            <button type="button" onclick="b12_selectV2Item(${idx})" class="px-3 py-1.5 rounded-lg text-xs font-bold transition cursor-pointer ${idx === currentV2Index ? 'bg-indigo-600 text-white shadow-sm' : 'bg-slate-700/80 hover:bg-slate-700 text-slate-300 border border-slate-600'}">
                                 ${item.verb} (${item.caseType.toUpperCase()})
                             </button>
                         `).join('')}
@@ -272,9 +272,9 @@
         `;
     }
 
-    function selectV2Item(idx) {
+    function b12_selectV2Item(idx) {
         currentV2Index = idx;
-        renderAkkDativFlowchartSvg();
+        b12_renderAkkDativFlowchartSvg();
     }
 
     // =========================================================================
@@ -333,8 +333,8 @@
 
     let currentV3Index = 0;
 
-    function renderImperativMachineSvg(containerId) {
-        const c = document.getElementById(containerId || "svg-v3-container");
+    function b12_renderImperativMachineSvg(containerId) {
+        const c = document.getElementById(containerId || "b12-svg-v3-container");
         if (!c) return;
         const cur = V3_VERB_ITEMS[currentV3Index] || V3_VERB_ITEMS[0];
 
@@ -353,7 +353,7 @@
                 <!-- Thanh chọn động từ -->
                 <div class="flex flex-wrap gap-2">
                     ${V3_VERB_ITEMS.map((item, idx) => `
-                        <button onclick="selectV3Verb(${idx})" class="px-3 py-1.5 rounded-xl text-xs font-bold transition cursor-pointer flex items-center gap-1.5 ${idx === currentV3Index ? 'bg-amber-500 text-slate-950 font-black shadow-md' : 'bg-slate-800 hover:bg-slate-700 text-slate-300 border border-slate-700'}">
+                        <button type="button" onclick="b12_selectV3Verb(${idx})" class="px-3 py-1.5 rounded-xl text-xs font-bold transition cursor-pointer flex items-center gap-1.5 ${idx === currentV3Index ? 'bg-amber-500 text-slate-950 font-black shadow-md' : 'bg-slate-800 hover:bg-slate-700 text-slate-300 border border-slate-700'}">
                             <span>${item.verb}</span>
                             <span class="text-[10px] opacity-75 font-normal">(${item.ruleType.split(' ')[0]})</span>
                         </button>
@@ -401,7 +401,7 @@
                             <div class="text-base sm:text-lg font-black text-white">👉 „${cur.imperativ}“</div>
                             <div class="text-xs text-slate-300">📖 Dịch nghĩa: ${cur.tr}</div>
                         </div>
-                        <button onclick="speakGerman('${cur.imperativ.replace(/'/g, "\\'")}', 0.9)" class="px-4 py-2 rounded-xl bg-amber-500 hover:bg-amber-400 text-slate-950 font-black text-xs transition shadow-md flex items-center gap-1.5 cursor-pointer shrink-0">
+                        <button type="button" onclick="speakGerman('${cur.imperativ.replace(/'/g, "\\'")}', 0.9)" class="px-4 py-2 rounded-xl bg-amber-500 hover:bg-amber-400 text-slate-950 font-black text-xs transition shadow-md flex items-center gap-1.5 cursor-pointer shrink-0">
                             🔊 Nghe câu lệnh
                         </button>
                     </div>
@@ -413,9 +413,9 @@
         `;
     }
 
-    function selectV3Verb(idx) {
+    function b12_selectV3Verb(idx) {
         currentV3Index = idx;
-        renderImperativMachineSvg();
+        b12_renderImperativMachineSvg();
     }
 
     // =========================================================================
@@ -456,8 +456,8 @@
 
     let currentV4Index = 0;
 
-    function renderImperativComparisonSvg(containerId) {
-        const c = document.getElementById(containerId || "svg-v4-container");
+    function b12_renderImperativComparisonSvg(containerId) {
+        const c = document.getElementById(containerId || "b12-svg-v4-container");
         if (!c) return;
         const cur = V4_COMPARISON_VERBS[currentV4Index] || V4_COMPARISON_VERBS[0];
 
@@ -476,7 +476,7 @@
                 <!-- Chọn động từ -->
                 <div class="flex flex-wrap gap-2">
                     ${V4_COMPARISON_VERBS.map((v, idx) => `
-                        <button onclick="selectV4Verb(${idx})" class="px-3.5 py-1.5 rounded-xl text-xs font-bold transition cursor-pointer ${idx === currentV4Index ? 'bg-indigo-600 text-white shadow-md font-black' : 'bg-slate-800 hover:bg-slate-700 text-slate-300 border border-slate-700'}">
+                        <button type="button" onclick="b12_selectV4Verb(${idx})" class="px-3.5 py-1.5 rounded-xl text-xs font-bold transition cursor-pointer ${idx === currentV4Index ? 'bg-indigo-600 text-white shadow-md font-black' : 'bg-slate-800 hover:bg-slate-700 text-slate-300 border border-slate-700'}">
                             ${v.verb} (${v.vi})
                         </button>
                     `).join('')}
@@ -497,7 +497,7 @@
                         <div class="p-3 rounded-xl bg-slate-950/80 border border-slate-800 space-y-1">
                             <div class="text-xs font-bold text-white">„${cur.du.ex}“</div>
                             <div class="text-[11px] text-slate-400">${cur.du.tr}</div>
-                            <button onclick="speakGerman('${cur.du.ex.replace(/'/g, "\\'")}', 0.9)" class="w-full mt-2 py-1.5 rounded-lg bg-amber-600 hover:bg-amber-500 text-white text-xs font-bold transition flex items-center justify-center gap-1 cursor-pointer">
+                            <button type="button" onclick="speakGerman('${cur.du.ex.replace(/'/g, "\\'")}', 0.9)" class="w-full mt-2 py-1.5 rounded-lg bg-amber-600 hover:bg-amber-500 text-white text-xs font-bold transition flex items-center justify-center gap-1 cursor-pointer">
                                 🔊 Nghe ngôi du
                             </button>
                         </div>
@@ -516,7 +516,7 @@
                         <div class="p-3 rounded-xl bg-slate-950/80 border border-slate-800 space-y-1">
                             <div class="text-xs font-bold text-white">„${cur.ihr.ex}“</div>
                             <div class="text-[11px] text-slate-400">${cur.ihr.tr}</div>
-                            <button onclick="speakGerman('${cur.ihr.ex.replace(/'/g, "\\'")}', 0.9)" class="w-full mt-2 py-1.5 rounded-lg bg-indigo-600 hover:bg-indigo-500 text-white text-xs font-bold transition flex items-center justify-center gap-1 cursor-pointer">
+                            <button type="button" onclick="speakGerman('${cur.ihr.ex.replace(/'/g, "\\'")}', 0.9)" class="w-full mt-2 py-1.5 rounded-lg bg-indigo-600 hover:bg-indigo-500 text-white text-xs font-bold transition flex items-center justify-center gap-1 cursor-pointer">
                                 🔊 Nghe ngôi ihr
                             </button>
                         </div>
@@ -535,7 +535,7 @@
                         <div class="p-3 rounded-xl bg-slate-950/80 border border-slate-800 space-y-1">
                             <div class="text-xs font-bold text-white">„${cur.sie.ex}“</div>
                             <div class="text-[11px] text-slate-400">${cur.sie.tr}</div>
-                            <button onclick="speakGerman('${cur.sie.ex.replace(/'/g, "\\'")}', 0.9)" class="w-full mt-2 py-1.5 rounded-lg bg-emerald-600 hover:bg-emerald-500 text-white text-xs font-bold transition flex items-center justify-center gap-1 cursor-pointer">
+                            <button type="button" onclick="speakGerman('${cur.sie.ex.replace(/'/g, "\\'")}', 0.9)" class="w-full mt-2 py-1.5 rounded-lg bg-emerald-600 hover:bg-emerald-500 text-white text-xs font-bold transition flex items-center justify-center gap-1 cursor-pointer">
                                 🔊 Nghe ngôi Sie
                             </button>
                         </div>
@@ -549,9 +549,9 @@
         `;
     }
 
-    function selectV4Verb(idx) {
+    function b12_selectV4Verb(idx) {
         currentV4Index = idx;
-        renderImperativComparisonSvg();
+        b12_renderImperativComparisonSvg();
     }
 
     // =========================================================================
@@ -580,8 +580,8 @@
     let currentV5Action = 0; // hier rauchen
     let currentV5Mode = "verbot"; // "verbot" (cấm) hoặc "erlaubnis" (cho phép)
 
-    function renderDuerfenControlSvg(containerId) {
-        const c = document.getElementById(containerId || "svg-v5-container");
+    function b12_renderDuerfenControlSvg(containerId) {
+        const c = document.getElementById(containerId || "b12-svg-v5-container");
         if (!c) return;
 
         const subj = V5_SUBJECTS[currentV5Subj];
@@ -611,10 +611,10 @@
                     </div>
                     <!-- Chuyển chế độ: Cấm đoán vs Cho phép -->
                     <div class="flex items-center rounded-xl bg-slate-950 p-1 border border-slate-800">
-                        <button onclick="setV5Mode('verbot')" class="px-3 py-1 rounded-lg text-xs font-bold transition cursor-pointer ${isVerbot ? 'bg-rose-600 text-white shadow-xs' : 'text-slate-400 hover:text-white'}">
+                        <button type="button" onclick="b12_setV5Mode('verbot')" class="px-3 py-1 rounded-lg text-xs font-bold transition cursor-pointer ${isVerbot ? 'bg-rose-600 text-white shadow-xs' : 'text-slate-400 hover:text-white'}">
                             🚫 Cấm đoán (nicht dürfen)
                         </button>
-                        <button onclick="setV5Mode('erlaubnis')" class="px-3 py-1 rounded-lg text-xs font-bold transition cursor-pointer ${!isVerbot ? 'bg-emerald-600 text-white shadow-xs' : 'text-slate-400 hover:text-white'}">
+                        <button type="button" onclick="b12_setV5Mode('erlaubnis')" class="px-3 py-1 rounded-lg text-xs font-bold transition cursor-pointer ${!isVerbot ? 'bg-emerald-600 text-white shadow-xs' : 'text-slate-400 hover:text-white'}">
                             ✅ Cho phép (dürfen)
                         </button>
                     </div>
@@ -627,7 +627,7 @@
                         <label class="text-xs font-bold text-slate-300">1. Chọn Chủ ngữ (Subjekt):</label>
                         <div class="grid grid-cols-2 sm:grid-cols-4 gap-1.5">
                             ${V5_SUBJECTS.map((s, idx) => `
-                                <button onclick="selectV5Subj(${idx})" class="p-2 rounded-xl text-xs font-bold transition text-left cursor-pointer ${idx === currentV5Subj ? 'bg-indigo-600 text-white shadow-sm border border-indigo-400' : 'bg-slate-800 hover:bg-slate-700 text-slate-300 border border-slate-700'}">
+                                <button type="button" onclick="b12_selectV5Subj(${idx})" class="p-2 rounded-xl text-xs font-bold transition text-left cursor-pointer ${idx === currentV5Subj ? 'bg-indigo-600 text-white shadow-sm border border-indigo-400' : 'bg-slate-800 hover:bg-slate-700 text-slate-300 border border-slate-700'}">
                                     <div>${s.label.split(' ')[0]}</div>
                                     <div class="text-[10px] text-amber-300 font-mono font-bold">${s.conj}</div>
                                 </button>
@@ -640,7 +640,7 @@
                         <label class="text-xs font-bold text-slate-300">2. Chọn Hành động (Aktion):</label>
                         <div class="grid grid-cols-2 sm:grid-cols-3 gap-1.5">
                             ${V5_ACTIONS.map((a, idx) => `
-                                <button onclick="selectV5Action(${idx})" class="p-2 rounded-xl text-xs font-bold transition text-left cursor-pointer flex items-center gap-1.5 ${idx === currentV5Action ? 'bg-rose-600 text-white shadow-sm border border-rose-400' : 'bg-slate-800 hover:bg-slate-700 text-slate-300 border border-slate-700'}">
+                                <button type="button" onclick="b12_selectV5Action(${idx})" class="p-2 rounded-xl text-xs font-bold transition text-left cursor-pointer flex items-center gap-1.5 ${idx === currentV5Action ? 'bg-rose-600 text-white shadow-sm border border-rose-400' : 'bg-slate-800 hover:bg-slate-700 text-slate-300 border border-slate-700'}">
                                     <span class="text-base">${a.icon}</span>
                                     <div class="truncate text-[11px]">${a.label}</div>
                                 </button>
@@ -672,7 +672,7 @@
                             <div class="text-base sm:text-lg font-black text-white">„${sentenceDe}“</div>
                             <div class="text-xs text-slate-300">📖 Dịch: ${sentenceVi}</div>
                         </div>
-                        <button onclick="speakGerman('${sentenceDe.replace(/'/g, "\\'")}', 0.9)" class="px-4 py-2 rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white font-bold text-xs transition shadow-md flex items-center gap-1.5 cursor-pointer shrink-0">
+                        <button type="button" onclick="speakGerman('${sentenceDe.replace(/'/g, "\\'")}', 0.9)" class="px-4 py-2 rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white font-bold text-xs transition shadow-md flex items-center gap-1.5 cursor-pointer shrink-0">
                             🔊 Nghe câu này
                         </button>
                     </div>
@@ -681,19 +681,19 @@
         `;
     }
 
-    function selectV5Subj(idx) {
+    function b12_selectV5Subj(idx) {
         currentV5Subj = idx;
-        renderDuerfenControlSvg();
+        b12_renderDuerfenControlSvg();
     }
 
-    function selectV5Action(idx) {
+    function b12_selectV5Action(idx) {
         currentV5Action = idx;
-        renderDuerfenControlSvg();
+        b12_renderDuerfenControlSvg();
     }
 
-    function setV5Mode(mode) {
+    function b12_setV5Mode(mode) {
         currentV5Mode = mode;
-        renderDuerfenControlSvg();
+        b12_renderDuerfenControlSvg();
     }
 
     // =========================================================================
@@ -715,8 +715,8 @@
     let currentV6Step = 0;
     let showV6Translation = true;
 
-    function renderKlinikSceneSvg(containerId) {
-        const c = document.getElementById(containerId || "svg-v6-container");
+    function b12_renderKlinikSceneSvg(containerId) {
+        const c = document.getElementById(containerId || "b12-svg-v6-container");
         if (!c) return;
 
         const cur = V6_DIALOGUE[currentV6Step];
@@ -732,7 +732,7 @@
                         <h4 class="text-base sm:text-lg font-black text-white">Hoạt Cảnh Phòng Khám Bác Sĩ & Nhà Thuốc</h4>
                     </div>
                     <div class="flex items-center gap-2">
-                        <button onclick="toggleV6Translation()" class="px-3 py-1 rounded-lg text-xs font-bold bg-slate-800 hover:bg-slate-700 text-slate-300 border border-slate-700 transition cursor-pointer">
+                        <button type="button" onclick="b12_toggleV6Translation()" class="px-3 py-1 rounded-lg text-xs font-bold bg-slate-800 hover:bg-slate-700 text-slate-300 border border-slate-700 transition cursor-pointer">
                             ${showV6Translation ? 'Ẩn bản dịch' : 'Hiện bản dịch'}
                         </button>
                         <span class="text-xs text-slate-400 font-mono">Lượt ${currentV6Step + 1} / ${V6_DIALOGUE.length}</span>
@@ -763,15 +763,15 @@
                 <!-- Bảng điều khiển chuyển lượt & phát âm -->
                 <div class="flex items-center justify-between flex-wrap gap-2 pt-1 border-t border-slate-800">
                     <div class="flex items-center gap-2">
-                        <button onclick="prevV6Step()" ${currentV6Step === 0 ? 'disabled' : ''} class="px-3.5 py-2 rounded-xl text-xs font-bold bg-slate-800 hover:bg-slate-700 disabled:opacity-40 disabled:cursor-not-allowed text-white transition flex items-center gap-1 cursor-pointer">
+                        <button type="button" onclick="b12_prevV6Step()" ${currentV6Step === 0 ? 'disabled' : ''} class="px-3.5 py-2 rounded-xl text-xs font-bold bg-slate-800 hover:bg-slate-700 disabled:opacity-40 disabled:cursor-not-allowed text-white transition flex items-center gap-1 cursor-pointer">
                             ◀ Lượt trước
                         </button>
-                        <button onclick="nextV6Step()" ${currentV6Step === V6_DIALOGUE.length - 1 ? 'disabled' : ''} class="px-3.5 py-2 rounded-xl text-xs font-bold bg-slate-800 hover:bg-slate-700 disabled:opacity-40 disabled:cursor-not-allowed text-white transition flex items-center gap-1 cursor-pointer">
+                        <button type="button" onclick="b12_nextV6Step()" ${currentV6Step === V6_DIALOGUE.length - 1 ? 'disabled' : ''} class="px-3.5 py-2 rounded-xl text-xs font-bold bg-slate-800 hover:bg-slate-700 disabled:opacity-40 disabled:cursor-not-allowed text-white transition flex items-center gap-1 cursor-pointer">
                             Lượt kế tiếp ▶
                         </button>
                     </div>
 
-                    <button onclick="speakGerman('${cur.audio.replace(/'/g, "\\'")}', 0.9)" class="px-5 py-2 rounded-xl bg-cyan-600 hover:bg-cyan-500 text-white font-black text-xs transition shadow-md flex items-center gap-1.5 cursor-pointer">
+                    <button type="button" onclick="speakGerman('${cur.audio.replace(/'/g, "\\'")}', 0.9)" class="px-5 py-2 rounded-xl bg-cyan-600 hover:bg-cyan-500 text-white font-black text-xs transition shadow-md flex items-center gap-1.5 cursor-pointer">
                         🔊 Nghe lượt thoại này
                     </button>
                 </div>
@@ -779,57 +779,58 @@
         `;
     }
 
-    function prevV6Step() {
+    function b12_prevV6Step() {
         if (currentV6Step > 0) {
             currentV6Step--;
-            renderKlinikSceneSvg();
+            b12_renderKlinikSceneSvg();
         }
     }
 
-    function nextV6Step() {
+    function b12_nextV6Step() {
         if (currentV6Step < V6_DIALOGUE.length - 1) {
             currentV6Step++;
-            renderKlinikSceneSvg();
+            b12_renderKlinikSceneSvg();
         }
     }
 
-    function toggleV6Translation() {
+    function b12_toggleV6Translation() {
         showV6Translation = !showV6Translation;
-        renderKlinikSceneSvg();
+        b12_renderKlinikSceneSvg();
     }
 
     // =========================================================================
     // KHỞI TẠO TẤT CẢ SƠ ĐỒ
     // =========================================================================
-    function initGesundheitSvgDiagrams() {
+    function b12_initGesundheitSvgDiagrams() {
         if (typeof currentLesson !== 'undefined' && currentLesson && currentLesson.id !== 26) {
             return;
         }
-        renderKoerperkarteSvg();
-        renderAkkDativFlowchartSvg();
-        renderImperativMachineSvg();
-        renderImperativComparisonSvg();
-        renderDuerfenControlSvg();
-        renderKlinikSceneSvg();
+        b12_renderKoerperkarteSvg();
+        b12_renderAkkDativFlowchartSvg();
+        b12_renderImperativMachineSvg();
+        b12_renderImperativComparisonSvg();
+        b12_renderDuerfenControlSvg();
+        b12_renderKlinikSceneSvg();
     }
 
-    // Export ra Window
-    global.renderKoerperkarteSvg = renderKoerperkarteSvg;
-    global.selectV1BodyPart = selectV1BodyPart;
-    global.renderAkkDativFlowchartSvg = renderAkkDativFlowchartSvg;
-    global.selectV2Item = selectV2Item;
-    global.renderImperativMachineSvg = renderImperativMachineSvg;
-    global.selectV3Verb = selectV3Verb;
-    global.renderImperativComparisonSvg = renderImperativComparisonSvg;
-    global.selectV4Verb = selectV4Verb;
-    global.renderDuerfenControlSvg = renderDuerfenControlSvg;
-    global.selectV5Subj = selectV5Subj;
-    global.selectV5Action = selectV5Action;
-    global.setV5Mode = setV5Mode;
-    global.renderKlinikSceneSvg = renderKlinikSceneSvg;
-    global.prevV6Step = prevV6Step;
-    global.nextV6Step = nextV6Step;
-    global.toggleV6Translation = toggleV6Translation;
-    global.initGesundheitSvgDiagrams = initGesundheitSvgDiagrams;
+    // Export ra Window (B12 isolated namespace to prevent collision with B11)
+    global.b12_renderKoerperkarteSvg = b12_renderKoerperkarteSvg;
+    global.b12_selectV1BodyPart = b12_selectV1BodyPart;
+    global.b12_renderAkkDativFlowchartSvg = b12_renderAkkDativFlowchartSvg;
+    global.b12_selectV2Item = b12_selectV2Item;
+    global.b12_renderImperativMachineSvg = b12_renderImperativMachineSvg;
+    global.b12_selectV3Verb = b12_selectV3Verb;
+    global.b12_renderImperativComparisonSvg = b12_renderImperativComparisonSvg;
+    global.b12_selectV4Verb = b12_selectV4Verb;
+    global.b12_renderDuerfenControlSvg = b12_renderDuerfenControlSvg;
+    global.b12_selectV5Subj = b12_selectV5Subj;
+    global.b12_selectV5Action = b12_selectV5Action;
+    global.b12_setV5Mode = b12_setV5Mode;
+    global.b12_renderKlinikSceneSvg = b12_renderKlinikSceneSvg;
+    global.b12_prevV6Step = b12_prevV6Step;
+    global.b12_nextV6Step = b12_nextV6Step;
+    global.b12_toggleV6Translation = b12_toggleV6Translation;
+    global.b12_initGesundheitSvgDiagrams = b12_initGesundheitSvgDiagrams;
+    global.initGesundheitSvgDiagrams = b12_initGesundheitSvgDiagrams;
 
 })(typeof window !== 'undefined' ? window : this);

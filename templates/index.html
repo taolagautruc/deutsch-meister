@@ -1346,11 +1346,11 @@
                 setTimeout(initEssenSvgDiagrams, 50);
             }
             if (currentLesson && currentLesson.id === 25) {
-                const fn = window.b11_initKleidungSvgDiagrams || window.initKleidungSvgDiagrams;
-                if (typeof fn === 'function') setTimeout(fn, 50);
+                if (typeof initKleidungSvgDiagrams === 'function') setTimeout(initKleidungSvgDiagrams, 50);
             }
-            if (currentLesson && currentLesson.id === 26 && typeof initGesundheitSvgDiagrams === 'function') {
-                setTimeout(initGesundheitSvgDiagrams, 50);
+            if (currentLesson && currentLesson.id === 26) {
+                const fn12 = window.b12_initGesundheitSvgDiagrams || window.initGesundheitSvgDiagrams;
+                if (typeof fn12 === 'function') setTimeout(fn12, 50);
             }
 
             // Cập nhật nhãn số dạng bài tập động

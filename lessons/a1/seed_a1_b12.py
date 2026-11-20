@@ -124,7 +124,7 @@ def seed_lesson_12():
             </div>
 
             <!-- SƠ ĐỒ V1 CONTAINER -->
-            <div id="svg-v1-container" class="mt-4"></div>
+            <div id="b12-svg-v1-container" class="mt-4"></div>
         </div>
 
         <!-- HỌC PHẦN 2: ĐẠI TỪ NHÂN XƯNG CÁCH 4 (PERSONALPRONOMEN IM AKKUSATIV) -->
@@ -160,7 +160,7 @@ def seed_lesson_12():
             </div>
 
             <!-- SƠ ĐỒ V2 CONTAINER -->
-            <div id="svg-v2-container" class="mt-4"></div>
+            <div id="b12-svg-v2-container" class="mt-4"></div>
         </div>
 
         <!-- HỌC PHẦN 3: ĐỘNG TỪ KHUYẾT THIẾU DÜRFEN -->
@@ -183,7 +183,7 @@ def seed_lesson_12():
             </div>
 
             <!-- SƠ ĐỒ V5 CONTAINER -->
-            <div id="svg-v5-container" class="mt-4"></div>
+            <div id="b12-svg-v5-container" class="mt-4"></div>
         </div>
 
         <!-- HỌC PHẦN 4: CÂU MỆNH LỆNH (IMPERATIV) -->
@@ -223,8 +223,8 @@ def seed_lesson_12():
             </div>
 
             <!-- SƠ ĐỒ V3 & V4 CONTAINER -->
-            <div id="svg-v3-container" class="mt-4"></div>
-            <div id="svg-v4-container" class="mt-4"></div>
+            <div id="b12-svg-v3-container" class="mt-4"></div>
+            <div id="b12-svg-v4-container" class="mt-4"></div>
         </div>
 
         <!-- HỌC PHẦN 5: ĐỌC HIỂU & PHÂN TÍCH VĂN BẢN (TEXTANALYSE) -->
@@ -238,7 +238,7 @@ def seed_lesson_12():
             </p>
 
             <!-- SƠ ĐỒ V6 CONTAINER -->
-            <div id="svg-v6-container" class="mt-4"></div>
+            <div id="b12-svg-v6-container" class="mt-4"></div>
         </div>
     </div>
 """
