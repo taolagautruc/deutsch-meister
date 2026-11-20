@@ -1,5 +1,6 @@
 {
   "lessons/a1/seed_a1_b10.py": "623d24c3233fcdbef8a6ed0aefa364f1fbfe643baa15fe2e8940d252bf9d7c15",
+  "lessons/a1/seed_a1_b11.py": "2742e3661694f901bd6c55391950aba5914307f92de5629bb7ac04b8933c1ae2",
   "lessons/a1/seed_a1_b1_p1.py": "9b5770e89b9d9f08dd4ee5a5990a18c70c6c3866f363099001c023b089b3a87d",
   "lessons/a1/seed_a1_b1_p2.py": "e6433a6dd3fbbbac82255302fb5652dd68f97430b792d822b8543d76fa1dfe90",
   "lessons/a1/seed_a1_b2.py": "658ffb9e19368c4608f9ff7ef45f964d0b34a58d90b7a20053a0712637237464",
@@ -9,5 +10,8 @@
   "lessons/a1/seed_a1_b6.py": "6011bfba5b0a877b1628c28be4d56eaa8dfca417ce41e5812525c825ddfc0296",
   "lessons/a1/seed_a1_b7.py": "e7b982d581e148f2c1b7e3d9494360b9a68321386d9d95bd2c34208357d14129",
   "lessons/a1/seed_a1_b8.py": "3a19d2fd01f5236cd01e702c5debafe82fd98a17f9b71b30812cb8175b74a662",
-  "lessons/a1/seed_a1_b9.py": "768a5c17357de2a0d476ed765b3bbe8aebde5efa83cec33400eeae8b3a9ef389"
+  "lessons/a1/seed_a1_b9.py": "768a5c17357de2a0d476ed765b3bbe8aebde5efa83cec33400eeae8b3a9ef389",
+  "static/js/verbs_db.js": "8da710b575ecc72f76bb4a41253d163b441bc52ddba85c82fa255cf81a60a976",
+  "static/js/lexikon_db.js": "2385b83e284e19c4f526a79b39b8755e8dcf79610cb7e7b84845ab9c969a0777",
+  "arena_generator.py": "92d094862302278a1acfe49038ef4b74d0acb884389f765e383ea13fa3f33235"
 }
