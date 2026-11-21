@@ -222,24 +222,29 @@ def seed_lesson_12():
                 </div>
             </div>
 
-            <!-- MỞ RỘNG: ĐỘNG TỪ PHẢN THÂN TÁCH "SICH AUSRUHEN" -->
-            <div class="p-4 rounded-2xl bg-cyan-50/80 border border-cyan-200 text-xs text-cyan-950 space-y-2">
-                <div class="font-bold text-cyan-900 flex items-center gap-1.5">
-                    <span>💡 Mở rộng lời khuyên sức khỏe: Động từ phản thân tách <b>sich ausruhen</b> (nghỉ ngơi)</span>
+            <!-- MỤC MỞ RỘNG: ĐỘNG TỪ PHẢN THÂN TÁCH "SICH AUSRUHEN" -->
+            <div class="p-5 rounded-2xl bg-cyan-50/90 border-2 border-cyan-300 text-xs text-cyan-950 space-y-3 shadow-xs">
+                <div class="flex items-center justify-between flex-wrap gap-2">
+                    <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-cyan-600 text-white font-extrabold text-xs shadow-xs">
+                        💡 Mục 4.1 Mở rộng lời khuyên sức khỏe: Động từ phản thân tách (sich ausruhen)
+                    </span>
+                    <span class="text-[11px] font-bold text-cyan-800 bg-cyan-100/80 px-2 py-0.5 rounded-md border border-cyan-200">
+                        Phổ biến trong giao tiếp phòng khám
+                    </span>
                 </div>
-                <p class="text-slate-700 leading-relaxed">
+                <p class="text-slate-700 leading-relaxed text-xs sm:text-sm">
                     Trong bối cảnh y tế và sức khỏe, các bác sĩ rất thường dùng động từ <b>sich ausruhen</b> (nghỉ ngơi). Đây là động từ phản thân đi kèm tiền tố tách <b>aus-</b>:
                 </p>
-                <div class="grid grid-cols-1 sm:grid-cols-2 gap-2.5 text-xs">
-                    <div class="p-2.5 rounded-xl bg-white border border-cyan-200 space-y-1">
-                        <div class="font-bold text-cyan-900">📌 Bảng đại từ phản thân (Reflexivpronomen):</div>
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs">
+                    <div class="p-3 rounded-xl bg-white border border-cyan-200 space-y-1.5 shadow-2xs">
+                        <div class="font-bold text-cyan-900 text-xs uppercase tracking-wide">📌 Bảng đại từ phản thân (Reflexivpronomen):</div>
                         <div class="text-slate-700">• ich ➔ <b>mich</b> | du ➔ <b>dich</b></div>
                         <div class="text-slate-700">• er / sie / es / man ➔ <b>sich</b></div>
                         <div class="text-slate-700">• wir ➔ <b>uns</b> | ihr ➔ <b>euch</b> | sie / Sie ➔ <b>sich</b></div>
                     </div>
-                    <div class="p-2.5 rounded-xl bg-white border border-cyan-200 space-y-1">
-                        <div class="font-bold text-cyan-900">⚡ Câu mệnh lệnh (Imperativ) với sich ausruhen:</div>
-                        <div class="text-slate-700">• <b>ngôi du:</b> <code>Ruh dich aus!</code> (hoặc <code>Ruhe dich aus!</code>) — <i>Hãy nghỉ ngơi đi!</i></div>
+                    <div class="p-3 rounded-xl bg-white border border-cyan-200 space-y-1.5 shadow-2xs">
+                        <div class="font-bold text-cyan-900 text-xs uppercase tracking-wide">⚡ Câu mệnh lệnh (Imperativ) với sich ausruhen:</div>
+                        <div class="text-slate-700">• <b>ngôi du:</b> <code>Ruh dich aus!</code> — <i>Hãy nghỉ ngơi đi!</i></div>
                         <div class="text-slate-700">• <b>ngôi ihr:</b> <code>Ruht euch aus!</code> — <i>Các bạn hãy nghỉ ngơi đi!</i></div>
                         <div class="text-slate-700">• <b>ngôi Sie:</b> <code>Ruhen Sie sich aus!</code> — <i>Xin ngài hãy nghỉ ngơi đi!</i></div>
                     </div>
@@ -2418,7 +2423,7 @@ def seed_lesson_12():
                 "question": "Câu 86: Dịch câu sau sang tiếng Đức (ngôi du): „Hãy nghỉ ngơi đi!“",
                 "options": null,
                 "correct_answer": "Ruh dich aus!",
-                "explanation": "Mệnh lệnh ngôi du của động từ phản thân tách sich ausruhen: Ruh dich aus! (hoặc Ruhe dich aus!). -> Đáp án chuẩn: \"Ruh dich aus!\"",
+                "explanation": "Mệnh lệnh ngôi du của động từ phản thân tách sich ausruhen là Ruh dich aus!. -> Đáp án chuẩn: \"Ruh dich aus!\"",
                 "exp_reward": 15,
                 "extra_data": {
                         "accepted_answers": [
