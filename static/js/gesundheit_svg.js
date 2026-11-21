@@ -124,9 +124,10 @@
                             </div>
 
                             <div class="pt-3 border-t border-slate-700/60 space-y-1.5">
-                                <div class="text-[11px] font-bold text-slate-400 uppercase tracking-wider">Mẫu câu diễn đạt đau với 'wehtun':</div>
+                                <div class="text-[11px] font-bold text-slate-400 uppercase tracking-wider">Mẫu câu minh họa:</div>
                                 <div class="text-sm sm:text-base font-bold text-emerald-300 font-sans">„${current.ex}“</div>
                                 <div class="text-xs text-slate-300">📖 Dịch: ${current.tr}</div>
+                                <div class="text-[11px] text-amber-300/90 italic pt-1">💡 Khi đã có đại từ sở hữu (mein-, ihr-...), đại từ Dativ (mir, ihr...) có thể được lược bỏ (ví dụ: Mein Ohr tut weh).</div>
                                 <div class="pt-1 flex justify-end">
                                     <button type="button" onclick="speakGerman('${current.ex.replace(/'/g, "\\'")}', 0.9)" class="px-3 py-1 rounded-lg bg-emerald-600 hover:bg-emerald-500 text-white text-xs font-bold transition shadow-xs cursor-pointer flex items-center gap-1">
                                         🔊 Nghe câu mẫu
@@ -306,12 +307,12 @@
             note: "Đặc biệt: Động từ đổi a ➔ ä thì Imperativ BẮT BUỘC MẤT biến âm, quay về 'a' thường."
         },
         {
-            verb: "warten", type: "stem_d_t", praesens: "Du wartest", ruleType: "Gốc kết thúc bằng -t/-d (Thêm -e)",
+            verb: "warten", type: "stem_d_t", praesens: "Du wartest", ruleType: "Gốc kết thúc bằng -t/-d hoặc phụ âm + m/n (Thêm -e)",
             step1: "Chia ngôi du ở Hiện tại: 'Du wartest'",
             step2: "Bỏ 'Du' và bỏ '-st' ➔ còn 'warte'",
             step3: "Kết quả: Warte!",
             imperativ: "Warte hier auf mich!", tr: "Hãy đợi tôi ở đây!",
-            note: "Gốc kết thúc bằng -d hoặc -t bắt buộc giữ lại đuôi -e để phát âm được."
+            note: "Gốc kết thúc bằng -t/-d hoặc phụ âm + m/n (như atmen ➔ Atme!, öffnen ➔ Öffne!) bắt buộc thêm đuôi -e để phát âm được."
         },
         {
             verb: "schlafen", type: "vowel_a_to_ae", praesens: "Du schläfst", ruleType: "Biến âm a ➔ ä (MẤT biến âm)",
@@ -429,16 +430,16 @@
             sie: { form: "Trinken Sie!", ex: "Trinken Sie viel Wasser!", tr: "Xin Ngài hãy uống nhiều nước!" }
         },
         {
-            verb: "nehmen", vi: "uống/lấy thuốc",
+            verb: "nehmen", vi: "lấy; uống thuốc",
             du: { form: "Nimm!", ex: "Nimm diese Tablette!", tr: "Hãy uống viên thuốc này!" },
             ihr: { form: "Nehmt!", ex: "Nehmt diese Tabletten!", tr: "Các bạn hãy uống những viên thuốc này!" },
             sie: { form: "Nehmen Sie!", ex: "Nehmen Sie diese Tablette!", tr: "Xin Ngài hãy uống viên thuốc này!" }
         },
         {
-            verb: "bleiben", vi: "ở lại (giường)",
-            du: { form: "Bleib!", ex: "Bleib im Bett!", tr: "Hãy ở lại trên giường!" },
-            ihr: { form: "Bleibt!", ex: "Bleibt im Bett!", tr: "Các bạn hãy nằm trên giường!" },
-            sie: { form: "Bleiben Sie!", ex: "Bleiben Sie im Bett!", tr: "Xin Ngài hãy nghỉ ngơi trên giường!" }
+            verb: "bleiben", vi: "ở lại",
+            du: { form: "Bleib!", ex: "Bleib im Bett!", tr: "Hãy nằm yên trên giường!" },
+            ihr: { form: "Bleibt!", ex: "Bleibt im Bett!", tr: "Các bạn hãy nằm yên trên giường!" },
+            sie: { form: "Bleiben Sie!", ex: "Bleiben Sie im Bett!", tr: "Xin Ngài hãy nằm yên trên giường!" }
         },
         {
             verb: "helfen", vi: "giúp đỡ",
@@ -447,10 +448,10 @@
             sie: { form: "Helfen Sie!", ex: "Helfen Sie mir bitte!", tr: "Xin Ngài hãy giúp tôi với!" }
         },
         {
-            verb: "sein", vi: "hãy (thì/là)",
-            du: { form: "Sei!", ex: "Sei ruhig!", tr: "Hãy giữ bình tĩnh!" },
-            ihr: { form: "Seid!", ex: "Seid ruhig!", tr: "Các bạn hãy giữ trật tự!" },
-            sie: { form: "Seien Sie!", ex: "Seien Sie ruhig!", tr: "Xin Ngài hãy giữ bình tĩnh!" }
+            verb: "sein", vi: "thì, là",
+            du: { form: "Sei!", ex: "Sei ruhig!", tr: "Hãy giữ bình tĩnh! (hoặc: giữ trật tự)" },
+            ihr: { form: "Seid!", ex: "Seid ruhig!", tr: "Các bạn hãy giữ bình tĩnh! (hoặc: giữ trật tự)" },
+            sie: { form: "Seien Sie!", ex: "Seien Sie ruhig!", tr: "Xin Ngài hãy giữ bình tĩnh! (hoặc: giữ trật tự)" }
         }
     ];
 
@@ -543,7 +544,7 @@
                 </div>
 
                 <div class="p-3 rounded-xl bg-slate-950/80 border border-slate-800 text-xs text-slate-400">
-                    ⚠️ <b>Quy tắc tối thượng (R1):</b> Không bao giờ dùng chủ ngữ <code>du</code> hay <code>ihr</code> trong câu mệnh lệnh (Sai: <i>Gehst du!</i> / <i>Geht ihr!</i> ➔ Đúng: <i>Geh!</i> / <i>Geht!</i>). Riêng ngôi <code>Sie</code> bắt buộc phải có chữ <code>Sie</code> đi ngay sau động từ (<i>Gehen Sie!</i>).
+                    💡 <b>Quy tắc quan trọng:</b> Chủ ngữ <code>du</code> và <code>ihr</code> thường lược bỏ; chỉ thêm khi muốn nhấn mạnh hoặc đối lập (ví dụ: <i>Komm du mal her!</i>). Dạng có chủ ngữ (<i>Gehst du!</i> / <i>Geht ihr!</i>) thường không dùng ➔ Tiêu chuẩn là: <i>Geh!</i> / <i>Geht!</i>. Riêng ngôi <code>Sie</code> bắt buộc phải có chữ <code>Sie</code> đi ngay sau động từ (<i>Gehen Sie!</i>).
                 </div>
             </div>
         `;
