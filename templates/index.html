@@ -2218,8 +2218,14 @@
                             <div class="space-y-2">
                                 ${extra.items.map((item, itIdx) => {
                                     let sentHtml = item.sentence;
-                                    if (item.target_phrase && sentHtml.includes(item.target_phrase)) {
-                                        sentHtml = sentHtml.replace(item.target_phrase, `<b class="text-indigo-600 underline font-black">${item.target_phrase}</b>`);
+                                    if (item.target_phrase) {
+                                        const escTarget = String(item.target_phrase).replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+                                        const wordRegex = new RegExp(`(?<![\\p{L}\\p{N}])${escTarget}(?![\\p{L}\\p{N}])`, 'u');
+                                        if (wordRegex.test(sentHtml)) {
+                                            sentHtml = sentHtml.replace(wordRegex, `<b class="text-indigo-600 underline font-black">$&</b>`);
+                                        } else if (sentHtml.includes(item.target_phrase)) {
+                                            sentHtml = sentHtml.replace(item.target_phrase, `<b class="text-indigo-600 underline font-black">${item.target_phrase}</b>`);
+                                        }
                                     }
                                     const userCh = window._caseChoices[i][itIdx];
                                     const isAkk = userCh === 'Akkusativ';
