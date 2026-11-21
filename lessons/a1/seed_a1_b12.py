@@ -2037,13 +2037,15 @@ def seed_lesson_12():
         {
                 "id": 68,
                 "exercise_type": "dien_tao_cau",
-                "question": "Câu 68: Điền 2 từ để hoàn thành câu: „Ở đây người ta không được phép hút thuốc.“ (man / rauchen)",
+                "question": "Câu 68: Điền 2 từ để hoàn thành câu (ở đây người ta không được phép hút thuốc): „Hier ___ man nicht ___.“ (dürfen / rauchen)",
                 "options": null,
                 "correct_answer": "darf / rauchen",
-                "explanation": "Chủ ngữ man chia dürfen thành darf. Động từ chính rauchen nằm ở cuối câu ở dạng nguyên thể. -> Đáp án: \"darf / rauchen\"",
+                "explanation": "Chủ ngữ man dùng với dürfen chia là darf. Động từ chính rauchen đứng cuối câu ở dạng nguyên thể → „Hier darf man nicht rauchen.“ -> Đáp án: \"darf / rauchen\"",
                 "exp_reward": 15,
                 "extra_data": {
-                        "display_frame": "Hier [1] man nicht [2].",
+                        "display_frame": "Hier ___ man nicht ___.",
+                        "hints": "(dürfen / rauchen)",
+                        "instruction": "Điền từ vào các chỗ trống theo thứ tự, ngăn cách bằng dấu /",
                         "accepted_answers": [
                                 "darf / rauchen",
                                 "darf/rauchen",
@@ -2056,51 +2058,60 @@ def seed_lesson_12():
         {
                 "id": 69,
                 "exercise_type": "dien_tao_cau",
-                "question": "Câu 69: Điền 3 từ để hoàn thành câu: „Bác sĩ, tôi có được phép chơi thể thao không?“ (ich / Sport / machen)",
+                "question": "Câu 69: Điền 2 từ để hoàn thành câu: „Herr Doktor, ___ ich Sport ___?“ (dürfen / machen)",
                 "options": null,
-                "correct_answer": "darf / Sport / machen",
-                "explanation": "Câu hỏi nghi vấn: Đưa Modalverb darf lên đầu. Sport machen đứng cuối. -> Đáp án: \"darf / Sport / machen\"",
+                "correct_answer": "darf / machen",
+                "explanation": "Chủ ngữ ich → dürfen chia là darf. Động từ chính machen ở cuối câu → „Herr Doktor, darf ich Sport machen?“ -> Đáp án: \"darf / machen\"",
                 "exp_reward": 15,
                 "extra_data": {
-                        "display_frame": "Herr Doktor, [1] ich [2] [3]?",
+                        "display_frame": "Herr Doktor, ___ ich Sport ___?",
+                        "hints": "(dürfen / machen)",
+                        "instruction": "Điền từ vào các chỗ trống theo thứ tự, ngăn cách bằng dấu /",
                         "accepted_answers": [
-                                "darf / Sport / machen",
-                                "darf/Sport/machen",
-                                "darf Sport machen"
+                                "darf / machen",
+                                "darf/machen",
+                                "darf machen"
                         ],
-                        "translation": "Bác sĩ, tôi có được phép chơi thể thao không?",
+                        "translation": "Thưa bác sĩ, tôi có được phép tập thể thao không?",
                         "audio_text": "Herr Doktor darf ich Sport machen"
                 }
         },
         {
                 "id": 70,
                 "exercise_type": "dien_tao_cau",
-                "question": "Câu 70: Điền 2 từ để hoàn thành câu: „Đứa trẻ đang ngủ. Các con hãy trật tự!“ (ihr / sein / leise)",
+                "question": "Câu 70: Điền 2 từ để hoàn thành câu (nói với nhiều bạn nhỏ): „Das Kind schläft. ___ bitte ___!“ (sein / leise)",
                 "options": null,
-                "correct_answer": "Seid / leise",
-                "explanation": "Imperativ ngôi ihr của động từ sein là Seid. -> Đáp án: \"Seid / leise\"",
+                "correct_answer": "seid / leise",
+                "explanation": "Imperativ ngôi ihr của sein là seid, không dùng chủ ngữ ihr → „Seid bitte leise!“ -> Đáp án: \"seid / leise\"",
                 "exp_reward": 15,
                 "extra_data": {
-                        "display_frame": "Das Kind schläft. [1] [2]!",
+                        "display_frame": "Das Kind schläft. ___ bitte ___!",
+                        "hints": "(sein / leise)",
+                        "instruction": "Điền từ vào các chỗ trống theo thứ tự, ngăn cách bằng dấu /",
                         "accepted_answers": [
+                                "seid / leise",
+                                "seid/leise",
+                                "seid leise",
                                 "Seid / leise",
                                 "Seid/leise",
                                 "Seid leise"
                         ],
-                        "translation": "Đứa trẻ đang ngủ. Các con hãy trật tự!",
+                        "translation": "Đứa trẻ đang ngủ. Các con hãy trật tự nhé!",
                         "audio_text": "Das Kind schläft Seid leise"
                 }
         },
         {
                 "id": 71,
                 "exercise_type": "dien_tao_cau",
-                "question": "Câu 71: Điền 2 từ để hoàn thành câu: „Bố yêu con. Con có yêu bố không?“ (ich / du)",
+                "question": "Câu 71: Điền 2 đại từ Akkusativ (người bố nói với con): „Ich liebe ___. Liebst du ___?“ (du → Akkusativ / ich → Akkusativ)",
                 "options": null,
                 "correct_answer": "dich / mich",
-                "explanation": "lieben + Akkusativ. Yêu con -> dich, yêu bố (tôi) -> mich. -> Đáp án: \"dich / mich\"",
+                "explanation": "lieben + Akkusativ. Akkusativ của du là dich, của ich là mich → „Ich liebe dich. Liebst du mich?“ -> Đáp án: \"dich / mich\"",
                 "exp_reward": 15,
                 "extra_data": {
-                        "display_frame": "Ich liebe [1]. Liebst du [2]?",
+                        "display_frame": "Ich liebe ___. Liebst du ___?",
+                        "hints": "(du → Akkusativ / ich → Akkusativ)",
+                        "instruction": "Điền từ vào các chỗ trống theo thứ tự, ngăn cách bằng dấu /",
                         "accepted_answers": [
                                 "dich / mich",
                                 "dich/mich",
@@ -2113,17 +2124,22 @@ def seed_lesson_12():
         {
                 "id": 72,
                 "exercise_type": "dien_tao_cau",
-                "question": "Câu 72: Điền 2 từ để hoàn thành câu: „Cánh tay tôi đau. Tôi cần một loại thuốc mỡ.“ (weh / Salbe)",
+                "question": "Câu 72: Điền 2 từ để hoàn thành câu: „Mein Arm tut ___ weh. Ich brauche eine ___.“ (ich → Dativ / Salbe)",
                 "options": null,
-                "correct_answer": "weh / Salbe",
-                "explanation": "Động từ tách wehtun -> tut weh. Thuốc mỡ là Salbe. -> Đáp án: \"weh / Salbe\"",
+                "correct_answer": "mir / Salbe",
+                "explanation": "Cấu trúc tut + Dativ + weh, Dativ của ich là mir. die Salbe → eine Salbe. -> Đáp án: \"mir / Salbe\"",
                 "exp_reward": 15,
                 "extra_data": {
-                        "display_frame": "Mein Arm tut mir [1]. Ich brauche eine [2].",
+                        "display_frame": "Mein Arm tut ___ weh. Ich brauche eine ___.",
+                        "hints": "(ich → Dativ / Salbe)",
+                        "instruction": "Điền từ vào các chỗ trống theo thứ tự, ngăn cách bằng dấu /",
                         "accepted_answers": [
-                                "weh / Salbe",
-                                "weh/Salbe",
-                                "weh Salbe"
+                                "mir / Salbe",
+                                "mir/Salbe",
+                                "mir Salbe",
+                                "mir / salbe",
+                                "mir/salbe",
+                                "mir salbe"
                         ],
                         "translation": "Cánh tay tôi đau. Tôi cần một loại thuốc mỡ.",
                         "audio_text": "Mein Arm tut mir weh Ich brauche eine Salbe"
