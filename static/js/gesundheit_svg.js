@@ -817,6 +817,161 @@
         b12_renderKlinikSceneSvg();
     }
 
+    // =========================================================================
+    // DỊCH CÂU TIẾNG ĐỨC / TIẾNG VIỆT - CHẤM ĐIỂM LINH HOẠT BÀI 12
+    // =========================================================================
+
+    function removeVietnameseDiacritics(str) {
+        if (!str) return '';
+        return String(str)
+            .normalize('NFD')
+            .replace(/[\u0300-\u036f]/g, '')
+            .replace(/[đĐ]/g, 'd');
+    }
+
+    function cleanVietnameseString(str) {
+        if (!str) return '';
+        return String(str)
+            .toLowerCase()
+            .replace(/[.,\/#!$%\^&\*;:{}=\-_`~()?"'„“”]/g, ' ')
+            .replace(/\s+/g, ' ')
+            .trim();
+    }
+
+    function normalizeGermanTranslation(str) {
+        if (!str) return '';
+        return String(str)
+            .toLowerCase()
+            .replace(/ä/g, 'ae')
+            .replace(/ö/g, 'oe')
+            .replace(/ü/g, 'ue')
+            .replace(/ß/g, 'ss')
+            .replace(/[.,\/#!$%\^&\*;:{}=\-_`~()?"'„“”]/g, ' ')
+            .replace(/\s+/g, ' ')
+            .trim();
+    }
+
+    function evaluateLesson12DVTranslation(userAns, qNum) {
+        if (!userAns) return false;
+        const raw = cleanVietnameseString(userAns);
+        const norm = cleanVietnameseString(removeVietnameseDiacritics(userAns));
+        if (!norm) return false;
+
+        // Câu 87: „Atmen Sie bitte tief ein und aus!“
+        // Xin ngài hãy hít vào và thở ra thật sâu!
+        if (qNum === 87) {
+            const hasIn = /\b(hit|hit\s+vao|hit\s+vo)\b/.test(norm);
+            const hasOut = /\b(tho|tho\s+ra)\b/.test(norm);
+            const hasDeep = /\b(sau|that\s+sau|rat\s+sau)\b/.test(norm);
+            const isForbidden = /\b(uong|thuoc|chup|ngu)\b/.test(norm);
+            if (hasIn && hasOut && hasDeep && !isForbidden) return true;
+        }
+
+        // Câu 88: „Der Rücken tut ihm weh.“
+        // Lưng của anh ấy bị đau / Anh ấy bị đau lưng
+        if (qNum === 88) {
+            const hasBack = /\b(lung|cai\s+lung)\b/.test(norm);
+            const hasPerson = /\b(anh\s+ay|ong\s+ay|cau\s+ay|anh\s+ta|chu\s+ay|bac\s+ay|han|nguoi\s+do|ong\s+ta)\b/.test(norm);
+            const hasPain = /\b(dau|nhuc|moi)\b/.test(norm);
+            const forbiddenRaw = /\b(bụng|ngực|tai|mắt|mũi|chân|tay|đầu)\b/i.test(raw);
+            const forbiddenNorm = /\b(co\s+ay|ba\s+ay|chi\s+ay|toi|chung\s+toi|chung\s+ta|cac\s+ban)\b/.test(norm);
+            if (hasBack && hasPerson && hasPain && !forbiddenRaw && !forbiddenNorm) return true;
+        }
+
+        // Câu 89: „Darf ich hier fotografieren?“
+        // Tôi có được phép chụp ảnh ở đây không?
+        if (qNum === 89) {
+            const hasSubject = /\b(toi|minh|em|con|chau)\b/.test(norm);
+            const hasPermission = /\b(duoc\s+phep|duoc|co\s+the|co\s+duoc\s+phep|duoc\s+quyen)\b/.test(norm);
+            const hasPhoto = /\b(chup\s+anh|chup\s+hinh|chup)\b/.test(norm);
+            const hasLocation = /\b(o\s+day|tai\s+day|cho\s+nay|noi\s+nay)\b/.test(norm);
+            const hasQuestion = /\b(khong|duoc\s+khong|ha|a|nhi)\b/.test(norm) || String(userAns).includes('?');
+            const isProhibition = /\b(khong\s+duoc\s+phep|khong\s+duoc\s+chup|cam)\b/.test(norm);
+            const forbiddenSubj = /\b(anh\s+ay|co\s+ay|ong\s+ay|chung\s+toi|chung\s+ta|ho)\b/.test(norm);
+            if (hasSubject && hasPermission && hasPhoto && hasLocation && hasQuestion && !isProhibition && !forbiddenSubj) return true;
+        }
+
+        // Câu 90: „Bleib heute im Bett!“
+        // Hôm nay hãy nằm nghỉ trên giường! (hoặc: ở lại trên giường)
+        if (qNum === 90) {
+            const hasToday = /\b(hom\s+nay|bua\s+nay|ngay\s+hom\s+nay)\b/.test(norm);
+            const hasStay = /\b(nam\s+nghi|o\s+lai|nam\s+lai|nghi\s+ngoi|nam|o|nghi)\b/.test(norm);
+            const hasBed = /\b(giuong|tren\s+giuong|o\s+giuong|trong\s+giuong)\b/.test(norm);
+            const isForbidden = /\b(ngay\s+mai|mai|hom\s+qua|tuan\s+sau|day|ra\s+khoi|roi\s+khoi|di\s+lam)\b/.test(norm);
+            if (hasToday && hasStay && hasBed && !isForbidden) return true;
+        }
+
+        // Câu 91: „Wir sehen uns jeden Morgen im Bus.“
+        // Chúng ta gặp nhau mỗi sáng trên xe buýt.
+        if (qNum === 91) {
+            const hasSubj = /\b(chung\s+ta|chung\s+toi|chung\s+minh|tui\s+minh|ta)\b/.test(norm);
+            const hasSee = /\b(gap\s+nhau|nhin\s+thay\s+nhau|trong\s+thay\s+nhau|thay\s+nhau|gap)\b/.test(norm);
+            const hasMorning = /\b(moi\s+sang|moi\s+buoi\s+sang|hang\s+sang|moi\s+sang\s+som)\b/.test(norm);
+            const hasBus = /\b(xe\s+buyt|xe\s+bus|bus)\b/.test(norm);
+            const isForbidden = /\b(buoi\s+toi|buoi\s+chieu|buoi\s+trua|tau\s+hoa|tau\s+dien|xe\s+lua|may\s+bay|taxi)\b/.test(norm);
+            const forbiddenSubj = /\b(anh\s+ay|co\s+ay|ho|cac\s+ban)\b/.test(norm);
+            if (hasSubj && hasSee && hasMorning && hasBus && !isForbidden && !forbiddenSubj) return true;
+        }
+
+        // Câu 92: „Zeigen Sie mir bitte Ihre Zunge!“
+        // Xin ngài hãy cho tôi xem lưỡi của ngài!
+        if (qNum === 92) {
+            const hasShow = /\b(cho\s+(?:toi\s+)?xem|xem|the|dua\s+luoi|chi\s+cho\s+toi)\b/.test(norm);
+            const hasTongue = /\b(luoi|cai\s+luoi)\b/.test(norm);
+            const forbiddenRaw = /\b(mắt|tai|mũi|miệng|răng|chân|tay|bụng|lưng)\b/i.test(raw);
+            if (hasShow && hasTongue && !forbiddenRaw) return true;
+        }
+
+        return false;
+    }
+
+    function evaluateLesson12VDTranslation(userAns, qNum) {
+        if (!userAns) return false;
+        const norm = normalizeGermanTranslation(userAns);
+        if (!norm) return false;
+
+        // Câu 81: „Ngài hãy uống nhiều nước!“ -> Trinken Sie viel Wasser!
+        if (qNum === 81) {
+            const hasDrink = /^(?:bitte\s+)?trinken\s+sie\b/.test(norm);
+            const hasWater = /\bviel\s+wasser(?:\s+bitte)?$/.test(norm);
+            const isMiddleBitte = /^trinken\s+sie\s+bitte\s+viel\s+wasser$/.test(norm);
+            if ((hasDrink && hasWater) || isMiddleBitte) return true;
+        }
+
+        // Câu 82: „Ở đây người ta không được phép hút thuốc.“ -> Hier darf man nicht rauchen. / Man darf hier nicht rauchen.
+        if (qNum === 82) {
+            if (norm === 'hier darf man nicht rauchen' || norm === 'man darf hier nicht rauchen') return true;
+        }
+
+        // Câu 83: „Hãy làm bài tập về nhà của bạn!“ (ngôi du) -> Mach deine Hausaufgaben!
+        if (qNum === 83) {
+            const isPattern = /^(?:bitte\s+)?mach(?:\s+bitte)?\s+deine\s+hausaufgaben(?:\s+bitte)?$/.test(norm);
+            if (isPattern) return true;
+        }
+
+        // Câu 84: „Tôi bị đau đầu dữ dội.“ -> Ich habe starke Kopfschmerzen. / Mein Kopf tut mir sehr weh.
+        if (qNum === 84) {
+            const hasHaben = /^ich\s+habe\s+(?:sehr\s+)?starke\s+kopfschmerzen$/.test(norm) ||
+                             /^ich\s+habe\s+kopfschmerzen$/.test(norm);
+            const hasWehtun = /^mein\s+kopf\s+tut\s+mir\s+(?:sehr\s+)?weh$/.test(norm);
+            if (hasHaben || hasWehtun) return true;
+        }
+
+        // Câu 85: „Các bạn hãy ăn nhiều rau hơn!“ -> Esst mehr Gemüse!
+        if (qNum === 85) {
+            const isPattern = /^(?:bitte\s+)?esst(?:\s+bitte)?\s+mehr\s+gemuese(?:\s+bitte)?$/.test(norm);
+            if (isPattern) return true;
+        }
+
+        // Câu 86: „Hãy nghỉ ngơi đi!“ (ngôi du) -> Ruh dich aus!
+        if (qNum === 86) {
+            const isPattern = /^(?:bitte\s+)?(?:ruh|ruhe)(?:\s+bitte)?\s+dich(?:\s+bitte)?\s+aus(?:\s+bitte)?$/.test(norm);
+            if (isPattern) return true;
+        }
+
+        return false;
+    }
+
     // Export ra Window (B12 isolated namespace to prevent collision with B11)
     global.b12_renderKoerperkarteSvg = b12_renderKoerperkarteSvg;
     global.b12_selectV1BodyPart = b12_selectV1BodyPart;
@@ -836,5 +991,10 @@
     global.b12_toggleV6Translation = b12_toggleV6Translation;
     global.b12_initGesundheitSvgDiagrams = b12_initGesundheitSvgDiagrams;
     global.initGesundheitSvgDiagrams = b12_initGesundheitSvgDiagrams;
+    global.removeVietnameseDiacritics = removeVietnameseDiacritics;
+    global.cleanVietnameseString = cleanVietnameseString;
+    global.normalizeGermanTranslation = normalizeGermanTranslation;
+    global.evaluateLesson12DVTranslation = evaluateLesson12DVTranslation;
+    global.evaluateLesson12VDTranslation = evaluateLesson12VDTranslation;
 
 })(typeof window !== 'undefined' ? window : this);

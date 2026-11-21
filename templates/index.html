@@ -3272,11 +3272,25 @@
                             (currentLesson.title && /bài 11\b/i.test(currentLesson.title))
                         ))
                     );
+                    const isLesson12 = Boolean(
+                        (ex && (String(ex.lesson_id) === '26')) ||
+                        (typeof currentLesson !== 'undefined' && currentLesson && (
+                            String(currentLesson.id) === '26' || 
+                            (currentLesson.title && /bài 12\b/i.test(currentLesson.title))
+                        ))
+                    );
                     const l8QMatch = isLesson8 && (ex.question || '').match(/Câu\s+(4[6-9]|5[0-7])\b/i);
                     const l8VDMatch = isLesson8 && (ex.question || '').match(/Câu\s+(8[7-9]|9[0-3])\b/i);
                     const l8DVMatch = isLesson8 && (ex.question || '').match(/Câu\s+(9[4-9]|100)\b/i);
                     const l11DVMatch = isLesson11 && (ex.question || '').match(/Câu\s+(38|6[4-8])\b/i);
-                    if (l11DVMatch && typeof evaluateLesson11DVTranslation === 'function' && evaluateLesson11DVTranslation(userAnswer, parseInt(l11DVMatch[1], 10))) {
+                    const l12DVMatch = isLesson12 && (ex.question || '').match(/Câu\s+(8[7-9]|9[0-2])\b/i);
+                    const l12VDMatch = isLesson12 && (ex.question || '').match(/Câu\s+(8[1-6])\b/i);
+
+                    if (l12DVMatch && typeof evaluateLesson12DVTranslation === 'function' && evaluateLesson12DVTranslation(userAnswer, parseInt(l12DVMatch[1], 10))) {
+                        isCorrect = true;
+                    } else if (l12VDMatch && typeof evaluateLesson12VDTranslation === 'function' && evaluateLesson12VDTranslation(userAnswer, parseInt(l12VDMatch[1], 10))) {
+                        isCorrect = true;
+                    } else if (l11DVMatch && typeof evaluateLesson11DVTranslation === 'function' && evaluateLesson11DVTranslation(userAnswer, parseInt(l11DVMatch[1], 10))) {
                         isCorrect = true;
                     } else if (l9DVMatch && typeof evaluateLesson9DVTranslation === 'function' && evaluateLesson9DVTranslation(userAnswer, parseInt(l9DVMatch[1], 10))) {
                         isCorrect = true;
@@ -3490,6 +3504,26 @@
                     }
                 }
 
+                let sampleSublineHtml = '';
+                const isTranslation = (ex && (
+                    ex.exercise_type === 'dich_cau_dv' || 
+                    ex.exercise_type === 'dich_cau_vd' || 
+                    ex.exercise_type === 'dich_nghia_dv' || 
+                    ex.exercise_type === 'dich_nghia_vd' || 
+                    ex.exercise_type === 'dich'
+                ));
+                if (isTranslation && ex.correct_answer) {
+                    const normUser = normalizeAnswer(userAnswer);
+                    const normSample = normalizeAnswer(ex.correct_answer);
+                    if (normUser !== normSample) {
+                        sampleSublineHtml = `
+                            <div class="text-xs text-emerald-800 font-medium pt-0.5">
+                                <span>💡 Đáp án mẫu: <b>${ex.correct_answer}</b> <i>(cách dịch của bạn cũng đúng)</i></span>
+                            </div>
+                        `;
+                    }
+                }
+
                 feedback.innerHTML = `
                     <div class="space-y-1.5">
                         <div class="flex items-center gap-2">
@@ -3498,6 +3532,7 @@
                                 ? `<span class="text-emerald-800 font-bold">(+${earnedExp} EXP)</span>` 
                                 : `<span class="text-slate-500 font-bold text-xs">(+0 EXP • ${isAlreadyCompleted ? 'Đã nhận trước đó' : 'Đã xem đáp án'})</span>`}
                         </div>
+                        ${sampleSublineHtml}
                         ${capitalizationWarningHtml}
                         ${correctPairsHtml}
                         ${dialogueGermanHtml}
@@ -3792,17 +3827,40 @@
                                     </div>
                                 </div>
                             `;
-                        } else if (isViToDe) {
+                        let altAnswersHtml = '';
+                        if (extra && Array.isArray(extra.accepted_answers) && extra.accepted_answers.length > 0) {
+                            const alts = extra.accepted_answers.filter(a => a && normalizeAnswer(a) !== normalizeAnswer(displayAns) && normalizeAnswer(a) !== normalizeAnswer(ex.correct_answer));
+                            const uniqueAlts = [];
+                            alts.forEach(a => {
+                                if (!uniqueAlts.some(u => normalizeAnswer(u) === normalizeAnswer(a)) && uniqueAlts.length < 3) {
+                                    uniqueAlts.push(a);
+                                }
+                            });
+                            if (uniqueAlts.length > 0) {
+                                altAnswersHtml = `
+                                    <div class="text-xs text-rose-800 pt-1">
+                                        <span class="font-bold">Các cách dịch khác cũng được chấp nhận:</span>
+                                        <ul class="list-disc list-inside mt-0.5 space-y-0.5 text-rose-900">
+                                            ${uniqueAlts.map(u => `<li>${u}</li>`).join('')}
+                                        </ul>
+                                    </div>
+                                `;
+                            }
+                        }
+
+                        if (isViToDe) {
                             ansBlockHtml = `
                                 <div class="text-rose-900 pt-0.5">
                                     <span class="font-bold text-rose-700">🎯 Đáp án mẫu:</span> <span class="font-extrabold text-rose-800">${displayAns}</span>
                                 </div>
+                                ${altAnswersHtml}
                             `;
                         } else {
                             ansBlockHtml = `
                                 <div class="text-rose-900 pt-0.5">
                                     Đáp án đúng là: <span class="font-extrabold text-rose-800">${displayAns}</span>
                                 </div>
+                                ${altAnswersHtml}
                             `;
                         }
                     }
