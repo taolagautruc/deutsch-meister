@@ -167,6 +167,9 @@
         { verb: "treffen", caseType: "akk", prep: "", meaning: "gặp gỡ", sentence: "Wir treffen ihn heute im Krankenhaus.", tr: "Chúng tôi gặp anh ấy hôm nay ở bệnh viện.", nom: "er", pronoun: "ihn", reason: "Động từ treffen + Akkusativ ➔ er đổi thành ihn." },
         { verb: "wehtun", caseType: "dat", prep: "", meaning: "làm đau", sentence: "Der Kopf tut ihr weh.", tr: "Đầu cô ấy bị đau.", nom: "sie", pronoun: "ihr", reason: "Cấu trúc 'tut + Dativ + weh' ➔ sie đổi thành ihr." },
         { verb: "anrufen", caseType: "akk", prep: "", meaning: "gọi điện", sentence: "Ruf mich bitte an!", tr: "Xin hãy gọi điện cho tôi!", nom: "ich", pronoun: "mich", reason: "Động từ tách anrufen + Akkusativ ➔ dùng mich." },
+        { verb: "danken", caseType: "dat", prep: "", meaning: "cảm ơn", sentence: "Ich danke dir für die Hilfe.", tr: "Tôi cảm ơn bạn vì sự giúp đỡ.", nom: "du", pronoun: "dir", reason: "Động từ danken luôn đi với Dativ ➔ du đổi thành dir." },
+        { verb: "hören", caseType: "akk", prep: "", meaning: "nghe", sentence: "Ich höre euch nicht.", tr: "Tôi không nghe thấy các bạn.", nom: "ihr", pronoun: "euch", reason: "Động từ hören + Akkusativ ➔ ihr đổi thành euch." },
+        { verb: "kennen", caseType: "akk", prep: "", meaning: "quen biết", sentence: "Das ist Maria. Kennst du sie?", tr: "Kia là Maria. Bạn có biết cô ấy không?", nom: "sie", pronoun: "sie", reason: "Động từ kennen + Akkusativ ➔ sie vẫn là sie." },
         { verb: "für", caseType: "akk", prep: "für", meaning: "cho, dành cho", sentence: "Diese Medizin ist für uns.", tr: "Thuốc này là dành cho chúng tôi.", nom: "wir", pronoun: "uns", reason: "Giới từ für luôn đi kèm Akkusativ ➔ wir đổi thành uns." },
         { verb: "mit", caseType: "dat", prep: "mit", meaning: "với, cùng với", sentence: "Er spricht mit Ihnen.", tr: "Anh ấy nói chuyện với Ngài.", nom: "Sie", pronoun: "Ihnen", reason: "Giới từ mit luôn đi kèm Dativ ➔ Sie đổi thành Ihnen." }
     ];
@@ -221,7 +224,7 @@
                             ${isAkk ? '<span class="text-xs font-bold text-sky-300 animate-pulse">● ĐANG KÍCH HOẠT</span>' : ''}
                         </div>
                         <div class="text-xs text-slate-300 space-y-1">
-                            <div>👉 <b>Động từ:</b> <code>lieben, treffen, sehen, anrufen, besuchen, fragen...</code></div>
+                            <div>👉 <b>Động từ:</b> <code>lieben, treffen, sehen, anrufen, besuchen, hören, kennen, fragen...</code></div>
                             <div>👉 <b>Giới từ:</b> <code>für, ohne, durch, gegen, um</code></div>
                             <div class="text-sky-300 font-bold pt-1">Kết luận: Dùng mich, dich, ihn, sie, es, uns, euch, sie, Sie.</div>
                         </div>
@@ -233,7 +236,7 @@
                             ${!isAkk ? '<span class="text-xs font-bold text-amber-300 animate-pulse">● ĐANG KÍCH HOẠT</span>' : ''}
                         </div>
                         <div class="text-xs text-slate-300 space-y-1">
-                            <div>👉 <b>Động từ:</b> <code>helfen, wehtun, gefallen, passen, schmecken, gehören...</code></div>
+                            <div>👉 <b>Động từ:</b> <code>helfen, wehtun, danken, gefallen, passen, schmecken, gehören...</code></div>
                             <div>👉 <b>Giới từ:</b> <code>mit, bei, von, zu, nach, aus, seit</code></div>
                             <div class="text-amber-300 font-bold pt-1">Kết luận: Dùng mir, dir, ihm, ihr, ihm, uns, euch, ihnen, Ihnen.</div>
                         </div>

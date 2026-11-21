@@ -2213,7 +2213,7 @@
                     extraHtml += `
                         <div class="my-3 p-4 rounded-2xl bg-indigo-50/80 border border-indigo-200 space-y-3">
                             <div class="text-xs font-extrabold text-indigo-900 flex items-center justify-between">
-                                <span>🏷️ Xác định cụm in đậm trong 4 câu dưới đây là Akkusativ hay Dativ:</span>
+                                <span>🏷️ Xác định từ được gạch chân trong 4 câu dưới đây là Akkusativ hay Dativ:</span>
                             </div>
                             <div class="space-y-2">
                                 ${extra.items.map((item, itIdx) => {
@@ -2223,8 +2223,11 @@
                                         const wordRegex = new RegExp(`(?<![\\p{L}\\p{N}])${escTarget}(?![\\p{L}\\p{N}])`, 'u');
                                         if (wordRegex.test(sentHtml)) {
                                             sentHtml = sentHtml.replace(wordRegex, `<b class="text-indigo-600 underline font-black">$&</b>`);
-                                        } else if (sentHtml.includes(item.target_phrase)) {
-                                            sentHtml = sentHtml.replace(item.target_phrase, `<b class="text-indigo-600 underline font-black">${item.target_phrase}</b>`);
+                                        } else {
+                                            const wordRegexI = new RegExp(`(?<![\\p{L}\\p{N}])${escTarget}(?![\\p{L}\\p{N}])`, 'ui');
+                                            if (wordRegexI.test(sentHtml)) {
+                                                sentHtml = sentHtml.replace(wordRegexI, `<b class="text-indigo-600 underline font-black">$&</b>`);
+                                            }
                                         }
                                     }
                                     const userCh = window._caseChoices[i][itIdx];

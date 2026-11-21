@@ -107,7 +107,7 @@ def seed_lesson_12():
                     <ul class="space-y-0.5 text-slate-700">
                         <li>• <b>das Auge</b> (die Augen): mắt</li>
                         <li>• <b>das Ohr</b> (die Ohren): tai</li>
-                        <li>• <b>das Bein</b> (die Beine): cẳng chân</li>
+                        <li>• <b>das Bein</b> (die Beine): chân (cả cẳng)</li>
                         <li>• <b>das Herz</b> (die Herzen): trái tim</li>
                         <li>• <b>das Knie</b> (die Knie): đầu gối</li>
                         <li>• <b>das Haar</b> (die Haare): tóc</li>
@@ -1439,7 +1439,7 @@ def seed_lesson_12():
         {
                 "id": 51,
                 "exercise_type": "phan_loai_cach",
-                "question": "Câu 51: Xác định từ in đậm trong mỗi câu sau thuộc Akkusativ hay Dativ:",
+                "question": "Câu 51: Xác định từ được gạch chân trong mỗi câu sau thuộc Akkusativ hay Dativ:",
                 "options": null,
                 "correct_answer": "Akkusativ, Dativ, Akkusativ, Dativ",
                 "explanation": "1. sehen + Akkusativ ➔ dich · 2. helfen + Dativ ➔ mir · 3. treffen + Akkusativ ➔ ihn · 4. gehören + Dativ ➔ uns. -> Đáp án: \"Akkusativ, Dativ, Akkusativ, Dativ\"",
@@ -1477,7 +1477,7 @@ def seed_lesson_12():
         {
                 "id": 52,
                 "exercise_type": "phan_loai_cach",
-                "question": "Câu 52: Xác định từ in đậm trong mỗi câu sau thuộc Akkusativ hay Dativ:",
+                "question": "Câu 52: Xác định từ được gạch chân trong mỗi câu sau thuộc Akkusativ hay Dativ:",
                 "options": null,
                 "correct_answer": "Dativ, Akkusativ, Dativ, Akkusativ",
                 "explanation": "1. wehtun + Dativ ➔ ihm · 2. lieben + Akkusativ ➔ mich · 3. passen + Dativ ➔ dir · 4. brauchen + Akkusativ ➔ es. -> Đáp án: \"Dativ, Akkusativ, Dativ, Akkusativ\"",
@@ -1515,7 +1515,7 @@ def seed_lesson_12():
         {
                 "id": 53,
                 "exercise_type": "phan_loai_cach",
-                "question": "Câu 53: Xác định từ in đậm trong mỗi câu sau thuộc Akkusativ hay Dativ:",
+                "question": "Câu 53: Xác định từ được gạch chân trong mỗi câu sau thuộc Akkusativ hay Dativ:",
                 "options": null,
                 "correct_answer": "Dativ, Akkusativ, Akkusativ, Dativ",
                 "explanation": "1. gefallen + Dativ ➔ Ihnen · 2. hören + Akkusativ ➔ euch · 3. besuchen + Akkusativ ➔ uns · 4. danken + Dativ ➔ dir. -> Đáp án: \"Dativ, Akkusativ, Akkusativ, Dativ\"",
@@ -1553,7 +1553,7 @@ def seed_lesson_12():
         {
                 "id": 54,
                 "exercise_type": "phan_loai_cach",
-                "question": "Câu 54: Xác định từ in đậm trong mỗi câu sau thuộc Akkusativ hay Dativ:",
+                "question": "Câu 54: Xác định từ được gạch chân trong mỗi câu sau thuộc Akkusativ hay Dativ:",
                 "options": null,
                 "correct_answer": "Dativ, Akkusativ, Dativ, Akkusativ",
                 "explanation": "1. helfen + Dativ ➔ ihr · 2. sehen + Akkusativ ➔ sie · 3. stehen + Dativ ➔ mir · 4. kennen + Akkusativ ➔ Sie. -> Đáp án: \"Dativ, Akkusativ, Dativ, Akkusativ\"",
@@ -1591,7 +1591,7 @@ def seed_lesson_12():
         {
                 "id": 55,
                 "exercise_type": "phan_loai_cach",
-                "question": "Câu 55: Xác định từ in đậm trong mỗi câu sau thuộc Akkusativ hay Dativ:",
+                "question": "Câu 55: Xác định từ được gạch chân trong mỗi câu sau thuộc Akkusativ hay Dativ:",
                 "options": null,
                 "correct_answer": "Akkusativ, Dativ, Dativ, Akkusativ",
                 "explanation": "1. giới từ für + Akkusativ ➔ sie · 2. gefallen + Dativ ➔ ihr · 3. geben + Dativ (người nhận) ➔ ihr · 4. lesen + Akkusativ ➔ es. -> Đáp án: \"Akkusativ, Dativ, Dativ, Akkusativ\"",
@@ -1632,7 +1632,7 @@ def seed_lesson_12():
                 "question": "Câu 56: Phân loại mạo từ (der / die / das) cho 4 danh từ sau:",
                 "options": null,
                 "correct_answer": "Kopf: der, Hand: die, Auge: das, Zahn: der",
-                "explanation": "der Kopf, die Hand, das Auge, der Zahn. -> Đáp án: \"Kopf: der, Hand: die, Auge: das, Zahn: der\"",
+                "explanation": "Kopf, Hand, Zahn: học thuộc giống (der Kopf, die Hand, der Zahn). Lưu ý: Auge tận cùng -e nhưng là das (ngoại lệ, giống das Ohr). -> Đáp án: \"Kopf: der, Hand: die, Auge: das, Zahn: der\"",
                 "exp_reward": 15,
                 "extra_data": {
                         "items": [
@@ -1674,7 +1674,7 @@ def seed_lesson_12():
                 "question": "Câu 57: Phân loại mạo từ (der / die / das) cho 4 danh từ sau:",
                 "options": null,
                 "correct_answer": "Bauch: der, Schulter: die, Knie: das, Finger: der",
-                "explanation": "der Bauch, die Schulter, das Knie, der Finger. -> Đáp án: \"Bauch: der, Schulter: die, Knie: das, Finger: der\"",
+                "explanation": "Bauch, Finger: giống đực (der Bauch, der Finger - học thuộc). Schulter: giống cái (die Schulter - học thuộc). Knie: giống trung (das Knie - học thuộc). -> Đáp án: \"Bauch: der, Schulter: die, Knie: das, Finger: der\"",
                 "exp_reward": 15,
                 "extra_data": {
                         "items": [
@@ -1716,7 +1716,7 @@ def seed_lesson_12():
                 "question": "Câu 58: Phân loại mạo từ (der / die / das) cho 4 danh từ sau:",
                 "options": null,
                 "correct_answer": "Fieber: das, Erkältung: die, Husten: der, Medikament: das",
-                "explanation": "das Fieber, die Erkältung (đuôi -ung luôn là die), der Husten, das Medikament. -> Đáp án: \"Fieber: das, Erkältung: die, Husten: der, Medikament: das\"",
+                "explanation": "Mẹo: đuôi -ung luôn là die (die Erkältung); đuôi -ment là das (das Medikament). Từ không có quy tắc cần học thuộc: das Fieber, der Husten. -> Đáp án: \"Fieber: das, Erkältung: die, Husten: der, Medikament: das\"",
                 "exp_reward": 15,
                 "extra_data": {
                         "items": [
@@ -1758,7 +1758,7 @@ def seed_lesson_12():
                 "question": "Câu 59: Phân loại mạo từ (der / die / das) cho 4 danh từ sau:",
                 "options": null,
                 "correct_answer": "Apotheke: die, Rezept: das, Schmerz: der, Tablette: die",
-                "explanation": "die Apotheke, das Rezept, der Schmerz, die Tablette. -> Đáp án: \"Apotheke: die, Rezept: das, Schmerz: der, Tablette: die\"",
+                "explanation": "Mẹo: đuôi -e thường là die (die Apotheke, die Tablette). Từ không có quy tắc cần học thuộc: das Rezept, der Schmerz. -> Đáp án: \"Apotheke: die, Rezept: das, Schmerz: der, Tablette: die\"",
                 "exp_reward": 15,
                 "extra_data": {
                         "items": [
@@ -1797,7 +1797,7 @@ def seed_lesson_12():
         {
                 "id": 60,
                 "exercise_type": "noi_o_tu_vung",
-                "question": "Câu 60: Nối các ô tương ứng từ trái qua phải:",
+                "question": "Câu 60: Nối từ tiếng Đức với nghĩa tiếng Việt:",
                 "options": null,
                 "correct_answer": "Nối đúng 4/4 cặp",
                 "explanation": "Các bộ phận phần thân trên. -> Đáp án: \"Nối đúng 4/4 cặp\"",
@@ -1827,7 +1827,7 @@ def seed_lesson_12():
         {
                 "id": 61,
                 "exercise_type": "noi_o_tu_vung",
-                "question": "Câu 61: Nối các ô tương ứng từ trái qua phải:",
+                "question": "Câu 61: Nối từ tiếng Đức với nghĩa tiếng Việt:",
                 "options": null,
                 "correct_answer": "Nối đúng 4/4 cặp",
                 "explanation": "Các bộ phận chi. -> Đáp án: \"Nối đúng 4/4 cặp\"",
@@ -1840,7 +1840,7 @@ def seed_lesson_12():
                                 },
                                 {
                                         "left": "das Bein",
-                                        "right": "chân (từ đùi)"
+                                        "right": "chân (cả cẳng)"
                                 },
                                 {
                                         "left": "der Arm",
@@ -1851,16 +1851,16 @@ def seed_lesson_12():
                                         "right": "bàn tay"
                                 }
                         ],
-                        "translation": "der Fuß = bàn chân | das Bein = chân (từ đùi) | der Arm = cánh tay | die Hand = bàn tay"
+                        "translation": "der Fuß = bàn chân | das Bein = chân (cả cẳng) | der Arm = cánh tay | die Hand = bàn tay"
                 }
         },
         {
                 "id": 62,
                 "exercise_type": "noi_o_tu_vung",
-                "question": "Câu 62: Nối các ô tương ứng từ trái qua phải:",
+                "question": "Câu 62: Nối danh từ số ít với dạng số nhiều:",
                 "options": null,
                 "correct_answer": "Nối đúng 4/4 cặp",
-                "explanation": "Auge/Ohr thêm -n; Finger giữ nguyên; Zahn thêm Umlaut + e. -> Đáp án: \"Nối đúng 4/4 cặp\"",
+                "explanation": "Auge + n; Ohr + en; Finger giữ nguyên; Zahn thêm Umlaut + e. -> Đáp án: \"Nối đúng 4/4 cặp\"",
                 "exp_reward": 15,
                 "extra_data": {
                         "noi_o_pairs": [
@@ -1881,13 +1881,13 @@ def seed_lesson_12():
                                         "right": "die Zähne"
                                 }
                         ],
-                        "translation": "das Auge = die Augen | das Ohr = die Ohren | der Finger = die Finger | der Zahn = die Zähne"
+                        "translation": "das Auge (mắt) = die Augen (đôi mắt) | das Ohr (tai) = die Ohren (đôi tai) | der Finger (ngón tay) = die Finger (những ngón tay) | der Zahn (răng) = die Zähne (những chiếc răng)"
                 }
         },
         {
                 "id": 63,
                 "exercise_type": "noi_o_tu_vung",
-                "question": "Câu 63: Nối các ô tương ứng từ trái qua phải:",
+                "question": "Câu 63: Nối từ tiếng Đức với nghĩa tiếng Việt:",
                 "options": null,
                 "correct_answer": "Nối đúng 4/4 cặp",
                 "explanation": "Các vật dụng/thuốc tại nhà thuốc. -> Đáp án: \"Nối đúng 4/4 cặp\"",
@@ -1917,10 +1917,10 @@ def seed_lesson_12():
         {
                 "id": 64,
                 "exercise_type": "noi_o_tu_vung",
-                "question": "Câu 64: Nối các ô tương ứng từ trái qua phải:",
+                "question": "Câu 64: Nối từ tiếng Đức với nghĩa tiếng Việt:",
                 "options": null,
                 "correct_answer": "Nối đúng 4/4 cặp",
-                "explanation": "Các triệu chứng cảm lạnh thông thường. -> Đáp án: \"Nối đúng 4/4 cặp\"",
+                "explanation": "Các từ về bệnh và triệu chứng. -> Đáp án: \"Nối đúng 4/4 cặp\"",
                 "exp_reward": 15,
                 "extra_data": {
                         "noi_o_pairs": [
@@ -1947,7 +1947,7 @@ def seed_lesson_12():
         {
                 "id": 65,
                 "exercise_type": "noi_o_tu_vung",
-                "question": "Câu 65: Nối các ô tương ứng từ trái qua phải:",
+                "question": "Câu 65: Nối đại từ Nominativ với dạng Akkusativ:",
                 "options": null,
                 "correct_answer": "Nối đúng 4/4 cặp",
                 "explanation": "Bảng biến đổi đại từ nhân xưng từ cách 1 sang cách 4. -> Đáp án: \"Nối đúng 4/4 cặp\"",
@@ -1971,13 +1971,13 @@ def seed_lesson_12():
                                         "right": "euch"
                                 }
                         ],
-                        "translation": "ich = mich | du = dich | wir = uns | ihr = euch"
+                        "translation": "ich (tôi - Nom) = mich (tôi - Akk) | du (bạn - Nom) = dich (bạn - Akk) | wir (chúng tôi - Nom) = uns (chúng tôi - Akk) | ihr (các bạn - Nom) = euch (các bạn - Akk)"
                 }
         },
         {
                 "id": 66,
                 "exercise_type": "noi_o_tu_vung",
-                "question": "Câu 66: Nối các ô tương ứng từ trái qua phải:",
+                "question": "Câu 66: Nối đại từ Nominativ với dạng Akkusativ:",
                 "options": null,
                 "correct_answer": "Nối đúng 4/4 cặp",
                 "explanation": "Chỉ có giống đực (er) biến đổi thành ihn. -> Đáp án: \"Nối đúng 4/4 cặp\"",
@@ -2001,16 +2001,16 @@ def seed_lesson_12():
                                         "right": "Sie"
                                 }
                         ],
-                        "translation": "er = ihn | sie (cô ấy) = sie | es = es | Sie (trang trọng) = Sie"
+                        "translation": "er (anh ấy - Nom) = ihn (anh ấy - Akk) | sie (cô ấy - Nom) = sie (cô ấy - Akk) | es (nó - Nom) = es (nó - Akk) | Sie (Ngài - Nom) = Sie (Ngài - Akk)"
                 }
         },
         {
                 "id": 67,
                 "exercise_type": "noi_o_tu_vung",
-                "question": "Câu 67: Nối các ô tương ứng từ trái qua phải:",
+                "question": "Câu 67: Nối câu hỏi với câu trả lời phù hợp:",
                 "options": null,
                 "correct_answer": "Nối đúng 4/4 cặp",
-                "explanation": "Logic hội thoại khi đăng ký khám bệnh. -> Đáp án: \"Nối đúng 4/4 cặp\"",
+                "explanation": "Logic hội thoại đăng ký tại phòng khám: Hỏi hẹn trước ➔ Hỏi đã từng đến chưa ➔ Hỏi thời gian chờ ➔ Hướng dẫn chỗ ngồi đợi. -> Đáp án: \"Nối đúng 4/4 cặp\"",
                 "exp_reward": 15,
                 "extra_data": {
                         "noi_o_pairs": [
@@ -2019,19 +2019,19 @@ def seed_lesson_12():
                                         "right": "Nein, leider nicht."
                                 },
                                 {
-                                        "left": "Was fehlt Ihnen denn?",
-                                        "right": "Ich habe Bauchschmerzen."
-                                },
-                                {
                                         "left": "Waren Sie schon einmal bei uns?",
-                                        "right": "Ja, mein Name ist Schmidt."
+                                        "right": "Nein, ich bin neu hier."
                                 },
                                 {
                                         "left": "Muss ich lange warten?",
+                                        "right": "Nein, nur ein paar Minuten."
+                                },
+                                {
+                                        "left": "Wo soll ich warten?",
                                         "right": "Nehmen Sie bitte im Wartezimmer Platz."
                                 }
                         ],
-                        "translation": "Haben Sie einen Termin? = Nein, leider nicht. | Was fehlt Ihnen denn? = Ich habe Bauchschmerzen. | Waren Sie schon einmal bei uns? = Ja, mein Name ist Schmidt. | Muss ich lange warten? = Nehmen Sie bitte im Wartezimmer Platz."
+                        "translation": "1. Haben Sie einen Termin? (Ngài có hẹn trước không?) = Nein, leider nicht. (Không, tiếc là không.) | 2. Waren Sie schon einmal bei uns? (Ngài đã từng đến khám ở chỗ chúng tôi chưa?) = Nein, ich bin neu hier. (Chưa, tôi là bệnh nhân mới.) | 3. Muss ich lange warten? (Tôi có phải đợi lâu không?) = Nein, nur ein paar Minuten. (Không, chỉ vài phút thôi.) | 4. Wo soll ich warten? (Tôi nên chờ ở đâu?) = Nehmen Sie bitte im Wartezimmer Platz. (Xin ngài hãy ngồi chờ ở phòng đợi.)"
                 }
         },
         {
