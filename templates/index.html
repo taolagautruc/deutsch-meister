@@ -2265,7 +2265,15 @@
                         textToSpeak = ex.correct_answer || '';
                     }
                     const cleanSpeak = textToSpeak.replace(/'/g, "\\'");
-                    extraHtml = `
+                    extraHtml = '';
+                    if (extra.display_sentence) {
+                        extraHtml += `
+                            <div class="mt-2.5 p-3 rounded-xl bg-indigo-50/70 border border-indigo-200 text-indigo-950 font-semibold text-sm">
+                                📝 ${extra.display_sentence}
+                            </div>
+                        `;
+                    }
+                    extraHtml += `
                         <div class="flex flex-wrap gap-2 mt-2">
                             <button onclick="speakGerman('${cleanSpeak}', 1.0)" class="px-3.5 py-1.5 rounded-xl bg-blue-50 hover:bg-blue-100 text-blue-700 border border-blue-200 text-xs font-bold cursor-pointer">
                                 🔊 Nghe chuẩn (1.0x)
@@ -2275,13 +2283,6 @@
                             </button>
                         </div>
                     `;
-                    if (extra.display_sentence) {
-                        extraHtml += `
-                            <div class="mt-2.5 p-3 rounded-xl bg-indigo-50/70 border border-indigo-200 text-indigo-950 font-semibold text-sm">
-                                📝 ${extra.display_sentence}
-                            </div>
-                        `;
-                    }
                 }
 
                 if (extra.passage) {
@@ -2422,7 +2423,7 @@
 
                 let displayQuestion = (typeof ensureQuestionNumber === 'function') ? ensureQuestionNumber(ex.question, ex.question, i + 1) : ex.question;
                 if ((ex.exercise_type === 'nghe' || ex.exercise_type === 'nghe_dien') && extra && extra.display_sentence) {
-                    displayQuestion = displayQuestion.replace(/[:\s]+['"„][^'"“”]+['"“”]?\s*$/, ':');
+                    displayQuestion = displayQuestion.replace(/[:\s]+['"„][^'"“”]+['"“”]?.*$/, ':');
                     if (!displayQuestion.endsWith(':')) displayQuestion += ':';
                 }
 
@@ -2459,6 +2460,11 @@
                                     <span class="text-emerald-700 font-extrabold text-sm">✅ Đã hoàn thành chính xác!</span>
                                     <span class="text-emerald-800 font-bold">(+${ex.exp_reward} EXP)</span>
                                 </div>
+                                ${(ex.exercise_type === 'nghe_dien' || ex.exercise_type === 'nghe') && extra && extra.full_sentence ? `
+                                    <div class="p-2.5 rounded-xl bg-emerald-100/70 border border-emerald-300 text-emerald-950 text-xs sm:text-sm font-semibold">
+                                        🎯 Câu hoàn chỉnh: <span class="font-bold text-emerald-900">${extra.full_sentence}</span>
+                                    </div>
+                                ` : ''}
                                 ${capWarningStaticHtml}
                                 ${translationHtml}
                                 <div class="text-emerald-900 leading-relaxed pt-1 whitespace-pre-line">
@@ -3524,6 +3530,16 @@
                     }
                 }
 
+                let fullSentenceHtml = '';
+                if ((ex.exercise_type === 'nghe_dien' || ex.exercise_type === 'nghe') && extra && extra.full_sentence) {
+                    fullSentenceHtml = `
+                        <div class="mt-1 p-2.5 rounded-xl bg-emerald-100/70 border border-emerald-300 text-emerald-950 text-xs sm:text-sm font-semibold flex items-center gap-2">
+                            <span>🎯 Câu hoàn chỉnh:</span>
+                            <span class="font-bold text-emerald-900">${extra.full_sentence}</span>
+                        </div>
+                    `;
+                }
+
                 feedback.innerHTML = `
                     <div class="space-y-1.5">
                         <div class="flex items-center gap-2">
@@ -3533,6 +3549,7 @@
                                 : `<span class="text-slate-500 font-bold text-xs">(+0 EXP • ${isAlreadyCompleted ? 'Đã nhận trước đó' : 'Đã xem đáp án'})</span>`}
                         </div>
                         ${sampleSublineHtml}
+                        ${fullSentenceHtml}
                         ${capitalizationWarningHtml}
                         ${correctPairsHtml}
                         ${dialogueGermanHtml}
@@ -3853,6 +3870,16 @@
                                 ansBlockHtml = `
                                     <div class="text-rose-900 pt-0.5">
                                         <span class="font-bold text-rose-700">🎯 Đáp án mẫu:</span> <span class="font-extrabold text-rose-800">${displayAns}</span>
+                                    </div>
+                                    ${altAnswersHtml}
+                                `;
+                            } else if ((ex.exercise_type === 'nghe_dien' || ex.exercise_type === 'nghe') && extra && extra.full_sentence) {
+                                ansBlockHtml = `
+                                    <div class="text-rose-900 pt-0.5 space-y-1.5">
+                                        <div>Đáp án đúng là: <span class="font-extrabold text-rose-800">${ex.correct_answer}</span></div>
+                                        <div class="p-2.5 rounded-xl bg-rose-100/80 border border-rose-300 text-rose-950 text-xs sm:text-sm font-semibold">
+                                            🎯 Câu đầy đủ: <span class="font-bold text-rose-900">${extra.full_sentence}</span>
+                                        </div>
                                     </div>
                                     ${altAnswersHtml}
                                 `;
