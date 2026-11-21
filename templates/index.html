@@ -2399,12 +2399,19 @@
                                     : (ex && ex.exercise_type === 'viet_lai_dies')
                                         ? 'Nhập câu viết lại với dies-... (nhấn Enter để kiểm tra và chuyển câu)'
                                         : (isMultiSlot 
-                                            ? 'Điền 2 từ ngăn cách bởi dấu / (ví dụ: từ 1 / từ 2)...' 
+                                            ? 'Điền từ vào các chỗ trống theo thứ tự, ngăn cách bằng dấu /...' 
                                             : (isDeToVi 
                                                 ? 'Nhập bản dịch tiếng Việt của bạn... (nhấn Enter để kiểm tra và chuyển câu)' 
                                                 : 'Nhập đáp án tiếng Đức của bạn... (nhấn Enter để kiểm tra và chuyển câu)'));
+                    const multiSlotHintHtml = (isMultiSlot || (ex && ex.exercise_type === 'dien_tao_cau'))
+                        ? `<div class="text-xs font-semibold text-slate-500 flex items-center gap-1.5 mt-2.5">
+                               <span class="text-indigo-600 font-bold">👉 Hướng dẫn:</span>
+                               <span>Điền từ vào các chỗ trống theo thứ tự, ngăn cách bằng dấu /</span>
+                           </div>`
+                        : '';
                     inputHtml = `
-                        <div class="flex gap-2 mt-3">
+                        ${multiSlotHintHtml}
+                        <div class="flex gap-2 mt-2">
                             <input id="ex-input-${i}" value="${cleanAns.replace(/"/g, '&quot;')}" oninput="handleExerciseInputChange(${i})" onfocus="handleExerciseInputFocus(${i})" onkeydown="handleExerciseInputKeydown(event, ${i})" type="text" placeholder="${placeholderText}" class="flex-1 px-4 py-2.5 rounded-xl ${isDone ? 'bg-emerald-50/40 border-2 border-emerald-400 font-bold text-emerald-950' : 'bg-white border border-slate-200'} text-sm focus:outline-none focus:border-indigo-500" spellcheck="false" autocorrect="off" autocapitalize="off" autocomplete="off">
                             <button id="ex-btn-${i}" onclick="checkExerciseAnswer(${i}, document.getElementById('ex-input-${i}').value)" class="px-5 py-2.5 rounded-xl ${isDone ? 'bg-emerald-600 hover:bg-emerald-700' : 'bg-indigo-600 hover:bg-indigo-500'} cursor-pointer text-white font-bold text-sm shadow-sm transition shrink-0">
                                 ${isDone ? '✓ Đã xong' : 'Kiểm tra'}
