@@ -201,8 +201,8 @@ def seed_lesson_12():
                     <div class="font-bold text-amber-900 uppercase">1. Ngôi du (Thân mật 1 người)</div>
                     <div class="text-slate-700">• Bỏ chủ ngữ <code>du</code>, bỏ đuôi <code>-st</code>: <i>Komm!</i>, <i>Trink!</i></div>
                     <div class="text-slate-700">• Biến âm <code>e ➔ i/ie</code>: <b>GIỮ</b> (<i>Iss!</i>, <i>Lies!</i>, <i>Nimm!</i>)</div>
-                    <div class="text-slate-700">• Biến âm <code>a ➔ ä</code>: <b>MẤT</b> (<i>Fahr!</i>, <i>Schlaf!</i>)</div>
-                    <div class="text-slate-700">• Gốc kết thúc bằng <code>-t/-d</code> hoặc phụ âm + <code>m/n</code>: thêm <b>-e</b> (<i>Warte!</i>, <i>Atme!</i>, <i>Öffne!</i>)</div>
+                    <div class="text-slate-700">• Đổi <code>a ➔ ä</code> (hoặc <code>au ➔ äu</code>): về nguyên âm gốc (<i>Fahr!</i>, <i>Schlaf!</i>, <i>Lauf!</i>)</div>
+                    <div class="text-slate-700">• Gốc kết thúc bằng <code>-t/-d</code> hoặc phụ âm + <code>m/n</code>: thêm <b>-e</b> (<i>Arbeite!</i>, <i>Warte!</i>, <i>Atme!</i>, <i>Öffne!</i>, <i>Zeichne!</i>)</div>
                 </div>
 
                 <div class="p-3.5 rounded-2xl bg-indigo-50 border border-indigo-200 space-y-1.5">
@@ -646,7 +646,7 @@ def seed_lesson_12():
                         "Trinkst du viel Wasser!"
                 ],
                 "correct_answer": "Trink viel Wasser!",
-                "explanation": "Đối với ngôi du, ta bỏ -st và bỏ chủ ngữ du. du trinkst ➔ Trink!. -> Đáp án đúng: \"Trink viel Wasser!\"",
+                "explanation": "Đối với ngôi du, ta bỏ -st và bỏ chủ ngữ du. du trinkst ➔ Trink! -> Đáp án đúng: \"Trink viel Wasser!\"",
                 "exp_reward": 15,
                 "extra_data": {
                         "translation": "Hãy uống nhiều nước!",
@@ -736,7 +736,7 @@ def seed_lesson_12():
                         "Iss mehr Gemüse!"
                 ],
                 "correct_answer": "Esst mehr Gemüse!",
-                "explanation": "Mệnh lệnh ngôi ihr: chia động từ như bình thường (ihr esst) rồi bỏ chủ ngữ ihr ➔ Esst!. Không có biến âm 'i' như ngôi du. -> Đáp án đúng: \"Esst mehr Gemüse!\"",
+                "explanation": "Mệnh lệnh ngôi ihr: chia động từ như bình thường (ihr esst) rồi bỏ chủ ngữ ihr ➔ Esst! Không có biến âm 'i' như ngôi du. -> Đáp án đúng: \"Esst mehr Gemüse!\"",
                 "exp_reward": 15,
                 "extra_data": {
                         "translation": "Các bạn hãy ăn nhiều rau hơn!",
@@ -808,7 +808,7 @@ def seed_lesson_12():
                         "Arbeitet!"
                 ],
                 "correct_answer": "Arbeite!",
-                "explanation": "Động từ kết thúc bằng -t (arbeit-en). Khi chuyển sang Imperativ ngôi du, ta phải giữ lại đuôi -e để dễ phát âm ➔ Arbeite!.",
+                "explanation": "Gốc động từ kết thúc bằng -t (arbeit-en ➔ arbeit-), khi chuyển sang Imperativ ngôi du phải thêm đuôi -e để dễ phát âm ➔ Arbeite!",
                 "exp_reward": 15,
                 "extra_data": {
                         "translation": "Hãy làm việc đi!",
@@ -922,7 +922,7 @@ def seed_lesson_12():
                 "question": "Câu 20: Điền động từ chia ở Imperativ (ngôi du): „___ bitte einen Moment!“ (warten)",
                 "options": null,
                 "correct_answer": "Warte",
-                "explanation": "Động từ warten gốc tận cùng bằng t ➔ Imperativ ngôi du phải thêm đuôi -e: Warte!.",
+                "explanation": "Gốc động từ warten (bỏ -en) kết thúc bằng -t ➔ Imperativ ngôi du phải thêm đuôi -e: Warte!",
                 "exp_reward": 15,
                 "extra_data": {
                         "accepted_answers": [
@@ -938,7 +938,7 @@ def seed_lesson_12():
                 "question": "Câu 21: Điền động từ chia ở Imperativ (ngôi ihr): „Kinder, ___ eure Hausaufgaben!“ (machen)",
                 "options": null,
                 "correct_answer": "Macht",
-                "explanation": "Ngôi ihr chia bình thường macht rồi bỏ chữ ihr ➔ Macht!.",
+                "explanation": "Ngôi ihr chia bình thường macht rồi bỏ chữ ihr ➔ Macht!",
                 "exp_reward": 15,
                 "extra_data": {
                         "accepted_answers": [
@@ -954,7 +954,7 @@ def seed_lesson_12():
                 "question": "Câu 22: Điền động từ chia ở Imperativ (ngôi du): „___ nicht so viel Cola!“ (trinken)",
                 "options": null,
                 "correct_answer": "Trink",
-                "explanation": "Ngôi du của trinken là trinkst, bỏ st ➔ Trink! (hoặc Trinke! trong văn phong trang trọng).",
+                "explanation": "Ngôi du của trinken là trinkst, bỏ st ➔ Trink!",
                 "exp_reward": 15,
                 "extra_data": {
                         "accepted_answers": [
@@ -1099,7 +1099,7 @@ def seed_lesson_12():
                 "question": "Câu 31: Chuyển câu trần thuật sau sang câu Mệnh lệnh (Imperativ): „Du isst mehr Obst.“",
                 "options": null,
                 "correct_answer": "Iss mehr Obst!",
-                "explanation": "Động từ essen có biến âm e thành i ở ngôi du (du isst). Bỏ st (vì tận cùng là s nên chỉ mất s) ➔ Iss. -> Đáp án: \"Iss mehr Obst!\"",
+                "explanation": "Du isst ➔ bỏ du và đuôi -t ➔ Iss! (động từ đổi e ➔ i nên giữ i) -> Đáp án: \"Iss mehr Obst!\"",
                 "exp_reward": 15,
                 "extra_data": {
                         "source_sentence": "Du isst mehr Obst.",
@@ -1210,7 +1210,7 @@ def seed_lesson_12():
                 "question": "Câu 37: Chuyển câu trần thuật sau sang câu Mệnh lệnh (Imperativ): „Sie (trang trọng) rufen mich morgen an.“",
                 "options": null,
                 "correct_answer": "Rufen Sie mich morgen an!",
-                "explanation": "Đảo Rufen lên đầu, tiền tố tách an vẫn ở cuối câu ➔ Rufen Sie... an!. -> Đáp án: \"Rufen Sie mich morgen an!\"",
+                "explanation": "Đảo Rufen lên đầu, tiền tố tách an vẫn ở cuối câu ➔ Rufen Sie... an! -> Đáp án: \"Rufen Sie mich morgen an!\"",
                 "exp_reward": 15,
                 "extra_data": {
                         "source_sentence": "Sie (trang trọng) rufen mich morgen an.",
@@ -1228,7 +1228,7 @@ def seed_lesson_12():
                 "question": "Câu 38: Chuyển câu trần thuật sau sang câu Mệnh lệnh (Imperativ): „Du fährst langsamer.“",
                 "options": null,
                 "correct_answer": "Fahr langsamer!",
-                "explanation": "Động từ fahren có biến âm ở ngôi du (du fährst). TUY NHIÊN, trong Imperativ, động từ có biến âm Umlaut (ä, ö, ü) sẽ bị mất Umlaut ➔ Fahr! -> Đáp án: \"Fahr langsamer!\"",
+                "explanation": "Động từ đổi a ➔ ä (hoặc au ➔ äu) ở ngôi du thì Imperativ ngôi du trở về nguyên âm gốc: fährst ➔ Fahr!, schläfst ➔ Schlaf!, läufst ➔ Lauf! -> Đáp án: \"Fahr langsamer!\"",
                 "exp_reward": 15,
                 "extra_data": {
                         "source_sentence": "Du fährst langsamer.",
@@ -1246,7 +1246,7 @@ def seed_lesson_12():
                 "question": "Câu 39: Chuyển câu trần thuật sau sang câu Mệnh lệnh (Imperativ): „Du zeichnest ein Bild.“",
                 "options": null,
                 "correct_answer": "Zeichne ein Bild!",
-                "explanation": "Động từ zeichnen có gốc tận cùng là -nen ➔ phải thêm đuôi -e ở mệnh lệnh ngôi du ➔ Zeichne! -> Đáp án: \"Zeichne ein Bild!\"",
+                "explanation": "Gốc động từ (bỏ -en) là zeichn-, kết thúc bằng phụ âm + n nên phải thêm -e để đọc được ➔ Zeichne! -> Đáp án: \"Zeichne ein Bild!\"",
                 "exp_reward": 15,
                 "extra_data": {
                         "source_sentence": "Du zeichnest ein Bild.",

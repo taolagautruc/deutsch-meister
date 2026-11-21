@@ -518,7 +518,7 @@
             "all": "Tất cả",
             "trac_nghiem": "1. Trắc nghiệm",
             "dien_khuyet": "2. Điền khuyết",
-            "chia_imperativ": "3. Biến đổi Imperativ",
+            "chia_imperativ": "3. Chuyển sang Mệnh lệnh",
             "dien_dai_tu_akk": "4. Điền đại từ Akkusativ",
             "phan_loai_cach": "5. Phân loại Akkusativ / Dativ",
             "phan_loai_giong": "6. Phân loại der / die / das",
@@ -2453,7 +2453,11 @@
                     `
                     : `<div id="ex-feedback-${i}" class="hidden text-xs p-3.5 rounded-xl mt-2"></div>`;
 
-                const typeBadgeLabel = isLesson11 ? (B11_TYPE_LABELS[ex.exercise_type] || TYPE_LABELS[ex.exercise_type] || ex.exercise_type) : (TYPE_LABELS[ex.exercise_type] || ex.exercise_type);
+                const typeBadgeLabel = isLesson12 
+                    ? (B12_TYPE_LABELS[ex.exercise_type] || TYPE_LABELS[ex.exercise_type] || ex.exercise_type) 
+                    : (isLesson11 
+                        ? (B11_TYPE_LABELS[ex.exercise_type] || TYPE_LABELS[ex.exercise_type] || ex.exercise_type) 
+                        : (TYPE_LABELS[ex.exercise_type] || ex.exercise_type));
 
                 return `
                     <div id="ex-card-${i}" class="p-5 rounded-2xl ${cardBorder} space-y-2 transition-all">
@@ -2762,14 +2766,6 @@
 
         function handleExerciseInputFocus(index) {
             activeInputId = `ex-input-${index}`;
-            const inputEl = document.getElementById(`ex-input-${index}`);
-            if (!inputEl) return;
-            const checkBtn = document.getElementById(`ex-btn-${index}`) || inputEl.nextElementSibling;
-            if (checkBtn && checkBtn.innerText.includes('Đã xong')) {
-                checkBtn.className = "px-5 py-2.5 rounded-xl bg-indigo-600 hover:bg-indigo-700 text-white font-bold text-sm shadow-sm transition cursor-pointer shrink-0";
-                checkBtn.innerText = "Kiểm tra";
-                checkBtn.disabled = false;
-            }
         }
 
         function handleExerciseInputChange(index) {
@@ -3425,7 +3421,9 @@
                         </div>
                     `;
                 }
-                const earnedExp = ex._hasBeenWrong ? 0 : ex.exp_reward;
+                const curLId = currentLesson ? currentLesson.id : null;
+                const isAlreadyCompleted = Boolean(ex && ex._isUserCorrect) || Boolean(curLId && userLessonsProgress[curLId] && Array.isArray(userLessonsProgress[curLId].correct_exercises) && userLessonsProgress[curLId].correct_exercises.includes(index));
+                const earnedExp = (isAlreadyCompleted || ex._hasBeenWrong) ? 0 : ex.exp_reward;
                 const correctPairsHtml = '';
                 let dialogueGermanHtml = '';
                 if (ex.exercise_type === 'hoi_thoai_sap_xep' && Array.isArray(extra.lines)) {
@@ -3482,7 +3480,7 @@
                             <span class="text-emerald-700 font-extrabold text-sm">✅ Chính xác!</span>
                             ${earnedExp > 0 
                                 ? `<span class="text-emerald-800 font-bold">(+${earnedExp} EXP)</span>` 
-                                : `<span class="text-slate-500 font-bold text-xs">(+0 EXP • Đã xem đáp án)</span>`}
+                                : `<span class="text-slate-500 font-bold text-xs">(+0 EXP • ${isAlreadyCompleted ? 'Đã nhận trước đó' : 'Đã xem đáp án'})</span>`}
                         </div>
                         ${capitalizationWarningHtml}
                         ${correctPairsHtml}

@@ -293,18 +293,18 @@
         {
             verb: "essen", type: "vowel_e_to_i", praesens: "Du isst", ruleType: "Biến âm e ➔ i (GIỮ biến âm)",
             step1: "Chia ngôi du ở Hiện tại: 'Du isst' (đã biến âm e ➔ i)",
-            step2: "Bỏ 'Du' và bỏ '-st' (gốc có s nên chỉ bỏ -t/-st): is<s>st</s>",
+            step2: "Bỏ 'Du' và đuôi '-t': is<s>t</s>",
             step3: "Kết quả: Iss!",
             imperativ: "Iss mehr Obst!", tr: "Hãy ăn nhiều trái cây hơn!",
-            note: "Đặc biệt: Động từ đổi e ➔ i/ie thì Imperativ BẮT BUỘC GIỮ biến âm i/ie."
+            note: "Du isst ➔ bỏ du và đuôi -t ➔ Iss! (động từ đổi e ➔ i nên giữ i)."
         },
         {
-            verb: "fahren", type: "vowel_a_to_ae", praesens: "Du fährst", ruleType: "Biến âm a ➔ ä (MẤT biến âm)",
+            verb: "fahren", type: "vowel_a_to_ae", praesens: "Du fährst", ruleType: "Biến âm a ➔ ä (Về nguyên âm gốc)",
             step1: "Chia ngôi du ở Hiện tại: 'Du fährst' (có dấu hai chấm ä)",
-            step2: "Bỏ 'Du', bỏ '-st' VÀ BỎ LUÔN biến âm ä ➔ trở về nguyên mẫu 'a'",
+            step2: "Bỏ 'Du', bỏ '-st' VÀ trở về nguyên âm gốc 'a'",
             step3: "Kết quả: Fahr!",
             imperativ: "Fahr langsamer!", tr: "Hãy lái xe chậm hơn!",
-            note: "Đặc biệt: Động từ đổi a ➔ ä thì Imperativ BẮT BUỘC MẤT biến âm, quay về 'a' thường."
+            note: "Động từ đổi a ➔ ä (hoặc au ➔ äu) ở ngôi du thì Imperativ ngôi du trở về nguyên âm gốc: fährst ➔ Fahr!, schläfst ➔ Schlaf!, läufst ➔ Lauf!."
         },
         {
             verb: "warten", type: "stem_d_t", praesens: "Du wartest", ruleType: "Gốc kết thúc bằng -t/-d hoặc phụ âm + m/n (Thêm -e)",
@@ -312,7 +312,7 @@
             step2: "Bỏ 'Du' và bỏ '-st' ➔ còn 'warte'",
             step3: "Kết quả: Warte!",
             imperativ: "Warte hier auf mich!", tr: "Hãy đợi tôi ở đây!",
-            note: "Gốc kết thúc bằng -t/-d hoặc phụ âm + m/n (như atmen ➔ Atme!, öffnen ➔ Öffne!) bắt buộc thêm đuôi -e để phát âm được."
+            note: "Gốc kết thúc bằng -t/-d hoặc phụ âm + m/n (như arbeit- ➔ Arbeite!, atm- ➔ Atme!, öffn- ➔ Öffne!, zeichn- ➔ Zeichne!) bắt buộc thêm đuôi -e để phát âm được."
         },
         {
             verb: "schlafen", type: "vowel_a_to_ae", praesens: "Du schläfst", ruleType: "Biến âm a ➔ ä (MẤT biến âm)",
