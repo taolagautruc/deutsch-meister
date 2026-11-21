@@ -2174,152 +2174,195 @@ def seed_lesson_12():
                         "audio_text": "Mein Arm tut mir weh Ich brauche eine Salbe"
                 }
         },
-        {
-                "id": 73,
-                "exercise_type": "nghe_dien",
-                "question": "Câu 73: Nghe và điền từ còn thiếu vào chỗ trống:",
-                "options": null,
-                "correct_answer": "Geh",
-                "explanation": "Imperativ của gehen ngôi du là Geh.",
-                "exp_reward": 15,
-                "extra_data": {
-                        "audio_text": "",
-                        "display_sentence": "",
-                        "hint_vi": "Hãy đi dạo mỗi ngày!",
-                        "accepted_answers": [
-                                "Geh"
-                        ],
-                        "translation": "Hãy đi dạo mỗi ngày!"
-                }
-        },
-        {
-                "id": 74,
-                "exercise_type": "nghe_dien",
-                "question": "Câu 74: Nghe và điền từ còn thiếu vào chỗ trống:",
-                "options": null,
-                "correct_answer": "Ruhen",
-                "explanation": "Mệnh lệnh lịch sự của sich ausruhen là Ruhen Sie sich aus.",
-                "exp_reward": 15,
-                "extra_data": {
-                        "audio_text": "",
-                        "display_sentence": "",
-                        "hint_vi": "Chúc mau khỏe! Ngài hãy nghỉ ngơi đi.",
-                        "accepted_answers": [
-                                "Ruhen"
-                        ],
-                        "translation": "Chúc mau khỏe! Ngài hãy nghỉ ngơi đi."
-                }
-        },
-        {
-                "id": 75,
-                "exercise_type": "nghe_dien",
-                "question": "Câu 75: Nghe và điền từ còn thiếu vào chỗ trống:",
-                "options": null,
-                "correct_answer": "fehlt",
-                "explanation": "fehlen + Dativ dùng để hỏi thăm bệnh tình. -> Từ cần điền là: \"fehlt\"",
-                "exp_reward": 15,
-                "extra_data": {
-                        "audio_text": "",
-                        "display_sentence": "",
-                        "hint_vi": "Ngài bị làm sao vậy?",
-                        "accepted_answers": [
-                                "fehlt"
-                        ],
-                        "translation": "Ngài bị làm sao vậy?"
-                }
-        },
-        {
-                "id": 76,
-                "exercise_type": "nghe_dien",
-                "question": "Câu 76: Nghe và điền từ còn thiếu vào chỗ trống:",
-                "options": null,
-                "correct_answer": "Rezept",
-                "explanation": "Đơn thuốc là das Rezept.",
-                "exp_reward": 15,
-                "extra_data": {
-                        "audio_text": "",
-                        "display_sentence": "",
-                        "hint_vi": "Bác sĩ viết cho tôi một đơn thuốc.",
-                        "accepted_answers": [
-                                "Rezept"
-                        ],
-                        "translation": "Bác sĩ viết cho tôi một đơn thuốc."
-                }
-        },
-        {
-                "id": 77,
-                "exercise_type": "nghe_dien",
-                "question": "Câu 77: Nghe và điền từ còn thiếu vào chỗ trống:",
-                "options": null,
-                "correct_answer": "dürfen",
-                "explanation": "wir + dürfen.",
-                "exp_reward": 15,
-                "extra_data": {
-                        "audio_text": "",
-                        "display_sentence": "",
-                        "hint_vi": "Chúng tôi không được phép đỗ xe ở đây.",
-                        "accepted_answers": [
-                                "dürfen",
-                                "duerfen"
-                        ],
-                        "translation": "Chúng tôi không được phép đỗ xe ở đây."
-                }
-        },
-        {
-                "id": 78,
-                "exercise_type": "nghe_dien",
-                "question": "Câu 78: Nghe và điền từ còn thiếu vào chỗ trống:",
-                "options": null,
-                "correct_answer": "dich",
-                "explanation": "lieben + Akkusativ -> dich.",
-                "exp_reward": 15,
-                "extra_data": {
-                        "audio_text": "",
-                        "display_sentence": "",
-                        "hint_vi": "Em là người phụ nữ trong mơ của anh. Anh yêu em.",
-                        "accepted_answers": [
-                                "dich"
-                        ],
-                        "translation": "Em là người phụ nữ trong mơ của anh. Anh yêu em."
-                }
-        },
-        {
-                "id": 79,
-                "exercise_type": "nghe_dien",
-                "question": "Câu 79: Nghe và điền từ còn thiếu vào chỗ trống:",
-                "options": null,
-                "correct_answer": "Bauch",
-                "explanation": "Bụng là der Bauch.",
-                "exp_reward": 15,
-                "extra_data": {
-                        "audio_text": "",
-                        "display_sentence": "",
-                        "hint_vi": "Bụng tôi đau kinh khủng.",
-                        "accepted_answers": [
-                                "Bauch"
-                        ],
-                        "translation": "Bụng tôi đau kinh khủng."
-                }
-        },
-        {
-                "id": 80,
-                "exercise_type": "nghe_dien",
-                "question": "Câu 80: Nghe và điền từ còn thiếu vào chỗ trống:",
-                "options": null,
-                "correct_answer": "Nehmt",
-                "explanation": "Imperativ của nehmen ngôi ihr là Nehmt.",
-                "exp_reward": 15,
-                "extra_data": {
-                        "audio_text": "",
-                        "display_sentence": "",
-                        "hint_vi": "Các bạn hãy uống mỗi ngày một viên thuốc!",
-                        "accepted_answers": [
-                                "Nehmt"
-                        ],
-                        "translation": "Các bạn hãy uống mỗi ngày một viên thuốc!"
-                }
-        },
                 {
+                        "id": 73,
+                        "exercise_type": "nghe_dien",
+                        "question": "Câu 73: Nghe và điền từ còn thiếu vào chỗ trống: „___ jeden Tag spazieren!“ (gehen)",
+                        "options": null,
+                        "correct_answer": "Geh",
+                        "explanation": "gehen → Imperativ ngôi du: Geh! → „Geh jeden Tag spazieren!“",
+                        "exp_reward": 15,
+                        "extra_data": {
+                                        "display_sentence": "„___ jeden Tag spazieren!“ (gehen)",
+                                        "full_sentence": "„Geh jeden Tag spazieren!“",
+                                        "audio_text": "Geh jeden Tag spazieren",
+                                        "hints": "(gehen)",
+                                        "hint_vi": "Hãy đi dạo mỗi ngày!",
+                                        "translation": "Hãy đi dạo mỗi ngày!",
+                                        "accepted_answers": [
+                                                        "Geh",
+                                                        "geh",
+                                                        "Gehe",
+                                                        "gehe",
+                                                        "Geh jeden Tag spazieren!",
+                                                        "Geh jeden Tag spazieren"
+                                        ]
+                        }
+        },
+        {
+                        "id": 74,
+                        "exercise_type": "nghe_dien",
+                        "question": "Câu 74: Nghe và điền từ còn thiếu vào chỗ trống: „Gute Besserung! ___ Sie sich aus!“ (sich ausruhen)",
+                        "options": null,
+                        "correct_answer": "Ruhen",
+                        "explanation": "sich ausruhen → Imperativ ngôi Sie: Ruhen Sie sich aus! → „Gute Besserung! Ruhen Sie sich aus!“",
+                        "exp_reward": 15,
+                        "extra_data": {
+                                        "display_sentence": "„Gute Besserung! ___ Sie sich aus!“ (sich ausruhen)",
+                                        "full_sentence": "„Gute Besserung! Ruhen Sie sich aus!“",
+                                        "audio_text": "Gute Besserung Ruhen Sie sich aus",
+                                        "hints": "(sich ausruhen)",
+                                        "hint_vi": "Chúc mau khỏe! Ngài hãy nghỉ ngơi đi.",
+                                        "translation": "Chúc mau khỏe! Ngài hãy nghỉ ngơi đi.",
+                                        "accepted_answers": [
+                                                        "Ruhen",
+                                                        "ruhen",
+                                                        "Gute Besserung! Ruhen Sie sich aus!",
+                                                        "Ruhen Sie sich aus!"
+                                        ]
+                        }
+        },
+        {
+                        "id": 75,
+                        "exercise_type": "nghe_dien",
+                        "question": "Câu 75: Nghe và điền từ còn thiếu vào chỗ trống: „Was ___ Ihnen?“ (fehlen)",
+                        "options": null,
+                        "correct_answer": "fehlt",
+                        "explanation": "fehlen + Dativ dùng để hỏi thăm bệnh tình, chủ ngữ ngôi 3 số ít: fehlt → „Was fehlt Ihnen?“",
+                        "exp_reward": 15,
+                        "extra_data": {
+                                        "display_sentence": "„Was ___ Ihnen?“ (fehlen)",
+                                        "full_sentence": "„Was fehlt Ihnen?“",
+                                        "audio_text": "Was fehlt Ihnen",
+                                        "hints": "(fehlen)",
+                                        "hint_vi": "Ngài bị làm sao vậy?",
+                                        "translation": "Ngài bị làm sao vậy?",
+                                        "accepted_answers": [
+                                                        "fehlt",
+                                                        "Fehlt",
+                                                        "Was fehlt Ihnen?",
+                                                        "Was fehlt Ihnen"
+                                        ]
+                        }
+        },
+        {
+                        "id": 76,
+                        "exercise_type": "nghe_dien",
+                        "question": "Câu 76: Nghe và điền từ còn thiếu vào chỗ trống: „Der Arzt schreibt mir ein ___.“ (das Rezept)",
+                        "options": null,
+                        "correct_answer": "Rezept",
+                        "explanation": "ein + danh từ giống trung (das Rezept) ở Akkusativ: ein Rezept → „Der Arzt schreibt mir ein Rezept.“",
+                        "exp_reward": 15,
+                        "extra_data": {
+                                        "display_sentence": "„Der Arzt schreibt mir ein ___.“ (das Rezept)",
+                                        "full_sentence": "„Der Arzt schreibt mir ein Rezept.“",
+                                        "audio_text": "Der Arzt schreibt mir ein Rezept",
+                                        "hints": "(das Rezept)",
+                                        "hint_vi": "Bác sĩ viết cho tôi một đơn thuốc.",
+                                        "translation": "Bác sĩ viết cho tôi một đơn thuốc.",
+                                        "accepted_answers": [
+                                                        "Rezept",
+                                                        "rezept",
+                                                        "Der Arzt schreibt mir ein Rezept.",
+                                                        "ein Rezept"
+                                        ]
+                        }
+        },
+        {
+                        "id": 77,
+                        "exercise_type": "nghe_dien",
+                        "question": "Câu 77: Nghe và điền từ còn thiếu vào chỗ trống: „Wir ___ hier nicht parken.“ (dürfen)",
+                        "options": null,
+                        "correct_answer": "dürfen",
+                        "explanation": "dürfen chia với chủ ngữ wir: dürfen → „Wir dürfen hier nicht parken.“",
+                        "exp_reward": 15,
+                        "extra_data": {
+                                        "display_sentence": "„Wir ___ hier nicht parken.“ (dürfen)",
+                                        "full_sentence": "„Wir dürfen hier nicht parken.“",
+                                        "audio_text": "Wir dürfen hier nicht parken",
+                                        "hints": "(dürfen)",
+                                        "hint_vi": "Chúng tôi không được phép đỗ xe ở đây.",
+                                        "translation": "Chúng tôi không được phép đỗ xe ở đây.",
+                                        "accepted_answers": [
+                                                        "dürfen",
+                                                        "duerfen",
+                                                        "Dürfen",
+                                                        "Duerfen",
+                                                        "Wir dürfen hier nicht parken.",
+                                                        "Wir duerfen hier nicht parken."
+                                        ]
+                        }
+        },
+        {
+                        "id": 78,
+                        "exercise_type": "nghe_dien",
+                        "question": "Câu 78: Nghe và điền từ còn thiếu vào chỗ trống: „Du bist meine Traumfrau. Ich liebe ___.“ (du → Akkusativ)",
+                        "options": null,
+                        "correct_answer": "dich",
+                        "explanation": "Động từ lieben đi với tân ngữ Akkusativ, đại từ du chuyển thành dich → „Du bist meine Traumfrau. Ich liebe dich.“",
+                        "exp_reward": 15,
+                        "extra_data": {
+                                        "display_sentence": "„Du bist meine Traumfrau. Ich liebe ___.“ (du → Akkusativ)",
+                                        "full_sentence": "„Du bist meine Traumfrau. Ich liebe dich.“",
+                                        "audio_text": "Du bist meine Traumfrau Ich liebe dich",
+                                        "hints": "(du → Akkusativ)",
+                                        "hint_vi": "Em là người phụ nữ trong mơ của anh. Anh yêu em.",
+                                        "translation": "Em là người phụ nữ trong mơ của anh. Anh yêu em.",
+                                        "accepted_answers": [
+                                                        "dich",
+                                                        "Dich",
+                                                        "Ich liebe dich.",
+                                                        "Ich liebe dich"
+                                        ]
+                        }
+        },
+        {
+                        "id": 79,
+                        "exercise_type": "nghe_dien",
+                        "question": "Câu 79: Nghe và điền từ còn thiếu vào chỗ trống: „Mein ___ tut mir furchtbar weh.“ (der Bauch)",
+                        "options": null,
+                        "correct_answer": "Bauch",
+                        "explanation": "Danh từ giống đực der Bauch, đứng làm chủ ngữ sau mein: Mein Bauch tut mir furchtbar weh. → „Mein Bauch tut mir furchtbar weh.“",
+                        "exp_reward": 15,
+                        "extra_data": {
+                                        "display_sentence": "„Mein ___ tut mir furchtbar weh.“ (der Bauch)",
+                                        "full_sentence": "„Mein Bauch tut mir furchtbar weh.“",
+                                        "audio_text": "Mein Bauch tut mir furchtbar weh",
+                                        "hints": "(der Bauch)",
+                                        "hint_vi": "Bụng tôi đau kinh khủng.",
+                                        "translation": "Bụng tôi đau kinh khủng.",
+                                        "accepted_answers": [
+                                                        "Bauch",
+                                                        "bauch",
+                                                        "Mein Bauch tut mir furchtbar weh.",
+                                                        "Mein Bauch tut mir furchtbar weh"
+                                        ]
+                        }
+        },
+        {
+                        "id": 80,
+                        "exercise_type": "nghe_dien",
+                        "question": "Câu 80: Nghe và điền từ còn thiếu vào chỗ trống: „___ jeden Tag eine Tablette!“ (nehmen)",
+                        "options": null,
+                        "correct_answer": "Nehmt",
+                        "explanation": "nehmen → Imperativ ngôi ihr: Nehmt! (bỏ chủ ngữ ihr, giữ nguyên gốc nehm- + -t) → „Nehmt jeden Tag eine Tablette!“",
+                        "exp_reward": 15,
+                        "extra_data": {
+                                        "display_sentence": "„___ jeden Tag eine Tablette!“ (nehmen)",
+                                        "full_sentence": "„Nehmt jeden Tag eine Tablette!“",
+                                        "audio_text": "Nehmt jeden Tag eine Tablette",
+                                        "hints": "(nehmen)",
+                                        "hint_vi": "Các bạn hãy uống mỗi ngày một viên thuốc!",
+                                        "translation": "Các bạn hãy uống mỗi ngày một viên thuốc!",
+                                        "accepted_answers": [
+                                                        "Nehmt",
+                                                        "nehmt",
+                                                        "Nehmt jeden Tag eine Tablette!",
+                                                        "Nehmt jeden Tag eine Tablette"
+                                        ]
+                        }
+        },
+        {
                         "id": 81,
                         "exercise_type": "dich_cau_vd",
                         "question": "Câu 81: Dịch câu sau sang tiếng Đức: „Ngài hãy uống nhiều nước!“",
