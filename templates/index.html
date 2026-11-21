@@ -3827,41 +3827,43 @@
                                     </div>
                                 </div>
                             `;
-                        let altAnswersHtml = '';
-                        if (extra && Array.isArray(extra.accepted_answers) && extra.accepted_answers.length > 0) {
-                            const alts = extra.accepted_answers.filter(a => a && normalizeAnswer(a) !== normalizeAnswer(displayAns) && normalizeAnswer(a) !== normalizeAnswer(ex.correct_answer));
-                            const uniqueAlts = [];
-                            alts.forEach(a => {
-                                if (!uniqueAlts.some(u => normalizeAnswer(u) === normalizeAnswer(a)) && uniqueAlts.length < 3) {
-                                    uniqueAlts.push(a);
+                        } else {
+                            let altAnswersHtml = '';
+                            if (extra && Array.isArray(extra.accepted_answers) && extra.accepted_answers.length > 0) {
+                                const alts = extra.accepted_answers.filter(a => a && normalizeAnswer(a) !== normalizeAnswer(displayAns) && normalizeAnswer(a) !== normalizeAnswer(ex.correct_answer));
+                                const uniqueAlts = [];
+                                alts.forEach(a => {
+                                    if (!uniqueAlts.some(u => normalizeAnswer(u) === normalizeAnswer(a)) && uniqueAlts.length < 3) {
+                                        uniqueAlts.push(a);
+                                    }
+                                });
+                                if (uniqueAlts.length > 0) {
+                                    altAnswersHtml = `
+                                        <div class="text-xs text-rose-800 pt-1">
+                                            <span class="font-bold">Các cách dịch khác cũng được chấp nhận:</span>
+                                            <ul class="list-disc list-inside mt-0.5 space-y-0.5 text-rose-900">
+                                                ${uniqueAlts.map(u => `<li>${u}</li>`).join('')}
+                                            </ul>
+                                        </div>
+                                    `;
                                 }
-                            });
-                            if (uniqueAlts.length > 0) {
-                                altAnswersHtml = `
-                                    <div class="text-xs text-rose-800 pt-1">
-                                        <span class="font-bold">Các cách dịch khác cũng được chấp nhận:</span>
-                                        <ul class="list-disc list-inside mt-0.5 space-y-0.5 text-rose-900">
-                                            ${uniqueAlts.map(u => `<li>${u}</li>`).join('')}
-                                        </ul>
+                            }
+
+                            if (isViToDe) {
+                                ansBlockHtml = `
+                                    <div class="text-rose-900 pt-0.5">
+                                        <span class="font-bold text-rose-700">🎯 Đáp án mẫu:</span> <span class="font-extrabold text-rose-800">${displayAns}</span>
                                     </div>
+                                    ${altAnswersHtml}
+                                `;
+                            } else {
+                                ansBlockHtml = `
+                                    <div class="text-rose-900 pt-0.5">
+                                        Đáp án đúng là: <span class="font-extrabold text-rose-800">${displayAns}</span>
+                                    </div>
+                                    ${altAnswersHtml}
                                 `;
                             }
-                        }
-
-                        if (isViToDe) {
-                            ansBlockHtml = `
-                                <div class="text-rose-900 pt-0.5">
-                                    <span class="font-bold text-rose-700">🎯 Đáp án mẫu:</span> <span class="font-extrabold text-rose-800">${displayAns}</span>
-                                </div>
-                                ${altAnswersHtml}
-                            `;
-                        } else {
-                            ansBlockHtml = `
-                                <div class="text-rose-900 pt-0.5">
-                                    Đáp án đúng là: <span class="font-extrabold text-rose-800">${displayAns}</span>
-                                </div>
-                                ${altAnswersHtml}
-                            `;
                         }
                     }
                     feedback.innerHTML = `
