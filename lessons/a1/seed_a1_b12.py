@@ -222,6 +222,30 @@ def seed_lesson_12():
                 </div>
             </div>
 
+            <!-- MỞ RỘNG: ĐỘNG TỪ PHẢN THÂN TÁCH "SICH AUSRUHEN" -->
+            <div class="p-4 rounded-2xl bg-cyan-50/80 border border-cyan-200 text-xs text-cyan-950 space-y-2">
+                <div class="font-bold text-cyan-900 flex items-center gap-1.5">
+                    <span>💡 Mở rộng lời khuyên sức khỏe: Động từ phản thân tách <b>sich ausruhen</b> (nghỉ ngơi)</span>
+                </div>
+                <p class="text-slate-700 leading-relaxed">
+                    Trong bối cảnh y tế và sức khỏe, các bác sĩ rất thường dùng động từ <b>sich ausruhen</b> (nghỉ ngơi). Đây là động từ phản thân đi kèm tiền tố tách <b>aus-</b>:
+                </p>
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-2.5 text-xs">
+                    <div class="p-2.5 rounded-xl bg-white border border-cyan-200 space-y-1">
+                        <div class="font-bold text-cyan-900">📌 Bảng đại từ phản thân (Reflexivpronomen):</div>
+                        <div class="text-slate-700">• ich ➔ <b>mich</b> | du ➔ <b>dich</b></div>
+                        <div class="text-slate-700">• er / sie / es / man ➔ <b>sich</b></div>
+                        <div class="text-slate-700">• wir ➔ <b>uns</b> | ihr ➔ <b>euch</b> | sie / Sie ➔ <b>sich</b></div>
+                    </div>
+                    <div class="p-2.5 rounded-xl bg-white border border-cyan-200 space-y-1">
+                        <div class="font-bold text-cyan-900">⚡ Câu mệnh lệnh (Imperativ) với sich ausruhen:</div>
+                        <div class="text-slate-700">• <b>ngôi du:</b> <code>Ruh dich aus!</code> (hoặc <code>Ruhe dich aus!</code>) — <i>Hãy nghỉ ngơi đi!</i></div>
+                        <div class="text-slate-700">• <b>ngôi ihr:</b> <code>Ruht euch aus!</code> — <i>Các bạn hãy nghỉ ngơi đi!</i></div>
+                        <div class="text-slate-700">• <b>ngôi Sie:</b> <code>Ruhen Sie sich aus!</code> — <i>Xin ngài hãy nghỉ ngơi đi!</i></div>
+                    </div>
+                </div>
+            </div>
+
             <!-- SƠ ĐỒ V3 & V4 CONTAINER -->
             <div id="b12-svg-v3-container" class="mt-4"></div>
             <div id="b12-svg-v4-container" class="mt-4"></div>
@@ -2329,15 +2353,19 @@ def seed_lesson_12():
         {
                 "id": 83,
                 "exercise_type": "dich_cau_vd",
-                "question": "Câu 83: Dịch câu sau sang tiếng Đức: „Hãy làm bài tập về nhà của bạn!“",
+                "question": "Câu 83: Dịch câu sau sang tiếng Đức (ngôi du): „Hãy làm bài tập về nhà của bạn!“",
                 "options": null,
                 "correct_answer": "Mach deine Hausaufgaben!",
-                "explanation": "Imperativ ngôi du của machen là Mach. -> Đáp án chuẩn: \"Mach deine Hausaufgaben!\"",
+                "explanation": "Imperativ ngôi du của machen là Mach. Tính từ sở hữu tương ứng ngôi du là deine. -> Đáp án chuẩn: \"Mach deine Hausaufgaben!\"",
                 "exp_reward": 15,
                 "extra_data": {
                         "accepted_answers": [
                                 "Mach deine Hausaufgaben!",
-                                "Mach deine Hausaufgaben"
+                                "Mach deine Hausaufgaben",
+                                "Macht eure Hausaufgaben!",
+                                "Macht eure Hausaufgaben",
+                                "Machen Sie Ihre Hausaufgaben!",
+                                "Machen Sie Ihre Hausaufgaben"
                         ],
                         "translation": "Hãy làm bài tập về nhà của bạn!",
                         "audio_text": "Mach deine Hausaufgaben"
@@ -2349,12 +2377,18 @@ def seed_lesson_12():
                 "question": "Câu 84: Dịch câu sau sang tiếng Đức: „Tôi bị đau đầu dữ dội.“",
                 "options": null,
                 "correct_answer": "Ich habe starke Kopfschmerzen.",
-                "explanation": "Bị bệnh gì dùng động từ haben + tên bệnh. -> Đáp án chuẩn: \"Ich habe starke Kopfschmerzen.\"",
+                "explanation": "Có hai cách nói: haben + Schmerzen (Ich habe starke Kopfschmerzen) hoặc wehtun + Dativ (Mein Kopf tut mir sehr weh). -> Đáp án chuẩn: \"Ich habe starke Kopfschmerzen.\" hoặc \"Mein Kopf tut mir sehr weh.\"",
                 "exp_reward": 15,
                 "extra_data": {
                         "accepted_answers": [
                                 "Ich habe starke Kopfschmerzen.",
-                                "Ich habe starke Kopfschmerzen"
+                                "Ich habe starke Kopfschmerzen",
+                                "Mein Kopf tut mir sehr weh.",
+                                "Mein Kopf tut mir sehr weh",
+                                "Mein Kopf tut mir weh.",
+                                "Mein Kopf tut mir weh",
+                                "Ich habe Kopfschmerzen.",
+                                "Ich habe Kopfschmerzen"
                         ],
                         "translation": "Tôi bị đau đầu dữ dội.",
                         "audio_text": "Ich habe starke Kopfschmerzen"
@@ -2381,16 +2415,23 @@ def seed_lesson_12():
         {
                 "id": 86,
                 "exercise_type": "dich_cau_vd",
-                "question": "Câu 86: Dịch câu sau sang tiếng Đức: „Hãy nghỉ ngơi đi!“",
+                "question": "Câu 86: Dịch câu sau sang tiếng Đức (ngôi du): „Hãy nghỉ ngơi đi!“",
                 "options": null,
                 "correct_answer": "Ruh dich aus!",
-                "explanation": "Động từ phản thân tách. Ngôi du: ruh dich aus.",
+                "explanation": "Mệnh lệnh ngôi du của động từ phản thân tách sich ausruhen: Ruh dich aus! (hoặc Ruhe dich aus!). -> Đáp án chuẩn: \"Ruh dich aus!\"",
                 "exp_reward": 15,
                 "extra_data": {
                         "accepted_answers": [
                                 "Ruh dich aus!",
                                 "Ruh dich aus",
-                                "Ruhe dich aus!"
+                                "Ruhe dich aus!",
+                                "Ruhe dich aus",
+                                "Ruht euch aus!",
+                                "Ruht euch aus",
+                                "Ruhen Sie sich aus!",
+                                "Ruhen Sie sich aus",
+                                "Bleib im Bett!",
+                                "Bleib im Bett"
                         ],
                         "translation": "Hãy nghỉ ngơi đi!",
                         "audio_text": "Ruh dich aus"
@@ -2900,15 +2941,17 @@ def seed_lesson_12():
                 "exercise_type": "dich_nghia_dv",
                 "question": "Câu 113: Dịch từ sau sang tiếng Việt: „das Bein“",
                 "options": null,
-                "correct_answer": "chân",
-                "explanation": "Nghĩa tiếng Việt chuẩn là: \"chân\".",
+                "correct_answer": "chân (cả cẳng)",
+                "explanation": "Nghĩa tiếng Việt chuẩn là: \"chân (cả cẳng)\".",
                 "exp_reward": 15,
                 "extra_data": {
                         "accepted_answers": [
+                                "chân (cả cẳng)",
                                 "chân",
-                                "cái chân"
+                                "cái chân",
+                                "cẳng chân"
                         ],
-                        "translation": "chân",
+                        "translation": "chân (cả cẳng)",
                         "audio_text": "das Bein"
                 }
         },
