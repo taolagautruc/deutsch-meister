@@ -1442,7 +1442,7 @@ def seed_lesson_12():
                 "question": "Câu 51: Xác định từ in đậm trong mỗi câu sau thuộc Akkusativ hay Dativ:",
                 "options": null,
                 "correct_answer": "Akkusativ, Dativ, Akkusativ, Dativ",
-                "explanation": "Phân loại dựa trên động từ đi kèm. -> Đáp án: \"Akkusativ, Dativ, Akkusativ, Dativ\"",
+                "explanation": "1. sehen + Akkusativ ➔ dich · 2. helfen + Dativ ➔ mir · 3. treffen + Akkusativ ➔ ihn · 4. gehören + Dativ ➔ uns. -> Đáp án: \"Akkusativ, Dativ, Akkusativ, Dativ\"",
                 "exp_reward": 15,
                 "extra_data": {
                         "items": [
@@ -1450,25 +1450,25 @@ def seed_lesson_12():
                                         "sentence": "„Ich sehe dich jeden Tag.“",
                                         "target_phrase": "dich",
                                         "case": "Akkusativ",
-                                        "reason_vi": "`sehen` + Akk"
+                                        "reason_vi": "sehen + Akk"
                                 },
                                 {
                                         "sentence": "„Der Arzt hilft mir.“",
                                         "target_phrase": "mir",
                                         "case": "Dativ",
-                                        "reason_vi": "`helfen` + Dat"
+                                        "reason_vi": "helfen + Dat"
                                 },
                                 {
                                         "sentence": "„Wir treffen ihn morgen.“",
                                         "target_phrase": "ihn",
                                         "case": "Akkusativ",
-                                        "reason_vi": "`treffen` + Akk"
+                                        "reason_vi": "treffen + Akk"
                                 },
                                 {
                                         "sentence": "„Das Auto gehört uns.“",
                                         "target_phrase": "uns",
                                         "case": "Dativ",
-                                        "reason_vi": "`gehören` + Dat"
+                                        "reason_vi": "gehören + Dat"
                                 }
                         ],
                         "translation": "Hàng 1: „Ich sehe dich jeden Tag.“ (Akkusativ) | Hàng 2: „Der Arzt hilft mir.“ (Dativ) | Hàng 3: „Wir treffen ihn morgen.“ (Akkusativ) | Hàng 4: „Das Auto gehört uns.“ (Dativ)"
@@ -1480,7 +1480,7 @@ def seed_lesson_12():
                 "question": "Câu 52: Xác định từ in đậm trong mỗi câu sau thuộc Akkusativ hay Dativ:",
                 "options": null,
                 "correct_answer": "Dativ, Akkusativ, Dativ, Akkusativ",
-                "explanation": "Phân loại dựa trên động từ đi kèm. -> Đáp án: \"Dativ, Akkusativ, Dativ, Akkusativ\"",
+                "explanation": "1. wehtun + Dativ ➔ ihm · 2. lieben + Akkusativ ➔ mich · 3. passen + Dativ ➔ dir · 4. brauchen + Akkusativ ➔ es. -> Đáp án: \"Dativ, Akkusativ, Dativ, Akkusativ\"",
                 "exp_reward": 15,
                 "extra_data": {
                         "items": [
@@ -1488,25 +1488,25 @@ def seed_lesson_12():
                                         "sentence": "„Der Kopf tut ihm weh.“",
                                         "target_phrase": "ihm",
                                         "case": "Dativ",
-                                        "reason_vi": "`wehtun` + Dat"
+                                        "reason_vi": "wehtun + Dat"
                                 },
                                 {
                                         "sentence": "„Sie liebt mich.“",
                                         "target_phrase": "mich",
                                         "case": "Akkusativ",
-                                        "reason_vi": "`lieben` + Akk"
+                                        "reason_vi": "lieben + Akk"
                                 },
                                 {
                                         "sentence": "„Passt dir die Hose?“",
                                         "target_phrase": "dir",
                                         "case": "Dativ",
-                                        "reason_vi": "`passen` + Dat"
+                                        "reason_vi": "passen + Dat"
                                 },
                                 {
                                         "sentence": "„Ich brauche es nicht.“",
                                         "target_phrase": "es",
                                         "case": "Akkusativ",
-                                        "reason_vi": "`brauchen` + Akk"
+                                        "reason_vi": "brauchen + Akk"
                                 }
                         ],
                         "translation": "Hàng 1: „Der Kopf tut ihm weh.“ (Dativ) | Hàng 2: „Sie liebt mich.“ (Akkusativ) | Hàng 3: „Passt dir die Hose?“ (Dativ) | Hàng 4: „Ich brauche es nicht.“ (Akkusativ)"
@@ -1518,7 +1518,7 @@ def seed_lesson_12():
                 "question": "Câu 53: Xác định từ in đậm trong mỗi câu sau thuộc Akkusativ hay Dativ:",
                 "options": null,
                 "correct_answer": "Dativ, Akkusativ, Akkusativ, Dativ",
-                "explanation": "Phân loại dựa trên động từ đi kèm. -> Đáp án: \"Dativ, Akkusativ, Akkusativ, Dativ\"",
+                "explanation": "1. gefallen + Dativ ➔ Ihnen · 2. hören + Akkusativ ➔ euch · 3. besuchen + Akkusativ ➔ uns · 4. danken + Dativ ➔ dir. -> Đáp án: \"Dativ, Akkusativ, Akkusativ, Dativ\"",
                 "exp_reward": 15,
                 "extra_data": {
                         "items": [
@@ -1526,25 +1526,25 @@ def seed_lesson_12():
                                         "sentence": "„Wie gefällt Ihnen das Hotel?“",
                                         "target_phrase": "Ihnen",
                                         "case": "Dativ",
-                                        "reason_vi": "`gefallen` + Dat"
+                                        "reason_vi": "gefallen + Dat"
                                 },
                                 {
                                         "sentence": "„Ich höre euch nicht.“",
                                         "target_phrase": "euch",
                                         "case": "Akkusativ",
-                                        "reason_vi": "`hören` + Akk"
+                                        "reason_vi": "hören + Akk"
                                 },
                                 {
                                         "sentence": "„Er besucht uns am Sonntag.“",
                                         "target_phrase": "uns",
                                         "case": "Akkusativ",
-                                        "reason_vi": "`besuchen` + Akk"
+                                        "reason_vi": "besuchen + Akk"
                                 },
                                 {
                                         "sentence": "„Ich danke dir für die Hilfe.“",
                                         "target_phrase": "dir",
                                         "case": "Dativ",
-                                        "reason_vi": "`danken` + Dat"
+                                        "reason_vi": "danken + Dat"
                                 }
                         ],
                         "translation": "Hàng 1: „Wie gefällt Ihnen das Hotel?“ (Dativ) | Hàng 2: „Ich höre euch nicht.“ (Akkusativ) | Hàng 3: „Er besucht uns am Sonntag.“ (Akkusativ) | Hàng 4: „Ich danke dir für die Hilfe.“ (Dativ)"
@@ -1556,7 +1556,7 @@ def seed_lesson_12():
                 "question": "Câu 54: Xác định từ in đậm trong mỗi câu sau thuộc Akkusativ hay Dativ:",
                 "options": null,
                 "correct_answer": "Dativ, Akkusativ, Dativ, Akkusativ",
-                "explanation": "Phân loại dựa trên động từ đi kèm. -> Đáp án: \"Dativ, Akkusativ, Dativ, Akkusativ\"",
+                "explanation": "1. helfen + Dativ ➔ ihr · 2. sehen + Akkusativ ➔ sie · 3. stehen + Dativ ➔ mir · 4. kennen + Akkusativ ➔ Sie. -> Đáp án: \"Dativ, Akkusativ, Dativ, Akkusativ\"",
                 "exp_reward": 15,
                 "extra_data": {
                         "items": [
@@ -1564,25 +1564,25 @@ def seed_lesson_12():
                                         "sentence": "„Die Salbe hilft ihr sehr.“",
                                         "target_phrase": "ihr",
                                         "case": "Dativ",
-                                        "reason_vi": "`helfen` + Dat"
+                                        "reason_vi": "helfen + Dat"
                                 },
                                 {
                                         "sentence": "„Manchmal sehe ich sie im Café.“ (cô ấy)",
                                         "target_phrase": "sie",
                                         "case": "Akkusativ",
-                                        "reason_vi": "`sehen` + Akk"
+                                        "reason_vi": "sehen + Akk"
                                 },
                                 {
                                         "sentence": "„Steht mir das Kleid?“",
                                         "target_phrase": "mir",
                                         "case": "Dativ",
-                                        "reason_vi": "`stehen` + Dat"
+                                        "reason_vi": "stehen + Dat"
                                 },
                                 {
                                         "sentence": "„Ich kenne Sie nicht.“ (Ngài)",
                                         "target_phrase": "Sie",
                                         "case": "Akkusativ",
-                                        "reason_vi": "`kennen` + Akk"
+                                        "reason_vi": "kennen + Akk"
                                 }
                         ],
                         "translation": "Hàng 1: „Die Salbe hilft ihr sehr.“ (Dativ) | Hàng 2: „Manchmal sehe ich sie im Café.“ (cô ấy) (Akkusativ) | Hàng 3: „Steht mir das Kleid?“ (Dativ) | Hàng 4: „Ich kenne Sie nicht.“ (Ngài) (Akkusativ)"
@@ -1594,7 +1594,7 @@ def seed_lesson_12():
                 "question": "Câu 55: Xác định từ in đậm trong mỗi câu sau thuộc Akkusativ hay Dativ:",
                 "options": null,
                 "correct_answer": "Akkusativ, Dativ, Dativ, Akkusativ",
-                "explanation": "Chú ý giới từ 'für' và các động từ đi với 2 tân ngữ (geben). -> Đáp án: \"Akkusativ, Dativ, Dativ, Akkusativ\"",
+                "explanation": "1. giới từ für + Akkusativ ➔ sie · 2. gefallen + Dativ ➔ ihr · 3. geben + Dativ (người nhận) ➔ ihr · 4. lesen + Akkusativ ➔ es. -> Đáp án: \"Akkusativ, Dativ, Dativ, Akkusativ\"",
                 "exp_reward": 15,
                 "extra_data": {
                         "items": [
@@ -1602,25 +1602,25 @@ def seed_lesson_12():
                                         "sentence": "„Ich kaufe das Buch für sie.“ (cô ấy)",
                                         "target_phrase": "sie",
                                         "case": "Akkusativ",
-                                        "reason_vi": "giới từ `für` + Akk"
+                                        "reason_vi": "giới từ für + Akk"
                                 },
                                 {
                                         "sentence": "„Das Buch gefällt ihr.“",
                                         "target_phrase": "ihr",
                                         "case": "Dativ",
-                                        "reason_vi": "`gefallen` + Dat"
+                                        "reason_vi": "gefallen + Dat"
                                 },
                                 {
                                         "sentence": "„Ich gebe ihr das Buch.“",
                                         "target_phrase": "ihr",
                                         "case": "Dativ",
-                                        "reason_vi": "`geben` + Dat người nhận"
+                                        "reason_vi": "geben + Dat người nhận"
                                 },
                                 {
                                         "sentence": "„Ich lese es jeden Tag.“ (cuốn sách)",
                                         "target_phrase": "es",
                                         "case": "Akkusativ",
-                                        "reason_vi": "`lesen` + Akk"
+                                        "reason_vi": "lesen + Akk"
                                 }
                         ],
                         "translation": "Hàng 1: „Ich kaufe das Buch für sie.“ (cô ấy) (Akkusativ) | Hàng 2: „Das Buch gefällt ihr.“ (Dativ) | Hàng 3: „Ich gebe ihr das Buch.“ (Dativ) | Hàng 4: „Ich lese es jeden Tag.“ (cuốn sách) (Akkusativ)"
