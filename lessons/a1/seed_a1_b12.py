@@ -202,7 +202,7 @@ def seed_lesson_12():
                     <div class="text-slate-700">• Bỏ chủ ngữ <code>du</code>, bỏ đuôi <code>-st</code>: <i>Komm!</i>, <i>Trink!</i></div>
                     <div class="text-slate-700">• Biến âm <code>e ➔ i/ie</code>: <b>GIỮ</b> (<i>Iss!</i>, <i>Lies!</i>, <i>Nimm!</i>)</div>
                     <div class="text-slate-700">• Biến âm <code>a ➔ ä</code>: <b>MẤT</b> (<i>Fahr!</i>, <i>Schlaf!</i>)</div>
-                    <div class="text-slate-700">• Gốc kết thúc bằng <code>-t/-d</code>: thêm <b>-e</b> (<i>Warte!</i>, <i>Atme!</i>)</div>
+                    <div class="text-slate-700">• Gốc kết thúc bằng <code>-t/-d</code> hoặc phụ âm + <code>m/n</code>: thêm <b>-e</b> (<i>Warte!</i>, <i>Atme!</i>, <i>Öffne!</i>)</div>
                 </div>
 
                 <div class="p-3.5 rounded-2xl bg-indigo-50 border border-indigo-200 space-y-1.5">
@@ -423,7 +423,7 @@ def seed_lesson_12():
                 "article": "der",
                 "german_word": "der Schmerz",
                 "vietnamese_meaning": "cơn đau (PL: die Schmerzen)",
-                "example_sentence": "„Ich habe starke Zahnschmerzen.“ — Tôi bị đau răng dữ dội."
+                "example_sentence": "„Ich habe starke Schmerzen.“ — Tôi bị đau dữ dội."
         },
         {
                 "article": "der",
@@ -494,7 +494,7 @@ def seed_lesson_12():
         {
                 "article": "die",
                 "german_word": "die Versichertenkarte",
-                "vietnamese_meaning": "thẻ BHYT (PL: die -karten)",
+                "vietnamese_meaning": "thẻ BHYT (PL: die Versichertenkarten)",
                 "example_sentence": "„Ich brauche Ihre Versichertenkarte.“ — Tôi cần thẻ BHYT của ngài."
         },
         {
@@ -513,7 +513,7 @@ def seed_lesson_12():
                 "article": "die",
                 "german_word": "die Entzündung",
                 "vietnamese_meaning": "chứng viêm (PL: die Entzündungen)",
-                "example_sentence": "„Er hat eine Halsentzündung.“ — Anh ấy bị viêm họng."
+                "example_sentence": "„Er hat eine Entzündung im Hals.“ — Anh ấy bị viêm ở họng."
         },
         {
                 "article": "die",
@@ -584,7 +584,7 @@ def seed_lesson_12():
         {
                 "id": 1,
                 "exercise_type": "trac_nghiem",
-                "question": "Câu 1: Chọn đại từ đúng: *„Ich liebe ___ .“*",
+                "question": "Câu 1: Chọn đại từ đúng: „Ich liebe ___.“",
                 "options": [
                         "dir",
                         "dich",
@@ -592,17 +592,17 @@ def seed_lesson_12():
                         "mich"
                 ],
                 "correct_answer": "dich",
-                "explanation": "Động từ `lieben` tác động trực tiếp lên đối tượng nên đi kèm với Akkusativ (Cách 4). Đại từ Akkusativ của `du` là **`dich`**.",
+                "explanation": "Động từ lieben tác động trực tiếp lên đối tượng nên đi kèm với Akkusativ (Cách 4). Đại từ Akkusativ của du là dich.",
                 "exp_reward": 15,
                 "extra_data": {
-                        "translation": "Tôi yêu bạn.“",
+                        "translation": "Tôi yêu bạn.",
                         "audio_text": "dich"
                 }
         },
         {
                 "id": 2,
                 "exercise_type": "trac_nghiem",
-                "question": "Câu 2: Chọn đại từ đúng: *„Der Arzt untersucht ___ heute.“* (ông ấy)",
+                "question": "Câu 2: Chọn đại từ đúng: „Der Arzt untersucht ___ heute.“ (ông ấy)",
                 "options": [
                         "er",
                         "ihm",
@@ -610,17 +610,17 @@ def seed_lesson_12():
                         "es"
                 ],
                 "correct_answer": "ihn",
-                "explanation": "Động từ `untersuchen` (khám bệnh) + Akkusativ. Akkusativ của `er` là **`ihn`**.",
+                "explanation": "Động từ untersuchen (khám bệnh) + Akkusativ. Akkusativ của er là ihn.",
                 "exp_reward": 15,
                 "extra_data": {
-                        "translation": "Bác sĩ khám cho ông ấy hôm nay.“",
+                        "translation": "Bác sĩ khám cho ông ấy hôm nay.",
                         "audio_text": "ihn"
                 }
         },
         {
                 "id": 3,
                 "exercise_type": "trac_nghiem",
-                "question": "Câu 3: Chọn hình thức đúng của Modalverb: *„Die Kinder ___ nicht so viel Schokolade essen.“*",
+                "question": "Câu 3: Chọn hình thức đúng của Modalverb: „Die Kinder ___ nicht so viel Schokolade essen.“",
                 "options": [
                         "dürft",
                         "darfst",
@@ -628,17 +628,17 @@ def seed_lesson_12():
                         "dürfen"
                 ],
                 "correct_answer": "dürfen",
-                "explanation": "`Die Kinder` là chủ ngữ số nhiều (sie - họ). Động từ dürfen chia ở số nhiều là **`dürfen`**.",
+                "explanation": "Die Kinder là chủ ngữ số nhiều (sie - họ). Động từ dürfen chia ở số nhiều là dürfen.",
                 "exp_reward": 15,
                 "extra_data": {
-                        "translation": "Bọn trẻ không được phép ăn quá nhiều sô cô la.“",
+                        "translation": "Bọn trẻ không được phép ăn quá nhiều sô cô la.",
                         "audio_text": "dürfen"
                 }
         },
         {
                 "id": 4,
                 "exercise_type": "trac_nghiem",
-                "question": "Câu 4: Chọn câu Mệnh lệnh (Imperativ) đúng cho ngôi **du**:",
+                "question": "Câu 4: Chọn câu Mệnh lệnh (Imperativ) đúng cho ngôi du:",
                 "options": [
                         "Trinkt viel Wasser!",
                         "Trinken Sie viel Wasser!",
@@ -646,10 +646,10 @@ def seed_lesson_12():
                         "Trinkst du viel Wasser!"
                 ],
                 "correct_answer": "Trink viel Wasser!",
-                "explanation": "Đối với ngôi `du`, ta bỏ `-st` và bỏ chủ ngữ `du`. `du trinkst` ➔ **`Trink!`**. -> Đáp án đúng: \"Trink viel Wasser!\"",
+                "explanation": "Đối với ngôi du, ta bỏ -st và bỏ chủ ngữ du. du trinkst ➔ Trink!. -> Đáp án đúng: \"Trink viel Wasser!\"",
                 "exp_reward": 15,
                 "extra_data": {
-                        "translation": "Hãy uống nhiều nước!“",
+                        "translation": "Hãy uống nhiều nước!",
                         "audio_text": "du"
                 }
         },
@@ -658,23 +658,23 @@ def seed_lesson_12():
                 "exercise_type": "trac_nghiem",
                 "question": "Câu 5: Tìm từ khác loại (về Giống - Artikel):",
                 "options": [
-                        "Bauch",
                         "Rücken",
-                        "Finger",
-                        "Nase"
+                        "Nase",
+                        "Bauch",
+                        "Finger"
                 ],
                 "correct_answer": "Nase",
-                "explanation": "der Bauch, der Rücken, der Finger đều là giống Đực (der). Chỉ có **`die Nase`** là giống Cái (die).",
+                "explanation": "der Rücken, der Bauch, der Finger đều là giống Đực (der). Chỉ có die Nase là giống Cái (die).",
                 "exp_reward": 15,
                 "extra_data": {
-                        "translation": "Bụng, Lưng, Ngón tay, Mũi.",
+                        "translation": "Rücken (lưng), Nase (mũi), Bauch (bụng), Finger (ngón tay).",
                         "audio_text": "Nase"
                 }
         },
         {
                 "id": 6,
                 "exercise_type": "trac_nghiem",
-                "question": "Câu 6: *„Guten Tag, Herr Müller. Was fehlt ___ ?“*",
+                "question": "Câu 6: „Guten Tag, Herr Müller. Was fehlt ___?“",
                 "options": [
                         "Ihnen",
                         "Sie",
@@ -682,17 +682,17 @@ def seed_lesson_12():
                         "dir"
                 ],
                 "correct_answer": "Ihnen",
-                "explanation": "Động từ `fehlen` trong y tế đi với Dativ. Herr Müller đòi hỏi sự trang trọng (Sie), Dativ của Sie là **`Ihnen`**.",
+                "explanation": "Động từ fehlen trong y tế đi với Dativ. Herr Müller đòi hỏi sự trang trọng (Sie), Dativ của Sie là Ihnen.",
                 "exp_reward": 15,
                 "extra_data": {
-                        "translation": "Chào ngài Müller. Ngài bị làm sao vậy?“",
+                        "translation": "Chào ngài Müller. Ngài bị làm sao vậy?",
                         "audio_text": "Ihnen"
                 }
         },
         {
                 "id": 7,
                 "exercise_type": "trac_nghiem",
-                "question": "Câu 7: Chọn đại từ đúng: *„Wir haben ein Problem. Kannst du ___ helfen?“*",
+                "question": "Câu 7: Chọn đại từ đúng: „Wir haben ein Problem. Kannst du ___ helfen?“",
                 "options": [
                         "uns",
                         "wir",
@@ -700,17 +700,17 @@ def seed_lesson_12():
                         "mich"
                 ],
                 "correct_answer": "uns",
-                "explanation": "Động từ `helfen` đi với Dativ. Dativ của `wir` (chúng tôi) là **`uns`**. (Bẫy: uns ở Akk và Dat giống nhau, nhưng bản chất ở đây là Dat).",
+                "explanation": "Động từ helfen đi với Dativ. Dativ của wir (chúng tôi) là uns. (Bẫy: uns ở Akk và Dat giống nhau, nhưng bản chất ở đây là Dat).",
                 "exp_reward": 15,
                 "extra_data": {
-                        "translation": "Chúng tôi có một vấn đề. Bạn có thể giúp chúng tôi không?“",
+                        "translation": "Chúng tôi có một vấn đề. Bạn có thể giúp chúng tôi không?",
                         "audio_text": "uns"
                 }
         },
         {
                 "id": 8,
                 "exercise_type": "trac_nghiem",
-                "question": "Câu 8: *„Das ist Maria. Kennst du ___ ?“*",
+                "question": "Câu 8: „Das ist Maria. Kennst du ___?“",
                 "options": [
                         "ihr",
                         "sie",
@@ -718,17 +718,17 @@ def seed_lesson_12():
                         "es"
                 ],
                 "correct_answer": "sie",
-                "explanation": "Động từ `kennen` + Akkusativ. Akkusativ của `sie` (cô ấy) vẫn là **`sie`**.",
+                "explanation": "Động từ kennen + Akkusativ. Akkusativ của sie (cô ấy) vẫn là sie.",
                 "exp_reward": 15,
                 "extra_data": {
-                        "translation": "Kia là Maria. Bạn có biết cô ấy không?“",
+                        "translation": "Kia là Maria. Bạn có biết cô ấy không?",
                         "audio_text": "sie"
                 }
         },
         {
                 "id": 9,
                 "exercise_type": "trac_nghiem",
-                "question": "Câu 9: Chọn câu Mệnh lệnh đúng cho ngôi **ihr**: (Động từ essen)",
+                "question": "Câu 9: Chọn câu Mệnh lệnh đúng cho ngôi ihr: (Động từ essen)",
                 "options": [
                         "Isst mehr Gemüse!",
                         "Esst mehr Gemüse!",
@@ -736,17 +736,17 @@ def seed_lesson_12():
                         "Iss mehr Gemüse!"
                 ],
                 "correct_answer": "Esst mehr Gemüse!",
-                "explanation": "Mệnh lệnh ngôi `ihr`: chia động từ như bình thường (`ihr esst`) rồi bỏ chủ ngữ `ihr` ➔ **`Esst!`**. Không có biến âm 'i' như ngôi du. -> Đáp án đúng: \"Esst mehr Gemüse!\"",
+                "explanation": "Mệnh lệnh ngôi ihr: chia động từ như bình thường (ihr esst) rồi bỏ chủ ngữ ihr ➔ Esst!. Không có biến âm 'i' như ngôi du. -> Đáp án đúng: \"Esst mehr Gemüse!\"",
                 "exp_reward": 15,
                 "extra_data": {
-                        "translation": "Các bạn hãy ăn nhiều rau hơn!“",
+                        "translation": "Các bạn hãy ăn nhiều rau hơn!",
                         "audio_text": "ihr"
                 }
         },
         {
                 "id": 10,
                 "exercise_type": "trac_nghiem",
-                "question": "Câu 10: Biển báo ghi: *„Hier darf man nicht parken.“* Nghĩa là gì?",
+                "question": "Câu 10: Biển báo ghi: „Hier darf man nicht parken.“ Nghĩa là gì?",
                 "options": [
                         "Người ta được phép đỗ xe ở đây.",
                         "Cấm đỗ xe ở đây.",
@@ -754,17 +754,17 @@ def seed_lesson_12():
                         "Bạn phải đỗ xe ở đây."
                 ],
                 "correct_answer": "Cấm đỗ xe ở đây.",
-                "explanation": "`nicht dürfen` mang ý nghĩa cấm đoán (Verbot). `parken` = đỗ xe. -> Đáp án đúng: \"Cấm đỗ xe ở đây.\"",
+                "explanation": "nicht dürfen mang ý nghĩa cấm đoán (Verbot). parken = đỗ xe. -> Đáp án đúng: \"Cấm đỗ xe ở đây.\"",
                 "exp_reward": 15,
                 "extra_data": {
-                        "translation": "Ở đây người ta không được đỗ xe.“",
+                        "translation": "Ở đây người ta không được đỗ xe.",
                         "audio_text": "Cấm đỗ xe ở đây"
                 }
         },
         {
                 "id": 11,
                 "exercise_type": "trac_nghiem",
-                "question": "Câu 11: Điền vào chỗ trống: *„Mein rechter ___ tut weh. Ich kann nicht gut laufen.“*",
+                "question": "Câu 11: Điền vào chỗ trống: „Mein rechter ___ tut weh. Ich kann nicht gut laufen.“",
                 "options": [
                         "Fuß",
                         "Kopf",
@@ -772,17 +772,17 @@ def seed_lesson_12():
                         "Bauch"
                 ],
                 "correct_answer": "Fuß",
-                "explanation": "`laufen` (đi/chạy) liên quan đến chân (`der Fuß`). `rechter` cho thấy danh từ giống đực (der).",
+                "explanation": "laufen (đi/chạy) liên quan đến chân (der Fuß). rechter cho thấy danh từ giống đực (der).",
                 "exp_reward": 15,
                 "extra_data": {
-                        "translation": "Bàn chân phải của tôi bị đau. Tôi không thể đi lại tốt được.“",
+                        "translation": "Bàn chân phải của tôi bị đau. Tôi không thể đi lại tốt được.",
                         "audio_text": "Fuß"
                 }
         },
         {
                 "id": 12,
                 "exercise_type": "trac_nghiem",
-                "question": "Câu 12: Chọn đại từ đúng: *„Ruf ___ bitte heute Abend an!“* (tôi)",
+                "question": "Câu 12: Chọn đại từ đúng: „Ruf ___ bitte heute Abend an!“ (tôi)",
                 "options": [
                         "mir",
                         "mich",
@@ -790,17 +790,17 @@ def seed_lesson_12():
                         "mein"
                 ],
                 "correct_answer": "mich",
-                "explanation": "Động từ `anrufen` (gọi điện) + Akkusativ. Akkusativ của `ich` là **`mich`**.",
+                "explanation": "Động từ anrufen (gọi điện) + Akkusativ. Akkusativ của ich là mich.",
                 "exp_reward": 15,
                 "extra_data": {
-                        "translation": "Hãy gọi cho tôi vào tối nay nhé!“",
+                        "translation": "Hãy gọi cho tôi vào tối nay nhé!",
                         "audio_text": "mich"
                 }
         },
         {
                 "id": 13,
                 "exercise_type": "trac_nghiem",
-                "question": "Câu 13: Chọn hình thức Mệnh lệnh đúng của động từ **arbeiten** cho ngôi **du**:",
+                "question": "Câu 13: Chọn hình thức Mệnh lệnh đúng của động từ arbeiten cho ngôi du:",
                 "options": [
                         "Arbeit!",
                         "Arbeitest!",
@@ -808,35 +808,35 @@ def seed_lesson_12():
                         "Arbeitet!"
                 ],
                 "correct_answer": "Arbeite!",
-                "explanation": "Động từ kết thúc bằng `-t` (`arbeit-en`). Khi chuyển sang Imperativ ngôi `du`, ta phải giữ lại đuôi `-e` để dễ phát âm ➔ **`Arbeite!`**.",
+                "explanation": "Động từ kết thúc bằng -t (arbeit-en). Khi chuyển sang Imperativ ngôi du, ta phải giữ lại đuôi -e để dễ phát âm ➔ Arbeite!.",
                 "exp_reward": 15,
                 "extra_data": {
-                        "translation": "Hãy làm việc đi!“",
+                        "translation": "Hãy làm việc đi!",
                         "audio_text": "arbeiten"
                 }
         },
         {
                 "id": 14,
                 "exercise_type": "trac_nghiem",
-                "question": "Câu 14: *„Wie oft muss ich die Tabletten nehmen?“ – „Nehmen ___ sie zweimal täglich.“*",
+                "question": "Câu 14: „Wie oft muss ich die Tabletten nehmen?“ – „Nehmen ___ die Tabletten zweimal täglich.“",
                 "options": [
                         "Sie",
                         "ihr",
                         "du",
-                        "wir"
+                        "man"
                 ],
                 "correct_answer": "Sie",
-                "explanation": "Động từ nguyên thể `Nehmen` đứng đầu câu + đại từ nhân xưng ➔ Câu mệnh lệnh ngôi lịch sự **`Sie`**.",
+                "explanation": "Động từ nguyên mẫu Nehmen đứng đầu câu + đại từ nhân xưng ➔ Câu mệnh lệnh ngôi lịch sự Sie.",
                 "exp_reward": 15,
                 "extra_data": {
-                        "translation": "Tôi phải uống thuốc mấy lần?“ – „Ngài hãy uống hai lần mỗi ngày.“",
+                        "translation": "Ngài hãy uống thuốc hai lần mỗi ngày.",
                         "audio_text": "Sie"
                 }
         },
         {
                 "id": 15,
                 "exercise_type": "trac_nghiem",
-                "question": "Câu 15: Chọn hình thức đúng của Modalverb: *„___ ich einen Kaffee trinken?“*",
+                "question": "Câu 15: Chọn hình thức đúng của Modalverb: „___ ich einen Kaffee trinken?“",
                 "options": [
                         "Darfst",
                         "Dürfen",
@@ -844,252 +844,252 @@ def seed_lesson_12():
                         "Dürft"
                 ],
                 "correct_answer": "Darf",
-                "explanation": "Chủ ngữ là `ich` ➔ động từ dürfen chia là **`darf`**.",
+                "explanation": "Chủ ngữ là ich ➔ động từ dürfen chia là darf.",
                 "exp_reward": 15,
                 "extra_data": {
-                        "translation": "Tôi có được phép uống một ly cà phê không?“",
+                        "translation": "Tôi có được phép uống một ly cà phê không?",
                         "audio_text": "Darf"
                 }
         },
         {
                 "id": 16,
                 "exercise_type": "dien_khuyet",
-                "question": "Câu 16: Điền Modalverb `dürfen`: *„Mama, ___ ich jetzt fernsehen?“*",
+                "question": "Câu 16: Điền Modalverb dürfen: „Mama, ___ ich jetzt fernsehen?“",
                 "options": null,
                 "correct_answer": "darf",
-                "explanation": "Chủ ngữ `ich` ➔ **`darf`**.",
+                "explanation": "Chủ ngữ ich ➔ darf.",
                 "exp_reward": 15,
                 "extra_data": {
                         "accepted_answers": [
                                 "darf"
                         ],
-                        "translation": "Mẹ ơi, con có được phép xem TV bây giờ không?“",
+                        "translation": "Mẹ ơi, con có được phép xem TV bây giờ không?",
                         "audio_text": "darf"
                 }
         },
         {
                 "id": 17,
                 "exercise_type": "dien_khuyet",
-                "question": "Câu 17: Điền Modalverb `dürfen`: *„Ihr ___ nicht so laut sprechen! Das Baby schläft.“*",
+                "question": "Câu 17: Điền Modalverb dürfen: „Ihr ___ nicht so laut sprechen! Das Baby schläft.“",
                 "options": null,
                 "correct_answer": "dürft",
-                "explanation": "Chủ ngữ `ihr` ➔ **`dürft`**.",
+                "explanation": "Chủ ngữ ihr ➔ dürft.",
                 "exp_reward": 15,
                 "extra_data": {
                         "accepted_answers": [
                                 "dürft",
                                 "duerft"
                         ],
-                        "translation": "Các con không được nói chuyện lớn tiếng như vậy! Em bé đang ngủ.“",
+                        "translation": "Các con không được nói chuyện lớn tiếng như vậy! Em bé đang ngủ.",
                         "audio_text": "dürft"
                 }
         },
         {
                 "id": 18,
                 "exercise_type": "dien_khuyet",
-                "question": "Câu 18: Điền Modalverb `dürfen`: *„Entschuldigung, ___ man hier fotografieren?“*",
+                "question": "Câu 18: Điền Modalverb dürfen: „Entschuldigung, ___ man hier fotografieren?“",
                 "options": null,
                 "correct_answer": "darf",
-                "explanation": "Chủ ngữ `man` (người ta - ngôi thứ 3 số ít) ➔ **`darf`**.",
+                "explanation": "Chủ ngữ man (người ta - ngôi thứ 3 số ít) ➔ darf.",
                 "exp_reward": 15,
                 "extra_data": {
                         "accepted_answers": [
                                 "darf"
                         ],
-                        "translation": "Xin lỗi, người ta có được phép chụp ảnh ở đây không?“",
+                        "translation": "Xin lỗi, người ta có được phép chụp ảnh ở đây không?",
                         "audio_text": "darf"
                 }
         },
         {
                 "id": 19,
                 "exercise_type": "dien_khuyet",
-                "question": "Câu 19: Điền Modalverb `dürfen`: *„Lukas ___ heute Abend nicht ins Kino gehen.“*",
+                "question": "Câu 19: Điền Modalverb dürfen: „Lukas ___ heute Abend nicht ins Kino gehen.“",
                 "options": null,
                 "correct_answer": "darf",
-                "explanation": "Chủ ngữ `Lukas` (er) ➔ **`darf`**.",
+                "explanation": "Chủ ngữ Lukas (er) ➔ darf.",
                 "exp_reward": 15,
                 "extra_data": {
                         "accepted_answers": [
                                 "darf"
                         ],
-                        "translation": "Lukas không được phép đi xem phim tối nay.“",
+                        "translation": "Lukas không được phép đi xem phim tối nay.",
                         "audio_text": "darf"
                 }
         },
         {
                 "id": 20,
                 "exercise_type": "dien_khuyet",
-                "question": "Câu 20: Điền động từ chia ở Imperativ (ngôi du): *„___ bitte einen Moment!“* (warten)",
+                "question": "Câu 20: Điền động từ chia ở Imperativ (ngôi du): „___ bitte einen Moment!“ (warten)",
                 "options": null,
                 "correct_answer": "Warte",
-                "explanation": "Động từ `warten` gốc tận cùng bằng `t` ➔ Imperativ ngôi du phải thêm đuôi `-e`: **`Warte!`**.",
+                "explanation": "Động từ warten gốc tận cùng bằng t ➔ Imperativ ngôi du phải thêm đuôi -e: Warte!.",
                 "exp_reward": 15,
                 "extra_data": {
                         "accepted_answers": [
                                 "Warte"
                         ],
-                        "translation": "Xin hãy đợi một lát!“",
+                        "translation": "Xin hãy đợi một lát!",
                         "audio_text": "Warte"
                 }
         },
         {
                 "id": 21,
                 "exercise_type": "dien_khuyet",
-                "question": "Câu 21: Điền động từ chia ở Imperativ (ngôi ihr): *„Kinder, ___ eure Hausaufgaben!“* (machen)",
+                "question": "Câu 21: Điền động từ chia ở Imperativ (ngôi ihr): „Kinder, ___ eure Hausaufgaben!“ (machen)",
                 "options": null,
                 "correct_answer": "Macht",
-                "explanation": "Ngôi ihr chia bình thường `macht` rồi bỏ chữ `ihr` ➔ **`Macht!`**.",
+                "explanation": "Ngôi ihr chia bình thường macht rồi bỏ chữ ihr ➔ Macht!.",
                 "exp_reward": 15,
                 "extra_data": {
                         "accepted_answers": [
                                 "Macht"
                         ],
-                        "translation": "Các con, hãy làm bài tập về nhà của các con đi!“",
+                        "translation": "Các con, hãy làm bài tập về nhà của các con đi!",
                         "audio_text": "Macht"
                 }
         },
         {
                 "id": 22,
                 "exercise_type": "dien_khuyet",
-                "question": "Câu 22: Điền động từ chia ở Imperativ (ngôi du): *„___ nicht so viel Cola!“* (trinken)",
+                "question": "Câu 22: Điền động từ chia ở Imperativ (ngôi du): „___ nicht so viel Cola!“ (trinken)",
                 "options": null,
                 "correct_answer": "Trink",
-                "explanation": "Ngôi du của trinken là `trinkst`, bỏ `st` ➔ **`Trink!`** (hoặc Trinke! trong văn phong trang trọng).",
+                "explanation": "Ngôi du của trinken là trinkst, bỏ st ➔ Trink! (hoặc Trinke! trong văn phong trang trọng).",
                 "exp_reward": 15,
                 "extra_data": {
                         "accepted_answers": [
                                 "Trink",
                                 "Trinke"
                         ],
-                        "translation": "Đừng uống nhiều nước ngọt Cola quá!“",
+                        "translation": "Đừng uống nhiều nước ngọt Cola quá!",
                         "audio_text": "Trink"
                 }
         },
         {
                 "id": 23,
                 "exercise_type": "dien_khuyet",
-                "question": "Câu 23: Điền động từ chia ở Imperativ (ngôi Sie): *„___ Sie bitte Platz im Wartezimmer!“* (nehmen)",
+                "question": "Câu 23: Điền động từ chia ở Imperativ (ngôi Sie): „___ Sie bitte Platz im Wartezimmer!“ (nehmen)",
                 "options": null,
                 "correct_answer": "Nehmen",
-                "explanation": "Cấu trúc mệnh lệnh lịch sự: Nguyên thể **`Nehmen`** + Sie.",
+                "explanation": "Cấu trúc mệnh lệnh lịch sự: Nguyên thể Nehmen + Sie.",
                 "exp_reward": 15,
                 "extra_data": {
                         "accepted_answers": [
                                 "Nehmen"
                         ],
-                        "translation": "Xin ngài hãy ngồi chờ ở phòng đợi!“",
+                        "translation": "Xin ngài hãy ngồi chờ ở phòng đợi!",
                         "audio_text": "Nehmen"
                 }
         },
         {
                 "id": 24,
                 "exercise_type": "dien_khuyet",
-                "question": "Câu 24: Điền đại từ Akkusativ: *„Das ist mein neuer Pullover. Findest du ___ schön?“* (er)",
+                "question": "Câu 24: Điền đại từ Akkusativ: „Das ist mein neuer Pullover. Findest du ___ schön?“ (er)",
                 "options": null,
                 "correct_answer": "ihn",
-                "explanation": "`der Pullover` được thay thế bằng đại từ `er`. Đứng làm tân ngữ cho `finden` ➔ Akkusativ là **`ihn`**.",
+                "explanation": "der Pullover được thay thế bằng đại từ er. Đứng làm tân ngữ cho finden ➔ Akkusativ là ihn.",
                 "exp_reward": 15,
                 "extra_data": {
                         "accepted_answers": [
                                 "ihn"
                         ],
-                        "translation": "Đó là chiếc áo len mới của tôi. Bạn thấy nó đẹp không?“",
+                        "translation": "Đó là chiếc áo len mới của tôi. Bạn thấy nó đẹp không?",
                         "audio_text": "ihn"
                 }
         },
         {
                 "id": 25,
                 "exercise_type": "dien_khuyet",
-                "question": "Câu 25: Điền đại từ Dativ: *„Wir suchen den Bahnhof. Können Sie ___ bitte helfen?“* (wir)",
+                "question": "Câu 25: Điền đại từ Dativ: „Wir suchen den Bahnhof. Können Sie ___ bitte helfen?“ (wir)",
                 "options": null,
                 "correct_answer": "uns",
-                "explanation": "LƯU Ý! Động từ `helfen` đi với Dativ. Dativ của `wir` là **`uns`**. (Câu này rèn luyện sự tỉnh táo).",
+                "explanation": "LƯU Ý! Động từ helfen đi với Dativ. Dativ của wir là uns. (Câu này rèn luyện sự tỉnh táo).",
                 "exp_reward": 15,
                 "extra_data": {
                         "accepted_answers": [
                                 "uns"
                         ],
-                        "translation": "Chúng tôi đang tìm nhà ga. Ngài có thể giúp chúng tôi được không?“",
+                        "translation": "Chúng tôi đang tìm nhà ga. Ngài có thể giúp chúng tôi được không?",
                         "audio_text": "uns"
                 }
         },
         {
                 "id": 26,
                 "exercise_type": "dien_khuyet",
-                "question": "Câu 26: Điền đại từ Akkusativ: *„Ich habe dich gestern angerufen, aber du hast ___ nicht gehört.“* (ich)",
+                "question": "Câu 26: Điền đại từ Akkusativ: „Ich habe dich gestern angerufen, aber du hast ___ nicht gehört.“ (ich)",
                 "options": null,
                 "correct_answer": "mich",
-                "explanation": "Động từ `hören` + Akkusativ. Akkusativ của `ich` là **`mich`**.",
+                "explanation": "Động từ hören + Akkusativ. Akkusativ của ich là mich.",
                 "exp_reward": 15,
                 "extra_data": {
                         "accepted_answers": [
                                 "mich"
                         ],
-                        "translation": "Hôm qua tôi đã gọi điện cho bạn, nhưng bạn không nghe thấy tôi.“",
+                        "translation": "Hôm qua tôi đã gọi điện cho bạn, nhưng bạn không nghe thấy tôi.",
                         "audio_text": "mich"
                 }
         },
         {
                 "id": 27,
                 "exercise_type": "dien_khuyet",
-                "question": "Câu 27: Điền bộ phận cơ thể: *„Ich kann nicht essen. Ich habe Zahn___.“*",
+                "question": "Câu 27: Điền bộ phận cơ thể: „Ich kann nicht essen. Ich habe Zahn___.“",
                 "options": null,
                 "correct_answer": "schmerzen",
-                "explanation": "Ghép từ `Zahn` + `schmerzen` = **`Zahnschmerzen`**.",
+                "explanation": "Ghép từ Zahn + schmerzen = Zahnschmerzen.",
                 "exp_reward": 15,
                 "extra_data": {
                         "accepted_answers": [
                                 "schmerzen"
                         ],
-                        "translation": "Tôi không thể ăn. Tôi bị đau răng.“",
+                        "translation": "Tôi không thể ăn. Tôi bị đau răng.",
                         "audio_text": "schmerzen"
                 }
         },
         {
                 "id": 28,
                 "exercise_type": "dien_khuyet",
-                "question": "Câu 28: Điền bộ phận cơ thể: *„Er hat den ganzen Tag am Computer gearbeitet. Jetzt tun ihm die ___ weh.“* (đôi mắt)",
+                "question": "Câu 28: Điền bộ phận cơ thể: „Er hat den ganzen Tag am Computer gearbeitet. Jetzt tun ihm die ___ weh.“ (đôi mắt)",
                 "options": null,
                 "correct_answer": "Augen",
-                "explanation": "Đôi mắt (số nhiều) = **`die Augen`**.",
+                "explanation": "Đôi mắt (số nhiều) = die Augen.",
                 "exp_reward": 15,
                 "extra_data": {
                         "accepted_answers": [
                                 "Augen"
                         ],
-                        "translation": "Anh ấy đã làm việc cả ngày trên máy tính. Bây giờ đôi mắt của anh ấy bị đau.“",
+                        "translation": "Anh ấy đã làm việc cả ngày trên máy tính. Bây giờ đôi mắt của anh ấy bị đau.",
                         "audio_text": "Augen"
                 }
         },
         {
                 "id": 29,
                 "exercise_type": "dien_khuyet",
-                "question": "Câu 29: Điền dạng đúng của động từ: *„Der Arzt ___ mir Hustensaft.“* (verschreiben)",
+                "question": "Câu 29: Điền dạng đúng của động từ: „Der Arzt ___ mir Hustensaft.“ (verschreiben)",
                 "options": null,
                 "correct_answer": "verschreibt",
-                "explanation": "Chủ ngữ `Der Arzt` (er) ➔ **`verschreibt`**.",
+                "explanation": "Chủ ngữ Der Arzt (er) ➔ verschreibt.",
                 "exp_reward": 15,
                 "extra_data": {
                         "accepted_answers": [
                                 "verschreibt"
                         ],
-                        "translation": "Bác sĩ kê cho tôi siro ho.“",
+                        "translation": "Bác sĩ kê cho tôi siro ho.",
                         "audio_text": "verschreibt"
                 }
         },
         {
                 "id": 30,
                 "exercise_type": "dien_khuyet",
-                "question": "Câu 30: Điền dạng đúng của động từ: *„Bitte ___ Sie tief ein und aus!“* (atmen)",
+                "question": "Câu 30: Điền dạng đúng của động từ: „Bitte ___ Sie tief ein und aus!“ (atmen)",
                 "options": null,
                 "correct_answer": "atmen",
-                "explanation": "Câu mệnh lệnh ngôi Sie ➔ động từ nguyên thể **`atmen`**.",
+                "explanation": "Câu mệnh lệnh ngôi Sie ➔ động từ nguyên thể atmen.",
                 "exp_reward": 15,
                 "extra_data": {
                         "accepted_answers": [
                                 "atmen"
                         ],
-                        "translation": "Xin ngài hãy hít vào và thở ra thật sâu!“",
+                        "translation": "Xin ngài hãy hít vào và thở ra thật sâu!",
                         "audio_text": "atmen"
                 }
         },
@@ -1099,7 +1099,7 @@ def seed_lesson_12():
                 "question": "Câu 31: Chuyển câu trần thuật sau sang câu Mệnh lệnh (Imperativ): „Du isst mehr Obst.“",
                 "options": null,
                 "correct_answer": "Iss mehr Obst!",
-                "explanation": "Động từ essen có biến âm `e` thành `i` ở ngôi du (du isst). Bỏ `st` (vì tận cùng là s nên chỉ mất s) ➔ **`Iss`**. -> Đáp án: \"Iss mehr Obst!\"",
+                "explanation": "Động từ essen có biến âm e thành i ở ngôi du (du isst). Bỏ st (vì tận cùng là s nên chỉ mất s) ➔ Iss. -> Đáp án: \"Iss mehr Obst!\"",
                 "exp_reward": 15,
                 "extra_data": {
                         "source_sentence": "Du isst mehr Obst.",
@@ -1107,7 +1107,7 @@ def seed_lesson_12():
                                 "Iss mehr Obst!",
                                 "Iss mehr Obst"
                         ],
-                        "translation": "Hãy ăn nhiều trái cây hơn!“",
+                        "translation": "Hãy ăn nhiều trái cây hơn!",
                         "audio_text": "Iss mehr Obst"
                 }
         },
@@ -1117,7 +1117,7 @@ def seed_lesson_12():
                 "question": "Câu 32: Chuyển câu trần thuật sau sang câu Mệnh lệnh (Imperativ): „Ihr lest den Text.“",
                 "options": null,
                 "correct_answer": "Lest den Text!",
-                "explanation": "Ngôi `ihr` chia là `lest`, bỏ chữ `ihr` đi ➔ **`Lest den Text!`**",
+                "explanation": "Ngôi ihr chia là lest, bỏ chữ ihr đi ➔ Lest den Text!",
                 "exp_reward": 15,
                 "extra_data": {
                         "source_sentence": "Ihr lest den Text.",
@@ -1125,7 +1125,7 @@ def seed_lesson_12():
                                 "Lest den Text!",
                                 "Lest den Text"
                         ],
-                        "translation": "Các bạn hãy đọc đoạn văn!“",
+                        "translation": "Các bạn hãy đọc đoạn văn!",
                         "audio_text": "Lest den Text"
                 }
         },
@@ -1135,7 +1135,7 @@ def seed_lesson_12():
                 "question": "Câu 33: Chuyển câu trần thuật sau sang câu Mệnh lệnh (Imperativ): „Sie (trang trọng) kommen bitte pünktlich.“",
                 "options": null,
                 "correct_answer": "Kommen Sie bitte pünktlich!",
-                "explanation": "Đảo động từ nguyên thể lên trước `Sie` ➔ **`Kommen Sie`**. -> Đáp án: \"Kommen Sie bitte pünktlich!\"",
+                "explanation": "Đảo động từ nguyên thể lên trước Sie ➔ Kommen Sie. -> Đáp án: \"Kommen Sie bitte pünktlich!\"",
                 "exp_reward": 15,
                 "extra_data": {
                         "source_sentence": "Sie (trang trọng) kommen bitte pünktlich.",
@@ -1145,7 +1145,7 @@ def seed_lesson_12():
                                 "Bitte kommen Sie pünktlich!",
                                 "Bitte kommen Sie pünktlich"
                         ],
-                        "translation": "Xin ngài hãy đến đúng giờ!“",
+                        "translation": "Xin ngài hãy đến đúng giờ!",
                         "audio_text": "Kommen Sie bitte pünktlich"
                 }
         },
@@ -1155,7 +1155,7 @@ def seed_lesson_12():
                 "question": "Câu 34: Chuyển câu trần thuật sau sang câu Mệnh lệnh (Imperativ): „Du bist leise.“",
                 "options": null,
                 "correct_answer": "Sei leise!",
-                "explanation": "`sein` là động từ bất quy tắc đặc biệt. Ở ngôi du, mệnh lệnh của nó là **`Sei`**. -> Đáp án: \"Sei leise!\"",
+                "explanation": "sein là động từ bất quy tắc đặc biệt. Ở ngôi du, mệnh lệnh của nó là Sei. -> Đáp án: \"Sei leise!\"",
                 "exp_reward": 15,
                 "extra_data": {
                         "source_sentence": "Du bist leise.",
@@ -1163,7 +1163,7 @@ def seed_lesson_12():
                                 "Sei leise!",
                                 "Sei leise"
                         ],
-                        "translation": "Hãy trật tự!“",
+                        "translation": "Hãy trật tự!",
                         "audio_text": "Sei leise"
                 }
         },
@@ -1173,7 +1173,7 @@ def seed_lesson_12():
                 "question": "Câu 35: Chuyển câu trần thuật sau sang câu Mệnh lệnh (Imperativ): „Ihr geht jetzt schlafen.“",
                 "options": null,
                 "correct_answer": "Geht jetzt schlafen!",
-                "explanation": "Ngôi `ihr` chia là `geht`, bỏ `ihr` ➔ **`Geht jetzt schlafen!`**",
+                "explanation": "Ngôi ihr chia là geht, bỏ ihr ➔ Geht jetzt schlafen!",
                 "exp_reward": 15,
                 "extra_data": {
                         "source_sentence": "Ihr geht jetzt schlafen.",
@@ -1181,7 +1181,7 @@ def seed_lesson_12():
                                 "Geht jetzt schlafen!",
                                 "Geht jetzt schlafen"
                         ],
-                        "translation": "Các con hãy đi ngủ ngay bây giờ!“",
+                        "translation": "Các con hãy đi ngủ ngay bây giờ!",
                         "audio_text": "Geht jetzt schlafen"
                 }
         },
@@ -1191,7 +1191,7 @@ def seed_lesson_12():
                 "question": "Câu 36: Chuyển câu trần thuật sau sang câu Mệnh lệnh (Imperativ): „Du machst die Tür zu.“",
                 "options": null,
                 "correct_answer": "Mach die Tür zu!",
-                "explanation": "Động từ tách `zumachen`. Ngôi du là `du machst ... zu` ➔ Bỏ `st` và `du` ➔ **`Mach die Tür zu!`**",
+                "explanation": "Động từ tách zumachen. Ngôi du là du machst... zu ➔ Bỏ st và du ➔ Mach die Tür zu!",
                 "exp_reward": 15,
                 "extra_data": {
                         "source_sentence": "Du machst die Tür zu.",
@@ -1200,7 +1200,7 @@ def seed_lesson_12():
                                 "Mach die Tuer zu!",
                                 "Mach die Tür zu"
                         ],
-                        "translation": "Hãy đóng cửa lại!“",
+                        "translation": "Hãy đóng cửa lại!",
                         "audio_text": "Mach die Tür zu"
                 }
         },
@@ -1210,7 +1210,7 @@ def seed_lesson_12():
                 "question": "Câu 37: Chuyển câu trần thuật sau sang câu Mệnh lệnh (Imperativ): „Sie (trang trọng) rufen mich morgen an.“",
                 "options": null,
                 "correct_answer": "Rufen Sie mich morgen an!",
-                "explanation": "Đảo `Rufen` lên đầu, tiền tố tách `an` vẫn ở cuối câu ➔ **`Rufen Sie ... an!`**. -> Đáp án: \"Rufen Sie mich morgen an!\"",
+                "explanation": "Đảo Rufen lên đầu, tiền tố tách an vẫn ở cuối câu ➔ Rufen Sie... an!. -> Đáp án: \"Rufen Sie mich morgen an!\"",
                 "exp_reward": 15,
                 "extra_data": {
                         "source_sentence": "Sie (trang trọng) rufen mich morgen an.",
@@ -1218,7 +1218,7 @@ def seed_lesson_12():
                                 "Rufen Sie mich morgen an!",
                                 "Rufen Sie mich morgen an"
                         ],
-                        "translation": "Xin ngài hãy gọi cho tôi vào ngày mai!“",
+                        "translation": "Xin ngài hãy gọi cho tôi vào ngày mai!",
                         "audio_text": "Rufen Sie mich morgen an"
                 }
         },
@@ -1228,7 +1228,7 @@ def seed_lesson_12():
                 "question": "Câu 38: Chuyển câu trần thuật sau sang câu Mệnh lệnh (Imperativ): „Du fährst langsamer.“",
                 "options": null,
                 "correct_answer": "Fahr langsamer!",
-                "explanation": "Động từ `fahren` có biến âm ở ngôi du (du fährst). TUY NHIÊN, trong Imperativ, động từ có biến âm Umlaut (ä, ö, ü) sẽ bị **mất Umlaut** ➔ **`Fahr!`** -> Đáp án: \"Fahr langsamer!\"",
+                "explanation": "Động từ fahren có biến âm ở ngôi du (du fährst). TUY NHIÊN, trong Imperativ, động từ có biến âm Umlaut (ä, ö, ü) sẽ bị mất Umlaut ➔ Fahr! -> Đáp án: \"Fahr langsamer!\"",
                 "exp_reward": 15,
                 "extra_data": {
                         "source_sentence": "Du fährst langsamer.",
@@ -1236,7 +1236,7 @@ def seed_lesson_12():
                                 "Fahr langsamer!",
                                 "Fahr langsamer"
                         ],
-                        "translation": "Hãy lái xe chậm lại!“",
+                        "translation": "Hãy lái xe chậm lại!",
                         "audio_text": "Fahr langsamer"
                 }
         },
@@ -1246,7 +1246,7 @@ def seed_lesson_12():
                 "question": "Câu 39: Chuyển câu trần thuật sau sang câu Mệnh lệnh (Imperativ): „Du zeichnest ein Bild.“",
                 "options": null,
                 "correct_answer": "Zeichne ein Bild!",
-                "explanation": "Động từ `zeichnen` có gốc tận cùng là `-nen` ➔ phải thêm đuôi `-e` ở mệnh lệnh ngôi du ➔ **`Zeichne!`** -> Đáp án: \"Zeichne ein Bild!\"",
+                "explanation": "Động từ zeichnen có gốc tận cùng là -nen ➔ phải thêm đuôi -e ở mệnh lệnh ngôi du ➔ Zeichne! -> Đáp án: \"Zeichne ein Bild!\"",
                 "exp_reward": 15,
                 "extra_data": {
                         "source_sentence": "Du zeichnest ein Bild.",
@@ -1254,7 +1254,7 @@ def seed_lesson_12():
                                 "Zeichne ein Bild!",
                                 "Zeichne ein Bild"
                         ],
-                        "translation": "Hãy vẽ một bức tranh!“",
+                        "translation": "Hãy vẽ một bức tranh!",
                         "audio_text": "Zeichne ein Bild"
                 }
         },
@@ -1264,7 +1264,7 @@ def seed_lesson_12():
                 "question": "Câu 40: Chuyển câu trần thuật sau sang câu Mệnh lệnh (Imperativ): „Ihr nehmt die Tabletten.“",
                 "options": null,
                 "correct_answer": "Nehmt die Tabletten!",
-                "explanation": "Ngôi `ihr` của nehmen là `nehmt`. Bỏ `ihr` ➔ **`Nehmt die Tabletten!`**",
+                "explanation": "Ngôi ihr của nehmen là nehmt. Bỏ ihr ➔ Nehmt die Tabletten!",
                 "exp_reward": 15,
                 "extra_data": {
                         "source_sentence": "Ihr nehmt die Tabletten.",
@@ -1272,167 +1272,167 @@ def seed_lesson_12():
                                 "Nehmt die Tabletten!",
                                 "Nehmt die Tabletten"
                         ],
-                        "translation": "Các bạn hãy uống thuốc viên đi!“",
+                        "translation": "Các bạn hãy uống thuốc viên đi!",
                         "audio_text": "Nehmt die Tabletten"
                 }
         },
         {
                 "id": 41,
                 "exercise_type": "dien_dai_tu_akk",
-                "question": "Câu 41: *„Ich liebe meine Eltern. Ich besuche ___ jedes Wochenende.“*",
+                "question": "Câu 41: „Ich liebe meine Eltern. Ich besuche ___ jedes Wochenende.“",
                 "options": null,
                 "correct_answer": "sie",
-                "explanation": "`meine Eltern` (số nhiều) ➔ đại từ `sie` (họ). `besuchen` + Akkusativ ➔ vẫn là **`sie`**.",
+                "explanation": "meine Eltern (số nhiều) ➔ đại từ sie (họ). besuchen + Akkusativ ➔ vẫn là sie.",
                 "exp_reward": 15,
                 "extra_data": {
                         "accepted_answers": [
                                 "sie"
                         ],
-                        "translation": "Tôi yêu bố mẹ tôi. Tôi đến thăm họ mỗi cuối tuần.“",
+                        "translation": "Tôi yêu bố mẹ tôi. Tôi đến thăm họ mỗi cuối tuần.",
                         "audio_text": "sie"
                 }
         },
         {
                 "id": 42,
                 "exercise_type": "dien_dai_tu_akk",
-                "question": "Câu 42: *„Das ist mein neuer Computer. Ich brauche ___ für die Arbeit.“*",
+                "question": "Câu 42: „Das ist mein neuer Computer. Ich brauche ___ für die Arbeit.“",
                 "options": null,
                 "correct_answer": "ihn",
-                "explanation": "`der Computer` (giống đực) ➔ đại từ `er`. `brauchen` + Akkusativ ➔ Akkusativ của `er` là **`ihn`**.",
+                "explanation": "der Computer (giống đực) ➔ đại từ er. brauchen + Akkusativ ➔ Akkusativ của er là ihn.",
                 "exp_reward": 15,
                 "extra_data": {
                         "accepted_answers": [
                                 "ihn"
                         ],
-                        "translation": "Đó là chiếc máy tính mới của tôi. Tôi cần nó cho công việc.“",
+                        "translation": "Đó là chiếc máy tính mới của tôi. Tôi cần nó cho công việc.",
                         "audio_text": "ihn"
                 }
         },
         {
                 "id": 43,
                 "exercise_type": "dien_dai_tu_akk",
-                "question": "Câu 43: *„Wo ist Anna? Ich kann ___ nicht finden.“*",
+                "question": "Câu 43: „Wo ist Anna? Ich kann ___ nicht finden.“",
                 "options": null,
                 "correct_answer": "sie",
-                "explanation": "`Anna` (giống cái) ➔ đại từ `sie` (cô ấy). `finden` + Akkusativ ➔ **`sie`**.",
+                "explanation": "Anna (giống cái) ➔ đại từ sie (cô ấy). finden + Akkusativ ➔ sie.",
                 "exp_reward": 15,
                 "extra_data": {
                         "accepted_answers": [
                                 "sie"
                         ],
-                        "translation": "Anna đâu rồi? Tôi không thể tìm thấy cô ấy.“",
+                        "translation": "Anna đâu rồi? Tôi không thể tìm thấy cô ấy.",
                         "audio_text": "sie"
                 }
         },
         {
                 "id": 44,
                 "exercise_type": "dien_dai_tu_akk",
-                "question": "Câu 44: *„Wir haben ein neues Auto. Ich kaufe ___ morgen.“*",
+                "question": "Câu 44: „Wir haben ein neues Auto. Ich kaufe ___ morgen.“",
                 "options": null,
                 "correct_answer": "es",
-                "explanation": "`das Auto` (giống trung) ➔ đại từ `es`. `kaufen` + Akkusativ ➔ **`es`**.",
+                "explanation": "das Auto (giống trung) ➔ đại từ es. kaufen + Akkusativ ➔ es.",
                 "exp_reward": 15,
                 "extra_data": {
                         "accepted_answers": [
                                 "es"
                         ],
-                        "translation": "Chúng tôi có một chiếc ô tô mới. Tôi mua nó vào ngày mai.“",
+                        "translation": "Chúng tôi có một chiếc ô tô mới. Tôi mua nó vào ngày mai.",
                         "audio_text": "es"
                 }
         },
         {
                 "id": 45,
                 "exercise_type": "dien_dai_tu_akk",
-                "question": "Câu 45: *„Ihr seid meine besten Freunde. Ich vergesse ___ nie.“*",
+                "question": "Câu 45: „Ihr seid meine besten Freunde. Ich vergesse ___ nie.“",
                 "options": null,
                 "correct_answer": "euch",
-                "explanation": "`ihr` (các bạn). `vergessen` + Akkusativ ➔ Akkusativ của `ihr` là **`euch`**.",
+                "explanation": "ihr (các bạn). vergessen + Akkusativ ➔ Akkusativ của ihr là euch.",
                 "exp_reward": 15,
                 "extra_data": {
                         "accepted_answers": [
                                 "euch"
                         ],
-                        "translation": "Các bạn là những người bạn tốt nhất của tôi. Tôi sẽ không bao giờ quên các bạn.“",
+                        "translation": "Các bạn là những người bạn tốt nhất của tôi. Tôi sẽ không bao giờ quên các bạn.",
                         "audio_text": "euch"
                 }
         },
         {
                 "id": 46,
                 "exercise_type": "dien_dai_tu_akk",
-                "question": "Câu 46: *„Herr Schmidt, der Chef möchte ___ sprechen.“*",
+                "question": "Câu 46: „Herr Schmidt, der Chef möchte ___ sprechen.“",
                 "options": null,
                 "correct_answer": "Sie",
-                "explanation": "Herr Schmidt ➔ xưng hô trang trọng (Sie). `sprechen` + Akkusativ ➔ **`Sie`** (viết hoa).",
+                "explanation": "Herr Schmidt ➔ xưng hô trang trọng (Sie). sprechen + Akkusativ ➔ Sie (viết hoa).",
                 "exp_reward": 15,
                 "extra_data": {
                         "accepted_answers": [
                                 "Sie"
                         ],
-                        "translation": "Ngài Schmidt, sếp muốn nói chuyện với ngài.“",
+                        "translation": "Ngài Schmidt, sếp muốn nói chuyện với ngài.",
                         "audio_text": "Sie"
                 }
         },
         {
                 "id": 47,
                 "exercise_type": "dien_dai_tu_akk",
-                "question": "Câu 47: *„Der Salat ist lecker. Ich esse ___ gern.“*",
+                "question": "Câu 47: „Der Salat ist lecker. Ich esse ___ gern.“",
                 "options": null,
                 "correct_answer": "ihn",
-                "explanation": "`der Salat` (giống đực) ➔ `er`. `essen` + Akkusativ ➔ **`ihn`**.",
+                "explanation": "der Salat (giống đực) ➔ er. essen + Akkusativ ➔ ihn.",
                 "exp_reward": 15,
                 "extra_data": {
                         "accepted_answers": [
                                 "ihn"
                         ],
-                        "translation": "Món salad ngon. Tôi thích ăn nó.“",
+                        "translation": "Món salad ngon. Tôi thích ăn nó.",
                         "audio_text": "ihn"
                 }
         },
         {
                 "id": 48,
                 "exercise_type": "dien_dai_tu_akk",
-                "question": "Câu 48: *„Das Buch ist interessant. Ich lese ___ jeden Abend.“*",
+                "question": "Câu 48: „Das Buch ist interessant. Ich lese ___ jeden Abend.“",
                 "options": null,
                 "correct_answer": "es",
-                "explanation": "`das Buch` (giống trung) ➔ `es`. `lesen` + Akkusativ ➔ **`es`**.",
+                "explanation": "das Buch (giống trung) ➔ es. lesen + Akkusativ ➔ es.",
                 "exp_reward": 15,
                 "extra_data": {
                         "accepted_answers": [
                                 "es"
                         ],
-                        "translation": "Cuốn sách thật thú vị. Tôi đọc nó mỗi tối.“",
+                        "translation": "Cuốn sách thật thú vị. Tôi đọc nó mỗi tối.",
                         "audio_text": "es"
                 }
         },
         {
                 "id": 49,
                 "exercise_type": "dien_dai_tu_akk",
-                "question": "Câu 49: *„Mein Bruder und ich spielen oft Fußball. Manchmal besucht unser Vater ___ beim Training.“*",
+                "question": "Câu 49: „Mein Bruder und ich spielen oft Fußball. Manchmal besucht unser Vater ___ beim Training.“",
                 "options": null,
                 "correct_answer": "uns",
-                "explanation": "`Mein Bruder und ich` = wir (chúng tôi). `besuchen` + Akkusativ ➔ Akkusativ của `wir` là **`uns`**.",
+                "explanation": "Mein Bruder und ich = wir (chúng tôi). besuchen + Akkusativ ➔ Akkusativ của wir là uns.",
                 "exp_reward": 15,
                 "extra_data": {
                         "accepted_answers": [
                                 "uns"
                         ],
-                        "translation": "Anh trai tôi và tôi thường chơi bóng đá. Đôi khi bố chúng tôi đến thăm chúng tôi lúc tập luyện.“",
+                        "translation": "Anh trai tôi và tôi thường chơi bóng đá. Đôi khi bố chúng tôi đến thăm chúng tôi lúc tập luyện.",
                         "audio_text": "uns"
                 }
         },
         {
                 "id": 50,
                 "exercise_type": "dien_dai_tu_akk",
-                "question": "Câu 50: *„Hast du den Schlüssel? – Nein, ich habe ___ nicht gesehen.“*",
+                "question": "Câu 50: „Hast du den Schlüssel? – Nein, ich habe ___ nicht gesehen.“",
                 "options": null,
                 "correct_answer": "ihn",
-                "explanation": "`der Schlüssel` (giống đực) ➔ `er`. `sehen` + Akkusativ ➔ **`ihn`**.",
+                "explanation": "der Schlüssel (giống đực) ➔ er. sehen + Akkusativ ➔ ihn.",
                 "exp_reward": 15,
                 "extra_data": {
                         "accepted_answers": [
                                 "ihn"
                         ],
-                        "translation": "Bạn có chìa khóa không? – Không, tôi chưa nhìn thấy nó.“",
+                        "translation": "Bạn có chìa khóa không? – Không, tôi chưa nhìn thấy nó.",
                         "audio_text": "ihn"
                 }
         },
@@ -2037,10 +2037,10 @@ def seed_lesson_12():
         {
                 "id": 68,
                 "exercise_type": "dien_tao_cau",
-                "question": "Câu 68: Điền 2 từ để hoàn thành câu: *„Ở đây người ta không được phép hút thuốc.“* (man / rauchen)",
+                "question": "Câu 68: Điền 2 từ để hoàn thành câu: „Ở đây người ta không được phép hút thuốc.“ (man / rauchen)",
                 "options": null,
                 "correct_answer": "darf / rauchen",
-                "explanation": "Chủ ngữ `man` chia dürfen thành **`darf`**. Động từ chính **`rauchen`** nằm ở cuối câu ở dạng nguyên thể. -> Đáp án: \"darf / rauchen\"",
+                "explanation": "Chủ ngữ man chia dürfen thành darf. Động từ chính rauchen nằm ở cuối câu ở dạng nguyên thể. -> Đáp án: \"darf / rauchen\"",
                 "exp_reward": 15,
                 "extra_data": {
                         "display_frame": "Hier [1] man nicht [2].",
@@ -2049,17 +2049,17 @@ def seed_lesson_12():
                                 "darf/rauchen",
                                 "darf rauchen"
                         ],
-                        "translation": "Ở đây người ta không được phép hút thuốc.“",
+                        "translation": "Ở đây người ta không được phép hút thuốc.",
                         "audio_text": "Hier darf man nicht rauchen"
                 }
         },
         {
                 "id": 69,
                 "exercise_type": "dien_tao_cau",
-                "question": "Câu 69: Điền 3 từ để hoàn thành câu: *„Bác sĩ, tôi có được phép chơi thể thao không?“* (ich / Sport / machen)",
+                "question": "Câu 69: Điền 3 từ để hoàn thành câu: „Bác sĩ, tôi có được phép chơi thể thao không?“ (ich / Sport / machen)",
                 "options": null,
                 "correct_answer": "darf / Sport / machen",
-                "explanation": "Câu hỏi nghi vấn: Đưa Modalverb **`darf`** lên đầu. **`Sport machen`** đứng cuối. -> Đáp án: \"darf / Sport / machen\"",
+                "explanation": "Câu hỏi nghi vấn: Đưa Modalverb darf lên đầu. Sport machen đứng cuối. -> Đáp án: \"darf / Sport / machen\"",
                 "exp_reward": 15,
                 "extra_data": {
                         "display_frame": "Herr Doktor, [1] ich [2] [3]?",
@@ -2068,17 +2068,17 @@ def seed_lesson_12():
                                 "darf/Sport/machen",
                                 "darf Sport machen"
                         ],
-                        "translation": "Bác sĩ, tôi có được phép chơi thể thao không?“",
+                        "translation": "Bác sĩ, tôi có được phép chơi thể thao không?",
                         "audio_text": "Herr Doktor darf ich Sport machen"
                 }
         },
         {
                 "id": 70,
                 "exercise_type": "dien_tao_cau",
-                "question": "Câu 70: Điền 2 từ để hoàn thành câu: *„Đứa trẻ đang ngủ. Các con hãy trật tự!“* (ihr / sein / leise)",
+                "question": "Câu 70: Điền 2 từ để hoàn thành câu: „Đứa trẻ đang ngủ. Các con hãy trật tự!“ (ihr / sein / leise)",
                 "options": null,
                 "correct_answer": "Seid / leise",
-                "explanation": "Imperativ ngôi ihr của động từ `sein` là **`Seid`**. -> Đáp án: \"Seid / leise\"",
+                "explanation": "Imperativ ngôi ihr của động từ sein là Seid. -> Đáp án: \"Seid / leise\"",
                 "exp_reward": 15,
                 "extra_data": {
                         "display_frame": "Das Kind schläft. [1] [2]!",
@@ -2087,17 +2087,17 @@ def seed_lesson_12():
                                 "Seid/leise",
                                 "Seid leise"
                         ],
-                        "translation": "Đứa trẻ đang ngủ. Các con hãy trật tự!“",
+                        "translation": "Đứa trẻ đang ngủ. Các con hãy trật tự!",
                         "audio_text": "Das Kind schläft Seid leise"
                 }
         },
         {
                 "id": 71,
                 "exercise_type": "dien_tao_cau",
-                "question": "Câu 71: Điền 2 từ để hoàn thành câu: *„Bố yêu con. Con có yêu bố không?“* (ich / du)",
+                "question": "Câu 71: Điền 2 từ để hoàn thành câu: „Bố yêu con. Con có yêu bố không?“ (ich / du)",
                 "options": null,
                 "correct_answer": "dich / mich",
-                "explanation": "`lieben` + Akkusativ. Yêu con -> **`dich`**, yêu bố (tôi) -> **`mich`**. -> Đáp án: \"dich / mich\"",
+                "explanation": "lieben + Akkusativ. Yêu con -> dich, yêu bố (tôi) -> mich. -> Đáp án: \"dich / mich\"",
                 "exp_reward": 15,
                 "extra_data": {
                         "display_frame": "Ich liebe [1]. Liebst du [2]?",
@@ -2106,17 +2106,17 @@ def seed_lesson_12():
                                 "dich/mich",
                                 "dich mich"
                         ],
-                        "translation": "Bố yêu con. Con có yêu bố không?“",
+                        "translation": "Bố yêu con. Con có yêu bố không?",
                         "audio_text": "Ich liebe dich Liebst du mich"
                 }
         },
         {
                 "id": 72,
                 "exercise_type": "dien_tao_cau",
-                "question": "Câu 72: Điền 2 từ để hoàn thành câu: *„Cánh tay tôi đau. Tôi cần một loại thuốc mỡ.“* (weh / Salbe)",
+                "question": "Câu 72: Điền 2 từ để hoàn thành câu: „Cánh tay tôi đau. Tôi cần một loại thuốc mỡ.“ (weh / Salbe)",
                 "options": null,
                 "correct_answer": "weh / Salbe",
-                "explanation": "Động từ tách `wehtun` -> tut **`weh`**. Thuốc mỡ là **`Salbe`**. -> Đáp án: \"weh / Salbe\"",
+                "explanation": "Động từ tách wehtun -> tut weh. Thuốc mỡ là Salbe. -> Đáp án: \"weh / Salbe\"",
                 "exp_reward": 15,
                 "extra_data": {
                         "display_frame": "Mein Arm tut mir [1]. Ich brauche eine [2].",
@@ -2125,7 +2125,7 @@ def seed_lesson_12():
                                 "weh/Salbe",
                                 "weh Salbe"
                         ],
-                        "translation": "Cánh tay tôi đau. Tôi cần một loại thuốc mỡ.“",
+                        "translation": "Cánh tay tôi đau. Tôi cần một loại thuốc mỡ.",
                         "audio_text": "Mein Arm tut mir weh Ich brauche eine Salbe"
                 }
         },
@@ -2135,7 +2135,7 @@ def seed_lesson_12():
                 "question": "Câu 73: Nghe và điền từ còn thiếu vào chỗ trống:",
                 "options": null,
                 "correct_answer": "Geh",
-                "explanation": "Imperativ của `gehen` ngôi du là **`Geh`**.",
+                "explanation": "Imperativ của gehen ngôi du là Geh.",
                 "exp_reward": 15,
                 "extra_data": {
                         "audio_text": "",
@@ -2153,7 +2153,7 @@ def seed_lesson_12():
                 "question": "Câu 74: Nghe và điền từ còn thiếu vào chỗ trống:",
                 "options": null,
                 "correct_answer": "Ruhen",
-                "explanation": "Mệnh lệnh lịch sự của `sich ausruhen` là **`Ruhen Sie sich aus`**.",
+                "explanation": "Mệnh lệnh lịch sự của sich ausruhen là Ruhen Sie sich aus.",
                 "exp_reward": 15,
                 "extra_data": {
                         "audio_text": "",
@@ -2171,7 +2171,7 @@ def seed_lesson_12():
                 "question": "Câu 75: Nghe và điền từ còn thiếu vào chỗ trống:",
                 "options": null,
                 "correct_answer": "fehlt",
-                "explanation": "`fehlen` + Dativ dùng để hỏi thăm bệnh tình. -> Từ cần điền là: \"fehlt\"",
+                "explanation": "fehlen + Dativ dùng để hỏi thăm bệnh tình. -> Từ cần điền là: \"fehlt\"",
                 "exp_reward": 15,
                 "extra_data": {
                         "audio_text": "",
@@ -2189,7 +2189,7 @@ def seed_lesson_12():
                 "question": "Câu 76: Nghe và điền từ còn thiếu vào chỗ trống:",
                 "options": null,
                 "correct_answer": "Rezept",
-                "explanation": "Đơn thuốc là **`das Rezept`**.",
+                "explanation": "Đơn thuốc là das Rezept.",
                 "exp_reward": 15,
                 "extra_data": {
                         "audio_text": "",
@@ -2207,7 +2207,7 @@ def seed_lesson_12():
                 "question": "Câu 77: Nghe và điền từ còn thiếu vào chỗ trống:",
                 "options": null,
                 "correct_answer": "dürfen",
-                "explanation": "`wir` + **`dürfen`**.",
+                "explanation": "wir + dürfen.",
                 "exp_reward": 15,
                 "extra_data": {
                         "audio_text": "",
@@ -2226,7 +2226,7 @@ def seed_lesson_12():
                 "question": "Câu 78: Nghe và điền từ còn thiếu vào chỗ trống:",
                 "options": null,
                 "correct_answer": "dich",
-                "explanation": "`lieben` + Akkusativ -> **`dich`**.",
+                "explanation": "lieben + Akkusativ -> dich.",
                 "exp_reward": 15,
                 "extra_data": {
                         "audio_text": "",
@@ -2244,7 +2244,7 @@ def seed_lesson_12():
                 "question": "Câu 79: Nghe và điền từ còn thiếu vào chỗ trống:",
                 "options": null,
                 "correct_answer": "Bauch",
-                "explanation": "Bụng là **`der Bauch`**.",
+                "explanation": "Bụng là der Bauch.",
                 "exp_reward": 15,
                 "extra_data": {
                         "audio_text": "",
@@ -2262,7 +2262,7 @@ def seed_lesson_12():
                 "question": "Câu 80: Nghe và điền từ còn thiếu vào chỗ trống:",
                 "options": null,
                 "correct_answer": "Nehmt",
-                "explanation": "Imperativ của `nehmen` ngôi ihr là **`Nehmt`**.",
+                "explanation": "Imperativ của nehmen ngôi ihr là Nehmt.",
                 "exp_reward": 15,
                 "extra_data": {
                         "audio_text": "",
@@ -2280,7 +2280,7 @@ def seed_lesson_12():
                 "question": "Câu 81: Dịch câu sau sang tiếng Đức: „Ngài hãy uống nhiều nước!“",
                 "options": null,
                 "correct_answer": "Trinken Sie viel Wasser!",
-                "explanation": "Mệnh lệnh lịch sự: **`Trinken Sie + viel Wasser`**. -> Đáp án chuẩn: \"Trinken Sie viel Wasser!\"",
+                "explanation": "Mệnh lệnh lịch sự: Trinken Sie + viel Wasser. -> Đáp án chuẩn: \"Trinken Sie viel Wasser!\"",
                 "exp_reward": 15,
                 "extra_data": {
                         "accepted_answers": [
@@ -2316,7 +2316,7 @@ def seed_lesson_12():
                 "question": "Câu 83: Dịch câu sau sang tiếng Đức: „Hãy làm bài tập về nhà của bạn!“",
                 "options": null,
                 "correct_answer": "Mach deine Hausaufgaben!",
-                "explanation": "Imperativ ngôi du của `machen` là **`Mach`**. -> Đáp án chuẩn: \"Mach deine Hausaufgaben!\"",
+                "explanation": "Imperativ ngôi du của machen là Mach. -> Đáp án chuẩn: \"Mach deine Hausaufgaben!\"",
                 "exp_reward": 15,
                 "extra_data": {
                         "accepted_answers": [
@@ -2333,7 +2333,7 @@ def seed_lesson_12():
                 "question": "Câu 84: Dịch câu sau sang tiếng Đức: „Tôi bị đau đầu dữ dội.“",
                 "options": null,
                 "correct_answer": "Ich habe starke Kopfschmerzen.",
-                "explanation": "Bị bệnh gì dùng động từ `haben` + tên bệnh. -> Đáp án chuẩn: \"Ich habe starke Kopfschmerzen.\"",
+                "explanation": "Bị bệnh gì dùng động từ haben + tên bệnh. -> Đáp án chuẩn: \"Ich habe starke Kopfschmerzen.\"",
                 "exp_reward": 15,
                 "extra_data": {
                         "accepted_answers": [
@@ -2350,7 +2350,7 @@ def seed_lesson_12():
                 "question": "Câu 85: Dịch câu sau sang tiếng Đức: „Các bạn hãy ăn nhiều rau hơn!“",
                 "options": null,
                 "correct_answer": "Esst mehr Gemüse!",
-                "explanation": "Imperativ ngôi ihr của `essen` là **`Esst`**. -> Đáp án chuẩn: \"Esst mehr Gemüse!\"",
+                "explanation": "Imperativ ngôi ihr của essen là Esst. -> Đáp án chuẩn: \"Esst mehr Gemüse!\"",
                 "exp_reward": 15,
                 "extra_data": {
                         "accepted_answers": [
@@ -2368,7 +2368,7 @@ def seed_lesson_12():
                 "question": "Câu 86: Dịch câu sau sang tiếng Đức: „Hãy nghỉ ngơi đi!“",
                 "options": null,
                 "correct_answer": "Ruh dich aus!",
-                "explanation": "Động từ phản thân tách. Ngôi du: **`ruh dich aus`**.",
+                "explanation": "Động từ phản thân tách. Ngôi du: ruh dich aus.",
                 "exp_reward": 15,
                 "extra_data": {
                         "accepted_answers": [
@@ -2383,10 +2383,10 @@ def seed_lesson_12():
         {
                 "id": 87,
                 "exercise_type": "dich_cau_dv",
-                "question": "Câu 87: Dịch câu sau sang tiếng Việt: „“",
+                "question": "Câu 87: Dịch câu sau sang tiếng Việt: „Atmen Sie bitte tief ein und aus!“",
                 "options": null,
                 "correct_answer": "Xin ngài hãy hít vào và thở ra thật sâu!",
-                "explanation": "`tief ein- und ausatmen` = hít sâu và thở ra. -> Nghĩa tiếng Việt chuẩn: \"Xin ngài hãy hít vào và thở ra thật sâu!\"",
+                "explanation": "tief ein- und ausatmen = hít sâu và thở ra. -> Nghĩa tiếng Việt chuẩn: \"Xin ngài hãy hít vào và thở ra thật sâu!\"",
                 "exp_reward": 15,
                 "extra_data": {
                         "accepted_answers": [
@@ -2395,16 +2395,16 @@ def seed_lesson_12():
                                 "Hãy hít vào và thở ra thật sâu!"
                         ],
                         "translation": "Xin ngài hãy hít vào và thở ra thật sâu!",
-                        "audio_text": ""
+                        "audio_text": "Atmen Sie bitte tief ein und aus"
                 }
         },
         {
                 "id": 88,
                 "exercise_type": "dich_cau_dv",
-                "question": "Câu 88: Dịch câu sau sang tiếng Việt: „“",
+                "question": "Câu 88: Dịch câu sau sang tiếng Việt: „Der Rücken tut ihm weh.“",
                 "options": null,
                 "correct_answer": "Lưng của anh ấy bị đau.",
-                "explanation": "Cấu trúc `wehtun` + Dativ (`ihm`). -> Nghĩa tiếng Việt chuẩn: \"Lưng của anh ấy bị đau.\"",
+                "explanation": "Cấu trúc wehtun + Dativ (ihm). -> Nghĩa tiếng Việt chuẩn: \"Lưng của anh ấy bị đau.\"",
                 "exp_reward": 15,
                 "extra_data": {
                         "accepted_answers": [
@@ -2413,16 +2413,16 @@ def seed_lesson_12():
                                 "Lưng làm anh ấy đau."
                         ],
                         "translation": "Lưng của anh ấy bị đau.",
-                        "audio_text": ""
+                        "audio_text": "Der Rücken tut ihm weh"
                 }
         },
         {
                 "id": 89,
                 "exercise_type": "dich_cau_dv",
-                "question": "Câu 89: Dịch câu sau sang tiếng Việt: „“",
+                "question": "Câu 89: Dịch câu sau sang tiếng Việt: „Darf ich hier fotografieren?“",
                 "options": null,
                 "correct_answer": "Tôi có được phép chụp ảnh ở đây không?",
-                "explanation": "`fotografieren` = chụp ảnh. `darf ich` = xin phép. -> Nghĩa tiếng Việt chuẩn: \"Tôi có được phép chụp ảnh ở đây không?\"",
+                "explanation": "fotografieren = chụp ảnh. darf ich = xin phép. -> Nghĩa tiếng Việt chuẩn: \"Tôi có được phép chụp ảnh ở đây không?\"",
                 "exp_reward": 15,
                 "extra_data": {
                         "accepted_answers": [
@@ -2431,16 +2431,16 @@ def seed_lesson_12():
                                 "Tôi chụp ảnh ở đây được không?"
                         ],
                         "translation": "Tôi có được phép chụp ảnh ở đây không?",
-                        "audio_text": ""
+                        "audio_text": "Darf ich hier fotografieren"
                 }
         },
         {
                 "id": 90,
                 "exercise_type": "dich_cau_dv",
-                "question": "Câu 90: Dịch câu sau sang tiếng Việt: „“",
+                "question": "Câu 90: Dịch câu sau sang tiếng Việt: „Bleib heute im Bett!“",
                 "options": null,
                 "correct_answer": "Hôm nay hãy ở lại trên giường!",
-                "explanation": "`Bleib` là mệnh lệnh ngôi du của `bleiben`. `im Bett` = trên giường. -> Nghĩa tiếng Việt chuẩn: \"Hôm nay hãy ở lại trên giường!\"",
+                "explanation": "Bleib là mệnh lệnh ngôi du của bleiben. im Bett = trên giường. -> Nghĩa tiếng Việt chuẩn: \"Hôm nay hãy ở lại trên giường!\"",
                 "exp_reward": 15,
                 "extra_data": {
                         "accepted_answers": [
@@ -2449,16 +2449,16 @@ def seed_lesson_12():
                                 "Hôm nay hãy ở trên giường nhé!"
                         ],
                         "translation": "Hôm nay hãy ở lại trên giường!",
-                        "audio_text": ""
+                        "audio_text": "Bleib heute im Bett"
                 }
         },
         {
                 "id": 91,
                 "exercise_type": "dich_cau_dv",
-                "question": "Câu 91: Dịch câu sau sang tiếng Việt: „“",
+                "question": "Câu 91: Dịch câu sau sang tiếng Việt: „Wir sehen uns jeden Morgen im Bus.“",
                 "options": null,
                 "correct_answer": "Chúng ta gặp nhau mỗi sáng trên xe buýt.",
-                "explanation": "`sich sehen` = gặp/nhìn thấy nhau. `uns` ở đây là Akkusativ phản thân. -> Nghĩa tiếng Việt chuẩn: \"Chúng ta gặp nhau mỗi sáng trên xe buýt.\"",
+                "explanation": "sich sehen = gặp/nhìn thấy nhau. uns ở đây là Akkusativ phản thân. -> Nghĩa tiếng Việt chuẩn: \"Chúng ta gặp nhau mỗi sáng trên xe buýt.\"",
                 "exp_reward": 15,
                 "extra_data": {
                         "accepted_answers": [
@@ -2467,16 +2467,16 @@ def seed_lesson_12():
                                 "Chúng ta nhìn thấy nhau mỗi sáng trên xe buýt."
                         ],
                         "translation": "Chúng ta gặp nhau mỗi sáng trên xe buýt.",
-                        "audio_text": ""
+                        "audio_text": "Wir sehen uns jeden Morgen im Bus"
                 }
         },
         {
                 "id": 92,
                 "exercise_type": "dich_cau_dv",
-                "question": "Câu 92: Dịch câu sau sang tiếng Việt: „“",
+                "question": "Câu 92: Dịch câu sau sang tiếng Việt: „Zeigen Sie mir bitte Ihre Zunge!“",
                 "options": null,
                 "correct_answer": "Xin ngài hãy cho tôi xem lưỡi của ngài!",
-                "explanation": "`zeigen` = chỉ/cho xem. `die Zunge` = lưỡi. -> Nghĩa tiếng Việt chuẩn: \"Xin ngài hãy cho tôi xem lưỡi của ngài!\"",
+                "explanation": "zeigen = chỉ/cho xem. die Zunge = lưỡi. -> Nghĩa tiếng Việt chuẩn: \"Xin ngài hãy cho tôi xem lưỡi của ngài!\"",
                 "exp_reward": 15,
                 "extra_data": {
                         "accepted_answers": [
@@ -2485,7 +2485,7 @@ def seed_lesson_12():
                                 "Xin hãy thè lưỡi ra!"
                         ],
                         "translation": "Xin ngài hãy cho tôi xem lưỡi của ngài!",
-                        "audio_text": ""
+                        "audio_text": "Zeigen Sie mir bitte Ihre Zunge"
                 }
         },
         {
@@ -2508,7 +2508,7 @@ def seed_lesson_12():
                                 "Trinken Sie bitte viel Wasser!",
                                 "Bitte trinken Sie viel Wasser!"
                         ],
-                        "translation": "Xin ngài hãy uống nhiều nước!“",
+                        "translation": "Xin ngài hãy uống nhiều nước!",
                         "audio_text": "Trinken Sie bitte viel Wasser"
                 }
         },
@@ -2518,7 +2518,7 @@ def seed_lesson_12():
                 "question": "Câu 94: Sắp xếp các từ sau thành câu hoàn chỉnh:",
                 "options": null,
                 "correct_answer": "Räumt eure Zimmer auf!",
-                "explanation": "Động từ tách `aufräumen`, tiền tố `auf` đứng cuối. -> Đáp án: \"Räumt eure Zimmer auf!\"",
+                "explanation": "Động từ tách aufräumen, tiền tố auf đứng cuối. -> Đáp án: \"Räumt eure Zimmer auf!\"",
                 "exp_reward": 15,
                 "extra_data": {
                         "tokens": [
@@ -2530,7 +2530,7 @@ def seed_lesson_12():
                         "accepted_answers": [
                                 "Räumt eure Zimmer auf!"
                         ],
-                        "translation": "Các con hãy dọn dẹp phòng của mình đi!“",
+                        "translation": "Các con hãy dọn dẹp phòng của mình đi!",
                         "audio_text": "Räumt eure Zimmer auf"
                 }
         },
@@ -2552,7 +2552,7 @@ def seed_lesson_12():
                         "accepted_answers": [
                                 "Iss weniger Schokolade!"
                         ],
-                        "translation": "Hãy ăn ít sô cô la lại!“",
+                        "translation": "Hãy ăn ít sô cô la lại!",
                         "audio_text": "Iss weniger Schokolade"
                 }
         },
@@ -2577,7 +2577,7 @@ def seed_lesson_12():
                                 "Hier darf man nicht rauchen.",
                                 "Man darf hier nicht rauchen."
                         ],
-                        "translation": "Ở đây người ta không được phép hút thuốc.“",
+                        "translation": "Ở đây người ta không được phép hút thuốc.",
                         "audio_text": "Hier darf man nicht rauchen"
                 }
         },
@@ -2601,7 +2601,7 @@ def seed_lesson_12():
                                 "Ich vermisse dich jeden Tag.",
                                 "Jeden Tag vermisse ich dich."
                         ],
-                        "translation": "Anh nhớ em mỗi ngày.“* (`vermissen` + Akk).",
+                        "translation": "Anh nhớ em mỗi ngày.",
                         "audio_text": "Ich vermisse dich jeden Tag"
                 }
         },
@@ -2611,7 +2611,7 @@ def seed_lesson_12():
                 "question": "Câu 98: Sắp xếp các từ sau thành câu hoàn chỉnh:",
                 "options": null,
                 "correct_answer": "Der Arzt verschreibt mir ein Medikament.",
-                "explanation": "Dativ (`mir`) đứng trước Akkusativ (`ein Medikament`). -> Đáp án: \"Der Arzt verschreibt mir ein Medikament.\"",
+                "explanation": "Dativ (mir) đứng trước Akkusativ (ein Medikament). -> Đáp án: \"Der Arzt verschreibt mir ein Medikament.\"",
                 "exp_reward": 15,
                 "extra_data": {
                         "tokens": [
@@ -2624,7 +2624,7 @@ def seed_lesson_12():
                         "accepted_answers": [
                                 "Der Arzt verschreibt mir ein Medikament."
                         ],
-                        "translation": "Bác sĩ kê cho tôi một loại thuốc.“",
+                        "translation": "Bác sĩ kê cho tôi một loại thuốc.",
                         "audio_text": "Der Arzt verschreibt mir ein Medikament"
                 }
         },
@@ -2647,7 +2647,7 @@ def seed_lesson_12():
                         "accepted_answers": [
                                 "Ich habe starke Zahnschmerzen."
                         ],
-                        "translation": "Tôi bị đau răng nặng.“",
+                        "translation": "Tôi bị đau răng nặng.",
                         "audio_text": "Ich habe starke Zahnschmerzen"
                 }
         },
@@ -2671,109 +2671,109 @@ def seed_lesson_12():
                         "accepted_answers": [
                                 "Dürfen wir heute Abend ins Kino gehen?"
                         ],
-                        "translation": "Tối nay chúng con có được đi xem phim không?“",
+                        "translation": "Tối nay chúng con có được đi xem phim không?",
                         "audio_text": "Dürfen wir heute Abend ins Kino gehen"
                 }
         },
         {
                 "id": 101,
                 "exercise_type": "tim_loi_sai",
-                "question": "Câu 101: Tìm và sửa lỗi sai trong câu sau: „Arbeit nicht so viel!““",
+                "question": "Câu 101: Tìm và sửa lỗi sai trong câu sau: „Arbeit nicht so viel!“",
                 "options": null,
                 "correct_answer": "Arbeite nicht so viel!",
-                "explanation": "Động từ `arbeiten` kết thúc bằng `t`, Imperativ ngôi du phải thêm `e` ➔ **`Arbeite!`** -> Đáp án đúng: \"Arbeite nicht so viel!\"",
+                "explanation": "Động từ arbeiten kết thúc bằng t, Imperativ ngôi du phải thêm e ➔ Arbeite! -> Đáp án đúng: \"Arbeite nicht so viel!\"",
                 "exp_reward": 15,
                 "extra_data": {
-                        "wrong_sentence": "Arbeit nicht so viel!“",
+                        "wrong_sentence": "Arbeit nicht so viel!",
                         "accepted_answers": [
                                 "Arbeite nicht so viel!"
                         ],
-                        "translation": "Đừng làm việc nhiều quá!“",
+                        "translation": "Đừng làm việc nhiều quá!",
                         "audio_text": "Arbeite nicht so viel"
                 }
         },
         {
                 "id": 102,
                 "exercise_type": "tim_loi_sai",
-                "question": "Câu 102: Tìm và sửa lỗi sai trong câu sau: „Die Kinder darfen hier spielen.““",
+                "question": "Câu 102: Tìm và sửa lỗi sai trong câu sau: „Die Kinder darfen hier spielen.“",
                 "options": null,
                 "correct_answer": "Die Kinder dürfen hier spielen.",
-                "explanation": "Ngôi số nhiều của dürfen là `dürfen`, không bị biến âm `ü` thành `a`. -> Đáp án đúng: \"Die Kinder dürfen hier spielen.\"",
+                "explanation": "Ngôi số nhiều của dürfen là dürfen, không bị biến âm ü thành a. -> Đáp án đúng: \"Die Kinder dürfen hier spielen.\"",
                 "exp_reward": 15,
                 "extra_data": {
-                        "wrong_sentence": "Die Kinder darfen hier spielen.“",
+                        "wrong_sentence": "Die Kinder darfen hier spielen.",
                         "accepted_answers": [
                                 "Die Kinder dürfen hier spielen."
                         ],
-                        "translation": "Bọn trẻ được phép chơi ở đây.“",
+                        "translation": "Bọn trẻ được phép chơi ở đây.",
                         "audio_text": "Die Kinder dürfen hier spielen"
                 }
         },
         {
                 "id": 103,
                 "exercise_type": "tim_loi_sai",
-                "question": "Câu 103: Tìm và sửa lỗi sai trong câu sau: „Ich liebe dir.““",
+                "question": "Câu 103: Tìm và sửa lỗi sai trong câu sau: „Ich liebe dir.“",
                 "options": null,
                 "correct_answer": "Ich liebe dich.",
-                "explanation": "`lieben` + Akkusativ. Akkusativ của `du` là **`dich`**, không phải `dir`. -> Đáp án đúng: \"Ich liebe dich.\"",
+                "explanation": "lieben + Akkusativ. Akkusativ của du là dich, không phải dir. -> Đáp án đúng: \"Ich liebe dich.\"",
                 "exp_reward": 15,
                 "extra_data": {
-                        "wrong_sentence": "Ich liebe dir.“",
+                        "wrong_sentence": "Ich liebe dir.",
                         "accepted_answers": [
                                 "Ich liebe dich."
                         ],
-                        "translation": "Tôi yêu bạn.“",
+                        "translation": "Tôi yêu bạn.",
                         "audio_text": "Ich liebe dich"
                 }
         },
         {
                 "id": 104,
                 "exercise_type": "tim_loi_sai",
-                "question": "Câu 104: Tìm và sửa lỗi sai trong câu sau: „Trinkt ihr viel Wasser!““",
+                "question": "Câu 104: Tìm và sửa lỗi sai trong câu sau: „Trinkt ihr viel Wasser!“",
                 "options": null,
                 "correct_answer": "Trinkt viel Wasser!",
-                "explanation": "Imperativ ngôi `ihr` phải **BỎ từ `ihr`** đi. -> Đáp án đúng: \"Trinkt viel Wasser!\"",
+                "explanation": "Imperativ ngôi ihr phải BỎ từ ihr đi. -> Đáp án đúng: \"Trinkt viel Wasser!\"",
                 "exp_reward": 15,
                 "extra_data": {
-                        "wrong_sentence": "Trinkt ihr viel Wasser!“",
+                        "wrong_sentence": "Trinkt ihr viel Wasser!",
                         "accepted_answers": [
                                 "Trinkt viel Wasser!"
                         ],
-                        "translation": "Các bạn hãy uống nhiều nước!“",
+                        "translation": "Các bạn hãy uống nhiều nước!",
                         "audio_text": "Trinkt viel Wasser"
                 }
         },
         {
                 "id": 105,
                 "exercise_type": "tim_loi_sai",
-                "question": "Câu 105: Tìm và sửa lỗi sai trong câu sau: „Er darft heute nicht rausgehen.““",
+                "question": "Câu 105: Tìm và sửa lỗi sai trong câu sau: „Er darft heute nicht rausgehen.“",
                 "options": null,
                 "correct_answer": "Er darf heute nicht rausgehen.",
-                "explanation": "Ngôi er/sie/es của dürfen KHÔNG có đuôi `t` ➔ chỉ là **`darf`**. -> Đáp án đúng: \"Er darf heute nicht rausgehen.\"",
+                "explanation": "Ngôi er/sie/es của dürfen KHÔNG có đuôi t ➔ chỉ là darf. -> Đáp án đúng: \"Er darf heute nicht rausgehen.\"",
                 "exp_reward": 15,
                 "extra_data": {
-                        "wrong_sentence": "Er darft heute nicht rausgehen.“",
+                        "wrong_sentence": "Er darft heute nicht rausgehen.",
                         "accepted_answers": [
                                 "Er darf heute nicht rausgehen."
                         ],
-                        "translation": "Hôm nay anh ấy không được phép ra ngoài.“",
+                        "translation": "Hôm nay anh ấy không được phép ra ngoài.",
                         "audio_text": "Er darf heute nicht rausgehen"
                 }
         },
         {
                 "id": 106,
                 "exercise_type": "tim_loi_sai",
-                "question": "Câu 106: Tìm và sửa lỗi sai trong câu sau: „Ruhen aus Sie sich!““",
+                "question": "Câu 106: Tìm và sửa lỗi sai trong câu sau: „Ruhen aus Sie sich!“",
                 "options": null,
                 "correct_answer": "Ruhen Sie sich aus!",
-                "explanation": "Động từ tách `ausruhen`, tiền tố `aus` phải nằm cuối câu. -> Đáp án đúng: \"Ruhen Sie sich aus!\"",
+                "explanation": "Động từ tách ausruhen, tiền tố aus phải nằm cuối câu. -> Đáp án đúng: \"Ruhen Sie sich aus!\"",
                 "exp_reward": 15,
                 "extra_data": {
-                        "wrong_sentence": "Ruhen aus Sie sich!“",
+                        "wrong_sentence": "Ruhen aus Sie sich!",
                         "accepted_answers": [
                                 "Ruhen Sie sich aus!"
                         ],
-                        "translation": "Xin ngài hãy nghỉ ngơi!“",
+                        "translation": "Xin ngài hãy nghỉ ngơi!",
                         "audio_text": "Ruhen Sie sich aus"
                 }
         },
@@ -2847,7 +2847,7 @@ def seed_lesson_12():
         {
                 "id": 111,
                 "exercise_type": "dich_nghia_dv",
-                "question": "Câu 111: Dịch từ sau sang tiếng Việt: „“",
+                "question": "Câu 111: Dịch từ sau sang tiếng Việt: „die Schulter“",
                 "options": null,
                 "correct_answer": "vai",
                 "explanation": "Nghĩa tiếng Việt chuẩn là: \"vai\".",
@@ -2858,13 +2858,13 @@ def seed_lesson_12():
                                 "cái vai"
                         ],
                         "translation": "vai",
-                        "audio_text": ""
+                        "audio_text": "die Schulter"
                 }
         },
         {
                 "id": 112,
                 "exercise_type": "dich_nghia_dv",
-                "question": "Câu 112: Dịch từ sau sang tiếng Việt: „“",
+                "question": "Câu 112: Dịch từ sau sang tiếng Việt: „die Apotheke“",
                 "options": null,
                 "correct_answer": "nhà thuốc",
                 "explanation": "Nghĩa tiếng Việt chuẩn là: \"nhà thuốc\".",
@@ -2876,13 +2876,13 @@ def seed_lesson_12():
                                 "tiệm thuốc"
                         ],
                         "translation": "nhà thuốc",
-                        "audio_text": ""
+                        "audio_text": "die Apotheke"
                 }
         },
         {
                 "id": 113,
                 "exercise_type": "dich_nghia_dv",
-                "question": "Câu 113: Dịch từ sau sang tiếng Việt: „“",
+                "question": "Câu 113: Dịch từ sau sang tiếng Việt: „das Bein“",
                 "options": null,
                 "correct_answer": "chân",
                 "explanation": "Nghĩa tiếng Việt chuẩn là: \"chân\".",
@@ -2893,13 +2893,13 @@ def seed_lesson_12():
                                 "cái chân"
                         ],
                         "translation": "chân",
-                        "audio_text": ""
+                        "audio_text": "das Bein"
                 }
         },
         {
                 "id": 114,
                 "exercise_type": "dich_nghia_dv",
-                "question": "Câu 114: Dịch từ sau sang tiếng Việt: „“",
+                "question": "Câu 114: Dịch từ sau sang tiếng Việt: „der Schnupfen“",
                 "options": null,
                 "correct_answer": "sổ mũi",
                 "explanation": "Nghĩa tiếng Việt chuẩn là: \"sổ mũi\".",
@@ -2910,13 +2910,13 @@ def seed_lesson_12():
                                 "bệnh sổ mũi"
                         ],
                         "translation": "sổ mũi",
-                        "audio_text": ""
+                        "audio_text": "der Schnupfen"
                 }
         },
         {
                 "id": 115,
                 "exercise_type": "dung_sai",
-                "question": "Câu 115: Đọc đoạn văn 'Tipps für die Gesundheit' và chọn Đúng (Richtig) hoặc Sai (Falsch) cho nhận định: „Man soll jeden Tag zwei Liter Kaffee trinken.““",
+                "question": "Câu 115: Đọc đoạn văn 'Tipps für die Gesundheit' và chọn Đúng (Richtig) hoặc Sai (Falsch) cho nhận định: „Man soll jeden Tag zwei Liter Kaffee trinken.“",
                 "options": [
                         "Richtig",
                         "Falsch"
@@ -2926,7 +2926,7 @@ def seed_lesson_12():
                 "exp_reward": 15,
                 "extra_data": {
                         "passage": "Um gesund zu bleiben, müssen Sie auf Ihren Körper achten. Essen Sie viel Obst und Gemüse, denn sie haben viele Vitamine. Trinken Sie täglich mindestens zwei Liter Wasser. Trinken Sie nicht zu viel Kaffee oder Alkohol. Sie dürfen auch nicht rauchen, das ist sehr schlecht für die Lunge. Wenn Sie am Computer arbeiten, machen Sie oft Pausen für Ihre Augen. Und vergessen Sie nicht: Bewegen Sie sich jeden Tag!",
-                        "statement": "Man soll jeden Tag zwei Liter Kaffee trinken.“",
+                        "statement": "Man soll jeden Tag zwei Liter Kaffee trinken.",
                         "translation": "Người ta nên uống 2 lít cà phê mỗi ngày.",
                         "audio_text": "Man soll jeden Tag zwei Liter Kaffee trinken"
                 }
@@ -2934,7 +2934,7 @@ def seed_lesson_12():
         {
                 "id": 116,
                 "exercise_type": "dung_sai",
-                "question": "Câu 116: Đọc đoạn văn 'Tipps für die Gesundheit' và chọn Đúng (Richtig) hoặc Sai (Falsch) cho nhận định: „Rauchen ist gesund.““",
+                "question": "Câu 116: Đọc đoạn văn 'Tipps für die Gesundheit' và chọn Đúng (Richtig) hoặc Sai (Falsch) cho nhận định: „Rauchen ist gesund.“",
                 "options": [
                         "Richtig",
                         "Falsch"
@@ -2944,7 +2944,7 @@ def seed_lesson_12():
                 "exp_reward": 15,
                 "extra_data": {
                         "passage": "Um gesund zu bleiben, müssen Sie auf Ihren Körper achten. Essen Sie viel Obst und Gemüse, denn sie haben viele Vitamine. Trinken Sie täglich mindestens zwei Liter Wasser. Trinken Sie nicht zu viel Kaffee oder Alkohol. Sie dürfen auch nicht rauchen, das ist sehr schlecht für die Lunge. Wenn Sie am Computer arbeiten, machen Sie oft Pausen für Ihre Augen. Und vergessen Sie nicht: Bewegen Sie sich jeden Tag!",
-                        "statement": "Rauchen ist gesund.“",
+                        "statement": "Rauchen ist gesund.",
                         "translation": "Hút thuốc thì khỏe mạnh.",
                         "audio_text": "Rauchen ist gesund"
                 }
@@ -2952,7 +2952,7 @@ def seed_lesson_12():
         {
                 "id": 117,
                 "exercise_type": "dung_sai",
-                "question": "Câu 117: Đọc đoạn văn 'Tipps für die Gesundheit' và chọn Đúng (Richtig) hoặc Sai (Falsch) cho nhận định: „Gemüse und Obst haben Vitamine.““",
+                "question": "Câu 117: Đọc đoạn văn 'Tipps für die Gesundheit' và chọn Đúng (Richtig) hoặc Sai (Falsch) cho nhận định: „Gemüse und Obst haben Vitamine.“",
                 "options": [
                         "Richtig",
                         "Falsch"
@@ -2962,7 +2962,7 @@ def seed_lesson_12():
                 "exp_reward": 15,
                 "extra_data": {
                         "passage": "Um gesund zu bleiben, müssen Sie auf Ihren Körper achten. Essen Sie viel Obst und Gemüse, denn sie haben viele Vitamine. Trinken Sie täglich mindestens zwei Liter Wasser. Trinken Sie nicht zu viel Kaffee oder Alkohol. Sie dürfen auch nicht rauchen, das ist sehr schlecht für die Lunge. Wenn Sie am Computer arbeiten, machen Sie oft Pausen für Ihre Augen. Und vergessen Sie nicht: Bewegen Sie sich jeden Tag!",
-                        "statement": "Gemüse und Obst haben Vitamine.“",
+                        "statement": "Gemüse und Obst haben Vitamine.",
                         "translation": "Rau củ và trái cây có vitamin.",
                         "audio_text": "Gemüse und Obst haben Vitamine"
                 }
@@ -2970,7 +2970,7 @@ def seed_lesson_12():
         {
                 "id": 118,
                 "exercise_type": "dung_sai",
-                "question": "Câu 118: Đọc đoạn văn 'Tipps für die Gesundheit' và chọn Đúng (Richtig) hoặc Sai (Falsch) cho nhận định: „Man muss am Computer keine Pausen machen.““",
+                "question": "Câu 118: Đọc đoạn văn 'Tipps für die Gesundheit' và chọn Đúng (Richtig) hoặc Sai (Falsch) cho nhận định: „Man muss am Computer keine Pausen machen.“",
                 "options": [
                         "Richtig",
                         "Falsch"
@@ -2980,7 +2980,7 @@ def seed_lesson_12():
                 "exp_reward": 15,
                 "extra_data": {
                         "passage": "Um gesund zu bleiben, müssen Sie auf Ihren Körper achten. Essen Sie viel Obst und Gemüse, denn sie haben viele Vitamine. Trinken Sie täglich mindestens zwei Liter Wasser. Trinken Sie nicht zu viel Kaffee oder Alkohol. Sie dürfen auch nicht rauchen, das ist sehr schlecht für die Lunge. Wenn Sie am Computer arbeiten, machen Sie oft Pausen für Ihre Augen. Und vergessen Sie nicht: Bewegen Sie sich jeden Tag!",
-                        "statement": "Man muss am Computer keine Pausen machen.“",
+                        "statement": "Man muss am Computer keine Pausen machen.",
                         "translation": "Người ta không cần nghỉ ngơi khi dùng máy tính.",
                         "audio_text": "Man muss am Computer keine Pausen machen"
                 }
@@ -3140,13 +3140,13 @@ def seed_lesson_12():
                         "Ich habe Schnupfen."
                 ],
                 "correct_answer": "Ich habe Fieber.",
-                "explanation": "Biểu tượng ngậm nhiệt kế biểu thị bệnh Sốt (`Fieber`). -> Đáp án đúng: \"Ich habe Fieber.\"",
+                "explanation": "Biểu tượng ngậm nhiệt kế biểu thị bệnh Sốt (Fieber). -> Đáp án đúng: \"Ich habe Fieber.\"",
                 "exp_reward": 15,
                 "extra_data": {
                         "emoji_icon": "🤒",
                         "weather_icon": "🤒",
                         "icon_alt_vi": "Mặt ngậm nhiệt kế",
-                        "translation": "Tôi bị sốt.“",
+                        "translation": "Tôi bị sốt.",
                         "audio_text": "Ich habe Fieber"
                 }
         },
@@ -3161,13 +3161,13 @@ def seed_lesson_12():
                         "Ich bin gesund."
                 ],
                 "correct_answer": "Ich habe Schnupfen.",
-                "explanation": "Biểu tượng xì mũi bằng khăn giấy biểu thị bệnh Sổ mũi (`Schnupfen`). -> Đáp án đúng: \"Ich habe Schnupfen.\"",
+                "explanation": "Biểu tượng xì mũi bằng khăn giấy biểu thị bệnh Sổ mũi (Schnupfen). -> Đáp án đúng: \"Ich habe Schnupfen.\"",
                 "exp_reward": 15,
                 "extra_data": {
                         "emoji_icon": "🤧",
                         "weather_icon": "🤧",
                         "icon_alt_vi": "Mặt xì mũi",
-                        "translation": "Tôi bị sổ mũi.“",
+                        "translation": "Tôi bị sổ mũi.",
                         "audio_text": "Ich habe Schnupfen"
                 }
         },
@@ -3182,13 +3182,13 @@ def seed_lesson_12():
                         "Ich bin müde."
                 ],
                 "correct_answer": "Ich habe Kopfschmerzen.",
-                "explanation": "Biểu tượng đầu quấn băng biểu thị chứng Đau đầu (`Kopfschmerzen`). -> Đáp án đúng: \"Ich habe Kopfschmerzen.\"",
+                "explanation": "Biểu tượng đầu quấn băng biểu thị chứng Đau đầu (Kopfschmerzen). -> Đáp án đúng: \"Ich habe Kopfschmerzen.\"",
                 "exp_reward": 15,
                 "extra_data": {
                         "emoji_icon": "🤕",
                         "weather_icon": "🤕",
                         "icon_alt_vi": "Đầu quấn băng",
-                        "translation": "Tôi bị đau đầu.“",
+                        "translation": "Tôi bị đau đầu.",
                         "audio_text": "Ich habe Kopfschmerzen"
                 }
         },
@@ -3203,13 +3203,13 @@ def seed_lesson_12():
                         "Mein Fuß tut weh."
                 ],
                 "correct_answer": "Mein Bauch tut weh.",
-                "explanation": "Biểu tượng buồn nôn liên quan đến bệnh Đau dạ dày/Đau bụng (`Bauchschmerzen / Bauch tut weh`). -> Đáp án đúng: \"Mein Bauch tut weh.\"",
+                "explanation": "Biểu tượng buồn nôn liên quan đến bệnh Đau dạ dày/Đau bụng (Bauchschmerzen / Bauch tut weh). -> Đáp án đúng: \"Mein Bauch tut weh.\"",
                 "exp_reward": 15,
                 "extra_data": {
                         "emoji_icon": "🤢",
                         "weather_icon": "🤢",
                         "icon_alt_vi": "Mặt xanh xao buồn nôn",
-                        "translation": "Bụng tôi bị đau.“",
+                        "translation": "Bụng tôi bị đau.",
                         "audio_text": "Mein Bauch tut weh"
                 }
         }
