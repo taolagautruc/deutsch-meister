@@ -2319,236 +2319,295 @@ def seed_lesson_12():
                         "translation": "Các bạn hãy uống mỗi ngày một viên thuốc!"
                 }
         },
-        {
-                "id": 81,
-                "exercise_type": "dich_cau_vd",
-                "question": "Câu 81: Dịch câu sau sang tiếng Đức: „Ngài hãy uống nhiều nước!“",
-                "options": null,
-                "correct_answer": "Trinken Sie viel Wasser!",
-                "explanation": "Mệnh lệnh lịch sự: Trinken Sie + viel Wasser. -> Đáp án chuẩn: \"Trinken Sie viel Wasser!\"",
-                "exp_reward": 15,
-                "extra_data": {
-                        "accepted_answers": [
-                                "Trinken Sie viel Wasser!",
-                                "Trinken Sie viel Wasser",
-                                "Bitte trinken Sie viel Wasser!"
-                        ],
-                        "translation": "Ngài hãy uống nhiều nước!",
-                        "audio_text": "Trinken Sie viel Wasser"
-                }
+                {
+                        "id": 81,
+                        "exercise_type": "dich_cau_vd",
+                        "question": "Câu 81: Dịch câu sau sang tiếng Đức: „Ngài hãy uống nhiều nước!“",
+                        "options": null,
+                        "correct_answer": "Trinken Sie viel Wasser!",
+                        "explanation": "Mệnh lệnh lịch sự: Trinken Sie + viel Wasser. -> Đáp án chuẩn: \"Trinken Sie viel Wasser!\"",
+                        "exp_reward": 15,
+                        "extra_data": {
+                                        "accepted_answers": [
+                                                        "Trinken Sie viel Wasser!",
+                                                        "Trinken Sie viel Wasser",
+                                                        "Trinken Sie bitte viel Wasser!",
+                                                        "Trinken Sie bitte viel Wasser",
+                                                        "Trinken Sie viel Wasser, bitte!",
+                                                        "Trinken Sie viel Wasser, bitte",
+                                                        "Bitte trinken Sie viel Wasser!",
+                                                        "Bitte trinken Sie viel Wasser"
+                                        ],
+                                        "translation": "Ngài hãy uống nhiều nước!",
+                                        "audio_text": "Trinken Sie viel Wasser"
+                        }
         },
         {
-                "id": 82,
-                "exercise_type": "dich_cau_vd",
-                "question": "Câu 82: Dịch câu sau sang tiếng Đức: „Ở đây người ta không được phép hút thuốc.“",
-                "options": null,
-                "correct_answer": "Hier darf man nicht rauchen.",
-                "explanation": "man darf nicht = không được phép; rauchen (hút thuốc) để cuối câu. -> Đáp án chuẩn: \"Hier darf man nicht rauchen.\"",
-                "exp_reward": 15,
-                "extra_data": {
-                        "accepted_answers": [
-                                "Hier darf man nicht rauchen.",
-                                "Man darf hier nicht rauchen.",
-                                "Hier darf man nicht rauchen"
-                        ],
-                        "translation": "Ở đây người ta không được phép hút thuốc.",
-                        "audio_text": "Hier darf man nicht rauchen"
-                }
+                        "id": 82,
+                        "exercise_type": "dich_cau_vd",
+                        "question": "Câu 82: Dịch câu sau sang tiếng Đức: „Ở đây người ta không được phép hút thuốc.“",
+                        "options": null,
+                        "correct_answer": "Hier darf man nicht rauchen.",
+                        "explanation": "man darf nicht = không được phép; rauchen (hút thuốc) để cuối câu. -> Đáp án chuẩn: \"Hier darf man nicht rauchen.\"",
+                        "exp_reward": 15,
+                        "extra_data": {
+                                        "accepted_answers": [
+                                                        "Hier darf man nicht rauchen.",
+                                                        "Hier darf man nicht rauchen",
+                                                        "Man darf hier nicht rauchen.",
+                                                        "Man darf hier nicht rauchen"
+                                        ],
+                                        "translation": "Ở đây người ta không được phép hút thuốc.",
+                                        "audio_text": "Hier darf man nicht rauchen"
+                        }
         },
         {
-                "id": 83,
-                "exercise_type": "dich_cau_vd",
-                "question": "Câu 83: Dịch câu sau sang tiếng Đức (ngôi du): „Hãy làm bài tập về nhà của bạn!“",
-                "options": null,
-                "correct_answer": "Mach deine Hausaufgaben!",
-                "explanation": "Imperativ ngôi du của machen là Mach. Tính từ sở hữu tương ứng ngôi du là deine. -> Đáp án chuẩn: \"Mach deine Hausaufgaben!\"",
-                "exp_reward": 15,
-                "extra_data": {
-                        "accepted_answers": [
-                                "Mach deine Hausaufgaben!",
-                                "Mach deine Hausaufgaben",
-                                "Macht eure Hausaufgaben!",
-                                "Macht eure Hausaufgaben",
-                                "Machen Sie Ihre Hausaufgaben!",
-                                "Machen Sie Ihre Hausaufgaben"
-                        ],
-                        "translation": "Hãy làm bài tập về nhà của bạn!",
-                        "audio_text": "Mach deine Hausaufgaben"
-                }
+                        "id": 83,
+                        "exercise_type": "dich_cau_vd",
+                        "question": "Câu 83: Dịch câu sau sang tiếng Đức (ngôi du): „Hãy làm bài tập về nhà của bạn!“",
+                        "options": null,
+                        "correct_answer": "Mach deine Hausaufgaben!",
+                        "explanation": "Imperativ ngôi du của machen là Mach. Tính từ sở hữu tương ứng ngôi du là deine. -> Đáp án chuẩn: \"Mach deine Hausaufgaben!\"",
+                        "exp_reward": 15,
+                        "extra_data": {
+                                        "accepted_answers": [
+                                                        "Mach deine Hausaufgaben!",
+                                                        "Mach deine Hausaufgaben",
+                                                        "Mach bitte deine Hausaufgaben!",
+                                                        "Mach bitte deine Hausaufgaben",
+                                                        "Mach deine Hausaufgaben, bitte!",
+                                                        "Mach deine Hausaufgaben, bitte",
+                                                        "Bitte mach deine Hausaufgaben!",
+                                                        "Bitte mach deine Hausaufgaben",
+                                                        "Macht eure Hausaufgaben!",
+                                                        "Macht eure Hausaufgaben",
+                                                        "Machen Sie Ihre Hausaufgaben!",
+                                                        "Machen Sie Ihre Hausaufgaben"
+                                        ],
+                                        "translation": "Hãy làm bài tập về nhà của bạn!",
+                                        "audio_text": "Mach deine Hausaufgaben"
+                        }
         },
         {
-                "id": 84,
-                "exercise_type": "dich_cau_vd",
-                "question": "Câu 84: Dịch câu sau sang tiếng Đức: „Tôi bị đau đầu dữ dội.“",
-                "options": null,
-                "correct_answer": "Ich habe starke Kopfschmerzen.",
-                "explanation": "Có hai cách nói: haben + Schmerzen (Ich habe starke Kopfschmerzen) hoặc wehtun + Dativ (Mein Kopf tut mir sehr weh). -> Đáp án chuẩn: \"Ich habe starke Kopfschmerzen.\" hoặc \"Mein Kopf tut mir sehr weh.\"",
-                "exp_reward": 15,
-                "extra_data": {
-                        "accepted_answers": [
-                                "Ich habe starke Kopfschmerzen.",
-                                "Ich habe starke Kopfschmerzen",
-                                "Mein Kopf tut mir sehr weh.",
-                                "Mein Kopf tut mir sehr weh",
-                                "Mein Kopf tut mir weh.",
-                                "Mein Kopf tut mir weh",
-                                "Ich habe Kopfschmerzen.",
-                                "Ich habe Kopfschmerzen"
-                        ],
-                        "translation": "Tôi bị đau đầu dữ dội.",
-                        "audio_text": "Ich habe starke Kopfschmerzen"
-                }
+                        "id": 84,
+                        "exercise_type": "dich_cau_vd",
+                        "question": "Câu 84: Dịch câu sau sang tiếng Đức: „Tôi bị đau đầu dữ dội.“",
+                        "options": null,
+                        "correct_answer": "Ich habe starke Kopfschmerzen.",
+                        "explanation": "Có hai cách nói: haben + Schmerzen (Ich habe starke Kopfschmerzen) hoặc wehtun + Dativ (Mein Kopf tut mir sehr weh). -> Đáp án chuẩn: \"Ich habe starke Kopfschmerzen.\" hoặc \"Mein Kopf tut mir sehr weh.\"",
+                        "exp_reward": 15,
+                        "extra_data": {
+                                        "accepted_answers": [
+                                                        "Ich habe starke Kopfschmerzen.",
+                                                        "Ich habe starke Kopfschmerzen",
+                                                        "Ich habe sehr starke Kopfschmerzen.",
+                                                        "Ich habe sehr starke Kopfschmerzen",
+                                                        "Mein Kopf tut mir sehr weh.",
+                                                        "Mein Kopf tut mir sehr weh",
+                                                        "Mein Kopf tut mir weh.",
+                                                        "Mein Kopf tut mir weh",
+                                                        "Ich habe Kopfschmerzen.",
+                                                        "Ich habe Kopfschmerzen"
+                                        ],
+                                        "translation": "Tôi bị đau đầu dữ dội.",
+                                        "audio_text": "Ich habe starke Kopfschmerzen"
+                        }
         },
         {
-                "id": 85,
-                "exercise_type": "dich_cau_vd",
-                "question": "Câu 85: Dịch câu sau sang tiếng Đức: „Các bạn hãy ăn nhiều rau hơn!“",
-                "options": null,
-                "correct_answer": "Esst mehr Gemüse!",
-                "explanation": "Imperativ ngôi ihr của essen là Esst. -> Đáp án chuẩn: \"Esst mehr Gemüse!\"",
-                "exp_reward": 15,
-                "extra_data": {
-                        "accepted_answers": [
-                                "Esst mehr Gemüse!",
-                                "Esst mehr Gemüse",
-                                "Esst mehr Gemuese!"
-                        ],
-                        "translation": "Các bạn hãy ăn nhiều rau hơn!",
-                        "audio_text": "Esst mehr Gemüse"
-                }
+                        "id": 85,
+                        "exercise_type": "dich_cau_vd",
+                        "question": "Câu 85: Dịch câu sau sang tiếng Đức: „Các bạn hãy ăn nhiều rau hơn!“",
+                        "options": null,
+                        "correct_answer": "Esst mehr Gemüse!",
+                        "explanation": "Imperativ ngôi ihr của essen là Esst. -> Đáp án chuẩn: \"Esst mehr Gemüse!\"",
+                        "exp_reward": 15,
+                        "extra_data": {
+                                        "accepted_answers": [
+                                                        "Esst mehr Gemüse!",
+                                                        "Esst mehr Gemüse",
+                                                        "Esst bitte mehr Gemüse!",
+                                                        "Esst bitte mehr Gemüse",
+                                                        "Esst mehr Gemüse, bitte!",
+                                                        "Esst mehr Gemüse, bitte",
+                                                        "Bitte esst mehr Gemüse!",
+                                                        "Bitte esst mehr Gemüse",
+                                                        "Esst mehr Gemuese!",
+                                                        "Esst mehr Gemuese",
+                                                        "Esst bitte mehr Gemuese!",
+                                                        "Esst bitte mehr Gemuese"
+                                        ],
+                                        "translation": "Các bạn hãy ăn nhiều rau hơn!",
+                                        "audio_text": "Esst mehr Gemüse"
+                        }
         },
         {
-                "id": 86,
-                "exercise_type": "dich_cau_vd",
-                "question": "Câu 86: Dịch câu sau sang tiếng Đức (ngôi du): „Hãy nghỉ ngơi đi!“",
-                "options": null,
-                "correct_answer": "Ruh dich aus!",
-                "explanation": "Mệnh lệnh ngôi du của động từ phản thân tách sich ausruhen là Ruh dich aus!. -> Đáp án chuẩn: \"Ruh dich aus!\"",
-                "exp_reward": 15,
-                "extra_data": {
-                        "accepted_answers": [
-                                "Ruh dich aus!",
-                                "Ruh dich aus",
-                                "Ruhe dich aus!",
-                                "Ruhe dich aus",
-                                "Ruht euch aus!",
-                                "Ruht euch aus",
-                                "Ruhen Sie sich aus!",
-                                "Ruhen Sie sich aus",
-                                "Bleib im Bett!",
-                                "Bleib im Bett"
-                        ],
-                        "translation": "Hãy nghỉ ngơi đi!",
-                        "audio_text": "Ruh dich aus"
-                }
+                        "id": 86,
+                        "exercise_type": "dich_cau_vd",
+                        "question": "Câu 86: Dịch câu sau sang tiếng Đức (ngôi du): „Hãy nghỉ ngơi đi!“",
+                        "options": null,
+                        "correct_answer": "Ruh dich aus!",
+                        "explanation": "Mệnh lệnh ngôi du của động từ phản thân tách sich ausruhen là Ruh dich aus!. -> Đáp án chuẩn: \"Ruh dich aus!\"",
+                        "exp_reward": 15,
+                        "extra_data": {
+                                        "accepted_answers": [
+                                                        "Ruh dich aus!",
+                                                        "Ruh dich aus",
+                                                        "Ruh dich bitte aus!",
+                                                        "Ruh dich bitte aus",
+                                                        "Ruh dich aus, bitte!",
+                                                        "Ruh dich aus, bitte",
+                                                        "Bitte ruh dich aus!",
+                                                        "Bitte ruh dich aus",
+                                                        "Ruhe dich aus!",
+                                                        "Ruhe dich aus",
+                                                        "Ruht euch aus!",
+                                                        "Ruht euch aus",
+                                                        "Ruhen Sie sich aus!",
+                                                        "Ruhen Sie sich aus"
+                                        ],
+                                        "translation": "Hãy nghỉ ngơi đi!",
+                                        "audio_text": "Ruh dich aus"
+                        }
         },
         {
-                "id": 87,
-                "exercise_type": "dich_cau_dv",
-                "question": "Câu 87: Dịch câu sau sang tiếng Việt: „Atmen Sie bitte tief ein und aus!“",
-                "options": null,
-                "correct_answer": "Xin ngài hãy hít vào và thở ra thật sâu!",
-                "explanation": "tief ein- und ausatmen = hít sâu và thở ra. -> Nghĩa tiếng Việt chuẩn: \"Xin ngài hãy hít vào và thở ra thật sâu!\"",
-                "exp_reward": 15,
-                "extra_data": {
-                        "accepted_answers": [
-                                "Xin ngài hãy hít vào và thở ra thật sâu!",
-                                "Xin hãy hít vào và thở ra sâu!",
-                                "Hãy hít vào và thở ra thật sâu!"
-                        ],
-                        "translation": "Xin ngài hãy hít vào và thở ra thật sâu!",
-                        "audio_text": "Atmen Sie bitte tief ein und aus"
-                }
+                        "id": 87,
+                        "exercise_type": "dich_cau_dv",
+                        "question": "Câu 87: Dịch câu sau sang tiếng Việt: „Atmen Sie bitte tief ein und aus!“",
+                        "options": null,
+                        "correct_answer": "Xin ngài hãy hít vào và thở ra thật sâu!",
+                        "explanation": "tief ein- und ausatmen = hít sâu và thở ra. -> Nghĩa tiếng Việt chuẩn: \"Xin ngài hãy hít vào và thở ra thật sâu!\"",
+                        "exp_reward": 15,
+                        "extra_data": {
+                                        "accepted_answers": [
+                                                        "Xin ngài hãy hít vào và thở ra thật sâu!",
+                                                        "Xin hãy hít vào và thở ra thật sâu!",
+                                                        "Hãy hít vào và thở ra thật sâu!",
+                                                        "Hãy hít vào và thở ra sâu!",
+                                                        "Xin ngài hãy hít sâu và thở ra!",
+                                                        "Làm ơn hãy hít vào và thở ra thật sâu!",
+                                                        "Vui lòng hít vào và thở ra thật sâu!",
+                                                        "Hít vào và thở ra thật sâu!"
+                                        ],
+                                        "translation": "Xin ngài hãy hít vào và thở ra thật sâu!",
+                                        "audio_text": "Atmen Sie bitte tief ein und aus"
+                        }
         },
         {
-                "id": 88,
-                "exercise_type": "dich_cau_dv",
-                "question": "Câu 88: Dịch câu sau sang tiếng Việt: „Der Rücken tut ihm weh.“",
-                "options": null,
-                "correct_answer": "Lưng của anh ấy bị đau.",
-                "explanation": "Cấu trúc wehtun + Dativ (ihm). -> Nghĩa tiếng Việt chuẩn: \"Lưng của anh ấy bị đau.\"",
-                "exp_reward": 15,
-                "extra_data": {
-                        "accepted_answers": [
-                                "Lưng của anh ấy bị đau.",
-                                "Anh ấy bị đau lưng.",
-                                "Lưng làm anh ấy đau."
-                        ],
-                        "translation": "Lưng của anh ấy bị đau.",
-                        "audio_text": "Der Rücken tut ihm weh"
-                }
+                        "id": 88,
+                        "exercise_type": "dich_cau_dv",
+                        "question": "Câu 88: Dịch câu sau sang tiếng Việt: „Der Rücken tut ihm weh.“",
+                        "options": null,
+                        "correct_answer": "Lưng của anh ấy bị đau.",
+                        "explanation": "Cấu trúc wehtun + Dativ (ihm). -> Nghĩa tiếng Việt chuẩn: \"Lưng của anh ấy bị đau.\"",
+                        "exp_reward": 15,
+                        "extra_data": {
+                                        "accepted_answers": [
+                                                        "Lưng của anh ấy bị đau.",
+                                                        "Lưng anh ấy bị đau.",
+                                                        "Lưng anh ấy đau.",
+                                                        "Anh ấy bị đau lưng.",
+                                                        "Anh ấy đau lưng.",
+                                                        "Lưng của ông ấy bị đau.",
+                                                        "Lưng ông ấy bị đau.",
+                                                        "Ông ấy bị đau lưng.",
+                                                        "Lưng cậu ấy bị đau.",
+                                                        "Cậu ấy bị đau lưng."
+                                        ],
+                                        "translation": "Lưng của anh ấy bị đau.",
+                                        "audio_text": "Der Rücken tut ihm weh"
+                        }
         },
         {
-                "id": 89,
-                "exercise_type": "dich_cau_dv",
-                "question": "Câu 89: Dịch câu sau sang tiếng Việt: „Darf ich hier fotografieren?“",
-                "options": null,
-                "correct_answer": "Tôi có được phép chụp ảnh ở đây không?",
-                "explanation": "fotografieren = chụp ảnh. darf ich = xin phép. -> Nghĩa tiếng Việt chuẩn: \"Tôi có được phép chụp ảnh ở đây không?\"",
-                "exp_reward": 15,
-                "extra_data": {
-                        "accepted_answers": [
-                                "Tôi có được phép chụp ảnh ở đây không?",
-                                "Tôi có thể chụp ảnh ở đây không?",
-                                "Tôi chụp ảnh ở đây được không?"
-                        ],
-                        "translation": "Tôi có được phép chụp ảnh ở đây không?",
-                        "audio_text": "Darf ich hier fotografieren"
-                }
+                        "id": 89,
+                        "exercise_type": "dich_cau_dv",
+                        "question": "Câu 89: Dịch câu sau sang tiếng Việt: „Darf ich hier fotografieren?“",
+                        "options": null,
+                        "correct_answer": "Tôi có được phép chụp ảnh ở đây không?",
+                        "explanation": "fotografieren = chụp ảnh. darf ich = xin phép. -> Nghĩa tiếng Việt chuẩn: \"Tôi có được phép chụp ảnh ở đây không?\"",
+                        "exp_reward": 15,
+                        "extra_data": {
+                                        "accepted_answers": [
+                                                        "Tôi có được phép chụp ảnh ở đây không?",
+                                                        "Tôi có được chụp ảnh ở đây không?",
+                                                        "Tôi có thể chụp ảnh ở đây không?",
+                                                        "Tôi chụp ảnh ở đây được không?",
+                                                        "Tôi có được phép chụp hình ở đây không?",
+                                                        "Ở đây tôi có được chụp ảnh không?",
+                                                        "Ở đây tôi có được phép chụp ảnh không?",
+                                                        "Mình có được chụp ảnh ở đây không?"
+                                        ],
+                                        "translation": "Tôi có được phép chụp ảnh ở đây không?",
+                                        "audio_text": "Darf ich hier fotografieren"
+                        }
         },
         {
-                "id": 90,
-                "exercise_type": "dich_cau_dv",
-                "question": "Câu 90: Dịch câu sau sang tiếng Việt: „Bleib heute im Bett!“",
-                "options": null,
-                "correct_answer": "Hôm nay hãy ở lại trên giường!",
-                "explanation": "Bleib là mệnh lệnh ngôi du của bleiben. im Bett = trên giường. -> Nghĩa tiếng Việt chuẩn: \"Hôm nay hãy ở lại trên giường!\"",
-                "exp_reward": 15,
-                "extra_data": {
-                        "accepted_answers": [
-                                "Hôm nay hãy ở lại trên giường!",
-                                "Hãy nằm nghỉ trên giường hôm nay!",
-                                "Hôm nay hãy ở trên giường nhé!"
-                        ],
-                        "translation": "Hôm nay hãy ở lại trên giường!",
-                        "audio_text": "Bleib heute im Bett"
-                }
+                        "id": 90,
+                        "exercise_type": "dich_cau_dv",
+                        "question": "Câu 90: Dịch câu sau sang tiếng Việt: „Bleib heute im Bett!“",
+                        "options": null,
+                        "correct_answer": "Hôm nay hãy nằm nghỉ trên giường!",
+                        "explanation": "Bleib là mệnh lệnh ngôi du của bleiben. im Bett = trên giường. -> Nghĩa tiếng Việt chuẩn: \"Hôm nay hãy nằm nghỉ trên giường!\" (hoặc: Hôm nay hãy ở lại trên giường!).",
+                        "exp_reward": 15,
+                        "extra_data": {
+                                        "accepted_answers": [
+                                                        "Hôm nay hãy nằm nghỉ trên giường!",
+                                                        "Hôm nay hãy ở lại trên giường!",
+                                                        "Hôm nay hãy nằm lại trên giường!",
+                                                        "Hãy nằm nghỉ trên giường hôm nay!",
+                                                        "Hãy ở lại trên giường hôm nay!",
+                                                        "Hôm nay hãy nghỉ trên giường!",
+                                                        "Hôm nay hãy ở trên giường nhé!",
+                                                        "Hôm nay hãy nằm trên giường!"
+                                        ],
+                                        "translation": "Hôm nay hãy nằm nghỉ trên giường!",
+                                        "audio_text": "Bleib heute im Bett"
+                        }
         },
         {
-                "id": 91,
-                "exercise_type": "dich_cau_dv",
-                "question": "Câu 91: Dịch câu sau sang tiếng Việt: „Wir sehen uns jeden Morgen im Bus.“",
-                "options": null,
-                "correct_answer": "Chúng ta gặp nhau mỗi sáng trên xe buýt.",
-                "explanation": "sich sehen = gặp/nhìn thấy nhau. uns ở đây là Akkusativ phản thân. -> Nghĩa tiếng Việt chuẩn: \"Chúng ta gặp nhau mỗi sáng trên xe buýt.\"",
-                "exp_reward": 15,
-                "extra_data": {
-                        "accepted_answers": [
-                                "Chúng ta gặp nhau mỗi sáng trên xe buýt.",
-                                "Chúng tôi gặp nhau mỗi sáng ở xe buýt.",
-                                "Chúng ta nhìn thấy nhau mỗi sáng trên xe buýt."
-                        ],
-                        "translation": "Chúng ta gặp nhau mỗi sáng trên xe buýt.",
-                        "audio_text": "Wir sehen uns jeden Morgen im Bus"
-                }
+                        "id": 91,
+                        "exercise_type": "dich_cau_dv",
+                        "question": "Câu 91: Dịch câu sau sang tiếng Việt: „Wir sehen uns jeden Morgen im Bus.“",
+                        "options": null,
+                        "correct_answer": "Chúng ta gặp nhau mỗi sáng trên xe buýt.",
+                        "explanation": "sich sehen = gặp nhau, uns chỉ hai bên gặp nhau (chúng ta). -> Nghĩa tiếng Việt chuẩn: \"Chúng ta gặp nhau mỗi sáng trên xe buýt.\"",
+                        "exp_reward": 15,
+                        "extra_data": {
+                                        "accepted_answers": [
+                                                        "Chúng ta gặp nhau mỗi sáng trên xe buýt.",
+                                                        "Chúng tôi gặp nhau mỗi sáng trên xe buýt.",
+                                                        "Chúng mình gặp nhau mỗi sáng trên xe buýt.",
+                                                        "Chúng ta gặp nhau mỗi buổi sáng trên xe buýt.",
+                                                        "Chúng tôi gặp nhau mỗi buổi sáng ở xe buýt.",
+                                                        "Chúng ta gặp nhau mỗi sáng trên xe bus.",
+                                                        "Chúng tôi gặp nhau mỗi sáng trên xe bus."
+                                        ],
+                                        "translation": "Chúng ta gặp nhau mỗi sáng trên xe buýt.",
+                                        "audio_text": "Wir sehen uns jeden Morgen im Bus"
+                        }
         },
         {
-                "id": 92,
-                "exercise_type": "dich_cau_dv",
-                "question": "Câu 92: Dịch câu sau sang tiếng Việt: „Zeigen Sie mir bitte Ihre Zunge!“",
-                "options": null,
-                "correct_answer": "Xin ngài hãy cho tôi xem lưỡi của ngài!",
-                "explanation": "zeigen = chỉ/cho xem. die Zunge = lưỡi. -> Nghĩa tiếng Việt chuẩn: \"Xin ngài hãy cho tôi xem lưỡi của ngài!\"",
-                "exp_reward": 15,
-                "extra_data": {
-                        "accepted_answers": [
-                                "Xin ngài hãy cho tôi xem lưỡi của ngài!",
-                                "Hãy cho tôi xem lưỡi của ngài!",
-                                "Xin hãy thè lưỡi ra!"
-                        ],
-                        "translation": "Xin ngài hãy cho tôi xem lưỡi của ngài!",
-                        "audio_text": "Zeigen Sie mir bitte Ihre Zunge"
-                }
+                        "id": 92,
+                        "exercise_type": "dich_cau_dv",
+                        "question": "Câu 92: Dịch câu sau sang tiếng Việt: „Zeigen Sie mir bitte Ihre Zunge!“",
+                        "options": null,
+                        "correct_answer": "Xin ngài hãy cho tôi xem lưỡi của ngài!",
+                        "explanation": "zeigen = chỉ/cho xem. die Zunge = lưỡi. -> Nghĩa tiếng Việt chuẩn: \"Xin ngài hãy cho tôi xem lưỡi của ngài!\"",
+                        "exp_reward": 15,
+                        "extra_data": {
+                                        "accepted_answers": [
+                                                        "Xin ngài hãy cho tôi xem lưỡi của ngài!",
+                                                        "Xin hãy cho tôi xem lưỡi của ngài!",
+                                                        "Hãy cho tôi xem lưỡi của ngài!",
+                                                        "Hãy cho tôi xem lưỡi của bạn!",
+                                                        "Làm ơn cho tôi xem lưỡi của ngài!",
+                                                        "Vui lòng cho tôi xem lưỡi của ngài!",
+                                                        "Xin hãy thè lưỡi ra!",
+                                                        "Hãy thè lưỡi ra!",
+                                                        "Cho tôi xem lưỡi của bạn!"
+                                        ],
+                                        "translation": "Xin ngài hãy cho tôi xem lưỡi của ngài!",
+                                        "audio_text": "Zeigen Sie mir bitte Ihre Zunge"
+                        }
         },
         {
                 "id": 93,
