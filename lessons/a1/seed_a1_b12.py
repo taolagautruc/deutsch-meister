@@ -212,7 +212,7 @@ def seed_lesson_12():
 
                 <div class="p-3.5 rounded-2xl bg-indigo-50 border border-indigo-200 space-y-1.5">
                     <div class="font-bold text-indigo-900 uppercase">2. Ngôi ihr (Nhóm bạn bè)</div>
-                    <div class="text-slate-700">• Chia như ngôi <code>ihr</code> ở Hiện tại, rồi <b>bỏ chủ ngữ ihr</b>.</div>
+                    <div class="text-slate-700">• Chia như ngôi <code>ihr</code> ở Hiện tại, rồi <b>thông thường lược bỏ chủ ngữ ihr</b> (chỉ thêm khi muốn nhấn mạnh đối tượng).</div>
                     <div class="text-slate-700">• Ví dụ: ihr kommt ➔ <b>Kommt!</b></div>
                     <div class="text-slate-700">• Ví dụ: ihr esst ➔ <b>Esst!</b> (không biến âm 'i')</div>
                     <div class="text-slate-700">• Ví dụ: ihr wartet ➔ <b>Wartet!</b></div>
@@ -681,7 +681,7 @@ def seed_lesson_12():
                         "Trinkst du viel Wasser!"
                 ],
                 "correct_answer": "Trink viel Wasser!",
-                "explanation": "Đối với ngôi du, ta bỏ -st và bỏ chủ ngữ du. du trinkst ➔ Trink! -> Đáp án đúng: \"Trink viel Wasser!\"",
+                "explanation": "Đối với ngôi du, ta bỏ đuôi -st và thông thường lược bỏ chủ ngữ du (chỉ thêm khi muốn nhấn mạnh đối tượng): du trinkst ➔ Trink! -> Đáp án đúng: \"Trink viel Wasser!\"",
                 "exp_reward": 15,
                 "extra_data": {
                         "translation": "Hãy uống nhiều nước!",
@@ -771,7 +771,7 @@ def seed_lesson_12():
                         "Iss mehr Gemüse!"
                 ],
                 "correct_answer": "Esst mehr Gemüse!",
-                "explanation": "Mệnh lệnh ngôi ihr: chia động từ như bình thường (ihr esst) rồi bỏ chủ ngữ ihr ➔ Esst! Không có biến âm 'i' như ngôi du. -> Đáp án đúng: \"Esst mehr Gemüse!\"",
+                "explanation": "Mệnh lệnh ngôi ihr: chia động từ như bình thường (ihr esst) rồi thông thường lược bỏ chủ ngữ ihr (chỉ thêm khi muốn nhấn mạnh đối tượng) ➔ Esst! Không có biến âm 'i' như ngôi du. -> Đáp án đúng: \"Esst mehr Gemüse!\"",
                 "exp_reward": 15,
                 "extra_data": {
                         "translation": "Các bạn hãy ăn nhiều rau hơn!",
@@ -957,7 +957,7 @@ def seed_lesson_12():
                 "question": "Câu 20: Điền động từ chia ở Imperativ (ngôi du): „___ bitte einen Moment!“ (warten)",
                 "options": null,
                 "correct_answer": "Warte",
-                "explanation": "Gốc động từ warten (bỏ -en) kết thúc bằng -t ➔ Imperativ ngôi du phải thêm đuôi -e: Warte!",
+                "explanation": "Gốc động từ warten (bỏ -en) là wart-, kết thúc bằng -t nên Imperativ ngôi du phải thêm đuôi -e: Warte! (Quy tắc chung: gốc kết thúc bằng -t, -d hoặc phụ âm + m/n thì thêm đuôi -e).",
                 "exp_reward": 15,
                 "extra_data": {
                         "accepted_answers": [
@@ -973,7 +973,7 @@ def seed_lesson_12():
                 "question": "Câu 21: Điền động từ chia ở Imperativ (ngôi ihr): „Kinder, ___ eure Hausaufgaben!“ (machen)",
                 "options": null,
                 "correct_answer": "Macht",
-                "explanation": "Ngôi ihr chia bình thường macht rồi bỏ chữ ihr ➔ Macht!",
+                "explanation": "Ngôi ihr chia bình thường macht rồi thông thường lược bỏ chữ ihr (chỉ thêm khi muốn nhấn mạnh đối tượng) ➔ Macht!",
                 "exp_reward": 15,
                 "extra_data": {
                         "accepted_answers": [
@@ -1152,7 +1152,7 @@ def seed_lesson_12():
                 "question": "Câu 32: Chuyển câu trần thuật sau sang câu Mệnh lệnh (Imperativ): „Ihr lest den Text.“",
                 "options": null,
                 "correct_answer": "Lest den Text!",
-                "explanation": "Ngôi ihr chia là lest, bỏ chữ ihr đi ➔ Lest den Text!",
+                "explanation": "Ngôi ihr chia là lest, thông thường lược bỏ chữ ihr đi ➔ Lest den Text! (chỉ thêm khi muốn nhấn mạnh đối tượng).",
                 "exp_reward": 15,
                 "extra_data": {
                         "source_sentence": "Ihr lest den Text.",
@@ -1208,7 +1208,7 @@ def seed_lesson_12():
                 "question": "Câu 35: Chuyển câu trần thuật sau sang câu Mệnh lệnh (Imperativ): „Ihr geht jetzt schlafen.“",
                 "options": null,
                 "correct_answer": "Geht jetzt schlafen!",
-                "explanation": "Ngôi ihr chia là geht, bỏ ihr ➔ Geht jetzt schlafen!",
+                "explanation": "Ngôi ihr chia là geht, thông thường lược bỏ ihr ➔ Geht jetzt schlafen! (chỉ thêm ihr khi muốn nhấn mạnh).",
                 "exp_reward": 15,
                 "extra_data": {
                         "source_sentence": "Ihr geht jetzt schlafen.",
@@ -1281,7 +1281,7 @@ def seed_lesson_12():
                 "question": "Câu 39: Chuyển câu trần thuật sau sang câu Mệnh lệnh (Imperativ): „Du zeichnest ein Bild.“",
                 "options": null,
                 "correct_answer": "Zeichne ein Bild!",
-                "explanation": "Gốc động từ (bỏ -en) là zeichn-, kết thúc bằng phụ âm + n nên phải thêm -e để đọc được ➔ Zeichne! -> Đáp án: \"Zeichne ein Bild!\"",
+                "explanation": "Gốc động từ (bỏ -en) là zeichn-, kết thúc bằng phụ âm + n nên phải thêm -e để đọc được → Zeichne! (Quy tắc chung: gốc kết thúc bằng -t, -d hoặc phụ âm + m/n thì thêm -e) -> Đáp án: \"Zeichne ein Bild!\"",
                 "exp_reward": 15,
                 "extra_data": {
                         "source_sentence": "Du zeichnest ein Bild.",
@@ -2351,7 +2351,7 @@ def seed_lesson_12():
                         "question": "Câu 80: Nghe và điền 1 từ vào chỗ trống: „___ jeden Tag eine Tablette!“",
                         "options": null,
                         "correct_answer": "Nehmt",
-                        "explanation": "nehmen → Imperativ ngôi ihr: Nehmt! (bỏ chủ ngữ ihr, giữ nguyên gốc nehm- + -t) → „Nehmt jeden Tag eine Tablette!“",
+                        "explanation": "nehmen → Imperativ ngôi ihr: Nehmt! (thông thường lược bỏ chủ ngữ ihr, giữ nguyên gốc nehm- + -t) → „Nehmt jeden Tag eine Tablette!“",
                         "exp_reward": 15,
                         "extra_data": {
                                         "display_sentence": "„___ jeden Tag eine Tablette!“",
@@ -2695,7 +2695,7 @@ def seed_lesson_12():
                 "question": "Câu 94: Sắp xếp các từ sau thành câu hoàn chỉnh:",
                 "options": null,
                 "correct_answer": "Räumt eure Zimmer auf!",
-                "explanation": "Quy tắc câu Mệnh lệnh (Imperativ) ngôi ihr: Động từ chia như ngôi ihr ở thì Hiện tại (gốc räum- + -t thành Räumt) và bỏ chủ ngữ ihr. Với động từ tách aufräumen, tiền tố tách 'auf' bắt buộc phải chuyển xuống đứng ở cuối câu → „Räumt eure Zimmer auf!“. Khối từ 'eure Zimmer' đóng vai trò tân ngữ Akkusativ.",
+                "explanation": "Quy tắc câu Mệnh lệnh (Imperativ) ngôi ihr: Động từ chia như ngôi ihr ở thì Hiện tại (gốc räum- + -t thành Räumt) và thông thường lược bỏ chủ ngữ ihr (chỉ thêm khi muốn nhấn mạnh). Với động từ tách aufräumen, tiền tố tách 'auf' bắt buộc phải chuyển xuống đứng ở cuối câu → „Räumt eure Zimmer auf!“. Khối từ 'eure Zimmer' đóng vai trò tân ngữ Akkusativ.",
                 "exp_reward": 15,
                 "extra_data": {
                         "tokens": [
@@ -2862,12 +2862,13 @@ def seed_lesson_12():
                 "question": "Câu 101: Tìm và sửa lỗi sai trong câu sau: „Arbeit nicht so viel!“",
                 "options": null,
                 "correct_answer": "Arbeite nicht so viel!",
-                "explanation": "Động từ arbeiten kết thúc bằng t, Imperativ ngôi du phải thêm e ➔ Arbeite! -> Đáp án đúng: \"Arbeite nicht so viel!\"",
+                "explanation": "Gốc arbeit- kết thúc bằng -t nên Imperativ ngôi du bắt buộc phải thêm đuôi -e → Arbeite! (Quy tắc chung: gốc động từ kết thúc bằng -t, -d, hoặc phụ âm + m/n như zeichn-, öffn-, atm- đều phải thêm -e ở ngôi du) -> Đáp án đúng: \"Arbeite nicht so viel!\".",
                 "exp_reward": 15,
                 "extra_data": {
                         "wrong_sentence": "Arbeit nicht so viel!",
                         "accepted_answers": [
-                                "Arbeite nicht so viel!"
+                                "Arbeite nicht so viel!",
+                                "Arbeite nicht so viel"
                         ],
                         "translation": "Đừng làm việc nhiều quá!",
                         "audio_text": "Arbeite nicht so viel"
@@ -2876,69 +2877,79 @@ def seed_lesson_12():
         {
                 "id": 102,
                 "exercise_type": "tim_loi_sai",
-                "question": "Câu 102: Tìm và sửa lỗi sai trong câu sau: „Die Kinder darfen hier spielen.“",
+                "question": "Câu 102: Tìm và sửa lỗi sai trong câu sau: „Du darf nicht so laut sprechen.“",
                 "options": null,
-                "correct_answer": "Die Kinder dürfen hier spielen.",
-                "explanation": "Ngôi số nhiều của dürfen là dürfen, không bị biến âm ü thành a. -> Đáp án đúng: \"Die Kinder dürfen hier spielen.\"",
+                "correct_answer": "Du darfst nicht so laut sprechen.",
+                "explanation": "Động từ khuyết thiếu dürfen khi chia ở ngôi du thì hiện tại phải đổi nguyên âm ü ➔ a và thêm đuôi -st thành darfst (không giữ nguyên dạng darf của ngôi ich/er/sie/es) -> Đáp án đúng: „Du darfst nicht so laut sprechen!“.",
                 "exp_reward": 15,
                 "extra_data": {
-                        "wrong_sentence": "Die Kinder darfen hier spielen.",
+                        "wrong_sentence": "Du darf nicht so laut sprechen.",
                         "accepted_answers": [
-                                "Die Kinder dürfen hier spielen."
+                                "Du darfst nicht so laut sprechen.",
+                                "Du darfst nicht so laut sprechen"
                         ],
-                        "translation": "Bọn trẻ được phép chơi ở đây.",
-                        "audio_text": "Die Kinder dürfen hier spielen"
+                        "translation": "Bạn không được phép nói to như vậy.",
+                        "audio_text": "Du darfst nicht so laut sprechen"
                 }
         },
         {
                 "id": 103,
                 "exercise_type": "tim_loi_sai",
-                "question": "Câu 103: Tìm và sửa lỗi sai trong câu sau: „Ich liebe dir.“",
+                "question": "Câu 103: Tìm và sửa lỗi sai trong câu sau: „Ich besuche ihm morgen.“",
                 "options": null,
-                "correct_answer": "Ich liebe dich.",
-                "explanation": "lieben + Akkusativ. Akkusativ của du là dich, không phải dir. -> Đáp án đúng: \"Ich liebe dich.\"",
+                "correct_answer": "Ich besuche ihn morgen.",
+                "explanation": "Động từ besuchen đòi hỏi tân ngữ trực tiếp ở cách Akkusativ (besuchen + Akkusativ). Đại từ nhân xưng giống đực er chuyển sang Akkusativ là ihn (không dùng đại từ Dativ ihm) -> Đáp án đúng: „Ich besuche ihn morgen.“.",
                 "exp_reward": 15,
                 "extra_data": {
-                        "wrong_sentence": "Ich liebe dir.",
+                        "wrong_sentence": "Ich besuche ihm morgen.",
                         "accepted_answers": [
-                                "Ich liebe dich."
+                                "Ich besuche ihn morgen.",
+                                "Ich besuche ihn morgen",
+                                "Morgen besuche ich ihn.",
+                                "Morgen besuche ich ihn"
                         ],
-                        "translation": "Tôi yêu bạn.",
-                        "audio_text": "Ich liebe dich"
+                        "translation": "Ngày mai tôi sẽ đến thăm anh ấy.",
+                        "audio_text": "Ich besuche ihn morgen"
                 }
         },
         {
                 "id": 104,
                 "exercise_type": "tim_loi_sai",
-                "question": "Câu 104: Tìm và sửa lỗi sai trong câu sau: „Trinkt ihr viel Wasser!“",
+                "question": "Câu 104: Tìm và sửa lỗi sai trong câu sau: „Sprech bitte langsamer!“",
                 "options": null,
-                "correct_answer": "Trinkt viel Wasser!",
-                "explanation": "Imperativ ngôi ihr phải BỎ từ ihr đi. -> Đáp án đúng: \"Trinkt viel Wasser!\"",
+                "correct_answer": "Sprich bitte langsamer!",
+                "explanation": "Động từ sprechen là động từ mạnh biến đổi nguyên âm e ➔ i ở các ngôi số ít (du sprichst). Khi chuyển sang câu Mệnh lệnh (Imperativ) ở ngôi du, quy tắc bắt buộc là phải GIỮ nguyên âm biến đổi i (và thông thường lược bỏ chủ ngữ du cùng đuôi -st): Sprech ➔ Sprich! -> Đáp án đúng: „Sprich bitte langsamer!“.",
                 "exp_reward": 15,
                 "extra_data": {
-                        "wrong_sentence": "Trinkt ihr viel Wasser!",
+                        "wrong_sentence": "Sprech bitte langsamer!",
                         "accepted_answers": [
-                                "Trinkt viel Wasser!"
+                                "Sprich bitte langsamer!",
+                                "Sprich bitte langsamer",
+                                "Bitte sprich langsamer!",
+                                "Bitte sprich langsamer"
                         ],
-                        "translation": "Các bạn hãy uống nhiều nước!",
-                        "audio_text": "Trinkt viel Wasser"
+                        "translation": "Xin hãy nói chậm hơn!",
+                        "audio_text": "Sprich bitte langsamer"
                 }
         },
         {
                 "id": 105,
                 "exercise_type": "tim_loi_sai",
-                "question": "Câu 105: Tìm và sửa lỗi sai trong câu sau: „Er darft heute nicht rausgehen.“",
+                "question": "Câu 105: Tìm và sửa lỗi sai trong câu sau: „Er darft heute nicht Fußball spielen.“",
                 "options": null,
-                "correct_answer": "Er darf heute nicht rausgehen.",
-                "explanation": "Ngôi er/sie/es của dürfen KHÔNG có đuôi t ➔ chỉ là darf. -> Đáp án đúng: \"Er darf heute nicht rausgehen.\"",
+                "correct_answer": "Er darf heute nicht Fußball spielen.",
+                "explanation": "Động từ khuyết thiếu dürfen khi chia ở ngôi thứ ba số ít (er/sie/es/man) ở thì Hiện tại KHÔNG có đuôi -t (dạng chia là darf, giống hệt ngôi ich, không phải darft) -> Đáp án đúng: „Er darf heute nicht Fußball spielen.“.",
                 "exp_reward": 15,
                 "extra_data": {
-                        "wrong_sentence": "Er darft heute nicht rausgehen.",
+                        "wrong_sentence": "Er darft heute nicht Fußball spielen.",
                         "accepted_answers": [
-                                "Er darf heute nicht rausgehen."
+                                "Er darf heute nicht Fußball spielen.",
+                                "Er darf heute nicht Fußball spielen",
+                                "Heute darf er nicht Fußball spielen.",
+                                "Heute darf er nicht Fußball spielen"
                         ],
-                        "translation": "Hôm nay anh ấy không được phép ra ngoài.",
-                        "audio_text": "Er darf heute nicht rausgehen"
+                        "translation": "Hôm nay anh ấy không được phép chơi bóng đá.",
+                        "audio_text": "Er darf heute nicht Fußball spielen"
                 }
         },
         {
@@ -2947,14 +2958,15 @@ def seed_lesson_12():
                 "question": "Câu 106: Tìm và sửa lỗi sai trong câu sau: „Ruhen aus Sie sich!“",
                 "options": null,
                 "correct_answer": "Ruhen Sie sich aus!",
-                "explanation": "Động từ tách ausruhen, tiền tố aus phải nằm cuối câu. -> Đáp án đúng: \"Ruhen Sie sich aus!\"",
+                "explanation": "Quy tắc câu Mệnh lệnh (Imperativ) ngôi Sie với động từ phản thân tách (sich ausruhen): Động từ chia đứng đầu câu (Ruhen), đại từ nhân xưng Sie đứng ngay sau động từ, đại từ phản thân sich đứng sau Sie, và tiền tố tách aus bắt buộc phải đứng ở cuối câu → Ruhen Sie sich aus! -> Đáp án đúng: „Ruhen Sie sich aus!“.",
                 "exp_reward": 15,
                 "extra_data": {
                         "wrong_sentence": "Ruhen aus Sie sich!",
                         "accepted_answers": [
-                                "Ruhen Sie sich aus!"
+                                "Ruhen Sie sich aus!",
+                                "Ruhen Sie sich aus"
                         ],
-                        "translation": "Xin ngài hãy nghỉ ngơi!",
+                        "translation": "Xin ngài hãy nghỉ ngơi đi!",
                         "audio_text": "Ruhen Sie sich aus"
                 }
         },
