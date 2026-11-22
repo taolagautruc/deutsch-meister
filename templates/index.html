@@ -1812,6 +1812,42 @@
                 .trim();
         }
 
+        function checkSapXepAnswer(userAnswer, candidates) {
+            if (!userAnswer || typeof userAnswer !== 'string') return false;
+            const raw = userAnswer.trim();
+            // Tuyệt đối không cho phép lặp dấu câu hoặc mảnh từ dư (ví dụ: '! !', '!!', '..', '??')
+            if (/[.,!?:;]\s*[.,!?:;]/.test(raw)) {
+                return false;
+            }
+            function normEquiv(str) {
+                return (str || '')
+                    .toLowerCase()
+                    .normalize('NFC')
+                    .replace(/ä/g, 'ae')
+                    .replace(/ö/g, 'oe')
+                    .replace(/ü/g, 'ue')
+                    .replace(/ß/g, 'ss')
+                    .replace(/\s+/g, ' ')
+                    .trim();
+            }
+            const normUser = normEquiv(raw);
+            const userNoEnd = normUser.replace(/[.!?]+$/, '').trim();
+            // Nếu vẫn còn dấu câu lạ bên trong câu (không phải cuối câu)
+            if (/[.!?]/.test(userNoEnd)) return false;
+
+            for (const cand of candidates) {
+                if (!cand) continue;
+                const normCand = normEquiv(cand);
+                // Khớp chính xác cả câu (kể cả có dấu câu)
+                if (normUser === normCand) return true;
+                // Khớp câu khi người học bỏ qua dấu câu cuối câu
+                const candNoEnd = normCand.replace(/[.!?]+$/, '').trim();
+                if (userNoEnd === candNoEnd) return true;
+            }
+            return false;
+        }
+        window.checkSapXepAnswer = checkSapXepAnswer;
+
         function replaceVnWord(text, pattern, replacement) {
             return (' ' + text + ' ')
                 .replace(new RegExp('(^|\\s)(?:' + pattern + ')(?=\\s|$)', 'gi'), ' ' + replacement + ' ')
@@ -2013,9 +2049,9 @@
                                 <span>🔤 Bấm vào từ để ghép câu nhanh (hoặc tự gõ vào ô):</span>
                                 <button type="button" onclick="clearTokenInput(${i})" class="text-[11px] text-rose-600 hover:underline cursor-pointer font-semibold">Xóa hết</button>
                             </div>
-                            <div class="flex flex-wrap gap-1.5">
-                                ${extra.tokens.map(tok => `
-                                    <button type="button" onclick="appendTokenToInput(${i}, '${tok.replace(/'/g, "\\'")}')" class="px-2.5 py-1 rounded-lg bg-white hover:bg-indigo-50 border border-slate-300 hover:border-indigo-400 text-slate-800 font-bold text-xs shadow-xs transition active:scale-95 cursor-pointer">
+                            <div class="flex flex-wrap gap-1.5" id="token-bank-${i}">
+                                ${extra.tokens.map((tok, tokIdx) => `
+                                    <button type="button" id="tok-btn-${i}-${tokIdx}" onclick="appendTokenToInput(${i}, '${tok.replace(/'/g, "\\'")}', ${tokIdx})" class="px-2.5 py-1 rounded-lg bg-white hover:bg-indigo-50 border border-slate-300 hover:border-indigo-400 text-slate-800 font-bold text-xs shadow-xs transition active:scale-95 cursor-pointer">
                                         ${tok}
                                     </button>
                                 `).join('')}
@@ -2549,18 +2585,47 @@
             }
         }
 
-        function appendTokenToInput(exIdx, token) {
+        function appendTokenToInput(exIdx, token, tokIdx = null) {
             const input = document.getElementById(`ex-input-${exIdx}`);
             if (!input) return;
             const current = input.value.trim();
             if (!current) {
                 input.value = token;
+            } else if (/^[.,!?;:]$/.test(token)) {
+                // Gắn dấu câu liền với từ trước, không tạo khoảng trắng dư thừa
+                input.value = current.replace(/\s+$/, '') + token;
             } else {
                 input.value = current + ' ' + token;
+            }
+            if (tokIdx !== null && tokIdx !== undefined) {
+                const btn = document.getElementById(`tok-btn-${exIdx}-${tokIdx}`);
+                if (btn) {
+                    btn.disabled = true;
+                    btn.classList.add('opacity-40', 'pointer-events-none', 'bg-slate-200');
+                }
             }
             input.focus();
             if (typeof handleExerciseInputChange === 'function') handleExerciseInputChange(exIdx);
         }
+        window.appendTokenToInput = appendTokenToInput;
+
+        function clearTokenInput(exIdx) {
+            const input = document.getElementById(`ex-input-${exIdx}`);
+            if (input) {
+                input.value = '';
+                input.focus();
+            }
+            const container = document.getElementById(`token-bank-${exIdx}`);
+            if (container) {
+                const btns = container.querySelectorAll('button');
+                btns.forEach(b => {
+                    b.disabled = false;
+                    b.classList.remove('opacity-40', 'pointer-events-none', 'bg-slate-200');
+                });
+            }
+            if (typeof handleExerciseInputChange === 'function') handleExerciseInputChange(exIdx);
+        }
+        window.clearTokenInput = clearTokenInput;
 
         // --- HÀM HỖ TRỢ CHO DẠNG PHÂN LOẠI GIỐNG (BÀI 10 & 11) ---
         window._genderChoices = window._genderChoices || {};
@@ -3364,7 +3429,10 @@
                         const isDeToViEx = (ex && (ex.exercise_type === 'dich_nghia_dv' || ex.exercise_type === 'dich_cau_dv' || ex.exercise_type === 'dich')) &&
                                            (ex.question && /(?:sang tiếng việt|đức\s*→\s*việt|dịch câu sau sang tiếng việt)/i.test(ex.question));
 
-                        isCorrect = expandedCandidates.some(cand => {
+                        if (ex && ex.exercise_type === 'sap_xep_cau') {
+                            isCorrect = checkSapXepAnswer(userAnswer, expandedCandidates);
+                        } else {
+                            isCorrect = expandedCandidates.some(cand => {
                             if (!cand) return false;
                             if (normalizeAnswer(userAnswer) === normalizeAnswer(cand)) {
                                 return true;
@@ -3386,6 +3454,7 @@
                                 })
                                 : normalizeAnswer(userAnswer) === normalizeAnswer(cand);
                         });
+                        }
                     }
                 }
             }

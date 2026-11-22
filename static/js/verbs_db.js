@@ -1994,6 +1994,28 @@ if (typeof GERMAN_VERBS_DB !== 'undefined') {
             imperativ: { du: "bade", ihr: "badet", Sie: "baden Sie" },
             note: "Gốc kết thúc bằng -d nên thêm -e- ở các ngôi du, er/sie/es, ihr. Imperativ du: Bade!",
             example: "Ich bade jeden Abend warm."
+        },
+        {
+            infinitiv: "aufräumen",
+            meaning: "dọn dẹp (động từ tách)",
+            group: "Động từ tách (Trennbare Verben)",
+            stem: "räum- auf",
+            ending: "-en",
+            forms: { ich: "räume auf", du: "räumst auf", er_sie_es: "räumt auf", wir: "räumen auf", ihr: "räumt auf", sie_Sie: "räumen auf" },
+            imperativ: { du: "räum auf", ihr: "räumt auf", Sie: "räumen Sie auf" },
+            note: "Tiền tố auf- tách ra đứng ở cuối câu. Imperativ ihr: Räumt auf!",
+            example: "Räumt eure Zimmer auf!"
+        },
+        {
+            infinitiv: "vermissen",
+            meaning: "nhớ, thiếu vắng (+ Akkusativ)",
+            group: "Quy tắc (Regelmäßig)",
+            stem: "vermiss-",
+            ending: "-en",
+            forms: { ich: "vermisse", du: "vermisst", er_sie_es: "vermisst", wir: "vermissen", ihr: "vermisst", sie_Sie: "vermissen" },
+            imperativ: { du: "vermiss", ihr: "vermisst", Sie: "vermissen Sie" },
+            note: "Đi kèm tân ngữ trực tiếp Akkusativ: Ich vermisse dich.",
+            example: "Ich vermisse dich jeden Tag."
         }
     );
 }

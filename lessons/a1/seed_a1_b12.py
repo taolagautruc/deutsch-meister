@@ -159,6 +159,11 @@ def seed_lesson_12():
                 </table>
             </div>
 
+            <div class="p-3 rounded-xl bg-sky-50 border border-sky-200 text-xs text-slate-700 space-y-1">
+                <div>• <b>Động từ + Akkusativ:</b> <i>lieben</i> (yêu), <i>vermissen</i> (nhớ): <i>„Ich liebe dich.“</i> (Anh yêu em.), <i>„Ich vermisse dich jeden Tag.“</i> (Anh nhớ em mỗi ngày.)</div>
+                <div>• <b>Động từ + Dativ + Akkusativ (như geben):</b> Đại từ nhân xưng Dativ (người nhận: <i>mir</i>) luôn đứng trước cụm danh từ Akkusativ (vật: <i>eine Salbe</i>). Ví dụ: <i>„Die Hausärztin gibt mir eine Salbe.“</i></div>
+            </div>
+
             <!-- SƠ ĐỒ V2 CONTAINER -->
             <div id="b12-svg-v2-container" class="mt-4"></div>
         </div>
@@ -211,6 +216,7 @@ def seed_lesson_12():
                     <div class="text-slate-700">• Ví dụ: ihr kommt ➔ <b>Kommt!</b></div>
                     <div class="text-slate-700">• Ví dụ: ihr esst ➔ <b>Esst!</b> (không biến âm 'i')</div>
                     <div class="text-slate-700">• Ví dụ: ihr wartet ➔ <b>Wartet!</b></div>
+                    <div class="text-slate-700">• Động từ tách (như <i>aufräumen</i>, <i>ausruhen</i>): Tiền tố tách chuyển xuống cuối câu. Ví dụ: <b>Räumt eure Zimmer auf!</b></div>
                 </div>
 
                 <div class="p-3.5 rounded-2xl bg-emerald-50 border border-emerald-200 space-y-1.5">
@@ -2660,23 +2666,27 @@ def seed_lesson_12():
                 "exercise_type": "sap_xep_cau",
                 "question": "Câu 93: Sắp xếp các từ sau thành câu hoàn chỉnh:",
                 "options": null,
-                "correct_answer": "Trinken Sie bitte viel Wasser!",
-                "explanation": "Thứ tự từ chuẩn xác trong câu tiếng Đức. -> Đáp án: \"Trinken Sie bitte viel Wasser!\"",
+                "correct_answer": "Nehmen Sie bitte die Tabletten nach dem Essen!",
+                "explanation": "Quy tắc câu Mệnh lệnh (Imperativ) ngôi Sie: Động từ nguyên mẫu đứng đầu câu (V1), chủ ngữ Sie đứng ngay sau động từ (V2), từ lịch sự 'bitte' đứng sau Sie. Trạng ngữ thời gian 'nach dem Essen' đứng sau tân ngữ 'die Tabletten' (hoặc ngược lại) → „Nehmen Sie bitte die Tabletten nach dem Essen!“ (hoặc „Bitte nehmen Sie die Tabletten nach dem Essen!“).",
                 "exp_reward": 15,
                 "extra_data": {
                         "tokens": [
-                                "Sie",
-                                "viel Wasser",
-                                "Trinken",
                                 "bitte",
+                                "die Tabletten",
+                                "Sie",
+                                "nehmen",
+                                "nach dem Essen",
                                 "!"
                         ],
                         "accepted_answers": [
-                                "Trinken Sie bitte viel Wasser!",
-                                "Bitte trinken Sie viel Wasser!"
+                                "Nehmen Sie bitte die Tabletten nach dem Essen!",
+                                "Bitte nehmen Sie die Tabletten nach dem Essen!",
+                                "Nehmen Sie die Tabletten bitte nach dem Essen!",
+                                "Nehmen Sie nach dem Essen bitte die Tabletten!",
+                                "Bitte nehmen Sie nach dem Essen die Tabletten!"
                         ],
-                        "translation": "Xin ngài hãy uống nhiều nước!",
-                        "audio_text": "Trinken Sie bitte viel Wasser"
+                        "translation": "Xin ngài hãy uống thuốc sau bữa ăn!",
+                        "audio_text": "Nehmen Sie bitte die Tabletten nach dem Essen"
                 }
         },
         {
@@ -2685,13 +2695,13 @@ def seed_lesson_12():
                 "question": "Câu 94: Sắp xếp các từ sau thành câu hoàn chỉnh:",
                 "options": null,
                 "correct_answer": "Räumt eure Zimmer auf!",
-                "explanation": "Động từ tách aufräumen, tiền tố auf đứng cuối. -> Đáp án: \"Räumt eure Zimmer auf!\"",
+                "explanation": "Quy tắc câu Mệnh lệnh (Imperativ) ngôi ihr: Động từ chia như ngôi ihr ở thì Hiện tại (gốc räum- + -t thành Räumt) và bỏ chủ ngữ ihr. Với động từ tách aufräumen, tiền tố tách 'auf' bắt buộc phải chuyển xuống đứng ở cuối câu → „Räumt eure Zimmer auf!“. Khối từ 'eure Zimmer' đóng vai trò tân ngữ Akkusativ.",
                 "exp_reward": 15,
                 "extra_data": {
                         "tokens": [
-                                "eure Zimmer",
-                                "Räumt",
                                 "auf",
+                                "eure Zimmer",
+                                "räumt",
                                 "!"
                         ],
                         "accepted_answers": [
@@ -2707,13 +2717,13 @@ def seed_lesson_12():
                 "question": "Câu 95: Sắp xếp các từ sau thành câu hoàn chỉnh:",
                 "options": null,
                 "correct_answer": "Iss weniger Schokolade!",
-                "explanation": "Thứ tự từ chuẩn xác trong câu tiếng Đức. -> Đáp án: \"Iss weniger Schokolade!\"",
+                "explanation": "Quy tắc câu Mệnh lệnh (Imperativ) ngôi du với động từ bất quy tắc: essen đổi nguyên âm e → i thành 'Iss!' (bỏ chủ ngữ du và bỏ đuôi -st). Cụm tân ngữ 'weniger Schokolade' (ít sô cô la hơn) đứng sau động từ mệnh lệnh → „Iss weniger Schokolade!“. (Quy tắc chung ngôi du: bỏ du, bỏ đuôi -st, giữ nguyên âm đổi e ➔ i).",
                 "exp_reward": 15,
                 "extra_data": {
                         "tokens": [
                                 "weniger",
-                                "Iss",
                                 "Schokolade",
+                                "iss",
                                 "!"
                         ],
                         "accepted_answers": [
@@ -2728,24 +2738,25 @@ def seed_lesson_12():
                 "exercise_type": "sap_xep_cau",
                 "question": "Câu 96: Sắp xếp các từ sau thành câu hoàn chỉnh:",
                 "options": null,
-                "correct_answer": "Hier darf man nicht rauchen.",
-                "explanation": "Thứ tự từ chuẩn xác trong câu tiếng Đức. -> Đáp án: \"Hier darf man nicht rauchen.\"",
+                "correct_answer": "Im Wartezimmer darf man nicht telefonieren.",
+                "explanation": "Quy tắc câu trần thuật với Động từ khuyết (Modalverb): Động từ chia 'darf' (chủ ngữ man) bắt buộc đứng ở Vị trí 2 sau trạng từ nơi chốn 'Im Wartezimmer'. Động từ chính 'telefonieren' ở dạng nguyên mẫu đứng ở cuối câu (khung câu Satzklammer), từ phủ định 'nicht' đứng ngay trước động từ chính → „Im Wartezimmer darf man nicht telefonieren.“ (hoặc „Man darf im Wartezimmer nicht telefonieren.“).",
                 "exp_reward": 15,
                 "extra_data": {
                         "tokens": [
+                                "telefonieren",
                                 "darf",
-                                "man",
-                                "Hier",
-                                "rauchen",
+                                "im Wartezimmer",
                                 "nicht",
+                                "man",
                                 "."
                         ],
                         "accepted_answers": [
-                                "Hier darf man nicht rauchen.",
-                                "Man darf hier nicht rauchen."
+                                "Im Wartezimmer darf man nicht telefonieren.",
+                                "Man darf im Wartezimmer nicht telefonieren.",
+                                "Man darf nicht im Wartezimmer telefonieren."
                         ],
-                        "translation": "Ở đây người ta không được phép hút thuốc.",
-                        "audio_text": "Hier darf man nicht rauchen"
+                        "translation": "Trong phòng đợi người ta không được phép gọi điện thoại.",
+                        "audio_text": "Im Wartezimmer darf man nicht telefonieren"
                 }
         },
         {
@@ -2754,19 +2765,20 @@ def seed_lesson_12():
                 "question": "Câu 97: Sắp xếp các từ sau thành câu hoàn chỉnh:",
                 "options": null,
                 "correct_answer": "Ich vermisse dich jeden Tag.",
-                "explanation": "Thứ tự từ chuẩn xác trong câu tiếng Đức. -> Đáp án: \"Ich vermisse dich jeden Tag.\"",
+                "explanation": "Quy tắc vị trí tân ngữ Akkusativ: Động từ vermissen đi với tân ngữ trực tiếp chỉ người ở cách Akkusativ (đại từ 'dich'). Đại từ nhân xưng 'dich' đứng ngay sau động từ chia 'vermisse', trạng ngữ thời gian 'jeden Tag' đứng sau (hoặc đưa lên đầu câu thì động từ đảo lên V2) → „Ich vermisse dich jeden Tag.“ (hoặc „Jeden Tag vermisse ich dich.“ / „Dich vermisse ich jeden Tag.“).",
                 "exp_reward": 15,
                 "extra_data": {
                         "tokens": [
                                 "dich",
-                                "Ich",
                                 "jeden Tag",
                                 "vermisse",
+                                "Ich",
                                 "."
                         ],
                         "accepted_answers": [
                                 "Ich vermisse dich jeden Tag.",
-                                "Jeden Tag vermisse ich dich."
+                                "Jeden Tag vermisse ich dich.",
+                                "Dich vermisse ich jeden Tag."
                         ],
                         "translation": "Anh nhớ em mỗi ngày.",
                         "audio_text": "Ich vermisse dich jeden Tag"
@@ -2777,22 +2789,24 @@ def seed_lesson_12():
                 "exercise_type": "sap_xep_cau",
                 "question": "Câu 98: Sắp xếp các từ sau thành câu hoàn chỉnh:",
                 "options": null,
-                "correct_answer": "Der Arzt verschreibt mir ein Medikament.",
-                "explanation": "Dativ (mir) đứng trước Akkusativ (ein Medikament). -> Đáp án: \"Der Arzt verschreibt mir ein Medikament.\"",
+                "correct_answer": "Die Hausärztin gibt mir eine Salbe.",
+                "explanation": "Quy tắc trật tự tân ngữ Dativ và Akkusativ: Khi động từ đi kèm cả tân ngữ chỉ người và tân ngữ chỉ vật (như geben), đại từ nhân xưng ở Dativ ('mir' - người nhận) bắt buộc phải đứng trước cụm danh từ ở Akkusativ ('eine Salbe' - vật được cho). Chủ ngữ 'Die Hausärztin' đứng đầu câu, động từ 'gibt' ở Vị trí 2 → „Die Hausärztin gibt mir eine Salbe.“ (hoặc „Mir gibt die Hausärztin eine Salbe.“).",
                 "exp_reward": 15,
                 "extra_data": {
                         "tokens": [
-                                "verschreibt",
-                                "Der Arzt",
-                                "ein Medikament",
+                                "eine Salbe",
+                                "gibt",
+                                "die Hausärztin",
                                 "mir",
                                 "."
                         ],
                         "accepted_answers": [
-                                "Der Arzt verschreibt mir ein Medikament."
+                                "Die Hausärztin gibt mir eine Salbe.",
+                                "Mir gibt die Hausärztin eine Salbe.",
+                                "Eine Salbe gibt mir die Hausärztin."
                         ],
-                        "translation": "Bác sĩ kê cho tôi một loại thuốc.",
-                        "audio_text": "Der Arzt verschreibt mir ein Medikament"
+                        "translation": "Bác sĩ gia đình đưa cho tôi một tuýp thuốc mỡ.",
+                        "audio_text": "Die Hausärztin gibt mir eine Salbe"
                 }
         },
         {
@@ -2800,22 +2814,22 @@ def seed_lesson_12():
                 "exercise_type": "sap_xep_cau",
                 "question": "Câu 99: Sắp xếp các từ sau thành câu hoàn chỉnh:",
                 "options": null,
-                "correct_answer": "Ich habe starke Zahnschmerzen.",
-                "explanation": "Thứ tự từ chuẩn xác trong câu tiếng Đức. -> Đáp án: \"Ich habe starke Zahnschmerzen.\"",
+                "correct_answer": "Mein Bruder hat Bauchschmerzen.",
+                "explanation": "Quy tắc diễn đạt triệu chứng sức khỏe: Dùng cấu trúc haben + tên bệnh/cơn đau (Bauchschmerzen). Chủ ngữ ngôi thứ 3 số ít 'Mein Bruder' đi với động từ chia 'hat' ở Vị trí 2, danh từ bệnh đứng cuối câu → „Mein Bruder hat Bauchschmerzen.“ (hoặc đảo ngữ nhấn mạnh „Bauchschmerzen hat mein Bruder.“).",
                 "exp_reward": 15,
                 "extra_data": {
                         "tokens": [
-                                "starke",
-                                "habe",
-                                "Ich",
-                                "Zahnschmerzen",
+                                "Bauchschmerzen",
+                                "hat",
+                                "mein Bruder",
                                 "."
                         ],
                         "accepted_answers": [
-                                "Ich habe starke Zahnschmerzen."
+                                "Mein Bruder hat Bauchschmerzen.",
+                                "Bauchschmerzen hat mein Bruder."
                         ],
-                        "translation": "Tôi bị đau răng nặng.",
-                        "audio_text": "Ich habe starke Zahnschmerzen"
+                        "translation": "Em trai tôi bị đau bụng.",
+                        "audio_text": "Mein Bruder hat Bauchschmerzen"
                 }
         },
         {
@@ -2823,23 +2837,23 @@ def seed_lesson_12():
                 "exercise_type": "sap_xep_cau",
                 "question": "Câu 100: Sắp xếp các từ sau thành câu hoàn chỉnh:",
                 "options": null,
-                "correct_answer": "Dürfen wir heute Abend ins Kino gehen?",
-                "explanation": "Thứ tự từ chuẩn xác trong câu tiếng Đức. -> Đáp án: \"Dürfen wir heute Abend ins Kino gehen?\"",
+                "correct_answer": "Darf ich im Bett frühstücken?",
+                "explanation": "Quy tắc câu hỏi Yes/No (Ja/Nein-Frage) với Động từ khuyết: Động từ khuyết chia theo chủ ngữ ich ('Darf') bắt buộc phải đảo lên Vị trí 1 (đầu câu), chủ ngữ 'ich' đứng ở Vị trí 2. Động từ chính 'frühstücken' ở dạng nguyên thể đứng ở cuối câu, trạng ngữ nơi chốn 'im Bett' nằm ở giữa khung câu → „Darf ich im Bett frühstücken?“. Khung câu: Darf (V1) ... im Bett ... frühstücken (cuối)?",
                 "exp_reward": 15,
                 "extra_data": {
                         "tokens": [
-                                "ins Kino",
-                                "wir",
-                                "heute Abend",
-                                "Dürfen",
-                                "gehen",
+                                "im Bett",
+                                "frühstücken",
+                                "darf",
+                                "ich",
                                 "?"
                         ],
                         "accepted_answers": [
-                                "Dürfen wir heute Abend ins Kino gehen?"
+                                "Darf ich im Bett frühstücken?",
+                                "Darf ich frühstücken im Bett?"
                         ],
-                        "translation": "Tối nay chúng con có được đi xem phim không?",
-                        "audio_text": "Dürfen wir heute Abend ins Kino gehen"
+                        "translation": "Tôi có được ăn sáng trên giường không?",
+                        "audio_text": "Darf ich im Bett frühstücken"
                 }
         },
         {
