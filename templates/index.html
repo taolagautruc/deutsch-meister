@@ -2793,8 +2793,55 @@
             try { 
                 extra = (typeof ex.extra_data === 'string') ? JSON.parse(ex.extra_data) : (ex.extra_data || {}); 
             } catch(e){}
-            const sortedLines = [...(extra.lines || [])].sort((a, b) => (Number(a.id) || 0) - (Number(b.id) || 0));
-            const fullText = sortedLines.map(l => l.text).join(' ');
+            let sortedLines = [];
+            if (Array.isArray(extra.correct_order) && Array.isArray(extra.lines)) {
+                sortedLines = extra.correct_order.map(id => extra.lines.find(l => l.id === id)).filter(Boolean);
+            } else if (Array.isArray(extra.lines)) {
+                sortedLines = [...extra.lines].sort((a, b) => (Number(a.id) || 0) - (Number(b.id) || 0));
+            }
+            if (sortedLines.length === 0) return;
+
+            if ('speechSynthesis' in window) {
+                try {
+                    window.speechSynthesis.cancel();
+                    const speakerMap = {};
+                    let speakerCount = 0;
+                    sortedLines.forEach(l => {
+                        const spk = l.speaker || 'default';
+                        if (!(spk in speakerMap)) {
+                            speakerMap[spk] = speakerCount++;
+                        }
+                    });
+
+                    const allVoices = window.speechSynthesis.getVoices().filter(v => v.lang && v.lang.startsWith('de'));
+                    const voiceA = allVoices[0] || null;
+                    const voiceB = (allVoices.length > 1) ? allVoices[1] : voiceA;
+
+                    window._activeDialogueUtterances = [];
+                    sortedLines.forEach(line => {
+                        const text = (line.text || '').trim();
+                        if (!text) return;
+                        const u = new SpeechSynthesisUtterance(text);
+                        u.lang = 'de-DE';
+                        u.rate = 0.92;
+                        const spkIdx = speakerMap[line.speaker || 'default'] || 0;
+                        if (spkIdx % 2 === 0) {
+                            u.pitch = 1.05;
+                            if (voiceA) u.voice = voiceA;
+                        } else {
+                            u.pitch = 0.85;
+                            if (voiceB) u.voice = voiceB;
+                        }
+                        window._activeDialogueUtterances.push(u);
+                        window.speechSynthesis.speak(u);
+                    });
+                    return;
+                } catch (e) {
+                    console.warn('SpeechSynthesis dialogue err:', e);
+                }
+            }
+
+            const fullText = sortedLines.map(l => l.text).join('. ');
             if (fullText && typeof speakGerman === 'function') {
                 speakGerman(fullText, 0.95);
             }

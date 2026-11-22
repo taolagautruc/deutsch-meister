@@ -3203,34 +3203,34 @@ def seed_lesson_12():
                 "question": "Câu 119: Sắp xếp các câu thoại sau theo đúng thứ tự diễn biến hội thoại hợp lý:",
                 "options": null,
                 "correct_answer": "1, 2, 3, 4, 5",
-                "explanation": "Bác sĩ chào hỏi -> Bệnh nhân kể bệnh (đau bụng) -> Bác sĩ hỏi thêm triệu chứng (sốt) -> Bệnh nhân xác nhận -> Bác sĩ yêu cầu nằm xuống để khám. -> Đáp án: \"1, 2, 3, 4, 5\"",
+                "explanation": "Nhân viên phòng khám chào hỏi và hỏi lý do gọi đến -> Bệnh nhân báo bị ốm và cần đặt lịch hẹn hôm nay -> Phòng khám hỏi triệu chứng và hỏi có sốt cao không -> Bệnh nhân mô tả đau đầu và bị sốt từ hôm qua -> Phòng khám hẹn giờ đến khám vào lúc 11 giờ hôm nay (Imperativ: Kommen Sie bitte...!).",
                 "exp_reward": 15,
                 "extra_data": {
                         "lines": [
                                 {
                                         "id": 1,
-                                        "speaker": "Arzt",
-                                        "text": "Guten Tag, Herr Klein. Was fehlt Ihnen denn?"
+                                        "speaker": "Praxis",
+                                        "text": "Praxis Dr. Weber, guten Tag! Was kann ich für Sie tun?"
                                 },
                                 {
                                         "id": 2,
                                         "speaker": "Herr Klein",
-                                        "text": "Guten Tag. Ich habe seit gestern starke Bauchschmerzen."
+                                        "text": "Guten Tag. Ich bin krank und brauche heute einen Termin."
                                 },
                                 {
                                         "id": 3,
-                                        "speaker": "Arzt",
-                                        "text": "Haben Sie auch Fieber?"
+                                        "speaker": "Praxis",
+                                        "text": "Was fehlt Ihnen denn? Haben Sie hohes Fieber?"
                                 },
                                 {
                                         "id": 4,
                                         "speaker": "Herr Klein",
-                                        "text": "Ja, ein bisschen. Mir ist sehr warm."
+                                        "text": "Ja, mein Kopf tut sehr weh und ich habe seit gestern Fieber."
                                 },
                                 {
                                         "id": 5,
-                                        "speaker": "Arzt",
-                                        "text": "Legen Sie sich bitte auf die Liege. Ich untersuche Ihren Bauch."
+                                        "speaker": "Praxis",
+                                        "text": "Kommen Sie bitte heute um 11 Uhr in die Praxis!"
                                 }
                         ],
                         "correct_order": [
@@ -3240,7 +3240,7 @@ def seed_lesson_12():
                                 4,
                                 5
                         ],
-                        "translation": "Arzt: Guten Tag, Herr Klein. Was fehlt Ihnen denn? | Herr Klein: Guten Tag. Ich habe seit gestern starke Bauchschmerzen. | Arzt: Haben Sie auch Fieber? | Herr Klein: Ja, ein bisschen. Mir ist sehr warm. | Arzt: Legen Sie sich bitte auf die Liege. Ich untersuche Ihren Bauch."
+                        "translation": "- Phòng khám: Phòng khám Bác sĩ Weber xin chào! Tôi có thể giúp gì cho ngài?\n- Ông Klein: Xin chào. Tôi bị ốm và hôm nay tôi cần một lịch hẹn khám.\n- Phòng khám: Ngài bị làm sao vậy? Ngài có bị sốt cao không?\n- Ông Klein: Vâng, đầu tôi đau dữ dội và tôi bị sốt từ hôm qua.\n- Phòng khám: Xin ngài hãy đến phòng khám vào lúc 11 giờ hôm nay!"
                 }
         },
         {
@@ -3249,7 +3249,7 @@ def seed_lesson_12():
                 "question": "Câu 120: Sắp xếp các câu thoại sau theo đúng thứ tự diễn biến hội thoại hợp lý:",
                 "options": null,
                 "correct_answer": "1, 2, 3, 4, 5, 6",
-                "explanation": "Chào -> Đưa đơn thuốc -> Đưa thuốc -> Hỏi cách dùng -> Hướng dẫn cách dùng -> Cảm ơn. -> Đáp án: \"1, 2, 3, 4, 5, 6\"",
+                "explanation": "Dược sĩ chào và hỏi cần giúp gì -> Khách chào và đưa đơn thuốc của bác sĩ -> Dược sĩ cảm ơn và lấy thuốc -> Khách hỏi tần suất uống thuốc -> Dược sĩ hướng dẫn uống 2 lần mỗi ngày sau ăn (Imperativ: Nehmen Sie...) -> Khách cảm ơn và chào tạm biệt.",
                 "exp_reward": 15,
                 "extra_data": {
                         "lines": [
@@ -3292,7 +3292,7 @@ def seed_lesson_12():
                                 5,
                                 6
                         ],
-                        "translation": "Apothekerin: Guten Tag! Wie kann ich Ihnen helfen? | Kunde: Guten Tag! Ich habe ein Rezept vom Arzt. Hier, bitte. | Apothekerin: Danke. Einen Moment... Hier ist Ihr Medikament. | Kunde: Wie oft muss ich die Tabletten nehmen? | Apothekerin: Nehmen Sie zweimal täglich eine Tablette nach dem Essen. | Kunde: Vielen Dank. Auf Wiedersehen!"
+                        "translation": "- Dược sĩ: Xin chào! Tôi có thể giúp gì cho quý khách?\n- Khách: Xin chào! Tôi có đơn thuốc của bác sĩ. Đây ạ.\n- Dược sĩ: Cảm ơn. Xin chờ một lát... Thuốc của quý khách đây.\n- Khách: Tôi phải uống thuốc viên mấy lần?\n- Dược sĩ: Hãy uống hai lần mỗi ngày, mỗi lần một viên, sau bữa ăn.\n- Khách: Cảm ơn nhiều. Tạm biệt!"
                 }
         },
         {
@@ -3301,14 +3301,14 @@ def seed_lesson_12():
                 "question": "Câu 121: Sắp xếp các câu thoại sau theo đúng thứ tự diễn biến hội thoại hợp lý:",
                 "options": null,
                 "correct_answer": "1, 2, 3, 4, 5",
-                "explanation": "Con xin phép ra ngoài -> Mẹ hỏi thời tiết -> Con trả lời trời nắng -> Mẹ cho phép nhưng dặn mặc áo khoác (Imperativ) -> Con cảm ơn. -> Đáp án: \"1, 2, 3, 4, 5\"",
+                "explanation": "Con xin phép ra ngoài chơi (Darf ich jetzt draußen spielen?) -> Mẹ hỏi thời tiết (Regnet es draußen?) -> Con trả lời trời không mưa, trời nắng -> Mẹ cho phép chơi ở sân chơi nhưng dặn mặc áo khoác (Imperativ: zieh eine Jacke an!) -> Con cảm ơn và đồng ý làm ngay.",
                 "exp_reward": 15,
                 "extra_data": {
                         "lines": [
                                 {
                                         "id": 1,
                                         "speaker": "Sohn",
-                                        "text": "Mama, ich bin fertig mit den Hausaufgaben. Darf ich jetzt rausgehen?"
+                                        "text": "Mama, ich bin fertig mit den Hausaufgaben. Darf ich jetzt draußen spielen?"
                                 },
                                 {
                                         "id": 2,
@@ -3338,7 +3338,7 @@ def seed_lesson_12():
                                 4,
                                 5
                         ],
-                        "translation": "Sohn: Mama, ich bin fertig mit den Hausaufgaben. Darf ich jetzt rausgehen? | Mutter: Regnet es draußen? | Sohn: Nein, es regnet nicht. Die Sonne scheint. | Mutter: Gut, du darfst eine Stunde auf dem Spielplatz spielen. Aber zieh eine Jacke an! Es ist kalt. | Sohn: Danke, Mama! Mach ich."
+                        "translation": "- Con trai: Mẹ ơi, con làm xong bài tập về nhà rồi. Bây giờ con ra ngoài chơi được không ạ?\n- Mẹ: Bên ngoài trời có mưa không?\n- Con trai: Không ạ, trời không mưa. Trời nắng.\n- Mẹ: Được, con được chơi một tiếng ở sân chơi. Nhưng hãy mặc áo khoác vào! Trời lạnh.\n- Con trai: Cảm ơn mẹ! Vâng, con làm ngay!"
                 }
         },
         {
