@@ -922,6 +922,36 @@
             if (hasShow && hasTongue && !forbiddenRaw) return true;
         }
 
+        // Câu 111: „die Schulter“ -> vai / bả vai
+        if (qNum === 111) {
+            const hasShoulder = /\b(vai|ba\s+vai|cai\s+vai)\b/.test(norm);
+            const isForbidden = /\b(chan|tay|dau|lung|bung|mat|mui|tai)\b/.test(norm);
+            if (hasShoulder && !isForbidden) return true;
+        }
+
+        // Câu 112: „die Apotheke“ -> hiệu thuốc / nhà thuốc / tiệm thuốc
+        if (qNum === 112) {
+            const hasPharmacy = /\b(hieu\s+thuoc|nha\s+thuoc|tiem\s+thuoc|quay\s+thuoc)\b/.test(norm);
+            const isForbidden = /\b(benh\s+vien|phong\s+kham|sieu\s+thi|tiem\s+banh|truong\s+hoc)\b/.test(norm);
+            if (hasPharmacy && !isForbidden) return true;
+        }
+
+        // Câu 113: „das Bein“ -> chân / cẳng chân / chân (cả cẳng) - TỪ CHỐI "bàn chân" (der Fuß)
+        if (qNum === 113) {
+            // Kiểm tra từ cấm TUYỆT ĐỐI trước: bàn chân (der Fuß), ngón chân
+            if (/\b(ban\s+chan|ngon\s+chan)\b/.test(norm)) return false;
+            const hasLeg = /\b(chan|cang\s+chan|cai\s+chan|doi\s+chan)\b/.test(norm);
+            const isForbidden = /\b(tay|dau|lung|bung|mat|mui|tai|nguc)\b/.test(norm);
+            if (hasLeg && !isForbidden) return true;
+        }
+
+        // Câu 114: „der Schnupfen“ -> sổ mũi / nghẹt mũi / ngạt mũi / cảm lạnh nhẹ
+        if (qNum === 114) {
+            const hasCold = /\b(so\s+mui|nghet\s+mui|ngat\s+mui|cam\s+lanh\s+nhe|benh\s+so\s+mui|chay\s+nuoc\s+mui)\b/.test(norm);
+            const isForbidden = /\b(ho|sot|dau\s+hong|dau\s+bung|dau\s+dau|dau\s+lung)\b/.test(norm);
+            if (hasCold && !isForbidden) return true;
+        }
+
         return false;
     }
 
@@ -967,6 +997,26 @@
         if (qNum === 86) {
             const isPattern = /^(?:bitte\s+)?(?:ruh|ruhe)(?:\s+bitte)?\s+dich(?:\s+bitte)?\s+aus(?:\s+bitte)?$/.test(norm);
             if (isPattern) return true;
+        }
+
+        // Câu 107: „cái mũi“ -> die Nase
+        if (qNum === 107) {
+            if (norm === 'die nase' || norm === 'nase') return true;
+        }
+
+        // Câu 108: „bác sĩ gia đình (nam)“ -> der Hausarzt
+        if (qNum === 108) {
+            if (norm === 'der hausarzt' || norm === 'hausarzt') return true;
+        }
+
+        // Câu 109: „đơn thuốc“ -> das Rezept
+        if (qNum === 109) {
+            if (norm === 'das rezept' || norm === 'rezept') return true;
+        }
+
+        // Câu 110: „trái tim“ -> das Herz
+        if (qNum === 110) {
+            if (norm === 'das herz' || norm === 'herz') return true;
         }
 
         return false;

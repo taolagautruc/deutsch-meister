@@ -3073,7 +3073,7 @@
         }
 
         function formatExerciseTranslation(translation, ex) {
-            if (ex && ex.exercise_type === 'phan_loai_cach') {
+            if (ex && (ex.exercise_type === 'phan_loai_cach' || ex.exercise_type === 'dich_nghia_dv' || ex.exercise_type === 'dich_cau_dv')) {
                 return '';
             }
             const isNoiO = Boolean(ex && (ex.exercise_type === 'noi_o' || ex.exercise_type === 'noi_o_tu_vung'));
@@ -3385,8 +3385,8 @@
                     const l8VDMatch = isLesson8 && (ex.question || '').match(/Câu\s+(8[7-9]|9[0-3])\b/i);
                     const l8DVMatch = isLesson8 && (ex.question || '').match(/Câu\s+(9[4-9]|100)\b/i);
                     const l11DVMatch = isLesson11 && (ex.question || '').match(/Câu\s+(38|6[4-8])\b/i);
-                    const l12DVMatch = isLesson12 && (ex.question || '').match(/Câu\s+(8[7-9]|9[0-2])\b/i);
-                    const l12VDMatch = isLesson12 && (ex.question || '').match(/Câu\s+(8[1-6])\b/i);
+                    const l12DVMatch = isLesson12 && (ex.question || '').match(/Câu\s+(8[7-9]|9[0-2]|11[1-4])\b/i);
+                    const l12VDMatch = isLesson12 && (ex.question || '').match(/Câu\s+(8[1-6]|10[7-9]|110)\b/i);
 
                     if (l12DVMatch && typeof evaluateLesson12DVTranslation === 'function' && evaluateLesson12DVTranslation(userAnswer, parseInt(l12DVMatch[1], 10))) {
                         isCorrect = true;

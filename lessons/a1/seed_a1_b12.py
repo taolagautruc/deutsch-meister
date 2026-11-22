@@ -2976,11 +2976,14 @@ def seed_lesson_12():
                 "question": "Câu 107: Dịch từ sau sang tiếng Đức (kèm mạo từ der / die / das): „cái mũi“",
                 "options": null,
                 "correct_answer": "die Nase",
-                "explanation": "Nghĩa tiếng Đức chuẩn kèm mạo từ là: \"die Nase\".",
+                "explanation": "die Nase (giống cái, số nhiều: die Nasen) · Ví dụ: „Meine Nase läuft.“ (Mũi tôi đang chảy nước). -> Nghĩa tiếng Đức chuẩn kèm mạo từ là: \"die Nase\".",
                 "exp_reward": 15,
                 "extra_data": {
                         "accepted_answers": [
-                                "die Nase"
+                                "die Nase",
+                                "die nase",
+                                "Nase",
+                                "nase"
                         ],
                         "translation": "cái mũi",
                         "audio_text": "die Nase"
@@ -2992,12 +2995,14 @@ def seed_lesson_12():
                 "question": "Câu 108: Dịch từ sau sang tiếng Đức (kèm mạo từ der / die / das): „bác sĩ gia đình (nam)“",
                 "options": null,
                 "correct_answer": "der Hausarzt",
-                "explanation": "Nghĩa tiếng Đức chuẩn kèm mạo từ là: \"der Hausarzt\".",
+                "explanation": "der Hausarzt (giống đực, số nhiều: die Hausärzte) · Ví dụ: „Ich muss zum Hausarzt gehen.“ (Tôi phải đi bác sĩ gia đình). -> Nghĩa tiếng Đức chuẩn kèm mạo từ là: \"der Hausarzt\".",
                 "exp_reward": 15,
                 "extra_data": {
                         "accepted_answers": [
                                 "der Hausarzt",
-                                "Hausarzt"
+                                "der hausarzt",
+                                "Hausarzt",
+                                "hausarzt"
                         ],
                         "translation": "bác sĩ gia đình (nam)",
                         "audio_text": "der Hausarzt"
@@ -3009,12 +3014,14 @@ def seed_lesson_12():
                 "question": "Câu 109: Dịch từ sau sang tiếng Đức (kèm mạo từ der / die / das): „đơn thuốc“",
                 "options": null,
                 "correct_answer": "das Rezept",
-                "explanation": "Nghĩa tiếng Đức chuẩn kèm mạo từ là: \"das Rezept\".",
+                "explanation": "das Rezept (giống trung, số nhiều: die Rezepte) · Ví dụ: „Der Arzt schreibt mir ein Rezept.“ (Bác sĩ viết cho tôi một đơn thuốc). -> Nghĩa tiếng Đức chuẩn kèm mạo từ là: \"das Rezept\".",
                 "exp_reward": 15,
                 "extra_data": {
                         "accepted_answers": [
                                 "das Rezept",
-                                "Rezept"
+                                "das rezept",
+                                "Rezept",
+                                "rezept"
                         ],
                         "translation": "đơn thuốc",
                         "audio_text": "das Rezept"
@@ -3026,12 +3033,14 @@ def seed_lesson_12():
                 "question": "Câu 110: Dịch từ sau sang tiếng Đức (kèm mạo từ der / die / das): „trái tim“",
                 "options": null,
                 "correct_answer": "das Herz",
-                "explanation": "Nghĩa tiếng Đức chuẩn kèm mạo từ là: \"das Herz\".",
+                "explanation": "das Herz (giống trung, số nhiều: die Herzen) · Ví dụ: „Mein Herz schlägt schnell.“ (Tim tôi đập nhanh). -> Nghĩa tiếng Đức chuẩn kèm mạo từ là: \"das Herz\".",
                 "exp_reward": 15,
                 "extra_data": {
                         "accepted_answers": [
                                 "das Herz",
-                                "Herz"
+                                "das herz",
+                                "Herz",
+                                "herz"
                         ],
                         "translation": "trái tim",
                         "audio_text": "das Herz"
@@ -3043,12 +3052,14 @@ def seed_lesson_12():
                 "question": "Câu 111: Dịch từ sau sang tiếng Việt: „die Schulter“",
                 "options": null,
                 "correct_answer": "vai",
-                "explanation": "Nghĩa tiếng Việt chuẩn là: \"vai\".",
+                "explanation": "die Schulter (giống cái, số nhiều: die Schultern) · Ví dụ: „Sie hat Schmerzen in der Schulter.“ (Cô ấy bị đau ở vai). -> Đáp án: \"vai\".",
                 "exp_reward": 15,
                 "extra_data": {
                         "accepted_answers": [
                                 "vai",
-                                "cái vai"
+                                "bả vai",
+                                "cái vai",
+                                "vai (bả vai)"
                         ],
                         "translation": "vai",
                         "audio_text": "die Schulter"
@@ -3059,16 +3070,17 @@ def seed_lesson_12():
                 "exercise_type": "dich_nghia_dv",
                 "question": "Câu 112: Dịch từ sau sang tiếng Việt: „die Apotheke“",
                 "options": null,
-                "correct_answer": "nhà thuốc",
-                "explanation": "Nghĩa tiếng Việt chuẩn là: \"nhà thuốc\".",
+                "correct_answer": "hiệu thuốc",
+                "explanation": "die Apotheke (giống cái, số nhiều: die Apotheken) · Ví dụ: „Die Apotheke ist gleich um die Ecke.“ (Hiệu thuốc ở ngay góc phố). -> Đáp án: \"hiệu thuốc\" (hoặc nhà thuốc, tiệm thuốc).",
                 "exp_reward": 15,
                 "extra_data": {
                         "accepted_answers": [
-                                "nhà thuốc",
                                 "hiệu thuốc",
-                                "tiệm thuốc"
+                                "nhà thuốc",
+                                "tiệm thuốc",
+                                "quầy thuốc"
                         ],
-                        "translation": "nhà thuốc",
+                        "translation": "hiệu thuốc / nhà thuốc",
                         "audio_text": "die Apotheke"
                 }
         },
@@ -3077,15 +3089,16 @@ def seed_lesson_12():
                 "exercise_type": "dich_nghia_dv",
                 "question": "Câu 113: Dịch từ sau sang tiếng Việt: „das Bein“",
                 "options": null,
-                "correct_answer": "chân (cả cẳng)",
-                "explanation": "Nghĩa tiếng Việt chuẩn là: \"chân (cả cẳng)\".",
+                "correct_answer": "chân",
+                "explanation": "das Bein (giống trung, số nhiều: die Beine) · Ví dụ: „Sie hat lange Beine.“ (Cô ấy có đôi chân dài). Lưu ý: das Bein chỉ cẳng chân/chân nói chung, đừng nhầm với der Fuß (bàn chân). -> Đáp án: \"chân\".",
                 "exp_reward": 15,
                 "extra_data": {
                         "accepted_answers": [
-                                "chân (cả cẳng)",
                                 "chân",
+                                "cẳng chân",
+                                "chân (cả cẳng)",
                                 "cái chân",
-                                "cẳng chân"
+                                "đôi chân"
                         ],
                         "translation": "chân (cả cẳng)",
                         "audio_text": "das Bein"
@@ -3097,12 +3110,16 @@ def seed_lesson_12():
                 "question": "Câu 114: Dịch từ sau sang tiếng Việt: „der Schnupfen“",
                 "options": null,
                 "correct_answer": "sổ mũi",
-                "explanation": "Nghĩa tiếng Việt chuẩn là: \"sổ mũi\".",
+                "explanation": "der Schnupfen (giống đực, danh từ thường ở số ít) · Ví dụ: „Bei Schnupfen brauche ich Taschentücher.“ (Khi sổ mũi tôi cần khăn giấy). -> Đáp án: \"sổ mũi\".",
                 "exp_reward": 15,
                 "extra_data": {
                         "accepted_answers": [
                                 "sổ mũi",
-                                "bệnh sổ mũi"
+                                "nghẹt mũi",
+                                "ngạt mũi",
+                                "cảm lạnh nhẹ",
+                                "bệnh sổ mũi",
+                                "chảy nước mũi"
                         ],
                         "translation": "sổ mũi",
                         "audio_text": "der Schnupfen"

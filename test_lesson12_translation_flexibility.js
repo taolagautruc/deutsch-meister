@@ -254,6 +254,148 @@ const testCases = [
             'Xin ngài hãy há to miệng ra!',
             'Hãy đưa tay cho tôi xem!'
         ]
+    },
+
+    // --- VIỆT -> ĐỨC: DỊCH TỪ KÈM MẠO TỪ (Q107 - Q110) ---
+    {
+        qNum: 107,
+        type: 'VD',
+        name: 'Câu 107: cái mũi -> die Nase',
+        valid: [
+            'die Nase',
+            'die nase',
+            'Nase',
+            'nase'
+        ],
+        invalid: [
+            'das Auge',
+            'der Kopf',
+            'die Hand'
+        ]
+    },
+    {
+        qNum: 108,
+        type: 'VD',
+        name: 'Câu 108: bác sĩ gia đình (nam) -> der Hausarzt',
+        valid: [
+            'der Hausarzt',
+            'der hausarzt',
+            'Hausarzt',
+            'hausarzt'
+        ],
+        invalid: [
+            'die Hausärztin',
+            'das Krankenhaus',
+            'die Apotheke'
+        ]
+    },
+    {
+        qNum: 109,
+        type: 'VD',
+        name: 'Câu 109: đơn thuốc -> das Rezept',
+        valid: [
+            'das Rezept',
+            'das rezept',
+            'Rezept',
+            'rezept'
+        ],
+        invalid: [
+            'die Tablette',
+            'das Medikament',
+            'der Schmerz'
+        ]
+    },
+    {
+        qNum: 110,
+        type: 'VD',
+        name: 'Câu 110: trái tim -> das Herz',
+        valid: [
+            'das Herz',
+            'das herz',
+            'Herz',
+            'herz'
+        ],
+        invalid: [
+            'der Bauch',
+            'die Lunge',
+            'der Kopf'
+        ]
+    },
+
+    // --- ĐỨC -> VIỆT: DỊCH TỪ (Q111 - Q114) ---
+    {
+        qNum: 111,
+        type: 'DV',
+        name: 'Câu 111: die Schulter -> vai',
+        valid: [
+            'vai',
+            'bả vai',
+            'cái vai',
+            'vai (bả vai)',
+            'ba vai'
+        ],
+        invalid: [
+            'cánh tay',
+            'bàn chân',
+            'đầu gối'
+        ]
+    },
+    {
+        qNum: 112,
+        type: 'DV',
+        name: 'Câu 112: die Apotheke -> hiệu thuốc / nhà thuốc',
+        valid: [
+            'hiệu thuốc',
+            'nhà thuốc',
+            'tiệm thuốc',
+            'quầy thuốc',
+            'hieu thuoc',
+            'nha thuoc'
+        ],
+        invalid: [
+            'bệnh viện',
+            'phòng khám',
+            'siêu thị'
+        ]
+    },
+    {
+        qNum: 113,
+        type: 'DV',
+        name: 'Câu 113: das Bein -> chân (TỪ CHỐI "bàn chân")',
+        valid: [
+            'chân',
+            'cẳng chân',
+            'chân (cả cẳng)',
+            'cái chân',
+            'cang chan'
+        ],
+        invalid: [
+            'bàn chân',
+            'ban chan',
+            'ngón chân',
+            'cánh tay'
+        ]
+    },
+    {
+        qNum: 114,
+        type: 'DV',
+        name: 'Câu 114: der Schnupfen -> sổ mũi',
+        valid: [
+            'sổ mũi',
+            'nghẹt mũi',
+            'ngạt mũi',
+            'cảm lạnh nhẹ',
+            'bệnh sổ mũi',
+            'chảy nước mũi',
+            'so mui',
+            'nghet mui'
+        ],
+        invalid: [
+            'bị ho',
+            'bị sốt',
+            'đau họng',
+            'đau bụng'
+        ]
     }
 ];
 
