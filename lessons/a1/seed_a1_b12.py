@@ -2063,130 +2063,130 @@ def seed_lesson_12():
                         "translation": "1. Haben Sie einen Termin? (Ngài có hẹn trước không?) = Nein, leider nicht. (Không, tiếc là không.) | 2. Waren Sie schon einmal bei uns? (Ngài đã từng đến khám ở chỗ chúng tôi chưa?) = Nein, ich bin neu hier. (Chưa, tôi là bệnh nhân mới.) | 3. Muss ich lange warten? (Tôi có phải đợi lâu không?) = Nein, nur ein paar Minuten. (Không, chỉ vài phút thôi.) | 4. Wo soll ich warten? (Tôi nên chờ ở đâu?) = Nehmen Sie bitte im Wartezimmer Platz. (Xin ngài hãy ngồi chờ ở phòng đợi.)"
                 }
         },
-        {
-                "id": 68,
-                "exercise_type": "dien_tao_cau",
-                "question": "Câu 68: Điền 2 từ để hoàn thành câu (ở đây người ta không được phép hút thuốc): „Hier ___ man nicht ___.“ (dürfen / rauchen)",
-                "options": null,
-                "correct_answer": "darf / rauchen",
-                "explanation": "Chủ ngữ man dùng với dürfen chia là darf. Động từ chính rauchen đứng cuối câu ở dạng nguyên thể → „Hier darf man nicht rauchen.“ -> Đáp án: \"darf / rauchen\"",
-                "exp_reward": 15,
-                "extra_data": {
-                        "display_frame": "Hier ___ man nicht ___.",
-                        "hints": "(dürfen / rauchen)",
-                        "instruction": "Điền từ vào các chỗ trống theo thứ tự, ngăn cách bằng dấu /",
-                        "accepted_answers": [
-                                "darf / rauchen",
-                                "darf/rauchen",
-                                "darf rauchen"
-                        ],
-                        "translation": "Ở đây người ta không được phép hút thuốc.",
-                        "audio_text": "Hier darf man nicht rauchen"
-                }
-        },
-        {
-                "id": 69,
-                "exercise_type": "dien_tao_cau",
-                "question": "Câu 69: Điền 2 từ để hoàn thành câu: „Herr Doktor, ___ ich Sport ___?“ (dürfen / machen)",
-                "options": null,
-                "correct_answer": "darf / machen",
-                "explanation": "Chủ ngữ ich → dürfen chia là darf. Động từ chính machen ở cuối câu → „Herr Doktor, darf ich Sport machen?“ -> Đáp án: \"darf / machen\"",
-                "exp_reward": 15,
-                "extra_data": {
-                        "display_frame": "Herr Doktor, ___ ich Sport ___?",
-                        "hints": "(dürfen / machen)",
-                        "instruction": "Điền từ vào các chỗ trống theo thứ tự, ngăn cách bằng dấu /",
-                        "accepted_answers": [
-                                "darf / machen",
-                                "darf/machen",
-                                "darf machen"
-                        ],
-                        "translation": "Thưa bác sĩ, tôi có được phép tập thể thao không?",
-                        "audio_text": "Herr Doktor darf ich Sport machen"
-                }
-        },
-        {
-                "id": 70,
-                "exercise_type": "dien_tao_cau",
-                "question": "Câu 70: Điền 2 từ để hoàn thành câu (nói với nhiều bạn nhỏ): „Das Kind schläft. ___ bitte ___!“ (sein / leise)",
-                "options": null,
-                "correct_answer": "seid / leise",
-                "explanation": "Imperativ ngôi ihr của sein là seid, không dùng chủ ngữ ihr → „Seid bitte leise!“ -> Đáp án: \"seid / leise\"",
-                "exp_reward": 15,
-                "extra_data": {
-                        "display_frame": "Das Kind schläft. ___ bitte ___!",
-                        "hints": "(sein / leise)",
-                        "instruction": "Điền từ vào các chỗ trống theo thứ tự, ngăn cách bằng dấu /",
-                        "accepted_answers": [
-                                "seid / leise",
-                                "seid/leise",
-                                "seid leise",
-                                "Seid / leise",
-                                "Seid/leise",
-                                "Seid leise"
-                        ],
-                        "translation": "Đứa trẻ đang ngủ. Các con hãy trật tự nhé!",
-                        "audio_text": "Das Kind schläft Seid leise"
-                }
-        },
-        {
-                "id": 71,
-                "exercise_type": "dien_tao_cau",
-                "question": "Câu 71: Điền 2 đại từ Akkusativ (người bố nói với con): „Ich liebe ___. Liebst du ___?“ (du → Akkusativ / ich → Akkusativ)",
-                "options": null,
-                "correct_answer": "dich / mich",
-                "explanation": "lieben + Akkusativ. Akkusativ của du là dich, của ich là mich → „Ich liebe dich. Liebst du mich?“ -> Đáp án: \"dich / mich\"",
-                "exp_reward": 15,
-                "extra_data": {
-                        "display_frame": "Ich liebe ___. Liebst du ___?",
-                        "hints": "(du → Akkusativ / ich → Akkusativ)",
-                        "instruction": "Điền từ vào các chỗ trống theo thứ tự, ngăn cách bằng dấu /",
-                        "accepted_answers": [
-                                "dich / mich",
-                                "dich/mich",
-                                "dich mich"
-                        ],
-                        "translation": "Bố yêu con. Con có yêu bố không?",
-                        "audio_text": "Ich liebe dich Liebst du mich"
-                }
-        },
-        {
-                "id": 72,
-                "exercise_type": "dien_tao_cau",
-                "question": "Câu 72: Điền 2 từ để hoàn thành câu: „Mein Arm tut ___ weh. Ich brauche eine ___.“ (ich → Dativ / Salbe)",
-                "options": null,
-                "correct_answer": "mir / Salbe",
-                "explanation": "Cấu trúc tut + Dativ + weh, Dativ của ich là mir. die Salbe → eine Salbe. -> Đáp án: \"mir / Salbe\"",
-                "exp_reward": 15,
-                "extra_data": {
-                        "display_frame": "Mein Arm tut ___ weh. Ich brauche eine ___.",
-                        "hints": "(ich → Dativ / Salbe)",
-                        "instruction": "Điền từ vào các chỗ trống theo thứ tự, ngăn cách bằng dấu /",
-                        "accepted_answers": [
-                                "mir / Salbe",
-                                "mir/Salbe",
-                                "mir Salbe",
-                                "mir / salbe",
-                                "mir/salbe",
-                                "mir salbe"
-                        ],
-                        "translation": "Cánh tay tôi đau. Tôi cần một loại thuốc mỡ.",
-                        "audio_text": "Mein Arm tut mir weh Ich brauche eine Salbe"
-                }
-        },
                 {
+                        "id": 68,
+                        "exercise_type": "dien_tao_cau",
+                        "question": "Câu 68: Điền 2 từ để hoàn thành câu (ở đây người ta không được phép hút thuốc): „Hier ___ man nicht ___.“ (dürfen)",
+                        "options": null,
+                        "correct_answer": "darf / rauchen",
+                        "explanation": "Chủ ngữ man dùng với dürfen chia là darf. Động từ chính rauchen đứng cuối câu ở dạng nguyên thể → „Hier darf man nicht rauchen.“ -> Đáp án: \"darf / rauchen\"",
+                        "exp_reward": 15,
+                        "extra_data": {
+                                        "display_frame": "Hier ___ man nicht ___.",
+                                        "hints": "(dürfen)",
+                                        "instruction": "Điền từ vào các chỗ trống theo thứ tự, ngăn cách bằng dấu /",
+                                        "accepted_answers": [
+                                                        "darf / rauchen",
+                                                        "darf/rauchen",
+                                                        "darf rauchen"
+                                        ],
+                                        "translation": "Ở đây người ta không được phép hút thuốc.",
+                                        "audio_text": "Hier darf man nicht rauchen"
+                        }
+        },
+        {
+                        "id": 69,
+                        "exercise_type": "dien_tao_cau",
+                        "question": "Câu 69: Điền 2 từ để hoàn thành câu (thưa bác sĩ, tôi có được phép tập thể thao không): „Herr Doktor, ___ ich Sport ___?“ (dürfen)",
+                        "options": null,
+                        "correct_answer": "darf / machen",
+                        "explanation": "Chủ ngữ ich → dürfen chia là darf. Động từ chính machen ở cuối câu → „Herr Doktor, darf ich Sport machen?“ -> Đáp án: \"darf / machen\"",
+                        "exp_reward": 15,
+                        "extra_data": {
+                                        "display_frame": "Herr Doktor, ___ ich Sport ___?",
+                                        "hints": "(dürfen)",
+                                        "instruction": "Điền từ vào các chỗ trống theo thứ tự, ngăn cách bằng dấu /",
+                                        "accepted_answers": [
+                                                        "darf / machen",
+                                                        "darf/machen",
+                                                        "darf machen"
+                                        ],
+                                        "translation": "Thưa bác sĩ, tôi có được phép tập thể thao không?",
+                                        "audio_text": "Herr Doktor darf ich Sport machen"
+                        }
+        },
+        {
+                        "id": 70,
+                        "exercise_type": "dien_tao_cau",
+                        "question": "Câu 70: Điền 2 từ để hoàn thành câu (nói với nhiều bạn nhỏ, các con hãy trật tự nhé): „Das Kind schläft. ___ bitte ___!“ (sein)",
+                        "options": null,
+                        "correct_answer": "seid / leise",
+                        "explanation": "Imperativ ngôi ihr của sein là seid, không dùng chủ ngữ ihr → „Seid bitte leise!“ -> Đáp án: \"seid / leise\"",
+                        "exp_reward": 15,
+                        "extra_data": {
+                                        "display_frame": "Das Kind schläft. ___ bitte ___!",
+                                        "hints": "(sein)",
+                                        "instruction": "Điền từ vào các chỗ trống theo thứ tự, ngăn cách bằng dấu /",
+                                        "accepted_answers": [
+                                                        "seid / leise",
+                                                        "seid/leise",
+                                                        "seid leise",
+                                                        "Seid / leise",
+                                                        "Seid/leise",
+                                                        "Seid leise"
+                                        ],
+                                        "translation": "Đứa trẻ đang ngủ. Các con hãy trật tự nhé!",
+                                        "audio_text": "Das Kind schläft Seid leise"
+                        }
+        },
+        {
+                        "id": 71,
+                        "exercise_type": "dien_tao_cau",
+                        "question": "Câu 71: Điền 2 đại từ Akkusativ (người bố nói với con): „Ich liebe ___. Liebst du ___?“ (du / ich)",
+                        "options": null,
+                        "correct_answer": "dich / mich",
+                        "explanation": "lieben + Akkusativ. Akkusativ của du là dich, của ich là mich → „Ich liebe dich. Liebst du mich?“ -> Đáp án: \"dich / mich\"",
+                        "exp_reward": 15,
+                        "extra_data": {
+                                        "display_frame": "Ich liebe ___. Liebst du ___?",
+                                        "hints": "(du / ich)",
+                                        "instruction": "Điền từ vào các chỗ trống theo thứ tự, ngăn cách bằng dấu /",
+                                        "accepted_answers": [
+                                                        "dich / mich",
+                                                        "dich/mich",
+                                                        "dich mich"
+                                        ],
+                                        "translation": "Bố yêu con. Con có yêu bố không?",
+                                        "audio_text": "Ich liebe dich Liebst du mich"
+                        }
+        },
+        {
+                        "id": 72,
+                        "exercise_type": "dien_tao_cau",
+                        "question": "Câu 72: Điền 2 từ để hoàn thành câu (cánh tay tôi đau, tôi cần một loại thuốc mỡ): „Mein Arm tut ___ weh. Ich brauche eine ___.“ (ich)",
+                        "options": null,
+                        "correct_answer": "mir / Salbe",
+                        "explanation": "Cấu trúc tut + Dativ + weh, Dativ của ich là mir. die Salbe → eine Salbe. -> Đáp án: \"mir / Salbe\"",
+                        "exp_reward": 15,
+                        "extra_data": {
+                                        "display_frame": "Mein Arm tut ___ weh. Ich brauche eine ___.",
+                                        "hints": "(ich)",
+                                        "instruction": "Điền từ vào các chỗ trống theo thứ tự, ngăn cách bằng dấu /",
+                                        "accepted_answers": [
+                                                        "mir / Salbe",
+                                                        "mir/Salbe",
+                                                        "mir Salbe",
+                                                        "mir / salbe",
+                                                        "mir/salbe",
+                                                        "mir salbe"
+                                        ],
+                                        "translation": "Cánh tay tôi đau. Tôi cần một loại thuốc mỡ.",
+                                        "audio_text": "Mein Arm tut mir weh Ich brauche eine Salbe"
+                        }
+        },
+        {
                         "id": 73,
                         "exercise_type": "nghe_dien",
-                        "question": "Câu 73: Nghe và điền từ còn thiếu vào chỗ trống: „___ jeden Tag spazieren!“ (gehen)",
+                        "question": "Câu 73: Nghe và điền 1 từ vào chỗ trống: „___ jeden Tag spazieren!“",
                         "options": null,
                         "correct_answer": "Geh",
                         "explanation": "gehen → Imperativ ngôi du: Geh! → „Geh jeden Tag spazieren!“",
                         "exp_reward": 15,
                         "extra_data": {
-                                        "display_sentence": "„___ jeden Tag spazieren!“ (gehen)",
+                                        "display_sentence": "„___ jeden Tag spazieren!“",
                                         "full_sentence": "„Geh jeden Tag spazieren!“",
                                         "audio_text": "Geh jeden Tag spazieren",
-                                        "hints": "(gehen)",
+                                        "hints": "Động từ nguyên mẫu: gehen (ngôi du)",
                                         "hint_vi": "Hãy đi dạo mỗi ngày!",
                                         "translation": "Hãy đi dạo mỗi ngày!",
                                         "accepted_answers": [
@@ -2202,16 +2202,16 @@ def seed_lesson_12():
         {
                         "id": 74,
                         "exercise_type": "nghe_dien",
-                        "question": "Câu 74: Nghe và điền từ còn thiếu vào chỗ trống: „Gute Besserung! ___ Sie sich aus!“ (sich ausruhen)",
+                        "question": "Câu 74: Nghe và điền 1 từ vào chỗ trống: „Gute Besserung! ___ Sie sich aus!“",
                         "options": null,
                         "correct_answer": "Ruhen",
                         "explanation": "sich ausruhen → Imperativ ngôi Sie: Ruhen Sie sich aus! → „Gute Besserung! Ruhen Sie sich aus!“",
                         "exp_reward": 15,
                         "extra_data": {
-                                        "display_sentence": "„Gute Besserung! ___ Sie sich aus!“ (sich ausruhen)",
+                                        "display_sentence": "„Gute Besserung! ___ Sie sich aus!“",
                                         "full_sentence": "„Gute Besserung! Ruhen Sie sich aus!“",
                                         "audio_text": "Gute Besserung Ruhen Sie sich aus",
-                                        "hints": "(sich ausruhen)",
+                                        "hints": "Động từ phản thân: sich ausruhen (ngôi Sie)",
                                         "hint_vi": "Chúc mau khỏe! Ngài hãy nghỉ ngơi đi.",
                                         "translation": "Chúc mau khỏe! Ngài hãy nghỉ ngơi đi.",
                                         "accepted_answers": [
@@ -2225,16 +2225,16 @@ def seed_lesson_12():
         {
                         "id": 75,
                         "exercise_type": "nghe_dien",
-                        "question": "Câu 75: Nghe và điền từ còn thiếu vào chỗ trống: „Was ___ Ihnen?“ (fehlen)",
+                        "question": "Câu 75: Nghe và điền 1 từ vào chỗ trống: „Was ___ Ihnen?“",
                         "options": null,
                         "correct_answer": "fehlt",
                         "explanation": "fehlen + Dativ dùng để hỏi thăm bệnh tình, chủ ngữ ngôi 3 số ít: fehlt → „Was fehlt Ihnen?“",
                         "exp_reward": 15,
                         "extra_data": {
-                                        "display_sentence": "„Was ___ Ihnen?“ (fehlen)",
+                                        "display_sentence": "„Was ___ Ihnen?“",
                                         "full_sentence": "„Was fehlt Ihnen?“",
                                         "audio_text": "Was fehlt Ihnen",
-                                        "hints": "(fehlen)",
+                                        "hints": "Động từ nguyên mẫu: fehlen (chủ ngữ Was)",
                                         "hint_vi": "Ngài bị làm sao vậy?",
                                         "translation": "Ngài bị làm sao vậy?",
                                         "accepted_answers": [
@@ -2248,16 +2248,16 @@ def seed_lesson_12():
         {
                         "id": 76,
                         "exercise_type": "nghe_dien",
-                        "question": "Câu 76: Nghe và điền từ còn thiếu vào chỗ trống: „Der Arzt schreibt mir ein ___.“ (das Rezept)",
+                        "question": "Câu 76: Nghe và điền 1 từ vào chỗ trống: „Der Arzt schreibt mir ein ___.“",
                         "options": null,
                         "correct_answer": "Rezept",
                         "explanation": "ein + danh từ giống trung (das Rezept) ở Akkusativ: ein Rezept → „Der Arzt schreibt mir ein Rezept.“",
                         "exp_reward": 15,
                         "extra_data": {
-                                        "display_sentence": "„Der Arzt schreibt mir ein ___.“ (das Rezept)",
+                                        "display_sentence": "„Der Arzt schreibt mir ein ___.“",
                                         "full_sentence": "„Der Arzt schreibt mir ein Rezept.“",
                                         "audio_text": "Der Arzt schreibt mir ein Rezept",
-                                        "hints": "(das Rezept)",
+                                        "hints": "Danh từ giống trung: das Rezept (đơn thuốc)",
                                         "hint_vi": "Bác sĩ viết cho tôi một đơn thuốc.",
                                         "translation": "Bác sĩ viết cho tôi một đơn thuốc.",
                                         "accepted_answers": [
@@ -2271,16 +2271,16 @@ def seed_lesson_12():
         {
                         "id": 77,
                         "exercise_type": "nghe_dien",
-                        "question": "Câu 77: Nghe và điền từ còn thiếu vào chỗ trống: „Wir ___ hier nicht parken.“ (dürfen)",
+                        "question": "Câu 77: Nghe và điền 1 từ vào chỗ trống: „Wir ___ hier nicht parken.“",
                         "options": null,
                         "correct_answer": "dürfen",
                         "explanation": "dürfen chia với chủ ngữ wir: dürfen → „Wir dürfen hier nicht parken.“",
                         "exp_reward": 15,
                         "extra_data": {
-                                        "display_sentence": "„Wir ___ hier nicht parken.“ (dürfen)",
+                                        "display_sentence": "„Wir ___ hier nicht parken.“",
                                         "full_sentence": "„Wir dürfen hier nicht parken.“",
                                         "audio_text": "Wir dürfen hier nicht parken",
-                                        "hints": "(dürfen)",
+                                        "hints": "Modalverb: dürfen (chia với ngôi wir)",
                                         "hint_vi": "Chúng tôi không được phép đỗ xe ở đây.",
                                         "translation": "Chúng tôi không được phép đỗ xe ở đây.",
                                         "accepted_answers": [
@@ -2296,16 +2296,16 @@ def seed_lesson_12():
         {
                         "id": 78,
                         "exercise_type": "nghe_dien",
-                        "question": "Câu 78: Nghe và điền từ còn thiếu vào chỗ trống: „Du bist meine Traumfrau. Ich liebe ___.“ (du → Akkusativ)",
+                        "question": "Câu 78: Nghe và điền 1 từ vào chỗ trống: „Du bist meine Traumfrau. Ich liebe ___.“",
                         "options": null,
                         "correct_answer": "dich",
                         "explanation": "Động từ lieben đi với tân ngữ Akkusativ, đại từ du chuyển thành dich → „Du bist meine Traumfrau. Ich liebe dich.“",
                         "exp_reward": 15,
                         "extra_data": {
-                                        "display_sentence": "„Du bist meine Traumfrau. Ich liebe ___.“ (du → Akkusativ)",
+                                        "display_sentence": "„Du bist meine Traumfrau. Ich liebe ___.“",
                                         "full_sentence": "„Du bist meine Traumfrau. Ich liebe dich.“",
                                         "audio_text": "Du bist meine Traumfrau Ich liebe dich",
-                                        "hints": "(du → Akkusativ)",
+                                        "hints": "Đại từ nhân xưng: du (chia ở Akkusativ sau lieben)",
                                         "hint_vi": "Em là người phụ nữ trong mơ của anh. Anh yêu em.",
                                         "translation": "Em là người phụ nữ trong mơ của anh. Anh yêu em.",
                                         "accepted_answers": [
@@ -2319,16 +2319,16 @@ def seed_lesson_12():
         {
                         "id": 79,
                         "exercise_type": "nghe_dien",
-                        "question": "Câu 79: Nghe và điền từ còn thiếu vào chỗ trống: „Mein ___ tut mir furchtbar weh.“ (der Bauch)",
+                        "question": "Câu 79: Nghe và điền 1 từ vào chỗ trống: „Mein ___ tut mir furchtbar weh.“",
                         "options": null,
                         "correct_answer": "Bauch",
                         "explanation": "Danh từ giống đực der Bauch, đứng làm chủ ngữ sau mein: Mein Bauch tut mir furchtbar weh. → „Mein Bauch tut mir furchtbar weh.“",
                         "exp_reward": 15,
                         "extra_data": {
-                                        "display_sentence": "„Mein ___ tut mir furchtbar weh.“ (der Bauch)",
+                                        "display_sentence": "„Mein ___ tut mir furchtbar weh.“",
                                         "full_sentence": "„Mein Bauch tut mir furchtbar weh.“",
                                         "audio_text": "Mein Bauch tut mir furchtbar weh",
-                                        "hints": "(der Bauch)",
+                                        "hints": "Danh từ chỉ bộ phận cơ thể: der Bauch (bụng)",
                                         "hint_vi": "Bụng tôi đau kinh khủng.",
                                         "translation": "Bụng tôi đau kinh khủng.",
                                         "accepted_answers": [
@@ -2342,23 +2342,26 @@ def seed_lesson_12():
         {
                         "id": 80,
                         "exercise_type": "nghe_dien",
-                        "question": "Câu 80: Nghe và điền từ còn thiếu vào chỗ trống: „___ jeden Tag eine Tablette!“ (nehmen)",
+                        "question": "Câu 80: Nghe và điền 1 từ vào chỗ trống: „___ jeden Tag eine Tablette!“",
                         "options": null,
                         "correct_answer": "Nehmt",
                         "explanation": "nehmen → Imperativ ngôi ihr: Nehmt! (bỏ chủ ngữ ihr, giữ nguyên gốc nehm- + -t) → „Nehmt jeden Tag eine Tablette!“",
                         "exp_reward": 15,
                         "extra_data": {
-                                        "display_sentence": "„___ jeden Tag eine Tablette!“ (nehmen)",
+                                        "display_sentence": "„___ jeden Tag eine Tablette!“",
                                         "full_sentence": "„Nehmt jeden Tag eine Tablette!“",
                                         "audio_text": "Nehmt jeden Tag eine Tablette",
-                                        "hints": "(nehmen)",
+                                        "hints": "Động từ nguyên mẫu: nehmen (Imperativ ngôi ihr)",
                                         "hint_vi": "Các bạn hãy uống mỗi ngày một viên thuốc!",
                                         "translation": "Các bạn hãy uống mỗi ngày một viên thuốc!",
                                         "accepted_answers": [
                                                         "Nehmt",
                                                         "nehmt",
+                                                        "Nimm",
+                                                        "nimm",
                                                         "Nehmt jeden Tag eine Tablette!",
-                                                        "Nehmt jeden Tag eine Tablette"
+                                                        "Nehmt jeden Tag eine Tablette",
+                                                        "Nimm jeden Tag eine Tablette!"
                                         ]
                         }
         },

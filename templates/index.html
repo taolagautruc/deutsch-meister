@@ -2273,16 +2273,32 @@
                             </div>
                         `;
                     }
+                    let hintBtnHtml = '';
+                    if (extra.hints) {
+                        hintBtnHtml = `
+                            <button type="button" onclick="toggleExerciseHint(${i})" class="px-3 py-1.5 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-700 border border-slate-300 text-xs font-bold cursor-pointer transition flex items-center gap-1">
+                                💡 Xem gợi ý
+                            </button>
+                        `;
+                    }
                     extraHtml += `
-                        <div class="flex flex-wrap gap-2 mt-2">
+                        <div class="flex flex-wrap items-center gap-2 mt-2">
                             <button onclick="speakGerman('${cleanSpeak}', 1.0)" class="px-3.5 py-1.5 rounded-xl bg-blue-50 hover:bg-blue-100 text-blue-700 border border-blue-200 text-xs font-bold cursor-pointer">
                                 🔊 Nghe chuẩn (1.0x)
                             </button>
                             <button onclick="speakGerman('${cleanSpeak}', 0.65)" class="px-3.5 py-1.5 rounded-xl bg-amber-50 hover:bg-amber-100 text-amber-700 border border-amber-200 text-xs font-bold cursor-pointer">
                                 🐢 Nghe chậm (0.65x)
                             </button>
+                            ${hintBtnHtml}
                         </div>
                     `;
+                    if (extra.hints) {
+                        extraHtml += `
+                            <div id="ex-hint-${i}" class="hidden mt-2 p-2.5 rounded-xl bg-amber-50 border border-amber-300 text-amber-950 text-xs font-semibold">
+                                💡 Gợi ý: <b>${extra.hints}</b> <span class="text-amber-800 font-normal"><i>(Xem gợi ý sẽ nhận 0 EXP)</i></span>
+                            </div>
+                        `;
+                    }
                 }
 
                 if (extra.passage) {
@@ -2503,6 +2519,21 @@
                 restoreDialogueWidgetsUI();
             }
         }
+
+        function toggleExerciseHint(index) {
+            const el = document.getElementById(`ex-hint-${index}`);
+            if (!el) return;
+            const isHidden = el.classList.contains('hidden');
+            if (isHidden) {
+                el.classList.remove('hidden');
+                if (currentLesson && currentLesson.allRenderExercises && currentLesson.allRenderExercises[index]) {
+                    currentLesson.allRenderExercises[index]._hasBeenWrong = true;
+                }
+            } else {
+                el.classList.add('hidden');
+            }
+        }
+        window.toggleExerciseHint = toggleExerciseHint;
 
         function handleExerciseInputKeydown(event, index) {
             if (event.key === 'Enter') {
