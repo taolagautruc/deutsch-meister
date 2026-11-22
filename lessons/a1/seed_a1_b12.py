@@ -3128,73 +3128,73 @@ def seed_lesson_12():
         {
                 "id": 115,
                 "exercise_type": "dung_sai",
-                "question": "Câu 115: Đọc đoạn văn 'Tipps für die Gesundheit' và chọn Đúng (Richtig) hoặc Sai (Falsch) cho nhận định: „Man soll jeden Tag zwei Liter Kaffee trinken.“",
-                "options": [
-                        "Richtig",
-                        "Falsch"
-                ],
-                "correct_answer": "Falsch",
-                "explanation": "Đoạn văn khuyên uống hai lít nước (Wasser), không phải cà phê (Kaffee). Cà phê khuyên không nên uống nhiều. -> Đáp án: \"Falsch\"",
-                "exp_reward": 15,
-                "extra_data": {
-                        "passage": "Um gesund zu bleiben, müssen Sie auf Ihren Körper achten. Essen Sie viel Obst und Gemüse, denn sie haben viele Vitamine. Trinken Sie täglich mindestens zwei Liter Wasser. Trinken Sie nicht zu viel Kaffee oder Alkohol. Sie dürfen auch nicht rauchen, das ist sehr schlecht für die Lunge. Wenn Sie am Computer arbeiten, machen Sie oft Pausen für Ihre Augen. Und vergessen Sie nicht: Bewegen Sie sich jeden Tag!",
-                        "statement": "Man soll jeden Tag zwei Liter Kaffee trinken.",
-                        "translation": "Người ta nên uống 2 lít cà phê mỗi ngày.",
-                        "audio_text": "Man soll jeden Tag zwei Liter Kaffee trinken"
-                }
-        },
-        {
-                "id": 116,
-                "exercise_type": "dung_sai",
-                "question": "Câu 116: Đọc đoạn văn 'Tipps für die Gesundheit' và chọn Đúng (Richtig) hoặc Sai (Falsch) cho nhận định: „Rauchen ist gesund.“",
-                "options": [
-                        "Richtig",
-                        "Falsch"
-                ],
-                "correct_answer": "Falsch",
-                "explanation": "Đoạn văn ghi rõ \"Sie dürfen auch nicht rauchen, das ist sehr schlecht für die Lunge\" (Hút thuốc rất tệ cho phổi). -> Đáp án: \"Falsch\"",
-                "exp_reward": 15,
-                "extra_data": {
-                        "passage": "Um gesund zu bleiben, müssen Sie auf Ihren Körper achten. Essen Sie viel Obst und Gemüse, denn sie haben viele Vitamine. Trinken Sie täglich mindestens zwei Liter Wasser. Trinken Sie nicht zu viel Kaffee oder Alkohol. Sie dürfen auch nicht rauchen, das ist sehr schlecht für die Lunge. Wenn Sie am Computer arbeiten, machen Sie oft Pausen für Ihre Augen. Und vergessen Sie nicht: Bewegen Sie sich jeden Tag!",
-                        "statement": "Rauchen ist gesund.",
-                        "translation": "Hút thuốc thì khỏe mạnh.",
-                        "audio_text": "Rauchen ist gesund"
-                }
-        },
-        {
-                "id": 117,
-                "exercise_type": "dung_sai",
-                "question": "Câu 117: Đọc đoạn văn 'Tipps für die Gesundheit' và chọn Đúng (Richtig) hoặc Sai (Falsch) cho nhận định: „Gemüse und Obst haben Vitamine.“",
+                "question": "Câu 115: Đọc đoạn văn 'Tipps für die Gesundheit' và chọn Đúng (Richtig) hoặc Sai (Falsch) cho nhận định: „Man soll sich jeden Tag bewegen.“",
                 "options": [
                         "Richtig",
                         "Falsch"
                 ],
                 "correct_answer": "Richtig",
-                "explanation": "Đoạn văn có câu \"Essen Sie viel Obst und Gemüse, denn sie haben viele Vitamine\". -> Đáp án: \"Richtig\"",
+                "explanation": "Đoạn văn có câu: „Und vergessen Sie nicht: Bewegen Sie sich jeden Tag!“ (Và đừng quên: Hãy vận động mỗi ngày!) → Nhận định „Man soll sich jeden Tag bewegen.“ là Đúng (Richtig). -> Đáp án: \"Richtig\"",
                 "exp_reward": 15,
                 "extra_data": {
                         "passage": "Um gesund zu bleiben, müssen Sie auf Ihren Körper achten. Essen Sie viel Obst und Gemüse, denn sie haben viele Vitamine. Trinken Sie täglich mindestens zwei Liter Wasser. Trinken Sie nicht zu viel Kaffee oder Alkohol. Sie dürfen auch nicht rauchen, das ist sehr schlecht für die Lunge. Wenn Sie am Computer arbeiten, machen Sie oft Pausen für Ihre Augen. Und vergessen Sie nicht: Bewegen Sie sich jeden Tag!",
-                        "statement": "Gemüse und Obst haben Vitamine.",
-                        "translation": "Rau củ và trái cây có vitamin.",
-                        "audio_text": "Gemüse und Obst haben Vitamine"
+                        "statement": "Man soll sich jeden Tag bewegen.",
+                        "translation": "Người ta nên vận động mỗi ngày.",
+                        "audio_text": "Man soll sich jeden Tag bewegen"
                 }
         },
         {
-                "id": 118,
+                "id": 116,
                 "exercise_type": "dung_sai",
-                "question": "Câu 118: Đọc đoạn văn 'Tipps für die Gesundheit' và chọn Đúng (Richtig) hoặc Sai (Falsch) cho nhận định: „Man muss am Computer keine Pausen machen.“",
+                "question": "Câu 116: Đọc đoạn văn 'Tipps für die Gesundheit' và chọn Đúng (Richtig) hoặc Sai (Falsch) cho nhận định: „Rauchen ist gut für die Lunge.“",
                 "options": [
                         "Richtig",
                         "Falsch"
                 ],
                 "correct_answer": "Falsch",
-                "explanation": "Đoạn văn khuyên \"machen Sie oft Pausen für Ihre Augen\" (hãy nghỉ ngơi thường xuyên cho mắt). -> Đáp án: \"Falsch\"",
+                "explanation": "Đoạn văn ghi rõ: „Sie dürfen auch nicht rauchen, das ist sehr schlecht für die Lunge.“ (Bạn cũng không được phép hút thuốc, điều đó rất có hại cho phổi, chứ không phải tốt cho phổi) → Nhận định „Rauchen ist gut für die Lunge.“ là Sai (Falsch). -> Đáp án: \"Falsch\"",
                 "exp_reward": 15,
                 "extra_data": {
                         "passage": "Um gesund zu bleiben, müssen Sie auf Ihren Körper achten. Essen Sie viel Obst und Gemüse, denn sie haben viele Vitamine. Trinken Sie täglich mindestens zwei Liter Wasser. Trinken Sie nicht zu viel Kaffee oder Alkohol. Sie dürfen auch nicht rauchen, das ist sehr schlecht für die Lunge. Wenn Sie am Computer arbeiten, machen Sie oft Pausen für Ihre Augen. Und vergessen Sie nicht: Bewegen Sie sich jeden Tag!",
-                        "statement": "Man muss am Computer keine Pausen machen.",
-                        "translation": "Người ta không cần nghỉ ngơi khi dùng máy tính.",
-                        "audio_text": "Man muss am Computer keine Pausen machen"
+                        "statement": "Rauchen ist gut für die Lunge.",
+                        "translation": "Hút thuốc thì tốt cho phổi.",
+                        "audio_text": "Rauchen ist gut für die Lunge"
+                }
+        },
+        {
+                "id": 117,
+                "exercise_type": "dung_sai",
+                "question": "Câu 117: Đọc đoạn văn 'Tipps für die Gesundheit' và chọn Đúng (Richtig) hoặc Sai (Falsch) cho nhận định: „Obst und Gemüse sind gut für die Gesundheit.“",
+                "options": [
+                        "Richtig",
+                        "Falsch"
+                ],
+                "correct_answer": "Richtig",
+                "explanation": "Đoạn văn có câu: „Essen Sie viel Obst und Gemüse, denn sie haben viele Vitamine.“ (Hãy ăn nhiều trái cây và rau củ vì chúng có nhiều vitamin để giữ gìn sức khỏe) → Nhận định „Obst und Gemüse sind gut für die Gesundheit.“ là Đúng (Richtig). -> Đáp án: \"Richtig\"",
+                "exp_reward": 15,
+                "extra_data": {
+                        "passage": "Um gesund zu bleiben, müssen Sie auf Ihren Körper achten. Essen Sie viel Obst und Gemüse, denn sie haben viele Vitamine. Trinken Sie täglich mindestens zwei Liter Wasser. Trinken Sie nicht zu viel Kaffee oder Alkohol. Sie dürfen auch nicht rauchen, das ist sehr schlecht für die Lunge. Wenn Sie am Computer arbeiten, machen Sie oft Pausen für Ihre Augen. Und vergessen Sie nicht: Bewegen Sie sich jeden Tag!",
+                        "statement": "Obst und Gemüse sind gut für die Gesundheit.",
+                        "translation": "Trái cây và rau củ tốt cho sức khỏe.",
+                        "audio_text": "Obst und Gemüse sind gut für die Gesundheit"
+                }
+        },
+        {
+                "id": 118,
+                "exercise_type": "dung_sai",
+                "question": "Câu 118: Đọc đoạn văn 'Tipps für die Gesundheit' và chọn Đúng (Richtig) hoặc Sai (Falsch) cho nhận định: „Am Computer soll man oft Pausen machen.“",
+                "options": [
+                        "Richtig",
+                        "Falsch"
+                ],
+                "correct_answer": "Richtig",
+                "explanation": "Đoạn văn có câu: „Wenn Sie am Computer arbeiten, machen Sie oft Pausen für Ihre Augen.“ (Khi làm việc bên máy tính, hãy thường xuyên nghỉ ngơi cho mắt) → Nhận định „Am Computer soll man oft Pausen machen.“ là Đúng (Richtig). -> Đáp án: \"Richtig\"",
+                "exp_reward": 15,
+                "extra_data": {
+                        "passage": "Um gesund zu bleiben, müssen Sie auf Ihren Körper achten. Essen Sie viel Obst und Gemüse, denn sie haben viele Vitamine. Trinken Sie täglich mindestens zwei Liter Wasser. Trinken Sie nicht zu viel Kaffee oder Alkohol. Sie dürfen auch nicht rauchen, das ist sehr schlecht für die Lunge. Wenn Sie am Computer arbeiten, machen Sie oft Pausen für Ihre Augen. Und vergessen Sie nicht: Bewegen Sie sich jeden Tag!",
+                        "statement": "Am Computer soll man oft Pausen machen.",
+                        "translation": "Khi dùng máy tính nên thường xuyên nghỉ ngơi.",
+                        "audio_text": "Am Computer soll man oft Pausen machen"
                 }
         },
         {
