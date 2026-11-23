@@ -2708,6 +2708,7 @@
 
         function restoreDialogueWidgetsUI() {
             if (!currentLesson || !Array.isArray(currentLesson.allRenderExercises)) return;
+            const curLId = currentLesson ? currentLesson.id : null;
             currentLesson.allRenderExercises.forEach((ex, idx) => {
                 if (ex && ex.exercise_type === 'hoi_thoai_sap_xep') {
                     if (!window._dialogueOrders[idx] || window._dialogueOrders[idx].length === 0) {
@@ -2721,6 +2722,14 @@
                     }
                     if (window._dialogueOrders[idx] && window._dialogueOrders[idx].length > 0) {
                         updateDialogueWidgetUI(idx);
+                        const isDone = Boolean(ex && ex._isUserCorrect) || Boolean(curLId && userLessonsProgress[curLId] && Array.isArray(userLessonsProgress[curLId].correct_exercises) && userLessonsProgress[curLId].correct_exercises.includes(idx));
+                        if (isDone) {
+                            const btn = document.getElementById(`ex-btn-${idx}`);
+                            if (btn) {
+                                btn.className = "px-6 py-2.5 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-sm shadow-sm transition shrink-0 cursor-pointer";
+                                btn.innerText = "✓ Đã xong";
+                            }
+                        }
                     }
                 }
             });
@@ -2740,12 +2749,16 @@
 
         function updateDialogueWidgetUI(exIdx) {
             const list = window._dialogueOrders[exIdx] || [];
+            const ex = currentLesson && currentLesson.allRenderExercises ? currentLesson.allRenderExercises[exIdx] : null;
+            const curLId = currentLesson ? currentLesson.id : null;
+            const isDone = Boolean(ex && ex._isUserCorrect) || Boolean(curLId && userLessonsProgress[curLId] && Array.isArray(userLessonsProgress[curLId].correct_exercises) && userLessonsProgress[curLId].correct_exercises.includes(exIdx));
             const input = document.getElementById(`ex-input-${exIdx}`);
             if (input) {
                 input.value = list.join(', ');
-                if (typeof handleExerciseInputChange === 'function') handleExerciseInputChange(exIdx);
+                if (!isDone && typeof handleExerciseInputChange === 'function') {
+                    handleExerciseInputChange(exIdx);
+                }
             }
-            const ex = currentLesson && currentLesson.allRenderExercises ? currentLesson.allRenderExercises[exIdx] : null;
             let extra = {};
             try { 
                 extra = (typeof ex.extra_data === 'string') ? JSON.parse(ex.extra_data) : (ex.extra_data || {}); 
@@ -2936,6 +2949,19 @@
         function handleExerciseInputChange(index) {
             const inputEl = document.getElementById(`ex-input-${index}`);
             if (!inputEl) return;
+            const ex = currentLesson && currentLesson.allRenderExercises ? currentLesson.allRenderExercises[index] : null;
+            const curLId = currentLesson ? currentLesson.id : null;
+            const isDone = Boolean(ex && ex._isUserCorrect) || Boolean(curLId && userLessonsProgress[curLId] && Array.isArray(userLessonsProgress[curLId].correct_exercises) && userLessonsProgress[curLId].correct_exercises.includes(index));
+
+            if (isDone && !(ex && ex._retrying)) {
+                const checkBtn = document.getElementById(`ex-btn-${index}`) || inputEl.nextElementSibling;
+                if (checkBtn) {
+                    checkBtn.className = "px-6 py-2.5 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-sm shadow-sm transition shrink-0 cursor-pointer";
+                    checkBtn.innerText = "✓ Đã xong";
+                }
+                return;
+            }
+
             const card = document.getElementById(`ex-card-${index}`);
             const checkBtn = document.getElementById(`ex-btn-${index}`) || inputEl.nextElementSibling;
 
@@ -3243,7 +3269,14 @@
             } else if (ex.exercise_type === 'hoi_thoai_sap_xep' && extra.correct_order) {
                 const normUser = String(userAnswer || '').replace(/[\s,]+/g, '');
                 const normCorrect = extra.correct_order.join('');
-                isCorrect = (normUser === normCorrect);
+                if (normUser === normCorrect) {
+                    isCorrect = true;
+                } else if (Array.isArray(extra.accepted_orders)) {
+                    isCorrect = extra.accepted_orders.some(ord => {
+                        const s = Array.isArray(ord) ? ord.join('') : String(ord).replace(/[\s,]+/g, '');
+                        return normUser === s;
+                    });
+                }
             } else if (ex.exercise_type === 'phan_loai_giong') {
                 const uParts = String(userAnswer || '').toLowerCase().match(/\b(der|die|das)\b/g) || [];
                 let cParts = [];

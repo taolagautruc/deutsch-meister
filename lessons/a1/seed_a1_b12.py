@@ -3203,7 +3203,7 @@ def seed_lesson_12():
                 "question": "Câu 119: Sắp xếp các câu thoại sau theo đúng thứ tự diễn biến hội thoại hợp lý:",
                 "options": null,
                 "correct_answer": "1, 2, 3, 4, 5",
-                "explanation": "Nhân viên phòng khám chào hỏi và hỏi lý do gọi đến -> Bệnh nhân báo bị ốm và cần đặt lịch hẹn hôm nay -> Phòng khám hỏi triệu chứng và hỏi có sốt cao không -> Bệnh nhân mô tả đau đầu và bị sốt từ hôm qua -> Phòng khám hẹn giờ đến khám vào lúc 11 giờ hôm nay (Imperativ: Kommen Sie bitte...!).",
+                "explanation": "Nhân viên phòng khám chào hỏi và hỏi lý do gọi đến -> Bệnh nhân báo bị ốm và cần đặt lịch hẹn hôm nay -> Phòng khám hỏi triệu chứng và hỏi có sốt không -> Bệnh nhân mô tả đau đầu và bị sốt từ hôm qua -> Phòng khám hẹn giờ đến khám vào lúc 11 giờ hôm nay (Imperativ: Kommen Sie bitte...!).",
                 "exp_reward": 15,
                 "extra_data": {
                         "lines": [
@@ -3220,7 +3220,7 @@ def seed_lesson_12():
                                 {
                                         "id": 3,
                                         "speaker": "Praxis",
-                                        "text": "Was fehlt Ihnen denn? Haben Sie hohes Fieber?"
+                                        "text": "Was fehlt Ihnen denn? Haben Sie Fieber?"
                                 },
                                 {
                                         "id": 4,
@@ -3240,7 +3240,7 @@ def seed_lesson_12():
                                 4,
                                 5
                         ],
-                        "translation": "- Phòng khám: Phòng khám Bác sĩ Weber xin chào! Tôi có thể giúp gì cho ngài?\n- Ông Klein: Xin chào. Tôi bị ốm và hôm nay tôi cần một lịch hẹn khám.\n- Phòng khám: Ngài bị làm sao vậy? Ngài có bị sốt cao không?\n- Ông Klein: Vâng, đầu tôi đau dữ dội và tôi bị sốt từ hôm qua.\n- Phòng khám: Xin ngài hãy đến phòng khám vào lúc 11 giờ hôm nay!"
+                        "translation": "- Phòng khám: Phòng khám Bác sĩ Weber xin chào! Tôi có thể giúp gì cho ngài?\n- Ông Klein: Xin chào. Tôi bị ốm và hôm nay tôi cần một lịch hẹn khám.\n- Phòng khám: Ngài bị làm sao vậy? Ngài có sốt không?\n- Ông Klein: Vâng, đầu tôi đau dữ dội và tôi bị sốt từ hôm qua.\n- Phòng khám: Xin ngài hãy đến phòng khám vào lúc 11 giờ hôm nay!"
                 }
         },
         {
@@ -3249,39 +3249,39 @@ def seed_lesson_12():
                 "question": "Câu 120: Sắp xếp các câu thoại sau theo đúng thứ tự diễn biến hội thoại hợp lý:",
                 "options": null,
                 "correct_answer": "1, 2, 3, 4, 5, 6",
-                "explanation": "Dược sĩ chào và hỏi cần giúp gì -> Khách chào và đưa đơn thuốc của bác sĩ -> Dược sĩ cảm ơn và lấy thuốc -> Khách hỏi tần suất uống thuốc -> Dược sĩ hướng dẫn uống 2 lần mỗi ngày sau ăn (Imperativ: Nehmen Sie...) -> Khách cảm ơn và chào tạm biệt.",
+                "explanation": "Dược sĩ chào hỏi và hỏi nhu cầu của khách -> Khách kể con trai bị ho nặng và hỏi mua siro ho -> Dược sĩ xác nhận có và hỏi cháu có sốt không -> Khách xác nhận không sốt chỉ bị ho -> Dược sĩ đưa siro ho và dặn cách dùng (Imperativ: Geben Sie ihm...) -> Khách cảm ơn sự giúp đỡ và chào tạm biệt.",
                 "exp_reward": 15,
                 "extra_data": {
                         "lines": [
                                 {
                                         "id": 1,
                                         "speaker": "Apothekerin",
-                                        "text": "Guten Tag! Wie kann ich Ihnen helfen?"
+                                        "text": "Guten Tag! Was kann ich für Sie tun?"
                                 },
                                 {
                                         "id": 2,
                                         "speaker": "Kunde",
-                                        "text": "Guten Tag! Ich habe ein Rezept vom Arzt. Hier, bitte."
+                                        "text": "Guten Tag! Mein Sohn hat starken Husten. Haben Sie einen Hustensaft?"
                                 },
                                 {
                                         "id": 3,
                                         "speaker": "Apothekerin",
-                                        "text": "Danke. Einen Moment... Hier ist Ihr Medikament."
+                                        "text": "Ja, natürlich. Hat Ihr Sohn auch Fieber?"
                                 },
                                 {
                                         "id": 4,
                                         "speaker": "Kunde",
-                                        "text": "Wie oft muss ich die Tabletten nehmen?"
+                                        "text": "Nein, er hat kein Fieber, nur Husten."
                                 },
                                 {
                                         "id": 5,
                                         "speaker": "Apothekerin",
-                                        "text": "Nehmen Sie zweimal täglich eine Tablette nach dem Essen."
+                                        "text": "Hier ist der Hustensaft. Geben Sie ihm zweimal täglich einen Löffel!"
                                 },
                                 {
                                         "id": 6,
                                         "speaker": "Kunde",
-                                        "text": "Vielen Dank. Auf Wiedersehen!"
+                                        "text": "Vielen Dank für Ihre Hilfe. Auf Wiedersehen!"
                                 }
                         ],
                         "correct_order": [
@@ -3292,7 +3292,7 @@ def seed_lesson_12():
                                 5,
                                 6
                         ],
-                        "translation": "- Dược sĩ: Xin chào! Tôi có thể giúp gì cho quý khách?\n- Khách: Xin chào! Tôi có đơn thuốc của bác sĩ. Đây ạ.\n- Dược sĩ: Cảm ơn. Xin chờ một lát... Thuốc của quý khách đây.\n- Khách: Tôi phải uống thuốc viên mấy lần?\n- Dược sĩ: Hãy uống hai lần mỗi ngày, mỗi lần một viên, sau bữa ăn.\n- Khách: Cảm ơn nhiều. Tạm biệt!"
+                        "translation": "- Dược sĩ: Xin chào! Tôi có thể giúp gì cho quý khách?\n- Khách: Xin chào! Con trai tôi bị ho nặng. Hiệu thuốc có siro ho không ạ?\n- Dược sĩ: Vâng, có chứ. Cháu có bị sốt không?\n- Khách: Không, cháu không sốt, chỉ bị ho thôi.\n- Dược sĩ: Siro ho đây ạ. Hãy cho cháu uống mỗi ngày hai lần, mỗi lần một thìa!\n- Khách: Cảm ơn nhiều vì sự giúp đỡ của cô. Tạm biệt!"
                 }
         },
         {
