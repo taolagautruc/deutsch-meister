@@ -381,6 +381,7 @@
     <script src="/static/js/essen_svg.js?v=20261116_v4"></script>
     <script src="/static/js/kleidung_svg.js?v=20261118_v1"></script>
     <script src="/static/js/gesundheit_svg.js?v=20261120_v1"></script>
+    <script src="/static/js/b13_review_svg.js?v=20261123_v1"></script>
     <script src="/static/js/verbs_db.js?v=20261116_v4"></script>
     <script src="/static/js/lexikon_db.js?v=20261116_v4"></script>
     <script src="/static/js/arena_engine.js?v=20261116_v4"></script>
@@ -534,6 +535,34 @@
             "dung_sai": "16. Đọc hiểu Đúng / Sai",
             "hoi_thoai_sap_xep": "17. Sắp xếp hội thoại",
             "bieu_tuong_benh": "18. Nhìn Emoji đoán bệnh"
+        };
+
+        const B13_ORDER = [
+            "trac_nghiem", "dien_khuyet", "dien_chia_dong_tu", "dich_nghia_vd", "dich_nghia_dv",
+            "noi_o", "dien_tao_cau", "nghe_dien", "dich_cau_vd", "dich_cau_dv",
+            "sap_xep_cau", "phan_loai_dong_tu", "phan_loai_tu_hoi", "tim_loi_sai", "viet_lai_cau_w",
+            "dung_sai", "hoi_thoai_sap_xep", "doc_menu_cafe"
+        ];
+        const B13_TYPE_LABELS = {
+            "all": "Tất cả",
+            "trac_nghiem": "1. Trắc nghiệm",
+            "dien_khuyet": "2. Điền khuyết",
+            "dien_chia_dong_tu": "3. Chia ĐT bất quy tắc",
+            "dich_nghia_vd": "4. Dịch từ: Việt → Đức",
+            "dich_nghia_dv": "5. Dịch từ: Đức → Việt",
+            "noi_o": "6. Nối ô tương ứng",
+            "dien_tao_cau": "7. Điền 2 chỗ trống tạo câu",
+            "nghe_dien": "8. Nghe & điền từ",
+            "dich_cau_vd": "9. Dịch câu: Việt → Đức",
+            "dich_cau_dv": "10. Dịch câu: Đức → Việt",
+            "sap_xep_cau": "11. Sắp xếp từ thành câu",
+            "phan_loai_dong_tu": "12. Phân loại động từ",
+            "phan_loai_tu_hoi": "13. Phân loại từ để hỏi",
+            "tim_loi_sai": "14. Tìm và sửa lỗi sai",
+            "viet_lai_cau_w": "15. Đặt câu hỏi cho từ gạch chân",
+            "dung_sai": "16. Đọc hiểu Đúng / Sai",
+            "hoi_thoai_sap_xep": "17. Sắp xếp hội thoại",
+            "doc_menu_cafe": "18. Đọc menu chọn phản hồi"
         };
 
         let currentLevelData = null;
@@ -1352,6 +1381,10 @@
                 const fn12 = window.b12_initGesundheitSvgDiagrams || window.initGesundheitSvgDiagrams;
                 if (typeof fn12 === 'function') setTimeout(fn12, 50);
             }
+            if (currentLesson && (currentLesson.id === 27 || (currentLesson.title && /bài 13\b/i.test(currentLesson.title)))) {
+                const fn13 = window.b13_initReviewSvgDiagrams || window.initReviewSvgDiagrams;
+                if (typeof fn13 === 'function') setTimeout(fn13, 50);
+            }
 
             // Cập nhật nhãn số dạng bài tập động
             const subtabEx = document.getElementById('subtab-exercises');
@@ -1977,8 +2010,9 @@
 
             const isLesson11 = Boolean(currentLesson && currentLesson.id === 25);
             const isLesson12 = Boolean(currentLesson && currentLesson.id === 26);
-            const chipKeys = isLesson12 ? ['all', ...B12_ORDER] : (isLesson11 ? ['all', ...B11_ORDER] : Object.keys(TYPE_LABELS));
-            const getLabel = (k) => isLesson12 ? (B12_TYPE_LABELS[k] || TYPE_LABELS[k] || k) : (isLesson11 ? (B11_TYPE_LABELS[k] || TYPE_LABELS[k] || k) : (TYPE_LABELS[k] || k));
+            const isLesson13 = Boolean(currentLesson && (currentLesson.id === 27 || (currentLesson.title && /bài 13\b/i.test(currentLesson.title))));
+            const chipKeys = isLesson13 ? ['all', ...B13_ORDER] : (isLesson12 ? ['all', ...B12_ORDER] : (isLesson11 ? ['all', ...B11_ORDER] : Object.keys(TYPE_LABELS)));
+            const getLabel = (k) => isLesson13 ? (B13_TYPE_LABELS[k] || TYPE_LABELS[k] || k) : (isLesson12 ? (B12_TYPE_LABELS[k] || TYPE_LABELS[k] || k) : (isLesson11 ? (B11_TYPE_LABELS[k] || TYPE_LABELS[k] || k) : (TYPE_LABELS[k] || k)));
 
             const filterBarHtml = `
                 <div class="flex flex-wrap gap-2 pb-3 border-b border-slate-100">
@@ -2290,6 +2324,112 @@
                         </div>
                     `;
                 }
+                if (ex.exercise_type === 'phan_loai_dong_tu' && Array.isArray(extra.items) && extra.items.length > 0) {
+                    if (!window._verbTypeChoices) window._verbTypeChoices = {};
+                    if (!window._verbTypeChoices[i]) window._verbTypeChoices[i] = {};
+                    extraHtml += `
+                        <div class="my-3 p-4 rounded-2xl bg-amber-50/80 border border-amber-200 space-y-3">
+                            <div class="text-xs font-extrabold text-amber-900 flex items-center justify-between">
+                                <span>🏷️ Bấm chọn nhóm (Bất quy tắc / Có quy tắc) cho 4 động từ dưới đây:</span>
+                            </div>
+                            <div class="space-y-2">
+                                ${extra.items.map((item, itIdx) => {
+                                    const userCh = window._verbTypeChoices[i][itIdx];
+                                    const isBqt = userCh === 'Bất quy tắc';
+                                    const isCqt = userCh === 'Có quy tắc';
+                                    return `
+                                        <div class="p-2.5 rounded-xl bg-white border border-amber-200 flex flex-col sm:flex-row sm:items-center justify-between gap-2 text-xs">
+                                            <div class="space-y-0.5">
+                                                <div class="font-bold text-slate-900 text-sm font-mono">${itIdx + 1}. ${item.word}</div>
+                                                <div class="text-slate-500 italic text-[11px]">${item.meaning_vi || ''}</div>
+                                            </div>
+                                            <div class="flex gap-1.5 shrink-0">
+                                                <button type="button" onclick="setVerbTypeChoice(${i}, ${itIdx}, 'Bất quy tắc')" id="vt-btn-${i}-${itIdx}-bqt" class="px-3 py-1.5 rounded-lg ${isBqt ? 'bg-amber-600 text-white font-black shadow-xs' : 'bg-slate-100 text-slate-700 font-bold'} hover:bg-amber-500 hover:text-white text-xs cursor-pointer transition">
+                                                    Bất quy tắc
+                                                </button>
+                                                <button type="button" onclick="setVerbTypeChoice(${i}, ${itIdx}, 'Có quy tắc')" id="vt-btn-${i}-${itIdx}-cqt" class="px-3 py-1.5 rounded-lg ${isCqt ? 'bg-blue-600 text-white font-black shadow-xs' : 'bg-slate-100 text-slate-700 font-bold'} hover:bg-blue-500 hover:text-white text-xs cursor-pointer transition">
+                                                    Có quy tắc
+                                                </button>
+                                            </div>
+                                        </div>
+                                    `;
+                                }).join('')}
+                            </div>
+                        </div>
+                    `;
+                }
+                if (ex.exercise_type === 'phan_loai_tu_hoi' && Array.isArray(extra.items) && extra.items.length > 0) {
+                    if (!window._qwChoices) window._qwChoices = {};
+                    if (!window._qwChoices[i]) window._qwChoices[i] = {};
+                    extraHtml += `
+                        <div class="my-3 p-4 rounded-2xl bg-indigo-50/80 border border-indigo-200 space-y-3">
+                            <div class="text-xs font-extrabold text-indigo-900 flex items-center justify-between">
+                                <span>❓ Bấm chọn từ để hỏi tương ứng (Woher / Wo / Wie / Was) cho 4 câu trả lời dưới đây:</span>
+                            </div>
+                            <div class="space-y-2">
+                                ${extra.items.map((item, itIdx) => {
+                                    const userCh = window._qwChoices[i][itIdx];
+                                    const cats = ["Woher", "Wo", "Wie", "Was"];
+                                    return `
+                                        <div class="p-2.5 rounded-xl bg-white border border-indigo-200 flex flex-col sm:flex-row sm:items-center justify-between gap-2 text-xs">
+                                            <div class="space-y-0.5">
+                                                <div class="font-bold text-slate-900 text-sm font-mono">${itIdx + 1}. ${item.word}</div>
+                                                <div class="text-slate-500 italic text-[11px]">${item.meaning_vi || ''}</div>
+                                            </div>
+                                            <div class="flex gap-1 shrink-0 flex-wrap">
+                                                ${cats.map(cat => {
+                                                    const isCur = userCh === cat;
+                                                    let btnBg = 'bg-slate-100 text-slate-700 font-bold hover:bg-indigo-500 hover:text-white';
+                                                    if (isCur) {
+                                                        if (cat === 'Woher') btnBg = 'bg-rose-600 text-white font-black shadow-xs';
+                                                        else if (cat === 'Wo') btnBg = 'bg-blue-600 text-white font-black shadow-xs';
+                                                        else if (cat === 'Wie') btnBg = 'bg-amber-600 text-white font-black shadow-xs';
+                                                        else btnBg = 'bg-purple-600 text-white font-black shadow-xs';
+                                                    }
+                                                    return `
+                                                        <button type="button" onclick="setQuestionWordChoice(${i}, ${itIdx}, '${cat}')" id="qw-btn-${i}-${itIdx}-${cat.toLowerCase()}" class="px-2.5 py-1.5 rounded-lg ${btnBg} text-xs cursor-pointer transition">
+                                                            ${cat}
+                                                        </button>
+                                                    `;
+                                                }).join('')}
+                                            </div>
+                                        </div>
+                                    `;
+                                }).join('')}
+                            </div>
+                        </div>
+                    `;
+                }
+                if (ex.exercise_type === 'viet_lai_cau_w' && extra.source_sentence) {
+                    let sentHtml = extra.source_sentence;
+                    if (extra.target_phrase) {
+                        sentHtml = sentHtml.replace(extra.target_phrase, `<b class="text-indigo-600 underline font-black">${extra.target_phrase}</b>`);
+                    }
+                    extraHtml += `
+                        <div class="my-2.5 p-3.5 rounded-2xl bg-indigo-50/70 border border-indigo-200 space-y-1.5">
+                            <div class="text-xs font-bold text-indigo-700 uppercase tracking-wide">Câu cho sẵn:</div>
+                            <div class="text-sm font-black text-indigo-950">„${sentHtml}“</div>
+                            <div class="text-xs font-semibold text-slate-600">👉 Đặt câu hỏi W-Fragen phù hợp cho cụm từ in đậm/gạch chân.</div>
+                        </div>
+                    `;
+                }
+                if (ex.exercise_type === 'doc_menu_cafe' && extra && Array.isArray(extra.menu_items)) {
+                    extraHtml += `
+                        <div class="my-3 p-4 rounded-2xl bg-amber-50/90 border border-amber-300 space-y-2">
+                            <div class="text-xs font-black text-amber-900 uppercase tracking-wider flex items-center gap-1.5">
+                                <span>📋 Thực đơn Quán Cafe (Speisekarte):</span>
+                            </div>
+                            <div class="grid grid-cols-1 sm:grid-cols-3 gap-2">
+                                ${extra.menu_items.map(m => `
+                                    <div class="p-2.5 rounded-xl bg-white border border-amber-200 flex items-center justify-between text-xs">
+                                        <span class="font-bold text-slate-900 font-mono">${m.name}</span>
+                                        <span class="font-extrabold text-amber-700 font-mono">${m.price}</span>
+                                    </div>
+                                `).join('')}
+                            </div>
+                        </div>
+                    `;
+                }
                 if (ex.exercise_type === 'nghe' || ex.exercise_type === 'nghe_dien') {
                     let textToSpeak = extra.audio_text || '';
                     if (!textToSpeak && extra.display_sentence && ex.correct_answer) {
@@ -2418,7 +2558,7 @@
                             `;
                         }).join('')}
                     </div>`;
-                } else if (ex.exercise_type === 'hoi_thoai_sap_xep' || ex.exercise_type === 'phan_loai_cach' || ex.exercise_type === 'phan_loai_giong') {
+                } else if (ex.exercise_type === 'hoi_thoai_sap_xep' || ex.exercise_type === 'phan_loai_cach' || ex.exercise_type === 'phan_loai_giong' || ex.exercise_type === 'phan_loai_dong_tu' || ex.exercise_type === 'phan_loai_tu_hoi') {
                     const cleanAns = isDone 
                         ? (ex._userAnswer || String(ex.correct_answer || '').trim()) 
                         : (ex._userAnswer || '');
@@ -2527,11 +2667,13 @@
                     `
                     : `<div id="ex-feedback-${i}" class="hidden text-xs p-3.5 rounded-xl mt-2"></div>`;
 
-                const typeBadgeLabel = isLesson12 
-                    ? (B12_TYPE_LABELS[ex.exercise_type] || TYPE_LABELS[ex.exercise_type] || ex.exercise_type) 
-                    : (isLesson11 
-                        ? (B11_TYPE_LABELS[ex.exercise_type] || TYPE_LABELS[ex.exercise_type] || ex.exercise_type) 
-                        : (TYPE_LABELS[ex.exercise_type] || ex.exercise_type));
+                const typeBadgeLabel = isLesson13
+                    ? (B13_TYPE_LABELS[ex.exercise_type] || TYPE_LABELS[ex.exercise_type] || ex.exercise_type)
+                    : (isLesson12 
+                        ? (B12_TYPE_LABELS[ex.exercise_type] || TYPE_LABELS[ex.exercise_type] || ex.exercise_type) 
+                        : (isLesson11 
+                            ? (B11_TYPE_LABELS[ex.exercise_type] || TYPE_LABELS[ex.exercise_type] || ex.exercise_type) 
+                            : (TYPE_LABELS[ex.exercise_type] || ex.exercise_type)));
 
                 return `
                     <div id="ex-card-${i}" class="p-5 rounded-2xl ${cardBorder} space-y-2 transition-all">
@@ -2934,6 +3076,67 @@
             const parts = [];
             for (let k = 0; k < 4; k++) {
                 parts.push(window._caseChoices[exIdx][k] || '');
+            }
+            const input = document.getElementById(`ex-input-${exIdx}`);
+            if (input) {
+                input.value = parts.join(', ');
+                if (typeof handleExerciseInputChange === 'function') handleExerciseInputChange(exIdx);
+            }
+        }
+
+        window._verbTypeChoices = window._verbTypeChoices || {};
+        function setVerbTypeChoice(exIdx, itemIdx, choice) {
+            if (!window._verbTypeChoices[exIdx]) window._verbTypeChoices[exIdx] = {};
+            window._verbTypeChoices[exIdx][itemIdx] = choice;
+
+            const bqtBtn = document.getElementById(`vt-btn-${exIdx}-${itemIdx}-bqt`);
+            const cqtBtn = document.getElementById(`vt-btn-${exIdx}-${itemIdx}-cqt`);
+            if (bqtBtn && cqtBtn) {
+                if (choice === 'Bất quy tắc') {
+                    bqtBtn.className = "px-3 py-1.5 rounded-lg bg-amber-600 text-white font-black text-xs cursor-pointer shadow-xs transition";
+                    cqtBtn.className = "px-3 py-1.5 rounded-lg bg-slate-100 text-slate-700 font-bold hover:bg-blue-500 hover:text-white text-xs cursor-pointer transition";
+                } else {
+                    cqtBtn.className = "px-3 py-1.5 rounded-lg bg-blue-600 text-white font-black text-xs cursor-pointer shadow-xs transition";
+                    bqtBtn.className = "px-3 py-1.5 rounded-lg bg-slate-100 text-slate-700 font-bold hover:bg-amber-500 hover:text-white text-xs cursor-pointer transition";
+                }
+            }
+
+            const parts = [];
+            for (let k = 0; k < 4; k++) {
+                parts.push(window._verbTypeChoices[exIdx][k] || '');
+            }
+            const input = document.getElementById(`ex-input-${exIdx}`);
+            if (input) {
+                input.value = parts.join(', ');
+                if (typeof handleExerciseInputChange === 'function') handleExerciseInputChange(exIdx);
+            }
+        }
+
+        window._qwChoices = window._qwChoices || {};
+        function setQuestionWordChoice(exIdx, itemIdx, choice) {
+            if (!window._qwChoices[exIdx]) window._qwChoices[exIdx] = {};
+            window._qwChoices[exIdx][itemIdx] = choice;
+
+            const cats = ["Woher", "Wo", "Wie", "Was"];
+            cats.forEach(cat => {
+                const btn = document.getElementById(`qw-btn-${exIdx}-${itemIdx}-${cat.toLowerCase()}`);
+                if (btn) {
+                    if (cat === choice) {
+                        let activeColor = 'bg-indigo-600';
+                        if (cat === 'Woher') activeColor = 'bg-rose-600';
+                        else if (cat === 'Wo') activeColor = 'bg-blue-600';
+                        else if (cat === 'Wie') activeColor = 'bg-amber-600';
+                        else if (cat === 'Was') activeColor = 'bg-purple-600';
+                        btn.className = `px-2.5 py-1.5 rounded-lg ${activeColor} text-white font-black text-xs cursor-pointer shadow-xs transition`;
+                    } else {
+                        btn.className = "px-2.5 py-1.5 rounded-lg bg-slate-100 text-slate-700 font-bold hover:bg-indigo-500 hover:text-white text-xs cursor-pointer transition";
+                    }
+                }
+            });
+
+            const parts = [];
+            for (let k = 0; k < 4; k++) {
+                parts.push(window._qwChoices[exIdx][k] || '');
             }
             const input = document.getElementById(`ex-input-${exIdx}`);
             if (input) {

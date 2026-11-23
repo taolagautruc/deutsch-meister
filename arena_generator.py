@@ -1839,3 +1839,94 @@ ARENA_DATA_BY_LESSON[13] = {
         }
     ]
 }
+
+# -----------------------------------------------------------------------------
+# BÀI 13: Ôn tập tổng hợp A1 — Động từ bất quy tắc, W-Fragen & Giao tiếp quán Cafe
+# -----------------------------------------------------------------------------
+LESSON_ORDER_MAP[27] = ("A1", 14, "Bài 13: Ôn tập tổng hợp A1 — Động từ bất quy tắc, W-Fragen & Giao tiếp quán Cafe")
+
+ARENA_DATA_BY_LESSON[14] = {
+    "name": "Bài 13: Ôn tập tổng hợp A1 — Động từ bất quy tắc, W-Fragen & Giao tiếp quán Cafe",
+    "vocab_pairs": [
+        ("der Kaffee", "cà phê"),
+        ("der Tee", "trà"),
+        ("der Zucker", "đường"),
+        ("der Käse", "phô mai"),
+        ("der Salat", "rau xà lách"),
+        ("der Hund", "con chó"),
+        ("der Brief", "bức thư"),
+        ("das Eis", "kem, đá"),
+        ("das Futter", "thức ăn thú cưng"),
+        ("das Hotel", "khách sạn"),
+        ("das Rathaus", "tòa thị chính"),
+        ("das Gemüse", "rau củ")
+    ],
+    "noi_o_sets": [
+        [
+            {"left": "Woher kommen Sie?", "right": "Aus Vietnam."},
+            {"left": "Wo wohnen Sie?", "right": "In Berlin."},
+            {"left": "Wie heißen Sie?", "right": "Ich bin Anna."},
+            {"left": "Was trinken Sie?", "right": "Kaffee, bitte."}
+        ],
+        [
+            {"left": "Ist hier frei?", "right": "Ja klar, bitte."},
+            {"left": "Was möchten Sie trinken?", "right": "Einen Tee, bitte."},
+            {"left": "Zwei Kaffee, bitte!", "right": "Xin cho hai cà phê!"},
+            {"left": "Das Mädchen liest ein Buch.", "right": "Cô bé đọc một cuốn sách."}
+        ]
+    ],
+    "sentences_vd": [
+        ("Tôi đến từ nước Đức.", ["Ich komme aus Deutschland.", "Ich komme aus Deutschland"]),
+        ("Bạn sống ở đâu?", ["Wo wohnst du?", "Wo wohnst du", "Wo wohnen Sie?", "Wo wohnen Sie"]),
+        ("Ông nội tôi đọc báo.", ["Mein Großvater liest die Zeitung.", "Mein Großvater liest die Zeitung", "Mein Opa liest die Zeitung."]),
+        ("Các bạn ngủ ở khách sạn phải không?", ["Schlaft ihr im Hotel?", "Schlaft ihr im Hotel"])
+    ],
+    "sentences_dv": [
+        ("Entschuldigung, ist hier frei?", ["Xin lỗi, chỗ này còn trống không?", "Xin lỗi chỗ này còn trống không?", "Xin lỗi, ở đây còn trống không?"]),
+        ("Ich trinke Tee mit Zucker.", ["Tôi uống trà với đường.", "Tôi uống trà có đường.", "Tôi uống trà đường."]),
+        ("Hannes gibt dem Hund das Futter.", ["Hannes cho chú chó thức ăn.", "Hannes cho chó ăn thức ăn.", "Hannes đưa thức ăn cho chó."]),
+        ("Der Lehrer spricht zu leise.", ["Thầy giáo nói quá nhỏ.", "Giáo viên nói quá nhỏ.", "Thầy giáo nói quá khẽ."])
+    ],
+    "nghe_dien_items": [
+        {
+            "audio_text": "Der Vater liest die Zeitung.",
+            "display_sentence": "Der Vater ___ die Zeitung.",
+            "hint_vi": "Người bố đọc báo.",
+            "accepted_answers": ["liest"]
+        },
+        {
+            "audio_text": "Ich komme aus Vietnam.",
+            "display_sentence": "Ich komme ___ Vietnam.",
+            "hint_vi": "Tôi đến từ Việt Nam.",
+            "accepted_answers": ["aus"]
+        },
+        {
+            "audio_text": "Das Kind isst ein Eis.",
+            "display_sentence": "Das Kind ___ ein Eis.",
+            "hint_vi": "Đứa trẻ ăn một cây kem.",
+            "accepted_answers": ["isst"]
+        },
+        {
+            "audio_text": "Zwei Kaffee, bitte!",
+            "display_sentence": "Zwei ___, bitte!",
+            "hint_vi": "Xin cho hai cà phê!",
+            "accepted_answers": ["Kaffee"]
+        }
+    ],
+    "dien_tao_cau_items": [
+        {
+            "question": "Điền vào 2 chỗ trống để hoàn thành câu hỏi tên và xuất xứ:",
+            "display_frame": "[1] heißt du und woher [2] du?",
+            "word_bank_hints": ["Wie", "kommst", "Wo", "wohnst"],
+            "accepted_answers": ["Wie / kommst", "Wie/kommst", "Wie kommst", "wie / kommst"],
+            "explanation": "Hỏi tên dùng Wie, chủ ngữ du đi với kommst."
+        },
+        {
+            "question": "Điền vào 2 chỗ trống để hoàn thành câu chia động từ bất quy tắc:",
+            "display_frame": "Mein Bruder [1] nach München und [2] dort Freunde.",
+            "word_bank_hints": ["fährt", "trifft", "fahrt", "trefft"],
+            "accepted_answers": ["fährt / trifft", "fährt/trifft", "fährt trifft"],
+            "explanation": "Mein Bruder (er) -> fährt (a→ä) và trifft (e→i)."
+        }
+    ]
+}

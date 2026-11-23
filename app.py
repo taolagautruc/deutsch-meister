@@ -433,6 +433,24 @@ def ensure_db_initialized():
         if need_seed_b12:
             from lessons.a1.seed_a1_b12 import seed_lesson_12
             seed_lesson_12()
+
+        # Kiểm tra tự động nạp Bài 13 (A1)
+        cursor.execute("SELECT id FROM lessons WHERE title LIKE '%Bài 13%';")
+        lesson_b13 = cursor.fetchone()
+        need_seed_b13 = False
+        if not lesson_b13:
+            need_seed_b13 = True
+        else:
+            b13_id = lesson_b13["id"]
+            cursor.execute("SELECT count(*) as cnt FROM vocabularies WHERE lesson_id = ?;", (b13_id,))
+            v_cnt = cursor.fetchone()["cnt"]
+            cursor.execute("SELECT count(*) as cnt FROM exercises WHERE lesson_id = ?;", (b13_id,))
+            e_cnt = cursor.fetchone()["cnt"]
+            if v_cnt < 12 or e_cnt < 125:
+                need_seed_b13 = True
+        if need_seed_b13:
+            from lessons.a1.seed_a1_b13 import seed_lesson_13
+            seed_lesson_13()
             
         conn.close()
     except Exception as e:

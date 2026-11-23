@@ -2019,3 +2019,22 @@ if (typeof GERMAN_VERBS_DB !== 'undefined') {
         }
     );
 }
+
+// =============================================================================
+// BỔ SUNG ĐỘNG TỪ BÀI 13 (A1)
+// =============================================================================
+if (typeof GERMAN_VERBS_DB !== 'undefined') {
+    GERMAN_VERBS_DB.push(
+        {
+            infinitiv: "grillen",
+            meaning: "nướng BBQ",
+            group: "Quy tắc (Regelmäßig)",
+            stem: "grill-",
+            ending: "-en",
+            forms: { ich: "grille", du: "grillst", er_sie_es: "grillt", wir: "grillen", ihr: "grillt", sie_Sie: "grillen" },
+            imperativ: { du: "grill", ihr: "grillt", Sie: "grillen Sie" },
+            note: "Động từ có quy tắc, chia đều các ngôi.",
+            example: "Mein Vater grillt am Sonntag das Fleisch und das Gemüse."
+        }
+    );
+}
