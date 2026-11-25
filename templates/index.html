@@ -2832,6 +2832,8 @@
             const input = document.getElementById(`ex-input-${exIdx}`);
             if (input) {
                 input.value = '';
+                input.disabled = false;
+                input.readOnly = false;
                 input.focus();
             }
             const container = document.getElementById(`token-bank-${exIdx}`);
@@ -2839,6 +2841,8 @@
                 const btns = container.querySelectorAll('button');
                 btns.forEach(b => {
                     b.disabled = false;
+                    b.removeAttribute('disabled');
+                    b.style.pointerEvents = '';
                     b.classList.remove('opacity-40', 'pointer-events-none', 'bg-slate-200');
                 });
             }
@@ -3094,15 +3098,6 @@
             else if (centsStr.length > 2) centsStr = centsStr.substring(0, 2);
             const cents = parseInt(centsStr, 10) || 0;
             return euros * 100 + cents;
-        }
-
-        function clearTokenInput(exIdx) {
-            const input = document.getElementById(`ex-input-${exIdx}`);
-            if (input) {
-                input.value = '';
-                input.focus();
-                if (typeof handleExerciseInputChange === 'function') handleExerciseInputChange(exIdx);
-            }
         }
 
         window._hsChoices = window._hsChoices || {};
