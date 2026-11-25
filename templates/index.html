@@ -2112,10 +2112,14 @@
                     extraHtml += `<div class="my-3 overflow-hidden rounded-2xl border border-slate-700/50 shadow-md">${renderExerciseEssenSvg(extra.visual)}</div>`;
                 }
                 if (extra.reading_text) {
+                    const readingSpeakBtnHtml = (isLesson13 && extra.audio_text)
+                        ? `<button type="button" onclick="speakGerman('${String(extra.audio_text).replace(/'/g, "\\'")}', 0.95)" class="ml-auto px-2.5 py-1 rounded-lg bg-indigo-600 hover:bg-indigo-500 text-white font-bold text-xs shadow-xs transition cursor-pointer flex items-center gap-1">🔊 Nghe đoạn văn</button>`
+                        : '';
                     extraHtml += `
                         <div class="my-3 p-4 rounded-2xl bg-indigo-50/80 border border-indigo-200 text-slate-800 text-sm leading-relaxed space-y-2">
-                            <div class="flex items-center gap-2 font-black text-indigo-900 text-xs uppercase tracking-wide">
+                            <div class="flex items-center gap-2 font-black text-indigo-900 text-xs uppercase tracking-wide flex-wrap">
                                 <span>📖 Đoạn văn đọc hiểu (Lesetext):</span>
+                                ${readingSpeakBtnHtml}
                             </div>
                             <p class="font-medium italic text-slate-900 leading-relaxed">„${extra.reading_text}“</p>
                         </div>
@@ -2527,6 +2531,16 @@
                         <div class="p-4 rounded-xl bg-indigo-50/60 border border-indigo-200 text-xs sm:text-sm text-slate-800 whitespace-pre-line font-medium my-2">${extra.passage}</div>
                     `;
                 }
+                if (isLesson13 && extra && extra.audio_text && ['dich_nghia_dv', 'dich_cau_dv', 'phan_loai_dong_tu', 'phan_loai_tu_hoi'].includes(ex.exercise_type)) {
+                    const promptAudio = String(extra.audio_text).replace(/'/g, "\\'");
+                    extraHtml += `
+                        <div class="flex flex-wrap items-center gap-2 mt-2">
+                            <button type="button" onclick="speakGerman('${promptAudio}', 0.95)" class="px-3 py-1.5 rounded-xl bg-blue-50 hover:bg-blue-100 text-blue-700 border border-blue-200 text-xs font-bold cursor-pointer flex items-center gap-1">
+                                🔊 Nghe phát âm tiếng Đức
+                            </button>
+                        </div>
+                    `;
+                }
 
                 let inputHtml = '';
                 if ((ex.exercise_type === 'noi_o' || ex.exercise_type === 'noi_o_tu_vung') && extra.noi_o_pairs && extra.noi_o_pairs.length > 0) {
@@ -2700,6 +2714,13 @@
                                 ${(ex.exercise_type === 'nghe_dien' || ex.exercise_type === 'nghe') && extra && extra.full_sentence ? `
                                     <div class="p-2.5 rounded-xl bg-emerald-100/70 border border-emerald-300 text-emerald-950 text-xs sm:text-sm font-semibold">
                                         🎯 Câu hoàn chỉnh: <span class="font-bold text-emerald-900">${extra.full_sentence}</span>
+                                    </div>
+                                ` : ''}
+                                ${(isLesson13 && extra && extra.audio_text && !['nghe_dien', 'nghe', 'hoi_thoai_sap_xep', 'dung_sai', 'dich_nghia_dv', 'dich_cau_dv', 'phan_loai_dong_tu', 'phan_loai_tu_hoi'].includes(ex.exercise_type)) ? `
+                                    <div class="pt-1">
+                                        <button type="button" onclick="speakGerman('${String(extra.audio_text).replace(/'/g, "\\'")}', 0.95)" class="px-3 py-1.5 rounded-xl bg-blue-50 hover:bg-blue-100 text-blue-700 border border-blue-200 text-xs font-bold cursor-pointer inline-flex items-center gap-1">
+                                            🔊 Nghe câu tiếng Đức chuẩn
+                                        </button>
                                     </div>
                                 ` : ''}
                                 ${capWarningStaticHtml}
@@ -3968,6 +3989,21 @@
                     `;
                 }
 
+                const isLesson13Live = Boolean(
+                    (ex && String(ex.lesson_id) === '27') ||
+                    (typeof currentLesson !== 'undefined' && currentLesson && (
+                        String(currentLesson.id) === '27' ||
+                        (currentLesson.title && /bài 13\b/i.test(currentLesson.title))
+                    ))
+                );
+                const audioFeedbackBtnHtml = (isLesson13Live && extra && extra.audio_text && !['nghe_dien', 'nghe', 'hoi_thoai_sap_xep', 'dung_sai', 'dich_nghia_dv', 'dich_cau_dv', 'phan_loai_dong_tu', 'phan_loai_tu_hoi'].includes(ex.exercise_type))
+                    ? `<div class="pt-1">
+                           <button type="button" onclick="speakGerman('${String(extra.audio_text).replace(/'/g, "\\'")}', 0.95)" class="px-3 py-1.5 rounded-xl bg-blue-50 hover:bg-blue-100 text-blue-700 border border-blue-200 text-xs font-bold cursor-pointer inline-flex items-center gap-1">
+                               🔊 Nghe câu tiếng Đức chuẩn
+                           </button>
+                       </div>`
+                    : '';
+
                 feedback.innerHTML = `
                     <div class="space-y-1.5">
                         <div class="flex items-center gap-2">
@@ -3978,6 +4014,7 @@
                         </div>
                         ${sampleSublineHtml}
                         ${fullSentenceHtml}
+                        ${audioFeedbackBtnHtml}
                         ${capitalizationWarningHtml}
                         ${correctPairsHtml}
                         ${dialogueGermanHtml}

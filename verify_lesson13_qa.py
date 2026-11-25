@@ -173,17 +173,17 @@ def run_tests():
             print("  ✓ V1/V2 & W-Fragen Layout Check PASS: normal-case, 7 cặp sie/Sie, phép tính từng động từ & lưới 3 cột.")
 
     # 3. TEST VOCABULARY COUNT & E1 LEMMA/PLURAL + TRANSLATION CHECK
-    print("\n[3/8] Kiểm tra từ vựng Bài 13 (18 thẻ: lemma/plural & dịch Việt C1-C5, E1)...")
+    print("\n[3/8] Kiểm tra từ vựng Bài 13 (19 thẻ: lemma/plural & dịch Việt C1-C5, E1)...")
     cursor.execute("SELECT german_word, article, vietnamese_meaning, example_sentence FROM vocabularies WHERE lesson_id = 27;")
     v_rows = cursor.fetchall()
     v_cnt = len(v_rows)
-    if v_cnt == 18:
+    if v_cnt == 19:
         report["vocab_count_ok"] = True
-        print(f"  ✓ Đủ {v_cnt}/18 từ vựng chuẩn trong CSDL (12 gốc + 6 mới không trùng Bài 1->12).")
+        print(f"  ✓ Đủ {v_cnt}/19 từ vựng chuẩn trong CSDL (12 gốc + 7 mới gồm die Speisekarte, không trùng Bài 1->12).")
     else:
         report["vocab_count_ok"] = False
-        report["errors"].append(f"Số lượng từ vựng không đúng: {v_cnt}/18.")
-        print(f"  ✗ Số lượng từ vựng: {v_cnt}/18!")
+        report["errors"].append(f"Số lượng từ vựng không đúng: {v_cnt}/19.")
+        print(f"  ✗ Số lượng từ vựng: {v_cnt}/19!")
 
     has_die = any(r["article"] == "die" for r in v_rows)
     if not has_die:
@@ -214,7 +214,7 @@ def run_tests():
     for bad_ex in ["Hotelzimmer", "Erdbeereis", "Tomatensalat"]:
         if bad_ex in lex_text:
             report["errors"].append(f"lexikon_db.js vẫn còn ví dụ từ ghép chưa sửa: {bad_ex}")
-    print("  ✓ E1 Vocab Check PASS: 18/18 thẻ có ví dụ chứa lemma/plural, ngoặc „...“ & bản dịch.")
+    print("  ✓ E1 Vocab Check PASS: 19/19 thẻ có ví dụ chứa lemma/plural, ngoặc „...“ & bản dịch.")
 
     # 4. TEST TOTAL EXERCISES & 18 TYPES DISTRIBUTION
     print("\n[4/8] Kiểm tra tổng số bài tập & phân bổ 18 dạng bài...")
@@ -361,25 +361,41 @@ def run_tests():
     if expl_ok:
         print("  ✓ explanations_validated PASS: 100% câu có explanation chứa đáp án rõ ràng.")
 
-    # 8. TEST TTS AUDIO CLEANLINESS
-    print("\n[8/8] Kiểm tra TTS Cleanliness (Không chứa ___, [1], ngoặc vuông)...")
+    # 8. TEST TTS AUDIO CLEANLINESS & 100% TRANSLATION/AUDIO COVERAGE
+    print("\n[8/8] Kiểm tra TTS Cleanliness & độ phủ Translation/Audio (125/125 câu)...")
     tts_clean = True
-    for ex in exercises:
+    trans_ok = True
+    vi_char_re = re.compile(r"[àáạảãâầấậẩẫăằắặẳẵèẹẻẽêềếệểễìíịỉĩòóọỏõôồốộổỗơờớợởỡùúụủũưừứựửữỳýỵỷỹđ]", re.IGNORECASE)
+    for idx_ex, ex in enumerate(exercises, 1):
         extra = {}
         try:
             extra = json.loads(ex["extra_data"] or "{}")
         except:
             pass
-        audio = extra.get("audio_text", "")
-        if audio:
-            if "___" in audio or "[1]" in audio or "[2]" in audio or "[" in audio or "]" in audio:
+        trans = (extra.get("translation") or extra.get("reading_translation_vi") or "").strip()
+        if not trans:
+            trans_ok = False
+            report["errors"].append(f"Câu {idx_ex}: Thiếu translation/reading_translation_vi trong extra_data!")
+        elif "đáp án" in trans.lower():
+            trans_ok = False
+            report["errors"].append(f"Câu {idx_ex}: translation làm lộ gợi ý 'đáp án': '{trans}'")
+
+        audio = (extra.get("audio_text") or "").strip()
+        if not audio:
+            tts_clean = False
+            report["errors"].append(f"Câu {idx_ex}: Thiếu audio_text trong extra_data!")
+        else:
+            if "___" in audio or "[1]" in audio or "[2]" in audio or "[" in audio or "]" in audio or "→" in audio or "_" in audio:
                 tts_clean = False
-                report["errors"].append(f"Câu {ex['id']}: audio_text không sạch: '{audio}'")
-                print(f"  ✗ Câu {ex['id']}: Audio có ký tự khuyết: {audio}")
+                report["errors"].append(f"Câu {idx_ex}: audio_text không sạch ký tự điều hướng: '{audio}'")
+            if vi_char_re.search(audio):
+                tts_clean = False
+                report["errors"].append(f"Câu {idx_ex}: audio_text chứa ký tự tiếng Việt: '{audio}'")
 
     report["tts_cleanliness"] = tts_clean
-    if tts_clean:
-        print("  ✓ tts_cleanliness PASS: 100% audio_text sạch ký tự điều hướng.")
+    report["translations_complete"] = trans_ok
+    if tts_clean and trans_ok:
+        print("  ✓ tts_cleanliness & translations PASS: 125/125 câu có translation + audio_text tiếng Đức sạch.")
 
     conn.close()
 
@@ -390,7 +406,7 @@ def run_tests():
 [✓] BÁO CÁO QA BÀI 13 (ÔN TẬP A1)
     - Tổng số câu sinh ra: {report['total_questions']} / 125 (Phủ đủ 18 dạng UI).
     - Tỉ lệ trùng lặp: {report['duplicate_questions']}% ({125 - report['duplicate_questions']} Unique Hashes).
-    - DB Update: 18 thẻ từ vựng chuẩn (12 gốc + 6 mới không trùng Bài 1-12).
+    - DB Update: 19 thẻ từ vựng chuẩn (12 gốc + 7 mới gồm die Speisekarte, không trùng Bài 1-12).
 [✓] Zero-Bug Protocol:
     - 'ihr_conjugation_safety': {'PASS' if report['ihr_conjugation_safety'] else 'FAIL'} (Không sinh Umlaut sai cho ngôi ihr).
     - 'w_fragen_logic': PASS.
