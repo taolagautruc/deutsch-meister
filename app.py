@@ -435,18 +435,21 @@ def ensure_db_initialized():
             seed_lesson_12()
 
         # Kiểm tra tự động nạp Bài 13 (A1)
-        cursor.execute("SELECT id FROM lessons WHERE title LIKE '%Bài 13%';")
+        cursor.execute("SELECT id, grammar_content FROM lessons WHERE title LIKE '%Bài 13%';")
         lesson_b13 = cursor.fetchone()
         need_seed_b13 = False
         if not lesson_b13:
             need_seed_b13 = True
         else:
             b13_id = lesson_b13["id"]
+            b13_gc = lesson_b13["grammar_content"] or ""
             cursor.execute("SELECT count(*) as cnt FROM vocabularies WHERE lesson_id = ?;", (b13_id,))
             v_cnt = cursor.fetchone()["cnt"]
             cursor.execute("SELECT count(*) as cnt FROM exercises WHERE lesson_id = ?;", (b13_id,))
             e_cnt = cursor.fetchone()["cnt"]
-            if v_cnt < 12 or e_cnt < 125:
+            cursor.execute("SELECT count(*) as cnt FROM vocabularies WHERE lesson_id = ? AND (example_sentence LIKE '%Hotelzimmer%' OR example_sentence LIKE '%Erdbeereis%' OR example_sentence NOT LIKE '% — %');", (b13_id,))
+            v_old = cursor.fetchone()["cnt"]
+            if v_cnt < 18 or e_cnt < 125 or v_old > 0 or ("ÖK A1" in b13_gc) or ("Vowel-Shift" in b13_gc) or ("Luôn đi với" in b13_gc):
                 need_seed_b13 = True
         if need_seed_b13:
             from lessons.a1.seed_a1_b13 import seed_lesson_13

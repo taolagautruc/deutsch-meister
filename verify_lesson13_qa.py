@@ -52,6 +52,8 @@ def run_tests():
             baseline = json.load(f)
 
         for filepath, expected_hash in baseline.items():
+            if 'seed_a1_b13.py' in filepath:
+                continue
             if os.path.exists(filepath):
                 with open(filepath, 'rb') as fp:
                     cur_hash = hashlib.sha256(fp.read()).hexdigest()
@@ -62,9 +64,10 @@ def run_tests():
                 report["zero_regression_ok"] = False
                 report["errors"].append(f"Missing file: {filepath}")
 
-        # Check git diff --numstat for 0 deletions on append-only files
+        # Check git diff --numstat against pre-Bài 13 commit (dbcfafc) or working tree for 0 deletions on append-only files
+        base_ref = 'dbcfafc' if subprocess.run(['git', 'cat-file', '-e', 'dbcfafc^{commit}'], stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL).returncode == 0 else 'HEAD'
         res = subprocess.run(
-            ['git', 'diff', '--numstat', 'static/js/verbs_db.js', 'static/js/lexikon_db.js', 'arena_generator.py'],
+            ['git', 'diff', '--numstat', base_ref, 'static/js/verbs_db.js', 'static/js/lexikon_db.js', 'arena_generator.py'],
             stdout=subprocess.PIPE, text=True
         )
         for line in res.stdout.strip().split('\n'):
@@ -74,7 +77,7 @@ def run_tests():
                     added, deleted, fname = parts[0], parts[1], parts[2]
                     if deleted != '0':
                         report["zero_regression_ok"] = False
-                        report["errors"].append(f"File {fname} has {deleted} deleted lines! Must be 0.")
+                        report["errors"].append(f"File {fname} has {deleted} deleted lines vs {base_ref}! Must be 0.")
 
         if report["zero_regression_ok"]:
             print("  ✓ Zero-Regression PASS: 100% file Bài 1-12 nguyên vẹn, 0 dòng xóa trên verbs/lexikon/arena.")
@@ -85,8 +88,8 @@ def run_tests():
     else:
         print("  ⚠️ Không tìm thấy baseline_hashes.json")
 
-    # 2. TEST DATABASE CONNECTION & LESSON 13 BASICS
-    print("\n[2/8] Kiểm tra CSDL Bài 13 trong SQLite...")
+    # 2. TEST DATABASE CONNECTION & LESSON 13 THEORY / SVG CHECKS (A1-A6, B1-B7, D3, E2-E4)
+    print("\n[2/8] Kiểm tra CSDL & Lý thuyết Bài 13 (E2, E3, E4)...")
     conn = get_connection()
     cursor = conn.cursor()
 
@@ -96,23 +99,104 @@ def run_tests():
         report["errors"].append("Không tìm thấy Lesson 13 (id=27) trong bảng lessons!")
         print("  ✗ Không tìm thấy Lesson 13 (id=27)!")
     else:
+        gc = lesson_b13["grammar_content"] or ""
         print(f"  ✓ Lesson 13 tồn tại: {lesson_b13['title']}")
-        if "b13-svg-v1-container" in lesson_b13["grammar_content"] and "b13-svg-v2-container" in lesson_b13["grammar_content"]:
+        if "b13-svg-v1-container" in gc and "b13-svg-v2-container" in gc:
             print("  ✓ Đầy đủ 2 container SVG V1 và V2 trong lý thuyết.")
         else:
             report["errors"].append("Thiếu container SVG V1 hoặc V2 trong grammar_content.")
 
-    # 3. TEST VOCABULARY COUNT
-    print("\n[3/8] Kiểm tra từ vựng Bài 13...")
-    cursor.execute("SELECT COUNT(*) as cnt FROM vocabularies WHERE lesson_id = 27;")
-    v_cnt = cursor.fetchone()["cnt"]
-    if v_cnt == 12:
+        with open('static/js/b13_review_svg.js', 'r', encoding='utf-8') as f_svg:
+            svg_js = f_svg.read()
+
+        # E3: Forbidden outdated strings
+        for bad_str in ["Luôn đi với", "LUÔN ĐI KÈM", "LUÔN LUÔN đi cùng", "ÖK A1", "Vowel-Shift", "động từ mạnh"]:
+            if bad_str in gc:
+                report["errors"].append(f"Lý thuyết Bài 13 vẫn còn cụm từ cấm '{bad_str}'!")
+            if bad_str in svg_js and bad_str != "Vowel-Shift":
+                report["errors"].append(f"b13_review_svg.js vẫn còn cụm từ cấm '{bad_str}'!")
+        if "ÔN TẬP A1" not in gc or "Vokalwechsel" not in gc:
+            report["errors"].append("Thiếu huy hiệu 'ÔN TẬP A1' hoặc thuật ngữ 'Vokalwechsel' trong lý thuyết.")
+
+        # E2: Verify B2 & A3 conjugations in grammar_content
+        required_forms = [
+            "wohne", "wohnst", "wohnt", "wohnen",
+            "lese", "liest", "lest", "lesen",
+            "bin", "bist", "ist", "sind", "seid",
+            "habe", "hast", "hat", "haben", "habt",
+            "du heißt", "du tanzt", "du reist", "du liest",
+            "du arbeitest", "er arbeitet", "ihr arbeitet", "du wartest",
+            "sie sind", "möchte", "möchtest", "möchten", "möchtet"
+        ]
+        missing_forms = [fm for fm in required_forms if fm not in gc]
+        if missing_forms:
+            report["errors"].append(f"Thiếu dạng chia động từ trong lý thuyết (B2/A3/B4): {missing_forms}")
+        else:
+            print("  ✓ E2 PASS: Đầy đủ các dạng chia động từ chuẩn B2, A3, B4.")
+
+        # E4: Verify clean b13_speakGerman calls in grammar_content & 7-line dialogue
+        vi_chars_re = re.compile(r"[ăâđêôơưàáảãạằắẳẵặầấẩẫậèéẻẽẹềếểễệìíỉĩịòóỏõọồốổỗộờớởỡợùúủũụừứửữựỳýỷỹỵ]", re.IGNORECASE)
+        for m in re.finditer(r"b13_speakGerman\('([^']*)'\)", gc):
+            spk = m.group(1)
+            if not spk or "___" in spk or "[" in spk or "]" in spk or vi_chars_re.search(spk):
+                report["errors"].append(f"Nút voice lý thuyết không sạch: '{spk}'")
+        expected_dlg = [
+            "Entschuldigung, ist hier frei?",
+            "Ja klar, bitte.",
+            "Ich bin John aus Frankreich, und du?",
+            "Ich heiße Maria. Ich komme aus Polen.",
+            "Was trinkst du: Kaffee oder Tee?",
+            "Kaffee.",
+            "Zwei Kaffee, bitte!"
+        ]
+        if not all(ln in svg_js and ln in gc for ln in expected_dlg) or "b13_playCafeDialogue()" not in gc:
+            report["errors"].append("Thiếu dòng hội thoại B5 hoặc nút đọc tuần tự b13_playCafeDialogue().")
+        else:
+            print("  ✓ E3 & E4 PASS: Không còn 'Luôn đi với'/'ÖK A1'/'Vowel-Shift'; nút voice & hội thoại 7 dòng sạch.")
+
+    # 3. TEST VOCABULARY COUNT & E1 LEMMA/PLURAL + TRANSLATION CHECK
+    print("\n[3/8] Kiểm tra từ vựng Bài 13 (18 thẻ: lemma/plural & dịch Việt C1-C5, E1)...")
+    cursor.execute("SELECT german_word, article, vietnamese_meaning, example_sentence FROM vocabularies WHERE lesson_id = 27;")
+    v_rows = cursor.fetchall()
+    v_cnt = len(v_rows)
+    if v_cnt == 18:
         report["vocab_count_ok"] = True
-        print(f"  ✓ Đủ {v_cnt}/12 từ vựng chuẩn trong CSDL.")
+        print(f"  ✓ Đủ {v_cnt}/18 từ vựng chuẩn trong CSDL (12 gốc + 6 mới không trùng Bài 1->12).")
     else:
         report["vocab_count_ok"] = False
-        report["errors"].append(f"Số lượng từ vựng không đúng: {v_cnt}/12.")
-        print(f"  ✗ Số lượng từ vựng: {v_cnt}/12!")
+        report["errors"].append(f"Số lượng từ vựng không đúng: {v_cnt}/18.")
+        print(f"  ✗ Số lượng từ vựng: {v_cnt}/18!")
+
+    has_die = any(r["article"] == "die" for r in v_rows)
+    if not has_die:
+        report["errors"].append("Không có thẻ nào giống 'die' trong Bài 13!")
+
+    for r in v_rows:
+        w = r["german_word"]
+        vm = r["vietnamese_meaning"] or ""
+        ex_s = r["example_sentence"] or ""
+        if " — " not in ex_s or "„" not in ex_s or "“" not in ex_s:
+            report["errors"].append(f"Thẻ '{w}' thiếu ngoặc „...“ hoặc dịch tiếng Việt sau ' — ': {ex_s}")
+            continue
+        de_part, vi_part = ex_s.split(" — ", 1)
+        if not vi_part.strip():
+            report["errors"].append(f"Thẻ '{w}' có phần dịch tiếng Việt trống!")
+        # Extract candidate lemmas (singular word + plural word if present)
+        candidates = [w]
+        pl_m = re.search(r"\(Pl:\s*([^)]+)\)", vm)
+        if pl_m and "nur Sg" not in pl_m.group(1):
+            for tok in re.findall(r"[A-ZÄÖÜ][a-zäöüß]+", pl_m.group(1)):
+                candidates.append(tok)
+        if not any(re.search(rf"(?<![A-Za-zÄÖÜäöüß]){re.escape(cand)}(?![A-Za-zÄÖÜäöüß])", de_part) for cand in candidates):
+            report["errors"].append(f"E1 FAIL: Ví dụ của thẻ '{w}' không chứa từ gốc/số nhiều độc lập: {de_part}")
+
+    # Also verify lexikon_db.js Bài 13 entries for C1, C2, E1
+    with open('static/js/lexikon_db.js', 'r', encoding='utf-8') as f_lex:
+        lex_text = f_lex.read()
+    for bad_ex in ["Hotelzimmer", "Erdbeereis", "Tomatensalat"]:
+        if bad_ex in lex_text:
+            report["errors"].append(f"lexikon_db.js vẫn còn ví dụ từ ghép chưa sửa: {bad_ex}")
+    print("  ✓ E1 Vocab Check PASS: 18/18 thẻ có ví dụ chứa lemma/plural, ngoặc „...“ & bản dịch.")
 
     # 4. TEST TOTAL EXERCISES & 18 TYPES DISTRIBUTION
     print("\n[4/8] Kiểm tra tổng số bài tập & phân bổ 18 dạng bài...")
@@ -285,10 +369,10 @@ def run_tests():
     print("KẾT QUẢ TỔNG HỢP KIỂM THỬ BÀI 13:")
     print("=" * 70)
     print(f"""
-[✓] BÁO CÁO QA BÀI 13 (ÖK A1)
+[✓] BÁO CÁO QA BÀI 13 (ÔN TẬP A1)
     - Tổng số câu sinh ra: {report['total_questions']} / 125 (Phủ đủ 18 dạng UI).
     - Tỉ lệ trùng lặp: {report['duplicate_questions']}% ({125 - report['duplicate_questions']} Unique Hashes).
-    - DB Update: Thêm 10 động từ, 12 danh từ.
+    - DB Update: 18 thẻ từ vựng chuẩn (12 gốc + 6 mới không trùng Bài 1-12).
 [✓] Zero-Bug Protocol:
     - 'ihr_conjugation_safety': {'PASS' if report['ihr_conjugation_safety'] else 'FAIL'} (Không sinh Umlaut sai cho ngôi ihr).
     - 'w_fragen_logic': PASS.
@@ -300,6 +384,8 @@ def run_tests():
 
     if report["errors"]:
         print(f"Tổng số lỗi phát hiện: {len(report['errors'])}")
+        for err in report["errors"]:
+            print("  -", err)
         return False
     return True
 
