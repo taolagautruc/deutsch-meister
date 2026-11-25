@@ -280,7 +280,8 @@ def run_tests():
                     "sắp xếp các câu thoại sau theo đúng diễn biến một cuộc hội thoại tại quán cà phê",
                     "sắp xếp các câu thoại sau theo đúng diễn biến một cuộc làm quen lịch sự",
                     "sắp xếp các câu thoại sau theo đúng diễn biến cuộc đối thoại rủ rê bạn bè",
-                    "chọn dạng đúng của động từ trong ngoặc", "chọn từ để hỏi thích hợp"]:
+                    "chọn dạng đúng của động từ trong ngoặc", "chọn từ để hỏi thích hợp",
+                    "nghe audio và gõ lại trọn vẹn câu tiếng đức bạn nghe được"]:
             norm = norm + " " + normalize_text(ex["correct_answer"])
 
         if norm in seen:
@@ -391,6 +392,20 @@ def run_tests():
             if vi_char_re.search(audio):
                 tts_clean = False
                 report["errors"].append(f"Câu {idx_ex}: audio_text chứa ký tự tiếng Việt: '{audio}'")
+
+        # Enforce Dictation mode on Câu 64-71 (nghe_dien)
+        if ex["exercise_type"] == "nghe_dien":
+            q_txt = ex["question"] or ""
+            full_s = (extra.get("full_sentence") or "").strip()
+            if "___" in q_txt or "display_sentence" in extra or not extra.get("dictation_mode"):
+                tts_clean = False
+                report["errors"].append(f"Câu {idx_ex} (Dictation): vẫn còn ô đục lỗ hoặc thiếu dictation_mode!")
+            if "Nghe Audio và gõ lại trọn vẹn câu tiếng Đức bạn nghe được:" not in q_txt:
+                tts_clean = False
+                report["errors"].append(f"Câu {idx_ex} (Dictation): sai lệnh đề bài: '{q_txt}'")
+            if ex["correct_answer"] != full_s:
+                tts_clean = False
+                report["errors"].append(f"Câu {idx_ex} (Dictation): correct_answer '{ex['correct_answer']}' phải là cả câu '{full_s}'!")
 
     report["tts_cleanliness"] = tts_clean
     report["translations_complete"] = trans_ok

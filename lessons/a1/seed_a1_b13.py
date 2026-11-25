@@ -2050,151 +2050,158 @@ def seed_lesson_13():
             }
         },
 
-        # --- 3.8. NGHE GIỌNG BẢN XỨ VÀ ĐIỀN TỪ (8 CÂU) ---
+        # --- 3.8. NGHE CHÉP CHÍNH TẢ - DICTATION (8 CÂU) ---
         {
             "id": 64,
             "exercise_type": "nghe_dien",
-            "question": "Câu 64: Nghe phát âm và điền 1 từ còn thiếu vào chỗ trống:\nDer Vater ___ die Zeitung.",
+            "question": "Câu 64: Nghe Audio và gõ lại trọn vẹn câu tiếng Đức bạn nghe được:",
             "options": null,
-            "correct_answer": "liest",
-            "explanation": "Động từ bất quy tắc lesen ngôi er đổi e → ie là „liest“ -> Đáp án: liest.",
+            "correct_answer": "Der Vater liest die Zeitung.",
+            "explanation": "Động từ bất quy tắc lesen ngôi er đổi e → ie là „liest“. Câu hoàn chỉnh: „Der Vater liest die Zeitung.“ -> Đáp án: Der Vater liest die Zeitung.",
             "exp_reward": 10,
             "extra_data": {
                 "audio_text": "Der Vater liest die Zeitung.",
-                "display_sentence": "Der Vater ___ die Zeitung.",
                 "full_sentence": "Der Vater liest die Zeitung.",
+                "dictation_mode": True,
                 "translation": "Người bố đọc báo.",
                 "accepted_answers": [
-                    "liest"
+                    "Der Vater liest die Zeitung.",
+                    "Der Vater liest die Zeitung"
                 ]
             }
         },
         {
             "id": 65,
             "exercise_type": "nghe_dien",
-            "question": "Câu 65: Nghe phát âm và điền 1 từ còn thiếu vào chỗ trống:\nWann ___ ihr nach Hause?",
+            "question": "Câu 65: Nghe Audio và gõ lại trọn vẹn câu tiếng Đức bạn nghe được:",
             "options": null,
-            "correct_answer": "fahrt",
-            "explanation": "Ngôi ihr không biến âm, phát âm âm a ngắn trong „fahrt“ -> Đáp án: fahrt.",
+            "correct_answer": "Wann fahrt ihr nach Hause?",
+            "explanation": "Ngôi ihr không biến âm, phát âm âm a ngắn trong „fahrt“. Câu hoàn chỉnh: „Wann fahrt ihr nach Hause?“ -> Đáp án: Wann fahrt ihr nach Hause?",
             "exp_reward": 10,
             "extra_data": {
                 "audio_text": "Wann fahrt ihr nach Hause?",
-                "display_sentence": "Wann ___ ihr nach Hause?",
                 "full_sentence": "Wann fahrt ihr nach Hause?",
+                "dictation_mode": True,
                 "translation": "Khi nào các bạn về nhà?",
                 "accepted_answers": [
-                    "fahrt"
+                    "Wann fahrt ihr nach Hause?",
+                    "Wann fahrt ihr nach Hause"
                 ]
             }
         },
         {
             "id": 66,
             "exercise_type": "nghe_dien",
-            "question": "Câu 66: Nghe phát âm và điền 1 từ còn thiếu vào chỗ trống:\nIch komme ___ Vietnam.",
+            "question": "Câu 66: Nghe Audio và gõ lại trọn vẹn câu tiếng Đức bạn nghe được:",
             "options": null,
-            "correct_answer": "aus",
-            "explanation": "Giới từ chỉ nơi xuất xứ đi với kommen là „aus“ -> Đáp án: aus.",
+            "correct_answer": "Ich komme aus Vietnam.",
+            "explanation": "Giới từ chỉ nơi xuất xứ đi với kommen là „aus“. Câu hoàn chỉnh: „Ich komme aus Vietnam.“ -> Đáp án: Ich komme aus Vietnam.",
             "exp_reward": 10,
             "extra_data": {
                 "audio_text": "Ich komme aus Vietnam.",
-                "display_sentence": "Ich komme ___ Vietnam.",
                 "full_sentence": "Ich komme aus Vietnam.",
+                "dictation_mode": True,
                 "translation": "Tôi đến từ Việt Nam.",
                 "accepted_answers": [
-                    "aus"
+                    "Ich komme aus Vietnam.",
+                    "Ich komme aus Vietnam"
                 ]
             }
         },
         {
             "id": 67,
             "exercise_type": "nghe_dien",
-            "question": "Câu 67: Nghe phát âm và điền 1 từ còn thiếu vào chỗ trống:\nDas Kind ___ ein Eis.",
+            "question": "Câu 67: Nghe Audio và gõ lại trọn vẹn câu tiếng Đức bạn nghe được:",
             "options": null,
-            "correct_answer": "isst",
-            "explanation": "Chủ ngữ Das Kind (ngôi es), động từ essen đổi e → i thành „isst“ -> Đáp án: isst.",
+            "correct_answer": "Das Kind isst ein Eis.",
+            "explanation": "Chủ ngữ Das Kind (ngôi es), động từ essen đổi e → i thành „isst“. Câu hoàn chỉnh: „Das Kind isst ein Eis.“ -> Đáp án: Das Kind isst ein Eis.",
             "exp_reward": 10,
             "extra_data": {
                 "audio_text": "Das Kind isst ein Eis.",
-                "display_sentence": "Das Kind ___ ein Eis.",
                 "full_sentence": "Das Kind isst ein Eis.",
+                "dictation_mode": True,
                 "translation": "Đứa trẻ ăn một cây kem.",
                 "accepted_answers": [
-                    "isst"
+                    "Das Kind isst ein Eis.",
+                    "Das Kind isst ein Eis"
                 ]
             }
         },
         {
             "id": 68,
             "exercise_type": "nghe_dien",
-            "question": "Câu 68: Nghe phát âm và điền 1 từ còn thiếu vào chỗ trống:\n___ du Deutsch?",
+            "question": "Câu 68: Nghe Audio và gõ lại trọn vẹn câu tiếng Đức bạn nghe được:",
             "options": null,
-            "correct_answer": "Sprichst",
-            "explanation": "Động từ sprechen đổi e → i ở ngôi du đứng đầu câu hỏi Yes/No viết hoa: „Sprichst“ -> Đáp án: Sprichst.",
+            "correct_answer": "Sprichst du Deutsch?",
+            "explanation": "Động từ sprechen đổi e → i ở ngôi du đứng đầu câu hỏi Yes/No: „Sprichst“. Câu hoàn chỉnh: „Sprichst du Deutsch?“ -> Đáp án: Sprichst du Deutsch?",
             "exp_reward": 10,
             "extra_data": {
                 "audio_text": "Sprichst du Deutsch?",
-                "display_sentence": "___ du Deutsch?",
                 "full_sentence": "Sprichst du Deutsch?",
+                "dictation_mode": True,
                 "translation": "Bạn có nói tiếng Đức không?",
                 "accepted_answers": [
-                    "Sprichst",
-                    "sprichst"
+                    "Sprichst du Deutsch?",
+                    "Sprichst du Deutsch"
                 ]
             }
         },
         {
             "id": 69,
             "exercise_type": "nghe_dien",
-            "question": "Câu 69: Nghe phát âm và điền 1 từ còn thiếu vào chỗ trống:\nWir wohnen ___ Berlin.",
+            "question": "Câu 69: Nghe Audio và gõ lại trọn vẹn câu tiếng Đức bạn nghe được:",
             "options": null,
-            "correct_answer": "in",
-            "explanation": "Giới từ chỉ địa điểm cư trú trong thành phố là „in“ -> Đáp án: in.",
+            "correct_answer": "Wir wohnen in Berlin.",
+            "explanation": "Giới từ chỉ địa điểm cư trú trong thành phố là „in“. Câu hoàn chỉnh: „Wir wohnen in Berlin.“ -> Đáp án: Wir wohnen in Berlin.",
             "exp_reward": 10,
             "extra_data": {
                 "audio_text": "Wir wohnen in Berlin.",
-                "display_sentence": "Wir wohnen ___ Berlin.",
                 "full_sentence": "Wir wohnen in Berlin.",
+                "dictation_mode": True,
                 "translation": "Chúng tôi sống ở Berlin.",
                 "accepted_answers": [
-                    "in"
+                    "Wir wohnen in Berlin.",
+                    "Wir wohnen in Berlin"
                 ]
             }
         },
         {
             "id": 70,
             "exercise_type": "nghe_dien",
-            "question": "Câu 70: Nghe phát âm và điền 1 từ còn thiếu vào chỗ trống:\nZwei ___, bitte!",
+            "question": "Câu 70: Nghe Audio và gõ lại trọn vẹn câu tiếng Đức bạn nghe được:",
             "options": null,
-            "correct_answer": "Kaffee",
-            "explanation": "Từ cần điền là danh từ đồ uống „Kaffee“ -> Đáp án: Kaffee.",
+            "correct_answer": "Zwei Kaffee, bitte!",
+            "explanation": "Cụm gọi đồ uống lịch sự: „Zwei Kaffee, bitte!“. Danh từ Kaffee và từ đứng đầu câu cần viết hoa -> Đáp án: Zwei Kaffee, bitte!",
             "exp_reward": 10,
             "extra_data": {
                 "audio_text": "Zwei Kaffee, bitte!",
-                "display_sentence": "Zwei ___, bitte!",
                 "full_sentence": "Zwei Kaffee, bitte!",
+                "dictation_mode": True,
                 "translation": "Xin cho hai cà phê!",
                 "accepted_answers": [
-                    "Kaffee",
-                    "kaffee"
+                    "Zwei Kaffee, bitte!",
+                    "Zwei Kaffee, bitte"
                 ]
             }
         },
         {
             "id": 71,
             "exercise_type": "nghe_dien",
-            "question": "Câu 71: Nghe phát âm và điền 1 từ còn thiếu vào chỗ trống:\nDer Hund ___ auf dem Sofa.",
+            "question": "Câu 71: Nghe Audio và gõ lại trọn vẹn câu tiếng Đức bạn nghe được:",
             "options": null,
-            "correct_answer": "schläft",
-            "explanation": "Chủ ngữ Der Hund (er), động từ schlafen đổi a → ä thành „schläft“ -> Đáp án: schläft.",
+            "correct_answer": "Der Hund schläft auf dem Sofa.",
+            "explanation": "Chủ ngữ Der Hund (er), động từ schlafen đổi a → ä thành „schläft“. Câu hoàn chỉnh: „Der Hund schläft auf dem Sofa.“ -> Đáp án: Der Hund schläft auf dem Sofa.",
             "exp_reward": 10,
             "extra_data": {
                 "audio_text": "Der Hund schläft auf dem Sofa.",
-                "display_sentence": "Der Hund ___ auf dem Sofa.",
                 "full_sentence": "Der Hund schläft auf dem Sofa.",
+                "dictation_mode": True,
                 "translation": "Chú chó ngủ trên ghế sofa.",
                 "accepted_answers": [
-                    "schläft",
-                    "schlaeft"
+                    "Der Hund schläft auf dem Sofa.",
+                    "Der Hund schläft auf dem Sofa",
+                    "Der Hund schlaeft auf dem Sofa.",
+                    "Der Hund schlaeft auf dem Sofa"
                 ]
             }
         },

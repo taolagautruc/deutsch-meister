@@ -552,7 +552,7 @@
             "dich_nghia_dv": "5. Dịch từ: Đức → Việt",
             "noi_o": "6. Nối ô tương ứng",
             "dien_tao_cau": "7. Điền 2 chỗ trống tạo câu",
-            "nghe_dien": "8. Nghe & điền từ",
+            "nghe_dien": "8. Nghe chép chính tả",
             "dich_cau_vd": "9. Dịch câu: Việt → Đức",
             "dich_cau_dv": "10. Dịch câu: Đức → Việt",
             "sap_xep_cau": "11. Sắp xếp từ thành câu",
@@ -2490,8 +2490,9 @@
                         textToSpeak = ex.correct_answer || '';
                     }
                     const cleanSpeak = textToSpeak.replace(/'/g, "\\'");
+                    const isDictation13Card = Boolean(isLesson13 && ex.exercise_type === 'nghe_dien');
                     extraHtml = '';
-                    if (extra.display_sentence) {
+                    if (extra.display_sentence && !isDictation13Card) {
                         extraHtml += `
                             <div class="mt-2.5 p-3 rounded-xl bg-indigo-50/70 border border-indigo-200 text-indigo-950 font-semibold text-sm">
                                 📝 ${extra.display_sentence}
@@ -2499,7 +2500,7 @@
                         `;
                     }
                     let hintBtnHtml = '';
-                    if (extra.hints) {
+                    if (extra.hints && !isDictation13Card) {
                         hintBtnHtml = `
                             <button type="button" onclick="toggleExerciseHint(${i})" class="px-3 py-1.5 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-700 border border-slate-300 text-xs font-bold cursor-pointer transition flex items-center gap-1">
                                 💡 Xem gợi ý
@@ -2637,31 +2638,41 @@
                                         (Boolean(ex.question) && (ex.question.includes('[1]') || ex.question.includes('ngăn cách bởi dấu /') || ex.question.includes('cách nhau bởi dấu /') || ex.question.includes('ngăn cách bởi dấu phẩy') || ex.question.includes('cách nhau bởi dấu phẩy') || /điền\s+[2-9]\s+từ/i.test(ex.question)));
                     const isDeToVi = (ex && (ex.exercise_type === 'dich_nghia_dv' || ex.exercise_type === 'dich_cau_dv' || ex.exercise_type === 'dich')) &&
                                      (ex.question && /(?:sang tiếng việt|đức\s*→\s*việt|dịch câu sau sang tiếng việt)/i.test(ex.question));
+                    const isDictation13Input = Boolean(isLesson13 && (ex.exercise_type === 'nghe_dien' || (extra && extra.dictation_mode)));
                     const cleanAns = isDone 
                         ? (ex._userAnswer || (isMultiSlot ? String(ex.correct_answer || '').trim() : String(ex.correct_answer || '').split('/')[0].trim())) 
                         : (ex._userAnswer || '');
-                    const placeholderText = (ex && ex.exercise_type === 'nghe_gia_tien')
-                        ? 'Nhập số tiền (dùng dấu phẩy hoặc dấu chấm)...'
-                        : (ex && ex.exercise_type === 'dien_duoi_tinh_tu')
-                            ? 'Nhập đuôi tính từ...'
-                            : (ex && ex.exercise_type === 'chia_imperativ')
-                                ? 'Nhập câu mệnh lệnh... (nhấn Enter để kiểm tra và chuyển câu)'
-                                : (ex && ex.exercise_type === 'dien_dai_tu_akk')
-                                    ? 'Nhập đại từ Akkusativ...'
-                                    : (ex && ex.exercise_type === 'viet_lai_dies')
-                                        ? 'Nhập câu viết lại với dies-... (nhấn Enter để kiểm tra và chuyển câu)'
-                                        : (isMultiSlot 
-                                            ? 'Điền từ vào các chỗ trống theo thứ tự, ngăn cách bằng dấu /...' 
-                                            : (isDeToVi 
-                                                ? 'Nhập bản dịch tiếng Việt của bạn... (nhấn Enter để kiểm tra và chuyển câu)' 
-                                                : 'Nhập đáp án tiếng Đức của bạn... (nhấn Enter để kiểm tra và chuyển câu)'));
+                    const placeholderText = isDictation13Input
+                        ? 'Gõ lại trọn vẹn câu tiếng Đức bạn nghe được... (nhấn Enter để kiểm tra và chuyển câu)'
+                        : (ex && ex.exercise_type === 'nghe_gia_tien')
+                            ? 'Nhập số tiền (dùng dấu phẩy hoặc dấu chấm)...'
+                            : (ex && ex.exercise_type === 'dien_duoi_tinh_tu')
+                                ? 'Nhập đuôi tính từ...'
+                                : (ex && ex.exercise_type === 'chia_imperativ')
+                                    ? 'Nhập câu mệnh lệnh... (nhấn Enter để kiểm tra và chuyển câu)'
+                                    : (ex && ex.exercise_type === 'dien_dai_tu_akk')
+                                        ? 'Nhập đại từ Akkusativ...'
+                                        : (ex && ex.exercise_type === 'viet_lai_dies')
+                                            ? 'Nhập câu viết lại với dies-... (nhấn Enter để kiểm tra và chuyển câu)'
+                                            : (isMultiSlot 
+                                                ? 'Điền từ vào các chỗ trống theo thứ tự, ngăn cách bằng dấu /...' 
+                                                : (isDeToVi 
+                                                    ? 'Nhập bản dịch tiếng Việt của bạn... (nhấn Enter để kiểm tra và chuyển câu)' 
+                                                    : 'Nhập đáp án tiếng Đức của bạn... (nhấn Enter để kiểm tra và chuyển câu)'));
                     const multiSlotHintHtml = (isMultiSlot || (ex && ex.exercise_type === 'dien_tao_cau'))
                         ? `<div class="text-xs font-semibold text-slate-500 flex items-center gap-1.5 mt-2.5">
                                <span class="text-indigo-600 font-bold">👉 Hướng dẫn:</span>
                                <span>Điền từ vào các chỗ trống theo thứ tự, ngăn cách bằng dấu /</span>
                            </div>`
                         : '';
-                    inputHtml = `
+                    inputHtml = isDictation13Input ? `
+                        <div class="flex flex-col sm:flex-row gap-2.5 mt-3">
+                            <input id="ex-input-${i}" value="${cleanAns.replace(/"/g, '&quot;')}" oninput="handleExerciseInputChange(${i})" onfocus="handleExerciseInputFocus(${i})" onkeydown="handleExerciseInputKeydown(event, ${i})" type="text" placeholder="${placeholderText}" class="w-full flex-1 px-4 py-3 rounded-xl ${isDone ? 'bg-emerald-50/40 border-2 border-emerald-400 font-bold text-emerald-950' : 'bg-white border-2 border-indigo-200'} text-sm sm:text-base focus:outline-none focus:border-indigo-500 shadow-xs" spellcheck="false" autocorrect="off" autocapitalize="off" autocomplete="off">
+                            <button id="ex-btn-${i}" onclick="checkExerciseAnswer(${i}, document.getElementById('ex-input-${i}').value)" class="px-6 py-3 rounded-xl ${isDone ? 'bg-emerald-600 hover:bg-emerald-700' : 'bg-indigo-600 hover:bg-indigo-500'} cursor-pointer text-white font-bold text-sm shadow-sm transition shrink-0">
+                                ${isDone ? '✓ Đã xong' : 'Kiểm tra'}
+                            </button>
+                        </div>
+                    ` : `
                         ${multiSlotHintHtml}
                         <div class="flex gap-2 mt-2">
                             <input id="ex-input-${i}" value="${cleanAns.replace(/"/g, '&quot;')}" oninput="handleExerciseInputChange(${i})" onfocus="handleExerciseInputFocus(${i})" onkeydown="handleExerciseInputKeydown(event, ${i})" type="text" placeholder="${placeholderText}" class="flex-1 px-4 py-2.5 rounded-xl ${isDone ? 'bg-emerald-50/40 border-2 border-emerald-400 font-bold text-emerald-950' : 'bg-white border border-slate-200'} text-sm focus:outline-none focus:border-indigo-500" spellcheck="false" autocorrect="off" autocapitalize="off" autocomplete="off">
@@ -2673,7 +2684,7 @@
                 }
 
                 let displayQuestion = (typeof ensureQuestionNumber === 'function') ? ensureQuestionNumber(ex.question, ex.question, i + 1) : ex.question;
-                if ((ex.exercise_type === 'nghe' || ex.exercise_type === 'nghe_dien') && extra && extra.display_sentence) {
+                if ((ex.exercise_type === 'nghe' || ex.exercise_type === 'nghe_dien') && extra && extra.display_sentence && !(isLesson13 && ex.exercise_type === 'nghe_dien')) {
                     displayQuestion = displayQuestion.replace(/[:\s]+['"„][^'"“”]+['"“”]?.*$/, ':');
                     if (!displayQuestion.endsWith(':')) displayQuestion += ':';
                 }
@@ -2698,7 +2709,7 @@
                     <div class="mt-2 p-3 rounded-xl bg-amber-50 border border-amber-300 text-amber-900 text-xs leading-relaxed flex items-start gap-2 shadow-xs">
                         <span class="text-base leading-none">⚠️</span>
                         <div>
-                            <span class="font-extrabold text-amber-950">Tuy nhiên cần chú ý:</span> Danh từ tiếng Đức bắt buộc phải viết hoa chữ cái đầu (VD: die Jacke, der Schnee).
+                            <span class="font-extrabold text-amber-950">Tuy nhiên cần chú ý:</span> ${ex._capWarningText || 'Danh từ tiếng Đức bắt buộc phải viết hoa chữ cái đầu (VD: die Jacke, der Schnee).'}
                         </div>
                     </div>
                 ` : '';
@@ -3778,8 +3789,33 @@
                         const isDeToViEx = (ex && (ex.exercise_type === 'dich_nghia_dv' || ex.exercise_type === 'dich_cau_dv' || ex.exercise_type === 'dich')) &&
                                            (ex.question && /(?:sang tiếng việt|đức\s*→\s*việt|dịch câu sau sang tiếng việt)/i.test(ex.question));
 
+                        const isDictation13 = Boolean(
+                            ex && ex.exercise_type === 'nghe_dien' && (
+                                (extra && extra.dictation_mode) ||
+                                String(ex.lesson_id) === '27' ||
+                                (typeof currentLesson !== 'undefined' && currentLesson && (
+                                    String(currentLesson.id) === '27' || /bài 13\b/i.test(currentLesson.title || '')
+                                ))
+                            )
+                        );
+
                         if (ex && ex.exercise_type === 'sap_xep_cau') {
                             isCorrect = checkSapXepAnswer(userAnswer, expandedCandidates);
+                        } else if (isDictation13) {
+                            const rawDict = String(userAnswer || '').trim();
+                            if (!rawDict || /[.,!?:;]\s*[.,!?:;]/.test(rawDict)) {
+                                isCorrect = false;
+                            } else {
+                                const normUmlaut = (s) => normalizeAnswer(s).replace(/ä/g, 'ae').replace(/ö/g, 'oe').replace(/ü/g, 'ue').replace(/ß/g, 'ss');
+                                const uNorm = normalizeAnswer(rawDict);
+                                const uEquiv = normUmlaut(rawDict);
+                                const dictCandidates = [...expandedCandidates];
+                                if (extra && extra.full_sentence) dictCandidates.push(extra.full_sentence);
+                                isCorrect = dictCandidates.some(cand => {
+                                    if (!cand) return false;
+                                    return uNorm === normalizeAnswer(cand) || uEquiv === normUmlaut(cand);
+                                });
+                            }
                         } else {
                             isCorrect = expandedCandidates.some(cand => {
                             if (!cand) return false;
@@ -3939,7 +3975,47 @@
                     ex.exercise_type === 'dich_nghia_vd' || 
                     (ex.question && /Câu\s+(2[7-9]|3[0-2])\b/i.test(ex.question))
                 );
-                if (isD4L11 && typeof userAnswer === 'string') {
+                const isDictation13Cap = Boolean(
+                    ex && ex.exercise_type === 'nghe_dien' && (
+                        (extra && extra.dictation_mode) ||
+                        String(ex.lesson_id) === '27' ||
+                        (typeof currentLesson !== 'undefined' && currentLesson && (
+                            String(currentLesson.id) === '27' || /bài 13\b/i.test(currentLesson.title || '')
+                        ))
+                    )
+                );
+                if (isDictation13Cap && typeof userAnswer === 'string') {
+                    const stripPunct = (w) => String(w || '').replace(/^[.,!?;:"'„“”«»()]+|[.,!?;:"'„“”«»()]+$/g, '');
+                    const targetSentence = (extra && extra.full_sentence) ? String(extra.full_sentence) : String(ex.correct_answer || '');
+                    const correctWords = targetSentence.trim().split(/\s+/).map(stripPunct).filter(Boolean);
+                    const userWords = String(userAnswer || '').trim().split(/\s+/).map(stripPunct).filter(Boolean);
+                    const capMismatches = [];
+                    correctWords.forEach((cw, wIdx) => {
+                        if (/^[A-ZÄÖÜ]/.test(cw)) {
+                            const uw = (userWords[wIdx] && normalizeAnswer(userWords[wIdx]) === normalizeAnswer(cw))
+                                ? userWords[wIdx]
+                                : userWords.find(w => normalizeAnswer(w) === normalizeAnswer(cw));
+                            if (uw && !/^[A-ZÄÖÜ]/.test(uw)) {
+                                capMismatches.push(cw);
+                            }
+                        }
+                    });
+                    if (capMismatches.length > 0) {
+                        ex._capWarning = true;
+                        ex._capWarningText = `Trong tiếng Đức, chữ cái đầu câu và mọi danh từ đều bắt buộc phải viết hoa (cần viết hoa: <b>${capMismatches.join(', ')}</b>).`;
+                        capitalizationWarningHtml = `
+                            <div class="mt-2 p-3 rounded-xl bg-amber-50 border border-amber-300 text-amber-900 text-xs leading-relaxed flex items-start gap-2 shadow-xs">
+                                <span class="text-base leading-none">⚠️</span>
+                                <div>
+                                    <span class="font-extrabold text-amber-950">Tuy nhiên cần chú ý:</span> ${ex._capWarningText}
+                                </div>
+                            </div>
+                        `;
+                    } else {
+                        delete ex._capWarning;
+                        delete ex._capWarningText;
+                    }
+                } else if (isD4L11 && typeof userAnswer === 'string') {
                     const correctWords = String(ex.correct_answer || '').split(/\s+/).filter(Boolean);
                     const userWords = String(userAnswer || '').trim().split(/\s+/).filter(Boolean);
                     const capWord = correctWords.find(w => /^[A-ZÄÖÜ]/.test(w));
@@ -4339,7 +4415,18 @@
                                     ${altAnswersHtml}
                                 `;
                             } else if ((ex.exercise_type === 'nghe_dien' || ex.exercise_type === 'nghe') && extra && extra.full_sentence) {
-                                ansBlockHtml = `
+                                const isDictation13Wrong = Boolean(
+                                    (extra && extra.dictation_mode) ||
+                                    String(ex.lesson_id) === '27' ||
+                                    (typeof currentLesson !== 'undefined' && currentLesson && (
+                                        String(currentLesson.id) === '27' || /bài 13\b/i.test(currentLesson.title || '')
+                                    ))
+                                );
+                                ansBlockHtml = isDictation13Wrong ? `
+                                    <div class="p-2.5 rounded-xl bg-rose-100/80 border border-rose-300 text-rose-950 text-xs sm:text-sm font-semibold mt-1">
+                                        🎯 Đáp án đúng (câu hoàn chỉnh): <span class="font-bold text-rose-900">${extra.full_sentence}</span>
+                                    </div>
+                                ` : `
                                     <div class="text-rose-900 pt-0.5 space-y-1.5">
                                         <div>Đáp án đúng là: <span class="font-extrabold text-rose-800">${ex.correct_answer}</span></div>
                                         <div class="p-2.5 rounded-xl bg-rose-100/80 border border-rose-300 text-rose-950 text-xs sm:text-sm font-semibold">
