@@ -381,7 +381,7 @@
     <script src="/static/js/essen_svg.js?v=20261116_v4"></script>
     <script src="/static/js/kleidung_svg.js?v=20261118_v1"></script>
     <script src="/static/js/gesundheit_svg.js?v=20261120_v1"></script>
-    <script src="/static/js/b13_review_svg.js?v=20261125_v2"></script>
+    <script src="/static/js/b13_review_svg.js?v=20261126_v3"></script>
     <script src="/static/js/verbs_db.js?v=20261116_v4"></script>
     <script src="/static/js/lexikon_db.js?v=20261116_v4"></script>
     <script src="/static/js/arena_engine.js?v=20261116_v4"></script>
@@ -3741,14 +3741,24 @@
                             (currentLesson.title && /bài 12\b/i.test(currentLesson.title))
                         ))
                     );
+                    const isLesson13 = Boolean(
+                        (ex && (String(ex.lesson_id) === '27')) ||
+                        (typeof currentLesson !== 'undefined' && currentLesson && (
+                            String(currentLesson.id) === '27' || 
+                            (currentLesson.title && /bài 13\b/i.test(currentLesson.title))
+                        ))
+                    );
                     const l8QMatch = isLesson8 && (ex.question || '').match(/Câu\s+(4[6-9]|5[0-7])\b/i);
                     const l8VDMatch = isLesson8 && (ex.question || '').match(/Câu\s+(8[7-9]|9[0-3])\b/i);
                     const l8DVMatch = isLesson8 && (ex.question || '').match(/Câu\s+(9[4-9]|100)\b/i);
                     const l11DVMatch = isLesson11 && (ex.question || '').match(/Câu\s+(38|6[4-8])\b/i);
                     const l12DVMatch = isLesson12 && (ex.question || '').match(/Câu\s+(8[7-9]|9[0-2]|11[1-4])\b/i);
                     const l12VDMatch = isLesson12 && (ex.question || '').match(/Câu\s+(8[1-6]|10[7-9]|110)\b/i);
+                    const l13DVMatch = isLesson13 && (ex.question || '').match(/Câu\s+(8[0-6])\b/i);
 
-                    if (l12DVMatch && typeof evaluateLesson12DVTranslation === 'function' && evaluateLesson12DVTranslation(userAnswer, parseInt(l12DVMatch[1], 10))) {
+                    if (l13DVMatch && typeof evaluateLesson13DVTranslation === 'function' && evaluateLesson13DVTranslation(userAnswer, parseInt(l13DVMatch[1], 10))) {
+                        isCorrect = true;
+                    } else if (l12DVMatch && typeof evaluateLesson12DVTranslation === 'function' && evaluateLesson12DVTranslation(userAnswer, parseInt(l12DVMatch[1], 10))) {
                         isCorrect = true;
                     } else if (l12VDMatch && typeof evaluateLesson12VDTranslation === 'function' && evaluateLesson12VDTranslation(userAnswer, parseInt(l12VDMatch[1], 10))) {
                         isCorrect = true;

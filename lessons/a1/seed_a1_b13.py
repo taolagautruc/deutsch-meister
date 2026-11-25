@@ -2373,10 +2373,20 @@ def seed_lesson_13():
                     "Tên của ngài là gì",
                     "Tên ngài là gì?",
                     "Tên ngài là gì",
+                    "Tên của ngài gì?",
                     "Ngài tên là gì?",
                     "Ngài tên là gì",
+                    "Ngài tên gì?",
+                    "ngài tên gì",
                     "Tên của ông là gì?",
-                    "Tên của bà là gì?"
+                    "Tên của ông là gì",
+                    "Tên ông là gì?",
+                    "Ông tên là gì?",
+                    "Ông tên gì?",
+                    "Tên của bà là gì?",
+                    "Tên bà là gì?",
+                    "Bà tên là gì?",
+                    "Bà tên gì?"
                 ],
                 "audio_text": "Wie ist Ihr Name?",
                 "translation": "Tên của ngài là gì?"
@@ -2396,8 +2406,16 @@ def seed_lesson_13():
                     "Xin lỗi, chỗ này còn trống không",
                     "Xin lỗi chỗ này còn trống không?",
                     "Xin lỗi chỗ này còn trống không",
+                    "Xin lỗi, chỗ này có trống không?",
+                    "Xin lỗi chỗ này có trống không",
+                    "Chỗ này có trống không?",
+                    "chỗ này có trống không",
+                    "Chỗ này còn trống không?",
                     "Xin lỗi, ở đây còn trống không?",
-                    "Xin lỗi ở đây còn trống không?"
+                    "Xin lỗi ở đây còn trống không?",
+                    "Xin lỗi, ở đây có trống không?",
+                    "Ở đây có trống không?",
+                    "Ở đây còn trống không?"
                 ],
                 "audio_text": "Entschuldigung, ist hier frei?",
                 "translation": "Xin lỗi, chỗ này còn trống không?"
@@ -2417,7 +2435,13 @@ def seed_lesson_13():
                     "Tôi uống trà với đường",
                     "Tôi uống trà có đường.",
                     "Tôi uống trà có đường",
-                    "Tôi uống trà đường."
+                    "Tôi uống trà cùng đường.",
+                    "Tôi uống trà thêm đường.",
+                    "Tôi uống trà pha đường.",
+                    "Tôi uống trà đường.",
+                    "Tôi uống trà đường",
+                    "Mình uống trà với đường.",
+                    "Mình uống trà có đường."
                 ],
                 "audio_text": "Ich trinke Tee mit Zucker.",
                 "translation": "Tôi uống trà với đường."
@@ -2435,10 +2459,19 @@ def seed_lesson_13():
                 "accepted_answers": [
                     "Thầy giáo nói quá nhỏ.",
                     "Thầy giáo nói quá nhỏ",
+                    "Thầy giáo nói nhỏ quá.",
+                    "Thầy giáo nói quá bé.",
+                    "Thầy giáo nói quá bé",
+                    "Thầy giáo nói bé quá.",
                     "Giáo viên nói quá nhỏ.",
                     "Giáo viên nói quá nhỏ",
+                    "Giáo viên nói quá bé.",
+                    "Giáo viên nói bé quá.",
                     "Thầy giáo nói quá khẽ.",
-                    "Thầy giáo nói quá khẽ"
+                    "Thầy giáo nói quá khẽ",
+                    "Giáo viên nói quá khẽ.",
+                    "Thầy nói quá nhỏ.",
+                    "Thầy nói quá bé."
                 ],
                 "audio_text": "Der Lehrer spricht zu leise.",
                 "translation": "Thầy giáo nói quá nhỏ."
@@ -2456,10 +2489,21 @@ def seed_lesson_13():
                 "accepted_answers": [
                     "Hannes cho chú chó thức ăn.",
                     "Hannes cho chú chó thức ăn",
+                    "Hannes cho con chó thức ăn.",
+                    "Hannes cho con chó thức ăn",
+                    "Hannes cho chó thức ăn.",
+                    "Hannes cho chú chó ăn.",
+                    "Hannes cho con chó ăn.",
+                    "Hannes cho chó ăn.",
+                    "Hannes cho chú chó ăn thức ăn.",
+                    "Hannes cho con chó ăn thức ăn.",
                     "Hannes cho chó ăn thức ăn.",
                     "Hannes cho chó ăn thức ăn",
                     "Hannes đưa thức ăn cho chú chó.",
-                    "Hannes đưa thức ăn cho chó."
+                    "Hannes đưa thức ăn cho con chó.",
+                    "Hannes đưa thức ăn cho chó.",
+                    "Hannes đưa đồ ăn cho con chó.",
+                    "Hannes cho con chó đồ ăn."
                 ],
                 "audio_text": "Hannes gibt dem Hund das Futter.",
                 "translation": "Hannes cho chú chó thức ăn."
@@ -2477,8 +2521,20 @@ def seed_lesson_13():
                 "accepted_answers": [
                     "Cuối tuần bạn có đi Ba Lan không?",
                     "Cuối tuần bạn có đi Ba Lan không",
+                    "Vào cuối tuần bạn có đi Ba Lan không?",
                     "Bạn có đi Ba Lan vào cuối tuần không?",
-                    "Bạn có đi Ba Lan vào cuối tuần không"
+                    "Bạn có đi Ba Lan vào cuối tuần không",
+                    "Bạn có đi Ba Lan cuối tuần không?",
+                    "Cuối tuần cậu có đi Ba Lan không?",
+                    "Cậu có đi Ba Lan vào cuối tuần không?",
+                    "Cuối tuần mày có đi Ba Lan không?",
+                    "Mày có đi Ba Lan vào cuối tuần không?",
+                    "Cuối tuần bạn có lái xe tới Ba Lan không?",
+                    "Cuối tuần bạn có lái xe đi Ba Lan không?",
+                    "Bạn có lái xe đi Ba Lan vào cuối tuần không?",
+                    "Bạn có lái xe tới Ba Lan vào cuối tuần không?",
+                    "Cuối tuần cậu có lái xe đi Ba Lan không?",
+                    "Cuối tuần mày có lái xe tới Ba Lan không?"
                 ],
                 "audio_text": "Fährst du am Wochenende nach Polen?",
                 "translation": "Cuối tuần bạn có đi Ba Lan không?"
@@ -2497,7 +2553,12 @@ def seed_lesson_13():
                     "Karin sống ở München.",
                     "Karin sống ở München",
                     "Karin sống tại München.",
-                    "Karin sống tại München"
+                    "Karin sống tại München",
+                    "Karin sống ở Munich.",
+                    "Karin sống tại Munich.",
+                    "Karin ở München.",
+                    "Karin ở tại München.",
+                    "Karin đang sống ở München."
                 ],
                 "audio_text": "Karin wohnt in München.",
                 "translation": "Karin sống ở München."

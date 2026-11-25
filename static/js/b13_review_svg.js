@@ -675,6 +675,98 @@
         b13_renderWFragenMap();
     }
 
+    // =========================================================================
+    // DỊCH CÂU ĐỨC -> VIỆT ENGINE (BÀI 13 - CÂU 80 -> 86)
+    // =========================================================================
+    function cleanViB13(str) {
+        return String(str || '')
+            .toLowerCase()
+            .normalize('NFC')
+            .replace(/[.,!?;:"'„“”«»‘`’–—\-\(\)\[\]\{\}\/\\~]+/g, ' ')
+            .replace(/\s+/g, ' ')
+            .trim();
+    }
+
+    function hasViPhrase(clean, pattern) {
+        if (!clean) return false;
+        return new RegExp('(?:^|\\s)(?:' + pattern + ')(?=\\s|$)').test(clean);
+    }
+
+    function evaluateLesson13DVTranslation(userAns, qNum) {
+        if (!userAns || typeof userAns !== 'string') return false;
+        const clean = cleanViB13(userAns);
+        if (!clean) return false;
+        const hasQMark = String(userAns).includes('?');
+
+        // Câu 80: „Wie ist Ihr Name?“
+        if (qNum === 80) {
+            const hasName = hasViPhrase(clean, 'tên');
+            const hasPolite = hasViPhrase(clean, 'ngài|ông|bà|bác|cô|chú|anh|chị|quý vị|quý khách');
+            const hasWhat = hasViPhrase(clean, 'gì|là gì|tên gì');
+            const forbidden = hasViPhrase(clean, 'tôi|chúng tôi|chúng ta|họ|bọn họ|cậu|mày|đến từ|sống ở|uống|ăn|tuổi');
+            return Boolean(hasName && hasPolite && hasWhat && !forbidden);
+        }
+
+        // Câu 81: „Entschuldigung, ist hier frei?“
+        if (qNum === 81) {
+            const hasPlace = hasViPhrase(clean, 'chỗ này|ở đây|nơi này|đây|ghế này|bàn này|chỗ đó|nơi đây');
+            const hasFree = hasViPhrase(clean, 'còn trống|có trống|trống|còn chỗ');
+            const hasQ = hasQMark || hasViPhrase(clean, 'không|phải không|được không|ạ|nhỉ|chứ|hả');
+            const forbidden = hasViPhrase(clean, 'tên|uống|cà phê|trà|đi đâu|lái xe|tính tiền|bận|đắt');
+            return Boolean(hasPlace && hasFree && hasQ && !forbidden);
+        }
+
+        // Câu 82: „Ich trinke Tee mit Zucker.“
+        if (qNum === 82) {
+            const hasSubj = hasViPhrase(clean, 'tôi|mình|tớ|em|con|cháu');
+            const hasDrink = hasViPhrase(clean, 'uống');
+            const hasTea = hasViPhrase(clean, 'trà|nước trà');
+            const hasSugar = hasViPhrase(clean, 'đường');
+            const forbidden = hasViPhrase(clean, 'cà phê|sữa|bia|rượu|nước lọc|không đường|chúng tôi|bạn|ngài|anh ấy|cô ấy|họ');
+            return Boolean(hasSubj && hasDrink && hasTea && hasSugar && !forbidden);
+        }
+
+        // Câu 83: „Der Lehrer spricht zu leise.“
+        if (qNum === 83) {
+            const hasTeacher = hasViPhrase(clean, 'thầy giáo|cô giáo|giáo viên|người thầy|thầy|cô|giảng viên');
+            const hasSpeak = hasViPhrase(clean, 'nói|nói chuyện|giảng|phát biểu');
+            const hasTooQuiet = hasViPhrase(clean, '(?:quá|rất|hơi|cực kỳ|vô cùng)\\s+(?:nhỏ|bé|khẽ|nhẹ|nhỏ tiếng)|(?:nhỏ|bé|khẽ|nhẹ)\\s+quá');
+            const forbidden = hasViPhrase(clean, 'to|lớn|ồn|nhanh|chậm|học sinh|sinh viên');
+            return Boolean(hasTeacher && hasSpeak && hasTooQuiet && !forbidden);
+        }
+
+        // Câu 84: „Hannes gibt dem Hund das Futter.“
+        if (qNum === 84) {
+            const hasSubj = hasViPhrase(clean, 'hannes');
+            const hasGive = hasViPhrase(clean, 'cho|đưa|mang');
+            const hasDog = hasViPhrase(clean, 'chú chó|con chó|chó|chú cún|con cún|cún');
+            const hasFood = hasViPhrase(clean, 'thức ăn|đồ ăn|ăn');
+            const forbidden = hasViPhrase(clean, 'mèo|lợn|heo|chim|cá|chuột|gà|uống|ngủ|đánh');
+            return Boolean(hasSubj && hasGive && hasDog && hasFood && !forbidden);
+        }
+
+        // Câu 85: „Fährst du am Wochenende nach Polen?“
+        if (qNum === 85) {
+            const hasWeekend = hasViPhrase(clean, 'cuối tuần');
+            const hasYou = hasViPhrase(clean, 'bạn|cậu|mày|em|anh|chị');
+            const hasGo = hasViPhrase(clean, 'đi|lái xe|tới|đến|sang|về|chạy xe|du lịch');
+            const hasPoland = hasViPhrase(clean, 'ba lan');
+            const hasQ = hasQMark || hasViPhrase(clean, 'không|phải không|đúng không|à|hả|nhỉ|chứ');
+            const forbidden = hasViPhrase(clean, 'đức|pháp|việt nam|hà lan|thụy sĩ|thứ hai|chủ nhật|tôi|các bạn|họ|chúng tôi|ngài');
+            return Boolean(hasWeekend && hasYou && hasGo && hasPoland && hasQ && !forbidden);
+        }
+
+        // Câu 86: „Karin wohnt in München.“
+        if (qNum === 86) {
+            const hasSubj = hasViPhrase(clean, 'karin');
+            const hasLiveCity = hasViPhrase(clean, '(?:sinh sống|cư trú|sống|đang sống|đang ở|ở)\\s+(?:ở|tại|trong)?\\s*(?:thành phố\\s+)?(?:münchen|munchen|munich)');
+            const forbidden = hasViPhrase(clean, 'berlin|hamburg|việt nam|đến từ|làm việc|học');
+            return Boolean(hasSubj && hasLiveCity && !forbidden);
+        }
+
+        return false;
+    }
+
     // Export ra Window
     global.b13_renderVowelShiftMachine = b13_renderVowelShiftMachine;
     global.b13_selectVerb = b13_selectVerb;
@@ -685,5 +777,6 @@
     global.b13_speakGerman = b13_speakGerman;
     global.b13_initReviewSvgDiagrams = b13_initReviewSvgDiagrams;
     global.initReviewSvgDiagrams = b13_initReviewSvgDiagrams;
+    global.evaluateLesson13DVTranslation = evaluateLesson13DVTranslation;
 
 })(typeof window !== 'undefined' ? window : this);
