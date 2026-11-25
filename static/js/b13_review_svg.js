@@ -2,7 +2,7 @@
  * DeutschMeister - Module Sơ Đồ Trực Quan & Tương Tác Bài 13 (A1)
  * "Ôn tập tổng hợp A1: Động từ bất quy tắc, W-Fragen & Giao tiếp quán Cafe"
  * 
- * V1: Cỗ máy Vokalwechsel 7 động từ bất quy tắc (a→ä, e→i, e→ie & Bẫy ngôi ihr)
+ * V1: Cỗ máy Vokalwechsel 7 động từ bất quy tắc (a → ä, e → i, e → ie & Bẫy ngôi ihr)
  * V2: Bản đồ tương tác W-Fragen & Giới từ (Woher -> aus, Wo -> in, Wie -> Name, Was -> Dinge, Wann -> Zeit)
  */
 
@@ -17,130 +17,186 @@
             infinitiv: "lesen",
             meaning: "đọc",
             type: "e → ie",
-            baseVowel: "e",
-            shiftedVowel: "ie",
             forms: { ich: "lese", du: "liest", er_sie_es: "liest", wir: "lesen", ihr: "lest", sie_Sie: "lesen" },
-            note: "Vokalwechsel (đổi nguyên âm gốc) e → ie CHỈ ở ngôi du và er/sie/es. Gốc đã kết thúc bằng s nên du chỉ thêm -t (lies + t = liest). Ngôi ihr KHÔNG đổi (lest).",
+            rules: {
+                ich: "ich: gốc nguyên + e → les + e = lese",
+                du: "du lies + t = liest (gốc lies đã kết thúc bằng s nên chỉ thêm -t)",
+                er_sie_es: "er/sie/es lies + t = liest (đổi nguyên âm e → ie)",
+                wir: "wir: nguyên mẫu → lesen",
+                ihr: "ihr les + t = lest (KHÔNG đổi nguyên âm gốc)",
+                sie_Sie: "sie / Sie: nguyên mẫu → lesen"
+            },
             examples: {
                 ich: { de: "Ich lese am Abend ein Buch.", vi: "Buổi tối tôi đọc một quyển sách." },
                 du: { de: "Liest du gern Romane oder Zeitungen?", vi: "Bạn thích đọc tiểu thuyết hay báo?" },
                 er_sie_es: { de: "Das Mädchen liest das Buch.", vi: "Cô bé đọc quyển sách." },
                 wir: { de: "Wir lesen zusammen die Speisekarte.", vi: "Chúng tôi cùng nhau đọc thực đơn." },
                 ihr: { de: "Lest ihr heute einen langen Brief?", vi: "Hôm nay các bạn có đọc một bức thư dài không?" },
-                sie_Sie: { de: "Herr Weber, lesen Sie oft die Zeitung?", vi: "Ông Weber, ông có thường đọc báo không?" }
+                sie_Sie: [
+                    { tag: "sie (họ)", de: "Meine Eltern lesen jeden Abend die Zeitung.", vi: "Bố mẹ tôi tối nào cũng đọc báo." },
+                    { tag: "Sie (ngài)", de: "Herr Weber, lesen Sie oft die Zeitung?", vi: "Ông Weber, ông có thường đọc báo không?" }
+                ]
             }
         },
         "fahren": {
             infinitiv: "fahren",
             meaning: "lái xe, đi",
             type: "a → ä",
-            baseVowel: "a",
-            shiftedVowel: "ä",
             forms: { ich: "fahre", du: "fährst", er_sie_es: "fährt", wir: "fahren", ihr: "fahrt", sie_Sie: "fahren" },
-            note: "Vokalwechsel a → ä CHỈ ở ngôi du và er/sie/es. Ngôi ihr KHÔNG đổi nguyên âm (fahrt).",
+            rules: {
+                ich: "ich: gốc nguyên + e → fahr + e = fahre",
+                du: "du fähr + st = fährst (đổi nguyên âm a → ä)",
+                er_sie_es: "er/sie/es fähr + t = fährt (đổi nguyên âm a → ä)",
+                wir: "wir: nguyên mẫu → fahren",
+                ihr: "ihr fahr + t = fahrt (KHÔNG đổi nguyên âm gốc)",
+                sie_Sie: "sie / Sie: nguyên mẫu → fahren"
+            },
             examples: {
                 ich: { de: "Ich fahre mit dem Zug nach Hamburg.", vi: "Tôi đi tàu hỏa tới Hamburg." },
                 du: { de: "Fährst du am Wochenende nach Berlin?", vi: "Cuối tuần bạn có đi Berlin không?" },
                 er_sie_es: { de: "Mein Bruder fährt am Sonntag nach München.", vi: "Anh trai tôi đi München vào Chủ nhật." },
                 wir: { de: "Wir fahren nach Polen.", vi: "Chúng tôi đi tới Ba Lan." },
                 ihr: { de: "Wann fahrt ihr nach Hause?", vi: "Khi nào các bạn về nhà?" },
-                sie_Sie: { de: "Fahren Sie morgen in die Schweiz?", vi: "Ngày mai ngài có đi Thụy Sĩ không?" }
+                sie_Sie: [
+                    { tag: "sie (họ)", de: "Meine Freunde fahren am Wochenende nach Berlin.", vi: "Bạn bè của tôi đi Berlin vào cuối tuần." },
+                    { tag: "Sie (ngài)", de: "Fahren Sie morgen in die Schweiz?", vi: "Ngày mai ngài có đi Thụy Sĩ không?" }
+                ]
             }
         },
         "schlafen": {
             infinitiv: "schlafen",
             meaning: "ngủ",
             type: "a → ä",
-            baseVowel: "a",
-            shiftedVowel: "ä",
             forms: { ich: "schlafe", du: "schläfst", er_sie_es: "schläft", wir: "schlafen", ihr: "schlaft", sie_Sie: "schlafen" },
-            note: "Vokalwechsel a → ä CHỈ ở ngôi du và er/sie/es. Ngôi ihr KHÔNG đổi nguyên âm (schlaft).",
+            rules: {
+                ich: "ich: gốc nguyên + e → schlaf + e = schlafe",
+                du: "du schläf + st = schläfst (đổi nguyên âm a → ä)",
+                er_sie_es: "er/sie/es schläf + t = schläft (đổi nguyên âm a → ä)",
+                wir: "wir: nguyên mẫu → schlafen",
+                ihr: "ihr schlaf + t = schlaft (KHÔNG đổi nguyên âm gốc)",
+                sie_Sie: "sie / Sie: nguyên mẫu → schlafen"
+            },
             examples: {
                 ich: { de: "Ich schlafe heute sehr gut.", vi: "Hôm nay tôi ngủ rất ngon." },
                 du: { de: "Schläfst du im Hotel?", vi: "Bạn có ngủ ở khách sạn không?" },
                 er_sie_es: { de: "Der Hund schläft gemütlich auf dem Sofa.", vi: "Chú chó ngủ thoải mái trên ghế sofa." },
                 wir: { de: "Wir schlafen heute im Hotel.", vi: "Hôm nay chúng tôi ngủ ở khách sạn." },
                 ihr: { de: "Ihr schlaft am Wochenende zu lange!", vi: "Các bạn ngủ quá lâu vào cuối tuần!" },
-                sie_Sie: { de: "Die Kinder schlafen im Schlafzimmer.", vi: "Bọn trẻ ngủ trong phòng ngủ." }
+                sie_Sie: [
+                    { tag: "sie (họ)", de: "Die Kinder schlafen im Schlafzimmer.", vi: "Bọn trẻ ngủ trong phòng ngủ." },
+                    { tag: "Sie (ngài)", de: "Schlafen Sie heute im Hotel?", vi: "Hôm nay ngài ngủ ở khách sạn phải không?" }
+                ]
             }
         },
         "sprechen": {
             infinitiv: "sprechen",
             meaning: "nói",
             type: "e → i",
-            baseVowel: "e",
-            shiftedVowel: "i",
             forms: { ich: "spreche", du: "sprichst", er_sie_es: "spricht", wir: "sprechen", ihr: "sprecht", sie_Sie: "sprechen" },
-            note: "Vokalwechsel e → i CHỈ ở ngôi du và er/sie/es. Ngôi ihr KHÔNG đổi nguyên âm (sprecht).",
+            rules: {
+                ich: "ich: gốc nguyên + e → sprech + e = spreche",
+                du: "du sprich + st = sprichst (đổi nguyên âm e → i)",
+                er_sie_es: "er/sie/es sprich + t = spricht (đổi nguyên âm e → i)",
+                wir: "wir: nguyên mẫu → sprechen",
+                ihr: "ihr sprech + t = sprecht (KHÔNG đổi nguyên âm gốc)",
+                sie_Sie: "sie / Sie: nguyên mẫu → sprechen"
+            },
             examples: {
                 ich: { de: "Ich spreche ein bisschen Deutsch.", vi: "Tôi nói một chút tiếng Đức." },
                 du: { de: "Du sprichst zu leise.", vi: "Bạn nói quá nhỏ." },
                 er_sie_es: { de: "Der Lehrer spricht zu leise.", vi: "Thầy giáo nói quá nhỏ." },
                 wir: { de: "Wir sprechen im Deutschkurs viel Deutsch.", vi: "Chúng tôi nói nhiều tiếng Đức trong lớp học." },
                 ihr: { de: "Sprecht ihr Englisch oder Französisch?", vi: "Các bạn nói tiếng Anh hay tiếng Pháp?" },
-                sie_Sie: { de: "Die Touristen sprechen sehr deutlich.", vi: "Các du khách nói rất rõ ràng." }
+                sie_Sie: [
+                    { tag: "sie (họ)", de: "Die Touristen sprechen sehr deutlich.", vi: "Các du khách nói rất rõ ràng." },
+                    { tag: "Sie (ngài)", de: "Frau Müller, sprechen Sie Deutsch?", vi: "Bà Müller, bà có nói tiếng Đức không?" }
+                ]
             }
         },
         "treffen": {
             infinitiv: "treffen",
             meaning: "gặp gỡ",
             type: "e → i",
-            baseVowel: "e",
-            shiftedVowel: "i",
             forms: { ich: "treffe", du: "triffst", er_sie_es: "trifft", wir: "treffen", ihr: "trefft", sie_Sie: "treffen" },
-            note: "Vokalwechsel e → i CHỈ ở ngôi du và er/sie/es. Ngôi ihr KHÔNG đổi nguyên âm (trefft).",
+            rules: {
+                ich: "ich: gốc nguyên + e → treff + e = treffe",
+                du: "du triff + st = triffst (đổi nguyên âm e → i)",
+                er_sie_es: "er/sie/es triff + t = trifft (đổi nguyên âm e → i)",
+                wir: "wir: nguyên mẫu → treffen",
+                ihr: "ihr treff + t = trefft (KHÔNG đổi nguyên âm gốc)",
+                sie_Sie: "sie / Sie: nguyên mẫu → treffen"
+            },
             examples: {
                 ich: { de: "Heute treffe ich meine Freunde.", vi: "Hôm nay tôi gặp bạn bè của mình." },
                 du: { de: "Wann triffst du deine Freunde im Café?", vi: "Khi nào bạn gặp bạn bè ở quán cà phê?" },
                 er_sie_es: { de: "Am Nachmittag trifft Anna ihre Freunde im Café.", vi: "Vào buổi chiều, Anna gặp bạn bè ở quán cà phê." },
                 wir: { de: "Wir treffen uns um 15 Uhr im Café.", vi: "Chúng tôi gặp nhau lúc 15 giờ ở quán cà phê." },
                 ihr: { de: "Wann trefft ihr eure Freunde?", vi: "Khi nào các bạn gặp bạn bè của mình?" },
-                sie_Sie: { de: "Sie treffen Maria am Bahnhof.", vi: "Họ gặp Maria ở nhà ga." }
+                sie_Sie: [
+                    { tag: "sie (họ)", de: "Julia und Anna treffen Maria am Bahnhof.", vi: "Julia và Anna gặp Maria ở nhà ga." },
+                    { tag: "Sie (ngài)", de: "Wann treffen Sie Ihre Freunde im Café?", vi: "Khi nào ngài gặp bạn bè của ngài ở quán cà phê?" }
+                ]
             }
         },
         "essen": {
             infinitiv: "essen",
             meaning: "ăn",
             type: "e → i",
-            baseVowel: "e",
-            shiftedVowel: "i",
             forms: { ich: "esse", du: "isst", er_sie_es: "isst", wir: "essen", ihr: "esst", sie_Sie: "essen" },
-            note: "Vokalwechsel e → i CHỈ ở ngôi du và er/sie/es (du isst / er isst). Gốc kết thúc bằng s/ss nên du chỉ thêm -t. Ngôi ihr KHÔNG đổi (esst).",
+            rules: {
+                ich: "ich: gốc nguyên + e → ess + e = esse",
+                du: "du iss + t = isst (gốc kết thúc s nên chỉ thêm -t)",
+                er_sie_es: "er/sie/es iss + t = isst (đổi nguyên âm e → i)",
+                wir: "wir: nguyên mẫu → essen",
+                ihr: "ihr ess + t = esst (KHÔNG đổi nguyên âm gốc)",
+                sie_Sie: "sie / Sie: nguyên mẫu → essen"
+            },
             examples: {
                 ich: { de: "Ich esse gern Eis.", vi: "Tôi thích ăn kem." },
                 du: { de: "Was isst du heute zum Frühstück?", vi: "Hôm nay bạn ăn gì vào bữa sáng?" },
                 er_sie_es: { de: "Das Kind isst ein Eis.", vi: "Đứa trẻ ăn một cây kem." },
                 wir: { de: "Wir essen im Sommer gern Eis.", vi: "Vào mùa hè chúng tôi thích ăn kem." },
                 ihr: { de: "Esst ihr gern frischen Käse und Salat?", vi: "Các bạn có thích ăn phô mai tươi và xà lách không?" },
-                sie_Sie: { de: "Die Kinder essen Eis.", vi: "Bọn trẻ đang ăn kem." }
+                sie_Sie: [
+                    { tag: "sie (họ)", de: "Die Kinder essen im Sommer gern Eis.", vi: "Vào mùa hè bọn trẻ rất thích ăn kem." },
+                    { tag: "Sie (ngài)", de: "Essen Sie gern frischen Käse?", vi: "Ngài có thích ăn phô mai tươi không?" }
+                ]
             }
         },
         "geben": {
             infinitiv: "geben",
             meaning: "cho, đưa",
             type: "e → i",
-            baseVowel: "e",
-            shiftedVowel: "i",
             forms: { ich: "gebe", du: "gibst", er_sie_es: "gibt", wir: "geben", ihr: "gebt", sie_Sie: "geben" },
-            note: "Vokalwechsel e → i CHỈ ở ngôi du và er/sie/es (du gibst / er gibt). Ngôi ihr KHÔNG đổi nguyên âm (gebt).",
+            rules: {
+                ich: "ich: gốc nguyên + e → geb + e = gebe",
+                du: "du gib + st = gibst (đổi nguyên âm e → i)",
+                er_sie_es: "er/sie/es gib + t = gibt (đổi nguyên âm e → i)",
+                wir: "wir: nguyên mẫu → geben",
+                ihr: "ihr geb + t = gebt (KHÔNG đổi nguyên âm gốc)",
+                sie_Sie: "sie / Sie: nguyên mẫu → geben"
+            },
             examples: {
                 ich: { de: "Ich gebe dem Hund das Futter.", vi: "Tôi cho chú chó ăn thức ăn." },
                 du: { de: "Gibst du mir bitte den Zucker?", vi: "Bạn làm ơn đưa cho tôi đường được không?" },
                 er_sie_es: { de: "Hannes gibt dem Hund das Futter.", vi: "Hannes cho chú chó ăn thức ăn." },
                 wir: { de: "Wir geben dir das Buch.", vi: "Chúng tôi đưa cho bạn quyển sách." },
                 ihr: { de: "Gebt ihr dem Lehrer den Brief?", vi: "Các bạn đưa bức thư cho thầy giáo phải không?" },
-                sie_Sie: { de: "Hannes und Julia geben dem Hund das Futter.", vi: "Hannes và Julia cho chú chó thức ăn." }
+                sie_Sie: [
+                    { tag: "sie (họ)", de: "Hannes und Julia geben dem Hund das Futter.", vi: "Hannes và Julia cho chú chó ăn thức ăn." },
+                    { tag: "Sie (ngài)", de: "Geben Sie mir bitte den Zucker?", vi: "Ngài làm ơn đưa cho tôi đường được không?" }
+                ]
             }
         }
     };
 
     const PRONOUNS = [
-        { key: "ich", label: "ich (tôi)", isShifted: false, note: "Giữ nguyên âm gốc + đuôi -e" },
-        { key: "du", label: "du (bạn)", isShifted: true, note: "🔥 VOKALWECHSEL: Đổi nguyên âm gốc + đuôi -st (hoặc -t nếu gốc -s/-ß/-z)" },
-        { key: "er_sie_es", label: "er/sie/es (anh/cô ấy/nó)", isShifted: true, note: "🔥 VOKALWECHSEL: Đổi nguyên âm gốc + đuôi -t" },
-        { key: "wir", label: "wir (chúng tôi)", isShifted: false, note: "Giữ nguyên thể đuôi -en" },
-        { key: "ihr", label: "ihr (các bạn)", isShifted: false, isGoldWarning: true, note: "⚠️ QUY TẮC VÀNG: KHÔNG biến âm! Giữ nguyên âm gốc + đuôi -t" },
-        { key: "sie_Sie", label: "sie / Sie (họ / Ngài)", isShifted: false, note: "Giữ nguyên thể đuôi -en" }
+        { key: "ich", shortLabel: "ich", speakWord: "ich", isShifted: false },
+        { key: "du", shortLabel: "du", speakWord: "du", isShifted: true },
+        { key: "er_sie_es", shortLabel: "er/sie/es", speakWord: "er", isShifted: true },
+        { key: "wir", shortLabel: "wir", speakWord: "wir", isShifted: false },
+        { key: "ihr", shortLabel: "ihr", speakWord: "ihr", isShifted: false, isGoldWarning: true },
+        { key: "sie_Sie", shortLabel: "sie / Sie", speakWord: "sie", isShifted: false }
     ];
 
     let currentV1Verb = "lesen";
@@ -155,31 +211,34 @@
         const conjugatedForm = verbData.forms[currentV1Pronoun] || "";
         const isShifted = curPron.isShifted;
         const isIhr = curPron.key === "ihr";
-        const curExample = (verbData.examples && verbData.examples[curPron.key])
-            ? verbData.examples[curPron.key]
-            : { de: "", vi: "" };
+        const curRuleText = (verbData.rules && verbData.rules[curPron.key]) ? verbData.rules[curPron.key] : "";
+        const rawEx = verbData.examples ? verbData.examples[curPron.key] : null;
+        const exampleList = Array.isArray(rawEx)
+            ? rawEx
+            : (rawEx ? [{ tag: `Ví dụ (ngôi ${curPron.shortLabel})`, de: rawEx.de, vi: rawEx.vi }] : []);
 
-        const safeConjugationSpeak = `${curPron.key === 'er_sie_es' ? 'er' : (curPron.key === 'sie_Sie' ? 'Sie' : curPron.key)} ${conjugatedForm}`.replace(/'/g, "\\'");
-        const safeExampleSpeak = curExample.de.replace(/[„“"]/g, '').replace(/'/g, "\\'");
+        const safeConjugationSpeak = `${curPron.speakWord} ${conjugatedForm}`.replace(/'/g, "\\'");
 
         c.innerHTML = `
             <div class="p-4 sm:p-6 rounded-3xl bg-slate-900 border border-amber-500/40 text-white shadow-2xl space-y-5">
                 <!-- Header -->
                 <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2.5 border-b border-slate-800 pb-4">
                     <div class="flex flex-wrap items-center gap-2">
-                        <span class="px-3 py-1 rounded-full bg-amber-500/20 border border-amber-400/40 text-amber-300 font-bold text-xs uppercase tracking-wider whitespace-nowrap shrink-0">
-                            ⚙️ Sơ đồ V1: Cỗ Máy Vokalwechsel
+                        <span class="px-3 py-1 rounded-full bg-amber-500/20 border border-amber-400/40 text-amber-300 font-bold text-xs tracking-wider whitespace-nowrap shrink-0">
+                            ⚙️ Sơ đồ V1: Cỗ máy Vokalwechsel
                         </span>
-                        <h4 class="text-base sm:text-lg font-black text-white">Quy Tắc Vàng Động Từ Bất Quy Tắc (A1)</h4>
+                        <h4 class="text-base sm:text-lg font-black text-white">Quy tắc vàng động từ bất quy tắc (A1)</h4>
                     </div>
-                    <span class="text-xs text-amber-300/90 font-medium">💡 Đổi nguyên âm CHỈ ở du & er/sie/es • Ngôi ihr KHÔNG biến âm!</span>
+                    <span class="text-xs text-amber-300/90 font-medium">💡 Đổi nguyên âm CHỈ ở du &amp; er/sie/es • Ngôi ihr KHÔNG biến âm!</span>
                 </div>
 
                 <!-- Bộ chọn 7 Động từ -->
                 <div class="space-y-2">
-                    <div class="text-xs font-bold text-slate-300 uppercase tracking-wider flex flex-wrap items-center justify-between gap-2">
-                        <span>1. Chọn động từ bất quy tắc cần khảo sát:</span>
-                        <span class="text-amber-300 font-mono text-xs px-2 py-0.5 rounded bg-amber-500/10 border border-amber-500/30">Vokalwechsel: ${verbData.type}</span>
+                    <div class="text-xs font-bold text-slate-300 tracking-wide flex flex-wrap items-center justify-between gap-2">
+                        <span class="uppercase">1. Chọn động từ bất quy tắc cần khảo sát:</span>
+                        <span class="normal-case text-amber-300 font-mono text-xs px-2.5 py-0.5 rounded bg-amber-500/10 border border-amber-500/30">
+                            Vokalwechsel: ${verbData.type}
+                        </span>
                     </div>
                     <div class="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-7 gap-2">
                         ${Object.keys(V1_VERBS).map(vk => {
@@ -203,7 +262,7 @@
                 <!-- 6 Bóng đèn ngôi xưng -->
                 <div class="space-y-2">
                     <div class="text-xs font-bold text-slate-300 uppercase tracking-wider">
-                        2. Bấm chọn ngôi nhân xưng để xem dạng chia & ví dụ tương ứng:
+                        2. Bấm chọn ngôi nhân xưng để xem phép chia &amp; ví dụ tương ứng:
                     </div>
                     <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-2.5">
                         ${PRONOUNS.map(p => {
@@ -238,7 +297,7 @@
                                 <button type="button" onclick="b13_selectPronoun('${p.key}')"
                                     class="p-3 rounded-2xl border text-left transition cursor-pointer flex flex-col justify-between gap-1.5 min-w-0 ${bulbClass}">
                                     <div class="flex items-center justify-between gap-1">
-                                        <span class="text-xs font-black">${p.label.split(' ')[0]}</span>
+                                        <span class="text-xs font-black">${p.shortLabel}</span>
                                         <span class="text-xs shrink-0">${icon}</span>
                                     </div>
                                     <div class="text-sm font-black font-mono tracking-wide break-words">
@@ -263,14 +322,14 @@
                 } space-y-4">
                     <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
                         <div class="space-y-1">
-                            <span class="text-xs uppercase font-extrabold tracking-wider ${
+                            <span class="text-xs font-extrabold tracking-wider block ${
                                 isShifted ? 'text-rose-400' : (isIhr ? 'text-emerald-400' : 'text-sky-400')
                             }">
-                                ${isShifted ? '🚨 VOKALWECHSEL: NGUYÊN ÂM ĐÃ BIẾN ĐỔI!' : (isIhr ? '🛡️ CHỐNG BẪY NGÔI IHR: KHÔNG BIẾN ÂM!' : 'ℹ️ DẠNG CHIA NGUYÊN ÂM GỐC')}
+                                ${isShifted ? `🚨 Vokalwechsel (${verbData.type}): Nguyên âm gốc đổi ở ngôi ${curPron.shortLabel}` : (isIhr ? '🛡️ Chống bẫy ngôi ihr: KHÔNG biến âm!' : `ℹ️ Dạng chia nguyên âm gốc (${curPron.shortLabel})`)}
                             </span>
                             <div class="flex items-center gap-3 flex-wrap">
                                 <span class="text-2xl sm:text-3xl font-black text-white font-mono">
-                                    <span class="text-slate-300">${curPron.label.split(' ')[0]}</span>
+                                    <span class="text-slate-300">${curPron.shortLabel}</span>
                                     <span class="${isShifted ? 'text-rose-300 underline decoration-rose-500 decoration-2' : (isIhr ? 'text-emerald-300 font-black' : 'text-amber-300')}">${conjugatedForm}</span>
                                 </span>
                                 <button type="button" onclick="b13_speakGerman('${safeConjugationSpeak}')"
@@ -280,27 +339,34 @@
                             </div>
                         </div>
 
-                        <div class="p-3 rounded-xl bg-slate-950/70 border border-slate-800 text-xs space-y-1 max-w-sm">
+                        <div class="p-3 rounded-xl bg-slate-950/80 border border-slate-800 text-xs space-y-1 max-w-md">
                             <div class="font-bold text-slate-300">Quy tắc áp dụng:</div>
-                            <div class="${isShifted ? 'text-rose-200 font-semibold' : (isIhr ? 'text-emerald-200 font-bold' : 'text-slate-300')}">
-                                ${curPron.note}
+                            <div class="font-mono ${isShifted ? 'text-rose-200 font-semibold' : (isIhr ? 'text-emerald-200 font-bold' : 'text-slate-200')}">
+                                ${curRuleText}
                             </div>
                         </div>
                     </div>
 
-                    <!-- Ví dụ thực tế đổi theo đúng ngôi đang chọn -->
-                    <div class="pt-3 border-t border-slate-800/80 flex flex-col sm:flex-row sm:items-center justify-between gap-2 text-xs">
-                        <div class="space-y-1">
-                            <div class="text-slate-200 font-medium">
-                                <span class="text-amber-400 font-bold">Ví dụ (ngôi ${curPron.label.split(' ')[0]}):</span>
-                                <span class="italic font-serif text-sm text-white">„${curExample.de}“</span>
-                            </div>
-                            <div class="text-slate-300 italic">${curExample.vi}</div>
-                        </div>
-                        <button type="button" onclick="b13_speakGerman('${safeExampleSpeak}')"
-                            class="px-3 py-1.5 rounded-lg bg-amber-500/20 hover:bg-amber-500/30 text-amber-200 border border-amber-500/40 font-bold text-xs shrink-0 transition flex items-center gap-1 cursor-pointer self-start sm:self-center">
-                            🔊 Đọc cả câu
-                        </button>
+                    <!-- Ví dụ thực tế đổi theo đúng ngôi đang chọn (2 ví dụ riêng cho sie / Sie) -->
+                    <div class="pt-3 border-t border-slate-800/80 space-y-2.5 text-xs">
+                        ${exampleList.map(exItem => {
+                            const safeExSpeak = exItem.de.replace(/[„“"]/g, '').replace(/'/g, "\\'");
+                            return `
+                                <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 p-2.5 rounded-xl bg-slate-950/50 border border-slate-800/70">
+                                    <div class="space-y-0.5">
+                                        <div class="text-slate-200 font-medium">
+                                            <span class="px-2 py-0.5 rounded bg-amber-500/15 border border-amber-400/30 text-amber-300 font-bold mr-1.5">${exItem.tag}</span>
+                                            <span class="italic font-serif text-sm text-white">„${exItem.de}“</span>
+                                        </div>
+                                        <div class="text-slate-300 italic pl-1">${exItem.vi}</div>
+                                    </div>
+                                    <button type="button" onclick="b13_speakGerman('${safeExSpeak}')"
+                                        class="px-3 py-1.5 rounded-lg bg-amber-500/20 hover:bg-amber-500/30 text-amber-200 border border-amber-500/40 font-bold text-xs shrink-0 transition flex items-center gap-1 cursor-pointer self-start sm:self-center">
+                                        🔊 Nghe câu
+                                    </button>
+                                </div>
+                            `;
+                        }).join('')}
                     </div>
                 </div>
             </div>
@@ -416,8 +482,8 @@
                 <!-- Header -->
                 <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2.5 border-b border-slate-800 pb-4">
                     <div class="flex flex-wrap items-center gap-2">
-                        <span class="px-3 py-1 rounded-full bg-indigo-500/20 border border-indigo-400/40 text-indigo-300 font-bold text-xs uppercase tracking-wider whitespace-nowrap shrink-0">
-                            🗺️ Sơ đồ V2: W-Fragen &amp; Giới Từ
+                        <span class="px-3 py-1 rounded-full bg-indigo-500/20 border border-indigo-400/40 text-indigo-300 font-bold text-xs tracking-wider whitespace-nowrap shrink-0">
+                            🗺️ Sơ đồ V2: W-Fragen &amp; Giới từ
                         </span>
                         <h4 class="text-base sm:text-lg font-black text-white">Bản Đồ Đặt Câu Hỏi &amp; Giới Từ Đi Kèm (A1)</h4>
                     </div>
@@ -482,7 +548,7 @@
                         <div class="text-xs font-bold text-indigo-300 uppercase tracking-wider flex flex-wrap items-center justify-between gap-2">
                             <span>Mẫu Hội Thoại Thực Tế:</span>
                             <button type="button" onclick="b13_speakGerman('${safeBoth}')"
-                                class="px-2.5 py-1 rounded-lg bg-indigo-500/20 hover:bg-indigo-500/30 text-indigo-200 border border-indigo-500/40 text-xs font-bold transition flex items-center gap-1 cursor-pointer">
+                                class="normal-case px-2.5 py-1 rounded-lg bg-indigo-500/20 hover:bg-indigo-500/30 text-indigo-200 border border-indigo-500/40 text-xs font-bold transition flex items-center gap-1 cursor-pointer">
                                 🔊 Nghe hỏi &amp; đáp
                             </button>
                         </div>
@@ -530,7 +596,6 @@
         "Zwei Kaffee, bitte!"
     ];
 
-    let cafeDlgPlaying = false;
     let cafeDlgSeqToken = 0;
 
     function b13_clearCafeLineHighlights() {
@@ -545,7 +610,6 @@
     function b13_playCafeDialogue() {
         if (typeof window === 'undefined') return;
         const token = ++cafeDlgSeqToken;
-        cafeDlgPlaying = true;
         b13_clearCafeLineHighlights();
 
         const btn = document.getElementById("b13-cafe-play-all-btn");
@@ -558,7 +622,6 @@
             const playNext = (idx) => {
                 if (token !== cafeDlgSeqToken) return;
                 if (idx >= B13_CAFE_DIALOGUE_LINES.length) {
-                    cafeDlgPlaying = false;
                     b13_clearCafeLineHighlights();
                     if (btn) btn.innerText = "🔊 Nghe cả hội thoại";
                     return;

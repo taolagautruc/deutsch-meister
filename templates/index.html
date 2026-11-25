@@ -381,7 +381,7 @@
     <script src="/static/js/essen_svg.js?v=20261116_v4"></script>
     <script src="/static/js/kleidung_svg.js?v=20261118_v1"></script>
     <script src="/static/js/gesundheit_svg.js?v=20261120_v1"></script>
-    <script src="/static/js/b13_review_svg.js?v=20261125_v1"></script>
+    <script src="/static/js/b13_review_svg.js?v=20261125_v2"></script>
     <script src="/static/js/verbs_db.js?v=20261116_v4"></script>
     <script src="/static/js/lexikon_db.js?v=20261116_v4"></script>
     <script src="/static/js/arena_engine.js?v=20261116_v4"></script>
@@ -2049,6 +2049,13 @@
             const isLesson11 = Boolean(currentLesson && currentLesson.id === 25);
             const isLesson12 = Boolean(currentLesson && currentLesson.id === 26);
             const isLesson13 = Boolean(currentLesson && (currentLesson.id === 27 || (currentLesson.title && /bài 13\b/i.test(currentLesson.title))));
+            if (isLesson13) {
+                const subtabExEl = document.getElementById('subtab-exercises');
+                if (subtabExEl && list.length > 0) {
+                    const realTypeCount = new Set(list.map(x => x.exercise_type).filter(Boolean)).size;
+                    subtabExEl.innerText = `✍️ Phần 2: Bài tập (Đủ ${realTypeCount} Dạng)`;
+                }
+            }
             const chipKeys = isLesson13 ? ['all', ...B13_ORDER] : (isLesson12 ? ['all', ...B12_ORDER] : (isLesson11 ? ['all', ...B11_ORDER] : Object.keys(TYPE_LABELS)));
             const getLabel = (k) => isLesson13 ? (B13_TYPE_LABELS[k] || TYPE_LABELS[k] || k) : (isLesson12 ? (B12_TYPE_LABELS[k] || TYPE_LABELS[k] || k) : (isLesson11 ? (B11_TYPE_LABELS[k] || TYPE_LABELS[k] || k) : (TYPE_LABELS[k] || k)));
 

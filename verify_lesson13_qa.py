@@ -154,6 +154,20 @@ def run_tests():
         else:
             print("  ✓ E3 & E4 PASS: Không còn 'Luôn đi với'/'ÖK A1'/'Vowel-Shift'; nút voice & hội thoại 7 dòng sạch.")
 
+        # Kiểm tra bổ sung các lỗi mới (1-6)
+        if 'normal-case' not in svg_js or 'sie / Sie' not in svg_js:
+            report["errors"].append("V1 SVG thiếu normal-case cho Vokalwechsel hoặc thiếu nút 'sie / Sie'.")
+        if svg_js.count('tag: "sie (họ)"') != 7 or svg_js.count('tag: "Sie (ngài)"') != 7:
+            report["errors"].append("V1 SVG phải có đủ 7 cặp ví dụ 'sie (họ)' và 'Sie (ngài)' cho cả 7 động từ!")
+        if '+ đuôi -st' in svg_js or 'du lies + t = liest (gốc lies đã kết thúc bằng s nên chỉ thêm -t)' not in svg_js or 'du iss + t = isst (gốc kết thúc s nên chỉ thêm -t)' not in svg_js:
+            report["errors"].append("V1 SVG quy tắc du cho lesen/essen chưa chính xác ('chỉ thêm -t', không '+ đuôi -st')!")
+        if '-est nếu gốc -t/-d' not in gc or 'gốc <code>-t/-d</code> thì chèn <code>-e-</code>' not in gc:
+            report["errors"].append("Lý thuyết thiếu ghi chú gốc -t/-d ở bảng đại từ hoặc dưới bảng 15 câu mẫu!")
+        if 'xl:grid-cols-3' not in gc or 'lg:grid-cols-5' in gc:
+            report["errors"].append("Thẻ W-Fragen vẫn dùng grid 5 cột hẹp hoặc chưa chuyển sang tối đa 3 cột desktop!")
+        else:
+            print("  ✓ V1/V2 & W-Fragen Layout Check PASS: normal-case, 7 cặp sie/Sie, phép tính từng động từ & lưới 3 cột.")
+
     # 3. TEST VOCABULARY COUNT & E1 LEMMA/PLURAL + TRANSLATION CHECK
     print("\n[3/8] Kiểm tra từ vựng Bài 13 (18 thẻ: lemma/plural & dịch Việt C1-C5, E1)...")
     cursor.execute("SELECT german_word, article, vietnamese_meaning, example_sentence FROM vocabularies WHERE lesson_id = 27;")

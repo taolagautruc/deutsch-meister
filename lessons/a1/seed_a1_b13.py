@@ -100,7 +100,7 @@ def seed_lesson_13():
                             <td class="px-4 py-2.5 font-mono font-black text-indigo-700">du</td>
                             <td class="px-4 py-2.5 font-semibold">bạn</td>
                             <td class="px-4 py-2.5 text-slate-600">ngôi II, số ít</td>
-                            <td class="px-4 py-2.5 font-mono font-bold text-emerald-700">-st <span class="text-[11px] font-normal text-slate-500">(-t nếu gốc -s/-ß/-z)</span></td>
+                            <td class="px-4 py-2.5 font-mono font-bold text-emerald-700">-st <span class="text-[11px] font-normal text-slate-600">(-t nếu gốc -s/-ß/-z; -est nếu gốc -t/-d)</span></td>
                             <td class="px-4 py-2.5 text-center"><button type="button" onclick="b13_speakGerman('du')" class="px-2 py-0.5 rounded bg-slate-100 hover:bg-indigo-100 text-xs cursor-pointer">🔊</button></td>
                         </tr>
                         <tr class="hover:bg-slate-50">
@@ -425,6 +425,12 @@ def seed_lesson_13():
                         <button type="button" onclick="b13_speakGerman('Du arbeitest heute sehr viel.')" class="text-slate-400 hover:text-indigo-600 cursor-pointer shrink-0">🔊</button>
                     </div>
                 </div>
+                <div class="p-3 rounded-xl bg-amber-50/90 border border-amber-200 text-amber-950 flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+                    <div class="leading-relaxed">
+                        <b>Lưu ý:</b> gốc <code>-t/-d</code> thì chèn <code>-e-</code>: <span class="font-mono font-bold">du arbeitest, er arbeitet, ihr arbeitet</span>. Gốc <code>-s/-ß/-z</code> thì <code>du</code> chỉ thêm <code>-t</code>: <span class="font-mono font-bold">du heißt, du reist</span>.
+                    </div>
+                    <button type="button" onclick="b13_speakGerman('du arbeitest, er arbeitet, ihr arbeitet, du heißt, du reist')" class="px-2.5 py-1 rounded-lg bg-white border border-amber-200 text-amber-800 font-bold cursor-pointer shrink-0 self-start sm:self-center">🔊 Nghe</button>
+                </div>
             </div>
 
             <!-- ĐỘNG TỪ BẤT QUY TẮC (VOKALWECHSEL) -->
@@ -528,95 +534,125 @@ def seed_lesson_13():
                 </h2>
             </div>
 
-            <!-- A1 + A2 + D2 + D3: 5 THẺ W-FRAGEN ĐỒNG BỘ HOÀN TOÀN VỚI 5 TAB V2 -->
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-3 text-xs">
+            <!-- A1 + A2 + D2 + D3 + #4: 5 THẺ W-FRAGEN RESPONSIVE (1 CỘT MOBILE / 2 TABLET / TỐI ĐA 3 DESKTOP), ĐỒNG NHẤT CẤU TRÚC -->
+            <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4 text-xs">
                 <!-- 1. Wie -->
-                <div class="p-3.5 rounded-xl bg-slate-50 border border-slate-200 space-y-2 text-slate-800">
-                    <span class="font-mono text-sm font-black text-amber-700 block">Wie (Như thế nào)</span>
-                    <p class="text-slate-600 leading-snug">Hỏi tên gọi hoặc tính chất / trạng thái.</p>
-                    <div class="p-2 rounded-lg bg-white border border-slate-200 space-y-1">
-                        <div class="flex items-center justify-between gap-1">
-                            <span class="font-mono font-bold text-slate-900">„Wie heißen Sie?“</span>
-                            <button type="button" onclick="b13_speakGerman('Wie heißen Sie?')" class="text-slate-400 hover:text-indigo-600 cursor-pointer">🔊</button>
+                <div class="p-4 rounded-2xl bg-slate-50 border border-slate-200 flex flex-col justify-between gap-3 text-slate-800 min-w-[230px]">
+                    <div class="space-y-1.5 flex-1">
+                        <span class="font-mono text-sm font-black text-amber-700 block">Wie (Như thế nào)</span>
+                        <p class="text-slate-600 leading-relaxed">Dùng để hỏi tên gọi, tính chất hoặc trạng thái. Lưu ý: KHÔNG dùng „Was ist dein Name?“.</p>
+                    </div>
+                    <div class="p-3 rounded-xl bg-white border border-slate-200 space-y-2">
+                        <div class="space-y-0.5">
+                            <div class="flex items-center justify-between gap-2">
+                                <span class="font-mono font-bold text-slate-900 inline-block">„Wie heißen Sie?“</span>
+                                <button type="button" onclick="b13_speakGerman('Wie heißen Sie?')" class="text-slate-400 hover:text-indigo-600 cursor-pointer shrink-0">🔊</button>
+                            </div>
+                            <div class="text-[11px] text-slate-500 italic">Ngài tên là gì?</div>
                         </div>
-                        <div class="text-[11px] text-slate-500 italic">Ngài tên là gì?</div>
-                        <div class="flex items-center justify-between gap-1 pt-1 border-t border-slate-100">
-                            <span class="font-mono font-bold text-emerald-700">„Ich heiße Anna.“</span>
-                            <button type="button" onclick="b13_speakGerman('Ich heiße Anna.')" class="text-slate-400 hover:text-emerald-600 cursor-pointer">🔊</button>
+                        <div class="space-y-0.5 pt-2 border-t border-slate-100">
+                            <div class="flex items-center justify-between gap-2">
+                                <span class="font-mono font-bold text-emerald-700 inline-block">„Ich heiße Anna.“</span>
+                                <button type="button" onclick="b13_speakGerman('Ich heiße Anna.')" class="text-slate-400 hover:text-emerald-600 cursor-pointer shrink-0">🔊</button>
+                            </div>
+                            <div class="text-[11px] text-slate-500 italic">Tôi tên là Anna.</div>
                         </div>
-                        <div class="text-[11px] text-slate-500 italic">Tôi tên là Anna.</div>
                     </div>
                 </div>
 
                 <!-- 2. Woher (A2) -->
-                <div class="p-3.5 rounded-xl bg-slate-50 border border-slate-200 space-y-2 text-slate-800">
-                    <span class="font-mono text-sm font-black text-rose-700 block">Woher (Từ đâu)</span>
-                    <p class="text-slate-600 leading-snug">Thường đi với <b>aus</b>. Nước có mạo từ dùng <b>aus der / aus den</b>: <i>aus der Türkei, aus der Schweiz, aus den USA</i>. Nước không mạo từ: <i>aus Deutschland, aus Vietnam, aus Polen</i>.</p>
-                    <div class="p-2 rounded-lg bg-white border border-slate-200 space-y-1">
-                        <div class="flex items-center justify-between gap-1">
-                            <span class="font-mono font-bold text-slate-900">„Woher kommst du?“</span>
-                            <button type="button" onclick="b13_speakGerman('Woher kommst du?')" class="text-slate-400 hover:text-indigo-600 cursor-pointer">🔊</button>
+                <div class="p-4 rounded-2xl bg-slate-50 border border-slate-200 flex flex-col justify-between gap-3 text-slate-800 min-w-[230px]">
+                    <div class="space-y-1.5 flex-1">
+                        <span class="font-mono text-sm font-black text-rose-700 block">Woher (Từ đâu)</span>
+                        <p class="text-slate-600 leading-relaxed">Thường đi với <b>aus</b>. Nước có mạo từ dùng <b>aus der / aus den</b> (<i>aus der Türkei, aus der Schweiz, aus den USA</i>); nước không mạo từ dùng <b>aus</b> (<i>aus Deutschland, aus Vietnam, aus Polen</i>).</p>
+                    </div>
+                    <div class="p-3 rounded-xl bg-white border border-slate-200 space-y-2">
+                        <div class="space-y-0.5">
+                            <div class="flex items-center justify-between gap-2">
+                                <span class="font-mono font-bold text-slate-900 inline-block">„Woher kommst du?“</span>
+                                <button type="button" onclick="b13_speakGerman('Woher kommst du?')" class="text-slate-400 hover:text-indigo-600 cursor-pointer shrink-0">🔊</button>
+                            </div>
+                            <div class="text-[11px] text-slate-500 italic">Bạn đến từ đâu?</div>
                         </div>
-                        <div class="text-[11px] text-slate-500 italic">Bạn đến từ đâu?</div>
-                        <div class="flex items-center justify-between gap-1 pt-1 border-t border-slate-100">
-                            <span class="font-mono font-bold text-emerald-700">„Aus Vietnam.“</span>
-                            <button type="button" onclick="b13_speakGerman('Aus Vietnam.')" class="text-slate-400 hover:text-emerald-600 cursor-pointer">🔊</button>
+                        <div class="space-y-0.5 pt-2 border-t border-slate-100">
+                            <div class="flex items-center justify-between gap-2">
+                                <span class="font-mono font-bold text-emerald-700 inline-block">„Aus Vietnam.“</span>
+                                <button type="button" onclick="b13_speakGerman('Aus Vietnam.')" class="text-slate-400 hover:text-emerald-600 cursor-pointer shrink-0">🔊</button>
+                            </div>
+                            <div class="text-[11px] text-slate-500 italic">Từ Việt Nam.</div>
                         </div>
-                        <div class="text-[11px] text-slate-500 italic">Từ Việt Nam.</div>
                     </div>
                 </div>
 
                 <!-- 3. Wo (A1) -->
-                <div class="p-3.5 rounded-xl bg-slate-50 border border-slate-200 space-y-2 text-slate-800">
-                    <span class="font-mono text-sm font-black text-blue-700 block">Wo (Ở đâu)</span>
-                    <p class="text-slate-600 leading-snug">Thường đi với <b>in</b> + thành phố / nước (<i>in Berlin</i>). Cũng gặp <i>am Bahnhof, zu Hause, bei Freunden</i>.</p>
-                    <div class="p-2 rounded-lg bg-white border border-slate-200 space-y-1">
-                        <div class="flex items-center justify-between gap-1">
-                            <span class="font-mono font-bold text-slate-900">„Wo wohnen Sie?“</span>
-                            <button type="button" onclick="b13_speakGerman('Wo wohnen Sie?')" class="text-slate-400 hover:text-indigo-600 cursor-pointer">🔊</button>
+                <div class="p-4 rounded-2xl bg-slate-50 border border-slate-200 flex flex-col justify-between gap-3 text-slate-800 min-w-[230px]">
+                    <div class="space-y-1.5 flex-1">
+                        <span class="font-mono text-sm font-black text-blue-700 block">Wo (Ở đâu)</span>
+                        <p class="text-slate-600 leading-relaxed">Thường đi với <b>in</b> + thành phố / nước (<i>in Berlin</i>). Cũng gặp <i>am Bahnhof, zu Hause, bei Freunden</i>.</p>
+                    </div>
+                    <div class="p-3 rounded-xl bg-white border border-slate-200 space-y-2">
+                        <div class="space-y-0.5">
+                            <div class="flex items-center justify-between gap-2">
+                                <span class="font-mono font-bold text-slate-900 inline-block">„Wo wohnen Sie?“</span>
+                                <button type="button" onclick="b13_speakGerman('Wo wohnen Sie?')" class="text-slate-400 hover:text-indigo-600 cursor-pointer shrink-0">🔊</button>
+                            </div>
+                            <div class="text-[11px] text-slate-500 italic">Ngài sống ở đâu?</div>
                         </div>
-                        <div class="text-[11px] text-slate-500 italic">Ngài sống ở đâu?</div>
-                        <div class="flex items-center justify-between gap-1 pt-1 border-t border-slate-100">
-                            <span class="font-mono font-bold text-emerald-700">„In Berlin.“</span>
-                            <button type="button" onclick="b13_speakGerman('In Berlin.')" class="text-slate-400 hover:text-emerald-600 cursor-pointer">🔊</button>
+                        <div class="space-y-0.5 pt-2 border-t border-slate-100">
+                            <div class="flex items-center justify-between gap-2">
+                                <span class="font-mono font-bold text-emerald-700 inline-block">„In Berlin.“</span>
+                                <button type="button" onclick="b13_speakGerman('In Berlin.')" class="text-slate-400 hover:text-emerald-600 cursor-pointer shrink-0">🔊</button>
+                            </div>
+                            <div class="text-[11px] text-slate-500 italic">Ở Berlin.</div>
                         </div>
-                        <div class="text-[11px] text-slate-500 italic">Ở Berlin.</div>
                     </div>
                 </div>
 
                 <!-- 4. Was -->
-                <div class="p-3.5 rounded-xl bg-slate-50 border border-slate-200 space-y-2 text-slate-800">
-                    <span class="font-mono text-sm font-black text-purple-700 block">Was (Cái gì)</span>
-                    <p class="text-slate-600 leading-snug">Hỏi đồ vật, đồ ăn, thức uống hoặc hoạt động.</p>
-                    <div class="p-2 rounded-lg bg-white border border-slate-200 space-y-1">
-                        <div class="flex items-center justify-between gap-1">
-                            <span class="font-mono font-bold text-slate-900">„Was trinken Sie?“</span>
-                            <button type="button" onclick="b13_speakGerman('Was trinken Sie?')" class="text-slate-400 hover:text-indigo-600 cursor-pointer">🔊</button>
+                <div class="p-4 rounded-2xl bg-slate-50 border border-slate-200 flex flex-col justify-between gap-3 text-slate-800 min-w-[230px]">
+                    <div class="space-y-1.5 flex-1">
+                        <span class="font-mono text-sm font-black text-purple-700 block">Was (Cái gì)</span>
+                        <p class="text-slate-600 leading-relaxed">Hỏi đồ vật, đồ ăn, thức uống hoặc hoạt động đang làm.</p>
+                    </div>
+                    <div class="p-3 rounded-xl bg-white border border-slate-200 space-y-2">
+                        <div class="space-y-0.5">
+                            <div class="flex items-center justify-between gap-2">
+                                <span class="font-mono font-bold text-slate-900 inline-block">„Was trinken Sie?“</span>
+                                <button type="button" onclick="b13_speakGerman('Was trinken Sie?')" class="text-slate-400 hover:text-indigo-600 cursor-pointer shrink-0">🔊</button>
+                            </div>
+                            <div class="text-[11px] text-slate-500 italic">Ngài uống gì ạ?</div>
                         </div>
-                        <div class="text-[11px] text-slate-500 italic">Ngài uống gì ạ?</div>
-                        <div class="flex items-center justify-between gap-1 pt-1 border-t border-slate-100">
-                            <span class="font-mono font-bold text-emerald-700">„Kaffee mit Zucker.“</span>
-                            <button type="button" onclick="b13_speakGerman('Kaffee mit Zucker.')" class="text-slate-400 hover:text-emerald-600 cursor-pointer">🔊</button>
+                        <div class="space-y-0.5 pt-2 border-t border-slate-100">
+                            <div class="flex items-center justify-between gap-2">
+                                <span class="font-mono font-bold text-emerald-700 inline-block">„Kaffee mit Zucker.“</span>
+                                <button type="button" onclick="b13_speakGerman('Kaffee mit Zucker.')" class="text-slate-400 hover:text-emerald-600 cursor-pointer shrink-0">🔊</button>
+                            </div>
+                            <div class="text-[11px] text-slate-500 italic">Cà phê có đường.</div>
                         </div>
-                        <div class="text-[11px] text-slate-500 italic">Cà phê có đường.</div>
                     </div>
                 </div>
 
                 <!-- 5. Wann (D3) -->
-                <div class="p-3.5 rounded-xl bg-slate-50 border border-slate-200 space-y-2 text-slate-800">
-                    <span class="font-mono text-sm font-black text-emerald-700 block">Wann (Khi nào)</span>
-                    <p class="text-slate-600 leading-snug">Hỏi thời điểm, thứ trong tuần, giờ giấc (<i>am Wochenende, um 15 Uhr</i>).</p>
-                    <div class="p-2 rounded-lg bg-white border border-slate-200 space-y-1">
-                        <div class="flex items-center justify-between gap-1">
-                            <span class="font-mono font-bold text-slate-900">„Wann fahrt ihr?“</span>
-                            <button type="button" onclick="b13_speakGerman('Wann fahrt ihr?')" class="text-slate-400 hover:text-indigo-600 cursor-pointer">🔊</button>
+                <div class="p-4 rounded-2xl bg-slate-50 border border-slate-200 flex flex-col justify-between gap-3 text-slate-800 min-w-[230px]">
+                    <div class="space-y-1.5 flex-1">
+                        <span class="font-mono text-sm font-black text-emerald-700 block">Wann (Khi nào)</span>
+                        <p class="text-slate-600 leading-relaxed">Hỏi thời điểm, thứ trong tuần hoặc giờ giấc (<i>am Wochenende, um 15 Uhr</i>).</p>
+                    </div>
+                    <div class="p-3 rounded-xl bg-white border border-slate-200 space-y-2">
+                        <div class="space-y-0.5">
+                            <div class="flex items-center justify-between gap-2">
+                                <span class="font-mono font-bold text-slate-900 inline-block">„Wann fahrt ihr?“</span>
+                                <button type="button" onclick="b13_speakGerman('Wann fahrt ihr?')" class="text-slate-400 hover:text-indigo-600 cursor-pointer shrink-0">🔊</button>
+                            </div>
+                            <div class="text-[11px] text-slate-500 italic">Khi nào các bạn đi?</div>
                         </div>
-                        <div class="text-[11px] text-slate-500 italic">Khi nào các bạn đi?</div>
-                        <div class="flex items-center justify-between gap-1 pt-1 border-t border-slate-100">
-                            <span class="font-mono font-bold text-emerald-700">„Am Wochenende.“</span>
-                            <button type="button" onclick="b13_speakGerman('Am Wochenende.')" class="text-slate-400 hover:text-emerald-600 cursor-pointer">🔊</button>
+                        <div class="space-y-0.5 pt-2 border-t border-slate-100">
+                            <div class="flex items-center justify-between gap-2">
+                                <span class="font-mono font-bold text-emerald-700 inline-block">„Am Wochenende.“</span>
+                                <button type="button" onclick="b13_speakGerman('Am Wochenende.')" class="text-slate-400 hover:text-emerald-600 cursor-pointer shrink-0">🔊</button>
+                            </div>
+                            <div class="text-[11px] text-slate-500 italic">Vào cuối tuần.</div>
                         </div>
-                        <div class="text-[11px] text-slate-500 italic">Vào cuối tuần.</div>
                     </div>
                 </div>
             </div>
@@ -872,7 +908,7 @@ def seed_lesson_13():
         ("Brief", "der", "bức thư (Pl: die Briefe)", "„Anna schreibt einen langen Brief an ihre Oma.“ — Anna viết một bức thư dài cho bà của cô ấy."),
         ("Eis", "das", "kem, đá (Pl: nur Sg.)", "„Ich esse gern Eis.“ — Tôi thích ăn kem."),
         ("Futter", "das", "thức ăn thú cưng (Pl: nur Sg.)", "„Hannes gibt der Katze das Futter.“ — Hannes cho mèo ăn thức ăn."),
-        ("Hotel", "das", "khách sạn (Pl: die Hotels)", "„Das Hotel ist groß und sehr sauber.“ — Khách sạn lớn và rất sạch sẽ."),
+        ("Hotel", "das", "khách sạn (Pl: die Hotels)", "„Schläfst du im Hotel?“ — Bạn có ngủ ở khách sạn không?"),
         ("Rathaus", "das", "tòa thị chính (Pl: die Rathäuser)", "„Die Touristen besuchen das alte Rathaus.“ — Du khách tham quan tòa thị chính cũ."),
         ("Gemüse", "das", "rau củ (Pl: nur Sg.)", "„Gemüse ist sehr gesund für den Körper.“ — Rau củ rất tốt cho sức khỏe cơ thể."),
         # 6 thẻ mới từ B8 (đã loại 6 từ trùng: das Buch, der Lehrer, das Handy, die Küche, die Hausaufgabe, die Türkei)

@@ -449,7 +449,7 @@ def ensure_db_initialized():
             e_cnt = cursor.fetchone()["cnt"]
             cursor.execute("SELECT count(*) as cnt FROM vocabularies WHERE lesson_id = ? AND (example_sentence LIKE '%Hotelzimmer%' OR example_sentence LIKE '%Erdbeereis%' OR example_sentence NOT LIKE '% — %');", (b13_id,))
             v_old = cursor.fetchone()["cnt"]
-            if v_cnt < 18 or e_cnt < 125 or v_old > 0 or ("ÖK A1" in b13_gc) or ("Vowel-Shift" in b13_gc) or ("Luôn đi với" in b13_gc):
+            if v_cnt < 18 or e_cnt < 125 or v_old > 0 or ("ÖK A1" in b13_gc) or ("Vowel-Shift" in b13_gc) or ("Luôn đi với" in b13_gc) or ("-est nếu gốc -t/-d" not in b13_gc):
                 need_seed_b13 = True
         if need_seed_b13:
             from lessons.a1.seed_a1_b13 import seed_lesson_13
