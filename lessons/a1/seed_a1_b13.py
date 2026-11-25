@@ -129,14 +129,14 @@ def seed_lesson_13():
                             <td class="px-4 py-2.5 font-semibold">họ</td>
                             <td class="px-4 py-2.5 text-slate-600">ngôi III, số nhiều</td>
                             <td class="px-4 py-2.5 font-mono font-bold text-emerald-700">-en <span class="text-[11px] font-normal text-rose-700">(ngoại lệ: sie sind)</span></td>
-                            <td class="px-4 py-2.5 text-center"><button type="button" onclick="b13_speakGerman('sie sind')" class="px-2 py-0.5 rounded bg-slate-100 hover:bg-indigo-100 text-xs cursor-pointer">🔊</button></td>
+                            <td class="px-4 py-2.5 text-center"><button type="button" onclick="b13_speakGerman('sie')" class="px-2 py-0.5 rounded bg-slate-100 hover:bg-indigo-100 text-xs cursor-pointer">🔊</button></td>
                         </tr>
                         <tr class="hover:bg-slate-50">
                             <td class="px-4 py-2.5 font-mono font-black text-indigo-700">Sie</td>
                             <td class="px-4 py-2.5 font-semibold">ngài / các ngài</td>
                             <td class="px-4 py-2.5 text-slate-600">lịch sự (luôn viết hoa S)</td>
                             <td class="px-4 py-2.5 font-mono font-bold text-emerald-700">-en <span class="text-[11px] font-normal text-rose-700">(ngoại lệ: Sie sind)</span></td>
-                            <td class="px-4 py-2.5 text-center"><button type="button" onclick="b13_speakGerman('Sie sind')" class="px-2 py-0.5 rounded bg-slate-100 hover:bg-indigo-100 text-xs cursor-pointer">🔊</button></td>
+                            <td class="px-4 py-2.5 text-center"><button type="button" onclick="b13_speakGerman('Sie')" class="px-2 py-0.5 rounded bg-slate-100 hover:bg-indigo-100 text-xs cursor-pointer">🔊</button></td>
                         </tr>
                     </tbody>
                 </table>

@@ -165,6 +165,8 @@ def run_tests():
             report["errors"].append("Lý thuyết thiếu ghi chú gốc -t/-d ở bảng đại từ hoặc dưới bảng 15 câu mẫu!")
         if 'xl:grid-cols-3' not in gc or 'lg:grid-cols-5' in gc:
             report["errors"].append("Thẻ W-Fragen vẫn dùng grid 5 cột hẹp hoặc chưa chuyển sang tối đa 3 cột desktop!")
+        if "b13_speakGerman('sie')" not in gc or "b13_speakGerman('Sie')" not in gc or "b13_speakGerman('sie sind')" in gc or "b13_speakGerman('Sie sind')" in gc:
+            report["errors"].append("Voice ở bảng đại từ cho 'sie' / 'Sie' phải đọc đúng từng đại từ ('sie' và 'Sie')!")
         else:
             print("  ✓ V1/V2 & W-Fragen Layout Check PASS: normal-case, 7 cặp sie/Sie, phép tính từng động từ & lưới 3 cột.")
 
