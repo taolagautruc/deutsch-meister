@@ -224,7 +224,7 @@ def seed_lesson_1_part_1():
                 <p>• <b>Bis dann / Bis morgen / Bis später</b>: Hẹn gặp sau / Hẹn ngày mai / Hẹn lát gặp</p>
             </div>
             <div class="p-6 rounded-3xl bg-white border border-slate-200 shadow-sm space-y-2 text-xs sm:text-sm">
-                <h4 class="text-base font-extrabold text-indigo-700 uppercase tracking-wide">4. 5 Mẫu Câu Giới Thiệu Bản Thân <span class="text-xs font-normal text-slate-500 lowercase">(sử dụng đại từ "Sie" - Ngài/Bạn lịch sự)</span></h4>
+                <h4 class="text-base font-extrabold text-indigo-700 uppercase tracking-wide">4. 5 Mẫu Câu Giới Thiệu Bản Thân <span class="text-xs font-normal text-slate-500 normal-case">(sử dụng đại từ "Sie" - ngài/bạn lịch sự)</span></h4>
                 <p>1) <b>Wer sind Sie?</b> (Ngài là ai?) → <i>Ich bin Anna.</i> (Tôi là Anna.)</p>
                 <p>2) <b>Wie ist Ihr Name?</b> (Tên của Ngài là gì?) → <i>Mein Name ist Anna.</i> (Tên tôi là Anna.)</p>
                 <p>3) <b>Wie heißen Sie?</b> (Ngài tên là gì?) → <i>Ich heiße Anna.</i> (Tôi tên là Anna.)</p>

@@ -84,6 +84,16 @@ def ensure_db_initialized():
             if cursor.fetchone()["cnt"] == 0:
                 from lessons.a1.seed_a1_b1_p1 import seed_lesson_1_part_1
                 seed_lesson_1_part_1()
+            else:
+                cursor.execute("SELECT grammar_content FROM lessons WHERE id = 14;")
+                b1_row = cursor.fetchone()
+                if b1_row and 'text-slate-500 lowercase">(sử dụng đại từ "Sie"' in (b1_row["grammar_content"] or ""):
+                    new_b1_gc = b1_row["grammar_content"].replace(
+                        '<span class="text-xs font-normal text-slate-500 lowercase">(sử dụng đại từ "Sie" - Ngài/Bạn lịch sự)</span>',
+                        '<span class="text-xs font-normal text-slate-500 normal-case">(sử dụng đại từ "Sie" - ngài/bạn lịch sự)</span>'
+                    )
+                    cursor.execute("UPDATE lessons SET grammar_content = ? WHERE id = 14;", (new_b1_gc,))
+                    conn.commit()
             
         cursor.execute("SELECT COUNT(*) as cnt FROM lessons WHERE title LIKE 'Bài 1 (P2)%';")
         has_b1_p2 = cursor.fetchone()["cnt"] > 0
