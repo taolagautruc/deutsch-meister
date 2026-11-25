@@ -167,6 +167,8 @@ def run_tests():
             report["errors"].append("Thẻ W-Fragen vẫn dùng grid 5 cột hẹp hoặc chưa chuyển sang tối đa 3 cột desktop!")
         if "b13_speakGerman('sie')" not in gc or "b13_speakGerman('Sie')" not in gc or "b13_speakGerman('sie sind')" in gc or "b13_speakGerman('Sie sind')" in gc:
             report["errors"].append("Voice ở bảng đại từ cho 'sie' / 'Sie' phải đọc đúng từng đại từ ('sie' và 'Sie')!")
+        if "*„sien“*" in gc or "b13_speakGerman('sie kommen, sie lesen, sie sind')" not in gc:
+            report["errors"].append("Khung vàng phân biệt 3 chữ 'sie' chưa bỏ dấu * hoặc voice thiếu 'sie lesen'!")
         else:
             print("  ✓ V1/V2 & W-Fragen Layout Check PASS: normal-case, 7 cặp sie/Sie, phép tính từng động từ & lưới 3 cột.")
 

@@ -158,9 +158,9 @@ def seed_lesson_13():
                     <div class="p-3 rounded-xl bg-white border border-amber-200 text-slate-800 space-y-1">
                         <div class="flex items-center justify-between">
                             <span class="font-bold text-slate-900 font-mono">2. sie (họ)</span>
-                            <button type="button" onclick="b13_speakGerman('sie kommen, sie sind')" class="text-xs px-1.5 py-0.5 rounded bg-amber-50 hover:bg-amber-100 cursor-pointer">🔊</button>
+                            <button type="button" onclick="b13_speakGerman('sie kommen, sie lesen, sie sind')" class="text-xs px-1.5 py-0.5 rounded bg-amber-50 hover:bg-amber-100 cursor-pointer">🔊</button>
                         </div>
-                        <p class="text-slate-600 text-[11px]">Ngôi III số nhiều, động từ chia đuôi <b>-en</b>: <i class="font-mono text-slate-900">sie kommen, sie lesen</i>. <b>Ngoại lệ:</b> <b class="text-rose-700 font-mono">„sie sind“</b> (KHÔNG phải *„sien“*!).</p>
+                        <p class="text-slate-600 text-[11px]">Ngôi III số nhiều, động từ chia đuôi <b>-en</b>: <i class="font-mono text-slate-900">sie kommen, sie lesen</i>. <b>Ngoại lệ:</b> <b class="text-rose-700 font-mono">„sie sind“</b> (không phải <i class="line-through text-slate-500">„sien“</i>).</p>
                     </div>
                     <div class="p-3 rounded-xl bg-white border border-amber-200 text-slate-800 space-y-1">
                         <div class="flex items-center justify-between">
