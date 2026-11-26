@@ -196,8 +196,8 @@ def seed_lesson_14():
                             <td class="px-4 py-2.5 font-mono font-black text-indigo-700">du <span class="font-sans font-normal text-slate-500">(bạn)</span></td>
                             <td class="px-4 py-2.5 font-mono font-bold text-emerald-700">bist</td>
                             <td class="px-4 py-2.5 font-mono font-bold text-amber-700">warst</td>
-                            <td class="px-4 py-2.5"><span class="font-mono font-semibold text-slate-900"><b>Bist</b> du jetzt zu Hause?</span> <span class="text-xs text-slate-500 italic block">Bây giờ bạn có ở nhà không?</span></td>
-                            <td class="px-3 py-2.5 text-center"><button type="button" onclick="b14_speakGerman('Bist du jetzt zu Hause?')" class="p-1 rounded-lg bg-slate-50 hover:bg-indigo-100 border border-slate-200 cursor-pointer">🔊</button></td>
+                            <td class="px-4 py-2.5"><span class="font-mono font-semibold text-slate-900"><b>Warst</b> du gestern zu Hause?</span> <span class="text-xs text-slate-500 italic block">Hôm qua bạn có ở nhà không?</span></td>
+                            <td class="px-3 py-2.5 text-center"><button type="button" onclick="b14_speakGerman('Warst du gestern zu Hause?')" class="p-1 rounded-lg bg-slate-50 hover:bg-indigo-100 border border-slate-200 cursor-pointer">🔊</button></td>
                         </tr>
                         <tr>
                             <td class="px-4 py-2.5 font-mono font-black text-indigo-700">er/sie/es <span class="font-sans font-normal text-slate-500">(anh/cô ấy/nó)</span></td>
@@ -210,8 +210,8 @@ def seed_lesson_14():
                             <td class="px-4 py-2.5 font-mono font-black text-indigo-700">wir <span class="font-sans font-normal text-slate-500">(chúng tôi)</span></td>
                             <td class="px-4 py-2.5 font-mono font-bold text-emerald-700">sind</td>
                             <td class="px-4 py-2.5 font-mono font-bold text-amber-700">waren</td>
-                            <td class="px-4 py-2.5"><span class="font-mono font-semibold text-slate-900">Wir <b>sind</b> heute in Berlin.</span> <span class="text-xs text-slate-500 italic block">Hôm nay chúng tôi ở Berlin.</span></td>
-                            <td class="px-3 py-2.5 text-center"><button type="button" onclick="b14_speakGerman('Wir sind heute in Berlin.')" class="p-1 rounded-lg bg-slate-50 hover:bg-indigo-100 border border-slate-200 cursor-pointer">🔊</button></td>
+                            <td class="px-4 py-2.5"><span class="font-mono font-semibold text-slate-900">Wir <b>waren</b> gestern in Berlin.</span> <span class="text-xs text-slate-500 italic block">Hôm qua chúng tôi ở Berlin.</span></td>
+                            <td class="px-3 py-2.5 text-center"><button type="button" onclick="b14_speakGerman('Wir waren gestern in Berlin.')" class="p-1 rounded-lg bg-slate-50 hover:bg-indigo-100 border border-slate-200 cursor-pointer">🔊</button></td>
                         </tr>
                         <tr>
                             <td class="px-4 py-2.5 font-mono font-black text-indigo-700">ihr <span class="font-sans font-normal text-slate-500">(các bạn)</span></td>
@@ -346,6 +346,9 @@ def seed_lesson_14():
                         </div>
                     </div>
                 </div>
+                <div class="p-2.5 rounded-xl bg-white/90 border border-amber-200 text-xs text-amber-950">
+                    <b>💡 Ghi chú Trung tâm / Giữa:</b> <b>Zentrum</b> = trung tâm thành phố (<i>im Zentrum von Hanoi</i>); <b>Mitte</b> = giữa của một nước/vùng (<i>in der Mitte von Vietnam</i>).
+                </div>
             </div>
 
             <!-- CONTAINER SƠ ĐỒ LA BÀN TƯƠNG TÁC -->
@@ -364,9 +367,9 @@ def seed_lesson_14():
     vocab_items = [
         ("Laptop", "der", "máy tính xách tay (Pl: die Laptops)", "„Das ist kein Fernseher, das ist ein Laptop.“ — Đó không phải tivi, đó là một chiếc laptop."),
         ("Rucksack", "der", "ba lô (Pl: die Rucksäcke)", "„Ist das ein Rucksack von Thomas?“ — Đó có phải là một chiếc ba lô của Thomas không?"),
-        ("Schlüssel", "der", "chìa khóa (Pl: die Schlüssel)", "„Wo ist der Schlüssel heute?“ — Hôm nay chiếc chìa khóa ở đâu?"),
-        ("Arzt", "der", "bác sĩ (Pl: die Ärzte)", "„Früher war mein Vater Arzt.“ — Trước đây bố tôi từng là bác sĩ."),
-        ("Lehrer", "der", "giáo viên nam (Pl: die Lehrer)", "„Früher waren wir Studenten, jetzt sind wir Lehrer.“ — Trước đây chúng tôi là sinh viên, nay là giáo viên."),
+        ("Schlüssel", "der", "chìa khóa (Pl: die Schlüssel)", "„Wo ist heute der Schlüssel?“ — Hôm nay chìa khóa ở đâu?"),
+        ("Arzt", "der", "bác sĩ (nam); bác sĩ nói chung (Pl: die Ärzte)", "„Früher war mein Vater Arzt.“ — Trước đây bố tôi từng là bác sĩ."),
+        ("Lehrer", "der", "giáo viên (nam); thầy giáo (Pl: die Lehrer)", "„Früher waren wir Studenten, jetzt sind wir Lehrer.“ — Trước đây chúng tôi là sinh viên, nay là giáo viên."),
         ("Film", "der", "bộ phim (Pl: die Filme)", "„Gestern war ich im Kino, der Film war fantastisch!“ — Hôm qua tôi ở rạp, bộ phim rất tuyệt vời!"),
         ("Computer", "der", "máy vi tính (Pl: die Computer)", "„Das ist kein Fernseher, das ist ein Computer.“ — Đó không phải tivi, đó là máy vi tính."),
         ("Nordwesten", "der", "hướng Tây Bắc (Pl: nur Sg.)", "„Bremen liegt im Nordwesten von Deutschland.“ — Bremen nằm ở miền Tây Bắc của nước Đức."),
@@ -374,11 +377,11 @@ def seed_lesson_14():
         ("Südwesten", "der", "hướng Tây Nam (Pl: nur Sg.)", "„Spanien liegt im Südwesten von Europa.“ — Tây Ban Nha nằm ở miền Tây Nam của châu Âu."),
         ("Kamera", "die", "máy ảnh (Pl: die Kameras)", "„Das ist keine Kamera, das ist ein Handy.“ — Đó không phải máy ảnh, đó là điện thoại."),
         ("Muttersprache", "die", "tiếng mẹ đẻ (Pl: die Muttersprachen)", "„Seine Muttersprache ist Arabisch.“ — Tiếng mẹ đẻ của anh ấy là tiếng Ả Rập."),
-        ("Freundin", "die", "bạn gái (Pl: die Freundinnen)", "„Meine Freundin spricht gut Deutsch und Englisch.“ — Bạn gái tôi nói tốt tiếng Đức và tiếng Anh."),
-        ("Kind", "das", "đứa trẻ, con (Pl: die Kinder)", "„Das Kind lernt heute Deutsch in der Schule.“ — Đứa trẻ hôm nay học tiếng Đức ở trường."),
+        ("Freundin", "die", "bạn (nữ); bạn gái (Pl: die Freundinnen)", "„Meine Freundin spricht gut Deutsch und Englisch.“ — Bạn (nữ) của tôi nói tốt tiếng Đức và tiếng Anh."),
+        ("Kind", "das", "đứa trẻ; con (Pl: die Kinder)", "„Das Kind lernt heute Deutsch in der Schule.“ — Đứa trẻ hôm nay học tiếng Đức ở trường."),
         ("Konzert", "das", "buổi hòa nhạc (Pl: die Konzerte)", "„Das Konzert gestern Abend war fantastisch!“ — Buổi hòa nhạc tối qua thật tuyệt vời!"),
         ("Radio", "das", "cái đài radio (Pl: die Radios)", "„Nein, das ist kein Radio.“ — Không, đó không phải là một cái đài."),
-        ("Zentrum", "das", "trung tâm (Pl: die Zentren)", "„Da Nang liegt im Zentrum von Vietnam.“ — Đà Nẵng nằm ở trung tâm của Việt Nam."),
+        ("Zentrum", "das", "trung tâm thành phố (Zentrum = trung tâm thành phố; Mitte = giữa của một nước/vùng; Pl: die Zentren)", "„Das Hotel liegt im Zentrum von Hanoi.“ — Khách sạn nằm ở trung tâm Hà Nội."),
         ("Europa", "das", "châu Âu (Thường dùng KHÔNG mạo từ: in Europa, aus Europa; Pl: nur Sg.)", "„Russland liegt im Osten von Europa.“ — Nga nằm ở miền Đông của châu Âu.")
     ]
 

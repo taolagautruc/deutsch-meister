@@ -71,12 +71,12 @@
             adjExVi: 'Bremen nằm ở phía Tây Bắc của Leipzig. (hai thành phố riêng)'
         },
         Zentrum: {
-            vi: 'Trung tâm / Miền Trung',
+            vi: 'Giữa nước/vùng & Trung tâm thành phố',
             adj: null,
             nounEx: 'Da Nang liegt in der Mitte von Vietnam.',
-            nounExVi: 'Đà Nẵng nằm ở miền Trung của Việt Nam. (thuộc Việt Nam)',
-            adjEx: 'Hue liegt im Zentrum von Vietnam.',
-            adjExVi: 'Huế nằm ở trung tâm của Việt Nam. (thuộc Việt Nam)'
+            nounExVi: 'Đà Nẵng nằm ở miền Trung của Việt Nam. (Mitte = giữa một nước/vùng)',
+            adjEx: 'Hue liegt in der Mitte von Vietnam.',
+            adjExVi: 'Huế nằm ở miền Trung của Việt Nam. (VD trung tâm TP: Das Hotel liegt im Zentrum von Hanoi.)'
         }
     };
 
@@ -137,7 +137,7 @@
         const adjSafe = d.adjEx.replace(/'/g, "\\'");
 
         const way1Formula = (selectedDirection === 'Zentrum')
-            ? `liegt <span class="underline decoration-blue-500">in der Mitte</span> von ... <span class="text-xs font-normal text-blue-700">(hoặc im Zentrum)</span>`
+            ? `liegt <span class="underline decoration-blue-500">in der Mitte</span> von ... <span class="text-xs font-normal text-blue-700">(nước/vùng)</span>`
             : `liegt <span class="underline decoration-blue-500">im ${selectedDirection}</span> von ...`;
 
         const way2Html = d.adj ? `
@@ -161,11 +161,12 @@
         ` : `
             <div class="p-4 rounded-2xl bg-amber-50 border-2 border-amber-300 space-y-2">
                 <div class="flex items-center justify-between gap-2">
-                    <span class="px-2.5 py-0.5 rounded-lg bg-amber-600 text-white text-[11px] font-black uppercase">CỤM CỐ ĐỊNH • TRUNG TÂM</span>
+                    <span class="px-2.5 py-0.5 rounded-lg bg-amber-600 text-white text-[11px] font-black uppercase">CỤM CỐ ĐỊNH • MITTE vs ZENTRUM</span>
                     <span class="text-[11px] font-bold text-amber-800">Không có tính từ -lich tương ứng</span>
                 </div>
+                <div class="text-xs text-amber-900 font-semibold">Zentrum = trung tâm thành phố (<i>im Zentrum von Hanoi</i>); Mitte = giữa (của một nước/vùng).</div>
                 <div class="text-sm font-black text-amber-950 font-mono">
-                    liegt <span class="underline decoration-amber-500">in der Mitte / im Zentrum</span> von ...
+                    liegt <span class="underline decoration-amber-500">in der Mitte</span> von ... <span class="text-xs font-normal">(nước/vùng)</span>
                 </div>
                 <div class="p-2.5 rounded-xl bg-white border border-amber-200 flex items-center justify-between gap-2 text-xs">
                     <div>

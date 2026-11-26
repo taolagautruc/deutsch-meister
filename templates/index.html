@@ -382,7 +382,7 @@
     <script src="/static/js/kleidung_svg.js?v=20261118_v1"></script>
     <script src="/static/js/gesundheit_svg.js?v=20261120_v1"></script>
     <script src="/static/js/b13_review_svg.js?v=20261126_v3"></script>
-    <script src="/static/js/b14_review_svg.js?v=20261126_v2"></script>
+    <script src="/static/js/b14_review_svg.js?v=20261126_v3"></script>
     <script src="/static/js/verbs_db.js?v=20261116_v4"></script>
     <script src="/static/js/lexikon_db.js?v=20261116_v4"></script>
     <script src="/static/js/arena_engine.js?v=20261116_v4"></script>
@@ -1339,10 +1339,13 @@
                     const deDisplay = rawEx.slice(0, splitIdx).trim();
                     const viDisplay = rawEx.slice(splitIdx + 3).trim();
                     const cleanDeSpeak = deDisplay.replace(/[„“"]/g, '').trim().replace(/'/g, "\\'");
+                    const formattedDeDisplay = isLesson14Vocab
+                        ? deDisplay.replace(/(\S+)$/, '<span class="whitespace-nowrap">$1</span>')
+                        : deDisplay;
                     exampleBlockHtml = `
                         <div class="text-xs border-t border-slate-200/70 pt-2 space-y-1">
                             <div class="flex items-start justify-between gap-1.5 text-slate-700 italic">
-                                <span>${deDisplay}</span>
+                                <span>${formattedDeDisplay}</span>
                                 <button onclick="speakGerman('${cleanDeSpeak}')" title="Nghe câu ví dụ" class="shrink-0 p-1 rounded-md text-slate-400 hover:text-indigo-600 hover:bg-white transition cursor-pointer text-xs">🔊</button>
                             </div>
                             <div class="text-[11px] text-slate-500 not-italic">${viDisplay}</div>

@@ -488,7 +488,7 @@ def ensure_db_initialized():
             e_cnt14 = cursor.fetchone()["cnt"]
             cursor.execute("SELECT count(*) as cnt FROM exercises WHERE lesson_id = ? AND question LIKE '%Câu 62:%' AND correct_answer = 'Ägyptisch';", (b14_id,))
             e_old14 = cursor.fetchone()["cnt"]
-            if v_cnt14 < 18 or e_cnt14 < 125 or e_old14 > 0 or ("b14-compass-svg-container" not in b14_gc) or ("2 CÁCH NÓI KHÁC NGHĨA" not in b14_gc):
+            if v_cnt14 < 18 or e_cnt14 < 125 or e_old14 > 0 or ("b14-compass-svg-container" not in b14_gc) or ("2 CÁCH NÓI KHÁC NGHĨA" not in b14_gc) or ("Warst du gestern zu Hause?" not in b14_gc) or ("Wir waren gestern in Berlin." not in b14_gc):
                 need_seed_b14 = True
         if need_seed_b14:
             from lessons.a1.seed_a1_b14 import seed_lesson_14

@@ -85,7 +85,11 @@ def run_tests():
         "Länder", "Himmelsrichtungen",
         "2 CÁCH NÓI KHÁC NGHĨA: BÊN TRONG vs BÊN NGOÀI",
         "im Norden", "China liegt", "Arabisch", "die Türkei", "die Schweiz",
-        "KHÔNG có công thức cố định"
+        "KHÔNG có công thức cố định",
+        "Warst du gestern zu Hause?",
+        "Wir waren gestern in Berlin.",
+        "<b>Zentrum</b> = trung tâm thành phố",
+        "in der Mitte von Vietnam"
     ]:
         if marker not in gc:
             errors.append(f"Lý thuyết Bài 14 thiếu nội dung/thành phần '{marker}'!")
@@ -93,6 +97,8 @@ def run_tests():
         errors.append("Lý thuyết Bài 14 vẫn còn chứa 'Ägyptisch'!")
     if "Hanoi liegt <b>nördlich</b> von Vietnam" in gc or "München liegt <b>südlich</b> von Deutschland" in gc:
         errors.append("Lý thuyết Bài 14 vẫn còn ví dụ sai 'Hanoi/München liegt ...lich von Vietnam/Deutschland'!")
+    if "Warst du schon einmal" in gc or "Wir sind zu Hause" in gc:
+        errors.append("Lý thuyết Bài 14 bảng sein vẫn còn ví dụ Präsens cũ cho du/wir!")
 
     # 3. KIỂM TRA TỪ VỰNG BÀI 14 (KHÔNG TRÙNG BÀI 1 -> 13)
     print("\n[3/7] Kiểm tra từ vựng Bài 14 (18 thẻ không trùng Bài 1 -> 13)...")
@@ -102,8 +108,10 @@ def run_tests():
     v_rows = cursor.fetchall()
     if len(v_rows) != 18:
         errors.append(f"Số lượng từ vựng Bài 14 không đúng: {len(v_rows)}/18.")
+    v_map = {}
     for r in v_rows:
         w = r["german_word"]
+        v_map[w] = r
         if w.lower() in old_words:
             errors.append(f"Từ vựng '{w}' bị trùng với Bài 1-13!")
         ex_s = r["example_sentence"] or ""
@@ -113,6 +121,15 @@ def run_tests():
             de_part, vi_part = ex_s.split(" — ", 1)
             if not vi_part.strip():
                 errors.append(f"Thẻ '{w}' có phần dịch trống!")
+    if "Zentrum" in v_map and "Das Hotel liegt im Zentrum von Hanoi." not in (v_map["Zentrum"]["example_sentence"] or ""):
+        errors.append("Thẻ 'Zentrum' chưa cập nhật ví dụ 'Das Hotel liegt im Zentrum von Hanoi.'!")
+    if "Freundin" in v_map:
+        f_mean = v_map["Freundin"]["vietnamese_meaning"] or ""
+        f_ex = v_map["Freundin"]["example_sentence"] or ""
+        if "bạn (nữ); bạn gái" not in f_mean or "Bạn (nữ) của tôi" not in f_ex:
+            errors.append("Thẻ 'Freundin' chưa cập nhật nghĩa/dịch 'bạn (nữ); bạn gái'!")
+    if "Schlüssel" in v_map and "Wo ist heute der Schlüssel?" not in (v_map["Schlüssel"]["example_sentence"] or ""):
+        errors.append("Thẻ 'Schlüssel' chưa cập nhật ví dụ 'Wo ist heute der Schlüssel?'!")
     print(f"  ✓ Từ vựng Bài 14 PASS: {len(v_rows)}/18 thẻ độc nhất.")
 
     # 4. KIỂM TRA CHÍNH XÁC 125 CÂU BÀI TẬP
@@ -203,6 +220,12 @@ def run_tests():
         errors.append("Thiếu Semantic Tolerance evaluator cho Bài 14!")
     if "isLesson14GermanInput" not in idx_html:
         errors.append("Thiếu Capitalization Warning hook cho Bài 14!")
+    if "isLesson14Vocab" not in idx_html or "whitespace-nowrap" not in idx_html:
+        errors.append("Thiếu guard chống rớt dấu ngoặc đóng đơn độc (whitespace-nowrap) cho thẻ từ vựng Bài 14!")
+    if "Hue liegt in der Mitte von Vietnam." not in b14_js or "Zentrum = trung tâm thành phố" not in b14_js:
+        errors.append("b14_review_svg.js chưa cập nhật quy tắc Mitte vs Zentrum!")
+    if "Hue liegt im Zentrum von Vietnam." in b14_js:
+        errors.append("b14_review_svg.js vẫn còn ví dụ cũ 'Hue liegt im Zentrum von Vietnam.'!")
 
     # 8. KIỂM TRA TỌA ĐỘ PHƯƠNG HƯỚNG (-lich von) & CẤM DÙNG BÊN TRONG/Ägyptisch
     print("\n[8/8] Kiểm tra tọa độ địa lý (A liegt ...lich von B) & chống dùng sai bên trong...")
