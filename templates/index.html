@@ -4048,13 +4048,22 @@
                     ex.exercise_type === 'dich_nghia_vd' || 
                     ex.exercise_type === 'dich'
                 ));
-                if (isTranslation && ex.correct_answer) {
+                const isLesson13QuestionWrite = Boolean(
+                    ex && ex.exercise_type === 'viet_lai_cau_w' && (
+                        String(ex.lesson_id) === '27' ||
+                        (typeof currentLesson !== 'undefined' && currentLesson && (
+                            String(currentLesson.id) === '27' || /bài 13\b/i.test(currentLesson.title || '')
+                        ))
+                    )
+                );
+                if ((isTranslation || isLesson13QuestionWrite) && ex.correct_answer) {
                     const normUser = normalizeAnswer(userAnswer);
                     const normSample = normalizeAnswer(ex.correct_answer);
                     if (normUser !== normSample) {
+                        const altNote = isLesson13QuestionWrite ? 'cách hỏi của bạn cũng đúng' : 'cách dịch của bạn cũng đúng';
                         sampleSublineHtml = `
                             <div class="text-xs text-emerald-800 font-medium pt-0.5">
-                                <span>💡 Đáp án mẫu: <b>${ex.correct_answer}</b> <i>(cách dịch của bạn cũng đúng)</i></span>
+                                <span>💡 Đáp án mẫu: <b>${ex.correct_answer}</b> <i>(${altNote})</i></span>
                             </div>
                         `;
                     }

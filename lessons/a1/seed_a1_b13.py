@@ -3311,7 +3311,13 @@ def seed_lesson_13():
                 "target_phrase": "Kaffee",
                 "accepted_answers": [
                     "Was trinkt ihr?",
-                    "Was trinkt ihr"
+                    "Was trinkt ihr",
+                    "Was möchtet ihr trinken?",
+                    "Was möchtet ihr trinken",
+                    "Was moechtet ihr trinken?",
+                    "Was moechtet ihr trinken",
+                    "Was wollt ihr trinken?",
+                    "Was wollt ihr trinken"
                 ],
                 "audio_text": "Was trinkt ihr?",
                 "translation": "Các bạn uống gì? (Chúng tôi uống cà phê.)"

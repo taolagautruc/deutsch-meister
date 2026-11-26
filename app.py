@@ -465,7 +465,9 @@ def ensure_db_initialized():
             e_old_dictation = cursor.fetchone()["cnt"]
             cursor.execute("SELECT count(*) as cnt FROM exercises WHERE lesson_id = ? AND exercise_type = 'dich_cau_dv' AND question LIKE '%Câu 80:%' AND extra_data NOT LIKE '%ngài tên gì%';", (b13_id,))
             e_old_dv80 = cursor.fetchone()["cnt"]
-            if v_cnt < 19 or e_cnt < 125 or v_old > 0 or e_missing_qa > 0 or e_old_dictation > 0 or e_old_dv80 > 0 or ("ÖK A1" in b13_gc) or ("Vowel-Shift" in b13_gc) or ("Luôn đi với" in b13_gc) or ("-est nếu gốc -t/-d" not in b13_gc) or ("b13_speakGerman('sie sind')" in b13_gc) or ("*„sien“*" in b13_gc) or ("b13_speakGerman('sie kommen, sie sind')" in b13_gc):
+            cursor.execute("SELECT count(*) as cnt FROM exercises WHERE lesson_id = ? AND exercise_type = 'viet_lai_cau_w' AND question LIKE '%Câu 116:%' AND extra_data NOT LIKE '%möchtet ihr trinken%';", (b13_id,))
+            e_old_w116 = cursor.fetchone()["cnt"]
+            if v_cnt < 19 or e_cnt < 125 or v_old > 0 or e_missing_qa > 0 or e_old_dictation > 0 or e_old_dv80 > 0 or e_old_w116 > 0 or ("ÖK A1" in b13_gc) or ("Vowel-Shift" in b13_gc) or ("Luôn đi với" in b13_gc) or ("-est nếu gốc -t/-d" not in b13_gc) or ("b13_speakGerman('sie sind')" in b13_gc) or ("*„sien“*" in b13_gc) or ("b13_speakGerman('sie kommen, sie sind')" in b13_gc):
                 need_seed_b13 = True
         if need_seed_b13:
             from lessons.a1.seed_a1_b13 import seed_lesson_13
