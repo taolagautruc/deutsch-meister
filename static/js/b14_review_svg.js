@@ -10,73 +10,73 @@
             vi: 'Bắc',
             adj: 'nördlich',
             nounEx: 'Hanoi liegt im Norden von Vietnam.',
-            nounExVi: 'Hà Nội nằm ở miền Bắc của Việt Nam.',
-            adjEx: 'Hanoi liegt nördlich von Vietnam.',
-            adjExVi: 'Hà Nội nằm ở phía Bắc của Việt Nam.'
+            nounExVi: 'Hà Nội nằm ở miền Bắc của Việt Nam. (thuộc Việt Nam)',
+            adjEx: 'China liegt nördlich von Vietnam.',
+            adjExVi: 'Trung Quốc nằm ở phía Bắc của Việt Nam. (bên ngoài Việt Nam)'
         },
         Nordosten: {
             vi: 'Đông Bắc',
             adj: 'nordöstlich',
             nounEx: 'Hai Phong liegt im Nordosten von Vietnam.',
-            nounExVi: 'Hải Phòng nằm ở miền Đông Bắc của Việt Nam.',
-            adjEx: 'Hannover liegt nordöstlich von Leipzig.',
-            adjExVi: 'Hannover nằm ở phía Đông Bắc của Leipzig.'
+            nounExVi: 'Hải Phòng nằm ở miền Đông Bắc của Việt Nam. (thuộc Việt Nam)',
+            adjEx: 'Rostock liegt nordöstlich von Hannover.',
+            adjExVi: 'Rostock nằm ở phía Đông Bắc của Hannover. (hai thành phố riêng)'
         },
         Osten: {
             vi: 'Đông',
             adj: 'östlich',
             nounEx: 'Wien liegt im Osten von Österreich.',
-            nounExVi: 'Viên nằm ở miền Đông của nước Áo.',
+            nounExVi: 'Viên nằm ở miền Đông của nước Áo. (thuộc nước Áo)',
             adjEx: 'Dresden liegt östlich von Köln.',
-            adjExVi: 'Dresden nằm ở phía Đông của Köln.'
+            adjExVi: 'Dresden nằm ở phía Đông của Köln. (hai thành phố riêng)'
         },
         Südosten: {
             vi: 'Đông Nam',
             adj: 'südöstlich',
             nounEx: 'Griechenland liegt im Südosten von Europa.',
-            nounExVi: 'Hy Lạp nằm ở miền Đông Nam của châu Âu.',
+            nounExVi: 'Hy Lạp nằm ở miền Đông Nam của châu Âu. (thuộc châu Âu)',
             adjEx: 'München liegt südöstlich von Stuttgart.',
-            adjExVi: 'München nằm ở phía Đông Nam của Stuttgart.'
+            adjExVi: 'München nằm ở phía Đông Nam của Stuttgart. (hai thành phố riêng)'
         },
         Süden: {
             vi: 'Nam',
             adj: 'südlich',
             nounEx: 'München liegt im Süden von Deutschland.',
-            nounExVi: 'München nằm ở miền Nam của nước Đức.',
-            adjEx: 'München liegt südlich von Deutschland.',
-            adjExVi: 'München nằm ở phía Nam của nước Đức.'
+            nounExVi: 'München nằm ở miền Nam của nước Đức. (thuộc nước Đức)',
+            adjEx: 'Österreich liegt südlich von Deutschland.',
+            adjExVi: 'Áo nằm ở phía Nam của nước Đức. (hai quốc gia riêng)'
         },
         Südwesten: {
             vi: 'Tây Nam',
             adj: 'südwestlich',
             nounEx: 'Spanien liegt im Südwesten von Europa.',
-            nounExVi: 'Tây Ban Nha nằm ở miền Tây Nam của châu Âu.',
+            nounExVi: 'Tây Ban Nha nằm ở miền Tây Nam của châu Âu. (thuộc châu Âu)',
             adjEx: 'Bonn liegt südwestlich von Rostock.',
-            adjExVi: 'Bonn nằm ở phía Tây Nam của Rostock.'
+            adjExVi: 'Bonn nằm ở phía Tây Nam của Rostock. (hai thành phố riêng)'
         },
         Westen: {
             vi: 'Tây',
             adj: 'westlich',
             nounEx: 'Köln liegt im Westen von Deutschland.',
-            nounExVi: 'Köln nằm ở miền Tây của nước Đức.',
-            adjEx: 'Paris liegt westlich von Deutschland.',
-            adjExVi: 'Paris nằm ở phía Tây của nước Đức.'
+            nounExVi: 'Köln nằm ở miền Tây của nước Đức. (thuộc nước Đức)',
+            adjEx: 'Frankreich liegt westlich von Deutschland.',
+            adjExVi: 'Pháp nằm ở phía Tây của nước Đức. (hai quốc gia riêng)'
         },
         Nordwesten: {
             vi: 'Tây Bắc',
             adj: 'nordwestlich',
             nounEx: 'Bremen liegt im Nordwesten von Deutschland.',
-            nounExVi: 'Bremen nằm ở miền Tây Bắc của nước Đức.',
-            adjEx: 'Bremen liegt nordwestlich von Deutschland.',
-            adjExVi: 'Bremen nằm ở phía Tây Bắc của nước Đức.'
+            nounExVi: 'Bremen nằm ở miền Tây Bắc của nước Đức. (thuộc nước Đức)',
+            adjEx: 'Bremen liegt nordwestlich von Leipzig.',
+            adjExVi: 'Bremen nằm ở phía Tây Bắc của Leipzig. (hai thành phố riêng)'
         },
         Zentrum: {
             vi: 'Trung tâm / Miền Trung',
             adj: null,
-            nounEx: 'Da Nang liegt im Zentrum von Vietnam.',
-            nounExVi: 'Đà Nẵng nằm ở trung tâm của Việt Nam.',
+            nounEx: 'Da Nang liegt in der Mitte von Vietnam.',
+            nounExVi: 'Đà Nẵng nằm ở miền Trung của Việt Nam. (thuộc Việt Nam)',
             adjEx: 'Hue liegt im Zentrum von Vietnam.',
-            adjExVi: 'Huế nằm ở miền Trung của Việt Nam.'
+            adjExVi: 'Huế nằm ở trung tâm của Việt Nam. (thuộc Việt Nam)'
         }
     };
 
@@ -136,12 +136,17 @@
         const nounSafe = d.nounEx.replace(/'/g, "\\'");
         const adjSafe = d.adjEx.replace(/'/g, "\\'");
 
+        const way1Formula = (selectedDirection === 'Zentrum')
+            ? `liegt <span class="underline decoration-blue-500">in der Mitte</span> von ... <span class="text-xs font-normal text-blue-700">(hoặc im Zentrum)</span>`
+            : `liegt <span class="underline decoration-blue-500">im ${selectedDirection}</span> von ...`;
+
         const way2Html = d.adj ? `
             <div class="p-4 rounded-2xl bg-emerald-50 border-2 border-emerald-300 space-y-2">
                 <div class="flex items-center justify-between gap-2 flex-wrap">
-                    <span class="px-2.5 py-0.5 rounded-lg bg-emerald-600 text-white text-[11px] font-black uppercase">CÁCH 2 • Tính từ (-lich)</span>
+                    <span class="px-2.5 py-0.5 rounded-lg bg-emerald-600 text-white text-[11px] font-black uppercase">CÁCH 2 • Tính từ (-lich) • BÊN NGOÀI X</span>
                     <span class="px-2 py-0.5 rounded-md bg-rose-100 text-rose-800 border border-rose-300 text-[11px] font-black">TUYỆT ĐỐI KHÔNG dùng "im"</span>
                 </div>
+                <div class="text-xs text-emerald-800 font-semibold">So sánh vị trí hai nơi riêng biệt (A không thuộc X)</div>
                 <div class="text-sm font-black text-emerald-950 font-mono">
                     liegt <span class="underline decoration-emerald-500">${d.adj}</span> von ...
                 </div>
@@ -157,9 +162,10 @@
             <div class="p-4 rounded-2xl bg-amber-50 border-2 border-amber-300 space-y-2">
                 <div class="flex items-center justify-between gap-2">
                     <span class="px-2.5 py-0.5 rounded-lg bg-amber-600 text-white text-[11px] font-black uppercase">CỤM CỐ ĐỊNH • TRUNG TÂM</span>
+                    <span class="text-[11px] font-bold text-amber-800">Không có tính từ -lich tương ứng</span>
                 </div>
                 <div class="text-sm font-black text-amber-950 font-mono">
-                    liegt <span class="underline decoration-amber-500">im Zentrum</span> von ...
+                    liegt <span class="underline decoration-amber-500">in der Mitte / im Zentrum</span> von ...
                 </div>
                 <div class="p-2.5 rounded-xl bg-white border border-amber-200 flex items-center justify-between gap-2 text-xs">
                     <div>
@@ -201,11 +207,11 @@
                     </div>
                     <div class="p-4 rounded-2xl bg-blue-50 border-2 border-blue-300 space-y-2">
                         <div class="flex items-center justify-between gap-2 flex-wrap">
-                            <span class="px-2.5 py-0.5 rounded-lg bg-blue-600 text-white text-[11px] font-black uppercase">CÁCH 1 • Danh từ viết hoa (im + Danh từ)</span>
-                            <span class="px-2 py-0.5 rounded-md bg-blue-100 text-blue-900 border border-blue-200 text-[11px] font-black">Bắt buộc có "im"</span>
+                            <span class="px-2.5 py-0.5 rounded-lg bg-blue-600 text-white text-[11px] font-black uppercase">CÁCH 1 • Danh từ viết hoa • BÊN TRONG X</span>
+                            <span class="px-2 py-0.5 rounded-md bg-blue-100 text-blue-900 border border-blue-200 text-[11px] font-black">Bắt buộc có "im" (A thuộc X)</span>
                         </div>
                         <div class="text-sm font-black text-blue-950 font-mono">
-                            liegt <span class="underline decoration-blue-500">im ${selectedDirection}</span> von ...
+                            ${way1Formula}
                         </div>
                         <div class="p-2.5 rounded-xl bg-white border border-blue-200 flex items-center justify-between gap-2 text-xs">
                             <div>
@@ -216,6 +222,22 @@
                         </div>
                     </div>
                     ${way2Html}
+                </div>
+            </div>
+            <div class="mt-4 p-3.5 rounded-2xl bg-white border border-indigo-200 grid grid-cols-1 md:grid-cols-2 gap-3 text-xs">
+                <div class="p-2.5 rounded-xl bg-blue-50/70 border border-blue-200 flex items-center justify-between gap-2">
+                    <div>
+                        <span class="font-mono font-black text-blue-800">im Norden von Vietnam</span> → <b class="text-slate-900">Hanoi</b>
+                        <span class="block text-slate-600 italic mt-0.5">Hà Nội thuộc Việt Nam (nằm BÊN TRONG Việt Nam)</span>
+                    </div>
+                    <button type="button" onclick="b14_speakGerman('Hanoi liegt im Norden von Vietnam.')" class="p-1.5 rounded-lg bg-white hover:bg-blue-100 border border-blue-200 cursor-pointer shrink-0">🔊</button>
+                </div>
+                <div class="p-2.5 rounded-xl bg-emerald-50/70 border border-emerald-200 flex items-center justify-between gap-2">
+                    <div>
+                        <span class="font-mono font-black text-emerald-800">nördlich von Vietnam</span> → <b class="text-slate-900">China</b>
+                        <span class="block text-slate-600 italic mt-0.5">Trung Quốc không thuộc Việt Nam (nằm BÊN NGOÀI Việt Nam)</span>
+                    </div>
+                    <button type="button" onclick="b14_speakGerman('China liegt nördlich von Vietnam.')" class="p-1.5 rounded-lg bg-white hover:bg-emerald-100 border border-emerald-200 cursor-pointer shrink-0">🔊</button>
                 </div>
             </div>
         `;

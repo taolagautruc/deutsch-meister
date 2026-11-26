@@ -241,8 +241,8 @@ def seed_lesson_14():
                 </h2>
             </div>
             <div class="p-4 rounded-2xl bg-indigo-50/70 border border-indigo-200 text-xs sm:text-sm space-y-1.5">
-                <p><b>Quy tắc chung:</b> Đa số tên ngôn ngữ được tạo bằng cách thêm đuôi <code class="px-1.5 py-0.5 rounded bg-white border border-indigo-200 font-bold text-indigo-700">-sch</code> hoặc <code class="px-1.5 py-0.5 rounded bg-white border border-indigo-200 font-bold text-indigo-700">-isch</code> vào tên quốc gia (tên ngôn ngữ luôn viết hoa chữ cái đầu).</p>
-                <p><b>Lưu ý mạo từ quốc gia:</b> Đa số quốc gia không dùng mạo từ (<i>aus Deutschland, aus Vietnam</i>), ngoại trừ một số nước bắt buộc có mạo từ: <i>aus der Türkei, aus der Schweiz, aus den USA</i>.</p>
+                <p><b>Quy tắc chung:</b> Tên ngôn ngữ thường có đuôi <code class="px-1.5 py-0.5 rounded bg-white border border-indigo-200 font-bold text-indigo-700">-isch</code> / <code class="px-1.5 py-0.5 rounded bg-white border border-indigo-200 font-bold text-indigo-700">-sch</code> nhưng <b>KHÔNG có công thức cố định</b> (<i>Frankreich → Französisch, Spanien → Spanisch, Polen → Polnisch, Vietnam → Vietnamesisch, England → Englisch, Deutschland → Deutsch</i>). Hãy học theo từng cặp quốc gia – ngôn ngữ.</p>
+                <p><b>Lưu ý viết hoa &amp; mạo từ quốc gia:</b> Viết hoa khi là danh từ (<i>Ich lerne Deutsch, auf Deutsch</i>). Đa số quốc gia không dùng mạo từ (<i>aus Deutschland, aus Vietnam</i>), ngoại trừ một số nước bắt buộc có mạo từ: <i>aus der Türkei, aus der Schweiz, aus den USA</i>.</p>
             </div>
 
             <div class="overflow-x-auto rounded-2xl border border-slate-200 bg-white shadow-xs">
@@ -270,7 +270,7 @@ def seed_lesson_14():
                         </tr>
                         <tr>
                             <td class="px-4 py-2.5 font-semibold">Ägypten <span class="text-xs text-slate-500 block">(Ai Cập)</span></td>
-                            <td class="px-4 py-2.5 font-mono font-bold text-indigo-700"><div class="flex items-center justify-between gap-2"><span>Ägyptisch (hoặc Arabisch)</span><button type="button" onclick="b14_speakGerman('Ägypten, Ägyptisch, Arabisch')" class="p-1 rounded bg-slate-50 hover:bg-indigo-50 cursor-pointer">🔊</button></div></td>
+                            <td class="px-4 py-2.5 font-mono font-bold text-indigo-700"><div class="flex items-center justify-between gap-2"><span>Arabisch</span><button type="button" onclick="b14_speakGerman('Ägypten, Arabisch')" class="p-1 rounded bg-slate-50 hover:bg-indigo-50 cursor-pointer">🔊</button></div></td>
                             <td class="px-4 py-2.5 font-semibold">Russland <span class="text-xs text-slate-500 block">(Nga)</span></td>
                             <td class="px-4 py-2.5 font-mono font-bold text-indigo-700"><div class="flex items-center justify-between gap-2"><span>Russisch</span><button type="button" onclick="b14_speakGerman('Russland, Russisch')" class="p-1 rounded bg-slate-50 hover:bg-indigo-50 cursor-pointer">🔊</button></div></td>
                         </tr>
@@ -285,6 +285,12 @@ def seed_lesson_14():
                             <td class="px-4 py-2.5 font-mono font-bold text-indigo-700"><div class="flex items-center justify-between gap-2"><span>Dänisch</span><button type="button" onclick="b14_speakGerman('Dänemark, Dänisch')" class="p-1 rounded bg-slate-50 hover:bg-indigo-50 cursor-pointer">🔊</button></div></td>
                             <td class="px-4 py-2.5 font-semibold">Großbritannien (England) <span class="text-xs text-slate-500 block">(Anh)</span></td>
                             <td class="px-4 py-2.5 font-mono font-bold text-indigo-700"><div class="flex items-center justify-between gap-2"><span>Englisch</span><button type="button" onclick="b14_speakGerman('Großbritannien, Englisch')" class="p-1 rounded bg-slate-50 hover:bg-indigo-50 cursor-pointer">🔊</button></div></td>
+                        </tr>
+                        <tr class="bg-amber-50/40">
+                            <td class="px-4 py-2.5 font-semibold">die Türkei <span class="text-xs text-rose-700 block">(Thổ Nhĩ Kỳ • có mạo từ)</span></td>
+                            <td class="px-4 py-2.5 font-mono font-bold text-indigo-700"><div class="flex items-center justify-between gap-2"><span>Türkisch</span><button type="button" onclick="b14_speakGerman('die Türkei, Türkisch')" class="p-1 rounded bg-slate-50 hover:bg-indigo-50 cursor-pointer">🔊</button></div></td>
+                            <td class="px-4 py-2.5 font-semibold">die Schweiz <span class="text-xs text-rose-700 block">(Thụy Sĩ • có mạo từ)</span></td>
+                            <td class="px-4 py-2.5 font-mono font-bold text-indigo-700"><div class="flex items-center justify-between gap-2"><span>Deutsch / Französisch / Italienisch <span class="font-sans text-[11px] font-normal text-slate-500">(tùy vùng)</span></span><button type="button" onclick="b14_speakGerman('die Schweiz, Deutsch, Französisch, Italienisch')" class="p-1 rounded bg-slate-50 hover:bg-indigo-50 cursor-pointer shrink-0">🔊</button></div></td>
                         </tr>
                     </tbody>
                 </table>
@@ -311,30 +317,32 @@ def seed_lesson_14():
             </div>
 
             <div class="p-4 rounded-2xl bg-amber-50 border-2 border-amber-300 space-y-3">
-                <div class="font-black text-amber-950 text-sm">⚠️ QUY TẮC BẮT BUỘC: CÓ 2 CÁCH ĐỂ NÓI VỀ VỊ TRÍ ĐỊA LÝ</div>
+                <div class="font-black text-amber-950 text-sm">⚠️ 2 CÁCH NÓI KHÁC NGHĨA: BÊN TRONG vs BÊN NGOÀI</div>
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-3 text-xs sm:text-sm">
                     <div class="p-3.5 rounded-xl bg-white border border-blue-200 space-y-1.5">
                         <div class="font-black text-blue-800">CÁCH 1: Dùng Danh từ (Bắt buộc có „im“)</div>
+                        <p class="text-xs font-semibold text-blue-700">👉 Ở phía Bắc / Nam / … <b>BÊN TRONG X</b> (A thuộc X).</p>
                         <div class="font-mono text-xs bg-blue-50 p-2 rounded-lg text-blue-950 font-bold">A liegt <u>im + [Danh từ hướng viết hoa]</u> + von + B.</div>
                         <div class="flex items-center justify-between gap-2">
-                            <span><i>Hanoi liegt <b>im Norden</b> von Vietnam.</i></span>
+                            <div><i>Hanoi liegt <b>im Norden</b> von Vietnam.</i> <span class="text-slate-500 text-xs block">Hà Nội nằm ở miền Bắc của Việt Nam.</span></div>
                             <button type="button" onclick="b14_speakGerman('Hanoi liegt im Norden von Vietnam.')" class="p-1 rounded bg-blue-50 hover:bg-blue-100 cursor-pointer shrink-0">🔊</button>
                         </div>
                         <div class="flex items-center justify-between gap-2">
-                            <span><i>München liegt <b>im Süden</b> von Deutschland.</i></span>
+                            <div><i>München liegt <b>im Süden</b> von Deutschland.</i> <span class="text-slate-500 text-xs block">München nằm ở miền Nam của nước Đức.</span></div>
                             <button type="button" onclick="b14_speakGerman('München liegt im Süden von Deutschland.')" class="p-1 rounded bg-blue-50 hover:bg-blue-100 cursor-pointer shrink-0">🔊</button>
                         </div>
                     </div>
                     <div class="p-3.5 rounded-xl bg-white border border-emerald-200 space-y-1.5">
                         <div class="font-black text-emerald-800">CÁCH 2: Dùng Tính từ (-lich, TUYỆT ĐỐI KHÔNG dùng „im“)</div>
+                        <p class="text-xs font-semibold text-emerald-700">👉 Ở phía Bắc / Nam / … <b>BÊN NGOÀI X</b> (A không thuộc X, so sánh hai nơi riêng biệt).</p>
                         <div class="font-mono text-xs bg-emerald-50 p-2 rounded-lg text-emerald-950 font-bold">A liegt <u>[Tính từ hướng viết thường]</u> + von + B.</div>
                         <div class="flex items-center justify-between gap-2">
-                            <span><i>Hanoi liegt <b>nördlich</b> von Vietnam.</i></span>
-                            <button type="button" onclick="b14_speakGerman('Hanoi liegt nördlich von Vietnam.')" class="p-1 rounded bg-emerald-50 hover:bg-emerald-100 cursor-pointer shrink-0">🔊</button>
+                            <div><i>China liegt <b>nördlich</b> von Vietnam.</i> <span class="text-slate-500 text-xs block">Trung Quốc nằm ở phía Bắc Việt Nam.</span></div>
+                            <button type="button" onclick="b14_speakGerman('China liegt nördlich von Vietnam.')" class="p-1 rounded bg-emerald-50 hover:bg-emerald-100 cursor-pointer shrink-0">🔊</button>
                         </div>
                         <div class="flex items-center justify-between gap-2">
-                            <span><i>München liegt <b>südlich</b> von Deutschland.</i></span>
-                            <button type="button" onclick="b14_speakGerman('München liegt südlich von Deutschland.')" class="p-1 rounded bg-emerald-50 hover:bg-emerald-100 cursor-pointer shrink-0">🔊</button>
+                            <div><i>Österreich liegt <b>südlich</b> von Deutschland.</i> <span class="text-slate-500 text-xs block">Áo nằm ở phía Nam nước Đức.</span></div>
+                            <button type="button" onclick="b14_speakGerman('Österreich liegt südlich von Deutschland.')" class="p-1 rounded bg-emerald-50 hover:bg-emerald-100 cursor-pointer shrink-0">🔊</button>
                         </div>
                     </div>
                 </div>
@@ -365,13 +373,13 @@ def seed_lesson_14():
         ("Südosten", "der", "hướng Đông Nam (Pl: nur Sg.)", "„Griechenland liegt im Südosten von Europa.“ — Hy Lạp nằm ở miền Đông Nam của châu Âu."),
         ("Südwesten", "der", "hướng Tây Nam (Pl: nur Sg.)", "„Spanien liegt im Südwesten von Europa.“ — Tây Ban Nha nằm ở miền Tây Nam của châu Âu."),
         ("Kamera", "die", "máy ảnh (Pl: die Kameras)", "„Das ist keine Kamera, das ist ein Handy.“ — Đó không phải máy ảnh, đó là điện thoại."),
-        ("Muttersprache", "die", "tiếng mẹ đẻ (Pl: die Muttersprachen)", "„Seine Muttersprache ist Ägyptisch oder Arabisch.“ — Tiếng mẹ đẻ của anh ấy là tiếng Ai Cập hoặc Ả Rập."),
+        ("Muttersprache", "die", "tiếng mẹ đẻ (Pl: die Muttersprachen)", "„Seine Muttersprache ist Arabisch.“ — Tiếng mẹ đẻ của anh ấy là tiếng Ả Rập."),
         ("Freundin", "die", "bạn gái (Pl: die Freundinnen)", "„Meine Freundin spricht gut Deutsch und Englisch.“ — Bạn gái tôi nói tốt tiếng Đức và tiếng Anh."),
         ("Kind", "das", "đứa trẻ, con (Pl: die Kinder)", "„Das Kind lernt heute Deutsch in der Schule.“ — Đứa trẻ hôm nay học tiếng Đức ở trường."),
         ("Konzert", "das", "buổi hòa nhạc (Pl: die Konzerte)", "„Das Konzert gestern Abend war fantastisch!“ — Buổi hòa nhạc tối qua thật tuyệt vời!"),
         ("Radio", "das", "cái đài radio (Pl: die Radios)", "„Nein, das ist kein Radio.“ — Không, đó không phải là một cái đài."),
         ("Zentrum", "das", "trung tâm (Pl: die Zentren)", "„Da Nang liegt im Zentrum von Vietnam.“ — Đà Nẵng nằm ở trung tâm của Việt Nam."),
-        ("Europa", "das", "châu Âu (Pl: nur Sg.)", "„Russland liegt im Osten von Europa.“ — Nga nằm ở miền Đông của châu Âu.")
+        ("Europa", "das", "châu Âu (Thường dùng KHÔNG mạo từ: in Europa, aus Europa; Pl: nur Sg.)", "„Russland liegt im Osten von Europa.“ — Nga nằm ở miền Đông của châu Âu.")
     ]
 
     for word, art, mean, ex_sent in vocab_items:
@@ -435,10 +443,10 @@ def seed_lesson_14():
             "question": "Câu 4: Điền cụm từ chỉ vị trí thích hợp vào chỗ trống:\n„Da Nang liegt ___ von Vietnam.“ (trung tâm)",
             "options": null,
             "correct_answer": "im Zentrum",
-            "explanation": "Cụm từ cố định để chỉ vị trí trung tâm là „im Zentrum“ -> Đáp án: im Zentrum.",
+            "explanation": "Cụm từ cố định chỉ trung tâm ở bên trong là „im Zentrum“ (hoặc „in der Mitte“) -> Đáp án: im Zentrum.",
             "exp_reward": 10,
             "extra_data": {
-                "accepted_answers": ["im Zentrum", "im zentrum"],
+                "accepted_answers": ["im Zentrum", "im zentrum", "in der Mitte", "in der mitte"],
                 "audio_text": "Da Nang liegt im Zentrum von Vietnam.",
                 "translation": "Đà Nẵng nằm ở trung tâm của Việt Nam."
             }
@@ -446,18 +454,18 @@ def seed_lesson_14():
         {
             "id": 5,
             "exercise_type": "trac_nghiem",
-            "question": "Câu 5: Chọn câu ĐÚNG NHẤT mô tả vị trí của Cần Thơ:",
+            "question": "Câu 5: Chọn câu ĐÚNG NHẤT mô tả vị trí của Cần Thơ (thuộc Việt Nam):",
             "options": [
                 "Can Tho liegt im südlich von Vietnam.",
-                "Can Tho liegt südlich von Vietnam.",
+                "Can Tho liegt im Süden von Vietnam.",
                 "Can Tho liegt im Süden Vietnam."
             ],
-            "correct_answer": "Can Tho liegt südlich von Vietnam.",
-            "explanation": "„Can Tho liegt südlich von Vietnam.“ đúng vì „südlich“ là tính từ không đi kèm „im“; phương án C thiếu giới từ „von“ -> Đáp án: Can Tho liegt südlich von Vietnam..",
+            "correct_answer": "Can Tho liegt im Süden von Vietnam.",
+            "explanation": "Cần Thơ nằm bên trong Việt Nam nên phải dùng „im Süden von Vietnam“; „im südlich“ sai vì ghép „im“ với tính từ, còn phương án C thiếu giới từ „von“ -> Đáp án: Can Tho liegt im Süden von Vietnam..",
             "exp_reward": 10,
             "extra_data": {
-                "audio_text": "Can Tho liegt südlich von Vietnam.",
-                "translation": "Cần Thơ nằm ở phía Nam của Việt Nam."
+                "audio_text": "Can Tho liegt im Süden von Vietnam.",
+                "translation": "Cần Thơ nằm ở miền Nam của Việt Nam."
             }
         },
         {
@@ -563,18 +571,16 @@ def seed_lesson_14():
             "exercise_type": "tim_loi_sai",
             "question": "Câu 11: Tìm lỗi sai trong câu sau và viết lại câu đúng hoàn chỉnh:\n„Bremen liegt im nordwestlich von Deutschland.“",
             "options": null,
-            "correct_answer": "Bremen liegt nordwestlich von Deutschland.",
-            "explanation": "Bỏ „im“ vì „nordwestlich“ là tính từ đuôi -lich (hoặc sửa thành „im Nordwesten“) -> Đáp án: Bremen liegt nordwestlich von Deutschland..",
+            "correct_answer": "Bremen liegt im Nordwesten von Deutschland.",
+            "explanation": "Bremen nằm BÊN TRONG nước Đức nên phải dùng danh từ „im Nordwesten“, đồng thời không ghép „im“ với tính từ „nordwestlich“ -> Đáp án: Bremen liegt im Nordwesten von Deutschland..",
             "exp_reward": 15,
             "extra_data": {
                 "accepted_answers": [
-                    "Bremen liegt nordwestlich von Deutschland.",
-                    "Bremen liegt nordwestlich von Deutschland",
                     "Bremen liegt im Nordwesten von Deutschland.",
                     "Bremen liegt im Nordwesten von Deutschland"
                 ],
-                "audio_text": "Bremen liegt nordwestlich von Deutschland.",
-                "translation": "Bremen nằm ở phía Tây Bắc của nước Đức."
+                "audio_text": "Bremen liegt im Nordwesten von Deutschland.",
+                "translation": "Bremen nằm ở miền Tây Bắc của nước Đức."
             }
         },
         {
@@ -625,32 +631,30 @@ def seed_lesson_14():
             "exercise_type": "sap_xep_cau",
             "question": "Câu 15: Sắp xếp các từ sau thành câu hoàn chỉnh:",
             "options": null,
-            "correct_answer": "Hannover liegt nordöstlich von Leipzig.",
-            "explanation": "Chủ ngữ (Hannover) + liegt + tính từ hướng (nordöstlich) + von + Leipzig -> Đáp án: Hannover liegt nordöstlich von Leipzig..",
+            "correct_answer": "Hannover liegt nordwestlich von Leipzig.",
+            "explanation": "Thực tế địa lý: Hannover (52.37°N, 9.73°E) nằm ở phía Tây Bắc (nordwestlich) của Leipzig (51.34°N, 12.37°E) -> Đáp án: Hannover liegt nordwestlich von Leipzig..",
             "exp_reward": 10,
             "extra_data": {
-                "tokens": ["nordöstlich", "liegt", "Hannover", "von", "Leipzig", "."],
+                "tokens": ["nordwestlich", "liegt", "Hannover", "von", "Leipzig", "."],
                 "accepted_answers": [
-                    "Hannover liegt nordöstlich von Leipzig.",
-                    "Hannover liegt nordöstlich von Leipzig",
-                    "Hannover liegt nordoestlich von Leipzig.",
-                    "Hannover liegt nordoestlich von Leipzig"
+                    "Hannover liegt nordwestlich von Leipzig.",
+                    "Hannover liegt nordwestlich von Leipzig"
                 ],
-                "audio_text": "Hannover liegt nordöstlich von Leipzig.",
-                "translation": "Hannover nằm ở phía Đông Bắc của Leipzig."
+                "audio_text": "Hannover liegt nordwestlich von Leipzig.",
+                "translation": "Hannover nằm ở phía Tây Bắc của Leipzig."
             }
         },
         {
             "id": 16,
             "exercise_type": "trac_nghiem",
-            "question": "Câu 16: Cụm „im Nordwesten“ bằng nghĩa với tính từ nào sau đây?",
+            "question": "Câu 16: Cụm „im Nordwesten“ chỉ CÙNG HƯỚNG LA BÀN (Tây Bắc) với tính từ nào sau đây? (Lưu ý: „im Nordwesten“ dùng cho vị trí bên trong, còn tính từ dùng cho vị trí bên ngoài)",
             "options": ["nordöstlich", "südwestlich", "nordwestlich"],
             "correct_answer": "nordwestlich",
-            "explanation": "Nord (Bắc) + Westen (Tây) = Tây Bắc; „im Nordwesten“ tương đương „nordwestlich“ -> Đáp án: nordwestlich.",
+            "explanation": "Nord (Bắc) + Westen (Tây) = Tây Bắc. Tuy „im Nordwesten“ (bên trong) và „nordwestlich“ (bên ngoài) khác nhau về phạm vi, cả hai đều chỉ hướng Tây Bắc -> Đáp án: nordwestlich.",
             "exp_reward": 10,
             "extra_data": {
                 "audio_text": "im Nordwesten, nordwestlich",
-                "translation": "im Nordwesten = nordwestlich (ở phía Tây Bắc)."
+                "translation": "Cùng hướng Tây Bắc: im Nordwesten (bên trong) / nordwestlich (bên ngoài)."
             }
         },
         {
@@ -705,10 +709,15 @@ def seed_lesson_14():
             "question": "Câu 20: Tìm lỗi sai trong câu sau và viết lại câu đúng hoàn chỉnh:\n„Hue liegt im Zentrum in Vietnam.“",
             "options": null,
             "correct_answer": "Hue liegt im Zentrum von Vietnam.",
-            "explanation": "Cấu trúc mô tả thuộc về nơi nào phải dùng giới từ „von“ (của), không dùng „in“ -> Đáp án: Hue liegt im Zentrum von Vietnam..",
+            "explanation": "Cấu trúc mô tả thuộc về nơi nào phải dùng giới từ „von“ (của), không dùng „in“ (chấp nhận cả „in der Mitte von Vietnam“) -> Đáp án: Hue liegt im Zentrum von Vietnam..",
             "exp_reward": 15,
             "extra_data": {
-                "accepted_answers": ["Hue liegt im Zentrum von Vietnam.", "Hue liegt im Zentrum von Vietnam"],
+                "accepted_answers": [
+                    "Hue liegt im Zentrum von Vietnam.",
+                    "Hue liegt im Zentrum von Vietnam",
+                    "Hue liegt in der Mitte von Vietnam.",
+                    "Hue liegt in der Mitte von Vietnam"
+                ],
                 "audio_text": "Hue liegt im Zentrum von Vietnam.",
                 "translation": "Huế nằm ở miền Trung của Việt Nam."
             }
@@ -769,10 +778,15 @@ def seed_lesson_14():
             "question": "Câu 24: Dịch câu sau sang tiếng Đức:\n„Huế nằm ở trung tâm của Việt Nam.“",
             "options": null,
             "correct_answer": "Hue liegt im Zentrum von Vietnam.",
-            "explanation": "„ở trung tâm của Việt Nam“ = „im Zentrum von Vietnam“ -> Đáp án: Hue liegt im Zentrum von Vietnam..",
+            "explanation": "„ở trung tâm của Việt Nam“ = „im Zentrum von Vietnam“ (hoặc „in der Mitte von Vietnam“) -> Đáp án: Hue liegt im Zentrum von Vietnam..",
             "exp_reward": 10,
             "extra_data": {
-                "accepted_answers": ["Hue liegt im Zentrum von Vietnam.", "Hue liegt im Zentrum von Vietnam"],
+                "accepted_answers": [
+                    "Hue liegt im Zentrum von Vietnam.",
+                    "Hue liegt im Zentrum von Vietnam",
+                    "Hue liegt in der Mitte von Vietnam.",
+                    "Hue liegt in der Mitte von Vietnam"
+                ],
                 "audio_text": "Hue liegt im Zentrum von Vietnam.",
                 "translation": "Huế nằm ở trung tâm của Việt Nam."
             }
@@ -823,16 +837,12 @@ def seed_lesson_14():
             "question": "Câu 28: Tìm lỗi sai trong câu sau và viết lại câu đúng hoàn chỉnh:\n„Tokio liegt östlich in Japan.“",
             "options": null,
             "correct_answer": "Tokio liegt im Osten von Japan.",
-            "explanation": "Cụm giới từ chuẩn là „im Osten von Japan“ hoặc „östlich von Japan“ (không dùng „in Japan“ sau hướng) -> Đáp án: Tokio liegt im Osten von Japan..",
+            "explanation": "Tokyo nằm BÊN TRONG Nhật Bản nên phải dùng „im Osten von Japan“ (không dùng „östlich“ hay „in Japan“) -> Đáp án: Tokio liegt im Osten von Japan..",
             "exp_reward": 15,
             "extra_data": {
                 "accepted_answers": [
                     "Tokio liegt im Osten von Japan.",
-                    "Tokio liegt im Osten von Japan",
-                    "Tokio liegt östlich von Japan.",
-                    "Tokio liegt östlich von Japan",
-                    "Tokio liegt oestlich von Japan.",
-                    "Tokio liegt oestlich von Japan"
+                    "Tokio liegt im Osten von Japan"
                 ],
                 "audio_text": "Tokio liegt im Osten von Japan.",
                 "translation": "Tokyo nằm ở miền Đông của Nhật Bản."
@@ -1348,13 +1358,13 @@ def seed_lesson_14():
             "id": 62,
             "exercise_type": "trac_nghiem",
             "question": "Câu 62: Chọn tên ngôn ngữ đúng:\n„Er wohnt in Ägypten. Seine Muttersprache ist ___.“",
-            "options": ["Ägyptisch", "Ägypte", "Ägyptenisch"],
-            "correct_answer": "Ägyptisch",
-            "explanation": "Ngôn ngữ của Ai Cập (Ägypten) theo bảng là „Ägyptisch“ (hoặc Arabisch) -> Đáp án: Ägyptisch.",
+            "options": ["Arabisch", "Ägypte", "Ägyptenisch"],
+            "correct_answer": "Arabisch",
+            "explanation": "Ngôn ngữ chính thức của Ai Cập (Ägypten) là tiếng Ả Rập: „Arabisch“ -> Đáp án: Arabisch.",
             "exp_reward": 10,
             "extra_data": {
-                "audio_text": "Er wohnt in Ägypten. Seine Muttersprache ist Ägyptisch.",
-                "translation": "Anh ấy sống ở Ai Cập. Tiếng mẹ đẻ của anh ấy là tiếng Ai Cập."
+                "audio_text": "Er wohnt in Ägypten. Seine Muttersprache ist Arabisch.",
+                "translation": "Anh ấy sống ở Ai Cập. Tiếng mẹ đẻ của anh ấy là tiếng Ả Rập."
             }
         },
         {
@@ -2261,16 +2271,15 @@ def seed_lesson_14():
             "question": "Câu 115: Sắp xếp các từ sau thành câu hoàn chỉnh:",
             "options": null,
             "correct_answer": "Hamburg liegt nördlich von Hannover.",
-            "explanation": "Thực tế địa lý: Hamburg nằm ở phía Bắc của Hannover (tính từ „nördlich“ không có „im“) -> Đáp án: Hamburg liegt nördlich von Hannover..",
+            "explanation": "Thực tế địa lý: Hamburg (53.55°N) nằm ở phía Bắc của Hannover (52.37°N), tính từ „nördlich“ không có „im“ -> Đáp án: Hamburg liegt nördlich von Hannover..",
             "exp_reward": 10,
             "extra_data": {
                 "tokens": ["nördlich", "liegt", "Hannover", "von", "Hamburg", "."],
                 "accepted_answers": [
                     "Hamburg liegt nördlich von Hannover.",
                     "Hamburg liegt nördlich von Hannover",
-                    "Hannover liegt nördlich von Hamburg.",
-                    "Hannover liegt nördlich von Hamburg",
-                    "Hamburg liegt noerdlich von Hannover."
+                    "Hamburg liegt noerdlich von Hannover.",
+                    "Hamburg liegt noerdlich von Hannover"
                 ],
                 "audio_text": "Hamburg liegt nördlich von Hannover.",
                 "translation": "Hamburg nằm ở phía Bắc của Hannover."

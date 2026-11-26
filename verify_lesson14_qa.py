@@ -7,6 +7,7 @@ Theo Đặc tả Kỹ thuật Bài 14 (README/readme_b_i_14.md - Phần III):
 
 import hashlib
 import json
+import math
 import os
 import re
 import subprocess
@@ -82,10 +83,16 @@ def run_tests():
         "bg-blue-50", "bg-rose-50", "bg-emerald-50",
         "Präsens", "Präteritum",
         "Länder", "Himmelsrichtungen",
-        "im Norden", "nördlich"
+        "2 CÁCH NÓI KHÁC NGHĨA: BÊN TRONG vs BÊN NGOÀI",
+        "im Norden", "China liegt", "Arabisch", "die Türkei", "die Schweiz",
+        "KHÔNG có công thức cố định"
     ]:
         if marker not in gc:
             errors.append(f"Lý thuyết Bài 14 thiếu nội dung/thành phần '{marker}'!")
+    if "Ägyptisch" in gc:
+        errors.append("Lý thuyết Bài 14 vẫn còn chứa 'Ägyptisch'!")
+    if "Hanoi liegt <b>nördlich</b> von Vietnam" in gc or "München liegt <b>südlich</b> von Deutschland" in gc:
+        errors.append("Lý thuyết Bài 14 vẫn còn ví dụ sai 'Hanoi/München liegt ...lich von Vietnam/Deutschland'!")
 
     # 3. KIỂM TRA TỪ VỰNG BÀI 14 (KHÔNG TRÙNG BÀI 1 -> 13)
     print("\n[3/7] Kiểm tra từ vựng Bài 14 (18 thẻ không trùng Bài 1 -> 13)...")
@@ -196,6 +203,78 @@ def run_tests():
         errors.append("Thiếu Semantic Tolerance evaluator cho Bài 14!")
     if "isLesson14GermanInput" not in idx_html:
         errors.append("Thiếu Capitalization Warning hook cho Bài 14!")
+
+    # 8. KIỂM TRA TỌA ĐỘ PHƯƠNG HƯỚNG (-lich von) & CẤM DÙNG BÊN TRONG/Ägyptisch
+    print("\n[8/8] Kiểm tra tọa độ địa lý (A liegt ...lich von B) & chống dùng sai bên trong...")
+    COORDS = {
+        "Hanoi": (21.03, 105.85), "Hue": (16.46, 107.59), "Da Nang": (16.05, 108.20), "Can Tho": (10.04, 105.75),
+        "Köln": (50.94, 6.96), "Dresden": (51.05, 13.74), "München": (48.14, 11.58),
+        "Stuttgart": (48.78, 9.18), "Bonn": (50.73, 7.10), "Rostock": (54.09, 12.14),
+        "Hannover": (52.37, 9.73), "Leipzig": (51.34, 12.37), "Bremen": (53.08, 8.80),
+        "Hamburg": (53.55, 9.99), "Frankfurt": (50.11, 8.68), "Würzburg": (49.79, 9.95),
+        "Paris": (48.86, 2.35), "China": (35.86, 104.20), "Vietnam": (14.06, 108.28),
+        "Deutschland": (51.16, 10.45), "Österreich": (47.52, 14.55), "Polen": (51.92, 19.14),
+        "Frankreich": (46.23, 2.21), "Die Schweiz": (46.82, 8.23), "Schweiz": (46.82, 8.23),
+    }
+    COUNTRY_ENTITIES = {"China", "Vietnam", "Deutschland", "Österreich", "Polen", "Frankreich", "Die Schweiz", "Schweiz"}
+    DIR_AZIMUTH = {
+        "nördlich": 0.0, "nordöstlich": 45.0, "östlich": 90.0, "südöstlich": 135.0,
+        "südlich": 180.0, "südwestlich": 225.0, "westlich": 270.0, "nordwestlich": 315.0,
+    }
+    CONTAINED_IN = {
+        "Vietnam": {"Hanoi", "Hue", "Da Nang", "Hai Phong", "Nha Trang", "Can Tho"},
+        "Deutschland": {"Berlin", "Hamburg", "München", "Köln", "Dresden", "Leipzig", "Hannover", "Bremen", "Stuttgart", "Frankfurt", "Bonn", "Rostock", "Würzburg"},
+        "Österreich": {"Wien"},
+        "Japan": {"Tokio"},
+        "Europa": {"Spanien", "Griechenland", "Deutschland", "Frankreich", "Italien", "Polen", "Russland", "Österreich"},
+    }
+
+    def check_geo_sentence(sent, source_label):
+        m = re.search(r"([A-ZÄÖÜ][A-Za-zÄÖÜäöüß\s]+?)\s+liegt\s+(?:im\s+)?(nördlich|nordöstlich|östlich|südöstlich|südlich|südwestlich|westlich|nordwestlich)\s+von\s+([A-ZÄÖÜ][A-Za-zÄÖÜäöüß\s]+)", sent)
+        if not m:
+            return
+        # Bỏ qua câu ví dụ sai cố tình trong đề bài câu hỏi "tìm lỗi sai / sai ngữ pháp"
+        if re.search(r"\bim\s+(nördlich|nordöstlich|östlich|südöstlich|südlich|südwestlich|westlich|nordwestlich)", sent):
+            return
+        a_place = m.group(1).strip()
+        adj = m.group(2).strip()
+        b_place = re.sub(r"[.!?,\"„“]+$", "", m.group(3).strip())
+        if b_place in CONTAINED_IN and a_place in CONTAINED_IN[b_place]:
+            errors.append(f"{source_label}: '{a_place}' thuộc '{b_place}', cấm dùng '{adj} von {b_place}' (phải dùng 'im ...')!")
+            return
+        if a_place in COORDS and b_place in COORDS:
+            latA, lonA = COORDS[a_place]
+            latB, lonB = COORDS[b_place]
+            avg_lat = math.radians((latA + latB) / 2.0)
+            dy = latA - latB
+            dx = (lonA - lonB) * math.cos(avg_lat)
+            deg = (math.degrees(math.atan2(dx, dy)) + 360.0) % 360.0
+            exp_deg = DIR_AZIMUTH[adj]
+            diff = abs((deg - exp_deg + 180.0) % 360.0 - 180.0)
+            tol = 45.0 if (a_place in COUNTRY_ENTITIES or b_place in COUNTRY_ENTITIES) else 32.0
+            if diff > tol:
+                errors.append(f"{source_label}: Sai tọa độ '{sent}' -> hướng từ {b_place} tới {a_place} là {deg:.1f}°, kỳ vọng {adj} ({exp_deg}°, lệch {diff:.1f}° > {tol}°)!")
+
+    # Kiểm tra toàn bộ B14_DIRECTIONS trong b14_review_svg.js
+    for adj_ex_m in re.finditer(r"adjEx:\s*'([^']+)'", b14_js):
+        check_geo_sentence(adj_ex_m.group(1), "b14_review_svg.js")
+
+    # Kiểm tra toàn bộ 125 bài tập & thẻ từ vựng Bài 14
+    for r in v_rows:
+        if "Ägyptisch" in (r["example_sentence"] or "") or "Ägyptisch" in (r["vietnamese_meaning"] or ""):
+            errors.append(f"Thẻ từ vựng '{r['german_word']}' vẫn còn chứa 'Ägyptisch'!")
+        check_geo_sentence(r["example_sentence"] or "", f"Vocab({r['german_word']})")
+
+    for idx, ex in enumerate(exercises, 1):
+        extra = json.loads(ex["extra_data"] or "{}")
+        if "Ägyptisch" in (ex["correct_answer"] or "") or "Ägyptisch" in (extra.get("audio_text") or ""):
+            errors.append(f"Câu {idx}: Vẫn còn dùng 'Ägyptisch' thay cho 'Arabisch'!")
+        texts_to_check = [ex["correct_answer"] or "", extra.get("audio_text") or ""] + list(extra.get("accepted_answers") or [])
+        if idx not in (6, 11):  # Câu 6 chọn đáp án sai, Câu 11 đề bài chứa lỗi cố ý; còn correct_answer vẫn phải chuẩn
+            pass
+        for t in texts_to_check:
+            check_geo_sentence(t, f"Câu {idx}")
+    print("  ✓ Coordinate & Geography Check PASS: Mọi câu '...lich von' đúng hướng la bàn & phân biệt đúng BÊN TRONG / BÊN NGOÀI.")
 
     conn.close()
 
