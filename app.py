@@ -472,6 +472,25 @@ def ensure_db_initialized():
         if need_seed_b13:
             from lessons.a1.seed_a1_b13 import seed_lesson_13
             seed_lesson_13()
+
+        # Kiểm tra tự động nạp Bài 14 (A1)
+        cursor.execute("SELECT id, grammar_content FROM lessons WHERE title LIKE '%Bài 14%';")
+        lesson_b14 = cursor.fetchone()
+        need_seed_b14 = False
+        if not lesson_b14:
+            need_seed_b14 = True
+        else:
+            b14_id = lesson_b14["id"]
+            b14_gc = lesson_b14["grammar_content"] or ""
+            cursor.execute("SELECT count(*) as cnt FROM vocabularies WHERE lesson_id = ?;", (b14_id,))
+            v_cnt14 = cursor.fetchone()["cnt"]
+            cursor.execute("SELECT count(*) as cnt FROM exercises WHERE lesson_id = ?;", (b14_id,))
+            e_cnt14 = cursor.fetchone()["cnt"]
+            if v_cnt14 < 18 or e_cnt14 < 125 or ("b14-compass-svg-container" not in b14_gc):
+                need_seed_b14 = True
+        if need_seed_b14:
+            from lessons.a1.seed_a1_b14 import seed_lesson_14
+            seed_lesson_14()
             
         conn.close()
     except Exception as e:

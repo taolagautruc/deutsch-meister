@@ -382,6 +382,7 @@
     <script src="/static/js/kleidung_svg.js?v=20261118_v1"></script>
     <script src="/static/js/gesundheit_svg.js?v=20261120_v1"></script>
     <script src="/static/js/b13_review_svg.js?v=20261126_v3"></script>
+    <script src="/static/js/b14_review_svg.js?v=20261126_v1"></script>
     <script src="/static/js/verbs_db.js?v=20261116_v4"></script>
     <script src="/static/js/lexikon_db.js?v=20261116_v4"></script>
     <script src="/static/js/arena_engine.js?v=20261116_v4"></script>
@@ -563,6 +564,26 @@
             "dung_sai": "16. Đọc hiểu Đúng / Sai",
             "hoi_thoai_sap_xep": "17. Sắp xếp hội thoại",
             "doc_menu_cafe": "18. Đọc menu chọn phản hồi"
+        };
+
+        const B14_ORDER = [
+            "trac_nghiem", "dien_khuyet", "dien_tao_cau", "dich_cau_vd", "dich_cau_dv",
+            "sap_xep_cau", "tim_loi_sai", "noi_o", "viet_lai_cau_w", "nghe_dien",
+            "hoi_thoai_sap_xep"
+        ];
+        const B14_TYPE_LABELS = {
+            "all": "Tất cả",
+            "trac_nghiem": "1. Trắc nghiệm & Chọn giới từ",
+            "dien_khuyet": "2. Điền khuyết",
+            "dien_tao_cau": "3. Điền 2 chỗ trống",
+            "dich_cau_vd": "4. Dịch câu: Việt → Đức",
+            "dich_cau_dv": "5. Dịch câu: Đức → Việt",
+            "sap_xep_cau": "6. Sắp xếp từ thành câu",
+            "tim_loi_sai": "7. Tìm và sửa lỗi sai",
+            "noi_o": "8. Nối ô: Quốc gia & Ngôn ngữ",
+            "viet_lai_cau_w": "9. Đặt câu hỏi (W-Fragen / Ja-Nein)",
+            "nghe_dien": "10. Nghe chép chính tả (Dictation)",
+            "hoi_thoai_sap_xep": "11. Sắp xếp hội thoại logic"
         };
 
         let currentLevelData = null;
@@ -1233,6 +1254,7 @@
             if (!vocabGrid || !currentLesson || !currentLesson.vocabularies) return;
 
             const isLesson13Vocab = Boolean(currentLesson && (currentLesson.id === 27 || (currentLesson.title && /bài 13\b/i.test(currentLesson.title))));
+            const isLesson14Vocab = Boolean(currentLesson && (currentLesson.id === 28 || (currentLesson.title && /bài 14\b/i.test(currentLesson.title))));
             const derCount = currentLesson.vocabularies.filter(v => v.article === 'der').length;
             const dieCount = currentLesson.vocabularies.filter(v => v.article === 'die' || v.article === 'die (Plural)' || (v.german_word && v.german_word.includes('Alpen'))).length;
             const dasCount = currentLesson.vocabularies.filter(v => v.article === 'das').length;
@@ -1240,7 +1262,7 @@
             document.querySelectorAll('.vocab-filter-btn').forEach(btn => {
                 const f = btn.getAttribute('data-filter');
                 if (f === 'der' || f === 'die' || f === 'das') {
-                    if (isLesson13Vocab) {
+                    if (isLesson13Vocab || isLesson14Vocab) {
                         const c = f === 'der' ? derCount : (f === 'die' ? dieCount : dasCount);
                         btn.style.display = c > 0 ? 'inline-block' : 'none';
                     } else {
@@ -1312,7 +1334,7 @@
                 const safeSpeak = fullWord.replace(/'/g, "\\'");
                 const rawEx = v.example_sentence || '';
                 let exampleBlockHtml = '';
-                if (isLesson13Vocab && rawEx.includes(' — ')) {
+                if ((isLesson13Vocab || isLesson14Vocab) && rawEx.includes(' — ')) {
                     const splitIdx = rawEx.indexOf(' — ');
                     const deDisplay = rawEx.slice(0, splitIdx).trim();
                     const viDisplay = rawEx.slice(splitIdx + 3).trim();
@@ -1422,6 +1444,10 @@
             if (currentLesson && (currentLesson.id === 27 || (currentLesson.title && /bài 13\b/i.test(currentLesson.title)))) {
                 const fn13 = window.b13_initReviewSvgDiagrams || window.initReviewSvgDiagrams;
                 if (typeof fn13 === 'function') setTimeout(fn13, 50);
+            }
+            if (currentLesson && (currentLesson.id === 28 || (currentLesson.title && /bài 14\b/i.test(currentLesson.title)))) {
+                const fn14 = window.b14_initReviewSvgDiagrams;
+                if (typeof fn14 === 'function') setTimeout(fn14, 50);
             }
 
             // Cập nhật nhãn số dạng bài tập động
@@ -2049,15 +2075,16 @@
             const isLesson11 = Boolean(currentLesson && currentLesson.id === 25);
             const isLesson12 = Boolean(currentLesson && currentLesson.id === 26);
             const isLesson13 = Boolean(currentLesson && (currentLesson.id === 27 || (currentLesson.title && /bài 13\b/i.test(currentLesson.title))));
-            if (isLesson13) {
+            const isLesson14 = Boolean(currentLesson && (currentLesson.id === 28 || (currentLesson.title && /bài 14\b/i.test(currentLesson.title))));
+            if (isLesson13 || isLesson14) {
                 const subtabExEl = document.getElementById('subtab-exercises');
                 if (subtabExEl && list.length > 0) {
                     const realTypeCount = new Set(list.map(x => x.exercise_type).filter(Boolean)).size;
                     subtabExEl.innerText = `✍️ Phần 2: Bài tập (Đủ ${realTypeCount} Dạng)`;
                 }
             }
-            const chipKeys = isLesson13 ? ['all', ...B13_ORDER] : (isLesson12 ? ['all', ...B12_ORDER] : (isLesson11 ? ['all', ...B11_ORDER] : Object.keys(TYPE_LABELS)));
-            const getLabel = (k) => isLesson13 ? (B13_TYPE_LABELS[k] || TYPE_LABELS[k] || k) : (isLesson12 ? (B12_TYPE_LABELS[k] || TYPE_LABELS[k] || k) : (isLesson11 ? (B11_TYPE_LABELS[k] || TYPE_LABELS[k] || k) : (TYPE_LABELS[k] || k)));
+            const chipKeys = isLesson14 ? ['all', ...B14_ORDER] : (isLesson13 ? ['all', ...B13_ORDER] : (isLesson12 ? ['all', ...B12_ORDER] : (isLesson11 ? ['all', ...B11_ORDER] : Object.keys(TYPE_LABELS))));
+            const getLabel = (k) => isLesson14 ? (B14_TYPE_LABELS[k] || TYPE_LABELS[k] || k) : (isLesson13 ? (B13_TYPE_LABELS[k] || TYPE_LABELS[k] || k) : (isLesson12 ? (B12_TYPE_LABELS[k] || TYPE_LABELS[k] || k) : (isLesson11 ? (B11_TYPE_LABELS[k] || TYPE_LABELS[k] || k) : (TYPE_LABELS[k] || k))));
 
             const filterBarHtml = `
                 <div class="flex flex-wrap gap-2 pb-3 border-b border-slate-100">
@@ -2490,7 +2517,7 @@
                         textToSpeak = ex.correct_answer || '';
                     }
                     const cleanSpeak = textToSpeak.replace(/'/g, "\\'");
-                    const isDictation13Card = Boolean(isLesson13 && ex.exercise_type === 'nghe_dien');
+                    const isDictation13Card = Boolean((isLesson13 || isLesson14) && ex.exercise_type === 'nghe_dien');
                     extraHtml = '';
                     if (extra.display_sentence && !isDictation13Card) {
                         extraHtml += `
@@ -2532,7 +2559,7 @@
                         <div class="p-4 rounded-xl bg-indigo-50/60 border border-indigo-200 text-xs sm:text-sm text-slate-800 whitespace-pre-line font-medium my-2">${extra.passage}</div>
                     `;
                 }
-                if (isLesson13 && extra && extra.audio_text && ['dich_nghia_dv', 'dich_cau_dv', 'phan_loai_dong_tu', 'phan_loai_tu_hoi'].includes(ex.exercise_type)) {
+                if ((isLesson13 || isLesson14) && extra && extra.audio_text && ['dich_nghia_dv', 'dich_cau_dv', 'phan_loai_dong_tu', 'phan_loai_tu_hoi'].includes(ex.exercise_type)) {
                     const promptAudio = String(extra.audio_text).replace(/'/g, "\\'");
                     extraHtml += `
                         <div class="flex flex-wrap items-center gap-2 mt-2">
@@ -2638,7 +2665,7 @@
                                         (Boolean(ex.question) && (ex.question.includes('[1]') || ex.question.includes('ngăn cách bởi dấu /') || ex.question.includes('cách nhau bởi dấu /') || ex.question.includes('ngăn cách bởi dấu phẩy') || ex.question.includes('cách nhau bởi dấu phẩy') || /điền\s+[2-9]\s+từ/i.test(ex.question)));
                     const isDeToVi = (ex && (ex.exercise_type === 'dich_nghia_dv' || ex.exercise_type === 'dich_cau_dv' || ex.exercise_type === 'dich')) &&
                                      (ex.question && /(?:sang tiếng việt|đức\s*→\s*việt|dịch câu sau sang tiếng việt)/i.test(ex.question));
-                    const isDictation13Input = Boolean(isLesson13 && (ex.exercise_type === 'nghe_dien' || (extra && extra.dictation_mode)));
+                    const isDictation13Input = Boolean((isLesson13 || isLesson14) && (ex.exercise_type === 'nghe_dien' || (extra && extra.dictation_mode)));
                     const cleanAns = isDone 
                         ? (ex._userAnswer || (isMultiSlot ? String(ex.correct_answer || '').trim() : String(ex.correct_answer || '').split('/')[0].trim())) 
                         : (ex._userAnswer || '');
@@ -2684,7 +2711,7 @@
                 }
 
                 let displayQuestion = (typeof ensureQuestionNumber === 'function') ? ensureQuestionNumber(ex.question, ex.question, i + 1) : ex.question;
-                if ((ex.exercise_type === 'nghe' || ex.exercise_type === 'nghe_dien') && extra && extra.display_sentence && !(isLesson13 && ex.exercise_type === 'nghe_dien')) {
+                if ((ex.exercise_type === 'nghe' || ex.exercise_type === 'nghe_dien') && extra && extra.display_sentence && !((isLesson13 || isLesson14) && ex.exercise_type === 'nghe_dien')) {
                     displayQuestion = displayQuestion.replace(/[:\s]+['"„][^'"“”]+['"“”]?.*$/, ':');
                     if (!displayQuestion.endsWith(':')) displayQuestion += ':';
                 }
@@ -2727,7 +2754,7 @@
                                         🎯 Câu hoàn chỉnh: <span class="font-bold text-emerald-900">${extra.full_sentence}</span>
                                     </div>
                                 ` : ''}
-                                ${(isLesson13 && extra && extra.audio_text && !['nghe_dien', 'nghe', 'hoi_thoai_sap_xep', 'dung_sai', 'dich_nghia_dv', 'dich_cau_dv', 'phan_loai_dong_tu', 'phan_loai_tu_hoi'].includes(ex.exercise_type)) ? `
+                                ${((isLesson13 || isLesson14) && extra && extra.audio_text && !['nghe_dien', 'nghe', 'hoi_thoai_sap_xep', 'dung_sai', 'dich_nghia_dv', 'dich_cau_dv', 'phan_loai_dong_tu', 'phan_loai_tu_hoi'].includes(ex.exercise_type)) ? `
                                     <div class="pt-1">
                                         <button type="button" onclick="speakGerman('${String(extra.audio_text).replace(/'/g, "\\'")}', 0.95)" class="px-3 py-1.5 rounded-xl bg-blue-50 hover:bg-blue-100 text-blue-700 border border-blue-200 text-xs font-bold cursor-pointer inline-flex items-center gap-1">
                                             🔊 Nghe câu tiếng Đức chuẩn
@@ -2744,13 +2771,15 @@
                     `
                     : `<div id="ex-feedback-${i}" class="hidden text-xs p-3.5 rounded-xl mt-2"></div>`;
 
-                const typeBadgeLabel = isLesson13
-                    ? (B13_TYPE_LABELS[ex.exercise_type] || TYPE_LABELS[ex.exercise_type] || ex.exercise_type)
-                    : (isLesson12 
-                        ? (B12_TYPE_LABELS[ex.exercise_type] || TYPE_LABELS[ex.exercise_type] || ex.exercise_type) 
-                        : (isLesson11 
-                            ? (B11_TYPE_LABELS[ex.exercise_type] || TYPE_LABELS[ex.exercise_type] || ex.exercise_type) 
-                            : (TYPE_LABELS[ex.exercise_type] || ex.exercise_type)));
+                const typeBadgeLabel = isLesson14
+                    ? (B14_TYPE_LABELS[ex.exercise_type] || TYPE_LABELS[ex.exercise_type] || ex.exercise_type)
+                    : (isLesson13
+                        ? (B13_TYPE_LABELS[ex.exercise_type] || TYPE_LABELS[ex.exercise_type] || ex.exercise_type)
+                        : (isLesson12 
+                            ? (B12_TYPE_LABELS[ex.exercise_type] || TYPE_LABELS[ex.exercise_type] || ex.exercise_type) 
+                            : (isLesson11 
+                                ? (B11_TYPE_LABELS[ex.exercise_type] || TYPE_LABELS[ex.exercise_type] || ex.exercise_type) 
+                                : (TYPE_LABELS[ex.exercise_type] || ex.exercise_type))));
 
                 return `
                     <div id="ex-card-${i}" class="p-5 rounded-2xl ${cardBorder} space-y-2 transition-all">
@@ -3743,6 +3772,13 @@
                             (currentLesson.title && /bài 13\b/i.test(currentLesson.title))
                         ))
                     );
+                    const isLesson14 = Boolean(
+                        (ex && (String(ex.lesson_id) === '28')) ||
+                        (typeof currentLesson !== 'undefined' && currentLesson && (
+                            String(currentLesson.id) === '28' || 
+                            (currentLesson.title && /bài 14\b/i.test(currentLesson.title))
+                        ))
+                    );
                     const l8QMatch = isLesson8 && (ex.question || '').match(/Câu\s+(4[6-9]|5[0-7])\b/i);
                     const l8VDMatch = isLesson8 && (ex.question || '').match(/Câu\s+(8[7-9]|9[0-3])\b/i);
                     const l8DVMatch = isLesson8 && (ex.question || '').match(/Câu\s+(9[4-9]|100)\b/i);
@@ -3750,8 +3786,11 @@
                     const l12DVMatch = isLesson12 && (ex.question || '').match(/Câu\s+(8[7-9]|9[0-2]|11[1-4])\b/i);
                     const l12VDMatch = isLesson12 && (ex.question || '').match(/Câu\s+(8[1-6]|10[7-9]|110)\b/i);
                     const l13DVMatch = isLesson13 && (ex.question || '').match(/Câu\s+(8[0-6])\b/i);
+                    const l14DVMatch = isLesson14 && (ex.question || '').match(/Câu\s+(9|18|27|55|98|100|101|104)\b/i);
 
-                    if (l13DVMatch && typeof evaluateLesson13DVTranslation === 'function' && evaluateLesson13DVTranslation(userAnswer, parseInt(l13DVMatch[1], 10))) {
+                    if (l14DVMatch && typeof evaluateLesson14Translation === 'function' && evaluateLesson14Translation(userAnswer, parseInt(l14DVMatch[1], 10))) {
+                        isCorrect = true;
+                    } else if (l13DVMatch && typeof evaluateLesson13DVTranslation === 'function' && evaluateLesson13DVTranslation(userAnswer, parseInt(l13DVMatch[1], 10))) {
                         isCorrect = true;
                     } else if (l12DVMatch && typeof evaluateLesson12DVTranslation === 'function' && evaluateLesson12DVTranslation(userAnswer, parseInt(l12DVMatch[1], 10))) {
                         isCorrect = true;
@@ -3798,8 +3837,11 @@
                             ex && ex.exercise_type === 'nghe_dien' && (
                                 (extra && extra.dictation_mode) ||
                                 String(ex.lesson_id) === '27' ||
+                                String(ex.lesson_id) === '28' ||
                                 (typeof currentLesson !== 'undefined' && currentLesson && (
-                                    String(currentLesson.id) === '27' || /bài 13\b/i.test(currentLesson.title || '')
+                                    String(currentLesson.id) === '27' ||
+                                    String(currentLesson.id) === '28' ||
+                                    /bài (13|14)\b/i.test(currentLesson.title || '')
                                 ))
                             )
                         );
@@ -3984,30 +4026,51 @@
                     ex && ex.exercise_type === 'nghe_dien' && (
                         (extra && extra.dictation_mode) ||
                         String(ex.lesson_id) === '27' ||
+                        String(ex.lesson_id) === '28' ||
                         (typeof currentLesson !== 'undefined' && currentLesson && (
-                            String(currentLesson.id) === '27' || /bài 13\b/i.test(currentLesson.title || '')
+                            String(currentLesson.id) === '27' ||
+                            String(currentLesson.id) === '28' ||
+                            /bài (13|14)\b/i.test(currentLesson.title || '')
                         ))
                     )
                 );
-                if (isDictation13Cap && typeof userAnswer === 'string') {
-                    const stripPunct = (w) => String(w || '').replace(/^[.,!?;:"'„“”«»()]+|[.,!?;:"'„“”«»()]+$/g, '');
-                    const targetSentence = (extra && extra.full_sentence) ? String(extra.full_sentence) : String(ex.correct_answer || '');
-                    const correctWords = targetSentence.trim().split(/\s+/).map(stripPunct).filter(Boolean);
-                    const userWords = String(userAnswer || '').trim().split(/\s+/).map(stripPunct).filter(Boolean);
+                const isLesson14ExCap = Boolean(
+                    ex && (
+                        String(ex.lesson_id) === '28' ||
+                        (typeof currentLesson !== 'undefined' && currentLesson && (
+                            String(currentLesson.id) === '28' || /bài 14\b/i.test(currentLesson.title || '')
+                        ))
+                    )
+                );
+                const isLesson14GermanInput = isLesson14ExCap && !isMultipleChoice && ['dien_khuyet', 'dien_tao_cau', 'dich_cau_vd', 'sap_xep_cau', 'tim_loi_sai', 'viet_lai_cau_w', 'nghe_dien'].includes(ex.exercise_type);
+                if ((isDictation13Cap || isLesson14GermanInput) && typeof userAnswer === 'string') {
+                    const stripPunct = (w) => String(w || '').replace(/^[.,!?;:"'„“”«»()\/]+|[.,!?;:"'„“”«»()\/]+$/g, '');
+                    let targetSentence = (extra && extra.full_sentence) ? String(extra.full_sentence) : String(ex.correct_answer || '');
+                    if (isLesson14GermanInput && extra && Array.isArray(extra.accepted_answers) && extra.accepted_answers.length > 0) {
+                        const uCleanCap = String(userAnswer || '').replace(/[,;/]+/g, ' ').trim();
+                        const matchedCand = [ex.correct_answer, ...extra.accepted_answers].find(c => {
+                            if (!c) return false;
+                            const cClean = String(c).replace(/[,;/]+/g, ' ').trim();
+                            return normalizeAnswer(uCleanCap) === normalizeAnswer(cClean);
+                        });
+                        if (matchedCand) targetSentence = String(matchedCand);
+                    }
+                    const correctWords = targetSentence.replace(/[\/,]+/g, ' ').trim().split(/\s+/).map(stripPunct).filter(Boolean);
+                    const userWords = String(userAnswer || '').replace(/[\/,;]+/g, ' ').trim().split(/\s+/).map(stripPunct).filter(Boolean);
                     const capMismatches = [];
                     correctWords.forEach((cw, wIdx) => {
                         if (/^[A-ZÄÖÜ]/.test(cw)) {
                             const uw = (userWords[wIdx] && normalizeAnswer(userWords[wIdx]) === normalizeAnswer(cw))
                                 ? userWords[wIdx]
                                 : userWords.find(w => normalizeAnswer(w) === normalizeAnswer(cw));
-                            if (uw && !/^[A-ZÄÖÜ]/.test(uw)) {
+                            if (uw && !/^[A-ZÄÖÜ]/.test(uw) && !capMismatches.includes(cw)) {
                                 capMismatches.push(cw);
                             }
                         }
                     });
                     if (capMismatches.length > 0) {
                         ex._capWarning = true;
-                        ex._capWarningText = `Trong tiếng Đức, chữ cái đầu câu và mọi danh từ đều bắt buộc phải viết hoa (cần viết hoa: <b>${capMismatches.join(', ')}</b>).`;
+                        ex._capWarningText = `Trong tiếng Đức, chữ cái đầu câu, tên riêng và mọi danh từ đều bắt buộc phải viết hoa (cần viết hoa: <b>${capMismatches.join(', ')}</b> • Mẫu chuẩn: <b>${ex.correct_answer}</b>).`;
                         capitalizationWarningHtml = `
                             <div class="mt-2 p-3 rounded-xl bg-amber-50 border border-amber-300 text-amber-900 text-xs leading-relaxed flex items-start gap-2 shadow-xs">
                                 <span class="text-base leading-none">⚠️</span>
@@ -4051,8 +4114,11 @@
                 const isLesson13QuestionWrite = Boolean(
                     ex && ex.exercise_type === 'viet_lai_cau_w' && (
                         String(ex.lesson_id) === '27' ||
+                        String(ex.lesson_id) === '28' ||
                         (typeof currentLesson !== 'undefined' && currentLesson && (
-                            String(currentLesson.id) === '27' || /bài 13\b/i.test(currentLesson.title || '')
+                            String(currentLesson.id) === '27' ||
+                            String(currentLesson.id) === '28' ||
+                            /bài (13|14)\b/i.test(currentLesson.title || '')
                         ))
                     )
                 );
@@ -4080,10 +4146,11 @@
                 }
 
                 const isLesson13Live = Boolean(
-                    (ex && String(ex.lesson_id) === '27') ||
+                    (ex && (String(ex.lesson_id) === '27' || String(ex.lesson_id) === '28')) ||
                     (typeof currentLesson !== 'undefined' && currentLesson && (
                         String(currentLesson.id) === '27' ||
-                        (currentLesson.title && /bài 13\b/i.test(currentLesson.title))
+                        String(currentLesson.id) === '28' ||
+                        /bài (13|14)\b/i.test(currentLesson.title || '')
                     ))
                 );
                 const audioFeedbackBtnHtml = (isLesson13Live && extra && extra.audio_text && !['nghe_dien', 'nghe', 'hoi_thoai_sap_xep', 'dung_sai', 'dich_nghia_dv', 'dich_cau_dv', 'phan_loai_dong_tu', 'phan_loai_tu_hoi'].includes(ex.exercise_type))
@@ -4432,8 +4499,11 @@
                                 const isDictation13Wrong = Boolean(
                                     (extra && extra.dictation_mode) ||
                                     String(ex.lesson_id) === '27' ||
+                                    String(ex.lesson_id) === '28' ||
                                     (typeof currentLesson !== 'undefined' && currentLesson && (
-                                        String(currentLesson.id) === '27' || /bài 13\b/i.test(currentLesson.title || '')
+                                        String(currentLesson.id) === '27' ||
+                                        String(currentLesson.id) === '28' ||
+                                        /bài (13|14)\b/i.test(currentLesson.title || '')
                                     ))
                                 );
                                 ansBlockHtml = isDictation13Wrong ? `
