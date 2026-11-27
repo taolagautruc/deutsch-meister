@@ -2437,11 +2437,13 @@
                     const vtCats = (Array.isArray(extra.categories) && extra.categories.length === 2)
                         ? extra.categories
                         : ['Bất quy tắc', 'Có quy tắc'];
-                    extraHtml += `
-                        <div class="my-3 p-4 rounded-2xl bg-amber-50/80 border border-amber-200 space-y-3">
+                    const vtHeaderHtml = isLesson14 ? '' : `
                             <div class="text-xs font-extrabold text-amber-900 flex items-center justify-between">
                                 <span>🏷️ Bấm chọn nhóm (${vtCats[0]} / ${vtCats[1]}) cho ${extra.items.length} động từ dưới đây:</span>
-                            </div>
+                            </div>`;
+                    extraHtml += `
+                        <div class="my-3 p-4 rounded-2xl bg-amber-50/80 border border-amber-200 space-y-3">
+                            ${vtHeaderHtml}
                             <div class="space-y-2">
                                 ${extra.items.map((item, itIdx) => {
                                     const userCh = window._verbTypeChoices[i][itIdx];
