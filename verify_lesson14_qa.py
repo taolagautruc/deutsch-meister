@@ -121,8 +121,13 @@ def run_tests():
             de_part, vi_part = ex_s.split(" — ", 1)
             if not vi_part.strip():
                 errors.append(f"Thẻ '{w}' có phần dịch trống!")
-    if "Zentrum" in v_map and "Das Hotel liegt im Zentrum von Hanoi." not in (v_map["Zentrum"]["example_sentence"] or ""):
-        errors.append("Thẻ 'Zentrum' chưa cập nhật ví dụ 'Das Hotel liegt im Zentrum von Hanoi.'!")
+    if "Zentrum" in v_map:
+        z_ex = v_map["Zentrum"]["example_sentence"] or ""
+        z_mean = v_map["Zentrum"]["vietnamese_meaning"] or ""
+        if "Das Hotel liegt im Zentrum von Hanoi." not in z_ex:
+            errors.append("Thẻ 'Zentrum' chưa cập nhật ví dụ 'Das Hotel liegt im Zentrum von Hanoi.'!")
+        if z_mean != "trung tâm (thành phố) (Pl: die Zentren)":
+            errors.append(f"Thẻ 'Zentrum' nghĩa chưa gọn chuẩn: '{z_mean}'!")
     if "Freundin" in v_map:
         f_mean = v_map["Freundin"]["vietnamese_meaning"] or ""
         f_ex = v_map["Freundin"]["example_sentence"] or ""
@@ -226,6 +231,8 @@ def run_tests():
         errors.append("b14_review_svg.js chưa cập nhật quy tắc Mitte vs Zentrum!")
     if "Hue liegt im Zentrum von Vietnam." in b14_js:
         errors.append("b14_review_svg.js vẫn còn ví dụ cũ 'Hue liegt im Zentrum von Vietnam.'!")
+    if 'Dùng "in der Mitte" (không dùng "im")' not in b14_js or 'Bắt buộc có "im" (A thuộc X)' not in b14_js:
+        errors.append("b14_review_svg.js thiếu nhãn riêng way1Badge cho Zentrum / các hướng khác!")
 
     # 8. KIỂM TRA TỌA ĐỘ PHƯƠNG HƯỚNG (-lich von) & CẤM DÙNG BÊN TRONG/Ägyptisch
     print("\n[8/8] Kiểm tra tọa độ địa lý (A liegt ...lich von B) & chống dùng sai bên trong...")

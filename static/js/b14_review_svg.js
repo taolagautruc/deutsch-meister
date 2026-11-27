@@ -139,6 +139,9 @@
         const way1Formula = (selectedDirection === 'Zentrum')
             ? `liegt <span class="underline decoration-blue-500">in der Mitte</span> von ... <span class="text-xs font-normal text-blue-700">(nước/vùng)</span>`
             : `liegt <span class="underline decoration-blue-500">im ${selectedDirection}</span> von ...`;
+        const way1Badge = (selectedDirection === 'Zentrum')
+            ? 'Dùng "in der Mitte" (không dùng "im")'
+            : 'Bắt buộc có "im" (A thuộc X)';
 
         const way2Html = d.adj ? `
             <div class="p-4 rounded-2xl bg-emerald-50 border-2 border-emerald-300 space-y-2">
@@ -209,7 +212,7 @@
                     <div class="p-4 rounded-2xl bg-blue-50 border-2 border-blue-300 space-y-2">
                         <div class="flex items-center justify-between gap-2 flex-wrap">
                             <span class="px-2.5 py-0.5 rounded-lg bg-blue-600 text-white text-[11px] font-black uppercase">CÁCH 1 • Danh từ viết hoa • BÊN TRONG X</span>
-                            <span class="px-2 py-0.5 rounded-md bg-blue-100 text-blue-900 border border-blue-200 text-[11px] font-black">Bắt buộc có "im" (A thuộc X)</span>
+                            <span class="px-2 py-0.5 rounded-md bg-blue-100 text-blue-900 border border-blue-200 text-[11px] font-black">${way1Badge}</span>
                         </div>
                         <div class="text-sm font-black text-blue-950 font-mono">
                             ${way1Formula}

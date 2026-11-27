@@ -381,7 +381,7 @@ def seed_lesson_14():
         ("Kind", "das", "đứa trẻ; con (Pl: die Kinder)", "„Das Kind lernt heute Deutsch in der Schule.“ — Đứa trẻ hôm nay học tiếng Đức ở trường."),
         ("Konzert", "das", "buổi hòa nhạc (Pl: die Konzerte)", "„Das Konzert gestern Abend war fantastisch!“ — Buổi hòa nhạc tối qua thật tuyệt vời!"),
         ("Radio", "das", "cái đài radio (Pl: die Radios)", "„Nein, das ist kein Radio.“ — Không, đó không phải là một cái đài."),
-        ("Zentrum", "das", "trung tâm thành phố (Zentrum = trung tâm thành phố; Mitte = giữa của một nước/vùng; Pl: die Zentren)", "„Das Hotel liegt im Zentrum von Hanoi.“ — Khách sạn nằm ở trung tâm Hà Nội."),
+        ("Zentrum", "das", "trung tâm (thành phố) (Pl: die Zentren)", "„Das Hotel liegt im Zentrum von Hanoi.“ — Khách sạn nằm ở trung tâm Hà Nội."),
         ("Europa", "das", "châu Âu (Thường dùng KHÔNG mạo từ: in Europa, aus Europa; Pl: nur Sg.)", "„Russland liegt im Osten von Europa.“ — Nga nằm ở miền Đông của châu Âu.")
     ]
 
