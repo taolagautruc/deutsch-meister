@@ -400,10 +400,10 @@ def seed_lesson_14():
         {
             "id": 1,
             "exercise_type": "trac_nghiem",
-            "question": "Câu 1: Chọn giới từ thích hợp:\n„Berlin liegt ___ Nordosten von Deutschland.“",
+            "question": "Câu 1: Chọn giới từ thích hợp:\n\"Berlin liegt ___ Nordosten von Deutschland.\"",
             "options": ["in", "im", "an", "bei"],
             "correct_answer": "im",
-            "explanation": "„Nordosten“ là danh từ viết hoa chỉ hướng (nằm bên trong nước Đức), bắt buộc dùng cụm „im + [Danh từ hướng]“ -> Đáp án: im.",
+            "explanation": "\"Nordosten\" là danh từ viết hoa chỉ hướng (nằm bên trong nước Đức), bắt buộc dùng cụm \"im + [Danh từ hướng]\"\n-> Đáp án: im.",
             "exp_reward": 10,
             "extra_data": {
                 "audio_text": "Berlin liegt im Nordosten von Deutschland.",
@@ -413,10 +413,10 @@ def seed_lesson_14():
         {
             "id": 2,
             "exercise_type": "trac_nghiem",
-            "question": "Câu 2: Chọn giới từ thích hợp:\n„Hamburg liegt ___ nördlich von Hannover.“",
+            "question": "Câu 2: Chọn giới từ thích hợp:\n\"Hamburg liegt ___ nördlich von Hannover.\"",
             "options": ["in", "im", "(không điền giới từ)", "am"],
             "correct_answer": "(không điền giới từ)",
-            "explanation": "„nördlich“ là tính từ (có đuôi -lich, Hamburg nằm bên ngoài Hannover), tuyệt đối không dùng giới từ „im“ hay „in“ -> Đáp án: (không điền giới từ).",
+            "explanation": "\"nördlich\" là tính từ (có đuôi -lich, Hamburg nằm bên ngoài Hannover), tuyệt đối không dùng giới từ \"im\" hay \"in\"\n-> Đáp án: (không điền giới từ).",
             "exp_reward": 10,
             "extra_data": {
                 "audio_text": "Hamburg liegt nördlich von Hannover.",
@@ -434,7 +434,7 @@ def seed_lesson_14():
                 "Can Tho liegt südlich in Vietnam."
             ],
             "correct_answer": "Can Tho liegt im Süden von Vietnam.",
-            "explanation": "Cần Thơ thuộc Việt Nam và dùng danh từ chỉ hướng „Süden“ nên phải có cụm „im Süden von“. Phương án A ghép nhầm „im“ với tính từ „südlich“, C thiếu „von“, D dùng „südlich in“ sai cấu trúc -> Đáp án: Can Tho liegt im Süden von Vietnam.",
+            "explanation": "Cần Thơ thuộc Việt Nam và dùng danh từ chỉ hướng \"Süden\" nên phải có cụm \"im Süden von\".\nPhương án A ghép nhầm \"im\" với tính từ \"südlich\", C thiếu \"von\", D dùng \"südlich in\" sai cấu trúc.\n-> Đáp án: Can Tho liegt im Süden von Vietnam.",
             "exp_reward": 10,
             "extra_data": {
                 "audio_text": "Can Tho liegt im Süden von Vietnam.",
@@ -444,36 +444,36 @@ def seed_lesson_14():
         {
             "id": 4,
             "exercise_type": "trac_nghiem",
-            "question": "Câu 4: Cụm „im Nordwesten“ chỉ CÙNG HƯỚNG LA BÀN với tính từ nào sau đây?",
+            "question": "Câu 4: Cụm \"im Nordwesten\" chỉ CÙNG HƯỚNG LA BÀN với tính từ nào sau đây?",
             "options": ["südwestlich", "nordöstlich", "nordwestlich", "südöstlich"],
             "correct_answer": "nordwestlich",
-            "explanation": "Nord (Bắc) + Westen (Tây) = Tây Bắc. Tính từ tương ứng chỉ hướng Tây Bắc là „nordwestlich“ -> Đáp án: nordwestlich.",
+            "explanation": "Nord (Bắc) + Westen (Tây) = Tây Bắc.\nTính từ tương ứng chỉ hướng Tây Bắc là \"nordwestlich\"\n-> Đáp án: nordwestlich.",
             "exp_reward": 10,
             "extra_data": {
                 "audio_text": "im Nordwesten, nordwestlich",
-                "translation": "Cùng hướng Tây Bắc: im Nordwesten (bên trong) / nordwestlich (bên ngoài)."
+                "translation": "Cùng hướng Tây Bắc: im Nordwesten (bên trong)\nnordwestlich (bên ngoài)."
             }
         },
         {
             "id": 5,
             "exercise_type": "trac_nghiem",
-            "question": "Câu 5: Chọn mạo từ phủ định thích hợp:\n„Ist das eine Brille?“ — „Nein, das ist ___ Brille.“",
+            "question": "Câu 5: Chọn mạo từ phủ định thích hợp:\n\"Ist das eine Brille?\" — \"Nein, das ist ___ Brille.\"",
             "options": ["kein", "keine", "eine", "nicht"],
             "correct_answer": "keine",
-            "explanation": "„die Brille“ là danh từ giống cái (die), phủ định danh từ giống cái ở Nominativ dùng „keine“ -> Đáp án: keine.",
+            "explanation": "\"die Brille\" là danh từ giống cái (die), phủ định danh từ giống cái ở Nominativ dùng \"keine\"\n-> Đáp án: keine.",
             "exp_reward": 10,
             "extra_data": {
                 "audio_text": "Ist das eine Brille? Nein, das ist keine Brille.",
-                "translation": "Đây có phải mắt kính không? — Không, đó không phải mắt kính."
+                "translation": "Đây có phải mắt kính không?\nKhông, đó không phải mắt kính."
             }
         },
         {
             "id": 6,
             "exercise_type": "trac_nghiem",
-            "question": "Câu 6: Chọn cụm từ phù hợp để nói Đà Nẵng nằm ở miền Trung (giữa) của Việt Nam:\n„Da Nang liegt ___ von Vietnam.“",
+            "question": "Câu 6: Chọn cụm từ phù hợp để nói Đà Nẵng nằm ở miền Trung (giữa) của Việt Nam:\n\"Da Nang liegt ___ von Vietnam.\"",
             "options": ["im nordöstlich", "in der Mitte", "nördlich", "im westlich"],
             "correct_answer": "in der Mitte",
-            "explanation": "Với phạm vi một nước/vùng, diễn đạt „ở giữa / miền Trung của ...“ dùng cụm cố định „in der Mitte von“ -> Đáp án: in der Mitte.",
+            "explanation": "Với phạm vi một nước/vùng, diễn đạt \"ở giữa / miền Trung của ...\" dùng cụm cố định \"in der Mitte von\"\n-> Đáp án: in der Mitte.",
             "exp_reward": 10,
             "extra_data": {
                 "accepted_answers": ["in der Mitte", "im Zentrum"],
@@ -492,7 +492,7 @@ def seed_lesson_14():
                 "China liegt Norden von Vietnam."
             ],
             "correct_answer": "China liegt nördlich von Vietnam.",
-            "explanation": "Trung Quốc là quốc gia khác, nằm BÊN NGOÀI Việt Nam nên dùng tính từ „nördlich von“ (không dùng „im Norden von“) -> Đáp án: China liegt nördlich von Vietnam.",
+            "explanation": "Trung Quốc là quốc gia khác, nằm BÊN NGOÀI Việt Nam nên dùng tính từ \"nördlich von\" (không dùng \"im Norden von\").\n-> Đáp án: China liegt nördlich von Vietnam.",
             "exp_reward": 10,
             "extra_data": {
                 "audio_text": "China liegt nördlich von Vietnam.",
@@ -502,10 +502,10 @@ def seed_lesson_14():
         {
             "id": 8,
             "exercise_type": "trac_nghiem",
-            "question": "Câu 8: Chọn mạo từ phủ định thích hợp (der Laptop):\n„Das ist ___ Laptop, sondern ein Computer.“",
+            "question": "Câu 8: Chọn mạo từ phủ định thích hợp (der Laptop):\n\"Das ist ___ Laptop, sondern ein Computer.\"",
             "options": ["keine", "nicht", "kein", "einen"],
             "correct_answer": "kein",
-            "explanation": "„der Laptop“ mang giống đực (der), phủ định danh từ giống đực ở Nominativ dùng „kein“ -> Đáp án: kein.",
+            "explanation": "\"der Laptop\" mang giống đực (der), phủ định danh từ giống đực ở Nominativ dùng \"kein\"\n-> Đáp án: kein.",
             "exp_reward": 10,
             "extra_data": {
                 "audio_text": "Das ist kein Laptop, sondern ein Computer.",
@@ -515,23 +515,23 @@ def seed_lesson_14():
         {
             "id": 9,
             "exercise_type": "trac_nghiem",
-            "question": "Câu 9: Chọn dạng đúng của động từ „sein“:\n„___ das dein Rucksack?“ — „Ja, danke!“",
+            "question": "Câu 9: Chọn dạng đúng của động từ \"sein\":\n\"___ das dein Rucksack?\" — \"Ja, danke!\"",
             "options": ["Sind", "Bist", "Ist", "Seid"],
             "correct_answer": "Ist",
-            "explanation": "Chủ ngữ giả „das“ đi với danh từ số ít „dein Rucksack“ chia „sein“ ở ngôi số ít thứ 3 là „ist“ -> Đáp án: Ist.",
+            "explanation": "Chủ ngữ giả \"das\" đi với danh từ số ít \"dein Rucksack\" chia \"sein\" ở ngôi số ít thứ 3 là \"ist\"\n-> Đáp án: Ist.",
             "exp_reward": 10,
             "extra_data": {
                 "audio_text": "Ist das dein Rucksack? Ja, danke!",
-                "translation": "Đó có phải ba lô của bạn không? — Vâng, cảm ơn!"
+                "translation": "Đó có phải ba lô của bạn không?\nVâng, cảm ơn!"
             }
         },
         {
             "id": 10,
             "exercise_type": "trac_nghiem",
-            "question": "Câu 10: Chọn dạng quá khứ (Präteritum) đúng của „sein“:\n„Gestern ___ wir im Konzert in Berlin.“",
+            "question": "Câu 10: Chọn dạng quá khứ (Präteritum) đúng của \"sein\":\n\"Gestern ___ wir im Konzert in Berlin.\"",
             "options": ["sind", "wart", "waren", "war"],
             "correct_answer": "waren",
-            "explanation": "„Gestern“ (hôm qua) chỉ quá khứ. Ngôi „wir“ chia quá khứ Präteritum của „sein“ là „waren“ -> Đáp án: waren.",
+            "explanation": "\"Gestern\" (hôm qua) chỉ quá khứ.\nNgôi \"wir\" chia quá khứ Präteritum của \"sein\" là \"waren\"\n-> Đáp án: waren.",
             "exp_reward": 10,
             "extra_data": {
                 "audio_text": "Gestern waren wir im Konzert in Berlin.",
@@ -541,10 +541,10 @@ def seed_lesson_14():
         {
             "id": 11,
             "exercise_type": "trac_nghiem",
-            "question": "Câu 11: Chọn dạng quá khứ (Präteritum) đúng cho ngôi „du“:\n„___ du gestern Abend zu Hause?“",
+            "question": "Câu 11: Chọn dạng quá khứ (Präteritum) đúng cho ngôi \"du\":\n\"___ du gestern Abend zu Hause?\"",
             "options": ["Warst", "Bist", "Wart", "Waren"],
             "correct_answer": "Warst",
-            "explanation": "„gestern Abend“ là tối hôm qua (Präteritum). Ngôi „du“ chia quá khứ của „sein“ là „warst“ -> Đáp án: Warst.",
+            "explanation": "\"gestern Abend\" là tối hôm qua (Präteritum).\nNgôi \"du\" chia quá khứ của \"sein\" là \"warst\"\n-> Đáp án: Warst.",
             "exp_reward": 10,
             "extra_data": {
                 "audio_text": "Warst du gestern Abend zu Hause?",
@@ -554,10 +554,10 @@ def seed_lesson_14():
         {
             "id": 12,
             "exercise_type": "trac_nghiem",
-            "question": "Câu 12: Chọn cụm giới từ đúng với quốc gia „die Türkei“:\n„Mein Vater kommt ___ Türkei.“",
+            "question": "Câu 12: Chọn cụm giới từ đúng với quốc gia \"die Türkei\":\n\"Mein Vater kommt ___ Türkei.\"",
             "options": ["aus", "in die", "aus der", "im"],
             "correct_answer": "aus der",
-            "explanation": "„die Türkei“ là quốc gia có mạo từ giống cái, khi đi với giới từ „aus“ (+ Dativ) biến thành „aus der Türkei“ -> Đáp án: aus der.",
+            "explanation": "\"die Türkei\" là quốc gia có mạo từ giống cái, khi đi với giới từ \"aus\" (+ Dativ) biến thành \"aus der Türkei\"\n-> Đáp án: aus der.",
             "exp_reward": 10,
             "extra_data": {
                 "audio_text": "Mein Vater kommt aus der Türkei.",
@@ -570,7 +570,7 @@ def seed_lesson_14():
             "question": "Câu 13: Ngôn ngữ chính thức được nói tại Ai Cập (Ägypten) là gì?",
             "options": ["Ägyptisch", "Arabisch", "Türkisch", "Spanisch"],
             "correct_answer": "Arabisch",
-            "explanation": "Tại Ai Cập (Ägypten) người dân nói tiếng Ả Rập („Arabisch“), không dùng „Ägyptisch“ -> Đáp án: Arabisch.",
+            "explanation": "Tại Ai Cập (Ägypten) người dân nói tiếng Ả Rập (\"Arabisch\"), không dùng \"Ägyptisch\"\n-> Đáp án: Arabisch.",
             "exp_reward": 10,
             "extra_data": {
                 "audio_text": "In Ägypten spricht man Arabisch.",
@@ -580,10 +580,10 @@ def seed_lesson_14():
         {
             "id": 14,
             "exercise_type": "trac_nghiem",
-            "question": "Câu 14: Chọn giới từ đúng với quốc gia „die Schweiz“:\n„Meine Eltern wohnen ___ Schweiz, in Zürich.“",
+            "question": "Câu 14: Chọn giới từ đúng với quốc gia \"die Schweiz\":\n\"Meine Eltern wohnen ___ Schweiz, in Zürich.\"",
             "options": ["in", "im", "in der", "aus der"],
             "correct_answer": "in der",
-            "explanation": "„die Schweiz“ có mạo từ giống cái; trả lời cho vị trí tĩnh „Wo?“ dùng „in + Dativ“ -> „in der Schweiz“ -> Đáp án: in der.",
+            "explanation": "\"die Schweiz\" có mạo từ giống cái\ntrả lời cho vị trí tĩnh \"Wo?\" dùng \"in + Dativ\"\n-> \"in der Schweiz\"\n-> Đáp án: in der.",
             "exp_reward": 10,
             "extra_data": {
                 "audio_text": "Meine Eltern wohnen in der Schweiz, in Zürich.",
@@ -593,23 +593,23 @@ def seed_lesson_14():
         {
             "id": 15,
             "exercise_type": "trac_nghiem",
-            "question": "Câu 15: Chọn từ để hỏi phù hợp:\n„___ spricht man in Griechenland?“ — „Griechisch.“",
+            "question": "Câu 15: Chọn từ để hỏi phù hợp:\n\"___ spricht man in Griechenland?\" — \"Griechisch.\"",
             "options": ["Was für", "Wer", "Welche Sprache", "Woher"],
             "correct_answer": "Welche Sprache",
-            "explanation": "Để hỏi „người ta nói ngôn ngữ nào?“ dùng cụm „Welche Sprache spricht man ...?“ -> Đáp án: Welche Sprache.",
+            "explanation": "Để hỏi \"người ta nói ngôn ngữ nào?\" dùng cụm \"Welche Sprache spricht man ...?\"\n-> Đáp án: Welche Sprache.",
             "exp_reward": 10,
             "extra_data": {
                 "audio_text": "Welche Sprache spricht man in Griechenland? Griechisch.",
-                "translation": "Ở Hy Lạp người ta nói tiếng gì? — Tiếng Hy Lạp."
+                "translation": "Ở Hy Lạp người ta nói tiếng gì?\nTiếng Hy Lạp."
             }
         },
         {
             "id": 16,
             "exercise_type": "dien_khuyet",
-            "question": "Câu 16: Điền từ thích hợp:\n„Hai Phong liegt im ___ von Vietnam.“ (hướng Đông Bắc)",
+            "question": "Câu 16: Điền từ thích hợp:\n\"Hai Phong liegt im ___ von Vietnam.\" (hướng Đông Bắc)",
             "options": null,
             "correct_answer": "Nordosten",
-            "explanation": "Sau „im“ cần dùng danh từ viết hoa chỉ hướng (Hải Phòng thuộc miền Đông Bắc Việt Nam). Đông Bắc là „Nordosten“ -> Đáp án: Nordosten.",
+            "explanation": "Sau \"im\" cần dùng danh từ viết hoa chỉ hướng (Hải Phòng thuộc miền Đông Bắc Việt Nam).\nĐông Bắc là \"Nordosten\"\n-> Đáp án: Nordosten.",
             "exp_reward": 10,
             "extra_data": {
                 "accepted_answers": ["Nordosten", "nordosten"],
@@ -620,10 +620,10 @@ def seed_lesson_14():
         {
             "id": 17,
             "exercise_type": "dien_khuyet",
-            "question": "Câu 17: Điền tính từ chỉ hướng:\n„Polen liegt ___ von Deutschland.“ (phía Đông)",
+            "question": "Câu 17: Điền tính từ chỉ hướng:\n\"Polen liegt ___ von Deutschland.\" (phía Đông)",
             "options": null,
             "correct_answer": "östlich",
-            "explanation": "Ba Lan nằm bên ngoài Đức, phía Đông khi dùng như tính từ (không có giới từ) là „östlich“ -> Đáp án: östlich.",
+            "explanation": "Ba Lan nằm bên ngoài Đức, phía Đông khi dùng như tính từ (không có giới từ) là \"östlich\"\n-> Đáp án: östlich.",
             "exp_reward": 10,
             "extra_data": {
                 "accepted_answers": ["östlich", "oestlich"],
@@ -634,10 +634,10 @@ def seed_lesson_14():
         {
             "id": 18,
             "exercise_type": "dien_khuyet",
-            "question": "Câu 18: Điền giới từ thích hợp:\n„München liegt ___ Süden von Deutschland.“",
+            "question": "Câu 18: Điền giới từ thích hợp:\n\"München liegt ___ Süden von Deutschland.\"",
             "options": null,
             "correct_answer": "im",
-            "explanation": "München nằm bên trong nước Đức và „Süden“ là danh từ viết hoa chỉ hướng, nên bắt buộc đi kèm giới từ „im“ -> Đáp án: im.",
+            "explanation": "München nằm bên trong nước Đức và \"Süden\" là danh từ viết hoa chỉ hướng, nên bắt buộc đi kèm giới từ \"im\"\n-> Đáp án: im.",
             "exp_reward": 10,
             "extra_data": {
                 "accepted_answers": ["im", "Im"],
@@ -648,10 +648,10 @@ def seed_lesson_14():
         {
             "id": 19,
             "exercise_type": "dien_khuyet",
-            "question": "Câu 19: Điền mạo từ không xác định thích hợp (die Kamera):\n„Das ist kein Radio, das ist ___ Kamera.“",
+            "question": "Câu 19: Điền mạo từ không xác định thích hợp (die Kamera):\n\"Das ist kein Radio, das ist ___ Kamera.\"",
             "options": null,
             "correct_answer": "eine",
-            "explanation": "„die Kamera“ là danh từ giống cái, mạo từ không xác định ở Nominativ là „eine“ -> Đáp án: eine.",
+            "explanation": "\"die Kamera\" là danh từ giống cái, mạo từ không xác định ở Nominativ là \"eine\"\n-> Đáp án: eine.",
             "exp_reward": 10,
             "extra_data": {
                 "accepted_answers": ["eine", "Eine"],
@@ -662,24 +662,24 @@ def seed_lesson_14():
         {
             "id": 20,
             "exercise_type": "dien_khuyet",
-            "question": "Câu 20: Điền mạo từ phủ định thích hợp (der Schlüssel):\n„Ist das ein Schlüssel?“ — „Nein, das ist ___ Schlüssel.“",
+            "question": "Câu 20: Điền mạo từ phủ định thích hợp (der Schlüssel):\n\"Ist das ein Schlüssel?\" — \"Nein, das ist ___ Schlüssel.\"",
             "options": null,
             "correct_answer": "kein",
-            "explanation": "„der Schlüssel“ là danh từ giống đực, phủ định danh từ giống đực ở Nominativ dùng „kein“ -> Đáp án: kein.",
+            "explanation": "\"der Schlüssel\" là danh từ giống đực, phủ định danh từ giống đực ở Nominativ dùng \"kein\"\n-> Đáp án: kein.",
             "exp_reward": 10,
             "extra_data": {
                 "accepted_answers": ["kein", "Kein"],
                 "audio_text": "Ist das ein Schlüssel? Nein, das ist kein Schlüssel.",
-                "translation": "Đây có phải là chìa khóa không? — Không, đó không phải chìa khóa."
+                "translation": "Đây có phải là chìa khóa không?\nKhông, đó không phải chìa khóa."
             }
         },
         {
             "id": 21,
             "exercise_type": "dien_khuyet",
-            "question": "Câu 21: Điền danh từ chỉ hướng thích hợp:\n„Dresden liegt im ___ von Deutschland.“ (hướng Đông)",
+            "question": "Câu 21: Điền danh từ chỉ hướng thích hợp:\n\"Dresden liegt im ___ von Deutschland.\" (hướng Đông)",
             "options": null,
             "correct_answer": "Osten",
-            "explanation": "Dresden thuộc miền Đông nước Đức; sau „im“ dùng danh từ viết hoa chỉ hướng Đông là „Osten“ -> Đáp án: Osten.",
+            "explanation": "Dresden thuộc miền Đông nước Đức\nsau \"im\" dùng danh từ viết hoa chỉ hướng Đông là \"Osten\"\n-> Đáp án: Osten.",
             "exp_reward": 10,
             "extra_data": {
                 "accepted_answers": ["Osten", "osten"],
@@ -690,10 +690,10 @@ def seed_lesson_14():
         {
             "id": 22,
             "exercise_type": "dien_khuyet",
-            "question": "Câu 22: Điền tính từ chỉ hướng:\n„Österreich liegt ___ von Deutschland.“ (phía Nam)",
+            "question": "Câu 22: Điền tính từ chỉ hướng:\n\"Österreich liegt ___ von Deutschland.\" (phía Nam)",
             "options": null,
             "correct_answer": "südlich",
-            "explanation": "Áo là quốc gia riêng nằm bên ngoài và ở phía Nam của Đức nên dùng tính từ „südlich“ (không dùng „im“) -> Đáp án: südlich.",
+            "explanation": "Áo là quốc gia riêng nằm bên ngoài và ở phía Nam của Đức nên dùng tính từ \"südlich\" (không dùng \"im\").\n-> Đáp án: südlich.",
             "exp_reward": 10,
             "extra_data": {
                 "accepted_answers": ["südlich", "suedlich"],
@@ -704,24 +704,24 @@ def seed_lesson_14():
         {
             "id": 23,
             "exercise_type": "dien_khuyet",
-            "question": "Câu 23: Điền tên ngôn ngữ tiếng Đức thích hợp:\n„Er kommt aus Ägypten. Seine Muttersprache ist ___.“ (tiếng Ả Rập)",
+            "question": "Câu 23: Điền tên ngôn ngữ tiếng Đức thích hợp:\n\"Er kommt aus Ägypten. Seine Muttersprache ist ___.\" (tiếng Ả Rập)",
             "options": null,
             "correct_answer": "Arabisch",
-            "explanation": "Tiếng mẹ đẻ ở Ai Cập là tiếng Ả Rập, danh từ tên ngôn ngữ luôn viết hoa: „Arabisch“ -> Đáp án: Arabisch.",
+            "explanation": "Tiếng mẹ đẻ ở Ai Cập là tiếng Ả Rập, danh từ tên ngôn ngữ luôn viết hoa: \"Arabisch\"\n-> Đáp án: Arabisch.",
             "exp_reward": 10,
             "extra_data": {
                 "accepted_answers": ["Arabisch", "arabisch"],
                 "audio_text": "Er kommt aus Ägypten. Seine Muttersprache ist Arabisch.",
-                "translation": "Anh ấy đến từ Ai Cập. Tiếng mẹ đẻ của anh ấy là tiếng Ả Rập."
+                "translation": "Anh ấy đến từ Ai Cập.\nTiếng mẹ đẻ của anh ấy là tiếng Ả Rập."
             }
         },
         {
             "id": 24,
             "exercise_type": "dien_khuyet",
-            "question": "Câu 24: Điền tên châu lục bằng tiếng Đức (không cần mạo từ):\n„Deutschland und Frankreich liegen in ___.“ (châu Âu)",
+            "question": "Câu 24: Điền tên châu lục bằng tiếng Đức (không cần mạo từ):\n\"Deutschland und Frankreich liegen in ___.\" (châu Âu)",
             "options": null,
             "correct_answer": "Europa",
-            "explanation": "Tên châu lục „das Europa“ thường dùng không mạo từ sau giới từ „in“ -> „in Europa“ -> Đáp án: Europa.",
+            "explanation": "Tên châu lục \"das Europa\" thường dùng không mạo từ sau giới từ \"in\"\n-> \"in Europa\"\n-> Đáp án: Europa.",
             "exp_reward": 10,
             "extra_data": {
                 "accepted_answers": ["Europa", "europa"],
@@ -732,10 +732,10 @@ def seed_lesson_14():
         {
             "id": 25,
             "exercise_type": "dien_khuyet",
-            "question": "Câu 25: Điền mạo từ thích hợp sau giới từ „in“ (quốc gia die Türkei):\n„Meine Tante lebt seit zwei Jahren in ___ Türkei.“",
+            "question": "Câu 25: Điền mạo từ thích hợp sau giới từ \"in\" (quốc gia die Türkei):\n\"Meine Tante lebt seit zwei Jahren in ___ Türkei.\"",
             "options": null,
             "correct_answer": "der",
-            "explanation": "Quốc gia giống cái „die Türkei“ khi đứng sau „in“ (vị trí tĩnh) chuyển sang Dativ thành „in der Türkei“ -> Đáp án: der.",
+            "explanation": "Quốc gia giống cái \"die Türkei\" khi đứng sau \"in\" (vị trí tĩnh) chuyển sang Dativ thành \"in der Türkei\"\n-> Đáp án: der.",
             "exp_reward": 10,
             "extra_data": {
                 "accepted_answers": ["der"],
@@ -746,10 +746,10 @@ def seed_lesson_14():
         {
             "id": 26,
             "exercise_type": "dien_chia_dong_tu",
-            "question": "Câu 26: Chia động từ „sein“:\n„Früher ___ er sehr sportlich.“",
+            "question": "Câu 26: Chia động từ \"sein\":\n\"Früher ___ er sehr sportlich.\"",
             "options": null,
             "correct_answer": "war",
-            "explanation": "„Früher“ (trước đây) là dấu hiệu thì quá khứ Präteritum. Ngôi „er“ chia quá khứ của „sein“ là „war“ -> Đáp án: war.",
+            "explanation": "\"Früher\" (trước đây) là dấu hiệu thì quá khứ Präteritum.\nNgôi \"er\" chia quá khứ của \"sein\" là \"war\"\n-> Đáp án: war.",
             "exp_reward": 10,
             "extra_data": {
                 "accepted_answers": ["war"],
@@ -760,10 +760,10 @@ def seed_lesson_14():
         {
             "id": 27,
             "exercise_type": "dien_chia_dong_tu",
-            "question": "Câu 27: Chia động từ „sein“:\n„Wo ___ ihr jetzt?“",
+            "question": "Câu 27: Chia động từ \"sein\":\n\"Wo ___ ihr jetzt?\"",
             "options": null,
             "correct_answer": "seid",
-            "explanation": "„jetzt“ (bây giờ) là thì hiện tại (Präsens). Ngôi „ihr“ chia „sein“ là „seid“ -> Đáp án: seid.",
+            "explanation": "\"jetzt\" (bây giờ) là thì hiện tại (Präsens).\nNgôi \"ihr\" chia \"sein\" là \"seid\"\n-> Đáp án: seid.",
             "exp_reward": 10,
             "extra_data": {
                 "accepted_answers": ["seid"],
@@ -774,10 +774,10 @@ def seed_lesson_14():
         {
             "id": 28,
             "exercise_type": "dien_chia_dong_tu",
-            "question": "Câu 28: Chia động từ „tragen“:\n„Anna ___ gern ein blaues Kleid.“",
+            "question": "Câu 28: Chia động từ \"tragen\":\n\"Anna ___ gern ein blaues Kleid.\"",
             "options": null,
             "correct_answer": "trägt",
-            "explanation": "Động từ bất quy tắc „tragen“ (mặc) biến âm a -> ä ở ngôi er/sie/es (Anna) thành „trägt“ -> Đáp án: trägt.",
+            "explanation": "Động từ bất quy tắc \"tragen\" (mặc) biến âm a -> ä ở ngôi er/sie/es (Anna) thành \"trägt\"\n-> Đáp án: trägt.",
             "exp_reward": 10,
             "extra_data": {
                 "accepted_answers": ["trägt", "traegt"],
@@ -788,10 +788,10 @@ def seed_lesson_14():
         {
             "id": 29,
             "exercise_type": "dien_chia_dong_tu",
-            "question": "Câu 29: Chia động từ „sein“:\n„Gestern ___ meine Eltern im Konzert.“",
+            "question": "Câu 29: Chia động từ \"sein\":\n\"Gestern ___ meine Eltern im Konzert.\"",
             "options": null,
             "correct_answer": "waren",
-            "explanation": "„Gestern“ là quá khứ, chủ ngữ „meine Eltern“ (số nhiều) chia „sein“ ở Präteritum là „waren“ -> Đáp án: waren.",
+            "explanation": "\"Gestern\" là quá khứ, chủ ngữ \"meine Eltern\" (số nhiều) chia \"sein\" ở Präteritum là \"waren\"\n-> Đáp án: waren.",
             "exp_reward": 10,
             "extra_data": {
                 "accepted_answers": ["waren"],
@@ -802,10 +802,10 @@ def seed_lesson_14():
         {
             "id": 30,
             "exercise_type": "dien_chia_dong_tu",
-            "question": "Câu 30: Chia động từ „sein“:\n„Ich ___ letztes Jahr zum ersten Mal in Wien.“",
+            "question": "Câu 30: Chia động từ \"sein\":\n\"Ich ___ letztes Jahr zum ersten Mal in Wien.\"",
             "options": null,
             "correct_answer": "war",
-            "explanation": "„letztes Jahr“ (năm ngoái) chỉ quá khứ. Ngôi „ich“ chia Präteritum của „sein“ là „war“ -> Đáp án: war.",
+            "explanation": "\"letztes Jahr\" (năm ngoái) chỉ quá khứ.\nNgôi \"ich\" chia Präteritum của \"sein\" là \"war\"\n-> Đáp án: war.",
             "exp_reward": 10,
             "extra_data": {
                 "accepted_answers": ["war"],
@@ -816,10 +816,10 @@ def seed_lesson_14():
         {
             "id": 31,
             "exercise_type": "dien_chia_dong_tu",
-            "question": "Câu 31: Chia động từ „sein“:\n„Wann ___ du gestern zu Hause, Lisa?“",
+            "question": "Câu 31: Chia động từ \"sein\":\n\"Wann ___ du gestern zu Hause, Lisa?\"",
             "options": null,
             "correct_answer": "warst",
-            "explanation": "„gestern“ chỉ quá khứ, ngôi „du“ chia Präteritum của „sein“ là „warst“ -> Đáp án: warst.",
+            "explanation": "\"gestern\" chỉ quá khứ, ngôi \"du\" chia Präteritum của \"sein\" là \"warst\"\n-> Đáp án: warst.",
             "exp_reward": 10,
             "extra_data": {
                 "accepted_answers": ["warst"],
@@ -830,10 +830,10 @@ def seed_lesson_14():
         {
             "id": 32,
             "exercise_type": "dien_chia_dong_tu",
-            "question": "Câu 32: Chia động từ „lesen“:\n„Mein Bruder ___ jeden Morgen die Zeitung.“",
+            "question": "Câu 32: Chia động từ \"lesen\":\n\"Mein Bruder ___ jeden Morgen die Zeitung.\"",
             "options": null,
             "correct_answer": "liest",
-            "explanation": "Động từ bất quy tắc „lesen“ (đọc) biến âm e -> ie ở ngôi er/sie/es (Mein Bruder) thành „liest“ -> Đáp án: liest.",
+            "explanation": "Động từ bất quy tắc \"lesen\" (đọc) biến âm e -> ie ở ngôi er/sie/es (Mein Bruder) thành \"liest\"\n-> Đáp án: liest.",
             "exp_reward": 10,
             "extra_data": {
                 "accepted_answers": ["liest"],
@@ -844,10 +844,10 @@ def seed_lesson_14():
         {
             "id": 33,
             "exercise_type": "dien_chia_dong_tu",
-            "question": "Câu 33: Chia động từ „sprechen“:\n„Welche Sprachen ___ ihr zu Hause?“",
+            "question": "Câu 33: Chia động từ \"sprechen\":\n\"Welche Sprachen ___ ihr zu Hause?\"",
             "options": null,
             "correct_answer": "sprecht",
-            "explanation": "Ngôi „ihr“ KHÔNG bao giờ biến âm ở các động từ bất quy tắc! Gốc „sprech-“ + đuôi „-t“ -> Đáp án: sprecht.",
+            "explanation": "Ngôi \"ihr\" KHÔNG bao giờ biến âm ở các động từ bất quy tắc!\nGốc \"sprech-\" + đuôi \"-t\"\n-> Đáp án: sprecht.",
             "exp_reward": 10,
             "extra_data": {
                 "accepted_answers": ["sprecht"],
@@ -858,10 +858,10 @@ def seed_lesson_14():
         {
             "id": 34,
             "exercise_type": "dien_chia_dong_tu",
-            "question": "Câu 34: Chia động từ „fahren“:\n„Der Zug ___ direkt nach Hamburg.“",
+            "question": "Câu 34: Chia động từ \"fahren\":\n\"Der Zug ___ direkt nach Hamburg.\"",
             "options": null,
             "correct_answer": "fährt",
-            "explanation": "Động từ bất quy tắc „fahren“ (chạy/lái) biến âm a -> ä ở ngôi er/sie/es (Der Zug) thành „fährt“ -> Đáp án: fährt.",
+            "explanation": "Động từ bất quy tắc \"fahren\" (chạy/lái) biến âm a -> ä ở ngôi er/sie/es (Der Zug) thành \"fährt\"\n-> Đáp án: fährt.",
             "exp_reward": 10,
             "extra_data": {
                 "accepted_answers": ["fährt", "faehrt"],
@@ -872,10 +872,10 @@ def seed_lesson_14():
         {
             "id": 35,
             "exercise_type": "dien_chia_dong_tu",
-            "question": "Câu 35: Chia động từ „schlafen“:\n„Das Kind ___ am Sonntag bis neun Uhr.“",
+            "question": "Câu 35: Chia động từ \"schlafen\":\n\"Das Kind ___ am Sonntag bis neun Uhr.\"",
             "options": null,
             "correct_answer": "schläft",
-            "explanation": "Động từ bất quy tắc „schlafen“ (ngủ) biến âm a -> ä ở ngôi er/sie/es (Das Kind) thành „schläft“ -> Đáp án: schläft.",
+            "explanation": "Động từ bất quy tắc \"schlafen\" (ngủ) biến âm a -> ä ở ngôi er/sie/es (Das Kind) thành \"schläft\"\n-> Đáp án: schläft.",
             "exp_reward": 10,
             "extra_data": {
                 "accepted_answers": ["schläft", "schlaeft"],
@@ -886,10 +886,10 @@ def seed_lesson_14():
         {
             "id": 36,
             "exercise_type": "dich_nghia_vd",
-            "question": "Câu 36: Dịch sang tiếng Đức (kèm mạo từ số ít):\n„áo khoác mùa đông“",
+            "question": "Câu 36: Dịch sang tiếng Đức (kèm mạo từ số ít):\n\"áo khoác mùa đông\"",
             "options": null,
             "correct_answer": "der Wintermantel",
-            "explanation": "„áo khoác mùa đông“ là danh từ giống đực ghép từ der Winter + der Mantel -> Đáp án: der Wintermantel.",
+            "explanation": "\"áo khoác mùa đông\" là danh từ giống đực ghép từ der Winter + der Mantel.\n-> Đáp án: der Wintermantel.",
             "exp_reward": 10,
             "extra_data": {
                 "accepted_answers": ["der Wintermantel", "Wintermantel"],
@@ -900,10 +900,10 @@ def seed_lesson_14():
         {
             "id": 37,
             "exercise_type": "dich_nghia_vd",
-            "question": "Câu 37: Dịch sang tiếng Đức (kèm mạo từ số ít):\n„sương mù“",
+            "question": "Câu 37: Dịch sang tiếng Đức (kèm mạo từ số ít):\n\"sương mù\"",
             "options": null,
             "correct_answer": "der Nebel",
-            "explanation": "„sương mù“ trong tiếng Đức mang giống đực „der“ -> Đáp án: der Nebel.",
+            "explanation": "\"sương mù\" trong tiếng Đức mang giống đực \"der\"\n-> Đáp án: der Nebel.",
             "exp_reward": 10,
             "extra_data": {
                 "accepted_answers": ["der Nebel", "Nebel"],
@@ -914,10 +914,10 @@ def seed_lesson_14():
         {
             "id": 38,
             "exercise_type": "dich_nghia_vd",
-            "question": "Câu 38: Dịch sang tiếng Đức (kèm mạo từ số ít):\n„máy tính xách tay“",
+            "question": "Câu 38: Dịch sang tiếng Đức (kèm mạo từ số ít):\n\"máy tính xách tay\"",
             "options": null,
             "correct_answer": "der Laptop",
-            "explanation": "„máy tính xách tay“ trong tiếng Đức là danh từ giống đực „der“ -> Đáp án: der Laptop.",
+            "explanation": "\"máy tính xách tay\" trong tiếng Đức là danh từ giống đực \"der\"\n-> Đáp án: der Laptop.",
             "exp_reward": 10,
             "extra_data": {
                 "accepted_answers": ["der Laptop", "Laptop"],
@@ -928,10 +928,10 @@ def seed_lesson_14():
         {
             "id": 39,
             "exercise_type": "dich_nghia_vd",
-            "question": "Câu 39: Dịch sang tiếng Đức (kèm mạo từ số ít):\n„chìa khóa“",
+            "question": "Câu 39: Dịch sang tiếng Đức (kèm mạo từ số ít):\n\"chìa khóa\"",
             "options": null,
             "correct_answer": "der Schlüssel",
-            "explanation": "„chìa khóa“ là danh từ giống đực „der“ -> Đáp án: der Schlüssel.",
+            "explanation": "\"chìa khóa\" là danh từ giống đực \"der\"\n-> Đáp án: der Schlüssel.",
             "exp_reward": 10,
             "extra_data": {
                 "accepted_answers": ["der Schlüssel", "Schlüssel", "der Schluessel", "Schluessel"],
@@ -942,10 +942,10 @@ def seed_lesson_14():
         {
             "id": 40,
             "exercise_type": "dich_nghia_vd",
-            "question": "Câu 40: Dịch sang tiếng Đức (kèm mạo từ số ít):\n„tiếng mẹ đẻ“",
+            "question": "Câu 40: Dịch sang tiếng Đức (kèm mạo từ số ít):\n\"tiếng mẹ đẻ\"",
             "options": null,
             "correct_answer": "die Muttersprache",
-            "explanation": "„tiếng mẹ đẻ“ là danh từ ghép mang giống của „die Sprache“ (giống cái) -> Đáp án: die Muttersprache.",
+            "explanation": "\"tiếng mẹ đẻ\" là danh từ ghép mang giống của \"die Sprache\" (giống cái).\n-> Đáp án: die Muttersprache.",
             "exp_reward": 10,
             "extra_data": {
                 "accepted_answers": ["die Muttersprache", "Muttersprache"],
@@ -956,10 +956,10 @@ def seed_lesson_14():
         {
             "id": 41,
             "exercise_type": "dich_nghia_dv",
-            "question": "Câu 41: Dịch sang tiếng Việt:\n„die Krawatte“",
+            "question": "Câu 41: Dịch sang tiếng Việt:\n\"die Krawatte\"",
             "options": null,
             "correct_answer": "cà vạt",
-            "explanation": "„die Krawatte“ có nghĩa là chiếc cà vạt -> Đáp án: cà vạt.",
+            "explanation": "\"die Krawatte\" có nghĩa là chiếc cà vạt.\n-> Đáp án: cà vạt.",
             "exp_reward": 10,
             "extra_data": {
                 "accepted_answers": ["cà vạt", "cái cà vạt", "chiếc cà vạt"],
@@ -970,10 +970,10 @@ def seed_lesson_14():
         {
             "id": 42,
             "exercise_type": "dich_nghia_dv",
-            "question": "Câu 42: Dịch sang tiếng Việt:\n„Es ist neblig.“",
+            "question": "Câu 42: Dịch sang tiếng Việt:\n\"Es ist neblig.\"",
             "options": null,
             "correct_answer": "Trời có sương mù.",
-            "explanation": "Tính từ „neblig“ (từ „der Nebel“) mang nghĩa có sương mù -> Đáp án: Trời có sương mù.",
+            "explanation": "Tính từ \"neblig\" (từ \"der Nebel\") mang nghĩa có sương mù.\n-> Đáp án: Trời có sương mù.",
             "exp_reward": 10,
             "extra_data": {
                 "accepted_answers": ["Trời có sương mù.", "Trời có sương mù", "Có sương mù", "Trời sương mù"],
@@ -984,10 +984,10 @@ def seed_lesson_14():
         {
             "id": 43,
             "exercise_type": "dich_nghia_dv",
-            "question": "Câu 43: Dịch sang tiếng Việt:\n„der Rucksack“",
+            "question": "Câu 43: Dịch sang tiếng Việt:\n\"der Rucksack\"",
             "options": null,
             "correct_answer": "ba lô",
-            "explanation": "„der Rucksack“ là chiếc ba lô đeo lưng -> Đáp án: ba lô.",
+            "explanation": "\"der Rucksack\" là chiếc ba lô đeo lưng.\n-> Đáp án: ba lô.",
             "exp_reward": 10,
             "extra_data": {
                 "accepted_answers": ["ba lô", "balo", "cái ba lô", "chiếc ba lô"],
@@ -998,10 +998,10 @@ def seed_lesson_14():
         {
             "id": 44,
             "exercise_type": "dich_nghia_dv",
-            "question": "Câu 44: Dịch sang tiếng Việt:\n„die Kamera“",
+            "question": "Câu 44: Dịch sang tiếng Việt:\n\"die Kamera\"",
             "options": null,
             "correct_answer": "máy ảnh",
-            "explanation": "„die Kamera“ có nghĩa là máy ảnh / máy chụp hình -> Đáp án: máy ảnh.",
+            "explanation": "\"die Kamera\" có nghĩa là máy ảnh / máy chụp hình.\n-> Đáp án: máy ảnh.",
             "exp_reward": 10,
             "extra_data": {
                 "accepted_answers": ["máy ảnh", "chiếc máy ảnh", "cái máy ảnh", "máy chụp ảnh", "máy chụp hình"],
@@ -1012,10 +1012,10 @@ def seed_lesson_14():
         {
             "id": 45,
             "exercise_type": "dich_nghia_dv",
-            "question": "Câu 45: Dịch sang tiếng Việt:\n„das Konzert“",
+            "question": "Câu 45: Dịch sang tiếng Việt:\n\"das Konzert\"",
             "options": null,
             "correct_answer": "buổi hòa nhạc",
-            "explanation": "„das Konzert“ có nghĩa là buổi hòa nhạc -> Đáp án: buổi hòa nhạc.",
+            "explanation": "\"das Konzert\" có nghĩa là buổi hòa nhạc.\n-> Đáp án: buổi hòa nhạc.",
             "exp_reward": 10,
             "extra_data": {
                 "accepted_answers": ["buổi hòa nhạc", "hòa nhạc"],
@@ -1029,7 +1029,7 @@ def seed_lesson_14():
             "question": "Câu 46 (Bài nối 1): Ghép Quốc gia với Ngôn ngữ tương ứng:",
             "options": null,
             "correct_answer": "Nối đúng 4/4 cặp",
-            "explanation": "Quy tắc tạo tên ngôn ngữ thường thêm đuôi -sch hoặc -isch vào gốc tên quốc gia (Deutschland - Deutsch, Frankreich - Französisch, Polen - Polnisch, Italien - Italienisch) -> Đáp án: Nối đúng 4/4 cặp.",
+            "explanation": "Quy tắc tạo tên ngôn ngữ thường thêm đuôi -sch hoặc -isch vào gốc tên quốc gia (Deutschland - Deutsch, Frankreich - Französisch, Polen - Polnisch, Italien - Italienisch).\n-> Đáp án: Nối đúng 4/4 cặp.",
             "exp_reward": 15,
             "extra_data": {
                 "noi_o_pairs": [
@@ -1039,7 +1039,7 @@ def seed_lesson_14():
                     {"left": "Italien", "right": "Italienisch"}
                 ],
                 "audio_text": "Deutschland, Deutsch. Frankreich, Französisch. Polen, Polnisch. Italien, Italienisch.",
-                "translation": "Đức - Tiếng Đức | Pháp - Tiếng Pháp | Ba Lan - Tiếng Ba Lan | Ý - Tiếng Ý"
+                "translation": "Đức - Tiếng Đức\nPháp - Tiếng Pháp\nBa Lan - Tiếng Ba Lan\nÝ - Tiếng Ý"
             }
         },
         {
@@ -1048,7 +1048,7 @@ def seed_lesson_14():
             "question": "Câu 47 (Bài nối 2): Ghép từ vựng quần áo tiếng Đức với nghĩa tiếng Việt:",
             "options": null,
             "correct_answer": "Nối đúng 4/4 cặp",
-            "explanation": "Nhận diện từ vựng trang phục A1: der Stiefel (bốt), der Mantel (áo măng tô), der Pullover (áo len), der Rock (chân váy) -> Đáp án: Nối đúng 4/4 cặp.",
+            "explanation": "Nhận diện từ vựng trang phục A1: der Stiefel (bốt), der Mantel (áo măng tô), der Pullover (áo len), der Rock (chân váy).\n-> Đáp án: Nối đúng 4/4 cặp.",
             "exp_reward": 15,
             "extra_data": {
                 "noi_o_pairs": [
@@ -1058,7 +1058,7 @@ def seed_lesson_14():
                     {"left": "der Rock", "right": "chân váy"}
                 ],
                 "audio_text": "der Stiefel. der Mantel. der Pullover. der Rock.",
-                "translation": "der Stiefel: bốt | der Mantel: áo măng tô | der Pullover: áo len | der Rock: chân váy"
+                "translation": "der Stiefel: bốt\nder Mantel: áo măng tô\nder Pullover: áo len\nder Rock: chân váy"
             }
         },
         {
@@ -1067,7 +1067,7 @@ def seed_lesson_14():
             "question": "Câu 48 (Bài nối 3): Ghép Quốc gia với Ngôn ngữ (lưu ý ngoại lệ Ägypten):",
             "options": null,
             "correct_answer": "Nối đúng 4/4 cặp",
-            "explanation": "Ai Cập (Ägypten) nói tiếng Ả Rập (Arabisch), Tây Ban Nha -> Spanisch, Nhật Bản -> Japanisch, Nga -> Russisch -> Đáp án: Nối đúng 4/4 cặp.",
+            "explanation": "Ai Cập (Ägypten) nói tiếng Ả Rập (Arabisch), Tây Ban Nha.\n-> Spanisch, Nhật Bản.\n-> Japanisch, Nga.\n-> Russisch.\n-> Đáp án: Nối đúng 4/4 cặp.",
             "exp_reward": 15,
             "extra_data": {
                 "noi_o_pairs": [
@@ -1077,7 +1077,7 @@ def seed_lesson_14():
                     {"left": "Russland", "right": "Russisch"}
                 ],
                 "audio_text": "Ägypten, Arabisch. Spanien, Spanisch. Japan, Japanisch. Russland, Russisch.",
-                "translation": "Ai Cập - Tiếng Ả Rập | Tây Ban Nha - Tiếng Tây Ban Nha | Nhật Bản - Tiếng Nhật | Nga - Tiếng Nga"
+                "translation": "Ai Cập - Tiếng Ả Rập\nTây Ban Nha - Tiếng Tây Ban Nha\nNhật Bản - Tiếng Nhật\nNga - Tiếng Nga"
             }
         },
         {
@@ -1086,7 +1086,7 @@ def seed_lesson_14():
             "question": "Câu 49 (Bài nối 4): Ghép cụm phương hướng bên trong (im + Danh từ) với nghĩa tiếng Việt:",
             "options": null,
             "correct_answer": "Nối đúng 4/4 cặp",
-            "explanation": "Bốn hướng chính dùng danh từ viết hoa sau „im“: im Norden (Bắc), im Süden (Nam), im Osten (Đông), im Westen (Tây) -> Đáp án: Nối đúng 4/4 cặp.",
+            "explanation": "Bốn hướng chính dùng danh từ viết hoa sau \"im\": im Norden (Bắc), im Süden (Nam), im Osten (Đông), im Westen (Tây).\n-> Đáp án: Nối đúng 4/4 cặp.",
             "exp_reward": 15,
             "extra_data": {
                 "noi_o_pairs": [
@@ -1096,7 +1096,7 @@ def seed_lesson_14():
                     {"left": "im Westen", "right": "ở miền Tây"}
                 ],
                 "audio_text": "im Norden. im Süden. im Osten. im Westen.",
-                "translation": "im Norden: ở miền Bắc | im Süden: ở miền Nam | im Osten: ở miền Đông | im Westen: ở miền Tây"
+                "translation": "im Norden: ở miền Bắc\nim Süden: ở miền Nam\nim Osten: ở miền Đông\nim Westen: ở miền Tây"
             }
         },
         {
@@ -1105,7 +1105,7 @@ def seed_lesson_14():
             "question": "Câu 50 (Bài nối 5): Ghép tính từ chỉ hướng bên ngoài (-lich von) với nghĩa tương ứng:",
             "options": null,
             "correct_answer": "Nối đúng 4/4 cặp",
-            "explanation": "Tính từ chỉ hướng không đi với „im“: nordöstlich (Đông Bắc), südöstlich (Đông Nam), südwestlich (Tây Nam), nordwestlich (Tây Bắc) -> Đáp án: Nối đúng 4/4 cặp.",
+            "explanation": "Tính từ chỉ hướng không đi với \"im\": nordöstlich (Đông Bắc), südöstlich (Đông Nam), südwestlich (Tây Nam), nordwestlich (Tây Bắc).\n-> Đáp án: Nối đúng 4/4 cặp.",
             "exp_reward": 15,
             "extra_data": {
                 "noi_o_pairs": [
@@ -1115,16 +1115,16 @@ def seed_lesson_14():
                     {"left": "nordwestlich von", "right": "phía Tây Bắc của"}
                 ],
                 "audio_text": "nordöstlich von. südöstlich von. südwestlich von. nordwestlich von.",
-                "translation": "nordöstlich von: phía Đông Bắc của | südöstlich von: phía Đông Nam của | südwestlich von: phía Tây Nam của | nordwestlich von: phía Tây Bắc của"
+                "translation": "nordöstlich von: phía Đông Bắc của\nsüdöstlich von: phía Đông Nam của\nsüdwestlich von: phía Tây Nam của\nnordwestlich von: phía Tây Bắc của"
             }
         },
         {
             "id": 51,
             "exercise_type": "noi_o",
-            "question": "Câu 51 (Bài nối 6): Ghép đại từ nhân xưng với dạng quá khứ (Präteritum) của động từ „sein“:",
+            "question": "Câu 51 (Bài nối 6): Ghép đại từ nhân xưng với dạng quá khứ (Präteritum) của động từ \"sein\":",
             "options": null,
             "correct_answer": "Nối đúng 4/4 cặp",
-            "explanation": "Chia động từ „sein“ ở thì quá khứ Präteritum: ich war, du warst, wir waren, ihr wart -> Đáp án: Nối đúng 4/4 cặp.",
+            "explanation": "Chia động từ \"sein\" ở thì quá khứ Präteritum: ich war, du warst, wir waren, ihr wart.\n-> Đáp án: Nối đúng 4/4 cặp.",
             "exp_reward": 15,
             "extra_data": {
                 "noi_o_pairs": [
@@ -1134,16 +1134,16 @@ def seed_lesson_14():
                     {"left": "ihr", "right": "wart"}
                 ],
                 "audio_text": "ich war. du warst. wir waren. ihr wart.",
-                "translation": "ich war: tôi đã | du warst: bạn đã | wir waren: chúng tôi đã | ihr wart: các bạn đã"
+                "translation": "ich war: tôi đã\ndu warst: bạn đã\nwir waren: chúng tôi đã\nihr wart: các bạn đã"
             }
         },
         {
             "id": 52,
             "exercise_type": "noi_o",
-            "question": "Câu 52 (Bài nối 7): Ghép đại từ nhân xưng với dạng hiện tại (Präsens) của động từ „sein“:",
+            "question": "Câu 52 (Bài nối 7): Ghép đại từ nhân xưng với dạng hiện tại (Präsens) của động từ \"sein\":",
             "options": null,
             "correct_answer": "Nối đúng 4/4 cặp",
-            "explanation": "Chia động từ „sein“ ở thì hiện tại Präsens: ich bin, du bist, er ist, ihr seid -> Đáp án: Nối đúng 4/4 cặp.",
+            "explanation": "Chia động từ \"sein\" ở thì hiện tại Präsens: ich bin, du bist, er ist, ihr seid.\n-> Đáp án: Nối đúng 4/4 cặp.",
             "exp_reward": 15,
             "extra_data": {
                 "noi_o_pairs": [
@@ -1153,16 +1153,16 @@ def seed_lesson_14():
                     {"left": "ihr", "right": "seid"}
                 ],
                 "audio_text": "ich bin. du bist. er ist. ihr seid.",
-                "translation": "ich bin: tôi là | du bist: bạn là | er ist: anh ấy là | ihr seid: các bạn là"
+                "translation": "ich bin: tôi là\ndu bist: bạn là\ner ist: anh ấy là\nihr seid: các bạn là"
             }
         },
         {
             "id": 53,
             "exercise_type": "noi_o",
-            "question": "Câu 53 (Bài nối 8): Ghép tên quốc gia với cụm chỉ vị trí „ở tại ...“ (Wo?) tương ứng:",
+            "question": "Câu 53 (Bài nối 8): Ghép tên quốc gia với cụm chỉ vị trí \"ở tại ...\" (Wo?) tương ứng:",
             "options": null,
             "correct_answer": "Nối đúng 4/4 cặp",
-            "explanation": "Quốc gia không mạo từ dùng „in + Tên nước“ (in Deutschland); có mạo từ giống cái dùng „in der ...“ (in der Schweiz / Türkei); số nhiều dùng „in den USA“ -> Đáp án: Nối đúng 4/4 cặp.",
+            "explanation": "Quốc gia không mạo từ dùng \"in + Tên nước\" (in Deutschland)\ncó mạo từ giống cái dùng \"in der ...\" (in der Schweiz / Türkei)\nsố nhiều dùng \"in den USA\"\n-> Đáp án: Nối đúng 4/4 cặp.",
             "exp_reward": 15,
             "extra_data": {
                 "noi_o_pairs": [
@@ -1172,7 +1172,7 @@ def seed_lesson_14():
                     {"left": "Deutschland", "right": "in Deutschland"}
                 ],
                 "audio_text": "die Schweiz, in der Schweiz. die Türkei, in der Türkei. die USA, in den USA. Deutschland, in Deutschland.",
-                "translation": "Thụy Sĩ -> ở Thụy Sĩ | Thổ Nhĩ Kỳ -> ở Thổ Nhĩ Kỳ | Mỹ -> ở Mỹ | Đức -> ở Đức"
+                "translation": "Thụy Sĩ -> ở Thụy Sĩ\nThổ Nhĩ Kỳ -> ở Thổ Nhĩ Kỳ\nMỹ -> ở Mỹ\nĐức -> ở Đức"
             }
         },
         {
@@ -1181,7 +1181,7 @@ def seed_lesson_14():
             "question": "Câu 54 (Bài nối 9): Ghép tình huống thời tiết với đồ dùng/trang phục phù hợp:",
             "options": null,
             "correct_answer": "Nối đúng 4/4 cặp",
-            "explanation": "Trời mưa (Es regnet) cần ô (der Regenschirm); trời tuyết (Es schneit) cần áo khoác mùa đông; trời nắng (sonnig) cần kính râm; trời lạnh (kalt) cần khăn quàng -> Đáp án: Nối đúng 4/4 cặp.",
+            "explanation": "Trời mưa (Es regnet) cần ô (der Regenschirm)\ntrời tuyết (Es schneit) cần áo khoác mùa đông\ntrời nắng (sonnig) cần kính râm\ntrời lạnh (kalt) cần khăn quàng.\n-> Đáp án: Nối đúng 4/4 cặp.",
             "exp_reward": 15,
             "extra_data": {
                 "noi_o_pairs": [
@@ -1191,7 +1191,7 @@ def seed_lesson_14():
                     {"left": "Es ist kalt.", "right": "der Schal"}
                 ],
                 "audio_text": "Es regnet, der Regenschirm. Es schneit, der Wintermantel. Es ist sonnig, die Sonnenbrille. Es ist kalt, der Schal.",
-                "translation": "Trời mưa -> ô dù | Có tuyết -> áo khoác mùa đông | Trời nắng -> kính râm | Trời lạnh -> khăn quàng"
+                "translation": "Trời mưa -> ô dù\nCó tuyết -> áo khoác mùa đông\nTrời nắng -> kính râm\nTrời lạnh -> khăn quàng"
             }
         },
         {
@@ -1200,7 +1200,7 @@ def seed_lesson_14():
             "question": "Câu 55 (Bài nối 10): Ghép danh từ mới của Bài 14 với nghĩa tiếng Việt tương ứng:",
             "options": null,
             "correct_answer": "Nối đúng 4/4 cặp",
-            "explanation": "Ôn tập từ vựng Bài 14: das Zentrum (trung tâm thành phố), die Freundin (bạn nữ; bạn gái), der Arzt (bác sĩ), das Kind (đứa trẻ; con) -> Đáp án: Nối đúng 4/4 cặp.",
+            "explanation": "Ôn tập từ vựng Bài 14: das Zentrum (trung tâm thành phố), die Freundin (bạn nữ; bạn gái), der Arzt (bác sĩ), das Kind (đứa trẻ; con).\n-> Đáp án: Nối đúng 4/4 cặp.",
             "exp_reward": 15,
             "extra_data": {
                 "noi_o_pairs": [
@@ -1210,16 +1210,16 @@ def seed_lesson_14():
                     {"left": "das Kind", "right": "đứa trẻ; con"}
                 ],
                 "audio_text": "das Zentrum. die Freundin. der Arzt. das Kind.",
-                "translation": "das Zentrum: trung tâm (thành phố) | die Freundin: bạn (nữ); bạn gái | der Arzt: bác sĩ | das Kind: đứa trẻ; con"
+                "translation": "das Zentrum: trung tâm (thành phố)\ndie Freundin: bạn (nữ); bạn gái\nder Arzt: bác sĩ\ndas Kind: đứa trẻ; con"
             }
         },
         {
             "id": 56,
             "exercise_type": "dien_tao_cau",
-            "question": "Câu 56: Điền 2 từ vào chỗ trống [1] và [2] (cách nhau bởi dấu /):\n„München liegt [1] [2] von Deutschland.“ (miền Nam)",
+            "question": "Câu 56: Điền 2 từ vào chỗ trống [1] và [2] (cách nhau bởi dấu /):\n\"München liegt [1] [2] von Deutschland.\" (miền Nam)",
             "options": null,
             "correct_answer": "im / Süden",
-            "explanation": "Có 2 ô trống và München nằm bên trong nước Đức nên dùng cấu trúc danh từ „im Süden“ -> Đáp án: im / Süden.",
+            "explanation": "Có 2 ô trống và München nằm bên trong nước Đức nên dùng cấu trúc danh từ \"im Süden\"\n-> Đáp án: im / Süden.",
             "exp_reward": 15,
             "extra_data": {
                 "display_frame": "München liegt [1] [2] von Deutschland.",
@@ -1231,25 +1231,25 @@ def seed_lesson_14():
         {
             "id": 57,
             "exercise_type": "dien_tao_cau",
-            "question": "Câu 57: Điền 2 mạo từ thích hợp vào [1] và [2] (cách nhau bởi dấu /):\n„Das ist [1] Kuli. [2] Kuli ist blau.“ (một / cây bút đó - xác định)",
+            "question": "Câu 57: Điền 2 mạo từ thích hợp vào [1] và [2] (cách nhau bởi dấu /):\n\"Das ist [1] Kuli. [2] Kuli ist blau.\" (một / cây bút đó - xác định)",
             "options": null,
             "correct_answer": "ein / Der",
-            "explanation": "„der Kuli“ giống đực: lần đầu nhắc đến dùng mạo từ không xác định „ein“; lần sau đã xác định dùng „Der“ (đầu câu viết hoa) -> Đáp án: ein / Der.",
+            "explanation": "\"der Kuli\" giống đực: lần đầu nhắc đến dùng mạo từ không xác định \"ein\"\nlần sau đã xác định dùng \"Der\" (đầu câu viết hoa).\n-> Đáp án: ein / Der.",
             "exp_reward": 15,
             "extra_data": {
                 "display_frame": "Das ist [1] Kuli. [2] Kuli ist blau.",
                 "accepted_answers": ["ein / Der", "ein/Der", "ein Der"],
                 "audio_text": "Das ist ein Kuli. Der Kuli ist blau.",
-                "translation": "Đây là một cây bút bi. Cây bút bi đó màu xanh dương."
+                "translation": "Đây là một cây bút bi.\nCây bút bi đó màu xanh dương."
             }
         },
         {
             "id": 58,
             "exercise_type": "dien_tao_cau",
-            "question": "Câu 58: Điền 2 từ vào chỗ trống [1] và [2] (cách nhau bởi dấu /):\n„Hue liegt [1] [2] Mitte von Vietnam.“ (ở phần giữa của đất nước)",
+            "question": "Câu 58: Điền 2 từ vào chỗ trống [1] và [2] (cách nhau bởi dấu /):\n\"Hue liegt [1] [2] Mitte von Vietnam.\" (ở phần giữa của đất nước)",
             "options": null,
             "correct_answer": "in / der",
-            "explanation": "Cụm cố định chỉ vùng giữa của một quốc gia là „in der Mitte von ...“ -> Đáp án: in / der.",
+            "explanation": "Cụm cố định chỉ vùng giữa của một quốc gia là \"in der Mitte von ...\"\n-> Đáp án: in / der.",
             "exp_reward": 15,
             "extra_data": {
                 "display_frame": "Hue liegt [1] [2] Mitte von Vietnam.",
@@ -1261,25 +1261,25 @@ def seed_lesson_14():
         {
             "id": 59,
             "exercise_type": "dien_tao_cau",
-            "question": "Câu 59: Điền 2 mạo từ thích hợp vào [1] và [2] (cách nhau bởi dấu /):\n„Das ist [1] Kamera. [2] Kamera ist neu.“ (một / chiếc máy ảnh đó)",
+            "question": "Câu 59: Điền 2 mạo từ thích hợp vào [1] và [2] (cách nhau bởi dấu /):\n\"Das ist [1] Kamera. [2] Kamera ist neu.\" (một / chiếc máy ảnh đó)",
             "options": null,
             "correct_answer": "eine / Die",
-            "explanation": "„die Kamera“ giống cái: lần đầu dùng „eine“; câu sau đã xác định và ở đầu câu nên dùng „Die“ -> Đáp án: eine / Die.",
+            "explanation": "\"die Kamera\" giống cái: lần đầu dùng \"eine\"\ncâu sau đã xác định và ở đầu câu nên dùng \"Die\"\n-> Đáp án: eine / Die.",
             "exp_reward": 15,
             "extra_data": {
                 "display_frame": "Das ist [1] Kamera. [2] Kamera ist neu.",
                 "accepted_answers": ["eine / Die", "eine/Die", "eine Die"],
                 "audio_text": "Das ist eine Kamera. Die Kamera ist neu.",
-                "translation": "Đây là một chiếc máy ảnh. Chiếc máy ảnh đó mới."
+                "translation": "Đây là một chiếc máy ảnh.\nChiếc máy ảnh đó mới."
             }
         },
         {
             "id": 60,
             "exercise_type": "dien_tao_cau",
-            "question": "Câu 60: Điền 2 từ vào chỗ trống [1] và [2] (cách nhau bởi dấu /):\n„Mein Freund kommt [1] [2] Türkei.“ (từ nước Thổ Nhĩ Kỳ)",
+            "question": "Câu 60: Điền 2 từ vào chỗ trống [1] và [2] (cách nhau bởi dấu /):\n\"Mein Freund kommt [1] [2] Türkei.\" (từ nước Thổ Nhĩ Kỳ)",
             "options": null,
             "correct_answer": "aus / der",
-            "explanation": "Quốc gia giống cái „die Türkei“ đi với „kommen aus“ chuyển thành „aus der Türkei“ -> Đáp án: aus / der.",
+            "explanation": "Quốc gia giống cái \"die Türkei\" đi với \"kommen aus\" chuyển thành \"aus der Türkei\"\n-> Đáp án: aus / der.",
             "exp_reward": 15,
             "extra_data": {
                 "display_frame": "Mein Freund kommt [1] [2] Türkei.",
@@ -1291,10 +1291,10 @@ def seed_lesson_14():
         {
             "id": 61,
             "exercise_type": "dien_tao_cau",
-            "question": "Câu 61: Điền 2 từ vào chỗ trống [1] và [2] (cách nhau bởi dấu /):\n„Meine Schwester wohnt [1] [2] Schweiz.“ (ở Thụy Sĩ)",
+            "question": "Câu 61: Điền 2 từ vào chỗ trống [1] và [2] (cách nhau bởi dấu /):\n\"Meine Schwester wohnt [1] [2] Schweiz.\" (ở Thụy Sĩ)",
             "options": null,
             "correct_answer": "in / der",
-            "explanation": "Quốc gia giống cái „die Schweiz“ đi với „wohnen in“ (vị trí tĩnh) chuyển sang Dativ thành „in der Schweiz“ -> Đáp án: in / der.",
+            "explanation": "Quốc gia giống cái \"die Schweiz\" đi với \"wohnen in\" (vị trí tĩnh) chuyển sang Dativ thành \"in der Schweiz\"\n-> Đáp án: in / der.",
             "exp_reward": 15,
             "extra_data": {
                 "display_frame": "Meine Schwester wohnt [1] [2] Schweiz.",
@@ -1306,10 +1306,10 @@ def seed_lesson_14():
         {
             "id": 62,
             "exercise_type": "dien_tao_cau",
-            "question": "Câu 62: Điền 2 từ vào chỗ trống [1] và [2] (cách nhau bởi dấu /):\n„Bremen liegt [1] [2] von Deutschland.“ (miền Tây Bắc)",
+            "question": "Câu 62: Điền 2 từ vào chỗ trống [1] và [2] (cách nhau bởi dấu /):\n\"Bremen liegt [1] [2] von Deutschland.\" (miền Tây Bắc)",
             "options": null,
             "correct_answer": "im / Nordwesten",
-            "explanation": "Bremen thuộc miền Tây Bắc nước Đức nên dùng „im Nordwesten“ (viết hoa danh từ hướng) -> Đáp án: im / Nordwesten.",
+            "explanation": "Bremen thuộc miền Tây Bắc nước Đức nên dùng \"im Nordwesten\" (viết hoa danh từ hướng).\n-> Đáp án: im / Nordwesten.",
             "exp_reward": 15,
             "extra_data": {
                 "display_frame": "Bremen liegt [1] [2] von Deutschland.",
@@ -1321,10 +1321,10 @@ def seed_lesson_14():
         {
             "id": 63,
             "exercise_type": "dien_tao_cau",
-            "question": "Câu 63: Điền 2 mạo từ thích hợp vào [1] và [2] (cách nhau bởi dấu /):\n„Das ist [1] Laptop, sondern [2] Computer.“ (không phải / một)",
+            "question": "Câu 63: Điền 2 mạo từ thích hợp vào [1] và [2] (cách nhau bởi dấu /):\n\"Das ist [1] Laptop, sondern [2] Computer.\" (không phải / một)",
             "options": null,
             "correct_answer": "kein / ein",
-            "explanation": "„der Laptop“ và „der Computer“ đều mang giống đực „der“ ở Nominativ: phủ định dùng „kein“, khẳng định dùng „ein“ -> Đáp án: kein / ein.",
+            "explanation": "\"der Laptop\" và \"der Computer\" đều mang giống đực \"der\" ở Nominativ: phủ định dùng \"kein\", khẳng định dùng \"ein\"\n-> Đáp án: kein / ein.",
             "exp_reward": 15,
             "extra_data": {
                 "display_frame": "Das ist [1] Laptop, sondern [2] Computer.",
@@ -1339,7 +1339,7 @@ def seed_lesson_14():
             "question": "Câu 64: Nghe Audio và gõ lại trọn vẹn câu tiếng Đức bạn nghe được:",
             "options": null,
             "correct_answer": "Wo waren Sie gestern, Herr Müller?",
-            "explanation": "Luyện nghe câu hỏi quá khứ lịch sự với ngôi „Sie“: „Wo waren Sie gestern, Herr Müller?“ -> Đáp án: Wo waren Sie gestern, Herr Müller?",
+            "explanation": "Luyện nghe câu hỏi quá khứ lịch sự với ngôi \"Sie\": \"Wo waren Sie gestern, Herr Müller?\"\n-> Đáp án: Wo waren Sie gestern, Herr Müller?",
             "exp_reward": 15,
             "extra_data": {
                 "dictation_mode": true,
@@ -1360,7 +1360,7 @@ def seed_lesson_14():
             "question": "Câu 65: Nghe Audio và gõ lại trọn vẹn câu tiếng Đức bạn nghe được:",
             "options": null,
             "correct_answer": "Paris liegt westlich von Deutschland.",
-            "explanation": "Luyện nghe cấu trúc phương hướng bên ngoài dùng tính từ „westlich“: „Paris liegt westlich von Deutschland.“ -> Đáp án: Paris liegt westlich von Deutschland.",
+            "explanation": "Luyện nghe cấu trúc phương hướng bên ngoài dùng tính từ \"westlich\": \"Paris liegt westlich von Deutschland.\"\n-> Đáp án: Paris liegt westlich von Deutschland.",
             "exp_reward": 15,
             "extra_data": {
                 "dictation_mode": true,
@@ -1376,7 +1376,7 @@ def seed_lesson_14():
             "question": "Câu 66: Nghe Audio và gõ lại trọn vẹn câu tiếng Đức bạn nghe được:",
             "options": null,
             "correct_answer": "Hanoi liegt im Norden von Vietnam.",
-            "explanation": "Câu mẫu phương hướng bên trong: „Hanoi liegt im Norden von Vietnam.“ -> Đáp án: Hanoi liegt im Norden von Vietnam.",
+            "explanation": "Câu mẫu phương hướng bên trong: \"Hanoi liegt im Norden von Vietnam.\"\n-> Đáp án: Hanoi liegt im Norden von Vietnam.",
             "exp_reward": 15,
             "extra_data": {
                 "dictation_mode": true,
@@ -1392,7 +1392,7 @@ def seed_lesson_14():
             "question": "Câu 67: Nghe Audio và gõ lại trọn vẹn câu tiếng Đức bạn nghe được:",
             "options": null,
             "correct_answer": "Früher war mein Vater Arzt in Leipzig.",
-            "explanation": "Ôn tập thì quá khứ của „sein“ (war) và nghề nghiệp không mạo từ: „Früher war mein Vater Arzt in Leipzig.“ -> Đáp án: Früher war mein Vater Arzt in Leipzig.",
+            "explanation": "Ôn tập thì quá khứ của \"sein\" (war) và nghề nghiệp không mạo từ: \"Früher war mein Vater Arzt in Leipzig.\"\n-> Đáp án: Früher war mein Vater Arzt in Leipzig.",
             "exp_reward": 15,
             "extra_data": {
                 "dictation_mode": true,
@@ -1412,7 +1412,7 @@ def seed_lesson_14():
             "question": "Câu 68: Nghe Audio và gõ lại trọn vẹn câu tiếng Đức bạn nghe được:",
             "options": null,
             "correct_answer": "Das Hotel liegt im Zentrum von Hanoi.",
-            "explanation": "Phân biệt „im Zentrum“ (trung tâm thành phố): „Das Hotel liegt im Zentrum von Hanoi.“ -> Đáp án: Das Hotel liegt im Zentrum von Hanoi.",
+            "explanation": "Phân biệt \"im Zentrum\" (trung tâm thành phố): \"Das Hotel liegt im Zentrum von Hanoi.\"\n-> Đáp án: Das Hotel liegt im Zentrum von Hanoi.",
             "exp_reward": 15,
             "extra_data": {
                 "dictation_mode": true,
@@ -1428,7 +1428,7 @@ def seed_lesson_14():
             "question": "Câu 69: Nghe Audio và gõ lại trọn vẹn câu tiếng Đức bạn nghe được:",
             "options": null,
             "correct_answer": "Früher waren wir Studenten, jetzt sind wir Lehrer.",
-            "explanation": "Đối chiếu quá khứ „waren“ và hiện tại „sind“ cho ngôi „wir“: „Früher waren wir Studenten, jetzt sind wir Lehrer.“ -> Đáp án: Früher waren wir Studenten, jetzt sind wir Lehrer.",
+            "explanation": "Đối chiếu quá khứ \"waren\" và hiện tại \"sind\" cho ngôi \"wir\": \"Früher waren wir Studenten, jetzt sind wir Lehrer.\"\n-> Đáp án: Früher waren wir Studenten, jetzt sind wir Lehrer.",
             "exp_reward": 15,
             "extra_data": {
                 "dictation_mode": true,
@@ -1449,7 +1449,7 @@ def seed_lesson_14():
             "question": "Câu 70: Nghe Audio và gõ lại trọn vẹn câu tiếng Đức bạn nghe được:",
             "options": null,
             "correct_answer": "Seine Muttersprache ist Arabisch.",
-            "explanation": "Nghe từ vựng „die Muttersprache“ và ngôn ngữ „Arabisch“: „Seine Muttersprache ist Arabisch.“ -> Đáp án: Seine Muttersprache ist Arabisch.",
+            "explanation": "Nghe từ vựng \"die Muttersprache\" và ngôn ngữ \"Arabisch\": \"Seine Muttersprache ist Arabisch.\"\n-> Đáp án: Seine Muttersprache ist Arabisch.",
             "exp_reward": 15,
             "extra_data": {
                 "dictation_mode": true,
@@ -1465,7 +1465,7 @@ def seed_lesson_14():
             "question": "Câu 71: Nghe Audio và gõ lại trọn vẹn câu tiếng Đức bạn nghe được:",
             "options": null,
             "correct_answer": "Griechenland liegt im Südosten von Europa.",
-            "explanation": "Nghe câu hướng kép Đông Nam („im Südosten“) trong châu Âu („von Europa“): „Griechenland liegt im Südosten von Europa.“ -> Đáp án: Griechenland liegt im Südosten von Europa.",
+            "explanation": "Nghe câu hướng kép Đông Nam (\"im Südosten\") trong châu Âu (\"von Europa\"): \"Griechenland liegt im Südosten von Europa.\"\n-> Đáp án: Griechenland liegt im Südosten von Europa.",
             "exp_reward": 15,
             "extra_data": {
                 "dictation_mode": true,
@@ -1482,10 +1482,10 @@ def seed_lesson_14():
         {
             "id": 72,
             "exercise_type": "dich_cau_vd",
-            "question": "Câu 72: Dịch câu sau sang tiếng Đức (dùng tính từ hướng):\n„Nước Áo nằm ở phía Nam của nước Đức.“",
+            "question": "Câu 72: Dịch câu sau sang tiếng Đức (dùng tính từ hướng):\n\"Nước Áo nằm ở phía Nam của nước Đức.\"",
             "options": null,
             "correct_answer": "Österreich liegt südlich von Deutschland.",
-            "explanation": "Nước Áo nằm BÊN NGOÀI Đức nên dùng tính từ „südlich“ (tuyệt đối không dùng „im“) -> Đáp án: Österreich liegt südlich von Deutschland.",
+            "explanation": "Nước Áo nằm BÊN NGOÀI Đức nên dùng tính từ \"südlich\" (tuyệt đối không dùng \"im\").\n-> Đáp án: Österreich liegt südlich von Deutschland.",
             "exp_reward": 15,
             "extra_data": {
                 "accepted_answers": [
@@ -1500,10 +1500,10 @@ def seed_lesson_14():
         {
             "id": 73,
             "exercise_type": "dich_cau_vd",
-            "question": "Câu 73: Dịch câu sau sang tiếng Đức (dùng danh từ hướng):\n„Tây Ban Nha nằm ở miền Tây Nam của Châu Âu.“",
+            "question": "Câu 73: Dịch câu sau sang tiếng Đức (dùng danh từ hướng):\n\"Tây Ban Nha nằm ở miền Tây Nam của Châu Âu.\"",
             "options": null,
             "correct_answer": "Spanien liegt im Südwesten von Europa.",
-            "explanation": "Tây Ban Nha thuộc Châu Âu, miền Tây Nam (danh từ) là „Südwesten“ đi kèm giới từ „im“ -> Đáp án: Spanien liegt im Südwesten von Europa.",
+            "explanation": "Tây Ban Nha thuộc Châu Âu, miền Tây Nam (danh từ) là \"Südwesten\" đi kèm giới từ \"im\"\n-> Đáp án: Spanien liegt im Südwesten von Europa.",
             "exp_reward": 15,
             "extra_data": {
                 "accepted_answers": [
@@ -1518,10 +1518,10 @@ def seed_lesson_14():
         {
             "id": 74,
             "exercise_type": "dich_cau_vd",
-            "question": "Câu 74: Dịch câu sau sang tiếng Đức:\n„Đà Nẵng nằm ở miền Trung (giữa) của Việt Nam.“",
+            "question": "Câu 74: Dịch câu sau sang tiếng Đức:\n\"Đà Nẵng nằm ở miền Trung (giữa) của Việt Nam.\"",
             "options": null,
             "correct_answer": "Da Nang liegt in der Mitte von Vietnam.",
-            "explanation": "Vùng giữa của một quốc gia dùng cụm „in der Mitte von“ -> Đáp án: Da Nang liegt in der Mitte von Vietnam.",
+            "explanation": "Vùng giữa của một quốc gia dùng cụm \"in der Mitte von\"\n-> Đáp án: Da Nang liegt in der Mitte von Vietnam.",
             "exp_reward": 15,
             "extra_data": {
                 "accepted_answers": [
@@ -1537,10 +1537,10 @@ def seed_lesson_14():
         {
             "id": 75,
             "exercise_type": "dich_cau_vd",
-            "question": "Câu 75: Dịch câu sau sang tiếng Đức (ngôi du):\n„Hôm qua bạn có ở nhà không?“",
+            "question": "Câu 75: Dịch câu sau sang tiếng Đức (ngôi du):\n\"Hôm qua bạn có ở nhà không?\"",
             "options": null,
             "correct_answer": "Warst du gestern zu Hause?",
-            "explanation": "Đặt câu hỏi Yes/No thì quá khứ với „sein“ ở ngôi „du“ là „Warst du ...?“ -> Đáp án: Warst du gestern zu Hause?",
+            "explanation": "Đặt câu hỏi Yes/No thì quá khứ với \"sein\" ở ngôi \"du\" là \"Warst du ...?\"\n-> Đáp án: Warst du gestern zu Hause?",
             "exp_reward": 15,
             "extra_data": {
                 "accepted_answers": [
@@ -1556,10 +1556,10 @@ def seed_lesson_14():
         {
             "id": 76,
             "exercise_type": "dich_cau_vd",
-            "question": "Câu 76: Dịch câu sau sang tiếng Đức:\n„Hôm qua chúng tôi ở Berlin.“",
+            "question": "Câu 76: Dịch câu sau sang tiếng Đức:\n\"Hôm qua chúng tôi ở Berlin.\"",
             "options": null,
             "correct_answer": "Wir waren gestern in Berlin.",
-            "explanation": "Chủ ngữ „wir“ chia quá khứ của „sein“ là „waren“ -> Đáp án: Wir waren gestern in Berlin.",
+            "explanation": "Chủ ngữ \"wir\" chia quá khứ của \"sein\" là \"waren\"\n-> Đáp án: Wir waren gestern in Berlin.",
             "exp_reward": 15,
             "extra_data": {
                 "accepted_answers": [
@@ -1575,10 +1575,10 @@ def seed_lesson_14():
         {
             "id": 77,
             "exercise_type": "dich_cau_vd",
-            "question": "Câu 77: Dịch câu sau sang tiếng Đức (lưu ý mạo từ phủ định):\n„Đây không phải là một chiếc ba lô, đây là một cái túi.“ (die Tasche)",
+            "question": "Câu 77: Dịch câu sau sang tiếng Đức (lưu ý mạo từ phủ định):\n\"Đây không phải là một chiếc ba lô, đây là một cái túi.\" (die Tasche)",
             "options": null,
             "correct_answer": "Das ist kein Rucksack, das ist eine Tasche.",
-            "explanation": "„der Rucksack“ giống đực -> phủ định là „kein“; „die Tasche“ giống cái -> khẳng định là „eine“ -> Đáp án: Das ist kein Rucksack, das ist eine Tasche.",
+            "explanation": "\"der Rucksack\" giống đực -> phủ định là \"kein\"\n\"die Tasche\" giống cái.\n-> khẳng định là \"eine\"\n-> Đáp án: Das ist kein Rucksack, das ist eine Tasche.",
             "exp_reward": 15,
             "extra_data": {
                 "accepted_answers": [
@@ -1593,10 +1593,10 @@ def seed_lesson_14():
         {
             "id": 78,
             "exercise_type": "dich_cau_vd",
-            "question": "Câu 78: Dịch câu sau sang tiếng Đức:\n„Cô ấy đến từ Thụy Sĩ và nói tiếng Pháp.“",
+            "question": "Câu 78: Dịch câu sau sang tiếng Đức:\n\"Cô ấy đến từ Thụy Sĩ và nói tiếng Pháp.\"",
             "options": null,
             "correct_answer": "Sie kommt aus der Schweiz und spricht Französisch.",
-            "explanation": "„die Schweiz“ đi với „aus“ biến thành „aus der Schweiz“; động từ „sprechen“ ngôi „sie“ biến âm thành „spricht“ -> Đáp án: Sie kommt aus der Schweiz und spricht Französisch.",
+            "explanation": "\"die Schweiz\" đi với \"aus\" biến thành \"aus der Schweiz\"\nđộng từ \"sprechen\" ngôi \"sie\" biến âm thành \"spricht\"\n-> Đáp án: Sie kommt aus der Schweiz und spricht Französisch.",
             "exp_reward": 15,
             "extra_data": {
                 "accepted_answers": [
@@ -1611,10 +1611,10 @@ def seed_lesson_14():
         {
             "id": 79,
             "exercise_type": "dich_cau_vd",
-            "question": "Câu 79: Dịch câu sau sang tiếng Đức:\n„Buổi hòa nhạc tối qua rất tuyệt vời!“",
+            "question": "Câu 79: Dịch câu sau sang tiếng Đức:\n\"Buổi hòa nhạc tối qua rất tuyệt vời!\"",
             "options": null,
             "correct_answer": "Das Konzert gestern Abend war fantastisch!",
-            "explanation": "„das Konzert“ là chủ ngữ số ít ở quá khứ nên dùng „war“ -> Đáp án: Das Konzert gestern Abend war fantastisch!",
+            "explanation": "\"das Konzert\" là chủ ngữ số ít ở quá khứ nên dùng \"war\"\n-> Đáp án: Das Konzert gestern Abend war fantastisch!",
             "exp_reward": 15,
             "extra_data": {
                 "accepted_answers": [
@@ -1632,10 +1632,10 @@ def seed_lesson_14():
         {
             "id": 80,
             "exercise_type": "dich_cau_dv",
-            "question": "Câu 80: Dịch câu sau sang tiếng Việt:\n„Russland liegt im Osten von Europa.“",
+            "question": "Câu 80: Dịch câu sau sang tiếng Việt:\n\"Russland liegt im Osten von Europa.\"",
             "options": null,
             "correct_answer": "Nga nằm ở miền Đông của châu Âu.",
-            "explanation": "„Russland“ = Nga, „im Osten von Europa“ = ở miền Đông của châu Âu -> Đáp án: Nga nằm ở miền Đông của châu Âu.",
+            "explanation": "\"Russland\" = Nga, \"im Osten von Europa\" = ở miền Đông của châu Âu.\n-> Đáp án: Nga nằm ở miền Đông của châu Âu.",
             "exp_reward": 15,
             "extra_data": {
                 "accepted_answers": [
@@ -1651,10 +1651,10 @@ def seed_lesson_14():
         {
             "id": 81,
             "exercise_type": "dich_cau_dv",
-            "question": "Câu 81: Dịch câu sau sang tiếng Việt:\n„Letztes Jahr war sie in Vietnam.“",
+            "question": "Câu 81: Dịch câu sau sang tiếng Việt:\n\"Letztes Jahr war sie in Vietnam.\"",
             "options": null,
             "correct_answer": "Năm ngoái cô ấy đã ở Việt Nam.",
-            "explanation": "„Letztes Jahr“ = Năm ngoái; động từ quá khứ „war“ diễn tả trạng thái đã ở đâu trong quá khứ -> Đáp án: Năm ngoái cô ấy đã ở Việt Nam.",
+            "explanation": "\"Letztes Jahr\" = Năm ngoái\nđộng từ quá khứ \"war\" diễn tả trạng thái đã ở đâu trong quá khứ.\n-> Đáp án: Năm ngoái cô ấy đã ở Việt Nam.",
             "exp_reward": 15,
             "extra_data": {
                 "accepted_answers": [
@@ -1670,10 +1670,10 @@ def seed_lesson_14():
         {
             "id": 82,
             "exercise_type": "dich_cau_dv",
-            "question": "Câu 82: Dịch câu sau sang tiếng Việt:\n„Wo liegt Würzburg?“",
+            "question": "Câu 82: Dịch câu sau sang tiếng Việt:\n\"Wo liegt Würzburg?\"",
             "options": null,
             "correct_answer": "Würzburg nằm ở đâu?",
-            "explanation": "Từ để hỏi „Wo“ = ở đâu, động từ „liegen“ dùng để hỏi vị trí địa lý -> Đáp án: Würzburg nằm ở đâu?",
+            "explanation": "Từ để hỏi \"Wo\" = ở đâu, động từ \"liegen\" dùng để hỏi vị trí địa lý.\n-> Đáp án: Würzburg nằm ở đâu?",
             "exp_reward": 15,
             "extra_data": {
                 "accepted_answers": ["Würzburg nằm ở đâu?", "Würzburg nằm ở đâu", "Würzburg ở đâu?"],
@@ -1684,10 +1684,10 @@ def seed_lesson_14():
         {
             "id": 83,
             "exercise_type": "dich_cau_dv",
-            "question": "Câu 83: Dịch câu sau sang tiếng Việt:\n„Die Schweiz liegt südlich von Deutschland.“",
+            "question": "Câu 83: Dịch câu sau sang tiếng Việt:\n\"Die Schweiz liegt südlich von Deutschland.\"",
             "options": null,
             "correct_answer": "Thụy Sĩ nằm ở phía Nam của nước Đức.",
-            "explanation": "„die Schweiz“ = Thụy Sĩ, tính từ „südlich von“ = ở phía Nam của (bên ngoài) -> Đáp án: Thụy Sĩ nằm ở phía Nam của nước Đức.",
+            "explanation": "\"die Schweiz\" = Thụy Sĩ, tính từ \"südlich von\" = ở phía Nam của (bên ngoài).\n-> Đáp án: Thụy Sĩ nằm ở phía Nam của nước Đức.",
             "exp_reward": 15,
             "extra_data": {
                 "accepted_answers": [
@@ -1702,10 +1702,10 @@ def seed_lesson_14():
         {
             "id": 84,
             "exercise_type": "dich_cau_dv",
-            "question": "Câu 84: Dịch câu sau sang tiếng Việt:\n„Köln liegt im Westen von Deutschland.“",
+            "question": "Câu 84: Dịch câu sau sang tiếng Việt:\n\"Köln liegt im Westen von Deutschland.\"",
             "options": null,
             "correct_answer": "Köln nằm ở miền Tây của nước Đức.",
-            "explanation": "„im Westen“ diễn tả vị trí ở miền Tây bên trong nước Đức -> Đáp án: Köln nằm ở miền Tây của nước Đức.",
+            "explanation": "\"im Westen\" diễn tả vị trí ở miền Tây bên trong nước Đức.\n-> Đáp án: Köln nằm ở miền Tây của nước Đức.",
             "exp_reward": 15,
             "extra_data": {
                 "accepted_answers": [
@@ -1720,10 +1720,10 @@ def seed_lesson_14():
         {
             "id": 85,
             "exercise_type": "dich_cau_dv",
-            "question": "Câu 85: Dịch câu sau sang tiếng Việt:\n„Früher war mein Onkel Lehrer in Dresden.“",
+            "question": "Câu 85: Dịch câu sau sang tiếng Việt:\n\"Früher war mein Onkel Lehrer in Dresden.\"",
             "options": null,
             "correct_answer": "Trước đây chú/bác tôi từng là giáo viên ở Dresden.",
-            "explanation": "„Früher“ = Trước đây, „war“ = từng là, „mein Onkel“ = chú/bác/cậu của tôi -> Đáp án: Trước đây chú/bác tôi từng là giáo viên ở Dresden.",
+            "explanation": "\"Früher\" = Trước đây, \"war\" = từng là, \"mein Onkel\" = chú/bác/cậu của tôi.\n-> Đáp án: Trước đây chú/bác tôi từng là giáo viên ở Dresden.",
             "exp_reward": 15,
             "extra_data": {
                 "accepted_answers": [
@@ -1739,10 +1739,10 @@ def seed_lesson_14():
         {
             "id": 86,
             "exercise_type": "dich_cau_dv",
-            "question": "Câu 86: Dịch câu sau sang tiếng Việt:\n„Sie spricht Arabisch und Englisch.“",
+            "question": "Câu 86: Dịch câu sau sang tiếng Việt:\n\"Sie spricht Arabisch und Englisch.\"",
             "options": null,
             "correct_answer": "Cô ấy nói tiếng Ả Rập và tiếng Anh.",
-            "explanation": "„spricht“ là dạng chia ngôi „sie“ (cô ấy) của „sprechen“, „Arabisch“ = tiếng Ả Rập -> Đáp án: Cô ấy nói tiếng Ả Rập và tiếng Anh.",
+            "explanation": "\"spricht\" là dạng chia ngôi \"sie\" (cô ấy) của \"sprechen\", \"Arabisch\" = tiếng Ả Rập.\n-> Đáp án: Cô ấy nói tiếng Ả Rập và tiếng Anh.",
             "exp_reward": 15,
             "extra_data": {
                 "accepted_answers": [
@@ -1760,7 +1760,7 @@ def seed_lesson_14():
             "question": "Câu 87: Sắp xếp các từ sau thành câu hoàn chỉnh:",
             "options": null,
             "correct_answer": "Bonn liegt südwestlich von Rostock.",
-            "explanation": "Cấu trúc phương hướng ngoài thành phố: Chủ ngữ (Bonn) + liegt + tính từ hướng (südwestlich, không có im) + von + Rostock -> Đáp án: Bonn liegt südwestlich von Rostock.",
+            "explanation": "Cấu trúc phương hướng ngoài thành phố: Chủ ngữ (Bonn) + liegt + tính từ hướng (südwestlich, không có im) + von + Rostock.\n-> Đáp án: Bonn liegt südwestlich von Rostock.",
             "exp_reward": 15,
             "extra_data": {
                 "tokens": ["liegt", "Bonn", "südwestlich", "Rostock", "von", "."],
@@ -1775,7 +1775,7 @@ def seed_lesson_14():
             "question": "Câu 88: Sắp xếp các từ sau thành câu hỏi hoàn chỉnh:",
             "options": null,
             "correct_answer": "Ist das das Auto von Thomas?",
-            "explanation": "Câu hỏi Yes/No luôn đảo động từ „Ist“ lên đầu câu; mạo từ xác định „das“ đứng ngay trước „Auto“ -> Đáp án: Ist das das Auto von Thomas?",
+            "explanation": "Câu hỏi Yes/No luôn đảo động từ \"Ist\" lên đầu câu\nmạo từ xác định \"das\" đứng ngay trước \"Auto\"\n-> Đáp án: Ist das das Auto von Thomas?",
             "exp_reward": 15,
             "extra_data": {
                 "tokens": ["das", "Ist", "Auto", "das", "von", "Thomas", "?"],
@@ -1790,7 +1790,7 @@ def seed_lesson_14():
             "question": "Câu 89: Sắp xếp các từ sau thành câu hoàn chỉnh (mô tả vị trí giữa hai thành phố):",
             "options": null,
             "correct_answer": "Hannover liegt nordwestlich von Leipzig.",
-            "explanation": "Hannover nằm bên ngoài, về phía Tây Bắc của Leipzig nên dùng tính từ „nordwestlich von“ -> Đáp án: Hannover liegt nordwestlich von Leipzig.",
+            "explanation": "Hannover nằm bên ngoài, về phía Tây Bắc của Leipzig nên dùng tính từ \"nordwestlich von\"\n-> Đáp án: Hannover liegt nordwestlich von Leipzig.",
             "exp_reward": 15,
             "extra_data": {
                 "tokens": ["nordwestlich", "liegt", "Hannover", "von", "Leipzig", "."],
@@ -1805,7 +1805,7 @@ def seed_lesson_14():
             "question": "Câu 90: Sắp xếp các từ sau thành câu hỏi quá khứ:",
             "options": null,
             "correct_answer": "Warst du am Wochenende in München?",
-            "explanation": "Câu hỏi Yes/No quá khứ với „sein“ đảo „Warst“ lên đầu câu -> Đáp án: Warst du am Wochenende in München?",
+            "explanation": "Câu hỏi Yes/No quá khứ với \"sein\" đảo \"Warst\" lên đầu câu.\n-> Đáp án: Warst du am Wochenende in München?",
             "exp_reward": 15,
             "extra_data": {
                 "tokens": ["am", "Warst", "du", "in", "Wochenende", "München", "?"],
@@ -1820,7 +1820,7 @@ def seed_lesson_14():
             "question": "Câu 91: Sắp xếp các từ sau thành câu phân biệt đồ vật:",
             "options": null,
             "correct_answer": "Das ist kein Fernseher, das ist ein Radio.",
-            "explanation": "„der Fernseher“ (giống đực) phủ định bằng „kein“; „das Radio“ (giống trung) dùng „ein“ -> Đáp án: Das ist kein Fernseher, das ist ein Radio.",
+            "explanation": "\"der Fernseher\" (giống đực) phủ định bằng \"kein\"\n\"das Radio\" (giống trung) dùng \"ein\"\n-> Đáp án: Das ist kein Fernseher, das ist ein Radio.",
             "exp_reward": 15,
             "extra_data": {
                 "tokens": ["ein", "ist", "Das", "kein", "Radio", "das", "Fernseher,", "ist", "."],
@@ -1838,7 +1838,7 @@ def seed_lesson_14():
             "question": "Câu 92: Sắp xếp các từ sau thành câu nói về xuất xứ:",
             "options": null,
             "correct_answer": "Er kommt aus der Türkei.",
-            "explanation": "Quốc gia giống cái „die Türkei“ đi kèm giới từ „aus“ thành „aus der Türkei“ -> Đáp án: Er kommt aus der Türkei.",
+            "explanation": "Quốc gia giống cái \"die Türkei\" đi kèm giới từ \"aus\" thành \"aus der Türkei\"\n-> Đáp án: Er kommt aus der Türkei.",
             "exp_reward": 15,
             "extra_data": {
                 "tokens": ["Türkei", "kommt", "aus", "Er", "der", "."],
@@ -1853,7 +1853,7 @@ def seed_lesson_14():
             "question": "Câu 93: Sắp xếp các từ sau thành câu hoàn chỉnh:",
             "options": null,
             "correct_answer": "Das Kind lernt heute Deutsch in der Schule.",
-            "explanation": "Động từ chia „lernt“ đứng ở vị trí số 2 trong câu trần thuật -> Đáp án: Das Kind lernt heute Deutsch in der Schule.",
+            "explanation": "Động từ chia \"lernt\" đứng ở vị trí số 2 trong câu trần thuật.\n-> Đáp án: Das Kind lernt heute Deutsch in der Schule.",
             "exp_reward": 15,
             "extra_data": {
                 "tokens": ["lernt", "Das", "Kind", "Deutsch", "in der Schule", "heute", "."],
@@ -1871,7 +1871,7 @@ def seed_lesson_14():
             "question": "Câu 94: Sắp xếp các từ sau thành câu hoàn chỉnh:",
             "options": null,
             "correct_answer": "Meine Freundin spricht gut Italienisch.",
-            "explanation": "Chủ ngữ „Meine Freundin“ (ngôi số ít giống cái) chia „sprechen“ biến âm thành „spricht“ -> Đáp án: Meine Freundin spricht gut Italienisch.",
+            "explanation": "Chủ ngữ \"Meine Freundin\" (ngôi số ít giống cái) chia \"sprechen\" biến âm thành \"spricht\"\n-> Đáp án: Meine Freundin spricht gut Italienisch.",
             "exp_reward": 15,
             "extra_data": {
                 "tokens": ["spricht", "Freundin", "gut", "Meine", "Italienisch", "."],
@@ -1886,7 +1886,7 @@ def seed_lesson_14():
             "question": "Câu 95: Sắp xếp các từ sau thành câu mô tả vị trí địa lý:",
             "options": null,
             "correct_answer": "Stuttgart liegt südöstlich von Bonn.",
-            "explanation": "Stuttgart nằm bên ngoài, ở phía Đông Nam của Bonn -> dùng tính từ „südöstlich von“ -> Đáp án: Stuttgart liegt südöstlich von Bonn.",
+            "explanation": "Stuttgart nằm bên ngoài, ở phía Đông Nam của Bonn.\n-> dùng tính từ \"südöstlich von\"\n-> Đáp án: Stuttgart liegt südöstlich von Bonn.",
             "exp_reward": 15,
             "extra_data": {
                 "tokens": ["von", "Stuttgart", "Bonn", "südöstlich", "liegt", "."],
@@ -1901,7 +1901,7 @@ def seed_lesson_14():
             "question": "Câu 96: Sắp xếp các từ sau thành câu hỏi lịch sự:",
             "options": null,
             "correct_answer": "Woher kommen Sie, Frau Weber?",
-            "explanation": "Câu hỏi W-Fragen lịch sự dùng ngôi „Sie“: „Woher kommen Sie, Frau Weber?“ -> Đáp án: Woher kommen Sie, Frau Weber?",
+            "explanation": "Câu hỏi W-Fragen lịch sự dùng ngôi \"Sie\": \"Woher kommen Sie, Frau Weber?\"\n-> Đáp án: Woher kommen Sie, Frau Weber?",
             "exp_reward": 15,
             "extra_data": {
                 "tokens": ["kommen", "Woher", "Sie,", "Weber", "Frau", "?"],
@@ -1913,10 +1913,10 @@ def seed_lesson_14():
         {
             "id": 97,
             "exercise_type": "phan_loai_dong_tu",
-            "question": "Câu 97: Phân loại các dạng của động từ „sein“ sau đây vào 2 nhóm Hiện tại (Präsens) / Quá khứ (Präteritum):",
+            "question": "Câu 97: Phân loại các dạng của động từ \"sein\" sau đây vào 2 nhóm Hiện tại (Präsens) / Quá khứ (Präteritum):",
             "options": null,
             "correct_answer": "Hiện tại (Präsens), Hiện tại (Präsens), Hiện tại (Präsens), Quá khứ (Präteritum), Quá khứ (Präteritum), Quá khứ (Präteritum)",
-            "explanation": "Hiện tại (Präsens): bin, ist, seid. Quá khứ (Präteritum): war, waren, warst -> Đáp án: Hiện tại (Präsens) cho 3 từ đầu, Quá khứ (Präteritum) cho 3 từ sau.",
+            "explanation": "Hiện tại (Präsens): bin, ist, seid.\nQuá khứ (Präteritum): war, waren, warst.\n-> Đáp án: Hiện tại (Präsens) cho 3 từ đầu, Quá khứ (Präteritum) cho 3 từ sau.",
             "exp_reward": 15,
             "extra_data": {
                 "categories": ["Hiện tại (Präsens)", "Quá khứ (Präteritum)"],
@@ -1932,16 +1932,16 @@ def seed_lesson_14():
                     "Hiện tại (Präsens), Hiện tại (Präsens), Hiện tại (Präsens), Quá khứ (Präteritum), Quá khứ (Präteritum), Quá khứ (Präteritum)"
                 ],
                 "audio_text": "bin, ist, seid, war, waren, warst.",
-                "translation": "Hiện tại: bin, ist, seid | Quá khứ: war, waren, warst"
+                "translation": "Hiện tại: bin, ist, seid\nQuá khứ: war, waren, warst"
             }
         },
         {
             "id": 98,
             "exercise_type": "phan_loai_dong_tu",
-            "question": "Câu 98: Phân loại 4 dạng chia của động từ „sein“ sau đây vào 2 nhóm Hiện tại (Präsens) / Quá khứ (Präteritum):",
+            "question": "Câu 98: Phân loại 4 dạng chia của động từ \"sein\" sau đây vào 2 nhóm Hiện tại (Präsens) / Quá khứ (Präteritum):",
             "options": null,
             "correct_answer": "Hiện tại (Präsens), Quá khứ (Präteritum), Hiện tại (Präsens), Quá khứ (Präteritum)",
-            "explanation": "„bist“ (du) và „sind“ (wir/sie/Sie) thuộc Hiện tại (Präsens); „wart“ (ihr) và „waren“ (wir/sie/Sie) thuộc Quá khứ (Präteritum).",
+            "explanation": "\"bist\" (du) và \"sind\" (wir/sie/Sie) thuộc Hiện tại (Präsens)\n\"wart\" (ihr) và \"waren\" (wir/sie/Sie) thuộc Quá khứ (Präteritum).",
             "exp_reward": 15,
             "extra_data": {
                 "categories": ["Hiện tại (Präsens)", "Quá khứ (Präteritum)"],
@@ -1953,7 +1953,7 @@ def seed_lesson_14():
                 ],
                 "accepted_answers": ["Hiện tại (Präsens), Quá khứ (Präteritum), Hiện tại (Präsens), Quá khứ (Präteritum)"],
                 "audio_text": "bist, wart, sind, war.",
-                "translation": "Hiện tại: bist, sind | Quá khứ: wart, war"
+                "translation": "Hiện tại: bist, sind\nQuá khứ: wart, war"
             }
         },
         {
@@ -1962,7 +1962,7 @@ def seed_lesson_14():
             "question": "Câu 99: Phân loại 4 động từ sau (tragen, wohnen, lesen, kaufen) vào nhóm Bất quy tắc (biến âm ở ngôi du/er) hoặc Có quy tắc:",
             "options": null,
             "correct_answer": "Bất quy tắc, Có quy tắc, Bất quy tắc, Có quy tắc",
-            "explanation": "„tragen“ (a -> ä: trägt) và „lesen“ (e -> ie: liest) biến âm ở ngôi du/er nên là Bất quy tắc; „wohnen“ và „kaufen“ là Có quy tắc -> Đáp án: Bất quy tắc, Có quy tắc, Bất quy tắc, Có quy tắc.",
+            "explanation": "\"tragen\" (a -> ä: trägt) và \"lesen\" (e -> ie: liest) biến âm ở ngôi du/er nên là Bất quy tắc\n\"wohnen\" và \"kaufen\" là Có quy tắc.\n-> Đáp án: Bất quy tắc, Có quy tắc, Bất quy tắc, Có quy tắc.",
             "exp_reward": 15,
             "extra_data": {
                 "categories": ["Bất quy tắc", "Có quy tắc"],
@@ -1977,7 +1977,7 @@ def seed_lesson_14():
                     "Bất quy tắc / Có quy tắc / Bất quy tắc / Có quy tắc"
                 ],
                 "audio_text": "tragen, wohnen, lesen, kaufen.",
-                "translation": "tragen: mặc (bất quy tắc) | wohnen: sống (có quy tắc) | lesen: đọc (bất quy tắc) | kaufen: mua (có quy tắc)"
+                "translation": "tragen: mặc (bất quy tắc)\nwohnen: sống (có quy tắc)\nlesen: đọc (bất quy tắc)\nkaufen: mua (có quy tắc)"
             }
         },
         {
@@ -1986,7 +1986,7 @@ def seed_lesson_14():
             "question": "Câu 100: Chọn từ để hỏi thích hợp (Wo / Woher) cho 4 câu hỏi dưới đây:",
             "options": null,
             "correct_answer": "Woher, Wo, Wo, Woher",
-            "explanation": "Động từ „kommen“ (đến từ đâu) luôn dùng „Woher“. Các câu hỏi vị trí tĩnh („liegen“, „sein“) dùng „Wo“ -> Đáp án: Woher, Wo, Wo, Woher.",
+            "explanation": "Động từ \"kommen\" (đến từ đâu) luôn dùng \"Woher\".\nCác câu hỏi vị trí tĩnh (\"liegen\", \"sein\") dùng \"Wo\"\n-> Đáp án: Woher, Wo, Wo, Woher.",
             "exp_reward": 15,
             "extra_data": {
                 "categories": ["Wo", "Woher"],
@@ -1998,7 +1998,7 @@ def seed_lesson_14():
                 ],
                 "accepted_answers": ["Woher, Wo, Wo, Woher", "Woher / Wo / Wo / Woher"],
                 "audio_text": "Woher kommst du? Wo liegt München? Wo waren Sie gestern? Wo kommt sie?",
-                "translation": "Bạn đến từ đâu? / München nằm ở đâu? / Hôm qua ngài ở đâu? / Cô ấy đến từ đâu?"
+                "translation": "Bạn đến từ đâu?\nMünchen nằm ở đâu?\nHôm qua ngài ở đâu?\nCô ấy đến từ đâu?"
             }
         },
         {
@@ -2007,7 +2007,7 @@ def seed_lesson_14():
             "question": "Câu 101: Phân loại 4 câu trả lời sau (Aus der Türkei, In Hanoi, Maria, Ein Rucksack) tương ứng với từ để hỏi phù hợp (Woher / Wo / Wie / Was):",
             "options": null,
             "correct_answer": "Woher, Wo, Wie, Was",
-            "explanation": "„Aus der Türkei“ chỉ xuất xứ (Woher), „In Hanoi“ chỉ vị trí (Wo), „Maria“ trả lời câu hỏi tên (Wie), „Ein Rucksack“ chỉ đồ vật (Was) -> Đáp án: Woher, Wo, Wie, Was.",
+            "explanation": "\"Aus der Türkei\" chỉ xuất xứ (Woher), \"In Hanoi\" chỉ vị trí (Wo), \"Maria\" trả lời câu hỏi tên (Wie), \"Ein Rucksack\" chỉ đồ vật (Was).\n-> Đáp án: Woher, Wo, Wie, Was.",
             "exp_reward": 15,
             "extra_data": {
                 "categories": ["Woher", "Wo", "Wie", "Was"],
@@ -2019,7 +2019,7 @@ def seed_lesson_14():
                 ],
                 "accepted_answers": ["Woher, Wo, Wie, Was", "Woher / Wo / Wie / Was"],
                 "audio_text": "Aus der Türkei. In Hanoi. Maria. Ein Rucksack.",
-                "translation": "Từ Thổ Nhĩ Kỳ / Ở Hà Nội / Tên Maria / Một chiếc ba lô"
+                "translation": "Từ Thổ Nhĩ Kỳ\nỞ Hà Nội\nTên Maria\nMột chiếc ba lô"
             }
         },
         {
@@ -2028,7 +2028,7 @@ def seed_lesson_14():
             "question": "Câu 102: Phân loại 4 câu trả lời sau (Im Süden von Deutschland, Aus Ägypten, Eine Kamera, Ich heiße Paul) tương ứng với từ để hỏi phù hợp (Wo / Woher / Was / Wie):",
             "options": null,
             "correct_answer": "Wo, Woher, Was, Wie",
-            "explanation": "„Im Süden von Deutschland“ chỉ vị trí (Wo), „Aus Ägypten“ chỉ xuất xứ (Woher), „Eine Kamera“ chỉ sự vật (Was), „Ich heiße Paul“ trả lời tên (Wie) -> Đáp án: Wo, Woher, Was, Wie.",
+            "explanation": "\"Im Süden von Deutschland\" chỉ vị trí (Wo), \"Aus Ägypten\" chỉ xuất xứ (Woher), \"Eine Kamera\" chỉ sự vật (Was), \"Ich heiße Paul\" trả lời tên (Wie).\n-> Đáp án: Wo, Woher, Was, Wie.",
             "exp_reward": 15,
             "extra_data": {
                 "categories": ["Woher", "Wo", "Wie", "Was"],
@@ -2040,16 +2040,16 @@ def seed_lesson_14():
                 ],
                 "accepted_answers": ["Wo, Woher, Was, Wie", "Wo / Woher / Was / Wie"],
                 "audio_text": "Im Süden von Deutschland. Aus Ägypten. Eine Kamera. Ich heiße Paul.",
-                "translation": "Ở miền Nam Đức / Từ Ai Cập / Một máy ảnh / Tôi tên là Paul"
+                "translation": "Ở miền Nam Đức\nTừ Ai Cập\nMột máy ảnh\nTôi tên là Paul"
             }
         },
         {
             "id": 103,
             "exercise_type": "tim_loi_sai",
-            "question": "Câu 103: Tìm lỗi sai trong câu sau và viết lại câu đúng hoàn chỉnh:\n„Bremen liegt im nordwestlich von Leipzig.“",
+            "question": "Câu 103: Tìm lỗi sai trong câu sau và viết lại câu đúng hoàn chỉnh:\n\"Bremen liegt im nordwestlich von Leipzig.\"",
             "options": null,
             "correct_answer": "Bremen liegt nordwestlich von Leipzig.",
-            "explanation": "„nordwestlich“ là tính từ chỉ hướng (Bremen nằm bên ngoài Leipzig), bắt buộc bỏ giới từ „im“ -> Đáp án: Bremen liegt nordwestlich von Leipzig.",
+            "explanation": "\"nordwestlich\" là tính từ chỉ hướng (Bremen nằm bên ngoài Leipzig), bắt buộc bỏ giới từ \"im\"\n-> Đáp án: Bremen liegt nordwestlich von Leipzig.",
             "exp_reward": 15,
             "extra_data": {
                 "accepted_answers": ["Bremen liegt nordwestlich von Leipzig.", "Bremen liegt nordwestlich von Leipzig"],
@@ -2060,24 +2060,24 @@ def seed_lesson_14():
         {
             "id": 104,
             "exercise_type": "tim_loi_sai",
-            "question": "Câu 104: Tìm lỗi sai trong câu sau và viết lại câu đúng hoàn chỉnh:\n„Das ist kein Kamera. Das ist ein Handy.“",
+            "question": "Câu 104: Tìm lỗi sai trong câu sau và viết lại câu đúng hoàn chỉnh:\n\"Das ist kein Kamera. Das ist ein Handy.\"",
             "options": null,
             "correct_answer": "Das ist keine Kamera. Das ist ein Handy.",
-            "explanation": "„die Kamera“ mang giống cái nên mạo từ phủ định phải là „keine“, không dùng „kein“ -> Đáp án: Das ist keine Kamera. Das ist ein Handy.",
+            "explanation": "\"die Kamera\" mang giống cái nên mạo từ phủ định phải là \"keine\", không dùng \"kein\"\n-> Đáp án: Das ist keine Kamera.\nDas ist ein Handy.",
             "exp_reward": 15,
             "extra_data": {
                 "accepted_answers": ["Das ist keine Kamera. Das ist ein Handy.", "Das ist keine Kamera. Das ist ein Handy"],
                 "audio_text": "Das ist keine Kamera. Das ist ein Handy.",
-                "translation": "Đó không phải là máy ảnh. Đó là một chiếc điện thoại."
+                "translation": "Đó không phải là máy ảnh.\nĐó là một chiếc điện thoại."
             }
         },
         {
             "id": 105,
             "exercise_type": "tim_loi_sai",
-            "question": "Câu 105: Tìm lỗi sai trong câu sau và viết lại câu đúng hoàn chỉnh:\n„Frankfurt liegt im westlich von Dresden.“",
+            "question": "Câu 105: Tìm lỗi sai trong câu sau và viết lại câu đúng hoàn chỉnh:\n\"Frankfurt liegt im westlich von Dresden.\"",
             "options": null,
             "correct_answer": "Frankfurt liegt westlich von Dresden.",
-            "explanation": "„westlich“ là tính từ chỉ hướng (bên ngoài Dresden), phải bỏ giới từ „im“ -> Đáp án: Frankfurt liegt westlich von Dresden.",
+            "explanation": "\"westlich\" là tính từ chỉ hướng (bên ngoài Dresden), phải bỏ giới từ \"im\"\n-> Đáp án: Frankfurt liegt westlich von Dresden.",
             "exp_reward": 15,
             "extra_data": {
                 "accepted_answers": ["Frankfurt liegt westlich von Dresden.", "Frankfurt liegt westlich von Dresden"],
@@ -2088,10 +2088,10 @@ def seed_lesson_14():
         {
             "id": 106,
             "exercise_type": "tim_loi_sai",
-            "question": "Câu 106: Tìm lỗi sai về thì của động từ và viết lại câu đúng hoàn chỉnh:\n„Heute bin ich zu Hause, und gestern sind wir in Köln.“",
+            "question": "Câu 106: Tìm lỗi sai về thì của động từ và viết lại câu đúng hoàn chỉnh:\n\"Heute bin ich zu Hause, und gestern sind wir in Köln.\"",
             "options": null,
             "correct_answer": "Heute bin ich zu Hause, und gestern waren wir in Köln.",
-            "explanation": "Vế sau có trạng từ quá khứ „gestern“ (hôm qua) nên động từ „sein“ ở ngôi „wir“ phải chia quá khứ thành „waren“ -> Đáp án: Heute bin ich zu Hause, und gestern waren wir in Köln.",
+            "explanation": "Vế sau có trạng từ quá khứ \"gestern\" (hôm qua) nên động từ \"sein\" ở ngôi \"wir\" phải chia quá khứ thành \"waren\"\n-> Đáp án: Heute bin ich zu Hause, und gestern waren wir in Köln.",
             "exp_reward": 15,
             "extra_data": {
                 "accepted_answers": [
@@ -2106,10 +2106,10 @@ def seed_lesson_14():
         {
             "id": 107,
             "exercise_type": "tim_loi_sai",
-            "question": "Câu 107: Tìm lỗi sai trong câu sau và viết lại câu đúng hoàn chỉnh:\n„Meine Familie kommt aus Türkei.“",
+            "question": "Câu 107: Tìm lỗi sai trong câu sau và viết lại câu đúng hoàn chỉnh:\n\"Meine Familie kommt aus Türkei.\"",
             "options": null,
             "correct_answer": "Meine Familie kommt aus der Türkei.",
-            "explanation": "„die Türkei“ là quốc gia bắt buộc có mạo từ giống cái, đi với giới từ „aus“ phải là „aus der Türkei“ -> Đáp án: Meine Familie kommt aus der Türkei.",
+            "explanation": "\"die Türkei\" là quốc gia bắt buộc có mạo từ giống cái, đi với giới từ \"aus\" phải là \"aus der Türkei\"\n-> Đáp án: Meine Familie kommt aus der Türkei.",
             "exp_reward": 15,
             "extra_data": {
                 "accepted_answers": [
@@ -2124,10 +2124,10 @@ def seed_lesson_14():
         {
             "id": 108,
             "exercise_type": "tim_loi_sai",
-            "question": "Câu 108: Tìm lỗi sai kiến thức ngôn ngữ và viết lại câu đúng hoàn chỉnh:\n„In Ägypten spricht man Ägyptisch.“",
+            "question": "Câu 108: Tìm lỗi sai kiến thức ngôn ngữ và viết lại câu đúng hoàn chỉnh:\n\"In Ägypten spricht man Ägyptisch.\"",
             "options": null,
             "correct_answer": "In Ägypten spricht man Arabisch.",
-            "explanation": "Ngôn ngữ chính thức của Ai Cập (Ägypten) là tiếng Ả Rập („Arabisch“), không phải „Ägyptisch“ -> Đáp án: In Ägypten spricht man Arabisch.",
+            "explanation": "Ngôn ngữ chính thức của Ai Cập (Ägypten) là tiếng Ả Rập (\"Arabisch\"), không phải \"Ägyptisch\"\n-> Đáp án: In Ägypten spricht man Arabisch.",
             "exp_reward": 15,
             "extra_data": {
                 "accepted_answers": [
@@ -2142,10 +2142,10 @@ def seed_lesson_14():
         {
             "id": 109,
             "exercise_type": "tim_loi_sai",
-            "question": "Câu 109: Tìm lỗi sai trong câu sau và viết lại câu đúng hoàn chỉnh:\n„Mein Bruder wohnen jetzt in der Schweiz.“",
+            "question": "Câu 109: Tìm lỗi sai trong câu sau và viết lại câu đúng hoàn chỉnh:\n\"Mein Bruder wohnen jetzt in der Schweiz.\"",
             "options": null,
             "correct_answer": "Mein Bruder wohnt jetzt in der Schweiz.",
-            "explanation": "Chủ ngữ „Mein Bruder“ (số ít, ngôi er) chia động từ „wohnen“ là „wohnt“ -> Đáp án: Mein Bruder wohnt jetzt in der Schweiz.",
+            "explanation": "Chủ ngữ \"Mein Bruder\" (số ít, ngôi er) chia động từ \"wohnen\" là \"wohnt\"\n-> Đáp án: Mein Bruder wohnt jetzt in der Schweiz.",
             "exp_reward": 15,
             "extra_data": {
                 "accepted_answers": ["Mein Bruder wohnt jetzt in der Schweiz.", "Mein Bruder wohnt jetzt in der Schweiz"],
@@ -2156,10 +2156,10 @@ def seed_lesson_14():
         {
             "id": 110,
             "exercise_type": "tim_loi_sai",
-            "question": "Câu 110: Tìm lỗi sai mạo từ sau động từ „sein“ và viết lại câu đúng hoàn chỉnh:\n„Ist das einen Schlüssel? Nein, das ist ein Kuli.“",
+            "question": "Câu 110: Tìm lỗi sai mạo từ sau động từ \"sein\" và viết lại câu đúng hoàn chỉnh:\n\"Ist das einen Schlüssel? Nein, das ist ein Kuli.\"",
             "options": null,
             "correct_answer": "Ist das ein Schlüssel? Nein, das ist ein Kuli.",
-            "explanation": "Sau động từ „sein“ luôn dùng Nominativ (không dùng Akkusativ „einen“), „der Schlüssel“ dùng „ein“ -> Đáp án: Ist das ein Schlüssel? Nein, das ist ein Kuli.",
+            "explanation": "Sau động từ \"sein\" luôn dùng Nominativ (không dùng Akkusativ \"einen\"), \"der Schlüssel\" dùng \"ein\"\n-> Đáp án: Ist das ein Schlüssel?\nNein, das ist ein Kuli.",
             "exp_reward": 15,
             "extra_data": {
                 "accepted_answers": [
@@ -2168,16 +2168,16 @@ def seed_lesson_14():
                     "Ist das ein Schluessel? Nein, das ist ein Kuli."
                 ],
                 "audio_text": "Ist das ein Schlüssel? Nein, das ist ein Kuli.",
-                "translation": "Đó có phải một chiếc chìa khóa không? Không, đó là một cây bút bi."
+                "translation": "Đó có phải một chiếc chìa khóa không?\nKhông, đó là một cây bút bi."
             }
         },
         {
             "id": 111,
             "exercise_type": "tim_loi_sai",
-            "question": "Câu 111: Tìm lỗi sai chia động từ bất quy tắc và viết lại câu đúng hoàn chỉnh:\n„Anna tragt heute eine schöne Jacke.“",
+            "question": "Câu 111: Tìm lỗi sai chia động từ bất quy tắc và viết lại câu đúng hoàn chỉnh:\n\"Anna tragt heute eine schöne Jacke.\"",
             "options": null,
             "correct_answer": "Anna trägt heute eine schöne Jacke.",
-            "explanation": "Động từ bất quy tắc „tragen“ phải biến âm a -> ä ở ngôi thứ 3 số ít „Anna“ thành „trägt“ -> Đáp án: Anna trägt heute eine schöne Jacke.",
+            "explanation": "Động từ bất quy tắc \"tragen\" phải biến âm a -> ä ở ngôi thứ 3 số ít \"Anna\" thành \"trägt\"\n-> Đáp án: Anna trägt heute eine schöne Jacke.",
             "exp_reward": 15,
             "extra_data": {
                 "accepted_answers": [
@@ -2192,10 +2192,10 @@ def seed_lesson_14():
         {
             "id": 112,
             "exercise_type": "tim_loi_sai",
-            "question": "Câu 112: Tìm lỗi sai giới từ và viết lại câu đúng hoàn chỉnh:\n„Hue liegt im Zentrum in Vietnam.“",
+            "question": "Câu 112: Tìm lỗi sai giới từ và viết lại câu đúng hoàn chỉnh:\n\"Hue liegt im Zentrum in Vietnam.\"",
             "options": null,
             "correct_answer": "Hue liegt in der Mitte von Vietnam.",
-            "explanation": "Khi diễn tả vị trí giữa của một quốc gia/vùng phải dùng cụm „in der Mitte von ...“ (hoặc „im Zentrum von ...“, không dùng „in Vietnam“) -> Đáp án: Hue liegt in der Mitte von Vietnam.",
+            "explanation": "Khi diễn tả vị trí giữa của một quốc gia/vùng phải dùng cụm \"in der Mitte von ...\" (hoặc \"im Zentrum von ...\", không dùng \"in Vietnam\").\n-> Đáp án: Hue liegt in der Mitte von Vietnam.",
             "exp_reward": 15,
             "extra_data": {
                 "accepted_answers": [
@@ -2214,14 +2214,14 @@ def seed_lesson_14():
             "question": "Câu 113: Đặt câu hỏi W-Fragen về xuất xứ cho cụm từ gạch chân (hỏi ở ngôi du):",
             "options": null,
             "correct_answer": "Woher kommst du?",
-            "explanation": "Cụm „aus Russland“ chỉ xuất xứ nên dùng từ để hỏi „Woher“, chia động từ ở ngôi „du“ là „kommst“ -> Đáp án: Woher kommst du?",
+            "explanation": "Cụm \"aus Russland\" chỉ xuất xứ nên dùng từ để hỏi \"Woher\", chia động từ ở ngôi \"du\" là \"kommst\"\n-> Đáp án: Woher kommst du?",
             "exp_reward": 15,
             "extra_data": {
                 "source_sentence": "Ich komme aus Russland.",
                 "target_phrase": "aus Russland",
                 "accepted_answers": ["Woher kommst du?", "Woher kommst du"],
                 "audio_text": "Woher kommst du?",
-                "translation": "Bạn đến từ đâu? (Tôi đến từ Nga.)"
+                "translation": "Bạn đến từ đâu?\n(Tôi đến từ Nga.)"
             }
         },
         {
@@ -2230,7 +2230,7 @@ def seed_lesson_14():
             "question": "Câu 114: Đặt câu hỏi W-Fragen về đồ uống cho từ gạch chân (hỏi ở ngôi ihr):",
             "options": null,
             "correct_answer": "Was trinkt ihr?",
-            "explanation": "„Kaffee“ là đồ uống (sự vật), dùng từ để hỏi „Was“. Ngôi „ihr“ chia „trinken“ là „trinkt“ (cũng chấp nhận „Was möchtet ihr trinken?“) -> Đáp án: Was trinkt ihr?",
+            "explanation": "\"Kaffee\" là đồ uống (sự vật), dùng từ để hỏi \"Was\".\nNgôi \"ihr\" chia \"trinken\" là \"trinkt\" (cũng chấp nhận \"Was möchtet ihr trinken?\").\n-> Đáp án: Was trinkt ihr?",
             "exp_reward": 15,
             "extra_data": {
                 "source_sentence": "Wir trinken Kaffee.",
@@ -2243,7 +2243,7 @@ def seed_lesson_14():
                     "Was moechtet ihr trinken?"
                 ],
                 "audio_text": "Was trinkt ihr?",
-                "translation": "Các bạn uống gì? (Chúng tôi uống cà phê.)"
+                "translation": "Các bạn uống gì?\n(Chúng tôi uống cà phê.)"
             }
         },
         {
@@ -2252,14 +2252,14 @@ def seed_lesson_14():
             "question": "Câu 115: Đặt câu hỏi W-Fragen về vị trí địa lý cho cụm từ gạch chân:",
             "options": null,
             "correct_answer": "Wo liegt Hanoi?",
-            "explanation": "Cụm „im Norden von Vietnam“ chỉ vị trí địa lý tĩnh nên dùng từ để hỏi „Wo“ -> Đáp án: Wo liegt Hanoi?",
+            "explanation": "Cụm \"im Norden von Vietnam\" chỉ vị trí địa lý tĩnh nên dùng từ để hỏi \"Wo\"\n-> Đáp án: Wo liegt Hanoi?",
             "exp_reward": 15,
             "extra_data": {
                 "source_sentence": "Hanoi liegt im Norden von Vietnam.",
                 "target_phrase": "im Norden von Vietnam",
                 "accepted_answers": ["Wo liegt Hanoi?", "Wo liegt Hanoi"],
                 "audio_text": "Wo liegt Hanoi?",
-                "translation": "Hà Nội nằm ở đâu? (Hà Nội nằm ở miền Bắc Việt Nam.)"
+                "translation": "Hà Nội nằm ở đâu?\n(Hà Nội nằm ở miền Bắc Việt Nam.)"
             }
         },
         {
@@ -2268,14 +2268,14 @@ def seed_lesson_14():
             "question": "Câu 116: Đặt câu hỏi W-Fragen về nơi chốn quá khứ cho cụm từ gạch chân (hỏi ở ngôi du):",
             "options": null,
             "correct_answer": "Wo warst du gestern?",
-            "explanation": "Cụm „im Kino“ chỉ nơi chốn trong quá khứ -> dùng „Wo“ và chia „sein“ ở quá khứ ngôi „du“ là „warst“ -> Đáp án: Wo warst du gestern?",
+            "explanation": "Cụm \"im Kino\" chỉ nơi chốn trong quá khứ.\n-> dùng \"Wo\" và chia \"sein\" ở quá khứ ngôi \"du\" là \"warst\"\n-> Đáp án: Wo warst du gestern?",
             "exp_reward": 15,
             "extra_data": {
                 "source_sentence": "Gestern war ich im Kino.",
                 "target_phrase": "im Kino",
                 "accepted_answers": ["Wo warst du gestern?", "Wo warst du gestern"],
                 "audio_text": "Wo warst du gestern?",
-                "translation": "Hôm qua bạn đã ở đâu? (Hôm qua tôi đã ở rạp chiếu phim.)"
+                "translation": "Hôm qua bạn đã ở đâu?\n(Hôm qua tôi đã ở rạp chiếu phim.)"
             }
         },
         {
@@ -2284,7 +2284,7 @@ def seed_lesson_14():
             "question": "Câu 117: Đặt câu hỏi W-Fragen về tiếng mẹ đẻ cho từ gạch chân (hỏi ở ngôi du):",
             "options": null,
             "correct_answer": "Was ist deine Muttersprache?",
-            "explanation": "„Arabisch“ là ngôn ngữ/sự vật, hỏi tiếng mẹ đẻ của bạn là gì dùng „Was ist deine Muttersprache?“ (cũng chấp nhận „Welche Sprache sprichst du?“) -> Đáp án: Was ist deine Muttersprache?",
+            "explanation": "\"Arabisch\" là ngôn ngữ/sự vật, hỏi tiếng mẹ đẻ của bạn là gì dùng \"Was ist deine Muttersprache?\" (cũng chấp nhận \"Welche Sprache sprichst du?\").\n-> Đáp án: Was ist deine Muttersprache?",
             "exp_reward": 15,
             "extra_data": {
                 "source_sentence": "Meine Muttersprache ist Arabisch.",
@@ -2296,52 +2296,52 @@ def seed_lesson_14():
                     "Welche Sprache sprichst du?"
                 ],
                 "audio_text": "Was ist deine Muttersprache?",
-                "translation": "Tiếng mẹ đẻ của bạn là gì? (Tiếng mẹ đẻ của tôi là tiếng Ả Rập.)"
+                "translation": "Tiếng mẹ đẻ của bạn là gì?\n(Tiếng mẹ đẻ của tôi là tiếng Ả Rập.)"
             }
         },
         {
             "id": 118,
             "exercise_type": "dung_sai",
-            "question": "Câu 118: Đọc đoạn văn sau và chọn Đúng (Richtig) hoặc Sai (Falsch):\nNhận định: „Hamburg liegt südlich von Deutschland.“",
+            "question": "Câu 118: Đọc đoạn văn sau và chọn Đúng (Richtig) hoặc Sai (Falsch):\nNhận định: \"Hamburg liegt südlich von Deutschland.\"",
             "options": ["Richtig", "Falsch"],
             "correct_answer": "Falsch",
-            "explanation": "Đoạn văn xác nhận „Hamburg liegt im Norden von Deutschland“ (ở miền Bắc nước Đức), nên nhận định Hamburg nằm ở phía Nam là sai -> Đáp án: Falsch.",
+            "explanation": "Đoạn văn xác nhận \"Hamburg liegt im Norden von Deutschland\" (ở miền Bắc nước Đức), nên nhận định Hamburg nằm ở phía Nam là sai.\n-> Đáp án: Falsch.",
             "exp_reward": 15,
             "extra_data": {
                 "reading_text": "Hamburg liegt im Norden von Deutschland. München liegt im Süden.",
-                "reading_translation_vi": "Hamburg nằm ở miền Bắc nước Đức. München nằm ở miền Nam.",
+                "reading_translation_vi": "Hamburg nằm ở miền Bắc nước Đức.\nMünchen nằm ở miền Nam.",
                 "accepted_answers": ["Falsch", "Falsch (Sai)"],
                 "audio_text": "Hamburg liegt im Norden von Deutschland. München liegt im Süden.",
-                "translation": "Hamburg nằm ở miền Bắc nước Đức. München nằm ở miền Nam."
+                "translation": "Hamburg nằm ở miền Bắc nước Đức.\nMünchen nằm ở miền Nam."
             }
         },
         {
             "id": 119,
             "exercise_type": "dung_sai",
-            "question": "Câu 119: Đọc đoạn văn sau và chọn Đúng (Richtig) hoặc Sai (Falsch):\nNhận định: „Die Familie wohnt jetzt in Wien.“",
+            "question": "Câu 119: Đọc đoạn văn sau và chọn Đúng (Richtig) hoặc Sai (Falsch):\nNhận định: \"Die Familie wohnt jetzt in Wien.\"",
             "options": ["Richtig", "Falsch"],
             "correct_answer": "Richtig",
-            "explanation": "Trong đoạn văn có câu „Jetzt wohnen wir in Europa, in Wien.“ -> trùng khớp hoàn toàn với nhận định -> Đáp án: Richtig.",
+            "explanation": "Trong đoạn văn có câu \"Jetzt wohnen wir in Europa, in Wien.\"\n-> trùng khớp hoàn toàn với nhận định.\n-> Đáp án: Richtig.",
             "exp_reward": 15,
             "extra_data": {
                 "reading_text": "Früher war meine Familie in der Schweiz. Mein Vater war Arzt in Zürich und meine Mutter war Lehrerin. Jetzt wohnen wir in Europa, in Wien. Ich spreche Deutsch und Englisch.",
-                "reading_translation_vi": "Trước đây gia đình tôi từng ở Thụy Sĩ. Bố tôi từng là bác sĩ ở Zürich và mẹ tôi từng là giáo viên. Bây giờ chúng tôi sống ở châu Âu, tại Viên. Tôi nói tiếng Đức và tiếng Anh.",
+                "reading_translation_vi": "Trước đây gia đình tôi từng ở Thụy Sĩ.\nBố tôi từng là bác sĩ ở Zürich và mẹ tôi từng là giáo viên.\nBây giờ chúng tôi sống ở châu Âu, tại Viên.\nTôi nói tiếng Đức và tiếng Anh.",
                 "accepted_answers": ["Richtig", "Richtig (Đúng)"],
                 "audio_text": "Früher war meine Familie in der Schweiz. Mein Vater war Arzt in Zürich und meine Mutter war Lehrerin. Jetzt wohnen wir in Europa, in Wien. Ich spreche Deutsch und Englisch.",
-                "translation": "Trước đây gia đình tôi từng ở Thụy Sĩ. Hiện tại gia đình sống ở Viên."
+                "translation": "Trước đây gia đình tôi từng ở Thụy Sĩ.\nHiện tại gia đình sống ở Viên."
             }
         },
         {
             "id": 120,
             "exercise_type": "dung_sai",
-            "question": "Câu 120: Đọc đoạn văn sau và chọn Đúng (Richtig) hoặc Sai (Falsch):\nNhận định: „Da Nang liegt im Westen von Vietnam.“",
+            "question": "Câu 120: Đọc đoạn văn sau và chọn Đúng (Richtig) hoặc Sai (Falsch):\nNhận định: \"Da Nang liegt im Westen von Vietnam.\"",
             "options": ["Richtig", "Falsch"],
             "correct_answer": "Falsch",
-            "explanation": "Đoạn văn nêu rõ „Da Nang liegt in der Mitte von Vietnam“ (nằm ở miền Trung/giữa Việt Nam), không phải miền Tây -> Đáp án: Falsch.",
+            "explanation": "Đoạn văn nêu rõ \"Da Nang liegt in der Mitte von Vietnam\" (nằm ở miền Trung/giữa Việt Nam), không phải miền Tây.\n-> Đáp án: Falsch.",
             "exp_reward": 15,
             "extra_data": {
                 "reading_text": "Hanoi liegt im Norden von Vietnam und Can Tho liegt im Süden. Da Nang liegt in der Mitte von Vietnam. Meine Freundin kommt aus Da Nang und ihre Muttersprache ist Vietnamesisch.",
-                "reading_translation_vi": "Hà Nội nằm ở miền Bắc Việt Nam và Cần Thơ nằm ở miền Nam. Đà Nẵng nằm ở miền Trung của Việt Nam. Bạn nữ của tôi đến từ Đà Nẵng và tiếng mẹ đẻ của cô ấy là tiếng Việt.",
+                "reading_translation_vi": "Hà Nội nằm ở miền Bắc Việt Nam và Cần Thơ nằm ở miền Nam.\nĐà Nẵng nằm ở miền Trung của Việt Nam.\nBạn nữ của tôi đến từ Đà Nẵng và tiếng mẹ đẻ của cô ấy là tiếng Việt.",
                 "accepted_answers": ["Falsch", "Falsch (Sai)"],
                 "audio_text": "Hanoi liegt im Norden von Vietnam und Can Tho liegt im Süden. Da Nang liegt in der Mitte von Vietnam. Meine Freundin kommt aus Da Nang und ihre Muttersprache ist Vietnamesisch.",
                 "translation": "Hà Nội ở miền Bắc, Cần Thơ ở miền Nam, Đà Nẵng ở miền Trung Việt Nam."
@@ -2353,7 +2353,7 @@ def seed_lesson_14():
             "question": "Câu 121: Sắp xếp các câu thoại sau theo đúng thứ tự một đoạn hội thoại hỏi vị trí hợp lý:",
             "options": null,
             "correct_answer": "1, 2, 3, 4",
-            "explanation": "Trình tự logic: Hỏi vị trí chung -> Trả lời ở nước Đức -> Hỏi kỹ hơn ở vùng nào -> Trả lời chi tiết bằng phương hướng (im Süden) -> Đáp án: 1, 2, 3, 4.",
+            "explanation": "Trình tự logic: Hỏi vị trí chung -> Trả lời ở nước Đức.\n-> Hỏi kỹ hơn ở vùng nào.\n-> Trả lời chi tiết bằng phương hướng (im Süden).\n-> Đáp án: 1, 2, 3, 4.",
             "exp_reward": 15,
             "extra_data": {
                 "lines": [
@@ -2364,7 +2364,7 @@ def seed_lesson_14():
                 ],
                 "correct_order": [1, 2, 3, 4],
                 "audio_text": "Entschuldigung, wo liegt München? München? Das liegt in Deutschland. Ja, aber wo genau in Deutschland? München liegt im Süden von Deutschland.",
-                "translation": "- Khách: Xin lỗi, München nằm ở đâu?\n- Người qua đường: München à? Nó nằm ở Đức.\n- Khách: Vâng, nhưng chính xác ở đâu tại Đức?\n- Người qua đường: München nằm ở miền Nam nước Đức."
+                "translation": "- Khách: Xin lỗi, München nằm ở đâu?\n- Người qua đường: München à?\nNó nằm ở Đức.\n- Khách: Vâng, nhưng chính xác ở đâu tại Đức?\n- Người qua đường: München nằm ở miền Nam nước Đức."
             }
         },
         {
@@ -2373,7 +2373,7 @@ def seed_lesson_14():
             "question": "Câu 122: Sắp xếp các câu thoại sau theo đúng diễn biến hội thoại hỏi thăm quá khứ:",
             "options": null,
             "correct_answer": "1, 2, 3, 4",
-            "explanation": "Trình tự logic: Hỏi hôm qua ở đâu -> Trả lời ở buổi hòa nhạc -> Hỏi cảm nhận buổi hòa nhạc thế nào -> Trả lời thật tuyệt vời -> Đáp án: 1, 2, 3, 4.",
+            "explanation": "Trình tự logic: Hỏi hôm qua ở đâu -> Trả lời ở buổi hòa nhạc.\n-> Hỏi cảm nhận buổi hòa nhạc thế nào.\n-> Trả lời thật tuyệt vời.\n-> Đáp án: 1, 2, 3, 4.",
             "exp_reward": 15,
             "extra_data": {
                 "lines": [
@@ -2393,7 +2393,7 @@ def seed_lesson_14():
             "question": "Câu 123: Sắp xếp các câu thoại sau theo đúng diễn biến hội thoại hỏi xuất xứ và ngôn ngữ:",
             "options": null,
             "correct_answer": "1, 2, 3, 4",
-            "explanation": "Trình tự logic: Hỏi đến từ đâu -> Trả lời từ Thổ Nhĩ Kỳ -> Hỏi về ngôn ngữ nói được -> Xác nhận tiếng mẹ đẻ và đang học tiếng Đức -> Đáp án: 1, 2, 3, 4.",
+            "explanation": "Trình tự logic: Hỏi đến từ đâu -> Trả lời từ Thổ Nhĩ Kỳ.\n-> Hỏi về ngôn ngữ nói được.\n-> Xác nhận tiếng mẹ đẻ và đang học tiếng Đức.\n-> Đáp án: 1, 2, 3, 4.",
             "exp_reward": 15,
             "extra_data": {
                 "lines": [
@@ -2418,7 +2418,7 @@ def seed_lesson_14():
                 "Berlin liegt im Südosten von Deutschland."
             ],
             "correct_answer": "Berlin liegt im Nordosten von Deutschland.",
-            "explanation": "Vị trí góc trên bên phải tương ứng với hướng Đông Bắc (Nord + Ost = Nordosten), nằm bên trong Đức nên dùng „im Nordosten von Deutschland“ -> Đáp án: Berlin liegt im Nordosten von Deutschland.",
+            "explanation": "Vị trí góc trên bên phải tương ứng với hướng Đông Bắc (Nord + Ost = Nordosten), nằm bên trong Đức nên dùng \"im Nordosten von Deutschland\"\n-> Đáp án: Berlin liegt im Nordosten von Deutschland.",
             "exp_reward": 15,
             "extra_data": {
                 "map_card": {
@@ -2435,7 +2435,7 @@ def seed_lesson_14():
         {
             "id": 125,
             "exercise_type": "doc_menu_cafe",
-            "question": "Câu 125: Nhìn vào bảng thực đơn sau và chọn câu trả lời phù hợp nhất của khách khi bồi bàn hỏi:\n„Was möchten Sie bestellen?“",
+            "question": "Câu 125: Nhìn vào bảng thực đơn sau và chọn câu trả lời phù hợp nhất của khách khi bồi bàn hỏi:\n\"Was möchten Sie bestellen?\"",
             "options": [
                 "Ich nehme einen Tee und einen Kuchen, bitte.",
                 "München liegt im Süden von Deutschland.",
@@ -2443,7 +2443,7 @@ def seed_lesson_14():
                 "Früher waren wir Lehrer in Berlin."
             ],
             "correct_answer": "Ich nehme einen Tee und einen Kuchen, bitte.",
-            "explanation": "Khi bồi bàn hỏi gọi món („Was möchten Sie bestellen?“), câu phản hồi hợp lý theo thực đơn là chọn đồ uống/bánh có trong menu -> Đáp án: Ich nehme einen Tee und einen Kuchen, bitte.",
+            "explanation": "Khi bồi bàn hỏi gọi món (\"Was möchten Sie bestellen?\"), câu phản hồi hợp lý theo thực đơn là chọn đồ uống/bánh có trong menu.\n-> Đáp án: Ich nehme einen Tee und einen Kuchen, bitte.",
             "exp_reward": 15,
             "extra_data": {
                 "menu_items": [
@@ -2453,7 +2453,7 @@ def seed_lesson_14():
                 ],
                 "accepted_answers": ["Ich nehme einen Tee und einen Kuchen, bitte."],
                 "audio_text": "Was möchten Sie bestellen? Ich nehme einen Tee und einen Kuchen, bitte.",
-                "translation": "Ngài muốn gọi món gì ạ? — Cho tôi gọi một trà và một bánh ngọt, làm ơn."
+                "translation": "Ngài muốn gọi món gì ạ?\nCho tôi gọi một trà và một bánh ngọt, làm ơn."
             }
         }
     ]

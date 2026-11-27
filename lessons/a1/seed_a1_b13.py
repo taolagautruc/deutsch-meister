@@ -933,14 +933,13 @@ def seed_lesson_13():
     cursor.execute("DELETE FROM exercises WHERE lesson_id = ?;", (lesson_id,))
 
     exercises_data = [
-        # --- 3.1. TRẮC NGHIỆM (15 CÂU) ---
         {
             "id": 1,
             "exercise_type": "trac_nghiem",
-            "question": "Câu 1: Chọn dạng đúng của động từ trong ngoặc:\n„Meine Schwester ___ am Abend oft einen Roman.“ (lesen)",
+            "question": "Câu 1: Chọn dạng đúng của động từ trong ngoặc:\n\"Meine Schwester ___ am Abend oft einen Roman.\" (lesen)",
             "options": ["lest", "lese", "liest", "liesst"],
             "correct_answer": "liest",
-            "explanation": "Chủ ngữ „Meine Schwester“ tương đương ngôi cô ấy (sie), động từ bất quy tắc „lesen“ đổi e → ie thành „liest“ -> Đáp án: liest.",
+            "explanation": "Chủ ngữ \"Meine Schwester\" tương đương ngôi cô ấy (sie), động từ bất quy tắc \"lesen\" đổi e → ie thành \"liest\"\n-> Đáp án: liest.",
             "exp_reward": 10,
             "extra_data": {
                 "audio_text": "Meine Schwester liest am Abend oft einen Roman.",
@@ -950,177 +949,209 @@ def seed_lesson_13():
         {
             "id": 2,
             "exercise_type": "trac_nghiem",
-            "question": "Câu 2: Chọn dạng đúng của động từ trong ngoặc:\n„Wann ___ ihr am Wochenende nach Berlin?“ (fahren)",
+            "question": "Câu 2: Chọn dạng đúng của động từ trong ngoặc:\n\"Wann ___ ihr am Wochenende nach Berlin?\" (fahren)",
             "options": ["fährst", "fahrt", "fährt", "fahren"],
             "correct_answer": "fahrt",
-            "explanation": "LƯU Ý: Ngôi ihr (các bạn) KHÔNG biến âm. Động từ „fahren“ bỏ đuôi -en thêm -t thành „fahrt“ -> Đáp án: fahrt.",
+            "explanation": "LƯU Ý: Ngôi ihr (các bạn) KHÔNG biến âm.\nĐộng từ \"fahren\" bỏ đuôi -en thêm -t thành \"fahrt\"\n-> Đáp án: fahrt.",
             "exp_reward": 10,
-            "extra_data": {"audio_text": "Wann fahrt ihr am Wochenende nach Berlin?", "translation": "Cuối tuần khi nào các bạn đi Berlin?"}
+            "extra_data": {
+                "audio_text": "Wann fahrt ihr am Wochenende nach Berlin?",
+                "translation": "Cuối tuần khi nào các bạn đi Berlin?"
+            }
         },
         {
             "id": 3,
             "exercise_type": "trac_nghiem",
-            "question": "Câu 3: Chọn từ để hỏi thích hợp:\n„___ kommst du, Maria?“ — „Aus Spanien.“",
+            "question": "Câu 3: Chọn từ để hỏi thích hợp:\n\"___ kommst du, Maria?\" — \"Aus Spanien.\"",
             "options": ["Wo", "Wie", "Was", "Woher"],
             "correct_answer": "Woher",
-            "explanation": "Câu trả lời dùng giới từ „Aus“ (từ) chỉ quê quán/xuất xứ, nên câu hỏi phải dùng từ để hỏi „Woher“ (từ đâu) -> Đáp án: Woher.",
+            "explanation": "Câu trả lời dùng giới từ \"Aus\" (từ) chỉ quê quán/xuất xứ, nên câu hỏi phải dùng từ để hỏi \"Woher\" (từ đâu).\n-> Đáp án: Woher.",
             "exp_reward": 10,
-            "extra_data": {"audio_text": "Woher kommst du, Maria? Aus Spanien.", "translation": "Maria, bạn đến từ đâu? — Từ Tây Ban Nha."}
+            "extra_data": {
+                "audio_text": "Woher kommst du, Maria? Aus Spanien.",
+                "translation": "Maria, bạn đến từ đâu?\nTừ Tây Ban Nha."
+            }
         },
         {
             "id": 4,
             "exercise_type": "trac_nghiem",
-            "question": "Câu 4: Chọn dạng đúng của động từ trong ngoặc:\n„Der Lehrer ___ heute sehr laut.“ (sprechen)",
+            "question": "Câu 4: Chọn dạng đúng của động từ trong ngoặc:\n\"Der Lehrer ___ heute sehr laut.\" (sprechen)",
             "options": ["sprechet", "sprech", "spricht", "spracht"],
             "correct_answer": "spricht",
-            "explanation": "Chủ ngữ „Der Lehrer“ (er - anh ấy), động từ bất quy tắc „sprechen“ đổi e → i thành „spricht“ -> Đáp án: spricht.",
+            "explanation": "Chủ ngữ \"Der Lehrer\" (er - anh ấy), động từ bất quy tắc \"sprechen\" đổi e → i thành \"spricht\"\n-> Đáp án: spricht.",
             "exp_reward": 10,
-            "extra_data": {"audio_text": "Der Lehrer spricht heute sehr laut.", "translation": "Hôm nay thầy giáo nói rất to."}
+            "extra_data": {
+                "audio_text": "Der Lehrer spricht heute sehr laut.",
+                "translation": "Hôm nay thầy giáo nói rất to."
+            }
         },
         {
             "id": 5,
             "exercise_type": "trac_nghiem",
-            "question": "Câu 5: Chọn dạng đúng của động từ trong ngoặc:\n„Was ___ Hannes und Julia dem kleinen Hund?“ (geben)",
+            "question": "Câu 5: Chọn dạng đúng của động từ trong ngoặc:\n\"Was ___ Hannes und Julia dem kleinen Hund?\" (geben)",
             "options": ["gibt", "gebt", "gibst", "geben"],
             "correct_answer": "geben",
-            "explanation": "Chủ ngữ là „Hannes und Julia“ (họ - sie số nhiều), động từ giữ nguyên thể „geben“ -> Đáp án: geben.",
+            "explanation": "Chủ ngữ là \"Hannes und Julia\" (họ - sie số nhiều), động từ giữ nguyên thể \"geben\"\n-> Đáp án: geben.",
             "exp_reward": 10,
-            "extra_data": {"audio_text": "Was geben Hannes und Julia dem kleinen Hund?", "translation": "Hannes và Julia cho chú chó nhỏ ăn gì?"}
+            "extra_data": {
+                "audio_text": "Was geben Hannes und Julia dem kleinen Hund?",
+                "translation": "Hannes và Julia cho chú chó nhỏ ăn gì?"
+            }
         },
         {
             "id": 6,
             "exercise_type": "trac_nghiem",
-            "question": "Câu 6: Chọn dạng đúng của động từ trong ngoặc:\n„Das Handy ___ in der Küche auf dem Tisch.“ (liegen)",
+            "question": "Câu 6: Chọn dạng đúng của động từ trong ngoặc:\n\"Das Handy ___ in der Küche auf dem Tisch.\" (liegen)",
             "options": ["liegst", "lege", "liegt", "liegen"],
             "correct_answer": "liegt",
-            "explanation": "Chủ ngữ „Das Handy“ (ngôi es) đi với động từ có quy tắc „liegen“ thêm đuôi -t thành „liegt“ -> Đáp án: liegt.",
+            "explanation": "Chủ ngữ \"Das Handy\" (ngôi es) đi với động từ có quy tắc \"liegen\" thêm đuôi -t thành \"liegt\"\n-> Đáp án: liegt.",
             "exp_reward": 10,
-            "extra_data": {"audio_text": "Das Handy liegt in der Küche auf dem Tisch.", "translation": "Chiếc điện thoại nằm ở trong bếp trên bàn."}
+            "extra_data": {
+                "audio_text": "Das Handy liegt in der Küche auf dem Tisch.",
+                "translation": "Chiếc điện thoại nằm ở trong bếp trên bàn."
+            }
         },
         {
             "id": 7,
             "exercise_type": "trac_nghiem",
-            "question": "Câu 7: Chọn dạng đúng của động từ trong ngoặc:\n„___ du heute Nacht bei mir?“ (schlafen)",
+            "question": "Câu 7: Chọn dạng đúng của động từ trong ngoặc:\n\"___ du heute Nacht bei mir?\" (schlafen)",
             "options": ["Schlafst", "Schläfst", "Schläft", "Schlafen"],
             "correct_answer": "Schläfst",
-            "explanation": "Chủ ngữ ngôi „du“, động từ „schlafen“ đổi a → ä và thêm đuôi -st thành „Schläfst“ -> Đáp án: Schläfst.",
+            "explanation": "Chủ ngữ ngôi \"du\", động từ \"schlafen\" đổi a → ä và thêm đuôi -st thành \"Schläfst\"\n-> Đáp án: Schläfst.",
             "exp_reward": 10,
-            "extra_data": {"audio_text": "Schläfst du heute Nacht bei mir?", "translation": "Tối nay bạn có ngủ ở chỗ tôi không?"}
+            "extra_data": {
+                "audio_text": "Schläfst du heute Nacht bei mir?",
+                "translation": "Tối nay bạn có ngủ ở chỗ tôi không?"
+            }
         },
         {
             "id": 8,
             "exercise_type": "trac_nghiem",
-            "question": "Câu 8: Chọn đại từ nhân xưng thích hợp:\n„Der Vater grillt am Sonntag Fleisch. ___ macht auch einen Salat.“",
+            "question": "Câu 8: Chọn đại từ nhân xưng thích hợp:\n\"Der Vater grillt am Sonntag Fleisch. ___ macht auch einen Salat.\"",
             "options": ["Er", "Sie", "Es", "Ihr"],
             "correct_answer": "Er",
-            "explanation": "Đại từ thay thế cho danh từ giống đực „Der Vater“ là „Er“ (anh ấy/ông ấy) -> Đáp án: Er.",
+            "explanation": "Đại từ thay thế cho danh từ giống đực \"Der Vater\" là \"Er\" (anh ấy/ông ấy).\n-> Đáp án: Er.",
             "exp_reward": 10,
             "extra_data": {
                 "audio_text": "Der Vater grillt am Sonntag Fleisch. Er macht auch einen Salat.",
-                "translation": "Người bố nướng thịt vào Chủ nhật. Ông ấy cũng làm một món salad."
+                "translation": "Người bố nướng thịt vào Chủ nhật.\nÔng ấy cũng làm một món salad."
             }
         },
         {
             "id": 9,
             "exercise_type": "trac_nghiem",
-            "question": "Câu 9: Chọn câu hỏi ĐÚNG cho câu trả lời sau:\n„Ich trinke Kaffee mit Zucker.“",
+            "question": "Câu 9: Chọn câu hỏi ĐÚNG cho câu trả lời sau:\n\"Ich trinke Kaffee mit Zucker.\"",
             "options": ["Wo wohnst du?", "Was trinken Sie?", "Wie heißt du?", "Wer trinkt Tee?"],
             "correct_answer": "Was trinken Sie?",
-            "explanation": "Câu trả lời nói về loại đồ uống („Kaffee“), nên câu hỏi phù hợp nhất là „Was trinken Sie?“ (Ngài uống gì?) -> Đáp án: Was trinken Sie?.",
+            "explanation": "Câu trả lời nói về loại đồ uống (\"Kaffee\"), nên câu hỏi phù hợp nhất là \"Was trinken Sie?\" (Ngài uống gì?).\n-> Đáp án: Was trinken Sie?",
             "exp_reward": 10,
-            "extra_data": {"audio_text": "Was trinken Sie? Ich trinke Kaffee mit Zucker.", "translation": "Ngài uống gì? Tôi uống cà phê với đường."}
+            "extra_data": {
+                "audio_text": "Was trinken Sie? Ich trinke Kaffee mit Zucker.",
+                "translation": "Ngài uống gì?\nTôi uống cà phê với đường."
+            }
         },
         {
             "id": 10,
             "exercise_type": "trac_nghiem",
-            "question": "Câu 10: Chọn dạng động từ tobe đúng cho câu giao tiếp:\n„Entschuldigung, ___ hier frei?“",
+            "question": "Câu 10: Chọn dạng động từ tobe đúng cho câu giao tiếp:\n\"Entschuldigung, ___ hier frei?\"",
             "options": ["ist", "sind", "bin", "bist"],
             "correct_answer": "ist",
-            "explanation": "Chủ ngữ giả định cho chỗ ngồi/nơi chốn là es, đi với động từ tobe „ist“ (Ist hier frei? = Chỗ này còn trống không?) -> Đáp án: ist.",
+            "explanation": "Chủ ngữ giả định cho chỗ ngồi/nơi chốn là es, đi với động từ tobe \"ist\" (Ist hier frei? = Chỗ này còn trống không?).\n-> Đáp án: ist.",
             "exp_reward": 10,
-            "extra_data": {"audio_text": "Entschuldigung, ist hier frei?", "translation": "Xin lỗi, chỗ này còn trống không?"}
+            "extra_data": {
+                "audio_text": "Entschuldigung, ist hier frei?",
+                "translation": "Xin lỗi, chỗ này còn trống không?"
+            }
         },
         {
             "id": 11,
             "exercise_type": "trac_nghiem",
-            "question": "Câu 11: Chọn dạng đúng của động từ trong ngoặc:\n„Wann ___ du deine Freunde im Café?“ (treffen)",
+            "question": "Câu 11: Chọn dạng đúng của động từ trong ngoặc:\n\"Wann ___ du deine Freunde im Café?\" (treffen)",
             "options": ["treffst", "triffst", "trifft", "treffen"],
             "correct_answer": "triffst",
-            "explanation": "Ngôi „du“, động từ bất quy tắc „treffen“ đổi e → i thành „triffst“ -> Đáp án: triffst.",
+            "explanation": "Ngôi \"du\", động từ bất quy tắc \"treffen\" đổi e → i thành \"triffst\"\n-> Đáp án: triffst.",
             "exp_reward": 10,
-            "extra_data": {"audio_text": "Wann triffst du deine Freunde im Café?", "translation": "Khi nào bạn gặp bạn bè ở quán cà phê?"}
+            "extra_data": {
+                "audio_text": "Wann triffst du deine Freunde im Café?",
+                "translation": "Khi nào bạn gặp bạn bè ở quán cà phê?"
+            }
         },
         {
             "id": 12,
             "exercise_type": "trac_nghiem",
-            "question": "Câu 12: Chọn dạng đúng của động từ trong ngoặc:\n„Wir ___ im Sommer gern Vanilleeis.“ (essen)",
+            "question": "Câu 12: Chọn dạng đúng của động từ trong ngoặc:\n\"Wir ___ im Sommer gern Vanilleeis.\" (essen)",
             "options": ["isst", "esse", "essen", "esst"],
             "correct_answer": "essen",
-            "explanation": "Chủ ngữ ngôi „wir“ (chúng tôi) luôn dùng động từ nguyên thể „essen“ -> Đáp án: essen.",
+            "explanation": "Chủ ngữ ngôi \"wir\" (chúng tôi) luôn dùng động từ nguyên thể \"essen\"\n-> Đáp án: essen.",
             "exp_reward": 10,
-            "extra_data": {"audio_text": "Wir essen im Sommer gern Vanilleeis.", "translation": "Mùa hè chúng tôi thích ăn kem vani."}
+            "extra_data": {
+                "audio_text": "Wir essen im Sommer gern Vanilleeis.",
+                "translation": "Mùa hè chúng tôi thích ăn kem vani."
+            }
         },
         {
             "id": 13,
             "exercise_type": "trac_nghiem",
-            "question": "Câu 13: Chọn dạng đúng của động từ trong ngoặc:\n„Julia und Lara ___ nach Italien.“ (reisen)",
+            "question": "Câu 13: Chọn dạng đúng của động từ trong ngoặc:\n\"Julia und Lara ___ nach Italien.\" (reisen)",
             "options": ["reist", "reisen", "reisst", "reise"],
             "correct_answer": "reisen",
-            "explanation": "Chủ ngữ số nhiều „Julia und Lara“ (họ - sie số nhiều), động từ giữ nguyên thể „reisen“ -> Đáp án: reisen.",
+            "explanation": "Chủ ngữ số nhiều \"Julia und Lara\" (họ - sie số nhiều), động từ giữ nguyên thể \"reisen\"\n-> Đáp án: reisen.",
             "exp_reward": 10,
-            "extra_data": {"audio_text": "Julia und Lara reisen nach Italien.", "translation": "Julia và Lara đi du lịch đến Ý."}
+            "extra_data": {
+                "audio_text": "Julia und Lara reisen nach Italien.",
+                "translation": "Julia và Lara đi du lịch đến Ý."
+            }
         },
         {
             "id": 14,
             "exercise_type": "trac_nghiem",
-            "question": "Câu 14: Chọn từ để hỏi thích hợp:\n„___ wohnen Sie jetzt?“ — „In München.“",
+            "question": "Câu 14: Chọn từ để hỏi thích hợp:\n\"___ wohnen Sie jetzt?\" — \"In München.\"",
             "options": ["Woher", "Was", "Wie", "Wo"],
             "correct_answer": "Wo",
-            "explanation": "Câu trả lời dùng giới từ „In“ chỉ địa điểm cư trú, câu hỏi về nơi ở dùng „Wo“ (ở đâu) -> Đáp án: Wo.",
+            "explanation": "Câu trả lời dùng giới từ \"In\" chỉ địa điểm cư trú, câu hỏi về nơi ở dùng \"Wo\" (ở đâu).\n-> Đáp án: Wo.",
             "exp_reward": 10,
-            "extra_data": {"audio_text": "Wo wohnen Sie jetzt? In München.", "translation": "Hiện tại ngài sống ở đâu? — Ở München."}
+            "extra_data": {
+                "audio_text": "Wo wohnen Sie jetzt? In München.",
+                "translation": "Hiện tại ngài sống ở đâu?\nỞ München."
+            }
         },
         {
             "id": 15,
             "exercise_type": "trac_nghiem",
-            "question": "Câu 15: Chọn dạng đúng của động từ trong ngoặc:\n„Die Touristen ___ das alte Rathaus.“ (besuchen)",
+            "question": "Câu 15: Chọn dạng đúng của động từ trong ngoặc:\n\"Die Touristen ___ das alte Rathaus.\" (besuchen)",
             "options": ["besucht", "besuche", "besuchen", "besuchst"],
             "correct_answer": "besuchen",
-            "explanation": "Chủ ngữ „Die Touristen“ (số nhiều - họ) đi với động từ nguyên thể „besuchen“ -> Đáp án: besuchen.",
+            "explanation": "Chủ ngữ \"Die Touristen\" (số nhiều - họ) đi với động từ nguyên thể \"besuchen\"\n-> Đáp án: besuchen.",
             "exp_reward": 10,
-            "extra_data": {"audio_text": "Die Touristen besuchen das alte Rathaus.", "translation": "Khách du lịch tham quan tòa thị chính cũ."}
+            "extra_data": {
+                "audio_text": "Die Touristen besuchen das alte Rathaus.",
+                "translation": "Khách du lịch tham quan tòa thị chính cũ."
+            }
         },
-
-        # --- 3.2. ĐIỀN KHUYẾT (10 CÂU) ---
         {
             "id": 16,
             "exercise_type": "dien_khuyet",
-            "question": "Câu 16: Điền từ để hỏi thích hợp vào chỗ trống:\n„___ heißt du?“ — „Ich heiße David.“",
+            "question": "Câu 16: Điền từ để hỏi thích hợp vào chỗ trống:\n\"___ heißt du?\" — \"Ich heiße David.\"",
             "options": null,
             "correct_answer": "Wie",
-            "explanation": "Hỏi tên trong tiếng Đức luôn dùng từ để hỏi „Wie“ (Wie heißt du?) -> Đáp án: Wie.",
+            "explanation": "Hỏi tên trong tiếng Đức luôn dùng từ để hỏi \"Wie\" (Wie heißt du?).\n-> Đáp án: Wie.",
             "exp_reward": 10,
             "extra_data": {
-                "accepted_answers": [
-                    "Wie",
-                    "wie"
-                ],
+                "accepted_answers": ["Wie", "wie"],
                 "audio_text": "Wie heißt du? Ich heiße David.",
-                "translation": "Bạn tên là gì? — Tôi tên là David."
+                "translation": "Bạn tên là gì?\nTôi tên là David."
             }
         },
         {
             "id": 17,
             "exercise_type": "dien_khuyet",
-            "question": "Câu 17: Điền dạng đúng của động từ trong ngoặc vào chỗ trống:\n„Wir ___ den Käse im Supermarkt.“ (kaufen)",
+            "question": "Câu 17: Điền dạng đúng của động từ trong ngoặc vào chỗ trống:\n\"Wir ___ den Käse im Supermarkt.\" (kaufen)",
             "options": null,
             "correct_answer": "kaufen",
-            "explanation": "Chủ ngữ „wir“ đi với động từ nguyên thể „kaufen“ -> Đáp án: kaufen.",
+            "explanation": "Chủ ngữ \"wir\" đi với động từ nguyên thể \"kaufen\"\n-> Đáp án: kaufen.",
             "exp_reward": 10,
             "extra_data": {
-                "accepted_answers": [
-                    "kaufen"
-                ],
+                "accepted_answers": ["kaufen"],
                 "audio_text": "Wir kaufen den Käse im Supermarkt.",
                 "translation": "Chúng tôi mua phô mai ở siêu thị."
             }
@@ -1128,15 +1159,13 @@ def seed_lesson_13():
         {
             "id": 18,
             "exercise_type": "dien_khuyet",
-            "question": "Câu 18: Điền dạng đúng của động từ trong ngoặc vào chỗ trống:\n„Mein Onkel ___ gern schwarzen Tee.“ (trinken)",
+            "question": "Câu 18: Điền dạng đúng của động từ trong ngoặc vào chỗ trống:\n\"Mein Onkel ___ gern schwarzen Tee.\" (trinken)",
             "options": null,
             "correct_answer": "trinkt",
-            "explanation": "Chủ ngữ „Mein Onkel“ (er - anh ấy), động từ có quy tắc „trinken“ thêm đuôi -t thành „trinkt“ -> Đáp án: trinkt.",
+            "explanation": "Chủ ngữ \"Mein Onkel\" (er - anh ấy), động từ có quy tắc \"trinken\" thêm đuôi -t thành \"trinkt\"\n-> Đáp án: trinkt.",
             "exp_reward": 10,
             "extra_data": {
-                "accepted_answers": [
-                    "trinkt"
-                ],
+                "accepted_answers": ["trinkt"],
                 "audio_text": "Mein Onkel trinkt gern schwarzen Tee.",
                 "translation": "Chú của tôi thích uống trà đen."
             }
@@ -1144,25 +1173,27 @@ def seed_lesson_13():
         {
             "id": 19,
             "exercise_type": "dien_khuyet",
-            "question": "Câu 19: Điền dạng đúng của động từ trong ngoặc vào chỗ trống:\n„Ich ___ meine Hausaufgaben.“ (machen)",
+            "question": "Câu 19: Điền dạng đúng của động từ trong ngoặc vào chỗ trống:\n\"Ich ___ meine Hausaufgaben.\" (machen)",
             "options": null,
             "correct_answer": "mache",
-            "explanation": "Chủ ngữ „ich“ đi với động từ có quy tắc thêm đuôi -e thành „mache“ -> Đáp án: mache.",
+            "explanation": "Chủ ngữ \"ich\" đi với động từ có quy tắc thêm đuôi -e thành \"mache\"\n-> Đáp án: mache.",
             "exp_reward": 10,
-            "extra_data": {"accepted_answers": ["mache"], "audio_text": "Ich mache meine Hausaufgaben.", "translation": "Tôi làm bài tập về nhà của mình."}
+            "extra_data": {
+                "accepted_answers": ["mache"],
+                "audio_text": "Ich mache meine Hausaufgaben.",
+                "translation": "Tôi làm bài tập về nhà của mình."
+            }
         },
         {
             "id": 20,
             "exercise_type": "dien_khuyet",
-            "question": "Câu 20: Điền dạng đúng của động từ trong ngoặc vào chỗ trống:\n„Die Kinder ___ Fußball auf dem Hof.“ (spielen)",
+            "question": "Câu 20: Điền dạng đúng của động từ trong ngoặc vào chỗ trống:\n\"Die Kinder ___ Fußball auf dem Hof.\" (spielen)",
             "options": null,
             "correct_answer": "spielen",
-            "explanation": "Chủ ngữ số nhiều „Die Kinder“ (bọn trẻ - sie Plural), động từ giữ nguyên thể „spielen“ -> Đáp án: spielen.",
+            "explanation": "Chủ ngữ số nhiều \"Die Kinder\" (bọn trẻ - sie Plural), động từ giữ nguyên thể \"spielen\"\n-> Đáp án: spielen.",
             "exp_reward": 10,
             "extra_data": {
-                "accepted_answers": [
-                    "spielen"
-                ],
+                "accepted_answers": ["spielen"],
                 "audio_text": "Die Kinder spielen Fußball auf dem Hof.",
                 "translation": "Bọn trẻ đang chơi bóng đá ngoài sân."
             }
@@ -1170,16 +1201,13 @@ def seed_lesson_13():
         {
             "id": 21,
             "exercise_type": "dien_khuyet",
-            "question": "Câu 21: Điền động từ khuyết thiếu thể hiện mong muốn lịch sự:\n„Herr Müller, was ___ Sie trinken?“ (muốn)",
+            "question": "Câu 21: Điền động từ khuyết thiếu thể hiện mong muốn lịch sự:\n\"Herr Müller, was ___ Sie trinken?\" (muốn)",
             "options": null,
             "correct_answer": "möchten",
-            "explanation": "Động từ khuyết thiếu chỉ sự mong muốn lịch sự đi với ngôi Ngài (Sie) là „möchten“ -> Đáp án: möchten.",
+            "explanation": "Động từ khuyết thiếu chỉ sự mong muốn lịch sự đi với ngôi Ngài (Sie) là \"möchten\"\n-> Đáp án: möchten.",
             "exp_reward": 10,
             "extra_data": {
-                "accepted_answers": [
-                    "möchten",
-                    "moechten"
-                ],
+                "accepted_answers": ["möchten", "moechten"],
                 "audio_text": "Herr Müller, was möchten Sie trinken?",
                 "translation": "Ông Müller, ngài muốn uống gì ạ?"
             }
@@ -1187,26 +1215,27 @@ def seed_lesson_13():
         {
             "id": 22,
             "exercise_type": "dien_khuyet",
-            "question": "Câu 22: Điền giới từ chỉ xuất xứ vào chỗ trống:\n„Ich komme ___ Frankreich.“ (từ)",
+            "question": "Câu 22: Điền giới từ chỉ xuất xứ vào chỗ trống:\n\"Ich komme ___ Frankreich.\" (từ)",
             "options": null,
             "correct_answer": "aus",
-            "explanation": "Giới từ chỉ nơi xuất xứ đi với động từ kommen là „aus“ -> Đáp án: aus.",
+            "explanation": "Giới từ chỉ nơi xuất xứ đi với động từ kommen là \"aus\"\n-> Đáp án: aus.",
             "exp_reward": 10,
-            "extra_data": {"accepted_answers": ["aus"], "audio_text": "Ich komme aus Frankreich.", "translation": "Tôi đến từ nước Pháp."}
+            "extra_data": {
+                "accepted_answers": ["aus"],
+                "audio_text": "Ich komme aus Frankreich.",
+                "translation": "Tôi đến từ nước Pháp."
+            }
         },
         {
             "id": 23,
             "exercise_type": "dien_khuyet",
-            "question": "Câu 23: Điền dạng đúng của động từ trong ngoặc vào chỗ trống:\n„___ ihr einen Brief an die Großmutter?“ (schreiben)",
+            "question": "Câu 23: Điền dạng đúng của động từ trong ngoặc vào chỗ trống:\n\"___ ihr einen Brief an die Großmutter?\" (schreiben)",
             "options": null,
             "correct_answer": "Schreibt",
-            "explanation": "Ngôi „ihr“ (các bạn), động từ „schreiben“ thêm đuôi -t và đứng đầu câu hỏi đảo là „Schreibt“ -> Đáp án: Schreibt.",
+            "explanation": "Ngôi \"ihr\" (các bạn), động từ \"schreiben\" thêm đuôi -t và đứng đầu câu hỏi đảo là \"Schreibt\"\n-> Đáp án: Schreibt.",
             "exp_reward": 10,
             "extra_data": {
-                "accepted_answers": [
-                    "Schreibt",
-                    "schreibt"
-                ],
+                "accepted_answers": ["Schreibt", "schreibt"],
                 "audio_text": "Schreibt ihr einen Brief an die Großmutter?",
                 "translation": "Các bạn đang viết một bức thư gửi cho bà phải không?"
             }
@@ -1214,16 +1243,13 @@ def seed_lesson_13():
         {
             "id": 24,
             "exercise_type": "dien_khuyet",
-            "question": "Câu 24: Điền dạng đúng của động từ trong ngoặc vào chỗ trống:\n„Karin ___ sehr gern klassische Musik.“ (hören)",
+            "question": "Câu 24: Điền dạng đúng của động từ trong ngoặc vào chỗ trống:\n\"Karin ___ sehr gern klassische Musik.\" (hören)",
             "options": null,
             "correct_answer": "hört",
-            "explanation": "Chủ ngữ Karin (ngôi sie số ít), động từ „hören“ thêm đuôi -t thành „hört“ -> Đáp án: hört.",
+            "explanation": "Chủ ngữ Karin (ngôi sie số ít), động từ \"hören\" thêm đuôi -t thành \"hört\"\n-> Đáp án: hört.",
             "exp_reward": 10,
             "extra_data": {
-                "accepted_answers": [
-                    "hört",
-                    "hoert"
-                ],
+                "accepted_answers": ["hört", "hoert"],
                 "audio_text": "Karin hört sehr gern klassische Musik.",
                 "translation": "Karin rất thích nghe nhạc cổ điển."
             }
@@ -1231,34 +1257,27 @@ def seed_lesson_13():
         {
             "id": 25,
             "exercise_type": "dien_khuyet",
-            "question": "Câu 25: Điền từ để hỏi thích hợp vào chỗ trống:\n„___ singst du so gern?“ — „Weil ich Musik liebe.“",
+            "question": "Câu 25: Điền từ để hỏi thích hợp vào chỗ trống:\n\"___ singst du so gern?\" — \"Weil ich Musik liebe.\"",
             "options": null,
             "correct_answer": "Warum",
-            "explanation": "Câu trả lời bắt đầu bằng „Weil“ (bởi vì), câu hỏi nguyên nhân phải dùng „Warum“ (tại sao) -> Đáp án: Warum.",
+            "explanation": "Câu trả lời bắt đầu bằng \"Weil\" (bởi vì), câu hỏi nguyên nhân phải dùng \"Warum\" (tại sao).\n-> Đáp án: Warum.",
             "exp_reward": 10,
             "extra_data": {
-                "accepted_answers": [
-                    "Warum",
-                    "warum"
-                ],
+                "accepted_answers": ["Warum", "warum"],
                 "audio_text": "Warum singst du so gern? Weil ich Musik liebe.",
-                "translation": "Tại sao bạn thích hát thế? — Bởi vì tôi yêu âm nhạc."
+                "translation": "Tại sao bạn thích hát thế?\nBởi vì tôi yêu âm nhạc."
             }
         },
-
-        # --- 3.3. CHIA ĐỘNG TỪ BẤT QUY TẮC (10 CÂU) ---
         {
             "id": 26,
             "exercise_type": "dien_chia_dong_tu",
-            "question": "Câu 26: Chia động từ bất quy tắc trong ngoặc theo đúng chủ ngữ:\n„Das Mädchen ___ im Wohnzimmer ein Buch.“ (lesen)",
+            "question": "Câu 26: Chia động từ bất quy tắc trong ngoặc theo đúng chủ ngữ:\n\"Das Mädchen ___ im Wohnzimmer ein Buch.\" (lesen)",
             "options": null,
             "correct_answer": "liest",
-            "explanation": "Chủ ngữ „Das Mädchen“ (ngôi es), động từ bất quy tắc „lesen“ đổi e → ie thành „liest“ -> Đáp án: liest.",
+            "explanation": "Chủ ngữ \"Das Mädchen\" (ngôi es), động từ bất quy tắc \"lesen\" đổi e → ie thành \"liest\"\n-> Đáp án: liest.",
             "exp_reward": 10,
             "extra_data": {
-                "accepted_answers": [
-                    "liest"
-                ],
+                "accepted_answers": ["liest"],
                 "audio_text": "Das Mädchen liest im Wohnzimmer ein Buch.",
                 "translation": "Cô bé đang đọc một quyển sách trong phòng khách."
             }
@@ -1266,16 +1285,13 @@ def seed_lesson_13():
         {
             "id": 27,
             "exercise_type": "dien_chia_dong_tu",
-            "question": "Câu 27: Chia động từ bất quy tắc trong ngoặc theo đúng chủ ngữ:\n„Er ___ am Sonntag nach Hamburg.“ (fahren)",
+            "question": "Câu 27: Chia động từ bất quy tắc trong ngoặc theo đúng chủ ngữ:\n\"Er ___ am Sonntag nach Hamburg.\" (fahren)",
             "options": null,
             "correct_answer": "fährt",
-            "explanation": "Ngôi „er“, động từ bất quy tắc „fahren“ đổi a → ä thành „fährt“ -> Đáp án: fährt.",
+            "explanation": "Ngôi \"er\", động từ bất quy tắc \"fahren\" đổi a → ä thành \"fährt\"\n-> Đáp án: fährt.",
             "exp_reward": 10,
             "extra_data": {
-                "accepted_answers": [
-                    "fährt",
-                    "faehrt"
-                ],
+                "accepted_answers": ["fährt", "faehrt"],
                 "audio_text": "Er fährt am Sonntag nach Hamburg.",
                 "translation": "Anh ấy đi Hamburg vào Chủ nhật."
             }
@@ -1283,15 +1299,13 @@ def seed_lesson_13():
         {
             "id": 28,
             "exercise_type": "dien_chia_dong_tu",
-            "question": "Câu 28: Chia động từ bất quy tắc trong ngoặc theo đúng chủ ngữ:\n„Was ___ du heute zum Frühstück?“ (essen)",
+            "question": "Câu 28: Chia động từ bất quy tắc trong ngoặc theo đúng chủ ngữ:\n\"Was ___ du heute zum Frühstück?\" (essen)",
             "options": null,
             "correct_answer": "isst",
-            "explanation": "Ngôi „du“, động từ bất quy tắc „essen“ đổi e → i thành „isst“ -> Đáp án: isst.",
+            "explanation": "Ngôi \"du\", động từ bất quy tắc \"essen\" đổi e → i thành \"isst\"\n-> Đáp án: isst.",
             "exp_reward": 10,
             "extra_data": {
-                "accepted_answers": [
-                    "isst"
-                ],
+                "accepted_answers": ["isst"],
                 "audio_text": "Was isst du heute zum Frühstück?",
                 "translation": "Hôm nay bạn ăn gì cho bữa sáng?"
             }
@@ -1299,15 +1313,13 @@ def seed_lesson_13():
         {
             "id": 29,
             "exercise_type": "dien_chia_dong_tu",
-            "question": "Câu 29: Chia động từ bất quy tắc trong ngoặc theo đúng chủ ngữ:\n„Der Tourist ___ fließend Deutsch.“ (sprechen)",
+            "question": "Câu 29: Chia động từ bất quy tắc trong ngoặc theo đúng chủ ngữ:\n\"Der Tourist ___ fließend Deutsch.\" (sprechen)",
             "options": null,
             "correct_answer": "spricht",
-            "explanation": "Chủ ngữ „Der Tourist“ (ngôi er), động từ „sprechen“ đổi e → i thành „spricht“ -> Đáp án: spricht.",
+            "explanation": "Chủ ngữ \"Der Tourist\" (ngôi er), động từ \"sprechen\" đổi e → i thành \"spricht\"\n-> Đáp án: spricht.",
             "exp_reward": 10,
             "extra_data": {
-                "accepted_answers": [
-                    "spricht"
-                ],
+                "accepted_answers": ["spricht"],
                 "audio_text": "Der Tourist spricht fließend Deutsch.",
                 "translation": "Người khách du lịch nói tiếng Đức trôi chảy."
             }
@@ -1315,25 +1327,27 @@ def seed_lesson_13():
         {
             "id": 30,
             "exercise_type": "dien_chia_dong_tu",
-            "question": "Câu 30: Chia động từ mệnh lệnh ngôi du của động từ trong ngoặc:\n„Bitte ___ mir den Zucker!“ (geben - ngôi du)",
+            "question": "Câu 30: Chia động từ mệnh lệnh ngôi du của động từ trong ngoặc:\n\"Bitte ___ mir den Zucker!\" (geben - ngôi du)",
             "options": null,
             "correct_answer": "gib",
-            "explanation": "Mệnh lệnh ngôi du của động từ bất quy tắc „geben“ (e → i) lược bỏ đuôi -st thành „gib“ -> Đáp án: gib.",
+            "explanation": "Mệnh lệnh ngôi du của động từ bất quy tắc \"geben\" (e → i) lược bỏ đuôi -st thành \"gib\"\n-> Đáp án: gib.",
             "exp_reward": 10,
-            "extra_data": {"accepted_answers": ["gib", "Gib"], "audio_text": "Bitte gib mir den Zucker!", "translation": "Làm ơn đưa cho tôi lọ đường!"}
+            "extra_data": {
+                "accepted_answers": ["gib", "Gib"],
+                "audio_text": "Bitte gib mir den Zucker!",
+                "translation": "Làm ơn đưa cho tôi lọ đường!"
+            }
         },
         {
             "id": 31,
             "exercise_type": "dien_chia_dong_tu",
-            "question": "Câu 31: Chia động từ bất quy tắc trong ngoặc theo đúng chủ ngữ:\n„Wann ___ er seine neue Freundin?“ (treffen)",
+            "question": "Câu 31: Chia động từ bất quy tắc trong ngoặc theo đúng chủ ngữ:\n\"Wann ___ er seine neue Freundin?\" (treffen)",
             "options": null,
             "correct_answer": "trifft",
-            "explanation": "Ngôi „er“, động từ bất quy tắc „treffen“ đổi e → i thành „trifft“ -> Đáp án: trifft.",
+            "explanation": "Ngôi \"er\", động từ bất quy tắc \"treffen\" đổi e → i thành \"trifft\"\n-> Đáp án: trifft.",
             "exp_reward": 10,
             "extra_data": {
-                "accepted_answers": [
-                    "trifft"
-                ],
+                "accepted_answers": ["trifft"],
                 "audio_text": "Wann trifft er seine neue Freundin?",
                 "translation": "Khi nào anh ấy gặp người bạn gái mới của mình?"
             }
@@ -1341,16 +1355,13 @@ def seed_lesson_13():
         {
             "id": 32,
             "exercise_type": "dien_chia_dong_tu",
-            "question": "Câu 32: Chia động từ bất quy tắc trong ngoặc theo đúng chủ ngữ:\n„Der Hund ___ gemütlich auf dem Sofa.“ (schlafen)",
+            "question": "Câu 32: Chia động từ bất quy tắc trong ngoặc theo đúng chủ ngữ:\n\"Der Hund ___ gemütlich auf dem Sofa.\" (schlafen)",
             "options": null,
             "correct_answer": "schläft",
-            "explanation": "Chủ ngữ „Der Hund“ (ngôi er), động từ „schlafen“ đổi a → ä thành „schläft“ -> Đáp án: schläft.",
+            "explanation": "Chủ ngữ \"Der Hund\" (ngôi er), động từ \"schlafen\" đổi a → ä thành \"schläft\"\n-> Đáp án: schläft.",
             "exp_reward": 10,
             "extra_data": {
-                "accepted_answers": [
-                    "schläft",
-                    "schlaeft"
-                ],
+                "accepted_answers": ["schläft", "schlaeft"],
                 "audio_text": "Der Hund schläft gemütlich auf dem Sofa.",
                 "translation": "Chú chó ngủ thoải mái trên ghế sofa."
             }
@@ -1358,15 +1369,13 @@ def seed_lesson_13():
         {
             "id": 33,
             "exercise_type": "dien_chia_dong_tu",
-            "question": "Câu 33: Chia động từ trong ngoặc theo đúng chủ ngữ:\n„Ihr ___ am Wochenende zu lange!“ (schlafen)",
+            "question": "Câu 33: Chia động từ trong ngoặc theo đúng chủ ngữ:\n\"Ihr ___ am Wochenende zu lange!\" (schlafen)",
             "options": null,
             "correct_answer": "schlaft",
-            "explanation": "LƯU Ý QUAN TRỌNG: Ngôi ihr (các bạn) KHÔNG BAO GIỜ biến âm. „schlafen“ chỉ thêm đuôi -t thành „schlaft“ -> Đáp án: schlaft.",
+            "explanation": "LƯU Ý QUAN TRỌNG: Ngôi ihr (các bạn) KHÔNG BAO GIỜ biến âm.\n\"schlafen\" chỉ thêm đuôi -t thành \"schlaft\"\n-> Đáp án: schlaft.",
             "exp_reward": 10,
             "extra_data": {
-                "accepted_answers": [
-                    "schlaft"
-                ],
+                "accepted_answers": ["schlaft"],
                 "audio_text": "Ihr schlaft am Wochenende zu lange!",
                 "translation": "Cuối tuần các bạn ngủ quá lâu đấy!"
             }
@@ -1374,16 +1383,13 @@ def seed_lesson_13():
         {
             "id": 34,
             "exercise_type": "dien_chia_dong_tu",
-            "question": "Câu 34: Chia động từ bất quy tắc trong ngoặc theo đúng chủ ngữ:\n„___ du gern Romane oder Zeitungen?“ (lesen)",
+            "question": "Câu 34: Chia động từ bất quy tắc trong ngoặc theo đúng chủ ngữ:\n\"___ du gern Romane oder Zeitungen?\" (lesen)",
             "options": null,
             "correct_answer": "Liest",
-            "explanation": "Ngôi „du“, động từ bất quy tắc „lesen“ đổi e → ie đứng đầu câu hỏi là „Liest“ -> Đáp án: Liest.",
+            "explanation": "Ngôi \"du\", động từ bất quy tắc \"lesen\" đổi e → ie đứng đầu câu hỏi là \"Liest\"\n-> Đáp án: Liest.",
             "exp_reward": 10,
             "extra_data": {
-                "accepted_answers": [
-                    "Liest",
-                    "liest"
-                ],
+                "accepted_answers": ["Liest", "liest"],
                 "audio_text": "Liest du gern Romane oder Zeitungen?",
                 "translation": "Bạn thích đọc tiểu thuyết hay báo?"
             }
@@ -1391,58 +1397,55 @@ def seed_lesson_13():
         {
             "id": 35,
             "exercise_type": "dien_chia_dong_tu",
-            "question": "Câu 35: Chia động từ bất quy tắc trong ngoặc theo đúng chủ ngữ:\n„Die Chefin ___ gerade mit einem Kunden.“ (sprechen)",
+            "question": "Câu 35: Chia động từ bất quy tắc trong ngoặc theo đúng chủ ngữ:\n\"Die Chefin ___ gerade mit einem Kunden.\" (sprechen)",
             "options": null,
             "correct_answer": "spricht",
-            "explanation": "Chủ ngữ „Die Chefin“ (ngôi sie số ít), động từ „sprechen“ đổi e → i thành „spricht“ -> Đáp án: spricht.",
+            "explanation": "Chủ ngữ \"Die Chefin\" (ngôi sie số ít), động từ \"sprechen\" đổi e → i thành \"spricht\"\n-> Đáp án: spricht.",
             "exp_reward": 10,
             "extra_data": {
-                "accepted_answers": [
-                    "spricht"
-                ],
+                "accepted_answers": ["spricht"],
                 "audio_text": "Die Chefin spricht gerade mit einem Kunden.",
                 "translation": "Nữ sếp đang nói chuyện với một khách hàng."
             }
         },
-
-        # --- 3.4. DỊCH TỪ VIỆT → ĐỨC (5 CÂU) ---
         {
             "id": 36,
             "exercise_type": "dich_nghia_vd",
-            "question": "Câu 36: Dịch từ sau sang tiếng Đức (kèm mạo từ xác định):\n„cà phê“",
+            "question": "Câu 36: Dịch từ sau sang tiếng Đức (kèm mạo từ xác định):\n\"cà phê\"",
             "options": null,
             "correct_answer": "der Kaffee",
-            "explanation": "Cà phê trong tiếng Đức là danh từ giống đực: „der Kaffee“ -> Đáp án: der Kaffee.",
+            "explanation": "Cà phê trong tiếng Đức là danh từ giống đực: \"der Kaffee\"\n-> Đáp án: der Kaffee.",
             "exp_reward": 10,
-            "extra_data": {"accepted_answers": ["der Kaffee", "Kaffee", "der kaffee", "kaffee"], "audio_text": "der Kaffee", "translation": "cà phê"}
+            "extra_data": {
+                "accepted_answers": ["der Kaffee", "Kaffee", "der kaffee", "kaffee"],
+                "audio_text": "der Kaffee",
+                "translation": "cà phê"
+            }
         },
         {
             "id": 37,
             "exercise_type": "dich_nghia_vd",
-            "question": "Câu 37: Dịch từ sau sang tiếng Đức (kèm mạo từ xác định):\n„trà“",
+            "question": "Câu 37: Dịch từ sau sang tiếng Đức (kèm mạo từ xác định):\n\"trà\"",
             "options": null,
             "correct_answer": "der Tee",
-            "explanation": "Trà trong tiếng Đức là danh từ giống đực: „der Tee“ -> Đáp án: der Tee.",
+            "explanation": "Trà trong tiếng Đức là danh từ giống đực: \"der Tee\"\n-> Đáp án: der Tee.",
             "exp_reward": 10,
-            "extra_data": {"accepted_answers": ["der Tee", "Tee", "der tee", "tee"], "audio_text": "der Tee", "translation": "trà"}
+            "extra_data": {
+                "accepted_answers": ["der Tee", "Tee", "der tee", "tee"],
+                "audio_text": "der Tee",
+                "translation": "trà"
+            }
         },
         {
             "id": 38,
             "exercise_type": "dich_nghia_vd",
-            "question": "Câu 38: Dịch từ sau sang tiếng Đức (kèm mạo từ xác định):\n„rau củ“",
+            "question": "Câu 38: Dịch từ sau sang tiếng Đức (kèm mạo từ xác định):\n\"rau củ\"",
             "options": null,
             "correct_answer": "das Gemüse",
-            "explanation": "Rau củ trong tiếng Đức là danh từ giống trung: „das Gemüse“ -> Đáp án: das Gemüse.",
+            "explanation": "Rau củ trong tiếng Đức là danh từ giống trung: \"das Gemüse\"\n-> Đáp án: das Gemüse.",
             "exp_reward": 10,
             "extra_data": {
-                "accepted_answers": [
-                    "das Gemüse",
-                    "Gemüse",
-                    "das Gemuese",
-                    "Gemuese",
-                    "das gemüse",
-                    "gemüse"
-                ],
+                "accepted_answers": ["das Gemüse", "Gemüse", "das Gemuese", "Gemuese", "das gemüse", "gemüse"],
                 "audio_text": "das Gemüse",
                 "translation": "rau củ"
             }
@@ -1450,41 +1453,38 @@ def seed_lesson_13():
         {
             "id": 39,
             "exercise_type": "dich_nghia_vd",
-            "question": "Câu 39: Dịch từ sau sang tiếng Đức (kèm mạo từ xác định):\n„bức thư“",
+            "question": "Câu 39: Dịch từ sau sang tiếng Đức (kèm mạo từ xác định):\n\"bức thư\"",
             "options": null,
             "correct_answer": "der Brief",
-            "explanation": "Bức thư trong tiếng Đức là danh từ giống đực: „der Brief“ -> Đáp án: der Brief.",
+            "explanation": "Bức thư trong tiếng Đức là danh từ giống đực: \"der Brief\"\n-> Đáp án: der Brief.",
             "exp_reward": 10,
-            "extra_data": {"accepted_answers": ["der Brief", "Brief", "der brief", "brief"], "audio_text": "der Brief", "translation": "bức thư"}
+            "extra_data": {
+                "accepted_answers": ["der Brief", "Brief", "der brief", "brief"],
+                "audio_text": "der Brief",
+                "translation": "bức thư"
+            }
         },
         {
             "id": 40,
             "exercise_type": "dich_nghia_vd",
-            "question": "Câu 40: Dịch từ sau sang tiếng Đức (kèm mạo từ xác định):\n„tòa thị chính“",
+            "question": "Câu 40: Dịch từ sau sang tiếng Đức (kèm mạo từ xác định):\n\"tòa thị chính\"",
             "options": null,
             "correct_answer": "das Rathaus",
-            "explanation": "Tòa thị chính là danh từ ghép giống trung (der Rat + das Haus) -> „das Rathaus“ -> Đáp án: das Rathaus.",
+            "explanation": "Tòa thị chính là danh từ ghép giống trung (der Rat + das Haus).\n-> \"das Rathaus\"\n-> Đáp án: das Rathaus.",
             "exp_reward": 10,
             "extra_data": {
-                "accepted_answers": [
-                    "das Rathaus",
-                    "Rathaus",
-                    "das rathaus",
-                    "rathaus"
-                ],
+                "accepted_answers": ["das Rathaus", "Rathaus", "das rathaus", "rathaus"],
                 "audio_text": "das Rathaus",
                 "translation": "tòa thị chính"
             }
         },
-
-        # --- 3.5. DỊCH TỪ / CÂU NGẮN ĐỨC → VIỆT (5 CÂU) ---
         {
             "id": 41,
             "exercise_type": "dich_nghia_dv",
-            "question": "Câu 41: Dịch câu giao tiếp sau sang tiếng Việt:\n„Entschuldigung, ist hier frei?“",
+            "question": "Câu 41: Dịch câu giao tiếp sau sang tiếng Việt:\n\"Entschuldigung, ist hier frei?\"",
             "options": null,
             "correct_answer": "Xin lỗi, chỗ này còn trống không?",
-            "explanation": "Câu hỏi lịch sự phổ biến khi muốn ngồi vào bàn còn trống ở quán: „Xin lỗi, chỗ này còn trống không?“ -> Đáp án: Xin lỗi, chỗ này còn trống không?.",
+            "explanation": "Câu hỏi lịch sự phổ biến khi muốn ngồi vào bàn còn trống ở quán: \"Xin lỗi, chỗ này còn trống không?\"\n-> Đáp án: Xin lỗi, chỗ này còn trống không?",
             "exp_reward": 10,
             "extra_data": {
                 "accepted_answers": [
@@ -1502,10 +1502,10 @@ def seed_lesson_13():
         {
             "id": 42,
             "exercise_type": "dich_nghia_dv",
-            "question": "Câu 42: Dịch câu đáp lại sau sang tiếng Việt:\n„Ja klar, bitte.“",
+            "question": "Câu 42: Dịch câu đáp lại sau sang tiếng Việt:\n\"Ja klar, bitte.\"",
             "options": null,
             "correct_answer": "Vâng tất nhiên, xin mời.",
-            "explanation": "Câu trả lời đồng ý nhiệt tình cho người khác ngồi cùng bàn: „Vâng tất nhiên, xin mời.“ -> Đáp án: Vâng tất nhiên, xin mời..",
+            "explanation": "Câu trả lời đồng ý nhiệt tình cho người khác ngồi cùng bàn: \"Vâng tất nhiên, xin mời.\"\n-> Đáp án: Vâng tất nhiên, xin mời.",
             "exp_reward": 10,
             "extra_data": {
                 "accepted_answers": [
@@ -1523,10 +1523,10 @@ def seed_lesson_13():
         {
             "id": 43,
             "exercise_type": "dich_nghia_dv",
-            "question": "Câu 43: Dịch câu gọi món sau sang tiếng Việt:\n„Zwei Kaffee, bitte!“",
+            "question": "Câu 43: Dịch câu gọi món sau sang tiếng Việt:\n\"Zwei Kaffee, bitte!\"",
             "options": null,
             "correct_answer": "Xin cho hai cà phê!",
-            "explanation": "Cách gọi món nhanh và lịch sự trong quán cà phê: „Xin cho hai cà phê!“ -> Đáp án: Xin cho hai cà phê!.",
+            "explanation": "Cách gọi món nhanh và lịch sự trong quán cà phê: \"Xin cho hai cà phê!\"\n-> Đáp án: Xin cho hai cà phê!",
             "exp_reward": 10,
             "extra_data": {
                 "accepted_answers": [
@@ -1544,10 +1544,10 @@ def seed_lesson_13():
         {
             "id": 44,
             "exercise_type": "dich_nghia_dv",
-            "question": "Câu 44: Dịch danh từ sau sang tiếng Việt:\n„das Futter“",
+            "question": "Câu 44: Dịch danh từ sau sang tiếng Việt:\n\"das Futter\"",
             "options": null,
             "correct_answer": "thức ăn thú cưng",
-            "explanation": "Danh từ „das Futter“ dùng riêng để chỉ thức ăn dành cho thú cưng / động vật -> Đáp án: thức ăn thú cưng.",
+            "explanation": "Danh từ \"das Futter\" dùng riêng để chỉ thức ăn dành cho thú cưng / động vật.\n-> Đáp án: thức ăn thú cưng.",
             "exp_reward": 10,
             "extra_data": {
                 "accepted_answers": [
@@ -1565,44 +1565,34 @@ def seed_lesson_13():
         {
             "id": 45,
             "exercise_type": "dich_nghia_dv",
-            "question": "Câu 45: Dịch danh từ sau sang tiếng Việt:\n„der Käse“",
+            "question": "Câu 45: Dịch danh từ sau sang tiếng Việt:\n\"der Käse\"",
             "options": null,
             "correct_answer": "phô mai",
-            "explanation": "Danh từ „der Käse“ trong tiếng Đức nghĩa là „phô mai“ -> Đáp án: phô mai.",
+            "explanation": "Danh từ \"der Käse\" trong tiếng Đức nghĩa là \"phô mai\"\n-> Đáp án: phô mai.",
             "exp_reward": 10,
-            "extra_data": {"accepted_answers": ["phô mai", "pho mát", "pho mai", "phomai"], "audio_text": "der Käse", "translation": "phô mai"}
+            "extra_data": {
+                "accepted_answers": ["phô mai", "pho mát", "pho mai", "phomai"],
+                "audio_text": "der Käse",
+                "translation": "phô mai"
+            }
         },
-
-        # --- 3.6. NỐI Ô TƯƠNG ỨNG (10 BÀI) ---
         {
             "id": 46,
             "exercise_type": "noi_o",
             "question": "Câu 46: Nối đại từ nhân xưng với dạng chia tương ứng của động từ sprechen (e → i):",
             "options": null,
             "correct_answer": "Nối đúng 4/4 cặp",
-            "explanation": "Ngôi ich/ihr giữ nguyên nguyên âm e (spreche, sprecht), ngôi du/er biến âm e thành i (sprichst, spricht) -> Đáp án: Nối đúng 4/4 cặp.",
+            "explanation": "Ngôi ich/ihr giữ nguyên nguyên âm e (spreche, sprecht), ngôi du/er biến âm e thành i (sprichst, spricht).\n-> Đáp án: Nối đúng 4/4 cặp.",
             "exp_reward": 15,
             "extra_data": {
                 "noi_o_pairs": [
-                    {
-                        "left": "ich",
-                        "right": "spreche"
-                    },
-                    {
-                        "left": "du",
-                        "right": "sprichst"
-                    },
-                    {
-                        "left": "er",
-                        "right": "spricht"
-                    },
-                    {
-                        "left": "ihr",
-                        "right": "sprecht"
-                    }
+                    {"left": "ich", "right": "spreche"},
+                    {"left": "du", "right": "sprichst"},
+                    {"left": "er", "right": "spricht"},
+                    {"left": "ihr", "right": "sprecht"}
                 ],
                 "audio_text": "ich spreche. du sprichst. er spricht. ihr sprecht.",
-                "translation": "ich spreche: tôi nói | du sprichst: bạn nói | er spricht: anh ấy nói | ihr sprecht: các bạn nói"
+                "translation": "ich spreche: tôi nói\ndu sprichst: bạn nói\ner spricht: anh ấy nói\nihr sprecht: các bạn nói"
             }
         },
         {
@@ -1611,29 +1601,17 @@ def seed_lesson_13():
             "question": "Câu 47: Nối đại từ nhân xưng với dạng chia tương ứng của động từ fahren (a → ä):",
             "options": null,
             "correct_answer": "Nối đúng 4/4 cặp",
-            "explanation": "Ngôi du và cô ấy biến âm a thành ä (fährst, fährt); ngôi ihr và wir không biến âm (fahrt, fahren) -> Đáp án: Nối đúng 4/4 cặp.",
+            "explanation": "Ngôi du và cô ấy biến âm a thành ä (fährst, fährt)\nngôi ihr và wir không biến âm (fahrt, fahren).\n-> Đáp án: Nối đúng 4/4 cặp.",
             "exp_reward": 15,
             "extra_data": {
                 "noi_o_pairs": [
-                    {
-                        "left": "wir",
-                        "right": "fahren"
-                    },
-                    {
-                        "left": "du",
-                        "right": "fährst"
-                    },
-                    {
-                        "left": "sie (cô ấy)",
-                        "right": "fährt"
-                    },
-                    {
-                        "left": "ihr",
-                        "right": "fahrt"
-                    }
+                    {"left": "wir", "right": "fahren"},
+                    {"left": "du", "right": "fährst"},
+                    {"left": "sie (cô ấy)", "right": "fährt"},
+                    {"left": "ihr", "right": "fahrt"}
                 ],
                 "audio_text": "wir fahren. du fährst. sie fährt. ihr fahrt.",
-                "translation": "wir fahren: chúng tôi đi | du fährst: bạn đi | sie fährt: cô ấy đi | ihr fahrt: các bạn đi"
+                "translation": "wir fahren: chúng tôi đi\ndu fährst: bạn đi\nsie fährt: cô ấy đi\nihr fahrt: các bạn đi"
             }
         },
         {
@@ -1642,29 +1620,17 @@ def seed_lesson_13():
             "question": "Câu 48: Nối đại từ nhân xưng với dạng chia tương ứng của động từ schlafen (a → ä):",
             "options": null,
             "correct_answer": "Nối đúng 4/4 cặp",
-            "explanation": "Động từ schlafen biến âm a thành ä ở ngôi du (schläfst) và es (schläft); ngôi ihr giữ nguyên a (schlaft) -> Đáp án: Nối đúng 4/4 cặp.",
+            "explanation": "Động từ schlafen biến âm a thành ä ở ngôi du (schläfst) và es (schläft)\nngôi ihr giữ nguyên a (schlaft).\n-> Đáp án: Nối đúng 4/4 cặp.",
             "exp_reward": 15,
             "extra_data": {
                 "noi_o_pairs": [
-                    {
-                        "left": "ich",
-                        "right": "schlafe"
-                    },
-                    {
-                        "left": "du",
-                        "right": "schläfst"
-                    },
-                    {
-                        "left": "es",
-                        "right": "schläft"
-                    },
-                    {
-                        "left": "ihr",
-                        "right": "schlaft"
-                    }
+                    {"left": "ich", "right": "schlafe"},
+                    {"left": "du", "right": "schläfst"},
+                    {"left": "es", "right": "schläft"},
+                    {"left": "ihr", "right": "schlaft"}
                 ],
                 "audio_text": "ich schlafe. du schläfst. es schläft. ihr schlaft.",
-                "translation": "ich schlafe: tôi ngủ | du schläfst: bạn ngủ | es schläft: nó ngủ | ihr schlaft: các bạn ngủ"
+                "translation": "ich schlafe: tôi ngủ\ndu schläfst: bạn ngủ\nes schläft: nó ngủ\nihr schlaft: các bạn ngủ"
             }
         },
         {
@@ -1673,29 +1639,17 @@ def seed_lesson_13():
             "question": "Câu 49: Nối câu hỏi W-Fragen với câu trả lời tương ứng:",
             "options": null,
             "correct_answer": "Nối đúng 4/4 cặp",
-            "explanation": "Woher đi với giới từ Aus; Wo đi với giới từ In; Wie hỏi tên; Was hỏi đồ uống -> Đáp án: Nối đúng 4/4 cặp.",
+            "explanation": "Woher đi với giới từ Aus\nWo đi với giới từ In; Wie hỏi tên\nWas hỏi đồ uống.\n-> Đáp án: Nối đúng 4/4 cặp.",
             "exp_reward": 15,
             "extra_data": {
                 "noi_o_pairs": [
-                    {
-                        "left": "Woher kommen Sie?",
-                        "right": "Aus Vietnam."
-                    },
-                    {
-                        "left": "Wo wohnen Sie?",
-                        "right": "In Berlin."
-                    },
-                    {
-                        "left": "Wie heißen Sie?",
-                        "right": "Ich bin Anna."
-                    },
-                    {
-                        "left": "Was trinken Sie?",
-                        "right": "Kaffee, bitte."
-                    }
+                    {"left": "Woher kommen Sie?", "right": "Aus Vietnam."},
+                    {"left": "Wo wohnen Sie?", "right": "In Berlin."},
+                    {"left": "Wie heißen Sie?", "right": "Ich bin Anna."},
+                    {"left": "Was trinken Sie?", "right": "Kaffee, bitte."}
                 ],
                 "audio_text": "Woher kommen Sie? Aus Vietnam. Wo wohnen Sie? In Berlin. Wie heißen Sie? Ich bin Anna. Was trinken Sie? Kaffee, bitte.",
-                "translation": "Woher kommen Sie? — Aus Vietnam (Từ Việt Nam) | Wo wohnen Sie? — In Berlin (Ở Berlin) | Wie heißen Sie? — Ich bin Anna (Tôi là Anna) | Was trinken Sie? — Kaffee, bitte (Cho cà phê ạ)"
+                "translation": "Woher kommen Sie? — Aus Vietnam (Từ Việt Nam)\nWo wohnen Sie? — In Berlin (Ở Berlin)\nWie heißen Sie? — Ich bin Anna (Tôi là Anna)\nWas trinken Sie? — Kaffee, bitte (Cho cà phê ạ)"
             }
         },
         {
@@ -1704,29 +1658,17 @@ def seed_lesson_13():
             "question": "Câu 50: Nối danh từ tiếng Đức với nghĩa tiếng Việt tương ứng:",
             "options": null,
             "correct_answer": "Nối đúng 4/4 cặp",
-            "explanation": "der Zucker: đường, das Rathaus: tòa thị chính, der Brief: bức thư, der Hund: con chó -> Đáp án: Nối đúng 4/4 cặp.",
+            "explanation": "der Zucker: đường, das Rathaus: tòa thị chính, der Brief: bức thư, der Hund: con chó.\n-> Đáp án: Nối đúng 4/4 cặp.",
             "exp_reward": 15,
             "extra_data": {
                 "noi_o_pairs": [
-                    {
-                        "left": "der Zucker",
-                        "right": "đường"
-                    },
-                    {
-                        "left": "das Rathaus",
-                        "right": "tòa thị chính"
-                    },
-                    {
-                        "left": "der Brief",
-                        "right": "bức thư"
-                    },
-                    {
-                        "left": "der Hund",
-                        "right": "con chó"
-                    }
+                    {"left": "der Zucker", "right": "đường"},
+                    {"left": "das Rathaus", "right": "tòa thị chính"},
+                    {"left": "der Brief", "right": "bức thư"},
+                    {"left": "der Hund", "right": "con chó"}
                 ],
                 "audio_text": "der Zucker. das Rathaus. der Brief. der Hund.",
-                "translation": "der Zucker: đường | das Rathaus: tòa thị chính | der Brief: bức thư | der Hund: con chó"
+                "translation": "der Zucker: đường\ndas Rathaus: tòa thị chính\nder Brief: bức thư\nder Hund: con chó"
             }
         },
         {
@@ -1735,29 +1677,17 @@ def seed_lesson_13():
             "question": "Câu 51: Nối câu thoại trong quán cà phê với câu phản hồi phù hợp:",
             "options": null,
             "correct_answer": "Nối đúng 4/4 cặp",
-            "explanation": "Khớp các phản hồi chuẩn trong giao tiếp quán Cafe -> Đáp án: Nối đúng 4/4 cặp.",
+            "explanation": "Khớp các phản hồi chuẩn trong giao tiếp quán Cafe.\n-> Đáp án: Nối đúng 4/4 cặp.",
             "exp_reward": 15,
             "extra_data": {
                 "noi_o_pairs": [
-                    {
-                        "left": "Ist hier frei?",
-                        "right": "Ja klar, bitte."
-                    },
-                    {
-                        "left": "Was möchten Sie trinken?",
-                        "right": "Einen Tee, bitte."
-                    },
-                    {
-                        "left": "Ich bin John.",
-                        "right": "Ich heiße Maria."
-                    },
-                    {
-                        "left": "Trinkst du Kaffee oder Tee?",
-                        "right": "Kaffee mit Zucker."
-                    }
+                    {"left": "Ist hier frei?", "right": "Ja klar, bitte."},
+                    {"left": "Was möchten Sie trinken?", "right": "Einen Tee, bitte."},
+                    {"left": "Ich bin John.", "right": "Ich heiße Maria."},
+                    {"left": "Trinkst du Kaffee oder Tee?", "right": "Kaffee mit Zucker."}
                 ],
                 "audio_text": "Ist hier frei? Ja klar, bitte. Was möchten Sie trinken? Einen Tee, bitte. Ich bin John. Ich heiße Maria. Trinkst du Kaffee oder Tee? Kaffee mit Zucker.",
-                "translation": "Ist hier frei? — Ja klar, bitte. | Was möchten Sie trinken? — Einen Tee, bitte. | Ich bin John. — Ich heiße Maria. | Trinkst du Kaffee oder Tee? — Kaffee mit Zucker."
+                "translation": "Ist hier frei? — Ja klar, bitte.\nWas möchten Sie trinken? — Einen Tee, bitte.\nIch bin John. — Ich heiße Maria.\nTrinkst du Kaffee oder Tee? — Kaffee mit Zucker."
             }
         },
         {
@@ -1766,29 +1696,17 @@ def seed_lesson_13():
             "question": "Câu 52: Nối đại từ nhân xưng với dạng chia tương ứng của động từ lesen (e → ie):",
             "options": null,
             "correct_answer": "Nối đúng 4/4 cặp",
-            "explanation": "Động từ lesen biến âm e thành ie ở ngôi du (liest) và er (liest); ngôi ihr giữ nguyên e (lest) -> Đáp án: Nối đúng 4/4 cặp.",
+            "explanation": "Động từ lesen biến âm e thành ie ở ngôi du (liest) và er (liest)\nngôi ihr giữ nguyên e (lest).\n-> Đáp án: Nối đúng 4/4 cặp.",
             "exp_reward": 15,
             "extra_data": {
                 "noi_o_pairs": [
-                    {
-                        "left": "ich",
-                        "right": "lese"
-                    },
-                    {
-                        "left": "du",
-                        "right": "liest"
-                    },
-                    {
-                        "left": "er",
-                        "right": "liest"
-                    },
-                    {
-                        "left": "ihr",
-                        "right": "lest"
-                    }
+                    {"left": "ich", "right": "lese"},
+                    {"left": "du", "right": "liest"},
+                    {"left": "er", "right": "liest"},
+                    {"left": "ihr", "right": "lest"}
                 ],
                 "audio_text": "ich lese. du liest. er liest. ihr lest.",
-                "translation": "ich lese: tôi đọc | du liest: bạn đọc | er liest: anh ấy đọc | ihr lest: các bạn đọc"
+                "translation": "ich lese: tôi đọc\ndu liest: bạn đọc\ner liest: anh ấy đọc\nihr lest: các bạn đọc"
             }
         },
         {
@@ -1797,29 +1715,17 @@ def seed_lesson_13():
             "question": "Câu 53: Nối động từ nguyên thể với nghĩa tiếng Việt tương ứng:",
             "options": null,
             "correct_answer": "Nối đúng 4/4 cặp",
-            "explanation": "geben: cho/đưa; treffen: gặp gỡ; reisen: du lịch; grillen: nướng BBQ -> Đáp án: Nối đúng 4/4 cặp.",
+            "explanation": "geben: cho/đưa; treffen: gặp gỡ\nreisen: du lịch; grillen: nướng BBQ.\n-> Đáp án: Nối đúng 4/4 cặp.",
             "exp_reward": 15,
             "extra_data": {
                 "noi_o_pairs": [
-                    {
-                        "left": "geben",
-                        "right": "cho, đưa"
-                    },
-                    {
-                        "left": "treffen",
-                        "right": "gặp gỡ"
-                    },
-                    {
-                        "left": "reisen",
-                        "right": "du lịch"
-                    },
-                    {
-                        "left": "grillen",
-                        "right": "nướng BBQ"
-                    }
+                    {"left": "geben", "right": "cho, đưa"},
+                    {"left": "treffen", "right": "gặp gỡ"},
+                    {"left": "reisen", "right": "du lịch"},
+                    {"left": "grillen", "right": "nướng BBQ"}
                 ],
                 "audio_text": "geben. treffen. reisen. grillen.",
-                "translation": "geben: cho, đưa | treffen: gặp gỡ | reisen: du lịch | grillen: nướng BBQ"
+                "translation": "geben: cho, đưa\ntreffen: gặp gỡ\nreisen: du lịch\ngrillen: nướng BBQ"
             }
         },
         {
@@ -1828,29 +1734,17 @@ def seed_lesson_13():
             "question": "Câu 54: Nối đại từ nhân xưng với dạng chia đúng của động từ sein và haben:",
             "options": null,
             "correct_answer": "Nối đúng 4/4 cặp",
-            "explanation": "ich đi với bin; du đi với bist; wir đi với haben; er đi với hat -> Đáp án: Nối đúng 4/4 cặp.",
+            "explanation": "ich đi với bin; du đi với bist\nwir đi với haben; er đi với hat.\n-> Đáp án: Nối đúng 4/4 cặp.",
             "exp_reward": 15,
             "extra_data": {
                 "noi_o_pairs": [
-                    {
-                        "left": "ich",
-                        "right": "bin"
-                    },
-                    {
-                        "left": "du",
-                        "right": "bist"
-                    },
-                    {
-                        "left": "wir",
-                        "right": "haben"
-                    },
-                    {
-                        "left": "er",
-                        "right": "hat"
-                    }
+                    {"left": "ich", "right": "bin"},
+                    {"left": "du", "right": "bist"},
+                    {"left": "wir", "right": "haben"},
+                    {"left": "er", "right": "hat"}
                 ],
                 "audio_text": "ich bin. du bist. wir haben. er hat.",
-                "translation": "ich bin: tôi là | du bist: bạn là | wir haben: chúng tôi có | er hat: anh ấy có"
+                "translation": "ich bin: tôi là\ndu bist: bạn là\nwir haben: chúng tôi có\ner hat: anh ấy có"
             }
         },
         {
@@ -1859,50 +1753,30 @@ def seed_lesson_13():
             "question": "Câu 55: Nối chủ ngữ với vị ngữ chứa động từ essen (e → i):",
             "options": null,
             "correct_answer": "Nối đúng 4/4 cặp",
-            "explanation": "Das Mädchen (es) -> isst Eis; Die Kinder (Plural) -> essen Eis; Ich -> esse Eis; Ihr -> esst Eis -> Đáp án: Nối đúng 4/4 cặp.",
+            "explanation": "Das Mädchen (es) -> isst Eis\nDie Kinder (Plural).\n-> essen Eis; Ich.\n-> esse Eis; Ihr.\n-> esst Eis.\n-> Đáp án: Nối đúng 4/4 cặp.",
             "exp_reward": 15,
             "extra_data": {
                 "noi_o_pairs": [
-                    {
-                        "left": "Das Mädchen",
-                        "right": "isst Eis."
-                    },
-                    {
-                        "left": "Die Kinder",
-                        "right": "essen Eis."
-                    },
-                    {
-                        "left": "Ich",
-                        "right": "esse Eis."
-                    },
-                    {
-                        "left": "Ihr",
-                        "right": "esst Eis."
-                    }
+                    {"left": "Das Mädchen", "right": "isst Eis."},
+                    {"left": "Die Kinder", "right": "essen Eis."},
+                    {"left": "Ich", "right": "esse Eis."},
+                    {"left": "Ihr", "right": "esst Eis."}
                 ],
                 "audio_text": "Das Mädchen isst Eis. Die Kinder essen Eis. Ich esse Eis. Ihr esst Eis.",
-                "translation": "Das Mädchen isst Eis: Cô bé ăn kem | Die Kinder essen Eis: Bọn trẻ ăn kem | Ich esse Eis: Tôi ăn kem | Ihr esst Eis: Các bạn ăn kem"
+                "translation": "Das Mädchen isst Eis: Cô bé ăn kem\nDie Kinder essen Eis: Bọn trẻ ăn kem\nIch esse Eis: Tôi ăn kem\nIhr esst Eis: Các bạn ăn kem"
             }
         },
-
-        # --- 3.7. ĐIỀN 2 CHỖ TRỐNG TẠO CÂU (8 CÂU) ---
         {
             "id": 56,
             "exercise_type": "dien_tao_cau",
-            "question": "Câu 56: Điền 2 từ vào chỗ trống [1] và [2] (cách nhau bởi dấu /):\n„[1] heißt du und woher [2] du?“",
+            "question": "Câu 56: Điền 2 từ vào chỗ trống [1] và [2] (cách nhau bởi dấu /):\n\"[1] heißt du und woher [2] du?\"",
             "options": null,
             "correct_answer": "Wie / kommst",
-            "explanation": "Hỏi tên dùng từ để hỏi „Wie“; chủ ngữ ngôi du đi với kommen thành „kommst“ -> Đáp án: Wie / kommst.",
+            "explanation": "Hỏi tên dùng từ để hỏi \"Wie\"\nchủ ngữ ngôi du đi với kommen thành \"kommst\"\n-> Đáp án: Wie / kommst.",
             "exp_reward": 15,
             "extra_data": {
                 "display_frame": "[1] heißt du und woher [2] du?",
-                "accepted_answers": [
-                    "Wie / kommst",
-                    "Wie/kommst",
-                    "Wie kommst",
-                    "wie / kommst",
-                    "wie/kommst"
-                ],
+                "accepted_answers": ["Wie / kommst", "Wie/kommst", "Wie kommst", "wie / kommst", "wie/kommst"],
                 "audio_text": "Wie heißt du und woher kommst du?",
                 "translation": "Bạn tên là gì và bạn đến từ đâu?"
             }
@@ -1910,18 +1784,14 @@ def seed_lesson_13():
         {
             "id": 57,
             "exercise_type": "dien_tao_cau",
-            "question": "Câu 57: Điền 2 dạng động từ vào chỗ trống [1] và [2] (cách nhau bởi dấu /):\n„Die Touristen [1] das Rathaus und [2] Fotos.“ (besuchen / machen)",
+            "question": "Câu 57: Điền 2 dạng động từ vào chỗ trống [1] và [2] (cách nhau bởi dấu /):\n\"Die Touristen [1] das Rathaus und [2] Fotos.\" (besuchen / machen)",
             "options": null,
             "correct_answer": "besuchen / machen",
-            "explanation": "Chủ ngữ „Die Touristen“ (số nhiều) đi với động từ nguyên thể „besuchen“ và „machen“ -> Đáp án: besuchen / machen.",
+            "explanation": "Chủ ngữ \"Die Touristen\" (số nhiều) đi với động từ nguyên thể \"besuchen\" và \"machen\"\n-> Đáp án: besuchen / machen.",
             "exp_reward": 15,
             "extra_data": {
                 "display_frame": "Die Touristen [1] das Rathaus und [2] Fotos.",
-                "accepted_answers": [
-                    "besuchen / machen",
-                    "besuchen/machen",
-                    "besuchen machen"
-                ],
+                "accepted_answers": ["besuchen / machen", "besuchen/machen", "besuchen machen"],
                 "audio_text": "Die Touristen besuchen das Rathaus und machen Fotos.",
                 "translation": "Khách du lịch tham quan tòa thị chính và chụp ảnh."
             }
@@ -1929,61 +1799,44 @@ def seed_lesson_13():
         {
             "id": 58,
             "exercise_type": "dien_tao_cau",
-            "question": "Câu 58: Điền 2 dạng động từ vào chỗ trống [1] và [2] (cách nhau bởi dấu /):\n„Mein Bruder [1] am Wochenende nach München. Er [2] dort Freunde.“ (fahren / treffen)",
+            "question": "Câu 58: Điền 2 dạng động từ vào chỗ trống [1] và [2] (cách nhau bởi dấu /):\n\"Mein Bruder [1] am Wochenende nach München. Er [2] dort Freunde.\" (fahren / treffen)",
             "options": null,
             "correct_answer": "fährt / trifft",
-            "explanation": "Chủ ngữ „Mein Bruder“ (er) đi với fahren biến âm thành „fährt“ và treffen biến âm thành „trifft“ -> Đáp án: fährt / trifft.",
+            "explanation": "Chủ ngữ \"Mein Bruder\" (er) đi với fahren biến âm thành \"fährt\" và treffen biến âm thành \"trifft\"\n-> Đáp án: fährt / trifft.",
             "exp_reward": 15,
             "extra_data": {
                 "display_frame": "Mein Bruder [1] am Wochenende nach München. Er [2] dort Freunde.",
-                "accepted_answers": [
-                    "fährt / trifft",
-                    "fährt/trifft",
-                    "faehrt / trifft",
-                    "faehrt/trifft",
-                    "fährt trifft"
-                ],
+                "accepted_answers": ["fährt / trifft", "fährt/trifft", "faehrt / trifft", "faehrt/trifft", "fährt trifft"],
                 "audio_text": "Mein Bruder fährt am Wochenende nach München. Er trifft dort Freunde.",
-                "translation": "Anh trai tôi đi München vào cuối tuần. Anh ấy gặp bạn bè ở đó."
+                "translation": "Anh trai tôi đi München vào cuối tuần.\nAnh ấy gặp bạn bè ở đó."
             }
         },
         {
             "id": 59,
             "exercise_type": "dien_tao_cau",
-            "question": "Câu 59: Điền từ để hỏi và động từ vào chỗ trống [1] và [2] (cách nhau bởi dấu /):\n„[1] schläft das Baby? — Es [2] im Schlafzimmer.“ (Wo / schlafen)",
+            "question": "Câu 59: Điền từ để hỏi và động từ vào chỗ trống [1] và [2] (cách nhau bởi dấu /):\n\"[1] schläft das Baby? — Es [2] im Schlafzimmer.\" (Wo / schlafen)",
             "options": null,
             "correct_answer": "Wo / schläft",
-            "explanation": "Hỏi nơi chốn dùng từ để hỏi „Wo“; chủ ngữ „Es“ đi với schlafen đổi a → ä thành „schläft“ -> Đáp án: Wo / schläft.",
+            "explanation": "Hỏi nơi chốn dùng từ để hỏi \"Wo\"\nchủ ngữ \"Es\" đi với schlafen đổi a → ä thành \"schläft\"\n-> Đáp án: Wo / schläft.",
             "exp_reward": 15,
             "extra_data": {
                 "display_frame": "[1] schläft das Baby? — Es [2] im Schlafzimmer.",
-                "accepted_answers": [
-                    "Wo / schläft",
-                    "Wo/schläft",
-                    "Wo / schlaeft",
-                    "Wo/schlaeft",
-                    "Wo schläft",
-                    "wo / schläft"
-                ],
+                "accepted_answers": ["Wo / schläft", "Wo/schläft", "Wo / schlaeft", "Wo/schlaeft", "Wo schläft", "wo / schläft"],
                 "audio_text": "Wo schläft das Baby? Es schläft im Schlafzimmer.",
-                "translation": "Em bé ngủ ở đâu? — Em bé ngủ trong phòng ngủ."
+                "translation": "Em bé ngủ ở đâu?\nEm bé ngủ trong phòng ngủ."
             }
         },
         {
             "id": 60,
             "exercise_type": "dien_tao_cau",
-            "question": "Câu 60: Điền 2 dạng động từ vào chỗ trống [1] và [2] (cách nhau bởi dấu /):\n„Wir [1] gern Fleisch, aber Anna [2] lieber Gemüse.“ (grillen)",
+            "question": "Câu 60: Điền 2 dạng động từ vào chỗ trống [1] và [2] (cách nhau bởi dấu /):\n\"Wir [1] gern Fleisch, aber Anna [2] lieber Gemüse.\" (grillen)",
             "options": null,
             "correct_answer": "grillen / grillt",
-            "explanation": "Chủ ngữ „Wir“ đi với nguyên thể „grillen“; chủ ngữ „Anna“ (ngôi sie số ít) thêm đuôi -t thành „grillt“ -> Đáp án: grillen / grillt.",
+            "explanation": "Chủ ngữ \"Wir\" đi với nguyên thể \"grillen\"\nchủ ngữ \"Anna\" (ngôi sie số ít) thêm đuôi -t thành \"grillt\"\n-> Đáp án: grillen / grillt.",
             "exp_reward": 15,
             "extra_data": {
                 "display_frame": "Wir [1] gern Fleisch, aber Anna [2] lieber Gemüse.",
-                "accepted_answers": [
-                    "grillen / grillt",
-                    "grillen/grillt",
-                    "grillen grillt"
-                ],
+                "accepted_answers": ["grillen / grillt", "grillen/grillt", "grillen grillt"],
                 "audio_text": "Wir grillen gern Fleisch, aber Anna grillt lieber Gemüse.",
                 "translation": "Chúng tôi thích nướng thịt, nhưng Anna thích nướng rau củ hơn."
             }
@@ -1991,83 +1844,62 @@ def seed_lesson_13():
         {
             "id": 61,
             "exercise_type": "dien_tao_cau",
-            "question": "Câu 61: Điền 2 dạng động từ vào chỗ trống [1] và [2] (cách nhau bởi dấu /):\n„Was [1] ihr? Kaffee oder Tee? — Wir [2] Tee.“ (trinken)",
+            "question": "Câu 61: Điền 2 dạng động từ vào chỗ trống [1] và [2] (cách nhau bởi dấu /):\n\"Was [1] ihr? Kaffee oder Tee? — Wir [2] Tee.\" (trinken)",
             "options": null,
             "correct_answer": "trinkt / trinken",
-            "explanation": "Ngôi „ihr“ đi với „trinkt“; ngôi „wir“ đi với động từ nguyên thể „trinken“ -> Đáp án: trinkt / trinken.",
+            "explanation": "Ngôi \"ihr\" đi với \"trinkt\"\nngôi \"wir\" đi với động từ nguyên thể \"trinken\"\n-> Đáp án: trinkt / trinken.",
             "exp_reward": 15,
             "extra_data": {
                 "display_frame": "Was [1] ihr? Kaffee oder Tee? — Wir [2] Tee.",
-                "accepted_answers": [
-                    "trinkt / trinken",
-                    "trinkt/trinken",
-                    "trinkt trinken"
-                ],
+                "accepted_answers": ["trinkt / trinken", "trinkt/trinken", "trinkt trinken"],
                 "audio_text": "Was trinkt ihr? Kaffee oder Tee? Wir trinken Tee.",
-                "translation": "Các bạn uống gì? Cà phê hay trà? — Chúng tôi uống trà."
+                "translation": "Các bạn uống gì?\nCà phê hay trà?\nChúng tôi uống trà."
             }
         },
         {
             "id": 62,
             "exercise_type": "dien_tao_cau",
-            "question": "Câu 62: Điền từ để hỏi và giới từ vào chỗ trống [1] và [2] (cách nhau bởi dấu /):\n„[1] kommen Sie? — [2] der Türkei.“",
+            "question": "Câu 62: Điền từ để hỏi và giới từ vào chỗ trống [1] và [2] (cách nhau bởi dấu /):\n\"[1] kommen Sie? — [2] der Türkei.\"",
             "options": null,
             "correct_answer": "Woher / Aus",
-            "explanation": "Hỏi quê quán/xuất xứ dùng từ để hỏi „Woher“ và câu trả lời dùng giới từ „Aus“ -> Đáp án: Woher / Aus.",
+            "explanation": "Hỏi quê quán/xuất xứ dùng từ để hỏi \"Woher\" và câu trả lời dùng giới từ \"Aus\"\n-> Đáp án: Woher / Aus.",
             "exp_reward": 15,
             "extra_data": {
                 "display_frame": "[1] kommen Sie? — [2] der Türkei.",
-                "accepted_answers": [
-                    "Woher / Aus",
-                    "Woher/Aus",
-                    "Woher Aus",
-                    "woher / aus",
-                    "woher/aus"
-                ],
+                "accepted_answers": ["Woher / Aus", "Woher/Aus", "Woher Aus", "woher / aus", "woher/aus"],
                 "audio_text": "Woher kommen Sie? Aus der Türkei.",
-                "translation": "Ngài đến từ đâu? — Từ Thổ Nhĩ Kỳ."
+                "translation": "Ngài đến từ đâu?\nTừ Thổ Nhĩ Kỳ."
             }
         },
         {
             "id": 63,
             "exercise_type": "dien_tao_cau",
-            "question": "Câu 63: Điền từ để hỏi và dạng động từ vào chỗ trống [1] và [2] (cách nhau bởi dấu /):\n„[1] isst du gern? — Ich [2] gern Käse.“ (essen)",
+            "question": "Câu 63: Điền từ để hỏi và dạng động từ vào chỗ trống [1] và [2] (cách nhau bởi dấu /):\n\"[1] isst du gern? — Ich [2] gern Käse.\" (essen)",
             "options": null,
             "correct_answer": "Was / esse",
-            "explanation": "Hỏi ăn món gì dùng từ để hỏi „Was“; chủ ngữ ngôi „ich“ đi với động từ thêm -e thành „esse“ -> Đáp án: Was / esse.",
+            "explanation": "Hỏi ăn món gì dùng từ để hỏi \"Was\"\nchủ ngữ ngôi \"ich\" đi với động từ thêm -e thành \"esse\"\n-> Đáp án: Was / esse.",
             "exp_reward": 15,
             "extra_data": {
                 "display_frame": "[1] isst du gern? — Ich [2] gern Käse.",
-                "accepted_answers": [
-                    "Was / esse",
-                    "Was/esse",
-                    "Was esse",
-                    "was / esse",
-                    "was/esse"
-                ],
+                "accepted_answers": ["Was / esse", "Was/esse", "Was esse", "was / esse", "was/esse"],
                 "audio_text": "Was isst du gern? Ich esse gern Käse.",
-                "translation": "Bạn thích ăn gì? — Tôi thích ăn phô mai."
+                "translation": "Bạn thích ăn gì?\nTôi thích ăn phô mai."
             }
         },
-
-        # --- 3.8. NGHE CHÉP CHÍNH TẢ - DICTATION (8 CÂU) ---
         {
             "id": 64,
             "exercise_type": "nghe_dien",
             "question": "Câu 64: Nghe Audio và gõ lại trọn vẹn câu tiếng Đức bạn nghe được:",
             "options": null,
             "correct_answer": "Der Vater liest die Zeitung.",
-            "explanation": "Động từ bất quy tắc lesen ngôi er đổi e → ie là „liest“. Câu hoàn chỉnh: „Der Vater liest die Zeitung.“ -> Đáp án: Der Vater liest die Zeitung.",
+            "explanation": "Động từ bất quy tắc lesen ngôi er đổi e → ie là \"liest\".\nCâu hoàn chỉnh: \"Der Vater liest die Zeitung.\"\n-> Đáp án: Der Vater liest die Zeitung.",
             "exp_reward": 10,
             "extra_data": {
                 "audio_text": "Der Vater liest die Zeitung.",
                 "full_sentence": "Der Vater liest die Zeitung.",
-                "dictation_mode": True,
+                "dictation_mode": true,
                 "translation": "Người bố đọc báo.",
-                "accepted_answers": [
-                    "Der Vater liest die Zeitung.",
-                    "Der Vater liest die Zeitung"
-                ]
+                "accepted_answers": ["Der Vater liest die Zeitung.", "Der Vater liest die Zeitung"]
             }
         },
         {
@@ -2076,17 +1908,14 @@ def seed_lesson_13():
             "question": "Câu 65: Nghe Audio và gõ lại trọn vẹn câu tiếng Đức bạn nghe được:",
             "options": null,
             "correct_answer": "Wann fahrt ihr nach Hause?",
-            "explanation": "Ngôi ihr không biến âm, phát âm âm a ngắn trong „fahrt“. Câu hoàn chỉnh: „Wann fahrt ihr nach Hause?“ -> Đáp án: Wann fahrt ihr nach Hause?",
+            "explanation": "Ngôi ihr không biến âm, phát âm âm a ngắn trong \"fahrt\".\nCâu hoàn chỉnh: \"Wann fahrt ihr nach Hause?\"\n-> Đáp án: Wann fahrt ihr nach Hause?",
             "exp_reward": 10,
             "extra_data": {
                 "audio_text": "Wann fahrt ihr nach Hause?",
                 "full_sentence": "Wann fahrt ihr nach Hause?",
-                "dictation_mode": True,
+                "dictation_mode": true,
                 "translation": "Khi nào các bạn về nhà?",
-                "accepted_answers": [
-                    "Wann fahrt ihr nach Hause?",
-                    "Wann fahrt ihr nach Hause"
-                ]
+                "accepted_answers": ["Wann fahrt ihr nach Hause?", "Wann fahrt ihr nach Hause"]
             }
         },
         {
@@ -2095,17 +1924,14 @@ def seed_lesson_13():
             "question": "Câu 66: Nghe Audio và gõ lại trọn vẹn câu tiếng Đức bạn nghe được:",
             "options": null,
             "correct_answer": "Ich komme aus Vietnam.",
-            "explanation": "Giới từ chỉ nơi xuất xứ đi với kommen là „aus“. Câu hoàn chỉnh: „Ich komme aus Vietnam.“ -> Đáp án: Ich komme aus Vietnam.",
+            "explanation": "Giới từ chỉ nơi xuất xứ đi với kommen là \"aus\".\nCâu hoàn chỉnh: \"Ich komme aus Vietnam.\"\n-> Đáp án: Ich komme aus Vietnam.",
             "exp_reward": 10,
             "extra_data": {
                 "audio_text": "Ich komme aus Vietnam.",
                 "full_sentence": "Ich komme aus Vietnam.",
-                "dictation_mode": True,
+                "dictation_mode": true,
                 "translation": "Tôi đến từ Việt Nam.",
-                "accepted_answers": [
-                    "Ich komme aus Vietnam.",
-                    "Ich komme aus Vietnam"
-                ]
+                "accepted_answers": ["Ich komme aus Vietnam.", "Ich komme aus Vietnam"]
             }
         },
         {
@@ -2114,17 +1940,14 @@ def seed_lesson_13():
             "question": "Câu 67: Nghe Audio và gõ lại trọn vẹn câu tiếng Đức bạn nghe được:",
             "options": null,
             "correct_answer": "Das Kind isst ein Eis.",
-            "explanation": "Chủ ngữ Das Kind (ngôi es), động từ essen đổi e → i thành „isst“. Câu hoàn chỉnh: „Das Kind isst ein Eis.“ -> Đáp án: Das Kind isst ein Eis.",
+            "explanation": "Chủ ngữ Das Kind (ngôi es), động từ essen đổi e → i thành \"isst\".\nCâu hoàn chỉnh: \"Das Kind isst ein Eis.\"\n-> Đáp án: Das Kind isst ein Eis.",
             "exp_reward": 10,
             "extra_data": {
                 "audio_text": "Das Kind isst ein Eis.",
                 "full_sentence": "Das Kind isst ein Eis.",
-                "dictation_mode": True,
+                "dictation_mode": true,
                 "translation": "Đứa trẻ ăn một cây kem.",
-                "accepted_answers": [
-                    "Das Kind isst ein Eis.",
-                    "Das Kind isst ein Eis"
-                ]
+                "accepted_answers": ["Das Kind isst ein Eis.", "Das Kind isst ein Eis"]
             }
         },
         {
@@ -2133,17 +1956,14 @@ def seed_lesson_13():
             "question": "Câu 68: Nghe Audio và gõ lại trọn vẹn câu tiếng Đức bạn nghe được:",
             "options": null,
             "correct_answer": "Sprichst du Deutsch?",
-            "explanation": "Động từ sprechen đổi e → i ở ngôi du đứng đầu câu hỏi Yes/No: „Sprichst“. Câu hoàn chỉnh: „Sprichst du Deutsch?“ -> Đáp án: Sprichst du Deutsch?",
+            "explanation": "Động từ sprechen đổi e → i ở ngôi du đứng đầu câu hỏi Yes/No: \"Sprichst\".\nCâu hoàn chỉnh: \"Sprichst du Deutsch?\"\n-> Đáp án: Sprichst du Deutsch?",
             "exp_reward": 10,
             "extra_data": {
                 "audio_text": "Sprichst du Deutsch?",
                 "full_sentence": "Sprichst du Deutsch?",
-                "dictation_mode": True,
+                "dictation_mode": true,
                 "translation": "Bạn có nói tiếng Đức không?",
-                "accepted_answers": [
-                    "Sprichst du Deutsch?",
-                    "Sprichst du Deutsch"
-                ]
+                "accepted_answers": ["Sprichst du Deutsch?", "Sprichst du Deutsch"]
             }
         },
         {
@@ -2152,17 +1972,14 @@ def seed_lesson_13():
             "question": "Câu 69: Nghe Audio và gõ lại trọn vẹn câu tiếng Đức bạn nghe được:",
             "options": null,
             "correct_answer": "Wir wohnen in Berlin.",
-            "explanation": "Giới từ chỉ địa điểm cư trú trong thành phố là „in“. Câu hoàn chỉnh: „Wir wohnen in Berlin.“ -> Đáp án: Wir wohnen in Berlin.",
+            "explanation": "Giới từ chỉ địa điểm cư trú trong thành phố là \"in\".\nCâu hoàn chỉnh: \"Wir wohnen in Berlin.\"\n-> Đáp án: Wir wohnen in Berlin.",
             "exp_reward": 10,
             "extra_data": {
                 "audio_text": "Wir wohnen in Berlin.",
                 "full_sentence": "Wir wohnen in Berlin.",
-                "dictation_mode": True,
+                "dictation_mode": true,
                 "translation": "Chúng tôi sống ở Berlin.",
-                "accepted_answers": [
-                    "Wir wohnen in Berlin.",
-                    "Wir wohnen in Berlin"
-                ]
+                "accepted_answers": ["Wir wohnen in Berlin.", "Wir wohnen in Berlin"]
             }
         },
         {
@@ -2171,17 +1988,14 @@ def seed_lesson_13():
             "question": "Câu 70: Nghe Audio và gõ lại trọn vẹn câu tiếng Đức bạn nghe được:",
             "options": null,
             "correct_answer": "Zwei Kaffee, bitte!",
-            "explanation": "Cụm gọi đồ uống lịch sự: „Zwei Kaffee, bitte!“. Danh từ Kaffee và từ đứng đầu câu cần viết hoa -> Đáp án: Zwei Kaffee, bitte!",
+            "explanation": "Cụm gọi đồ uống lịch sự: \"Zwei Kaffee, bitte!\" Danh từ Kaffee và từ đứng đầu câu cần viết hoa.\n-> Đáp án: Zwei Kaffee, bitte!",
             "exp_reward": 10,
             "extra_data": {
                 "audio_text": "Zwei Kaffee, bitte!",
                 "full_sentence": "Zwei Kaffee, bitte!",
-                "dictation_mode": True,
+                "dictation_mode": true,
                 "translation": "Xin cho hai cà phê!",
-                "accepted_answers": [
-                    "Zwei Kaffee, bitte!",
-                    "Zwei Kaffee, bitte"
-                ]
+                "accepted_answers": ["Zwei Kaffee, bitte!", "Zwei Kaffee, bitte"]
             }
         },
         {
@@ -2190,12 +2004,12 @@ def seed_lesson_13():
             "question": "Câu 71: Nghe Audio và gõ lại trọn vẹn câu tiếng Đức bạn nghe được:",
             "options": null,
             "correct_answer": "Der Hund schläft auf dem Sofa.",
-            "explanation": "Chủ ngữ Der Hund (er), động từ schlafen đổi a → ä thành „schläft“. Câu hoàn chỉnh: „Der Hund schläft auf dem Sofa.“ -> Đáp án: Der Hund schläft auf dem Sofa.",
+            "explanation": "Chủ ngữ Der Hund (er), động từ schlafen đổi a → ä thành \"schläft\".\nCâu hoàn chỉnh: \"Der Hund schläft auf dem Sofa.\"\n-> Đáp án: Der Hund schläft auf dem Sofa.",
             "exp_reward": 10,
             "extra_data": {
                 "audio_text": "Der Hund schläft auf dem Sofa.",
                 "full_sentence": "Der Hund schläft auf dem Sofa.",
-                "dictation_mode": True,
+                "dictation_mode": true,
                 "translation": "Chú chó ngủ trên ghế sofa.",
                 "accepted_answers": [
                     "Der Hund schläft auf dem Sofa.",
@@ -2205,21 +2019,16 @@ def seed_lesson_13():
                 ]
             }
         },
-
-        # --- 3.9. DỊCH CÂU HOÀN CHỈNH VIỆT → ĐỨC (8 CÂU) ---
         {
             "id": 72,
             "exercise_type": "dich_cau_vd",
-            "question": "Câu 72: Dịch câu sau sang tiếng Đức:\n„Tôi đến từ nước Đức.“",
+            "question": "Câu 72: Dịch câu sau sang tiếng Đức:\n\"Tôi đến từ nước Đức.\"",
             "options": null,
             "correct_answer": "Ich komme aus Deutschland.",
-            "explanation": "Chủ ngữ Ich + động từ komme + giới từ xuất xứ aus + tên quốc gia Deutschland -> Đáp án: Ich komme aus Deutschland..",
+            "explanation": "Chủ ngữ Ich + động từ komme + giới từ xuất xứ aus + tên quốc gia Deutschland.\n-> Đáp án: Ich komme aus Deutschland.",
             "exp_reward": 10,
             "extra_data": {
-                "accepted_answers": [
-                    "Ich komme aus Deutschland.",
-                    "Ich komme aus Deutschland"
-                ],
+                "accepted_answers": ["Ich komme aus Deutschland.", "Ich komme aus Deutschland"],
                 "audio_text": "Ich komme aus Deutschland.",
                 "translation": "Tôi đến từ nước Đức."
             }
@@ -2227,18 +2036,13 @@ def seed_lesson_13():
         {
             "id": 73,
             "exercise_type": "dich_cau_vd",
-            "question": "Câu 73: Dịch câu sau sang tiếng Đức:\n„Bạn sống ở đâu?“",
+            "question": "Câu 73: Dịch câu sau sang tiếng Đức:\n\"Bạn sống ở đâu?\"",
             "options": null,
             "correct_answer": "Wo wohnst du?",
-            "explanation": "Từ để hỏi Wo + động từ wohnen chia theo ngôi du là „Wo wohnst du?“ (hoặc ngôi Sie: „Wo wohnen Sie?“) -> Đáp án: Wo wohnst du?.",
+            "explanation": "Từ để hỏi Wo + động từ wohnen chia theo ngôi du là \"Wo wohnst du?\" (hoặc ngôi Sie: \"Wo wohnen Sie?\").\n-> Đáp án: Wo wohnst du?",
             "exp_reward": 10,
             "extra_data": {
-                "accepted_answers": [
-                    "Wo wohnst du?",
-                    "Wo wohnst du",
-                    "Wo wohnen Sie?",
-                    "Wo wohnen Sie"
-                ],
+                "accepted_answers": ["Wo wohnst du?", "Wo wohnst du", "Wo wohnen Sie?", "Wo wohnen Sie"],
                 "audio_text": "Wo wohnst du?",
                 "translation": "Bạn sống ở đâu?"
             }
@@ -2246,10 +2050,10 @@ def seed_lesson_13():
         {
             "id": 74,
             "exercise_type": "dich_cau_vd",
-            "question": "Câu 74: Dịch câu sau sang tiếng Đức:\n„Ông nội tôi đọc báo.“",
+            "question": "Câu 74: Dịch câu sau sang tiếng Đức:\n\"Ông nội tôi đọc báo.\"",
             "options": null,
             "correct_answer": "Mein Großvater liest die Zeitung.",
-            "explanation": "Chủ ngữ Mein Großvater / Mein Opa (ngôi er), động từ lesen đổi e → ie thành „liest“ + die Zeitung -> Đáp án: Mein Großvater liest die Zeitung..",
+            "explanation": "Chủ ngữ Mein Großvater / Mein Opa (ngôi er), động từ lesen đổi e → ie thành \"liest\" + die Zeitung.\n-> Đáp án: Mein Großvater liest die Zeitung.",
             "exp_reward": 10,
             "extra_data": {
                 "accepted_answers": [
@@ -2269,10 +2073,10 @@ def seed_lesson_13():
         {
             "id": 75,
             "exercise_type": "dich_cau_vd",
-            "question": "Câu 75: Dịch câu sau sang tiếng Đức:\n„Cô ấy đi Berlin.“",
+            "question": "Câu 75: Dịch câu sau sang tiếng Đức:\n\"Cô ấy đi Berlin.\"",
             "options": null,
             "correct_answer": "Sie fährt nach Berlin.",
-            "explanation": "Chủ ngữ Sie (cô ấy) đi với fahren đổi a → ä thành „fährt“ + giới từ nach Berlin -> Đáp án: Sie fährt nach Berlin..",
+            "explanation": "Chủ ngữ Sie (cô ấy) đi với fahren đổi a → ä thành \"fährt\" + giới từ nach Berlin.\n-> Đáp án: Sie fährt nach Berlin.",
             "exp_reward": 10,
             "extra_data": {
                 "accepted_answers": [
@@ -2288,16 +2092,13 @@ def seed_lesson_13():
         {
             "id": 76,
             "exercise_type": "dich_cau_vd",
-            "question": "Câu 76: Dịch câu sau sang tiếng Đức:\n„Anh ấy gặp bạn bè của anh ấy.“",
+            "question": "Câu 76: Dịch câu sau sang tiếng Đức:\n\"Anh ấy gặp bạn bè của anh ấy.\"",
             "options": null,
             "correct_answer": "Er trifft seine Freunde.",
-            "explanation": "Chủ ngữ Er đi với động từ treffen đổi e → i thành „trifft“ + tân ngữ seine Freunde -> Đáp án: Er trifft seine Freunde..",
+            "explanation": "Chủ ngữ Er đi với động từ treffen đổi e → i thành \"trifft\" + tân ngữ seine Freunde.\n-> Đáp án: Er trifft seine Freunde.",
             "exp_reward": 10,
             "extra_data": {
-                "accepted_answers": [
-                    "Er trifft seine Freunde.",
-                    "Er trifft seine Freunde"
-                ],
+                "accepted_answers": ["Er trifft seine Freunde.", "Er trifft seine Freunde"],
                 "audio_text": "Er trifft seine Freunde.",
                 "translation": "Anh ấy gặp bạn bè của anh ấy."
             }
@@ -2305,18 +2106,13 @@ def seed_lesson_13():
         {
             "id": 77,
             "exercise_type": "dich_cau_vd",
-            "question": "Câu 77: Dịch câu sau sang tiếng Đức:\n„Chúng tôi ăn kem.“",
+            "question": "Câu 77: Dịch câu sau sang tiếng Đức:\n\"Chúng tôi ăn kem.\"",
             "options": null,
             "correct_answer": "Wir essen Eis.",
-            "explanation": "Chủ ngữ Wir đi với động từ nguyên thể „essen“ + Eis -> Đáp án: Wir essen Eis..",
+            "explanation": "Chủ ngữ Wir đi với động từ nguyên thể \"essen\" + Eis.\n-> Đáp án: Wir essen Eis.",
             "exp_reward": 10,
             "extra_data": {
-                "accepted_answers": [
-                    "Wir essen Eis.",
-                    "Wir essen Eis",
-                    "Wir essen ein Eis.",
-                    "Wir essen ein Eis"
-                ],
+                "accepted_answers": ["Wir essen Eis.", "Wir essen Eis", "Wir essen ein Eis.", "Wir essen ein Eis"],
                 "audio_text": "Wir essen Eis.",
                 "translation": "Chúng tôi ăn kem."
             }
@@ -2324,16 +2120,13 @@ def seed_lesson_13():
         {
             "id": 78,
             "exercise_type": "dich_cau_vd",
-            "question": "Câu 78: Dịch câu sau sang tiếng Đức:\n„Các bạn ngủ ở khách sạn phải không?“",
+            "question": "Câu 78: Dịch câu sau sang tiếng Đức:\n\"Các bạn ngủ ở khách sạn phải không?\"",
             "options": null,
             "correct_answer": "Schlaft ihr im Hotel?",
-            "explanation": "Câu hỏi Yes/No đảo động từ lên đầu; ngôi ihr KHÔNG biến âm nên chia là „Schlaft ihr im Hotel?“ -> Đáp án: Schlaft ihr im Hotel?.",
+            "explanation": "Câu hỏi Yes/No đảo động từ lên đầu\nngôi ihr KHÔNG biến âm nên chia là \"Schlaft ihr im Hotel?\"\n-> Đáp án: Schlaft ihr im Hotel?",
             "exp_reward": 10,
             "extra_data": {
-                "accepted_answers": [
-                    "Schlaft ihr im Hotel?",
-                    "Schlaft ihr im Hotel"
-                ],
+                "accepted_answers": ["Schlaft ihr im Hotel?", "Schlaft ihr im Hotel"],
                 "audio_text": "Schlaft ihr im Hotel?",
                 "translation": "Các bạn ngủ ở khách sạn phải không?"
             }
@@ -2341,10 +2134,10 @@ def seed_lesson_13():
         {
             "id": 79,
             "exercise_type": "dich_cau_vd",
-            "question": "Câu 79: Dịch câu sau sang tiếng Đức:\n„Ngài muốn uống gì ạ?“",
+            "question": "Câu 79: Dịch câu sau sang tiếng Đức:\n\"Ngài muốn uống gì ạ?\"",
             "options": null,
             "correct_answer": "Was möchten Sie trinken?",
-            "explanation": "Câu hỏi lịch sự trong quán dùng động từ khuyết thiếu: „Was möchten Sie trinken?“ -> Đáp án: Was möchten Sie trinken?.",
+            "explanation": "Câu hỏi lịch sự trong quán dùng động từ khuyết thiếu: \"Was möchten Sie trinken?\"\n-> Đáp án: Was möchten Sie trinken?",
             "exp_reward": 10,
             "extra_data": {
                 "accepted_answers": [
@@ -2357,15 +2150,13 @@ def seed_lesson_13():
                 "translation": "Ngài muốn uống gì ạ?"
             }
         },
-
-        # --- 3.10. DỊCH CÂU HOÀN CHỈNH ĐỨC → VIỆT (7 CÂU) ---
         {
             "id": 80,
             "exercise_type": "dich_cau_dv",
-            "question": "Câu 80: Dịch câu sau sang tiếng Việt:\n„Wie ist Ihr Name?“",
+            "question": "Câu 80: Dịch câu sau sang tiếng Việt:\n\"Wie ist Ihr Name?\"",
             "options": null,
             "correct_answer": "Tên của ngài là gì?",
-            "explanation": "Câu hỏi tên trang trọng trong tiếng Đức: „Tên của ngài là gì?“ -> Đáp án: Tên của ngài là gì?.",
+            "explanation": "Câu hỏi tên trang trọng trong tiếng Đức: \"Tên của ngài là gì?\"\n-> Đáp án: Tên của ngài là gì?",
             "exp_reward": 10,
             "extra_data": {
                 "accepted_answers": [
@@ -2395,10 +2186,10 @@ def seed_lesson_13():
         {
             "id": 81,
             "exercise_type": "dich_cau_dv",
-            "question": "Câu 81: Dịch câu sau sang tiếng Việt:\n„Entschuldigung, ist hier frei?“",
+            "question": "Câu 81: Dịch câu sau sang tiếng Việt:\n\"Entschuldigung, ist hier frei?\"",
             "options": null,
             "correct_answer": "Xin lỗi, chỗ này còn trống không?",
-            "explanation": "Câu hỏi xin phép ngồi ghế trống trong quán: „Xin lỗi, chỗ này còn trống không?“ -> Đáp án: Xin lỗi, chỗ này còn trống không?.",
+            "explanation": "Câu hỏi xin phép ngồi ghế trống trong quán: \"Xin lỗi, chỗ này còn trống không?\"\n-> Đáp án: Xin lỗi, chỗ này còn trống không?",
             "exp_reward": 10,
             "extra_data": {
                 "accepted_answers": [
@@ -2424,10 +2215,10 @@ def seed_lesson_13():
         {
             "id": 82,
             "exercise_type": "dich_cau_dv",
-            "question": "Câu 82: Dịch câu sau sang tiếng Việt:\n„Ich trinke Tee mit Zucker.“",
+            "question": "Câu 82: Dịch câu sau sang tiếng Việt:\n\"Ich trinke Tee mit Zucker.\"",
             "options": null,
             "correct_answer": "Tôi uống trà với đường.",
-            "explanation": "mit Zucker = với đường / có đường: „Tôi uống trà với đường.“ -> Đáp án: Tôi uống trà với đường..",
+            "explanation": "mit Zucker = với đường / có đường: \"Tôi uống trà với đường.\"\n-> Đáp án: Tôi uống trà với đường.",
             "exp_reward": 10,
             "extra_data": {
                 "accepted_answers": [
@@ -2450,10 +2241,10 @@ def seed_lesson_13():
         {
             "id": 83,
             "exercise_type": "dich_cau_dv",
-            "question": "Câu 83: Dịch câu sau sang tiếng Việt:\n„Der Lehrer spricht zu leise.“",
+            "question": "Câu 83: Dịch câu sau sang tiếng Việt:\n\"Der Lehrer spricht zu leise.\"",
             "options": null,
             "correct_answer": "Thầy giáo nói quá nhỏ.",
-            "explanation": "spricht = nói, zu leise = quá nhỏ/quá khẽ: „Thầy giáo nói quá nhỏ.“ -> Đáp án: Thầy giáo nói quá nhỏ..",
+            "explanation": "spricht = nói, zu leise = quá nhỏ/quá khẽ: \"Thầy giáo nói quá nhỏ.\"\n-> Đáp án: Thầy giáo nói quá nhỏ.",
             "exp_reward": 10,
             "extra_data": {
                 "accepted_answers": [
@@ -2480,10 +2271,10 @@ def seed_lesson_13():
         {
             "id": 84,
             "exercise_type": "dich_cau_dv",
-            "question": "Câu 84: Dịch câu sau sang tiếng Việt:\n„Hannes gibt dem Hund das Futter.“",
+            "question": "Câu 84: Dịch câu sau sang tiếng Việt:\n\"Hannes gibt dem Hund das Futter.\"",
             "options": null,
             "correct_answer": "Hannes cho chú chó thức ăn.",
-            "explanation": "gibt dem Hund = cho chú chó, das Futter = thức ăn: „Hannes cho chú chó thức ăn.“ -> Đáp án: Hannes cho chú chó thức ăn..",
+            "explanation": "gibt dem Hund = cho chú chó, das Futter = thức ăn: \"Hannes cho chú chó thức ăn.\"\n-> Đáp án: Hannes cho chú chó thức ăn.",
             "exp_reward": 10,
             "extra_data": {
                 "accepted_answers": [
@@ -2512,10 +2303,10 @@ def seed_lesson_13():
         {
             "id": 85,
             "exercise_type": "dich_cau_dv",
-            "question": "Câu 85: Dịch câu sau sang tiếng Việt:\n„Fährst du am Wochenende nach Polen?“",
+            "question": "Câu 85: Dịch câu sau sang tiếng Việt:\n\"Fährst du am Wochenende nach Polen?\"",
             "options": null,
             "correct_answer": "Cuối tuần bạn có đi Ba Lan không?",
-            "explanation": "Fährst du = bạn có đi/lái xe..., am Wochenende = vào cuối tuần: „Cuối tuần bạn có đi Ba Lan không?“ -> Đáp án: Cuối tuần bạn có đi Ba Lan không?.",
+            "explanation": "Fährst du = bạn có đi/lái xe..., am Wochenende = vào cuối tuần: \"Cuối tuần bạn có đi Ba Lan không?\"\n-> Đáp án: Cuối tuần bạn có đi Ba Lan không?",
             "exp_reward": 10,
             "extra_data": {
                 "accepted_answers": [
@@ -2543,10 +2334,10 @@ def seed_lesson_13():
         {
             "id": 86,
             "exercise_type": "dich_cau_dv",
-            "question": "Câu 86: Dịch câu sau sang tiếng Việt:\n„Karin wohnt in München.“",
+            "question": "Câu 86: Dịch câu sau sang tiếng Việt:\n\"Karin wohnt in München.\"",
             "options": null,
             "correct_answer": "Karin sống ở München.",
-            "explanation": "wohnt in München = sống ở München: „Karin sống ở München.“ -> Đáp án: Karin sống ở München..",
+            "explanation": "wohnt in München = sống ở München: \"Karin sống ở München.\"\n-> Đáp án: Karin sống ở München.",
             "exp_reward": 10,
             "extra_data": {
                 "accepted_answers": [
@@ -2564,28 +2355,17 @@ def seed_lesson_13():
                 "translation": "Karin sống ở München."
             }
         },
-
-        # --- 3.11. SẮP XẾP TỪ THÀNH CÂU (10 CÂU) ---
         {
             "id": 87,
             "exercise_type": "sap_xep_cau",
             "question": "Câu 87: Sắp xếp các từ sau thành câu hoàn chỉnh:",
             "options": null,
             "correct_answer": "Im Sommer essen die Kinder gern Eis.",
-            "explanation": "Trạng ngữ „Im Sommer“ đứng đầu thì động từ „essen“ đứng ở vị trí 2, tiếp theo là chủ ngữ „die Kinder“ -> Đáp án: Im Sommer essen die Kinder gern Eis..",
+            "explanation": "Trạng ngữ \"Im Sommer\" đứng đầu thì động từ \"essen\" đứng ở vị trí 2, tiếp theo là chủ ngữ \"die Kinder\"\n-> Đáp án: Im Sommer essen die Kinder gern Eis.",
             "exp_reward": 10,
             "extra_data": {
-                "tokens": [
-                    "die Kinder",
-                    "essen",
-                    "Eis",
-                    "Im Sommer",
-                    "gern"
-                ],
-                "accepted_answers": [
-                    "Im Sommer essen die Kinder gern Eis.",
-                    "Die Kinder essen im Sommer gern Eis."
-                ],
+                "tokens": ["die Kinder", "essen", "Eis", "Im Sommer", "gern"],
+                "accepted_answers": ["Im Sommer essen die Kinder gern Eis.", "Die Kinder essen im Sommer gern Eis."],
                 "audio_text": "Im Sommer essen die Kinder gern Eis.",
                 "translation": "Vào mùa hè bọn trẻ thích ăn kem."
             }
@@ -2596,19 +2376,11 @@ def seed_lesson_13():
             "question": "Câu 88: Sắp xếp các từ sau thành câu hỏi hoàn chỉnh:",
             "options": null,
             "correct_answer": "Reist ihr nach Italien?",
-            "explanation": "Câu hỏi Yes/No đảo động từ „Reist“ lên đầu câu, sau đó đến chủ ngữ „ihr“ -> Đáp án: Reist ihr nach Italien?.",
+            "explanation": "Câu hỏi Yes/No đảo động từ \"Reist\" lên đầu câu, sau đó đến chủ ngữ \"ihr\"\n-> Đáp án: Reist ihr nach Italien?",
             "exp_reward": 10,
             "extra_data": {
-                "tokens": [
-                    "ihr",
-                    "nach",
-                    "Reist",
-                    "Italien",
-                    "?"
-                ],
-                "accepted_answers": [
-                    "Reist ihr nach Italien?"
-                ],
+                "tokens": ["ihr", "nach", "Reist", "Italien", "?"],
+                "accepted_answers": ["Reist ihr nach Italien?"],
                 "audio_text": "Reist ihr nach Italien?",
                 "translation": "Các bạn có đi du lịch đến Ý không?"
             }
@@ -2619,19 +2391,11 @@ def seed_lesson_13():
             "question": "Câu 89: Sắp xếp các từ sau thành câu hỏi hoàn chỉnh:",
             "options": null,
             "correct_answer": "Wo wohnen Sie in Berlin?",
-            "explanation": "Từ để hỏi „Wo“ đứng đầu, động từ „wohnen“ ở vị trí 2, tiếp đến chủ ngữ „Sie“ -> Đáp án: Wo wohnen Sie in Berlin?.",
+            "explanation": "Từ để hỏi \"Wo\" đứng đầu, động từ \"wohnen\" ở vị trí 2, tiếp đến chủ ngữ \"Sie\"\n-> Đáp án: Wo wohnen Sie in Berlin?",
             "exp_reward": 10,
             "extra_data": {
-                "tokens": [
-                    "wohnen",
-                    "Sie",
-                    "in Berlin",
-                    "Wo",
-                    "?"
-                ],
-                "accepted_answers": [
-                    "Wo wohnen Sie in Berlin?"
-                ],
+                "tokens": ["wohnen", "Sie", "in Berlin", "Wo", "?"],
+                "accepted_answers": ["Wo wohnen Sie in Berlin?"],
                 "audio_text": "Wo wohnen Sie in Berlin?",
                 "translation": "Ngài sống ở đâu tại Berlin?"
             }
@@ -2642,19 +2406,11 @@ def seed_lesson_13():
             "question": "Câu 90: Sắp xếp các từ sau thành câu hỏi hoàn chỉnh:",
             "options": null,
             "correct_answer": "Was trinkt der Opa am Morgen?",
-            "explanation": "Từ để hỏi „Was“ đứng đầu, động từ „trinkt“ ở vị trí 2, chủ ngữ „der Opa“ -> Đáp án: Was trinkt der Opa am Morgen?.",
+            "explanation": "Từ để hỏi \"Was\" đứng đầu, động từ \"trinkt\" ở vị trí 2, chủ ngữ \"der Opa\"\n-> Đáp án: Was trinkt der Opa am Morgen?",
             "exp_reward": 10,
             "extra_data": {
-                "tokens": [
-                    "trinkt",
-                    "Was",
-                    "am Morgen",
-                    "der Opa",
-                    "?"
-                ],
-                "accepted_answers": [
-                    "Was trinkt der Opa am Morgen?"
-                ],
+                "tokens": ["trinkt", "Was", "am Morgen", "der Opa", "?"],
+                "accepted_answers": ["Was trinkt der Opa am Morgen?"],
                 "audio_text": "Was trinkt der Opa am Morgen?",
                 "translation": "Ông nội uống gì vào buổi sáng?"
             }
@@ -2665,15 +2421,10 @@ def seed_lesson_13():
             "question": "Câu 91: Sắp xếp các từ sau thành câu hoàn chỉnh:",
             "options": null,
             "correct_answer": "Der Großvater liest am Morgen die Zeitung.",
-            "explanation": "Chủ ngữ „Der Großvater“, động từ „liest“ vị trí 2, trạng ngữ „am Morgen“, tân ngữ „die Zeitung“ -> Đáp án: Der Großvater liest am Morgen die Zeitung..",
+            "explanation": "Chủ ngữ \"Der Großvater\", động từ \"liest\" vị trí 2, trạng ngữ \"am Morgen\", tân ngữ \"die Zeitung\"\n-> Đáp án: Der Großvater liest am Morgen die Zeitung.",
             "exp_reward": 10,
             "extra_data": {
-                "tokens": [
-                    "die Zeitung",
-                    "Der Großvater",
-                    "am Morgen",
-                    "liest"
-                ],
+                "tokens": ["die Zeitung", "Der Großvater", "am Morgen", "liest"],
                 "accepted_answers": [
                     "Der Großvater liest am Morgen die Zeitung.",
                     "Am Morgen liest der Großvater die Zeitung."
@@ -2688,19 +2439,11 @@ def seed_lesson_13():
             "question": "Câu 92: Sắp xếp các từ sau thành câu hoàn chỉnh:",
             "options": null,
             "correct_answer": "Hannes gibt dem Hund das Futter.",
-            "explanation": "Chủ ngữ „Hannes“, động từ „gibt“ ở vị trí 2, tân ngữ Dativ „dem Hund“, tân ngữ Akkusativ „das Futter“ -> Đáp án: Hannes gibt dem Hund das Futter..",
+            "explanation": "Chủ ngữ \"Hannes\", động từ \"gibt\" ở vị trí 2, tân ngữ Dativ \"dem Hund\", tân ngữ Akkusativ \"das Futter\"\n-> Đáp án: Hannes gibt dem Hund das Futter.",
             "exp_reward": 10,
             "extra_data": {
-                "tokens": [
-                    "dem Hund",
-                    "Hannes",
-                    "das Futter",
-                    "gibt"
-                ],
-                "accepted_answers": [
-                    "Hannes gibt dem Hund das Futter.",
-                    "Dem Hund gibt Hannes das Futter."
-                ],
+                "tokens": ["dem Hund", "Hannes", "das Futter", "gibt"],
+                "accepted_answers": ["Hannes gibt dem Hund das Futter.", "Dem Hund gibt Hannes das Futter."],
                 "audio_text": "Hannes gibt dem Hund das Futter.",
                 "translation": "Hannes cho chú chó thức ăn."
             }
@@ -2711,19 +2454,11 @@ def seed_lesson_13():
             "question": "Câu 93: Sắp xếp các từ sau thành câu hoàn chỉnh:",
             "options": null,
             "correct_answer": "Wir schlafen heute im Hotel.",
-            "explanation": "Chủ ngữ „Wir“, động từ „schlafen“ ở vị trí 2, thời gian „heute“, địa điểm „im Hotel“ -> Đáp án: Wir schlafen heute im Hotel..",
+            "explanation": "Chủ ngữ \"Wir\", động từ \"schlafen\" ở vị trí 2, thời gian \"heute\", địa điểm \"im Hotel\"\n-> Đáp án: Wir schlafen heute im Hotel.",
             "exp_reward": 10,
             "extra_data": {
-                "tokens": [
-                    "im Hotel",
-                    "schlafen",
-                    "Wir",
-                    "heute"
-                ],
-                "accepted_answers": [
-                    "Wir schlafen heute im Hotel.",
-                    "Heute schlafen wir im Hotel."
-                ],
+                "tokens": ["im Hotel", "schlafen", "Wir", "heute"],
+                "accepted_answers": ["Wir schlafen heute im Hotel.", "Heute schlafen wir im Hotel."],
                 "audio_text": "Wir schlafen heute im Hotel.",
                 "translation": "Hôm nay chúng tôi ngủ ở khách sạn."
             }
@@ -2734,19 +2469,11 @@ def seed_lesson_13():
             "question": "Câu 94: Sắp xếp các từ sau thành câu hoàn chỉnh:",
             "options": null,
             "correct_answer": "Der Lehrer spricht fließend Deutsch.",
-            "explanation": "Chủ ngữ „Der Lehrer“, động từ „spricht“ ở vị trí 2, bổ ngữ „fließend Deutsch“ -> Đáp án: Der Lehrer spricht fließend Deutsch..",
+            "explanation": "Chủ ngữ \"Der Lehrer\", động từ \"spricht\" ở vị trí 2, bổ ngữ \"fließend Deutsch\"\n-> Đáp án: Der Lehrer spricht fließend Deutsch.",
             "exp_reward": 10,
             "extra_data": {
-                "tokens": [
-                    "spricht",
-                    "Der Lehrer",
-                    "Deutsch",
-                    "fließend"
-                ],
-                "accepted_answers": [
-                    "Der Lehrer spricht fließend Deutsch.",
-                    "Fließend Deutsch spricht der Lehrer."
-                ],
+                "tokens": ["spricht", "Der Lehrer", "Deutsch", "fließend"],
+                "accepted_answers": ["Der Lehrer spricht fließend Deutsch.", "Fließend Deutsch spricht der Lehrer."],
                 "audio_text": "Der Lehrer spricht fließend Deutsch.",
                 "translation": "Thầy giáo nói tiếng Đức trôi chảy."
             }
@@ -2757,19 +2484,11 @@ def seed_lesson_13():
             "question": "Câu 95: Sắp xếp các từ sau thành câu hoàn chỉnh:",
             "options": null,
             "correct_answer": "Heute treffe ich meine Freunde.",
-            "explanation": "Trạng từ thời gian „Heute“ đứng đầu câu, động từ „treffe“ ở vị trí 2, chủ ngữ „ich“ -> Đáp án: Heute treffe ich meine Freunde..",
+            "explanation": "Trạng từ thời gian \"Heute\" đứng đầu câu, động từ \"treffe\" ở vị trí 2, chủ ngữ \"ich\"\n-> Đáp án: Heute treffe ich meine Freunde.",
             "exp_reward": 10,
             "extra_data": {
-                "tokens": [
-                    "treffe",
-                    "ich",
-                    "Heute",
-                    "meine Freunde"
-                ],
-                "accepted_answers": [
-                    "Heute treffe ich meine Freunde.",
-                    "Ich treffe heute meine Freunde."
-                ],
+                "tokens": ["treffe", "ich", "Heute", "meine Freunde"],
+                "accepted_answers": ["Heute treffe ich meine Freunde.", "Ich treffe heute meine Freunde."],
                 "audio_text": "Heute treffe ich meine Freunde.",
                 "translation": "Hôm nay tôi gặp bạn bè của mình."
             }
@@ -2780,65 +2499,37 @@ def seed_lesson_13():
             "question": "Câu 96: Sắp xếp các từ sau thành câu hỏi hoàn chỉnh:",
             "options": null,
             "correct_answer": "Woher kommst du?",
-            "explanation": "Từ để hỏi „Woher“ đứng đầu, động từ „kommst“ ở vị trí 2, chủ ngữ „du“ -> Đáp án: Woher kommst du?.",
+            "explanation": "Từ để hỏi \"Woher\" đứng đầu, động từ \"kommst\" ở vị trí 2, chủ ngữ \"du\"\n-> Đáp án: Woher kommst du?",
             "exp_reward": 10,
             "extra_data": {
-                "tokens": [
-                    "kommst",
-                    "Woher",
-                    "du",
-                    "?"
-                ],
-                "accepted_answers": [
-                    "Woher kommst du?"
-                ],
+                "tokens": ["kommst", "Woher", "du", "?"],
+                "accepted_answers": ["Woher kommst du?"],
                 "audio_text": "Woher kommst du?",
                 "translation": "Bạn đến từ đâu?"
             }
         },
-
-        # --- 3.12. PHÂN LOẠI ĐỘNG TỪ (3 BÀI) ---
         {
             "id": 97,
             "exercise_type": "phan_loai_dong_tu",
             "question": "Câu 97: Phân loại 4 động từ sau (lesen, kaufen, fahren, machen) vào nhóm Bất quy tắc (biến âm) hoặc Có quy tắc:",
             "options": null,
             "correct_answer": "Bất quy tắc, Có quy tắc, Bất quy tắc, Có quy tắc",
-            "explanation": "lesen (e → ie) và fahren (a → ä) là động từ bất quy tắc; kaufen và machen là động từ có quy tắc -> Đáp án: Bất quy tắc, Có quy tắc, Bất quy tắc, Có quy tắc.",
+            "explanation": "lesen (e → ie) và fahren (a → ä) là động từ bất quy tắc\nkaufen và machen là động từ có quy tắc.\n-> Đáp án: Bất quy tắc, Có quy tắc, Bất quy tắc, Có quy tắc.",
             "exp_reward": 15,
             "extra_data": {
                 "items": [
-                    {
-                        "word": "lesen",
-                        "meaning_vi": "đọc (e → ie)",
-                        "category": "Bất quy tắc"
-                    },
-                    {
-                        "word": "kaufen",
-                        "meaning_vi": "mua",
-                        "category": "Có quy tắc"
-                    },
-                    {
-                        "word": "fahren",
-                        "meaning_vi": "lái xe (a → ä)",
-                        "category": "Bất quy tắc"
-                    },
-                    {
-                        "word": "machen",
-                        "meaning_vi": "làm",
-                        "category": "Có quy tắc"
-                    }
+                    {"word": "lesen", "meaning_vi": "đọc (e → ie)", "category": "Bất quy tắc"},
+                    {"word": "kaufen", "meaning_vi": "mua", "category": "Có quy tắc"},
+                    {"word": "fahren", "meaning_vi": "lái xe (a → ä)", "category": "Bất quy tắc"},
+                    {"word": "machen", "meaning_vi": "làm", "category": "Có quy tắc"}
                 ],
-                "categories": [
-                    "Bất quy tắc",
-                    "Có quy tắc"
-                ],
+                "categories": ["Bất quy tắc", "Có quy tắc"],
                 "accepted_answers": [
                     "Bất quy tắc, Có quy tắc, Bất quy tắc, Có quy tắc",
                     "Bất quy tắc / Có quy tắc / Bất quy tắc / Có quy tắc"
                 ],
                 "audio_text": "lesen. kaufen. fahren. machen.",
-                "translation": "lesen: đọc | kaufen: mua | fahren: lái xe | machen: làm"
+                "translation": "lesen: đọc\nkaufen: mua\nfahren: lái xe\nmachen: làm"
             }
         },
         {
@@ -2847,41 +2538,22 @@ def seed_lesson_13():
             "question": "Câu 98: Phân loại 4 động từ sau (sprechen, hören, spielen, treffen) vào nhóm Bất quy tắc (biến âm) hoặc Có quy tắc:",
             "options": null,
             "correct_answer": "Bất quy tắc, Có quy tắc, Có quy tắc, Bất quy tắc",
-            "explanation": "sprechen (e → i) và treffen (e → i) là động từ bất quy tắc; hören và spielen là động từ có quy tắc -> Đáp án: Bất quy tắc, Có quy tắc, Có quy tắc, Bất quy tắc.",
+            "explanation": "sprechen (e → i) và treffen (e → i) là động từ bất quy tắc\nhören và spielen là động từ có quy tắc.\n-> Đáp án: Bất quy tắc, Có quy tắc, Có quy tắc, Bất quy tắc.",
             "exp_reward": 15,
             "extra_data": {
                 "items": [
-                    {
-                        "word": "sprechen",
-                        "meaning_vi": "nói (e → i)",
-                        "category": "Bất quy tắc"
-                    },
-                    {
-                        "word": "hören",
-                        "meaning_vi": "nghe",
-                        "category": "Có quy tắc"
-                    },
-                    {
-                        "word": "spielen",
-                        "meaning_vi": "chơi",
-                        "category": "Có quy tắc"
-                    },
-                    {
-                        "word": "treffen",
-                        "meaning_vi": "gặp gỡ (e → i)",
-                        "category": "Bất quy tắc"
-                    }
+                    {"word": "sprechen", "meaning_vi": "nói (e → i)", "category": "Bất quy tắc"},
+                    {"word": "hören", "meaning_vi": "nghe", "category": "Có quy tắc"},
+                    {"word": "spielen", "meaning_vi": "chơi", "category": "Có quy tắc"},
+                    {"word": "treffen", "meaning_vi": "gặp gỡ (e → i)", "category": "Bất quy tắc"}
                 ],
-                "categories": [
-                    "Bất quy tắc",
-                    "Có quy tắc"
-                ],
+                "categories": ["Bất quy tắc", "Có quy tắc"],
                 "accepted_answers": [
                     "Bất quy tắc, Có quy tắc, Có quy tắc, Bất quy tắc",
                     "Bất quy tắc / Có quy tắc / Có quy tắc / Bất quy tắc"
                 ],
                 "audio_text": "sprechen. hören. spielen. treffen.",
-                "translation": "sprechen: nói | hören: nghe | spielen: chơi | treffen: gặp gỡ"
+                "translation": "sprechen: nói\nhören: nghe\nspielen: chơi\ntreffen: gặp gỡ"
             }
         },
         {
@@ -2890,88 +2562,43 @@ def seed_lesson_13():
             "question": "Câu 99: Phân loại 4 động từ sau (schlafen, reisen, geben, grillen) vào nhóm Bất quy tắc (biến âm) hoặc Có quy tắc:",
             "options": null,
             "correct_answer": "Bất quy tắc, Có quy tắc, Bất quy tắc, Có quy tắc",
-            "explanation": "schlafen (a → ä) và geben (e → i) là động từ bất quy tắc; reisen và grillen là động từ có quy tắc -> Đáp án: Bất quy tắc, Có quy tắc, Bất quy tắc, Có quy tắc.",
+            "explanation": "schlafen (a → ä) và geben (e → i) là động từ bất quy tắc\nreisen và grillen là động từ có quy tắc.\n-> Đáp án: Bất quy tắc, Có quy tắc, Bất quy tắc, Có quy tắc.",
             "exp_reward": 15,
             "extra_data": {
                 "items": [
-                    {
-                        "word": "schlafen",
-                        "meaning_vi": "ngủ (a → ä)",
-                        "category": "Bất quy tắc"
-                    },
-                    {
-                        "word": "reisen",
-                        "meaning_vi": "du lịch",
-                        "category": "Có quy tắc"
-                    },
-                    {
-                        "word": "geben",
-                        "meaning_vi": "cho, đưa (e → i)",
-                        "category": "Bất quy tắc"
-                    },
-                    {
-                        "word": "grillen",
-                        "meaning_vi": "nướng BBQ",
-                        "category": "Có quy tắc"
-                    }
+                    {"word": "schlafen", "meaning_vi": "ngủ (a → ä)", "category": "Bất quy tắc"},
+                    {"word": "reisen", "meaning_vi": "du lịch", "category": "Có quy tắc"},
+                    {"word": "geben", "meaning_vi": "cho, đưa (e → i)", "category": "Bất quy tắc"},
+                    {"word": "grillen", "meaning_vi": "nướng BBQ", "category": "Có quy tắc"}
                 ],
-                "categories": [
-                    "Bất quy tắc",
-                    "Có quy tắc"
-                ],
+                "categories": ["Bất quy tắc", "Có quy tắc"],
                 "accepted_answers": [
                     "Bất quy tắc, Có quy tắc, Bất quy tắc, Có quy tắc",
                     "Bất quy tắc / Có quy tắc / Bất quy tắc / Có quy tắc"
                 ],
                 "audio_text": "schlafen. reisen. geben. grillen.",
-                "translation": "schlafen: ngủ | reisen: du lịch | geben: cho, đưa | grillen: nướng BBQ"
+                "translation": "schlafen: ngủ\nreisen: du lịch\ngeben: cho, đưa\ngrillen: nướng BBQ"
             }
         },
-
-        # --- 3.13. PHÂN LOẠI TỪ ĐỂ HỎI (3 BÀI) ---
         {
             "id": 100,
             "exercise_type": "phan_loai_tu_hoi",
             "question": "Câu 100: Phân loại 4 câu trả lời sau (Aus Vietnam, In Berlin, Anna, Kaffee) tương ứng với từ để hỏi phù hợp (Woher, Wo, Wie, Was):",
             "options": null,
             "correct_answer": "Woher, Wo, Wie, Was",
-            "explanation": "Aus đi với Woher, In đi với Wo, Tên người đi với Wie, Đồ uống đi với Was -> Đáp án: Woher, Wo, Wie, Was.",
+            "explanation": "Aus đi với Woher, In đi với Wo, Tên người đi với Wie, Đồ uống đi với Was.\n-> Đáp án: Woher, Wo, Wie, Was.",
             "exp_reward": 15,
             "extra_data": {
                 "items": [
-                    {
-                        "word": "Aus Vietnam.",
-                        "meaning_vi": "Từ Việt Nam (xuất xứ)",
-                        "category": "Woher"
-                    },
-                    {
-                        "word": "In Berlin.",
-                        "meaning_vi": "Ở Berlin (địa điểm)",
-                        "category": "Wo"
-                    },
-                    {
-                        "word": "Anna.",
-                        "meaning_vi": "Tên riêng",
-                        "category": "Wie"
-                    },
-                    {
-                        "word": "Kaffee.",
-                        "meaning_vi": "Đồ uống",
-                        "category": "Was"
-                    }
+                    {"word": "Aus Vietnam.", "meaning_vi": "Từ Việt Nam (xuất xứ)", "category": "Woher"},
+                    {"word": "In Berlin.", "meaning_vi": "Ở Berlin (địa điểm)", "category": "Wo"},
+                    {"word": "Anna.", "meaning_vi": "Tên riêng", "category": "Wie"},
+                    {"word": "Kaffee.", "meaning_vi": "Đồ uống", "category": "Was"}
                 ],
-                "categories": [
-                    "Woher",
-                    "Wo",
-                    "Wie",
-                    "Was"
-                ],
-                "accepted_answers": [
-                    "Woher, Wo, Wie, Was",
-                    "Woher / Wo / Wie / Was"
-                ],
+                "categories": ["Woher", "Wo", "Wie", "Was"],
+                "accepted_answers": ["Woher, Wo, Wie, Was", "Woher / Wo / Wie / Was"],
                 "audio_text": "Aus Vietnam. In Berlin. Anna. Kaffee.",
-                "translation": "Aus Vietnam: Từ Việt Nam | In Berlin: Ở Berlin | Anna: Tên riêng | Kaffee: Cà phê"
+                "translation": "Aus Vietnam: Từ Việt Nam\nIn Berlin: Ở Berlin\nAnna: Tên riêng\nKaffee: Cà phê"
             }
         },
         {
@@ -2980,43 +2607,19 @@ def seed_lesson_13():
             "question": "Câu 101: Phân loại 4 câu trả lời sau (Mein Name ist John, Aus Frankreich, In München, Ein Eis) tương ứng với từ để hỏi phù hợp (Wie, Woher, Wo, Was):",
             "options": null,
             "correct_answer": "Wie, Woher, Wo, Was",
-            "explanation": "Mein Name ist... đi với Wie (Wie ist Ihr Name?); Aus đi với Woher; In đi với Wo; Ein Eis đi với Was -> Đáp án: Wie, Woher, Wo, Was.",
+            "explanation": "Mein Name ist... đi với Wie (Wie ist Ihr Name?)\nAus đi với Woher; In đi với Wo\nEin Eis đi với Was.\n-> Đáp án: Wie, Woher, Wo, Was.",
             "exp_reward": 15,
             "extra_data": {
                 "items": [
-                    {
-                        "word": "Mein Name ist John.",
-                        "meaning_vi": "Tên tôi là John (hỏi tên)",
-                        "category": "Wie"
-                    },
-                    {
-                        "word": "Aus Frankreich.",
-                        "meaning_vi": "Từ nước Pháp (xuất xứ)",
-                        "category": "Woher"
-                    },
-                    {
-                        "word": "In München.",
-                        "meaning_vi": "Ở München (địa điểm)",
-                        "category": "Wo"
-                    },
-                    {
-                        "word": "Ein Eis.",
-                        "meaning_vi": "Một cây kem (món ăn)",
-                        "category": "Was"
-                    }
+                    {"word": "Mein Name ist John.", "meaning_vi": "Tên tôi là John (hỏi tên)", "category": "Wie"},
+                    {"word": "Aus Frankreich.", "meaning_vi": "Từ nước Pháp (xuất xứ)", "category": "Woher"},
+                    {"word": "In München.", "meaning_vi": "Ở München (địa điểm)", "category": "Wo"},
+                    {"word": "Ein Eis.", "meaning_vi": "Một cây kem (món ăn)", "category": "Was"}
                 ],
-                "categories": [
-                    "Wie",
-                    "Woher",
-                    "Wo",
-                    "Was"
-                ],
-                "accepted_answers": [
-                    "Wie, Woher, Wo, Was",
-                    "Wie / Woher / Wo / Was"
-                ],
+                "categories": ["Wie", "Woher", "Wo", "Was"],
+                "accepted_answers": ["Wie, Woher, Wo, Was", "Wie / Woher / Wo / Was"],
                 "audio_text": "Mein Name ist John. Aus Frankreich. In München. Ein Eis.",
-                "translation": "Mein Name ist John: Tên tôi là John | Aus Frankreich: Từ nước Pháp | In München: Ở München | Ein Eis: Một cây kem"
+                "translation": "Mein Name ist John: Tên tôi là John\nAus Frankreich: Từ nước Pháp\nIn München: Ở München\nEin Eis: Một cây kem"
             }
         },
         {
@@ -3025,54 +2628,28 @@ def seed_lesson_13():
             "question": "Câu 102: Phân loại 4 câu trả lời sau (Aus der Türkei, Ich heiße Julia, In Hamburg, Einen Tomatensalat) tương ứng với từ để hỏi phù hợp (Woher, Wie, Wo, Was):",
             "options": null,
             "correct_answer": "Woher, Wie, Wo, Was",
-            "explanation": "Aus der Türkei đi với Woher; Ich heiße... đi với Wie; In Hamburg đi với Wo; Einen Tomatensalat đi với Was -> Đáp án: Woher, Wie, Wo, Was.",
+            "explanation": "Aus der Türkei đi với Woher\nIch heiße... đi với Wie\nIn Hamburg đi với Wo; Einen Tomatensalat đi với Was.\n-> Đáp án: Woher, Wie, Wo, Was.",
             "exp_reward": 15,
             "extra_data": {
                 "items": [
-                    {
-                        "word": "Aus der Türkei.",
-                        "meaning_vi": "Từ Thổ Nhĩ Kỳ (xuất xứ)",
-                        "category": "Woher"
-                    },
-                    {
-                        "word": "Ich heiße Julia.",
-                        "meaning_vi": "Tôi tên là Julia (hỏi tên)",
-                        "category": "Wie"
-                    },
-                    {
-                        "word": "In Hamburg.",
-                        "meaning_vi": "Ở Hamburg (địa điểm)",
-                        "category": "Wo"
-                    },
-                    {
-                        "word": "Einen Tomatensalat.",
-                        "meaning_vi": "Món salad cà chua (món ăn)",
-                        "category": "Was"
-                    }
+                    {"word": "Aus der Türkei.", "meaning_vi": "Từ Thổ Nhĩ Kỳ (xuất xứ)", "category": "Woher"},
+                    {"word": "Ich heiße Julia.", "meaning_vi": "Tôi tên là Julia (hỏi tên)", "category": "Wie"},
+                    {"word": "In Hamburg.", "meaning_vi": "Ở Hamburg (địa điểm)", "category": "Wo"},
+                    {"word": "Einen Tomatensalat.", "meaning_vi": "Món salad cà chua (món ăn)", "category": "Was"}
                 ],
-                "categories": [
-                    "Woher",
-                    "Wie",
-                    "Wo",
-                    "Was"
-                ],
-                "accepted_answers": [
-                    "Woher, Wie, Wo, Was",
-                    "Woher / Wie / Wo / Was"
-                ],
+                "categories": ["Woher", "Wie", "Wo", "Was"],
+                "accepted_answers": ["Woher, Wie, Wo, Was", "Woher / Wie / Wo / Was"],
                 "audio_text": "Aus der Türkei. Ich heiße Julia. In Hamburg. Einen Tomatensalat.",
-                "translation": "Aus der Türkei: Từ Thổ Nhĩ Kỳ | Ich heiße Julia: Tôi tên là Julia | In Hamburg: Ở Hamburg | Einen Tomatensalat: Món salad cà chua"
+                "translation": "Aus der Türkei: Từ Thổ Nhĩ Kỳ\nIch heiße Julia: Tôi tên là Julia\nIn Hamburg: Ở Hamburg\nEinen Tomatensalat: Món salad cà chua"
             }
         },
-
-        # --- 3.14. TÌM LỖI SAI VÀ SỬA LẠI (10 CÂU) ---
         {
             "id": 103,
             "exercise_type": "tim_loi_sai",
-            "question": "Câu 103: Tìm lỗi sai trong câu sau và viết lại câu đúng hoàn chỉnh:\n„Ihr schläft heute Nacht im Hotel, oder?“",
+            "question": "Câu 103: Tìm lỗi sai trong câu sau và viết lại câu đúng hoàn chỉnh:\n\"Ihr schläft heute Nacht im Hotel, oder?\"",
             "options": null,
             "correct_answer": "Ihr schlaft heute Nacht im Hotel, oder?",
-            "explanation": "BẪY QUAN TRỌNG: Ngôi ihr (các bạn) KHÔNG BAO GIỜ biến âm. Động từ schlafen đi với ihr là „schlaft“ (không có Umlaut ä) -> Đáp án: Ihr schlaft heute Nacht im Hotel, oder?.",
+            "explanation": "BẪY QUAN TRỌNG: Ngôi ihr (các bạn) KHÔNG BAO GIỜ biến âm.\nĐộng từ schlafen đi với ihr là \"schlaft\" (không có Umlaut ä).\n-> Đáp án: Ihr schlaft heute Nacht im Hotel, oder?",
             "exp_reward": 15,
             "extra_data": {
                 "accepted_answers": [
@@ -3087,16 +2664,13 @@ def seed_lesson_13():
         {
             "id": 104,
             "exercise_type": "tim_loi_sai",
-            "question": "Câu 104: Tìm lỗi sai trong câu sau và viết lại câu đúng hoàn chỉnh:\n„Wann treffst du heute deine Freunde?“",
+            "question": "Câu 104: Tìm lỗi sai trong câu sau và viết lại câu đúng hoàn chỉnh:\n\"Wann treffst du heute deine Freunde?\"",
             "options": null,
             "correct_answer": "Wann triffst du heute deine Freunde?",
-            "explanation": "Động từ bất quy tắc treffen biến âm e → i ở ngôi du thành „triffst“ -> Đáp án: Wann triffst du heute deine Freunde?.",
+            "explanation": "Động từ bất quy tắc treffen biến âm e → i ở ngôi du thành \"triffst\"\n-> Đáp án: Wann triffst du heute deine Freunde?",
             "exp_reward": 15,
             "extra_data": {
-                "accepted_answers": [
-                    "Wann triffst du heute deine Freunde?",
-                    "Wann triffst du heute deine Freunde"
-                ],
+                "accepted_answers": ["Wann triffst du heute deine Freunde?", "Wann triffst du heute deine Freunde"],
                 "audio_text": "Wann triffst du heute deine Freunde?",
                 "translation": "Hôm nay khi nào bạn gặp bạn bè của mình?"
             }
@@ -3104,16 +2678,13 @@ def seed_lesson_13():
         {
             "id": 105,
             "exercise_type": "tim_loi_sai",
-            "question": "Câu 105: Tìm lỗi sai trong câu sau và viết lại câu đúng hoàn chỉnh:\n„Woher wohnst du in Berlin?“",
+            "question": "Câu 105: Tìm lỗi sai trong câu sau và viết lại câu đúng hoàn chỉnh:\n\"Woher wohnst du in Berlin?\"",
             "options": null,
             "correct_answer": "Wo wohnst du in Berlin?",
-            "explanation": "Hỏi nơi ở (với giới từ in) phải dùng từ để hỏi „Wo“, không dùng Woher -> Đáp án: Wo wohnst du in Berlin?.",
+            "explanation": "Hỏi nơi ở (với giới từ in) phải dùng từ để hỏi \"Wo\", không dùng Woher.\n-> Đáp án: Wo wohnst du in Berlin?",
             "exp_reward": 15,
             "extra_data": {
-                "accepted_answers": [
-                    "Wo wohnst du in Berlin?",
-                    "Wo wohnst du in Berlin"
-                ],
+                "accepted_answers": ["Wo wohnst du in Berlin?", "Wo wohnst du in Berlin"],
                 "audio_text": "Wo wohnst du in Berlin?",
                 "translation": "Bạn sống ở đâu tại Berlin?"
             }
@@ -3121,10 +2692,10 @@ def seed_lesson_13():
         {
             "id": 106,
             "exercise_type": "tim_loi_sai",
-            "question": "Câu 106: Tìm lỗi sai trong câu sau và viết lại câu đúng hoàn chỉnh:\n„Das Mädchen lest im Wohnzimmer ein Buch.“",
+            "question": "Câu 106: Tìm lỗi sai trong câu sau và viết lại câu đúng hoàn chỉnh:\n\"Das Mädchen lest im Wohnzimmer ein Buch.\"",
             "options": null,
             "correct_answer": "Das Mädchen liest im Wohnzimmer ein Buch.",
-            "explanation": "Chủ ngữ Das Mädchen mang giống trung (ngôi es). Động từ bất quy tắc lesen đổi e → ie thành „liest“ -> Đáp án: Das Mädchen liest im Wohnzimmer ein Buch..",
+            "explanation": "Chủ ngữ Das Mädchen mang giống trung (ngôi es).\nĐộng từ bất quy tắc lesen đổi e → ie thành \"liest\"\n-> Đáp án: Das Mädchen liest im Wohnzimmer ein Buch.",
             "exp_reward": 15,
             "extra_data": {
                 "accepted_answers": [
@@ -3138,16 +2709,13 @@ def seed_lesson_13():
         {
             "id": 107,
             "exercise_type": "tim_loi_sai",
-            "question": "Câu 107: Tìm lỗi sai trong câu sau và viết lại câu đúng hoàn chỉnh:\n„Ich fahrt am Wochenende ans Meer.“",
+            "question": "Câu 107: Tìm lỗi sai trong câu sau và viết lại câu đúng hoàn chỉnh:\n\"Ich fahrt am Wochenende ans Meer.\"",
             "options": null,
             "correct_answer": "Ich fahre am Wochenende ans Meer.",
-            "explanation": "Chủ ngữ ngôi ich đi với động từ thêm đuôi -e bình thường thành „fahre“ -> Đáp án: Ich fahre am Wochenende ans Meer..",
+            "explanation": "Chủ ngữ ngôi ich đi với động từ thêm đuôi -e bình thường thành \"fahre\"\n-> Đáp án: Ich fahre am Wochenende ans Meer.",
             "exp_reward": 15,
             "extra_data": {
-                "accepted_answers": [
-                    "Ich fahre am Wochenende ans Meer.",
-                    "Ich fahre am Wochenende ans Meer"
-                ],
+                "accepted_answers": ["Ich fahre am Wochenende ans Meer.", "Ich fahre am Wochenende ans Meer"],
                 "audio_text": "Ich fahre am Wochenende ans Meer.",
                 "translation": "Cuối tuần tôi đi ra biển."
             }
@@ -3155,16 +2723,13 @@ def seed_lesson_13():
         {
             "id": 108,
             "exercise_type": "tim_loi_sai",
-            "question": "Câu 108: Tìm lỗi sai trong câu sau và viết lại câu đúng hoàn chỉnh:\n„Der Lehrer sprechen zu leise.“",
+            "question": "Câu 108: Tìm lỗi sai trong câu sau và viết lại câu đúng hoàn chỉnh:\n\"Der Lehrer sprechen zu leise.\"",
             "options": null,
             "correct_answer": "Der Lehrer spricht zu leise.",
-            "explanation": "Chủ ngữ Der Lehrer (ngôi er), động từ sprechen đổi e → i thành „spricht“ -> Đáp án: Der Lehrer spricht zu leise..",
+            "explanation": "Chủ ngữ Der Lehrer (ngôi er), động từ sprechen đổi e → i thành \"spricht\"\n-> Đáp án: Der Lehrer spricht zu leise.",
             "exp_reward": 15,
             "extra_data": {
-                "accepted_answers": [
-                    "Der Lehrer spricht zu leise.",
-                    "Der Lehrer spricht zu leise"
-                ],
+                "accepted_answers": ["Der Lehrer spricht zu leise.", "Der Lehrer spricht zu leise"],
                 "audio_text": "Der Lehrer spricht zu leise.",
                 "translation": "Thầy giáo nói quá nhỏ."
             }
@@ -3172,16 +2737,13 @@ def seed_lesson_13():
         {
             "id": 109,
             "exercise_type": "tim_loi_sai",
-            "question": "Câu 109: Tìm lỗi sai trong câu sau và viết lại câu đúng hoàn chỉnh:\n„Ich komme in Deutschland.“",
+            "question": "Câu 109: Tìm lỗi sai trong câu sau và viết lại câu đúng hoàn chỉnh:\n\"Ich komme in Deutschland.\"",
             "options": null,
             "correct_answer": "Ich komme aus Deutschland.",
-            "explanation": "Động từ kommen diễn tả xuất xứ từ quốc gia nào phải đi kèm giới từ „aus“ -> Đáp án: Ich komme aus Deutschland..",
+            "explanation": "Động từ kommen diễn tả xuất xứ từ quốc gia nào phải đi kèm giới từ \"aus\"\n-> Đáp án: Ich komme aus Deutschland.",
             "exp_reward": 15,
             "extra_data": {
-                "accepted_answers": [
-                    "Ich komme aus Deutschland.",
-                    "Ich komme aus Deutschland"
-                ],
+                "accepted_answers": ["Ich komme aus Deutschland.", "Ich komme aus Deutschland"],
                 "audio_text": "Ich komme aus Deutschland.",
                 "translation": "Tôi đến từ nước Đức."
             }
@@ -3189,16 +2751,13 @@ def seed_lesson_13():
         {
             "id": 110,
             "exercise_type": "tim_loi_sai",
-            "question": "Câu 110: Tìm lỗi sai trong câu sau và viết lại câu đúng hoàn chỉnh:\n„Was esst er gern?“",
+            "question": "Câu 110: Tìm lỗi sai trong câu sau và viết lại câu đúng hoàn chỉnh:\n\"Was esst er gern?\"",
             "options": null,
             "correct_answer": "Was isst er gern?",
-            "explanation": "Chủ ngữ ngôi er, động từ bất quy tắc essen đổi e → i thành „isst“ -> Đáp án: Was isst er gern?.",
+            "explanation": "Chủ ngữ ngôi er, động từ bất quy tắc essen đổi e → i thành \"isst\"\n-> Đáp án: Was isst er gern?",
             "exp_reward": 15,
             "extra_data": {
-                "accepted_answers": [
-                    "Was isst er gern?",
-                    "Was isst er gern"
-                ],
+                "accepted_answers": ["Was isst er gern?", "Was isst er gern"],
                 "audio_text": "Was isst er gern?",
                 "translation": "Anh ấy thích ăn gì?"
             }
@@ -3206,16 +2765,13 @@ def seed_lesson_13():
         {
             "id": 111,
             "exercise_type": "tim_loi_sai",
-            "question": "Câu 111: Tìm lỗi sai trong câu sau và viết lại câu đúng hoàn chỉnh:\n„Entschuldigung, ist hier frei sein?“",
+            "question": "Câu 111: Tìm lỗi sai trong câu sau và viết lại câu đúng hoàn chỉnh:\n\"Entschuldigung, ist hier frei sein?\"",
             "options": null,
             "correct_answer": "Entschuldigung, ist hier frei?",
-            "explanation": "Câu đã có động từ tobe ist đứng trước, không để động từ nguyên thể sein ở cuối câu -> Đáp án: Entschuldigung, ist hier frei?.",
+            "explanation": "Câu đã có động từ tobe ist đứng trước, không để động từ nguyên thể sein ở cuối câu.\n-> Đáp án: Entschuldigung, ist hier frei?",
             "exp_reward": 15,
             "extra_data": {
-                "accepted_answers": [
-                    "Entschuldigung, ist hier frei?",
-                    "Entschuldigung, ist hier frei"
-                ],
+                "accepted_answers": ["Entschuldigung, ist hier frei?", "Entschuldigung, ist hier frei"],
                 "audio_text": "Entschuldigung, ist hier frei?",
                 "translation": "Xin lỗi, chỗ này còn trống không?"
             }
@@ -3223,10 +2779,10 @@ def seed_lesson_13():
         {
             "id": 112,
             "exercise_type": "tim_loi_sai",
-            "question": "Câu 112: Tìm lỗi sai trong câu sau và viết lại câu đúng hoàn chỉnh:\n„Hannes und Julia gibt dem Hund das Futter.“",
+            "question": "Câu 112: Tìm lỗi sai trong câu sau và viết lại câu đúng hoàn chỉnh:\n\"Hannes und Julia gibt dem Hund das Futter.\"",
             "options": null,
             "correct_answer": "Hannes und Julia geben dem Hund das Futter.",
-            "explanation": "Chủ ngữ số nhiều (Hannes und Julia - sie số nhiều), động từ giữ nguyên thể „geben“ -> Đáp án: Hannes und Julia geben dem Hund das Futter..",
+            "explanation": "Chủ ngữ số nhiều (Hannes und Julia - sie số nhiều), động từ giữ nguyên thể \"geben\"\n-> Đáp án: Hannes und Julia geben dem Hund das Futter.",
             "exp_reward": 15,
             "extra_data": {
                 "accepted_answers": [
@@ -3237,74 +2793,61 @@ def seed_lesson_13():
                 "translation": "Hannes và Julia cho chú chó thức ăn."
             }
         },
-
-        # --- 3.15. ĐẶT CÂU HỎI CHO TỪ GẠCH CHÂN (5 CÂU) ---
         {
             "id": 113,
             "exercise_type": "viet_lai_cau_w",
-            "question": "Câu 113: Đặt câu hỏi cho cụm từ in đậm trong câu sau (hỏi ở ngôi du):\n„Ich komme **aus Polen**.“",
+            "question": "Câu 113: Đặt câu hỏi cho cụm từ in đậm trong câu sau (hỏi ở ngôi du):\n\"Ich komme **aus Polen**.\"",
             "options": null,
             "correct_answer": "Woher kommst du?",
-            "explanation": "Cụm „aus Polen“ chỉ nơi xuất xứ nên hỏi bằng từ để hỏi „Woher“; đổi ngôi ich thành du đi với động từ kommst -> Đáp án: Woher kommst du?.",
+            "explanation": "Cụm \"aus Polen\" chỉ nơi xuất xứ nên hỏi bằng từ để hỏi \"Woher\"\nđổi ngôi ich thành du đi với động từ kommst.\n-> Đáp án: Woher kommst du?",
             "exp_reward": 15,
             "extra_data": {
                 "source_sentence": "Ich komme aus Polen.",
                 "target_phrase": "aus Polen",
-                "accepted_answers": [
-                    "Woher kommst du?",
-                    "Woher kommst du"
-                ],
+                "accepted_answers": ["Woher kommst du?", "Woher kommst du"],
                 "audio_text": "Woher kommst du?",
-                "translation": "Bạn đến từ đâu? (Tôi đến từ Ba Lan.)"
+                "translation": "Bạn đến từ đâu?\n(Tôi đến từ Ba Lan.)"
             }
         },
         {
             "id": 114,
             "exercise_type": "viet_lai_cau_w",
-            "question": "Câu 114: Đặt câu hỏi cho cụm từ in đậm trong câu sau (hỏi ở ngôi Sie lịch sự):\n„Mein Name ist **Anna**.“",
+            "question": "Câu 114: Đặt câu hỏi cho cụm từ in đậm trong câu sau (hỏi ở ngôi Sie lịch sự):\n\"Mein Name ist **Anna**.\"",
             "options": null,
             "correct_answer": "Wie ist Ihr Name?",
-            "explanation": "Hỏi tên lịch sự ở ngôi Sie dùng cấu trúc „Wie ist Ihr Name?“ hoặc „Wie heißen Sie?“ -> Đáp án: Wie ist Ihr Name?.",
+            "explanation": "Hỏi tên lịch sự ở ngôi Sie dùng cấu trúc \"Wie ist Ihr Name?\" hoặc \"Wie heißen Sie?\"\n-> Đáp án: Wie ist Ihr Name?",
             "exp_reward": 15,
             "extra_data": {
                 "source_sentence": "Mein Name ist Anna.",
                 "target_phrase": "Anna",
-                "accepted_answers": [
-                    "Wie ist Ihr Name?",
-                    "Wie ist Ihr Name",
-                    "Wie heißen Sie?",
-                    "Wie heißen Sie"
-                ],
+                "accepted_answers": ["Wie ist Ihr Name?", "Wie ist Ihr Name", "Wie heißen Sie?", "Wie heißen Sie"],
                 "audio_text": "Wie ist Ihr Name?",
-                "translation": "Tên của ngài là gì? (Tên tôi là Anna.)"
+                "translation": "Tên của ngài là gì?\n(Tên tôi là Anna.)"
             }
         },
         {
             "id": 115,
             "exercise_type": "viet_lai_cau_w",
-            "question": "Câu 115: Đặt câu hỏi cho cụm từ in đậm trong câu sau (hỏi ở ngôi du):\n„Ich wohne **in Ha Noi**.“",
+            "question": "Câu 115: Đặt câu hỏi cho cụm từ in đậm trong câu sau (hỏi ở ngôi du):\n\"Ich wohne **in Ha Noi**.\"",
             "options": null,
             "correct_answer": "Wo wohnst du?",
-            "explanation": "Cụm „in Ha Noi“ chỉ địa điểm cư trú nên hỏi bằng từ để hỏi „Wo“; đổi ngôi ich thành du đi với wohnst -> Đáp án: Wo wohnst du?.",
+            "explanation": "Cụm \"in Ha Noi\" chỉ địa điểm cư trú nên hỏi bằng từ để hỏi \"Wo\"\nđổi ngôi ich thành du đi với wohnst.\n-> Đáp án: Wo wohnst du?",
             "exp_reward": 15,
             "extra_data": {
                 "source_sentence": "Ich wohne in Ha Noi.",
                 "target_phrase": "in Ha Noi",
-                "accepted_answers": [
-                    "Wo wohnst du?",
-                    "Wo wohnst du"
-                ],
+                "accepted_answers": ["Wo wohnst du?", "Wo wohnst du"],
                 "audio_text": "Wo wohnst du?",
-                "translation": "Bạn sống ở đâu? (Tôi sống ở Hà Nội.)"
+                "translation": "Bạn sống ở đâu?\n(Tôi sống ở Hà Nội.)"
             }
         },
         {
             "id": 116,
             "exercise_type": "viet_lai_cau_w",
-            "question": "Câu 116: Đặt câu hỏi cho cụm từ in đậm trong câu sau (hỏi ở ngôi ihr):\n„Wir trinken **Kaffee**.“",
+            "question": "Câu 116: Đặt câu hỏi cho cụm từ in đậm trong câu sau (hỏi ở ngôi ihr):\n\"Wir trinken **Kaffee**.\"",
             "options": null,
             "correct_answer": "Was trinkt ihr?",
-            "explanation": "Từ „Kaffee“ chỉ đồ vật/đồ uống nên hỏi bằng „Was“; đổi ngôi wir thành ihr đi với động từ „trinkt“ -> Đáp án: Was trinkt ihr?.",
+            "explanation": "Từ \"Kaffee\" chỉ đồ vật/đồ uống nên hỏi bằng \"Was\"\nđổi ngôi wir thành ihr đi với động từ \"trinkt\"\n-> Đáp án: Was trinkt ihr?",
             "exp_reward": 15,
             "extra_data": {
                 "source_sentence": "Wir trinken Kaffee.",
@@ -3320,136 +2863,92 @@ def seed_lesson_13():
                     "Was wollt ihr trinken"
                 ],
                 "audio_text": "Was trinkt ihr?",
-                "translation": "Các bạn uống gì? (Chúng tôi uống cà phê.)"
+                "translation": "Các bạn uống gì?\n(Chúng tôi uống cà phê.)"
             }
         },
         {
             "id": 117,
             "exercise_type": "viet_lai_cau_w",
-            "question": "Câu 117: Đặt câu hỏi cho cụm từ in đậm trong câu sau (hỏi ở ngôi sie - cô ấy):\n„Sie kommt **aus der Türkei**.“",
+            "question": "Câu 117: Đặt câu hỏi cho cụm từ in đậm trong câu sau (hỏi ở ngôi sie - cô ấy):\n\"Sie kommt **aus der Türkei**.\"",
             "options": null,
             "correct_answer": "Woher kommt sie?",
-            "explanation": "Cụm „aus der Türkei“ chỉ xuất xứ nên hỏi bằng „Woher“; giữ nguyên chủ ngữ ngôi 3 số ít sie và động từ kommt -> Đáp án: Woher kommt sie?.",
+            "explanation": "Cụm \"aus der Türkei\" chỉ xuất xứ nên hỏi bằng \"Woher\"\ngiữ nguyên chủ ngữ ngôi 3 số ít sie và động từ kommt.\n-> Đáp án: Woher kommt sie?",
             "exp_reward": 15,
             "extra_data": {
                 "source_sentence": "Sie kommt aus der Türkei.",
                 "target_phrase": "aus der Türkei",
-                "accepted_answers": [
-                    "Woher kommt sie?",
-                    "Woher kommt sie"
-                ],
+                "accepted_answers": ["Woher kommt sie?", "Woher kommt sie"],
                 "audio_text": "Woher kommt sie?",
-                "translation": "Cô ấy đến từ đâu? (Cô ấy đến từ Thổ Nhĩ Kỳ.)"
+                "translation": "Cô ấy đến từ đâu?\n(Cô ấy đến từ Thổ Nhĩ Kỳ.)"
             }
         },
-
-        # --- 3.16. ĐÚNG HAY SAI (3 CÂU) ---
         {
             "id": 118,
             "exercise_type": "dung_sai",
-            "question": "Câu 118: Đọc đoạn văn sau và chọn Đúng (Richtig) hoặc Sai (Falsch):\nNhận định: „David kommt aus Deutschland.“",
+            "question": "Câu 118: Đọc đoạn văn sau và chọn Đúng (Richtig) hoặc Sai (Falsch):\nNhận định: \"David kommt aus Deutschland.\"",
             "options": ["Richtig", "Falsch"],
             "correct_answer": "Falsch",
-            "explanation": "Nhận định này là SAI (Falsch) vì trong bài đọc nói rõ David đến từ Tây Ban Nha („Er kommt aus Spanien“), không phải từ nước Đức -> Đáp án: Falsch.",
+            "explanation": "Nhận định này là SAI (Falsch) vì trong bài đọc nói rõ David đến từ Tây Ban Nha (\"Er kommt aus Spanien\"), không phải từ nước Đức.\n-> Đáp án: Falsch.",
             "exp_reward": 10,
             "extra_data": {
                 "reading_text": "Das ist David. Er kommt aus Spanien, aber er wohnt jetzt in Berlin. Am Wochenende fährt er oft mit dem Fahrrad in den Park. Er liest gern Bücher und isst Pizza. Heute trifft er Maria im Café. Sie trinken zusammen Kaffee mit viel Zucker.",
-                "reading_translation_vi": "Đây là David. Anh ấy đến từ Tây Ban Nha, nhưng hiện tại anh ấy sống ở Berlin. Vào cuối tuần, anh ấy thường đi xe đạp vào công viên. Anh ấy thích đọc sách và ăn pizza. Hôm nay anh ấy gặp Maria ở quán cà phê. Họ cùng nhau uống cà phê với nhiều đường.",
-                "accepted_answers": [
-                    "Falsch"
-                ],
+                "reading_translation_vi": "Đây là David.\nAnh ấy đến từ Tây Ban Nha, nhưng hiện tại anh ấy sống ở Berlin.\nVào cuối tuần, anh ấy thường đi xe đạp vào công viên.\nAnh ấy thích đọc sách và ăn pizza.\nHôm nay anh ấy gặp Maria ở quán cà phê.\nHọ cùng nhau uống cà phê với nhiều đường.",
+                "accepted_answers": ["Falsch"],
                 "audio_text": "Das ist David. Er kommt aus Spanien, aber er wohnt jetzt in Berlin. Am Wochenende fährt er oft mit dem Fahrrad in den Park. Er liest gern Bücher und isst Pizza. Heute trifft er Maria im Café. Sie trinken zusammen Kaffee mit viel Zucker.",
-                "translation": "Đây là David. Anh ấy đến từ Tây Ban Nha, nhưng hiện tại anh ấy sống ở Berlin. Vào cuối tuần, anh ấy thường đi xe đạp vào công viên. Anh ấy thích đọc sách và ăn pizza. Hôm nay anh ấy gặp Maria ở quán cà phê. Họ cùng nhau uống cà phê với nhiều đường."
+                "translation": "Đây là David.\nAnh ấy đến từ Tây Ban Nha, nhưng hiện tại anh ấy sống ở Berlin.\nVào cuối tuần, anh ấy thường đi xe đạp vào công viên.\nAnh ấy thích đọc sách và ăn pizza.\nHôm nay anh ấy gặp Maria ở quán cà phê.\nHọ cùng nhau uống cà phê với nhiều đường."
             }
         },
         {
             "id": 119,
             "exercise_type": "dung_sai",
-            "question": "Câu 119: Đọc đoạn văn sau và chọn Đúng (Richtig) hoặc Sai (Falsch):\nNhận định: „Maria und David trinken Kaffee.“",
+            "question": "Câu 119: Đọc đoạn văn sau và chọn Đúng (Richtig) hoặc Sai (Falsch):\nNhận định: \"Maria und David trinken Kaffee.\"",
             "options": ["Richtig", "Falsch"],
             "correct_answer": "Richtig",
-            "explanation": "Nhận định này là ĐÚNG (Richtig) vì đoạn văn viết: „Sie trinken zusammen Kaffee mit viel Zucker“ -> Đáp án: Richtig.",
+            "explanation": "Nhận định này là ĐÚNG (Richtig) vì đoạn văn viết: \"Sie trinken zusammen Kaffee mit viel Zucker\"\n-> Đáp án: Richtig.",
             "exp_reward": 10,
             "extra_data": {
                 "reading_text": "Das ist David. Er kommt aus Spanien, aber er wohnt jetzt in Berlin. Am Wochenende fährt er oft mit dem Fahrrad in den Park. Er liest gern Bücher und isst Pizza. Heute trifft er Maria im Café. Sie trinken zusammen Kaffee mit viel Zucker.",
-                "reading_translation_vi": "Đây là David. Anh ấy đến từ Tây Ban Nha, nhưng hiện tại anh ấy sống ở Berlin. Vào cuối tuần, anh ấy thường đi xe đạp vào công viên. Anh ấy thích đọc sách và ăn pizza. Hôm nay anh ấy gặp Maria ở quán cà phê. Họ cùng nhau uống cà phê với nhiều đường.",
-                "accepted_answers": [
-                    "Richtig"
-                ],
+                "reading_translation_vi": "Đây là David.\nAnh ấy đến từ Tây Ban Nha, nhưng hiện tại anh ấy sống ở Berlin.\nVào cuối tuần, anh ấy thường đi xe đạp vào công viên.\nAnh ấy thích đọc sách và ăn pizza.\nHôm nay anh ấy gặp Maria ở quán cà phê.\nHọ cùng nhau uống cà phê với nhiều đường.",
+                "accepted_answers": ["Richtig"],
                 "audio_text": "Das ist David. Er kommt aus Spanien, aber er wohnt jetzt in Berlin. Am Wochenende fährt er oft mit dem Fahrrad in den Park. Er liest gern Bücher und isst Pizza. Heute trifft er Maria im Café. Sie trinken zusammen Kaffee mit viel Zucker.",
-                "translation": "Đây là David. Anh ấy đến từ Tây Ban Nha, nhưng hiện tại anh ấy sống ở Berlin. Vào cuối tuần, anh ấy thường đi xe đạp vào công viên. Anh ấy thích đọc sách và ăn pizza. Hôm nay anh ấy gặp Maria ở quán cà phê. Họ cùng nhau uống cà phê với nhiều đường."
+                "translation": "Đây là David.\nAnh ấy đến từ Tây Ban Nha, nhưng hiện tại anh ấy sống ở Berlin.\nVào cuối tuần, anh ấy thường đi xe đạp vào công viên.\nAnh ấy thích đọc sách và ăn pizza.\nHôm nay anh ấy gặp Maria ở quán cà phê.\nHọ cùng nhau uống cà phê với nhiều đường."
             }
         },
         {
             "id": 120,
             "exercise_type": "dung_sai",
-            "question": "Câu 120: Đọc đoạn văn sau và chọn Đúng (Richtig) hoặc Sai (Falsch):\nNhận định: „David isst gern Pizza und liest Bücher.“",
+            "question": "Câu 120: Đọc đoạn văn sau và chọn Đúng (Richtig) hoặc Sai (Falsch):\nNhận định: \"David isst gern Pizza und liest Bücher.\"",
             "options": ["Richtig", "Falsch"],
             "correct_answer": "Richtig",
-            "explanation": "Nhận định này là ĐÚNG (Richtig) vì đoạn văn viết: „Er liest gern Bücher und isst Pizza“ -> Đáp án: Richtig.",
+            "explanation": "Nhận định này là ĐÚNG (Richtig) vì đoạn văn viết: \"Er liest gern Bücher und isst Pizza\"\n-> Đáp án: Richtig.",
             "exp_reward": 10,
             "extra_data": {
                 "reading_text": "Das ist David. Er kommt aus Spanien, aber er wohnt jetzt in Berlin. Am Wochenende fährt er oft mit dem Fahrrad in den Park. Er liest gern Bücher und isst Pizza. Heute trifft er Maria im Café. Sie trinken zusammen Kaffee mit viel Zucker.",
-                "reading_translation_vi": "Đây là David. Anh ấy đến từ Tây Ban Nha, nhưng hiện tại anh ấy sống ở Berlin. Vào cuối tuần, anh ấy thường đi xe đạp vào công viên. Anh ấy thích đọc sách và ăn pizza. Hôm nay anh ấy gặp Maria ở quán cà phê. Họ cùng nhau uống cà phê với nhiều đường.",
-                "accepted_answers": [
-                    "Richtig"
-                ],
+                "reading_translation_vi": "Đây là David.\nAnh ấy đến từ Tây Ban Nha, nhưng hiện tại anh ấy sống ở Berlin.\nVào cuối tuần, anh ấy thường đi xe đạp vào công viên.\nAnh ấy thích đọc sách và ăn pizza.\nHôm nay anh ấy gặp Maria ở quán cà phê.\nHọ cùng nhau uống cà phê với nhiều đường.",
+                "accepted_answers": ["Richtig"],
                 "audio_text": "Das ist David. Er kommt aus Spanien, aber er wohnt jetzt in Berlin. Am Wochenende fährt er oft mit dem Fahrrad in den Park. Er liest gern Bücher und isst Pizza. Heute trifft er Maria im Café. Sie trinken zusammen Kaffee mit viel Zucker.",
-                "translation": "Đây là David. Anh ấy đến từ Tây Ban Nha, nhưng hiện tại anh ấy sống ở Berlin. Vào cuối tuần, anh ấy thường đi xe đạp vào công viên. Anh ấy thích đọc sách và ăn pizza. Hôm nay anh ấy gặp Maria ở quán cà phê. Họ cùng nhau uống cà phê với nhiều đường."
+                "translation": "Đây là David.\nAnh ấy đến từ Tây Ban Nha, nhưng hiện tại anh ấy sống ở Berlin.\nVào cuối tuần, anh ấy thường đi xe đạp vào công viên.\nAnh ấy thích đọc sách và ăn pizza.\nHôm nay anh ấy gặp Maria ở quán cà phê.\nHọ cùng nhau uống cà phê với nhiều đường."
             }
         },
-
-        # --- 3.17. SẮP XẾP HỘI THOẠI (3 CÂU) ---
         {
             "id": 121,
             "exercise_type": "hoi_thoai_sap_xep",
             "question": "Câu 121: Sắp xếp các câu thoại sau theo đúng diễn biến một cuộc hội thoại tại quán cà phê:",
             "options": null,
             "correct_answer": "1, 2, 3, 4, 5, 6",
-            "explanation": "Thứ tự logic: Khách hỏi chỗ trống -> Anna mời ngồi -> Khách cảm ơn & tự giới thiệu -> Anna giới thiệu lại -> Bồi bàn hỏi món -> Khách gọi 2 cà phê -> Đáp án: 1, 2, 3, 4, 5, 6.",
+            "explanation": "Thứ tự logic: Khách hỏi chỗ trống -> Anna mời ngồi.\n-> Khách cảm ơn & tự giới thiệu.\n-> Anna giới thiệu lại.\n-> Bồi bàn hỏi món.\n-> Khách gọi 2 cà phê.\n-> Đáp án: 1, 2, 3, 4, 5, 6.",
             "exp_reward": 15,
             "extra_data": {
                 "lines": [
-                    {
-                        "id": 1,
-                        "speaker": "Gast",
-                        "text": "Entschuldigung, ist hier frei?"
-                    },
-                    {
-                        "id": 2,
-                        "speaker": "Anna",
-                        "text": "Ja klar, bitte. Setzen Sie sich."
-                    },
-                    {
-                        "id": 3,
-                        "speaker": "Gast",
-                        "text": "Danke. Ich bin John aus Frankreich, und du?"
-                    },
-                    {
-                        "id": 4,
-                        "speaker": "Anna",
-                        "text": "Ich heiße Anna. Ich komme aus Polen."
-                    },
-                    {
-                        "id": 5,
-                        "speaker": "Kellner",
-                        "text": "Was möchtet ihr trinken: Kaffee oder Tee?"
-                    },
-                    {
-                        "id": 6,
-                        "speaker": "Gast",
-                        "text": "Zwei Kaffee mit Zucker, bitte!"
-                    }
+                    {"id": 1, "speaker": "Gast", "text": "Entschuldigung, ist hier frei?"},
+                    {"id": 2, "speaker": "Anna", "text": "Ja klar, bitte. Setzen Sie sich."},
+                    {"id": 3, "speaker": "Gast", "text": "Danke. Ich bin John aus Frankreich, und du?"},
+                    {"id": 4, "speaker": "Anna", "text": "Ich heiße Anna. Ich komme aus Polen."},
+                    {"id": 5, "speaker": "Kellner", "text": "Was möchtet ihr trinken: Kaffee oder Tee?"},
+                    {"id": 6, "speaker": "Gast", "text": "Zwei Kaffee mit Zucker, bitte!"}
                 ],
-                "correct_order": [
-                    1,
-                    2,
-                    3,
-                    4,
-                    5,
-                    6
-                ],
-                "translation": "- Khách: Xin lỗi, chỗ này còn trống không?\n- Anna: Vâng tất nhiên, xin mời. Ngài hãy ngồi xuống đi.\n- Khách: Cảm ơn bạn. Tôi là John đến từ Pháp, còn bạn?\n- Anna: Tôi tên là Anna. Tôi đến từ Ba Lan.\n- Bồi bàn: Các bạn muốn uống gì: cà phê hay trà?\n- Khách: Cho hai cà phê có đường, xin cảm ơn!",
+                "correct_order": [1, 2, 3, 4, 5, 6],
+                "translation": "- Khách: Xin lỗi, chỗ này còn trống không?\n- Anna: Vâng tất nhiên, xin mời.\nNgài hãy ngồi xuống đi.\n- Khách: Cảm ơn bạn.\nTôi là John đến từ Pháp, còn bạn?\n- Anna: Tôi tên là Anna.\nTôi đến từ Ba Lan.\n- Bồi bàn: Các bạn muốn uống gì: cà phê hay trà?\n- Khách: Cho hai cà phê có đường, xin cảm ơn!",
                 "audio_text": "Entschuldigung, ist hier frei? Ja klar, bitte. Setzen Sie sich. Danke. Ich bin John aus Frankreich, und du? Ich heiße Anna. Ich komme aus Polen. Was möchtet ihr trinken: Kaffee oder Tee? Zwei Kaffee mit Zucker, bitte!"
             }
         },
@@ -3459,50 +2958,19 @@ def seed_lesson_13():
             "question": "Câu 122: Sắp xếp các câu thoại sau theo đúng diễn biến một cuộc làm quen lịch sự:",
             "options": null,
             "correct_answer": "1, 2, 3, 4, 5, 6",
-            "explanation": "Thứ tự logic: Chào hỏi ban đầu -> Giới thiệu tên và hỏi lại -> Giới thiệu tên và hỏi xuất xứ -> Trả lời xuất xứ -> Hỏi nơi ở hiện tại -> Trả lời nơi ở -> Đáp án: 1, 2, 3, 4, 5, 6.",
+            "explanation": "Thứ tự logic: Chào hỏi ban đầu -> Giới thiệu tên và hỏi lại.\n-> Giới thiệu tên và hỏi xuất xứ.\n-> Trả lời xuất xứ.\n-> Hỏi nơi ở hiện tại.\n-> Trả lời nơi ở.\n-> Đáp án: 1, 2, 3, 4, 5, 6.",
             "exp_reward": 15,
             "extra_data": {
                 "lines": [
-                    {
-                        "id": 1,
-                        "speaker": "Maria",
-                        "text": "Guten Tag! Wer sind Sie?"
-                    },
-                    {
-                        "id": 2,
-                        "speaker": "David",
-                        "text": "Guten Tag, mein Name ist David. Und wie heißen Sie?"
-                    },
-                    {
-                        "id": 3,
-                        "speaker": "Maria",
-                        "text": "Ich bin Maria. Woher kommen Sie, David?"
-                    },
-                    {
-                        "id": 4,
-                        "speaker": "David",
-                        "text": "Ich komme aus Deutschland."
-                    },
-                    {
-                        "id": 5,
-                        "speaker": "Maria",
-                        "text": "Und wo wohnen Sie jetzt?"
-                    },
-                    {
-                        "id": 6,
-                        "speaker": "David",
-                        "text": "Ich wohne in Berlin."
-                    }
+                    {"id": 1, "speaker": "Maria", "text": "Guten Tag! Wer sind Sie?"},
+                    {"id": 2, "speaker": "David", "text": "Guten Tag, mein Name ist David. Und wie heißen Sie?"},
+                    {"id": 3, "speaker": "Maria", "text": "Ich bin Maria. Woher kommen Sie, David?"},
+                    {"id": 4, "speaker": "David", "text": "Ich komme aus Deutschland."},
+                    {"id": 5, "speaker": "Maria", "text": "Und wo wohnen Sie jetzt?"},
+                    {"id": 6, "speaker": "David", "text": "Ich wohne in Berlin."}
                 ],
-                "correct_order": [
-                    1,
-                    2,
-                    3,
-                    4,
-                    5,
-                    6
-                ],
-                "translation": "- Maria: Xin chào! Ngài là ai ạ?\n- David: Xin chào, tên tôi là David. Còn ngài tên là gì?\n- Maria: Tôi là Maria. Ngài đến từ đâu vậy David?\n- David: Tôi đến từ nước Đức.\n- Maria: Và hiện tại ngài sống ở đâu?\n- David: Tôi sống ở Berlin.",
+                "correct_order": [1, 2, 3, 4, 5, 6],
+                "translation": "- Maria: Xin chào!\nNgài là ai ạ?\n- David: Xin chào, tên tôi là David.\nCòn ngài tên là gì?\n- Maria: Tôi là Maria.\nNgài đến từ đâu vậy David?\n- David: Tôi đến từ nước Đức.\n- Maria: Và hiện tại ngài sống ở đâu?\n- David: Tôi sống ở Berlin.",
                 "audio_text": "Guten Tag! Wer sind Sie? Guten Tag, mein Name ist David. Und wie heißen Sie? Ich bin Maria. Woher kommen Sie, David? Ich komme aus Deutschland. Und wo wohnen Sie jetzt? Ich wohne in Berlin."
             }
         },
@@ -3512,59 +2980,26 @@ def seed_lesson_13():
             "question": "Câu 123: Sắp xếp các câu thoại sau theo đúng diễn biến cuộc đối thoại rủ rê bạn bè:",
             "options": null,
             "correct_answer": "1, 2, 3, 4, 5, 6",
-            "explanation": "Thứ tự logic: Hỏi thời gian gặp bạn -> Trả lời thời gian & địa điểm -> Hỏi hoạt động dự định -> Trả lời hoạt động -> Chúc vui vẻ -> Cảm ơn -> Đáp án: 1, 2, 3, 4, 5, 6.",
+            "explanation": "Thứ tự logic: Hỏi thời gian gặp bạn -> Trả lời thời gian & địa điểm.\n-> Hỏi hoạt động dự định.\n-> Trả lời hoạt động.\n-> Chúc vui vẻ.\n-> Cảm ơn.\n-> Đáp án: 1, 2, 3, 4, 5, 6.",
             "exp_reward": 15,
             "extra_data": {
                 "lines": [
-                    {
-                        "id": 1,
-                        "speaker": "Lukas",
-                        "text": "Hallo! Wann triffst du heute deine Freunde?"
-                    },
-                    {
-                        "id": 2,
-                        "speaker": "Paul",
-                        "text": "Hallo! Wir treffen uns um 15 Uhr im Café."
-                    },
-                    {
-                        "id": 3,
-                        "speaker": "Lukas",
-                        "text": "Was macht ihr dort?"
-                    },
-                    {
-                        "id": 4,
-                        "speaker": "Paul",
-                        "text": "Wir trinken Kaffee und essen Kuchen."
-                    },
-                    {
-                        "id": 5,
-                        "speaker": "Lukas",
-                        "text": "Das klingt gut! Viel Spaß!"
-                    },
-                    {
-                        "id": 6,
-                        "speaker": "Paul",
-                        "text": "Danke!"
-                    }
+                    {"id": 1, "speaker": "Lukas", "text": "Hallo! Wann triffst du heute deine Freunde?"},
+                    {"id": 2, "speaker": "Paul", "text": "Hallo! Wir treffen uns um 15 Uhr im Café."},
+                    {"id": 3, "speaker": "Lukas", "text": "Was macht ihr dort?"},
+                    {"id": 4, "speaker": "Paul", "text": "Wir trinken Kaffee und essen Kuchen."},
+                    {"id": 5, "speaker": "Lukas", "text": "Das klingt gut! Viel Spaß!"},
+                    {"id": 6, "speaker": "Paul", "text": "Danke!"}
                 ],
-                "correct_order": [
-                    1,
-                    2,
-                    3,
-                    4,
-                    5,
-                    6
-                ],
-                "translation": "- Lukas: Xin chào! Hôm nay khi nào bạn gặp bạn bè thế?\n- Paul: Chào bạn! Chúng tôi gặp nhau lúc 15 giờ ở quán cà phê.\n- Lukas: Các bạn làm gì ở đó?\n- Paul: Chúng tôi uống cà phê và ăn bánh ngọt.\n- Lukas: Nghe hay đấy! Chúc vui vẻ nhé!\n- Paul: Cảm ơn bạn!",
+                "correct_order": [1, 2, 3, 4, 5, 6],
+                "translation": "- Lukas: Xin chào!\nHôm nay khi nào bạn gặp bạn bè thế?\n- Paul: Chào bạn!\nChúng tôi gặp nhau lúc 15 giờ ở quán cà phê.\n- Lukas: Các bạn làm gì ở đó?\n- Paul: Chúng tôi uống cà phê và ăn bánh ngọt.\n- Lukas: Nghe hay đấy!\nChúc vui vẻ nhé!\n- Paul: Cảm ơn bạn!",
                 "audio_text": "Hallo! Wann triffst du heute deine Freunde? Hallo! Wir treffen uns um 15 Uhr im Café. Was macht ihr dort? Wir trinken Kaffee und essen Kuchen. Das klingt gut! Viel Spaß! Danke!"
             }
         },
-
-        # --- 3.18. ĐỌC MENU CHỌN PHẢN HỒI (2 CÂU) ---
         {
             "id": 124,
             "exercise_type": "doc_menu_cafe",
-            "question": "Câu 124: Nhìn vào bảng thực đơn sau và chọn câu trả lời đúng của khách khi bồi bàn hỏi:\n📋 Thực đơn: Kaffee (2,50 €), Tee (2,00 €), Kuchen (3,00 €)\nBồi bàn hỏi: „Was möchten Sie trinken?“",
+            "question": "Câu 124: Nhìn vào bảng thực đơn sau và chọn câu trả lời đúng của khách khi bồi bàn hỏi:\n📋 Thực đơn: Kaffee (2,50 €), Tee (2,00 €), Kuchen (3,00 €)\nBồi bàn hỏi: \"Was möchten Sie trinken?\"",
             "options": [
                 "Ich trinke einen Kaffee.",
                 "Ich esse Kuchen.",
@@ -3572,63 +3007,36 @@ def seed_lesson_13():
                 "Ich komme aus Vietnam."
             ],
             "correct_answer": "Ich trinke einen Kaffee.",
-            "explanation": "Bồi bàn hỏi khách muốn uống gì („Was möchten Sie trinken?“), câu trả lời phù hợp trong thực đơn đồ uống là „Ich trinke einen Kaffee.“ -> Đáp án: Ich trinke einen Kaffee..",
+            "explanation": "Bồi bàn hỏi khách muốn uống gì (\"Was möchten Sie trinken?\"), câu trả lời phù hợp trong thực đơn đồ uống là \"Ich trinke einen Kaffee.\"\n-> Đáp án: Ich trinke einen Kaffee.",
             "exp_reward": 10,
             "extra_data": {
                 "menu_items": [
-                    {
-                        "name": "Kaffee",
-                        "price": "2,50 €"
-                    },
-                    {
-                        "name": "Tee",
-                        "price": "2,00 €"
-                    },
-                    {
-                        "name": "Kuchen",
-                        "price": "3,00 €"
-                    }
+                    {"name": "Kaffee", "price": "2,50 €"},
+                    {"name": "Tee", "price": "2,00 €"},
+                    {"name": "Kuchen", "price": "3,00 €"}
                 ],
-                "accepted_answers": [
-                    "Ich trinke einen Kaffee."
-                ],
+                "accepted_answers": ["Ich trinke einen Kaffee."],
                 "audio_text": "Was möchten Sie trinken? Ich trinke einen Kaffee.",
-                "translation": "Ngài muốn uống gì ạ? — Tôi uống một ly cà phê."
+                "translation": "Ngài muốn uống gì ạ?\nTôi uống một ly cà phê."
             }
         },
         {
             "id": 125,
             "exercise_type": "doc_menu_cafe",
-            "question": "Câu 125: Nhìn vào bảng thực đơn sau và chọn câu trả lời đúng khi bạn của bạn hỏi:\n📋 Thực đơn: Pizza (6,50 €), Tomatensalat (4,00 €), Eis (2,00 €)\nBạn hỏi: „Was essen wir jetzt?“",
-            "options": [
-                "Wir essen ein Eis.",
-                "Wir trinken Kaffee.",
-                "Wir schlafen.",
-                "Wir fahren."
-            ],
+            "question": "Câu 125: Nhìn vào bảng thực đơn sau và chọn câu trả lời đúng khi bạn của bạn hỏi:\n📋 Thực đơn: Pizza (6,50 €), Tomatensalat (4,00 €), Eis (2,00 €)\nBạn hỏi: \"Was essen wir jetzt?\"",
+            "options": ["Wir essen ein Eis.", "Wir trinken Kaffee.", "Wir schlafen.", "Wir fahren."],
             "correct_answer": "Wir essen ein Eis.",
-            "explanation": "Câu hỏi về món ăn („Was essen wir jetzt?“), trong các phương án chỉ có món ăn phù hợp với thực đơn là „Wir essen ein Eis.“ -> Đáp án: Wir essen ein Eis..",
+            "explanation": "Câu hỏi về món ăn (\"Was essen wir jetzt?\"), trong các phương án chỉ có món ăn phù hợp với thực đơn là \"Wir essen ein Eis.\"\n-> Đáp án: Wir essen ein Eis.",
             "exp_reward": 10,
             "extra_data": {
                 "menu_items": [
-                    {
-                        "name": "Pizza",
-                        "price": "6,50 €"
-                    },
-                    {
-                        "name": "Tomatensalat",
-                        "price": "4,00 €"
-                    },
-                    {
-                        "name": "Eis",
-                        "price": "2,00 €"
-                    }
+                    {"name": "Pizza", "price": "6,50 €"},
+                    {"name": "Tomatensalat", "price": "4,00 €"},
+                    {"name": "Eis", "price": "2,00 €"}
                 ],
-                "accepted_answers": [
-                    "Wir essen ein Eis."
-                ],
+                "accepted_answers": ["Wir essen ein Eis."],
                 "audio_text": "Was essen wir jetzt? Wir essen ein Eis.",
-                "translation": "Bây giờ chúng ta ăn gì đây? — Chúng ta ăn một cây kem."
+                "translation": "Bây giờ chúng ta ăn gì đây?\nChúng ta ăn một cây kem."
             }
         }
     ]
