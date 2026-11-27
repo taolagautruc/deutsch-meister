@@ -567,14 +567,14 @@ def seed_lesson_14():
         {
             "id": 13,
             "exercise_type": "trac_nghiem",
-            "question": "Câu 13: Ngôn ngữ chính thức được nói tại Ai Cập (Ägypten) là gì?",
+            "question": "Câu 13: \"Welche Sprache spricht man in Ägypten?\"",
             "options": ["Ägyptisch", "Arabisch", "Türkisch", "Spanisch"],
             "correct_answer": "Arabisch",
             "explanation": "Tại Ai Cập (Ägypten) người dân nói tiếng Ả Rập (\"Arabisch\"), không dùng \"Ägyptisch\"\n-> Đáp án: Arabisch.",
             "exp_reward": 10,
             "extra_data": {
                 "audio_text": "In Ägypten spricht man Arabisch.",
-                "translation": "Ở Ai Cập người ta nói tiếng Ả Rập."
+                "translation": "Người ta nói ngôn ngữ nào ở Ai Cập?"
             }
         },
         {
@@ -824,7 +824,7 @@ def seed_lesson_14():
             "extra_data": {
                 "accepted_answers": ["warst"],
                 "audio_text": "Wann warst du gestern zu Hause, Lisa?",
-                "translation": "Hôm qua mấy giờ bạn ở nhà vậy, Lisa?"
+                "translation": "Hôm qua khi nào bạn ở nhà vậy, Lisa?"
             }
         },
         {
