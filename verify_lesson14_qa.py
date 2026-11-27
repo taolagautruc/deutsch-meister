@@ -137,12 +137,38 @@ def run_tests():
         errors.append("Thẻ 'Schlüssel' chưa cập nhật ví dụ 'Wo ist heute der Schlüssel?'!")
     print(f"  ✓ Từ vựng Bài 14 PASS: {len(v_rows)}/18 thẻ độc nhất.")
 
-    # 4. KIỂM TRA CHÍNH XÁC 125 CÂU BÀI TẬP
-    print("\n[4/7] Kiểm tra số lượng bài tập (assert len == 125)...")
+    # 4. KIỂM TRA CHÍNH XÁC 125 CÂU BÀI TẬP & ĐỦ 18 DẠNG BÀI
+    print("\n[4/7] Kiểm tra số lượng bài tập (assert len == 125) & cấu trúc 18 dạng bài...")
     cursor.execute("SELECT id, exercise_type, question, options_json, correct_answer, explanation, extra_data FROM exercises WHERE lesson_id = 28 ORDER BY id ASC;")
     exercises = cursor.fetchall()
     assert len(exercises) == 125, f"Kỳ vọng 125 câu, thực tế {len(exercises)} câu!"
-    print("  ✓ Đủ chính xác 125/125 câu bài tập.")
+    from collections import Counter
+    expected_dist = {
+        "trac_nghiem": 15, "dien_khuyet": 10, "dien_chia_dong_tu": 10,
+        "dich_nghia_vd": 5, "dich_nghia_dv": 5, "noi_o": 10,
+        "dien_tao_cau": 8, "nghe_dien": 8, "dich_cau_vd": 8,
+        "dich_cau_dv": 7, "sap_xep_cau": 10, "phan_loai_dong_tu": 3,
+        "phan_loai_tu_hoi": 3, "tim_loi_sai": 10, "viet_lai_cau_w": 5,
+        "dung_sai": 3, "hoi_thoai_sap_xep": 3, "doc_menu_cafe": 2,
+    }
+    actual_dist = Counter(ex["exercise_type"] for ex in exercises)
+    if dict(actual_dist) != expected_dist:
+        errors.append(f"Phân bổ 18 dạng không khớp: thực tế {dict(actual_dist)} vs kỳ vọng {expected_dist}")
+    for idx, ex in enumerate(exercises, 1):
+        opts = json.loads(ex["options_json"] or "[]")
+        if ex["exercise_type"] == "trac_nghiem":
+            if len(opts) != 4:
+                errors.append(f"Câu {idx} (trac_nghiem): Chỉ có {len(opts)} lựa chọn, bắt buộc đủ 4!")
+            if any(o.strip().lower() == "(để trống)" for o in opts):
+                errors.append(f"Câu {idx}: Vẫn còn lựa chọn cấm '(để trống)'!")
+            if ex["correct_answer"] not in opts:
+                errors.append(f"Câu {idx}: Đáp án đúng '{ex['correct_answer']}' không nằm trong 4 lựa chọn!")
+        if ex["exercise_type"] == "noi_o":
+            extra = json.loads(ex["extra_data"] or "{}")
+            pairs = extra.get("noi_o_pairs") or []
+            if len(pairs) != 4 or len({p["left"] for p in pairs}) != 4 or len({p["right"] for p in pairs}) != 4:
+                errors.append(f"Câu {idx} (noi_o): Không đủ 4 cặp độc nhất!")
+    print("  ✓ Đủ chính xác 125/125 câu bài tập, khớp 18 dạng (Trắc nghiệm 100% đủ 4 lựa chọn).")
 
     # 5. QUÉT TRÙNG LẶP (125 UNIQUE)
     print("\n[5/7] Quét trùng lặp nội dung (125/125 câu độc nhất)...")
@@ -204,11 +230,11 @@ def run_tests():
 
     print("  ✓ Translation, Explanation & TTS Cleanliness PASS: 125/125 câu hợp lệ.")
 
-    # 7. ANTI-BUG PROTOCOL CHECK (Dictation Mode + Semantic Tolerance + Cap Warning)
-    print("\n[7/7] Rà soát Anti-Bug (Dictation Mode 86-95, Semantic Tolerance, Capitalization Warning)...")
-    dict_ex = [ex for idx, ex in enumerate(exercises, 1) if 86 <= idx <= 95]
-    assert len(dict_ex) == 10
-    for offset, ex in enumerate(dict_ex, 86):
+    # 7. ANTI-BUG PROTOCOL CHECK (Dictation Mode + Semantic Tolerance + Cap Warning + 18 Chips)
+    print("\n[7/7] Rà soát Anti-Bug (Dictation Mode 64-71, Semantic Tolerance, Capitalization Warning, 18 Chips)...")
+    dict_ex = [ex for idx, ex in enumerate(exercises, 1) if 64 <= idx <= 71]
+    assert len(dict_ex) == 8
+    for offset, ex in enumerate(dict_ex, 64):
         extra = json.loads(ex["extra_data"] or "{}")
         if ex["exercise_type"] != "nghe_dien":
             errors.append(f"Câu {offset}: Phải là 'nghe_dien'!")
@@ -233,12 +259,15 @@ def run_tests():
         errors.append("b14_review_svg.js vẫn còn ví dụ cũ 'Hue liegt im Zentrum von Vietnam.'!")
     if 'Dùng "in der Mitte" (không dùng "im")' not in b14_js or 'Bắt buộc có "im" (A thuộc X)' not in b14_js:
         errors.append("b14_review_svg.js thiếu nhãn riêng way1Badge cho Zentrum / các hướng khác!")
+    for t_chip in expected_dist.keys():
+        if t_chip not in idx_html:
+            errors.append(f"templates/index.html thiếu loại bài tập '{t_chip}'!")
 
     # 8. KIỂM TRA TỌA ĐỘ PHƯƠNG HƯỚNG (-lich von) & CẤM DÙNG BÊN TRONG/Ägyptisch
     print("\n[8/8] Kiểm tra tọa độ địa lý (A liegt ...lich von B) & chống dùng sai bên trong...")
     COORDS = {
-        "Hanoi": (21.03, 105.85), "Hue": (16.46, 107.59), "Da Nang": (16.05, 108.20), "Can Tho": (10.04, 105.75),
-        "Köln": (50.94, 6.96), "Dresden": (51.05, 13.74), "München": (48.14, 11.58),
+        "Hanoi": (21.03, 105.85), "Hai Phong": (20.84, 106.68), "Hue": (16.46, 107.59), "Da Nang": (16.05, 108.20), "Can Tho": (10.04, 105.75),
+        "Berlin": (52.52, 13.40), "Köln": (50.94, 6.96), "Dresden": (51.05, 13.74), "München": (48.14, 11.58),
         "Stuttgart": (48.78, 9.18), "Bonn": (50.73, 7.10), "Rostock": (54.09, 12.14),
         "Hannover": (52.37, 9.73), "Leipzig": (51.34, 12.37), "Bremen": (53.08, 8.80),
         "Hamburg": (53.55, 9.99), "Frankfurt": (50.11, 8.68), "Würzburg": (49.79, 9.95),

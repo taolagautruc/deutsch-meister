@@ -270,8 +270,33 @@
         if (!clean) return false;
         const hasQMark = String(userAns).includes('?');
 
-        // Câu 9: „Russland liegt im Osten von Europa.“
-        if (qNum === 9) {
+        // Câu 41: „die Krawatte“
+        if (qNum === 41) {
+            return hasViPhrase14(clean, '(?:cái\\s+|chiếc\\s+)?cà\\s*vạt|caravat');
+        }
+
+        // Câu 42: „Es ist neblig.“
+        if (qNum === 42) {
+            return hasViPhrase14(clean, '(?:trời\\s+)?(?:đang\\s+)?(?:có\\s+)?sương mù');
+        }
+
+        // Câu 43: „der Rucksack“
+        if (qNum === 43) {
+            return hasViPhrase14(clean, '(?:cái\\s+|chiếc\\s+)?(?:ba lô|balo)');
+        }
+
+        // Câu 44: „die Kamera“
+        if (qNum === 44) {
+            return hasViPhrase14(clean, '(?:cái\\s+|chiếc\\s+)?máy ảnh|máy chụp hình|camera');
+        }
+
+        // Câu 45: „das Konzert“
+        if (qNum === 45) {
+            return hasViPhrase14(clean, '(?:buổi\\s+|chương trình\\s+)?hòa nhạc');
+        }
+
+        // Câu 80: „Russland liegt im Osten von Europa.“
+        if (qNum === 80) {
             const hasCountry = hasViPhrase14(clean, 'nga|nước nga|liên bang nga');
             const hasDir = hasViPhrase14(clean, '(?:ở\\s+)?(?:miền|phía|khu vực)\\s+đông|đông');
             const hasEurope = hasViPhrase14(clean, 'châu âu|âu châu');
@@ -279,24 +304,8 @@
             return Boolean(hasCountry && hasDir && hasEurope && !forbidden);
         }
 
-        // Câu 18: „Die Schweiz liegt südlich von Deutschland.“
-        if (qNum === 18) {
-            const hasCountry = hasViPhrase14(clean, 'thụy sĩ|nước thụy sĩ|thụy sỹ|nước thụy sỹ');
-            const hasDir = hasViPhrase14(clean, '(?:ở\\s+)?(?:miền|phía)\\s+nam|nam');
-            const hasGermany = hasViPhrase14(clean, 'đức|nước đức');
-            const forbidden = hasViPhrase14(clean, 'bắc|đông|tây|thụy điển|áo|pháp');
-            return Boolean(hasCountry && hasDir && hasGermany && !forbidden);
-        }
-
-        // Câu 27: „Wo liegt Da Nang?“
-        if (qNum === 27) {
-            const hasCity = hasViPhrase14(clean, 'đà nẵng|da nang');
-            const hasWhere = hasViPhrase14(clean, 'nằm ở đâu|ở đâu|chỗ nào|vị trí nào');
-            return Boolean(hasCity && hasWhere);
-        }
-
-        // Câu 55: „Letztes Jahr war sie in Vietnam.“
-        if (qNum === 55) {
+        // Câu 81: „Letztes Jahr war sie in Vietnam.“
+        if (qNum === 81) {
             const hasLastYear = hasViPhrase14(clean, 'năm ngoái|năm trước|vào năm ngoái');
             const hasSubj = hasViPhrase14(clean, 'cô ấy|chị ấy|bà ấy|em ấy|cô ta|họ');
             const hasInVn = hasViPhrase14(clean, '(?:đã\\s+)?(?:từng\\s+)?(?:ở|tại)\\s+(?:nước\\s+)?việt nam');
@@ -304,40 +313,49 @@
             return Boolean(hasLastYear && hasSubj && hasInVn && !forbidden);
         }
 
-        // Câu 98: „Fährst du am Wochenende nach Polen?“
-        if (qNum === 98) {
-            const hasWeekend = hasViPhrase14(clean, 'cuối tuần');
-            const hasYou = hasViPhrase14(clean, 'bạn|cậu|mày|em|anh|chị');
-            const hasGo = hasViPhrase14(clean, 'đi|lái xe|tới|đến|sang|về|du lịch');
-            const hasPoland = hasViPhrase14(clean, 'ba lan');
-            const hasQ = hasQMark || hasViPhrase14(clean, 'không|phải không|đúng không|à|hả|chứ|nhỉ');
-            const forbidden = hasViPhrase14(clean, 'đức|pháp|việt nam|nga|tôi|các bạn|họ|chúng tôi|ngài');
-            return Boolean(hasWeekend && hasYou && hasGo && hasPoland && hasQ && !forbidden);
+        // Câu 82: „Wo liegt Würzburg?“
+        if (qNum === 82) {
+            const hasCity = hasViPhrase14(clean, 'würzburg|wurzburg');
+            const hasWhere = hasViPhrase14(clean, 'nằm ở đâu|ở đâu|chỗ nào|vị trí nào');
+            return Boolean(hasCity && hasWhere);
         }
 
-        // Câu 100: „Das klingt gut! Viel Spaß!“
-        if (qNum === 100) {
-            const hasGood = hasViPhrase14(clean, '(?:nghe\\s+)?(?:hay|tuyệt|tuyệt vời|ổn|tốt|hợp lý)');
-            const hasFun = hasViPhrase14(clean, 'chúc\\s+(?:bạn\\s+|các bạn\\s+)?vui vẻ|vui vẻ nhé|chơi vui');
-            return Boolean(hasGood && hasFun);
+        // Câu 83: „Die Schweiz liegt südlich von Deutschland.“
+        if (qNum === 83) {
+            const hasCountry = hasViPhrase14(clean, 'thụy sĩ|nước thụy sĩ|thụy sỹ|nước thụy sỹ');
+            const hasDir = hasViPhrase14(clean, '(?:ở\\s+)?(?:miền|phía)\\s+nam|nam');
+            const hasGermany = hasViPhrase14(clean, 'đức|nước đức');
+            const forbidden = hasViPhrase14(clean, 'bắc|đông|tây|thụy điển|áo|pháp');
+            return Boolean(hasCountry && hasDir && hasGermany && !forbidden);
         }
 
-        // Câu 101: „Was möchtet ihr trinken?“
-        if (qNum === 101) {
-            const hasSubj = hasViPhrase14(clean, 'các bạn|mọi người|tụi bạn|bọn bạn|các cậu');
-            const hasDrinkWhat = hasViPhrase14(clean, 'uống gì|uống thứ gì|uống cái gì');
-            const forbidden = hasViPhrase14(clean, 'ăn|tôi|chúng tôi|ngài|anh ấy|cô ấy');
-            return Boolean(hasSubj && hasDrinkWhat && !forbidden);
+        // Câu 84: „Köln liegt im Westen von Deutschland.“
+        if (qNum === 84) {
+            const hasCity = hasViPhrase14(clean, 'köln|koln|cologne');
+            const hasDir = hasViPhrase14(clean, '(?:ở\\s+)?(?:miền|phía|khu vực)\\s+tây|tây');
+            const hasGermany = hasViPhrase14(clean, 'đức|nước đức');
+            const forbidden = hasViPhrase14(clean, 'đông|nam|bắc|pháp|việt nam');
+            return Boolean(hasCity && hasDir && hasGermany && !forbidden);
         }
 
-        // Câu 104: „Sie spricht Französisch und Englisch.“
-        if (qNum === 104) {
-            const hasSubj = hasViPhrase14(clean, 'cô ấy|chị ấy|bà ấy|em ấy|ngài|bạn');
+        // Câu 85: „Früher war mein Onkel Lehrer in Dresden.“
+        if (qNum === 85) {
+            const hasEarlier = hasViPhrase14(clean, 'trước đây|ngày trước|hồi trước|trước kia|xưa');
+            const hasSubj = hasViPhrase14(clean, '(?:chú|bác|cậu)(?:\\s+của)?\\s+tôi');
+            const hasJob = hasViPhrase14(clean, '(?:từng\\s+)?(?:đã\\s+)?(?:là\\s+)?(?:giáo viên|thầy giáo|cô giáo)');
+            const hasCity = hasViPhrase14(clean, 'dresden');
+            const forbidden = hasViPhrase14(clean, 'bố|cha|mẹ|anh trai|em trai|bác sĩ|sinh viên|berlin|hà nội');
+            return Boolean(hasEarlier && hasSubj && hasJob && hasCity && !forbidden);
+        }
+
+        // Câu 86: „Sie spricht Arabisch und Englisch.“
+        if (qNum === 86) {
+            const hasSubj = hasViPhrase14(clean, 'cô ấy|chị ấy|bà ấy|em ấy|ngài|bạn|họ');
             const hasSpeak = hasViPhrase14(clean, 'nói|nói được|giao tiếp');
-            const hasFr = hasViPhrase14(clean, 'tiếng pháp|pháp');
+            const hasAr = hasViPhrase14(clean, 'tiếng ả rập|tiếng ả-rập|ả rập');
             const hasEn = hasViPhrase14(clean, 'tiếng anh|anh');
-            const forbidden = hasViPhrase14(clean, 'đức|nga|việt|tây ban nha|tôi|anh ấy');
-            return Boolean(hasSubj && hasSpeak && hasFr && hasEn && !forbidden);
+            const forbidden = hasViPhrase14(clean, 'đức|nga|việt|pháp|tây ban nha|tôi|anh ấy');
+            return Boolean(hasSubj && hasSpeak && hasAr && hasEn && !forbidden);
         }
 
         return false;

@@ -382,7 +382,7 @@
     <script src="/static/js/kleidung_svg.js?v=20261118_v1"></script>
     <script src="/static/js/gesundheit_svg.js?v=20261120_v1"></script>
     <script src="/static/js/b13_review_svg.js?v=20261126_v3"></script>
-    <script src="/static/js/b14_review_svg.js?v=20261127_v1"></script>
+    <script src="/static/js/b14_review_svg.js?v=20261127_v2"></script>
     <script src="/static/js/verbs_db.js?v=20261116_v4"></script>
     <script src="/static/js/lexikon_db.js?v=20261116_v4"></script>
     <script src="/static/js/arena_engine.js?v=20261116_v4"></script>
@@ -567,23 +567,31 @@
         };
 
         const B14_ORDER = [
-            "trac_nghiem", "dien_khuyet", "dien_tao_cau", "dich_cau_vd", "dich_cau_dv",
-            "sap_xep_cau", "tim_loi_sai", "noi_o", "viet_lai_cau_w", "nghe_dien",
-            "hoi_thoai_sap_xep"
+            "trac_nghiem", "dien_khuyet", "dien_chia_dong_tu", "dich_nghia_vd", "dich_nghia_dv",
+            "noi_o", "dien_tao_cau", "nghe_dien", "dich_cau_vd", "dich_cau_dv",
+            "sap_xep_cau", "phan_loai_dong_tu", "phan_loai_tu_hoi", "tim_loi_sai", "viet_lai_cau_w",
+            "dung_sai", "hoi_thoai_sap_xep", "doc_menu_cafe"
         ];
         const B14_TYPE_LABELS = {
             "all": "Tất cả",
-            "trac_nghiem": "1. Trắc nghiệm & Chọn giới từ",
+            "trac_nghiem": "1. Trắc nghiệm",
             "dien_khuyet": "2. Điền khuyết",
-            "dien_tao_cau": "3. Điền 2 chỗ trống",
-            "dich_cau_vd": "4. Dịch câu: Việt → Đức",
-            "dich_cau_dv": "5. Dịch câu: Đức → Việt",
-            "sap_xep_cau": "6. Sắp xếp từ thành câu",
-            "tim_loi_sai": "7. Tìm và sửa lỗi sai",
-            "noi_o": "8. Nối ô: Quốc gia & Ngôn ngữ",
-            "viet_lai_cau_w": "9. Đặt câu hỏi (W-Fragen / Ja-Nein)",
-            "nghe_dien": "10. Nghe chép chính tả (Dictation)",
-            "hoi_thoai_sap_xep": "11. Sắp xếp hội thoại logic"
+            "dien_chia_dong_tu": "3. Chia ĐT bất quy tắc",
+            "dich_nghia_vd": "4. Dịch từ: Việt → Đức",
+            "dich_nghia_dv": "5. Dịch từ: Đức → Việt",
+            "noi_o": "6. Nối ô tương ứng",
+            "dien_tao_cau": "7. Điền 2 chỗ trống tạo câu",
+            "nghe_dien": "8. Nghe chép chính tả",
+            "dich_cau_vd": "9. Dịch câu: Việt → Đức",
+            "dich_cau_dv": "10. Dịch câu: Đức → Việt",
+            "sap_xep_cau": "11. Sắp xếp từ thành câu",
+            "phan_loai_dong_tu": "12. Phân loại động từ",
+            "phan_loai_tu_hoi": "13. Phân loại từ để hỏi",
+            "tim_loi_sai": "14. Tìm và sửa lỗi sai",
+            "viet_lai_cau_w": "15. Đặt câu hỏi cho từ gạch chân",
+            "dung_sai": "16. Đọc hiểu Đúng / Sai",
+            "hoi_thoai_sap_xep": "17. Sắp xếp hội thoại",
+            "doc_menu_cafe": "18. Đọc menu chọn phản hồi"
         };
 
         let currentLevelData = null;
@@ -1518,6 +1526,13 @@
                     activeSession = null;
                 }
             }
+            if (activeSession && (lId === 28 || (currentLesson && currentLesson.title && /bài 14\b/i.test(currentLesson.title)))) {
+                const savedTypes14 = new Set((activeSession.allRenderExercises || []).map(x => x && x.exercise_type).filter(Boolean));
+                if (savedTypes14.size < 18) {
+                    clearActiveLessonSession(lId);
+                    activeSession = null;
+                }
+            }
 
             if (activeSession) {
                 // Khôi phục chính xác phiên làm bài dở dang của người dùng
@@ -2142,7 +2157,7 @@
                     extraHtml += `<div class="my-3 overflow-hidden rounded-2xl border border-slate-700/50 shadow-md">${renderExerciseEssenSvg(extra.visual)}</div>`;
                 }
                 if (extra.reading_text) {
-                    const readingSpeakBtnHtml = (isLesson13 && extra.audio_text)
+                    const readingSpeakBtnHtml = ((isLesson13 || isLesson14) && extra.audio_text)
                         ? `<button type="button" onclick="speakGerman('${String(extra.audio_text).replace(/'/g, "\\'")}', 0.95)" class="ml-auto px-2.5 py-1 rounded-lg bg-indigo-600 hover:bg-indigo-500 text-white font-bold text-xs shadow-xs transition cursor-pointer flex items-center gap-1">🔊 Nghe đoạn văn</button>`
                         : '';
                     extraHtml += `
@@ -2406,28 +2421,33 @@
                 if (ex.exercise_type === 'phan_loai_dong_tu' && Array.isArray(extra.items) && extra.items.length > 0) {
                     if (!window._verbTypeChoices) window._verbTypeChoices = {};
                     if (!window._verbTypeChoices[i]) window._verbTypeChoices[i] = {};
+                    const vtCats = (Array.isArray(extra.categories) && extra.categories.length === 2)
+                        ? extra.categories
+                        : ['Bất quy tắc', 'Có quy tắc'];
                     extraHtml += `
                         <div class="my-3 p-4 rounded-2xl bg-amber-50/80 border border-amber-200 space-y-3">
                             <div class="text-xs font-extrabold text-amber-900 flex items-center justify-between">
-                                <span>🏷️ Bấm chọn nhóm (Bất quy tắc / Có quy tắc) cho 4 động từ dưới đây:</span>
+                                <span>🏷️ Bấm chọn nhóm (${vtCats[0]} / ${vtCats[1]}) cho ${extra.items.length} động từ dưới đây:</span>
                             </div>
                             <div class="space-y-2">
                                 ${extra.items.map((item, itIdx) => {
                                     const userCh = window._verbTypeChoices[i][itIdx];
-                                    const isBqt = userCh === 'Bất quy tắc';
-                                    const isCqt = userCh === 'Có quy tắc';
+                                    const isCat0 = userCh === vtCats[0];
+                                    const isCat1 = userCh === vtCats[1];
+                                    const safeC0 = vtCats[0].replace(/'/g, "\\'");
+                                    const safeC1 = vtCats[1].replace(/'/g, "\\'");
                                     return `
                                         <div class="p-2.5 rounded-xl bg-white border border-amber-200 flex flex-col sm:flex-row sm:items-center justify-between gap-2 text-xs">
                                             <div class="space-y-0.5">
                                                 <div class="font-bold text-slate-900 text-sm font-mono">${itIdx + 1}. ${item.word}</div>
                                                 <div class="text-slate-500 italic text-[11px]">${item.meaning_vi || ''}</div>
                                             </div>
-                                            <div class="flex gap-1.5 shrink-0">
-                                                <button type="button" onclick="setVerbTypeChoice(${i}, ${itIdx}, 'Bất quy tắc')" id="vt-btn-${i}-${itIdx}-bqt" class="px-3 py-1.5 rounded-lg ${isBqt ? 'bg-amber-600 text-white font-black shadow-xs' : 'bg-slate-100 text-slate-700 font-bold'} hover:bg-amber-500 hover:text-white text-xs cursor-pointer transition">
-                                                    Bất quy tắc
+                                            <div class="flex gap-1.5 shrink-0 flex-wrap">
+                                                <button type="button" onclick="setVerbTypeChoice(${i}, ${itIdx}, '${safeC0}')" id="vt-btn-${i}-${itIdx}-0" class="px-3 py-1.5 rounded-lg ${isCat0 ? 'bg-amber-600 text-white font-black shadow-xs' : 'bg-slate-100 text-slate-700 font-bold'} hover:bg-amber-500 hover:text-white text-xs cursor-pointer transition">
+                                                    ${vtCats[0]}
                                                 </button>
-                                                <button type="button" onclick="setVerbTypeChoice(${i}, ${itIdx}, 'Có quy tắc')" id="vt-btn-${i}-${itIdx}-cqt" class="px-3 py-1.5 rounded-lg ${isCqt ? 'bg-blue-600 text-white font-black shadow-xs' : 'bg-slate-100 text-slate-700 font-bold'} hover:bg-blue-500 hover:text-white text-xs cursor-pointer transition">
-                                                    Có quy tắc
+                                                <button type="button" onclick="setVerbTypeChoice(${i}, ${itIdx}, '${safeC1}')" id="vt-btn-${i}-${itIdx}-1" class="px-3 py-1.5 rounded-lg ${isCat1 ? 'bg-blue-600 text-white font-black shadow-xs' : 'bg-slate-100 text-slate-700 font-bold'} hover:bg-blue-500 hover:text-white text-xs cursor-pointer transition">
+                                                    ${vtCats[1]}
                                                 </button>
                                             </div>
                                         </div>
@@ -2440,15 +2460,17 @@
                 if (ex.exercise_type === 'phan_loai_tu_hoi' && Array.isArray(extra.items) && extra.items.length > 0) {
                     if (!window._qwChoices) window._qwChoices = {};
                     if (!window._qwChoices[i]) window._qwChoices[i] = {};
+                    const cats = (Array.isArray(extra.categories) && extra.categories.length > 0)
+                        ? extra.categories
+                        : ["Woher", "Wo", "Wie", "Was"];
                     extraHtml += `
                         <div class="my-3 p-4 rounded-2xl bg-indigo-50/80 border border-indigo-200 space-y-3">
                             <div class="text-xs font-extrabold text-indigo-900 flex items-center justify-between">
-                                <span>❓ Bấm chọn từ để hỏi tương ứng (Woher / Wo / Wie / Was) cho 4 câu trả lời dưới đây:</span>
+                                <span>❓ Bấm chọn từ để hỏi tương ứng (${cats.join(' / ')}) cho ${extra.items.length} câu dưới đây:</span>
                             </div>
                             <div class="space-y-2">
                                 ${extra.items.map((item, itIdx) => {
                                     const userCh = window._qwChoices[i][itIdx];
-                                    const cats = ["Woher", "Wo", "Wie", "Was"];
                                     return `
                                         <div class="p-2.5 rounded-xl bg-white border border-indigo-200 flex flex-col sm:flex-row sm:items-center justify-between gap-2 text-xs">
                                             <div class="space-y-0.5">
@@ -2489,6 +2511,29 @@
                             <div class="text-xs font-bold text-indigo-700 uppercase tracking-wide">Câu cho sẵn:</div>
                             <div class="text-sm font-black text-indigo-950">„${sentHtml}“</div>
                             <div class="text-xs font-semibold text-slate-600">👉 Đặt câu hỏi W-Fragen phù hợp cho cụm từ in đậm/gạch chân.</div>
+                        </div>
+                    `;
+                }
+                if (ex.exercise_type === 'doc_menu_cafe' && extra && extra.map_card) {
+                    const mc = extra.map_card;
+                    extraHtml += `
+                        <div class="my-3 p-4 rounded-2xl bg-sky-50/90 border border-sky-300 space-y-2">
+                            <div class="text-xs font-black text-sky-900 uppercase tracking-wider flex items-center gap-1.5">
+                                <span>🗺️ Bản đồ định hướng (${mc.country || 'Deutschland'}):</span>
+                            </div>
+                            <div class="flex justify-center">
+                                <svg viewBox="0 0 260 220" class="w-full max-w-[260px] bg-white rounded-2xl border border-sky-200 shadow-xs p-2">
+                                    <rect x="45" y="32" width="170" height="156" rx="18" fill="#f0f9ff" stroke="#7dd3fc" stroke-width="2" />
+                                    <line x1="130" y1="32" x2="130" y2="188" stroke="#cbd5e1" stroke-dasharray="4 3" stroke-width="1.5" />
+                                    <line x1="45" y1="110" x2="215" y2="110" stroke="#cbd5e1" stroke-dasharray="4 3" stroke-width="1.5" />
+                                    <text x="130" y="20" text-anchor="middle" fill="#0369a1" font-size="11" font-weight="900">Bắc (N)</text>
+                                    <text x="130" y="208" text-anchor="middle" fill="#0369a1" font-size="11" font-weight="900">Nam (S)</text>
+                                    <text x="23" y="114" text-anchor="middle" fill="#0369a1" font-size="11" font-weight="900">Tây (W)</text>
+                                    <text x="237" y="114" text-anchor="middle" fill="#0369a1" font-size="11" font-weight="900">Đông (O)</text>
+                                    <circle cx="${mc.x || 185}" cy="${mc.y || 64}" r="9" fill="#ef4444" stroke="#991b1b" stroke-width="2" />
+                                    <text x="${mc.x || 185}" y="${(mc.y || 64) - 13}" text-anchor="middle" fill="#0f172a" font-size="12" font-weight="900">📍 ${mc.city || 'Berlin'}</text>
+                                </svg>
+                            </div>
                         </div>
                     `;
                 }
@@ -3193,20 +3238,28 @@
             if (!window._verbTypeChoices[exIdx]) window._verbTypeChoices[exIdx] = {};
             window._verbTypeChoices[exIdx][itemIdx] = choice;
 
-            const bqtBtn = document.getElementById(`vt-btn-${exIdx}-${itemIdx}-bqt`);
-            const cqtBtn = document.getElementById(`vt-btn-${exIdx}-${itemIdx}-cqt`);
-            if (bqtBtn && cqtBtn) {
-                if (choice === 'Bất quy tắc') {
-                    bqtBtn.className = "px-3 py-1.5 rounded-lg bg-amber-600 text-white font-black text-xs cursor-pointer shadow-xs transition";
-                    cqtBtn.className = "px-3 py-1.5 rounded-lg bg-slate-100 text-slate-700 font-bold hover:bg-blue-500 hover:text-white text-xs cursor-pointer transition";
+            const ex = currentLesson && currentLesson.allRenderExercises ? currentLesson.allRenderExercises[exIdx] : null;
+            let extra = {};
+            try { extra = ex ? (typeof ex.extra_data === 'string' ? JSON.parse(ex.extra_data) : (ex.extra_data || {})) : {}; } catch (e) {}
+            const vtCats = (Array.isArray(extra.categories) && extra.categories.length === 2)
+                ? extra.categories
+                : ['Bất quy tắc', 'Có quy tắc'];
+            const totalItems = (Array.isArray(extra.items) && extra.items.length > 0) ? extra.items.length : 4;
+
+            const btn0 = document.getElementById(`vt-btn-${exIdx}-${itemIdx}-0`);
+            const btn1 = document.getElementById(`vt-btn-${exIdx}-${itemIdx}-1`);
+            if (btn0 && btn1) {
+                if (choice === vtCats[0]) {
+                    btn0.className = "px-3 py-1.5 rounded-lg bg-amber-600 text-white font-black text-xs cursor-pointer shadow-xs transition";
+                    btn1.className = "px-3 py-1.5 rounded-lg bg-slate-100 text-slate-700 font-bold hover:bg-blue-500 hover:text-white text-xs cursor-pointer transition";
                 } else {
-                    cqtBtn.className = "px-3 py-1.5 rounded-lg bg-blue-600 text-white font-black text-xs cursor-pointer shadow-xs transition";
-                    bqtBtn.className = "px-3 py-1.5 rounded-lg bg-slate-100 text-slate-700 font-bold hover:bg-amber-500 hover:text-white text-xs cursor-pointer transition";
+                    btn1.className = "px-3 py-1.5 rounded-lg bg-blue-600 text-white font-black text-xs cursor-pointer shadow-xs transition";
+                    btn0.className = "px-3 py-1.5 rounded-lg bg-slate-100 text-slate-700 font-bold hover:bg-amber-500 hover:text-white text-xs cursor-pointer transition";
                 }
             }
 
             const parts = [];
-            for (let k = 0; k < 4; k++) {
+            for (let k = 0; k < totalItems; k++) {
                 parts.push(window._verbTypeChoices[exIdx][k] || '');
             }
             const input = document.getElementById(`ex-input-${exIdx}`);
@@ -3221,7 +3274,14 @@
             if (!window._qwChoices[exIdx]) window._qwChoices[exIdx] = {};
             window._qwChoices[exIdx][itemIdx] = choice;
 
-            const cats = ["Woher", "Wo", "Wie", "Was"];
+            const ex = currentLesson && currentLesson.allRenderExercises ? currentLesson.allRenderExercises[exIdx] : null;
+            let extra = {};
+            try { extra = ex ? (typeof ex.extra_data === 'string' ? JSON.parse(ex.extra_data) : (ex.extra_data || {})) : {}; } catch (e) {}
+            const cats = (Array.isArray(extra.categories) && extra.categories.length > 0)
+                ? extra.categories
+                : ["Woher", "Wo", "Wie", "Was"];
+            const totalItems = (Array.isArray(extra.items) && extra.items.length > 0) ? extra.items.length : 4;
+
             cats.forEach(cat => {
                 const btn = document.getElementById(`qw-btn-${exIdx}-${itemIdx}-${cat.toLowerCase()}`);
                 if (btn) {
@@ -3239,7 +3299,7 @@
             });
 
             const parts = [];
-            for (let k = 0; k < 4; k++) {
+            for (let k = 0; k < totalItems; k++) {
                 parts.push(window._qwChoices[exIdx][k] || '');
             }
             const input = document.getElementById(`ex-input-${exIdx}`);
@@ -3789,7 +3849,7 @@
                     const l12DVMatch = isLesson12 && (ex.question || '').match(/Câu\s+(8[7-9]|9[0-2]|11[1-4])\b/i);
                     const l12VDMatch = isLesson12 && (ex.question || '').match(/Câu\s+(8[1-6]|10[7-9]|110)\b/i);
                     const l13DVMatch = isLesson13 && (ex.question || '').match(/Câu\s+(8[0-6])\b/i);
-                    const l14DVMatch = isLesson14 && (ex.question || '').match(/Câu\s+(9|18|27|55|98|100|101|104)\b/i);
+                    const l14DVMatch = isLesson14 && (ex.exercise_type === 'dich_cau_dv' || ex.exercise_type === 'dich_nghia_dv') && (ex.question || '').match(/Câu\s+(4[1-5]|8[0-6])\b/i);
 
                     if (l14DVMatch && typeof evaluateLesson14Translation === 'function' && evaluateLesson14Translation(userAnswer, parseInt(l14DVMatch[1], 10))) {
                         isCorrect = true;
@@ -4045,7 +4105,7 @@
                         ))
                     )
                 );
-                const isLesson14GermanInput = isLesson14ExCap && !isMultipleChoice && ['dien_khuyet', 'dien_tao_cau', 'dich_cau_vd', 'sap_xep_cau', 'tim_loi_sai', 'viet_lai_cau_w', 'nghe_dien'].includes(ex.exercise_type);
+                const isLesson14GermanInput = isLesson14ExCap && !isMultipleChoice && ['dien_khuyet', 'dien_chia_dong_tu', 'dich_nghia_vd', 'dien_tao_cau', 'dich_cau_vd', 'sap_xep_cau', 'tim_loi_sai', 'viet_lai_cau_w', 'nghe_dien'].includes(ex.exercise_type);
                 if ((isDictation13Cap || isLesson14GermanInput) && typeof userAnswer === 'string') {
                     const stripPunct = (w) => String(w || '').replace(/^[.,!?;:"'„“”«»()\/]+|[.,!?;:"'„“”«»()\/]+$/g, '');
                     let targetSentence = (extra && extra.full_sentence) ? String(extra.full_sentence) : String(ex.correct_answer || '');
@@ -4633,6 +4693,10 @@
             }
             if (window._caseChoices) {
                 delete window._caseChoices[index];
+            }
+            if (currentLesson && (String(currentLesson.id) === '28' || /bài 14\b/i.test(currentLesson.title || ''))) {
+                if (window._verbTypeChoices) delete window._verbTypeChoices[index];
+                if (window._qwChoices) delete window._qwChoices[index];
             }
             if (currentLesson && window.sessionPracticeAnswers && window.sessionPracticeAnswers[currentLesson.id]) {
                 window.sessionPracticeAnswers[currentLesson.id].delete(index);
