@@ -1941,7 +1941,7 @@ def seed_lesson_14():
             "question": "Câu 98: Phân loại 4 dạng chia của động từ \"sein\" sau đây vào 2 nhóm Hiện tại (Präsens) / Quá khứ (Präteritum):",
             "options": null,
             "correct_answer": "Hiện tại (Präsens), Quá khứ (Präteritum), Hiện tại (Präsens), Quá khứ (Präteritum)",
-            "explanation": "\"bist\" (du) và \"sind\" (wir/sie/Sie) thuộc Hiện tại (Präsens)\n\"wart\" (ihr) và \"waren\" (wir/sie/Sie) thuộc Quá khứ (Präteritum).",
+            "explanation": "\"bist\" (du) và \"sind\" (wir/sie/Sie) thuộc Hiện tại (Präsens)\n\"wart\" (ihr) và \"war\" (ich/er/sie/es) thuộc Quá khứ (Präteritum).",
             "exp_reward": 15,
             "extra_data": {
                 "categories": ["Hiện tại (Präsens)", "Quá khứ (Präteritum)"],
