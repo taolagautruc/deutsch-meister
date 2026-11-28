@@ -2049,10 +2049,17 @@ def seed_lesson_14():
             "question": "Câu 103: Tìm lỗi sai trong câu sau và viết lại câu đúng hoàn chỉnh:\n\"Bremen liegt im nordwestlich von Leipzig.\"",
             "options": null,
             "correct_answer": "Bremen liegt nordwestlich von Leipzig.",
-            "explanation": "\"nordwestlich\" là tính từ chỉ hướng (Bremen nằm bên ngoài Leipzig), bắt buộc bỏ giới từ \"im\"\n-> Đáp án: Bremen liegt nordwestlich von Leipzig.",
+            "explanation": "Có 2 cách sửa đúng:\n1) Bỏ \"im\" vì \"nordwestlich\" là tính từ -> \"Bremen liegt nordwestlich von Leipzig.\"\n2) Giữ giới từ \"im\" thì phải đổi thành danh từ -> \"Bremen liegt im Nordwesten von Leipzig.\"",
             "exp_reward": 15,
             "extra_data": {
-                "accepted_answers": ["Bremen liegt nordwestlich von Leipzig.", "Bremen liegt nordwestlich von Leipzig"],
+                "accepted_answers": [
+                    "Bremen liegt nordwestlich von Leipzig.",
+                    "Bremen liegt nordwestlich von Leipzig",
+                    "Bremen liegt im Nordwesten von Leipzig.",
+                    "Bremen liegt im Nordwesten von Leipzig",
+                    "Bremen liegt im nordwesten von Leipzig.",
+                    "Bremen liegt im nordwesten von Leipzig"
+                ],
                 "audio_text": "Bremen liegt nordwestlich von Leipzig.",
                 "translation": "Bremen nằm ở phía Tây Bắc của Leipzig."
             }
@@ -2077,10 +2084,17 @@ def seed_lesson_14():
             "question": "Câu 105: Tìm lỗi sai trong câu sau và viết lại câu đúng hoàn chỉnh:\n\"Frankfurt liegt im westlich von Dresden.\"",
             "options": null,
             "correct_answer": "Frankfurt liegt westlich von Dresden.",
-            "explanation": "\"westlich\" là tính từ chỉ hướng (bên ngoài Dresden), phải bỏ giới từ \"im\"\n-> Đáp án: Frankfurt liegt westlich von Dresden.",
+            "explanation": "Có 2 cách sửa đúng:\n1) Bỏ \"im\" vì \"westlich\" là tính từ -> \"Frankfurt liegt westlich von Dresden.\"\n2) Giữ giới từ \"im\" thì phải đổi thành danh từ -> \"Frankfurt liegt im Westen von Dresden.\"",
             "exp_reward": 15,
             "extra_data": {
-                "accepted_answers": ["Frankfurt liegt westlich von Dresden.", "Frankfurt liegt westlich von Dresden"],
+                "accepted_answers": [
+                    "Frankfurt liegt westlich von Dresden.",
+                    "Frankfurt liegt westlich von Dresden",
+                    "Frankfurt liegt im Westen von Dresden.",
+                    "Frankfurt liegt im Westen von Dresden",
+                    "Frankfurt liegt im westen von Dresden.",
+                    "Frankfurt liegt im westen von Dresden"
+                ],
                 "audio_text": "Frankfurt liegt westlich von Dresden.",
                 "translation": "Frankfurt nằm ở phía Tây của Dresden."
             }
